@@ -33,9 +33,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.Callable;
 
-/**
- * Default implementation for ReadChannel.
- */
+/** Default implementation for ReadChannel. */
 class BlobReadChannel implements ReadChannel {
 
   private static final int DEFAULT_CHUNK_SIZE = 2 * 1024 * 1024;
@@ -54,8 +52,8 @@ class BlobReadChannel implements ReadChannel {
   private int bufferPos;
   private byte[] buffer;
 
-  BlobReadChannel(StorageOptions serviceOptions, BlobId blob,
-      Map<StorageRpc.Option, ?> requestOptions) {
+  BlobReadChannel(
+      StorageOptions serviceOptions, BlobId blob, Map<StorageRpc.Option, ?> requestOptions) {
     this.serviceOptions = serviceOptions;
     this.blob = blob;
     this.requestOptions = requestOptions;
@@ -66,11 +64,12 @@ class BlobReadChannel implements ReadChannel {
 
   @Override
   public RestorableState<ReadChannel> capture() {
-    StateImpl.Builder builder = StateImpl.builder(serviceOptions, blob, requestOptions)
-        .setPosition(position)
-        .setIsOpen(isOpen)
-        .setEndOfStream(endOfStream)
-        .setChunkSize(chunkSize);
+    StateImpl.Builder builder =
+        StateImpl.builder(serviceOptions, blob, requestOptions)
+            .setPosition(position)
+            .setIsOpen(isOpen)
+            .setEndOfStream(endOfStream)
+            .setChunkSize(chunkSize);
     if (buffer != null) {
       builder.setPosition(position + bufferPos);
       builder.setEndOfStream(false);
@@ -106,7 +105,6 @@ class BlobReadChannel implements ReadChannel {
     endOfStream = false;
   }
 
-
   @Override
   public void setChunkSize(int chunkSize) {
     this.chunkSize = chunkSize <= 0 ? DEFAULT_CHUNK_SIZE : chunkSize;
@@ -121,13 +119,17 @@ class BlobReadChannel implements ReadChannel {
       }
       final int toRead = Math.max(byteBuffer.remaining(), chunkSize);
       try {
-        Tuple<String, byte[]> result = runWithRetries(new Callable<Tuple<String, byte[]>>() {
-          @Override
-          public Tuple<String, byte[]> call() {
-            return storageRpc.read(storageObject, requestOptions, position, toRead);
-          }
-        }, serviceOptions.getRetrySettings(), StorageImpl.EXCEPTION_HANDLER,
-            serviceOptions.getClock());
+        Tuple<String, byte[]> result =
+            runWithRetries(
+                new Callable<Tuple<String, byte[]>>() {
+                  @Override
+                  public Tuple<String, byte[]> call() {
+                    return storageRpc.read(storageObject, requestOptions, position, toRead);
+                  }
+                },
+                serviceOptions.getRetrySettings(),
+                StorageImpl.EXCEPTION_HANDLER,
+                serviceOptions.getClock());
         if (result.y().length > 0 && lastEtag != null && !Objects.equals(result.x(), lastEtag)) {
           StringBuilder messageBuilder = new StringBuilder();
           messageBuilder.append("Blob ").append(blob).append(" was updated while reading");
@@ -245,8 +247,8 @@ class BlobReadChannel implements ReadChannel {
 
     @Override
     public int hashCode() {
-      return Objects.hash(serviceOptions, blob, requestOptions, lastEtag, position, isOpen,
-          endOfStream, chunkSize);
+      return Objects.hash(
+          serviceOptions, blob, requestOptions, lastEtag, position, isOpen, endOfStream, chunkSize);
     }
 
     @Override

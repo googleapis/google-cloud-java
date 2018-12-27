@@ -3,11 +3,14 @@
 
 package com.google.cloud.tasks.v2beta2;
 
-public interface LeaseTasksRequestOrBuilder extends
+public interface LeaseTasksRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.tasks.v2beta2.LeaseTasksRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * The queue name. For example:
@@ -18,6 +21,8 @@ public interface LeaseTasksRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The queue name. For example:
@@ -26,10 +31,11 @@ public interface LeaseTasksRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The maximum number of tasks to lease.
    * The system will make a best effort to return as close to as
@@ -42,6 +48,8 @@ public interface LeaseTasksRequestOrBuilder extends
   int getMaxTasks();
 
   /**
+   *
+   *
    * <pre>
    * After the worker has successfully finished the work associated
    * with the task, the worker must call via
@@ -57,6 +65,8 @@ public interface LeaseTasksRequestOrBuilder extends
    */
   boolean hasLeaseDuration();
   /**
+   *
+   *
    * <pre>
    * After the worker has successfully finished the work associated
    * with the task, the worker must call via
@@ -72,6 +82,8 @@ public interface LeaseTasksRequestOrBuilder extends
    */
   com.google.protobuf.Duration getLeaseDuration();
   /**
+   *
+   *
    * <pre>
    * After the worker has successfully finished the work associated
    * with the task, the worker must call via
@@ -88,6 +100,8 @@ public interface LeaseTasksRequestOrBuilder extends
   com.google.protobuf.DurationOrBuilder getLeaseDurationOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] will be
    * returned.
@@ -105,6 +119,8 @@ public interface LeaseTasksRequestOrBuilder extends
    */
   int getResponseViewValue();
   /**
+   *
+   *
    * <pre>
    * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] will be
    * returned.
@@ -123,6 +139,8 @@ public interface LeaseTasksRequestOrBuilder extends
   com.google.cloud.tasks.v2beta2.Task.View getResponseView();
 
   /**
+   *
+   *
    * <pre>
    * `filter` can be used to specify a subset of tasks to lease.
    * When `filter` is set to `tag=&lt;my-tag&gt;` then the
@@ -151,6 +169,8 @@ public interface LeaseTasksRequestOrBuilder extends
    */
   java.lang.String getFilter();
   /**
+   *
+   *
    * <pre>
    * `filter` can be used to specify a subset of tasks to lease.
    * When `filter` is set to `tag=&lt;my-tag&gt;` then the
@@ -177,6 +197,5 @@ public interface LeaseTasksRequestOrBuilder extends
    *
    * <code>string filter = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getFilterBytes();
+  com.google.protobuf.ByteString getFilterBytes();
 }

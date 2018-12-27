@@ -85,50 +85,50 @@ public class GlobalAddressClientTest {
   @Test
   @SuppressWarnings("all")
   public void deleteGlobalAddressTest() {
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    String targetId = "targetId-815576439";
-    String kind = "kind3292052";
-    String description = "description-1724546052";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String insertTime = "insertTime-103148397";
-    Integer httpErrorStatusCode = 1386087020;
-    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-    String targetLink = "targetLink-2084812312";
-    String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
-    Integer progress = 1001078227;
-    String operationType = "operationType-1432962286";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
-    String id = "id3355";
-    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
-    String user = "user3599307";
+    String creationTimestamp = "creationTimestamp567396278";
+    String description = "description-1724546052";
+    String endTime = "endTime1725551537";
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    Integer httpErrorStatusCode = 1386087020;
+    String id = "id3355";
+    String insertTime = "insertTime-103148397";
+    String kind = "kind3292052";
+    String name = "name3373707";
+    String operationType = "operationType-1432962286";
+    Integer progress = 1001078227;
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String selfLink = "selfLink-1691268851";
+    String startTime = "startTime-1573145462";
     String status = "status-892481550";
+    String statusMessage = "statusMessage-239442758";
+    String targetId = "targetId-815576439";
+    String targetLink = "targetLink-2084812312";
+    String user = "user3599307";
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     Operation expectedResponse =
         Operation.newBuilder()
-            .setHttpErrorMessage(httpErrorMessage)
-            .setTargetId(targetId)
-            .setKind(kind)
-            .setDescription(description)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setInsertTime(insertTime)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setZone(zone.toString())
-            .setTargetLink(targetLink)
-            .setCreationTimestamp(creationTimestamp)
-            .setName(name)
-            .setProgress(progress)
-            .setOperationType(operationType)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
-            .setId(id)
-            .setRegion(region.toString())
             .setClientOperationId(clientOperationId)
-            .setUser(user)
+            .setCreationTimestamp(creationTimestamp)
+            .setDescription(description)
+            .setEndTime(endTime)
+            .setHttpErrorMessage(httpErrorMessage)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setId(id)
+            .setInsertTime(insertTime)
+            .setKind(kind)
+            .setName(name)
+            .setOperationType(operationType)
+            .setProgress(progress)
+            .setRegion(region.toString())
+            .setSelfLink(selfLink)
+            .setStartTime(startTime)
             .setStatus(status)
+            .setStatusMessage(statusMessage)
+            .setTargetId(targetId)
+            .setTargetLink(targetLink)
+            .setUser(user)
+            .setZone(zone.toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -174,34 +174,40 @@ public class GlobalAddressClientTest {
   @SuppressWarnings("all")
   public void getGlobalAddressTest() {
     ProjectGlobalAddressName address2 = ProjectGlobalAddressName.of("[PROJECT]", "[ADDRESS]");
-    String networkTier = "networkTier-19473069";
     String addressType = "addressType264307877";
-    String kind = "kind3292052";
+    String creationTimestamp = "creationTimestamp567396278";
     String description = "description-1724546052";
-    String selfLink = "selfLink-1691268851";
+    String id = "id3355";
     String ipVersion = "ipVersion-1315653184";
+    String kind = "kind3292052";
+    String name = "name3373707";
+    ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
+    String networkTier = "networkTier-19473069";
+    Integer prefixLength = 1157046989;
+    String purpose = "purpose-220463842";
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String selfLink = "selfLink-1691268851";
+    String status = "status-892481550";
     ProjectRegionSubnetworkName subnetwork =
         ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
-    String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
-    String id = "id3355";
-    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
-    String status = "status-892481550";
     Address expectedResponse =
         Address.newBuilder()
             .setAddress(address2.toString())
-            .setNetworkTier(networkTier)
             .setAddressType(addressType)
-            .setKind(kind)
-            .setDescription(description)
-            .setSelfLink(selfLink)
-            .setIpVersion(ipVersion)
-            .setSubnetwork(subnetwork.toString())
             .setCreationTimestamp(creationTimestamp)
-            .setName(name)
+            .setDescription(description)
             .setId(id)
+            .setIpVersion(ipVersion)
+            .setKind(kind)
+            .setName(name)
+            .setNetwork(network.toString())
+            .setNetworkTier(networkTier)
+            .setPrefixLength(prefixLength)
+            .setPurpose(purpose)
             .setRegion(region.toString())
+            .setSelfLink(selfLink)
             .setStatus(status)
+            .setSubnetwork(subnetwork.toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -246,50 +252,50 @@ public class GlobalAddressClientTest {
   @Test
   @SuppressWarnings("all")
   public void insertGlobalAddressTest() {
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    String targetId = "targetId-815576439";
-    String kind = "kind3292052";
-    String description = "description-1724546052";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String insertTime = "insertTime-103148397";
-    Integer httpErrorStatusCode = 1386087020;
-    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-    String targetLink = "targetLink-2084812312";
-    String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
-    Integer progress = 1001078227;
-    String operationType = "operationType-1432962286";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
-    String id = "id3355";
-    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
-    String user = "user3599307";
+    String creationTimestamp = "creationTimestamp567396278";
+    String description = "description-1724546052";
+    String endTime = "endTime1725551537";
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    Integer httpErrorStatusCode = 1386087020;
+    String id = "id3355";
+    String insertTime = "insertTime-103148397";
+    String kind = "kind3292052";
+    String name = "name3373707";
+    String operationType = "operationType-1432962286";
+    Integer progress = 1001078227;
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String selfLink = "selfLink-1691268851";
+    String startTime = "startTime-1573145462";
     String status = "status-892481550";
+    String statusMessage = "statusMessage-239442758";
+    String targetId = "targetId-815576439";
+    String targetLink = "targetLink-2084812312";
+    String user = "user3599307";
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     Operation expectedResponse =
         Operation.newBuilder()
-            .setHttpErrorMessage(httpErrorMessage)
-            .setTargetId(targetId)
-            .setKind(kind)
-            .setDescription(description)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setInsertTime(insertTime)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setZone(zone.toString())
-            .setTargetLink(targetLink)
-            .setCreationTimestamp(creationTimestamp)
-            .setName(name)
-            .setProgress(progress)
-            .setOperationType(operationType)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
-            .setId(id)
-            .setRegion(region.toString())
             .setClientOperationId(clientOperationId)
-            .setUser(user)
+            .setCreationTimestamp(creationTimestamp)
+            .setDescription(description)
+            .setEndTime(endTime)
+            .setHttpErrorMessage(httpErrorMessage)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setId(id)
+            .setInsertTime(insertTime)
+            .setKind(kind)
+            .setName(name)
+            .setOperationType(operationType)
+            .setProgress(progress)
+            .setRegion(region.toString())
+            .setSelfLink(selfLink)
+            .setStartTime(startTime)
             .setStatus(status)
+            .setStatusMessage(statusMessage)
+            .setTargetId(targetId)
+            .setTargetLink(targetLink)
+            .setUser(user)
+            .setZone(zone.toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -336,17 +342,17 @@ public class GlobalAddressClientTest {
   @Test
   @SuppressWarnings("all")
   public void listGlobalAddressesTest() {
+    String id = "id3355";
     String kind = "kind3292052";
     String nextPageToken = "";
-    String id = "id3355";
     String selfLink = "selfLink-1691268851";
     Address itemsElement = Address.newBuilder().build();
     List<Address> items = Arrays.asList(itemsElement);
     AddressList expectedResponse =
         AddressList.newBuilder()
+            .setId(id)
             .setKind(kind)
             .setNextPageToken(nextPageToken)
-            .setId(id)
             .setSelfLink(selfLink)
             .addAllItems(items)
             .build();

@@ -27,15 +27,16 @@ import java.util.Set;
  * Datastore service exception.
  *
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/errors#Error_Codes">Google Cloud
- *      Datastore error codes</a>
+ *     Datastore error codes</a>
  */
 public final class DatastoreException extends BaseHttpServiceException {
 
   // see https://cloud.google.com/datastore/docs/concepts/errors#Error_Codes"
-  private static final Set<Error> RETRYABLE_ERRORS = ImmutableSet.of(
-      new Error(10, "ABORTED", false),
-      new Error(4, "DEADLINE_EXCEEDED", false),
-      new Error(14, "UNAVAILABLE", true));
+  private static final Set<Error> RETRYABLE_ERRORS =
+      ImmutableSet.of(
+          new Error(10, "ABORTED", false),
+          new Error(4, "DEADLINE_EXCEEDED", false),
+          new Error(14, "UNAVAILABLE", true));
   private static final long serialVersionUID = 2663750991205874435L;
 
   public DatastoreException(int code, String message, String reason) {
@@ -46,8 +47,8 @@ public final class DatastoreException extends BaseHttpServiceException {
     super(code, message, reason, true, RETRYABLE_ERRORS, cause);
   }
 
-  public DatastoreException(int code, String message, String reason, boolean idempotent,
-      Throwable cause) {
+  public DatastoreException(
+      int code, String message, String reason, boolean idempotent, Throwable cause) {
     super(code, message, reason, idempotent, RETRYABLE_ERRORS, cause);
   }
 
@@ -73,8 +74,8 @@ public final class DatastoreException extends BaseHttpServiceException {
    * @throws DatastoreException every time
    */
   static DatastoreException throwInvalidRequest(String massage, Object... params) {
-    throw new DatastoreException(UNKNOWN_CODE, String.format(massage, params),
-        "FAILED_PRECONDITION");
+    throw new DatastoreException(
+        UNKNOWN_CODE, String.format(massage, params), "FAILED_PRECONDITION");
   }
 
   static DatastoreException propagateUserException(Exception ex) {

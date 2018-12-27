@@ -4,31 +4,34 @@
 package com.google.cloud.vision.v1p3beta1;
 
 /**
+ *
+ *
  * <pre>
  * Request message for the `CreateReferenceImage` method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.vision.v1p3beta1.CreateReferenceImageRequest}
  */
-public  final class CreateReferenceImageRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class CreateReferenceImageRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p3beta1.CreateReferenceImageRequest)
     CreateReferenceImageRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use CreateReferenceImageRequest.newBuilder() to construct.
   private CreateReferenceImageRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private CreateReferenceImageRequest() {
     parent_ = "";
     referenceImageId_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private CreateReferenceImageRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -48,66 +51,75 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            parent_ = s;
-            break;
-          }
-          case 18: {
-            com.google.cloud.vision.v1p3beta1.ReferenceImage.Builder subBuilder = null;
-            if (referenceImage_ != null) {
-              subBuilder = referenceImage_.toBuilder();
+              parent_ = s;
+              break;
             }
-            referenceImage_ = input.readMessage(com.google.cloud.vision.v1p3beta1.ReferenceImage.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(referenceImage_);
-              referenceImage_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.cloud.vision.v1p3beta1.ReferenceImage.Builder subBuilder = null;
+              if (referenceImage_ != null) {
+                subBuilder = referenceImage_.toBuilder();
+              }
+              referenceImage_ =
+                  input.readMessage(
+                      com.google.cloud.vision.v1p3beta1.ReferenceImage.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(referenceImage_);
+                referenceImage_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            referenceImageId_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              referenceImageId_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto.internal_static_google_cloud_vision_v1p3beta1_CreateReferenceImageRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto
+        .internal_static_google_cloud_vision_v1p3beta1_CreateReferenceImageRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto.internal_static_google_cloud_vision_v1p3beta1_CreateReferenceImageRequest_fieldAccessorTable
+    return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto
+        .internal_static_google_cloud_vision_v1p3beta1_CreateReferenceImageRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest.class, com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest.Builder.class);
+            com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest.class,
+            com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest.Builder.class);
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
+   *
+   *
    * <pre>
    * Resource name of the product in which to create the reference image.
    * Format is
@@ -121,14 +133,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       parent_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Resource name of the product in which to create the reference image.
    * Format is
@@ -137,13 +150,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string parent = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getParentBytes() {
+  public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       parent_ = b;
       return b;
     } else {
@@ -154,6 +165,8 @@ private static final long serialVersionUID = 0L;
   public static final int REFERENCE_IMAGE_FIELD_NUMBER = 2;
   private com.google.cloud.vision.v1p3beta1.ReferenceImage referenceImage_;
   /**
+   *
+   *
    * <pre>
    * The reference image to create.
    * If an image ID is specified, it is ignored.
@@ -165,6 +178,8 @@ private static final long serialVersionUID = 0L;
     return referenceImage_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The reference image to create.
    * If an image ID is specified, it is ignored.
@@ -173,9 +188,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.vision.v1p3beta1.ReferenceImage reference_image = 2;</code>
    */
   public com.google.cloud.vision.v1p3beta1.ReferenceImage getReferenceImage() {
-    return referenceImage_ == null ? com.google.cloud.vision.v1p3beta1.ReferenceImage.getDefaultInstance() : referenceImage_;
+    return referenceImage_ == null
+        ? com.google.cloud.vision.v1p3beta1.ReferenceImage.getDefaultInstance()
+        : referenceImage_;
   }
   /**
+   *
+   *
    * <pre>
    * The reference image to create.
    * If an image ID is specified, it is ignored.
@@ -190,6 +209,8 @@ private static final long serialVersionUID = 0L;
   public static final int REFERENCE_IMAGE_ID_FIELD_NUMBER = 3;
   private volatile java.lang.Object referenceImageId_;
   /**
+   *
+   *
    * <pre>
    * A user-supplied resource id for the ReferenceImage to be added. If set,
    * the server will attempt to use this value as the resource id. If it is
@@ -204,14 +225,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       referenceImageId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * A user-supplied resource id for the ReferenceImage to be added. If set,
    * the server will attempt to use this value as the resource id. If it is
@@ -221,13 +243,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string reference_image_id = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getReferenceImageIdBytes() {
+  public com.google.protobuf.ByteString getReferenceImageIdBytes() {
     java.lang.Object ref = referenceImageId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       referenceImageId_ = b;
       return b;
     } else {
@@ -236,6 +256,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -247,8 +268,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getParentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
@@ -271,8 +291,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
     if (referenceImage_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getReferenceImage());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getReferenceImage());
     }
     if (!getReferenceImageIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, referenceImageId_);
@@ -285,23 +304,21 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest other = (com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest) obj;
+    com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest other =
+        (com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest) obj;
 
     boolean result = true;
-    result = result && getParent()
-        .equals(other.getParent());
+    result = result && getParent().equals(other.getParent());
     result = result && (hasReferenceImage() == other.hasReferenceImage());
     if (hasReferenceImage()) {
-      result = result && getReferenceImage()
-          .equals(other.getReferenceImage());
+      result = result && getReferenceImage().equals(other.getReferenceImage());
     }
-    result = result && getReferenceImageId()
-        .equals(other.getReferenceImageId());
+    result = result && getReferenceImageId().equals(other.getReferenceImageId());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -327,117 +344,127 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest prototype) {
+
+  public static Builder newBuilder(
+      com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Request message for the `CreateReferenceImage` method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.vision.v1p3beta1.CreateReferenceImageRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.vision.v1p3beta1.CreateReferenceImageRequest)
       com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto.internal_static_google_cloud_vision_v1p3beta1_CreateReferenceImageRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto
+          .internal_static_google_cloud_vision_v1p3beta1_CreateReferenceImageRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto.internal_static_google_cloud_vision_v1p3beta1_CreateReferenceImageRequest_fieldAccessorTable
+      return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto
+          .internal_static_google_cloud_vision_v1p3beta1_CreateReferenceImageRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest.class, com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest.Builder.class);
+              com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest.class,
+              com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest.Builder.class);
     }
 
     // Construct using com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest.newBuilder()
@@ -445,16 +472,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -472,13 +498,14 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto.internal_static_google_cloud_vision_v1p3beta1_CreateReferenceImageRequest_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto
+          .internal_static_google_cloud_vision_v1p3beta1_CreateReferenceImageRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest getDefaultInstanceForType() {
+    public com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest
+        getDefaultInstanceForType() {
       return com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest.getDefaultInstance();
     }
 
@@ -493,7 +520,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest buildPartial() {
-      com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest result = new com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest(this);
+      com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest result =
+          new com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest(this);
       result.parent_ = parent_;
       if (referenceImageBuilder_ == null) {
         result.referenceImage_ = referenceImage_;
@@ -509,38 +537,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest) {
-        return mergeFrom((com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest)other);
+        return mergeFrom((com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -548,7 +577,9 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest other) {
-      if (other == com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest.getDefaultInstance()) return this;
+      if (other
+          == com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest.getDefaultInstance())
+        return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
         onChanged();
@@ -579,7 +610,9 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -591,6 +624,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object parent_ = "";
     /**
+     *
+     *
      * <pre>
      * Resource name of the product in which to create the reference image.
      * Format is
@@ -602,8 +637,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         parent_ = s;
         return s;
@@ -612,6 +646,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Resource name of the product in which to create the reference image.
      * Format is
@@ -620,13 +656,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getParentBytes() {
+    public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         parent_ = b;
         return b;
       } else {
@@ -634,6 +668,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Resource name of the product in which to create the reference image.
      * Format is
@@ -642,17 +678,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public Builder setParent(
-        java.lang.String value) {
+    public Builder setParent(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       parent_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Resource name of the product in which to create the reference image.
      * Format is
@@ -662,12 +699,14 @@ private static final long serialVersionUID = 0L;
      * <code>string parent = 1;</code>
      */
     public Builder clearParent() {
-      
+
       parent_ = getDefaultInstance().getParent();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Resource name of the product in which to create the reference image.
      * Format is
@@ -676,13 +715,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public Builder setParentBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       parent_ = value;
       onChanged();
       return this;
@@ -690,8 +728,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.vision.v1p3beta1.ReferenceImage referenceImage_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.ReferenceImage, com.google.cloud.vision.v1p3beta1.ReferenceImage.Builder, com.google.cloud.vision.v1p3beta1.ReferenceImageOrBuilder> referenceImageBuilder_;
+            com.google.cloud.vision.v1p3beta1.ReferenceImage,
+            com.google.cloud.vision.v1p3beta1.ReferenceImage.Builder,
+            com.google.cloud.vision.v1p3beta1.ReferenceImageOrBuilder>
+        referenceImageBuilder_;
     /**
+     *
+     *
      * <pre>
      * The reference image to create.
      * If an image ID is specified, it is ignored.
@@ -703,6 +746,8 @@ private static final long serialVersionUID = 0L;
       return referenceImageBuilder_ != null || referenceImage_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The reference image to create.
      * If an image ID is specified, it is ignored.
@@ -712,12 +757,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1p3beta1.ReferenceImage getReferenceImage() {
       if (referenceImageBuilder_ == null) {
-        return referenceImage_ == null ? com.google.cloud.vision.v1p3beta1.ReferenceImage.getDefaultInstance() : referenceImage_;
+        return referenceImage_ == null
+            ? com.google.cloud.vision.v1p3beta1.ReferenceImage.getDefaultInstance()
+            : referenceImage_;
       } else {
         return referenceImageBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The reference image to create.
      * If an image ID is specified, it is ignored.
@@ -739,6 +788,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The reference image to create.
      * If an image ID is specified, it is ignored.
@@ -758,6 +809,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The reference image to create.
      * If an image ID is specified, it is ignored.
@@ -769,7 +822,9 @@ private static final long serialVersionUID = 0L;
       if (referenceImageBuilder_ == null) {
         if (referenceImage_ != null) {
           referenceImage_ =
-            com.google.cloud.vision.v1p3beta1.ReferenceImage.newBuilder(referenceImage_).mergeFrom(value).buildPartial();
+              com.google.cloud.vision.v1p3beta1.ReferenceImage.newBuilder(referenceImage_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           referenceImage_ = value;
         }
@@ -781,6 +836,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The reference image to create.
      * If an image ID is specified, it is ignored.
@@ -800,6 +857,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The reference image to create.
      * If an image ID is specified, it is ignored.
@@ -808,11 +867,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1p3beta1.ReferenceImage reference_image = 2;</code>
      */
     public com.google.cloud.vision.v1p3beta1.ReferenceImage.Builder getReferenceImageBuilder() {
-      
+
       onChanged();
       return getReferenceImageFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The reference image to create.
      * If an image ID is specified, it is ignored.
@@ -824,11 +885,14 @@ private static final long serialVersionUID = 0L;
       if (referenceImageBuilder_ != null) {
         return referenceImageBuilder_.getMessageOrBuilder();
       } else {
-        return referenceImage_ == null ?
-            com.google.cloud.vision.v1p3beta1.ReferenceImage.getDefaultInstance() : referenceImage_;
+        return referenceImage_ == null
+            ? com.google.cloud.vision.v1p3beta1.ReferenceImage.getDefaultInstance()
+            : referenceImage_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The reference image to create.
      * If an image ID is specified, it is ignored.
@@ -837,14 +901,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1p3beta1.ReferenceImage reference_image = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.ReferenceImage, com.google.cloud.vision.v1p3beta1.ReferenceImage.Builder, com.google.cloud.vision.v1p3beta1.ReferenceImageOrBuilder> 
+            com.google.cloud.vision.v1p3beta1.ReferenceImage,
+            com.google.cloud.vision.v1p3beta1.ReferenceImage.Builder,
+            com.google.cloud.vision.v1p3beta1.ReferenceImageOrBuilder>
         getReferenceImageFieldBuilder() {
       if (referenceImageBuilder_ == null) {
-        referenceImageBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.vision.v1p3beta1.ReferenceImage, com.google.cloud.vision.v1p3beta1.ReferenceImage.Builder, com.google.cloud.vision.v1p3beta1.ReferenceImageOrBuilder>(
-                getReferenceImage(),
-                getParentForChildren(),
-                isClean());
+        referenceImageBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vision.v1p3beta1.ReferenceImage,
+                com.google.cloud.vision.v1p3beta1.ReferenceImage.Builder,
+                com.google.cloud.vision.v1p3beta1.ReferenceImageOrBuilder>(
+                getReferenceImage(), getParentForChildren(), isClean());
         referenceImage_ = null;
       }
       return referenceImageBuilder_;
@@ -852,6 +919,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object referenceImageId_ = "";
     /**
+     *
+     *
      * <pre>
      * A user-supplied resource id for the ReferenceImage to be added. If set,
      * the server will attempt to use this value as the resource id. If it is
@@ -864,8 +933,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getReferenceImageId() {
       java.lang.Object ref = referenceImageId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         referenceImageId_ = s;
         return s;
@@ -874,6 +942,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A user-supplied resource id for the ReferenceImage to be added. If set,
      * the server will attempt to use this value as the resource id. If it is
@@ -883,13 +953,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string reference_image_id = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getReferenceImageIdBytes() {
+    public com.google.protobuf.ByteString getReferenceImageIdBytes() {
       java.lang.Object ref = referenceImageId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         referenceImageId_ = b;
         return b;
       } else {
@@ -897,6 +965,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A user-supplied resource id for the ReferenceImage to be added. If set,
      * the server will attempt to use this value as the resource id. If it is
@@ -906,17 +976,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string reference_image_id = 3;</code>
      */
-    public Builder setReferenceImageId(
-        java.lang.String value) {
+    public Builder setReferenceImageId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       referenceImageId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A user-supplied resource id for the ReferenceImage to be added. If set,
      * the server will attempt to use this value as the resource id. If it is
@@ -927,12 +998,14 @@ private static final long serialVersionUID = 0L;
      * <code>string reference_image_id = 3;</code>
      */
     public Builder clearReferenceImageId() {
-      
+
       referenceImageId_ = getDefaultInstance().getReferenceImageId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A user-supplied resource id for the ReferenceImage to be added. If set,
      * the server will attempt to use this value as the resource id. If it is
@@ -942,20 +1015,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string reference_image_id = 3;</code>
      */
-    public Builder setReferenceImageIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setReferenceImageIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       referenceImageId_ = value;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -965,12 +1037,13 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.vision.v1p3beta1.CreateReferenceImageRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.vision.v1p3beta1.CreateReferenceImageRequest)
-  private static final com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest DEFAULT_INSTANCE;
+  private static final com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest
+      DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest();
   }
@@ -979,16 +1052,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CreateReferenceImageRequest>
-      PARSER = new com.google.protobuf.AbstractParser<CreateReferenceImageRequest>() {
-    @java.lang.Override
-    public CreateReferenceImageRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new CreateReferenceImageRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<CreateReferenceImageRequest> PARSER =
+      new com.google.protobuf.AbstractParser<CreateReferenceImageRequest>() {
+        @java.lang.Override
+        public CreateReferenceImageRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new CreateReferenceImageRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<CreateReferenceImageRequest> parser() {
     return PARSER;
@@ -1003,6 +1076,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.vision.v1p3beta1.CreateReferenceImageRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

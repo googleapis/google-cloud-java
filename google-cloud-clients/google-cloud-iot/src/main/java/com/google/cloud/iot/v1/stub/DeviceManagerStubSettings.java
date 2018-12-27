@@ -40,6 +40,8 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.iot.v1.BindDeviceToGatewayRequest;
+import com.google.cloud.iot.v1.BindDeviceToGatewayResponse;
 import com.google.cloud.iot.v1.CreateDeviceRegistryRequest;
 import com.google.cloud.iot.v1.CreateDeviceRequest;
 import com.google.cloud.iot.v1.DeleteDeviceRegistryRequest;
@@ -58,6 +60,10 @@ import com.google.cloud.iot.v1.ListDeviceStatesResponse;
 import com.google.cloud.iot.v1.ListDevicesRequest;
 import com.google.cloud.iot.v1.ListDevicesResponse;
 import com.google.cloud.iot.v1.ModifyCloudToDeviceConfigRequest;
+import com.google.cloud.iot.v1.SendCommandToDeviceRequest;
+import com.google.cloud.iot.v1.SendCommandToDeviceResponse;
+import com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest;
+import com.google.cloud.iot.v1.UnbindDeviceFromGatewayResponse;
 import com.google.cloud.iot.v1.UpdateDeviceRegistryRequest;
 import com.google.cloud.iot.v1.UpdateDeviceRequest;
 import com.google.common.collect.ImmutableList;
@@ -119,7 +125,8 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
       updateDeviceRegistrySettings;
   private final UnaryCallSettings<DeleteDeviceRegistryRequest, Empty> deleteDeviceRegistrySettings;
   private final PagedCallSettings<
-          ListDeviceRegistriesRequest, ListDeviceRegistriesResponse,
+          ListDeviceRegistriesRequest,
+          ListDeviceRegistriesResponse,
           ListDeviceRegistriesPagedResponse>
       listDeviceRegistriesSettings;
   private final UnaryCallSettings<CreateDeviceRequest, Device> createDeviceSettings;
@@ -138,6 +145,12 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings;
+  private final UnaryCallSettings<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
+      sendCommandToDeviceSettings;
+  private final UnaryCallSettings<BindDeviceToGatewayRequest, BindDeviceToGatewayResponse>
+      bindDeviceToGatewaySettings;
+  private final UnaryCallSettings<UnbindDeviceFromGatewayRequest, UnbindDeviceFromGatewayResponse>
+      unbindDeviceFromGatewaySettings;
 
   /** Returns the object with the settings used for calls to createDeviceRegistry. */
   public UnaryCallSettings<CreateDeviceRegistryRequest, DeviceRegistry>
@@ -163,7 +176,8 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
 
   /** Returns the object with the settings used for calls to listDeviceRegistries. */
   public PagedCallSettings<
-          ListDeviceRegistriesRequest, ListDeviceRegistriesResponse,
+          ListDeviceRegistriesRequest,
+          ListDeviceRegistriesResponse,
           ListDeviceRegistriesPagedResponse>
       listDeviceRegistriesSettings() {
     return listDeviceRegistriesSettings;
@@ -227,6 +241,24 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
   public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings() {
     return testIamPermissionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to sendCommandToDevice. */
+  public UnaryCallSettings<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
+      sendCommandToDeviceSettings() {
+    return sendCommandToDeviceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to bindDeviceToGateway. */
+  public UnaryCallSettings<BindDeviceToGatewayRequest, BindDeviceToGatewayResponse>
+      bindDeviceToGatewaySettings() {
+    return bindDeviceToGatewaySettings;
+  }
+
+  /** Returns the object with the settings used for calls to unbindDeviceFromGateway. */
+  public UnaryCallSettings<UnbindDeviceFromGatewayRequest, UnbindDeviceFromGatewayResponse>
+      unbindDeviceFromGatewaySettings() {
+    return unbindDeviceFromGatewaySettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -313,6 +345,9 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+    sendCommandToDeviceSettings = settingsBuilder.sendCommandToDeviceSettings().build();
+    bindDeviceToGatewaySettings = settingsBuilder.bindDeviceToGatewaySettings().build();
+    unbindDeviceFromGatewaySettings = settingsBuilder.unbindDeviceFromGatewaySettings().build();
   }
 
   private static final PagedListDescriptor<
@@ -349,7 +384,9 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
 
             @Override
             public Iterable<DeviceRegistry> extractResources(ListDeviceRegistriesResponse payload) {
-              return payload.getDeviceRegistriesList();
+              return payload.getDeviceRegistriesList() != null
+                  ? payload.getDeviceRegistriesList()
+                  : ImmutableList.<DeviceRegistry>of();
             }
           };
 
@@ -383,16 +420,20 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
 
             @Override
             public Iterable<Device> extractResources(ListDevicesResponse payload) {
-              return payload.getDevicesList();
+              return payload.getDevicesList() != null
+                  ? payload.getDevicesList()
+                  : ImmutableList.<Device>of();
             }
           };
 
   private static final PagedListResponseFactory<
-          ListDeviceRegistriesRequest, ListDeviceRegistriesResponse,
+          ListDeviceRegistriesRequest,
+          ListDeviceRegistriesResponse,
           ListDeviceRegistriesPagedResponse>
       LIST_DEVICE_REGISTRIES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListDeviceRegistriesRequest, ListDeviceRegistriesResponse,
+              ListDeviceRegistriesRequest,
+              ListDeviceRegistriesResponse,
               ListDeviceRegistriesPagedResponse>() {
             @Override
             public ApiFuture<ListDeviceRegistriesPagedResponse> getFuturePagedResponse(
@@ -438,7 +479,8 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
     private final UnaryCallSettings.Builder<DeleteDeviceRegistryRequest, Empty>
         deleteDeviceRegistrySettings;
     private final PagedCallSettings.Builder<
-            ListDeviceRegistriesRequest, ListDeviceRegistriesResponse,
+            ListDeviceRegistriesRequest,
+            ListDeviceRegistriesResponse,
             ListDeviceRegistriesPagedResponse>
         listDeviceRegistriesSettings;
     private final UnaryCallSettings.Builder<CreateDeviceRequest, Device> createDeviceSettings;
@@ -459,6 +501,13 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings;
+    private final UnaryCallSettings.Builder<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
+        sendCommandToDeviceSettings;
+    private final UnaryCallSettings.Builder<BindDeviceToGatewayRequest, BindDeviceToGatewayResponse>
+        bindDeviceToGatewaySettings;
+    private final UnaryCallSettings.Builder<
+            UnbindDeviceFromGatewayRequest, UnbindDeviceFromGatewayResponse>
+        unbindDeviceFromGatewaySettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -552,6 +601,12 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
 
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      sendCommandToDeviceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      bindDeviceToGatewaySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      unbindDeviceFromGatewaySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               createDeviceRegistrySettings,
@@ -569,7 +624,10 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
               listDeviceStatesSettings,
               setIamPolicySettings,
               getIamPolicySettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              sendCommandToDeviceSettings,
+              bindDeviceToGatewaySettings,
+              unbindDeviceFromGatewaySettings);
 
       initDefaults(this);
     }
@@ -665,6 +723,21 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
+      builder
+          .sendCommandToDeviceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("rate_limited_aware"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("rate_limited_aware"));
+
+      builder
+          .bindDeviceToGatewaySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .unbindDeviceFromGatewaySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
       return builder;
     }
 
@@ -687,6 +760,9 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
+      sendCommandToDeviceSettings = settings.sendCommandToDeviceSettings.toBuilder();
+      bindDeviceToGatewaySettings = settings.bindDeviceToGatewaySettings.toBuilder();
+      unbindDeviceFromGatewaySettings = settings.unbindDeviceFromGatewaySettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -705,7 +781,10 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
               listDeviceStatesSettings,
               setIamPolicySettings,
               getIamPolicySettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              sendCommandToDeviceSettings,
+              bindDeviceToGatewaySettings,
+              unbindDeviceFromGatewaySettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -750,7 +829,8 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
 
     /** Returns the builder for the settings used for calls to listDeviceRegistries. */
     public PagedCallSettings.Builder<
-            ListDeviceRegistriesRequest, ListDeviceRegistriesResponse,
+            ListDeviceRegistriesRequest,
+            ListDeviceRegistriesResponse,
             ListDeviceRegistriesPagedResponse>
         listDeviceRegistriesSettings() {
       return listDeviceRegistriesSettings;
@@ -816,6 +896,25 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to sendCommandToDevice. */
+    public UnaryCallSettings.Builder<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
+        sendCommandToDeviceSettings() {
+      return sendCommandToDeviceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to bindDeviceToGateway. */
+    public UnaryCallSettings.Builder<BindDeviceToGatewayRequest, BindDeviceToGatewayResponse>
+        bindDeviceToGatewaySettings() {
+      return bindDeviceToGatewaySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to unbindDeviceFromGateway. */
+    public UnaryCallSettings.Builder<
+            UnbindDeviceFromGatewayRequest, UnbindDeviceFromGatewayResponse>
+        unbindDeviceFromGatewaySettings() {
+      return unbindDeviceFromGatewaySettings;
     }
 
     @Override

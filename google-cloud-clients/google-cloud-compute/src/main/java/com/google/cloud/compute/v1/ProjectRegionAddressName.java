@@ -32,8 +32,9 @@ public final class ProjectRegionAddressName implements ResourceName {
   private final String project;
   private final String region;
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/regions/{region}/addresses/{address}");
+      PathTemplate.createWithoutUrlEncoding("{project}/regions/{region}/addresses/{address}");
+
+  public static final String SERVICE_ADDRESS = "https://www.googleapis.com/compute/v1/projects/";
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -100,14 +101,22 @@ public final class ProjectRegionAddressName implements ResourceName {
   }
 
   public static ProjectRegionAddressName parse(String formattedString) {
+    String resourcePath = formattedString;
+    if (formattedString.startsWith(SERVICE_ADDRESS)) {
+      resourcePath = formattedString.substring(SERVICE_ADDRESS.length());
+    }
     Map<String, String> matchMap =
         PATH_TEMPLATE.validatedMatch(
-            formattedString, "ProjectRegionAddressName.parse: formattedString not in valid format");
+            resourcePath, "ProjectRegionAddressName.parse: formattedString not in valid format");
     return of(matchMap.get("address"), matchMap.get("project"), matchMap.get("region"));
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    String resourcePath = formattedString;
+    if (formattedString.startsWith(SERVICE_ADDRESS)) {
+      resourcePath = formattedString.substring(SERVICE_ADDRESS.length());
+    }
+    return PATH_TEMPLATE.matches(resourcePath);
   }
 
   public static class Builder {

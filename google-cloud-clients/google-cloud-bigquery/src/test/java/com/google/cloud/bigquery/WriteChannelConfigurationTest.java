@@ -23,19 +23,18 @@ import com.google.cloud.bigquery.JobInfo.CreateDisposition;
 import com.google.cloud.bigquery.JobInfo.WriteDisposition;
 import com.google.cloud.bigquery.TimePartitioning.Type;
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
 import java.nio.charset.StandardCharsets;
 import java.util.List;
+import org.junit.Test;
 
 public class WriteChannelConfigurationTest {
 
-  private static final CsvOptions CSV_OPTIONS = CsvOptions.newBuilder()
-      .setAllowJaggedRows(true)
-      .setAllowQuotedNewLines(false)
-      .setEncoding(StandardCharsets.UTF_8)
-      .build();
+  private static final CsvOptions CSV_OPTIONS =
+      CsvOptions.newBuilder()
+          .setAllowJaggedRows(true)
+          .setAllowQuotedNewLines(false)
+          .setEncoding(StandardCharsets.UTF_8)
+          .build();
   private static final TableId TABLE_ID = TableId.of("dataset", "table");
   private static final CreateDisposition CREATE_DISPOSITION = CreateDisposition.CREATE_IF_NEEDED;
   private static final WriteDisposition WRITE_DISPOSITION = WriteDisposition.WRITE_APPEND;
@@ -53,7 +52,8 @@ public class WriteChannelConfigurationTest {
   private static final List<JobInfo.SchemaUpdateOption> SCHEMA_UPDATE_OPTIONS =
       ImmutableList.of(JobInfo.SchemaUpdateOption.ALLOW_FIELD_ADDITION);
   private static final TimePartitioning TIME_PARTITIONING = TimePartitioning.of(Type.DAY);
-  private static final Clustering CLUSTERING = Clustering.newBuilder().setFields(ImmutableList.of("Foo","Bar")).build();
+  private static final Clustering CLUSTERING =
+      Clustering.newBuilder().setFields(ImmutableList.of("Foo", "Bar")).build();
   private static final WriteChannelConfiguration LOAD_CONFIGURATION_CSV =
       WriteChannelConfiguration.newBuilder(TABLE_ID)
           .setCreateDisposition(CREATE_DISPOSITION)
@@ -69,9 +69,10 @@ public class WriteChannelConfigurationTest {
           .setClustering(CLUSTERING)
           .build();
 
-  private static final DatastoreBackupOptions BACKUP_OPTIONS = DatastoreBackupOptions.newBuilder()
-      .setProjectionFields(ImmutableList.of("field_1", "field_2"))
-      .build();
+  private static final DatastoreBackupOptions BACKUP_OPTIONS =
+      DatastoreBackupOptions.newBuilder()
+          .setProjectionFields(ImmutableList.of("field_1", "field_2"))
+          .build();
   private static final WriteChannelConfiguration LOAD_CONFIGURATION_BACKUP =
       WriteChannelConfiguration.newBuilder(TABLE_ID)
           .setCreateDisposition(CREATE_DISPOSITION)
@@ -87,9 +88,11 @@ public class WriteChannelConfigurationTest {
   @Test
   public void testToBuilder() {
     compareLoadConfiguration(LOAD_CONFIGURATION_CSV, LOAD_CONFIGURATION_CSV.toBuilder().build());
-    WriteChannelConfiguration configuration = LOAD_CONFIGURATION_CSV.toBuilder()
-        .setDestinationTable(TableId.of("dataset", "newTable"))
-        .build();
+    WriteChannelConfiguration configuration =
+        LOAD_CONFIGURATION_CSV
+            .toBuilder()
+            .setDestinationTable(TableId.of("dataset", "newTable"))
+            .build();
     assertEquals("newTable", configuration.getDestinationTable().getTable());
     configuration = configuration.toBuilder().setDestinationTable(TABLE_ID).build();
     compareLoadConfiguration(LOAD_CONFIGURATION_CSV, configuration);
@@ -155,14 +158,22 @@ public class WriteChannelConfigurationTest {
   @Test
   public void testToPbAndFromPb() {
     assertNull(LOAD_CONFIGURATION_CSV.toPb().getLoad().getSourceUris());
-    compareLoadConfiguration(LOAD_CONFIGURATION_CSV,
-        WriteChannelConfiguration.fromPb(LOAD_CONFIGURATION_CSV.toPb()));
+    compareLoadConfiguration(
+        LOAD_CONFIGURATION_CSV, WriteChannelConfiguration.fromPb(LOAD_CONFIGURATION_CSV.toPb()));
     WriteChannelConfiguration configuration = WriteChannelConfiguration.of(TABLE_ID);
     compareLoadConfiguration(configuration, WriteChannelConfiguration.fromPb(configuration.toPb()));
   }
 
-  private void compareLoadConfiguration(WriteChannelConfiguration expected,
-      WriteChannelConfiguration value) {
+  @Test
+  public void testSetProjectIdDoNotOverride() {
+    WriteChannelConfiguration configuration =
+        WriteChannelConfiguration.of(TABLE_ID).setProjectId("project");
+    configuration.setProjectId("different-project").toBuilder();
+    assertEquals("project", configuration.getDestinationTable().getProject());
+  }
+
+  private void compareLoadConfiguration(
+      WriteChannelConfiguration expected, WriteChannelConfiguration value) {
     assertEquals(expected, value);
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.toString(), value.toString());

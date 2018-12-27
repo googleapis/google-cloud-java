@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1;
 
-public interface HiveJobOrBuilder extends
+public interface HiveJobOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1.HiveJob)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The HCFS URI of the script that contains Hive queries.
    * </pre>
@@ -16,16 +19,19 @@ public interface HiveJobOrBuilder extends
    */
   java.lang.String getQueryFileUri();
   /**
+   *
+   *
    * <pre>
    * The HCFS URI of the script that contains Hive queries.
    * </pre>
    *
    * <code>string query_file_uri = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getQueryFileUriBytes();
+  com.google.protobuf.ByteString getQueryFileUriBytes();
 
   /**
+   *
+   *
    * <pre>
    * A list of queries.
    * </pre>
@@ -34,6 +40,8 @@ public interface HiveJobOrBuilder extends
    */
   boolean hasQueryList();
   /**
+   *
+   *
    * <pre>
    * A list of queries.
    * </pre>
@@ -42,6 +50,8 @@ public interface HiveJobOrBuilder extends
    */
   com.google.cloud.dataproc.v1.QueryList getQueryList();
   /**
+   *
+   *
    * <pre>
    * A list of queries.
    * </pre>
@@ -51,6 +61,8 @@ public interface HiveJobOrBuilder extends
   com.google.cloud.dataproc.v1.QueryListOrBuilder getQueryListOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. Whether to continue executing queries if a query fails.
    * The default value is `false`. Setting to `true` can be useful when executing
@@ -62,6 +74,8 @@ public interface HiveJobOrBuilder extends
   boolean getContinueOnFailure();
 
   /**
+   *
+   *
    * <pre>
    * Optional. Mapping of query variable names to values (equivalent to the
    * Hive command: `SET name="value";`).
@@ -71,6 +85,8 @@ public interface HiveJobOrBuilder extends
    */
   int getScriptVariablesCount();
   /**
+   *
+   *
    * <pre>
    * Optional. Mapping of query variable names to values (equivalent to the
    * Hive command: `SET name="value";`).
@@ -78,15 +94,13 @@ public interface HiveJobOrBuilder extends
    *
    * <code>map&lt;string, string&gt; script_variables = 4;</code>
    */
-  boolean containsScriptVariables(
-      java.lang.String key);
-  /**
-   * Use {@link #getScriptVariablesMap()} instead.
-   */
+  boolean containsScriptVariables(java.lang.String key);
+  /** Use {@link #getScriptVariablesMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getScriptVariables();
+  java.util.Map<java.lang.String, java.lang.String> getScriptVariables();
   /**
+   *
+   *
    * <pre>
    * Optional. Mapping of query variable names to values (equivalent to the
    * Hive command: `SET name="value";`).
@@ -94,9 +108,10 @@ public interface HiveJobOrBuilder extends
    *
    * <code>map&lt;string, string&gt; script_variables = 4;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getScriptVariablesMap();
+  java.util.Map<java.lang.String, java.lang.String> getScriptVariablesMap();
   /**
+   *
+   *
    * <pre>
    * Optional. Mapping of query variable names to values (equivalent to the
    * Hive command: `SET name="value";`).
@@ -104,11 +119,10 @@ public interface HiveJobOrBuilder extends
    *
    * <code>map&lt;string, string&gt; script_variables = 4;</code>
    */
-
-  java.lang.String getScriptVariablesOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getScriptVariablesOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * Optional. Mapping of query variable names to values (equivalent to the
    * Hive command: `SET name="value";`).
@@ -116,11 +130,11 @@ public interface HiveJobOrBuilder extends
    *
    * <code>map&lt;string, string&gt; script_variables = 4;</code>
    */
-
-  java.lang.String getScriptVariablesOrThrow(
-      java.lang.String key);
+  java.lang.String getScriptVariablesOrThrow(java.lang.String key);
 
   /**
+   *
+   *
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
    * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -132,6 +146,8 @@ public interface HiveJobOrBuilder extends
    */
   int getPropertiesCount();
   /**
+   *
+   *
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
    * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -141,15 +157,13 @@ public interface HiveJobOrBuilder extends
    *
    * <code>map&lt;string, string&gt; properties = 5;</code>
    */
-  boolean containsProperties(
-      java.lang.String key);
-  /**
-   * Use {@link #getPropertiesMap()} instead.
-   */
+  boolean containsProperties(java.lang.String key);
+  /** Use {@link #getPropertiesMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getProperties();
+  java.util.Map<java.lang.String, java.lang.String> getProperties();
   /**
+   *
+   *
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
    * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -159,9 +173,10 @@ public interface HiveJobOrBuilder extends
    *
    * <code>map&lt;string, string&gt; properties = 5;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getPropertiesMap();
+  java.util.Map<java.lang.String, java.lang.String> getPropertiesMap();
   /**
+   *
+   *
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
    * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -171,11 +186,10 @@ public interface HiveJobOrBuilder extends
    *
    * <code>map&lt;string, string&gt; properties = 5;</code>
    */
-
-  java.lang.String getPropertiesOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getPropertiesOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
    * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -185,11 +199,11 @@ public interface HiveJobOrBuilder extends
    *
    * <code>map&lt;string, string&gt; properties = 5;</code>
    */
-
-  java.lang.String getPropertiesOrThrow(
-      java.lang.String key);
+  java.lang.String getPropertiesOrThrow(java.lang.String key);
 
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of jar files to add to the CLASSPATH of the
    * Hive server and Hadoop MapReduce (MR) tasks. Can contain Hive SerDes
@@ -198,9 +212,10 @@ public interface HiveJobOrBuilder extends
    *
    * <code>repeated string jar_file_uris = 6;</code>
    */
-  java.util.List<java.lang.String>
-      getJarFileUrisList();
+  java.util.List<java.lang.String> getJarFileUrisList();
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of jar files to add to the CLASSPATH of the
    * Hive server and Hadoop MapReduce (MR) tasks. Can contain Hive SerDes
@@ -211,6 +226,8 @@ public interface HiveJobOrBuilder extends
    */
   int getJarFileUrisCount();
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of jar files to add to the CLASSPATH of the
    * Hive server and Hadoop MapReduce (MR) tasks. Can contain Hive SerDes
@@ -221,6 +238,8 @@ public interface HiveJobOrBuilder extends
    */
   java.lang.String getJarFileUris(int index);
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of jar files to add to the CLASSPATH of the
    * Hive server and Hadoop MapReduce (MR) tasks. Can contain Hive SerDes
@@ -229,8 +248,7 @@ public interface HiveJobOrBuilder extends
    *
    * <code>repeated string jar_file_uris = 6;</code>
    */
-  com.google.protobuf.ByteString
-      getJarFileUrisBytes(int index);
+  com.google.protobuf.ByteString getJarFileUrisBytes(int index);
 
   public com.google.cloud.dataproc.v1.HiveJob.QueriesCase getQueriesCase();
 }

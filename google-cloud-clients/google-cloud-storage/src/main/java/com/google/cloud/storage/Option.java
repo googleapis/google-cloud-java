@@ -20,7 +20,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.common.base.MoreObjects;
-
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -53,8 +52,7 @@ public abstract class Option implements Serializable {
       return false;
     }
     Option other = (Option) obj;
-    return Objects.equals(rpcOption, other.rpcOption)
-        && Objects.equals(value, other.value);
+    return Objects.equals(rpcOption, other.rpcOption) && Objects.equals(value, other.value);
   }
 
   @Override

@@ -3,20 +3,24 @@
 
 package com.google.cloud.vision.v1;
 
-public interface BoundingPolyOrBuilder extends
+public interface BoundingPolyOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1.BoundingPoly)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The bounding polygon vertices.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.Vertex vertices = 1;</code>
    */
-  java.util.List<com.google.cloud.vision.v1.Vertex> 
-      getVerticesList();
+  java.util.List<com.google.cloud.vision.v1.Vertex> getVerticesList();
   /**
+   *
+   *
    * <pre>
    * The bounding polygon vertices.
    * </pre>
@@ -25,6 +29,8 @@ public interface BoundingPolyOrBuilder extends
    */
   com.google.cloud.vision.v1.Vertex getVertices(int index);
   /**
+   *
+   *
    * <pre>
    * The bounding polygon vertices.
    * </pre>
@@ -33,34 +39,39 @@ public interface BoundingPolyOrBuilder extends
    */
   int getVerticesCount();
   /**
+   *
+   *
    * <pre>
    * The bounding polygon vertices.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.Vertex vertices = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.vision.v1.VertexOrBuilder> 
-      getVerticesOrBuilderList();
+  java.util.List<? extends com.google.cloud.vision.v1.VertexOrBuilder> getVerticesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The bounding polygon vertices.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.Vertex vertices = 1;</code>
    */
-  com.google.cloud.vision.v1.VertexOrBuilder getVerticesOrBuilder(
-      int index);
+  com.google.cloud.vision.v1.VertexOrBuilder getVerticesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * The bounding polygon normalized vertices.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.NormalizedVertex normalized_vertices = 2;</code>
    */
-  java.util.List<com.google.cloud.vision.v1.NormalizedVertex> 
-      getNormalizedVerticesList();
+  java.util.List<com.google.cloud.vision.v1.NormalizedVertex> getNormalizedVerticesList();
   /**
+   *
+   *
    * <pre>
    * The bounding polygon normalized vertices.
    * </pre>
@@ -69,6 +80,8 @@ public interface BoundingPolyOrBuilder extends
    */
   com.google.cloud.vision.v1.NormalizedVertex getNormalizedVertices(int index);
   /**
+   *
+   *
    * <pre>
    * The bounding polygon normalized vertices.
    * </pre>
@@ -77,21 +90,24 @@ public interface BoundingPolyOrBuilder extends
    */
   int getNormalizedVerticesCount();
   /**
+   *
+   *
    * <pre>
    * The bounding polygon normalized vertices.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.NormalizedVertex normalized_vertices = 2;</code>
    */
-  java.util.List<? extends com.google.cloud.vision.v1.NormalizedVertexOrBuilder> 
+  java.util.List<? extends com.google.cloud.vision.v1.NormalizedVertexOrBuilder>
       getNormalizedVerticesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The bounding polygon normalized vertices.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.NormalizedVertex normalized_vertices = 2;</code>
    */
-  com.google.cloud.vision.v1.NormalizedVertexOrBuilder getNormalizedVerticesOrBuilder(
-      int index);
+  com.google.cloud.vision.v1.NormalizedVertexOrBuilder getNormalizedVerticesOrBuilder(int index);
 }

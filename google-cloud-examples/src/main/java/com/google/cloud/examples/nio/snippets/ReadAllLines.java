@@ -24,9 +24,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
-/**
- * A snippet showing how to read all lines of a Google Cloud Storage file using NIO.
- */
+/** A snippet showing how to read all lines of a Google Cloud Storage file using NIO. */
 public class ReadAllLines {
 
   public static void main(String... args) throws IOException {

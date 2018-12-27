@@ -15,14 +15,15 @@
  */
 
 /**
- * A client for BigQuery – A fully managed, petabyte scale, low cost enterprise data
- * warehouse for analytics.
+ * A client for BigQuery – A fully managed, petabyte scale, low cost enterprise data warehouse for
+ * analytics.
  *
  * <p>A simple usage example showing how to create a table if it does not exist and load data into
- * it. For the complete source code see
- * <a href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/bigquery/snippets/CreateTableAndLoadData.java">
+ * it. For the complete source code see <a
+ * href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/bigquery/snippets/CreateTableAndLoadData.java">
  * CreateTableAndLoadData.java</a>.
- * <pre> {@code
+ *
+ * <pre>{@code
  * BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
  * TableId tableId = TableId.of("dataset", "table");
  * Table table = bigquery.getTable(tableId);
@@ -39,7 +40,8 @@
  *   System.out.println("Job completed with errors");
  * } else {
  *   System.out.println("Job succeeded");
- * }}</pre>
+ * }
+ * }</pre>
  *
  * @see <a href="https://cloud.google.com/bigquery/">Google Cloud BigQuery</a>
  */

@@ -81,8 +81,8 @@ public interface BigQueryRpc extends ServiceRpc {
 
   /**
    * Lists the provided project's datasets. Partial information is returned on a dataset
-   * (datasetReference, friendlyName and id). To get full information use
-   * {@link #getDataset(String, String, Map)}.
+   * (datasetReference, friendlyName and id). To get full information use {@link #getDataset(String,
+   * String, Map)}.
    *
    * @throws BigQueryException upon failure
    */
@@ -140,13 +140,13 @@ public interface BigQueryRpc extends ServiceRpc {
 
   /**
    * Lists the dataset's tables. Partial information is returned on a table (tableReference,
-   * friendlyName, id and type). To get full information use
-   * {@link #getTable(String, String, String, Map)}.
+   * friendlyName, id and type). To get full information use {@link #getTable(String, String,
+   * String, Map)}.
    *
    * @throws BigQueryException upon failure
    */
-  Tuple<String, Iterable<Table>> listTables(String projectId, String dataset,
-      Map<Option, ?> options);
+  Tuple<String, Iterable<Table>> listTables(
+      String projectId, String dataset, Map<Option, ?> options);
 
   /**
    * Delete the requested table.
@@ -161,8 +161,8 @@ public interface BigQueryRpc extends ServiceRpc {
    *
    * @throws BigQueryException upon failure
    */
-  TableDataInsertAllResponse insertAll(String projectId, String datasetId, String tableId,
-      TableDataInsertAllRequest request);
+  TableDataInsertAllResponse insertAll(
+      String projectId, String datasetId, String tableId, TableDataInsertAllRequest request);
 
   /**
    * Lists the table's rows.
@@ -226,6 +226,11 @@ public interface BigQueryRpc extends ServiceRpc {
    *     Returns {@code null} otherwise
    * @throws BigQueryException upon failure
    */
-  Job write(String uploadId, byte[] toWrite, int toWriteOffset, long destOffset, int length,
+  Job write(
+      String uploadId,
+      byte[] toWrite,
+      int toWriteOffset,
+      long destOffset,
+      int length,
       boolean last);
 }

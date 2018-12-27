@@ -14,20 +14,21 @@
 
 package com.google.cloud.vision.v1;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class ProductSetName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/locations/{location}/productSets/{product_set}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/productSets/{product_set}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -62,20 +63,16 @@ public class ProductSetName implements ResourceName {
   }
 
   public static ProductSetName of(String project, String location, String productSet) {
-    return newBuilder()
-      .setProject(project)
-      .setLocation(location)
-      .setProductSet(productSet)
-      .build();
+    return newBuilder().setProject(project).setLocation(location).setProductSet(productSet).build();
   }
 
   public static String format(String project, String location, String productSet) {
     return newBuilder()
-      .setProject(project)
-      .setLocation(location)
-      .setProductSet(productSet)
-      .build()
-      .toString();
+        .setProject(project)
+        .setLocation(location)
+        .setProductSet(productSet)
+        .build()
+        .toString();
   }
 
   public static ProductSetName parse(String formattedString) {
@@ -83,7 +80,8 @@ public class ProductSetName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "ProductSetName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "ProductSetName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("location"), matchMap.get("product_set"));
   }
 
@@ -132,7 +130,8 @@ public class ProductSetName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "location", location, "product_set", productSet);
+    return PATH_TEMPLATE.instantiate(
+        "project", project, "location", location, "product_set", productSet);
   }
 
   /** Builder for ProductSetName. */
@@ -169,8 +168,7 @@ public class ProductSetName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(ProductSetName productSetName) {
       project = productSetName.project;
@@ -209,4 +207,3 @@ public class ProductSetName implements ResourceName {
     return h;
   }
 }
-

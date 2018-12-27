@@ -3,11 +3,14 @@
 
 package com.google.cloud.speech.v1p1beta1;
 
-public interface RecognitionAudioOrBuilder extends
+public interface RecognitionAudioOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.speech.v1p1beta1.RecognitionAudio)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The audio data bytes encoded as specified in
    * `RecognitionConfig`. Note: as with all bytes fields, protobuffers use a
@@ -19,6 +22,8 @@ public interface RecognitionAudioOrBuilder extends
   com.google.protobuf.ByteString getContent();
 
   /**
+   *
+   *
    * <pre>
    * URI that points to a file that contains audio data bytes as specified in
    * `RecognitionConfig`. The file must not be compressed (for example, gzip).
@@ -33,6 +38,8 @@ public interface RecognitionAudioOrBuilder extends
    */
   java.lang.String getUri();
   /**
+   *
+   *
    * <pre>
    * URI that points to a file that contains audio data bytes as specified in
    * `RecognitionConfig`. The file must not be compressed (for example, gzip).
@@ -45,8 +52,7 @@ public interface RecognitionAudioOrBuilder extends
    *
    * <code>string uri = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getUriBytes();
+  com.google.protobuf.ByteString getUriBytes();
 
   public com.google.cloud.speech.v1p1beta1.RecognitionAudio.AudioSourceCase getAudioSourceCase();
 }

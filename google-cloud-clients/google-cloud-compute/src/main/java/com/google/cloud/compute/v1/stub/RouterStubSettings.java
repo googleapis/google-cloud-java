@@ -16,6 +16,7 @@
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.RouterClient.AggregatedListRoutersPagedResponse;
+import static com.google.cloud.compute.v1.RouterClient.GetNatMappingInfoRoutersPagedResponse;
 import static com.google.cloud.compute.v1.RouterClient.ListRoutersPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -42,6 +43,7 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListRoutersHttpRequest;
 import com.google.cloud.compute.v1.DeleteRouterHttpRequest;
+import com.google.cloud.compute.v1.GetNatMappingInfoRoutersHttpRequest;
 import com.google.cloud.compute.v1.GetRouterHttpRequest;
 import com.google.cloud.compute.v1.GetRouterStatusRouterHttpRequest;
 import com.google.cloud.compute.v1.InsertRouterHttpRequest;
@@ -56,6 +58,8 @@ import com.google.cloud.compute.v1.RouterStatusResponse;
 import com.google.cloud.compute.v1.RoutersPreviewResponse;
 import com.google.cloud.compute.v1.RoutersScopedList;
 import com.google.cloud.compute.v1.UpdateRouterHttpRequest;
+import com.google.cloud.compute.v1.VmEndpointNatMappings;
+import com.google.cloud.compute.v1.VmEndpointNatMappingsList;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -107,11 +111,17 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
           .build();
 
   private final PagedCallSettings<
-          AggregatedListRoutersHttpRequest, RouterAggregatedList,
+          AggregatedListRoutersHttpRequest,
+          RouterAggregatedList,
           AggregatedListRoutersPagedResponse>
       aggregatedListRoutersSettings;
   private final UnaryCallSettings<DeleteRouterHttpRequest, Operation> deleteRouterSettings;
   private final UnaryCallSettings<GetRouterHttpRequest, Router> getRouterSettings;
+  private final PagedCallSettings<
+          GetNatMappingInfoRoutersHttpRequest,
+          VmEndpointNatMappingsList,
+          GetNatMappingInfoRoutersPagedResponse>
+      getNatMappingInfoRoutersSettings;
   private final UnaryCallSettings<GetRouterStatusRouterHttpRequest, RouterStatusResponse>
       getRouterStatusRouterSettings;
   private final UnaryCallSettings<InsertRouterHttpRequest, Operation> insertRouterSettings;
@@ -124,7 +134,8 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
 
   /** Returns the object with the settings used for calls to aggregatedListRouters. */
   public PagedCallSettings<
-          AggregatedListRoutersHttpRequest, RouterAggregatedList,
+          AggregatedListRoutersHttpRequest,
+          RouterAggregatedList,
           AggregatedListRoutersPagedResponse>
       aggregatedListRoutersSettings() {
     return aggregatedListRoutersSettings;
@@ -138,6 +149,15 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
   /** Returns the object with the settings used for calls to getRouter. */
   public UnaryCallSettings<GetRouterHttpRequest, Router> getRouterSettings() {
     return getRouterSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getNatMappingInfoRouters. */
+  public PagedCallSettings<
+          GetNatMappingInfoRoutersHttpRequest,
+          VmEndpointNatMappingsList,
+          GetNatMappingInfoRoutersPagedResponse>
+      getNatMappingInfoRoutersSettings() {
+    return getNatMappingInfoRoutersSettings;
   }
 
   /** Returns the object with the settings used for calls to getRouterStatusRouter. */
@@ -250,6 +270,7 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
     aggregatedListRoutersSettings = settingsBuilder.aggregatedListRoutersSettings().build();
     deleteRouterSettings = settingsBuilder.deleteRouterSettings().build();
     getRouterSettings = settingsBuilder.getRouterSettings().build();
+    getNatMappingInfoRoutersSettings = settingsBuilder.getNatMappingInfoRoutersSettings().build();
     getRouterStatusRouterSettings = settingsBuilder.getRouterStatusRouterSettings().build();
     insertRouterSettings = settingsBuilder.insertRouterSettings().build();
     listRoutersSettings = settingsBuilder.listRoutersSettings().build();
@@ -296,7 +317,56 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
 
             @Override
             public Iterable<RoutersScopedList> extractResources(RouterAggregatedList payload) {
-              return payload.getItemsMap().values();
+              return payload.getItemsMap() != null
+                  ? payload.getItemsMap().values()
+                  : ImmutableList.<RoutersScopedList>of();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          GetNatMappingInfoRoutersHttpRequest, VmEndpointNatMappingsList, VmEndpointNatMappings>
+      GET_NAT_MAPPING_INFO_ROUTERS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              GetNatMappingInfoRoutersHttpRequest,
+              VmEndpointNatMappingsList,
+              VmEndpointNatMappings>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public GetNatMappingInfoRoutersHttpRequest injectToken(
+                GetNatMappingInfoRoutersHttpRequest payload, String token) {
+              return GetNatMappingInfoRoutersHttpRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public GetNatMappingInfoRoutersHttpRequest injectPageSize(
+                GetNatMappingInfoRoutersHttpRequest payload, int pageSize) {
+              return GetNatMappingInfoRoutersHttpRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(GetNatMappingInfoRoutersHttpRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(VmEndpointNatMappingsList payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<VmEndpointNatMappings> extractResources(
+                VmEndpointNatMappingsList payload) {
+              return payload.getResultList() != null
+                  ? payload.getResultList()
+                  : ImmutableList.<VmEndpointNatMappings>of();
             }
           };
 
@@ -332,16 +402,20 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
 
             @Override
             public Iterable<Router> extractResources(RouterList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<Router>of();
             }
           };
 
   private static final PagedListResponseFactory<
-          AggregatedListRoutersHttpRequest, RouterAggregatedList,
+          AggregatedListRoutersHttpRequest,
+          RouterAggregatedList,
           AggregatedListRoutersPagedResponse>
       AGGREGATED_LIST_ROUTERS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              AggregatedListRoutersHttpRequest, RouterAggregatedList,
+              AggregatedListRoutersHttpRequest,
+              RouterAggregatedList,
               AggregatedListRoutersPagedResponse>() {
             @Override
             public ApiFuture<AggregatedListRoutersPagedResponse> getFuturePagedResponse(
@@ -354,6 +428,33 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
                       PageContext.create(
                           callable, AGGREGATED_LIST_ROUTERS_PAGE_STR_DESC, request, context);
               return AggregatedListRoutersPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          GetNatMappingInfoRoutersHttpRequest,
+          VmEndpointNatMappingsList,
+          GetNatMappingInfoRoutersPagedResponse>
+      GET_NAT_MAPPING_INFO_ROUTERS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              GetNatMappingInfoRoutersHttpRequest,
+              VmEndpointNatMappingsList,
+              GetNatMappingInfoRoutersPagedResponse>() {
+            @Override
+            public ApiFuture<GetNatMappingInfoRoutersPagedResponse> getFuturePagedResponse(
+                UnaryCallable<GetNatMappingInfoRoutersHttpRequest, VmEndpointNatMappingsList>
+                    callable,
+                GetNatMappingInfoRoutersHttpRequest request,
+                ApiCallContext context,
+                ApiFuture<VmEndpointNatMappingsList> futureResponse) {
+              PageContext<
+                      GetNatMappingInfoRoutersHttpRequest,
+                      VmEndpointNatMappingsList,
+                      VmEndpointNatMappings>
+                  pageContext =
+                      PageContext.create(
+                          callable, GET_NAT_MAPPING_INFO_ROUTERS_PAGE_STR_DESC, request, context);
+              return GetNatMappingInfoRoutersPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -379,12 +480,18 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final PagedCallSettings.Builder<
-            AggregatedListRoutersHttpRequest, RouterAggregatedList,
+            AggregatedListRoutersHttpRequest,
+            RouterAggregatedList,
             AggregatedListRoutersPagedResponse>
         aggregatedListRoutersSettings;
     private final UnaryCallSettings.Builder<DeleteRouterHttpRequest, Operation>
         deleteRouterSettings;
     private final UnaryCallSettings.Builder<GetRouterHttpRequest, Router> getRouterSettings;
+    private final PagedCallSettings.Builder<
+            GetNatMappingInfoRoutersHttpRequest,
+            VmEndpointNatMappingsList,
+            GetNatMappingInfoRoutersPagedResponse>
+        getNatMappingInfoRoutersSettings;
     private final UnaryCallSettings.Builder<GetRouterStatusRouterHttpRequest, RouterStatusResponse>
         getRouterStatusRouterSettings;
     private final UnaryCallSettings.Builder<InsertRouterHttpRequest, Operation>
@@ -446,6 +553,9 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
 
       getRouterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      getNatMappingInfoRoutersSettings =
+          PagedCallSettings.newBuilder(GET_NAT_MAPPING_INFO_ROUTERS_PAGE_STR_FACT);
+
       getRouterStatusRouterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       insertRouterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -463,6 +573,7 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
               aggregatedListRoutersSettings,
               deleteRouterSettings,
               getRouterSettings,
+              getNatMappingInfoRoutersSettings,
               getRouterStatusRouterSettings,
               insertRouterSettings,
               listRoutersSettings,
@@ -496,6 +607,11 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
 
       builder
           .getRouterSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getNatMappingInfoRoutersSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -538,6 +654,7 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
       aggregatedListRoutersSettings = settings.aggregatedListRoutersSettings.toBuilder();
       deleteRouterSettings = settings.deleteRouterSettings.toBuilder();
       getRouterSettings = settings.getRouterSettings.toBuilder();
+      getNatMappingInfoRoutersSettings = settings.getNatMappingInfoRoutersSettings.toBuilder();
       getRouterStatusRouterSettings = settings.getRouterStatusRouterSettings.toBuilder();
       insertRouterSettings = settings.insertRouterSettings.toBuilder();
       listRoutersSettings = settings.listRoutersSettings.toBuilder();
@@ -550,6 +667,7 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
               aggregatedListRoutersSettings,
               deleteRouterSettings,
               getRouterSettings,
+              getNatMappingInfoRoutersSettings,
               getRouterStatusRouterSettings,
               insertRouterSettings,
               listRoutersSettings,
@@ -576,7 +694,8 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
 
     /** Returns the builder for the settings used for calls to aggregatedListRouters. */
     public PagedCallSettings.Builder<
-            AggregatedListRoutersHttpRequest, RouterAggregatedList,
+            AggregatedListRoutersHttpRequest,
+            RouterAggregatedList,
             AggregatedListRoutersPagedResponse>
         aggregatedListRoutersSettings() {
       return aggregatedListRoutersSettings;
@@ -590,6 +709,15 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
     /** Returns the builder for the settings used for calls to getRouter. */
     public UnaryCallSettings.Builder<GetRouterHttpRequest, Router> getRouterSettings() {
       return getRouterSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getNatMappingInfoRouters. */
+    public PagedCallSettings.Builder<
+            GetNatMappingInfoRoutersHttpRequest,
+            VmEndpointNatMappingsList,
+            GetNatMappingInfoRoutersPagedResponse>
+        getNatMappingInfoRoutersSettings() {
+      return getNatMappingInfoRoutersSettings;
     }
 
     /** Returns the builder for the settings used for calls to getRouterStatusRouter. */

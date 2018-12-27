@@ -17,6 +17,7 @@
 package com.google.cloud.http;
 
 import static com.google.common.base.Preconditions.checkNotNull;
+
 import com.google.api.client.http.HttpExecuteInterceptor;
 import com.google.api.client.http.HttpHeaders;
 import com.google.api.client.http.HttpRequest;
@@ -36,33 +37,23 @@ import javax.annotation.Nullable;
 public final class CensusHttpModule {
 
   /**
-   * OpenCensus tracing component.
-   * When no OpenCensus implementation is provided, it will return a no-op tracer.
+   * OpenCensus tracing component. When no OpenCensus implementation is provided, it will return a
+   * no-op tracer.
    */
   private final Tracer tracer;
 
-  /**
-   * {@link TextFormat} used in tracing context propagation.
-   */
-  @Nullable
-  private final TextFormat propagationTextFormat;
+  /** {@link TextFormat} used in tracing context propagation. */
+  @Nullable private final TextFormat propagationTextFormat;
 
-  /**
-   * {@link TextFormat.Setter} for {@link #propagationTextFormat}.
-   */
-  @Nullable
-  private final TextFormat.Setter<HttpHeaders> propagationTextFormatSetter;
+  /** {@link TextFormat.Setter} for {@link #propagationTextFormat}. */
+  @Nullable private final TextFormat.Setter<HttpHeaders> propagationTextFormatSetter;
 
-  /**
-   * Whether spans are stored locally.
-   */
+  /** Whether spans are stored locally. */
   private final boolean isRecordEvents;
 
-  /**
-   * Default HTTP propagation text formatter.
-   */
+  /** Default HTTP propagation text formatter. */
   @VisibleForTesting
-  final static class DefaultPropagationTextFormatSetter extends TextFormat.Setter<HttpHeaders> {
+  static final class DefaultPropagationTextFormatSetter extends TextFormat.Setter<HttpHeaders> {
     static final TextFormat.Setter<HttpHeaders> INSTANCE = new DefaultPropagationTextFormatSetter();
 
     @Override
@@ -77,8 +68,7 @@ public final class CensusHttpModule {
    */
   @VisibleForTesting
   final class CensusHttpExecuteInterceptor implements HttpExecuteInterceptor {
-    @Nullable
-    HttpExecuteInterceptor interceptor;
+    @Nullable HttpExecuteInterceptor interceptor;
 
     CensusHttpExecuteInterceptor(HttpExecuteInterceptor interceptor) {
       this.interceptor = interceptor;
@@ -106,8 +96,7 @@ public final class CensusHttpModule {
    */
   @VisibleForTesting
   final class CensusHttpRequestInitializer implements HttpRequestInitializer {
-    @Nullable
-    HttpRequestInitializer initializer;
+    @Nullable HttpRequestInitializer initializer;
 
     CensusHttpRequestInitializer(HttpRequestInitializer initializer) {
       this.initializer = initializer;

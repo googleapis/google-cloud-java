@@ -19,23 +19,18 @@ package com.google.cloud.datastore;
 import java.util.Iterator;
 
 /**
- * The result of a Google Cloud Datastore query submission.
- * When the result is not typed it is possible to cast it to its appropriate type according to
- * the {@link #getResultClass} value.
+ * The result of a Google Cloud Datastore query submission. When the result is not typed it is
+ * possible to cast it to its appropriate type according to the {@link #getResultClass} value.
  * Results are loaded lazily in batches, where batch size is set by Cloud Datastore. As a result, it
- * is possible to get a {@code DatastoreException} upon {@link Iterator#hasNext hasNext} or
- * {@link Iterator#next next} calls.
+ * is possible to get a {@code DatastoreException} upon {@link Iterator#hasNext hasNext} or {@link
+ * Iterator#next next} calls.
  *
  * @param <V> the type of the results value.
  */
 public interface QueryResults<V> extends Iterator<V> {
 
-
-  /**
-   * Returns the actual class of the result's values.
-   */
+  /** Returns the actual class of the result's values. */
   Class<?> getResultClass();
-
 
   /**
    * Returns the Cursor for the point after the value returned in the last {@link #next} call. This
@@ -43,7 +38,8 @@ public interface QueryResults<V> extends Iterator<V> {
    * additional results.
    *
    * <p>A simple use case:
-   * <pre> {@code
+   *
+   * <pre>{@code
    * Query<Entity> query = Query.newEntityQueryBuilder()
    *     .setKind("Person")
    *     .setFilter(PropertyFilter.eq("favoriteFood", "pizza"))
@@ -55,4 +51,19 @@ public interface QueryResults<V> extends Iterator<V> {
    * }</pre>
    */
   Cursor getCursorAfter();
+
+  /**
+   * Returns the number of results skipped, typically because of an offset.
+   *
+   * <p>A simple use case to count entities:
+   *
+   * <pre>{@code
+   * Query<Key> query = Query.newKeyQueryBuilder().setOffset(Integer.MAX_VALUE).build();
+   * QueryResults<Key> result = datasore.datastore.run(query);
+   * if (!result.hasNext()) {
+   *  int numberOfEntities = result.getSkippedResults();
+   * }
+   * }</pre>
+   */
+  int getSkippedResults();
 }

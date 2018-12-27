@@ -3,26 +3,24 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface CharsToIgnoreOrBuilder extends
+public interface CharsToIgnoreOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.CharsToIgnore)
     com.google.protobuf.MessageOrBuilder {
 
-  /**
-   * <code>string characters_to_skip = 1;</code>
-   */
+  /** <code>string characters_to_skip = 1;</code> */
   java.lang.String getCharactersToSkip();
-  /**
-   * <code>string characters_to_skip = 1;</code>
-   */
-  com.google.protobuf.ByteString
-      getCharactersToSkipBytes();
+  /** <code>string characters_to_skip = 1;</code> */
+  com.google.protobuf.ByteString getCharactersToSkipBytes();
 
   /**
-   * <code>.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore common_characters_to_ignore = 2;</code>
+   * <code>.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore common_characters_to_ignore = 2;
+   * </code>
    */
   int getCommonCharactersToIgnoreValue();
   /**
-   * <code>.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore common_characters_to_ignore = 2;</code>
+   * <code>.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore common_characters_to_ignore = 2;
+   * </code>
    */
   com.google.privacy.dlp.v2.CharsToIgnore.CommonCharsToIgnore getCommonCharactersToIgnore();
 

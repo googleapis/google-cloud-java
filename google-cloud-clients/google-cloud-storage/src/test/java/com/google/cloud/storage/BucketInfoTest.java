@@ -29,26 +29,24 @@ import com.google.cloud.storage.BucketInfo.CreatedBeforeDeleteRule;
 import com.google.cloud.storage.BucketInfo.DeleteRule;
 import com.google.cloud.storage.BucketInfo.DeleteRule.Type;
 import com.google.cloud.storage.BucketInfo.IsLiveDeleteRule;
-import com.google.cloud.storage.BucketInfo.NumNewerVersionsDeleteRule;
-import com.google.cloud.storage.BucketInfo.RawDeleteRule;
 import com.google.cloud.storage.BucketInfo.LifecycleRule;
 import com.google.cloud.storage.BucketInfo.LifecycleRule.LifecycleAction;
 import com.google.cloud.storage.BucketInfo.LifecycleRule.LifecycleCondition;
-
+import com.google.cloud.storage.BucketInfo.NumNewerVersionsDeleteRule;
+import com.google.cloud.storage.BucketInfo.RawDeleteRule;
 import com.google.common.collect.ImmutableList;
-
 import com.google.common.collect.ImmutableMap;
-import org.junit.Test;
-
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import org.junit.Test;
 
 public class BucketInfoTest {
 
-  private static final List<Acl> ACL = ImmutableList.of(
-      Acl.of(User.ofAllAuthenticatedUsers(), Role.READER),
-      Acl.of(new Project(VIEWERS, "p1"), Role.WRITER));
+  private static final List<Acl> ACL =
+      ImmutableList.of(
+          Acl.of(User.ofAllAuthenticatedUsers(), Role.READER),
+          Acl.of(new Project(VIEWERS, "p1"), Role.WRITER));
   private static final String ETAG = "0xFF00";
   private static final String GENERATED_ID = "B/N:1";
   private static final Long META_GENERATION = 10L;
@@ -69,7 +67,8 @@ public class BucketInfoTest {
   private static final String NOT_FOUND_PAGE = "error.html";
   private static final String LOCATION = "ASIA";
   private static final StorageClass STORAGE_CLASS = StorageClass.STANDARD;
-  private static final String DEFAULT_KMS_KEY_NAME = "projects/p/locations/kr-loc/keyRings/kr/cryptoKeys/key";
+  private static final String DEFAULT_KMS_KEY_NAME =
+      "projects/p/locations/kr-loc/keyRings/kr/cryptoKeys/key";
   private static final Boolean VERSIONING_ENABLED = true;
   private static final Map<String, String> BUCKET_LABELS = ImmutableMap.of("label1", "value1");
   private static final Boolean REQUESTER_PAYS = true;
@@ -77,31 +76,32 @@ public class BucketInfoTest {
   private static final Long RETENTION_EFFECTIVE_TIME = 10L;
   private static final Long RETENTION_PERIOD = 10L;
   private static final Boolean RETENTION_POLICY_IS_LOCKED = false;
-  private static final BucketInfo BUCKET_INFO = BucketInfo.newBuilder("b")
-      .setAcl(ACL)
-      .setEtag(ETAG)
-      .setGeneratedId(GENERATED_ID)
-      .setMetageneration(META_GENERATION)
-      .setOwner(OWNER)
-      .setSelfLink(SELF_LINK)
-      .setCors(CORS)
-      .setCreateTime(CREATE_TIME)
-      .setDefaultAcl(DEFAULT_ACL)
-      .setDeleteRules(DELETE_RULES)
-      .setLifecycleRules(LIFECYCLE_RULES)
-      .setIndexPage(INDEX_PAGE)
-      .setNotFoundPage(NOT_FOUND_PAGE)
-      .setLocation(LOCATION)
-      .setStorageClass(STORAGE_CLASS)
-      .setVersioningEnabled(VERSIONING_ENABLED)
-      .setLabels(BUCKET_LABELS)
-      .setRequesterPays(REQUESTER_PAYS)
-      .setDefaultKmsKeyName(DEFAULT_KMS_KEY_NAME)
-      .setDefaultEventBasedHold(DEFAULT_EVENT_BASED_HOLD)
-      .setRetentionEffectiveTime(RETENTION_EFFECTIVE_TIME)
-      .setRetentionPeriod(RETENTION_PERIOD)
-      .setRetentionPolicyIsLocked(RETENTION_POLICY_IS_LOCKED)
-      .build();
+  private static final BucketInfo BUCKET_INFO =
+      BucketInfo.newBuilder("b")
+          .setAcl(ACL)
+          .setEtag(ETAG)
+          .setGeneratedId(GENERATED_ID)
+          .setMetageneration(META_GENERATION)
+          .setOwner(OWNER)
+          .setSelfLink(SELF_LINK)
+          .setCors(CORS)
+          .setCreateTime(CREATE_TIME)
+          .setDefaultAcl(DEFAULT_ACL)
+          .setDeleteRules(DELETE_RULES)
+          .setLifecycleRules(LIFECYCLE_RULES)
+          .setIndexPage(INDEX_PAGE)
+          .setNotFoundPage(NOT_FOUND_PAGE)
+          .setLocation(LOCATION)
+          .setStorageClass(STORAGE_CLASS)
+          .setVersioningEnabled(VERSIONING_ENABLED)
+          .setLabels(BUCKET_LABELS)
+          .setRequesterPays(REQUESTER_PAYS)
+          .setDefaultKmsKeyName(DEFAULT_KMS_KEY_NAME)
+          .setDefaultEventBasedHold(DEFAULT_EVENT_BASED_HOLD)
+          .setRetentionEffectiveTime(RETENTION_EFFECTIVE_TIME)
+          .setRetentionPeriod(RETENTION_PERIOD)
+          .setRetentionPolicyIsLocked(RETENTION_POLICY_IS_LOCKED)
+          .build();
 
   @Test
   public void testToBuilder() {
@@ -210,8 +210,8 @@ public class BucketInfoTest {
     RawDeleteRule rawRule = new RawDeleteRule(rule);
     assertEquals(Type.IS_LIVE, isLiveRule.getType());
     assertEquals(Type.IS_LIVE, isLiveRule.getType());
-    ImmutableList<DeleteRule> rules = ImmutableList
-        .of(ageRule, createBeforeRule, versionsRule, isLiveRule, rawRule);
+    ImmutableList<DeleteRule> rules =
+        ImmutableList.of(ageRule, createBeforeRule, versionsRule, isLiveRule, rawRule);
     for (DeleteRule delRule : rules) {
       assertEquals(delRule, DeleteRule.fromPb(delRule.toPb()));
     }
@@ -225,14 +225,22 @@ public class BucketInfoTest {
                 LifecycleCondition.newBuilder().setAge(10).build())
             .toPb();
 
-    assertEquals(LifecycleRule.DeleteLifecycleAction.TYPE, deleteLifecycleRule.getAction().getType());
+    assertEquals(
+        LifecycleRule.DeleteLifecycleAction.TYPE, deleteLifecycleRule.getAction().getType());
     assertEquals(10, deleteLifecycleRule.getCondition().getAge().intValue());
 
-    Rule setStorageClassLifecycleRule = new LifecycleRule(
-            LifecycleAction.newSetStorageClassAction(StorageClass.COLDLINE),
-            LifecycleCondition.newBuilder().setIsLive(true).setNumberOfNewerVersions(10).build()).toPb();
+    Rule setStorageClassLifecycleRule =
+        new LifecycleRule(
+                LifecycleAction.newSetStorageClassAction(StorageClass.COLDLINE),
+                LifecycleCondition.newBuilder()
+                    .setIsLive(true)
+                    .setNumberOfNewerVersions(10)
+                    .build())
+            .toPb();
 
-    assertEquals(StorageClass.COLDLINE.toString(), setStorageClassLifecycleRule.getAction().getStorageClass());
+    assertEquals(
+        StorageClass.COLDLINE.toString(),
+        setStorageClassLifecycleRule.getAction().getStorageClass());
     assertTrue(setStorageClassLifecycleRule.getCondition().getIsLive());
     assertEquals(10, setStorageClassLifecycleRule.getCondition().getNumNewerVersions().intValue());
   }

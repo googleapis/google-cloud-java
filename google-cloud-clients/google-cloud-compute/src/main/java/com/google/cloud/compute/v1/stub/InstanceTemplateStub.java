@@ -21,12 +21,17 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteInstanceTemplateHttpRequest;
+import com.google.cloud.compute.v1.GetIamPolicyInstanceTemplateHttpRequest;
 import com.google.cloud.compute.v1.GetInstanceTemplateHttpRequest;
 import com.google.cloud.compute.v1.InsertInstanceTemplateHttpRequest;
 import com.google.cloud.compute.v1.InstanceTemplate;
 import com.google.cloud.compute.v1.InstanceTemplateList;
 import com.google.cloud.compute.v1.ListInstanceTemplatesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Policy;
+import com.google.cloud.compute.v1.SetIamPolicyInstanceTemplateHttpRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsInstanceTemplateHttpRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -52,6 +57,13 @@ public abstract class InstanceTemplateStub implements BackgroundResource {
   }
 
   @BetaApi
+  public UnaryCallable<GetIamPolicyInstanceTemplateHttpRequest, Policy>
+      getIamPolicyInstanceTemplateCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getIamPolicyInstanceTemplateCallable()");
+  }
+
+  @BetaApi
   public UnaryCallable<InsertInstanceTemplateHttpRequest, Operation>
       insertInstanceTemplateCallable() {
     throw new UnsupportedOperationException("Not implemented: insertInstanceTemplateCallable()");
@@ -68,6 +80,20 @@ public abstract class InstanceTemplateStub implements BackgroundResource {
   public UnaryCallable<ListInstanceTemplatesHttpRequest, InstanceTemplateList>
       listInstanceTemplatesCallable() {
     throw new UnsupportedOperationException("Not implemented: listInstanceTemplatesCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<SetIamPolicyInstanceTemplateHttpRequest, Policy>
+      setIamPolicyInstanceTemplateCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: setIamPolicyInstanceTemplateCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<TestIamPermissionsInstanceTemplateHttpRequest, TestPermissionsResponse>
+      testIamPermissionsInstanceTemplateCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: testIamPermissionsInstanceTemplateCallable()");
   }
 
   @Override

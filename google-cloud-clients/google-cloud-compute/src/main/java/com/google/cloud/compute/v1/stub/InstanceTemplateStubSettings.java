@@ -40,12 +40,17 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteInstanceTemplateHttpRequest;
+import com.google.cloud.compute.v1.GetIamPolicyInstanceTemplateHttpRequest;
 import com.google.cloud.compute.v1.GetInstanceTemplateHttpRequest;
 import com.google.cloud.compute.v1.InsertInstanceTemplateHttpRequest;
 import com.google.cloud.compute.v1.InstanceTemplate;
 import com.google.cloud.compute.v1.InstanceTemplateList;
 import com.google.cloud.compute.v1.ListInstanceTemplatesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Policy;
+import com.google.cloud.compute.v1.SetIamPolicyInstanceTemplateHttpRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsInstanceTemplateHttpRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -100,12 +105,20 @@ public class InstanceTemplateStubSettings extends StubSettings<InstanceTemplateS
       deleteInstanceTemplateSettings;
   private final UnaryCallSettings<GetInstanceTemplateHttpRequest, InstanceTemplate>
       getInstanceTemplateSettings;
+  private final UnaryCallSettings<GetIamPolicyInstanceTemplateHttpRequest, Policy>
+      getIamPolicyInstanceTemplateSettings;
   private final UnaryCallSettings<InsertInstanceTemplateHttpRequest, Operation>
       insertInstanceTemplateSettings;
   private final PagedCallSettings<
-          ListInstanceTemplatesHttpRequest, InstanceTemplateList,
+          ListInstanceTemplatesHttpRequest,
+          InstanceTemplateList,
           ListInstanceTemplatesPagedResponse>
       listInstanceTemplatesSettings;
+  private final UnaryCallSettings<SetIamPolicyInstanceTemplateHttpRequest, Policy>
+      setIamPolicyInstanceTemplateSettings;
+  private final UnaryCallSettings<
+          TestIamPermissionsInstanceTemplateHttpRequest, TestPermissionsResponse>
+      testIamPermissionsInstanceTemplateSettings;
 
   /** Returns the object with the settings used for calls to deleteInstanceTemplate. */
   public UnaryCallSettings<DeleteInstanceTemplateHttpRequest, Operation>
@@ -119,6 +132,12 @@ public class InstanceTemplateStubSettings extends StubSettings<InstanceTemplateS
     return getInstanceTemplateSettings;
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicyInstanceTemplate. */
+  public UnaryCallSettings<GetIamPolicyInstanceTemplateHttpRequest, Policy>
+      getIamPolicyInstanceTemplateSettings() {
+    return getIamPolicyInstanceTemplateSettings;
+  }
+
   /** Returns the object with the settings used for calls to insertInstanceTemplate. */
   public UnaryCallSettings<InsertInstanceTemplateHttpRequest, Operation>
       insertInstanceTemplateSettings() {
@@ -127,10 +146,23 @@ public class InstanceTemplateStubSettings extends StubSettings<InstanceTemplateS
 
   /** Returns the object with the settings used for calls to listInstanceTemplates. */
   public PagedCallSettings<
-          ListInstanceTemplatesHttpRequest, InstanceTemplateList,
+          ListInstanceTemplatesHttpRequest,
+          InstanceTemplateList,
           ListInstanceTemplatesPagedResponse>
       listInstanceTemplatesSettings() {
     return listInstanceTemplatesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicyInstanceTemplate. */
+  public UnaryCallSettings<SetIamPolicyInstanceTemplateHttpRequest, Policy>
+      setIamPolicyInstanceTemplateSettings() {
+    return setIamPolicyInstanceTemplateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissionsInstanceTemplate. */
+  public UnaryCallSettings<TestIamPermissionsInstanceTemplateHttpRequest, TestPermissionsResponse>
+      testIamPermissionsInstanceTemplateSettings() {
+    return testIamPermissionsInstanceTemplateSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -210,8 +242,14 @@ public class InstanceTemplateStubSettings extends StubSettings<InstanceTemplateS
 
     deleteInstanceTemplateSettings = settingsBuilder.deleteInstanceTemplateSettings().build();
     getInstanceTemplateSettings = settingsBuilder.getInstanceTemplateSettings().build();
+    getIamPolicyInstanceTemplateSettings =
+        settingsBuilder.getIamPolicyInstanceTemplateSettings().build();
     insertInstanceTemplateSettings = settingsBuilder.insertInstanceTemplateSettings().build();
     listInstanceTemplatesSettings = settingsBuilder.listInstanceTemplatesSettings().build();
+    setIamPolicyInstanceTemplateSettings =
+        settingsBuilder.setIamPolicyInstanceTemplateSettings().build();
+    testIamPermissionsInstanceTemplateSettings =
+        settingsBuilder.testIamPermissionsInstanceTemplateSettings().build();
   }
 
   private static final PagedListDescriptor<
@@ -252,16 +290,20 @@ public class InstanceTemplateStubSettings extends StubSettings<InstanceTemplateS
 
             @Override
             public Iterable<InstanceTemplate> extractResources(InstanceTemplateList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<InstanceTemplate>of();
             }
           };
 
   private static final PagedListResponseFactory<
-          ListInstanceTemplatesHttpRequest, InstanceTemplateList,
+          ListInstanceTemplatesHttpRequest,
+          InstanceTemplateList,
           ListInstanceTemplatesPagedResponse>
       LIST_INSTANCE_TEMPLATES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListInstanceTemplatesHttpRequest, InstanceTemplateList,
+              ListInstanceTemplatesHttpRequest,
+              InstanceTemplateList,
               ListInstanceTemplatesPagedResponse>() {
             @Override
             public ApiFuture<ListInstanceTemplatesPagedResponse> getFuturePagedResponse(
@@ -285,12 +327,20 @@ public class InstanceTemplateStubSettings extends StubSettings<InstanceTemplateS
         deleteInstanceTemplateSettings;
     private final UnaryCallSettings.Builder<GetInstanceTemplateHttpRequest, InstanceTemplate>
         getInstanceTemplateSettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyInstanceTemplateHttpRequest, Policy>
+        getIamPolicyInstanceTemplateSettings;
     private final UnaryCallSettings.Builder<InsertInstanceTemplateHttpRequest, Operation>
         insertInstanceTemplateSettings;
     private final PagedCallSettings.Builder<
-            ListInstanceTemplatesHttpRequest, InstanceTemplateList,
+            ListInstanceTemplatesHttpRequest,
+            InstanceTemplateList,
             ListInstanceTemplatesPagedResponse>
         listInstanceTemplatesSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyInstanceTemplateHttpRequest, Policy>
+        setIamPolicyInstanceTemplateSettings;
+    private final UnaryCallSettings.Builder<
+            TestIamPermissionsInstanceTemplateHttpRequest, TestPermissionsResponse>
+        testIamPermissionsInstanceTemplateSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -337,17 +387,26 @@ public class InstanceTemplateStubSettings extends StubSettings<InstanceTemplateS
 
       getInstanceTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      getIamPolicyInstanceTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       insertInstanceTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listInstanceTemplatesSettings =
           PagedCallSettings.newBuilder(LIST_INSTANCE_TEMPLATES_PAGE_STR_FACT);
 
+      setIamPolicyInstanceTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      testIamPermissionsInstanceTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               deleteInstanceTemplateSettings,
               getInstanceTemplateSettings,
+              getIamPolicyInstanceTemplateSettings,
               insertInstanceTemplateSettings,
-              listInstanceTemplatesSettings);
+              listInstanceTemplatesSettings,
+              setIamPolicyInstanceTemplateSettings,
+              testIamPermissionsInstanceTemplateSettings);
 
       initDefaults(this);
     }
@@ -374,6 +433,11 @@ public class InstanceTemplateStubSettings extends StubSettings<InstanceTemplateS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .getIamPolicyInstanceTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .insertInstanceTemplateSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -381,6 +445,16 @@ public class InstanceTemplateStubSettings extends StubSettings<InstanceTemplateS
       builder
           .listInstanceTemplatesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .setIamPolicyInstanceTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .testIamPermissionsInstanceTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       return builder;
@@ -391,15 +465,24 @@ public class InstanceTemplateStubSettings extends StubSettings<InstanceTemplateS
 
       deleteInstanceTemplateSettings = settings.deleteInstanceTemplateSettings.toBuilder();
       getInstanceTemplateSettings = settings.getInstanceTemplateSettings.toBuilder();
+      getIamPolicyInstanceTemplateSettings =
+          settings.getIamPolicyInstanceTemplateSettings.toBuilder();
       insertInstanceTemplateSettings = settings.insertInstanceTemplateSettings.toBuilder();
       listInstanceTemplatesSettings = settings.listInstanceTemplatesSettings.toBuilder();
+      setIamPolicyInstanceTemplateSettings =
+          settings.setIamPolicyInstanceTemplateSettings.toBuilder();
+      testIamPermissionsInstanceTemplateSettings =
+          settings.testIamPermissionsInstanceTemplateSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               deleteInstanceTemplateSettings,
               getInstanceTemplateSettings,
+              getIamPolicyInstanceTemplateSettings,
               insertInstanceTemplateSettings,
-              listInstanceTemplatesSettings);
+              listInstanceTemplatesSettings,
+              setIamPolicyInstanceTemplateSettings,
+              testIamPermissionsInstanceTemplateSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -430,6 +513,12 @@ public class InstanceTemplateStubSettings extends StubSettings<InstanceTemplateS
       return getInstanceTemplateSettings;
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicyInstanceTemplate. */
+    public UnaryCallSettings.Builder<GetIamPolicyInstanceTemplateHttpRequest, Policy>
+        getIamPolicyInstanceTemplateSettings() {
+      return getIamPolicyInstanceTemplateSettings;
+    }
+
     /** Returns the builder for the settings used for calls to insertInstanceTemplate. */
     public UnaryCallSettings.Builder<InsertInstanceTemplateHttpRequest, Operation>
         insertInstanceTemplateSettings() {
@@ -438,10 +527,26 @@ public class InstanceTemplateStubSettings extends StubSettings<InstanceTemplateS
 
     /** Returns the builder for the settings used for calls to listInstanceTemplates. */
     public PagedCallSettings.Builder<
-            ListInstanceTemplatesHttpRequest, InstanceTemplateList,
+            ListInstanceTemplatesHttpRequest,
+            InstanceTemplateList,
             ListInstanceTemplatesPagedResponse>
         listInstanceTemplatesSettings() {
       return listInstanceTemplatesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicyInstanceTemplate. */
+    public UnaryCallSettings.Builder<SetIamPolicyInstanceTemplateHttpRequest, Policy>
+        setIamPolicyInstanceTemplateSettings() {
+      return setIamPolicyInstanceTemplateSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to testIamPermissionsInstanceTemplate.
+     */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsInstanceTemplateHttpRequest, TestPermissionsResponse>
+        testIamPermissionsInstanceTemplateSettings() {
+      return testIamPermissionsInstanceTemplateSettings;
     }
 
     @Override

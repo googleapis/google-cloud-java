@@ -93,7 +93,8 @@ public class DeviceManagerSettings extends ClientSettings<DeviceManagerSettings>
 
   /** Returns the object with the settings used for calls to listDeviceRegistries. */
   public PagedCallSettings<
-          ListDeviceRegistriesRequest, ListDeviceRegistriesResponse,
+          ListDeviceRegistriesRequest,
+          ListDeviceRegistriesResponse,
           ListDeviceRegistriesPagedResponse>
       listDeviceRegistriesSettings() {
     return ((DeviceManagerStubSettings) getStubSettings()).listDeviceRegistriesSettings();
@@ -157,6 +158,24 @@ public class DeviceManagerSettings extends ClientSettings<DeviceManagerSettings>
   public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings() {
     return ((DeviceManagerStubSettings) getStubSettings()).testIamPermissionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to sendCommandToDevice. */
+  public UnaryCallSettings<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
+      sendCommandToDeviceSettings() {
+    return ((DeviceManagerStubSettings) getStubSettings()).sendCommandToDeviceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to bindDeviceToGateway. */
+  public UnaryCallSettings<BindDeviceToGatewayRequest, BindDeviceToGatewayResponse>
+      bindDeviceToGatewaySettings() {
+    return ((DeviceManagerStubSettings) getStubSettings()).bindDeviceToGatewaySettings();
+  }
+
+  /** Returns the object with the settings used for calls to unbindDeviceFromGateway. */
+  public UnaryCallSettings<UnbindDeviceFromGatewayRequest, UnbindDeviceFromGatewayResponse>
+      unbindDeviceFromGatewaySettings() {
+    return ((DeviceManagerStubSettings) getStubSettings()).unbindDeviceFromGatewaySettings();
   }
 
   public static final DeviceManagerSettings create(DeviceManagerStubSettings stub)
@@ -282,7 +301,8 @@ public class DeviceManagerSettings extends ClientSettings<DeviceManagerSettings>
 
     /** Returns the builder for the settings used for calls to listDeviceRegistries. */
     public PagedCallSettings.Builder<
-            ListDeviceRegistriesRequest, ListDeviceRegistriesResponse,
+            ListDeviceRegistriesRequest,
+            ListDeviceRegistriesResponse,
             ListDeviceRegistriesPagedResponse>
         listDeviceRegistriesSettings() {
       return getStubSettingsBuilder().listDeviceRegistriesSettings();
@@ -348,6 +368,25 @@ public class DeviceManagerSettings extends ClientSettings<DeviceManagerSettings>
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return getStubSettingsBuilder().testIamPermissionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to sendCommandToDevice. */
+    public UnaryCallSettings.Builder<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
+        sendCommandToDeviceSettings() {
+      return getStubSettingsBuilder().sendCommandToDeviceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to bindDeviceToGateway. */
+    public UnaryCallSettings.Builder<BindDeviceToGatewayRequest, BindDeviceToGatewayResponse>
+        bindDeviceToGatewaySettings() {
+      return getStubSettingsBuilder().bindDeviceToGatewaySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to unbindDeviceFromGateway. */
+    public UnaryCallSettings.Builder<
+            UnbindDeviceFromGatewayRequest, UnbindDeviceFromGatewayResponse>
+        unbindDeviceFromGatewaySettings() {
+      return getStubSettingsBuilder().unbindDeviceFromGatewaySettings();
     }
 
     @Override

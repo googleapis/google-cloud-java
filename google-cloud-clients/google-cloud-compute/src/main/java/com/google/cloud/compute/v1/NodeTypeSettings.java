@@ -66,7 +66,8 @@ import javax.annotation.Generated;
 public class NodeTypeSettings extends ClientSettings<NodeTypeSettings> {
   /** Returns the object with the settings used for calls to aggregatedListNodeTypes. */
   public PagedCallSettings<
-          AggregatedListNodeTypesHttpRequest, NodeTypeAggregatedList,
+          AggregatedListNodeTypesHttpRequest,
+          NodeTypeAggregatedList,
           AggregatedListNodeTypesPagedResponse>
       aggregatedListNodeTypesSettings() {
     return ((NodeTypeStubSettings) getStubSettings()).aggregatedListNodeTypesSettings();
@@ -186,7 +187,8 @@ public class NodeTypeSettings extends ClientSettings<NodeTypeSettings> {
 
     /** Returns the builder for the settings used for calls to aggregatedListNodeTypes. */
     public PagedCallSettings.Builder<
-            AggregatedListNodeTypesHttpRequest, NodeTypeAggregatedList,
+            AggregatedListNodeTypesHttpRequest,
+            NodeTypeAggregatedList,
             AggregatedListNodeTypesPagedResponse>
         aggregatedListNodeTypesSettings() {
       return getStubSettingsBuilder().aggregatedListNodeTypesSettings();

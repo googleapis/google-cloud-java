@@ -3,11 +3,14 @@
 
 package com.google.cloud.language.v1;
 
-public interface EntityMentionOrBuilder extends
+public interface EntityMentionOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.language.v1.EntityMention)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The mention text.
    * </pre>
@@ -16,6 +19,8 @@ public interface EntityMentionOrBuilder extends
    */
   boolean hasText();
   /**
+   *
+   *
    * <pre>
    * The mention text.
    * </pre>
@@ -24,6 +29,8 @@ public interface EntityMentionOrBuilder extends
    */
   com.google.cloud.language.v1.TextSpan getText();
   /**
+   *
+   *
    * <pre>
    * The mention text.
    * </pre>
@@ -33,6 +40,8 @@ public interface EntityMentionOrBuilder extends
   com.google.cloud.language.v1.TextSpanOrBuilder getTextOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The type of the entity mention.
    * </pre>
@@ -41,6 +50,8 @@ public interface EntityMentionOrBuilder extends
    */
   int getTypeValue();
   /**
+   *
+   *
    * <pre>
    * The type of the entity mention.
    * </pre>
@@ -50,6 +61,8 @@ public interface EntityMentionOrBuilder extends
   com.google.cloud.language.v1.EntityMention.Type getType();
 
   /**
+   *
+   *
    * <pre>
    * For calls to [AnalyzeEntitySentiment][] or if
    * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
@@ -61,6 +74,8 @@ public interface EntityMentionOrBuilder extends
    */
   boolean hasSentiment();
   /**
+   *
+   *
    * <pre>
    * For calls to [AnalyzeEntitySentiment][] or if
    * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
@@ -72,6 +87,8 @@ public interface EntityMentionOrBuilder extends
    */
   com.google.cloud.language.v1.Sentiment getSentiment();
   /**
+   *
+   *
    * <pre>
    * For calls to [AnalyzeEntitySentiment][] or if
    * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1.AnnotateTextRequest.Features.extract_entity_sentiment] is set to

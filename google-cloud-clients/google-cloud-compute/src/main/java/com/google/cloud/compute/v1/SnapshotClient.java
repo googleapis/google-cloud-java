@@ -55,13 +55,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -157,7 +157,7 @@ public class SnapshotClient implements BackgroundResource {
    * for deletion is needed for subsequent snapshots, the data will be moved to the next
    * corresponding snapshot.
    *
-   * <p>For more information, see Deleting snaphots.
+   * <p>For more information, see Deleting snapshots.
    *
    * <p>Sample code:
    *
@@ -188,7 +188,7 @@ public class SnapshotClient implements BackgroundResource {
    * for deletion is needed for subsequent snapshots, the data will be moved to the next
    * corresponding snapshot.
    *
-   * <p>For more information, see Deleting snaphots.
+   * <p>For more information, see Deleting snapshots.
    *
    * <p>Sample code:
    *
@@ -217,7 +217,7 @@ public class SnapshotClient implements BackgroundResource {
    * for deletion is needed for subsequent snapshots, the data will be moved to the next
    * corresponding snapshot.
    *
-   * <p>For more information, see Deleting snaphots.
+   * <p>For more information, see Deleting snapshots.
    *
    * <p>Sample code:
    *
@@ -246,7 +246,7 @@ public class SnapshotClient implements BackgroundResource {
    * for deletion is needed for subsequent snapshots, the data will be moved to the next
    * corresponding snapshot.
    *
-   * <p>For more information, see Deleting snaphots.
+   * <p>For more information, see Deleting snapshots.
    *
    * <p>Sample code:
    *
@@ -366,6 +366,108 @@ public class SnapshotClient implements BackgroundResource {
   @BetaApi
   public final UnaryCallable<GetSnapshotHttpRequest, Snapshot> getSnapshotCallable() {
     return stub.getSnapshotCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
+   *   ProjectGlobalSnapshotResourceName resource = ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   Policy response = snapshotClient.getIamPolicySnapshot(resource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy getIamPolicySnapshot(ProjectGlobalSnapshotResourceName resource) {
+
+    GetIamPolicySnapshotHttpRequest request =
+        GetIamPolicySnapshotHttpRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .build();
+    return getIamPolicySnapshot(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
+   *   ProjectGlobalSnapshotResourceName resource = ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   Policy response = snapshotClient.getIamPolicySnapshot(resource.toString());
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy getIamPolicySnapshot(String resource) {
+
+    GetIamPolicySnapshotHttpRequest request =
+        GetIamPolicySnapshotHttpRequest.newBuilder().setResource(resource).build();
+    return getIamPolicySnapshot(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
+   *   ProjectGlobalSnapshotResourceName resource = ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   GetIamPolicySnapshotHttpRequest request = GetIamPolicySnapshotHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .build();
+   *   Policy response = snapshotClient.getIamPolicySnapshot(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy getIamPolicySnapshot(GetIamPolicySnapshotHttpRequest request) {
+    return getIamPolicySnapshotCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
+   *   ProjectGlobalSnapshotResourceName resource = ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   GetIamPolicySnapshotHttpRequest request = GetIamPolicySnapshotHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .build();
+   *   ApiFuture&lt;Policy&gt; future = snapshotClient.getIamPolicySnapshotCallable().futureCall(request);
+   *   // Do something
+   *   Policy response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<GetIamPolicySnapshotHttpRequest, Policy>
+      getIamPolicySnapshotCallable() {
+    return stub.getIamPolicySnapshotCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -506,6 +608,119 @@ public class SnapshotClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
+   *   ProjectGlobalSnapshotResourceName resource = ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
+   *   Policy response = snapshotClient.setIamPolicySnapshot(resource, globalSetPolicyRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @param globalSetPolicyRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy setIamPolicySnapshot(
+      ProjectGlobalSnapshotResourceName resource,
+      GlobalSetPolicyRequest globalSetPolicyRequestResource) {
+
+    SetIamPolicySnapshotHttpRequest request =
+        SetIamPolicySnapshotHttpRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
+            .build();
+    return setIamPolicySnapshot(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
+   *   ProjectGlobalSnapshotResourceName resource = ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
+   *   Policy response = snapshotClient.setIamPolicySnapshot(resource.toString(), globalSetPolicyRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @param globalSetPolicyRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy setIamPolicySnapshot(
+      String resource, GlobalSetPolicyRequest globalSetPolicyRequestResource) {
+
+    SetIamPolicySnapshotHttpRequest request =
+        SetIamPolicySnapshotHttpRequest.newBuilder()
+            .setResource(resource)
+            .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
+            .build();
+    return setIamPolicySnapshot(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
+   *   ProjectGlobalSnapshotResourceName resource = ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
+   *   SetIamPolicySnapshotHttpRequest request = SetIamPolicySnapshotHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
+   *     .build();
+   *   Policy response = snapshotClient.setIamPolicySnapshot(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy setIamPolicySnapshot(SetIamPolicySnapshotHttpRequest request) {
+    return setIamPolicySnapshotCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
+   *   ProjectGlobalSnapshotResourceName resource = ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
+   *   SetIamPolicySnapshotHttpRequest request = SetIamPolicySnapshotHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
+   *     .build();
+   *   ApiFuture&lt;Policy&gt; future = snapshotClient.setIamPolicySnapshotCallable().futureCall(request);
+   *   // Do something
+   *   Policy response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<SetIamPolicySnapshotHttpRequest, Policy>
+      setIamPolicySnapshotCallable() {
+    return stub.setIamPolicySnapshotCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Sets the labels on a snapshot. To learn more about labels, read the Labeling Resources
    * documentation.
    *
@@ -519,7 +734,7 @@ public class SnapshotClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param resource Name of the resource for this request.
+   * @param resource Name or id of the resource for this request.
    * @param globalSetLabelsRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -551,7 +766,7 @@ public class SnapshotClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param resource Name of the resource for this request.
+   * @param resource Name or id of the resource for this request.
    * @param globalSetLabelsRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -620,6 +835,120 @@ public class SnapshotClient implements BackgroundResource {
     return stub.setLabelsSnapshotCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
+   *   ProjectGlobalSnapshotResourceName resource = ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
+   *   TestPermissionsResponse response = snapshotClient.testIamPermissionsSnapshot(resource, testPermissionsRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @param testPermissionsRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final TestPermissionsResponse testIamPermissionsSnapshot(
+      ProjectGlobalSnapshotResourceName resource,
+      TestPermissionsRequest testPermissionsRequestResource) {
+
+    TestIamPermissionsSnapshotHttpRequest request =
+        TestIamPermissionsSnapshotHttpRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .setTestPermissionsRequestResource(testPermissionsRequestResource)
+            .build();
+    return testIamPermissionsSnapshot(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
+   *   ProjectGlobalSnapshotResourceName resource = ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
+   *   TestPermissionsResponse response = snapshotClient.testIamPermissionsSnapshot(resource.toString(), testPermissionsRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @param testPermissionsRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final TestPermissionsResponse testIamPermissionsSnapshot(
+      String resource, TestPermissionsRequest testPermissionsRequestResource) {
+
+    TestIamPermissionsSnapshotHttpRequest request =
+        TestIamPermissionsSnapshotHttpRequest.newBuilder()
+            .setResource(resource)
+            .setTestPermissionsRequestResource(testPermissionsRequestResource)
+            .build();
+    return testIamPermissionsSnapshot(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
+   *   ProjectGlobalSnapshotResourceName resource = ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
+   *   TestIamPermissionsSnapshotHttpRequest request = TestIamPermissionsSnapshotHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
+   *     .build();
+   *   TestPermissionsResponse response = snapshotClient.testIamPermissionsSnapshot(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final TestPermissionsResponse testIamPermissionsSnapshot(
+      TestIamPermissionsSnapshotHttpRequest request) {
+    return testIamPermissionsSnapshotCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SnapshotClient snapshotClient = SnapshotClient.create()) {
+   *   ProjectGlobalSnapshotResourceName resource = ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
+   *   TestIamPermissionsSnapshotHttpRequest request = TestIamPermissionsSnapshotHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
+   *     .build();
+   *   ApiFuture&lt;TestPermissionsResponse&gt; future = snapshotClient.testIamPermissionsSnapshotCallable().futureCall(request);
+   *   // Do something
+   *   TestPermissionsResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<TestIamPermissionsSnapshotHttpRequest, TestPermissionsResponse>
+      testIamPermissionsSnapshotCallable() {
+    return stub.testIamPermissionsSnapshotCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -652,7 +981,10 @@ public class SnapshotClient implements BackgroundResource {
 
   public static class ListSnapshotsPagedResponse
       extends AbstractPagedListResponse<
-          ListSnapshotsHttpRequest, SnapshotList, Snapshot, ListSnapshotsPage,
+          ListSnapshotsHttpRequest,
+          SnapshotList,
+          Snapshot,
+          ListSnapshotsPage,
           ListSnapshotsFixedSizeCollection> {
 
     public static ApiFuture<ListSnapshotsPagedResponse> createAsync(
@@ -705,7 +1037,10 @@ public class SnapshotClient implements BackgroundResource {
 
   public static class ListSnapshotsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListSnapshotsHttpRequest, SnapshotList, Snapshot, ListSnapshotsPage,
+          ListSnapshotsHttpRequest,
+          SnapshotList,
+          Snapshot,
+          ListSnapshotsPage,
           ListSnapshotsFixedSizeCollection> {
 
     private ListSnapshotsFixedSizeCollection(List<ListSnapshotsPage> pages, int collectionSize) {

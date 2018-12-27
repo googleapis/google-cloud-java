@@ -3,11 +3,14 @@
 
 package com.google.cloud.oslogin.v1;
 
-public interface ImportSshPublicKeyResponseOrBuilder extends
+public interface ImportSshPublicKeyResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.oslogin.v1.ImportSshPublicKeyResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The login profile information for the user.
    * </pre>
@@ -16,6 +19,8 @@ public interface ImportSshPublicKeyResponseOrBuilder extends
    */
   boolean hasLoginProfile();
   /**
+   *
+   *
    * <pre>
    * The login profile information for the user.
    * </pre>
@@ -24,6 +29,8 @@ public interface ImportSshPublicKeyResponseOrBuilder extends
    */
   com.google.cloud.oslogin.v1.LoginProfile getLoginProfile();
   /**
+   *
+   *
    * <pre>
    * The login profile information for the user.
    * </pre>

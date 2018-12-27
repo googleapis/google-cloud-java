@@ -45,14 +45,24 @@ public class StatementTest {
 
   @Test
   public void serialization() throws Exception {
-    Statement stmt = Statement.newBuilder("SELECT * FROM table WHERE ")
-        .append("bool_field = @bool_field ").bind("bool_field").to(true)
-        .append("long_field = @long_field ").bind("long_field").to(1L)
-        .append("float_field = @float_field ").bind("float_field").to(1.)
-        .append("string_field = @string_field ").bind("string_field").to("abc")
-        .append("bytes_field = @bytes_field ").bind("bytes_field")
-        .to(ByteArray.fromBase64("abcd"))
-        .build();
+    Statement stmt =
+        Statement.newBuilder("SELECT * FROM table WHERE ")
+            .append("bool_field = @bool_field ")
+            .bind("bool_field")
+            .to(true)
+            .append("long_field = @long_field ")
+            .bind("long_field")
+            .to(1L)
+            .append("float_field = @float_field ")
+            .bind("float_field")
+            .to(1.)
+            .append("string_field = @string_field ")
+            .bind("string_field")
+            .to("abc")
+            .append("bytes_field = @bytes_field ")
+            .bind("bytes_field")
+            .to(ByteArray.fromBase64("abcd"))
+            .build();
     reserializeAndAssert(stmt);
   }
 

@@ -265,11 +265,12 @@ public class KeySetTest {
 
   @Test
   public void javaSerialization() throws Exception {
-    reserializeAndAssert(KeySet.all()
-                    .toBuilder()
-                    .addKey(Key.of("a", 1))
-                    .addRange(KeyRange.closedOpen(Key.of("m"), Key.of("p")))
-                    .build());
+    reserializeAndAssert(
+        KeySet.all()
+            .toBuilder()
+            .addKey(Key.of("a", 1))
+            .addRange(KeyRange.closedOpen(Key.of("m"), Key.of("p")))
+            .build());
   }
 
   private static void checkProto(KeySet keySet, String proto) {

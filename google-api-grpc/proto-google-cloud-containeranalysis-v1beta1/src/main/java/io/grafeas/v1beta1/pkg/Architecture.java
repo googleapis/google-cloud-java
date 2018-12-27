@@ -4,15 +4,18 @@
 package io.grafeas.v1beta1.pkg;
 
 /**
+ *
+ *
  * <pre>
  * Instruction set architectures supported by various package managers.
  * </pre>
  *
  * Protobuf enum {@code grafeas.v1beta1.package.Architecture}
  */
-public enum Architecture
-    implements com.google.protobuf.ProtocolMessageEnum {
+public enum Architecture implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   *
+   *
    * <pre>
    * Unknown architecture.
    * </pre>
@@ -21,6 +24,8 @@ public enum Architecture
    */
   ARCHITECTURE_UNSPECIFIED(0),
   /**
+   *
+   *
    * <pre>
    * X86 architecture.
    * </pre>
@@ -29,6 +34,8 @@ public enum Architecture
    */
   X86(1),
   /**
+   *
+   *
    * <pre>
    * X64 architecture.
    * </pre>
@@ -40,6 +47,8 @@ public enum Architecture
   ;
 
   /**
+   *
+   *
    * <pre>
    * Unknown architecture.
    * </pre>
@@ -48,6 +57,8 @@ public enum Architecture
    */
   public static final int ARCHITECTURE_UNSPECIFIED_VALUE = 0;
   /**
+   *
+   *
    * <pre>
    * X86 architecture.
    * </pre>
@@ -56,6 +67,8 @@ public enum Architecture
    */
   public static final int X86_VALUE = 1;
   /**
+   *
+   *
    * <pre>
    * X64 architecture.
    * </pre>
@@ -63,7 +76,6 @@ public enum Architecture
    * <code>X64 = 2;</code>
    */
   public static final int X64_VALUE = 2;
-
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -73,9 +85,7 @@ public enum Architecture
     return value;
   }
 
-  /**
-   * @deprecated Use {@link #forNumber(int)} instead.
-   */
+  /** @deprecated Use {@link #forNumber(int)} instead. */
   @java.lang.Deprecated
   public static Architecture valueOf(int value) {
     return forNumber(value);
@@ -83,45 +93,45 @@ public enum Architecture
 
   public static Architecture forNumber(int value) {
     switch (value) {
-      case 0: return ARCHITECTURE_UNSPECIFIED;
-      case 1: return X86;
-      case 2: return X64;
-      default: return null;
+      case 0:
+        return ARCHITECTURE_UNSPECIFIED;
+      case 1:
+        return X86;
+      case 2:
+        return X64;
+      default:
+        return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<Architecture>
-      internalGetValueMap() {
+  public static com.google.protobuf.Internal.EnumLiteMap<Architecture> internalGetValueMap() {
     return internalValueMap;
   }
-  private static final com.google.protobuf.Internal.EnumLiteMap<
-      Architecture> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<Architecture>() {
-          public Architecture findValueByNumber(int number) {
-            return Architecture.forNumber(number);
-          }
-        };
 
-  public final com.google.protobuf.Descriptors.EnumValueDescriptor
-      getValueDescriptor() {
+  private static final com.google.protobuf.Internal.EnumLiteMap<Architecture> internalValueMap =
+      new com.google.protobuf.Internal.EnumLiteMap<Architecture>() {
+        public Architecture findValueByNumber(int number) {
+          return Architecture.forNumber(number);
+        }
+      };
+
+  public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
     return getDescriptor().getValues().get(ordinal());
   }
-  public final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptorForType() {
+
+  public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
     return getDescriptor();
   }
-  public static final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return io.grafeas.v1beta1.pkg.PackageOuterClass.getDescriptor().getEnumTypes().get(0);
   }
 
   private static final Architecture[] VALUES = values();
 
-  public static Architecture valueOf(
-      com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+  public static Architecture valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
-      throw new java.lang.IllegalArgumentException(
-        "EnumValueDescriptor is not for this type.");
+      throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
     }
     if (desc.getIndex() == -1) {
       return UNRECOGNIZED;
@@ -137,4 +147,3 @@ public enum Architecture
 
   // @@protoc_insertion_point(enum_scope:grafeas.v1beta1.package.Architecture)
 }
-

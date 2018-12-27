@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface CreateTimeSeriesErrorOrBuilder extends
+public interface CreateTimeSeriesErrorOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.CreateTimeSeriesError)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The time series, including the `Metric`, `MonitoredResource`,
    * and `Point`s (including timestamp and value) that resulted
@@ -19,6 +22,8 @@ public interface CreateTimeSeriesErrorOrBuilder extends
    */
   boolean hasTimeSeries();
   /**
+   *
+   *
    * <pre>
    * The time series, including the `Metric`, `MonitoredResource`,
    * and `Point`s (including timestamp and value) that resulted
@@ -30,6 +35,8 @@ public interface CreateTimeSeriesErrorOrBuilder extends
    */
   com.google.monitoring.v3.TimeSeries getTimeSeries();
   /**
+   *
+   *
    * <pre>
    * The time series, including the `Metric`, `MonitoredResource`,
    * and `Point`s (including timestamp and value) that resulted
@@ -42,6 +49,8 @@ public interface CreateTimeSeriesErrorOrBuilder extends
   com.google.monitoring.v3.TimeSeriesOrBuilder getTimeSeriesOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The status of the requested write operation.
    * </pre>
@@ -50,6 +59,8 @@ public interface CreateTimeSeriesErrorOrBuilder extends
    */
   boolean hasStatus();
   /**
+   *
+   *
    * <pre>
    * The status of the requested write operation.
    * </pre>
@@ -58,6 +69,8 @@ public interface CreateTimeSeriesErrorOrBuilder extends
    */
   com.google.rpc.Status getStatus();
   /**
+   *
+   *
    * <pre>
    * The status of the requested write operation.
    * </pre>

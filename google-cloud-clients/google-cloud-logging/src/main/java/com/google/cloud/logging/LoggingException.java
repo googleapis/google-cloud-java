@@ -21,9 +21,7 @@ import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.grpc.BaseGrpcServiceException;
 import java.io.IOException;
 
-/**
- * Logging service exception.
- */
+/** Logging service exception. */
 public final class LoggingException extends BaseGrpcServiceException {
 
   private static final long serialVersionUID = 449689219311927047L;

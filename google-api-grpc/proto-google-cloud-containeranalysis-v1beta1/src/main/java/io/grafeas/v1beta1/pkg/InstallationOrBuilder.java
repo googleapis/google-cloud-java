@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1.pkg;
 
-public interface InstallationOrBuilder extends
+public interface InstallationOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.package.Installation)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Output only. The name of the installed package.
    * </pre>
@@ -16,16 +19,19 @@ public interface InstallationOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Output only. The name of the installed package.
    * </pre>
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * All of the places within the filesystem versions of this package
    * have been found.
@@ -33,9 +39,10 @@ public interface InstallationOrBuilder extends
    *
    * <code>repeated .grafeas.v1beta1.package.Location location = 2;</code>
    */
-  java.util.List<io.grafeas.v1beta1.pkg.Location> 
-      getLocationList();
+  java.util.List<io.grafeas.v1beta1.pkg.Location> getLocationList();
   /**
+   *
+   *
    * <pre>
    * All of the places within the filesystem versions of this package
    * have been found.
@@ -45,6 +52,8 @@ public interface InstallationOrBuilder extends
    */
   io.grafeas.v1beta1.pkg.Location getLocation(int index);
   /**
+   *
+   *
    * <pre>
    * All of the places within the filesystem versions of this package
    * have been found.
@@ -54,6 +63,8 @@ public interface InstallationOrBuilder extends
    */
   int getLocationCount();
   /**
+   *
+   *
    * <pre>
    * All of the places within the filesystem versions of this package
    * have been found.
@@ -61,9 +72,10 @@ public interface InstallationOrBuilder extends
    *
    * <code>repeated .grafeas.v1beta1.package.Location location = 2;</code>
    */
-  java.util.List<? extends io.grafeas.v1beta1.pkg.LocationOrBuilder> 
-      getLocationOrBuilderList();
+  java.util.List<? extends io.grafeas.v1beta1.pkg.LocationOrBuilder> getLocationOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * All of the places within the filesystem versions of this package
    * have been found.
@@ -71,6 +83,5 @@ public interface InstallationOrBuilder extends
    *
    * <code>repeated .grafeas.v1beta1.package.Location location = 2;</code>
    */
-  io.grafeas.v1beta1.pkg.LocationOrBuilder getLocationOrBuilder(
-      int index);
+  io.grafeas.v1beta1.pkg.LocationOrBuilder getLocationOrBuilder(int index);
 }

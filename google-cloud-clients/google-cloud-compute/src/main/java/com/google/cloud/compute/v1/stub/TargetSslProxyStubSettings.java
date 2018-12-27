@@ -294,7 +294,9 @@ public class TargetSslProxyStubSettings extends StubSettings<TargetSslProxyStubS
 
             @Override
             public Iterable<TargetSslProxy> extractResources(TargetSslProxyList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<TargetSslProxy>of();
             }
           };
 
@@ -302,7 +304,8 @@ public class TargetSslProxyStubSettings extends StubSettings<TargetSslProxyStubS
           ListTargetSslProxiesHttpRequest, TargetSslProxyList, ListTargetSslProxiesPagedResponse>
       LIST_TARGET_SSL_PROXIES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListTargetSslProxiesHttpRequest, TargetSslProxyList,
+              ListTargetSslProxiesHttpRequest,
+              TargetSslProxyList,
               ListTargetSslProxiesPagedResponse>() {
             @Override
             public ApiFuture<ListTargetSslProxiesPagedResponse> getFuturePagedResponse(

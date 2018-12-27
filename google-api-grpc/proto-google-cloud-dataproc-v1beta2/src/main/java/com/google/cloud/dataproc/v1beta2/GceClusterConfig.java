@@ -4,6 +4,8 @@
 package com.google.cloud.dataproc.v1beta2;
 
 /**
+ *
+ *
  * <pre>
  * Common config settings for resources of Compute Engine cluster
  * instances, applicable to all instances in the cluster.
@@ -11,15 +13,16 @@ package com.google.cloud.dataproc.v1beta2;
  *
  * Protobuf type {@code google.cloud.dataproc.v1beta2.GceClusterConfig}
  */
-public  final class GceClusterConfig extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class GceClusterConfig extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1beta2.GceClusterConfig)
     GceClusterConfigOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use GceClusterConfig.newBuilder() to construct.
   private GceClusterConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private GceClusterConfig() {
     zoneUri_ = "";
     networkUri_ = "";
@@ -31,10 +34,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private GceClusterConfig(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -54,80 +57,87 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            zoneUri_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            networkUri_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-              serviceAccountScopes_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000020;
+              zoneUri_ = s;
+              break;
             }
-            serviceAccountScopes_.add(s);
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
-              tags_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000040;
-            }
-            tags_.add(s);
-            break;
-          }
-          case 42: {
-            if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
-              metadata_ = com.google.protobuf.MapField.newMapField(
-                  MetadataDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000080;
-            }
-            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-            metadata__ = input.readMessage(
-                MetadataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            metadata_.getMutableMap().put(
-                metadata__.getKey(), metadata__.getValue());
-            break;
-          }
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            subnetworkUri_ = s;
-            break;
-          }
-          case 56: {
-
-            internalIpOnly_ = input.readBool();
-            break;
-          }
-          case 66: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            serviceAccount_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              networkUri_ = s;
+              break;
             }
-            break;
-          }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                serviceAccountScopes_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              serviceAccountScopes_.add(s);
+              break;
+            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+                tags_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              tags_.add(s);
+              break;
+            }
+          case 42:
+            {
+              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+                metadata_ =
+                    com.google.protobuf.MapField.newMapField(
+                        MetadataDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000080;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> metadata__ =
+                  input.readMessage(
+                      MetadataDefaultEntryHolder.defaultEntry.getParserForType(),
+                      extensionRegistry);
+              metadata_.getMutableMap().put(metadata__.getKey(), metadata__.getValue());
+              break;
+            }
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              subnetworkUri_ = s;
+              break;
+            }
+          case 56:
+            {
+              internalIpOnly_ = input.readBool();
+              break;
+            }
+          case 66:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              serviceAccount_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
         serviceAccountScopes_ = serviceAccountScopes_.getUnmodifiableView();
@@ -139,35 +149,39 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.dataproc.v1beta2.ClustersProto.internal_static_google_cloud_dataproc_v1beta2_GceClusterConfig_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.dataproc.v1beta2.ClustersProto
+        .internal_static_google_cloud_dataproc_v1beta2_GceClusterConfig_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
   @java.lang.Override
-  protected com.google.protobuf.MapField internalGetMapField(
-      int number) {
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
       case 5:
         return internalGetMetadata();
       default:
-        throw new RuntimeException(
-            "Invalid map field number: " + number);
+        throw new RuntimeException("Invalid map field number: " + number);
     }
   }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.dataproc.v1beta2.ClustersProto.internal_static_google_cloud_dataproc_v1beta2_GceClusterConfig_fieldAccessorTable
+    return com.google.cloud.dataproc.v1beta2.ClustersProto
+        .internal_static_google_cloud_dataproc_v1beta2_GceClusterConfig_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dataproc.v1beta2.GceClusterConfig.class, com.google.cloud.dataproc.v1beta2.GceClusterConfig.Builder.class);
+            com.google.cloud.dataproc.v1beta2.GceClusterConfig.class,
+            com.google.cloud.dataproc.v1beta2.GceClusterConfig.Builder.class);
   }
 
   private int bitField0_;
   public static final int ZONE_URI_FIELD_NUMBER = 1;
   private volatile java.lang.Object zoneUri_;
   /**
+   *
+   *
    * <pre>
    * Optional. The zone where the Compute Engine cluster will be located.
    * On a create request, it is required in the "global" region. If omitted
@@ -187,14 +201,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       zoneUri_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The zone where the Compute Engine cluster will be located.
    * On a create request, it is required in the "global" region. If omitted
@@ -209,13 +224,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string zone_uri = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getZoneUriBytes() {
+  public com.google.protobuf.ByteString getZoneUriBytes() {
     java.lang.Object ref = zoneUri_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       zoneUri_ = b;
       return b;
     } else {
@@ -226,6 +239,8 @@ private static final long serialVersionUID = 0L;
   public static final int NETWORK_URI_FIELD_NUMBER = 2;
   private volatile java.lang.Object networkUri_;
   /**
+   *
+   *
    * <pre>
    * Optional. The Compute Engine network to be used for machine
    * communications. Cannot be specified with subnetwork_uri. If neither
@@ -245,14 +260,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       networkUri_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The Compute Engine network to be used for machine
    * communications. Cannot be specified with subnetwork_uri. If neither
@@ -267,13 +283,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string network_uri = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getNetworkUriBytes() {
+  public com.google.protobuf.ByteString getNetworkUriBytes() {
     java.lang.Object ref = networkUri_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       networkUri_ = b;
       return b;
     } else {
@@ -284,6 +298,8 @@ private static final long serialVersionUID = 0L;
   public static final int SUBNETWORK_URI_FIELD_NUMBER = 6;
   private volatile java.lang.Object subnetworkUri_;
   /**
+   *
+   *
    * <pre>
    * Optional. The Compute Engine subnetwork to be used for machine
    * communications. Cannot be specified with network_uri.
@@ -300,14 +316,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       subnetworkUri_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The Compute Engine subnetwork to be used for machine
    * communications. Cannot be specified with network_uri.
@@ -319,13 +336,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string subnetwork_uri = 6;</code>
    */
-  public com.google.protobuf.ByteString
-      getSubnetworkUriBytes() {
+  public com.google.protobuf.ByteString getSubnetworkUriBytes() {
     java.lang.Object ref = subnetworkUri_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       subnetworkUri_ = b;
       return b;
     } else {
@@ -336,6 +351,8 @@ private static final long serialVersionUID = 0L;
   public static final int INTERNAL_IP_ONLY_FIELD_NUMBER = 7;
   private boolean internalIpOnly_;
   /**
+   *
+   *
    * <pre>
    * Optional. If true, all instances in the cluster will only have internal IP
    * addresses. By default, clusters are not restricted to internal IP addresses,
@@ -354,6 +371,8 @@ private static final long serialVersionUID = 0L;
   public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 8;
   private volatile java.lang.Object serviceAccount_;
   /**
+   *
+   *
    * <pre>
    * Optional. The service account of the instances. Defaults to the default
    * Compute Engine service account. Custom service accounts need
@@ -372,14 +391,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       serviceAccount_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The service account of the instances. Defaults to the default
    * Compute Engine service account. Custom service accounts need
@@ -393,13 +413,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string service_account = 8;</code>
    */
-  public com.google.protobuf.ByteString
-      getServiceAccountBytes() {
+  public com.google.protobuf.ByteString getServiceAccountBytes() {
     java.lang.Object ref = serviceAccount_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       serviceAccount_ = b;
       return b;
     } else {
@@ -410,6 +428,8 @@ private static final long serialVersionUID = 0L;
   public static final int SERVICE_ACCOUNT_SCOPES_FIELD_NUMBER = 3;
   private com.google.protobuf.LazyStringList serviceAccountScopes_;
   /**
+   *
+   *
    * <pre>
    * Optional. The URIs of service account scopes to be included in
    * Compute Engine instances. The following base set of scopes is always
@@ -426,11 +446,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string service_account_scopes = 3;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getServiceAccountScopesList() {
+  public com.google.protobuf.ProtocolStringList getServiceAccountScopesList() {
     return serviceAccountScopes_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The URIs of service account scopes to be included in
    * Compute Engine instances. The following base set of scopes is always
@@ -451,6 +472,8 @@ private static final long serialVersionUID = 0L;
     return serviceAccountScopes_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The URIs of service account scopes to be included in
    * Compute Engine instances. The following base set of scopes is always
@@ -471,6 +494,8 @@ private static final long serialVersionUID = 0L;
     return serviceAccountScopes_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The URIs of service account scopes to be included in
    * Compute Engine instances. The following base set of scopes is always
@@ -487,14 +512,15 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string service_account_scopes = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getServiceAccountScopesBytes(int index) {
+  public com.google.protobuf.ByteString getServiceAccountScopesBytes(int index) {
     return serviceAccountScopes_.getByteString(index);
   }
 
   public static final int TAGS_FIELD_NUMBER = 4;
   private com.google.protobuf.LazyStringList tags_;
   /**
+   *
+   *
    * <pre>
    * The Compute Engine tags to add to all instances (see
    * [Tagging instances](/compute/docs/label-or-tag-resources#tags)).
@@ -502,11 +528,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string tags = 4;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getTagsList() {
+  public com.google.protobuf.ProtocolStringList getTagsList() {
     return tags_;
   }
   /**
+   *
+   *
    * <pre>
    * The Compute Engine tags to add to all instances (see
    * [Tagging instances](/compute/docs/label-or-tag-resources#tags)).
@@ -518,6 +545,8 @@ private static final long serialVersionUID = 0L;
     return tags_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The Compute Engine tags to add to all instances (see
    * [Tagging instances](/compute/docs/label-or-tag-resources#tags)).
@@ -529,6 +558,8 @@ private static final long serialVersionUID = 0L;
     return tags_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The Compute Engine tags to add to all instances (see
    * [Tagging instances](/compute/docs/label-or-tag-resources#tags)).
@@ -536,30 +567,28 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string tags = 4;</code>
    */
-  public com.google.protobuf.ByteString
-      getTagsBytes(int index) {
+  public com.google.protobuf.ByteString getTagsBytes(int index) {
     return tags_.getByteString(index);
   }
 
   public static final int METADATA_FIELD_NUMBER = 5;
+
   private static final class MetadataDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        java.lang.String, java.lang.String> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<java.lang.String, java.lang.String>newDefaultInstance(
-                com.google.cloud.dataproc.v1beta2.ClustersProto.internal_static_google_cloud_dataproc_v1beta2_GceClusterConfig_MetadataEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "");
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.dataproc.v1beta2.ClustersProto
+                .internal_static_google_cloud_dataproc_v1beta2_GceClusterConfig_MetadataEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
   }
-  private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> metadata_;
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetMetadata() {
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> metadata_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetMetadata() {
     if (metadata_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(
-          MetadataDefaultEntryHolder.defaultEntry);
+      return com.google.protobuf.MapField.emptyMapField(MetadataDefaultEntryHolder.defaultEntry);
     }
     return metadata_;
   }
@@ -568,6 +597,8 @@ private static final long serialVersionUID = 0L;
     return internalGetMetadata().getMap().size();
   }
   /**
+   *
+   *
    * <pre>
    * The Compute Engine metadata entries to add to all instances (see
    * [Project and instance metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
@@ -575,20 +606,20 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; metadata = 5;</code>
    */
-
-  public boolean containsMetadata(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public boolean containsMetadata(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     return internalGetMetadata().getMap().containsKey(key);
   }
-  /**
-   * Use {@link #getMetadataMap()} instead.
-   */
+  /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
     return getMetadataMap();
   }
   /**
+   *
+   *
    * <pre>
    * The Compute Engine metadata entries to add to all instances (see
    * [Project and instance metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
@@ -596,11 +627,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; metadata = 5;</code>
    */
-
   public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
     return internalGetMetadata().getMap();
   }
   /**
+   *
+   *
    * <pre>
    * The Compute Engine metadata entries to add to all instances (see
    * [Project and instance metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
@@ -608,16 +640,17 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; metadata = 5;</code>
    */
-
   public java.lang.String getMetadataOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetMetadata().getMap();
+      java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   *
+   *
    * <pre>
    * The Compute Engine metadata entries to add to all instances (see
    * [Project and instance metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
@@ -625,12 +658,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; metadata = 5;</code>
    */
-
-  public java.lang.String getMetadataOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetMetadata().getMap();
+  public java.lang.String getMetadataOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
@@ -638,6 +670,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -649,8 +682,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getZoneUriBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, zoneUri_);
     }
@@ -658,17 +690,14 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, networkUri_);
     }
     for (int i = 0; i < serviceAccountScopes_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, serviceAccountScopes_.getRaw(i));
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 3, serviceAccountScopes_.getRaw(i));
     }
     for (int i = 0; i < tags_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, tags_.getRaw(i));
     }
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetMetadata(),
-        MetadataDefaultEntryHolder.defaultEntry,
-        5);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetMetadata(), MetadataDefaultEntryHolder.defaultEntry, 5);
     if (!getSubnetworkUriBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, subnetworkUri_);
     }
@@ -709,22 +738,21 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getTagsList().size();
     }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-         : internalGetMetadata().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-      metadata__ = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, metadata__);
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetMetadata().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> metadata__ =
+          MetadataDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, metadata__);
     }
     if (!getSubnetworkUriBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, subnetworkUri_);
     }
     if (internalIpOnly_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(7, internalIpOnly_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, internalIpOnly_);
     }
     if (!getServiceAccountBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, serviceAccount_);
@@ -737,30 +765,23 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.dataproc.v1beta2.GceClusterConfig)) {
       return super.equals(obj);
     }
-    com.google.cloud.dataproc.v1beta2.GceClusterConfig other = (com.google.cloud.dataproc.v1beta2.GceClusterConfig) obj;
+    com.google.cloud.dataproc.v1beta2.GceClusterConfig other =
+        (com.google.cloud.dataproc.v1beta2.GceClusterConfig) obj;
 
     boolean result = true;
-    result = result && getZoneUri()
-        .equals(other.getZoneUri());
-    result = result && getNetworkUri()
-        .equals(other.getNetworkUri());
-    result = result && getSubnetworkUri()
-        .equals(other.getSubnetworkUri());
-    result = result && (getInternalIpOnly()
-        == other.getInternalIpOnly());
-    result = result && getServiceAccount()
-        .equals(other.getServiceAccount());
-    result = result && getServiceAccountScopesList()
-        .equals(other.getServiceAccountScopesList());
-    result = result && getTagsList()
-        .equals(other.getTagsList());
-    result = result && internalGetMetadata().equals(
-        other.internalGetMetadata());
+    result = result && getZoneUri().equals(other.getZoneUri());
+    result = result && getNetworkUri().equals(other.getNetworkUri());
+    result = result && getSubnetworkUri().equals(other.getSubnetworkUri());
+    result = result && (getInternalIpOnly() == other.getInternalIpOnly());
+    result = result && getServiceAccount().equals(other.getServiceAccount());
+    result = result && getServiceAccountScopesList().equals(other.getServiceAccountScopesList());
+    result = result && getTagsList().equals(other.getTagsList());
+    result = result && internalGetMetadata().equals(other.internalGetMetadata());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -779,8 +800,7 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + SUBNETWORK_URI_FIELD_NUMBER;
     hash = (53 * hash) + getSubnetworkUri().hashCode();
     hash = (37 * hash) + INTERNAL_IP_ONLY_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getInternalIpOnly());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getInternalIpOnly());
     hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
     hash = (53 * hash) + getServiceAccount().hashCode();
     if (getServiceAccountScopesCount() > 0) {
@@ -801,96 +821,103 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.dataproc.v1beta2.GceClusterConfig parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.GceClusterConfig parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.GceClusterConfig parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.GceClusterConfig parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.GceClusterConfig parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.GceClusterConfig parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.dataproc.v1beta2.GceClusterConfig parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.dataproc.v1beta2.GceClusterConfig parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.dataproc.v1beta2.GceClusterConfig parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.dataproc.v1beta2.GceClusterConfig parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.GceClusterConfig parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.dataproc.v1beta2.GceClusterConfig parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.dataproc.v1beta2.GceClusterConfig parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dataproc.v1beta2.GceClusterConfig parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.dataproc.v1beta2.GceClusterConfig prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Common config settings for resources of Compute Engine cluster
    * instances, applicable to all instances in the cluster.
@@ -898,43 +925,43 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.dataproc.v1beta2.GceClusterConfig}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dataproc.v1beta2.GceClusterConfig)
       com.google.cloud.dataproc.v1beta2.GceClusterConfigOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dataproc.v1beta2.ClustersProto.internal_static_google_cloud_dataproc_v1beta2_GceClusterConfig_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataproc.v1beta2.ClustersProto
+          .internal_static_google_cloud_dataproc_v1beta2_GceClusterConfig_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 5:
           return internalGetMetadata();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
         case 5:
           return internalGetMutableMetadata();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dataproc.v1beta2.ClustersProto.internal_static_google_cloud_dataproc_v1beta2_GceClusterConfig_fieldAccessorTable
+      return com.google.cloud.dataproc.v1beta2.ClustersProto
+          .internal_static_google_cloud_dataproc_v1beta2_GceClusterConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dataproc.v1beta2.GceClusterConfig.class, com.google.cloud.dataproc.v1beta2.GceClusterConfig.Builder.class);
+              com.google.cloud.dataproc.v1beta2.GceClusterConfig.class,
+              com.google.cloud.dataproc.v1beta2.GceClusterConfig.Builder.class);
     }
 
     // Construct using com.google.cloud.dataproc.v1beta2.GceClusterConfig.newBuilder()
@@ -942,16 +969,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -974,9 +1000,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.dataproc.v1beta2.ClustersProto.internal_static_google_cloud_dataproc_v1beta2_GceClusterConfig_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.dataproc.v1beta2.ClustersProto
+          .internal_static_google_cloud_dataproc_v1beta2_GceClusterConfig_descriptor;
     }
 
     @java.lang.Override
@@ -995,7 +1021,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.dataproc.v1beta2.GceClusterConfig buildPartial() {
-      com.google.cloud.dataproc.v1beta2.GceClusterConfig result = new com.google.cloud.dataproc.v1beta2.GceClusterConfig(this);
+      com.google.cloud.dataproc.v1beta2.GceClusterConfig result =
+          new com.google.cloud.dataproc.v1beta2.GceClusterConfig(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.zoneUri_ = zoneUri_;
@@ -1024,38 +1051,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dataproc.v1beta2.GceClusterConfig) {
-        return mergeFrom((com.google.cloud.dataproc.v1beta2.GceClusterConfig)other);
+        return mergeFrom((com.google.cloud.dataproc.v1beta2.GceClusterConfig) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1063,7 +1091,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.dataproc.v1beta2.GceClusterConfig other) {
-      if (other == com.google.cloud.dataproc.v1beta2.GceClusterConfig.getDefaultInstance()) return this;
+      if (other == com.google.cloud.dataproc.v1beta2.GceClusterConfig.getDefaultInstance())
+        return this;
       if (!other.getZoneUri().isEmpty()) {
         zoneUri_ = other.zoneUri_;
         onChanged();
@@ -1103,8 +1132,7 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
-      internalGetMutableMetadata().mergeFrom(
-          other.internalGetMetadata());
+      internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1124,7 +1152,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.dataproc.v1beta2.GceClusterConfig) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.dataproc.v1beta2.GceClusterConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -1133,10 +1162,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object zoneUri_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional. The zone where the Compute Engine cluster will be located.
      * On a create request, it is required in the "global" region. If omitted
@@ -1154,8 +1186,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getZoneUri() {
       java.lang.Object ref = zoneUri_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         zoneUri_ = s;
         return s;
@@ -1164,6 +1195,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The zone where the Compute Engine cluster will be located.
      * On a create request, it is required in the "global" region. If omitted
@@ -1178,13 +1211,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string zone_uri = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getZoneUriBytes() {
+    public com.google.protobuf.ByteString getZoneUriBytes() {
       java.lang.Object ref = zoneUri_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         zoneUri_ = b;
         return b;
       } else {
@@ -1192,6 +1223,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The zone where the Compute Engine cluster will be located.
      * On a create request, it is required in the "global" region. If omitted
@@ -1206,17 +1239,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string zone_uri = 1;</code>
      */
-    public Builder setZoneUri(
-        java.lang.String value) {
+    public Builder setZoneUri(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       zoneUri_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The zone where the Compute Engine cluster will be located.
      * On a create request, it is required in the "global" region. If omitted
@@ -1232,12 +1266,14 @@ private static final long serialVersionUID = 0L;
      * <code>string zone_uri = 1;</code>
      */
     public Builder clearZoneUri() {
-      
+
       zoneUri_ = getDefaultInstance().getZoneUri();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The zone where the Compute Engine cluster will be located.
      * On a create request, it is required in the "global" region. If omitted
@@ -1252,13 +1288,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string zone_uri = 1;</code>
      */
-    public Builder setZoneUriBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setZoneUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       zoneUri_ = value;
       onChanged();
       return this;
@@ -1266,6 +1301,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object networkUri_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine network to be used for machine
      * communications. Cannot be specified with subnetwork_uri. If neither
@@ -1283,8 +1320,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getNetworkUri() {
       java.lang.Object ref = networkUri_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         networkUri_ = s;
         return s;
@@ -1293,6 +1329,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine network to be used for machine
      * communications. Cannot be specified with subnetwork_uri. If neither
@@ -1307,13 +1345,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string network_uri = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getNetworkUriBytes() {
+    public com.google.protobuf.ByteString getNetworkUriBytes() {
       java.lang.Object ref = networkUri_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         networkUri_ = b;
         return b;
       } else {
@@ -1321,6 +1357,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine network to be used for machine
      * communications. Cannot be specified with subnetwork_uri. If neither
@@ -1335,17 +1373,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string network_uri = 2;</code>
      */
-    public Builder setNetworkUri(
-        java.lang.String value) {
+    public Builder setNetworkUri(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       networkUri_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine network to be used for machine
      * communications. Cannot be specified with subnetwork_uri. If neither
@@ -1361,12 +1400,14 @@ private static final long serialVersionUID = 0L;
      * <code>string network_uri = 2;</code>
      */
     public Builder clearNetworkUri() {
-      
+
       networkUri_ = getDefaultInstance().getNetworkUri();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine network to be used for machine
      * communications. Cannot be specified with subnetwork_uri. If neither
@@ -1381,13 +1422,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string network_uri = 2;</code>
      */
-    public Builder setNetworkUriBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNetworkUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       networkUri_ = value;
       onChanged();
       return this;
@@ -1395,6 +1435,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object subnetworkUri_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine subnetwork to be used for machine
      * communications. Cannot be specified with network_uri.
@@ -1409,8 +1451,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getSubnetworkUri() {
       java.lang.Object ref = subnetworkUri_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         subnetworkUri_ = s;
         return s;
@@ -1419,6 +1460,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine subnetwork to be used for machine
      * communications. Cannot be specified with network_uri.
@@ -1430,13 +1473,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string subnetwork_uri = 6;</code>
      */
-    public com.google.protobuf.ByteString
-        getSubnetworkUriBytes() {
+    public com.google.protobuf.ByteString getSubnetworkUriBytes() {
       java.lang.Object ref = subnetworkUri_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         subnetworkUri_ = b;
         return b;
       } else {
@@ -1444,6 +1485,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine subnetwork to be used for machine
      * communications. Cannot be specified with network_uri.
@@ -1455,17 +1498,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string subnetwork_uri = 6;</code>
      */
-    public Builder setSubnetworkUri(
-        java.lang.String value) {
+    public Builder setSubnetworkUri(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       subnetworkUri_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine subnetwork to be used for machine
      * communications. Cannot be specified with network_uri.
@@ -1478,12 +1522,14 @@ private static final long serialVersionUID = 0L;
      * <code>string subnetwork_uri = 6;</code>
      */
     public Builder clearSubnetworkUri() {
-      
+
       subnetworkUri_ = getDefaultInstance().getSubnetworkUri();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine subnetwork to be used for machine
      * communications. Cannot be specified with network_uri.
@@ -1495,20 +1541,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string subnetwork_uri = 6;</code>
      */
-    public Builder setSubnetworkUriBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setSubnetworkUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       subnetworkUri_ = value;
       onChanged();
       return this;
     }
 
-    private boolean internalIpOnly_ ;
+    private boolean internalIpOnly_;
     /**
+     *
+     *
      * <pre>
      * Optional. If true, all instances in the cluster will only have internal IP
      * addresses. By default, clusters are not restricted to internal IP addresses,
@@ -1524,6 +1571,8 @@ private static final long serialVersionUID = 0L;
       return internalIpOnly_;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. If true, all instances in the cluster will only have internal IP
      * addresses. By default, clusters are not restricted to internal IP addresses,
@@ -1536,12 +1585,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool internal_ip_only = 7;</code>
      */
     public Builder setInternalIpOnly(boolean value) {
-      
+
       internalIpOnly_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. If true, all instances in the cluster will only have internal IP
      * addresses. By default, clusters are not restricted to internal IP addresses,
@@ -1554,7 +1605,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool internal_ip_only = 7;</code>
      */
     public Builder clearInternalIpOnly() {
-      
+
       internalIpOnly_ = false;
       onChanged();
       return this;
@@ -1562,6 +1613,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object serviceAccount_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional. The service account of the instances. Defaults to the default
      * Compute Engine service account. Custom service accounts need
@@ -1578,8 +1631,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getServiceAccount() {
       java.lang.Object ref = serviceAccount_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         serviceAccount_ = s;
         return s;
@@ -1588,6 +1640,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The service account of the instances. Defaults to the default
      * Compute Engine service account. Custom service accounts need
@@ -1601,13 +1655,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string service_account = 8;</code>
      */
-    public com.google.protobuf.ByteString
-        getServiceAccountBytes() {
+    public com.google.protobuf.ByteString getServiceAccountBytes() {
       java.lang.Object ref = serviceAccount_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         serviceAccount_ = b;
         return b;
       } else {
@@ -1615,6 +1667,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The service account of the instances. Defaults to the default
      * Compute Engine service account. Custom service accounts need
@@ -1628,17 +1682,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string service_account = 8;</code>
      */
-    public Builder setServiceAccount(
-        java.lang.String value) {
+    public Builder setServiceAccount(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       serviceAccount_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The service account of the instances. Defaults to the default
      * Compute Engine service account. Custom service accounts need
@@ -1653,12 +1708,14 @@ private static final long serialVersionUID = 0L;
      * <code>string service_account = 8;</code>
      */
     public Builder clearServiceAccount() {
-      
+
       serviceAccount_ = getDefaultInstance().getServiceAccount();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The service account of the instances. Defaults to the default
      * Compute Engine service account. Custom service accounts need
@@ -1672,26 +1729,29 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string service_account = 8;</code>
      */
-    public Builder setServiceAccountBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setServiceAccountBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       serviceAccount_ = value;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList serviceAccountScopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList serviceAccountScopes_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureServiceAccountScopesIsMutable() {
       if (!((bitField0_ & 0x00000020) == 0x00000020)) {
         serviceAccountScopes_ = new com.google.protobuf.LazyStringArrayList(serviceAccountScopes_);
         bitField0_ |= 0x00000020;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The URIs of service account scopes to be included in
      * Compute Engine instances. The following base set of scopes is always
@@ -1708,11 +1768,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string service_account_scopes = 3;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getServiceAccountScopesList() {
+    public com.google.protobuf.ProtocolStringList getServiceAccountScopesList() {
       return serviceAccountScopes_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The URIs of service account scopes to be included in
      * Compute Engine instances. The following base set of scopes is always
@@ -1733,6 +1794,8 @@ private static final long serialVersionUID = 0L;
       return serviceAccountScopes_.size();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The URIs of service account scopes to be included in
      * Compute Engine instances. The following base set of scopes is always
@@ -1753,6 +1816,8 @@ private static final long serialVersionUID = 0L;
       return serviceAccountScopes_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The URIs of service account scopes to be included in
      * Compute Engine instances. The following base set of scopes is always
@@ -1769,11 +1834,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string service_account_scopes = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getServiceAccountScopesBytes(int index) {
+    public com.google.protobuf.ByteString getServiceAccountScopesBytes(int index) {
       return serviceAccountScopes_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The URIs of service account scopes to be included in
      * Compute Engine instances. The following base set of scopes is always
@@ -1790,17 +1856,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string service_account_scopes = 3;</code>
      */
-    public Builder setServiceAccountScopes(
-        int index, java.lang.String value) {
+    public Builder setServiceAccountScopes(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureServiceAccountScopesIsMutable();
+        throw new NullPointerException();
+      }
+      ensureServiceAccountScopesIsMutable();
       serviceAccountScopes_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The URIs of service account scopes to be included in
      * Compute Engine instances. The following base set of scopes is always
@@ -1817,17 +1884,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string service_account_scopes = 3;</code>
      */
-    public Builder addServiceAccountScopes(
-        java.lang.String value) {
+    public Builder addServiceAccountScopes(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureServiceAccountScopesIsMutable();
+        throw new NullPointerException();
+      }
+      ensureServiceAccountScopesIsMutable();
       serviceAccountScopes_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The URIs of service account scopes to be included in
      * Compute Engine instances. The following base set of scopes is always
@@ -1844,15 +1912,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string service_account_scopes = 3;</code>
      */
-    public Builder addAllServiceAccountScopes(
-        java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllServiceAccountScopes(java.lang.Iterable<java.lang.String> values) {
       ensureServiceAccountScopesIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, serviceAccountScopes_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, serviceAccountScopes_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The URIs of service account scopes to be included in
      * Compute Engine instances. The following base set of scopes is always
@@ -1876,6 +1944,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The URIs of service account scopes to be included in
      * Compute Engine instances. The following base set of scopes is always
@@ -1892,26 +1962,29 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string service_account_scopes = 3;</code>
      */
-    public Builder addServiceAccountScopesBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder addServiceAccountScopesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureServiceAccountScopesIsMutable();
       serviceAccountScopes_.add(value);
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList tags_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureTagsIsMutable() {
       if (!((bitField0_ & 0x00000040) == 0x00000040)) {
         tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
         bitField0_ |= 0x00000040;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * The Compute Engine tags to add to all instances (see
      * [Tagging instances](/compute/docs/label-or-tag-resources#tags)).
@@ -1919,11 +1992,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string tags = 4;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getTagsList() {
+    public com.google.protobuf.ProtocolStringList getTagsList() {
       return tags_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
      * The Compute Engine tags to add to all instances (see
      * [Tagging instances](/compute/docs/label-or-tag-resources#tags)).
@@ -1935,6 +2009,8 @@ private static final long serialVersionUID = 0L;
       return tags_.size();
     }
     /**
+     *
+     *
      * <pre>
      * The Compute Engine tags to add to all instances (see
      * [Tagging instances](/compute/docs/label-or-tag-resources#tags)).
@@ -1946,6 +2022,8 @@ private static final long serialVersionUID = 0L;
       return tags_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * The Compute Engine tags to add to all instances (see
      * [Tagging instances](/compute/docs/label-or-tag-resources#tags)).
@@ -1953,11 +2031,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string tags = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getTagsBytes(int index) {
+    public com.google.protobuf.ByteString getTagsBytes(int index) {
       return tags_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
      * The Compute Engine tags to add to all instances (see
      * [Tagging instances](/compute/docs/label-or-tag-resources#tags)).
@@ -1965,17 +2044,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string tags = 4;</code>
      */
-    public Builder setTags(
-        int index, java.lang.String value) {
+    public Builder setTags(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTagsIsMutable();
+        throw new NullPointerException();
+      }
+      ensureTagsIsMutable();
       tags_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The Compute Engine tags to add to all instances (see
      * [Tagging instances](/compute/docs/label-or-tag-resources#tags)).
@@ -1983,17 +2063,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string tags = 4;</code>
      */
-    public Builder addTags(
-        java.lang.String value) {
+    public Builder addTags(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTagsIsMutable();
+        throw new NullPointerException();
+      }
+      ensureTagsIsMutable();
       tags_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The Compute Engine tags to add to all instances (see
      * [Tagging instances](/compute/docs/label-or-tag-resources#tags)).
@@ -2001,15 +2082,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string tags = 4;</code>
      */
-    public Builder addAllTags(
-        java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllTags(java.lang.Iterable<java.lang.String> values) {
       ensureTagsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, tags_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tags_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The Compute Engine tags to add to all instances (see
      * [Tagging instances](/compute/docs/label-or-tag-resources#tags)).
@@ -2024,6 +2105,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The Compute Engine tags to add to all instances (see
      * [Tagging instances](/compute/docs/label-or-tag-resources#tags)).
@@ -2031,34 +2114,33 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string tags = 4;</code>
      */
-    public Builder addTagsBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder addTagsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureTagsIsMutable();
       tags_.add(value);
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> metadata_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMetadata() {
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> metadata_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetMetadata() {
       if (metadata_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            MetadataDefaultEntryHolder.defaultEntry);
+        return com.google.protobuf.MapField.emptyMapField(MetadataDefaultEntryHolder.defaultEntry);
       }
       return metadata_;
     }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableMetadata() {
-      onChanged();;
+        internalGetMutableMetadata() {
+      onChanged();
+      ;
       if (metadata_ == null) {
-        metadata_ = com.google.protobuf.MapField.newMapField(
-            MetadataDefaultEntryHolder.defaultEntry);
+        metadata_ =
+            com.google.protobuf.MapField.newMapField(MetadataDefaultEntryHolder.defaultEntry);
       }
       if (!metadata_.isMutable()) {
         metadata_ = metadata_.copy();
@@ -2070,6 +2152,8 @@ private static final long serialVersionUID = 0L;
       return internalGetMetadata().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * The Compute Engine metadata entries to add to all instances (see
      * [Project and instance metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
@@ -2077,20 +2161,20 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; metadata = 5;</code>
      */
-
-    public boolean containsMetadata(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsMetadata(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetMetadata().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getMetadataMap()} instead.
-     */
+    /** Use {@link #getMetadataMap()} instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
       return getMetadataMap();
     }
     /**
+     *
+     *
      * <pre>
      * The Compute Engine metadata entries to add to all instances (see
      * [Project and instance metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
@@ -2098,11 +2182,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; metadata = 5;</code>
      */
-
     public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
       return internalGetMetadata().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * The Compute Engine metadata entries to add to all instances (see
      * [Project and instance metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
@@ -2110,16 +2195,17 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; metadata = 5;</code>
      */
-
     public java.lang.String getMetadataOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetMetadata().getMap();
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * The Compute Engine metadata entries to add to all instances (see
      * [Project and instance metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
@@ -2127,12 +2213,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; metadata = 5;</code>
      */
-
-    public java.lang.String getMetadataOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetMetadata().getMap();
+    public java.lang.String getMetadataOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -2140,11 +2225,12 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder clearMetadata() {
-      internalGetMutableMetadata().getMutableMap()
-          .clear();
+      internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The Compute Engine metadata entries to add to all instances (see
      * [Project and instance metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
@@ -2152,23 +2238,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; metadata = 5;</code>
      */
-
-    public Builder removeMetadata(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableMetadata().getMutableMap()
-          .remove(key);
+    public Builder removeMetadata(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableMetadata().getMutableMap().remove(key);
       return this;
     }
-    /**
-     * Use alternate mutation accessors instead.
-     */
+    /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String>
-    getMutableMetadata() {
+    public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
       return internalGetMutableMetadata().getMutableMap();
     }
     /**
+     *
+     *
      * <pre>
      * The Compute Engine metadata entries to add to all instances (see
      * [Project and instance metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
@@ -2176,16 +2260,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; metadata = 5;</code>
      */
-    public Builder putMetadata(
-        java.lang.String key,
-        java.lang.String value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableMetadata().getMutableMap()
-          .put(key, value);
+    public Builder putMetadata(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableMetadata().getMutableMap().put(key, value);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The Compute Engine metadata entries to add to all instances (see
      * [Project and instance metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
@@ -2193,16 +2280,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; metadata = 5;</code>
      */
-
-    public Builder putAllMetadata(
-        java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableMetadata().getMutableMap()
-          .putAll(values);
+    public Builder putAllMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableMetadata().getMutableMap().putAll(values);
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -2212,12 +2296,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.dataproc.v1beta2.GceClusterConfig)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.dataproc.v1beta2.GceClusterConfig)
   private static final com.google.cloud.dataproc.v1beta2.GceClusterConfig DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.dataproc.v1beta2.GceClusterConfig();
   }
@@ -2226,16 +2310,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GceClusterConfig>
-      PARSER = new com.google.protobuf.AbstractParser<GceClusterConfig>() {
-    @java.lang.Override
-    public GceClusterConfig parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new GceClusterConfig(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<GceClusterConfig> PARSER =
+      new com.google.protobuf.AbstractParser<GceClusterConfig>() {
+        @java.lang.Override
+        public GceClusterConfig parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new GceClusterConfig(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<GceClusterConfig> parser() {
     return PARSER;
@@ -2250,6 +2334,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.dataproc.v1beta2.GceClusterConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

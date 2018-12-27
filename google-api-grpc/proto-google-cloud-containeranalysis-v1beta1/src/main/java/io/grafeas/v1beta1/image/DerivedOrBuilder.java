@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1.image;
 
-public interface DerivedOrBuilder extends
+public interface DerivedOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.image.Derived)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The fingerprint of the derived image.
    * </pre>
@@ -16,6 +19,8 @@ public interface DerivedOrBuilder extends
    */
   boolean hasFingerprint();
   /**
+   *
+   *
    * <pre>
    * The fingerprint of the derived image.
    * </pre>
@@ -24,6 +29,8 @@ public interface DerivedOrBuilder extends
    */
   io.grafeas.v1beta1.image.Fingerprint getFingerprint();
   /**
+   *
+   *
    * <pre>
    * The fingerprint of the derived image.
    * </pre>
@@ -33,6 +40,8 @@ public interface DerivedOrBuilder extends
   io.grafeas.v1beta1.image.FingerprintOrBuilder getFingerprintOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The number of layers by which this image differs from the
    * associated image basis.
@@ -43,6 +52,8 @@ public interface DerivedOrBuilder extends
   int getDistance();
 
   /**
+   *
+   *
    * <pre>
    * This contains layer-specific metadata, if populated it has length
    * "distance" and is ordered with [distance] being the layer immediately
@@ -51,9 +62,10 @@ public interface DerivedOrBuilder extends
    *
    * <code>repeated .grafeas.v1beta1.image.Layer layer_info = 3;</code>
    */
-  java.util.List<io.grafeas.v1beta1.image.Layer> 
-      getLayerInfoList();
+  java.util.List<io.grafeas.v1beta1.image.Layer> getLayerInfoList();
   /**
+   *
+   *
    * <pre>
    * This contains layer-specific metadata, if populated it has length
    * "distance" and is ordered with [distance] being the layer immediately
@@ -64,6 +76,8 @@ public interface DerivedOrBuilder extends
    */
   io.grafeas.v1beta1.image.Layer getLayerInfo(int index);
   /**
+   *
+   *
    * <pre>
    * This contains layer-specific metadata, if populated it has length
    * "distance" and is ordered with [distance] being the layer immediately
@@ -74,6 +88,8 @@ public interface DerivedOrBuilder extends
    */
   int getLayerInfoCount();
   /**
+   *
+   *
    * <pre>
    * This contains layer-specific metadata, if populated it has length
    * "distance" and is ordered with [distance] being the layer immediately
@@ -82,9 +98,10 @@ public interface DerivedOrBuilder extends
    *
    * <code>repeated .grafeas.v1beta1.image.Layer layer_info = 3;</code>
    */
-  java.util.List<? extends io.grafeas.v1beta1.image.LayerOrBuilder> 
-      getLayerInfoOrBuilderList();
+  java.util.List<? extends io.grafeas.v1beta1.image.LayerOrBuilder> getLayerInfoOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * This contains layer-specific metadata, if populated it has length
    * "distance" and is ordered with [distance] being the layer immediately
@@ -93,10 +110,11 @@ public interface DerivedOrBuilder extends
    *
    * <code>repeated .grafeas.v1beta1.image.Layer layer_info = 3;</code>
    */
-  io.grafeas.v1beta1.image.LayerOrBuilder getLayerInfoOrBuilder(
-      int index);
+  io.grafeas.v1beta1.image.LayerOrBuilder getLayerInfoOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Output only. This contains the base image URL for the derived image
    * occurrence.
@@ -106,6 +124,8 @@ public interface DerivedOrBuilder extends
    */
   java.lang.String getBaseResourceUrl();
   /**
+   *
+   *
    * <pre>
    * Output only. This contains the base image URL for the derived image
    * occurrence.
@@ -113,6 +133,5 @@ public interface DerivedOrBuilder extends
    *
    * <code>string base_resource_url = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getBaseResourceUrlBytes();
+  com.google.protobuf.ByteString getBaseResourceUrlBytes();
 }

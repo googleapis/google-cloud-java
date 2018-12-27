@@ -18,13 +18,16 @@
  * A testing helper for Google Translation.
  *
  * <p>A simple usage example:
+ *
  * <p>Before the test:
- * <pre> {@code
+ *
+ * <pre>{@code
  * RemoteTranslateHelper helper = RemoteTranslateHelper.create();
  * Translate translate = helper.getOptions().getService();
- * } </pre>
+ * }</pre>
  *
- * @see <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-translate">
+ * @see <a
+ *     href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-translate">
  *     Google Cloud Java tools for testing</a>
  */
 package com.google.cloud.translate.testing;

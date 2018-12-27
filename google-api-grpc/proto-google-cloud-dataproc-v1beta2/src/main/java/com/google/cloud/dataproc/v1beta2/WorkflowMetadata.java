@@ -4,33 +4,37 @@
 package com.google.cloud.dataproc.v1beta2;
 
 /**
+ *
+ *
  * <pre>
  * A Cloud Dataproc workflow template resource.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1beta2.WorkflowMetadata}
  */
-public  final class WorkflowMetadata extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class WorkflowMetadata extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1beta2.WorkflowMetadata)
     WorkflowMetadataOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use WorkflowMetadata.newBuilder() to construct.
   private WorkflowMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private WorkflowMetadata() {
     template_ = "";
     version_ = 0;
     state_ = 0;
     clusterName_ = "";
+    clusterUuid_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private WorkflowMetadata(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -50,135 +54,192 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            template_ = s;
-            break;
-          }
-          case 16: {
+              template_ = s;
+              break;
+            }
+          case 16:
+            {
+              version_ = input.readInt32();
+              break;
+            }
+          case 26:
+            {
+              com.google.cloud.dataproc.v1beta2.ClusterOperation.Builder subBuilder = null;
+              if (createCluster_ != null) {
+                subBuilder = createCluster_.toBuilder();
+              }
+              createCluster_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1beta2.ClusterOperation.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(createCluster_);
+                createCluster_ = subBuilder.buildPartial();
+              }
 
-            version_ = input.readInt32();
-            break;
-          }
-          case 26: {
-            com.google.cloud.dataproc.v1beta2.ClusterOperation.Builder subBuilder = null;
-            if (createCluster_ != null) {
-              subBuilder = createCluster_.toBuilder();
+              break;
             }
-            createCluster_ = input.readMessage(com.google.cloud.dataproc.v1beta2.ClusterOperation.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(createCluster_);
-              createCluster_ = subBuilder.buildPartial();
-            }
+          case 34:
+            {
+              com.google.cloud.dataproc.v1beta2.WorkflowGraph.Builder subBuilder = null;
+              if (graph_ != null) {
+                subBuilder = graph_.toBuilder();
+              }
+              graph_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1beta2.WorkflowGraph.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(graph_);
+                graph_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 34: {
-            com.google.cloud.dataproc.v1beta2.WorkflowGraph.Builder subBuilder = null;
-            if (graph_ != null) {
-              subBuilder = graph_.toBuilder();
+              break;
             }
-            graph_ = input.readMessage(com.google.cloud.dataproc.v1beta2.WorkflowGraph.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(graph_);
-              graph_ = subBuilder.buildPartial();
-            }
+          case 42:
+            {
+              com.google.cloud.dataproc.v1beta2.ClusterOperation.Builder subBuilder = null;
+              if (deleteCluster_ != null) {
+                subBuilder = deleteCluster_.toBuilder();
+              }
+              deleteCluster_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1beta2.ClusterOperation.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(deleteCluster_);
+                deleteCluster_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 42: {
-            com.google.cloud.dataproc.v1beta2.ClusterOperation.Builder subBuilder = null;
-            if (deleteCluster_ != null) {
-              subBuilder = deleteCluster_.toBuilder();
+              break;
             }
-            deleteCluster_ = input.readMessage(com.google.cloud.dataproc.v1beta2.ClusterOperation.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(deleteCluster_);
-              deleteCluster_ = subBuilder.buildPartial();
-            }
+          case 48:
+            {
+              int rawValue = input.readEnum();
 
-            break;
-          }
-          case 48: {
-            int rawValue = input.readEnum();
-
-            state_ = rawValue;
-            break;
-          }
-          case 58: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            clusterName_ = s;
-            break;
-          }
-          case 66: {
-            if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
-              parameters_ = com.google.protobuf.MapField.newMapField(
-                  ParametersDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000080;
+              state_ = rawValue;
+              break;
             }
-            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-            parameters__ = input.readMessage(
-                ParametersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            parameters_.getMutableMap().put(
-                parameters__.getKey(), parameters__.getValue());
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 58:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              clusterName_ = s;
+              break;
             }
-            break;
-          }
+          case 66:
+            {
+              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+                parameters_ =
+                    com.google.protobuf.MapField.newMapField(
+                        ParametersDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000080;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> parameters__ =
+                  input.readMessage(
+                      ParametersDefaultEntryHolder.defaultEntry.getParserForType(),
+                      extensionRegistry);
+              parameters_.getMutableMap().put(parameters__.getKey(), parameters__.getValue());
+              break;
+            }
+          case 74:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (startTime_ != null) {
+                subBuilder = startTime_.toBuilder();
+              }
+              startTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(startTime_);
+                startTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 82:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (endTime_ != null) {
+                subBuilder = endTime_.toBuilder();
+              }
+              endTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(endTime_);
+                endTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 90:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              clusterUuid_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto.internal_static_google_cloud_dataproc_v1beta2_WorkflowMetadata_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto
+        .internal_static_google_cloud_dataproc_v1beta2_WorkflowMetadata_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
   @java.lang.Override
-  protected com.google.protobuf.MapField internalGetMapField(
-      int number) {
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
       case 8:
         return internalGetParameters();
       default:
-        throw new RuntimeException(
-            "Invalid map field number: " + number);
+        throw new RuntimeException("Invalid map field number: " + number);
     }
   }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto.internal_static_google_cloud_dataproc_v1beta2_WorkflowMetadata_fieldAccessorTable
+    return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto
+        .internal_static_google_cloud_dataproc_v1beta2_WorkflowMetadata_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dataproc.v1beta2.WorkflowMetadata.class, com.google.cloud.dataproc.v1beta2.WorkflowMetadata.Builder.class);
+            com.google.cloud.dataproc.v1beta2.WorkflowMetadata.class,
+            com.google.cloud.dataproc.v1beta2.WorkflowMetadata.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * The operation state.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.dataproc.v1beta2.WorkflowMetadata.State}
    */
-  public enum State
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum State implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Unused.
      * </pre>
@@ -187,6 +248,8 @@ private static final long serialVersionUID = 0L;
      */
     UNKNOWN(0),
     /**
+     *
+     *
      * <pre>
      * The operation has been created.
      * </pre>
@@ -195,6 +258,8 @@ private static final long serialVersionUID = 0L;
      */
     PENDING(1),
     /**
+     *
+     *
      * <pre>
      * The operation is running.
      * </pre>
@@ -203,6 +268,8 @@ private static final long serialVersionUID = 0L;
      */
     RUNNING(2),
     /**
+     *
+     *
      * <pre>
      * The operation is done; either cancelled or completed.
      * </pre>
@@ -214,6 +281,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Unused.
      * </pre>
@@ -222,6 +291,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int UNKNOWN_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * The operation has been created.
      * </pre>
@@ -230,6 +301,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PENDING_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * The operation is running.
      * </pre>
@@ -238,6 +311,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int RUNNING_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * The operation is done; either cancelled or completed.
      * </pre>
@@ -245,7 +320,6 @@ private static final long serialVersionUID = 0L;
      * <code>DONE = 3;</code>
      */
     public static final int DONE_VALUE = 3;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -255,9 +329,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static State valueOf(int value) {
       return forNumber(value);
@@ -265,46 +337,49 @@ private static final long serialVersionUID = 0L;
 
     public static State forNumber(int value) {
       switch (value) {
-        case 0: return UNKNOWN;
-        case 1: return PENDING;
-        case 2: return RUNNING;
-        case 3: return DONE;
-        default: return null;
+        case 0:
+          return UNKNOWN;
+        case 1:
+          return PENDING;
+        case 2:
+          return RUNNING;
+        case 3:
+          return DONE;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<State>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<State> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        State> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<State>() {
-            public State findValueByNumber(int number) {
-              return State.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<State> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<State>() {
+          public State findValueByNumber(int number) {
+            return State.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.google.cloud.dataproc.v1beta2.WorkflowMetadata.getDescriptor().getEnumTypes().get(0);
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.dataproc.v1beta2.WorkflowMetadata.getDescriptor()
+          .getEnumTypes()
+          .get(0);
     }
 
     private static final State[] VALUES = values();
 
-    public static State valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static State valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -325,6 +400,8 @@ private static final long serialVersionUID = 0L;
   public static final int TEMPLATE_FIELD_NUMBER = 1;
   private volatile java.lang.Object template_;
   /**
+   *
+   *
    * <pre>
    * Output only. The "resource name" of the template.
    * </pre>
@@ -336,27 +413,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       template_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The "resource name" of the template.
    * </pre>
    *
    * <code>string template = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getTemplateBytes() {
+  public com.google.protobuf.ByteString getTemplateBytes() {
     java.lang.Object ref = template_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       template_ = b;
       return b;
     } else {
@@ -367,6 +443,8 @@ private static final long serialVersionUID = 0L;
   public static final int VERSION_FIELD_NUMBER = 2;
   private int version_;
   /**
+   *
+   *
    * <pre>
    * Output only. The version of template at the time of
    * workflow instantiation.
@@ -381,6 +459,8 @@ private static final long serialVersionUID = 0L;
   public static final int CREATE_CLUSTER_FIELD_NUMBER = 3;
   private com.google.cloud.dataproc.v1beta2.ClusterOperation createCluster_;
   /**
+   *
+   *
    * <pre>
    * Output only. The create cluster operation metadata.
    * </pre>
@@ -391,6 +471,8 @@ private static final long serialVersionUID = 0L;
     return createCluster_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The create cluster operation metadata.
    * </pre>
@@ -398,9 +480,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.dataproc.v1beta2.ClusterOperation create_cluster = 3;</code>
    */
   public com.google.cloud.dataproc.v1beta2.ClusterOperation getCreateCluster() {
-    return createCluster_ == null ? com.google.cloud.dataproc.v1beta2.ClusterOperation.getDefaultInstance() : createCluster_;
+    return createCluster_ == null
+        ? com.google.cloud.dataproc.v1beta2.ClusterOperation.getDefaultInstance()
+        : createCluster_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The create cluster operation metadata.
    * </pre>
@@ -414,6 +500,8 @@ private static final long serialVersionUID = 0L;
   public static final int GRAPH_FIELD_NUMBER = 4;
   private com.google.cloud.dataproc.v1beta2.WorkflowGraph graph_;
   /**
+   *
+   *
    * <pre>
    * Output only. The workflow graph.
    * </pre>
@@ -424,6 +512,8 @@ private static final long serialVersionUID = 0L;
     return graph_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The workflow graph.
    * </pre>
@@ -431,9 +521,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.dataproc.v1beta2.WorkflowGraph graph = 4;</code>
    */
   public com.google.cloud.dataproc.v1beta2.WorkflowGraph getGraph() {
-    return graph_ == null ? com.google.cloud.dataproc.v1beta2.WorkflowGraph.getDefaultInstance() : graph_;
+    return graph_ == null
+        ? com.google.cloud.dataproc.v1beta2.WorkflowGraph.getDefaultInstance()
+        : graph_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The workflow graph.
    * </pre>
@@ -447,6 +541,8 @@ private static final long serialVersionUID = 0L;
   public static final int DELETE_CLUSTER_FIELD_NUMBER = 5;
   private com.google.cloud.dataproc.v1beta2.ClusterOperation deleteCluster_;
   /**
+   *
+   *
    * <pre>
    * Output only. The delete cluster operation metadata.
    * </pre>
@@ -457,6 +553,8 @@ private static final long serialVersionUID = 0L;
     return deleteCluster_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The delete cluster operation metadata.
    * </pre>
@@ -464,9 +562,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.dataproc.v1beta2.ClusterOperation delete_cluster = 5;</code>
    */
   public com.google.cloud.dataproc.v1beta2.ClusterOperation getDeleteCluster() {
-    return deleteCluster_ == null ? com.google.cloud.dataproc.v1beta2.ClusterOperation.getDefaultInstance() : deleteCluster_;
+    return deleteCluster_ == null
+        ? com.google.cloud.dataproc.v1beta2.ClusterOperation.getDefaultInstance()
+        : deleteCluster_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The delete cluster operation metadata.
    * </pre>
@@ -480,6 +582,8 @@ private static final long serialVersionUID = 0L;
   public static final int STATE_FIELD_NUMBER = 6;
   private int state_;
   /**
+   *
+   *
    * <pre>
    * Output only. The workflow state.
    * </pre>
@@ -490,6 +594,8 @@ private static final long serialVersionUID = 0L;
     return state_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The workflow state.
    * </pre>
@@ -498,15 +604,20 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.dataproc.v1beta2.WorkflowMetadata.State getState() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.dataproc.v1beta2.WorkflowMetadata.State result = com.google.cloud.dataproc.v1beta2.WorkflowMetadata.State.valueOf(state_);
-    return result == null ? com.google.cloud.dataproc.v1beta2.WorkflowMetadata.State.UNRECOGNIZED : result;
+    com.google.cloud.dataproc.v1beta2.WorkflowMetadata.State result =
+        com.google.cloud.dataproc.v1beta2.WorkflowMetadata.State.valueOf(state_);
+    return result == null
+        ? com.google.cloud.dataproc.v1beta2.WorkflowMetadata.State.UNRECOGNIZED
+        : result;
   }
 
   public static final int CLUSTER_NAME_FIELD_NUMBER = 7;
   private volatile java.lang.Object clusterName_;
   /**
+   *
+   *
    * <pre>
-   * Output only. The name of the managed cluster.
+   * Output only. The name of the target cluster.
    * </pre>
    *
    * <code>string cluster_name = 7;</code>
@@ -516,27 +627,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       clusterName_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
-   * Output only. The name of the managed cluster.
+   * Output only. The name of the target cluster.
    * </pre>
    *
    * <code>string cluster_name = 7;</code>
    */
-  public com.google.protobuf.ByteString
-      getClusterNameBytes() {
+  public com.google.protobuf.ByteString getClusterNameBytes() {
     java.lang.Object ref = clusterName_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       clusterName_ = b;
       return b;
     } else {
@@ -545,24 +655,23 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PARAMETERS_FIELD_NUMBER = 8;
+
   private static final class ParametersDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        java.lang.String, java.lang.String> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<java.lang.String, java.lang.String>newDefaultInstance(
-                com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto.internal_static_google_cloud_dataproc_v1beta2_WorkflowMetadata_ParametersEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "");
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto
+                .internal_static_google_cloud_dataproc_v1beta2_WorkflowMetadata_ParametersEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
   }
-  private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> parameters_;
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetParameters() {
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> parameters_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetParameters() {
     if (parameters_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(
-          ParametersDefaultEntryHolder.defaultEntry);
+      return com.google.protobuf.MapField.emptyMapField(ParametersDefaultEntryHolder.defaultEntry);
     }
     return parameters_;
   }
@@ -571,72 +680,197 @@ private static final long serialVersionUID = 0L;
     return internalGetParameters().getMap().size();
   }
   /**
+   *
+   *
    * <pre>
    * Map from parameter names to values that were used for those parameters.
    * </pre>
    *
    * <code>map&lt;string, string&gt; parameters = 8;</code>
    */
-
-  public boolean containsParameters(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public boolean containsParameters(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     return internalGetParameters().getMap().containsKey(key);
   }
-  /**
-   * Use {@link #getParametersMap()} instead.
-   */
+  /** Use {@link #getParametersMap()} instead. */
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getParameters() {
     return getParametersMap();
   }
   /**
+   *
+   *
    * <pre>
    * Map from parameter names to values that were used for those parameters.
    * </pre>
    *
    * <code>map&lt;string, string&gt; parameters = 8;</code>
    */
-
   public java.util.Map<java.lang.String, java.lang.String> getParametersMap() {
     return internalGetParameters().getMap();
   }
   /**
+   *
+   *
    * <pre>
    * Map from parameter names to values that were used for those parameters.
    * </pre>
    *
    * <code>map&lt;string, string&gt; parameters = 8;</code>
    */
-
   public java.lang.String getParametersOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetParameters().getMap();
+      java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetParameters().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   *
+   *
    * <pre>
    * Map from parameter names to values that were used for those parameters.
    * </pre>
    *
    * <code>map&lt;string, string&gt; parameters = 8;</code>
    */
-
-  public java.lang.String getParametersOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetParameters().getMap();
+  public java.lang.String getParametersOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetParameters().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
     return map.get(key);
   }
 
+  public static final int START_TIME_FIELD_NUMBER = 9;
+  private com.google.protobuf.Timestamp startTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Workflow start time.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp start_time = 9;</code>
+   */
+  public boolean hasStartTime() {
+    return startTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Workflow start time.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp start_time = 9;</code>
+   */
+  public com.google.protobuf.Timestamp getStartTime() {
+    return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Workflow start time.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp start_time = 9;</code>
+   */
+  public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
+    return getStartTime();
+  }
+
+  public static final int END_TIME_FIELD_NUMBER = 10;
+  private com.google.protobuf.Timestamp endTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Workflow end time.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp end_time = 10;</code>
+   */
+  public boolean hasEndTime() {
+    return endTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Workflow end time.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp end_time = 10;</code>
+   */
+  public com.google.protobuf.Timestamp getEndTime() {
+    return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Workflow end time.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp end_time = 10;</code>
+   */
+  public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
+    return getEndTime();
+  }
+
+  public static final int CLUSTER_UUID_FIELD_NUMBER = 11;
+  private volatile java.lang.Object clusterUuid_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The UUID of target cluster.
+   * </pre>
+   *
+   * <code>string cluster_uuid = 11;</code>
+   */
+  public java.lang.String getClusterUuid() {
+    java.lang.Object ref = clusterUuid_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      clusterUuid_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The UUID of target cluster.
+   * </pre>
+   *
+   * <code>string cluster_uuid = 11;</code>
+   */
+  public com.google.protobuf.ByteString getClusterUuidBytes() {
+    java.lang.Object ref = clusterUuid_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      clusterUuid_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -648,8 +882,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getTemplateBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, template_);
     }
@@ -671,12 +904,17 @@ private static final long serialVersionUID = 0L;
     if (!getClusterNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, clusterName_);
     }
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetParameters(),
-        ParametersDefaultEntryHolder.defaultEntry,
-        8);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetParameters(), ParametersDefaultEntryHolder.defaultEntry, 8);
+    if (startTime_ != null) {
+      output.writeMessage(9, getStartTime());
+    }
+    if (endTime_ != null) {
+      output.writeMessage(10, getEndTime());
+    }
+    if (!getClusterUuidBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, clusterUuid_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -690,37 +928,41 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, template_);
     }
     if (version_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, version_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, version_);
     }
     if (createCluster_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getCreateCluster());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getCreateCluster());
     }
     if (graph_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getGraph());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getGraph());
     }
     if (deleteCluster_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getDeleteCluster());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getDeleteCluster());
     }
     if (state_ != com.google.cloud.dataproc.v1beta2.WorkflowMetadata.State.UNKNOWN.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(6, state_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, state_);
     }
     if (!getClusterNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, clusterName_);
     }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-         : internalGetParameters().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-      parameters__ = ParametersDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, parameters__);
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetParameters().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> parameters__ =
+          ParametersDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, parameters__);
+    }
+    if (startTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getStartTime());
+    }
+    if (endTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getEndTime());
+    }
+    if (!getClusterUuidBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, clusterUuid_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -730,38 +972,41 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.dataproc.v1beta2.WorkflowMetadata)) {
       return super.equals(obj);
     }
-    com.google.cloud.dataproc.v1beta2.WorkflowMetadata other = (com.google.cloud.dataproc.v1beta2.WorkflowMetadata) obj;
+    com.google.cloud.dataproc.v1beta2.WorkflowMetadata other =
+        (com.google.cloud.dataproc.v1beta2.WorkflowMetadata) obj;
 
     boolean result = true;
-    result = result && getTemplate()
-        .equals(other.getTemplate());
-    result = result && (getVersion()
-        == other.getVersion());
+    result = result && getTemplate().equals(other.getTemplate());
+    result = result && (getVersion() == other.getVersion());
     result = result && (hasCreateCluster() == other.hasCreateCluster());
     if (hasCreateCluster()) {
-      result = result && getCreateCluster()
-          .equals(other.getCreateCluster());
+      result = result && getCreateCluster().equals(other.getCreateCluster());
     }
     result = result && (hasGraph() == other.hasGraph());
     if (hasGraph()) {
-      result = result && getGraph()
-          .equals(other.getGraph());
+      result = result && getGraph().equals(other.getGraph());
     }
     result = result && (hasDeleteCluster() == other.hasDeleteCluster());
     if (hasDeleteCluster()) {
-      result = result && getDeleteCluster()
-          .equals(other.getDeleteCluster());
+      result = result && getDeleteCluster().equals(other.getDeleteCluster());
     }
     result = result && state_ == other.state_;
-    result = result && getClusterName()
-        .equals(other.getClusterName());
-    result = result && internalGetParameters().equals(
-        other.internalGetParameters());
+    result = result && getClusterName().equals(other.getClusterName());
+    result = result && internalGetParameters().equals(other.internalGetParameters());
+    result = result && (hasStartTime() == other.hasStartTime());
+    if (hasStartTime()) {
+      result = result && getStartTime().equals(other.getStartTime());
+    }
+    result = result && (hasEndTime() == other.hasEndTime());
+    if (hasEndTime()) {
+      result = result && getEndTime().equals(other.getEndTime());
+    }
+    result = result && getClusterUuid().equals(other.getClusterUuid());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -797,145 +1042,162 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetParameters().hashCode();
     }
+    if (hasStartTime()) {
+      hash = (37 * hash) + START_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getStartTime().hashCode();
+    }
+    if (hasEndTime()) {
+      hash = (37 * hash) + END_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getEndTime().hashCode();
+    }
+    hash = (37 * hash) + CLUSTER_UUID_FIELD_NUMBER;
+    hash = (53 * hash) + getClusterUuid().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
   public static com.google.cloud.dataproc.v1beta2.WorkflowMetadata parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.WorkflowMetadata parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.WorkflowMetadata parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.WorkflowMetadata parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.WorkflowMetadata parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.WorkflowMetadata parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.dataproc.v1beta2.WorkflowMetadata parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.dataproc.v1beta2.WorkflowMetadata parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.dataproc.v1beta2.WorkflowMetadata parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.dataproc.v1beta2.WorkflowMetadata parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.WorkflowMetadata parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.dataproc.v1beta2.WorkflowMetadata parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.dataproc.v1beta2.WorkflowMetadata parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dataproc.v1beta2.WorkflowMetadata parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.dataproc.v1beta2.WorkflowMetadata prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A Cloud Dataproc workflow template resource.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1beta2.WorkflowMetadata}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dataproc.v1beta2.WorkflowMetadata)
       com.google.cloud.dataproc.v1beta2.WorkflowMetadataOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto.internal_static_google_cloud_dataproc_v1beta2_WorkflowMetadata_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto
+          .internal_static_google_cloud_dataproc_v1beta2_WorkflowMetadata_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 8:
           return internalGetParameters();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
         case 8:
           return internalGetMutableParameters();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto.internal_static_google_cloud_dataproc_v1beta2_WorkflowMetadata_fieldAccessorTable
+      return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto
+          .internal_static_google_cloud_dataproc_v1beta2_WorkflowMetadata_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dataproc.v1beta2.WorkflowMetadata.class, com.google.cloud.dataproc.v1beta2.WorkflowMetadata.Builder.class);
+              com.google.cloud.dataproc.v1beta2.WorkflowMetadata.class,
+              com.google.cloud.dataproc.v1beta2.WorkflowMetadata.Builder.class);
     }
 
     // Construct using com.google.cloud.dataproc.v1beta2.WorkflowMetadata.newBuilder()
@@ -943,16 +1205,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -983,13 +1244,27 @@ private static final long serialVersionUID = 0L;
       clusterName_ = "";
 
       internalGetMutableParameters().clear();
+      if (startTimeBuilder_ == null) {
+        startTime_ = null;
+      } else {
+        startTime_ = null;
+        startTimeBuilder_ = null;
+      }
+      if (endTimeBuilder_ == null) {
+        endTime_ = null;
+      } else {
+        endTime_ = null;
+        endTimeBuilder_ = null;
+      }
+      clusterUuid_ = "";
+
       return this;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto.internal_static_google_cloud_dataproc_v1beta2_WorkflowMetadata_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto
+          .internal_static_google_cloud_dataproc_v1beta2_WorkflowMetadata_descriptor;
     }
 
     @java.lang.Override
@@ -1008,7 +1283,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.dataproc.v1beta2.WorkflowMetadata buildPartial() {
-      com.google.cloud.dataproc.v1beta2.WorkflowMetadata result = new com.google.cloud.dataproc.v1beta2.WorkflowMetadata(this);
+      com.google.cloud.dataproc.v1beta2.WorkflowMetadata result =
+          new com.google.cloud.dataproc.v1beta2.WorkflowMetadata(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.template_ = template_;
@@ -1032,6 +1308,17 @@ private static final long serialVersionUID = 0L;
       result.clusterName_ = clusterName_;
       result.parameters_ = internalGetParameters();
       result.parameters_.makeImmutable();
+      if (startTimeBuilder_ == null) {
+        result.startTime_ = startTime_;
+      } else {
+        result.startTime_ = startTimeBuilder_.build();
+      }
+      if (endTimeBuilder_ == null) {
+        result.endTime_ = endTime_;
+      } else {
+        result.endTime_ = endTimeBuilder_.build();
+      }
+      result.clusterUuid_ = clusterUuid_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1041,38 +1328,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dataproc.v1beta2.WorkflowMetadata) {
-        return mergeFrom((com.google.cloud.dataproc.v1beta2.WorkflowMetadata)other);
+        return mergeFrom((com.google.cloud.dataproc.v1beta2.WorkflowMetadata) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1080,7 +1368,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.dataproc.v1beta2.WorkflowMetadata other) {
-      if (other == com.google.cloud.dataproc.v1beta2.WorkflowMetadata.getDefaultInstance()) return this;
+      if (other == com.google.cloud.dataproc.v1beta2.WorkflowMetadata.getDefaultInstance())
+        return this;
       if (!other.getTemplate().isEmpty()) {
         template_ = other.template_;
         onChanged();
@@ -1104,8 +1393,17 @@ private static final long serialVersionUID = 0L;
         clusterName_ = other.clusterName_;
         onChanged();
       }
-      internalGetMutableParameters().mergeFrom(
-          other.internalGetParameters());
+      internalGetMutableParameters().mergeFrom(other.internalGetParameters());
+      if (other.hasStartTime()) {
+        mergeStartTime(other.getStartTime());
+      }
+      if (other.hasEndTime()) {
+        mergeEndTime(other.getEndTime());
+      }
+      if (!other.getClusterUuid().isEmpty()) {
+        clusterUuid_ = other.clusterUuid_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1125,7 +1423,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.dataproc.v1beta2.WorkflowMetadata) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.dataproc.v1beta2.WorkflowMetadata) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -1134,10 +1433,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object template_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only. The "resource name" of the template.
      * </pre>
@@ -1147,8 +1449,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getTemplate() {
       java.lang.Object ref = template_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         template_ = s;
         return s;
@@ -1157,19 +1458,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The "resource name" of the template.
      * </pre>
      *
      * <code>string template = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getTemplateBytes() {
+    public com.google.protobuf.ByteString getTemplateBytes() {
       java.lang.Object ref = template_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         template_ = b;
         return b;
       } else {
@@ -1177,23 +1478,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The "resource name" of the template.
      * </pre>
      *
      * <code>string template = 1;</code>
      */
-    public Builder setTemplate(
-        java.lang.String value) {
+    public Builder setTemplate(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       template_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The "resource name" of the template.
      * </pre>
@@ -1201,32 +1505,35 @@ private static final long serialVersionUID = 0L;
      * <code>string template = 1;</code>
      */
     public Builder clearTemplate() {
-      
+
       template_ = getDefaultInstance().getTemplate();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The "resource name" of the template.
      * </pre>
      *
      * <code>string template = 1;</code>
      */
-    public Builder setTemplateBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setTemplateBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       template_ = value;
       onChanged();
       return this;
     }
 
-    private int version_ ;
+    private int version_;
     /**
+     *
+     *
      * <pre>
      * Output only. The version of template at the time of
      * workflow instantiation.
@@ -1238,6 +1545,8 @@ private static final long serialVersionUID = 0L;
       return version_;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The version of template at the time of
      * workflow instantiation.
@@ -1246,12 +1555,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 version = 2;</code>
      */
     public Builder setVersion(int value) {
-      
+
       version_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The version of template at the time of
      * workflow instantiation.
@@ -1260,7 +1571,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 version = 2;</code>
      */
     public Builder clearVersion() {
-      
+
       version_ = 0;
       onChanged();
       return this;
@@ -1268,8 +1579,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.dataproc.v1beta2.ClusterOperation createCluster_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.ClusterOperation, com.google.cloud.dataproc.v1beta2.ClusterOperation.Builder, com.google.cloud.dataproc.v1beta2.ClusterOperationOrBuilder> createClusterBuilder_;
+            com.google.cloud.dataproc.v1beta2.ClusterOperation,
+            com.google.cloud.dataproc.v1beta2.ClusterOperation.Builder,
+            com.google.cloud.dataproc.v1beta2.ClusterOperationOrBuilder>
+        createClusterBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only. The create cluster operation metadata.
      * </pre>
@@ -1280,6 +1596,8 @@ private static final long serialVersionUID = 0L;
       return createClusterBuilder_ != null || createCluster_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The create cluster operation metadata.
      * </pre>
@@ -1288,12 +1606,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dataproc.v1beta2.ClusterOperation getCreateCluster() {
       if (createClusterBuilder_ == null) {
-        return createCluster_ == null ? com.google.cloud.dataproc.v1beta2.ClusterOperation.getDefaultInstance() : createCluster_;
+        return createCluster_ == null
+            ? com.google.cloud.dataproc.v1beta2.ClusterOperation.getDefaultInstance()
+            : createCluster_;
       } else {
         return createClusterBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The create cluster operation metadata.
      * </pre>
@@ -1314,6 +1636,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The create cluster operation metadata.
      * </pre>
@@ -1332,6 +1656,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The create cluster operation metadata.
      * </pre>
@@ -1342,7 +1668,9 @@ private static final long serialVersionUID = 0L;
       if (createClusterBuilder_ == null) {
         if (createCluster_ != null) {
           createCluster_ =
-            com.google.cloud.dataproc.v1beta2.ClusterOperation.newBuilder(createCluster_).mergeFrom(value).buildPartial();
+              com.google.cloud.dataproc.v1beta2.ClusterOperation.newBuilder(createCluster_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           createCluster_ = value;
         }
@@ -1354,6 +1682,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The create cluster operation metadata.
      * </pre>
@@ -1372,6 +1702,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The create cluster operation metadata.
      * </pre>
@@ -1379,11 +1711,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.ClusterOperation create_cluster = 3;</code>
      */
     public com.google.cloud.dataproc.v1beta2.ClusterOperation.Builder getCreateClusterBuilder() {
-      
+
       onChanged();
       return getCreateClusterFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The create cluster operation metadata.
      * </pre>
@@ -1394,11 +1728,14 @@ private static final long serialVersionUID = 0L;
       if (createClusterBuilder_ != null) {
         return createClusterBuilder_.getMessageOrBuilder();
       } else {
-        return createCluster_ == null ?
-            com.google.cloud.dataproc.v1beta2.ClusterOperation.getDefaultInstance() : createCluster_;
+        return createCluster_ == null
+            ? com.google.cloud.dataproc.v1beta2.ClusterOperation.getDefaultInstance()
+            : createCluster_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The create cluster operation metadata.
      * </pre>
@@ -1406,14 +1743,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.ClusterOperation create_cluster = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.ClusterOperation, com.google.cloud.dataproc.v1beta2.ClusterOperation.Builder, com.google.cloud.dataproc.v1beta2.ClusterOperationOrBuilder> 
+            com.google.cloud.dataproc.v1beta2.ClusterOperation,
+            com.google.cloud.dataproc.v1beta2.ClusterOperation.Builder,
+            com.google.cloud.dataproc.v1beta2.ClusterOperationOrBuilder>
         getCreateClusterFieldBuilder() {
       if (createClusterBuilder_ == null) {
-        createClusterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataproc.v1beta2.ClusterOperation, com.google.cloud.dataproc.v1beta2.ClusterOperation.Builder, com.google.cloud.dataproc.v1beta2.ClusterOperationOrBuilder>(
-                getCreateCluster(),
-                getParentForChildren(),
-                isClean());
+        createClusterBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1beta2.ClusterOperation,
+                com.google.cloud.dataproc.v1beta2.ClusterOperation.Builder,
+                com.google.cloud.dataproc.v1beta2.ClusterOperationOrBuilder>(
+                getCreateCluster(), getParentForChildren(), isClean());
         createCluster_ = null;
       }
       return createClusterBuilder_;
@@ -1421,8 +1761,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.dataproc.v1beta2.WorkflowGraph graph_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.WorkflowGraph, com.google.cloud.dataproc.v1beta2.WorkflowGraph.Builder, com.google.cloud.dataproc.v1beta2.WorkflowGraphOrBuilder> graphBuilder_;
+            com.google.cloud.dataproc.v1beta2.WorkflowGraph,
+            com.google.cloud.dataproc.v1beta2.WorkflowGraph.Builder,
+            com.google.cloud.dataproc.v1beta2.WorkflowGraphOrBuilder>
+        graphBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only. The workflow graph.
      * </pre>
@@ -1433,6 +1778,8 @@ private static final long serialVersionUID = 0L;
       return graphBuilder_ != null || graph_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The workflow graph.
      * </pre>
@@ -1441,12 +1788,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dataproc.v1beta2.WorkflowGraph getGraph() {
       if (graphBuilder_ == null) {
-        return graph_ == null ? com.google.cloud.dataproc.v1beta2.WorkflowGraph.getDefaultInstance() : graph_;
+        return graph_ == null
+            ? com.google.cloud.dataproc.v1beta2.WorkflowGraph.getDefaultInstance()
+            : graph_;
       } else {
         return graphBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The workflow graph.
      * </pre>
@@ -1467,6 +1818,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The workflow graph.
      * </pre>
@@ -1485,6 +1838,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The workflow graph.
      * </pre>
@@ -1495,7 +1850,9 @@ private static final long serialVersionUID = 0L;
       if (graphBuilder_ == null) {
         if (graph_ != null) {
           graph_ =
-            com.google.cloud.dataproc.v1beta2.WorkflowGraph.newBuilder(graph_).mergeFrom(value).buildPartial();
+              com.google.cloud.dataproc.v1beta2.WorkflowGraph.newBuilder(graph_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           graph_ = value;
         }
@@ -1507,6 +1864,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The workflow graph.
      * </pre>
@@ -1525,6 +1884,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The workflow graph.
      * </pre>
@@ -1532,11 +1893,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.WorkflowGraph graph = 4;</code>
      */
     public com.google.cloud.dataproc.v1beta2.WorkflowGraph.Builder getGraphBuilder() {
-      
+
       onChanged();
       return getGraphFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The workflow graph.
      * </pre>
@@ -1547,11 +1910,14 @@ private static final long serialVersionUID = 0L;
       if (graphBuilder_ != null) {
         return graphBuilder_.getMessageOrBuilder();
       } else {
-        return graph_ == null ?
-            com.google.cloud.dataproc.v1beta2.WorkflowGraph.getDefaultInstance() : graph_;
+        return graph_ == null
+            ? com.google.cloud.dataproc.v1beta2.WorkflowGraph.getDefaultInstance()
+            : graph_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The workflow graph.
      * </pre>
@@ -1559,14 +1925,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.WorkflowGraph graph = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.WorkflowGraph, com.google.cloud.dataproc.v1beta2.WorkflowGraph.Builder, com.google.cloud.dataproc.v1beta2.WorkflowGraphOrBuilder> 
+            com.google.cloud.dataproc.v1beta2.WorkflowGraph,
+            com.google.cloud.dataproc.v1beta2.WorkflowGraph.Builder,
+            com.google.cloud.dataproc.v1beta2.WorkflowGraphOrBuilder>
         getGraphFieldBuilder() {
       if (graphBuilder_ == null) {
-        graphBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataproc.v1beta2.WorkflowGraph, com.google.cloud.dataproc.v1beta2.WorkflowGraph.Builder, com.google.cloud.dataproc.v1beta2.WorkflowGraphOrBuilder>(
-                getGraph(),
-                getParentForChildren(),
-                isClean());
+        graphBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1beta2.WorkflowGraph,
+                com.google.cloud.dataproc.v1beta2.WorkflowGraph.Builder,
+                com.google.cloud.dataproc.v1beta2.WorkflowGraphOrBuilder>(
+                getGraph(), getParentForChildren(), isClean());
         graph_ = null;
       }
       return graphBuilder_;
@@ -1574,8 +1943,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.dataproc.v1beta2.ClusterOperation deleteCluster_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.ClusterOperation, com.google.cloud.dataproc.v1beta2.ClusterOperation.Builder, com.google.cloud.dataproc.v1beta2.ClusterOperationOrBuilder> deleteClusterBuilder_;
+            com.google.cloud.dataproc.v1beta2.ClusterOperation,
+            com.google.cloud.dataproc.v1beta2.ClusterOperation.Builder,
+            com.google.cloud.dataproc.v1beta2.ClusterOperationOrBuilder>
+        deleteClusterBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only. The delete cluster operation metadata.
      * </pre>
@@ -1586,6 +1960,8 @@ private static final long serialVersionUID = 0L;
       return deleteClusterBuilder_ != null || deleteCluster_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The delete cluster operation metadata.
      * </pre>
@@ -1594,12 +1970,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dataproc.v1beta2.ClusterOperation getDeleteCluster() {
       if (deleteClusterBuilder_ == null) {
-        return deleteCluster_ == null ? com.google.cloud.dataproc.v1beta2.ClusterOperation.getDefaultInstance() : deleteCluster_;
+        return deleteCluster_ == null
+            ? com.google.cloud.dataproc.v1beta2.ClusterOperation.getDefaultInstance()
+            : deleteCluster_;
       } else {
         return deleteClusterBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The delete cluster operation metadata.
      * </pre>
@@ -1620,6 +2000,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The delete cluster operation metadata.
      * </pre>
@@ -1638,6 +2020,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The delete cluster operation metadata.
      * </pre>
@@ -1648,7 +2032,9 @@ private static final long serialVersionUID = 0L;
       if (deleteClusterBuilder_ == null) {
         if (deleteCluster_ != null) {
           deleteCluster_ =
-            com.google.cloud.dataproc.v1beta2.ClusterOperation.newBuilder(deleteCluster_).mergeFrom(value).buildPartial();
+              com.google.cloud.dataproc.v1beta2.ClusterOperation.newBuilder(deleteCluster_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           deleteCluster_ = value;
         }
@@ -1660,6 +2046,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The delete cluster operation metadata.
      * </pre>
@@ -1678,6 +2066,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The delete cluster operation metadata.
      * </pre>
@@ -1685,11 +2075,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.ClusterOperation delete_cluster = 5;</code>
      */
     public com.google.cloud.dataproc.v1beta2.ClusterOperation.Builder getDeleteClusterBuilder() {
-      
+
       onChanged();
       return getDeleteClusterFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The delete cluster operation metadata.
      * </pre>
@@ -1700,11 +2092,14 @@ private static final long serialVersionUID = 0L;
       if (deleteClusterBuilder_ != null) {
         return deleteClusterBuilder_.getMessageOrBuilder();
       } else {
-        return deleteCluster_ == null ?
-            com.google.cloud.dataproc.v1beta2.ClusterOperation.getDefaultInstance() : deleteCluster_;
+        return deleteCluster_ == null
+            ? com.google.cloud.dataproc.v1beta2.ClusterOperation.getDefaultInstance()
+            : deleteCluster_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The delete cluster operation metadata.
      * </pre>
@@ -1712,14 +2107,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.ClusterOperation delete_cluster = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.ClusterOperation, com.google.cloud.dataproc.v1beta2.ClusterOperation.Builder, com.google.cloud.dataproc.v1beta2.ClusterOperationOrBuilder> 
+            com.google.cloud.dataproc.v1beta2.ClusterOperation,
+            com.google.cloud.dataproc.v1beta2.ClusterOperation.Builder,
+            com.google.cloud.dataproc.v1beta2.ClusterOperationOrBuilder>
         getDeleteClusterFieldBuilder() {
       if (deleteClusterBuilder_ == null) {
-        deleteClusterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataproc.v1beta2.ClusterOperation, com.google.cloud.dataproc.v1beta2.ClusterOperation.Builder, com.google.cloud.dataproc.v1beta2.ClusterOperationOrBuilder>(
-                getDeleteCluster(),
-                getParentForChildren(),
-                isClean());
+        deleteClusterBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1beta2.ClusterOperation,
+                com.google.cloud.dataproc.v1beta2.ClusterOperation.Builder,
+                com.google.cloud.dataproc.v1beta2.ClusterOperationOrBuilder>(
+                getDeleteCluster(), getParentForChildren(), isClean());
         deleteCluster_ = null;
       }
       return deleteClusterBuilder_;
@@ -1727,6 +2125,8 @@ private static final long serialVersionUID = 0L;
 
     private int state_ = 0;
     /**
+     *
+     *
      * <pre>
      * Output only. The workflow state.
      * </pre>
@@ -1737,6 +2137,8 @@ private static final long serialVersionUID = 0L;
       return state_;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The workflow state.
      * </pre>
@@ -1749,6 +2151,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The workflow state.
      * </pre>
@@ -1757,10 +2161,15 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dataproc.v1beta2.WorkflowMetadata.State getState() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.dataproc.v1beta2.WorkflowMetadata.State result = com.google.cloud.dataproc.v1beta2.WorkflowMetadata.State.valueOf(state_);
-      return result == null ? com.google.cloud.dataproc.v1beta2.WorkflowMetadata.State.UNRECOGNIZED : result;
+      com.google.cloud.dataproc.v1beta2.WorkflowMetadata.State result =
+          com.google.cloud.dataproc.v1beta2.WorkflowMetadata.State.valueOf(state_);
+      return result == null
+          ? com.google.cloud.dataproc.v1beta2.WorkflowMetadata.State.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The workflow state.
      * </pre>
@@ -1771,12 +2180,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       state_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The workflow state.
      * </pre>
@@ -1784,7 +2195,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.WorkflowMetadata.State state = 6;</code>
      */
     public Builder clearState() {
-      
+
       state_ = 0;
       onChanged();
       return this;
@@ -1792,8 +2203,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object clusterName_ = "";
     /**
+     *
+     *
      * <pre>
-     * Output only. The name of the managed cluster.
+     * Output only. The name of the target cluster.
      * </pre>
      *
      * <code>string cluster_name = 7;</code>
@@ -1801,8 +2214,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getClusterName() {
       java.lang.Object ref = clusterName_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         clusterName_ = s;
         return s;
@@ -1811,19 +2223,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Output only. The name of the managed cluster.
+     * Output only. The name of the target cluster.
      * </pre>
      *
      * <code>string cluster_name = 7;</code>
      */
-    public com.google.protobuf.ByteString
-        getClusterNameBytes() {
+    public com.google.protobuf.ByteString getClusterNameBytes() {
       java.lang.Object ref = clusterName_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         clusterName_ = b;
         return b;
       } else {
@@ -1831,70 +2243,76 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Output only. The name of the managed cluster.
+     * Output only. The name of the target cluster.
      * </pre>
      *
      * <code>string cluster_name = 7;</code>
      */
-    public Builder setClusterName(
-        java.lang.String value) {
+    public Builder setClusterName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       clusterName_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Output only. The name of the managed cluster.
+     * Output only. The name of the target cluster.
      * </pre>
      *
      * <code>string cluster_name = 7;</code>
      */
     public Builder clearClusterName() {
-      
+
       clusterName_ = getDefaultInstance().getClusterName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Output only. The name of the managed cluster.
+     * Output only. The name of the target cluster.
      * </pre>
      *
      * <code>string cluster_name = 7;</code>
      */
-    public Builder setClusterNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setClusterNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       clusterName_ = value;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> parameters_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> parameters_;
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetParameters() {
+        internalGetParameters() {
       if (parameters_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
             ParametersDefaultEntryHolder.defaultEntry);
       }
       return parameters_;
     }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableParameters() {
-      onChanged();;
+        internalGetMutableParameters() {
+      onChanged();
+      ;
       if (parameters_ == null) {
-        parameters_ = com.google.protobuf.MapField.newMapField(
-            ParametersDefaultEntryHolder.defaultEntry);
+        parameters_ =
+            com.google.protobuf.MapField.newMapField(ParametersDefaultEntryHolder.defaultEntry);
       }
       if (!parameters_.isMutable()) {
         parameters_ = parameters_.copy();
@@ -1906,65 +2324,68 @@ private static final long serialVersionUID = 0L;
       return internalGetParameters().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * Map from parameter names to values that were used for those parameters.
      * </pre>
      *
      * <code>map&lt;string, string&gt; parameters = 8;</code>
      */
-
-    public boolean containsParameters(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsParameters(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetParameters().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getParametersMap()} instead.
-     */
+    /** Use {@link #getParametersMap()} instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getParameters() {
       return getParametersMap();
     }
     /**
+     *
+     *
      * <pre>
      * Map from parameter names to values that were used for those parameters.
      * </pre>
      *
      * <code>map&lt;string, string&gt; parameters = 8;</code>
      */
-
     public java.util.Map<java.lang.String, java.lang.String> getParametersMap() {
       return internalGetParameters().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * Map from parameter names to values that were used for those parameters.
      * </pre>
      *
      * <code>map&lt;string, string&gt; parameters = 8;</code>
      */
-
     public java.lang.String getParametersOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetParameters().getMap();
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetParameters().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * Map from parameter names to values that were used for those parameters.
      * </pre>
      *
      * <code>map&lt;string, string&gt; parameters = 8;</code>
      */
-
-    public java.lang.String getParametersOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetParameters().getMap();
+    public java.lang.String getParametersOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetParameters().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -1972,66 +2393,509 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder clearParameters() {
-      internalGetMutableParameters().getMutableMap()
-          .clear();
+      internalGetMutableParameters().getMutableMap().clear();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Map from parameter names to values that were used for those parameters.
      * </pre>
      *
      * <code>map&lt;string, string&gt; parameters = 8;</code>
      */
-
-    public Builder removeParameters(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableParameters().getMutableMap()
-          .remove(key);
+    public Builder removeParameters(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableParameters().getMutableMap().remove(key);
       return this;
     }
-    /**
-     * Use alternate mutation accessors instead.
-     */
+    /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String>
-    getMutableParameters() {
+    public java.util.Map<java.lang.String, java.lang.String> getMutableParameters() {
       return internalGetMutableParameters().getMutableMap();
     }
     /**
+     *
+     *
      * <pre>
      * Map from parameter names to values that were used for those parameters.
      * </pre>
      *
      * <code>map&lt;string, string&gt; parameters = 8;</code>
      */
-    public Builder putParameters(
-        java.lang.String key,
-        java.lang.String value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableParameters().getMutableMap()
-          .put(key, value);
+    public Builder putParameters(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableParameters().getMutableMap().put(key, value);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Map from parameter names to values that were used for those parameters.
      * </pre>
      *
      * <code>map&lt;string, string&gt; parameters = 8;</code>
      */
-
-    public Builder putAllParameters(
-        java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableParameters().getMutableMap()
-          .putAll(values);
+    public Builder putAllParameters(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableParameters().getMutableMap().putAll(values);
       return this;
     }
+
+    private com.google.protobuf.Timestamp startTime_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        startTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Workflow start time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 9;</code>
+     */
+    public boolean hasStartTime() {
+      return startTimeBuilder_ != null || startTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Workflow start time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 9;</code>
+     */
+    public com.google.protobuf.Timestamp getStartTime() {
+      if (startTimeBuilder_ == null) {
+        return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+      } else {
+        return startTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Workflow start time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 9;</code>
+     */
+    public Builder setStartTime(com.google.protobuf.Timestamp value) {
+      if (startTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        startTime_ = value;
+        onChanged();
+      } else {
+        startTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Workflow start time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 9;</code>
+     */
+    public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (startTimeBuilder_ == null) {
+        startTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        startTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Workflow start time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 9;</code>
+     */
+    public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
+      if (startTimeBuilder_ == null) {
+        if (startTime_ != null) {
+          startTime_ =
+              com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
+        } else {
+          startTime_ = value;
+        }
+        onChanged();
+      } else {
+        startTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Workflow start time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 9;</code>
+     */
+    public Builder clearStartTime() {
+      if (startTimeBuilder_ == null) {
+        startTime_ = null;
+        onChanged();
+      } else {
+        startTime_ = null;
+        startTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Workflow start time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 9;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
+
+      onChanged();
+      return getStartTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Workflow start time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 9;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
+      if (startTimeBuilder_ != null) {
+        return startTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Workflow start time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp start_time = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getStartTimeFieldBuilder() {
+      if (startTimeBuilder_ == null) {
+        startTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getStartTime(), getParentForChildren(), isClean());
+        startTime_ = null;
+      }
+      return startTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp endTime_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        endTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Workflow end time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 10;</code>
+     */
+    public boolean hasEndTime() {
+      return endTimeBuilder_ != null || endTime_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Workflow end time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 10;</code>
+     */
+    public com.google.protobuf.Timestamp getEndTime() {
+      if (endTimeBuilder_ == null) {
+        return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+      } else {
+        return endTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Workflow end time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 10;</code>
+     */
+    public Builder setEndTime(com.google.protobuf.Timestamp value) {
+      if (endTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        endTime_ = value;
+        onChanged();
+      } else {
+        endTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Workflow end time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 10;</code>
+     */
+    public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (endTimeBuilder_ == null) {
+        endTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        endTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Workflow end time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 10;</code>
+     */
+    public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
+      if (endTimeBuilder_ == null) {
+        if (endTime_ != null) {
+          endTime_ =
+              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+        } else {
+          endTime_ = value;
+        }
+        onChanged();
+      } else {
+        endTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Workflow end time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 10;</code>
+     */
+    public Builder clearEndTime() {
+      if (endTimeBuilder_ == null) {
+        endTime_ = null;
+        onChanged();
+      } else {
+        endTime_ = null;
+        endTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Workflow end time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 10;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
+
+      onChanged();
+      return getEndTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Workflow end time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 10;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
+      if (endTimeBuilder_ != null) {
+        return endTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Workflow end time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getEndTimeFieldBuilder() {
+      if (endTimeBuilder_ == null) {
+        endTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getEndTime(), getParentForChildren(), isClean());
+        endTime_ = null;
+      }
+      return endTimeBuilder_;
+    }
+
+    private java.lang.Object clusterUuid_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The UUID of target cluster.
+     * </pre>
+     *
+     * <code>string cluster_uuid = 11;</code>
+     */
+    public java.lang.String getClusterUuid() {
+      java.lang.Object ref = clusterUuid_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clusterUuid_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The UUID of target cluster.
+     * </pre>
+     *
+     * <code>string cluster_uuid = 11;</code>
+     */
+    public com.google.protobuf.ByteString getClusterUuidBytes() {
+      java.lang.Object ref = clusterUuid_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        clusterUuid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The UUID of target cluster.
+     * </pre>
+     *
+     * <code>string cluster_uuid = 11;</code>
+     */
+    public Builder setClusterUuid(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      clusterUuid_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The UUID of target cluster.
+     * </pre>
+     *
+     * <code>string cluster_uuid = 11;</code>
+     */
+    public Builder clearClusterUuid() {
+
+      clusterUuid_ = getDefaultInstance().getClusterUuid();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The UUID of target cluster.
+     * </pre>
+     *
+     * <code>string cluster_uuid = 11;</code>
+     */
+    public Builder setClusterUuidBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      clusterUuid_ = value;
+      onChanged();
+      return this;
+    }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -2041,12 +2905,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.dataproc.v1beta2.WorkflowMetadata)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.dataproc.v1beta2.WorkflowMetadata)
   private static final com.google.cloud.dataproc.v1beta2.WorkflowMetadata DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.dataproc.v1beta2.WorkflowMetadata();
   }
@@ -2055,16 +2919,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<WorkflowMetadata>
-      PARSER = new com.google.protobuf.AbstractParser<WorkflowMetadata>() {
-    @java.lang.Override
-    public WorkflowMetadata parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new WorkflowMetadata(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<WorkflowMetadata> PARSER =
+      new com.google.protobuf.AbstractParser<WorkflowMetadata>() {
+        @java.lang.Override
+        public WorkflowMetadata parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new WorkflowMetadata(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<WorkflowMetadata> parser() {
     return PARSER;
@@ -2079,6 +2943,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.dataproc.v1beta2.WorkflowMetadata getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

@@ -3,11 +3,14 @@
 
 package com.google.logging.v2;
 
-public interface CreateExclusionRequestOrBuilder extends
+public interface CreateExclusionRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.logging.v2.CreateExclusionRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The parent resource in which to create the exclusion:
    *     "projects/[PROJECT_ID]"
@@ -21,6 +24,8 @@ public interface CreateExclusionRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required. The parent resource in which to create the exclusion:
    *     "projects/[PROJECT_ID]"
@@ -32,10 +37,11 @@ public interface CreateExclusionRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The new exclusion, whose `name` parameter is an exclusion name
    * that is not already used in the parent resource.
@@ -45,6 +51,8 @@ public interface CreateExclusionRequestOrBuilder extends
    */
   boolean hasExclusion();
   /**
+   *
+   *
    * <pre>
    * Required. The new exclusion, whose `name` parameter is an exclusion name
    * that is not already used in the parent resource.
@@ -54,6 +62,8 @@ public interface CreateExclusionRequestOrBuilder extends
    */
   com.google.logging.v2.LogExclusion getExclusion();
   /**
+   *
+   *
    * <pre>
    * Required. The new exclusion, whose `name` parameter is an exclusion name
    * that is not already used in the parent resource.

@@ -21,7 +21,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.common.base.MoreObjects;
 import com.google.protobuf.Any;
 import com.google.protobuf.Struct;
-
 import java.io.Serializable;
 import java.util.Map;
 import java.util.Objects;
@@ -38,29 +37,19 @@ public abstract class Payload<T> implements Serializable {
   private final Type type;
   private final T data;
 
-  /**
-   * Type for a log entry payload.
-   */
+  /** Type for a log entry payload. */
   public enum Type {
-    /**
-     * Log entry data as UTF8 string.
-     */
+    /** Log entry data as UTF8 string. */
     STRING,
 
-    /**
-     * Log entry data as JSON.
-     */
+    /** Log entry data as JSON. */
     JSON,
 
-    /**
-     * Log entry data as a protobuf object.
-     */
+    /** Log entry data as a protobuf object. */
     PROTO
   }
 
-  /**
-   * A log entry payload as an UTF-8 string.
-   */
+  /** A log entry payload as an UTF-8 string. */
   public static final class StringPayload extends Payload<String> {
 
     private static final long serialVersionUID = 646595882175676029L;
@@ -74,9 +63,7 @@ public abstract class Payload<T> implements Serializable {
       return com.google.logging.v2.LogEntry.newBuilder().setTextPayload(getData());
     }
 
-    /**
-     * Creates a log entry payload given its data represented as an UTF-8 string.
-     */
+    /** Creates a log entry payload given its data represented as an UTF-8 string. */
     public static StringPayload of(String data) {
       return new StringPayload(data);
     }
@@ -86,9 +73,7 @@ public abstract class Payload<T> implements Serializable {
     }
   }
 
-  /**
-   * A log entry's JSON payload.
-   */
+  /** A log entry's JSON payload. */
   public static final class JsonPayload extends Payload<Struct> {
 
     private static final long serialVersionUID = 5747721918608143350L;
@@ -97,10 +82,7 @@ public abstract class Payload<T> implements Serializable {
       super(Type.JSON, jsonData);
     }
 
-
-    /**
-     * Returns the log entry's JSON data as an unmodifiable map.
-     */
+    /** Returns the log entry's JSON data as an unmodifiable map. */
     public Map<String, Object> getDataAsMap() {
       return Structs.asMap(getData());
     }
@@ -118,27 +100,26 @@ public abstract class Payload<T> implements Serializable {
      * Enums are serialized as strings.
      *
      * <p>Example usage of {@code JsonPayload}:
+     *
      * <pre>{@code
-     *   List<Long> listValue = Arrays.asList(1L, 2L);
-     *   Map<String, Object> innerMap = new HashMap<String, Object>();
-     *   innerMap.put("booleanValue", true);
-     *   innerMap.put("stringValue", "stringValue");
-     *   Map<String, Object> jsonContent = new HashMap<String, Object>();
-     *   jsonContent.put("listValue", listValue);
-     *   jsonContent.put("integerValue", 42);
-     *   jsonContent.put("doubleValue", 42.0);
-     *   jsonContent.put("stringValue", "stringValue");
-     *   jsonContent.put("mapValue", innerMap);
-     *   JsonPayload payload = JsonPayload.of(jsonContent);
+     * List<Long> listValue = Arrays.asList(1L, 2L);
+     * Map<String, Object> innerMap = new HashMap<String, Object>();
+     * innerMap.put("booleanValue", true);
+     * innerMap.put("stringValue", "stringValue");
+     * Map<String, Object> jsonContent = new HashMap<String, Object>();
+     * jsonContent.put("listValue", listValue);
+     * jsonContent.put("integerValue", 42);
+     * jsonContent.put("doubleValue", 42.0);
+     * jsonContent.put("stringValue", "stringValue");
+     * jsonContent.put("mapValue", innerMap);
+     * JsonPayload payload = JsonPayload.of(jsonContent);
      * }</pre>
      */
     public static JsonPayload of(Map<String, ?> data) {
       return new JsonPayload(Structs.newStruct(data));
     }
 
-    /**
-     * Creates a log entry payload given its JSON data represented as a protobuf struct.
-     */
+    /** Creates a log entry payload given its JSON data represented as a protobuf struct. */
     public static JsonPayload of(Struct data) {
       return new JsonPayload(data);
     }
@@ -148,9 +129,7 @@ public abstract class Payload<T> implements Serializable {
     }
   }
 
-  /**
-   * A log entry payload as a protobuf object.
-   */
+  /** A log entry payload as a protobuf object. */
   public static final class ProtoPayload extends Payload<Any> {
 
     private static final long serialVersionUID = 155951112369716872L;
@@ -164,9 +143,7 @@ public abstract class Payload<T> implements Serializable {
       return com.google.logging.v2.LogEntry.newBuilder().setProtoPayload(getData());
     }
 
-    /**
-     * Creates a log entry payload given its data as a protobuf object.
-     */
+    /** Creates a log entry payload given its data as a protobuf object. */
     public static ProtoPayload of(Any data) {
       return new ProtoPayload(data);
     }
@@ -181,7 +158,6 @@ public abstract class Payload<T> implements Serializable {
     this.data = checkNotNull(data);
   }
 
-
   /**
    * Returns the payload type. Payload can be an UTF-8 string ({@link Type#STRING}), a JSON object
    * ({@link Type#JSON}) or a protobuf object ({@link Type#PROTO}).
@@ -190,10 +166,7 @@ public abstract class Payload<T> implements Serializable {
     return type;
   }
 
-
-  /**
-   * Returns the log entry payload's data.
-   */
+  /** Returns the log entry payload's data. */
   public T getData() {
     return data;
   }

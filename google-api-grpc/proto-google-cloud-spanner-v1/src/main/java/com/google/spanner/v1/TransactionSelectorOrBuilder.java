@@ -3,11 +3,14 @@
 
 package com.google.spanner.v1;
 
-public interface TransactionSelectorOrBuilder extends
+public interface TransactionSelectorOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.v1.TransactionSelector)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Execute the read or SQL query in a temporary transaction.
    * This is the most efficient way to execute a transaction that
@@ -18,6 +21,8 @@ public interface TransactionSelectorOrBuilder extends
    */
   boolean hasSingleUse();
   /**
+   *
+   *
    * <pre>
    * Execute the read or SQL query in a temporary transaction.
    * This is the most efficient way to execute a transaction that
@@ -28,6 +33,8 @@ public interface TransactionSelectorOrBuilder extends
    */
   com.google.spanner.v1.TransactionOptions getSingleUse();
   /**
+   *
+   *
    * <pre>
    * Execute the read or SQL query in a temporary transaction.
    * This is the most efficient way to execute a transaction that
@@ -39,6 +46,8 @@ public interface TransactionSelectorOrBuilder extends
   com.google.spanner.v1.TransactionOptionsOrBuilder getSingleUseOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Execute the read or SQL query in a previously-started transaction.
    * </pre>
@@ -48,6 +57,8 @@ public interface TransactionSelectorOrBuilder extends
   com.google.protobuf.ByteString getId();
 
   /**
+   *
+   *
    * <pre>
    * Begin a new transaction and execute this read or SQL query in
    * it. The transaction ID of the new transaction is returned in
@@ -58,6 +69,8 @@ public interface TransactionSelectorOrBuilder extends
    */
   boolean hasBegin();
   /**
+   *
+   *
    * <pre>
    * Begin a new transaction and execute this read or SQL query in
    * it. The transaction ID of the new transaction is returned in
@@ -68,6 +81,8 @@ public interface TransactionSelectorOrBuilder extends
    */
   com.google.spanner.v1.TransactionOptions getBegin();
   /**
+   *
+   *
    * <pre>
    * Begin a new transaction and execute this read or SQL query in
    * it. The transaction ID of the new transaction is returned in

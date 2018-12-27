@@ -34,7 +34,6 @@ public class FormatOptionsTest {
     assertEquals(FormatOptions.AVRO, options.getType());
   }
 
-
   @Test
   public void testFactoryMethods() {
     assertEquals(FormatOptions.CSV, FormatOptions.csv().getType());
@@ -51,8 +50,8 @@ public class FormatOptionsTest {
     assertEquals(FormatOptions.json(), FormatOptions.json());
     assertEquals(FormatOptions.json().hashCode(), FormatOptions.json().hashCode());
     assertEquals(FormatOptions.datastoreBackup(), FormatOptions.datastoreBackup());
-    assertEquals(FormatOptions.datastoreBackup().hashCode(),
-        FormatOptions.datastoreBackup().hashCode());
+    assertEquals(
+        FormatOptions.datastoreBackup().hashCode(), FormatOptions.datastoreBackup().hashCode());
     assertEquals(FormatOptions.googleSheets(), FormatOptions.googleSheets());
   }
 }

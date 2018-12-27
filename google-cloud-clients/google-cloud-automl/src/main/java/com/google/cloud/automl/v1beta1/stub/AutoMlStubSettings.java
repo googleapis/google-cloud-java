@@ -138,7 +138,8 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
   private final UnaryCallSettings<GetModelEvaluationRequest, ModelEvaluation>
       getModelEvaluationSettings;
   private final PagedCallSettings<
-          ListModelEvaluationsRequest, ListModelEvaluationsResponse,
+          ListModelEvaluationsRequest,
+          ListModelEvaluationsResponse,
           ListModelEvaluationsPagedResponse>
       listModelEvaluationsSettings;
 
@@ -247,7 +248,8 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
 
   /** Returns the object with the settings used for calls to listModelEvaluations. */
   public PagedCallSettings<
-          ListModelEvaluationsRequest, ListModelEvaluationsResponse,
+          ListModelEvaluationsRequest,
+          ListModelEvaluationsResponse,
           ListModelEvaluationsPagedResponse>
       listModelEvaluationsSettings() {
     return listModelEvaluationsSettings;
@@ -371,7 +373,9 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
 
             @Override
             public Iterable<Dataset> extractResources(ListDatasetsResponse payload) {
-              return payload.getDatasetsList();
+              return payload.getDatasetsList() != null
+                  ? payload.getDatasetsList()
+                  : ImmutableList.<Dataset>of();
             }
           };
 
@@ -405,7 +409,9 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
 
             @Override
             public Iterable<Model> extractResources(ListModelsResponse payload) {
-              return payload.getModelList();
+              return payload.getModelList() != null
+                  ? payload.getModelList()
+                  : ImmutableList.<Model>of();
             }
           };
 
@@ -444,7 +450,9 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
             @Override
             public Iterable<ModelEvaluation> extractResources(
                 ListModelEvaluationsResponse payload) {
-              return payload.getModelEvaluationList();
+              return payload.getModelEvaluationList() != null
+                  ? payload.getModelEvaluationList()
+                  : ImmutableList.<ModelEvaluation>of();
             }
           };
 
@@ -483,11 +491,13 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
           };
 
   private static final PagedListResponseFactory<
-          ListModelEvaluationsRequest, ListModelEvaluationsResponse,
+          ListModelEvaluationsRequest,
+          ListModelEvaluationsResponse,
           ListModelEvaluationsPagedResponse>
       LIST_MODEL_EVALUATIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListModelEvaluationsRequest, ListModelEvaluationsResponse,
+              ListModelEvaluationsRequest,
+              ListModelEvaluationsResponse,
               ListModelEvaluationsPagedResponse>() {
             @Override
             public ApiFuture<ListModelEvaluationsPagedResponse> getFuturePagedResponse(
@@ -537,7 +547,8 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
     private final UnaryCallSettings.Builder<GetModelEvaluationRequest, ModelEvaluation>
         getModelEvaluationSettings;
     private final PagedCallSettings.Builder<
-            ListModelEvaluationsRequest, ListModelEvaluationsResponse,
+            ListModelEvaluationsRequest,
+            ListModelEvaluationsResponse,
             ListModelEvaluationsPagedResponse>
         listModelEvaluationsSettings;
 
@@ -1004,7 +1015,8 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
 
     /** Returns the builder for the settings used for calls to listModelEvaluations. */
     public PagedCallSettings.Builder<
-            ListModelEvaluationsRequest, ListModelEvaluationsResponse,
+            ListModelEvaluationsRequest,
+            ListModelEvaluationsResponse,
             ListModelEvaluationsPagedResponse>
         listModelEvaluationsSettings() {
       return listModelEvaluationsSettings;

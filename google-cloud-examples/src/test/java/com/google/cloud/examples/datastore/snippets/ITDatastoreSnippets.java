@@ -27,18 +27,16 @@ import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.Key;
 import com.google.cloud.datastore.KeyFactory;
 import com.google.common.collect.Lists;
-
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import org.junit.After;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.rules.Timeout;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class ITDatastoreSnippets {
 
@@ -47,11 +45,9 @@ public class ITDatastoreSnippets {
 
   private final List<Key> registeredKeys = new ArrayList<>();
 
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
-  @Rule
-  public Timeout globalTimeout = Timeout.seconds(300);
+  @Rule public Timeout globalTimeout = Timeout.seconds(300);
 
   @BeforeClass
   public static void beforeClass() {
@@ -153,8 +149,7 @@ public class ITDatastoreSnippets {
     assertNotNull(datastoreSnippets.getEntityWithKey(key1));
     assertNotNull(datastoreSnippets.getEntityWithKey(key2));
 
-    List<Entity> entities = Lists
-        .newArrayList(datastoreSnippets.getEntitiesWithKeys(key1, key2));
+    List<Entity> entities = Lists.newArrayList(datastoreSnippets.getEntitiesWithKeys(key1, key2));
     assertEquals(2, entities.size());
     Map<String, Entity> entityMap = createEntityMap(entities);
     assertEquals("value1", entityMap.get(key1).getString("propertyName"));

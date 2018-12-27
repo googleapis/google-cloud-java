@@ -26,6 +26,7 @@ import com.google.cloud.compute.v1.AddNodesNodeGroupHttpRequest;
 import com.google.cloud.compute.v1.AggregatedListNodeGroupsHttpRequest;
 import com.google.cloud.compute.v1.DeleteNodeGroupHttpRequest;
 import com.google.cloud.compute.v1.DeleteNodesNodeGroupHttpRequest;
+import com.google.cloud.compute.v1.GetIamPolicyNodeGroupHttpRequest;
 import com.google.cloud.compute.v1.GetNodeGroupHttpRequest;
 import com.google.cloud.compute.v1.InsertNodeGroupHttpRequest;
 import com.google.cloud.compute.v1.ListNodeGroupsHttpRequest;
@@ -35,7 +36,11 @@ import com.google.cloud.compute.v1.NodeGroupAggregatedList;
 import com.google.cloud.compute.v1.NodeGroupList;
 import com.google.cloud.compute.v1.NodeGroupsListNodes;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Policy;
+import com.google.cloud.compute.v1.SetIamPolicyNodeGroupHttpRequest;
 import com.google.cloud.compute.v1.SetNodeTemplateNodeGroupHttpRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsNodeGroupHttpRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -82,6 +87,11 @@ public abstract class NodeGroupStub implements BackgroundResource {
   }
 
   @BetaApi
+  public UnaryCallable<GetIamPolicyNodeGroupHttpRequest, Policy> getIamPolicyNodeGroupCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyNodeGroupCallable()");
+  }
+
+  @BetaApi
   public UnaryCallable<InsertNodeGroupHttpRequest, Operation> insertNodeGroupCallable() {
     throw new UnsupportedOperationException("Not implemented: insertNodeGroupCallable()");
   }
@@ -110,9 +120,21 @@ public abstract class NodeGroupStub implements BackgroundResource {
   }
 
   @BetaApi
+  public UnaryCallable<SetIamPolicyNodeGroupHttpRequest, Policy> setIamPolicyNodeGroupCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyNodeGroupCallable()");
+  }
+
+  @BetaApi
   public UnaryCallable<SetNodeTemplateNodeGroupHttpRequest, Operation>
       setNodeTemplateNodeGroupCallable() {
     throw new UnsupportedOperationException("Not implemented: setNodeTemplateNodeGroupCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<TestIamPermissionsNodeGroupHttpRequest, TestPermissionsResponse>
+      testIamPermissionsNodeGroupCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: testIamPermissionsNodeGroupCallable()");
   }
 
   @Override

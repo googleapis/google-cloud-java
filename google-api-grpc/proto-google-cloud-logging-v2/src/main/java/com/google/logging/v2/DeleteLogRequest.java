@@ -4,30 +4,33 @@
 package com.google.logging.v2;
 
 /**
+ *
+ *
  * <pre>
  * The parameters to DeleteLog.
  * </pre>
  *
  * Protobuf type {@code google.logging.v2.DeleteLogRequest}
  */
-public  final class DeleteLogRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class DeleteLogRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.logging.v2.DeleteLogRequest)
     DeleteLogRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use DeleteLogRequest.newBuilder() to construct.
   private DeleteLogRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private DeleteLogRequest() {
     logName_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private DeleteLogRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -47,47 +50,52 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            logName_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              logName_ = s;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.logging.v2.LoggingProto.internal_static_google_logging_v2_DeleteLogRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.logging.v2.LoggingProto
+        .internal_static_google_logging_v2_DeleteLogRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.logging.v2.LoggingProto.internal_static_google_logging_v2_DeleteLogRequest_fieldAccessorTable
+    return com.google.logging.v2.LoggingProto
+        .internal_static_google_logging_v2_DeleteLogRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.logging.v2.DeleteLogRequest.class, com.google.logging.v2.DeleteLogRequest.Builder.class);
+            com.google.logging.v2.DeleteLogRequest.class,
+            com.google.logging.v2.DeleteLogRequest.Builder.class);
   }
 
   public static final int LOG_NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object logName_;
   /**
+   *
+   *
    * <pre>
    * Required. The resource name of the log to delete:
    *     "projects/[PROJECT_ID]/logs/[LOG_ID]"
@@ -108,14 +116,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       logName_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. The resource name of the log to delete:
    *     "projects/[PROJECT_ID]/logs/[LOG_ID]"
@@ -131,13 +140,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string log_name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getLogNameBytes() {
+  public com.google.protobuf.ByteString getLogNameBytes() {
     java.lang.Object ref = logName_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       logName_ = b;
       return b;
     } else {
@@ -146,6 +153,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -157,8 +165,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getLogNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, logName_);
     }
@@ -182,7 +189,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.logging.v2.DeleteLogRequest)) {
       return super.equals(obj);
@@ -190,8 +197,7 @@ private static final long serialVersionUID = 0L;
     com.google.logging.v2.DeleteLogRequest other = (com.google.logging.v2.DeleteLogRequest) obj;
 
     boolean result = true;
-    result = result && getLogName()
-        .equals(other.getLogName());
+    result = result && getLogName().equals(other.getLogName());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -210,118 +216,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.logging.v2.DeleteLogRequest parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.logging.v2.DeleteLogRequest parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.logging.v2.DeleteLogRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.logging.v2.DeleteLogRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.logging.v2.DeleteLogRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.logging.v2.DeleteLogRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.logging.v2.DeleteLogRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.logging.v2.DeleteLogRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.logging.v2.DeleteLogRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.logging.v2.DeleteLogRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.logging.v2.DeleteLogRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.logging.v2.DeleteLogRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.logging.v2.DeleteLogRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.logging.v2.DeleteLogRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The parameters to DeleteLog.
    * </pre>
    *
    * Protobuf type {@code google.logging.v2.DeleteLogRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.logging.v2.DeleteLogRequest)
       com.google.logging.v2.DeleteLogRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.logging.v2.LoggingProto.internal_static_google_logging_v2_DeleteLogRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.logging.v2.LoggingProto
+          .internal_static_google_logging_v2_DeleteLogRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.logging.v2.LoggingProto.internal_static_google_logging_v2_DeleteLogRequest_fieldAccessorTable
+      return com.google.logging.v2.LoggingProto
+          .internal_static_google_logging_v2_DeleteLogRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.logging.v2.DeleteLogRequest.class, com.google.logging.v2.DeleteLogRequest.Builder.class);
+              com.google.logging.v2.DeleteLogRequest.class,
+              com.google.logging.v2.DeleteLogRequest.Builder.class);
     }
 
     // Construct using com.google.logging.v2.DeleteLogRequest.newBuilder()
@@ -329,16 +344,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -348,9 +362,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.logging.v2.LoggingProto.internal_static_google_logging_v2_DeleteLogRequest_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.logging.v2.LoggingProto
+          .internal_static_google_logging_v2_DeleteLogRequest_descriptor;
     }
 
     @java.lang.Override
@@ -369,7 +383,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.logging.v2.DeleteLogRequest buildPartial() {
-      com.google.logging.v2.DeleteLogRequest result = new com.google.logging.v2.DeleteLogRequest(this);
+      com.google.logging.v2.DeleteLogRequest result =
+          new com.google.logging.v2.DeleteLogRequest(this);
       result.logName_ = logName_;
       onBuilt();
       return result;
@@ -379,38 +394,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.logging.v2.DeleteLogRequest) {
-        return mergeFrom((com.google.logging.v2.DeleteLogRequest)other);
+        return mergeFrom((com.google.logging.v2.DeleteLogRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -454,6 +470,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object logName_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. The resource name of the log to delete:
      *     "projects/[PROJECT_ID]/logs/[LOG_ID]"
@@ -472,8 +490,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getLogName() {
       java.lang.Object ref = logName_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         logName_ = s;
         return s;
@@ -482,6 +499,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The resource name of the log to delete:
      *     "projects/[PROJECT_ID]/logs/[LOG_ID]"
@@ -497,13 +516,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string log_name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getLogNameBytes() {
+    public com.google.protobuf.ByteString getLogNameBytes() {
       java.lang.Object ref = logName_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         logName_ = b;
         return b;
       } else {
@@ -511,6 +528,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The resource name of the log to delete:
      *     "projects/[PROJECT_ID]/logs/[LOG_ID]"
@@ -526,17 +545,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string log_name = 1;</code>
      */
-    public Builder setLogName(
-        java.lang.String value) {
+    public Builder setLogName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       logName_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The resource name of the log to delete:
      *     "projects/[PROJECT_ID]/logs/[LOG_ID]"
@@ -553,12 +573,14 @@ private static final long serialVersionUID = 0L;
      * <code>string log_name = 1;</code>
      */
     public Builder clearLogName() {
-      
+
       logName_ = getDefaultInstance().getLogName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The resource name of the log to delete:
      *     "projects/[PROJECT_ID]/logs/[LOG_ID]"
@@ -574,20 +596,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string log_name = 1;</code>
      */
-    public Builder setLogNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setLogNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       logName_ = value;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -597,12 +618,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.logging.v2.DeleteLogRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.logging.v2.DeleteLogRequest)
   private static final com.google.logging.v2.DeleteLogRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.logging.v2.DeleteLogRequest();
   }
@@ -611,16 +632,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<DeleteLogRequest>
-      PARSER = new com.google.protobuf.AbstractParser<DeleteLogRequest>() {
-    @java.lang.Override
-    public DeleteLogRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new DeleteLogRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<DeleteLogRequest> PARSER =
+      new com.google.protobuf.AbstractParser<DeleteLogRequest>() {
+        @java.lang.Override
+        public DeleteLogRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new DeleteLogRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<DeleteLogRequest> parser() {
     return PARSER;
@@ -635,6 +656,4 @@ private static final long serialVersionUID = 0L;
   public com.google.logging.v2.DeleteLogRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

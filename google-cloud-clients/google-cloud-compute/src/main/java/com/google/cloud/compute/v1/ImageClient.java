@@ -55,13 +55,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -557,6 +557,107 @@ public class ImageClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ImageClient imageClient = ImageClient.create()) {
+   *   ProjectGlobalImageResourceName resource = ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   Policy response = imageClient.getIamPolicyImage(resource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy getIamPolicyImage(ProjectGlobalImageResourceName resource) {
+
+    GetIamPolicyImageHttpRequest request =
+        GetIamPolicyImageHttpRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .build();
+    return getIamPolicyImage(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ImageClient imageClient = ImageClient.create()) {
+   *   ProjectGlobalImageResourceName resource = ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   Policy response = imageClient.getIamPolicyImage(resource.toString());
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy getIamPolicyImage(String resource) {
+
+    GetIamPolicyImageHttpRequest request =
+        GetIamPolicyImageHttpRequest.newBuilder().setResource(resource).build();
+    return getIamPolicyImage(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ImageClient imageClient = ImageClient.create()) {
+   *   ProjectGlobalImageResourceName resource = ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   GetIamPolicyImageHttpRequest request = GetIamPolicyImageHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .build();
+   *   Policy response = imageClient.getIamPolicyImage(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy getIamPolicyImage(GetIamPolicyImageHttpRequest request) {
+    return getIamPolicyImageCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ImageClient imageClient = ImageClient.create()) {
+   *   ProjectGlobalImageResourceName resource = ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   GetIamPolicyImageHttpRequest request = GetIamPolicyImageHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .build();
+   *   ApiFuture&lt;Policy&gt; future = imageClient.getIamPolicyImageCallable().futureCall(request);
+   *   // Do something
+   *   Policy response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<GetIamPolicyImageHttpRequest, Policy> getIamPolicyImageCallable() {
+    return stub.getIamPolicyImageCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Creates an image in the specified project using the data included in the request.
    *
    * <p>Sample code:
@@ -834,6 +935,118 @@ public class ImageClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ImageClient imageClient = ImageClient.create()) {
+   *   ProjectGlobalImageResourceName resource = ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
+   *   Policy response = imageClient.setIamPolicyImage(resource, globalSetPolicyRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @param globalSetPolicyRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy setIamPolicyImage(
+      ProjectGlobalImageResourceName resource,
+      GlobalSetPolicyRequest globalSetPolicyRequestResource) {
+
+    SetIamPolicyImageHttpRequest request =
+        SetIamPolicyImageHttpRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
+            .build();
+    return setIamPolicyImage(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ImageClient imageClient = ImageClient.create()) {
+   *   ProjectGlobalImageResourceName resource = ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
+   *   Policy response = imageClient.setIamPolicyImage(resource.toString(), globalSetPolicyRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @param globalSetPolicyRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy setIamPolicyImage(
+      String resource, GlobalSetPolicyRequest globalSetPolicyRequestResource) {
+
+    SetIamPolicyImageHttpRequest request =
+        SetIamPolicyImageHttpRequest.newBuilder()
+            .setResource(resource)
+            .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
+            .build();
+    return setIamPolicyImage(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ImageClient imageClient = ImageClient.create()) {
+   *   ProjectGlobalImageResourceName resource = ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
+   *   SetIamPolicyImageHttpRequest request = SetIamPolicyImageHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
+   *     .build();
+   *   Policy response = imageClient.setIamPolicyImage(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy setIamPolicyImage(SetIamPolicyImageHttpRequest request) {
+    return setIamPolicyImageCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ImageClient imageClient = ImageClient.create()) {
+   *   ProjectGlobalImageResourceName resource = ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
+   *   SetIamPolicyImageHttpRequest request = SetIamPolicyImageHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
+   *     .build();
+   *   ApiFuture&lt;Policy&gt; future = imageClient.setIamPolicyImageCallable().futureCall(request);
+   *   // Do something
+   *   Policy response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<SetIamPolicyImageHttpRequest, Policy> setIamPolicyImageCallable() {
+    return stub.setIamPolicyImageCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Sets the labels on an image. To learn more about labels, read the Labeling Resources
    * documentation.
    *
@@ -847,7 +1060,7 @@ public class ImageClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param resource Name of the resource for this request.
+   * @param resource Name or id of the resource for this request.
    * @param globalSetLabelsRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -879,7 +1092,7 @@ public class ImageClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param resource Name of the resource for this request.
+   * @param resource Name or id of the resource for this request.
    * @param globalSetLabelsRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -946,6 +1159,120 @@ public class ImageClient implements BackgroundResource {
   @BetaApi
   public final UnaryCallable<SetLabelsImageHttpRequest, Operation> setLabelsImageCallable() {
     return stub.setLabelsImageCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ImageClient imageClient = ImageClient.create()) {
+   *   ProjectGlobalImageResourceName resource = ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
+   *   TestPermissionsResponse response = imageClient.testIamPermissionsImage(resource, testPermissionsRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @param testPermissionsRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final TestPermissionsResponse testIamPermissionsImage(
+      ProjectGlobalImageResourceName resource,
+      TestPermissionsRequest testPermissionsRequestResource) {
+
+    TestIamPermissionsImageHttpRequest request =
+        TestIamPermissionsImageHttpRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .setTestPermissionsRequestResource(testPermissionsRequestResource)
+            .build();
+    return testIamPermissionsImage(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ImageClient imageClient = ImageClient.create()) {
+   *   ProjectGlobalImageResourceName resource = ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
+   *   TestPermissionsResponse response = imageClient.testIamPermissionsImage(resource.toString(), testPermissionsRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @param testPermissionsRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final TestPermissionsResponse testIamPermissionsImage(
+      String resource, TestPermissionsRequest testPermissionsRequestResource) {
+
+    TestIamPermissionsImageHttpRequest request =
+        TestIamPermissionsImageHttpRequest.newBuilder()
+            .setResource(resource)
+            .setTestPermissionsRequestResource(testPermissionsRequestResource)
+            .build();
+    return testIamPermissionsImage(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ImageClient imageClient = ImageClient.create()) {
+   *   ProjectGlobalImageResourceName resource = ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
+   *   TestIamPermissionsImageHttpRequest request = TestIamPermissionsImageHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
+   *     .build();
+   *   TestPermissionsResponse response = imageClient.testIamPermissionsImage(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final TestPermissionsResponse testIamPermissionsImage(
+      TestIamPermissionsImageHttpRequest request) {
+    return testIamPermissionsImageCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ImageClient imageClient = ImageClient.create()) {
+   *   ProjectGlobalImageResourceName resource = ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
+   *   TestIamPermissionsImageHttpRequest request = TestIamPermissionsImageHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
+   *     .build();
+   *   ApiFuture&lt;TestPermissionsResponse&gt; future = imageClient.testIamPermissionsImageCallable().futureCall(request);
+   *   // Do something
+   *   TestPermissionsResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<TestIamPermissionsImageHttpRequest, TestPermissionsResponse>
+      testIamPermissionsImageCallable() {
+    return stub.testIamPermissionsImageCallable();
   }
 
   @Override

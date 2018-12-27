@@ -3,11 +3,14 @@
 
 package com.google.cloud.texttospeech.v1beta1;
 
-public interface ListVoicesRequestOrBuilder extends
+public interface ListVoicesRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.texttospeech.v1beta1.ListVoicesRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Optional (but recommended)
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. If
@@ -23,6 +26,8 @@ public interface ListVoicesRequestOrBuilder extends
    */
   java.lang.String getLanguageCode();
   /**
+   *
+   *
    * <pre>
    * Optional (but recommended)
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. If
@@ -36,6 +41,5 @@ public interface ListVoicesRequestOrBuilder extends
    *
    * <code>string language_code = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getLanguageCodeBytes();
+  com.google.protobuf.ByteString getLanguageCodeBytes();
 }

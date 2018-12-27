@@ -97,9 +97,7 @@ class Emulator {
 
     channel = createChannel(availablePort);
 
-    tableAdminClient = BigtableTableAdminGrpc.newBlockingStub(
-        channel
-    );
+    tableAdminClient = BigtableTableAdminGrpc.newBlockingStub(channel);
 
     dataClient =
         BigtableDataClient.create(

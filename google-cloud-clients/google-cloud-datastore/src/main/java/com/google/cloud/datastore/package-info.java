@@ -15,14 +15,14 @@
  */
 
 /**
- * A client for Cloud Datastore – A highly-scalable NoSQL database for web and mobile
- * applications.
+ * A client for Cloud Datastore – A highly-scalable NoSQL database for web and mobile applications.
  *
  * <p>Here's a simple usage example for using google-cloud from App/Compute Engine. This example
- * shows how to create a Datastore entity. For the complete source code see
- * <a href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/CreateEntity.java">
+ * shows how to create a Datastore entity. For the complete source code see <a
+ * href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/CreateEntity.java">
  * CreateEntity.java</a>.
- * <pre> {@code
+ *
+ * <pre>{@code
  * Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
  * KeyFactory keyFactory = datastore.newKeyFactory().setKind("keyKind");
  * Key key = keyFactory.newKey("keyName");
@@ -32,13 +32,14 @@
  *     .set("access_time", Timestamp.now())
  *     .build();
  * datastore.put(entity);
- * } </pre>
- * <p>
- * This second example shows how to get and update a Datastore entity if it exists. For the complete
- * source code see
- * <a href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/UpdateEntity.java">
+ * }</pre>
+ *
+ * <p>This second example shows how to get and update a Datastore entity if it exists. For the
+ * complete source code see <a
+ * href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/UpdateEntity.java">
  * UpdateEntity.java</a>.
- * <pre> {@code
+ *
+ * <pre>{@code
  * Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
  * KeyFactory keyFactory = datastore.newKeyFactory().setKind("keyKind");
  * Key key = keyFactory.newKey("keyName");
@@ -49,11 +50,12 @@
  *       .set("access_time", Timestamp.now())
  *       .build();
  *   datastore.update(entity);
- * }} </pre>
+ * }
+ * }</pre>
+ *
  * <p>When using google-cloud from outside of App/Compute Engine, you have to <a
- * href="https://github.com/googleapis/google-cloud-java#specifying-a-project-id">specify a
- * project ID</a> and
- * <a href="https://github.com/googleapis/google-cloud-java#authentication">provide
+ * href="https://github.com/googleapis/google-cloud-java#specifying-a-project-id">specify a project
+ * ID</a> and <a href="https://github.com/googleapis/google-cloud-java#authentication">provide
  * credentials</a>.
  *
  * @see <a href="https://cloud.google.com/datastore/">Google Cloud Datastore</a>

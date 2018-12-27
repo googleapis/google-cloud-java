@@ -37,20 +37,22 @@ public class FieldListTest {
   private static final String FIELD_DESCRIPTION2 = "FieldDescription2";
   private static final String FIELD_DESCRIPTION3 = "FieldDescription3";
 
-  private final Field fieldSchema1 = Field.newBuilder(FIELD_NAME1, FIELD_TYPE1)
-      .setMode(FIELD_MODE1)
-      .setDescription(FIELD_DESCRIPTION1)
-      .build();
-  private final Field fieldSchema2 = Field.newBuilder(FIELD_NAME2, FIELD_TYPE2)
-      .setMode(FIELD_MODE2)
-      .setDescription(FIELD_DESCRIPTION2)
-      .build();
+  private final Field fieldSchema1 =
+      Field.newBuilder(FIELD_NAME1, FIELD_TYPE1)
+          .setMode(FIELD_MODE1)
+          .setDescription(FIELD_DESCRIPTION1)
+          .build();
+  private final Field fieldSchema2 =
+      Field.newBuilder(FIELD_NAME2, FIELD_TYPE2)
+          .setMode(FIELD_MODE2)
+          .setDescription(FIELD_DESCRIPTION2)
+          .build();
 
-  private final Field fieldSchema3 = Field
-      .newBuilder(FIELD_NAME3, FIELD_TYPE3, fieldSchema1, fieldSchema2)
-      .setMode(FIELD_MODE3)
-      .setDescription(FIELD_DESCRIPTION3)
-      .build();
+  private final Field fieldSchema3 =
+      Field.newBuilder(FIELD_NAME3, FIELD_TYPE3, fieldSchema1, fieldSchema2)
+          .setMode(FIELD_MODE3)
+          .setDescription(FIELD_DESCRIPTION3)
+          .build();
 
   private final FieldList fieldsSchema = FieldList.of(fieldSchema1, fieldSchema2, fieldSchema3);
 

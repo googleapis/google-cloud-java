@@ -20,12 +20,10 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
-
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.ISODateTimeFormat;
-
 import java.io.Serializable;
 import java.util.Objects;
+import org.joda.time.format.DateTimeFormatter;
+import org.joda.time.format.ISODateTimeFormat;
 
 /**
  * The deprecation status associated to a Google Compute Engine resource.
@@ -44,9 +42,7 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
   private final T replacement;
   private final Status status;
 
-  /**
-   * The deprecation status of a Google Compute Engine resource.
-   */
+  /** The deprecation status of a Google Compute Engine resource. */
   public enum Status {
     /**
      * Operations that create a Google Compute Engine entity using a deprecated resource will return
@@ -162,17 +158,13 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
       return this;
     }
 
-    /**
-     * Sets the status of the deprecated resource.
-     */
+    /** Sets the status of the deprecated resource. */
     public Builder<T> setStatus(Status status) {
       this.status = checkNotNull(status);
       return this;
     }
 
-    /**
-     * Creates a {@code DeprecationStatus} object.
-     */
+    /** Creates a {@code DeprecationStatus} object. */
     public DeprecationStatus<T> build() {
       return new DeprecationStatus<T>(this);
     }
@@ -272,16 +264,12 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
     return replacement;
   }
 
-  /**
-   * Returns the deprecation state of this resource.
-   */
+  /** Returns the deprecation state of this resource. */
   public Status getStatus() {
     return status;
   }
 
-  /**
-   * Returns a builder for the {@code DeprecationStatus} object.
-   */
+  /** Returns a builder for the {@code DeprecationStatus} object. */
   public Builder<T> toBuilder() {
     return new Builder<>(this);
   }
@@ -306,7 +294,7 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
   public boolean equals(Object obj) {
     return obj == this
         || obj instanceof DeprecationStatus
-        && Objects.equals(toPb(), ((DeprecationStatus) obj).toPb());
+            && Objects.equals(toPb(), ((DeprecationStatus) obj).toPb());
   }
 
   com.google.api.services.compute.model.DeprecationStatus toPb() {
@@ -320,9 +308,7 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
     return deprecationStatusPb;
   }
 
-  /**
-   * Returns the builder for a {@code DeprecationStatus} object given the status.
-   */
+  /** Returns the builder for a {@code DeprecationStatus} object given the status. */
   public static <T extends ResourceId> Builder<T> newBuilder(Status status) {
     return new Builder<T>().setStatus(status);
   }
@@ -335,9 +321,7 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
     return new Builder<T>().setStatus(status).setReplacement(replacement);
   }
 
-  /**
-   * Returns a {@code DeprecationStatus} object given the status and replacement's identity.
-   */
+  /** Returns a {@code DeprecationStatus} object given the status and replacement's identity. */
   public static <T extends ResourceId> DeprecationStatus<T> of(Status status, T replacement) {
     return newBuilder(status, replacement).build();
   }

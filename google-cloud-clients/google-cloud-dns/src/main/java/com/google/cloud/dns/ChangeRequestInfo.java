@@ -26,12 +26,10 @@ import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
-
 import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
-
 import org.joda.time.DateTime;
 import org.joda.time.format.ISODateTimeFormat;
 
@@ -61,7 +59,7 @@ public class ChangeRequestInfo implements Serializable {
    * This enumerates the possible states of a change request.
    *
    * @see <a href="https://cloud.google.com/dns/api/v1/changes#resource">Google Cloud DNS
-   * documentation</a>
+   *     documentation</a>
    */
   public static final class Status extends StringEnumValue {
     private static final long serialVersionUID = -294992980062438246L;
@@ -74,9 +72,8 @@ public class ChangeRequestInfo implements Serializable {
           }
         };
 
-    private static final StringEnumType<Status> type = new StringEnumType(
-        Status.class,
-        CONSTRUCTOR);
+    private static final StringEnumType<Status> type =
+        new StringEnumType(Status.class, CONSTRUCTOR);
 
     public static final Status PENDING = type.createAndRegister("PENDING");
     public static final Status DONE = type.createAndRegister("DONE");
@@ -86,40 +83,32 @@ public class ChangeRequestInfo implements Serializable {
     }
 
     /**
-     * Get the Status for the given String constant, and throw an exception if the constant is
-     * not recognized.
+     * Get the Status for the given String constant, and throw an exception if the constant is not
+     * recognized.
      */
     public static Status valueOfStrict(String constant) {
       return type.valueOfStrict(constant);
     }
 
-    /**
-     * Get the Status for the given String constant, and allow unrecognized values.
-     */
+    /** Get the Status for the given String constant, and allow unrecognized values. */
     public static Status valueOf(String constant) {
       return type.valueOf(constant);
     }
 
-    /**
-     * Return the known values for Status.
-     */
+    /** Return the known values for Status. */
     public static Status[] values() {
       return type.values();
     }
   }
 
-  /**
-   * A builder for {@code ChangeRequestInfo}.
-   */
+  /** A builder for {@code ChangeRequestInfo}. */
   public abstract static class Builder {
-
 
     /**
      * Sets a collection of {@link RecordSet}s which are to be added to the zone upon executing this
      * {@code ChangeRequestInfo}.
      */
     public abstract Builder setAdditions(List<RecordSet> additions);
-
 
     /**
      * Sets a collection of {@link RecordSet}s which are to be deleted from the zone upon executing
@@ -163,19 +152,13 @@ public class ChangeRequestInfo implements Serializable {
      */
     public abstract Builder removeDeletion(RecordSet recordSet);
 
-    /**
-     * Associates a service-generated id to this {@code ChangeRequestInfo}.
-     */
+    /** Associates a service-generated id to this {@code ChangeRequestInfo}. */
     abstract Builder setGeneratedId(String generatedId);
 
-    /**
-     * Sets the time when this change request was started by a server.
-     */
+    /** Sets the time when this change request was started by a server. */
     abstract Builder setStartTime(long startTimeMillis);
 
-    /**
-     * Sets the current status of this {@code ChangeRequest}.
-     */
+    /** Sets the current status of this {@code ChangeRequest}. */
     abstract Builder setStatus(ChangeRequest.Status status);
 
     /**
@@ -205,13 +188,11 @@ public class ChangeRequestInfo implements Serializable {
       this.status = info.status;
     }
 
-
     @Override
     public Builder setAdditions(List<RecordSet> additions) {
       this.additions = Lists.newLinkedList(checkNotNull(additions));
       return this;
     }
-
 
     @Override
     public Builder setDeletions(List<RecordSet> deletions) {
@@ -287,23 +268,17 @@ public class ChangeRequestInfo implements Serializable {
     this.status = builder.status;
   }
 
-
-  /**
-   * Returns an empty builder for the {@code ChangeRequestInfo} class.
-   */
+  /** Returns an empty builder for the {@code ChangeRequestInfo} class. */
   public static Builder newBuilder() {
     return new BuilderImpl();
   }
 
-  /**
-   * Creates a builder populated with values of this {@code ChangeRequestInfo}.
-   */
+  /** Creates a builder populated with values of this {@code ChangeRequestInfo}. */
   public Builder toBuilder() {
     return new BuilderImpl(this);
   }
 
-
-    /**
+  /**
    * Returns the list of {@link RecordSet}s to be added to the zone upon submitting this change
    * request.
    */
@@ -311,8 +286,7 @@ public class ChangeRequestInfo implements Serializable {
     return additions;
   }
 
-
-    /**
+  /**
    * Returns the list of {@link RecordSet}s to be deleted from the zone upon submitting this change
    * request.
    */
@@ -320,18 +294,12 @@ public class ChangeRequestInfo implements Serializable {
     return deletions;
   }
 
-
-  /**
-   * Returns the service-generated id for this change request.
-   */
+  /** Returns the service-generated id for this change request. */
   public String getGeneratedId() {
     return generatedId;
   }
 
-
-  /**
-   * Returns the time when this change request was started by the server.
-   */
+  /** Returns the time when this change request was started by the server. */
   public Long getStartTimeMillis() {
     return startTimeMillis;
   }
@@ -398,8 +366,8 @@ public class ChangeRequestInfo implements Serializable {
   public boolean equals(Object obj) {
     return obj == this
         || obj != null
-        && obj.getClass().equals(ChangeRequestInfo.class)
-        && toPb().equals(((ChangeRequestInfo) obj).toPb());
+            && obj.getClass().equals(ChangeRequestInfo.class)
+            && toPb().equals(((ChangeRequestInfo) obj).toPb());
   }
 
   @Override

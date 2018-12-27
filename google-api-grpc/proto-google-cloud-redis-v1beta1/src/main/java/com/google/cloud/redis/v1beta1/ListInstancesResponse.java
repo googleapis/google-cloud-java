@@ -4,31 +4,34 @@
 package com.google.cloud.redis.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * Response for [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances].
  * </pre>
  *
  * Protobuf type {@code google.cloud.redis.v1beta1.ListInstancesResponse}
  */
-public  final class ListInstancesResponse extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ListInstancesResponse extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.redis.v1beta1.ListInstancesResponse)
     ListInstancesResponseOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ListInstancesResponse.newBuilder() to construct.
   private ListInstancesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ListInstancesResponse() {
     instances_ = java.util.Collections.emptyList();
     nextPageToken_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ListInstancesResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -48,35 +51,37 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              instances_ = new java.util.ArrayList<com.google.cloud.redis.v1beta1.Instance>();
-              mutable_bitField0_ |= 0x00000001;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                instances_ = new java.util.ArrayList<com.google.cloud.redis.v1beta1.Instance>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              instances_.add(
+                  input.readMessage(
+                      com.google.cloud.redis.v1beta1.Instance.parser(), extensionRegistry));
+              break;
             }
-            instances_.add(
-                input.readMessage(com.google.cloud.redis.v1beta1.Instance.parser(), extensionRegistry));
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            nextPageToken_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              nextPageToken_ = s;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         instances_ = java.util.Collections.unmodifiableList(instances_);
@@ -85,23 +90,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto.internal_static_google_cloud_redis_v1beta1_ListInstancesResponse_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto
+        .internal_static_google_cloud_redis_v1beta1_ListInstancesResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto.internal_static_google_cloud_redis_v1beta1_ListInstancesResponse_fieldAccessorTable
+    return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto
+        .internal_static_google_cloud_redis_v1beta1_ListInstancesResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.redis.v1beta1.ListInstancesResponse.class, com.google.cloud.redis.v1beta1.ListInstancesResponse.Builder.class);
+            com.google.cloud.redis.v1beta1.ListInstancesResponse.class,
+            com.google.cloud.redis.v1beta1.ListInstancesResponse.Builder.class);
   }
 
   private int bitField0_;
   public static final int INSTANCES_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.redis.v1beta1.Instance> instances_;
   /**
+   *
+   *
    * <pre>
    * A list of Redis instances in the project in the specified location,
    * or across all locations.
@@ -120,6 +130,8 @@ private static final long serialVersionUID = 0L;
     return instances_;
   }
   /**
+   *
+   *
    * <pre>
    * A list of Redis instances in the project in the specified location,
    * or across all locations.
@@ -134,11 +146,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.cloud.redis.v1beta1.Instance instances = 1;</code>
    */
-  public java.util.List<? extends com.google.cloud.redis.v1beta1.InstanceOrBuilder> 
+  public java.util.List<? extends com.google.cloud.redis.v1beta1.InstanceOrBuilder>
       getInstancesOrBuilderList() {
     return instances_;
   }
   /**
+   *
+   *
    * <pre>
    * A list of Redis instances in the project in the specified location,
    * or across all locations.
@@ -157,6 +171,8 @@ private static final long serialVersionUID = 0L;
     return instances_.size();
   }
   /**
+   *
+   *
    * <pre>
    * A list of Redis instances in the project in the specified location,
    * or across all locations.
@@ -175,6 +191,8 @@ private static final long serialVersionUID = 0L;
     return instances_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * A list of Redis instances in the project in the specified location,
    * or across all locations.
@@ -189,14 +207,15 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.cloud.redis.v1beta1.Instance instances = 1;</code>
    */
-  public com.google.cloud.redis.v1beta1.InstanceOrBuilder getInstancesOrBuilder(
-      int index) {
+  public com.google.cloud.redis.v1beta1.InstanceOrBuilder getInstancesOrBuilder(int index) {
     return instances_.get(index);
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
   private volatile java.lang.Object nextPageToken_;
   /**
+   *
+   *
    * <pre>
    * Token to retrieve the next page of results, or empty if there are no more
    * results in the list.
@@ -209,14 +228,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       nextPageToken_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Token to retrieve the next page of results, or empty if there are no more
    * results in the list.
@@ -224,13 +244,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string next_page_token = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getNextPageTokenBytes() {
+  public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       nextPageToken_ = b;
       return b;
     } else {
@@ -239,6 +257,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -250,8 +269,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < instances_.size(); i++) {
       output.writeMessage(1, instances_.get(i));
     }
@@ -268,8 +286,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     for (int i = 0; i < instances_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, instances_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, instances_.get(i));
     }
     if (!getNextPageTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
@@ -282,18 +299,17 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.redis.v1beta1.ListInstancesResponse)) {
       return super.equals(obj);
     }
-    com.google.cloud.redis.v1beta1.ListInstancesResponse other = (com.google.cloud.redis.v1beta1.ListInstancesResponse) obj;
+    com.google.cloud.redis.v1beta1.ListInstancesResponse other =
+        (com.google.cloud.redis.v1beta1.ListInstancesResponse) obj;
 
     boolean result = true;
-    result = result && getInstancesList()
-        .equals(other.getInstancesList());
-    result = result && getNextPageToken()
-        .equals(other.getNextPageToken());
+    result = result && getInstancesList().equals(other.getInstancesList());
+    result = result && getNextPageToken().equals(other.getNextPageToken());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -317,117 +333,126 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.redis.v1beta1.ListInstancesResponse parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.redis.v1beta1.ListInstancesResponse parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.redis.v1beta1.ListInstancesResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.redis.v1beta1.ListInstancesResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.redis.v1beta1.ListInstancesResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.redis.v1beta1.ListInstancesResponse parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.redis.v1beta1.ListInstancesResponse parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.redis.v1beta1.ListInstancesResponse parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.redis.v1beta1.ListInstancesResponse parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.redis.v1beta1.ListInstancesResponse parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.redis.v1beta1.ListInstancesResponse parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.redis.v1beta1.ListInstancesResponse parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.redis.v1beta1.ListInstancesResponse parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.redis.v1beta1.ListInstancesResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.redis.v1beta1.ListInstancesResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Response for [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances].
    * </pre>
    *
    * Protobuf type {@code google.cloud.redis.v1beta1.ListInstancesResponse}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.redis.v1beta1.ListInstancesResponse)
       com.google.cloud.redis.v1beta1.ListInstancesResponseOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto.internal_static_google_cloud_redis_v1beta1_ListInstancesResponse_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto
+          .internal_static_google_cloud_redis_v1beta1_ListInstancesResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto.internal_static_google_cloud_redis_v1beta1_ListInstancesResponse_fieldAccessorTable
+      return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto
+          .internal_static_google_cloud_redis_v1beta1_ListInstancesResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.redis.v1beta1.ListInstancesResponse.class, com.google.cloud.redis.v1beta1.ListInstancesResponse.Builder.class);
+              com.google.cloud.redis.v1beta1.ListInstancesResponse.class,
+              com.google.cloud.redis.v1beta1.ListInstancesResponse.Builder.class);
     }
 
     // Construct using com.google.cloud.redis.v1beta1.ListInstancesResponse.newBuilder()
@@ -435,17 +460,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getInstancesFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -461,9 +486,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto.internal_static_google_cloud_redis_v1beta1_ListInstancesResponse_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto
+          .internal_static_google_cloud_redis_v1beta1_ListInstancesResponse_descriptor;
     }
 
     @java.lang.Override
@@ -482,7 +507,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.redis.v1beta1.ListInstancesResponse buildPartial() {
-      com.google.cloud.redis.v1beta1.ListInstancesResponse result = new com.google.cloud.redis.v1beta1.ListInstancesResponse(this);
+      com.google.cloud.redis.v1beta1.ListInstancesResponse result =
+          new com.google.cloud.redis.v1beta1.ListInstancesResponse(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (instancesBuilder_ == null) {
@@ -504,38 +530,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.redis.v1beta1.ListInstancesResponse) {
-        return mergeFrom((com.google.cloud.redis.v1beta1.ListInstancesResponse)other);
+        return mergeFrom((com.google.cloud.redis.v1beta1.ListInstancesResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -543,7 +570,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.redis.v1beta1.ListInstancesResponse other) {
-      if (other == com.google.cloud.redis.v1beta1.ListInstancesResponse.getDefaultInstance()) return this;
+      if (other == com.google.cloud.redis.v1beta1.ListInstancesResponse.getDefaultInstance())
+        return this;
       if (instancesBuilder_ == null) {
         if (!other.instances_.isEmpty()) {
           if (instances_.isEmpty()) {
@@ -562,9 +590,10 @@ private static final long serialVersionUID = 0L;
             instancesBuilder_ = null;
             instances_ = other.instances_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            instancesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getInstancesFieldBuilder() : null;
+            instancesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getInstancesFieldBuilder()
+                    : null;
           } else {
             instancesBuilder_.addAllMessages(other.instances_);
           }
@@ -593,7 +622,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.redis.v1beta1.ListInstancesResponse) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.redis.v1beta1.ListInstancesResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -602,21 +632,28 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.util.List<com.google.cloud.redis.v1beta1.Instance> instances_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureInstancesIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
         instances_ = new java.util.ArrayList<com.google.cloud.redis.v1beta1.Instance>(instances_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.redis.v1beta1.Instance, com.google.cloud.redis.v1beta1.Instance.Builder, com.google.cloud.redis.v1beta1.InstanceOrBuilder> instancesBuilder_;
+            com.google.cloud.redis.v1beta1.Instance,
+            com.google.cloud.redis.v1beta1.Instance.Builder,
+            com.google.cloud.redis.v1beta1.InstanceOrBuilder>
+        instancesBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * A list of Redis instances in the project in the specified location,
      * or across all locations.
@@ -639,6 +676,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of Redis instances in the project in the specified location,
      * or across all locations.
@@ -661,6 +700,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of Redis instances in the project in the specified location,
      * or across all locations.
@@ -683,6 +724,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of Redis instances in the project in the specified location,
      * or across all locations.
@@ -697,8 +740,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.redis.v1beta1.Instance instances = 1;</code>
      */
-    public Builder setInstances(
-        int index, com.google.cloud.redis.v1beta1.Instance value) {
+    public Builder setInstances(int index, com.google.cloud.redis.v1beta1.Instance value) {
       if (instancesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -712,6 +754,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of Redis instances in the project in the specified location,
      * or across all locations.
@@ -738,6 +782,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of Redis instances in the project in the specified location,
      * or across all locations.
@@ -766,6 +812,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of Redis instances in the project in the specified location,
      * or across all locations.
@@ -780,8 +828,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.redis.v1beta1.Instance instances = 1;</code>
      */
-    public Builder addInstances(
-        int index, com.google.cloud.redis.v1beta1.Instance value) {
+    public Builder addInstances(int index, com.google.cloud.redis.v1beta1.Instance value) {
       if (instancesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -795,6 +842,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of Redis instances in the project in the specified location,
      * or across all locations.
@@ -809,8 +858,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.redis.v1beta1.Instance instances = 1;</code>
      */
-    public Builder addInstances(
-        com.google.cloud.redis.v1beta1.Instance.Builder builderForValue) {
+    public Builder addInstances(com.google.cloud.redis.v1beta1.Instance.Builder builderForValue) {
       if (instancesBuilder_ == null) {
         ensureInstancesIsMutable();
         instances_.add(builderForValue.build());
@@ -821,6 +869,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of Redis instances in the project in the specified location,
      * or across all locations.
@@ -847,6 +897,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of Redis instances in the project in the specified location,
      * or across all locations.
@@ -865,8 +917,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.cloud.redis.v1beta1.Instance> values) {
       if (instancesBuilder_ == null) {
         ensureInstancesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, instances_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, instances_);
         onChanged();
       } else {
         instancesBuilder_.addAllMessages(values);
@@ -874,6 +925,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of Redis instances in the project in the specified location,
      * or across all locations.
@@ -899,6 +952,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of Redis instances in the project in the specified location,
      * or across all locations.
@@ -924,6 +979,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of Redis instances in the project in the specified location,
      * or across all locations.
@@ -938,11 +995,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.redis.v1beta1.Instance instances = 1;</code>
      */
-    public com.google.cloud.redis.v1beta1.Instance.Builder getInstancesBuilder(
-        int index) {
+    public com.google.cloud.redis.v1beta1.Instance.Builder getInstancesBuilder(int index) {
       return getInstancesFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * A list of Redis instances in the project in the specified location,
      * or across all locations.
@@ -957,14 +1015,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.redis.v1beta1.Instance instances = 1;</code>
      */
-    public com.google.cloud.redis.v1beta1.InstanceOrBuilder getInstancesOrBuilder(
-        int index) {
+    public com.google.cloud.redis.v1beta1.InstanceOrBuilder getInstancesOrBuilder(int index) {
       if (instancesBuilder_ == null) {
-        return instances_.get(index);  } else {
+        return instances_.get(index);
+      } else {
         return instancesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of Redis instances in the project in the specified location,
      * or across all locations.
@@ -979,8 +1039,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.redis.v1beta1.Instance instances = 1;</code>
      */
-    public java.util.List<? extends com.google.cloud.redis.v1beta1.InstanceOrBuilder> 
-         getInstancesOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.redis.v1beta1.InstanceOrBuilder>
+        getInstancesOrBuilderList() {
       if (instancesBuilder_ != null) {
         return instancesBuilder_.getMessageOrBuilderList();
       } else {
@@ -988,6 +1048,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of Redis instances in the project in the specified location,
      * or across all locations.
@@ -1003,10 +1065,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.redis.v1beta1.Instance instances = 1;</code>
      */
     public com.google.cloud.redis.v1beta1.Instance.Builder addInstancesBuilder() {
-      return getInstancesFieldBuilder().addBuilder(
-          com.google.cloud.redis.v1beta1.Instance.getDefaultInstance());
+      return getInstancesFieldBuilder()
+          .addBuilder(com.google.cloud.redis.v1beta1.Instance.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * A list of Redis instances in the project in the specified location,
      * or across all locations.
@@ -1021,12 +1085,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.redis.v1beta1.Instance instances = 1;</code>
      */
-    public com.google.cloud.redis.v1beta1.Instance.Builder addInstancesBuilder(
-        int index) {
-      return getInstancesFieldBuilder().addBuilder(
-          index, com.google.cloud.redis.v1beta1.Instance.getDefaultInstance());
+    public com.google.cloud.redis.v1beta1.Instance.Builder addInstancesBuilder(int index) {
+      return getInstancesFieldBuilder()
+          .addBuilder(index, com.google.cloud.redis.v1beta1.Instance.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * A list of Redis instances in the project in the specified location,
      * or across all locations.
@@ -1041,16 +1106,22 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.redis.v1beta1.Instance instances = 1;</code>
      */
-    public java.util.List<com.google.cloud.redis.v1beta1.Instance.Builder> 
-         getInstancesBuilderList() {
+    public java.util.List<com.google.cloud.redis.v1beta1.Instance.Builder>
+        getInstancesBuilderList() {
       return getInstancesFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.redis.v1beta1.Instance, com.google.cloud.redis.v1beta1.Instance.Builder, com.google.cloud.redis.v1beta1.InstanceOrBuilder> 
+            com.google.cloud.redis.v1beta1.Instance,
+            com.google.cloud.redis.v1beta1.Instance.Builder,
+            com.google.cloud.redis.v1beta1.InstanceOrBuilder>
         getInstancesFieldBuilder() {
       if (instancesBuilder_ == null) {
-        instancesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.redis.v1beta1.Instance, com.google.cloud.redis.v1beta1.Instance.Builder, com.google.cloud.redis.v1beta1.InstanceOrBuilder>(
+        instancesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.redis.v1beta1.Instance,
+                com.google.cloud.redis.v1beta1.Instance.Builder,
+                com.google.cloud.redis.v1beta1.InstanceOrBuilder>(
                 instances_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -1062,6 +1133,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object nextPageToken_ = "";
     /**
+     *
+     *
      * <pre>
      * Token to retrieve the next page of results, or empty if there are no more
      * results in the list.
@@ -1072,8 +1145,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         nextPageToken_ = s;
         return s;
@@ -1082,6 +1154,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Token to retrieve the next page of results, or empty if there are no more
      * results in the list.
@@ -1089,13 +1163,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string next_page_token = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getNextPageTokenBytes() {
+    public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         nextPageToken_ = b;
         return b;
       } else {
@@ -1103,6 +1175,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Token to retrieve the next page of results, or empty if there are no more
      * results in the list.
@@ -1110,17 +1184,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string next_page_token = 2;</code>
      */
-    public Builder setNextPageToken(
-        java.lang.String value) {
+    public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       nextPageToken_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Token to retrieve the next page of results, or empty if there are no more
      * results in the list.
@@ -1129,12 +1204,14 @@ private static final long serialVersionUID = 0L;
      * <code>string next_page_token = 2;</code>
      */
     public Builder clearNextPageToken() {
-      
+
       nextPageToken_ = getDefaultInstance().getNextPageToken();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Token to retrieve the next page of results, or empty if there are no more
      * results in the list.
@@ -1142,20 +1219,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string next_page_token = 2;</code>
      */
-    public Builder setNextPageTokenBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       nextPageToken_ = value;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1165,12 +1241,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.redis.v1beta1.ListInstancesResponse)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.redis.v1beta1.ListInstancesResponse)
   private static final com.google.cloud.redis.v1beta1.ListInstancesResponse DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.redis.v1beta1.ListInstancesResponse();
   }
@@ -1179,16 +1255,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListInstancesResponse>
-      PARSER = new com.google.protobuf.AbstractParser<ListInstancesResponse>() {
-    @java.lang.Override
-    public ListInstancesResponse parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ListInstancesResponse(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ListInstancesResponse> PARSER =
+      new com.google.protobuf.AbstractParser<ListInstancesResponse>() {
+        @java.lang.Override
+        public ListInstancesResponse parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ListInstancesResponse(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ListInstancesResponse> parser() {
     return PARSER;
@@ -1203,6 +1279,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.redis.v1beta1.ListInstancesResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

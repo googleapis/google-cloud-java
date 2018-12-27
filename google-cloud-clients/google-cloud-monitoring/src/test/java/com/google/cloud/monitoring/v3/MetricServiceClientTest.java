@@ -39,7 +39,6 @@ import com.google.monitoring.v3.ListMetricDescriptorsResponse;
 import com.google.monitoring.v3.ListMonitoredResourceDescriptorsRequest;
 import com.google.monitoring.v3.ListMonitoredResourceDescriptorsResponse;
 import com.google.monitoring.v3.ListTimeSeriesRequest;
-import com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView;
 import com.google.monitoring.v3.ListTimeSeriesResponse;
 import com.google.monitoring.v3.MetricDescriptorName;
 import com.google.monitoring.v3.MonitoredResourceDescriptorName;

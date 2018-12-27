@@ -20,13 +20,10 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.cloud.translate.spi.v2.TranslateRpc;
 import com.google.common.base.MoreObjects;
-
 import java.io.Serializable;
 import java.util.Objects;
 
-/**
- * Base class for Translate operation option.
- */
+/** Base class for Translate operation option. */
 abstract class Option implements Serializable {
 
   private static final long serialVersionUID = 8546712558603322394L;
@@ -53,8 +50,7 @@ abstract class Option implements Serializable {
       return false;
     }
     Option other = (Option) obj;
-    return Objects.equals(rpcOption, other.rpcOption)
-        && Objects.equals(value, other.value);
+    return Objects.equals(rpcOption, other.rpcOption) && Objects.equals(value, other.value);
   }
 
   @Override

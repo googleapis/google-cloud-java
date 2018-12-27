@@ -17,9 +17,12 @@ package com.google.cloud.compute.v1;
 
 import static com.google.cloud.compute.v1.SnapshotClient.ListSnapshotsPagedResponse;
 import static com.google.cloud.compute.v1.stub.HttpJsonSnapshotStub.deleteSnapshotMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonSnapshotStub.getIamPolicySnapshotMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonSnapshotStub.getSnapshotMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonSnapshotStub.listSnapshotsMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonSnapshotStub.setIamPolicySnapshotMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonSnapshotStub.setLabelsSnapshotMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonSnapshotStub.testIamPermissionsSnapshotMethodDescriptor;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
@@ -51,8 +54,11 @@ public class SnapshotClientTest {
           Lists.<ApiMethodDescriptor>newArrayList(
               deleteSnapshotMethodDescriptor,
               getSnapshotMethodDescriptor,
+              getIamPolicySnapshotMethodDescriptor,
               listSnapshotsMethodDescriptor,
-              setLabelsSnapshotMethodDescriptor));
+              setIamPolicySnapshotMethodDescriptor,
+              setLabelsSnapshotMethodDescriptor,
+              testIamPermissionsSnapshotMethodDescriptor));
   private static final MockHttpService mockService =
       new MockHttpService(METHOD_DESCRIPTORS, SnapshotStubSettings.getDefaultEndpoint());
 
@@ -85,50 +91,50 @@ public class SnapshotClientTest {
   @Test
   @SuppressWarnings("all")
   public void deleteSnapshotTest() {
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    String targetId = "targetId-815576439";
-    String kind = "kind3292052";
-    String description = "description-1724546052";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String insertTime = "insertTime-103148397";
-    Integer httpErrorStatusCode = 1386087020;
-    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-    String targetLink = "targetLink-2084812312";
-    String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
-    Integer progress = 1001078227;
-    String operationType = "operationType-1432962286";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
-    String id = "id3355";
-    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
-    String user = "user3599307";
+    String creationTimestamp = "creationTimestamp567396278";
+    String description = "description-1724546052";
+    String endTime = "endTime1725551537";
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    Integer httpErrorStatusCode = 1386087020;
+    String id = "id3355";
+    String insertTime = "insertTime-103148397";
+    String kind = "kind3292052";
+    String name = "name3373707";
+    String operationType = "operationType-1432962286";
+    Integer progress = 1001078227;
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String selfLink = "selfLink-1691268851";
+    String startTime = "startTime-1573145462";
     String status = "status-892481550";
+    String statusMessage = "statusMessage-239442758";
+    String targetId = "targetId-815576439";
+    String targetLink = "targetLink-2084812312";
+    String user = "user3599307";
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     Operation expectedResponse =
         Operation.newBuilder()
-            .setHttpErrorMessage(httpErrorMessage)
-            .setTargetId(targetId)
-            .setKind(kind)
-            .setDescription(description)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setInsertTime(insertTime)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setZone(zone.toString())
-            .setTargetLink(targetLink)
-            .setCreationTimestamp(creationTimestamp)
-            .setName(name)
-            .setProgress(progress)
-            .setOperationType(operationType)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
-            .setId(id)
-            .setRegion(region.toString())
             .setClientOperationId(clientOperationId)
-            .setUser(user)
+            .setCreationTimestamp(creationTimestamp)
+            .setDescription(description)
+            .setEndTime(endTime)
+            .setHttpErrorMessage(httpErrorMessage)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setId(id)
+            .setInsertTime(insertTime)
+            .setKind(kind)
+            .setName(name)
+            .setOperationType(operationType)
+            .setProgress(progress)
+            .setRegion(region.toString())
+            .setSelfLink(selfLink)
+            .setStartTime(startTime)
             .setStatus(status)
+            .setStatusMessage(statusMessage)
+            .setTargetId(targetId)
+            .setTargetLink(targetLink)
+            .setUser(user)
+            .setZone(zone.toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -173,34 +179,34 @@ public class SnapshotClientTest {
   @Test
   @SuppressWarnings("all")
   public void getSnapshotTest() {
+    String creationTimestamp = "creationTimestamp567396278";
+    String description = "description-1724546052";
+    String diskSizeGb = "diskSizeGb-757478089";
+    String id = "id3355";
+    String kind = "kind3292052";
+    String labelFingerprint = "labelFingerprint714995737";
+    String name = "name3373707";
+    String selfLink = "selfLink-1691268851";
     String sourceDisk = "sourceDisk-85117119";
     String sourceDiskId = "sourceDiskId-1693292839";
-    String kind = "kind3292052";
-    String description = "description-1724546052";
-    String labelFingerprint = "labelFingerprint714995737";
-    String selfLink = "selfLink-1691268851";
-    String storageBytesStatus = "storageBytesStatus1027609994";
-    String storageBytes = "storageBytes2035244455";
-    String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
-    String id = "id3355";
-    String diskSizeGb = "diskSizeGb-757478089";
     String status = "status-892481550";
+    String storageBytes = "storageBytes2035244455";
+    String storageBytesStatus = "storageBytesStatus1027609994";
     Snapshot expectedResponse =
         Snapshot.newBuilder()
+            .setCreationTimestamp(creationTimestamp)
+            .setDescription(description)
+            .setDiskSizeGb(diskSizeGb)
+            .setId(id)
+            .setKind(kind)
+            .setLabelFingerprint(labelFingerprint)
+            .setName(name)
+            .setSelfLink(selfLink)
             .setSourceDisk(sourceDisk)
             .setSourceDiskId(sourceDiskId)
-            .setKind(kind)
-            .setDescription(description)
-            .setLabelFingerprint(labelFingerprint)
-            .setSelfLink(selfLink)
-            .setStorageBytesStatus(storageBytesStatus)
-            .setStorageBytes(storageBytes)
-            .setCreationTimestamp(creationTimestamp)
-            .setName(name)
-            .setId(id)
-            .setDiskSizeGb(diskSizeGb)
             .setStatus(status)
+            .setStorageBytes(storageBytes)
+            .setStorageBytesStatus(storageBytesStatus)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -244,18 +250,68 @@ public class SnapshotClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void getIamPolicySnapshotTest() {
+    String etag = "etag3123477";
+    Boolean iamOwned = false;
+    Integer version = 351608024;
+    Policy expectedResponse =
+        Policy.newBuilder().setEtag(etag).setIamOwned(iamOwned).setVersion(version).build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectGlobalSnapshotResourceName resource =
+        ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
+
+    Policy actualResponse = client.getIamPolicySnapshot(resource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getIamPolicySnapshotExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectGlobalSnapshotResourceName resource =
+          ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
+
+      client.getIamPolicySnapshot(resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void listSnapshotsTest() {
+    String id = "id3355";
     String kind = "kind3292052";
     String nextPageToken = "";
-    String id = "id3355";
     String selfLink = "selfLink-1691268851";
     Snapshot itemsElement = Snapshot.newBuilder().build();
     List<Snapshot> items = Arrays.asList(itemsElement);
     SnapshotList expectedResponse =
         SnapshotList.newBuilder()
+            .setId(id)
             .setKind(kind)
             .setNextPageToken(nextPageToken)
-            .setId(id)
             .setSelfLink(selfLink)
             .addAllItems(items)
             .build();
@@ -304,51 +360,105 @@ public class SnapshotClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void setIamPolicySnapshotTest() {
+    String etag = "etag3123477";
+    Boolean iamOwned = false;
+    Integer version = 351608024;
+    Policy expectedResponse =
+        Policy.newBuilder().setEtag(etag).setIamOwned(iamOwned).setVersion(version).build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectGlobalSnapshotResourceName resource =
+        ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
+    GlobalSetPolicyRequest globalSetPolicyRequestResource =
+        GlobalSetPolicyRequest.newBuilder().build();
+
+    Policy actualResponse = client.setIamPolicySnapshot(resource, globalSetPolicyRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setIamPolicySnapshotExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectGlobalSnapshotResourceName resource =
+          ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
+      GlobalSetPolicyRequest globalSetPolicyRequestResource =
+          GlobalSetPolicyRequest.newBuilder().build();
+
+      client.setIamPolicySnapshot(resource, globalSetPolicyRequestResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void setLabelsSnapshotTest() {
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    String targetId = "targetId-815576439";
-    String kind = "kind3292052";
-    String description = "description-1724546052";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String insertTime = "insertTime-103148397";
-    Integer httpErrorStatusCode = 1386087020;
-    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-    String targetLink = "targetLink-2084812312";
-    String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
-    Integer progress = 1001078227;
-    String operationType = "operationType-1432962286";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
-    String id = "id3355";
-    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
-    String user = "user3599307";
+    String creationTimestamp = "creationTimestamp567396278";
+    String description = "description-1724546052";
+    String endTime = "endTime1725551537";
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    Integer httpErrorStatusCode = 1386087020;
+    String id = "id3355";
+    String insertTime = "insertTime-103148397";
+    String kind = "kind3292052";
+    String name = "name3373707";
+    String operationType = "operationType-1432962286";
+    Integer progress = 1001078227;
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String selfLink = "selfLink-1691268851";
+    String startTime = "startTime-1573145462";
     String status = "status-892481550";
+    String statusMessage = "statusMessage-239442758";
+    String targetId = "targetId-815576439";
+    String targetLink = "targetLink-2084812312";
+    String user = "user3599307";
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     Operation expectedResponse =
         Operation.newBuilder()
-            .setHttpErrorMessage(httpErrorMessage)
-            .setTargetId(targetId)
-            .setKind(kind)
-            .setDescription(description)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setInsertTime(insertTime)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setZone(zone.toString())
-            .setTargetLink(targetLink)
-            .setCreationTimestamp(creationTimestamp)
-            .setName(name)
-            .setProgress(progress)
-            .setOperationType(operationType)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
-            .setId(id)
-            .setRegion(region.toString())
             .setClientOperationId(clientOperationId)
-            .setUser(user)
+            .setCreationTimestamp(creationTimestamp)
+            .setDescription(description)
+            .setEndTime(endTime)
+            .setHttpErrorMessage(httpErrorMessage)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setId(id)
+            .setInsertTime(insertTime)
+            .setKind(kind)
+            .setName(name)
+            .setOperationType(operationType)
+            .setProgress(progress)
+            .setRegion(region.toString())
+            .setSelfLink(selfLink)
+            .setStartTime(startTime)
             .setStatus(status)
+            .setStatusMessage(statusMessage)
+            .setTargetId(targetId)
+            .setTargetLink(targetLink)
+            .setUser(user)
+            .setZone(zone.toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -390,6 +500,57 @@ public class SnapshotClientTest {
           GlobalSetLabelsRequest.newBuilder().build();
 
       client.setLabelsSnapshot(resource, globalSetLabelsRequestResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void testIamPermissionsSnapshotTest() {
+    TestPermissionsResponse expectedResponse = TestPermissionsResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectGlobalSnapshotResourceName resource =
+        ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
+    TestPermissionsRequest testPermissionsRequestResource =
+        TestPermissionsRequest.newBuilder().build();
+
+    TestPermissionsResponse actualResponse =
+        client.testIamPermissionsSnapshot(resource, testPermissionsRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void testIamPermissionsSnapshotExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectGlobalSnapshotResourceName resource =
+          ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
+      TestPermissionsRequest testPermissionsRequestResource =
+          TestPermissionsRequest.newBuilder().build();
+
+      client.testIamPermissionsSnapshot(resource, testPermissionsRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

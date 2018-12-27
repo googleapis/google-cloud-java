@@ -4,29 +4,31 @@
 package com.google.cloud.kms.v1;
 
 /**
+ *
+ *
  * <pre>
  * A [Digest][google.cloud.kms.v1.Digest] holds a cryptographic message digest.
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.Digest}
  */
-public  final class Digest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Digest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.Digest)
     DigestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Digest.newBuilder() to construct.
   private Digest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private Digest() {
-  }
+
+  private Digest() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Digest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -46,68 +48,70 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            digestCase_ = 1;
-            digest_ = input.readBytes();
-            break;
-          }
-          case 18: {
-            digestCase_ = 2;
-            digest_ = input.readBytes();
-            break;
-          }
-          case 26: {
-            digestCase_ = 3;
-            digest_ = input.readBytes();
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 10:
+            {
+              digestCase_ = 1;
+              digest_ = input.readBytes();
+              break;
             }
-            break;
-          }
+          case 18:
+            {
+              digestCase_ = 2;
+              digest_ = input.readBytes();
+              break;
+            }
+          case 26:
+            {
+              digestCase_ = 3;
+              digest_ = input.readBytes();
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.kms.v1.KmsProto.internal_static_google_cloud_kms_v1_Digest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.kms.v1.KmsProto.internal_static_google_cloud_kms_v1_Digest_fieldAccessorTable
+    return com.google.cloud.kms.v1.KmsProto
+        .internal_static_google_cloud_kms_v1_Digest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.cloud.kms.v1.Digest.class, com.google.cloud.kms.v1.Digest.Builder.class);
   }
 
   private int digestCase_ = 0;
   private java.lang.Object digest_;
-  public enum DigestCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum DigestCase implements com.google.protobuf.Internal.EnumLite {
     SHA256(1),
     SHA384(2),
     SHA512(3),
     DIGEST_NOT_SET(0);
     private final int value;
+
     private DigestCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static DigestCase valueOf(int value) {
       return forNumber(value);
@@ -115,26 +119,32 @@ private static final long serialVersionUID = 0L;
 
     public static DigestCase forNumber(int value) {
       switch (value) {
-        case 1: return SHA256;
-        case 2: return SHA384;
-        case 3: return SHA512;
-        case 0: return DIGEST_NOT_SET;
-        default: return null;
+        case 1:
+          return SHA256;
+        case 2:
+          return SHA384;
+        case 3:
+          return SHA512;
+        case 0:
+          return DIGEST_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public DigestCase
-  getDigestCase() {
-    return DigestCase.forNumber(
-        digestCase_);
+  public DigestCase getDigestCase() {
+    return DigestCase.forNumber(digestCase_);
   }
 
   public static final int SHA256_FIELD_NUMBER = 1;
   /**
+   *
+   *
    * <pre>
    * A message digest produced with the SHA-256 algorithm.
    * </pre>
@@ -150,6 +160,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int SHA384_FIELD_NUMBER = 2;
   /**
+   *
+   *
    * <pre>
    * A message digest produced with the SHA-384 algorithm.
    * </pre>
@@ -165,6 +177,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int SHA512_FIELD_NUMBER = 3;
   /**
+   *
+   *
    * <pre>
    * A message digest produced with the SHA-512 algorithm.
    * </pre>
@@ -179,6 +193,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -190,19 +205,15 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (digestCase_ == 1) {
-      output.writeBytes(
-          1, (com.google.protobuf.ByteString) digest_);
+      output.writeBytes(1, (com.google.protobuf.ByteString) digest_);
     }
     if (digestCase_ == 2) {
-      output.writeBytes(
-          2, (com.google.protobuf.ByteString) digest_);
+      output.writeBytes(2, (com.google.protobuf.ByteString) digest_);
     }
     if (digestCase_ == 3) {
-      output.writeBytes(
-          3, (com.google.protobuf.ByteString) digest_);
+      output.writeBytes(3, (com.google.protobuf.ByteString) digest_);
     }
     unknownFields.writeTo(output);
   }
@@ -214,19 +225,19 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (digestCase_ == 1) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(
-            1, (com.google.protobuf.ByteString) digest_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBytesSize(
+              1, (com.google.protobuf.ByteString) digest_);
     }
     if (digestCase_ == 2) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(
-            2, (com.google.protobuf.ByteString) digest_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBytesSize(
+              2, (com.google.protobuf.ByteString) digest_);
     }
     if (digestCase_ == 3) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(
-            3, (com.google.protobuf.ByteString) digest_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBytesSize(
+              3, (com.google.protobuf.ByteString) digest_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -236,7 +247,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.kms.v1.Digest)) {
       return super.equals(obj);
@@ -244,21 +255,17 @@ private static final long serialVersionUID = 0L;
     com.google.cloud.kms.v1.Digest other = (com.google.cloud.kms.v1.Digest) obj;
 
     boolean result = true;
-    result = result && getDigestCase().equals(
-        other.getDigestCase());
+    result = result && getDigestCase().equals(other.getDigestCase());
     if (!result) return false;
     switch (digestCase_) {
       case 1:
-        result = result && getSha256()
-            .equals(other.getSha256());
+        result = result && getSha256().equals(other.getSha256());
         break;
       case 2:
-        result = result && getSha384()
-            .equals(other.getSha384());
+        result = result && getSha384().equals(other.getSha384());
         break;
       case 3:
-        result = result && getSha512()
-            .equals(other.getSha512());
+        result = result && getSha512().equals(other.getSha512());
         break;
       case 0:
       default:
@@ -295,116 +302,122 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.kms.v1.Digest parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.kms.v1.Digest parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.kms.v1.Digest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.kms.v1.Digest parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.cloud.kms.v1.Digest parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.kms.v1.Digest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.kms.v1.Digest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.kms.v1.Digest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.kms.v1.Digest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.kms.v1.Digest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.kms.v1.Digest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.kms.v1.Digest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.kms.v1.Digest parseFrom(
-      com.google.protobuf.CodedInputStream input)
+
+  public static com.google.cloud.kms.v1.Digest parseFrom(com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.kms.v1.Digest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.kms.v1.Digest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A [Digest][google.cloud.kms.v1.Digest] holds a cryptographic message digest.
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.Digest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.kms.v1.Digest)
       com.google.cloud.kms.v1.DigestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.kms.v1.KmsProto.internal_static_google_cloud_kms_v1_Digest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.kms.v1.KmsProto.internal_static_google_cloud_kms_v1_Digest_fieldAccessorTable
+      return com.google.cloud.kms.v1.KmsProto
+          .internal_static_google_cloud_kms_v1_Digest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.cloud.kms.v1.Digest.class, com.google.cloud.kms.v1.Digest.Builder.class);
     }
@@ -414,16 +427,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -433,8 +445,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.kms.v1.KmsProto.internal_static_google_cloud_kms_v1_Digest_descriptor;
     }
 
@@ -473,38 +484,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.kms.v1.Digest) {
-        return mergeFrom((com.google.cloud.kms.v1.Digest)other);
+        return mergeFrom((com.google.cloud.kms.v1.Digest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -514,21 +526,25 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.google.cloud.kms.v1.Digest other) {
       if (other == com.google.cloud.kms.v1.Digest.getDefaultInstance()) return this;
       switch (other.getDigestCase()) {
-        case SHA256: {
-          setSha256(other.getSha256());
-          break;
-        }
-        case SHA384: {
-          setSha384(other.getSha384());
-          break;
-        }
-        case SHA512: {
-          setSha512(other.getSha512());
-          break;
-        }
-        case DIGEST_NOT_SET: {
-          break;
-        }
+        case SHA256:
+          {
+            setSha256(other.getSha256());
+            break;
+          }
+        case SHA384:
+          {
+            setSha384(other.getSha384());
+            break;
+          }
+        case SHA512:
+          {
+            setSha512(other.getSha512());
+            break;
+          }
+        case DIGEST_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -558,12 +574,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int digestCase_ = 0;
     private java.lang.Object digest_;
-    public DigestCase
-        getDigestCase() {
-      return DigestCase.forNumber(
-          digestCase_);
+
+    public DigestCase getDigestCase() {
+      return DigestCase.forNumber(digestCase_);
     }
 
     public Builder clearDigest() {
@@ -573,8 +589,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     /**
+     *
+     *
      * <pre>
      * A message digest produced with the SHA-256 algorithm.
      * </pre>
@@ -588,6 +605,8 @@ private static final long serialVersionUID = 0L;
       return com.google.protobuf.ByteString.EMPTY;
     }
     /**
+     *
+     *
      * <pre>
      * A message digest produced with the SHA-256 algorithm.
      * </pre>
@@ -596,14 +615,16 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setSha256(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  digestCase_ = 1;
+        throw new NullPointerException();
+      }
+      digestCase_ = 1;
       digest_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A message digest produced with the SHA-256 algorithm.
      * </pre>
@@ -620,6 +641,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     *
+     *
      * <pre>
      * A message digest produced with the SHA-384 algorithm.
      * </pre>
@@ -633,6 +656,8 @@ private static final long serialVersionUID = 0L;
       return com.google.protobuf.ByteString.EMPTY;
     }
     /**
+     *
+     *
      * <pre>
      * A message digest produced with the SHA-384 algorithm.
      * </pre>
@@ -641,14 +666,16 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setSha384(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  digestCase_ = 2;
+        throw new NullPointerException();
+      }
+      digestCase_ = 2;
       digest_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A message digest produced with the SHA-384 algorithm.
      * </pre>
@@ -665,6 +692,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     *
+     *
      * <pre>
      * A message digest produced with the SHA-512 algorithm.
      * </pre>
@@ -678,6 +707,8 @@ private static final long serialVersionUID = 0L;
       return com.google.protobuf.ByteString.EMPTY;
     }
     /**
+     *
+     *
      * <pre>
      * A message digest produced with the SHA-512 algorithm.
      * </pre>
@@ -686,14 +717,16 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setSha512(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  digestCase_ = 3;
+        throw new NullPointerException();
+      }
+      digestCase_ = 3;
       digest_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A message digest produced with the SHA-512 algorithm.
      * </pre>
@@ -708,9 +741,9 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -720,12 +753,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.kms.v1.Digest)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.kms.v1.Digest)
   private static final com.google.cloud.kms.v1.Digest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.kms.v1.Digest();
   }
@@ -734,16 +767,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Digest>
-      PARSER = new com.google.protobuf.AbstractParser<Digest>() {
-    @java.lang.Override
-    public Digest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Digest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Digest> PARSER =
+      new com.google.protobuf.AbstractParser<Digest>() {
+        @java.lang.Override
+        public Digest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Digest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Digest> parser() {
     return PARSER;
@@ -758,6 +791,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.kms.v1.Digest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

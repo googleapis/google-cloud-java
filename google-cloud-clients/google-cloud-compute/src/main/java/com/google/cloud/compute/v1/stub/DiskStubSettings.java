@@ -48,11 +48,16 @@ import com.google.cloud.compute.v1.DiskAggregatedList;
 import com.google.cloud.compute.v1.DiskList;
 import com.google.cloud.compute.v1.DisksScopedList;
 import com.google.cloud.compute.v1.GetDiskHttpRequest;
+import com.google.cloud.compute.v1.GetIamPolicyDiskHttpRequest;
 import com.google.cloud.compute.v1.InsertDiskHttpRequest;
 import com.google.cloud.compute.v1.ListDisksHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.ResizeDiskHttpRequest;
+import com.google.cloud.compute.v1.SetIamPolicyDiskHttpRequest;
 import com.google.cloud.compute.v1.SetLabelsDiskHttpRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsDiskHttpRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -110,11 +115,15 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
       createSnapshotDiskSettings;
   private final UnaryCallSettings<DeleteDiskHttpRequest, Operation> deleteDiskSettings;
   private final UnaryCallSettings<GetDiskHttpRequest, Disk> getDiskSettings;
+  private final UnaryCallSettings<GetIamPolicyDiskHttpRequest, Policy> getIamPolicyDiskSettings;
   private final UnaryCallSettings<InsertDiskHttpRequest, Operation> insertDiskSettings;
   private final PagedCallSettings<ListDisksHttpRequest, DiskList, ListDisksPagedResponse>
       listDisksSettings;
   private final UnaryCallSettings<ResizeDiskHttpRequest, Operation> resizeDiskSettings;
+  private final UnaryCallSettings<SetIamPolicyDiskHttpRequest, Policy> setIamPolicyDiskSettings;
   private final UnaryCallSettings<SetLabelsDiskHttpRequest, Operation> setLabelsDiskSettings;
+  private final UnaryCallSettings<TestIamPermissionsDiskHttpRequest, TestPermissionsResponse>
+      testIamPermissionsDiskSettings;
 
   /** Returns the object with the settings used for calls to aggregatedListDisks. */
   public PagedCallSettings<
@@ -138,6 +147,11 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
     return getDiskSettings;
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicyDisk. */
+  public UnaryCallSettings<GetIamPolicyDiskHttpRequest, Policy> getIamPolicyDiskSettings() {
+    return getIamPolicyDiskSettings;
+  }
+
   /** Returns the object with the settings used for calls to insertDisk. */
   public UnaryCallSettings<InsertDiskHttpRequest, Operation> insertDiskSettings() {
     return insertDiskSettings;
@@ -154,9 +168,20 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
     return resizeDiskSettings;
   }
 
+  /** Returns the object with the settings used for calls to setIamPolicyDisk. */
+  public UnaryCallSettings<SetIamPolicyDiskHttpRequest, Policy> setIamPolicyDiskSettings() {
+    return setIamPolicyDiskSettings;
+  }
+
   /** Returns the object with the settings used for calls to setLabelsDisk. */
   public UnaryCallSettings<SetLabelsDiskHttpRequest, Operation> setLabelsDiskSettings() {
     return setLabelsDiskSettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissionsDisk. */
+  public UnaryCallSettings<TestIamPermissionsDiskHttpRequest, TestPermissionsResponse>
+      testIamPermissionsDiskSettings() {
+    return testIamPermissionsDiskSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -237,10 +262,13 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
     createSnapshotDiskSettings = settingsBuilder.createSnapshotDiskSettings().build();
     deleteDiskSettings = settingsBuilder.deleteDiskSettings().build();
     getDiskSettings = settingsBuilder.getDiskSettings().build();
+    getIamPolicyDiskSettings = settingsBuilder.getIamPolicyDiskSettings().build();
     insertDiskSettings = settingsBuilder.insertDiskSettings().build();
     listDisksSettings = settingsBuilder.listDisksSettings().build();
     resizeDiskSettings = settingsBuilder.resizeDiskSettings().build();
+    setIamPolicyDiskSettings = settingsBuilder.setIamPolicyDiskSettings().build();
     setLabelsDiskSettings = settingsBuilder.setLabelsDiskSettings().build();
+    testIamPermissionsDiskSettings = settingsBuilder.testIamPermissionsDiskSettings().build();
   }
 
   private static final PagedListDescriptor<
@@ -279,7 +307,9 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
 
             @Override
             public Iterable<DisksScopedList> extractResources(DiskAggregatedList payload) {
-              return payload.getItemsMap().values();
+              return payload.getItemsMap() != null
+                  ? payload.getItemsMap().values()
+                  : ImmutableList.<DisksScopedList>of();
             }
           };
 
@@ -313,7 +343,9 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
 
             @Override
             public Iterable<Disk> extractResources(DiskList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<Disk>of();
             }
           };
 
@@ -321,7 +353,8 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
           AggregatedListDisksHttpRequest, DiskAggregatedList, AggregatedListDisksPagedResponse>
       AGGREGATED_LIST_DISKS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              AggregatedListDisksHttpRequest, DiskAggregatedList,
+              AggregatedListDisksHttpRequest,
+              DiskAggregatedList,
               AggregatedListDisksPagedResponse>() {
             @Override
             public ApiFuture<AggregatedListDisksPagedResponse> getFuturePagedResponse(
@@ -364,12 +397,19 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
         createSnapshotDiskSettings;
     private final UnaryCallSettings.Builder<DeleteDiskHttpRequest, Operation> deleteDiskSettings;
     private final UnaryCallSettings.Builder<GetDiskHttpRequest, Disk> getDiskSettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyDiskHttpRequest, Policy>
+        getIamPolicyDiskSettings;
     private final UnaryCallSettings.Builder<InsertDiskHttpRequest, Operation> insertDiskSettings;
     private final PagedCallSettings.Builder<ListDisksHttpRequest, DiskList, ListDisksPagedResponse>
         listDisksSettings;
     private final UnaryCallSettings.Builder<ResizeDiskHttpRequest, Operation> resizeDiskSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyDiskHttpRequest, Policy>
+        setIamPolicyDiskSettings;
     private final UnaryCallSettings.Builder<SetLabelsDiskHttpRequest, Operation>
         setLabelsDiskSettings;
+    private final UnaryCallSettings.Builder<
+            TestIamPermissionsDiskHttpRequest, TestPermissionsResponse>
+        testIamPermissionsDiskSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -421,13 +461,19 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
 
       getDiskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      getIamPolicyDiskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       insertDiskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listDisksSettings = PagedCallSettings.newBuilder(LIST_DISKS_PAGE_STR_FACT);
 
       resizeDiskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      setIamPolicyDiskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       setLabelsDiskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      testIamPermissionsDiskSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -435,10 +481,13 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
               createSnapshotDiskSettings,
               deleteDiskSettings,
               getDiskSettings,
+              getIamPolicyDiskSettings,
               insertDiskSettings,
               listDisksSettings,
               resizeDiskSettings,
-              setLabelsDiskSettings);
+              setIamPolicyDiskSettings,
+              setLabelsDiskSettings,
+              testIamPermissionsDiskSettings);
 
       initDefaults(this);
     }
@@ -475,6 +524,11 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .getIamPolicyDiskSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .insertDiskSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -490,7 +544,17 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .setIamPolicyDiskSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .setLabelsDiskSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .testIamPermissionsDiskSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -504,10 +568,13 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
       createSnapshotDiskSettings = settings.createSnapshotDiskSettings.toBuilder();
       deleteDiskSettings = settings.deleteDiskSettings.toBuilder();
       getDiskSettings = settings.getDiskSettings.toBuilder();
+      getIamPolicyDiskSettings = settings.getIamPolicyDiskSettings.toBuilder();
       insertDiskSettings = settings.insertDiskSettings.toBuilder();
       listDisksSettings = settings.listDisksSettings.toBuilder();
       resizeDiskSettings = settings.resizeDiskSettings.toBuilder();
+      setIamPolicyDiskSettings = settings.setIamPolicyDiskSettings.toBuilder();
       setLabelsDiskSettings = settings.setLabelsDiskSettings.toBuilder();
+      testIamPermissionsDiskSettings = settings.testIamPermissionsDiskSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -515,10 +582,13 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
               createSnapshotDiskSettings,
               deleteDiskSettings,
               getDiskSettings,
+              getIamPolicyDiskSettings,
               insertDiskSettings,
               listDisksSettings,
               resizeDiskSettings,
-              setLabelsDiskSettings);
+              setIamPolicyDiskSettings,
+              setLabelsDiskSettings,
+              testIamPermissionsDiskSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -560,6 +630,12 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
       return getDiskSettings;
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicyDisk. */
+    public UnaryCallSettings.Builder<GetIamPolicyDiskHttpRequest, Policy>
+        getIamPolicyDiskSettings() {
+      return getIamPolicyDiskSettings;
+    }
+
     /** Returns the builder for the settings used for calls to insertDisk. */
     public UnaryCallSettings.Builder<InsertDiskHttpRequest, Operation> insertDiskSettings() {
       return insertDiskSettings;
@@ -576,9 +652,21 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
       return resizeDiskSettings;
     }
 
+    /** Returns the builder for the settings used for calls to setIamPolicyDisk. */
+    public UnaryCallSettings.Builder<SetIamPolicyDiskHttpRequest, Policy>
+        setIamPolicyDiskSettings() {
+      return setIamPolicyDiskSettings;
+    }
+
     /** Returns the builder for the settings used for calls to setLabelsDisk. */
     public UnaryCallSettings.Builder<SetLabelsDiskHttpRequest, Operation> setLabelsDiskSettings() {
       return setLabelsDiskSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissionsDisk. */
+    public UnaryCallSettings.Builder<TestIamPermissionsDiskHttpRequest, TestPermissionsResponse>
+        testIamPermissionsDiskSettings() {
+      return testIamPermissionsDiskSettings;
     }
 
     @Override

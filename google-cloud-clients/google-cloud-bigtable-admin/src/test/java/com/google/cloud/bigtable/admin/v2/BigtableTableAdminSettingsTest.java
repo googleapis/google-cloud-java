@@ -28,8 +28,8 @@ public class BigtableTableAdminSettingsTest {
   public void testInstanceName() throws IOException {
     InstanceName instanceName = InstanceName.of("my-project", "my-instance");
 
-    BigtableTableAdminSettings.Builder builder = BigtableTableAdminSettings.newBuilder()
-        .setInstanceName(instanceName);
+    BigtableTableAdminSettings.Builder builder =
+        BigtableTableAdminSettings.newBuilder().setInstanceName(instanceName);
 
     assertThat(builder.getInstanceName()).isEqualTo(instanceName);
     assertThat(builder.build().getInstanceName()).isEqualTo(instanceName);
@@ -53,17 +53,22 @@ public class BigtableTableAdminSettingsTest {
   public void testStubSettings() throws IOException {
     InstanceName instanceName = InstanceName.of("my-project", "my-instance");
 
-    BigtableTableAdminSettings.Builder builder = BigtableTableAdminSettings.newBuilder()
-        .setInstanceName(instanceName);
+    BigtableTableAdminSettings.Builder builder =
+        BigtableTableAdminSettings.newBuilder().setInstanceName(instanceName);
 
-    builder.stubSettings().createTableSettings()
-        .setRetryableCodes(Code.INVALID_ARGUMENT);
+    builder.stubSettings().createTableSettings().setRetryableCodes(Code.INVALID_ARGUMENT);
 
     assertThat(builder.build().getStubSettings().createTableSettings().getRetryableCodes())
         .containsExactly(Code.INVALID_ARGUMENT);
 
-    assertThat(builder.build().toBuilder().build().getStubSettings().createTableSettings()
-        .getRetryableCodes())
+    assertThat(
+            builder
+                .build()
+                .toBuilder()
+                .build()
+                .getStubSettings()
+                .createTableSettings()
+                .getRetryableCodes())
         .containsExactly(Code.INVALID_ARGUMENT);
   }
 }

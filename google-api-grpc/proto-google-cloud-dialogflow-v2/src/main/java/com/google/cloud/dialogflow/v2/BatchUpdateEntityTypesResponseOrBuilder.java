@@ -3,20 +3,24 @@
 
 package com.google.cloud.dialogflow.v2;
 
-public interface BatchUpdateEntityTypesResponseOrBuilder extends
+public interface BatchUpdateEntityTypesResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.BatchUpdateEntityTypesResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The collection of updated or created entity types.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.EntityType entity_types = 1;</code>
    */
-  java.util.List<com.google.cloud.dialogflow.v2.EntityType> 
-      getEntityTypesList();
+  java.util.List<com.google.cloud.dialogflow.v2.EntityType> getEntityTypesList();
   /**
+   *
+   *
    * <pre>
    * The collection of updated or created entity types.
    * </pre>
@@ -25,6 +29,8 @@ public interface BatchUpdateEntityTypesResponseOrBuilder extends
    */
   com.google.cloud.dialogflow.v2.EntityType getEntityTypes(int index);
   /**
+   *
+   *
    * <pre>
    * The collection of updated or created entity types.
    * </pre>
@@ -33,21 +39,24 @@ public interface BatchUpdateEntityTypesResponseOrBuilder extends
    */
   int getEntityTypesCount();
   /**
+   *
+   *
    * <pre>
    * The collection of updated or created entity types.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.EntityType entity_types = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.dialogflow.v2.EntityTypeOrBuilder> 
+  java.util.List<? extends com.google.cloud.dialogflow.v2.EntityTypeOrBuilder>
       getEntityTypesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The collection of updated or created entity types.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.EntityType entity_types = 1;</code>
    */
-  com.google.cloud.dialogflow.v2.EntityTypeOrBuilder getEntityTypesOrBuilder(
-      int index);
+  com.google.cloud.dialogflow.v2.EntityTypeOrBuilder getEntityTypesOrBuilder(int index);
 }

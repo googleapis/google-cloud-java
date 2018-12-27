@@ -30,15 +30,16 @@ public class ZoneTest {
   private static final Zone.Status STATUS = Zone.Status.DOWN;
   private static final DeprecationStatus<ZoneId> DEPRECATION_STATUS =
       DeprecationStatus.of(DeprecationStatus.Status.DELETED, ZONE_ID);
-  private static final Zone ZONE = Zone.builder()
-      .setZoneId(ZONE_ID)
-      .setGeneratedId(GENERATED_ID)
-      .setCreationTimestamp(CREATION_TIMESTAMP)
-      .setDescription(DESCRIPTION)
-      .setStatus(STATUS)
-      .setDeprecationStatus(DEPRECATION_STATUS)
-      .setRegion(REGION_ID)
-      .build();
+  private static final Zone ZONE =
+      Zone.builder()
+          .setZoneId(ZONE_ID)
+          .setGeneratedId(GENERATED_ID)
+          .setCreationTimestamp(CREATION_TIMESTAMP)
+          .setDescription(DESCRIPTION)
+          .setStatus(STATUS)
+          .setDeprecationStatus(DEPRECATION_STATUS)
+          .setRegion(REGION_ID)
+          .build();
 
   @Test
   public void testBuilder() {

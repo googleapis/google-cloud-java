@@ -3,11 +3,14 @@
 
 package com.google.cloud.videointelligence.v1beta1;
 
-public interface SafeSearchAnnotationOrBuilder extends
+public interface SafeSearchAnnotationOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.videointelligence.v1beta1.SafeSearchAnnotation)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Likelihood of adult content.
    * </pre>
@@ -16,6 +19,8 @@ public interface SafeSearchAnnotationOrBuilder extends
    */
   int getAdultValue();
   /**
+   *
+   *
    * <pre>
    * Likelihood of adult content.
    * </pre>
@@ -25,6 +30,8 @@ public interface SafeSearchAnnotationOrBuilder extends
   com.google.cloud.videointelligence.v1beta1.Likelihood getAdult();
 
   /**
+   *
+   *
    * <pre>
    * Likelihood that an obvious modification was made to the original
    * version to make it appear funny or offensive.
@@ -34,6 +41,8 @@ public interface SafeSearchAnnotationOrBuilder extends
    */
   int getSpoofValue();
   /**
+   *
+   *
    * <pre>
    * Likelihood that an obvious modification was made to the original
    * version to make it appear funny or offensive.
@@ -44,6 +53,8 @@ public interface SafeSearchAnnotationOrBuilder extends
   com.google.cloud.videointelligence.v1beta1.Likelihood getSpoof();
 
   /**
+   *
+   *
    * <pre>
    * Likelihood of medical content.
    * </pre>
@@ -52,6 +63,8 @@ public interface SafeSearchAnnotationOrBuilder extends
    */
   int getMedicalValue();
   /**
+   *
+   *
    * <pre>
    * Likelihood of medical content.
    * </pre>
@@ -61,6 +74,8 @@ public interface SafeSearchAnnotationOrBuilder extends
   com.google.cloud.videointelligence.v1beta1.Likelihood getMedical();
 
   /**
+   *
+   *
    * <pre>
    * Likelihood of violent content.
    * </pre>
@@ -69,6 +84,8 @@ public interface SafeSearchAnnotationOrBuilder extends
    */
   int getViolentValue();
   /**
+   *
+   *
    * <pre>
    * Likelihood of violent content.
    * </pre>
@@ -78,6 +95,8 @@ public interface SafeSearchAnnotationOrBuilder extends
   com.google.cloud.videointelligence.v1beta1.Likelihood getViolent();
 
   /**
+   *
+   *
    * <pre>
    * Likelihood of racy content.
    * </pre>
@@ -86,6 +105,8 @@ public interface SafeSearchAnnotationOrBuilder extends
    */
   int getRacyValue();
   /**
+   *
+   *
    * <pre>
    * Likelihood of racy content.
    * </pre>
@@ -95,6 +116,8 @@ public interface SafeSearchAnnotationOrBuilder extends
   com.google.cloud.videointelligence.v1beta1.Likelihood getRacy();
 
   /**
+   *
+   *
    * <pre>
    * Video time offset in microseconds.
    * </pre>

@@ -54,60 +54,62 @@ public class ComputeImplTest {
   private static final String VALID_DISK_SIZE = "10GB-10TB";
   private static final Long DEFAULT_DISK_SIZE_GB = 10L;
   private static final DiskTypeId DISK_TYPE_ID = DiskTypeId.of("project", "zone", "diskType");
-  private static final DiskType DISK_TYPE = DiskType.newBuilder()
-      .setGeneratedId(GENERATED_ID)
-      .setDiskTypeId(DISK_TYPE_ID)
-      .setCreationTimestamp(CREATION_TIMESTAMP)
-      .setDescription(DESCRIPTION)
-      .setValidDiskSize(VALID_DISK_SIZE)
-      .setDefaultDiskSizeGb(DEFAULT_DISK_SIZE_GB)
-      .build();
+  private static final DiskType DISK_TYPE =
+      DiskType.newBuilder()
+          .setGeneratedId(GENERATED_ID)
+          .setDiskTypeId(DISK_TYPE_ID)
+          .setCreationTimestamp(CREATION_TIMESTAMP)
+          .setDescription(DESCRIPTION)
+          .setValidDiskSize(VALID_DISK_SIZE)
+          .setDefaultDiskSizeGb(DEFAULT_DISK_SIZE_GB)
+          .build();
   private static final MachineTypeId MACHINE_TYPE_ID = MachineTypeId.of("project", "zone", "type");
   private static final Integer GUEST_CPUS = 1;
   private static final Integer MEMORY_MB = 2;
   private static final List<Integer> SCRATCH_DISKS = ImmutableList.of(3);
   private static final Integer MAXIMUM_PERSISTENT_DISKS = 4;
   private static final Long MAXIMUM_PERSISTENT_DISKS_SIZE_GB = 5L;
-  private static final MachineType MACHINE_TYPE = MachineType.newBuilder()
-      .setGeneratedId(GENERATED_ID)
-      .setMachineTypeId(MACHINE_TYPE_ID)
-      .setCreationTimestamp(CREATION_TIMESTAMP)
-      .setDescription(DESCRIPTION)
-      .setCpus(GUEST_CPUS)
-      .setMemoryMb(MEMORY_MB)
-      .setScratchDisksSizeGb(SCRATCH_DISKS)
-      .setMaximumPersistentDisks(MAXIMUM_PERSISTENT_DISKS)
-      .setMaximumPersistentDisksSizeGb(MAXIMUM_PERSISTENT_DISKS_SIZE_GB)
-      .build();
+  private static final MachineType MACHINE_TYPE =
+      MachineType.newBuilder()
+          .setGeneratedId(GENERATED_ID)
+          .setMachineTypeId(MACHINE_TYPE_ID)
+          .setCreationTimestamp(CREATION_TIMESTAMP)
+          .setDescription(DESCRIPTION)
+          .setCpus(GUEST_CPUS)
+          .setMemoryMb(MEMORY_MB)
+          .setScratchDisksSizeGb(SCRATCH_DISKS)
+          .setMaximumPersistentDisks(MAXIMUM_PERSISTENT_DISKS)
+          .setMaximumPersistentDisksSizeGb(MAXIMUM_PERSISTENT_DISKS_SIZE_GB)
+          .build();
   private static final RegionId REGION_ID = RegionId.of("project", "region");
   private static final Region.Status REGION_STATUS = Region.Status.DOWN;
   private static final ZoneId ZONE_ID1 = ZoneId.of("project", "zone1");
   private static final ZoneId ZONE_ID2 = ZoneId.of("project", "zone2");
   private static final List<ZoneId> ZONES = ImmutableList.of(ZONE_ID1, ZONE_ID2);
-  private static final Region.Quota QUOTA1 =
-      new Region.Quota("METRIC1", 2, 1);
-  private static final Region.Quota QUOTA2 =
-      new Region.Quota("METRIC2", 4, 3);
+  private static final Region.Quota QUOTA1 = new Region.Quota("METRIC1", 2, 1);
+  private static final Region.Quota QUOTA2 = new Region.Quota("METRIC2", 4, 3);
   private static final List<Region.Quota> QUOTAS = ImmutableList.of(QUOTA1, QUOTA2);
-  private static final Region REGION = Region.builder()
-      .setRegionId(REGION_ID)
-      .setGeneratedId(GENERATED_ID)
-      .setCreationTimestamp(CREATION_TIMESTAMP)
-      .setDescription(DESCRIPTION)
-      .setStatus(REGION_STATUS)
-      .setZones(ZONES)
-      .setQuotas(QUOTAS)
-      .build();
+  private static final Region REGION =
+      Region.builder()
+          .setRegionId(REGION_ID)
+          .setGeneratedId(GENERATED_ID)
+          .setCreationTimestamp(CREATION_TIMESTAMP)
+          .setDescription(DESCRIPTION)
+          .setStatus(REGION_STATUS)
+          .setZones(ZONES)
+          .setQuotas(QUOTAS)
+          .build();
   private static final ZoneId ZONE_ID = ZoneId.of("project", "zone");
   private static final Zone.Status ZONE_STATUS = Zone.Status.DOWN;
-  private static final Zone ZONE = Zone.builder()
-      .setZoneId(ZONE_ID)
-      .setGeneratedId(GENERATED_ID)
-      .setCreationTimestamp(CREATION_TIMESTAMP)
-      .setDescription(DESCRIPTION)
-      .setStatus(ZONE_STATUS)
-      .setRegion(REGION_ID)
-      .build();
+  private static final Zone ZONE =
+      Zone.builder()
+          .setZoneId(ZONE_ID)
+          .setGeneratedId(GENERATED_ID)
+          .setCreationTimestamp(CREATION_TIMESTAMP)
+          .setDescription(DESCRIPTION)
+          .setStatus(ZONE_STATUS)
+          .setRegion(REGION_ID)
+          .build();
   private static final LicenseId LICENSE_ID = LicenseId.of("project", "license");
   private static final Boolean CHARGES_USE_FEE = true;
   private static final License LICENSE = new License(LICENSE_ID, CHARGES_USE_FEE);
@@ -144,8 +146,7 @@ public class ComputeImplTest {
       RegionOperationId.of("project", "region", "op");
   private static final RegionAddressId REGION_ADDRESS_ID =
       RegionAddressId.of("project", "region", "address");
-  private static final GlobalAddressId GLOBAL_ADDRESS_ID =
-      GlobalAddressId.of("project", "address");
+  private static final GlobalAddressId GLOBAL_ADDRESS_ID = GlobalAddressId.of("project", "address");
   private static final AddressInfo REGION_ADDRESS =
       AddressInfo.newBuilder(REGION_ADDRESS_ID).build();
   private static final AddressInfo GLOBAL_ADDRESS =
@@ -190,10 +191,11 @@ public class ComputeImplTest {
       Compute.DiskTypeListOption.pageSize(42L);
   private static final Compute.DiskTypeListOption DISK_TYPE_LIST_FILTER =
       Compute.DiskTypeListOption.filter(DISK_TYPE_FILTER);
-  private static final Map<ComputeRpc.Option, ?> DISK_TYPE_LIST_OPTIONS = ImmutableMap.of(
-      ComputeRpc.Option.PAGE_TOKEN, "cursor",
-      ComputeRpc.Option.MAX_RESULTS, 42L,
-      ComputeRpc.Option.FILTER, "description eq someDescription");
+  private static final Map<ComputeRpc.Option, ?> DISK_TYPE_LIST_OPTIONS =
+      ImmutableMap.of(
+          ComputeRpc.Option.PAGE_TOKEN, "cursor",
+          ComputeRpc.Option.MAX_RESULTS, 42L,
+          ComputeRpc.Option.FILTER, "description eq someDescription");
 
   // DiskType aggregated list options
   private static final Compute.DiskTypeAggregatedListOption DISK_TYPE_AGGREGATED_LIST_PAGE_TOKEN =
@@ -205,8 +207,8 @@ public class ComputeImplTest {
 
   // MachineType options
   private static final Compute.MachineTypeOption MACHINE_TYPE_OPTION_FIELDS =
-      Compute.MachineTypeOption.fields(Compute.MachineTypeField.ID,
-          Compute.MachineTypeField.DESCRIPTION);
+      Compute.MachineTypeOption.fields(
+          Compute.MachineTypeField.ID, Compute.MachineTypeField.DESCRIPTION);
 
   // MachineType list options
   private static final Compute.MachineTypeFilter MACHINE_TYPE_FILTER =
@@ -217,18 +219,19 @@ public class ComputeImplTest {
       Compute.MachineTypeListOption.pageSize(42L);
   private static final Compute.MachineTypeListOption MACHINE_TYPE_LIST_FILTER =
       Compute.MachineTypeListOption.filter(MACHINE_TYPE_FILTER);
-  private static final Map<ComputeRpc.Option, ?> MACHINE_TYPE_LIST_OPTIONS = ImmutableMap.of(
-      ComputeRpc.Option.PAGE_TOKEN, "cursor",
-      ComputeRpc.Option.MAX_RESULTS, 42L,
-      ComputeRpc.Option.FILTER, "maximumPersistentDisks ne 42");
+  private static final Map<ComputeRpc.Option, ?> MACHINE_TYPE_LIST_OPTIONS =
+      ImmutableMap.of(
+          ComputeRpc.Option.PAGE_TOKEN, "cursor",
+          ComputeRpc.Option.MAX_RESULTS, 42L,
+          ComputeRpc.Option.FILTER, "maximumPersistentDisks ne 42");
 
   // MachineType aggregated list options
   private static final Compute.MachineTypeAggregatedListOption
       MACHINE_TYPE_AGGREGATED_LIST_PAGE_TOKEN =
-      Compute.MachineTypeAggregatedListOption.pageToken("cursor");
+          Compute.MachineTypeAggregatedListOption.pageToken("cursor");
   private static final Compute.MachineTypeAggregatedListOption
       MACHINE_TYPE_AGGREGATED_LIST_PAGE_SIZE =
-      Compute.MachineTypeAggregatedListOption.pageSize(42L);
+          Compute.MachineTypeAggregatedListOption.pageSize(42L);
   private static final Compute.MachineTypeAggregatedListOption MACHINE_TYPE_AGGREGATED_LIST_FILTER =
       Compute.MachineTypeAggregatedListOption.filter(MACHINE_TYPE_FILTER);
 
@@ -245,10 +248,11 @@ public class ComputeImplTest {
       Compute.RegionListOption.pageSize(42L);
   private static final Compute.RegionListOption REGION_LIST_FILTER =
       Compute.RegionListOption.filter(REGION_FILTER);
-  private static final Map<ComputeRpc.Option, ?> REGION_LIST_OPTIONS = ImmutableMap.of(
-      ComputeRpc.Option.PAGE_TOKEN, "cursor",
-      ComputeRpc.Option.MAX_RESULTS, 42L,
-      ComputeRpc.Option.FILTER, "id eq someId");
+  private static final Map<ComputeRpc.Option, ?> REGION_LIST_OPTIONS =
+      ImmutableMap.of(
+          ComputeRpc.Option.PAGE_TOKEN, "cursor",
+          ComputeRpc.Option.MAX_RESULTS, 42L,
+          ComputeRpc.Option.FILTER, "id eq someId");
 
   // Zone options
   private static final Compute.ZoneOption ZONE_OPTION_FIELDS =
@@ -263,10 +267,11 @@ public class ComputeImplTest {
       Compute.ZoneListOption.pageSize(42L);
   private static final Compute.ZoneListOption ZONE_LIST_FILTER =
       Compute.ZoneListOption.filter(ZONE_FILTER);
-  private static final Map<ComputeRpc.Option, ?> ZONE_LIST_OPTIONS = ImmutableMap.of(
-      ComputeRpc.Option.PAGE_TOKEN, "cursor",
-      ComputeRpc.Option.MAX_RESULTS, 42L,
-      ComputeRpc.Option.FILTER, "name ne someName");
+  private static final Map<ComputeRpc.Option, ?> ZONE_LIST_OPTIONS =
+      ImmutableMap.of(
+          ComputeRpc.Option.PAGE_TOKEN, "cursor",
+          ComputeRpc.Option.MAX_RESULTS, 42L,
+          ComputeRpc.Option.FILTER, "name ne someName");
 
   // License options
   private static final Compute.LicenseOption LICENSE_OPTION_FIELDS =
@@ -285,10 +290,11 @@ public class ComputeImplTest {
       Compute.OperationListOption.pageSize(42L);
   private static final Compute.OperationListOption OPERATION_LIST_FILTER =
       Compute.OperationListOption.filter(OPERATION_FILTER);
-  private static final Map<ComputeRpc.Option, ?> OPERATION_LIST_OPTIONS = ImmutableMap.of(
-      ComputeRpc.Option.PAGE_TOKEN, "cursor",
-      ComputeRpc.Option.MAX_RESULTS, 42L,
-      ComputeRpc.Option.FILTER, "progress ne 0");
+  private static final Map<ComputeRpc.Option, ?> OPERATION_LIST_OPTIONS =
+      ImmutableMap.of(
+          ComputeRpc.Option.PAGE_TOKEN, "cursor",
+          ComputeRpc.Option.MAX_RESULTS, 42L,
+          ComputeRpc.Option.FILTER, "progress ne 0");
 
   // Address options
   private static final Compute.AddressOption ADDRESS_OPTION_FIELDS =
@@ -303,10 +309,11 @@ public class ComputeImplTest {
       Compute.AddressListOption.pageSize(42L);
   private static final Compute.AddressListOption ADDRESS_LIST_FILTER =
       Compute.AddressListOption.filter(ADDRESS_FILTER);
-  private static final Map<ComputeRpc.Option, ?> ADDRESS_LIST_OPTIONS = ImmutableMap.of(
-      ComputeRpc.Option.PAGE_TOKEN, "cursor",
-      ComputeRpc.Option.MAX_RESULTS, 42L,
-      ComputeRpc.Option.FILTER, "region ne someRegion");
+  private static final Map<ComputeRpc.Option, ?> ADDRESS_LIST_OPTIONS =
+      ImmutableMap.of(
+          ComputeRpc.Option.PAGE_TOKEN, "cursor",
+          ComputeRpc.Option.MAX_RESULTS, 42L,
+          ComputeRpc.Option.FILTER, "region ne someRegion");
 
   // Address aggregated list options
   private static final Compute.AddressAggregatedListOption ADDRESS_AGGREGATED_LIST_PAGE_TOKEN =
@@ -329,10 +336,11 @@ public class ComputeImplTest {
       Compute.SnapshotListOption.pageSize(42L);
   private static final Compute.SnapshotListOption SNAPSHOT_LIST_FILTER =
       Compute.SnapshotListOption.filter(SNAPSHOT_FILTER);
-  private static final Map<ComputeRpc.Option, ?> SNAPSHOT_LIST_OPTIONS = ImmutableMap.of(
-      ComputeRpc.Option.PAGE_TOKEN, "cursor",
-      ComputeRpc.Option.MAX_RESULTS, 42L,
-      ComputeRpc.Option.FILTER, "diskSizeGb eq 500");
+  private static final Map<ComputeRpc.Option, ?> SNAPSHOT_LIST_OPTIONS =
+      ImmutableMap.of(
+          ComputeRpc.Option.PAGE_TOKEN, "cursor",
+          ComputeRpc.Option.MAX_RESULTS, 42L,
+          ComputeRpc.Option.FILTER, "diskSizeGb eq 500");
 
   // Image options
   private static final Compute.ImageOption IMAGE_OPTION_FIELDS =
@@ -347,10 +355,11 @@ public class ComputeImplTest {
       Compute.ImageListOption.pageSize(42L);
   private static final Compute.ImageListOption IMAGE_LIST_FILTER =
       Compute.ImageListOption.filter(IMAGE_FILTER);
-  private static final Map<ComputeRpc.Option, ?> IMAGE_LIST_OPTIONS = ImmutableMap.of(
-      ComputeRpc.Option.PAGE_TOKEN, "cursor",
-      ComputeRpc.Option.MAX_RESULTS, 42L,
-      ComputeRpc.Option.FILTER, "diskSizeGb ne 500");
+  private static final Map<ComputeRpc.Option, ?> IMAGE_LIST_OPTIONS =
+      ImmutableMap.of(
+          ComputeRpc.Option.PAGE_TOKEN, "cursor",
+          ComputeRpc.Option.MAX_RESULTS, 42L,
+          ComputeRpc.Option.FILTER, "diskSizeGb ne 500");
 
   // Disk options
   private static final Compute.DiskOption DISK_OPTION_FIELDS =
@@ -365,10 +374,11 @@ public class ComputeImplTest {
       Compute.DiskListOption.pageSize(42L);
   private static final Compute.DiskListOption DISK_LIST_FILTER =
       Compute.DiskListOption.filter(DISK_FILTER);
-  private static final Map<ComputeRpc.Option, ?> DISK_LIST_OPTIONS = ImmutableMap.of(
-      ComputeRpc.Option.PAGE_TOKEN, "cursor",
-      ComputeRpc.Option.MAX_RESULTS, 42L,
-      ComputeRpc.Option.FILTER, "sizeGb ne 500");
+  private static final Map<ComputeRpc.Option, ?> DISK_LIST_OPTIONS =
+      ImmutableMap.of(
+          ComputeRpc.Option.PAGE_TOKEN, "cursor",
+          ComputeRpc.Option.MAX_RESULTS, 42L,
+          ComputeRpc.Option.FILTER, "sizeGb ne 500");
 
   // Disk aggregated list options
   private static final Compute.DiskAggregatedListOption DISK_AGGREGATED_LIST_PAGE_TOKEN =
@@ -380,8 +390,8 @@ public class ComputeImplTest {
 
   // Subnetwork options
   private static final Compute.SubnetworkOption SUBNETWORK_OPTION_FIELDS =
-      Compute.SubnetworkOption.fields(Compute.SubnetworkField.ID,
-          Compute.SubnetworkField.DESCRIPTION);
+      Compute.SubnetworkOption.fields(
+          Compute.SubnetworkField.ID, Compute.SubnetworkField.DESCRIPTION);
 
   // Subnetwork list options
   private static final Compute.SubnetworkFilter SUBNETWORK_FILTER =
@@ -392,15 +402,16 @@ public class ComputeImplTest {
       Compute.SubnetworkListOption.pageSize(42L);
   private static final Compute.SubnetworkListOption SUBNETWORK_LIST_FILTER =
       Compute.SubnetworkListOption.filter(SUBNETWORK_FILTER);
-  private static final Map<ComputeRpc.Option, ?> SUBNETWORK_LIST_OPTIONS = ImmutableMap.of(
-      ComputeRpc.Option.PAGE_TOKEN, "cursor",
-      ComputeRpc.Option.MAX_RESULTS, 42L,
-      ComputeRpc.Option.FILTER, "ipCidrRange eq 192.168.0.0/16");
+  private static final Map<ComputeRpc.Option, ?> SUBNETWORK_LIST_OPTIONS =
+      ImmutableMap.of(
+          ComputeRpc.Option.PAGE_TOKEN, "cursor",
+          ComputeRpc.Option.MAX_RESULTS, 42L,
+          ComputeRpc.Option.FILTER, "ipCidrRange eq 192.168.0.0/16");
 
   // Subnetwork aggregated list options
   private static final Compute.SubnetworkAggregatedListOption
       SUBNETWORK_AGGREGATED_LIST_PAGE_TOKEN =
-      Compute.SubnetworkAggregatedListOption.pageToken("cursor");
+          Compute.SubnetworkAggregatedListOption.pageToken("cursor");
   private static final Compute.SubnetworkAggregatedListOption SUBNETWORK_AGGREGATED_LIST_PAGE_SIZE =
       Compute.SubnetworkAggregatedListOption.pageSize(42L);
   private static final Compute.SubnetworkAggregatedListOption SUBNETWORK_AGGREGATED_LIST_FILTER =
@@ -419,10 +430,11 @@ public class ComputeImplTest {
       Compute.NetworkListOption.pageSize(42L);
   private static final Compute.NetworkListOption NETWORK_LIST_FILTER =
       Compute.NetworkListOption.filter(NETWORK_FILTER);
-  private static final Map<ComputeRpc.Option, ?> NETWORK_LIST_OPTIONS = ImmutableMap.of(
-      ComputeRpc.Option.PAGE_TOKEN, "cursor",
-      ComputeRpc.Option.MAX_RESULTS, 42L,
-      ComputeRpc.Option.FILTER, "IPv4Range eq 192.168.0.0/16");
+  private static final Map<ComputeRpc.Option, ?> NETWORK_LIST_OPTIONS =
+      ImmutableMap.of(
+          ComputeRpc.Option.PAGE_TOKEN, "cursor",
+          ComputeRpc.Option.MAX_RESULTS, 42L,
+          ComputeRpc.Option.FILTER, "IPv4Range eq 192.168.0.0/16");
 
   // Instance options
   private static final Compute.InstanceOption INSTANCE_OPTION_FIELDS =
@@ -437,10 +449,11 @@ public class ComputeImplTest {
       Compute.InstanceListOption.pageSize(42L);
   private static final Compute.InstanceListOption INSTANCE_LIST_FILTER =
       Compute.InstanceListOption.filter(INSTANCE_FILTER);
-  private static final Map<ComputeRpc.Option, ?> INSTANCE_LIST_OPTIONS = ImmutableMap.of(
-      ComputeRpc.Option.PAGE_TOKEN, "cursor",
-      ComputeRpc.Option.MAX_RESULTS, 42L,
-      ComputeRpc.Option.FILTER, "canIpForward eq true");
+  private static final Map<ComputeRpc.Option, ?> INSTANCE_LIST_OPTIONS =
+      ImmutableMap.of(
+          ComputeRpc.Option.PAGE_TOKEN, "cursor",
+          ComputeRpc.Option.MAX_RESULTS, 42L,
+          ComputeRpc.Option.FILTER, "canIpForward eq true");
 
   // Instance aggregated list options
   private static final Compute.InstanceAggregatedListOption INSTANCE_AGGREGATED_LIST_PAGE_TOKEN =
@@ -451,13 +464,13 @@ public class ComputeImplTest {
       Compute.InstanceAggregatedListOption.filter(INSTANCE_FILTER);
 
   private static final Function<Operation, com.google.api.services.compute.model.Operation>
-      OPERATION_TO_PB_FUNCTION = new Function<Operation,
-      com.google.api.services.compute.model.Operation>() {
-    @Override
-    public com.google.api.services.compute.model.Operation apply(Operation operation) {
-      return operation.toPb();
-    }
-  };
+      OPERATION_TO_PB_FUNCTION =
+          new Function<Operation, com.google.api.services.compute.model.Operation>() {
+            @Override
+            public com.google.api.services.compute.model.Operation apply(Operation operation) {
+              return operation.toPb();
+            }
+          };
 
   private ComputeOptions options;
   private ComputeRpcFactory rpcFactoryMock;
@@ -468,82 +481,86 @@ public class ComputeImplTest {
   private Operation zoneOperation;
   private Operation regionOperation;
 
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Before
   public void setUp() {
     rpcFactoryMock = EasyMock.createMock(ComputeRpcFactory.class);
     computeRpcMock = EasyMock.createMock(ComputeRpc.class);
     EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(ComputeOptions.class)))
-        .andReturn(computeRpcMock).times(2);
+        .andReturn(computeRpcMock)
+        .times(2);
     EasyMock.replay(rpcFactoryMock);
-    options = ComputeOptions.newBuilder()
-        .setProjectId(PROJECT)
-        .setServiceRpcFactory(rpcFactoryMock)
-        .setRetrySettings(ServiceOptions.getNoRetrySettings())
-        .build();
+    options =
+        ComputeOptions.newBuilder()
+            .setProjectId(PROJECT)
+            .setServiceRpcFactory(rpcFactoryMock)
+            .setRetrySettings(ServiceOptions.getNoRetrySettings())
+            .build();
     Compute otherService = options.toBuilder().build().getService();
-    globalOperation = new Operation.Builder(otherService)
-        .getGeneratedId(GENERATED_ID)
-        .setOperationId(GLOBAL_OPERATION_ID)
-        .setClientOperationId(CLIENT_OPERATION_ID)
-        .setOperationType(OPERATION_TYPE)
-        .setTargetLink(TARGET_LINK)
-        .setTargetId(TARGET_ID)
-        .setStatus(STATUS)
-        .setStatusMessage(STATUS_MESSAGE)
-        .setUser(USER)
-        .setProgress(PROGRESS)
-        .setInsertTime(INSERT_TIME)
-        .setStartTime(START_TIME)
-        .setEndTime(END_TIME)
-        .setErrors(ERRORS)
-        .setWarnings(WARNINGS)
-        .setHttpErrorStatusCode(HTTP_ERROR_STATUS_CODE)
-        .setHttpErrorMessage(HTTP_ERROR_MESSAGE)
-        .setDescription(DESCRIPTION)
-        .build();
-    zoneOperation = new Operation.Builder(otherService)
-        .getGeneratedId(GENERATED_ID)
-        .setOperationId(ZONE_OPERATION_ID)
-        .setClientOperationId(CLIENT_OPERATION_ID)
-        .setOperationType(OPERATION_TYPE)
-        .setTargetLink(TARGET_LINK)
-        .setTargetId(TARGET_ID)
-        .setStatus(STATUS)
-        .setStatusMessage(STATUS_MESSAGE)
-        .setUser(USER)
-        .setProgress(PROGRESS)
-        .setInsertTime(INSERT_TIME)
-        .setStartTime(START_TIME)
-        .setEndTime(END_TIME)
-        .setErrors(ERRORS)
-        .setWarnings(WARNINGS)
-        .setHttpErrorStatusCode(HTTP_ERROR_STATUS_CODE)
-        .setHttpErrorMessage(HTTP_ERROR_MESSAGE)
-        .setDescription(DESCRIPTION)
-        .build();
-    regionOperation = new Operation.Builder(otherService)
-        .getGeneratedId(GENERATED_ID)
-        .setOperationId(REGION_OPERATION_ID)
-        .setClientOperationId(CLIENT_OPERATION_ID)
-        .setOperationType(OPERATION_TYPE)
-        .setTargetLink(TARGET_LINK)
-        .setTargetId(TARGET_ID)
-        .setStatus(STATUS)
-        .setStatusMessage(STATUS_MESSAGE)
-        .setUser(USER)
-        .setProgress(PROGRESS)
-        .setInsertTime(INSERT_TIME)
-        .setStartTime(START_TIME)
-        .setEndTime(END_TIME)
-        .setErrors(ERRORS)
-        .setWarnings(WARNINGS)
-        .setHttpErrorStatusCode(HTTP_ERROR_STATUS_CODE)
-        .setHttpErrorMessage(HTTP_ERROR_MESSAGE)
-        .setDescription(DESCRIPTION)
-        .build();
+    globalOperation =
+        new Operation.Builder(otherService)
+            .getGeneratedId(GENERATED_ID)
+            .setOperationId(GLOBAL_OPERATION_ID)
+            .setClientOperationId(CLIENT_OPERATION_ID)
+            .setOperationType(OPERATION_TYPE)
+            .setTargetLink(TARGET_LINK)
+            .setTargetId(TARGET_ID)
+            .setStatus(STATUS)
+            .setStatusMessage(STATUS_MESSAGE)
+            .setUser(USER)
+            .setProgress(PROGRESS)
+            .setInsertTime(INSERT_TIME)
+            .setStartTime(START_TIME)
+            .setEndTime(END_TIME)
+            .setErrors(ERRORS)
+            .setWarnings(WARNINGS)
+            .setHttpErrorStatusCode(HTTP_ERROR_STATUS_CODE)
+            .setHttpErrorMessage(HTTP_ERROR_MESSAGE)
+            .setDescription(DESCRIPTION)
+            .build();
+    zoneOperation =
+        new Operation.Builder(otherService)
+            .getGeneratedId(GENERATED_ID)
+            .setOperationId(ZONE_OPERATION_ID)
+            .setClientOperationId(CLIENT_OPERATION_ID)
+            .setOperationType(OPERATION_TYPE)
+            .setTargetLink(TARGET_LINK)
+            .setTargetId(TARGET_ID)
+            .setStatus(STATUS)
+            .setStatusMessage(STATUS_MESSAGE)
+            .setUser(USER)
+            .setProgress(PROGRESS)
+            .setInsertTime(INSERT_TIME)
+            .setStartTime(START_TIME)
+            .setEndTime(END_TIME)
+            .setErrors(ERRORS)
+            .setWarnings(WARNINGS)
+            .setHttpErrorStatusCode(HTTP_ERROR_STATUS_CODE)
+            .setHttpErrorMessage(HTTP_ERROR_MESSAGE)
+            .setDescription(DESCRIPTION)
+            .build();
+    regionOperation =
+        new Operation.Builder(otherService)
+            .getGeneratedId(GENERATED_ID)
+            .setOperationId(REGION_OPERATION_ID)
+            .setClientOperationId(CLIENT_OPERATION_ID)
+            .setOperationType(OPERATION_TYPE)
+            .setTargetLink(TARGET_LINK)
+            .setTargetId(TARGET_ID)
+            .setStatus(STATUS)
+            .setStatusMessage(STATUS_MESSAGE)
+            .setUser(USER)
+            .setProgress(PROGRESS)
+            .setInsertTime(INSERT_TIME)
+            .setStartTime(START_TIME)
+            .setEndTime(END_TIME)
+            .setErrors(ERRORS)
+            .setWarnings(WARNINGS)
+            .setHttpErrorStatusCode(HTTP_ERROR_STATUS_CODE)
+            .setHttpErrorMessage(HTTP_ERROR_MESSAGE)
+            .setDescription(DESCRIPTION)
+            .build();
   }
 
   @After
@@ -560,8 +577,9 @@ public class ComputeImplTest {
 
   @Test
   public void testGetDiskType() {
-    EasyMock.expect(computeRpcMock.getDiskType(
-        DISK_TYPE_ID.getZone(), DISK_TYPE_ID.getType(), EMPTY_RPC_OPTIONS))
+    EasyMock.expect(
+            computeRpcMock.getDiskType(
+                DISK_TYPE_ID.getZone(), DISK_TYPE_ID.getType(), EMPTY_RPC_OPTIONS))
         .andReturn(DISK_TYPE.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -571,8 +589,9 @@ public class ComputeImplTest {
 
   @Test
   public void testGetDiskType_Null() {
-    EasyMock.expect(computeRpcMock.getDiskType(
-        DISK_TYPE_ID.getZone(), DISK_TYPE_ID.getType(), EMPTY_RPC_OPTIONS))
+    EasyMock.expect(
+            computeRpcMock.getDiskType(
+                DISK_TYPE_ID.getZone(), DISK_TYPE_ID.getType(), EMPTY_RPC_OPTIONS))
         .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -581,8 +600,9 @@ public class ComputeImplTest {
 
   @Test
   public void testGetDiskTypeFromDiskTypeId() {
-    EasyMock.expect(computeRpcMock.getDiskType(
-        DISK_TYPE_ID.getZone(), DISK_TYPE_ID.getType(), EMPTY_RPC_OPTIONS))
+    EasyMock.expect(
+            computeRpcMock.getDiskType(
+                DISK_TYPE_ID.getZone(), DISK_TYPE_ID.getType(), EMPTY_RPC_OPTIONS))
         .andReturn(DISK_TYPE.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -594,13 +614,14 @@ public class ComputeImplTest {
   public void testGetDiskTypeWithSelectedFields() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
     EasyMock.expect(
-        computeRpcMock.getDiskType(
-            eq(DISK_TYPE_ID.getZone()), eq(DISK_TYPE_ID.getType()), capture(capturedOptions)))
+            computeRpcMock.getDiskType(
+                eq(DISK_TYPE_ID.getZone()), eq(DISK_TYPE_ID.getType()), capture(capturedOptions)))
         .andReturn(DISK_TYPE.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
-    DiskType diskType = compute.getDiskType(DISK_TYPE_ID.getZone(), DISK_TYPE_ID.getType(),
-        DISK_TYPE_OPTION_FIELDS);
+    DiskType diskType =
+        compute.getDiskType(
+            DISK_TYPE_ID.getZone(), DISK_TYPE_ID.getType(), DISK_TYPE_OPTION_FIELDS);
     String selector =
         (String) capturedOptions.getValue().get(DISK_TYPE_OPTION_FIELDS.getRpcOption());
     assertTrue(selector.contains("selfLink"));
@@ -635,8 +656,7 @@ public class ComputeImplTest {
         Tuple.of(cursor, Iterables.transform(diskTypeList, DiskType.TO_PB_FUNCTION));
     ImmutableList<DiskType> nextDiskTypeList = ImmutableList.of(DISK_TYPE);
     Tuple<String, Iterable<com.google.api.services.compute.model.DiskType>> nextResult =
-        Tuple.of(nextCursor,
-            Iterables.transform(nextDiskTypeList, DiskType.TO_PB_FUNCTION));
+        Tuple.of(nextCursor, Iterables.transform(nextDiskTypeList, DiskType.TO_PB_FUNCTION));
     Map<ComputeRpc.Option, ?> nextOptions = ImmutableMap.of(ComputeRpc.Option.PAGE_TOKEN, cursor);
     EasyMock.expect(computeRpcMock.listDiskTypes(DISK_TYPE_ID.getZone(), EMPTY_RPC_OPTIONS))
         .andReturn(result);
@@ -648,16 +668,15 @@ public class ComputeImplTest {
     assertArrayEquals(diskTypeList.toArray(), Iterables.toArray(page.getValues(), DiskType.class));
     page = page.getNextPage();
     assertEquals(nextCursor, page.getNextPageToken());
-    assertArrayEquals(nextDiskTypeList.toArray(),
-        Iterables.toArray(page.getValues(), DiskType.class));
+    assertArrayEquals(
+        nextDiskTypeList.toArray(), Iterables.toArray(page.getValues(), DiskType.class));
   }
 
   @Test
   public void testListEmptyDiskTypes() {
     ImmutableList<com.google.api.services.compute.model.DiskType> diskTypes = ImmutableList.of();
     Tuple<String, Iterable<com.google.api.services.compute.model.DiskType>> result =
-        Tuple.<String, Iterable<com.google.api.services.compute.model.DiskType>>of(null,
-            diskTypes);
+        Tuple.<String, Iterable<com.google.api.services.compute.model.DiskType>>of(null, diskTypes);
     EasyMock.expect(computeRpcMock.listDiskTypes(DISK_TYPE_ID.getZone(), EMPTY_RPC_OPTIONS))
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
@@ -677,8 +696,12 @@ public class ComputeImplTest {
     EasyMock.expect(computeRpcMock.listDiskTypes(DISK_TYPE_ID.getZone(), DISK_TYPE_LIST_OPTIONS))
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
-    Page<DiskType> page = compute.listDiskTypes(DISK_TYPE_ID.getZone(), DISK_TYPE_LIST_PAGE_SIZE,
-        DISK_TYPE_LIST_PAGE_TOKEN, DISK_TYPE_LIST_FILTER);
+    Page<DiskType> page =
+        compute.listDiskTypes(
+            DISK_TYPE_ID.getZone(),
+            DISK_TYPE_LIST_PAGE_SIZE,
+            DISK_TYPE_LIST_PAGE_TOKEN,
+            DISK_TYPE_LIST_FILTER);
     assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(diskTypeList.toArray(), Iterables.toArray(page.getValues(), DiskType.class));
   }
@@ -707,8 +730,7 @@ public class ComputeImplTest {
         Tuple.of(cursor, Iterables.transform(diskTypeList, DiskType.TO_PB_FUNCTION));
     ImmutableList<DiskType> nextDiskTypeList = ImmutableList.of(DISK_TYPE);
     Tuple<String, Iterable<com.google.api.services.compute.model.DiskType>> nextResult =
-        Tuple.of(nextCursor,
-            Iterables.transform(nextDiskTypeList, DiskType.TO_PB_FUNCTION));
+        Tuple.of(nextCursor, Iterables.transform(nextDiskTypeList, DiskType.TO_PB_FUNCTION));
     Map<ComputeRpc.Option, ?> nextOptions = ImmutableMap.of(ComputeRpc.Option.PAGE_TOKEN, cursor);
     EasyMock.expect(computeRpcMock.listDiskTypes(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.expect(computeRpcMock.listDiskTypes(nextOptions)).andReturn(nextResult);
@@ -718,16 +740,15 @@ public class ComputeImplTest {
     assertArrayEquals(diskTypeList.toArray(), Iterables.toArray(page.getValues(), DiskType.class));
     page = page.getNextPage();
     assertEquals(nextCursor, page.getNextPageToken());
-    assertArrayEquals(nextDiskTypeList.toArray(),
-        Iterables.toArray(page.getValues(), DiskType.class));
+    assertArrayEquals(
+        nextDiskTypeList.toArray(), Iterables.toArray(page.getValues(), DiskType.class));
   }
 
   @Test
   public void testAggregatedListEmptyDiskTypes() {
     ImmutableList<com.google.api.services.compute.model.DiskType> diskTypes = ImmutableList.of();
     Tuple<String, Iterable<com.google.api.services.compute.model.DiskType>> result =
-        Tuple.<String, Iterable<com.google.api.services.compute.model.DiskType>>of(null,
-            diskTypes);
+        Tuple.<String, Iterable<com.google.api.services.compute.model.DiskType>>of(null, diskTypes);
     EasyMock.expect(computeRpcMock.listDiskTypes(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -745,8 +766,11 @@ public class ComputeImplTest {
         Tuple.of(cursor, Iterables.transform(diskTypeList, DiskType.TO_PB_FUNCTION));
     EasyMock.expect(computeRpcMock.listDiskTypes(DISK_TYPE_LIST_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
-    Page<DiskType> page = compute.listDiskTypes(DISK_TYPE_AGGREGATED_LIST_PAGE_SIZE,
-        DISK_TYPE_AGGREGATED_LIST_PAGE_TOKEN, DISK_TYPE_AGGREGATED_LIST_FILTER);
+    Page<DiskType> page =
+        compute.listDiskTypes(
+            DISK_TYPE_AGGREGATED_LIST_PAGE_SIZE,
+            DISK_TYPE_AGGREGATED_LIST_PAGE_TOKEN,
+            DISK_TYPE_AGGREGATED_LIST_FILTER);
     assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(diskTypeList.toArray(), Iterables.toArray(page.getValues(), DiskType.class));
   }
@@ -754,8 +778,8 @@ public class ComputeImplTest {
   @Test
   public void testGetMachineType() {
     EasyMock.expect(
-        computeRpcMock.getMachineType(
-            MACHINE_TYPE_ID.getZone(), MACHINE_TYPE_ID.getType(), EMPTY_RPC_OPTIONS))
+            computeRpcMock.getMachineType(
+                MACHINE_TYPE_ID.getZone(), MACHINE_TYPE_ID.getType(), EMPTY_RPC_OPTIONS))
         .andReturn(MACHINE_TYPE.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -767,8 +791,8 @@ public class ComputeImplTest {
   @Test
   public void testGetMachineType_Null() {
     EasyMock.expect(
-        computeRpcMock.getMachineType(
-            MACHINE_TYPE_ID.getZone(), MACHINE_TYPE_ID.getType(), EMPTY_RPC_OPTIONS))
+            computeRpcMock.getMachineType(
+                MACHINE_TYPE_ID.getZone(), MACHINE_TYPE_ID.getType(), EMPTY_RPC_OPTIONS))
         .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -777,8 +801,9 @@ public class ComputeImplTest {
 
   @Test
   public void testGetMachineTypeFromMachineTypeId() {
-    EasyMock.expect(computeRpcMock.getMachineType(
-        MACHINE_TYPE_ID.getZone(), MACHINE_TYPE_ID.getType(), EMPTY_RPC_OPTIONS))
+    EasyMock.expect(
+            computeRpcMock.getMachineType(
+                MACHINE_TYPE_ID.getZone(), MACHINE_TYPE_ID.getType(), EMPTY_RPC_OPTIONS))
         .andReturn(MACHINE_TYPE.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -790,13 +815,16 @@ public class ComputeImplTest {
   public void testGetMachineTypeWithSelectedFields() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
     EasyMock.expect(
-        computeRpcMock.getMachineType(eq(MACHINE_TYPE_ID.getZone()), eq(MACHINE_TYPE_ID.getType()),
-            capture(capturedOptions)))
+            computeRpcMock.getMachineType(
+                eq(MACHINE_TYPE_ID.getZone()),
+                eq(MACHINE_TYPE_ID.getType()),
+                capture(capturedOptions)))
         .andReturn(MACHINE_TYPE.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
-    MachineType machineType = compute.getMachineType(MACHINE_TYPE_ID.getZone(),
-        MACHINE_TYPE_ID.getType(), MACHINE_TYPE_OPTION_FIELDS);
+    MachineType machineType =
+        compute.getMachineType(
+            MACHINE_TYPE_ID.getZone(), MACHINE_TYPE_ID.getType(), MACHINE_TYPE_OPTION_FIELDS);
     String selector =
         (String) capturedOptions.getValue().get(DISK_TYPE_OPTION_FIELDS.getRpcOption());
     assertTrue(selector.contains("selfLink"));
@@ -812,15 +840,14 @@ public class ComputeImplTest {
     compute = options.getService();
     ImmutableList<MachineType> machineTypeList = ImmutableList.of(MACHINE_TYPE, MACHINE_TYPE);
     Tuple<String, Iterable<com.google.api.services.compute.model.MachineType>> result =
-        Tuple.of(cursor,
-            Iterables.transform(machineTypeList, MachineType.TO_PB_FUNCTION));
+        Tuple.of(cursor, Iterables.transform(machineTypeList, MachineType.TO_PB_FUNCTION));
     EasyMock.expect(computeRpcMock.listMachineTypes(MACHINE_TYPE_ID.getZone(), EMPTY_RPC_OPTIONS))
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<MachineType> page = compute.listMachineTypes(MACHINE_TYPE_ID.getZone());
     assertEquals(cursor, page.getNextPageToken());
-    assertArrayEquals(machineTypeList.toArray(), Iterables.toArray(page.getValues(),
-        MachineType.class));
+    assertArrayEquals(
+        machineTypeList.toArray(), Iterables.toArray(page.getValues(), MachineType.class));
   }
 
   @Test
@@ -830,13 +857,10 @@ public class ComputeImplTest {
     compute = options.getService();
     ImmutableList<MachineType> machineTypeList = ImmutableList.of(MACHINE_TYPE, MACHINE_TYPE);
     Tuple<String, Iterable<com.google.api.services.compute.model.MachineType>> result =
-        Tuple.of(cursor,
-            Iterables.transform(machineTypeList, MachineType.TO_PB_FUNCTION));
+        Tuple.of(cursor, Iterables.transform(machineTypeList, MachineType.TO_PB_FUNCTION));
     ImmutableList<MachineType> nextMachineTypeList = ImmutableList.of(MACHINE_TYPE);
-    Tuple<String, Iterable<com.google.api.services.compute.model.MachineType>>
-        nextResult =
-        Tuple.of(nextCursor,
-            Iterables.transform(nextMachineTypeList, MachineType.TO_PB_FUNCTION));
+    Tuple<String, Iterable<com.google.api.services.compute.model.MachineType>> nextResult =
+        Tuple.of(nextCursor, Iterables.transform(nextMachineTypeList, MachineType.TO_PB_FUNCTION));
     Map<ComputeRpc.Option, ?> nextOptions = ImmutableMap.of(ComputeRpc.Option.PAGE_TOKEN, cursor);
     EasyMock.expect(computeRpcMock.listMachineTypes(MACHINE_TYPE_ID.getZone(), EMPTY_RPC_OPTIONS))
         .andReturn(result);
@@ -845,12 +869,12 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     Page<MachineType> page = compute.listMachineTypes(MACHINE_TYPE_ID.getZone());
     assertEquals(cursor, page.getNextPageToken());
-    assertArrayEquals(machineTypeList.toArray(),
-        Iterables.toArray(page.getValues(), MachineType.class));
+    assertArrayEquals(
+        machineTypeList.toArray(), Iterables.toArray(page.getValues(), MachineType.class));
     page = page.getNextPage();
     assertEquals(nextCursor, page.getNextPageToken());
-    assertArrayEquals(nextMachineTypeList.toArray(),
-        Iterables.toArray(page.getValues(), MachineType.class));
+    assertArrayEquals(
+        nextMachineTypeList.toArray(), Iterables.toArray(page.getValues(), MachineType.class));
   }
 
   @Test
@@ -859,16 +883,15 @@ public class ComputeImplTest {
         ImmutableList.of();
     Tuple<String, Iterable<com.google.api.services.compute.model.MachineType>> result =
         Tuple.<String, Iterable<com.google.api.services.compute.model.MachineType>>of(
-            null,
-            machineTypes);
+            null, machineTypes);
     EasyMock.expect(computeRpcMock.listMachineTypes(MACHINE_TYPE_ID.getZone(), EMPTY_RPC_OPTIONS))
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Page<MachineType> page = compute.listMachineTypes(MACHINE_TYPE_ID.getZone());
     assertNull(page.getNextPageToken());
-    assertArrayEquals(machineTypes.toArray(),
-        Iterables.toArray(page.getValues(), MachineType.class));
+    assertArrayEquals(
+        machineTypes.toArray(), Iterables.toArray(page.getValues(), MachineType.class));
   }
 
   @Test
@@ -877,17 +900,20 @@ public class ComputeImplTest {
     compute = options.getService();
     ImmutableList<MachineType> machineTypeList = ImmutableList.of(MACHINE_TYPE, MACHINE_TYPE);
     Tuple<String, Iterable<com.google.api.services.compute.model.MachineType>> result =
-        Tuple.of(cursor,
-            Iterables.transform(machineTypeList, MachineType.TO_PB_FUNCTION));
+        Tuple.of(cursor, Iterables.transform(machineTypeList, MachineType.TO_PB_FUNCTION));
     EasyMock.expect(
-        computeRpcMock.listMachineTypes(MACHINE_TYPE_ID.getZone(), MACHINE_TYPE_LIST_OPTIONS))
+            computeRpcMock.listMachineTypes(MACHINE_TYPE_ID.getZone(), MACHINE_TYPE_LIST_OPTIONS))
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
-    Page<MachineType> page = compute.listMachineTypes(MACHINE_TYPE_ID.getZone(),
-        MACHINE_TYPE_LIST_PAGE_SIZE, MACHINE_TYPE_LIST_PAGE_TOKEN, MACHINE_TYPE_LIST_FILTER);
+    Page<MachineType> page =
+        compute.listMachineTypes(
+            MACHINE_TYPE_ID.getZone(),
+            MACHINE_TYPE_LIST_PAGE_SIZE,
+            MACHINE_TYPE_LIST_PAGE_TOKEN,
+            MACHINE_TYPE_LIST_FILTER);
     assertEquals(cursor, page.getNextPageToken());
-    assertArrayEquals(machineTypeList.toArray(),
-        Iterables.toArray(page.getValues(), MachineType.class));
+    assertArrayEquals(
+        machineTypeList.toArray(), Iterables.toArray(page.getValues(), MachineType.class));
   }
 
   @Test
@@ -896,14 +922,13 @@ public class ComputeImplTest {
     compute = options.getService();
     ImmutableList<MachineType> machineTypeList = ImmutableList.of(MACHINE_TYPE, MACHINE_TYPE);
     Tuple<String, Iterable<com.google.api.services.compute.model.MachineType>> result =
-        Tuple.of(cursor,
-            Iterables.transform(machineTypeList, MachineType.TO_PB_FUNCTION));
+        Tuple.of(cursor, Iterables.transform(machineTypeList, MachineType.TO_PB_FUNCTION));
     EasyMock.expect(computeRpcMock.listMachineTypes(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<MachineType> page = compute.listMachineTypes();
     assertEquals(cursor, page.getNextPageToken());
-    assertArrayEquals(machineTypeList.toArray(), Iterables.toArray(page.getValues(),
-        MachineType.class));
+    assertArrayEquals(
+        machineTypeList.toArray(), Iterables.toArray(page.getValues(), MachineType.class));
   }
 
   @Test
@@ -913,25 +938,22 @@ public class ComputeImplTest {
     compute = options.getService();
     ImmutableList<MachineType> machineTypeList = ImmutableList.of(MACHINE_TYPE, MACHINE_TYPE);
     Tuple<String, Iterable<com.google.api.services.compute.model.MachineType>> result =
-        Tuple.of(cursor,
-            Iterables.transform(machineTypeList, MachineType.TO_PB_FUNCTION));
+        Tuple.of(cursor, Iterables.transform(machineTypeList, MachineType.TO_PB_FUNCTION));
     ImmutableList<MachineType> nextMachineTypeList = ImmutableList.of(MACHINE_TYPE);
-    Tuple<String, Iterable<com.google.api.services.compute.model.MachineType>>
-        nextResult =
-        Tuple.of(nextCursor,
-            Iterables.transform(nextMachineTypeList, MachineType.TO_PB_FUNCTION));
+    Tuple<String, Iterable<com.google.api.services.compute.model.MachineType>> nextResult =
+        Tuple.of(nextCursor, Iterables.transform(nextMachineTypeList, MachineType.TO_PB_FUNCTION));
     Map<ComputeRpc.Option, ?> nextOptions = ImmutableMap.of(ComputeRpc.Option.PAGE_TOKEN, cursor);
     EasyMock.expect(computeRpcMock.listMachineTypes(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.expect(computeRpcMock.listMachineTypes(nextOptions)).andReturn(nextResult);
     EasyMock.replay(computeRpcMock);
     Page<MachineType> page = compute.listMachineTypes();
     assertEquals(cursor, page.getNextPageToken());
-    assertArrayEquals(machineTypeList.toArray(),
-        Iterables.toArray(page.getValues(), MachineType.class));
+    assertArrayEquals(
+        machineTypeList.toArray(), Iterables.toArray(page.getValues(), MachineType.class));
     page = page.getNextPage();
     assertEquals(nextCursor, page.getNextPageToken());
-    assertArrayEquals(nextMachineTypeList.toArray(),
-        Iterables.toArray(page.getValues(), MachineType.class));
+    assertArrayEquals(
+        nextMachineTypeList.toArray(), Iterables.toArray(page.getValues(), MachineType.class));
   }
 
   @Test
@@ -940,15 +962,14 @@ public class ComputeImplTest {
         ImmutableList.of();
     Tuple<String, Iterable<com.google.api.services.compute.model.MachineType>> result =
         Tuple.<String, Iterable<com.google.api.services.compute.model.MachineType>>of(
-            null,
-            machineTypes);
+            null, machineTypes);
     EasyMock.expect(computeRpcMock.listMachineTypes(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Page<MachineType> page = compute.listMachineTypes();
     assertNull(page.getNextPageToken());
-    assertArrayEquals(machineTypes.toArray(),
-        Iterables.toArray(page.getValues(), MachineType.class));
+    assertArrayEquals(
+        machineTypes.toArray(), Iterables.toArray(page.getValues(), MachineType.class));
   }
 
   @Test
@@ -957,16 +978,17 @@ public class ComputeImplTest {
     compute = options.getService();
     ImmutableList<MachineType> machineTypeList = ImmutableList.of(MACHINE_TYPE, MACHINE_TYPE);
     Tuple<String, Iterable<com.google.api.services.compute.model.MachineType>> result =
-        Tuple.of(cursor,
-            Iterables.transform(machineTypeList, MachineType.TO_PB_FUNCTION));
-    EasyMock.expect(computeRpcMock.listMachineTypes(MACHINE_TYPE_LIST_OPTIONS))
-        .andReturn(result);
+        Tuple.of(cursor, Iterables.transform(machineTypeList, MachineType.TO_PB_FUNCTION));
+    EasyMock.expect(computeRpcMock.listMachineTypes(MACHINE_TYPE_LIST_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
-    Page<MachineType> page = compute.listMachineTypes(MACHINE_TYPE_AGGREGATED_LIST_PAGE_SIZE,
-        MACHINE_TYPE_AGGREGATED_LIST_PAGE_TOKEN, MACHINE_TYPE_AGGREGATED_LIST_FILTER);
+    Page<MachineType> page =
+        compute.listMachineTypes(
+            MACHINE_TYPE_AGGREGATED_LIST_PAGE_SIZE,
+            MACHINE_TYPE_AGGREGATED_LIST_PAGE_TOKEN,
+            MACHINE_TYPE_AGGREGATED_LIST_FILTER);
     assertEquals(cursor, page.getNextPageToken());
-    assertArrayEquals(machineTypeList.toArray(),
-        Iterables.toArray(page.getValues(), MachineType.class));
+    assertArrayEquals(
+        machineTypeList.toArray(), Iterables.toArray(page.getValues(), MachineType.class));
   }
 
   @Test
@@ -1045,8 +1067,7 @@ public class ComputeImplTest {
   public void testListEmptyRegions() {
     ImmutableList<com.google.api.services.compute.model.Region> regions = ImmutableList.of();
     Tuple<String, Iterable<com.google.api.services.compute.model.Region>> result =
-        Tuple.<String, Iterable<com.google.api.services.compute.model.Region>>of(null,
-            regions);
+        Tuple.<String, Iterable<com.google.api.services.compute.model.Region>>of(null, regions);
     EasyMock.expect(computeRpcMock.listRegions(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -1064,8 +1085,8 @@ public class ComputeImplTest {
         Tuple.of(cursor, Iterables.transform(regionList, Region.TO_PB_FUNCTION));
     EasyMock.expect(computeRpcMock.listRegions(REGION_LIST_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
-    Page<Region> page = compute.listRegions(REGION_LIST_PAGE_SIZE, REGION_LIST_PAGE_TOKEN,
-        REGION_LIST_FILTER);
+    Page<Region> page =
+        compute.listRegions(REGION_LIST_PAGE_SIZE, REGION_LIST_PAGE_TOKEN, REGION_LIST_FILTER);
     assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(regionList.toArray(), Iterables.toArray(page.getValues(), Region.class));
   }
@@ -1145,8 +1166,7 @@ public class ComputeImplTest {
   public void testListEmptyZones() {
     ImmutableList<com.google.api.services.compute.model.Zone> zones = ImmutableList.of();
     Tuple<String, Iterable<com.google.api.services.compute.model.Zone>> result =
-        Tuple.<String, Iterable<com.google.api.services.compute.model.Zone>>of(null,
-            zones);
+        Tuple.<String, Iterable<com.google.api.services.compute.model.Zone>>of(null, zones);
     EasyMock.expect(computeRpcMock.listZones(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -1192,8 +1212,9 @@ public class ComputeImplTest {
   @Test
   public void testGetLicenseFromStringWithOptions() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.getLicense(
-        eq(PROJECT), eq(LICENSE_ID.getLicense()), capture(capturedOptions)))
+    EasyMock.expect(
+            computeRpcMock.getLicense(
+                eq(PROJECT), eq(LICENSE_ID.getLicense()), capture(capturedOptions)))
         .andReturn(LICENSE.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -1210,8 +1231,9 @@ public class ComputeImplTest {
   public void testGetLicenseFromIdWithOptions() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
     LicenseId licenseId = LicenseId.of("project2", "license2");
-    EasyMock.expect(computeRpcMock.getLicense(
-        eq(licenseId.getProject()), eq(licenseId.getLicense()), capture(capturedOptions)))
+    EasyMock.expect(
+            computeRpcMock.getLicense(
+                eq(licenseId.getProject()), eq(licenseId.getLicense()), capture(capturedOptions)))
         .andReturn(LICENSE.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -1227,8 +1249,10 @@ public class ComputeImplTest {
   @Test
   public void testGetLicenseFromId() {
     LicenseId licenseId = LicenseId.of("project2", "license2");
-    EasyMock.expect(computeRpcMock.getLicense(licenseId.getProject(), licenseId.getLicense(),
-        EMPTY_RPC_OPTIONS)).andReturn(LICENSE.toPb());
+    EasyMock.expect(
+            computeRpcMock.getLicense(
+                licenseId.getProject(), licenseId.getLicense(), EMPTY_RPC_OPTIONS))
+        .andReturn(LICENSE.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     License license = compute.getLicense(licenseId);
@@ -1238,8 +1262,9 @@ public class ComputeImplTest {
   @Test
   public void testGetLicenseFromId_Null() {
     LicenseId licenseId = LicenseId.of("project2", "license2");
-    EasyMock.expect(computeRpcMock.getLicense(
-        licenseId.getProject(), licenseId.getLicense(), EMPTY_RPC_OPTIONS))
+    EasyMock.expect(
+            computeRpcMock.getLicense(
+                licenseId.getProject(), licenseId.getLicense(), EMPTY_RPC_OPTIONS))
         .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -1249,7 +1274,8 @@ public class ComputeImplTest {
   @Test
   public void testGetGlobalOperation() {
     EasyMock.expect(
-        computeRpcMock.getGlobalOperation(GLOBAL_OPERATION_ID.getOperation(), EMPTY_RPC_OPTIONS))
+            computeRpcMock.getGlobalOperation(
+                GLOBAL_OPERATION_ID.getOperation(), EMPTY_RPC_OPTIONS))
         .andReturn(globalOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -1259,7 +1285,8 @@ public class ComputeImplTest {
   @Test
   public void testGetGlobalOperation_Null() {
     EasyMock.expect(
-        computeRpcMock.getGlobalOperation(GLOBAL_OPERATION_ID.getOperation(), EMPTY_RPC_OPTIONS))
+            computeRpcMock.getGlobalOperation(
+                GLOBAL_OPERATION_ID.getOperation(), EMPTY_RPC_OPTIONS))
         .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -1269,8 +1296,9 @@ public class ComputeImplTest {
   @Test
   public void testGetGlobalOperationWithSelectedFields() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.getGlobalOperation(
-        eq(GLOBAL_OPERATION_ID.getOperation()), capture(capturedOptions)))
+    EasyMock.expect(
+            computeRpcMock.getGlobalOperation(
+                eq(GLOBAL_OPERATION_ID.getOperation()), capture(capturedOptions)))
         .andReturn(globalOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -1295,8 +1323,8 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     Page<Operation> page = compute.listGlobalOperations();
     assertEquals(cursor, page.getNextPageToken());
-    assertArrayEquals(operationList.toArray(),
-        Iterables.toArray(page.getValues(), Operation.class));
+    assertArrayEquals(
+        operationList.toArray(), Iterables.toArray(page.getValues(), Operation.class));
   }
 
   @Test
@@ -1309,28 +1337,27 @@ public class ComputeImplTest {
     Tuple<String, Iterable<com.google.api.services.compute.model.Operation>> result =
         Tuple.of(cursor, Iterables.transform(operationList, OPERATION_TO_PB_FUNCTION));
     Tuple<String, Iterable<com.google.api.services.compute.model.Operation>> nextResult =
-        Tuple.of(nextCursor,
-            Iterables.transform(nextOperationList, OPERATION_TO_PB_FUNCTION));
+        Tuple.of(nextCursor, Iterables.transform(nextOperationList, OPERATION_TO_PB_FUNCTION));
     Map<ComputeRpc.Option, ?> nextOptions = ImmutableMap.of(ComputeRpc.Option.PAGE_TOKEN, cursor);
     EasyMock.expect(computeRpcMock.listGlobalOperations(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.expect(computeRpcMock.listGlobalOperations(nextOptions)).andReturn(nextResult);
     EasyMock.replay(computeRpcMock);
     Page<Operation> page = compute.listGlobalOperations();
     assertEquals(cursor, page.getNextPageToken());
-    assertArrayEquals(operationList.toArray(),
-        Iterables.toArray(page.getValues(), Operation.class));
+    assertArrayEquals(
+        operationList.toArray(), Iterables.toArray(page.getValues(), Operation.class));
     page = page.getNextPage();
     assertEquals(nextCursor, page.getNextPageToken());
-    assertArrayEquals(nextOperationList.toArray(),
-        Iterables.toArray(page.getValues(), Operation.class));
+    assertArrayEquals(
+        nextOperationList.toArray(), Iterables.toArray(page.getValues(), Operation.class));
   }
 
   @Test
   public void testListEmptyGlobalOperations() {
     ImmutableList<com.google.api.services.compute.model.Operation> operations = ImmutableList.of();
     Tuple<String, Iterable<com.google.api.services.compute.model.Operation>> result =
-        Tuple.<String, Iterable<com.google.api.services.compute.model.Operation>>of(null,
-            operations);
+        Tuple.<String, Iterable<com.google.api.services.compute.model.Operation>>of(
+            null, operations);
     EasyMock.expect(computeRpcMock.listGlobalOperations(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -1348,11 +1375,12 @@ public class ComputeImplTest {
         Tuple.of(cursor, Iterables.transform(operationList, OPERATION_TO_PB_FUNCTION));
     EasyMock.expect(computeRpcMock.listGlobalOperations(OPERATION_LIST_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
-    Page<Operation> page = compute.listGlobalOperations(OPERATION_LIST_PAGE_SIZE,
-        OPERATION_LIST_PAGE_TOKEN, OPERATION_LIST_FILTER);
+    Page<Operation> page =
+        compute.listGlobalOperations(
+            OPERATION_LIST_PAGE_SIZE, OPERATION_LIST_PAGE_TOKEN, OPERATION_LIST_FILTER);
     assertEquals(cursor, page.getNextPageToken());
-    assertArrayEquals(operationList.toArray(),
-        Iterables.toArray(page.getValues(), Operation.class));
+    assertArrayEquals(
+        operationList.toArray(), Iterables.toArray(page.getValues(), Operation.class));
   }
 
   @Test
@@ -1375,8 +1403,11 @@ public class ComputeImplTest {
 
   @Test
   public void testGetRegionOperation() {
-    EasyMock.expect(computeRpcMock.getRegionOperation(REGION_OPERATION_ID.getRegion(),
-        REGION_OPERATION_ID.getOperation(), EMPTY_RPC_OPTIONS))
+    EasyMock.expect(
+            computeRpcMock.getRegionOperation(
+                REGION_OPERATION_ID.getRegion(),
+                REGION_OPERATION_ID.getOperation(),
+                EMPTY_RPC_OPTIONS))
         .andReturn(regionOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -1386,8 +1417,11 @@ public class ComputeImplTest {
 
   @Test
   public void testGetRegionOperation_Null() {
-    EasyMock.expect(computeRpcMock.getRegionOperation(REGION_OPERATION_ID.getRegion(),
-        REGION_OPERATION_ID.getOperation(), EMPTY_RPC_OPTIONS))
+    EasyMock.expect(
+            computeRpcMock.getRegionOperation(
+                REGION_OPERATION_ID.getRegion(),
+                REGION_OPERATION_ID.getOperation(),
+                EMPTY_RPC_OPTIONS))
         .andReturn(regionOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -1398,8 +1432,11 @@ public class ComputeImplTest {
   @Test
   public void testGetRegionOperationWithSelectedFields() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.getRegionOperation(eq(REGION_OPERATION_ID.getRegion()),
-        eq(REGION_OPERATION_ID.getOperation()), capture(capturedOptions)))
+    EasyMock.expect(
+            computeRpcMock.getRegionOperation(
+                eq(REGION_OPERATION_ID.getRegion()),
+                eq(REGION_OPERATION_ID.getOperation()),
+                capture(capturedOptions)))
         .andReturn(regionOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -1421,13 +1458,13 @@ public class ComputeImplTest {
     Tuple<String, Iterable<com.google.api.services.compute.model.Operation>> result =
         Tuple.of(cursor, Iterables.transform(operationList, OPERATION_TO_PB_FUNCTION));
     EasyMock.expect(
-        computeRpcMock.listRegionOperations(REGION_OPERATION_ID.getRegion(), EMPTY_RPC_OPTIONS))
+            computeRpcMock.listRegionOperations(REGION_OPERATION_ID.getRegion(), EMPTY_RPC_OPTIONS))
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Operation> page = compute.listRegionOperations(REGION_OPERATION_ID.getRegion());
     assertEquals(cursor, page.getNextPageToken());
-    assertArrayEquals(operationList.toArray(),
-        Iterables.toArray(page.getValues(), Operation.class));
+    assertArrayEquals(
+        operationList.toArray(), Iterables.toArray(page.getValues(), Operation.class));
   }
 
   @Test
@@ -1440,32 +1477,33 @@ public class ComputeImplTest {
     Tuple<String, Iterable<com.google.api.services.compute.model.Operation>> result =
         Tuple.of(cursor, Iterables.transform(operationList, OPERATION_TO_PB_FUNCTION));
     Tuple<String, Iterable<com.google.api.services.compute.model.Operation>> nextResult =
-        Tuple.of(nextCursor,
-            Iterables.transform(nextOperationList, OPERATION_TO_PB_FUNCTION));
+        Tuple.of(nextCursor, Iterables.transform(nextOperationList, OPERATION_TO_PB_FUNCTION));
     Map<ComputeRpc.Option, ?> nextOptions = ImmutableMap.of(ComputeRpc.Option.PAGE_TOKEN, cursor);
-    EasyMock.expect(computeRpcMock.listRegionOperations(REGION_OPERATION_ID.getRegion(),
-        EMPTY_RPC_OPTIONS)).andReturn(result);
-    EasyMock.expect(computeRpcMock.listRegionOperations(REGION_OPERATION_ID.getRegion(),
-        nextOptions)).andReturn(nextResult);
+    EasyMock.expect(
+            computeRpcMock.listRegionOperations(REGION_OPERATION_ID.getRegion(), EMPTY_RPC_OPTIONS))
+        .andReturn(result);
+    EasyMock.expect(
+            computeRpcMock.listRegionOperations(REGION_OPERATION_ID.getRegion(), nextOptions))
+        .andReturn(nextResult);
     EasyMock.replay(computeRpcMock);
     Page<Operation> page = compute.listRegionOperations(REGION_OPERATION_ID.getRegion());
     assertEquals(cursor, page.getNextPageToken());
-    assertArrayEquals(operationList.toArray(),
-        Iterables.toArray(page.getValues(), Operation.class));
+    assertArrayEquals(
+        operationList.toArray(), Iterables.toArray(page.getValues(), Operation.class));
     page = page.getNextPage();
     assertEquals(nextCursor, page.getNextPageToken());
-    assertArrayEquals(nextOperationList.toArray(),
-        Iterables.toArray(page.getValues(), Operation.class));
+    assertArrayEquals(
+        nextOperationList.toArray(), Iterables.toArray(page.getValues(), Operation.class));
   }
 
   @Test
   public void testListEmptyRegionOperations() {
     ImmutableList<com.google.api.services.compute.model.Operation> operations = ImmutableList.of();
     Tuple<String, Iterable<com.google.api.services.compute.model.Operation>> result =
-        Tuple.<String, Iterable<com.google.api.services.compute.model.Operation>>of(null,
-            operations);
+        Tuple.<String, Iterable<com.google.api.services.compute.model.Operation>>of(
+            null, operations);
     EasyMock.expect(
-        computeRpcMock.listRegionOperations(REGION_OPERATION_ID.getRegion(), EMPTY_RPC_OPTIONS))
+            computeRpcMock.listRegionOperations(REGION_OPERATION_ID.getRegion(), EMPTY_RPC_OPTIONS))
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -1481,21 +1519,28 @@ public class ComputeImplTest {
     ImmutableList<Operation> operationList = ImmutableList.of(regionOperation, regionOperation);
     Tuple<String, Iterable<com.google.api.services.compute.model.Operation>> result =
         Tuple.of(cursor, Iterables.transform(operationList, OPERATION_TO_PB_FUNCTION));
-    EasyMock.expect(computeRpcMock.listRegionOperations(
-        REGION_OPERATION_ID.getRegion(), OPERATION_LIST_OPTIONS))
+    EasyMock.expect(
+            computeRpcMock.listRegionOperations(
+                REGION_OPERATION_ID.getRegion(), OPERATION_LIST_OPTIONS))
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
-    Page<Operation> page = compute.listRegionOperations(REGION_OPERATION_ID.getRegion(),
-        OPERATION_LIST_PAGE_SIZE, OPERATION_LIST_PAGE_TOKEN, OPERATION_LIST_FILTER);
+    Page<Operation> page =
+        compute.listRegionOperations(
+            REGION_OPERATION_ID.getRegion(),
+            OPERATION_LIST_PAGE_SIZE,
+            OPERATION_LIST_PAGE_TOKEN,
+            OPERATION_LIST_FILTER);
     assertEquals(cursor, page.getNextPageToken());
-    assertArrayEquals(operationList.toArray(),
-        Iterables.toArray(page.getValues(), Operation.class));
+    assertArrayEquals(
+        operationList.toArray(), Iterables.toArray(page.getValues(), Operation.class));
   }
 
   @Test
   public void testDeleteRegionOperation_True() {
-    EasyMock.expect(computeRpcMock.deleteRegionOperation(REGION_OPERATION_ID.getRegion(),
-        REGION_OPERATION_ID.getOperation())).andReturn(true);
+    EasyMock.expect(
+            computeRpcMock.deleteRegionOperation(
+                REGION_OPERATION_ID.getRegion(), REGION_OPERATION_ID.getOperation()))
+        .andReturn(true);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertTrue(compute.deleteOperation(REGION_OPERATION_ID));
@@ -1503,8 +1548,10 @@ public class ComputeImplTest {
 
   @Test
   public void testDeleteRegionOperation_False() {
-    EasyMock.expect(computeRpcMock.deleteRegionOperation(REGION_OPERATION_ID.getRegion(),
-        REGION_OPERATION_ID.getOperation())).andReturn(false);
+    EasyMock.expect(
+            computeRpcMock.deleteRegionOperation(
+                REGION_OPERATION_ID.getRegion(), REGION_OPERATION_ID.getOperation()))
+        .andReturn(false);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertFalse(compute.deleteOperation(REGION_OPERATION_ID));
@@ -1512,8 +1559,10 @@ public class ComputeImplTest {
 
   @Test
   public void testGetZoneOperation() {
-    EasyMock.expect(computeRpcMock.getZoneOperation(ZONE_OPERATION_ID.getZone(),
-        ZONE_OPERATION_ID.getOperation(), EMPTY_RPC_OPTIONS)).andReturn(zoneOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.getZoneOperation(
+                ZONE_OPERATION_ID.getZone(), ZONE_OPERATION_ID.getOperation(), EMPTY_RPC_OPTIONS))
+        .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Operation operation = compute.getOperation(ZONE_OPERATION_ID);
@@ -1522,8 +1571,10 @@ public class ComputeImplTest {
 
   @Test
   public void testGetZoneOperation_Null() {
-    EasyMock.expect(computeRpcMock.getZoneOperation(ZONE_OPERATION_ID.getZone(),
-        ZONE_OPERATION_ID.getOperation(), EMPTY_RPC_OPTIONS)).andReturn(null);
+    EasyMock.expect(
+            computeRpcMock.getZoneOperation(
+                ZONE_OPERATION_ID.getZone(), ZONE_OPERATION_ID.getOperation(), EMPTY_RPC_OPTIONS))
+        .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertNull(compute.getOperation(ZONE_OPERATION_ID));
@@ -1532,8 +1583,11 @@ public class ComputeImplTest {
   @Test
   public void testGetZoneOperationWithSelectedFields() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.getZoneOperation(eq(ZONE_OPERATION_ID.getZone()),
-        eq(ZONE_OPERATION_ID.getOperation()), capture(capturedOptions)))
+    EasyMock.expect(
+            computeRpcMock.getZoneOperation(
+                eq(ZONE_OPERATION_ID.getZone()),
+                eq(ZONE_OPERATION_ID.getOperation()),
+                capture(capturedOptions)))
         .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -1555,13 +1609,13 @@ public class ComputeImplTest {
     Tuple<String, Iterable<com.google.api.services.compute.model.Operation>> result =
         Tuple.of(cursor, Iterables.transform(operationList, OPERATION_TO_PB_FUNCTION));
     EasyMock.expect(
-        computeRpcMock.listZoneOperations(ZONE_OPERATION_ID.getZone(), EMPTY_RPC_OPTIONS))
+            computeRpcMock.listZoneOperations(ZONE_OPERATION_ID.getZone(), EMPTY_RPC_OPTIONS))
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Operation> page = compute.listZoneOperations(ZONE_OPERATION_ID.getZone());
     assertEquals(cursor, page.getNextPageToken());
-    assertArrayEquals(operationList.toArray(),
-        Iterables.toArray(page.getValues(), Operation.class));
+    assertArrayEquals(
+        operationList.toArray(), Iterables.toArray(page.getValues(), Operation.class));
   }
 
   @Test
@@ -1574,33 +1628,32 @@ public class ComputeImplTest {
     Tuple<String, Iterable<com.google.api.services.compute.model.Operation>> result =
         Tuple.of(cursor, Iterables.transform(operationList, OPERATION_TO_PB_FUNCTION));
     Tuple<String, Iterable<com.google.api.services.compute.model.Operation>> nextResult =
-        Tuple.of(nextCursor,
-            Iterables.transform(nextOperationList, OPERATION_TO_PB_FUNCTION));
+        Tuple.of(nextCursor, Iterables.transform(nextOperationList, OPERATION_TO_PB_FUNCTION));
     Map<ComputeRpc.Option, ?> nextOptions = ImmutableMap.of(ComputeRpc.Option.PAGE_TOKEN, cursor);
-    EasyMock.expect(computeRpcMock.listZoneOperations(
-        ZONE_OPERATION_ID.getZone(), EMPTY_RPC_OPTIONS))
+    EasyMock.expect(
+            computeRpcMock.listZoneOperations(ZONE_OPERATION_ID.getZone(), EMPTY_RPC_OPTIONS))
         .andReturn(result);
     EasyMock.expect(computeRpcMock.listZoneOperations(ZONE_OPERATION_ID.getZone(), nextOptions))
         .andReturn(nextResult);
     EasyMock.replay(computeRpcMock);
     Page<Operation> page = compute.listZoneOperations(ZONE_OPERATION_ID.getZone());
     assertEquals(cursor, page.getNextPageToken());
-    assertArrayEquals(operationList.toArray(),
-        Iterables.toArray(page.getValues(), Operation.class));
+    assertArrayEquals(
+        operationList.toArray(), Iterables.toArray(page.getValues(), Operation.class));
     page = page.getNextPage();
     assertEquals(nextCursor, page.getNextPageToken());
-    assertArrayEquals(nextOperationList.toArray(),
-        Iterables.toArray(page.getValues(), Operation.class));
+    assertArrayEquals(
+        nextOperationList.toArray(), Iterables.toArray(page.getValues(), Operation.class));
   }
 
   @Test
   public void testListEmptyZoneOperations() {
     ImmutableList<com.google.api.services.compute.model.Operation> operations = ImmutableList.of();
     Tuple<String, Iterable<com.google.api.services.compute.model.Operation>> result =
-        Tuple.<String, Iterable<com.google.api.services.compute.model.Operation>>of(null,
-            operations);
+        Tuple.<String, Iterable<com.google.api.services.compute.model.Operation>>of(
+            null, operations);
     EasyMock.expect(
-        computeRpcMock.listZoneOperations(ZONE_OPERATION_ID.getZone(), EMPTY_RPC_OPTIONS))
+            computeRpcMock.listZoneOperations(ZONE_OPERATION_ID.getZone(), EMPTY_RPC_OPTIONS))
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -1617,20 +1670,26 @@ public class ComputeImplTest {
     Tuple<String, Iterable<com.google.api.services.compute.model.Operation>> result =
         Tuple.of(cursor, Iterables.transform(operationList, OPERATION_TO_PB_FUNCTION));
     EasyMock.expect(
-        computeRpcMock.listZoneOperations(ZONE_OPERATION_ID.getZone(), OPERATION_LIST_OPTIONS))
+            computeRpcMock.listZoneOperations(ZONE_OPERATION_ID.getZone(), OPERATION_LIST_OPTIONS))
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
-    Page<Operation> page = compute.listZoneOperations(ZONE_OPERATION_ID.getZone(),
-        OPERATION_LIST_PAGE_SIZE, OPERATION_LIST_PAGE_TOKEN, OPERATION_LIST_FILTER);
+    Page<Operation> page =
+        compute.listZoneOperations(
+            ZONE_OPERATION_ID.getZone(),
+            OPERATION_LIST_PAGE_SIZE,
+            OPERATION_LIST_PAGE_TOKEN,
+            OPERATION_LIST_FILTER);
     assertEquals(cursor, page.getNextPageToken());
-    assertArrayEquals(operationList.toArray(),
-        Iterables.toArray(page.getValues(), Operation.class));
+    assertArrayEquals(
+        operationList.toArray(), Iterables.toArray(page.getValues(), Operation.class));
   }
 
   @Test
   public void testDeleteZoneOperation_True() {
-    EasyMock.expect(computeRpcMock.deleteZoneOperation(ZONE_OPERATION_ID.getZone(),
-        ZONE_OPERATION_ID.getOperation())).andReturn(true);
+    EasyMock.expect(
+            computeRpcMock.deleteZoneOperation(
+                ZONE_OPERATION_ID.getZone(), ZONE_OPERATION_ID.getOperation()))
+        .andReturn(true);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertTrue(compute.deleteOperation(ZONE_OPERATION_ID));
@@ -1638,8 +1697,10 @@ public class ComputeImplTest {
 
   @Test
   public void testDeleteZoneOperation_False() {
-    EasyMock.expect(computeRpcMock.deleteZoneOperation(ZONE_OPERATION_ID.getZone(),
-        ZONE_OPERATION_ID.getOperation())).andReturn(false);
+    EasyMock.expect(
+            computeRpcMock.deleteZoneOperation(
+                ZONE_OPERATION_ID.getZone(), ZONE_OPERATION_ID.getOperation()))
+        .andReturn(false);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertFalse(compute.deleteOperation(ZONE_OPERATION_ID));
@@ -1647,8 +1708,8 @@ public class ComputeImplTest {
 
   @Test
   public void testGetGlobalAddress() {
-    EasyMock.expect(computeRpcMock.getGlobalAddress(
-        GLOBAL_ADDRESS_ID.getAddress(), EMPTY_RPC_OPTIONS))
+    EasyMock.expect(
+            computeRpcMock.getGlobalAddress(GLOBAL_ADDRESS_ID.getAddress(), EMPTY_RPC_OPTIONS))
         .andReturn(GLOBAL_ADDRESS.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -1658,8 +1719,8 @@ public class ComputeImplTest {
 
   @Test
   public void testGetGlobalAddress_Null() {
-    EasyMock.expect(computeRpcMock.getGlobalAddress(
-        GLOBAL_ADDRESS_ID.getAddress(), EMPTY_RPC_OPTIONS))
+    EasyMock.expect(
+            computeRpcMock.getGlobalAddress(GLOBAL_ADDRESS_ID.getAddress(), EMPTY_RPC_OPTIONS))
         .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -1669,8 +1730,9 @@ public class ComputeImplTest {
   @Test
   public void testGetGlobalAddressWithSelectedFields() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.getGlobalAddress(
-        eq(GLOBAL_ADDRESS_ID.getAddress()), capture(capturedOptions)))
+    EasyMock.expect(
+            computeRpcMock.getGlobalAddress(
+                eq(GLOBAL_ADDRESS_ID.getAddress()), capture(capturedOptions)))
         .andReturn(GLOBAL_ADDRESS.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -1685,8 +1747,10 @@ public class ComputeImplTest {
 
   @Test
   public void testGetRegionAddress() {
-    EasyMock.expect(computeRpcMock.getRegionAddress(REGION_ADDRESS_ID.getRegion(),
-        REGION_ADDRESS_ID.getAddress(), EMPTY_RPC_OPTIONS)).andReturn(REGION_ADDRESS.toPb());
+    EasyMock.expect(
+            computeRpcMock.getRegionAddress(
+                REGION_ADDRESS_ID.getRegion(), REGION_ADDRESS_ID.getAddress(), EMPTY_RPC_OPTIONS))
+        .andReturn(REGION_ADDRESS.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Address address = compute.getAddress(REGION_ADDRESS_ID);
@@ -1695,8 +1759,10 @@ public class ComputeImplTest {
 
   @Test
   public void testGetRegionAddress_Null() {
-    EasyMock.expect(computeRpcMock.getRegionAddress(REGION_ADDRESS_ID.getRegion(),
-        REGION_ADDRESS_ID.getAddress(), EMPTY_RPC_OPTIONS)).andReturn(REGION_ADDRESS.toPb());
+    EasyMock.expect(
+            computeRpcMock.getRegionAddress(
+                REGION_ADDRESS_ID.getRegion(), REGION_ADDRESS_ID.getAddress(), EMPTY_RPC_OPTIONS))
+        .andReturn(REGION_ADDRESS.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Address address = compute.getAddress(REGION_ADDRESS_ID);
@@ -1706,8 +1772,11 @@ public class ComputeImplTest {
   @Test
   public void testGetRegionAddressWithSelectedFields() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.getRegionAddress(eq(REGION_ADDRESS_ID.getRegion()),
-        eq(REGION_ADDRESS_ID.getAddress()), capture(capturedOptions)))
+    EasyMock.expect(
+            computeRpcMock.getRegionAddress(
+                eq(REGION_ADDRESS_ID.getRegion()),
+                eq(REGION_ADDRESS_ID.getAddress()),
+                capture(capturedOptions)))
         .andReturn(REGION_ADDRESS.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -1722,8 +1791,8 @@ public class ComputeImplTest {
 
   @Test
   public void testDeleteGlobalAddress_Operation() {
-    EasyMock.expect(computeRpcMock.deleteGlobalAddress(
-        GLOBAL_ADDRESS_ID.getAddress(), EMPTY_RPC_OPTIONS))
+    EasyMock.expect(
+            computeRpcMock.deleteGlobalAddress(GLOBAL_ADDRESS_ID.getAddress(), EMPTY_RPC_OPTIONS))
         .andReturn(globalOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -1733,8 +1802,10 @@ public class ComputeImplTest {
   @Test
   public void testDeleteGlobalAddressWithSelectedFields_Operation() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.deleteGlobalAddress(eq(GLOBAL_ADDRESS_ID.getAddress()),
-        capture(capturedOptions))).andReturn(globalOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.deleteGlobalAddress(
+                eq(GLOBAL_ADDRESS_ID.getAddress()), capture(capturedOptions)))
+        .andReturn(globalOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Operation operation = compute.deleteAddress(GLOBAL_ADDRESS_ID, OPERATION_OPTION_FIELDS);
@@ -1749,8 +1820,8 @@ public class ComputeImplTest {
 
   @Test
   public void testDeleteGlobalAddress_Null() {
-    EasyMock.expect(computeRpcMock.deleteGlobalAddress(
-        GLOBAL_ADDRESS_ID.getAddress(), EMPTY_RPC_OPTIONS))
+    EasyMock.expect(
+            computeRpcMock.deleteGlobalAddress(GLOBAL_ADDRESS_ID.getAddress(), EMPTY_RPC_OPTIONS))
         .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -1759,8 +1830,10 @@ public class ComputeImplTest {
 
   @Test
   public void testDeleteRegionAddress_Operation() {
-    EasyMock.expect(computeRpcMock.deleteRegionAddress(REGION_ADDRESS_ID.getRegion(),
-        REGION_ADDRESS_ID.getAddress(), EMPTY_RPC_OPTIONS)).andReturn(regionOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.deleteRegionAddress(
+                REGION_ADDRESS_ID.getRegion(), REGION_ADDRESS_ID.getAddress(), EMPTY_RPC_OPTIONS))
+        .andReturn(regionOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertEquals(regionOperation, compute.deleteAddress(REGION_ADDRESS_ID));
@@ -1769,8 +1842,11 @@ public class ComputeImplTest {
   @Test
   public void testDeleteRegionAddressWithSelectedFields_Operation() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.deleteRegionAddress(eq(REGION_ADDRESS_ID.getRegion()),
-        eq(REGION_ADDRESS_ID.getAddress()), capture(capturedOptions)))
+    EasyMock.expect(
+            computeRpcMock.deleteRegionAddress(
+                eq(REGION_ADDRESS_ID.getRegion()),
+                eq(REGION_ADDRESS_ID.getAddress()),
+                capture(capturedOptions)))
         .andReturn(globalOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -1786,8 +1862,10 @@ public class ComputeImplTest {
 
   @Test
   public void testDeleteRegionAddress_Null() {
-    EasyMock.expect(computeRpcMock.deleteRegionAddress(REGION_ADDRESS_ID.getRegion(),
-        REGION_ADDRESS_ID.getAddress(), EMPTY_RPC_OPTIONS)).andReturn(null);
+    EasyMock.expect(
+            computeRpcMock.deleteRegionAddress(
+                REGION_ADDRESS_ID.getRegion(), REGION_ADDRESS_ID.getAddress(), EMPTY_RPC_OPTIONS))
+        .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertNull(compute.deleteAddress(REGION_ADDRESS_ID));
@@ -1797,9 +1875,10 @@ public class ComputeImplTest {
   public void testListGlobalAddresses() {
     String cursor = "cursor";
     compute = options.getService();
-    ImmutableList<Address> addressList = ImmutableList.of(
-        new Address(compute, new AddressInfo.BuilderImpl(GLOBAL_ADDRESS)),
-        new Address(compute, new AddressInfo.BuilderImpl(GLOBAL_ADDRESS)));
+    ImmutableList<Address> addressList =
+        ImmutableList.of(
+            new Address(compute, new AddressInfo.BuilderImpl(GLOBAL_ADDRESS)),
+            new Address(compute, new AddressInfo.BuilderImpl(GLOBAL_ADDRESS)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Address>> result =
         Tuple.of(cursor, Iterables.transform(addressList, AddressInfo.TO_PB_FUNCTION));
     EasyMock.expect(computeRpcMock.listGlobalAddresses(EMPTY_RPC_OPTIONS)).andReturn(result);
@@ -1814,16 +1893,16 @@ public class ComputeImplTest {
     String cursor = "cursor";
     String nextCursor = "nextCursor";
     compute = options.getService();
-    ImmutableList<Address> addressList = ImmutableList.of(
-        new Address(compute, new AddressInfo.BuilderImpl(GLOBAL_ADDRESS)),
-        new Address(compute, new AddressInfo.BuilderImpl(GLOBAL_ADDRESS)));
-    ImmutableList<Address> nextAddressList = ImmutableList.of(
-        new Address(compute, new AddressInfo.BuilderImpl(GLOBAL_ADDRESS)));
+    ImmutableList<Address> addressList =
+        ImmutableList.of(
+            new Address(compute, new AddressInfo.BuilderImpl(GLOBAL_ADDRESS)),
+            new Address(compute, new AddressInfo.BuilderImpl(GLOBAL_ADDRESS)));
+    ImmutableList<Address> nextAddressList =
+        ImmutableList.of(new Address(compute, new AddressInfo.BuilderImpl(GLOBAL_ADDRESS)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Address>> result =
         Tuple.of(cursor, Iterables.transform(addressList, AddressInfo.TO_PB_FUNCTION));
     Tuple<String, Iterable<com.google.api.services.compute.model.Address>> nextResult =
-        Tuple.of(nextCursor,
-            Iterables.transform(nextAddressList, AddressInfo.TO_PB_FUNCTION));
+        Tuple.of(nextCursor, Iterables.transform(nextAddressList, AddressInfo.TO_PB_FUNCTION));
     Map<ComputeRpc.Option, ?> nextOptions = ImmutableMap.of(ComputeRpc.Option.PAGE_TOKEN, cursor);
     EasyMock.expect(computeRpcMock.listGlobalAddresses(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.expect(computeRpcMock.listGlobalAddresses(nextOptions)).andReturn(nextResult);
@@ -1833,16 +1912,15 @@ public class ComputeImplTest {
     assertArrayEquals(addressList.toArray(), Iterables.toArray(page.getValues(), Address.class));
     page = page.getNextPage();
     assertEquals(nextCursor, page.getNextPageToken());
-    assertArrayEquals(nextAddressList.toArray(),
-        Iterables.toArray(page.getValues(), Address.class));
+    assertArrayEquals(
+        nextAddressList.toArray(), Iterables.toArray(page.getValues(), Address.class));
   }
 
   @Test
   public void testListEmptyGlobalAddresses() {
     ImmutableList<com.google.api.services.compute.model.Address> addresses = ImmutableList.of();
     Tuple<String, Iterable<com.google.api.services.compute.model.Address>> result =
-        Tuple.<String, Iterable<com.google.api.services.compute.model.Address>>of(null,
-            addresses);
+        Tuple.<String, Iterable<com.google.api.services.compute.model.Address>>of(null, addresses);
     EasyMock.expect(computeRpcMock.listGlobalAddresses(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -1855,15 +1933,17 @@ public class ComputeImplTest {
   public void testListGlobalAddressesWithOptions() {
     String cursor = "cursor";
     compute = options.getService();
-    ImmutableList<Address> addressList = ImmutableList.of(
-        new Address(compute, new AddressInfo.BuilderImpl(GLOBAL_ADDRESS)),
-        new Address(compute, new AddressInfo.BuilderImpl(GLOBAL_ADDRESS)));
+    ImmutableList<Address> addressList =
+        ImmutableList.of(
+            new Address(compute, new AddressInfo.BuilderImpl(GLOBAL_ADDRESS)),
+            new Address(compute, new AddressInfo.BuilderImpl(GLOBAL_ADDRESS)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Address>> result =
         Tuple.of(cursor, Iterables.transform(addressList, AddressInfo.TO_PB_FUNCTION));
     EasyMock.expect(computeRpcMock.listGlobalAddresses(ADDRESS_LIST_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
-    Page<Address> page = compute.listGlobalAddresses(ADDRESS_LIST_PAGE_SIZE,
-        ADDRESS_LIST_PAGE_TOKEN, ADDRESS_LIST_FILTER);
+    Page<Address> page =
+        compute.listGlobalAddresses(
+            ADDRESS_LIST_PAGE_SIZE, ADDRESS_LIST_PAGE_TOKEN, ADDRESS_LIST_FILTER);
     assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(addressList.toArray(), Iterables.toArray(page.getValues(), Address.class));
   }
@@ -1872,13 +1952,14 @@ public class ComputeImplTest {
   public void testListRegionAddresses() {
     String cursor = "cursor";
     compute = options.getService();
-    ImmutableList<Address> addressList = ImmutableList.of(
-        new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)),
-        new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)));
+    ImmutableList<Address> addressList =
+        ImmutableList.of(
+            new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)),
+            new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Address>> result =
         Tuple.of(cursor, Iterables.transform(addressList, AddressInfo.TO_PB_FUNCTION));
     EasyMock.expect(
-        computeRpcMock.listRegionAddresses(REGION_ADDRESS_ID.getRegion(), EMPTY_RPC_OPTIONS))
+            computeRpcMock.listRegionAddresses(REGION_ADDRESS_ID.getRegion(), EMPTY_RPC_OPTIONS))
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Address> page = compute.listRegionAddresses(REGION_ADDRESS_ID.getRegion());
@@ -1891,22 +1972,21 @@ public class ComputeImplTest {
     String cursor = "cursor";
     String nextCursor = "nextCursor";
     compute = options.getService();
-    ImmutableList<Address> addressList = ImmutableList.of(
-        new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)),
-        new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)));
-    ImmutableList<Address> nextAddressList = ImmutableList.of(
-        new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)));
+    ImmutableList<Address> addressList =
+        ImmutableList.of(
+            new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)),
+            new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)));
+    ImmutableList<Address> nextAddressList =
+        ImmutableList.of(new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Address>> result =
         Tuple.of(cursor, Iterables.transform(addressList, AddressInfo.TO_PB_FUNCTION));
     Tuple<String, Iterable<com.google.api.services.compute.model.Address>> nextResult =
-        Tuple.of(nextCursor,
-            Iterables.transform(nextAddressList, AddressInfo.TO_PB_FUNCTION));
+        Tuple.of(nextCursor, Iterables.transform(nextAddressList, AddressInfo.TO_PB_FUNCTION));
     Map<ComputeRpc.Option, ?> nextOptions = ImmutableMap.of(ComputeRpc.Option.PAGE_TOKEN, cursor);
     EasyMock.expect(
-        computeRpcMock.listRegionAddresses(REGION_ADDRESS_ID.getRegion(), EMPTY_RPC_OPTIONS))
+            computeRpcMock.listRegionAddresses(REGION_ADDRESS_ID.getRegion(), EMPTY_RPC_OPTIONS))
         .andReturn(result);
-    EasyMock.expect(
-        computeRpcMock.listRegionAddresses(REGION_ADDRESS_ID.getRegion(), nextOptions))
+    EasyMock.expect(computeRpcMock.listRegionAddresses(REGION_ADDRESS_ID.getRegion(), nextOptions))
         .andReturn(nextResult);
     EasyMock.replay(computeRpcMock);
     Page<Address> page = compute.listRegionAddresses(REGION_ADDRESS_ID.getRegion());
@@ -1914,18 +1994,17 @@ public class ComputeImplTest {
     assertArrayEquals(addressList.toArray(), Iterables.toArray(page.getValues(), Address.class));
     page = page.getNextPage();
     assertEquals(nextCursor, page.getNextPageToken());
-    assertArrayEquals(nextAddressList.toArray(),
-        Iterables.toArray(page.getValues(), Address.class));
+    assertArrayEquals(
+        nextAddressList.toArray(), Iterables.toArray(page.getValues(), Address.class));
   }
 
   @Test
   public void testListEmptyRegionAddresses() {
     ImmutableList<com.google.api.services.compute.model.Address> addresses = ImmutableList.of();
     Tuple<String, Iterable<com.google.api.services.compute.model.Address>> result =
-        Tuple.<String, Iterable<com.google.api.services.compute.model.Address>>of(null,
-            addresses);
+        Tuple.<String, Iterable<com.google.api.services.compute.model.Address>>of(null, addresses);
     EasyMock.expect(
-        computeRpcMock.listRegionAddresses(REGION_ADDRESS_ID.getRegion(), EMPTY_RPC_OPTIONS))
+            computeRpcMock.listRegionAddresses(REGION_ADDRESS_ID.getRegion(), EMPTY_RPC_OPTIONS))
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -1938,17 +2017,22 @@ public class ComputeImplTest {
   public void testListRegionAddressesWithOptions() {
     String cursor = "cursor";
     compute = options.getService();
-    ImmutableList<Address> addressList = ImmutableList.of(
-        new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)),
-        new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)));
+    ImmutableList<Address> addressList =
+        ImmutableList.of(
+            new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)),
+            new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Address>> result =
         Tuple.of(cursor, Iterables.transform(addressList, AddressInfo.TO_PB_FUNCTION));
     EasyMock.expect(
-        computeRpcMock.listRegionAddresses(REGION_ADDRESS_ID.getRegion(), ADDRESS_LIST_OPTIONS))
+            computeRpcMock.listRegionAddresses(REGION_ADDRESS_ID.getRegion(), ADDRESS_LIST_OPTIONS))
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
-    Page<Address> page = compute.listRegionAddresses(REGION_ADDRESS_ID.getRegion(),
-        ADDRESS_LIST_PAGE_SIZE, ADDRESS_LIST_PAGE_TOKEN, ADDRESS_LIST_FILTER);
+    Page<Address> page =
+        compute.listRegionAddresses(
+            REGION_ADDRESS_ID.getRegion(),
+            ADDRESS_LIST_PAGE_SIZE,
+            ADDRESS_LIST_PAGE_TOKEN,
+            ADDRESS_LIST_FILTER);
     assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(addressList.toArray(), Iterables.toArray(page.getValues(), Address.class));
   }
@@ -1957,9 +2041,10 @@ public class ComputeImplTest {
   public void testAggregatedListAddresses() {
     String cursor = "cursor";
     compute = options.getService();
-    ImmutableList<Address> addressList = ImmutableList.of(
-        new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)),
-        new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)));
+    ImmutableList<Address> addressList =
+        ImmutableList.of(
+            new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)),
+            new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Address>> result =
         Tuple.of(cursor, Iterables.transform(addressList, AddressInfo.TO_PB_FUNCTION));
     EasyMock.expect(computeRpcMock.listAddresses(EMPTY_RPC_OPTIONS)).andReturn(result);
@@ -1974,16 +2059,16 @@ public class ComputeImplTest {
     String cursor = "cursor";
     String nextCursor = "nextCursor";
     compute = options.getService();
-    ImmutableList<Address> addressList = ImmutableList.of(
-        new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)),
-        new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)));
-    ImmutableList<Address> nextAddressList = ImmutableList.of(
-        new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)));
+    ImmutableList<Address> addressList =
+        ImmutableList.of(
+            new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)),
+            new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)));
+    ImmutableList<Address> nextAddressList =
+        ImmutableList.of(new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Address>> result =
         Tuple.of(cursor, Iterables.transform(addressList, AddressInfo.TO_PB_FUNCTION));
     Tuple<String, Iterable<com.google.api.services.compute.model.Address>> nextResult =
-        Tuple.of(nextCursor,
-            Iterables.transform(nextAddressList, AddressInfo.TO_PB_FUNCTION));
+        Tuple.of(nextCursor, Iterables.transform(nextAddressList, AddressInfo.TO_PB_FUNCTION));
     Map<ComputeRpc.Option, ?> nextOptions = ImmutableMap.of(ComputeRpc.Option.PAGE_TOKEN, cursor);
     EasyMock.expect(computeRpcMock.listAddresses(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.expect(computeRpcMock.listAddresses(nextOptions)).andReturn(nextResult);
@@ -1993,16 +2078,15 @@ public class ComputeImplTest {
     assertArrayEquals(addressList.toArray(), Iterables.toArray(page.getValues(), Address.class));
     page = page.getNextPage();
     assertEquals(nextCursor, page.getNextPageToken());
-    assertArrayEquals(nextAddressList.toArray(),
-        Iterables.toArray(page.getValues(), Address.class));
+    assertArrayEquals(
+        nextAddressList.toArray(), Iterables.toArray(page.getValues(), Address.class));
   }
 
   @Test
   public void testAggregatedListEmptyAddresses() {
     ImmutableList<com.google.api.services.compute.model.Address> addresses = ImmutableList.of();
     Tuple<String, Iterable<com.google.api.services.compute.model.Address>> result =
-        Tuple.<String, Iterable<com.google.api.services.compute.model.Address>>of(null,
-            addresses);
+        Tuple.<String, Iterable<com.google.api.services.compute.model.Address>>of(null, addresses);
     EasyMock.expect(computeRpcMock.listAddresses(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -2015,15 +2099,19 @@ public class ComputeImplTest {
   public void testAggregatedListAddressesWithOptions() {
     String cursor = "cursor";
     compute = options.getService();
-    ImmutableList<Address> addressList = ImmutableList.of(
-        new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)),
-        new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)));
+    ImmutableList<Address> addressList =
+        ImmutableList.of(
+            new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)),
+            new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Address>> result =
         Tuple.of(cursor, Iterables.transform(addressList, AddressInfo.TO_PB_FUNCTION));
     EasyMock.expect(computeRpcMock.listAddresses(ADDRESS_LIST_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
-    Page<Address> page = compute.listAddresses(ADDRESS_AGGREGATED_LIST_PAGE_SIZE,
-        ADDRESS_AGGREGATED_LIST_PAGE_TOKEN, ADDRESS_AGGREGATED_LIST_FILTER);
+    Page<Address> page =
+        compute.listAddresses(
+            ADDRESS_AGGREGATED_LIST_PAGE_SIZE,
+            ADDRESS_AGGREGATED_LIST_PAGE_TOKEN,
+            ADDRESS_AGGREGATED_LIST_FILTER);
     assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(addressList.toArray(), Iterables.toArray(page.getValues(), Address.class));
   }
@@ -2044,7 +2132,7 @@ public class ComputeImplTest {
   public void testCreateGlobalAddressWithOptions() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
     EasyMock.expect(
-        computeRpcMock.createGlobalAddress(eq(GLOBAL_ADDRESS.toPb()), capture(capturedOptions)))
+            computeRpcMock.createGlobalAddress(eq(GLOBAL_ADDRESS.toPb()), capture(capturedOptions)))
         .andReturn(globalOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -2060,8 +2148,10 @@ public class ComputeImplTest {
 
   @Test
   public void testCreateRegionAddress() {
-    EasyMock.expect(computeRpcMock.createRegionAddress(REGION_ADDRESS_ID.getRegion(),
-        REGION_ADDRESS.toPb(), EMPTY_RPC_OPTIONS)).andReturn(regionOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.createRegionAddress(
+                REGION_ADDRESS_ID.getRegion(), REGION_ADDRESS.toPb(), EMPTY_RPC_OPTIONS))
+        .andReturn(regionOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     AddressId incompleteId = RegionAddressId.of("region", "address");
@@ -2073,8 +2163,12 @@ public class ComputeImplTest {
   @Test
   public void testCreateRegionAddressWithOptions() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.createRegionAddress(eq(REGION_ADDRESS_ID.getRegion()),
-        eq(REGION_ADDRESS.toPb()), capture(capturedOptions))).andReturn(regionOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.createRegionAddress(
+                eq(REGION_ADDRESS_ID.getRegion()),
+                eq(REGION_ADDRESS.toPb()),
+                capture(capturedOptions)))
+        .andReturn(regionOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Operation operation = compute.create(REGION_ADDRESS, OPERATION_OPTION_FIELDS);
@@ -2089,8 +2183,14 @@ public class ComputeImplTest {
 
   @Test
   public void testCreateSnapshot() {
-    EasyMock.expect(computeRpcMock.createSnapshot(DISK_ID.getZone(), DISK_ID.getDisk(),
-        SNAPSHOT_ID.getSnapshot(), null, EMPTY_RPC_OPTIONS)).andReturn(zoneOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.createSnapshot(
+                DISK_ID.getZone(),
+                DISK_ID.getDisk(),
+                SNAPSHOT_ID.getSnapshot(),
+                null,
+                EMPTY_RPC_OPTIONS))
+        .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Operation operation = compute.create(SNAPSHOT);
@@ -2100,8 +2200,13 @@ public class ComputeImplTest {
   @Test
   public void testCreateSnapshotWithOptions() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.createSnapshot(eq(DISK_ID.getZone()), eq(DISK_ID.getDisk()),
-        eq(SNAPSHOT_ID.getSnapshot()), EasyMock.<String>isNull(), capture(capturedOptions)))
+    EasyMock.expect(
+            computeRpcMock.createSnapshot(
+                eq(DISK_ID.getZone()),
+                eq(DISK_ID.getDisk()),
+                eq(SNAPSHOT_ID.getSnapshot()),
+                EasyMock.<String>isNull(),
+                capture(capturedOptions)))
         .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -2137,8 +2242,9 @@ public class ComputeImplTest {
   @Test
   public void testGetSnapshotWithSelectedFields() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.getSnapshot(eq(SNAPSHOT_ID.getSnapshot()),
-        capture(capturedOptions))).andReturn(SNAPSHOT.toPb());
+    EasyMock.expect(
+            computeRpcMock.getSnapshot(eq(SNAPSHOT_ID.getSnapshot()), capture(capturedOptions)))
+        .andReturn(SNAPSHOT.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Snapshot snapshot = compute.getSnapshot(SNAPSHOT_ID.getSnapshot(), SNAPSHOT_OPTION_FIELDS);
@@ -2163,8 +2269,9 @@ public class ComputeImplTest {
   @Test
   public void testDeleteSnapshotWithSelectedFields_Operation() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.deleteSnapshot(eq(SNAPSHOT_ID.getSnapshot()),
-        capture(capturedOptions))).andReturn(globalOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.deleteSnapshot(eq(SNAPSHOT_ID.getSnapshot()), capture(capturedOptions)))
+        .andReturn(globalOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Operation operation = compute.deleteSnapshot(SNAPSHOT_ID, OPERATION_OPTION_FIELDS);
@@ -2190,9 +2297,10 @@ public class ComputeImplTest {
   public void testListSnapshots() {
     String cursor = "cursor";
     compute = options.getService();
-    ImmutableList<Snapshot> snapshotList = ImmutableList.of(
-        new Snapshot(compute, new SnapshotInfo.BuilderImpl(SNAPSHOT)),
-        new Snapshot(compute, new SnapshotInfo.BuilderImpl(SNAPSHOT)));
+    ImmutableList<Snapshot> snapshotList =
+        ImmutableList.of(
+            new Snapshot(compute, new SnapshotInfo.BuilderImpl(SNAPSHOT)),
+            new Snapshot(compute, new SnapshotInfo.BuilderImpl(SNAPSHOT)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Snapshot>> result =
         Tuple.of(cursor, Iterables.transform(snapshotList, SnapshotInfo.TO_PB_FUNCTION));
     EasyMock.expect(computeRpcMock.listSnapshots(EMPTY_RPC_OPTIONS)).andReturn(result);
@@ -2207,16 +2315,16 @@ public class ComputeImplTest {
     String cursor = "cursor";
     String nextCursor = "nextCursor";
     compute = options.getService();
-    ImmutableList<Snapshot> snapshotList = ImmutableList.of(
-        new Snapshot(compute, new SnapshotInfo.BuilderImpl(SNAPSHOT)),
-        new Snapshot(compute, new SnapshotInfo.BuilderImpl(SNAPSHOT)));
-    ImmutableList<Snapshot> nextSnapshotList = ImmutableList.of(
-        new Snapshot(compute, new SnapshotInfo.BuilderImpl(SNAPSHOT)));
+    ImmutableList<Snapshot> snapshotList =
+        ImmutableList.of(
+            new Snapshot(compute, new SnapshotInfo.BuilderImpl(SNAPSHOT)),
+            new Snapshot(compute, new SnapshotInfo.BuilderImpl(SNAPSHOT)));
+    ImmutableList<Snapshot> nextSnapshotList =
+        ImmutableList.of(new Snapshot(compute, new SnapshotInfo.BuilderImpl(SNAPSHOT)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Snapshot>> result =
         Tuple.of(cursor, Iterables.transform(snapshotList, SnapshotInfo.TO_PB_FUNCTION));
     Tuple<String, Iterable<com.google.api.services.compute.model.Snapshot>> nextResult =
-        Tuple.of(nextCursor,
-            Iterables.transform(nextSnapshotList, SnapshotInfo.TO_PB_FUNCTION));
+        Tuple.of(nextCursor, Iterables.transform(nextSnapshotList, SnapshotInfo.TO_PB_FUNCTION));
     Map<ComputeRpc.Option, ?> nextOptions = ImmutableMap.of(ComputeRpc.Option.PAGE_TOKEN, cursor);
     EasyMock.expect(computeRpcMock.listSnapshots(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.expect(computeRpcMock.listSnapshots(nextOptions)).andReturn(nextResult);
@@ -2226,8 +2334,8 @@ public class ComputeImplTest {
     assertArrayEquals(snapshotList.toArray(), Iterables.toArray(page.getValues(), Snapshot.class));
     page = page.getNextPage();
     assertEquals(nextCursor, page.getNextPageToken());
-    assertArrayEquals(nextSnapshotList.toArray(),
-        Iterables.toArray(page.getValues(), Snapshot.class));
+    assertArrayEquals(
+        nextSnapshotList.toArray(), Iterables.toArray(page.getValues(), Snapshot.class));
   }
 
   @Test
@@ -2235,8 +2343,7 @@ public class ComputeImplTest {
     compute = options.getService();
     ImmutableList<com.google.api.services.compute.model.Snapshot> snapshots = ImmutableList.of();
     Tuple<String, Iterable<com.google.api.services.compute.model.Snapshot>> result =
-        Tuple.<String, Iterable<com.google.api.services.compute.model.Snapshot>>of(null,
-            snapshots);
+        Tuple.<String, Iterable<com.google.api.services.compute.model.Snapshot>>of(null, snapshots);
     EasyMock.expect(computeRpcMock.listSnapshots(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Snapshot> page = compute.listSnapshots();
@@ -2248,15 +2355,17 @@ public class ComputeImplTest {
   public void testListSnapshotsWithOptions() {
     String cursor = "cursor";
     compute = options.getService();
-    ImmutableList<Snapshot> snapshotList = ImmutableList.of(
-        new Snapshot(compute, new SnapshotInfo.BuilderImpl(SNAPSHOT)),
-        new Snapshot(compute, new SnapshotInfo.BuilderImpl(SNAPSHOT)));
+    ImmutableList<Snapshot> snapshotList =
+        ImmutableList.of(
+            new Snapshot(compute, new SnapshotInfo.BuilderImpl(SNAPSHOT)),
+            new Snapshot(compute, new SnapshotInfo.BuilderImpl(SNAPSHOT)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Snapshot>> result =
         Tuple.of(cursor, Iterables.transform(snapshotList, SnapshotInfo.TO_PB_FUNCTION));
     EasyMock.expect(computeRpcMock.listSnapshots(SNAPSHOT_LIST_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
-    Page<Snapshot> page = compute.listSnapshots(SNAPSHOT_LIST_PAGE_SIZE, SNAPSHOT_LIST_PAGE_TOKEN,
-        SNAPSHOT_LIST_FILTER);
+    Page<Snapshot> page =
+        compute.listSnapshots(
+            SNAPSHOT_LIST_PAGE_SIZE, SNAPSHOT_LIST_PAGE_TOKEN, SNAPSHOT_LIST_FILTER);
     assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(snapshotList.toArray(), Iterables.toArray(page.getValues(), Snapshot.class));
   }
@@ -2291,7 +2400,7 @@ public class ComputeImplTest {
   @Test
   public void testGetImage() {
     EasyMock.expect(
-        computeRpcMock.getImage(IMAGE_ID.getProject(), IMAGE_ID.getImage(), EMPTY_RPC_OPTIONS))
+            computeRpcMock.getImage(IMAGE_ID.getProject(), IMAGE_ID.getImage(), EMPTY_RPC_OPTIONS))
         .andReturn(IMAGE.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -2302,7 +2411,7 @@ public class ComputeImplTest {
   @Test
   public void testGetImage_Null() {
     EasyMock.expect(
-        computeRpcMock.getImage(IMAGE_ID.getProject(), IMAGE_ID.getImage(), EMPTY_RPC_OPTIONS))
+            computeRpcMock.getImage(IMAGE_ID.getProject(), IMAGE_ID.getImage(), EMPTY_RPC_OPTIONS))
         .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -2312,8 +2421,10 @@ public class ComputeImplTest {
   @Test
   public void testGetImageWithSelectedFields() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.getImage(eq(IMAGE_ID.getProject()), eq(IMAGE_ID.getImage()),
-        capture(capturedOptions))).andReturn(IMAGE.toPb());
+    EasyMock.expect(
+            computeRpcMock.getImage(
+                eq(IMAGE_ID.getProject()), eq(IMAGE_ID.getImage()), capture(capturedOptions)))
+        .andReturn(IMAGE.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Image image = compute.getImage(IMAGE_ID, IMAGE_OPTION_FIELDS);
@@ -2329,8 +2440,10 @@ public class ComputeImplTest {
 
   @Test
   public void testDeleteImage_Operation() {
-    EasyMock.expect(computeRpcMock.deleteImage(IMAGE_ID.getProject(), IMAGE_ID.getImage(),
-        EMPTY_RPC_OPTIONS)).andReturn(globalOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.deleteImage(
+                IMAGE_ID.getProject(), IMAGE_ID.getImage(), EMPTY_RPC_OPTIONS))
+        .andReturn(globalOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertEquals(globalOperation, compute.deleteImage(IMAGE_ID));
@@ -2339,8 +2452,10 @@ public class ComputeImplTest {
   @Test
   public void testDeleteImageWithSelectedFields_Operation() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.deleteImage(eq(PROJECT), eq(IMAGE_ID.getImage()),
-        capture(capturedOptions))).andReturn(globalOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.deleteImage(
+                eq(PROJECT), eq(IMAGE_ID.getImage()), capture(capturedOptions)))
+        .andReturn(globalOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Operation operation = compute.deleteImage(ImageId.of("image"), OPERATION_OPTION_FIELDS);
@@ -2355,8 +2470,10 @@ public class ComputeImplTest {
 
   @Test
   public void testDeleteImage_Null() {
-    EasyMock.expect(computeRpcMock.deleteImage(IMAGE_ID.getProject(), IMAGE_ID.getImage(),
-        EMPTY_RPC_OPTIONS)).andReturn(null);
+    EasyMock.expect(
+            computeRpcMock.deleteImage(
+                IMAGE_ID.getProject(), IMAGE_ID.getImage(), EMPTY_RPC_OPTIONS))
+        .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertNull(compute.deleteImage(IMAGE_ID));
@@ -2364,8 +2481,13 @@ public class ComputeImplTest {
 
   @Test
   public void testDeprecateImage_Operation() {
-    EasyMock.expect(computeRpcMock.deprecateImage(IMAGE_ID.getProject(), IMAGE_ID.getImage(),
-        DEPRECATION_STATUS.toPb(), EMPTY_RPC_OPTIONS)).andReturn(globalOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.deprecateImage(
+                IMAGE_ID.getProject(),
+                IMAGE_ID.getImage(),
+                DEPRECATION_STATUS.toPb(),
+                EMPTY_RPC_OPTIONS))
+        .andReturn(globalOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertEquals(globalOperation, compute.deprecate(IMAGE_ID, DEPRECATION_STATUS));
@@ -2374,8 +2496,13 @@ public class ComputeImplTest {
   @Test
   public void testDeprecateImageWithSelectedFields_Operation() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.deprecateImage(eq(PROJECT), eq(IMAGE_ID.getImage()),
-        eq(DEPRECATION_STATUS.toPb()), capture(capturedOptions))).andReturn(globalOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.deprecateImage(
+                eq(PROJECT),
+                eq(IMAGE_ID.getImage()),
+                eq(DEPRECATION_STATUS.toPb()),
+                capture(capturedOptions)))
+        .andReturn(globalOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Operation operation =
@@ -2391,8 +2518,13 @@ public class ComputeImplTest {
 
   @Test
   public void testDeprecateImage_Null() {
-    EasyMock.expect(computeRpcMock.deprecateImage(IMAGE_ID.getProject(), IMAGE_ID.getImage(),
-        DEPRECATION_STATUS.toPb(), EMPTY_RPC_OPTIONS)).andReturn(null);
+    EasyMock.expect(
+            computeRpcMock.deprecateImage(
+                IMAGE_ID.getProject(),
+                IMAGE_ID.getImage(),
+                DEPRECATION_STATUS.toPb(),
+                EMPTY_RPC_OPTIONS))
+        .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertNull(compute.deprecate(IMAGE_ID, DEPRECATION_STATUS));
@@ -2402,9 +2534,10 @@ public class ComputeImplTest {
   public void testListImages() {
     String cursor = "cursor";
     compute = options.getService();
-    ImmutableList<Image> imageList = ImmutableList.of(
-        new Image(compute, new ImageInfo.BuilderImpl(IMAGE)),
-        new Image(compute, new ImageInfo.BuilderImpl(IMAGE)));
+    ImmutableList<Image> imageList =
+        ImmutableList.of(
+            new Image(compute, new ImageInfo.BuilderImpl(IMAGE)),
+            new Image(compute, new ImageInfo.BuilderImpl(IMAGE)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Image>> result =
         Tuple.of(cursor, Iterables.transform(imageList, ImageInfo.TO_PB_FUNCTION));
     EasyMock.expect(computeRpcMock.listImages(PROJECT, EMPTY_RPC_OPTIONS)).andReturn(result);
@@ -2419,16 +2552,16 @@ public class ComputeImplTest {
     String cursor = "cursor";
     String nextCursor = "nextCursor";
     compute = options.getService();
-    ImmutableList<Image> imageList = ImmutableList.of(
-        new Image(compute, new ImageInfo.BuilderImpl(IMAGE)),
-        new Image(compute, new ImageInfo.BuilderImpl(IMAGE)));
-    ImmutableList<Image> nextImageList = ImmutableList.of(
-        new Image(compute, new ImageInfo.BuilderImpl(IMAGE)));
+    ImmutableList<Image> imageList =
+        ImmutableList.of(
+            new Image(compute, new ImageInfo.BuilderImpl(IMAGE)),
+            new Image(compute, new ImageInfo.BuilderImpl(IMAGE)));
+    ImmutableList<Image> nextImageList =
+        ImmutableList.of(new Image(compute, new ImageInfo.BuilderImpl(IMAGE)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Image>> result =
         Tuple.of(cursor, Iterables.transform(imageList, ImageInfo.TO_PB_FUNCTION));
     Tuple<String, Iterable<com.google.api.services.compute.model.Image>> nextResult =
-        Tuple.of(nextCursor,
-            Iterables.transform(nextImageList, ImageInfo.TO_PB_FUNCTION));
+        Tuple.of(nextCursor, Iterables.transform(nextImageList, ImageInfo.TO_PB_FUNCTION));
     Map<ComputeRpc.Option, ?> nextOptions = ImmutableMap.of(ComputeRpc.Option.PAGE_TOKEN, cursor);
     EasyMock.expect(computeRpcMock.listImages(PROJECT, EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.expect(computeRpcMock.listImages(PROJECT, nextOptions)).andReturn(nextResult);
@@ -2445,9 +2578,10 @@ public class ComputeImplTest {
   public void testListImagesForProject() {
     String cursor = "cursor";
     compute = options.getService();
-    ImmutableList<Image> imageList = ImmutableList.of(
-        new Image(compute, new ImageInfo.BuilderImpl(IMAGE)),
-        new Image(compute, new ImageInfo.BuilderImpl(IMAGE)));
+    ImmutableList<Image> imageList =
+        ImmutableList.of(
+            new Image(compute, new ImageInfo.BuilderImpl(IMAGE)),
+            new Image(compute, new ImageInfo.BuilderImpl(IMAGE)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Image>> result =
         Tuple.of(cursor, Iterables.transform(imageList, ImageInfo.TO_PB_FUNCTION));
     EasyMock.expect(computeRpcMock.listImages("otherProject", EMPTY_RPC_OPTIONS)).andReturn(result);
@@ -2462,8 +2596,7 @@ public class ComputeImplTest {
     compute = options.getService();
     ImmutableList<com.google.api.services.compute.model.Image> images = ImmutableList.of();
     Tuple<String, Iterable<com.google.api.services.compute.model.Image>> result =
-        Tuple.<String, Iterable<com.google.api.services.compute.model.Image>>of(null,
-            images);
+        Tuple.<String, Iterable<com.google.api.services.compute.model.Image>>of(null, images);
     EasyMock.expect(computeRpcMock.listImages(PROJECT, EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Image> page = compute.listImages();
@@ -2476,8 +2609,7 @@ public class ComputeImplTest {
     compute = options.getService();
     ImmutableList<com.google.api.services.compute.model.Image> images = ImmutableList.of();
     Tuple<String, Iterable<com.google.api.services.compute.model.Image>> result =
-        Tuple.<String, Iterable<com.google.api.services.compute.model.Image>>of(null,
-            images);
+        Tuple.<String, Iterable<com.google.api.services.compute.model.Image>>of(null, images);
     EasyMock.expect(computeRpcMock.listImages("otherProject", EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Image> page = compute.listImages("otherProject");
@@ -2489,15 +2621,16 @@ public class ComputeImplTest {
   public void testListImagesWithOptions() {
     String cursor = "cursor";
     compute = options.getService();
-    ImmutableList<Image> imageList = ImmutableList.of(
-        new Image(compute, new ImageInfo.BuilderImpl(IMAGE)),
-        new Image(compute, new ImageInfo.BuilderImpl(IMAGE)));
+    ImmutableList<Image> imageList =
+        ImmutableList.of(
+            new Image(compute, new ImageInfo.BuilderImpl(IMAGE)),
+            new Image(compute, new ImageInfo.BuilderImpl(IMAGE)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Image>> result =
         Tuple.of(cursor, Iterables.transform(imageList, ImageInfo.TO_PB_FUNCTION));
     EasyMock.expect(computeRpcMock.listImages(PROJECT, IMAGE_LIST_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
-    Page<Image> page = compute.listImages(IMAGE_LIST_PAGE_SIZE, IMAGE_LIST_PAGE_TOKEN,
-        IMAGE_LIST_FILTER);
+    Page<Image> page =
+        compute.listImages(IMAGE_LIST_PAGE_SIZE, IMAGE_LIST_PAGE_TOKEN, IMAGE_LIST_FILTER);
     assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(imageList.toArray(), Iterables.toArray(page.getValues(), Image.class));
   }
@@ -2506,15 +2639,16 @@ public class ComputeImplTest {
   public void testListImagesForProjectWithOptions() {
     String cursor = "cursor";
     compute = options.getService();
-    ImmutableList<Image> imageList = ImmutableList.of(
-        new Image(compute, new ImageInfo.BuilderImpl(IMAGE)),
-        new Image(compute, new ImageInfo.BuilderImpl(IMAGE)));
+    ImmutableList<Image> imageList =
+        ImmutableList.of(
+            new Image(compute, new ImageInfo.BuilderImpl(IMAGE)),
+            new Image(compute, new ImageInfo.BuilderImpl(IMAGE)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Image>> result =
         Tuple.of(cursor, Iterables.transform(imageList, ImageInfo.TO_PB_FUNCTION));
     EasyMock.expect(computeRpcMock.listImages("other", IMAGE_LIST_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
-    Page<Image> page = compute.listImages("other", IMAGE_LIST_PAGE_SIZE, IMAGE_LIST_PAGE_TOKEN,
-        IMAGE_LIST_FILTER);
+    Page<Image> page =
+        compute.listImages("other", IMAGE_LIST_PAGE_SIZE, IMAGE_LIST_PAGE_TOKEN, IMAGE_LIST_FILTER);
     assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(imageList.toArray(), Iterables.toArray(page.getValues(), Image.class));
   }
@@ -2541,8 +2675,10 @@ public class ComputeImplTest {
   @Test
   public void testGetDiskWithSelectedFields() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.getDisk(eq(DISK_ID.getZone()), eq(DISK_ID.getDisk()),
-        capture(capturedOptions))).andReturn(DISK.toPb());
+    EasyMock.expect(
+            computeRpcMock.getDisk(
+                eq(DISK_ID.getZone()), eq(DISK_ID.getDisk()), capture(capturedOptions)))
+        .andReturn(DISK.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Disk disk = compute.getDisk(DISK_ID, DISK_OPTION_FIELDS);
@@ -2559,8 +2695,8 @@ public class ComputeImplTest {
 
   @Test
   public void testDeleteDisk_Operation() {
-    EasyMock.expect(computeRpcMock.deleteDisk(
-        DISK_ID.getZone(), DISK_ID.getDisk(), EMPTY_RPC_OPTIONS))
+    EasyMock.expect(
+            computeRpcMock.deleteDisk(DISK_ID.getZone(), DISK_ID.getDisk(), EMPTY_RPC_OPTIONS))
         .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -2570,8 +2706,10 @@ public class ComputeImplTest {
   @Test
   public void testDeleteDiskWithSelectedFields_Operation() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.deleteDisk(eq(DISK_ID.getZone()), eq(DISK_ID.getDisk()),
-        capture(capturedOptions))).andReturn(zoneOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.deleteDisk(
+                eq(DISK_ID.getZone()), eq(DISK_ID.getDisk()), capture(capturedOptions)))
+        .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Operation operation = compute.deleteDisk(DISK_ID, OPERATION_OPTION_FIELDS);
@@ -2586,8 +2724,8 @@ public class ComputeImplTest {
 
   @Test
   public void testDeleteDisk_Null() {
-    EasyMock.expect(computeRpcMock.deleteDisk(
-        DISK_ID.getZone(), DISK_ID.getDisk(), EMPTY_RPC_OPTIONS))
+    EasyMock.expect(
+            computeRpcMock.deleteDisk(DISK_ID.getZone(), DISK_ID.getDisk(), EMPTY_RPC_OPTIONS))
         .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -2598,9 +2736,10 @@ public class ComputeImplTest {
   public void testListDisks() {
     String cursor = "cursor";
     compute = options.getService();
-    ImmutableList<Disk> diskList = ImmutableList.of(
-        new Disk(compute, new DiskInfo.BuilderImpl(DISK)),
-        new Disk(compute, new DiskInfo.BuilderImpl(DISK)));
+    ImmutableList<Disk> diskList =
+        ImmutableList.of(
+            new Disk(compute, new DiskInfo.BuilderImpl(DISK)),
+            new Disk(compute, new DiskInfo.BuilderImpl(DISK)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Disk>> result =
         Tuple.of(cursor, Iterables.transform(diskList, DiskInfo.TO_PB_FUNCTION));
     EasyMock.expect(computeRpcMock.listDisks(DISK_ID.getZone(), EMPTY_RPC_OPTIONS))
@@ -2616,11 +2755,12 @@ public class ComputeImplTest {
     String cursor = "cursor";
     String nextCursor = "nextCursor";
     compute = options.getService();
-    ImmutableList<Disk> diskList = ImmutableList.of(
-        new Disk(compute, new DiskInfo.BuilderImpl(DISK)),
-        new Disk(compute, new DiskInfo.BuilderImpl(DISK)));
-    ImmutableList<Disk> nextDiskList = ImmutableList.of(
-        new Disk(compute, new DiskInfo.BuilderImpl(DISK)));
+    ImmutableList<Disk> diskList =
+        ImmutableList.of(
+            new Disk(compute, new DiskInfo.BuilderImpl(DISK)),
+            new Disk(compute, new DiskInfo.BuilderImpl(DISK)));
+    ImmutableList<Disk> nextDiskList =
+        ImmutableList.of(new Disk(compute, new DiskInfo.BuilderImpl(DISK)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Disk>> result =
         Tuple.of(cursor, Iterables.transform(diskList, DiskInfo.TO_PB_FUNCTION));
     Tuple<String, Iterable<com.google.api.services.compute.model.Disk>> nextResult =
@@ -2643,8 +2783,7 @@ public class ComputeImplTest {
     compute = options.getService();
     ImmutableList<com.google.api.services.compute.model.Disk> disks = ImmutableList.of();
     Tuple<String, Iterable<com.google.api.services.compute.model.Disk>> result =
-        Tuple.<String, Iterable<com.google.api.services.compute.model.Disk>>of(null,
-            disks);
+        Tuple.<String, Iterable<com.google.api.services.compute.model.Disk>>of(null, disks);
     EasyMock.expect(computeRpcMock.listDisks(DISK_ID.getZone(), EMPTY_RPC_OPTIONS))
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
@@ -2657,16 +2796,18 @@ public class ComputeImplTest {
   public void testListDisksWithOptions() {
     String cursor = "cursor";
     compute = options.getService();
-    ImmutableList<Disk> diskList = ImmutableList.of(
-        new Disk(compute, new DiskInfo.BuilderImpl(DISK)),
-        new Disk(compute, new DiskInfo.BuilderImpl(DISK)));
+    ImmutableList<Disk> diskList =
+        ImmutableList.of(
+            new Disk(compute, new DiskInfo.BuilderImpl(DISK)),
+            new Disk(compute, new DiskInfo.BuilderImpl(DISK)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Disk>> result =
         Tuple.of(cursor, Iterables.transform(diskList, DiskInfo.TO_PB_FUNCTION));
     EasyMock.expect(computeRpcMock.listDisks(DISK_ID.getZone(), DISK_LIST_OPTIONS))
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
-    Page<Disk> page = compute.listDisks(
-        DISK_ID.getZone(), DISK_LIST_PAGE_SIZE, DISK_LIST_PAGE_TOKEN, DISK_LIST_FILTER);
+    Page<Disk> page =
+        compute.listDisks(
+            DISK_ID.getZone(), DISK_LIST_PAGE_SIZE, DISK_LIST_PAGE_TOKEN, DISK_LIST_FILTER);
     assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(diskList.toArray(), Iterables.toArray(page.getValues(), Disk.class));
   }
@@ -2675,9 +2816,10 @@ public class ComputeImplTest {
   public void testAggregatedListDisks() {
     String cursor = "cursor";
     compute = options.getService();
-    ImmutableList<Disk> diskList = ImmutableList.of(
-        new Disk(compute, new DiskInfo.BuilderImpl(DISK)),
-        new Disk(compute, new DiskInfo.BuilderImpl(DISK)));
+    ImmutableList<Disk> diskList =
+        ImmutableList.of(
+            new Disk(compute, new DiskInfo.BuilderImpl(DISK)),
+            new Disk(compute, new DiskInfo.BuilderImpl(DISK)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Disk>> result =
         Tuple.of(cursor, Iterables.transform(diskList, DiskInfo.TO_PB_FUNCTION));
     EasyMock.expect(computeRpcMock.listDisks(EMPTY_RPC_OPTIONS)).andReturn(result);
@@ -2692,11 +2834,12 @@ public class ComputeImplTest {
     String cursor = "cursor";
     String nextCursor = "nextCursor";
     compute = options.getService();
-    ImmutableList<Disk> diskList = ImmutableList.of(
-        new Disk(compute, new DiskInfo.BuilderImpl(DISK)),
-        new Disk(compute, new DiskInfo.BuilderImpl(DISK)));
-    ImmutableList<Disk> nextDiskList = ImmutableList.of(
-        new Disk(compute, new DiskInfo.BuilderImpl(DISK)));
+    ImmutableList<Disk> diskList =
+        ImmutableList.of(
+            new Disk(compute, new DiskInfo.BuilderImpl(DISK)),
+            new Disk(compute, new DiskInfo.BuilderImpl(DISK)));
+    ImmutableList<Disk> nextDiskList =
+        ImmutableList.of(new Disk(compute, new DiskInfo.BuilderImpl(DISK)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Disk>> result =
         Tuple.of(cursor, Iterables.transform(diskList, DiskInfo.TO_PB_FUNCTION));
     Tuple<String, Iterable<com.google.api.services.compute.model.Disk>> nextResult =
@@ -2718,8 +2861,7 @@ public class ComputeImplTest {
     compute = options.getService();
     ImmutableList<com.google.api.services.compute.model.Disk> diskList = ImmutableList.of();
     Tuple<String, Iterable<com.google.api.services.compute.model.Disk>> result =
-        Tuple.<String, Iterable<com.google.api.services.compute.model.Disk>>of(null,
-            diskList);
+        Tuple.<String, Iterable<com.google.api.services.compute.model.Disk>>of(null, diskList);
     EasyMock.expect(computeRpcMock.listDisks(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Disk> page = compute.listDisks();
@@ -2731,15 +2873,19 @@ public class ComputeImplTest {
   public void testAggregatedListDisksWithOptions() {
     String cursor = "cursor";
     compute = options.getService();
-    ImmutableList<Disk> diskList = ImmutableList.of(
-        new Disk(compute, new DiskInfo.BuilderImpl(DISK)),
-        new Disk(compute, new DiskInfo.BuilderImpl(DISK)));
+    ImmutableList<Disk> diskList =
+        ImmutableList.of(
+            new Disk(compute, new DiskInfo.BuilderImpl(DISK)),
+            new Disk(compute, new DiskInfo.BuilderImpl(DISK)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Disk>> result =
         Tuple.of(cursor, Iterables.transform(diskList, DiskInfo.TO_PB_FUNCTION));
     EasyMock.expect(computeRpcMock.listDisks(DISK_LIST_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
-    Page<Disk> page = compute.listDisks(DISK_AGGREGATED_LIST_PAGE_SIZE,
-        DISK_AGGREGATED_LIST_PAGE_TOKEN, DISK_AGGREGATED_LIST_FILTER);
+    Page<Disk> page =
+        compute.listDisks(
+            DISK_AGGREGATED_LIST_PAGE_SIZE,
+            DISK_AGGREGATED_LIST_PAGE_TOKEN,
+            DISK_AGGREGATED_LIST_FILTER);
     assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(diskList.toArray(), Iterables.toArray(page.getValues(), Disk.class));
   }
@@ -2752,10 +2898,11 @@ public class ComputeImplTest {
     compute = options.getService();
     DiskId diskId = DiskId.of("zone", "disk");
     DiskTypeId diskTypeId = DiskTypeId.of("zone", "diskType");
-    DiskInfo disk = DISK.toBuilder()
-        .setDiskId(diskId)
-        .setConfiguration(StandardDiskConfiguration.of(diskTypeId))
-        .build();
+    DiskInfo disk =
+        DISK.toBuilder()
+            .setDiskId(diskId)
+            .setConfiguration(StandardDiskConfiguration.of(diskTypeId))
+            .build();
     Operation operation = compute.create(disk);
     assertEquals(zoneOperation, operation);
   }
@@ -2763,8 +2910,10 @@ public class ComputeImplTest {
   @Test
   public void testCreateDiskWithOptions() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.createDisk(eq(DISK_ID.getZone()), eq(DISK.toPb()),
-        capture(capturedOptions))).andReturn(zoneOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.createDisk(
+                eq(DISK_ID.getZone()), eq(DISK.toPb()), capture(capturedOptions)))
+        .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Operation operation = compute.create(DISK, OPERATION_OPTION_FIELDS);
@@ -2779,8 +2928,9 @@ public class ComputeImplTest {
 
   @Test
   public void testResizeDisk_Operation() {
-    EasyMock.expect(computeRpcMock.resizeDisk(DISK_ID.getZone(), DISK_ID.getDisk(), 42L,
-        EMPTY_RPC_OPTIONS)).andReturn(zoneOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.resizeDisk(DISK_ID.getZone(), DISK_ID.getDisk(), 42L, EMPTY_RPC_OPTIONS))
+        .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertEquals(zoneOperation, compute.resize(DISK_ID, 42L));
@@ -2789,8 +2939,10 @@ public class ComputeImplTest {
   @Test
   public void testResizeDiskWithSelectedFields_Operation() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.resizeDisk(eq(DISK_ID.getZone()), eq(DISK_ID.getDisk()), eq(42L),
-        capture(capturedOptions))).andReturn(zoneOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.resizeDisk(
+                eq(DISK_ID.getZone()), eq(DISK_ID.getDisk()), eq(42L), capture(capturedOptions)))
+        .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Operation operation = compute.resize(DISK_ID, 42L, OPERATION_OPTION_FIELDS);
@@ -2805,8 +2957,9 @@ public class ComputeImplTest {
 
   @Test
   public void testResizeDisk_Null() {
-    EasyMock.expect(computeRpcMock.resizeDisk(DISK_ID.getZone(), DISK_ID.getDisk(), 42L,
-        EMPTY_RPC_OPTIONS)).andReturn(null);
+    EasyMock.expect(
+            computeRpcMock.resizeDisk(DISK_ID.getZone(), DISK_ID.getDisk(), 42L, EMPTY_RPC_OPTIONS))
+        .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertNull(compute.resize(DISK_ID, 42L));
@@ -2814,8 +2967,9 @@ public class ComputeImplTest {
 
   @Test
   public void testGetSubnetwork() {
-    EasyMock.expect(computeRpcMock.getSubnetwork(
-        SUBNETWORK_ID.getRegion(), SUBNETWORK_ID.getSubnetwork(), EMPTY_RPC_OPTIONS))
+    EasyMock.expect(
+            computeRpcMock.getSubnetwork(
+                SUBNETWORK_ID.getRegion(), SUBNETWORK_ID.getSubnetwork(), EMPTY_RPC_OPTIONS))
         .andReturn(SUBNETWORK.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -2825,8 +2979,9 @@ public class ComputeImplTest {
 
   @Test
   public void testGetSubnetwork_Null() {
-    EasyMock.expect(computeRpcMock.getSubnetwork(
-        SUBNETWORK_ID.getRegion(), SUBNETWORK_ID.getSubnetwork(), EMPTY_RPC_OPTIONS))
+    EasyMock.expect(
+            computeRpcMock.getSubnetwork(
+                SUBNETWORK_ID.getRegion(), SUBNETWORK_ID.getSubnetwork(), EMPTY_RPC_OPTIONS))
         .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -2836,8 +2991,12 @@ public class ComputeImplTest {
   @Test
   public void testGetSubnetworkWithSelectedFields() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.getSubnetwork(eq(SUBNETWORK_ID.getRegion()),
-        eq(SUBNETWORK_ID.getSubnetwork()), capture(capturedOptions))).andReturn(SUBNETWORK.toPb());
+    EasyMock.expect(
+            computeRpcMock.getSubnetwork(
+                eq(SUBNETWORK_ID.getRegion()),
+                eq(SUBNETWORK_ID.getSubnetwork()),
+                capture(capturedOptions)))
+        .andReturn(SUBNETWORK.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Subnetwork subnetwork = compute.getSubnetwork(SUBNETWORK_ID, SUBNETWORK_OPTION_FIELDS);
@@ -2852,8 +3011,10 @@ public class ComputeImplTest {
 
   @Test
   public void testDeleteSubnetwork_Operation() {
-    EasyMock.expect(computeRpcMock.deleteSubnetwork(SUBNETWORK_ID.getRegion(),
-        SUBNETWORK_ID.getSubnetwork(), EMPTY_RPC_OPTIONS)).andReturn(regionOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.deleteSubnetwork(
+                SUBNETWORK_ID.getRegion(), SUBNETWORK_ID.getSubnetwork(), EMPTY_RPC_OPTIONS))
+        .andReturn(regionOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertEquals(regionOperation, compute.deleteSubnetwork(SUBNETWORK_ID));
@@ -2862,8 +3023,11 @@ public class ComputeImplTest {
   @Test
   public void testDeleteSubnetworkWithSelectedFields_Operation() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.deleteSubnetwork(eq(SUBNETWORK_ID.getRegion()),
-        eq(SUBNETWORK_ID.getSubnetwork()), capture(capturedOptions)))
+    EasyMock.expect(
+            computeRpcMock.deleteSubnetwork(
+                eq(SUBNETWORK_ID.getRegion()),
+                eq(SUBNETWORK_ID.getSubnetwork()),
+                capture(capturedOptions)))
         .andReturn(regionOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -2879,8 +3043,10 @@ public class ComputeImplTest {
 
   @Test
   public void testDeleteSubnetwork_Null() {
-    EasyMock.expect(computeRpcMock.deleteSubnetwork(SUBNETWORK_ID.getRegion(),
-        SUBNETWORK_ID.getSubnetwork(), EMPTY_RPC_OPTIONS)).andReturn(null);
+    EasyMock.expect(
+            computeRpcMock.deleteSubnetwork(
+                SUBNETWORK_ID.getRegion(), SUBNETWORK_ID.getSubnetwork(), EMPTY_RPC_OPTIONS))
+        .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertNull(compute.deleteSubnetwork(SUBNETWORK_ID));
@@ -2890,19 +3056,19 @@ public class ComputeImplTest {
   public void testListSubnetworks() {
     String cursor = "cursor";
     compute = options.getService();
-    ImmutableList<Subnetwork> subnetworkList = ImmutableList.of(
-        new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)),
-        new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)));
+    ImmutableList<Subnetwork> subnetworkList =
+        ImmutableList.of(
+            new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)),
+            new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Subnetwork>> result =
-        Tuple.of(cursor,
-            Iterables.transform(subnetworkList, SubnetworkInfo.TO_PB_FUNCTION));
+        Tuple.of(cursor, Iterables.transform(subnetworkList, SubnetworkInfo.TO_PB_FUNCTION));
     EasyMock.expect(computeRpcMock.listSubnetworks(SUBNETWORK_ID.getRegion(), EMPTY_RPC_OPTIONS))
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Subnetwork> page = compute.listSubnetworks(SUBNETWORK_ID.getRegion());
     assertEquals(cursor, page.getNextPageToken());
-    assertArrayEquals(subnetworkList.toArray(),
-        Iterables.toArray(page.getValues(), Subnetwork.class));
+    assertArrayEquals(
+        subnetworkList.toArray(), Iterables.toArray(page.getValues(), Subnetwork.class));
   }
 
   @Test
@@ -2910,17 +3076,17 @@ public class ComputeImplTest {
     String cursor = "cursor";
     String nextCursor = "nextCursor";
     compute = options.getService();
-    ImmutableList<Subnetwork> subnetworkList = ImmutableList.of(
-        new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)),
-        new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)));
-    ImmutableList<Subnetwork> nextSubnetworkList = ImmutableList.of(
-        new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)));
+    ImmutableList<Subnetwork> subnetworkList =
+        ImmutableList.of(
+            new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)),
+            new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)));
+    ImmutableList<Subnetwork> nextSubnetworkList =
+        ImmutableList.of(new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Subnetwork>> result =
-        Tuple.of(cursor,
-            Iterables.transform(subnetworkList, SubnetworkInfo.TO_PB_FUNCTION));
-    Tuple<String, Iterable<com.google.api.services.compute.model.Subnetwork>>
-        nextResult = Tuple.of(nextCursor,
-        Iterables.transform(nextSubnetworkList, SubnetworkInfo.TO_PB_FUNCTION));
+        Tuple.of(cursor, Iterables.transform(subnetworkList, SubnetworkInfo.TO_PB_FUNCTION));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Subnetwork>> nextResult =
+        Tuple.of(
+            nextCursor, Iterables.transform(nextSubnetworkList, SubnetworkInfo.TO_PB_FUNCTION));
     Map<ComputeRpc.Option, ?> nextOptions = ImmutableMap.of(ComputeRpc.Option.PAGE_TOKEN, cursor);
     EasyMock.expect(computeRpcMock.listSubnetworks(SUBNETWORK_ID.getRegion(), EMPTY_RPC_OPTIONS))
         .andReturn(result);
@@ -2929,12 +3095,12 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     Page<Subnetwork> page = compute.listSubnetworks(SUBNETWORK_ID.getRegion());
     assertEquals(cursor, page.getNextPageToken());
-    assertArrayEquals(subnetworkList.toArray(),
-        Iterables.toArray(page.getValues(), Subnetwork.class));
+    assertArrayEquals(
+        subnetworkList.toArray(), Iterables.toArray(page.getValues(), Subnetwork.class));
     page = page.getNextPage();
     assertEquals(nextCursor, page.getNextPageToken());
-    assertArrayEquals(nextSubnetworkList.toArray(),
-        Iterables.toArray(page.getValues(), Subnetwork.class));
+    assertArrayEquals(
+        nextSubnetworkList.toArray(), Iterables.toArray(page.getValues(), Subnetwork.class));
   }
 
   @Test
@@ -2944,8 +3110,7 @@ public class ComputeImplTest {
         ImmutableList.of();
     Tuple<String, Iterable<com.google.api.services.compute.model.Subnetwork>> result =
         Tuple.<String, Iterable<com.google.api.services.compute.model.Subnetwork>>of(
-            null,
-            subnetworks);
+            null, subnetworks);
     EasyMock.expect(computeRpcMock.listSubnetworks(SUBNETWORK_ID.getRegion(), EMPTY_RPC_OPTIONS))
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
@@ -2958,39 +3123,43 @@ public class ComputeImplTest {
   public void testListSubnetworksWithOptions() {
     String cursor = "cursor";
     compute = options.getService();
-    ImmutableList<Subnetwork> subnetworkList = ImmutableList.of(
-        new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)),
-        new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)));
+    ImmutableList<Subnetwork> subnetworkList =
+        ImmutableList.of(
+            new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)),
+            new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Subnetwork>> result =
-        Tuple.of(cursor,
-            Iterables.transform(subnetworkList, SubnetworkInfo.TO_PB_FUNCTION));
-    EasyMock.expect(computeRpcMock.listSubnetworks(
-        SUBNETWORK_ID.getRegion(), SUBNETWORK_LIST_OPTIONS))
+        Tuple.of(cursor, Iterables.transform(subnetworkList, SubnetworkInfo.TO_PB_FUNCTION));
+    EasyMock.expect(
+            computeRpcMock.listSubnetworks(SUBNETWORK_ID.getRegion(), SUBNETWORK_LIST_OPTIONS))
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
-    Page<Subnetwork> page = compute.listSubnetworks(SUBNETWORK_ID.getRegion(),
-        SUBNETWORK_LIST_PAGE_SIZE, SUBNETWORK_LIST_PAGE_TOKEN, SUBNETWORK_LIST_FILTER);
+    Page<Subnetwork> page =
+        compute.listSubnetworks(
+            SUBNETWORK_ID.getRegion(),
+            SUBNETWORK_LIST_PAGE_SIZE,
+            SUBNETWORK_LIST_PAGE_TOKEN,
+            SUBNETWORK_LIST_FILTER);
     assertEquals(cursor, page.getNextPageToken());
-    assertArrayEquals(subnetworkList.toArray(),
-        Iterables.toArray(page.getValues(), Subnetwork.class));
+    assertArrayEquals(
+        subnetworkList.toArray(), Iterables.toArray(page.getValues(), Subnetwork.class));
   }
 
   @Test
   public void testAggregatedListSubnetworks() {
     String cursor = "cursor";
     compute = options.getService();
-    ImmutableList<Subnetwork> subnetworkList = ImmutableList.of(
-        new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)),
-        new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)));
+    ImmutableList<Subnetwork> subnetworkList =
+        ImmutableList.of(
+            new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)),
+            new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Subnetwork>> result =
-        Tuple.of(cursor,
-            Iterables.transform(subnetworkList, SubnetworkInfo.TO_PB_FUNCTION));
+        Tuple.of(cursor, Iterables.transform(subnetworkList, SubnetworkInfo.TO_PB_FUNCTION));
     EasyMock.expect(computeRpcMock.listSubnetworks(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Subnetwork> page = compute.listSubnetworks();
     assertEquals(cursor, page.getNextPageToken());
-    assertArrayEquals(subnetworkList.toArray(),
-        Iterables.toArray(page.getValues(), Subnetwork.class));
+    assertArrayEquals(
+        subnetworkList.toArray(), Iterables.toArray(page.getValues(), Subnetwork.class));
   }
 
   @Test
@@ -2998,29 +3167,29 @@ public class ComputeImplTest {
     String cursor = "cursor";
     String nextCursor = "nextCursor";
     compute = options.getService();
-    ImmutableList<Subnetwork> subnetworkList = ImmutableList.of(
-        new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)),
-        new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)));
-    ImmutableList<Subnetwork> nextSubnetworkList = ImmutableList.of(
-        new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)));
+    ImmutableList<Subnetwork> subnetworkList =
+        ImmutableList.of(
+            new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)),
+            new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)));
+    ImmutableList<Subnetwork> nextSubnetworkList =
+        ImmutableList.of(new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Subnetwork>> result =
-        Tuple.of(cursor,
-            Iterables.transform(subnetworkList, SubnetworkInfo.TO_PB_FUNCTION));
-    Tuple<String, Iterable<com.google.api.services.compute.model.Subnetwork>>
-        nextResult = Tuple.of(nextCursor,
-        Iterables.transform(nextSubnetworkList, SubnetworkInfo.TO_PB_FUNCTION));
+        Tuple.of(cursor, Iterables.transform(subnetworkList, SubnetworkInfo.TO_PB_FUNCTION));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Subnetwork>> nextResult =
+        Tuple.of(
+            nextCursor, Iterables.transform(nextSubnetworkList, SubnetworkInfo.TO_PB_FUNCTION));
     Map<ComputeRpc.Option, ?> nextOptions = ImmutableMap.of(ComputeRpc.Option.PAGE_TOKEN, cursor);
     EasyMock.expect(computeRpcMock.listSubnetworks(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.expect(computeRpcMock.listSubnetworks(nextOptions)).andReturn(nextResult);
     EasyMock.replay(computeRpcMock);
     Page<Subnetwork> page = compute.listSubnetworks();
     assertEquals(cursor, page.getNextPageToken());
-    assertArrayEquals(subnetworkList.toArray(),
-        Iterables.toArray(page.getValues(), Subnetwork.class));
+    assertArrayEquals(
+        subnetworkList.toArray(), Iterables.toArray(page.getValues(), Subnetwork.class));
     page = page.getNextPage();
     assertEquals(nextCursor, page.getNextPageToken());
-    assertArrayEquals(nextSubnetworkList.toArray(),
-        Iterables.toArray(page.getValues(), Subnetwork.class));
+    assertArrayEquals(
+        nextSubnetworkList.toArray(), Iterables.toArray(page.getValues(), Subnetwork.class));
   }
 
   @Test
@@ -3030,8 +3199,7 @@ public class ComputeImplTest {
         ImmutableList.of();
     Tuple<String, Iterable<com.google.api.services.compute.model.Subnetwork>> result =
         Tuple.<String, Iterable<com.google.api.services.compute.model.Subnetwork>>of(
-            null,
-            subnetworks);
+            null, subnetworks);
     EasyMock.expect(computeRpcMock.listSubnetworks(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Subnetwork> page = compute.listSubnetworks();
@@ -3043,25 +3211,30 @@ public class ComputeImplTest {
   public void testAggregatedListSubnetworksWithOptions() {
     String cursor = "cursor";
     compute = options.getService();
-    ImmutableList<Subnetwork> subnetworkList = ImmutableList.of(
-        new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)),
-        new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)));
+    ImmutableList<Subnetwork> subnetworkList =
+        ImmutableList.of(
+            new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)),
+            new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Subnetwork>> result =
-        Tuple.of(cursor,
-            Iterables.transform(subnetworkList, SubnetworkInfo.TO_PB_FUNCTION));
+        Tuple.of(cursor, Iterables.transform(subnetworkList, SubnetworkInfo.TO_PB_FUNCTION));
     EasyMock.expect(computeRpcMock.listSubnetworks(SUBNETWORK_LIST_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
-    Page<Subnetwork> page = compute.listSubnetworks(SUBNETWORK_AGGREGATED_LIST_PAGE_SIZE,
-        SUBNETWORK_AGGREGATED_LIST_PAGE_TOKEN, SUBNETWORK_AGGREGATED_LIST_FILTER);
+    Page<Subnetwork> page =
+        compute.listSubnetworks(
+            SUBNETWORK_AGGREGATED_LIST_PAGE_SIZE,
+            SUBNETWORK_AGGREGATED_LIST_PAGE_TOKEN,
+            SUBNETWORK_AGGREGATED_LIST_FILTER);
     assertEquals(cursor, page.getNextPageToken());
-    assertArrayEquals(subnetworkList.toArray(),
-        Iterables.toArray(page.getValues(), Subnetwork.class));
+    assertArrayEquals(
+        subnetworkList.toArray(), Iterables.toArray(page.getValues(), Subnetwork.class));
   }
 
   @Test
   public void testCreateSubnetwork() {
-    EasyMock.expect(computeRpcMock.createSubnetwork(SUBNETWORK_ID.getRegion(), SUBNETWORK.toPb(),
-        EMPTY_RPC_OPTIONS)).andReturn(regionOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.createSubnetwork(
+                SUBNETWORK_ID.getRegion(), SUBNETWORK.toPb(), EMPTY_RPC_OPTIONS))
+        .andReturn(regionOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     SubnetworkId subnetworkId = SubnetworkId.of("region", "network");
@@ -3074,8 +3247,10 @@ public class ComputeImplTest {
   @Test
   public void testCreateSubnetworkWithOptions() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.createSubnetwork(eq(SUBNETWORK_ID.getRegion()),
-        eq(SUBNETWORK.toPb()), capture(capturedOptions))).andReturn(regionOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.createSubnetwork(
+                eq(SUBNETWORK_ID.getRegion()), eq(SUBNETWORK.toPb()), capture(capturedOptions)))
+        .andReturn(regionOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Operation operation = compute.create(SUBNETWORK, OPERATION_OPTION_FIELDS);
@@ -3110,8 +3285,8 @@ public class ComputeImplTest {
   @Test
   public void testGetNetworkWithSelectedFields() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.getNetwork(eq(
-        NETWORK_ID.getNetwork()), capture(capturedOptions)))
+    EasyMock.expect(
+            computeRpcMock.getNetwork(eq(NETWORK_ID.getNetwork()), capture(capturedOptions)))
         .andReturn(NETWORK.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -3138,8 +3313,9 @@ public class ComputeImplTest {
   @Test
   public void testDeleteNetworkWithSelectedFields_Operation() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.deleteNetwork(eq(NETWORK_ID.getNetwork()),
-        capture(capturedOptions))).andReturn(globalOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.deleteNetwork(eq(NETWORK_ID.getNetwork()), capture(capturedOptions)))
+        .andReturn(globalOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Operation operation = compute.deleteNetwork(NETWORK_ID, OPERATION_OPTION_FIELDS);
@@ -3165,9 +3341,10 @@ public class ComputeImplTest {
   public void testListNetworks() {
     String cursor = "cursor";
     compute = options.getService();
-    ImmutableList<Network> networkList = ImmutableList.of(
-        new Network(compute, new NetworkInfo.BuilderImpl(NETWORK)),
-        new Network(compute, new NetworkInfo.BuilderImpl(NETWORK)));
+    ImmutableList<Network> networkList =
+        ImmutableList.of(
+            new Network(compute, new NetworkInfo.BuilderImpl(NETWORK)),
+            new Network(compute, new NetworkInfo.BuilderImpl(NETWORK)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Network>> result =
         Tuple.of(cursor, Iterables.transform(networkList, NetworkInfo.TO_PB_FUNCTION));
     EasyMock.expect(computeRpcMock.listNetworks(EMPTY_RPC_OPTIONS)).andReturn(result);
@@ -3182,16 +3359,16 @@ public class ComputeImplTest {
     String cursor = "cursor";
     String nextCursor = "nextCursor";
     compute = options.getService();
-    ImmutableList<Network> networkList = ImmutableList.of(
-        new Network(compute, new NetworkInfo.BuilderImpl(NETWORK)),
-        new Network(compute, new NetworkInfo.BuilderImpl(NETWORK)));
-    ImmutableList<Network> nextNetworkList = ImmutableList.of(
-        new Network(compute, new NetworkInfo.BuilderImpl(NETWORK)));
+    ImmutableList<Network> networkList =
+        ImmutableList.of(
+            new Network(compute, new NetworkInfo.BuilderImpl(NETWORK)),
+            new Network(compute, new NetworkInfo.BuilderImpl(NETWORK)));
+    ImmutableList<Network> nextNetworkList =
+        ImmutableList.of(new Network(compute, new NetworkInfo.BuilderImpl(NETWORK)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Network>> result =
         Tuple.of(cursor, Iterables.transform(networkList, NetworkInfo.TO_PB_FUNCTION));
     Tuple<String, Iterable<com.google.api.services.compute.model.Network>> nextResult =
-        Tuple.of(nextCursor,
-            Iterables.transform(nextNetworkList, NetworkInfo.TO_PB_FUNCTION));
+        Tuple.of(nextCursor, Iterables.transform(nextNetworkList, NetworkInfo.TO_PB_FUNCTION));
     Map<ComputeRpc.Option, ?> nextOptions = ImmutableMap.of(ComputeRpc.Option.PAGE_TOKEN, cursor);
     EasyMock.expect(computeRpcMock.listNetworks(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.expect(computeRpcMock.listNetworks(nextOptions)).andReturn(nextResult);
@@ -3201,8 +3378,8 @@ public class ComputeImplTest {
     assertArrayEquals(networkList.toArray(), Iterables.toArray(page.getValues(), Network.class));
     page = page.getNextPage();
     assertEquals(nextCursor, page.getNextPageToken());
-    assertArrayEquals(nextNetworkList.toArray(),
-        Iterables.toArray(page.getValues(), Network.class));
+    assertArrayEquals(
+        nextNetworkList.toArray(), Iterables.toArray(page.getValues(), Network.class));
   }
 
   @Test
@@ -3210,8 +3387,7 @@ public class ComputeImplTest {
     compute = options.getService();
     ImmutableList<com.google.api.services.compute.model.Network> networks = ImmutableList.of();
     Tuple<String, Iterable<com.google.api.services.compute.model.Network>> result =
-        Tuple.<String, Iterable<com.google.api.services.compute.model.Network>>of(null,
-            networks);
+        Tuple.<String, Iterable<com.google.api.services.compute.model.Network>>of(null, networks);
     EasyMock.expect(computeRpcMock.listNetworks(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Network> page = compute.listNetworks();
@@ -3223,15 +3399,16 @@ public class ComputeImplTest {
   public void testListNetworksWithOptions() {
     String cursor = "cursor";
     compute = options.getService();
-    ImmutableList<Network> networkList = ImmutableList.of(
-        new Network(compute, new NetworkInfo.BuilderImpl(NETWORK)),
-        new Network(compute, new NetworkInfo.BuilderImpl(NETWORK)));
+    ImmutableList<Network> networkList =
+        ImmutableList.of(
+            new Network(compute, new NetworkInfo.BuilderImpl(NETWORK)),
+            new Network(compute, new NetworkInfo.BuilderImpl(NETWORK)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Network>> result =
         Tuple.of(cursor, Iterables.transform(networkList, NetworkInfo.TO_PB_FUNCTION));
     EasyMock.expect(computeRpcMock.listNetworks(NETWORK_LIST_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
-    Page<Network> page = compute.listNetworks(NETWORK_LIST_PAGE_SIZE, NETWORK_LIST_PAGE_TOKEN,
-        NETWORK_LIST_FILTER);
+    Page<Network> page =
+        compute.listNetworks(NETWORK_LIST_PAGE_SIZE, NETWORK_LIST_PAGE_TOKEN, NETWORK_LIST_FILTER);
     assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(networkList.toArray(), Iterables.toArray(page.getValues(), Network.class));
   }
@@ -3267,8 +3444,10 @@ public class ComputeImplTest {
 
   @Test
   public void testGetInstance() {
-    EasyMock.expect(computeRpcMock.getInstance(INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(),
-        EMPTY_RPC_OPTIONS)).andReturn(INSTANCE.toPb());
+    EasyMock.expect(
+            computeRpcMock.getInstance(
+                INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(), EMPTY_RPC_OPTIONS))
+        .andReturn(INSTANCE.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Instance instance = compute.getInstance(INSTANCE_ID);
@@ -3277,8 +3456,10 @@ public class ComputeImplTest {
 
   @Test
   public void testGetInstance_Null() {
-    EasyMock.expect(computeRpcMock.getInstance(INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(),
-        EMPTY_RPC_OPTIONS)).andReturn(null);
+    EasyMock.expect(
+            computeRpcMock.getInstance(
+                INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(), EMPTY_RPC_OPTIONS))
+        .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertNull(compute.getInstance(INSTANCE_ID));
@@ -3287,8 +3468,9 @@ public class ComputeImplTest {
   @Test
   public void testGetInstanceWithSelectedFields() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.getInstance(
-        eq(INSTANCE_ID.getZone()), eq(INSTANCE_ID.getInstance()), capture(capturedOptions)))
+    EasyMock.expect(
+            computeRpcMock.getInstance(
+                eq(INSTANCE_ID.getZone()), eq(INSTANCE_ID.getInstance()), capture(capturedOptions)))
         .andReturn(INSTANCE.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -3304,8 +3486,10 @@ public class ComputeImplTest {
 
   @Test
   public void testDeleteInstance_Operation() {
-    EasyMock.expect(computeRpcMock.deleteInstance(INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(),
-        EMPTY_RPC_OPTIONS)).andReturn(zoneOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.deleteInstance(
+                INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(), EMPTY_RPC_OPTIONS))
+        .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertEquals(zoneOperation, compute.deleteInstance(INSTANCE_ID));
@@ -3314,8 +3498,10 @@ public class ComputeImplTest {
   @Test
   public void testDeleteInstanceWithSelectedFields_Operation() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.deleteInstance(eq(INSTANCE_ID.getZone()),
-        eq(INSTANCE_ID.getInstance()), capture(capturedOptions))).andReturn(zoneOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.deleteInstance(
+                eq(INSTANCE_ID.getZone()), eq(INSTANCE_ID.getInstance()), capture(capturedOptions)))
+        .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Operation operation = compute.deleteInstance(INSTANCE_ID, OPERATION_OPTION_FIELDS);
@@ -3330,8 +3516,10 @@ public class ComputeImplTest {
 
   @Test
   public void testDeleteInstance_Null() {
-    EasyMock.expect(computeRpcMock.deleteInstance(INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(),
-        EMPTY_RPC_OPTIONS)).andReturn(null);
+    EasyMock.expect(
+            computeRpcMock.deleteInstance(
+                INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(), EMPTY_RPC_OPTIONS))
+        .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertNull(compute.deleteInstance(INSTANCE_ID));
@@ -3341,9 +3529,10 @@ public class ComputeImplTest {
   public void testListInstances() {
     String cursor = "cursor";
     compute = options.getService();
-    ImmutableList<Instance> instanceList = ImmutableList.of(
-        new Instance(compute, new InstanceInfo.BuilderImpl(INSTANCE)),
-        new Instance(compute, new InstanceInfo.BuilderImpl(INSTANCE)));
+    ImmutableList<Instance> instanceList =
+        ImmutableList.of(
+            new Instance(compute, new InstanceInfo.BuilderImpl(INSTANCE)),
+            new Instance(compute, new InstanceInfo.BuilderImpl(INSTANCE)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Instance>> result =
         Tuple.of(cursor, Iterables.transform(instanceList, InstanceInfo.TO_PB_FUNCTION));
     EasyMock.expect(computeRpcMock.listInstances(INSTANCE_ID.getZone(), EMPTY_RPC_OPTIONS))
@@ -3359,16 +3548,16 @@ public class ComputeImplTest {
     String cursor = "cursor";
     String nextCursor = "nextCursor";
     compute = options.getService();
-    ImmutableList<Instance> instanceList = ImmutableList.of(
-        new Instance(compute, new InstanceInfo.BuilderImpl(INSTANCE)),
-        new Instance(compute, new InstanceInfo.BuilderImpl(INSTANCE)));
-    ImmutableList<Instance> nextInstanceList = ImmutableList.of(
-        new Instance(compute, new InstanceInfo.BuilderImpl(INSTANCE)));
+    ImmutableList<Instance> instanceList =
+        ImmutableList.of(
+            new Instance(compute, new InstanceInfo.BuilderImpl(INSTANCE)),
+            new Instance(compute, new InstanceInfo.BuilderImpl(INSTANCE)));
+    ImmutableList<Instance> nextInstanceList =
+        ImmutableList.of(new Instance(compute, new InstanceInfo.BuilderImpl(INSTANCE)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Instance>> result =
         Tuple.of(cursor, Iterables.transform(instanceList, InstanceInfo.TO_PB_FUNCTION));
     Tuple<String, Iterable<com.google.api.services.compute.model.Instance>> nextResult =
-        Tuple.of(nextCursor,
-            Iterables.transform(nextInstanceList, InstanceInfo.TO_PB_FUNCTION));
+        Tuple.of(nextCursor, Iterables.transform(nextInstanceList, InstanceInfo.TO_PB_FUNCTION));
     Map<ComputeRpc.Option, ?> nextOptions = ImmutableMap.of(ComputeRpc.Option.PAGE_TOKEN, cursor);
     EasyMock.expect(computeRpcMock.listInstances(INSTANCE_ID.getZone(), EMPTY_RPC_OPTIONS))
         .andReturn(result);
@@ -3380,8 +3569,8 @@ public class ComputeImplTest {
     assertArrayEquals(instanceList.toArray(), Iterables.toArray(page.getValues(), Instance.class));
     page = page.getNextPage();
     assertEquals(nextCursor, page.getNextPageToken());
-    assertArrayEquals(nextInstanceList.toArray(),
-        Iterables.toArray(page.getValues(), Instance.class));
+    assertArrayEquals(
+        nextInstanceList.toArray(), Iterables.toArray(page.getValues(), Instance.class));
   }
 
   @Test
@@ -3389,8 +3578,7 @@ public class ComputeImplTest {
     compute = options.getService();
     ImmutableList<com.google.api.services.compute.model.Instance> instances = ImmutableList.of();
     Tuple<String, Iterable<com.google.api.services.compute.model.Instance>> result =
-        Tuple.<String, Iterable<com.google.api.services.compute.model.Instance>>of(null,
-            instances);
+        Tuple.<String, Iterable<com.google.api.services.compute.model.Instance>>of(null, instances);
     EasyMock.expect(computeRpcMock.listInstances(INSTANCE_ID.getZone(), EMPTY_RPC_OPTIONS))
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
@@ -3403,16 +3591,21 @@ public class ComputeImplTest {
   public void testListInstancesWithOptions() {
     String cursor = "cursor";
     compute = options.getService();
-    ImmutableList<Instance> instanceList = ImmutableList.of(
-        new Instance(compute, new InstanceInfo.BuilderImpl(INSTANCE)),
-        new Instance(compute, new InstanceInfo.BuilderImpl(INSTANCE)));
+    ImmutableList<Instance> instanceList =
+        ImmutableList.of(
+            new Instance(compute, new InstanceInfo.BuilderImpl(INSTANCE)),
+            new Instance(compute, new InstanceInfo.BuilderImpl(INSTANCE)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Instance>> result =
         Tuple.of(cursor, Iterables.transform(instanceList, InstanceInfo.TO_PB_FUNCTION));
     EasyMock.expect(computeRpcMock.listInstances(INSTANCE_ID.getZone(), INSTANCE_LIST_OPTIONS))
         .andReturn(result);
     EasyMock.replay(computeRpcMock);
-    Page<Instance> page = compute.listInstances(INSTANCE_ID.getZone(), INSTANCE_LIST_PAGE_SIZE,
-        INSTANCE_LIST_PAGE_TOKEN, INSTANCE_LIST_FILTER);
+    Page<Instance> page =
+        compute.listInstances(
+            INSTANCE_ID.getZone(),
+            INSTANCE_LIST_PAGE_SIZE,
+            INSTANCE_LIST_PAGE_TOKEN,
+            INSTANCE_LIST_FILTER);
     assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(instanceList.toArray(), Iterables.toArray(page.getValues(), Instance.class));
   }
@@ -3421,9 +3614,10 @@ public class ComputeImplTest {
   public void testAggregatedListInstances() {
     String cursor = "cursor";
     compute = options.getService();
-    ImmutableList<Instance> instanceList = ImmutableList.of(
-        new Instance(compute, new InstanceInfo.BuilderImpl(INSTANCE)),
-        new Instance(compute, new InstanceInfo.BuilderImpl(INSTANCE)));
+    ImmutableList<Instance> instanceList =
+        ImmutableList.of(
+            new Instance(compute, new InstanceInfo.BuilderImpl(INSTANCE)),
+            new Instance(compute, new InstanceInfo.BuilderImpl(INSTANCE)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Instance>> result =
         Tuple.of(cursor, Iterables.transform(instanceList, InstanceInfo.TO_PB_FUNCTION));
     EasyMock.expect(computeRpcMock.listInstances(EMPTY_RPC_OPTIONS)).andReturn(result);
@@ -3438,16 +3632,16 @@ public class ComputeImplTest {
     String cursor = "cursor";
     String nextCursor = "nextCursor";
     compute = options.getService();
-    ImmutableList<Instance> instanceList = ImmutableList.of(
-        new Instance(compute, new InstanceInfo.BuilderImpl(INSTANCE)),
-        new Instance(compute, new InstanceInfo.BuilderImpl(INSTANCE)));
-    ImmutableList<Instance> nextInstanceList = ImmutableList.of(
-        new Instance(compute, new InstanceInfo.BuilderImpl(INSTANCE)));
+    ImmutableList<Instance> instanceList =
+        ImmutableList.of(
+            new Instance(compute, new InstanceInfo.BuilderImpl(INSTANCE)),
+            new Instance(compute, new InstanceInfo.BuilderImpl(INSTANCE)));
+    ImmutableList<Instance> nextInstanceList =
+        ImmutableList.of(new Instance(compute, new InstanceInfo.BuilderImpl(INSTANCE)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Instance>> result =
         Tuple.of(cursor, Iterables.transform(instanceList, InstanceInfo.TO_PB_FUNCTION));
     Tuple<String, Iterable<com.google.api.services.compute.model.Instance>> nextResult =
-        Tuple.of(nextCursor,
-            Iterables.transform(nextInstanceList, InstanceInfo.TO_PB_FUNCTION));
+        Tuple.of(nextCursor, Iterables.transform(nextInstanceList, InstanceInfo.TO_PB_FUNCTION));
     Map<ComputeRpc.Option, ?> nextOptions = ImmutableMap.of(ComputeRpc.Option.PAGE_TOKEN, cursor);
     EasyMock.expect(computeRpcMock.listInstances(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.expect(computeRpcMock.listInstances(nextOptions)).andReturn(nextResult);
@@ -3457,8 +3651,8 @@ public class ComputeImplTest {
     assertArrayEquals(instanceList.toArray(), Iterables.toArray(page.getValues(), Instance.class));
     page = page.getNextPage();
     assertEquals(nextCursor, page.getNextPageToken());
-    assertArrayEquals(nextInstanceList.toArray(),
-        Iterables.toArray(page.getValues(), Instance.class));
+    assertArrayEquals(
+        nextInstanceList.toArray(), Iterables.toArray(page.getValues(), Instance.class));
   }
 
   @Test
@@ -3466,8 +3660,8 @@ public class ComputeImplTest {
     compute = options.getService();
     ImmutableList<com.google.api.services.compute.model.Instance> instanceList = ImmutableList.of();
     Tuple<String, Iterable<com.google.api.services.compute.model.Instance>> result =
-        Tuple.<String, Iterable<com.google.api.services.compute.model.Instance>>of(null,
-            instanceList);
+        Tuple.<String, Iterable<com.google.api.services.compute.model.Instance>>of(
+            null, instanceList);
     EasyMock.expect(computeRpcMock.listInstances(EMPTY_RPC_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
     Page<Instance> page = compute.listInstances();
@@ -3479,28 +3673,37 @@ public class ComputeImplTest {
   public void testAggregatedListInstancesWithOptions() {
     String cursor = "cursor";
     compute = options.getService();
-    ImmutableList<Instance> instanceList = ImmutableList.of(
-        new Instance(compute, new InstanceInfo.BuilderImpl(INSTANCE)),
-        new Instance(compute, new InstanceInfo.BuilderImpl(INSTANCE)));
+    ImmutableList<Instance> instanceList =
+        ImmutableList.of(
+            new Instance(compute, new InstanceInfo.BuilderImpl(INSTANCE)),
+            new Instance(compute, new InstanceInfo.BuilderImpl(INSTANCE)));
     Tuple<String, Iterable<com.google.api.services.compute.model.Instance>> result =
         Tuple.of(cursor, Iterables.transform(instanceList, InstanceInfo.TO_PB_FUNCTION));
     EasyMock.expect(computeRpcMock.listInstances(INSTANCE_LIST_OPTIONS)).andReturn(result);
     EasyMock.replay(computeRpcMock);
-    Page<Instance> page = compute.listInstances(INSTANCE_AGGREGATED_LIST_PAGE_SIZE,
-        INSTANCE_AGGREGATED_LIST_PAGE_TOKEN, INSTANCE_AGGREGATED_LIST_FILTER);
+    Page<Instance> page =
+        compute.listInstances(
+            INSTANCE_AGGREGATED_LIST_PAGE_SIZE,
+            INSTANCE_AGGREGATED_LIST_PAGE_TOKEN,
+            INSTANCE_AGGREGATED_LIST_FILTER);
     assertEquals(cursor, page.getNextPageToken());
     assertArrayEquals(instanceList.toArray(), Iterables.toArray(page.getValues(), Instance.class));
   }
 
   @Test
   public void testCreateInstance() {
-    EasyMock.expect(computeRpcMock.createInstance(INSTANCE_ID.getZone(), INSTANCE.toPb(),
-        EMPTY_RPC_OPTIONS)).andReturn(zoneOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.createInstance(
+                INSTANCE_ID.getZone(), INSTANCE.toPb(), EMPTY_RPC_OPTIONS))
+        .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
-    InstanceInfo instance = InstanceInfo.of(InstanceId.of("zone", "instance"),
-        MachineTypeId.of("zone", "type"), ATTACHED_DISK,
-        NetworkInterface.of(NetworkId.of("network")));
+    InstanceInfo instance =
+        InstanceInfo.of(
+            InstanceId.of("zone", "instance"),
+            MachineTypeId.of("zone", "type"),
+            ATTACHED_DISK,
+            NetworkInterface.of(NetworkId.of("network")));
     Operation operation = compute.create(instance);
     assertEquals(zoneOperation, operation);
   }
@@ -3508,8 +3711,10 @@ public class ComputeImplTest {
   @Test
   public void testCreateInstanceWithOptions() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.createInstance(eq(INSTANCE_ID.getZone()), eq(INSTANCE.toPb()),
-        capture(capturedOptions))).andReturn(zoneOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.createInstance(
+                eq(INSTANCE_ID.getZone()), eq(INSTANCE.toPb()), capture(capturedOptions)))
+        .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Operation operation = compute.create(INSTANCE, OPERATION_OPTION_FIELDS);
@@ -3525,26 +3730,37 @@ public class ComputeImplTest {
   @Test
   public void testAddAccessConfig_Operation() {
     AccessConfig accessConfig = AccessConfig.of("192.168.1.1");
-    EasyMock.expect(computeRpcMock.addAccessConfig(INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(),
-        "networkInterface", accessConfig.toPb(), EMPTY_RPC_OPTIONS))
+    EasyMock.expect(
+            computeRpcMock.addAccessConfig(
+                INSTANCE_ID.getZone(),
+                INSTANCE_ID.getInstance(),
+                "networkInterface",
+                accessConfig.toPb(),
+                EMPTY_RPC_OPTIONS))
         .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
-    assertEquals(zoneOperation,
-        compute.addAccessConfig(INSTANCE_ID, "networkInterface", accessConfig));
+    assertEquals(
+        zoneOperation, compute.addAccessConfig(INSTANCE_ID, "networkInterface", accessConfig));
   }
 
   @Test
   public void testAddAccessConfigWithSelectedFields_Operation() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
     AccessConfig accessConfig = AccessConfig.of("192.168.1.1");
-    EasyMock.expect(computeRpcMock.addAccessConfig(eq(INSTANCE_ID.getZone()),
-        eq(INSTANCE_ID.getInstance()), eq("networkInterface"), eq(accessConfig.toPb()),
-        capture(capturedOptions))).andReturn(zoneOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.addAccessConfig(
+                eq(INSTANCE_ID.getZone()),
+                eq(INSTANCE_ID.getInstance()),
+                eq("networkInterface"),
+                eq(accessConfig.toPb()),
+                capture(capturedOptions)))
+        .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
-    Operation operation = compute.addAccessConfig(INSTANCE_ID, "networkInterface", accessConfig,
-        OPERATION_OPTION_FIELDS);
+    Operation operation =
+        compute.addAccessConfig(
+            INSTANCE_ID, "networkInterface", accessConfig, OPERATION_OPTION_FIELDS);
     String selector =
         (String) capturedOptions.getValue().get(OPERATION_OPTION_FIELDS.getRpcOption());
     assertTrue(selector.contains("selfLink"));
@@ -3557,8 +3773,14 @@ public class ComputeImplTest {
   @Test
   public void testAddAccessConfig_Null() {
     AccessConfig accessConfig = AccessConfig.of("192.168.1.1");
-    EasyMock.expect(computeRpcMock.addAccessConfig(INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(),
-        "networkInterface", accessConfig.toPb(), EMPTY_RPC_OPTIONS)).andReturn(null);
+    EasyMock.expect(
+            computeRpcMock.addAccessConfig(
+                INSTANCE_ID.getZone(),
+                INSTANCE_ID.getInstance(),
+                "networkInterface",
+                accessConfig.toPb(),
+                EMPTY_RPC_OPTIONS))
+        .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertNull(compute.addAccessConfig(INSTANCE_ID, "networkInterface", accessConfig));
@@ -3567,8 +3789,13 @@ public class ComputeImplTest {
   @Test
   public void testAttachDisk_Operation() {
     AttachedDisk attachedDisk = AttachedDisk.of(PERSISTENT_DISK_CONFIGURATION);
-    EasyMock.expect(computeRpcMock.attachDisk(INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(),
-        attachedDisk.toPb(), EMPTY_RPC_OPTIONS)).andReturn(zoneOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.attachDisk(
+                INSTANCE_ID.getZone(),
+                INSTANCE_ID.getInstance(),
+                attachedDisk.toPb(),
+                EMPTY_RPC_OPTIONS))
+        .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertEquals(zoneOperation, compute.attachDisk(INSTANCE_ID, PERSISTENT_DISK_CONFIGURATION));
@@ -3578,9 +3805,13 @@ public class ComputeImplTest {
   public void testAttachDiskWithSelectedFields_Operation() {
     AttachedDisk attachedDisk = AttachedDisk.of(PERSISTENT_DISK_CONFIGURATION);
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.attachDisk(
-        eq(INSTANCE_ID.getZone()), eq(INSTANCE_ID.getInstance()), eq(attachedDisk.toPb()),
-        capture(capturedOptions))).andReturn(zoneOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.attachDisk(
+                eq(INSTANCE_ID.getZone()),
+                eq(INSTANCE_ID.getInstance()),
+                eq(attachedDisk.toPb()),
+                capture(capturedOptions)))
+        .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Operation operation =
@@ -3597,8 +3828,13 @@ public class ComputeImplTest {
   @Test
   public void testAttachDisk_Null() {
     AttachedDisk attachedDisk = AttachedDisk.of(PERSISTENT_DISK_CONFIGURATION);
-    EasyMock.expect(computeRpcMock.attachDisk(INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(),
-        attachedDisk.toPb(), EMPTY_RPC_OPTIONS)).andReturn(null);
+    EasyMock.expect(
+            computeRpcMock.attachDisk(
+                INSTANCE_ID.getZone(),
+                INSTANCE_ID.getInstance(),
+                attachedDisk.toPb(),
+                EMPTY_RPC_OPTIONS))
+        .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertNull(compute.attachDisk(INSTANCE_ID, PERSISTENT_DISK_CONFIGURATION));
@@ -3607,25 +3843,35 @@ public class ComputeImplTest {
   @Test
   public void testAttachDiskName_Operation() {
     AttachedDisk attachedDisk = AttachedDisk.of("dev0", PERSISTENT_DISK_CONFIGURATION);
-    EasyMock.expect(computeRpcMock.attachDisk(INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(),
-        attachedDisk.toPb(), EMPTY_RPC_OPTIONS)).andReturn(zoneOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.attachDisk(
+                INSTANCE_ID.getZone(),
+                INSTANCE_ID.getInstance(),
+                attachedDisk.toPb(),
+                EMPTY_RPC_OPTIONS))
+        .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
-    assertEquals(zoneOperation,
-        compute.attachDisk(INSTANCE_ID, "dev0", PERSISTENT_DISK_CONFIGURATION));
+    assertEquals(
+        zoneOperation, compute.attachDisk(INSTANCE_ID, "dev0", PERSISTENT_DISK_CONFIGURATION));
   }
 
   @Test
   public void testAttachDiskNameWithSelectedFields_Operation() {
     AttachedDisk attachedDisk = AttachedDisk.of("dev0", PERSISTENT_DISK_CONFIGURATION);
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.attachDisk(
-        eq(INSTANCE_ID.getZone()), eq(INSTANCE_ID.getInstance()), eq(attachedDisk.toPb()),
-        capture(capturedOptions))).andReturn(zoneOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.attachDisk(
+                eq(INSTANCE_ID.getZone()),
+                eq(INSTANCE_ID.getInstance()),
+                eq(attachedDisk.toPb()),
+                capture(capturedOptions)))
+        .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
-    Operation operation = compute.attachDisk(INSTANCE_ID, "dev0", PERSISTENT_DISK_CONFIGURATION,
-        OPERATION_OPTION_FIELDS);
+    Operation operation =
+        compute.attachDisk(
+            INSTANCE_ID, "dev0", PERSISTENT_DISK_CONFIGURATION, OPERATION_OPTION_FIELDS);
     String selector =
         (String) capturedOptions.getValue().get(OPERATION_OPTION_FIELDS.getRpcOption());
     assertTrue(selector.contains("selfLink"));
@@ -3638,8 +3884,13 @@ public class ComputeImplTest {
   @Test
   public void testAttachDiskName_Null() {
     AttachedDisk attachedDisk = AttachedDisk.of("dev0", PERSISTENT_DISK_CONFIGURATION);
-    EasyMock.expect(computeRpcMock.attachDisk(INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(),
-        attachedDisk.toPb(), EMPTY_RPC_OPTIONS)).andReturn(null);
+    EasyMock.expect(
+            computeRpcMock.attachDisk(
+                INSTANCE_ID.getZone(),
+                INSTANCE_ID.getInstance(),
+                attachedDisk.toPb(),
+                EMPTY_RPC_OPTIONS))
+        .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertNull(compute.attachDisk(INSTANCE_ID, "dev0", PERSISTENT_DISK_CONFIGURATION));
@@ -3647,25 +3898,36 @@ public class ComputeImplTest {
 
   @Test
   public void testDeleteAccessConfig_Operation() {
-    EasyMock.expect(computeRpcMock.deleteAccessConfig(INSTANCE_ID.getZone(),
-        INSTANCE_ID.getInstance(), "networkInterface", "accessConfig", EMPTY_RPC_OPTIONS))
+    EasyMock.expect(
+            computeRpcMock.deleteAccessConfig(
+                INSTANCE_ID.getZone(),
+                INSTANCE_ID.getInstance(),
+                "networkInterface",
+                "accessConfig",
+                EMPTY_RPC_OPTIONS))
         .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
-    assertEquals(zoneOperation,
-        compute.deleteAccessConfig(INSTANCE_ID, "networkInterface", "accessConfig"));
+    assertEquals(
+        zoneOperation, compute.deleteAccessConfig(INSTANCE_ID, "networkInterface", "accessConfig"));
   }
 
   @Test
   public void testDeleteAccessConfigWithSelectedFields_Operation() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.deleteAccessConfig(eq(INSTANCE_ID.getZone()),
-        eq(INSTANCE_ID.getInstance()), eq("networkInterface"), eq("accessConfig"),
-        capture(capturedOptions))).andReturn(zoneOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.deleteAccessConfig(
+                eq(INSTANCE_ID.getZone()),
+                eq(INSTANCE_ID.getInstance()),
+                eq("networkInterface"),
+                eq("accessConfig"),
+                capture(capturedOptions)))
+        .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
-    Operation operation = compute.deleteAccessConfig(INSTANCE_ID, "networkInterface",
-        "accessConfig", OPERATION_OPTION_FIELDS);
+    Operation operation =
+        compute.deleteAccessConfig(
+            INSTANCE_ID, "networkInterface", "accessConfig", OPERATION_OPTION_FIELDS);
     String selector =
         (String) capturedOptions.getValue().get(OPERATION_OPTION_FIELDS.getRpcOption());
     assertTrue(selector.contains("selfLink"));
@@ -3677,8 +3939,13 @@ public class ComputeImplTest {
 
   @Test
   public void testDeleteAccessConfig_Null() {
-    EasyMock.expect(computeRpcMock.deleteAccessConfig(INSTANCE_ID.getZone(),
-        INSTANCE_ID.getInstance(), "networkInterface", "accessConfig", EMPTY_RPC_OPTIONS))
+    EasyMock.expect(
+            computeRpcMock.deleteAccessConfig(
+                INSTANCE_ID.getZone(),
+                INSTANCE_ID.getInstance(),
+                "networkInterface",
+                "accessConfig",
+                EMPTY_RPC_OPTIONS))
         .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -3687,8 +3954,10 @@ public class ComputeImplTest {
 
   @Test
   public void testDetachDisk_Operation() {
-    EasyMock.expect(computeRpcMock.detachDisk(INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(),
-        "device", EMPTY_RPC_OPTIONS)).andReturn(zoneOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.detachDisk(
+                INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(), "device", EMPTY_RPC_OPTIONS))
+        .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertEquals(zoneOperation, compute.detachDisk(INSTANCE_ID, "device"));
@@ -3697,8 +3966,12 @@ public class ComputeImplTest {
   @Test
   public void testDetachDiskWithSelectedFields_Operation() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.detachDisk(eq(INSTANCE_ID.getZone()),
-        eq(INSTANCE_ID.getInstance()), eq("device"), capture(capturedOptions)))
+    EasyMock.expect(
+            computeRpcMock.detachDisk(
+                eq(INSTANCE_ID.getZone()),
+                eq(INSTANCE_ID.getInstance()),
+                eq("device"),
+                capture(capturedOptions)))
         .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -3714,8 +3987,10 @@ public class ComputeImplTest {
 
   @Test
   public void testDetachDisk_Null() {
-    EasyMock.expect(computeRpcMock.detachDisk(INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(),
-        "device", EMPTY_RPC_OPTIONS)).andReturn(null);
+    EasyMock.expect(
+            computeRpcMock.detachDisk(
+                INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(), "device", EMPTY_RPC_OPTIONS))
+        .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertNull(compute.detachDisk(INSTANCE_ID, "device"));
@@ -3724,8 +3999,10 @@ public class ComputeImplTest {
   @Test
   public void testSerialPortOutputFromPort() {
     String output = "output";
-    EasyMock.expect(computeRpcMock.getSerialPortOutput(INSTANCE_ID.getZone(),
-        INSTANCE_ID.getInstance(), 2, EMPTY_RPC_OPTIONS)).andReturn(output);
+    EasyMock.expect(
+            computeRpcMock.getSerialPortOutput(
+                INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(), 2, EMPTY_RPC_OPTIONS))
+        .andReturn(output);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertEquals(output, compute.getSerialPortOutput(INSTANCE_ID, 2));
@@ -3734,8 +4011,10 @@ public class ComputeImplTest {
   @Test
   public void testSerialPortOutputDefault() {
     String output = "output";
-    EasyMock.expect(computeRpcMock.getSerialPortOutput(INSTANCE_ID.getZone(),
-        INSTANCE_ID.getInstance(), null, EMPTY_RPC_OPTIONS)).andReturn(output);
+    EasyMock.expect(
+            computeRpcMock.getSerialPortOutput(
+                INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(), null, EMPTY_RPC_OPTIONS))
+        .andReturn(output);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertEquals(output, compute.getSerialPortOutput(INSTANCE_ID));
@@ -3743,8 +4022,10 @@ public class ComputeImplTest {
 
   @Test
   public void testSerialPortOutputFromPort_Null() {
-    EasyMock.expect(computeRpcMock.getSerialPortOutput(INSTANCE_ID.getZone(),
-        INSTANCE_ID.getInstance(), 2, EMPTY_RPC_OPTIONS)).andReturn(null);
+    EasyMock.expect(
+            computeRpcMock.getSerialPortOutput(
+                INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(), 2, EMPTY_RPC_OPTIONS))
+        .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertNull(compute.getSerialPortOutput(INSTANCE_ID, 2));
@@ -3752,8 +4033,10 @@ public class ComputeImplTest {
 
   @Test
   public void testSerialPortOutputDefault_Null() {
-    EasyMock.expect(computeRpcMock.getSerialPortOutput(INSTANCE_ID.getZone(),
-        INSTANCE_ID.getInstance(), null, EMPTY_RPC_OPTIONS)).andReturn(null);
+    EasyMock.expect(
+            computeRpcMock.getSerialPortOutput(
+                INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(), null, EMPTY_RPC_OPTIONS))
+        .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertNull(compute.getSerialPortOutput(INSTANCE_ID));
@@ -3761,8 +4044,10 @@ public class ComputeImplTest {
 
   @Test
   public void testResetInstance_Operation() {
-    EasyMock.expect(computeRpcMock.reset(INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(),
-        EMPTY_RPC_OPTIONS)).andReturn(zoneOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.reset(
+                INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(), EMPTY_RPC_OPTIONS))
+        .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertEquals(zoneOperation, compute.reset(INSTANCE_ID));
@@ -3771,8 +4056,10 @@ public class ComputeImplTest {
   @Test
   public void testResetInstanceWithSelectedFields_Operation() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.reset(eq(INSTANCE_ID.getZone()), eq(INSTANCE_ID.getInstance()),
-        capture(capturedOptions))).andReturn(zoneOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.reset(
+                eq(INSTANCE_ID.getZone()), eq(INSTANCE_ID.getInstance()), capture(capturedOptions)))
+        .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Operation operation = compute.reset(INSTANCE_ID, OPERATION_OPTION_FIELDS);
@@ -3787,8 +4074,10 @@ public class ComputeImplTest {
 
   @Test
   public void testResetInstance_Null() {
-    EasyMock.expect(computeRpcMock.reset(INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(),
-        EMPTY_RPC_OPTIONS)).andReturn(null);
+    EasyMock.expect(
+            computeRpcMock.reset(
+                INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(), EMPTY_RPC_OPTIONS))
+        .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertNull(compute.reset(INSTANCE_ID));
@@ -3796,8 +4085,13 @@ public class ComputeImplTest {
 
   @Test
   public void testSetDiskAutodelete_Operation() {
-    EasyMock.expect(computeRpcMock.setDiskAutoDelete(INSTANCE_ID.getZone(),
-        INSTANCE_ID.getInstance(), "device", true, EMPTY_RPC_OPTIONS))
+    EasyMock.expect(
+            computeRpcMock.setDiskAutoDelete(
+                INSTANCE_ID.getZone(),
+                INSTANCE_ID.getInstance(),
+                "device",
+                true,
+                EMPTY_RPC_OPTIONS))
         .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -3807,8 +4101,13 @@ public class ComputeImplTest {
   @Test
   public void testSetDiskAutodeleteWithSelectedFields_Operation() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.setDiskAutoDelete(eq(INSTANCE_ID.getZone()),
-        eq(INSTANCE_ID.getInstance()), eq("device"), eq(true), capture(capturedOptions)))
+    EasyMock.expect(
+            computeRpcMock.setDiskAutoDelete(
+                eq(INSTANCE_ID.getZone()),
+                eq(INSTANCE_ID.getInstance()),
+                eq("device"),
+                eq(true),
+                capture(capturedOptions)))
         .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -3825,8 +4124,14 @@ public class ComputeImplTest {
 
   @Test
   public void testSetDiskAutodelete_Null() {
-    EasyMock.expect(computeRpcMock.setDiskAutoDelete(INSTANCE_ID.getZone(),
-        INSTANCE_ID.getInstance(), "device", false, EMPTY_RPC_OPTIONS)).andReturn(null);
+    EasyMock.expect(
+            computeRpcMock.setDiskAutoDelete(
+                INSTANCE_ID.getZone(),
+                INSTANCE_ID.getInstance(),
+                "device",
+                false,
+                EMPTY_RPC_OPTIONS))
+        .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertNull(compute.setDiskAutoDelete(INSTANCE_ID, "device", false));
@@ -3834,24 +4139,34 @@ public class ComputeImplTest {
 
   @Test
   public void testSetMachineType_Operation() {
-    EasyMock.expect(computeRpcMock.setMachineType(INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(),
-        MACHINE_TYPE_ID.getSelfLink(), EMPTY_RPC_OPTIONS)).andReturn(zoneOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.setMachineType(
+                INSTANCE_ID.getZone(),
+                INSTANCE_ID.getInstance(),
+                MACHINE_TYPE_ID.getSelfLink(),
+                EMPTY_RPC_OPTIONS))
+        .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
-    assertEquals(zoneOperation,
-        compute.setMachineType(INSTANCE_ID, MachineTypeId.of("zone", "type")));
+    assertEquals(
+        zoneOperation, compute.setMachineType(INSTANCE_ID, MachineTypeId.of("zone", "type")));
   }
 
   @Test
   public void testSetMachineTypeWithOptions_Operation() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.setMachineType(eq(INSTANCE_ID.getZone()),
-        eq(INSTANCE_ID.getInstance()), eq(MACHINE_TYPE_ID.getSelfLink()), capture(capturedOptions)))
+    EasyMock.expect(
+            computeRpcMock.setMachineType(
+                eq(INSTANCE_ID.getZone()),
+                eq(INSTANCE_ID.getInstance()),
+                eq(MACHINE_TYPE_ID.getSelfLink()),
+                capture(capturedOptions)))
         .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
-    Operation operation = compute.setMachineType(INSTANCE_ID, MachineTypeId.of("zone", "type"),
-        OPERATION_OPTION_FIELDS);
+    Operation operation =
+        compute.setMachineType(
+            INSTANCE_ID, MachineTypeId.of("zone", "type"), OPERATION_OPTION_FIELDS);
     String selector =
         (String) capturedOptions.getValue().get(OPERATION_OPTION_FIELDS.getRpcOption());
     assertTrue(selector.contains("selfLink"));
@@ -3863,8 +4178,13 @@ public class ComputeImplTest {
 
   @Test
   public void testSetMachineType_Null() {
-    EasyMock.expect(computeRpcMock.setMachineType(INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(),
-        MACHINE_TYPE_ID.getSelfLink(), EMPTY_RPC_OPTIONS)).andReturn(null);
+    EasyMock.expect(
+            computeRpcMock.setMachineType(
+                INSTANCE_ID.getZone(),
+                INSTANCE_ID.getInstance(),
+                MACHINE_TYPE_ID.getSelfLink(),
+                EMPTY_RPC_OPTIONS))
+        .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertNull(compute.setMachineType(INSTANCE_ID, MachineTypeId.of("zone", "type")));
@@ -3872,12 +4192,15 @@ public class ComputeImplTest {
 
   @Test
   public void testSetMetadata_Operation() {
-    Metadata metadata = Metadata.newBuilder()
-        .add("key", "value")
-        .setFingerprint("fingerprint")
-        .build();
-    EasyMock.expect(computeRpcMock.setMetadata(INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(),
-        metadata.toPb(), EMPTY_RPC_OPTIONS)).andReturn(zoneOperation.toPb());
+    Metadata metadata =
+        Metadata.newBuilder().add("key", "value").setFingerprint("fingerprint").build();
+    EasyMock.expect(
+            computeRpcMock.setMetadata(
+                INSTANCE_ID.getZone(),
+                INSTANCE_ID.getInstance(),
+                metadata.toPb(),
+                EMPTY_RPC_OPTIONS))
+        .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertEquals(zoneOperation, compute.setMetadata(INSTANCE_ID, metadata));
@@ -3886,12 +4209,14 @@ public class ComputeImplTest {
   @Test
   public void testSetMetadataWithOptions_Operation() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    Metadata metadata = Metadata.newBuilder()
-        .add("key", "value")
-        .setFingerprint("fingerprint")
-        .build();
-    EasyMock.expect(computeRpcMock.setMetadata(eq(INSTANCE_ID.getZone()),
-        eq(INSTANCE_ID.getInstance()), eq(metadata.toPb()), capture(capturedOptions)))
+    Metadata metadata =
+        Metadata.newBuilder().add("key", "value").setFingerprint("fingerprint").build();
+    EasyMock.expect(
+            computeRpcMock.setMetadata(
+                eq(INSTANCE_ID.getZone()),
+                eq(INSTANCE_ID.getInstance()),
+                eq(metadata.toPb()),
+                capture(capturedOptions)))
         .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -3907,12 +4232,15 @@ public class ComputeImplTest {
 
   @Test
   public void testSetMetadata_Null() {
-    Metadata metadata = Metadata.newBuilder()
-        .add("key", "value")
-        .setFingerprint("fingerprint")
-        .build();
-    EasyMock.expect(computeRpcMock.setMetadata(INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(),
-        metadata.toPb(), EMPTY_RPC_OPTIONS)).andReturn(null);
+    Metadata metadata =
+        Metadata.newBuilder().add("key", "value").setFingerprint("fingerprint").build();
+    EasyMock.expect(
+            computeRpcMock.setMetadata(
+                INSTANCE_ID.getZone(),
+                INSTANCE_ID.getInstance(),
+                metadata.toPb(),
+                EMPTY_RPC_OPTIONS))
+        .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertNull(compute.setMetadata(INSTANCE_ID, metadata));
@@ -3922,8 +4250,13 @@ public class ComputeImplTest {
   public void testSetSchedulingOptions_Operation() {
     SchedulingOptions schedulingOptions =
         SchedulingOptions.standard(true, SchedulingOptions.Maintenance.MIGRATE);
-    EasyMock.expect(computeRpcMock.setScheduling(INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(),
-        schedulingOptions.toPb(), EMPTY_RPC_OPTIONS)).andReturn(zoneOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.setScheduling(
+                INSTANCE_ID.getZone(),
+                INSTANCE_ID.getInstance(),
+                schedulingOptions.toPb(),
+                EMPTY_RPC_OPTIONS))
+        .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertEquals(zoneOperation, compute.setSchedulingOptions(INSTANCE_ID, schedulingOptions));
@@ -3934,8 +4267,12 @@ public class ComputeImplTest {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
     SchedulingOptions schedulingOptions =
         SchedulingOptions.standard(true, SchedulingOptions.Maintenance.MIGRATE);
-    EasyMock.expect(computeRpcMock.setScheduling(eq(INSTANCE_ID.getZone()),
-        eq(INSTANCE_ID.getInstance()), eq(schedulingOptions.toPb()), capture(capturedOptions)))
+    EasyMock.expect(
+            computeRpcMock.setScheduling(
+                eq(INSTANCE_ID.getZone()),
+                eq(INSTANCE_ID.getInstance()),
+                eq(schedulingOptions.toPb()),
+                capture(capturedOptions)))
         .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
@@ -3954,8 +4291,13 @@ public class ComputeImplTest {
   public void testSetSchedulingOptions_Null() {
     SchedulingOptions schedulingOptions =
         SchedulingOptions.standard(true, SchedulingOptions.Maintenance.MIGRATE);
-    EasyMock.expect(computeRpcMock.setScheduling(INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(),
-        schedulingOptions.toPb(), EMPTY_RPC_OPTIONS)).andReturn(null);
+    EasyMock.expect(
+            computeRpcMock.setScheduling(
+                INSTANCE_ID.getZone(),
+                INSTANCE_ID.getInstance(),
+                schedulingOptions.toPb(),
+                EMPTY_RPC_OPTIONS))
+        .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertNull(compute.setSchedulingOptions(INSTANCE_ID, schedulingOptions));
@@ -3964,8 +4306,10 @@ public class ComputeImplTest {
   @Test
   public void testTags_Operation() {
     Tags tags = Tags.of("tag1", "tag2");
-    EasyMock.expect(computeRpcMock.setTags(INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(),
-        tags.toPb(), EMPTY_RPC_OPTIONS)).andReturn(zoneOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.setTags(
+                INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(), tags.toPb(), EMPTY_RPC_OPTIONS))
+        .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertEquals(zoneOperation, compute.setTags(INSTANCE_ID, tags));
@@ -3975,8 +4319,13 @@ public class ComputeImplTest {
   public void testSetTagsWithOptions_Operation() {
     Tags tags = Tags.of("tag1", "tag2");
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.setTags(eq(INSTANCE_ID.getZone()), eq(INSTANCE_ID.getInstance()),
-        eq(tags.toPb()), capture(capturedOptions))).andReturn(zoneOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.setTags(
+                eq(INSTANCE_ID.getZone()),
+                eq(INSTANCE_ID.getInstance()),
+                eq(tags.toPb()),
+                capture(capturedOptions)))
+        .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Operation operation = compute.setTags(INSTANCE_ID, tags, OPERATION_OPTION_FIELDS);
@@ -3992,8 +4341,10 @@ public class ComputeImplTest {
   @Test
   public void testSetTags_Null() {
     Tags tags = Tags.of("tag1", "tag2");
-    EasyMock.expect(computeRpcMock.setTags(INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(),
-        tags.toPb(), EMPTY_RPC_OPTIONS)).andReturn(null);
+    EasyMock.expect(
+            computeRpcMock.setTags(
+                INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(), tags.toPb(), EMPTY_RPC_OPTIONS))
+        .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertNull(compute.setTags(INSTANCE_ID, tags));
@@ -4001,8 +4352,10 @@ public class ComputeImplTest {
 
   @Test
   public void testStartInstance_Operation() {
-    EasyMock.expect(computeRpcMock.start(INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(),
-        EMPTY_RPC_OPTIONS)).andReturn(zoneOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.start(
+                INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(), EMPTY_RPC_OPTIONS))
+        .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertEquals(zoneOperation, compute.start(INSTANCE_ID));
@@ -4011,8 +4364,10 @@ public class ComputeImplTest {
   @Test
   public void testStartInstanceWithSelectedFields_Operation() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.start(eq(INSTANCE_ID.getZone()), eq(INSTANCE_ID.getInstance()),
-        capture(capturedOptions))).andReturn(zoneOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.start(
+                eq(INSTANCE_ID.getZone()), eq(INSTANCE_ID.getInstance()), capture(capturedOptions)))
+        .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Operation operation = compute.start(INSTANCE_ID, OPERATION_OPTION_FIELDS);
@@ -4027,8 +4382,10 @@ public class ComputeImplTest {
 
   @Test
   public void testStartInstance_Null() {
-    EasyMock.expect(computeRpcMock.start(INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(),
-        EMPTY_RPC_OPTIONS)).andReturn(null);
+    EasyMock.expect(
+            computeRpcMock.start(
+                INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(), EMPTY_RPC_OPTIONS))
+        .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertNull(compute.start(INSTANCE_ID));
@@ -4036,8 +4393,10 @@ public class ComputeImplTest {
 
   @Test
   public void testStopInstance_Operation() {
-    EasyMock.expect(computeRpcMock.stop(INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(),
-        EMPTY_RPC_OPTIONS)).andReturn(zoneOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.stop(
+                INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(), EMPTY_RPC_OPTIONS))
+        .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertEquals(zoneOperation, compute.stop(INSTANCE_ID));
@@ -4046,8 +4405,10 @@ public class ComputeImplTest {
   @Test
   public void testStopInstanceWithSelectedFields_Operation() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(computeRpcMock.stop(eq(INSTANCE_ID.getZone()), eq(INSTANCE_ID.getInstance()),
-        capture(capturedOptions))).andReturn(zoneOperation.toPb());
+    EasyMock.expect(
+            computeRpcMock.stop(
+                eq(INSTANCE_ID.getZone()), eq(INSTANCE_ID.getInstance()), capture(capturedOptions)))
+        .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     Operation operation = compute.stop(INSTANCE_ID, OPERATION_OPTION_FIELDS);
@@ -4062,8 +4423,10 @@ public class ComputeImplTest {
 
   @Test
   public void testStopInstance_Null() {
-    EasyMock.expect(computeRpcMock.stop(INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(),
-        EMPTY_RPC_OPTIONS)).andReturn(null);
+    EasyMock.expect(
+            computeRpcMock.stop(
+                INSTANCE_ID.getZone(), INSTANCE_ID.getInstance(), EMPTY_RPC_OPTIONS))
+        .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.getService();
     assertNull(compute.stop(INSTANCE_ID));
@@ -4071,14 +4434,17 @@ public class ComputeImplTest {
 
   @Test
   public void testRetryableException() {
-    EasyMock.expect(computeRpcMock.getDiskType(
-        DISK_TYPE_ID.getZone(), DISK_TYPE_ID.getType(), EMPTY_RPC_OPTIONS))
+    EasyMock.expect(
+            computeRpcMock.getDiskType(
+                DISK_TYPE_ID.getZone(), DISK_TYPE_ID.getType(), EMPTY_RPC_OPTIONS))
         .andThrow(new ComputeException(500, "InternalError"))
         .andReturn(DISK_TYPE.toPb());
     EasyMock.replay(computeRpcMock);
     compute =
-        options.toBuilder()
-            .setRetrySettings(ServiceOptions.getDefaultRetrySettings()).build()
+        options
+            .toBuilder()
+            .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
+            .build()
             .getService();
     DiskType diskType = compute.getDiskType(DISK_TYPE_ID);
     assertEquals(DISK_TYPE, diskType);
@@ -4087,13 +4453,16 @@ public class ComputeImplTest {
   @Test
   public void testNonRetryableException() {
     String exceptionMessage = "Not Implemented";
-    EasyMock.expect(computeRpcMock.getDiskType(
-        DISK_TYPE_ID.getZone(), DISK_TYPE_ID.getType(), EMPTY_RPC_OPTIONS))
+    EasyMock.expect(
+            computeRpcMock.getDiskType(
+                DISK_TYPE_ID.getZone(), DISK_TYPE_ID.getType(), EMPTY_RPC_OPTIONS))
         .andThrow(new ComputeException(501, exceptionMessage));
     EasyMock.replay(computeRpcMock);
     compute =
-        options.toBuilder()
-            .setRetrySettings(ServiceOptions.getDefaultRetrySettings()).build()
+        options
+            .toBuilder()
+            .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
+            .build()
             .getService();
     thrown.expect(ComputeException.class);
     thrown.expectMessage(exceptionMessage);
@@ -4103,13 +4472,16 @@ public class ComputeImplTest {
   @Test
   public void testRuntimeException() {
     String exceptionMessage = "Artificial runtime exception";
-    EasyMock.expect(computeRpcMock.getDiskType(
-        DISK_TYPE_ID.getZone(), DISK_TYPE_ID.getType(), EMPTY_RPC_OPTIONS))
+    EasyMock.expect(
+            computeRpcMock.getDiskType(
+                DISK_TYPE_ID.getZone(), DISK_TYPE_ID.getType(), EMPTY_RPC_OPTIONS))
         .andThrow(new RuntimeException(exceptionMessage));
     EasyMock.replay(computeRpcMock);
     compute =
-        options.toBuilder()
-            .setRetrySettings(ServiceOptions.getDefaultRetrySettings()).build()
+        options
+            .toBuilder()
+            .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
+            .build()
             .getService();
     thrown.expect(ComputeException.class);
     thrown.expectMessage(exceptionMessage);

@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface CreateAlertPolicyRequestOrBuilder extends
+public interface CreateAlertPolicyRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.CreateAlertPolicyRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The project in which to create the alerting policy. The format is
    * `projects/[PROJECT_ID]`.
@@ -22,6 +25,8 @@ public interface CreateAlertPolicyRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The project in which to create the alerting policy. The format is
    * `projects/[PROJECT_ID]`.
@@ -34,10 +39,11 @@ public interface CreateAlertPolicyRequestOrBuilder extends
    *
    * <code>string name = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The requested alerting policy. You should omit the `name` field in this
    * policy. The name will be returned in the new policy, including
@@ -48,6 +54,8 @@ public interface CreateAlertPolicyRequestOrBuilder extends
    */
   boolean hasAlertPolicy();
   /**
+   *
+   *
    * <pre>
    * The requested alerting policy. You should omit the `name` field in this
    * policy. The name will be returned in the new policy, including
@@ -58,6 +66,8 @@ public interface CreateAlertPolicyRequestOrBuilder extends
    */
   com.google.monitoring.v3.AlertPolicy getAlertPolicy();
   /**
+   *
+   *
    * <pre>
    * The requested alerting policy. You should omit the `name` field in this
    * policy. The name will be returned in the new policy, including

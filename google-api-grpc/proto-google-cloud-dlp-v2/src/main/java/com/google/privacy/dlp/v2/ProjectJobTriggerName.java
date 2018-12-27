@@ -14,13 +14,13 @@
 
 package com.google.privacy.dlp.v2;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
@@ -56,18 +56,11 @@ public class ProjectJobTriggerName implements ResourceName {
   }
 
   public static ProjectJobTriggerName of(String project, String jobTrigger) {
-    return newBuilder()
-      .setProject(project)
-      .setJobTrigger(jobTrigger)
-      .build();
+    return newBuilder().setProject(project).setJobTrigger(jobTrigger).build();
   }
 
   public static String format(String project, String jobTrigger) {
-    return newBuilder()
-      .setProject(project)
-      .setJobTrigger(jobTrigger)
-      .build()
-      .toString();
+    return newBuilder().setProject(project).setJobTrigger(jobTrigger).build().toString();
   }
 
   public static ProjectJobTriggerName parse(String formattedString) {
@@ -75,7 +68,8 @@ public class ProjectJobTriggerName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "ProjectJobTriggerName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "ProjectJobTriggerName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("job_trigger"));
   }
 
@@ -150,8 +144,7 @@ public class ProjectJobTriggerName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(ProjectJobTriggerName projectJobTriggerName) {
       project = projectJobTriggerName.project;
@@ -170,8 +163,7 @@ public class ProjectJobTriggerName implements ResourceName {
     }
     if (o instanceof ProjectJobTriggerName) {
       ProjectJobTriggerName that = (ProjectJobTriggerName) o;
-      return (this.project.equals(that.project))
-          && (this.jobTrigger.equals(that.jobTrigger));
+      return (this.project.equals(that.project)) && (this.jobTrigger.equals(that.jobTrigger));
     }
     return false;
   }
@@ -186,4 +178,3 @@ public class ProjectJobTriggerName implements ResourceName {
     return h;
   }
 }
-

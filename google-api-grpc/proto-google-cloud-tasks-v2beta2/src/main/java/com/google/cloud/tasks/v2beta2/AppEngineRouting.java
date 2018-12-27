@@ -4,6 +4,8 @@
 package com.google.cloud.tasks.v2beta2;
 
 /**
+ *
+ *
  * <pre>
  * App Engine Routing.
  * For more information about services, versions, and instances see
@@ -15,15 +17,16 @@ package com.google.cloud.tasks.v2beta2;
  *
  * Protobuf type {@code google.cloud.tasks.v2beta2.AppEngineRouting}
  */
-public  final class AppEngineRouting extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class AppEngineRouting extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.tasks.v2beta2.AppEngineRouting)
     AppEngineRoutingOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use AppEngineRouting.newBuilder() to construct.
   private AppEngineRouting(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private AppEngineRouting() {
     service_ = "";
     version_ = "";
@@ -32,10 +35,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private AppEngineRouting(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -55,65 +58,73 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            service_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            version_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            instance_ = s;
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            host_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              service_ = s;
+              break;
             }
-            break;
-          }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              version_ = s;
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              instance_ = s;
+              break;
+            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              host_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.tasks.v2beta2.TargetProto.internal_static_google_cloud_tasks_v2beta2_AppEngineRouting_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.tasks.v2beta2.TargetProto
+        .internal_static_google_cloud_tasks_v2beta2_AppEngineRouting_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.tasks.v2beta2.TargetProto.internal_static_google_cloud_tasks_v2beta2_AppEngineRouting_fieldAccessorTable
+    return com.google.cloud.tasks.v2beta2.TargetProto
+        .internal_static_google_cloud_tasks_v2beta2_AppEngineRouting_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.tasks.v2beta2.AppEngineRouting.class, com.google.cloud.tasks.v2beta2.AppEngineRouting.Builder.class);
+            com.google.cloud.tasks.v2beta2.AppEngineRouting.class,
+            com.google.cloud.tasks.v2beta2.AppEngineRouting.Builder.class);
   }
 
   public static final int SERVICE_FIELD_NUMBER = 1;
   private volatile java.lang.Object service_;
   /**
+   *
+   *
    * <pre>
    * App service.
    * By default, the task is sent to the service which is the default
@@ -138,14 +149,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       service_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * App service.
    * By default, the task is sent to the service which is the default
@@ -165,13 +177,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string service = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getServiceBytes() {
+  public com.google.protobuf.ByteString getServiceBytes() {
     java.lang.Object ref = service_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       service_ = b;
       return b;
     } else {
@@ -182,6 +192,8 @@ private static final long serialVersionUID = 0L;
   public static final int VERSION_FIELD_NUMBER = 2;
   private volatile java.lang.Object version_;
   /**
+   *
+   *
    * <pre>
    * App version.
    * By default, the task is sent to the version which is the default
@@ -206,14 +218,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       version_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * App version.
    * By default, the task is sent to the version which is the default
@@ -233,13 +246,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string version = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getVersionBytes() {
+  public com.google.protobuf.ByteString getVersionBytes() {
     java.lang.Object ref = version_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       version_ = b;
       return b;
     } else {
@@ -250,6 +261,8 @@ private static final long serialVersionUID = 0L;
   public static final int INSTANCE_FIELD_NUMBER = 3;
   private volatile java.lang.Object instance_;
   /**
+   *
+   *
    * <pre>
    * App instance.
    * By default, the task is sent to an instance which is available when
@@ -268,14 +281,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       instance_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * App instance.
    * By default, the task is sent to an instance which is available when
@@ -289,13 +303,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string instance = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getInstanceBytes() {
+  public com.google.protobuf.ByteString getInstanceBytes() {
     java.lang.Object ref = instance_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       instance_ = b;
       return b;
     } else {
@@ -306,6 +318,8 @@ private static final long serialVersionUID = 0L;
   public static final int HOST_FIELD_NUMBER = 4;
   private volatile java.lang.Object host_;
   /**
+   *
+   *
    * <pre>
    * Output only. The host that the task is sent to.
    * For more information, see
@@ -360,14 +374,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       host_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The host that the task is sent to.
    * For more information, see
@@ -417,13 +432,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string host = 4;</code>
    */
-  public com.google.protobuf.ByteString
-      getHostBytes() {
+  public com.google.protobuf.ByteString getHostBytes() {
     java.lang.Object ref = host_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       host_ = b;
       return b;
     } else {
@@ -432,6 +445,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -443,8 +457,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getServiceBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, service_);
     }
@@ -486,22 +499,19 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.tasks.v2beta2.AppEngineRouting)) {
       return super.equals(obj);
     }
-    com.google.cloud.tasks.v2beta2.AppEngineRouting other = (com.google.cloud.tasks.v2beta2.AppEngineRouting) obj;
+    com.google.cloud.tasks.v2beta2.AppEngineRouting other =
+        (com.google.cloud.tasks.v2beta2.AppEngineRouting) obj;
 
     boolean result = true;
-    result = result && getService()
-        .equals(other.getService());
-    result = result && getVersion()
-        .equals(other.getVersion());
-    result = result && getInstance()
-        .equals(other.getInstance());
-    result = result && getHost()
-        .equals(other.getHost());
+    result = result && getService().equals(other.getService());
+    result = result && getVersion().equals(other.getVersion());
+    result = result && getInstance().equals(other.getInstance());
+    result = result && getHost().equals(other.getHost());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -526,97 +536,104 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.tasks.v2beta2.AppEngineRouting parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.tasks.v2beta2.AppEngineRouting parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.tasks.v2beta2.AppEngineRouting parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.tasks.v2beta2.AppEngineRouting parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.tasks.v2beta2.AppEngineRouting parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.tasks.v2beta2.AppEngineRouting parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.tasks.v2beta2.AppEngineRouting parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.tasks.v2beta2.AppEngineRouting parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.tasks.v2beta2.AppEngineRouting parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.tasks.v2beta2.AppEngineRouting parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.tasks.v2beta2.AppEngineRouting parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.tasks.v2beta2.AppEngineRouting parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.tasks.v2beta2.AppEngineRouting parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.tasks.v2beta2.AppEngineRouting parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.tasks.v2beta2.AppEngineRouting prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * App Engine Routing.
    * For more information about services, versions, and instances see
@@ -628,21 +645,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.tasks.v2beta2.AppEngineRouting}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.tasks.v2beta2.AppEngineRouting)
       com.google.cloud.tasks.v2beta2.AppEngineRoutingOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.tasks.v2beta2.TargetProto.internal_static_google_cloud_tasks_v2beta2_AppEngineRouting_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.tasks.v2beta2.TargetProto
+          .internal_static_google_cloud_tasks_v2beta2_AppEngineRouting_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.tasks.v2beta2.TargetProto.internal_static_google_cloud_tasks_v2beta2_AppEngineRouting_fieldAccessorTable
+      return com.google.cloud.tasks.v2beta2.TargetProto
+          .internal_static_google_cloud_tasks_v2beta2_AppEngineRouting_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.tasks.v2beta2.AppEngineRouting.class, com.google.cloud.tasks.v2beta2.AppEngineRouting.Builder.class);
+              com.google.cloud.tasks.v2beta2.AppEngineRouting.class,
+              com.google.cloud.tasks.v2beta2.AppEngineRouting.Builder.class);
     }
 
     // Construct using com.google.cloud.tasks.v2beta2.AppEngineRouting.newBuilder()
@@ -650,16 +669,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -675,9 +693,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.tasks.v2beta2.TargetProto.internal_static_google_cloud_tasks_v2beta2_AppEngineRouting_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.tasks.v2beta2.TargetProto
+          .internal_static_google_cloud_tasks_v2beta2_AppEngineRouting_descriptor;
     }
 
     @java.lang.Override
@@ -696,7 +714,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.tasks.v2beta2.AppEngineRouting buildPartial() {
-      com.google.cloud.tasks.v2beta2.AppEngineRouting result = new com.google.cloud.tasks.v2beta2.AppEngineRouting(this);
+      com.google.cloud.tasks.v2beta2.AppEngineRouting result =
+          new com.google.cloud.tasks.v2beta2.AppEngineRouting(this);
       result.service_ = service_;
       result.version_ = version_;
       result.instance_ = instance_;
@@ -709,38 +728,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.tasks.v2beta2.AppEngineRouting) {
-        return mergeFrom((com.google.cloud.tasks.v2beta2.AppEngineRouting)other);
+        return mergeFrom((com.google.cloud.tasks.v2beta2.AppEngineRouting) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -748,7 +768,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.tasks.v2beta2.AppEngineRouting other) {
-      if (other == com.google.cloud.tasks.v2beta2.AppEngineRouting.getDefaultInstance()) return this;
+      if (other == com.google.cloud.tasks.v2beta2.AppEngineRouting.getDefaultInstance())
+        return this;
       if (!other.getService().isEmpty()) {
         service_ = other.service_;
         onChanged();
@@ -796,6 +817,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object service_ = "";
     /**
+     *
+     *
      * <pre>
      * App service.
      * By default, the task is sent to the service which is the default
@@ -818,8 +841,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getService() {
       java.lang.Object ref = service_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         service_ = s;
         return s;
@@ -828,6 +850,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * App service.
      * By default, the task is sent to the service which is the default
@@ -847,13 +871,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string service = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getServiceBytes() {
+    public com.google.protobuf.ByteString getServiceBytes() {
       java.lang.Object ref = service_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         service_ = b;
         return b;
       } else {
@@ -861,6 +883,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * App service.
      * By default, the task is sent to the service which is the default
@@ -880,17 +904,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string service = 1;</code>
      */
-    public Builder setService(
-        java.lang.String value) {
+    public Builder setService(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       service_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * App service.
      * By default, the task is sent to the service which is the default
@@ -911,12 +936,14 @@ private static final long serialVersionUID = 0L;
      * <code>string service = 1;</code>
      */
     public Builder clearService() {
-      
+
       service_ = getDefaultInstance().getService();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * App service.
      * By default, the task is sent to the service which is the default
@@ -936,13 +963,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string service = 1;</code>
      */
-    public Builder setServiceBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setServiceBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       service_ = value;
       onChanged();
       return this;
@@ -950,6 +976,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object version_ = "";
     /**
+     *
+     *
      * <pre>
      * App version.
      * By default, the task is sent to the version which is the default
@@ -972,8 +1000,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getVersion() {
       java.lang.Object ref = version_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         version_ = s;
         return s;
@@ -982,6 +1009,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * App version.
      * By default, the task is sent to the version which is the default
@@ -1001,13 +1030,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string version = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getVersionBytes() {
+    public com.google.protobuf.ByteString getVersionBytes() {
       java.lang.Object ref = version_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         version_ = b;
         return b;
       } else {
@@ -1015,6 +1042,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * App version.
      * By default, the task is sent to the version which is the default
@@ -1034,17 +1063,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string version = 2;</code>
      */
-    public Builder setVersion(
-        java.lang.String value) {
+    public Builder setVersion(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       version_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * App version.
      * By default, the task is sent to the version which is the default
@@ -1065,12 +1095,14 @@ private static final long serialVersionUID = 0L;
      * <code>string version = 2;</code>
      */
     public Builder clearVersion() {
-      
+
       version_ = getDefaultInstance().getVersion();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * App version.
      * By default, the task is sent to the version which is the default
@@ -1090,13 +1122,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string version = 2;</code>
      */
-    public Builder setVersionBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setVersionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       version_ = value;
       onChanged();
       return this;
@@ -1104,6 +1135,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object instance_ = "";
     /**
+     *
+     *
      * <pre>
      * App instance.
      * By default, the task is sent to an instance which is available when
@@ -1120,8 +1153,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getInstance() {
       java.lang.Object ref = instance_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         instance_ = s;
         return s;
@@ -1130,6 +1162,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * App instance.
      * By default, the task is sent to an instance which is available when
@@ -1143,13 +1177,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string instance = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getInstanceBytes() {
+    public com.google.protobuf.ByteString getInstanceBytes() {
       java.lang.Object ref = instance_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         instance_ = b;
         return b;
       } else {
@@ -1157,6 +1189,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * App instance.
      * By default, the task is sent to an instance which is available when
@@ -1170,17 +1204,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string instance = 3;</code>
      */
-    public Builder setInstance(
-        java.lang.String value) {
+    public Builder setInstance(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       instance_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * App instance.
      * By default, the task is sent to an instance which is available when
@@ -1195,12 +1230,14 @@ private static final long serialVersionUID = 0L;
      * <code>string instance = 3;</code>
      */
     public Builder clearInstance() {
-      
+
       instance_ = getDefaultInstance().getInstance();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * App instance.
      * By default, the task is sent to an instance which is available when
@@ -1214,13 +1251,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string instance = 3;</code>
      */
-    public Builder setInstanceBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setInstanceBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       instance_ = value;
       onChanged();
       return this;
@@ -1228,6 +1264,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object host_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only. The host that the task is sent to.
      * For more information, see
@@ -1280,8 +1318,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getHost() {
       java.lang.Object ref = host_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         host_ = s;
         return s;
@@ -1290,6 +1327,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The host that the task is sent to.
      * For more information, see
@@ -1339,13 +1378,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string host = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getHostBytes() {
+    public com.google.protobuf.ByteString getHostBytes() {
       java.lang.Object ref = host_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         host_ = b;
         return b;
       } else {
@@ -1353,6 +1390,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The host that the task is sent to.
      * For more information, see
@@ -1402,17 +1441,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string host = 4;</code>
      */
-    public Builder setHost(
-        java.lang.String value) {
+    public Builder setHost(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       host_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The host that the task is sent to.
      * For more information, see
@@ -1463,12 +1503,14 @@ private static final long serialVersionUID = 0L;
      * <code>string host = 4;</code>
      */
     public Builder clearHost() {
-      
+
       host_ = getDefaultInstance().getHost();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The host that the task is sent to.
      * For more information, see
@@ -1518,20 +1560,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string host = 4;</code>
      */
-    public Builder setHostBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setHostBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       host_ = value;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1541,12 +1582,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.tasks.v2beta2.AppEngineRouting)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.tasks.v2beta2.AppEngineRouting)
   private static final com.google.cloud.tasks.v2beta2.AppEngineRouting DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.tasks.v2beta2.AppEngineRouting();
   }
@@ -1555,16 +1596,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<AppEngineRouting>
-      PARSER = new com.google.protobuf.AbstractParser<AppEngineRouting>() {
-    @java.lang.Override
-    public AppEngineRouting parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new AppEngineRouting(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<AppEngineRouting> PARSER =
+      new com.google.protobuf.AbstractParser<AppEngineRouting>() {
+        @java.lang.Override
+        public AppEngineRouting parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new AppEngineRouting(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<AppEngineRouting> parser() {
     return PARSER;
@@ -1579,6 +1620,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.tasks.v2beta2.AppEngineRouting getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

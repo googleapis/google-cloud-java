@@ -703,8 +703,7 @@ public class GrpcResultSetTest {
     consumer.onCompleted();
 
     assertThat(resultSet.next()).isTrue();
-    assertThat(resultSet.getDate(0))
-        .isEqualTo(Date.fromYearMonthDay(2018, 5, 29));
+    assertThat(resultSet.getDate(0)).isEqualTo(Date.fromYearMonthDay(2018, 5, 29));
   }
 
   @Test
@@ -726,7 +725,8 @@ public class GrpcResultSetTest {
     boolean[] boolArray = {true, true, false};
     consumer.onPartialResultSet(
         PartialResultSet.newBuilder()
-            .setMetadata(makeMetadata(Type.struct(Type.StructField.of("f", Type.array(Type.bool())))))
+            .setMetadata(
+                makeMetadata(Type.struct(Type.StructField.of("f", Type.array(Type.bool())))))
             .addValues(Value.boolArray(boolArray).toProto())
             .build());
     consumer.onCompleted();
@@ -740,7 +740,8 @@ public class GrpcResultSetTest {
 
     consumer.onPartialResultSet(
         PartialResultSet.newBuilder()
-            .setMetadata(makeMetadata(Type.struct(Type.StructField.of("f", Type.array(Type.int64())))))
+            .setMetadata(
+                makeMetadata(Type.struct(Type.StructField.of("f", Type.array(Type.int64())))))
             .addValues(Value.int64Array(longArray).toProto())
             .build());
     consumer.onCompleted();
@@ -754,8 +755,8 @@ public class GrpcResultSetTest {
 
     consumer.onPartialResultSet(
         PartialResultSet.newBuilder()
-            .setMetadata(makeMetadata(Type.struct(
-                Type.StructField.of("f", Type.array(Type.float64())))))
+            .setMetadata(
+                makeMetadata(Type.struct(Type.StructField.of("f", Type.array(Type.float64())))))
             .addValues(Value.float64Array(doubleArray).toProto())
             .build());
     consumer.onCompleted();
@@ -772,8 +773,8 @@ public class GrpcResultSetTest {
 
     consumer.onPartialResultSet(
         PartialResultSet.newBuilder()
-            .setMetadata(makeMetadata(Type.struct(
-                Type.StructField.of("f", Type.array(Type.timestamp())))))
+            .setMetadata(
+                makeMetadata(Type.struct(Type.StructField.of("f", Type.array(Type.timestamp())))))
             .addValues(Value.timestampArray(timestampList).toProto())
             .build());
     consumer.onCompleted();
@@ -790,8 +791,8 @@ public class GrpcResultSetTest {
 
     consumer.onPartialResultSet(
         PartialResultSet.newBuilder()
-            .setMetadata(makeMetadata(Type.struct(
-                Type.StructField.of("f", Type.array(Type.date())))))
+            .setMetadata(
+                makeMetadata(Type.struct(Type.StructField.of("f", Type.array(Type.date())))))
             .addValues(Value.dateArray(dateList).toProto())
             .build());
     consumer.onCompleted();

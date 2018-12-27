@@ -19,10 +19,13 @@ import static com.google.cloud.compute.v1.ImageClient.ListImagesPagedResponse;
 import static com.google.cloud.compute.v1.stub.HttpJsonImageStub.deleteImageMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonImageStub.deprecateImageMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonImageStub.getFromFamilyImageMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonImageStub.getIamPolicyImageMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonImageStub.getImageMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonImageStub.insertImageMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonImageStub.listImagesMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonImageStub.setIamPolicyImageMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonImageStub.setLabelsImageMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonImageStub.testIamPermissionsImageMethodDescriptor;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
@@ -56,9 +59,12 @@ public class ImageClientTest {
               deprecateImageMethodDescriptor,
               getImageMethodDescriptor,
               getFromFamilyImageMethodDescriptor,
+              getIamPolicyImageMethodDescriptor,
               insertImageMethodDescriptor,
               listImagesMethodDescriptor,
-              setLabelsImageMethodDescriptor));
+              setIamPolicyImageMethodDescriptor,
+              setLabelsImageMethodDescriptor,
+              testIamPermissionsImageMethodDescriptor));
   private static final MockHttpService mockService =
       new MockHttpService(METHOD_DESCRIPTORS, ImageStubSettings.getDefaultEndpoint());
 
@@ -91,50 +97,50 @@ public class ImageClientTest {
   @Test
   @SuppressWarnings("all")
   public void deleteImageTest() {
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    String targetId = "targetId-815576439";
-    String kind = "kind3292052";
-    String description = "description-1724546052";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String insertTime = "insertTime-103148397";
-    Integer httpErrorStatusCode = 1386087020;
-    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-    String targetLink = "targetLink-2084812312";
-    String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
-    Integer progress = 1001078227;
-    String operationType = "operationType-1432962286";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
-    String id = "id3355";
-    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
-    String user = "user3599307";
+    String creationTimestamp = "creationTimestamp567396278";
+    String description = "description-1724546052";
+    String endTime = "endTime1725551537";
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    Integer httpErrorStatusCode = 1386087020;
+    String id = "id3355";
+    String insertTime = "insertTime-103148397";
+    String kind = "kind3292052";
+    String name = "name3373707";
+    String operationType = "operationType-1432962286";
+    Integer progress = 1001078227;
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String selfLink = "selfLink-1691268851";
+    String startTime = "startTime-1573145462";
     String status = "status-892481550";
+    String statusMessage = "statusMessage-239442758";
+    String targetId = "targetId-815576439";
+    String targetLink = "targetLink-2084812312";
+    String user = "user3599307";
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     Operation expectedResponse =
         Operation.newBuilder()
-            .setHttpErrorMessage(httpErrorMessage)
-            .setTargetId(targetId)
-            .setKind(kind)
-            .setDescription(description)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setInsertTime(insertTime)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setZone(zone.toString())
-            .setTargetLink(targetLink)
-            .setCreationTimestamp(creationTimestamp)
-            .setName(name)
-            .setProgress(progress)
-            .setOperationType(operationType)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
-            .setId(id)
-            .setRegion(region.toString())
             .setClientOperationId(clientOperationId)
-            .setUser(user)
+            .setCreationTimestamp(creationTimestamp)
+            .setDescription(description)
+            .setEndTime(endTime)
+            .setHttpErrorMessage(httpErrorMessage)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setId(id)
+            .setInsertTime(insertTime)
+            .setKind(kind)
+            .setName(name)
+            .setOperationType(operationType)
+            .setProgress(progress)
+            .setRegion(region.toString())
+            .setSelfLink(selfLink)
+            .setStartTime(startTime)
             .setStatus(status)
+            .setStatusMessage(statusMessage)
+            .setTargetId(targetId)
+            .setTargetLink(targetLink)
+            .setUser(user)
+            .setZone(zone.toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -179,50 +185,50 @@ public class ImageClientTest {
   @Test
   @SuppressWarnings("all")
   public void deprecateImageTest() {
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    String targetId = "targetId-815576439";
-    String kind = "kind3292052";
-    String description = "description-1724546052";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String insertTime = "insertTime-103148397";
-    Integer httpErrorStatusCode = 1386087020;
-    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-    String targetLink = "targetLink-2084812312";
-    String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
-    Integer progress = 1001078227;
-    String operationType = "operationType-1432962286";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
-    String id = "id3355";
-    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
-    String user = "user3599307";
+    String creationTimestamp = "creationTimestamp567396278";
+    String description = "description-1724546052";
+    String endTime = "endTime1725551537";
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    Integer httpErrorStatusCode = 1386087020;
+    String id = "id3355";
+    String insertTime = "insertTime-103148397";
+    String kind = "kind3292052";
+    String name = "name3373707";
+    String operationType = "operationType-1432962286";
+    Integer progress = 1001078227;
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String selfLink = "selfLink-1691268851";
+    String startTime = "startTime-1573145462";
     String status = "status-892481550";
+    String statusMessage = "statusMessage-239442758";
+    String targetId = "targetId-815576439";
+    String targetLink = "targetLink-2084812312";
+    String user = "user3599307";
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     Operation expectedResponse =
         Operation.newBuilder()
-            .setHttpErrorMessage(httpErrorMessage)
-            .setTargetId(targetId)
-            .setKind(kind)
-            .setDescription(description)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setInsertTime(insertTime)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setZone(zone.toString())
-            .setTargetLink(targetLink)
-            .setCreationTimestamp(creationTimestamp)
-            .setName(name)
-            .setProgress(progress)
-            .setOperationType(operationType)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
-            .setId(id)
-            .setRegion(region.toString())
             .setClientOperationId(clientOperationId)
-            .setUser(user)
+            .setCreationTimestamp(creationTimestamp)
+            .setDescription(description)
+            .setEndTime(endTime)
+            .setHttpErrorMessage(httpErrorMessage)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setId(id)
+            .setInsertTime(insertTime)
+            .setKind(kind)
+            .setName(name)
+            .setOperationType(operationType)
+            .setProgress(progress)
+            .setRegion(region.toString())
+            .setSelfLink(selfLink)
+            .setStartTime(startTime)
             .setStatus(status)
+            .setStatusMessage(statusMessage)
+            .setTargetId(targetId)
+            .setTargetLink(targetLink)
+            .setUser(user)
+            .setZone(zone.toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -269,43 +275,43 @@ public class ImageClientTest {
   @Test
   @SuppressWarnings("all")
   public void getImageTest() {
-    String sourceSnapshotId = "sourceSnapshotId-1511650478";
-    String description = "description-1724546052";
-    String sourceSnapshot = "sourceSnapshot-947679896";
-    String labelFingerprint = "labelFingerprint714995737";
+    String archiveSizeBytes = "archiveSizeBytes-1766390198";
     String creationTimestamp = "creationTimestamp567396278";
+    String description = "description-1724546052";
+    String diskSizeGb = "diskSizeGb-757478089";
+    ProjectGlobalImageFamilyName family = ProjectGlobalImageFamilyName.of("[PROJECT]", "[FAMILY]");
     String id = "id3355";
+    String kind = "kind3292052";
+    String labelFingerprint = "labelFingerprint714995737";
+    String name = "name3373707";
+    String selfLink = "selfLink-1691268851";
     String sourceDisk = "sourceDisk-85117119";
     String sourceDiskId = "sourceDiskId-1693292839";
-    String sourceImageId = "sourceImageId-2092155357";
-    String kind = "kind3292052";
-    String selfLink = "selfLink-1691268851";
-    String sourceType = "sourceType-84625186";
-    String name = "name3373707";
-    String archiveSizeBytes = "archiveSizeBytes-1766390198";
     String sourceImage = "sourceImage1661056055";
-    ProjectGlobalImageFamilyName family = ProjectGlobalImageFamilyName.of("[PROJECT]", "[FAMILY]");
-    String diskSizeGb = "diskSizeGb-757478089";
+    String sourceImageId = "sourceImageId-2092155357";
+    String sourceSnapshot = "sourceSnapshot-947679896";
+    String sourceSnapshotId = "sourceSnapshotId-1511650478";
+    String sourceType = "sourceType-84625186";
     String status = "status-892481550";
     Image expectedResponse =
         Image.newBuilder()
-            .setSourceSnapshotId(sourceSnapshotId)
-            .setDescription(description)
-            .setSourceSnapshot(sourceSnapshot)
-            .setLabelFingerprint(labelFingerprint)
+            .setArchiveSizeBytes(archiveSizeBytes)
             .setCreationTimestamp(creationTimestamp)
+            .setDescription(description)
+            .setDiskSizeGb(diskSizeGb)
+            .setFamily(family.toString())
             .setId(id)
+            .setKind(kind)
+            .setLabelFingerprint(labelFingerprint)
+            .setName(name)
+            .setSelfLink(selfLink)
             .setSourceDisk(sourceDisk)
             .setSourceDiskId(sourceDiskId)
-            .setSourceImageId(sourceImageId)
-            .setKind(kind)
-            .setSelfLink(selfLink)
-            .setSourceType(sourceType)
-            .setName(name)
-            .setArchiveSizeBytes(archiveSizeBytes)
             .setSourceImage(sourceImage)
-            .setFamily(family.toString())
-            .setDiskSizeGb(diskSizeGb)
+            .setSourceImageId(sourceImageId)
+            .setSourceSnapshot(sourceSnapshot)
+            .setSourceSnapshotId(sourceSnapshotId)
+            .setSourceType(sourceType)
             .setStatus(status)
             .build();
     mockService.addResponse(expectedResponse);
@@ -351,43 +357,43 @@ public class ImageClientTest {
   @Test
   @SuppressWarnings("all")
   public void getFromFamilyImageTest() {
-    String sourceSnapshotId = "sourceSnapshotId-1511650478";
-    String description = "description-1724546052";
-    String sourceSnapshot = "sourceSnapshot-947679896";
-    String labelFingerprint = "labelFingerprint714995737";
+    String archiveSizeBytes = "archiveSizeBytes-1766390198";
     String creationTimestamp = "creationTimestamp567396278";
+    String description = "description-1724546052";
+    String diskSizeGb = "diskSizeGb-757478089";
+    ProjectGlobalImageFamilyName family2 = ProjectGlobalImageFamilyName.of("[PROJECT]", "[FAMILY]");
     String id = "id3355";
+    String kind = "kind3292052";
+    String labelFingerprint = "labelFingerprint714995737";
+    String name = "name3373707";
+    String selfLink = "selfLink-1691268851";
     String sourceDisk = "sourceDisk-85117119";
     String sourceDiskId = "sourceDiskId-1693292839";
-    String sourceImageId = "sourceImageId-2092155357";
-    String kind = "kind3292052";
-    String selfLink = "selfLink-1691268851";
-    String sourceType = "sourceType-84625186";
-    String name = "name3373707";
-    String archiveSizeBytes = "archiveSizeBytes-1766390198";
     String sourceImage = "sourceImage1661056055";
-    ProjectGlobalImageFamilyName family2 = ProjectGlobalImageFamilyName.of("[PROJECT]", "[FAMILY]");
-    String diskSizeGb = "diskSizeGb-757478089";
+    String sourceImageId = "sourceImageId-2092155357";
+    String sourceSnapshot = "sourceSnapshot-947679896";
+    String sourceSnapshotId = "sourceSnapshotId-1511650478";
+    String sourceType = "sourceType-84625186";
     String status = "status-892481550";
     Image expectedResponse =
         Image.newBuilder()
-            .setSourceSnapshotId(sourceSnapshotId)
-            .setDescription(description)
-            .setSourceSnapshot(sourceSnapshot)
-            .setLabelFingerprint(labelFingerprint)
+            .setArchiveSizeBytes(archiveSizeBytes)
             .setCreationTimestamp(creationTimestamp)
+            .setDescription(description)
+            .setDiskSizeGb(diskSizeGb)
+            .setFamily(family2.toString())
             .setId(id)
+            .setKind(kind)
+            .setLabelFingerprint(labelFingerprint)
+            .setName(name)
+            .setSelfLink(selfLink)
             .setSourceDisk(sourceDisk)
             .setSourceDiskId(sourceDiskId)
-            .setSourceImageId(sourceImageId)
-            .setKind(kind)
-            .setSelfLink(selfLink)
-            .setSourceType(sourceType)
-            .setName(name)
-            .setArchiveSizeBytes(archiveSizeBytes)
             .setSourceImage(sourceImage)
-            .setFamily(family2.toString())
-            .setDiskSizeGb(diskSizeGb)
+            .setSourceImageId(sourceImageId)
+            .setSourceSnapshot(sourceSnapshot)
+            .setSourceSnapshotId(sourceSnapshotId)
+            .setSourceType(sourceType)
             .setStatus(status)
             .build();
     mockService.addResponse(expectedResponse);
@@ -433,51 +439,101 @@ public class ImageClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void getIamPolicyImageTest() {
+    String etag = "etag3123477";
+    Boolean iamOwned = false;
+    Integer version = 351608024;
+    Policy expectedResponse =
+        Policy.newBuilder().setEtag(etag).setIamOwned(iamOwned).setVersion(version).build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectGlobalImageResourceName resource =
+        ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
+
+    Policy actualResponse = client.getIamPolicyImage(resource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getIamPolicyImageExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectGlobalImageResourceName resource =
+          ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
+
+      client.getIamPolicyImage(resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void insertImageTest() {
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    String targetId = "targetId-815576439";
-    String kind = "kind3292052";
-    String description = "description-1724546052";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String insertTime = "insertTime-103148397";
-    Integer httpErrorStatusCode = 1386087020;
-    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-    String targetLink = "targetLink-2084812312";
-    String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
-    Integer progress = 1001078227;
-    String operationType = "operationType-1432962286";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
-    String id = "id3355";
-    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
-    String user = "user3599307";
+    String creationTimestamp = "creationTimestamp567396278";
+    String description = "description-1724546052";
+    String endTime = "endTime1725551537";
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    Integer httpErrorStatusCode = 1386087020;
+    String id = "id3355";
+    String insertTime = "insertTime-103148397";
+    String kind = "kind3292052";
+    String name = "name3373707";
+    String operationType = "operationType-1432962286";
+    Integer progress = 1001078227;
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String selfLink = "selfLink-1691268851";
+    String startTime = "startTime-1573145462";
     String status = "status-892481550";
+    String statusMessage = "statusMessage-239442758";
+    String targetId = "targetId-815576439";
+    String targetLink = "targetLink-2084812312";
+    String user = "user3599307";
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     Operation expectedResponse =
         Operation.newBuilder()
-            .setHttpErrorMessage(httpErrorMessage)
-            .setTargetId(targetId)
-            .setKind(kind)
-            .setDescription(description)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setInsertTime(insertTime)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setZone(zone.toString())
-            .setTargetLink(targetLink)
-            .setCreationTimestamp(creationTimestamp)
-            .setName(name)
-            .setProgress(progress)
-            .setOperationType(operationType)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
-            .setId(id)
-            .setRegion(region.toString())
             .setClientOperationId(clientOperationId)
-            .setUser(user)
+            .setCreationTimestamp(creationTimestamp)
+            .setDescription(description)
+            .setEndTime(endTime)
+            .setHttpErrorMessage(httpErrorMessage)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setId(id)
+            .setInsertTime(insertTime)
+            .setKind(kind)
+            .setName(name)
+            .setOperationType(operationType)
+            .setProgress(progress)
+            .setRegion(region.toString())
+            .setSelfLink(selfLink)
+            .setStartTime(startTime)
             .setStatus(status)
+            .setStatusMessage(statusMessage)
+            .setTargetId(targetId)
+            .setTargetLink(targetLink)
+            .setUser(user)
+            .setZone(zone.toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -526,17 +582,17 @@ public class ImageClientTest {
   @Test
   @SuppressWarnings("all")
   public void listImagesTest() {
+    String id = "id3355";
     String kind = "kind3292052";
     String nextPageToken = "";
-    String id = "id3355";
     String selfLink = "selfLink-1691268851";
     Image itemsElement = Image.newBuilder().build();
     List<Image> items = Arrays.asList(itemsElement);
     ImageList expectedResponse =
         ImageList.newBuilder()
+            .setId(id)
             .setKind(kind)
             .setNextPageToken(nextPageToken)
-            .setId(id)
             .setSelfLink(selfLink)
             .addAllItems(items)
             .build();
@@ -585,51 +641,105 @@ public class ImageClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void setIamPolicyImageTest() {
+    String etag = "etag3123477";
+    Boolean iamOwned = false;
+    Integer version = 351608024;
+    Policy expectedResponse =
+        Policy.newBuilder().setEtag(etag).setIamOwned(iamOwned).setVersion(version).build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectGlobalImageResourceName resource =
+        ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
+    GlobalSetPolicyRequest globalSetPolicyRequestResource =
+        GlobalSetPolicyRequest.newBuilder().build();
+
+    Policy actualResponse = client.setIamPolicyImage(resource, globalSetPolicyRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setIamPolicyImageExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectGlobalImageResourceName resource =
+          ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
+      GlobalSetPolicyRequest globalSetPolicyRequestResource =
+          GlobalSetPolicyRequest.newBuilder().build();
+
+      client.setIamPolicyImage(resource, globalSetPolicyRequestResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void setLabelsImageTest() {
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    String targetId = "targetId-815576439";
-    String kind = "kind3292052";
-    String description = "description-1724546052";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String insertTime = "insertTime-103148397";
-    Integer httpErrorStatusCode = 1386087020;
-    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-    String targetLink = "targetLink-2084812312";
-    String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
-    Integer progress = 1001078227;
-    String operationType = "operationType-1432962286";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
-    String id = "id3355";
-    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
-    String user = "user3599307";
+    String creationTimestamp = "creationTimestamp567396278";
+    String description = "description-1724546052";
+    String endTime = "endTime1725551537";
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    Integer httpErrorStatusCode = 1386087020;
+    String id = "id3355";
+    String insertTime = "insertTime-103148397";
+    String kind = "kind3292052";
+    String name = "name3373707";
+    String operationType = "operationType-1432962286";
+    Integer progress = 1001078227;
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String selfLink = "selfLink-1691268851";
+    String startTime = "startTime-1573145462";
     String status = "status-892481550";
+    String statusMessage = "statusMessage-239442758";
+    String targetId = "targetId-815576439";
+    String targetLink = "targetLink-2084812312";
+    String user = "user3599307";
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     Operation expectedResponse =
         Operation.newBuilder()
-            .setHttpErrorMessage(httpErrorMessage)
-            .setTargetId(targetId)
-            .setKind(kind)
-            .setDescription(description)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setInsertTime(insertTime)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setZone(zone.toString())
-            .setTargetLink(targetLink)
-            .setCreationTimestamp(creationTimestamp)
-            .setName(name)
-            .setProgress(progress)
-            .setOperationType(operationType)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
-            .setId(id)
-            .setRegion(region.toString())
             .setClientOperationId(clientOperationId)
-            .setUser(user)
+            .setCreationTimestamp(creationTimestamp)
+            .setDescription(description)
+            .setEndTime(endTime)
+            .setHttpErrorMessage(httpErrorMessage)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setId(id)
+            .setInsertTime(insertTime)
+            .setKind(kind)
+            .setName(name)
+            .setOperationType(operationType)
+            .setProgress(progress)
+            .setRegion(region.toString())
+            .setSelfLink(selfLink)
+            .setStartTime(startTime)
             .setStatus(status)
+            .setStatusMessage(statusMessage)
+            .setTargetId(targetId)
+            .setTargetLink(targetLink)
+            .setUser(user)
+            .setZone(zone.toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -671,6 +781,57 @@ public class ImageClientTest {
           GlobalSetLabelsRequest.newBuilder().build();
 
       client.setLabelsImage(resource, globalSetLabelsRequestResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void testIamPermissionsImageTest() {
+    TestPermissionsResponse expectedResponse = TestPermissionsResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectGlobalImageResourceName resource =
+        ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
+    TestPermissionsRequest testPermissionsRequestResource =
+        TestPermissionsRequest.newBuilder().build();
+
+    TestPermissionsResponse actualResponse =
+        client.testIamPermissionsImage(resource, testPermissionsRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void testIamPermissionsImageExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectGlobalImageResourceName resource =
+          ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
+      TestPermissionsRequest testPermissionsRequestResource =
+          TestPermissionsRequest.newBuilder().build();
+
+      client.testIamPermissionsImage(resource, testPermissionsRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

@@ -27,12 +27,9 @@ import com.google.cloud.compute.deprecated.MachineTypeId;
 import com.google.cloud.compute.deprecated.NetworkId;
 import com.google.cloud.compute.deprecated.NetworkInterface;
 import com.google.cloud.compute.deprecated.Operation;
-
 import java.util.concurrent.TimeoutException;
 
-/**
- * A snippet for Google Cloud Compute Engine showing how to create a virtual machine instance.
- */
+/** A snippet for Google Cloud Compute Engine showing how to create a virtual machine instance. */
 public class CreateInstance {
 
   public static void main(String... args) throws InterruptedException, TimeoutException {

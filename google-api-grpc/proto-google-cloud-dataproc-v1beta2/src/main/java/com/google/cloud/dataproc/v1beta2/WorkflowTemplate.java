@@ -4,33 +4,37 @@
 package com.google.cloud.dataproc.v1beta2;
 
 /**
+ *
+ *
  * <pre>
  * A Cloud Dataproc workflow template resource.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1beta2.WorkflowTemplate}
  */
-public  final class WorkflowTemplate extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class WorkflowTemplate extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1beta2.WorkflowTemplate)
     WorkflowTemplateOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use WorkflowTemplate.newBuilder() to construct.
   private WorkflowTemplate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private WorkflowTemplate() {
     id_ = "";
     name_ = "";
     version_ = 0;
     jobs_ = java.util.Collections.emptyList();
+    parameters_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private WorkflowTemplate(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -50,135 +54,166 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+              name_ = s;
+              break;
+            }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            id_ = s;
-            break;
-          }
-          case 24: {
+              id_ = s;
+              break;
+            }
+          case 24:
+            {
+              version_ = input.readInt32();
+              break;
+            }
+          case 34:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (createTime_ != null) {
+                subBuilder = createTime_.toBuilder();
+              }
+              createTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(createTime_);
+                createTime_ = subBuilder.buildPartial();
+              }
 
-            version_ = input.readInt32();
-            break;
-          }
-          case 34: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (createTime_ != null) {
-              subBuilder = createTime_.toBuilder();
+              break;
             }
-            createTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(createTime_);
-              createTime_ = subBuilder.buildPartial();
-            }
+          case 42:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (updateTime_ != null) {
+                subBuilder = updateTime_.toBuilder();
+              }
+              updateTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(updateTime_);
+                updateTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 42: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (updateTime_ != null) {
-              subBuilder = updateTime_.toBuilder();
+              break;
             }
-            updateTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(updateTime_);
-              updateTime_ = subBuilder.buildPartial();
+          case 50:
+            {
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                labels_ =
+                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000020;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                  input.readMessage(
+                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
+              break;
             }
+          case 58:
+            {
+              com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement.Builder subBuilder = null;
+              if (placement_ != null) {
+                subBuilder = placement_.toBuilder();
+              }
+              placement_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(placement_);
+                placement_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 50: {
-            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-              labels_ = com.google.protobuf.MapField.newMapField(
-                  LabelsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000020;
+              break;
             }
-            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-            labels__ = input.readMessage(
-                LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            labels_.getMutableMap().put(
-                labels__.getKey(), labels__.getValue());
-            break;
-          }
-          case 58: {
-            com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement.Builder subBuilder = null;
-            if (placement_ != null) {
-              subBuilder = placement_.toBuilder();
+          case 66:
+            {
+              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+                jobs_ = new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.OrderedJob>();
+                mutable_bitField0_ |= 0x00000080;
+              }
+              jobs_.add(
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1beta2.OrderedJob.parser(), extensionRegistry));
+              break;
             }
-            placement_ = input.readMessage(com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(placement_);
-              placement_ = subBuilder.buildPartial();
+          case 74:
+            {
+              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+                parameters_ =
+                    new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.TemplateParameter>();
+                mutable_bitField0_ |= 0x00000100;
+              }
+              parameters_.add(
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1beta2.TemplateParameter.parser(),
+                      extensionRegistry));
+              break;
             }
-
-            break;
-          }
-          case 66: {
-            if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
-              jobs_ = new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.OrderedJob>();
-              mutable_bitField0_ |= 0x00000080;
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            jobs_.add(
-                input.readMessage(com.google.cloud.dataproc.v1beta2.OrderedJob.parser(), extensionRegistry));
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
         jobs_ = java.util.Collections.unmodifiableList(jobs_);
+      }
+      if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+        parameters_ = java.util.Collections.unmodifiableList(parameters_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto.internal_static_google_cloud_dataproc_v1beta2_WorkflowTemplate_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto
+        .internal_static_google_cloud_dataproc_v1beta2_WorkflowTemplate_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
   @java.lang.Override
-  protected com.google.protobuf.MapField internalGetMapField(
-      int number) {
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
       case 6:
         return internalGetLabels();
       default:
-        throw new RuntimeException(
-            "Invalid map field number: " + number);
+        throw new RuntimeException("Invalid map field number: " + number);
     }
   }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto.internal_static_google_cloud_dataproc_v1beta2_WorkflowTemplate_fieldAccessorTable
+    return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto
+        .internal_static_google_cloud_dataproc_v1beta2_WorkflowTemplate_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dataproc.v1beta2.WorkflowTemplate.class, com.google.cloud.dataproc.v1beta2.WorkflowTemplate.Builder.class);
+            com.google.cloud.dataproc.v1beta2.WorkflowTemplate.class,
+            com.google.cloud.dataproc.v1beta2.WorkflowTemplate.Builder.class);
   }
 
   private int bitField0_;
   public static final int ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object id_;
   /**
+   *
+   *
    * <pre>
    * Required. The template id.
    * The id must contain only letters (a-z, A-Z), numbers (0-9),
@@ -193,14 +228,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       id_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. The template id.
    * The id must contain only letters (a-z, A-Z), numbers (0-9),
@@ -210,13 +246,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string id = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getIdBytes() {
+  public com.google.protobuf.ByteString getIdBytes() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       id_ = b;
       return b;
     } else {
@@ -227,6 +261,8 @@ private static final long serialVersionUID = 0L;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * Output only. The "resource name" of the template, as described
    * in https://cloud.google.com/apis/design/resource_names of the form
@@ -240,14 +276,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The "resource name" of the template, as described
    * in https://cloud.google.com/apis/design/resource_names of the form
@@ -256,13 +293,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -273,6 +308,8 @@ private static final long serialVersionUID = 0L;
   public static final int VERSION_FIELD_NUMBER = 3;
   private int version_;
   /**
+   *
+   *
    * <pre>
    * Optional. Used to perform a consistent read-modify-write.
    * This field should be left blank for a `CreateWorkflowTemplate` request. It
@@ -293,6 +330,8 @@ private static final long serialVersionUID = 0L;
   public static final int CREATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp createTime_;
   /**
+   *
+   *
    * <pre>
    * Output only. The time template was created.
    * </pre>
@@ -303,6 +342,8 @@ private static final long serialVersionUID = 0L;
     return createTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The time template was created.
    * </pre>
@@ -313,6 +354,8 @@ private static final long serialVersionUID = 0L;
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The time template was created.
    * </pre>
@@ -326,6 +369,8 @@ private static final long serialVersionUID = 0L;
   public static final int UPDATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp updateTime_;
   /**
+   *
+   *
    * <pre>
    * Output only. The time template was last updated.
    * </pre>
@@ -336,6 +381,8 @@ private static final long serialVersionUID = 0L;
     return updateTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The time template was last updated.
    * </pre>
@@ -346,6 +393,8 @@ private static final long serialVersionUID = 0L;
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The time template was last updated.
    * </pre>
@@ -357,24 +406,23 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int LABELS_FIELD_NUMBER = 6;
+
   private static final class LabelsDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        java.lang.String, java.lang.String> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<java.lang.String, java.lang.String>newDefaultInstance(
-                com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto.internal_static_google_cloud_dataproc_v1beta2_WorkflowTemplate_LabelsEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "");
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto
+                .internal_static_google_cloud_dataproc_v1beta2_WorkflowTemplate_LabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
   }
-  private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> labels_;
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetLabels() {
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
     if (labels_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(
-          LabelsDefaultEntryHolder.defaultEntry);
+      return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
     }
     return labels_;
   }
@@ -383,6 +431,8 @@ private static final long serialVersionUID = 0L;
     return internalGetLabels().getMap().size();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The labels to associate with this template. These labels
    * will be propagated to all jobs and clusters created by the workflow
@@ -397,20 +447,20 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
-
-  public boolean containsLabels(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public boolean containsLabels(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     return internalGetLabels().getMap().containsKey(key);
   }
-  /**
-   * Use {@link #getLabelsMap()} instead.
-   */
+  /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The labels to associate with this template. These labels
    * will be propagated to all jobs and clusters created by the workflow
@@ -425,11 +475,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
-
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The labels to associate with this template. These labels
    * will be propagated to all jobs and clusters created by the workflow
@@ -444,16 +495,16 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
-
-  public java.lang.String getLabelsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetLabels().getMap();
+  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The labels to associate with this template. These labels
    * will be propagated to all jobs and clusters created by the workflow
@@ -468,12 +519,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
-
-  public java.lang.String getLabelsOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetLabels().getMap();
+  public java.lang.String getLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
@@ -483,6 +533,8 @@ private static final long serialVersionUID = 0L;
   public static final int PLACEMENT_FIELD_NUMBER = 7;
   private com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement placement_;
   /**
+   *
+   *
    * <pre>
    * Required. WorkflowTemplate scheduling information.
    * </pre>
@@ -493,6 +545,8 @@ private static final long serialVersionUID = 0L;
     return placement_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Required. WorkflowTemplate scheduling information.
    * </pre>
@@ -500,22 +554,29 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement placement = 7;</code>
    */
   public com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement getPlacement() {
-    return placement_ == null ? com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement.getDefaultInstance() : placement_;
+    return placement_ == null
+        ? com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement.getDefaultInstance()
+        : placement_;
   }
   /**
+   *
+   *
    * <pre>
    * Required. WorkflowTemplate scheduling information.
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement placement = 7;</code>
    */
-  public com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacementOrBuilder getPlacementOrBuilder() {
+  public com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacementOrBuilder
+      getPlacementOrBuilder() {
     return getPlacement();
   }
 
   public static final int JOBS_FIELD_NUMBER = 8;
   private java.util.List<com.google.cloud.dataproc.v1beta2.OrderedJob> jobs_;
   /**
+   *
+   *
    * <pre>
    * Required. The Directed Acyclic Graph of Jobs to submit.
    * </pre>
@@ -526,17 +587,21 @@ private static final long serialVersionUID = 0L;
     return jobs_;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The Directed Acyclic Graph of Jobs to submit.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.OrderedJob jobs = 8;</code>
    */
-  public java.util.List<? extends com.google.cloud.dataproc.v1beta2.OrderedJobOrBuilder> 
+  public java.util.List<? extends com.google.cloud.dataproc.v1beta2.OrderedJobOrBuilder>
       getJobsOrBuilderList() {
     return jobs_;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The Directed Acyclic Graph of Jobs to submit.
    * </pre>
@@ -547,6 +612,8 @@ private static final long serialVersionUID = 0L;
     return jobs_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Required. The Directed Acyclic Graph of Jobs to submit.
    * </pre>
@@ -557,18 +624,95 @@ private static final long serialVersionUID = 0L;
     return jobs_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Required. The Directed Acyclic Graph of Jobs to submit.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.OrderedJob jobs = 8;</code>
    */
-  public com.google.cloud.dataproc.v1beta2.OrderedJobOrBuilder getJobsOrBuilder(
-      int index) {
+  public com.google.cloud.dataproc.v1beta2.OrderedJobOrBuilder getJobsOrBuilder(int index) {
     return jobs_.get(index);
   }
 
+  public static final int PARAMETERS_FIELD_NUMBER = 9;
+  private java.util.List<com.google.cloud.dataproc.v1beta2.TemplateParameter> parameters_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Template parameters whose values are substituted into the
+   * template. Values for parameters must be provided when the template is
+   * instantiated.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+   */
+  public java.util.List<com.google.cloud.dataproc.v1beta2.TemplateParameter> getParametersList() {
+    return parameters_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Template parameters whose values are substituted into the
+   * template. Values for parameters must be provided when the template is
+   * instantiated.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+   */
+  public java.util.List<? extends com.google.cloud.dataproc.v1beta2.TemplateParameterOrBuilder>
+      getParametersOrBuilderList() {
+    return parameters_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Template parameters whose values are substituted into the
+   * template. Values for parameters must be provided when the template is
+   * instantiated.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+   */
+  public int getParametersCount() {
+    return parameters_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Template parameters whose values are substituted into the
+   * template. Values for parameters must be provided when the template is
+   * instantiated.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+   */
+  public com.google.cloud.dataproc.v1beta2.TemplateParameter getParameters(int index) {
+    return parameters_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Template parameters whose values are substituted into the
+   * template. Values for parameters must be provided when the template is
+   * instantiated.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+   */
+  public com.google.cloud.dataproc.v1beta2.TemplateParameterOrBuilder getParametersOrBuilder(
+      int index) {
+    return parameters_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -580,8 +724,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
@@ -597,17 +740,16 @@ private static final long serialVersionUID = 0L;
     if (updateTime_ != null) {
       output.writeMessage(5, getUpdateTime());
     }
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetLabels(),
-        LabelsDefaultEntryHolder.defaultEntry,
-        6);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 6);
     if (placement_ != null) {
       output.writeMessage(7, getPlacement());
     }
     for (int i = 0; i < jobs_.size(); i++) {
       output.writeMessage(8, jobs_.get(i));
+    }
+    for (int i = 0; i < parameters_.size(); i++) {
+      output.writeMessage(9, parameters_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -625,34 +767,32 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
     }
     if (version_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(3, version_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, version_);
     }
     if (createTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getCreateTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getCreateTime());
     }
     if (updateTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getUpdateTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getUpdateTime());
     }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-         : internalGetLabels().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-      labels__ = LabelsDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, labels__);
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+          LabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, labels__);
     }
     if (placement_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, getPlacement());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getPlacement());
     }
     for (int i = 0; i < jobs_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, jobs_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, jobs_.get(i));
+    }
+    for (int i = 0; i < parameters_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, parameters_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -662,39 +802,33 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.dataproc.v1beta2.WorkflowTemplate)) {
       return super.equals(obj);
     }
-    com.google.cloud.dataproc.v1beta2.WorkflowTemplate other = (com.google.cloud.dataproc.v1beta2.WorkflowTemplate) obj;
+    com.google.cloud.dataproc.v1beta2.WorkflowTemplate other =
+        (com.google.cloud.dataproc.v1beta2.WorkflowTemplate) obj;
 
     boolean result = true;
-    result = result && getId()
-        .equals(other.getId());
-    result = result && getName()
-        .equals(other.getName());
-    result = result && (getVersion()
-        == other.getVersion());
+    result = result && getId().equals(other.getId());
+    result = result && getName().equals(other.getName());
+    result = result && (getVersion() == other.getVersion());
     result = result && (hasCreateTime() == other.hasCreateTime());
     if (hasCreateTime()) {
-      result = result && getCreateTime()
-          .equals(other.getCreateTime());
+      result = result && getCreateTime().equals(other.getCreateTime());
     }
     result = result && (hasUpdateTime() == other.hasUpdateTime());
     if (hasUpdateTime()) {
-      result = result && getUpdateTime()
-          .equals(other.getUpdateTime());
+      result = result && getUpdateTime().equals(other.getUpdateTime());
     }
-    result = result && internalGetLabels().equals(
-        other.internalGetLabels());
+    result = result && internalGetLabels().equals(other.internalGetLabels());
     result = result && (hasPlacement() == other.hasPlacement());
     if (hasPlacement()) {
-      result = result && getPlacement()
-          .equals(other.getPlacement());
+      result = result && getPlacement().equals(other.getPlacement());
     }
-    result = result && getJobsList()
-        .equals(other.getJobsList());
+    result = result && getJobsList().equals(other.getJobsList());
+    result = result && getParametersList().equals(other.getParametersList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -732,145 +866,156 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + JOBS_FIELD_NUMBER;
       hash = (53 * hash) + getJobsList().hashCode();
     }
+    if (getParametersCount() > 0) {
+      hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
+      hash = (53 * hash) + getParametersList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
   public static com.google.cloud.dataproc.v1beta2.WorkflowTemplate parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.WorkflowTemplate parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.WorkflowTemplate parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.WorkflowTemplate parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.WorkflowTemplate parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.WorkflowTemplate parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.dataproc.v1beta2.WorkflowTemplate parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.dataproc.v1beta2.WorkflowTemplate parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.dataproc.v1beta2.WorkflowTemplate parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.dataproc.v1beta2.WorkflowTemplate parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.WorkflowTemplate parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.dataproc.v1beta2.WorkflowTemplate parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.dataproc.v1beta2.WorkflowTemplate parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dataproc.v1beta2.WorkflowTemplate parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.dataproc.v1beta2.WorkflowTemplate prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A Cloud Dataproc workflow template resource.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1beta2.WorkflowTemplate}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dataproc.v1beta2.WorkflowTemplate)
       com.google.cloud.dataproc.v1beta2.WorkflowTemplateOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto.internal_static_google_cloud_dataproc_v1beta2_WorkflowTemplate_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto
+          .internal_static_google_cloud_dataproc_v1beta2_WorkflowTemplate_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 6:
           return internalGetLabels();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
         case 6:
           return internalGetMutableLabels();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto.internal_static_google_cloud_dataproc_v1beta2_WorkflowTemplate_fieldAccessorTable
+      return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto
+          .internal_static_google_cloud_dataproc_v1beta2_WorkflowTemplate_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dataproc.v1beta2.WorkflowTemplate.class, com.google.cloud.dataproc.v1beta2.WorkflowTemplate.Builder.class);
+              com.google.cloud.dataproc.v1beta2.WorkflowTemplate.class,
+              com.google.cloud.dataproc.v1beta2.WorkflowTemplate.Builder.class);
     }
 
     // Construct using com.google.cloud.dataproc.v1beta2.WorkflowTemplate.newBuilder()
@@ -878,17 +1023,18 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getJobsFieldBuilder();
+        getParametersFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -923,13 +1069,19 @@ private static final long serialVersionUID = 0L;
       } else {
         jobsBuilder_.clear();
       }
+      if (parametersBuilder_ == null) {
+        parameters_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000100);
+      } else {
+        parametersBuilder_.clear();
+      }
       return this;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto.internal_static_google_cloud_dataproc_v1beta2_WorkflowTemplate_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto
+          .internal_static_google_cloud_dataproc_v1beta2_WorkflowTemplate_descriptor;
     }
 
     @java.lang.Override
@@ -948,7 +1100,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.dataproc.v1beta2.WorkflowTemplate buildPartial() {
-      com.google.cloud.dataproc.v1beta2.WorkflowTemplate result = new com.google.cloud.dataproc.v1beta2.WorkflowTemplate(this);
+      com.google.cloud.dataproc.v1beta2.WorkflowTemplate result =
+          new com.google.cloud.dataproc.v1beta2.WorkflowTemplate(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.id_ = id_;
@@ -980,6 +1133,15 @@ private static final long serialVersionUID = 0L;
       } else {
         result.jobs_ = jobsBuilder_.build();
       }
+      if (parametersBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) == 0x00000100)) {
+          parameters_ = java.util.Collections.unmodifiableList(parameters_);
+          bitField0_ = (bitField0_ & ~0x00000100);
+        }
+        result.parameters_ = parameters_;
+      } else {
+        result.parameters_ = parametersBuilder_.build();
+      }
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -989,38 +1151,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dataproc.v1beta2.WorkflowTemplate) {
-        return mergeFrom((com.google.cloud.dataproc.v1beta2.WorkflowTemplate)other);
+        return mergeFrom((com.google.cloud.dataproc.v1beta2.WorkflowTemplate) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1028,7 +1191,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.dataproc.v1beta2.WorkflowTemplate other) {
-      if (other == com.google.cloud.dataproc.v1beta2.WorkflowTemplate.getDefaultInstance()) return this;
+      if (other == com.google.cloud.dataproc.v1beta2.WorkflowTemplate.getDefaultInstance())
+        return this;
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
         onChanged();
@@ -1046,8 +1210,7 @@ private static final long serialVersionUID = 0L;
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
       }
-      internalGetMutableLabels().mergeFrom(
-          other.internalGetLabels());
+      internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       if (other.hasPlacement()) {
         mergePlacement(other.getPlacement());
       }
@@ -1069,11 +1232,39 @@ private static final long serialVersionUID = 0L;
             jobsBuilder_ = null;
             jobs_ = other.jobs_;
             bitField0_ = (bitField0_ & ~0x00000080);
-            jobsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getJobsFieldBuilder() : null;
+            jobsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getJobsFieldBuilder()
+                    : null;
           } else {
             jobsBuilder_.addAllMessages(other.jobs_);
+          }
+        }
+      }
+      if (parametersBuilder_ == null) {
+        if (!other.parameters_.isEmpty()) {
+          if (parameters_.isEmpty()) {
+            parameters_ = other.parameters_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+          } else {
+            ensureParametersIsMutable();
+            parameters_.addAll(other.parameters_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.parameters_.isEmpty()) {
+          if (parametersBuilder_.isEmpty()) {
+            parametersBuilder_.dispose();
+            parametersBuilder_ = null;
+            parameters_ = other.parameters_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+            parametersBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getParametersFieldBuilder()
+                    : null;
+          } else {
+            parametersBuilder_.addAllMessages(other.parameters_);
           }
         }
       }
@@ -1096,7 +1287,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.dataproc.v1beta2.WorkflowTemplate) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.dataproc.v1beta2.WorkflowTemplate) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -1105,10 +1297,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object id_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. The template id.
      * The id must contain only letters (a-z, A-Z), numbers (0-9),
@@ -1121,8 +1316,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getId() {
       java.lang.Object ref = id_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         id_ = s;
         return s;
@@ -1131,6 +1325,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The template id.
      * The id must contain only letters (a-z, A-Z), numbers (0-9),
@@ -1140,13 +1336,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getIdBytes() {
+    public com.google.protobuf.ByteString getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         id_ = b;
         return b;
       } else {
@@ -1154,6 +1348,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The template id.
      * The id must contain only letters (a-z, A-Z), numbers (0-9),
@@ -1163,17 +1359,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 2;</code>
      */
-    public Builder setId(
-        java.lang.String value) {
+    public Builder setId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       id_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The template id.
      * The id must contain only letters (a-z, A-Z), numbers (0-9),
@@ -1184,12 +1381,14 @@ private static final long serialVersionUID = 0L;
      * <code>string id = 2;</code>
      */
     public Builder clearId() {
-      
+
       id_ = getDefaultInstance().getId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The template id.
      * The id must contain only letters (a-z, A-Z), numbers (0-9),
@@ -1199,13 +1398,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 2;</code>
      */
-    public Builder setIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       id_ = value;
       onChanged();
       return this;
@@ -1213,6 +1411,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only. The "resource name" of the template, as described
      * in https://cloud.google.com/apis/design/resource_names of the form
@@ -1224,8 +1424,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -1234,6 +1433,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The "resource name" of the template, as described
      * in https://cloud.google.com/apis/design/resource_names of the form
@@ -1242,13 +1443,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -1256,6 +1455,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The "resource name" of the template, as described
      * in https://cloud.google.com/apis/design/resource_names of the form
@@ -1264,17 +1465,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The "resource name" of the template, as described
      * in https://cloud.google.com/apis/design/resource_names of the form
@@ -1284,12 +1486,14 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The "resource name" of the template, as described
      * in https://cloud.google.com/apis/design/resource_names of the form
@@ -1298,20 +1502,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
     }
 
-    private int version_ ;
+    private int version_;
     /**
+     *
+     *
      * <pre>
      * Optional. Used to perform a consistent read-modify-write.
      * This field should be left blank for a `CreateWorkflowTemplate` request. It
@@ -1329,6 +1534,8 @@ private static final long serialVersionUID = 0L;
       return version_;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Used to perform a consistent read-modify-write.
      * This field should be left blank for a `CreateWorkflowTemplate` request. It
@@ -1343,12 +1550,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 version = 3;</code>
      */
     public Builder setVersion(int value) {
-      
+
       version_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Used to perform a consistent read-modify-write.
      * This field should be left blank for a `CreateWorkflowTemplate` request. It
@@ -1363,7 +1572,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 version = 3;</code>
      */
     public Builder clearVersion() {
-      
+
       version_ = 0;
       onChanged();
       return this;
@@ -1371,8 +1580,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp createTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        createTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only. The time template was created.
      * </pre>
@@ -1383,6 +1597,8 @@ private static final long serialVersionUID = 0L;
       return createTimeBuilder_ != null || createTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time template was created.
      * </pre>
@@ -1391,12 +1607,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
-        return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
       } else {
         return createTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time template was created.
      * </pre>
@@ -1417,14 +1637,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time template was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
      */
-    public Builder setCreateTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
         onChanged();
@@ -1435,6 +1656,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time template was created.
      * </pre>
@@ -1445,7 +1668,7 @@ private static final long serialVersionUID = 0L;
       if (createTimeBuilder_ == null) {
         if (createTime_ != null) {
           createTime_ =
-            com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
         } else {
           createTime_ = value;
         }
@@ -1457,6 +1680,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time template was created.
      * </pre>
@@ -1475,6 +1700,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time template was created.
      * </pre>
@@ -1482,11 +1709,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      
+
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time template was created.
      * </pre>
@@ -1497,11 +1726,14 @@ private static final long serialVersionUID = 0L;
       if (createTimeBuilder_ != null) {
         return createTimeBuilder_.getMessageOrBuilder();
       } else {
-        return createTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time template was created.
      * </pre>
@@ -1509,14 +1741,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getCreateTimeFieldBuilder() {
       if (createTimeBuilder_ == null) {
-        createTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getCreateTime(),
-                getParentForChildren(),
-                isClean());
+        createTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(), getParentForChildren(), isClean());
         createTime_ = null;
       }
       return createTimeBuilder_;
@@ -1524,8 +1759,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp updateTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updateTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        updateTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only. The time template was last updated.
      * </pre>
@@ -1536,6 +1776,8 @@ private static final long serialVersionUID = 0L;
       return updateTimeBuilder_ != null || updateTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time template was last updated.
      * </pre>
@@ -1544,12 +1786,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
       if (updateTimeBuilder_ == null) {
-        return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
       } else {
         return updateTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time template was last updated.
      * </pre>
@@ -1570,14 +1816,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time template was last updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 5;</code>
      */
-    public Builder setUpdateTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
         onChanged();
@@ -1588,6 +1835,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time template was last updated.
      * </pre>
@@ -1598,7 +1847,7 @@ private static final long serialVersionUID = 0L;
       if (updateTimeBuilder_ == null) {
         if (updateTime_ != null) {
           updateTime_ =
-            com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
         } else {
           updateTime_ = value;
         }
@@ -1610,6 +1859,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time template was last updated.
      * </pre>
@@ -1628,6 +1879,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time template was last updated.
      * </pre>
@@ -1635,11 +1888,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp update_time = 5;</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      
+
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time template was last updated.
      * </pre>
@@ -1650,11 +1905,14 @@ private static final long serialVersionUID = 0L;
       if (updateTimeBuilder_ != null) {
         return updateTimeBuilder_.getMessageOrBuilder();
       } else {
-        return updateTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time template was last updated.
      * </pre>
@@ -1662,35 +1920,37 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp update_time = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getUpdateTimeFieldBuilder() {
       if (updateTimeBuilder_ == null) {
-        updateTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getUpdateTime(),
-                getParentForChildren(),
-                isClean());
+        updateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getUpdateTime(), getParentForChildren(), isClean());
         updateTime_ = null;
       }
       return updateTimeBuilder_;
     }
 
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> labels_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetLabels() {
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
       if (labels_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            LabelsDefaultEntryHolder.defaultEntry);
+        return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       return labels_;
     }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableLabels() {
-      onChanged();;
+        internalGetMutableLabels() {
+      onChanged();
+      ;
       if (labels_ == null) {
-        labels_ = com.google.protobuf.MapField.newMapField(
-            LabelsDefaultEntryHolder.defaultEntry);
+        labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
@@ -1702,6 +1962,8 @@ private static final long serialVersionUID = 0L;
       return internalGetLabels().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The labels to associate with this template. These labels
      * will be propagated to all jobs and clusters created by the workflow
@@ -1716,20 +1978,20 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 6;</code>
      */
-
-    public boolean containsLabels(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetLabels().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getLabelsMap()} instead.
-     */
+    /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The labels to associate with this template. These labels
      * will be propagated to all jobs and clusters created by the workflow
@@ -1744,11 +2006,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 6;</code>
      */
-
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The labels to associate with this template. These labels
      * will be propagated to all jobs and clusters created by the workflow
@@ -1763,16 +2026,17 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 6;</code>
      */
-
     public java.lang.String getLabelsOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetLabels().getMap();
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The labels to associate with this template. These labels
      * will be propagated to all jobs and clusters created by the workflow
@@ -1787,12 +2051,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 6;</code>
      */
-
-    public java.lang.String getLabelsOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetLabels().getMap();
+    public java.lang.String getLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -1800,11 +2063,12 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder clearLabels() {
-      internalGetMutableLabels().getMutableMap()
-          .clear();
+      internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The labels to associate with this template. These labels
      * will be propagated to all jobs and clusters created by the workflow
@@ -1819,23 +2083,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 6;</code>
      */
-
-    public Builder removeLabels(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableLabels().getMutableMap()
-          .remove(key);
+    public Builder removeLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-    /**
-     * Use alternate mutation accessors instead.
-     */
+    /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String>
-    getMutableLabels() {
+    public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       return internalGetMutableLabels().getMutableMap();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The labels to associate with this template. These labels
      * will be propagated to all jobs and clusters created by the workflow
@@ -1850,16 +2112,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 6;</code>
      */
-    public Builder putLabels(
-        java.lang.String key,
-        java.lang.String value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableLabels().getMutableMap()
-          .put(key, value);
+    public Builder putLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableLabels().getMutableMap().put(key, value);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The labels to associate with this template. These labels
      * will be propagated to all jobs and clusters created by the workflow
@@ -1874,18 +2139,20 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 6;</code>
      */
-
-    public Builder putAllLabels(
-        java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableLabels().getMutableMap()
-          .putAll(values);
+    public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableLabels().getMutableMap().putAll(values);
       return this;
     }
 
     private com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement placement_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement, com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement.Builder, com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacementOrBuilder> placementBuilder_;
+            com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement,
+            com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement.Builder,
+            com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacementOrBuilder>
+        placementBuilder_;
     /**
+     *
+     *
      * <pre>
      * Required. WorkflowTemplate scheduling information.
      * </pre>
@@ -1896,6 +2163,8 @@ private static final long serialVersionUID = 0L;
       return placementBuilder_ != null || placement_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Required. WorkflowTemplate scheduling information.
      * </pre>
@@ -1904,12 +2173,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement getPlacement() {
       if (placementBuilder_ == null) {
-        return placement_ == null ? com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement.getDefaultInstance() : placement_;
+        return placement_ == null
+            ? com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement.getDefaultInstance()
+            : placement_;
       } else {
         return placementBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. WorkflowTemplate scheduling information.
      * </pre>
@@ -1930,6 +2203,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. WorkflowTemplate scheduling information.
      * </pre>
@@ -1948,17 +2223,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. WorkflowTemplate scheduling information.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement placement = 7;</code>
      */
-    public Builder mergePlacement(com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement value) {
+    public Builder mergePlacement(
+        com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement value) {
       if (placementBuilder_ == null) {
         if (placement_ != null) {
           placement_ =
-            com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement.newBuilder(placement_).mergeFrom(value).buildPartial();
+              com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement.newBuilder(placement_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           placement_ = value;
         }
@@ -1970,6 +2250,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. WorkflowTemplate scheduling information.
      * </pre>
@@ -1988,33 +2270,42 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. WorkflowTemplate scheduling information.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement placement = 7;</code>
      */
-    public com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement.Builder getPlacementBuilder() {
-      
+    public com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement.Builder
+        getPlacementBuilder() {
+
       onChanged();
       return getPlacementFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Required. WorkflowTemplate scheduling information.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement placement = 7;</code>
      */
-    public com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacementOrBuilder getPlacementOrBuilder() {
+    public com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacementOrBuilder
+        getPlacementOrBuilder() {
       if (placementBuilder_ != null) {
         return placementBuilder_.getMessageOrBuilder();
       } else {
-        return placement_ == null ?
-            com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement.getDefaultInstance() : placement_;
+        return placement_ == null
+            ? com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement.getDefaultInstance()
+            : placement_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. WorkflowTemplate scheduling information.
      * </pre>
@@ -2022,32 +2313,41 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement placement = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement, com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement.Builder, com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacementOrBuilder> 
+            com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement,
+            com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement.Builder,
+            com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacementOrBuilder>
         getPlacementFieldBuilder() {
       if (placementBuilder_ == null) {
-        placementBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement, com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement.Builder, com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacementOrBuilder>(
-                getPlacement(),
-                getParentForChildren(),
-                isClean());
+        placementBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement,
+                com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement.Builder,
+                com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacementOrBuilder>(
+                getPlacement(), getParentForChildren(), isClean());
         placement_ = null;
       }
       return placementBuilder_;
     }
 
     private java.util.List<com.google.cloud.dataproc.v1beta2.OrderedJob> jobs_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureJobsIsMutable() {
       if (!((bitField0_ & 0x00000080) == 0x00000080)) {
         jobs_ = new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.OrderedJob>(jobs_);
         bitField0_ |= 0x00000080;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.OrderedJob, com.google.cloud.dataproc.v1beta2.OrderedJob.Builder, com.google.cloud.dataproc.v1beta2.OrderedJobOrBuilder> jobsBuilder_;
+            com.google.cloud.dataproc.v1beta2.OrderedJob,
+            com.google.cloud.dataproc.v1beta2.OrderedJob.Builder,
+            com.google.cloud.dataproc.v1beta2.OrderedJobOrBuilder>
+        jobsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Required. The Directed Acyclic Graph of Jobs to submit.
      * </pre>
@@ -2062,6 +2362,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Directed Acyclic Graph of Jobs to submit.
      * </pre>
@@ -2076,6 +2378,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Directed Acyclic Graph of Jobs to submit.
      * </pre>
@@ -2090,14 +2394,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Directed Acyclic Graph of Jobs to submit.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.OrderedJob jobs = 8;</code>
      */
-    public Builder setJobs(
-        int index, com.google.cloud.dataproc.v1beta2.OrderedJob value) {
+    public Builder setJobs(int index, com.google.cloud.dataproc.v1beta2.OrderedJob value) {
       if (jobsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2111,6 +2416,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Directed Acyclic Graph of Jobs to submit.
      * </pre>
@@ -2129,6 +2436,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Directed Acyclic Graph of Jobs to submit.
      * </pre>
@@ -2149,14 +2458,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Directed Acyclic Graph of Jobs to submit.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.OrderedJob jobs = 8;</code>
      */
-    public Builder addJobs(
-        int index, com.google.cloud.dataproc.v1beta2.OrderedJob value) {
+    public Builder addJobs(int index, com.google.cloud.dataproc.v1beta2.OrderedJob value) {
       if (jobsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2170,14 +2480,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Directed Acyclic Graph of Jobs to submit.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.OrderedJob jobs = 8;</code>
      */
-    public Builder addJobs(
-        com.google.cloud.dataproc.v1beta2.OrderedJob.Builder builderForValue) {
+    public Builder addJobs(com.google.cloud.dataproc.v1beta2.OrderedJob.Builder builderForValue) {
       if (jobsBuilder_ == null) {
         ensureJobsIsMutable();
         jobs_.add(builderForValue.build());
@@ -2188,6 +2499,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Directed Acyclic Graph of Jobs to submit.
      * </pre>
@@ -2206,6 +2519,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Directed Acyclic Graph of Jobs to submit.
      * </pre>
@@ -2216,8 +2531,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.cloud.dataproc.v1beta2.OrderedJob> values) {
       if (jobsBuilder_ == null) {
         ensureJobsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, jobs_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, jobs_);
         onChanged();
       } else {
         jobsBuilder_.addAllMessages(values);
@@ -2225,6 +2539,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Directed Acyclic Graph of Jobs to submit.
      * </pre>
@@ -2242,6 +2558,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Directed Acyclic Graph of Jobs to submit.
      * </pre>
@@ -2259,39 +2577,44 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Directed Acyclic Graph of Jobs to submit.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.OrderedJob jobs = 8;</code>
      */
-    public com.google.cloud.dataproc.v1beta2.OrderedJob.Builder getJobsBuilder(
-        int index) {
+    public com.google.cloud.dataproc.v1beta2.OrderedJob.Builder getJobsBuilder(int index) {
       return getJobsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Directed Acyclic Graph of Jobs to submit.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.OrderedJob jobs = 8;</code>
      */
-    public com.google.cloud.dataproc.v1beta2.OrderedJobOrBuilder getJobsOrBuilder(
-        int index) {
+    public com.google.cloud.dataproc.v1beta2.OrderedJobOrBuilder getJobsOrBuilder(int index) {
       if (jobsBuilder_ == null) {
-        return jobs_.get(index);  } else {
+        return jobs_.get(index);
+      } else {
         return jobsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Directed Acyclic Graph of Jobs to submit.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.OrderedJob jobs = 8;</code>
      */
-    public java.util.List<? extends com.google.cloud.dataproc.v1beta2.OrderedJobOrBuilder> 
-         getJobsOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.dataproc.v1beta2.OrderedJobOrBuilder>
+        getJobsOrBuilderList() {
       if (jobsBuilder_ != null) {
         return jobsBuilder_.getMessageOrBuilderList();
       } else {
@@ -2299,6 +2622,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Directed Acyclic Graph of Jobs to submit.
      * </pre>
@@ -2306,38 +2631,47 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.dataproc.v1beta2.OrderedJob jobs = 8;</code>
      */
     public com.google.cloud.dataproc.v1beta2.OrderedJob.Builder addJobsBuilder() {
-      return getJobsFieldBuilder().addBuilder(
-          com.google.cloud.dataproc.v1beta2.OrderedJob.getDefaultInstance());
+      return getJobsFieldBuilder()
+          .addBuilder(com.google.cloud.dataproc.v1beta2.OrderedJob.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Directed Acyclic Graph of Jobs to submit.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.OrderedJob jobs = 8;</code>
      */
-    public com.google.cloud.dataproc.v1beta2.OrderedJob.Builder addJobsBuilder(
-        int index) {
-      return getJobsFieldBuilder().addBuilder(
-          index, com.google.cloud.dataproc.v1beta2.OrderedJob.getDefaultInstance());
+    public com.google.cloud.dataproc.v1beta2.OrderedJob.Builder addJobsBuilder(int index) {
+      return getJobsFieldBuilder()
+          .addBuilder(index, com.google.cloud.dataproc.v1beta2.OrderedJob.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Directed Acyclic Graph of Jobs to submit.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.OrderedJob jobs = 8;</code>
      */
-    public java.util.List<com.google.cloud.dataproc.v1beta2.OrderedJob.Builder> 
-         getJobsBuilderList() {
+    public java.util.List<com.google.cloud.dataproc.v1beta2.OrderedJob.Builder>
+        getJobsBuilderList() {
       return getJobsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.OrderedJob, com.google.cloud.dataproc.v1beta2.OrderedJob.Builder, com.google.cloud.dataproc.v1beta2.OrderedJobOrBuilder> 
+            com.google.cloud.dataproc.v1beta2.OrderedJob,
+            com.google.cloud.dataproc.v1beta2.OrderedJob.Builder,
+            com.google.cloud.dataproc.v1beta2.OrderedJobOrBuilder>
         getJobsFieldBuilder() {
       if (jobsBuilder_ == null) {
-        jobsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.dataproc.v1beta2.OrderedJob, com.google.cloud.dataproc.v1beta2.OrderedJob.Builder, com.google.cloud.dataproc.v1beta2.OrderedJobOrBuilder>(
+        jobsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.dataproc.v1beta2.OrderedJob,
+                com.google.cloud.dataproc.v1beta2.OrderedJob.Builder,
+                com.google.cloud.dataproc.v1beta2.OrderedJobOrBuilder>(
                 jobs_,
                 ((bitField0_ & 0x00000080) == 0x00000080),
                 getParentForChildren(),
@@ -2346,9 +2680,406 @@ private static final long serialVersionUID = 0L;
       }
       return jobsBuilder_;
     }
+
+    private java.util.List<com.google.cloud.dataproc.v1beta2.TemplateParameter> parameters_ =
+        java.util.Collections.emptyList();
+
+    private void ensureParametersIsMutable() {
+      if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+        parameters_ =
+            new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.TemplateParameter>(
+                parameters_);
+        bitField0_ |= 0x00000100;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.dataproc.v1beta2.TemplateParameter,
+            com.google.cloud.dataproc.v1beta2.TemplateParameter.Builder,
+            com.google.cloud.dataproc.v1beta2.TemplateParameterOrBuilder>
+        parametersBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Template parameters whose values are substituted into the
+     * template. Values for parameters must be provided when the template is
+     * instantiated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+     */
+    public java.util.List<com.google.cloud.dataproc.v1beta2.TemplateParameter> getParametersList() {
+      if (parametersBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(parameters_);
+      } else {
+        return parametersBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Template parameters whose values are substituted into the
+     * template. Values for parameters must be provided when the template is
+     * instantiated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+     */
+    public int getParametersCount() {
+      if (parametersBuilder_ == null) {
+        return parameters_.size();
+      } else {
+        return parametersBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Template parameters whose values are substituted into the
+     * template. Values for parameters must be provided when the template is
+     * instantiated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+     */
+    public com.google.cloud.dataproc.v1beta2.TemplateParameter getParameters(int index) {
+      if (parametersBuilder_ == null) {
+        return parameters_.get(index);
+      } else {
+        return parametersBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Template parameters whose values are substituted into the
+     * template. Values for parameters must be provided when the template is
+     * instantiated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+     */
+    public Builder setParameters(
+        int index, com.google.cloud.dataproc.v1beta2.TemplateParameter value) {
+      if (parametersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureParametersIsMutable();
+        parameters_.set(index, value);
+        onChanged();
+      } else {
+        parametersBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Template parameters whose values are substituted into the
+     * template. Values for parameters must be provided when the template is
+     * instantiated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+     */
+    public Builder setParameters(
+        int index, com.google.cloud.dataproc.v1beta2.TemplateParameter.Builder builderForValue) {
+      if (parametersBuilder_ == null) {
+        ensureParametersIsMutable();
+        parameters_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        parametersBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Template parameters whose values are substituted into the
+     * template. Values for parameters must be provided when the template is
+     * instantiated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+     */
+    public Builder addParameters(com.google.cloud.dataproc.v1beta2.TemplateParameter value) {
+      if (parametersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureParametersIsMutable();
+        parameters_.add(value);
+        onChanged();
+      } else {
+        parametersBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Template parameters whose values are substituted into the
+     * template. Values for parameters must be provided when the template is
+     * instantiated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+     */
+    public Builder addParameters(
+        int index, com.google.cloud.dataproc.v1beta2.TemplateParameter value) {
+      if (parametersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureParametersIsMutable();
+        parameters_.add(index, value);
+        onChanged();
+      } else {
+        parametersBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Template parameters whose values are substituted into the
+     * template. Values for parameters must be provided when the template is
+     * instantiated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+     */
+    public Builder addParameters(
+        com.google.cloud.dataproc.v1beta2.TemplateParameter.Builder builderForValue) {
+      if (parametersBuilder_ == null) {
+        ensureParametersIsMutable();
+        parameters_.add(builderForValue.build());
+        onChanged();
+      } else {
+        parametersBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Template parameters whose values are substituted into the
+     * template. Values for parameters must be provided when the template is
+     * instantiated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+     */
+    public Builder addParameters(
+        int index, com.google.cloud.dataproc.v1beta2.TemplateParameter.Builder builderForValue) {
+      if (parametersBuilder_ == null) {
+        ensureParametersIsMutable();
+        parameters_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        parametersBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Template parameters whose values are substituted into the
+     * template. Values for parameters must be provided when the template is
+     * instantiated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+     */
+    public Builder addAllParameters(
+        java.lang.Iterable<? extends com.google.cloud.dataproc.v1beta2.TemplateParameter> values) {
+      if (parametersBuilder_ == null) {
+        ensureParametersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, parameters_);
+        onChanged();
+      } else {
+        parametersBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Template parameters whose values are substituted into the
+     * template. Values for parameters must be provided when the template is
+     * instantiated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+     */
+    public Builder clearParameters() {
+      if (parametersBuilder_ == null) {
+        parameters_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+      } else {
+        parametersBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Template parameters whose values are substituted into the
+     * template. Values for parameters must be provided when the template is
+     * instantiated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+     */
+    public Builder removeParameters(int index) {
+      if (parametersBuilder_ == null) {
+        ensureParametersIsMutable();
+        parameters_.remove(index);
+        onChanged();
+      } else {
+        parametersBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Template parameters whose values are substituted into the
+     * template. Values for parameters must be provided when the template is
+     * instantiated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+     */
+    public com.google.cloud.dataproc.v1beta2.TemplateParameter.Builder getParametersBuilder(
+        int index) {
+      return getParametersFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Template parameters whose values are substituted into the
+     * template. Values for parameters must be provided when the template is
+     * instantiated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+     */
+    public com.google.cloud.dataproc.v1beta2.TemplateParameterOrBuilder getParametersOrBuilder(
+        int index) {
+      if (parametersBuilder_ == null) {
+        return parameters_.get(index);
+      } else {
+        return parametersBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Template parameters whose values are substituted into the
+     * template. Values for parameters must be provided when the template is
+     * instantiated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+     */
+    public java.util.List<? extends com.google.cloud.dataproc.v1beta2.TemplateParameterOrBuilder>
+        getParametersOrBuilderList() {
+      if (parametersBuilder_ != null) {
+        return parametersBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(parameters_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Template parameters whose values are substituted into the
+     * template. Values for parameters must be provided when the template is
+     * instantiated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+     */
+    public com.google.cloud.dataproc.v1beta2.TemplateParameter.Builder addParametersBuilder() {
+      return getParametersFieldBuilder()
+          .addBuilder(com.google.cloud.dataproc.v1beta2.TemplateParameter.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Template parameters whose values are substituted into the
+     * template. Values for parameters must be provided when the template is
+     * instantiated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+     */
+    public com.google.cloud.dataproc.v1beta2.TemplateParameter.Builder addParametersBuilder(
+        int index) {
+      return getParametersFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.dataproc.v1beta2.TemplateParameter.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Template parameters whose values are substituted into the
+     * template. Values for parameters must be provided when the template is
+     * instantiated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+     */
+    public java.util.List<com.google.cloud.dataproc.v1beta2.TemplateParameter.Builder>
+        getParametersBuilderList() {
+      return getParametersFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.dataproc.v1beta2.TemplateParameter,
+            com.google.cloud.dataproc.v1beta2.TemplateParameter.Builder,
+            com.google.cloud.dataproc.v1beta2.TemplateParameterOrBuilder>
+        getParametersFieldBuilder() {
+      if (parametersBuilder_ == null) {
+        parametersBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.dataproc.v1beta2.TemplateParameter,
+                com.google.cloud.dataproc.v1beta2.TemplateParameter.Builder,
+                com.google.cloud.dataproc.v1beta2.TemplateParameterOrBuilder>(
+                parameters_,
+                ((bitField0_ & 0x00000100) == 0x00000100),
+                getParentForChildren(),
+                isClean());
+        parameters_ = null;
+      }
+      return parametersBuilder_;
+    }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -2358,12 +3089,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.dataproc.v1beta2.WorkflowTemplate)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.dataproc.v1beta2.WorkflowTemplate)
   private static final com.google.cloud.dataproc.v1beta2.WorkflowTemplate DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.dataproc.v1beta2.WorkflowTemplate();
   }
@@ -2372,16 +3103,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<WorkflowTemplate>
-      PARSER = new com.google.protobuf.AbstractParser<WorkflowTemplate>() {
-    @java.lang.Override
-    public WorkflowTemplate parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new WorkflowTemplate(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<WorkflowTemplate> PARSER =
+      new com.google.protobuf.AbstractParser<WorkflowTemplate>() {
+        @java.lang.Override
+        public WorkflowTemplate parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new WorkflowTemplate(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<WorkflowTemplate> parser() {
     return PARSER;
@@ -2396,6 +3127,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.dataproc.v1beta2.WorkflowTemplate getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

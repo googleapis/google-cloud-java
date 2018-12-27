@@ -73,15 +73,31 @@ public class SnapshotSettings extends ClientSettings<SnapshotSettings> {
     return ((SnapshotStubSettings) getStubSettings()).getSnapshotSettings();
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicySnapshot. */
+  public UnaryCallSettings<GetIamPolicySnapshotHttpRequest, Policy> getIamPolicySnapshotSettings() {
+    return ((SnapshotStubSettings) getStubSettings()).getIamPolicySnapshotSettings();
+  }
+
   /** Returns the object with the settings used for calls to listSnapshots. */
   public PagedCallSettings<ListSnapshotsHttpRequest, SnapshotList, ListSnapshotsPagedResponse>
       listSnapshotsSettings() {
     return ((SnapshotStubSettings) getStubSettings()).listSnapshotsSettings();
   }
 
+  /** Returns the object with the settings used for calls to setIamPolicySnapshot. */
+  public UnaryCallSettings<SetIamPolicySnapshotHttpRequest, Policy> setIamPolicySnapshotSettings() {
+    return ((SnapshotStubSettings) getStubSettings()).setIamPolicySnapshotSettings();
+  }
+
   /** Returns the object with the settings used for calls to setLabelsSnapshot. */
   public UnaryCallSettings<SetLabelsSnapshotHttpRequest, Operation> setLabelsSnapshotSettings() {
     return ((SnapshotStubSettings) getStubSettings()).setLabelsSnapshotSettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissionsSnapshot. */
+  public UnaryCallSettings<TestIamPermissionsSnapshotHttpRequest, TestPermissionsResponse>
+      testIamPermissionsSnapshotSettings() {
+    return ((SnapshotStubSettings) getStubSettings()).testIamPermissionsSnapshotSettings();
   }
 
   public static final SnapshotSettings create(SnapshotStubSettings stub) throws IOException {
@@ -196,6 +212,12 @@ public class SnapshotSettings extends ClientSettings<SnapshotSettings> {
       return getStubSettingsBuilder().getSnapshotSettings();
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicySnapshot. */
+    public UnaryCallSettings.Builder<GetIamPolicySnapshotHttpRequest, Policy>
+        getIamPolicySnapshotSettings() {
+      return getStubSettingsBuilder().getIamPolicySnapshotSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listSnapshots. */
     public PagedCallSettings.Builder<
             ListSnapshotsHttpRequest, SnapshotList, ListSnapshotsPagedResponse>
@@ -203,10 +225,22 @@ public class SnapshotSettings extends ClientSettings<SnapshotSettings> {
       return getStubSettingsBuilder().listSnapshotsSettings();
     }
 
+    /** Returns the builder for the settings used for calls to setIamPolicySnapshot. */
+    public UnaryCallSettings.Builder<SetIamPolicySnapshotHttpRequest, Policy>
+        setIamPolicySnapshotSettings() {
+      return getStubSettingsBuilder().setIamPolicySnapshotSettings();
+    }
+
     /** Returns the builder for the settings used for calls to setLabelsSnapshot. */
     public UnaryCallSettings.Builder<SetLabelsSnapshotHttpRequest, Operation>
         setLabelsSnapshotSettings() {
       return getStubSettingsBuilder().setLabelsSnapshotSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissionsSnapshot. */
+    public UnaryCallSettings.Builder<TestIamPermissionsSnapshotHttpRequest, TestPermissionsResponse>
+        testIamPermissionsSnapshotSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSnapshotSettings();
     }
 
     @Override

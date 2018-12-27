@@ -3,11 +3,14 @@
 
 package com.google.cloud.iot.v1;
 
-public interface ListDeviceStatesResponseOrBuilder extends
+public interface ListDeviceStatesResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.iot.v1.ListDeviceStatesResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The last few device states. States are listed in descending order of server
    * update time, starting from the most recent one.
@@ -15,9 +18,10 @@ public interface ListDeviceStatesResponseOrBuilder extends
    *
    * <code>repeated .google.cloud.iot.v1.DeviceState device_states = 1;</code>
    */
-  java.util.List<com.google.cloud.iot.v1.DeviceState> 
-      getDeviceStatesList();
+  java.util.List<com.google.cloud.iot.v1.DeviceState> getDeviceStatesList();
   /**
+   *
+   *
    * <pre>
    * The last few device states. States are listed in descending order of server
    * update time, starting from the most recent one.
@@ -27,6 +31,8 @@ public interface ListDeviceStatesResponseOrBuilder extends
    */
   com.google.cloud.iot.v1.DeviceState getDeviceStates(int index);
   /**
+   *
+   *
    * <pre>
    * The last few device states. States are listed in descending order of server
    * update time, starting from the most recent one.
@@ -36,6 +42,8 @@ public interface ListDeviceStatesResponseOrBuilder extends
    */
   int getDeviceStatesCount();
   /**
+   *
+   *
    * <pre>
    * The last few device states. States are listed in descending order of server
    * update time, starting from the most recent one.
@@ -43,9 +51,11 @@ public interface ListDeviceStatesResponseOrBuilder extends
    *
    * <code>repeated .google.cloud.iot.v1.DeviceState device_states = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.iot.v1.DeviceStateOrBuilder> 
+  java.util.List<? extends com.google.cloud.iot.v1.DeviceStateOrBuilder>
       getDeviceStatesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The last few device states. States are listed in descending order of server
    * update time, starting from the most recent one.
@@ -53,6 +63,5 @@ public interface ListDeviceStatesResponseOrBuilder extends
    *
    * <code>repeated .google.cloud.iot.v1.DeviceState device_states = 1;</code>
    */
-  com.google.cloud.iot.v1.DeviceStateOrBuilder getDeviceStatesOrBuilder(
-      int index);
+  com.google.cloud.iot.v1.DeviceStateOrBuilder getDeviceStatesOrBuilder(int index);
 }

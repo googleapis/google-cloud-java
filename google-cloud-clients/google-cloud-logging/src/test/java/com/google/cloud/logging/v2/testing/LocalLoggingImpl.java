@@ -25,9 +25,7 @@ import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
-
 import io.grpc.stub.StreamObserver;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

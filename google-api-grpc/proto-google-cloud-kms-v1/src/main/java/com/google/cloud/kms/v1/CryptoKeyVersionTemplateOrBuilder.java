@@ -3,11 +3,14 @@
 
 package com.google.cloud.kms.v1;
 
-public interface CryptoKeyVersionTemplateOrBuilder extends
+public interface CryptoKeyVersionTemplateOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.kms.v1.CryptoKeyVersionTemplate)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when creating a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on
    * this template. Immutable. Defaults to [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE].
@@ -17,6 +20,8 @@ public interface CryptoKeyVersionTemplateOrBuilder extends
    */
   int getProtectionLevelValue();
   /**
+   *
+   *
    * <pre>
    * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when creating a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on
    * this template. Immutable. Defaults to [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE].
@@ -27,6 +32,8 @@ public interface CryptoKeyVersionTemplateOrBuilder extends
   com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel();
 
   /**
+   *
+   *
    * <pre>
    * Required. [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] to use
    * when creating a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this template.
@@ -39,6 +46,8 @@ public interface CryptoKeyVersionTemplateOrBuilder extends
    */
   int getAlgorithmValue();
   /**
+   *
+   *
    * <pre>
    * Required. [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] to use
    * when creating a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this template.

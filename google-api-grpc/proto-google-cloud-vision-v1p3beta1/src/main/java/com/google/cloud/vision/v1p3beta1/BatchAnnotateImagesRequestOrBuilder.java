@@ -3,20 +3,24 @@
 
 package com.google.cloud.vision.v1p3beta1;
 
-public interface BatchAnnotateImagesRequestOrBuilder extends
+public interface BatchAnnotateImagesRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p3beta1.BatchAnnotateImagesRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Individual image annotation requests for this batch.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.AnnotateImageRequest requests = 1;</code>
    */
-  java.util.List<com.google.cloud.vision.v1p3beta1.AnnotateImageRequest> 
-      getRequestsList();
+  java.util.List<com.google.cloud.vision.v1p3beta1.AnnotateImageRequest> getRequestsList();
   /**
+   *
+   *
    * <pre>
    * Individual image annotation requests for this batch.
    * </pre>
@@ -25,6 +29,8 @@ public interface BatchAnnotateImagesRequestOrBuilder extends
    */
   com.google.cloud.vision.v1p3beta1.AnnotateImageRequest getRequests(int index);
   /**
+   *
+   *
    * <pre>
    * Individual image annotation requests for this batch.
    * </pre>
@@ -33,21 +39,24 @@ public interface BatchAnnotateImagesRequestOrBuilder extends
    */
   int getRequestsCount();
   /**
+   *
+   *
    * <pre>
    * Individual image annotation requests for this batch.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.AnnotateImageRequest requests = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.vision.v1p3beta1.AnnotateImageRequestOrBuilder> 
+  java.util.List<? extends com.google.cloud.vision.v1p3beta1.AnnotateImageRequestOrBuilder>
       getRequestsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Individual image annotation requests for this batch.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.AnnotateImageRequest requests = 1;</code>
    */
-  com.google.cloud.vision.v1p3beta1.AnnotateImageRequestOrBuilder getRequestsOrBuilder(
-      int index);
+  com.google.cloud.vision.v1p3beta1.AnnotateImageRequestOrBuilder getRequestsOrBuilder(int index);
 }

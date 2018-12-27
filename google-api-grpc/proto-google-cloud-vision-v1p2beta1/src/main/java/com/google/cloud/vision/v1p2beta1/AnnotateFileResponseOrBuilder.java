@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p2beta1;
 
-public interface AnnotateFileResponseOrBuilder extends
+public interface AnnotateFileResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p2beta1.AnnotateFileResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Information about the file for which this response is generated.
    * </pre>
@@ -16,6 +19,8 @@ public interface AnnotateFileResponseOrBuilder extends
    */
   boolean hasInputConfig();
   /**
+   *
+   *
    * <pre>
    * Information about the file for which this response is generated.
    * </pre>
@@ -24,6 +29,8 @@ public interface AnnotateFileResponseOrBuilder extends
    */
   com.google.cloud.vision.v1p2beta1.InputConfig getInputConfig();
   /**
+   *
+   *
    * <pre>
    * Information about the file for which this response is generated.
    * </pre>
@@ -33,15 +40,18 @@ public interface AnnotateFileResponseOrBuilder extends
   com.google.cloud.vision.v1p2beta1.InputConfigOrBuilder getInputConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Individual responses to images found within the file.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p2beta1.AnnotateImageResponse responses = 2;</code>
    */
-  java.util.List<com.google.cloud.vision.v1p2beta1.AnnotateImageResponse> 
-      getResponsesList();
+  java.util.List<com.google.cloud.vision.v1p2beta1.AnnotateImageResponse> getResponsesList();
   /**
+   *
+   *
    * <pre>
    * Individual responses to images found within the file.
    * </pre>
@@ -50,6 +60,8 @@ public interface AnnotateFileResponseOrBuilder extends
    */
   com.google.cloud.vision.v1p2beta1.AnnotateImageResponse getResponses(int index);
   /**
+   *
+   *
    * <pre>
    * Individual responses to images found within the file.
    * </pre>
@@ -58,21 +70,24 @@ public interface AnnotateFileResponseOrBuilder extends
    */
   int getResponsesCount();
   /**
+   *
+   *
    * <pre>
    * Individual responses to images found within the file.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p2beta1.AnnotateImageResponse responses = 2;</code>
    */
-  java.util.List<? extends com.google.cloud.vision.v1p2beta1.AnnotateImageResponseOrBuilder> 
+  java.util.List<? extends com.google.cloud.vision.v1p2beta1.AnnotateImageResponseOrBuilder>
       getResponsesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Individual responses to images found within the file.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p2beta1.AnnotateImageResponse responses = 2;</code>
    */
-  com.google.cloud.vision.v1p2beta1.AnnotateImageResponseOrBuilder getResponsesOrBuilder(
-      int index);
+  com.google.cloud.vision.v1p2beta1.AnnotateImageResponseOrBuilder getResponsesOrBuilder(int index);
 }

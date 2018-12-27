@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1;
 
-public interface ResourceOrBuilder extends
+public interface ResourceOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.Resource)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The name of the resource. For example, the name of a Docker image -
    * "Debian".
@@ -17,6 +20,8 @@ public interface ResourceOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The name of the resource. For example, the name of a Docker image -
    * "Debian".
@@ -24,10 +29,11 @@ public interface ResourceOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The unique URI of the resource. For example,
    * `https://gcr.io/project/image&#64;sha256:foo` for a Docker image.
@@ -37,6 +43,8 @@ public interface ResourceOrBuilder extends
    */
   java.lang.String getUri();
   /**
+   *
+   *
    * <pre>
    * The unique URI of the resource. For example,
    * `https://gcr.io/project/image&#64;sha256:foo` for a Docker image.
@@ -44,10 +52,11 @@ public interface ResourceOrBuilder extends
    *
    * <code>string uri = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getUriBytes();
+  com.google.protobuf.ByteString getUriBytes();
 
   /**
+   *
+   *
    * <pre>
    * The hash of the resource content. For example, the Docker digest.
    * </pre>
@@ -56,6 +65,8 @@ public interface ResourceOrBuilder extends
    */
   boolean hasContentHash();
   /**
+   *
+   *
    * <pre>
    * The hash of the resource content. For example, the Docker digest.
    * </pre>
@@ -64,6 +75,8 @@ public interface ResourceOrBuilder extends
    */
   io.grafeas.v1beta1.provenance.Hash getContentHash();
   /**
+   *
+   *
    * <pre>
    * The hash of the resource content. For example, the Docker digest.
    * </pre>

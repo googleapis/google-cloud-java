@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface DeleteJobTriggerRequestOrBuilder extends
+public interface DeleteJobTriggerRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.DeleteJobTriggerRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Resource name of the project and the triggeredJob, for example
    * `projects/dlp-test-project/jobTriggers/53234423`.
@@ -17,6 +20,8 @@ public interface DeleteJobTriggerRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Resource name of the project and the triggeredJob, for example
    * `projects/dlp-test-project/jobTriggers/53234423`.
@@ -24,6 +29,5 @@ public interface DeleteJobTriggerRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

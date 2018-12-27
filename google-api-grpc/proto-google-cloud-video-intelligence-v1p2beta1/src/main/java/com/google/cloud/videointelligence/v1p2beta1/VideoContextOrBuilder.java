@@ -3,11 +3,14 @@
 
 package com.google.cloud.videointelligence.v1p2beta1;
 
-public interface VideoContextOrBuilder extends
+public interface VideoContextOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.videointelligence.v1p2beta1.VideoContext)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Video segments to annotate. The segments may overlap and are not required
    * to be contiguous or span the whole video. If unspecified, each video is
@@ -16,9 +19,10 @@ public interface VideoContextOrBuilder extends
    *
    * <code>repeated .google.cloud.videointelligence.v1p2beta1.VideoSegment segments = 1;</code>
    */
-  java.util.List<com.google.cloud.videointelligence.v1p2beta1.VideoSegment> 
-      getSegmentsList();
+  java.util.List<com.google.cloud.videointelligence.v1p2beta1.VideoSegment> getSegmentsList();
   /**
+   *
+   *
    * <pre>
    * Video segments to annotate. The segments may overlap and are not required
    * to be contiguous or span the whole video. If unspecified, each video is
@@ -29,6 +33,8 @@ public interface VideoContextOrBuilder extends
    */
   com.google.cloud.videointelligence.v1p2beta1.VideoSegment getSegments(int index);
   /**
+   *
+   *
    * <pre>
    * Video segments to annotate. The segments may overlap and are not required
    * to be contiguous or span the whole video. If unspecified, each video is
@@ -39,6 +45,8 @@ public interface VideoContextOrBuilder extends
    */
   int getSegmentsCount();
   /**
+   *
+   *
    * <pre>
    * Video segments to annotate. The segments may overlap and are not required
    * to be contiguous or span the whole video. If unspecified, each video is
@@ -47,9 +55,11 @@ public interface VideoContextOrBuilder extends
    *
    * <code>repeated .google.cloud.videointelligence.v1p2beta1.VideoSegment segments = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.videointelligence.v1p2beta1.VideoSegmentOrBuilder> 
+  java.util.List<? extends com.google.cloud.videointelligence.v1p2beta1.VideoSegmentOrBuilder>
       getSegmentsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Video segments to annotate. The segments may overlap and are not required
    * to be contiguous or span the whole video. If unspecified, each video is
@@ -62,102 +72,153 @@ public interface VideoContextOrBuilder extends
       int index);
 
   /**
+   *
+   *
    * <pre>
    * Config for LABEL_DETECTION.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1p2beta1.LabelDetectionConfig label_detection_config = 2;</code>
+   * <code>
+   * .google.cloud.videointelligence.v1p2beta1.LabelDetectionConfig label_detection_config = 2;
+   * </code>
    */
   boolean hasLabelDetectionConfig();
   /**
+   *
+   *
    * <pre>
    * Config for LABEL_DETECTION.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1p2beta1.LabelDetectionConfig label_detection_config = 2;</code>
+   * <code>
+   * .google.cloud.videointelligence.v1p2beta1.LabelDetectionConfig label_detection_config = 2;
+   * </code>
    */
   com.google.cloud.videointelligence.v1p2beta1.LabelDetectionConfig getLabelDetectionConfig();
   /**
+   *
+   *
    * <pre>
    * Config for LABEL_DETECTION.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1p2beta1.LabelDetectionConfig label_detection_config = 2;</code>
+   * <code>
+   * .google.cloud.videointelligence.v1p2beta1.LabelDetectionConfig label_detection_config = 2;
+   * </code>
    */
-  com.google.cloud.videointelligence.v1p2beta1.LabelDetectionConfigOrBuilder getLabelDetectionConfigOrBuilder();
+  com.google.cloud.videointelligence.v1p2beta1.LabelDetectionConfigOrBuilder
+      getLabelDetectionConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Config for SHOT_CHANGE_DETECTION.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1p2beta1.ShotChangeDetectionConfig shot_change_detection_config = 3;</code>
+   * <code>
+   * .google.cloud.videointelligence.v1p2beta1.ShotChangeDetectionConfig shot_change_detection_config = 3;
+   * </code>
    */
   boolean hasShotChangeDetectionConfig();
   /**
+   *
+   *
    * <pre>
    * Config for SHOT_CHANGE_DETECTION.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1p2beta1.ShotChangeDetectionConfig shot_change_detection_config = 3;</code>
+   * <code>
+   * .google.cloud.videointelligence.v1p2beta1.ShotChangeDetectionConfig shot_change_detection_config = 3;
+   * </code>
    */
-  com.google.cloud.videointelligence.v1p2beta1.ShotChangeDetectionConfig getShotChangeDetectionConfig();
+  com.google.cloud.videointelligence.v1p2beta1.ShotChangeDetectionConfig
+      getShotChangeDetectionConfig();
   /**
+   *
+   *
    * <pre>
    * Config for SHOT_CHANGE_DETECTION.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1p2beta1.ShotChangeDetectionConfig shot_change_detection_config = 3;</code>
+   * <code>
+   * .google.cloud.videointelligence.v1p2beta1.ShotChangeDetectionConfig shot_change_detection_config = 3;
+   * </code>
    */
-  com.google.cloud.videointelligence.v1p2beta1.ShotChangeDetectionConfigOrBuilder getShotChangeDetectionConfigOrBuilder();
+  com.google.cloud.videointelligence.v1p2beta1.ShotChangeDetectionConfigOrBuilder
+      getShotChangeDetectionConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Config for EXPLICIT_CONTENT_DETECTION.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1p2beta1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;</code>
+   * <code>
+   * .google.cloud.videointelligence.v1p2beta1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;
+   * </code>
    */
   boolean hasExplicitContentDetectionConfig();
   /**
+   *
+   *
    * <pre>
    * Config for EXPLICIT_CONTENT_DETECTION.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1p2beta1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;</code>
+   * <code>
+   * .google.cloud.videointelligence.v1p2beta1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;
+   * </code>
    */
-  com.google.cloud.videointelligence.v1p2beta1.ExplicitContentDetectionConfig getExplicitContentDetectionConfig();
+  com.google.cloud.videointelligence.v1p2beta1.ExplicitContentDetectionConfig
+      getExplicitContentDetectionConfig();
   /**
+   *
+   *
    * <pre>
    * Config for EXPLICIT_CONTENT_DETECTION.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1p2beta1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;</code>
+   * <code>
+   * .google.cloud.videointelligence.v1p2beta1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;
+   * </code>
    */
-  com.google.cloud.videointelligence.v1p2beta1.ExplicitContentDetectionConfigOrBuilder getExplicitContentDetectionConfigOrBuilder();
+  com.google.cloud.videointelligence.v1p2beta1.ExplicitContentDetectionConfigOrBuilder
+      getExplicitContentDetectionConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Config for TEXT_DETECTION.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1p2beta1.TextDetectionConfig text_detection_config = 8;</code>
+   * <code>.google.cloud.videointelligence.v1p2beta1.TextDetectionConfig text_detection_config = 8;
+   * </code>
    */
   boolean hasTextDetectionConfig();
   /**
+   *
+   *
    * <pre>
    * Config for TEXT_DETECTION.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1p2beta1.TextDetectionConfig text_detection_config = 8;</code>
+   * <code>.google.cloud.videointelligence.v1p2beta1.TextDetectionConfig text_detection_config = 8;
+   * </code>
    */
   com.google.cloud.videointelligence.v1p2beta1.TextDetectionConfig getTextDetectionConfig();
   /**
+   *
+   *
    * <pre>
    * Config for TEXT_DETECTION.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1p2beta1.TextDetectionConfig text_detection_config = 8;</code>
+   * <code>.google.cloud.videointelligence.v1p2beta1.TextDetectionConfig text_detection_config = 8;
+   * </code>
    */
-  com.google.cloud.videointelligence.v1p2beta1.TextDetectionConfigOrBuilder getTextDetectionConfigOrBuilder();
+  com.google.cloud.videointelligence.v1p2beta1.TextDetectionConfigOrBuilder
+      getTextDetectionConfigOrBuilder();
 }

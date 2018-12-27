@@ -4,21 +4,24 @@
 package com.google.cloud.dataproc.v1beta2;
 
 /**
+ *
+ *
  * <pre>
  * A request to list jobs in a project.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1beta2.ListJobsRequest}
  */
-public  final class ListJobsRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ListJobsRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1beta2.ListJobsRequest)
     ListJobsRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ListJobsRequest.newBuilder() to construct.
   private ListJobsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ListJobsRequest() {
     projectId_ = "";
     region_ = "";
@@ -30,10 +33,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ListJobsRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -53,89 +56,100 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            projectId_ = s;
-            break;
-          }
-          case 16: {
-
-            pageSize_ = input.readInt32();
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            pageToken_ = s;
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            clusterName_ = s;
-            break;
-          }
-          case 40: {
-            int rawValue = input.readEnum();
-
-            jobStateMatcher_ = rawValue;
-            break;
-          }
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            region_ = s;
-            break;
-          }
-          case 58: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            filter_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              projectId_ = s;
+              break;
             }
-            break;
-          }
+          case 16:
+            {
+              pageSize_ = input.readInt32();
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              pageToken_ = s;
+              break;
+            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              clusterName_ = s;
+              break;
+            }
+          case 40:
+            {
+              int rawValue = input.readEnum();
+
+              jobStateMatcher_ = rawValue;
+              break;
+            }
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              region_ = s;
+              break;
+            }
+          case 58:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              filter_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.dataproc.v1beta2.JobsProto.internal_static_google_cloud_dataproc_v1beta2_ListJobsRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.dataproc.v1beta2.JobsProto
+        .internal_static_google_cloud_dataproc_v1beta2_ListJobsRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.dataproc.v1beta2.JobsProto.internal_static_google_cloud_dataproc_v1beta2_ListJobsRequest_fieldAccessorTable
+    return com.google.cloud.dataproc.v1beta2.JobsProto
+        .internal_static_google_cloud_dataproc_v1beta2_ListJobsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dataproc.v1beta2.ListJobsRequest.class, com.google.cloud.dataproc.v1beta2.ListJobsRequest.Builder.class);
+            com.google.cloud.dataproc.v1beta2.ListJobsRequest.class,
+            com.google.cloud.dataproc.v1beta2.ListJobsRequest.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * A matcher that specifies categories of job states.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher}
    */
-  public enum JobStateMatcher
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum JobStateMatcher implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Match all jobs, regardless of state.
      * </pre>
@@ -144,6 +158,8 @@ private static final long serialVersionUID = 0L;
      */
     ALL(0),
     /**
+     *
+     *
      * <pre>
      * Only match jobs in non-terminal states: PENDING, RUNNING, or
      * CANCEL_PENDING.
@@ -153,6 +169,8 @@ private static final long serialVersionUID = 0L;
      */
     ACTIVE(1),
     /**
+     *
+     *
      * <pre>
      * Only match jobs in terminal states: CANCELLED, DONE, or ERROR.
      * </pre>
@@ -164,6 +182,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Match all jobs, regardless of state.
      * </pre>
@@ -172,6 +192,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ALL_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Only match jobs in non-terminal states: PENDING, RUNNING, or
      * CANCEL_PENDING.
@@ -181,6 +203,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ACTIVE_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Only match jobs in terminal states: CANCELLED, DONE, or ERROR.
      * </pre>
@@ -188,7 +212,6 @@ private static final long serialVersionUID = 0L;
      * <code>NON_ACTIVE = 2;</code>
      */
     public static final int NON_ACTIVE_VALUE = 2;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -198,9 +221,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static JobStateMatcher valueOf(int value) {
       return forNumber(value);
@@ -208,36 +229,41 @@ private static final long serialVersionUID = 0L;
 
     public static JobStateMatcher forNumber(int value) {
       switch (value) {
-        case 0: return ALL;
-        case 1: return ACTIVE;
-        case 2: return NON_ACTIVE;
-        default: return null;
+        case 0:
+          return ALL;
+        case 1:
+          return ACTIVE;
+        case 2:
+          return NON_ACTIVE;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<JobStateMatcher>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<JobStateMatcher> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        JobStateMatcher> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<JobStateMatcher>() {
-            public JobStateMatcher findValueByNumber(int number) {
-              return JobStateMatcher.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<JobStateMatcher>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<JobStateMatcher>() {
+              public JobStateMatcher findValueByNumber(int number) {
+                return JobStateMatcher.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.google.cloud.dataproc.v1beta2.ListJobsRequest.getDescriptor().getEnumTypes().get(0);
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.dataproc.v1beta2.ListJobsRequest.getDescriptor()
+          .getEnumTypes()
+          .get(0);
     }
 
     private static final JobStateMatcher[] VALUES = values();
@@ -245,8 +271,7 @@ private static final long serialVersionUID = 0L;
     public static JobStateMatcher valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -266,6 +291,8 @@ private static final long serialVersionUID = 0L;
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object projectId_;
   /**
+   *
+   *
    * <pre>
    * Required. The ID of the Google Cloud Platform project that the job
    * belongs to.
@@ -278,14 +305,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       projectId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. The ID of the Google Cloud Platform project that the job
    * belongs to.
@@ -293,13 +321,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string project_id = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getProjectIdBytes() {
+  public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       projectId_ = b;
       return b;
     } else {
@@ -310,6 +336,8 @@ private static final long serialVersionUID = 0L;
   public static final int REGION_FIELD_NUMBER = 6;
   private volatile java.lang.Object region_;
   /**
+   *
+   *
    * <pre>
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
@@ -321,27 +349,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       region_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
    *
    * <code>string region = 6;</code>
    */
-  public com.google.protobuf.ByteString
-      getRegionBytes() {
+  public com.google.protobuf.ByteString getRegionBytes() {
     java.lang.Object ref = region_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       region_ = b;
       return b;
     } else {
@@ -352,6 +379,8 @@ private static final long serialVersionUID = 0L;
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
   private int pageSize_;
   /**
+   *
+   *
    * <pre>
    * Optional. The number of results to return in each response.
    * </pre>
@@ -365,6 +394,8 @@ private static final long serialVersionUID = 0L;
   public static final int PAGE_TOKEN_FIELD_NUMBER = 3;
   private volatile java.lang.Object pageToken_;
   /**
+   *
+   *
    * <pre>
    * Optional. The page token, returned by a previous call, to request the
    * next page of results.
@@ -377,14 +408,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       pageToken_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The page token, returned by a previous call, to request the
    * next page of results.
@@ -392,13 +424,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string page_token = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getPageTokenBytes() {
+  public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       pageToken_ = b;
       return b;
     } else {
@@ -409,6 +439,8 @@ private static final long serialVersionUID = 0L;
   public static final int CLUSTER_NAME_FIELD_NUMBER = 4;
   private volatile java.lang.Object clusterName_;
   /**
+   *
+   *
    * <pre>
    * Optional. If set, the returned jobs list includes only jobs that were
    * submitted to the named cluster.
@@ -421,14 +453,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       clusterName_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional. If set, the returned jobs list includes only jobs that were
    * submitted to the named cluster.
@@ -436,13 +469,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string cluster_name = 4;</code>
    */
-  public com.google.protobuf.ByteString
-      getClusterNameBytes() {
+  public com.google.protobuf.ByteString getClusterNameBytes() {
     java.lang.Object ref = clusterName_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       clusterName_ = b;
       return b;
     } else {
@@ -453,35 +484,46 @@ private static final long serialVersionUID = 0L;
   public static final int JOB_STATE_MATCHER_FIELD_NUMBER = 5;
   private int jobStateMatcher_;
   /**
+   *
+   *
    * <pre>
    * Optional. Specifies enumerated categories of jobs to list.
    * (default = match ALL jobs).
    * If `filter` is provided, `jobStateMatcher` will be ignored.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5;</code>
+   * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5;
+   * </code>
    */
   public int getJobStateMatcherValue() {
     return jobStateMatcher_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Specifies enumerated categories of jobs to list.
    * (default = match ALL jobs).
    * If `filter` is provided, `jobStateMatcher` will be ignored.
    * </pre>
    *
-   * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5;</code>
+   * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5;
+   * </code>
    */
   public com.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher getJobStateMatcher() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher result = com.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher.valueOf(jobStateMatcher_);
-    return result == null ? com.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher.UNRECOGNIZED : result;
+    com.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher result =
+        com.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher.valueOf(jobStateMatcher_);
+    return result == null
+        ? com.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher.UNRECOGNIZED
+        : result;
   }
 
   public static final int FILTER_FIELD_NUMBER = 7;
   private volatile java.lang.Object filter_;
   /**
+   *
+   *
    * <pre>
    * Optional. A filter constraining the jobs to list. Filters are
    * case-sensitive and have the following syntax:
@@ -502,14 +544,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       filter_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional. A filter constraining the jobs to list. Filters are
    * case-sensitive and have the following syntax:
@@ -525,13 +568,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string filter = 7;</code>
    */
-  public com.google.protobuf.ByteString
-      getFilterBytes() {
+  public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       filter_ = b;
       return b;
     } else {
@@ -540,6 +581,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -551,8 +593,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getProjectIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectId_);
     }
@@ -565,7 +606,8 @@ private static final long serialVersionUID = 0L;
     if (!getClusterNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, clusterName_);
     }
-    if (jobStateMatcher_ != com.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher.ALL.getNumber()) {
+    if (jobStateMatcher_
+        != com.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher.ALL.getNumber()) {
       output.writeEnum(5, jobStateMatcher_);
     }
     if (!getRegionBytes().isEmpty()) {
@@ -587,8 +629,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, projectId_);
     }
     if (pageSize_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, pageSize_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, pageSize_);
     }
     if (!getPageTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
@@ -596,9 +637,9 @@ private static final long serialVersionUID = 0L;
     if (!getClusterNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, clusterName_);
     }
-    if (jobStateMatcher_ != com.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher.ALL.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(5, jobStateMatcher_);
+    if (jobStateMatcher_
+        != com.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher.ALL.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, jobStateMatcher_);
     }
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, region_);
@@ -614,27 +655,22 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.dataproc.v1beta2.ListJobsRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.dataproc.v1beta2.ListJobsRequest other = (com.google.cloud.dataproc.v1beta2.ListJobsRequest) obj;
+    com.google.cloud.dataproc.v1beta2.ListJobsRequest other =
+        (com.google.cloud.dataproc.v1beta2.ListJobsRequest) obj;
 
     boolean result = true;
-    result = result && getProjectId()
-        .equals(other.getProjectId());
-    result = result && getRegion()
-        .equals(other.getRegion());
-    result = result && (getPageSize()
-        == other.getPageSize());
-    result = result && getPageToken()
-        .equals(other.getPageToken());
-    result = result && getClusterName()
-        .equals(other.getClusterName());
+    result = result && getProjectId().equals(other.getProjectId());
+    result = result && getRegion().equals(other.getRegion());
+    result = result && (getPageSize() == other.getPageSize());
+    result = result && getPageToken().equals(other.getPageToken());
+    result = result && getClusterName().equals(other.getClusterName());
     result = result && jobStateMatcher_ == other.jobStateMatcher_;
-    result = result && getFilter()
-        .equals(other.getFilter());
+    result = result && getFilter().equals(other.getFilter());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -666,117 +702,126 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.dataproc.v1beta2.ListJobsRequest parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.ListJobsRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.ListJobsRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.ListJobsRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.ListJobsRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.ListJobsRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.dataproc.v1beta2.ListJobsRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.dataproc.v1beta2.ListJobsRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.dataproc.v1beta2.ListJobsRequest parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.dataproc.v1beta2.ListJobsRequest parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.ListJobsRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.dataproc.v1beta2.ListJobsRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.dataproc.v1beta2.ListJobsRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dataproc.v1beta2.ListJobsRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.dataproc.v1beta2.ListJobsRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A request to list jobs in a project.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1beta2.ListJobsRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dataproc.v1beta2.ListJobsRequest)
       com.google.cloud.dataproc.v1beta2.ListJobsRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dataproc.v1beta2.JobsProto.internal_static_google_cloud_dataproc_v1beta2_ListJobsRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataproc.v1beta2.JobsProto
+          .internal_static_google_cloud_dataproc_v1beta2_ListJobsRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dataproc.v1beta2.JobsProto.internal_static_google_cloud_dataproc_v1beta2_ListJobsRequest_fieldAccessorTable
+      return com.google.cloud.dataproc.v1beta2.JobsProto
+          .internal_static_google_cloud_dataproc_v1beta2_ListJobsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dataproc.v1beta2.ListJobsRequest.class, com.google.cloud.dataproc.v1beta2.ListJobsRequest.Builder.class);
+              com.google.cloud.dataproc.v1beta2.ListJobsRequest.class,
+              com.google.cloud.dataproc.v1beta2.ListJobsRequest.Builder.class);
     }
 
     // Construct using com.google.cloud.dataproc.v1beta2.ListJobsRequest.newBuilder()
@@ -784,16 +829,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -815,9 +859,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.dataproc.v1beta2.JobsProto.internal_static_google_cloud_dataproc_v1beta2_ListJobsRequest_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.dataproc.v1beta2.JobsProto
+          .internal_static_google_cloud_dataproc_v1beta2_ListJobsRequest_descriptor;
     }
 
     @java.lang.Override
@@ -836,7 +880,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.dataproc.v1beta2.ListJobsRequest buildPartial() {
-      com.google.cloud.dataproc.v1beta2.ListJobsRequest result = new com.google.cloud.dataproc.v1beta2.ListJobsRequest(this);
+      com.google.cloud.dataproc.v1beta2.ListJobsRequest result =
+          new com.google.cloud.dataproc.v1beta2.ListJobsRequest(this);
       result.projectId_ = projectId_;
       result.region_ = region_;
       result.pageSize_ = pageSize_;
@@ -852,38 +897,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dataproc.v1beta2.ListJobsRequest) {
-        return mergeFrom((com.google.cloud.dataproc.v1beta2.ListJobsRequest)other);
+        return mergeFrom((com.google.cloud.dataproc.v1beta2.ListJobsRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -891,7 +937,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.dataproc.v1beta2.ListJobsRequest other) {
-      if (other == com.google.cloud.dataproc.v1beta2.ListJobsRequest.getDefaultInstance()) return this;
+      if (other == com.google.cloud.dataproc.v1beta2.ListJobsRequest.getDefaultInstance())
+        return this;
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
         onChanged();
@@ -937,7 +984,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.dataproc.v1beta2.ListJobsRequest) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.dataproc.v1beta2.ListJobsRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -949,6 +997,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object projectId_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. The ID of the Google Cloud Platform project that the job
      * belongs to.
@@ -959,8 +1009,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         projectId_ = s;
         return s;
@@ -969,6 +1018,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The ID of the Google Cloud Platform project that the job
      * belongs to.
@@ -976,13 +1027,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string project_id = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getProjectIdBytes() {
+    public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         projectId_ = b;
         return b;
       } else {
@@ -990,6 +1039,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The ID of the Google Cloud Platform project that the job
      * belongs to.
@@ -997,17 +1048,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string project_id = 1;</code>
      */
-    public Builder setProjectId(
-        java.lang.String value) {
+    public Builder setProjectId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       projectId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The ID of the Google Cloud Platform project that the job
      * belongs to.
@@ -1016,12 +1068,14 @@ private static final long serialVersionUID = 0L;
      * <code>string project_id = 1;</code>
      */
     public Builder clearProjectId() {
-      
+
       projectId_ = getDefaultInstance().getProjectId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The ID of the Google Cloud Platform project that the job
      * belongs to.
@@ -1029,13 +1083,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string project_id = 1;</code>
      */
-    public Builder setProjectIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       projectId_ = value;
       onChanged();
       return this;
@@ -1043,6 +1096,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object region_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. The Cloud Dataproc region in which to handle the request.
      * </pre>
@@ -1052,8 +1107,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getRegion() {
       java.lang.Object ref = region_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         region_ = s;
         return s;
@@ -1062,19 +1116,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Cloud Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 6;</code>
      */
-    public com.google.protobuf.ByteString
-        getRegionBytes() {
+    public com.google.protobuf.ByteString getRegionBytes() {
       java.lang.Object ref = region_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         region_ = b;
         return b;
       } else {
@@ -1082,23 +1136,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Cloud Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 6;</code>
      */
-    public Builder setRegion(
-        java.lang.String value) {
+    public Builder setRegion(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       region_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Cloud Dataproc region in which to handle the request.
      * </pre>
@@ -1106,32 +1163,35 @@ private static final long serialVersionUID = 0L;
      * <code>string region = 6;</code>
      */
     public Builder clearRegion() {
-      
+
       region_ = getDefaultInstance().getRegion();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Cloud Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 6;</code>
      */
-    public Builder setRegionBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setRegionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       region_ = value;
       onChanged();
       return this;
     }
 
-    private int pageSize_ ;
+    private int pageSize_;
     /**
+     *
+     *
      * <pre>
      * Optional. The number of results to return in each response.
      * </pre>
@@ -1142,6 +1202,8 @@ private static final long serialVersionUID = 0L;
       return pageSize_;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The number of results to return in each response.
      * </pre>
@@ -1149,12 +1211,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 page_size = 2;</code>
      */
     public Builder setPageSize(int value) {
-      
+
       pageSize_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The number of results to return in each response.
      * </pre>
@@ -1162,7 +1226,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 page_size = 2;</code>
      */
     public Builder clearPageSize() {
-      
+
       pageSize_ = 0;
       onChanged();
       return this;
@@ -1170,6 +1234,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object pageToken_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional. The page token, returned by a previous call, to request the
      * next page of results.
@@ -1180,8 +1246,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         pageToken_ = s;
         return s;
@@ -1190,6 +1255,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The page token, returned by a previous call, to request the
      * next page of results.
@@ -1197,13 +1264,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string page_token = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getPageTokenBytes() {
+    public com.google.protobuf.ByteString getPageTokenBytes() {
       java.lang.Object ref = pageToken_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         pageToken_ = b;
         return b;
       } else {
@@ -1211,6 +1276,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The page token, returned by a previous call, to request the
      * next page of results.
@@ -1218,17 +1285,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string page_token = 3;</code>
      */
-    public Builder setPageToken(
-        java.lang.String value) {
+    public Builder setPageToken(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       pageToken_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The page token, returned by a previous call, to request the
      * next page of results.
@@ -1237,12 +1305,14 @@ private static final long serialVersionUID = 0L;
      * <code>string page_token = 3;</code>
      */
     public Builder clearPageToken() {
-      
+
       pageToken_ = getDefaultInstance().getPageToken();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The page token, returned by a previous call, to request the
      * next page of results.
@@ -1250,13 +1320,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string page_token = 3;</code>
      */
-    public Builder setPageTokenBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       pageToken_ = value;
       onChanged();
       return this;
@@ -1264,6 +1333,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object clusterName_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional. If set, the returned jobs list includes only jobs that were
      * submitted to the named cluster.
@@ -1274,8 +1345,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getClusterName() {
       java.lang.Object ref = clusterName_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         clusterName_ = s;
         return s;
@@ -1284,6 +1354,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. If set, the returned jobs list includes only jobs that were
      * submitted to the named cluster.
@@ -1291,13 +1363,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string cluster_name = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getClusterNameBytes() {
+    public com.google.protobuf.ByteString getClusterNameBytes() {
       java.lang.Object ref = clusterName_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         clusterName_ = b;
         return b;
       } else {
@@ -1305,6 +1375,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. If set, the returned jobs list includes only jobs that were
      * submitted to the named cluster.
@@ -1312,17 +1384,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string cluster_name = 4;</code>
      */
-    public Builder setClusterName(
-        java.lang.String value) {
+    public Builder setClusterName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       clusterName_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. If set, the returned jobs list includes only jobs that were
      * submitted to the named cluster.
@@ -1331,12 +1404,14 @@ private static final long serialVersionUID = 0L;
      * <code>string cluster_name = 4;</code>
      */
     public Builder clearClusterName() {
-      
+
       clusterName_ = getDefaultInstance().getClusterName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. If set, the returned jobs list includes only jobs that were
      * submitted to the named cluster.
@@ -1344,13 +1419,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string cluster_name = 4;</code>
      */
-    public Builder setClusterNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setClusterNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       clusterName_ = value;
       onChanged();
       return this;
@@ -1358,25 +1432,31 @@ private static final long serialVersionUID = 0L;
 
     private int jobStateMatcher_ = 0;
     /**
+     *
+     *
      * <pre>
      * Optional. Specifies enumerated categories of jobs to list.
      * (default = match ALL jobs).
      * If `filter` is provided, `jobStateMatcher` will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5;</code>
+     * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5;
+     * </code>
      */
     public int getJobStateMatcherValue() {
       return jobStateMatcher_;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Specifies enumerated categories of jobs to list.
      * (default = match ALL jobs).
      * If `filter` is provided, `jobStateMatcher` will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5;</code>
+     * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5;
+     * </code>
      */
     public Builder setJobStateMatcherValue(int value) {
       jobStateMatcher_ = value;
@@ -1384,48 +1464,62 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Specifies enumerated categories of jobs to list.
      * (default = match ALL jobs).
      * If `filter` is provided, `jobStateMatcher` will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5;</code>
+     * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5;
+     * </code>
      */
     public com.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher getJobStateMatcher() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher result = com.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher.valueOf(jobStateMatcher_);
-      return result == null ? com.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher.UNRECOGNIZED : result;
+      com.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher result =
+          com.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher.valueOf(
+              jobStateMatcher_);
+      return result == null
+          ? com.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Specifies enumerated categories of jobs to list.
      * (default = match ALL jobs).
      * If `filter` is provided, `jobStateMatcher` will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5;</code>
+     * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5;
+     * </code>
      */
-    public Builder setJobStateMatcher(com.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher value) {
+    public Builder setJobStateMatcher(
+        com.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       jobStateMatcher_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Specifies enumerated categories of jobs to list.
      * (default = match ALL jobs).
      * If `filter` is provided, `jobStateMatcher` will be ignored.
      * </pre>
      *
-     * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5;</code>
+     * <code>.google.cloud.dataproc.v1beta2.ListJobsRequest.JobStateMatcher job_state_matcher = 5;
+     * </code>
      */
     public Builder clearJobStateMatcher() {
-      
+
       jobStateMatcher_ = 0;
       onChanged();
       return this;
@@ -1433,6 +1527,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object filter_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional. A filter constraining the jobs to list. Filters are
      * case-sensitive and have the following syntax:
@@ -1451,8 +1547,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         filter_ = s;
         return s;
@@ -1461,6 +1556,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A filter constraining the jobs to list. Filters are
      * case-sensitive and have the following syntax:
@@ -1476,13 +1573,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string filter = 7;</code>
      */
-    public com.google.protobuf.ByteString
-        getFilterBytes() {
+    public com.google.protobuf.ByteString getFilterBytes() {
       java.lang.Object ref = filter_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         filter_ = b;
         return b;
       } else {
@@ -1490,6 +1585,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A filter constraining the jobs to list. Filters are
      * case-sensitive and have the following syntax:
@@ -1505,17 +1602,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string filter = 7;</code>
      */
-    public Builder setFilter(
-        java.lang.String value) {
+    public Builder setFilter(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       filter_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A filter constraining the jobs to list. Filters are
      * case-sensitive and have the following syntax:
@@ -1532,12 +1630,14 @@ private static final long serialVersionUID = 0L;
      * <code>string filter = 7;</code>
      */
     public Builder clearFilter() {
-      
+
       filter_ = getDefaultInstance().getFilter();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A filter constraining the jobs to list. Filters are
      * case-sensitive and have the following syntax:
@@ -1553,20 +1653,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string filter = 7;</code>
      */
-    public Builder setFilterBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setFilterBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       filter_ = value;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1576,12 +1675,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.dataproc.v1beta2.ListJobsRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.dataproc.v1beta2.ListJobsRequest)
   private static final com.google.cloud.dataproc.v1beta2.ListJobsRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.dataproc.v1beta2.ListJobsRequest();
   }
@@ -1590,16 +1689,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListJobsRequest>
-      PARSER = new com.google.protobuf.AbstractParser<ListJobsRequest>() {
-    @java.lang.Override
-    public ListJobsRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ListJobsRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ListJobsRequest> PARSER =
+      new com.google.protobuf.AbstractParser<ListJobsRequest>() {
+        @java.lang.Override
+        public ListJobsRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ListJobsRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ListJobsRequest> parser() {
     return PARSER;
@@ -1614,6 +1713,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.dataproc.v1beta2.ListJobsRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

@@ -20,6 +20,7 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.Service;
 import java.util.List;
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 /** Represents a Firestore Database and is the entry point for all Firestore operations */
 public interface Firestore extends Service<FirestoreOptions>, AutoCloseable {
@@ -55,7 +56,6 @@ public interface Firestore extends Service<FirestoreOptions>, AutoCloseable {
    * Fetches the root collections that are associated with this Firestore database.
    *
    * @deprecated Use `listCollections()`.
-   *
    * @throws FirestoreException if the Iterable could not be initialized.
    * @return An Iterable that can be used to fetch all collections.
    */
@@ -93,7 +93,18 @@ public interface Firestore extends Service<FirestoreOptions>, AutoCloseable {
    * @param documentReferences List of Document References to fetch.
    */
   @Nonnull
-  ApiFuture<List<DocumentSnapshot>> getAll(final DocumentReference... documentReferences);
+  ApiFuture<List<DocumentSnapshot>> getAll(@Nonnull DocumentReference... documentReferences);
+
+  /**
+   * Retrieves multiple documents from Firestore, while optionally applying a field mask to reduce
+   * the amount of data transmitted.
+   *
+   * @param documentReferences Array with Document References to fetch.
+   * @param fieldMask If set, specifies the subset of fields to return.
+   */
+  @Nonnull
+  ApiFuture<List<DocumentSnapshot>> getAll(
+      @Nonnull DocumentReference[] documentReferences, @Nullable FieldMask fieldMask);
 
   /**
    * Gets a Firestore {@link WriteBatch} instance that can be used to combine multiple writes.

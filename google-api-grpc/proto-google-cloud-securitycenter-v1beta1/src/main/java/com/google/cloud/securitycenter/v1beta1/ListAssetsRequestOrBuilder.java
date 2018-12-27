@@ -3,11 +3,14 @@
 
 package com.google.cloud.securitycenter.v1beta1;
 
-public interface ListAssetsRequestOrBuilder extends
+public interface ListAssetsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.securitycenter.v1beta1.ListAssetsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Name of the organization assets should belong to. Its format is
    * "organizations/[organization_id]".
@@ -17,6 +20,8 @@ public interface ListAssetsRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Name of the organization assets should belong to. Its format is
    * "organizations/[organization_id]".
@@ -24,10 +29,11 @@ public interface ListAssetsRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Expression that defines the filter to apply across assets.
    * The expression is a list of zero or more restrictions combined via logical
@@ -55,6 +61,8 @@ public interface ListAssetsRequestOrBuilder extends
    */
   java.lang.String getFilter();
   /**
+   *
+   *
    * <pre>
    * Expression that defines the filter to apply across assets.
    * The expression is a list of zero or more restrictions combined via logical
@@ -80,10 +88,11 @@ public interface ListAssetsRequestOrBuilder extends
    *
    * <code>string filter = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getFilterBytes();
+  com.google.protobuf.ByteString getFilterBytes();
 
   /**
+   *
+   *
    * <pre>
    * Expression that defines what fields and order to use for sorting. The
    * string value should follow SQL syntax: comma separated list of fields. For
@@ -99,6 +108,8 @@ public interface ListAssetsRequestOrBuilder extends
    */
   java.lang.String getOrderBy();
   /**
+   *
+   *
    * <pre>
    * Expression that defines what fields and order to use for sorting. The
    * string value should follow SQL syntax: comma separated list of fields. For
@@ -112,10 +123,11 @@ public interface ListAssetsRequestOrBuilder extends
    *
    * <code>string order_by = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getOrderByBytes();
+  com.google.protobuf.ByteString getOrderByBytes();
 
   /**
+   *
+   *
    * <pre>
    * Time used as a reference point when filtering assets. The filter is limited
    * to assets existing at the supplied time and their values are those at that
@@ -127,6 +139,8 @@ public interface ListAssetsRequestOrBuilder extends
    */
   boolean hasReadTime();
   /**
+   *
+   *
    * <pre>
    * Time used as a reference point when filtering assets. The filter is limited
    * to assets existing at the supplied time and their values are those at that
@@ -138,6 +152,8 @@ public interface ListAssetsRequestOrBuilder extends
    */
   com.google.protobuf.Timestamp getReadTime();
   /**
+   *
+   *
    * <pre>
    * Time used as a reference point when filtering assets. The filter is limited
    * to assets existing at the supplied time and their values are those at that
@@ -150,6 +166,8 @@ public interface ListAssetsRequestOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * When compare_duration is set, the ListAssetResult's "state" attribute is
    * updated to indicate whether the asset was added, removed, or remained
@@ -176,6 +194,8 @@ public interface ListAssetsRequestOrBuilder extends
    */
   boolean hasCompareDuration();
   /**
+   *
+   *
    * <pre>
    * When compare_duration is set, the ListAssetResult's "state" attribute is
    * updated to indicate whether the asset was added, removed, or remained
@@ -202,6 +222,8 @@ public interface ListAssetsRequestOrBuilder extends
    */
   com.google.protobuf.Duration getCompareDuration();
   /**
+   *
+   *
    * <pre>
    * When compare_duration is set, the ListAssetResult's "state" attribute is
    * updated to indicate whether the asset was added, removed, or remained
@@ -229,6 +251,8 @@ public interface ListAssetsRequestOrBuilder extends
   com.google.protobuf.DurationOrBuilder getCompareDurationOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional.
    * A field mask to specify the ListAssetsResult fields to be listed in the
@@ -240,6 +264,8 @@ public interface ListAssetsRequestOrBuilder extends
    */
   boolean hasFieldMask();
   /**
+   *
+   *
    * <pre>
    * Optional.
    * A field mask to specify the ListAssetsResult fields to be listed in the
@@ -251,6 +277,8 @@ public interface ListAssetsRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getFieldMask();
   /**
+   *
+   *
    * <pre>
    * Optional.
    * A field mask to specify the ListAssetsResult fields to be listed in the
@@ -263,6 +291,8 @@ public interface ListAssetsRequestOrBuilder extends
   com.google.protobuf.FieldMaskOrBuilder getFieldMaskOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The value returned by the last `ListAssetsResponse`; indicates
    * that this is a continuation of a prior `ListAssets` call, and
@@ -273,6 +303,8 @@ public interface ListAssetsRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * The value returned by the last `ListAssetsResponse`; indicates
    * that this is a continuation of a prior `ListAssets` call, and
@@ -281,10 +313,11 @@ public interface ListAssetsRequestOrBuilder extends
    *
    * <code>string page_token = 8;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 
   /**
+   *
+   *
    * <pre>
    * The maximum number of results to return in a single response. Default is
    * 10, minimum is 1, maximum is 1000.

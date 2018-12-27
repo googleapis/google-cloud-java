@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface ListTimeSeriesRequestOrBuilder extends
+public interface ListTimeSeriesRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.ListTimeSeriesRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The project on which to execute the request. The format is
    * "projects/{project_id_or_number}".
@@ -17,6 +20,8 @@ public interface ListTimeSeriesRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The project on which to execute the request. The format is
    * "projects/{project_id_or_number}".
@@ -24,10 +29,11 @@ public interface ListTimeSeriesRequestOrBuilder extends
    *
    * <code>string name = 10;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * A [monitoring filter](/monitoring/api/v3/filters) that specifies which time
    * series should be returned.  The filter must specify a single metric type,
@@ -41,6 +47,8 @@ public interface ListTimeSeriesRequestOrBuilder extends
    */
   java.lang.String getFilter();
   /**
+   *
+   *
    * <pre>
    * A [monitoring filter](/monitoring/api/v3/filters) that specifies which time
    * series should be returned.  The filter must specify a single metric type,
@@ -52,10 +60,11 @@ public interface ListTimeSeriesRequestOrBuilder extends
    *
    * <code>string filter = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getFilterBytes();
+  com.google.protobuf.ByteString getFilterBytes();
 
   /**
+   *
+   *
    * <pre>
    * The time interval for which results should be returned. Only time series
    * that contain data points in the specified interval are included
@@ -66,6 +75,8 @@ public interface ListTimeSeriesRequestOrBuilder extends
    */
   boolean hasInterval();
   /**
+   *
+   *
    * <pre>
    * The time interval for which results should be returned. Only time series
    * that contain data points in the specified interval are included
@@ -76,6 +87,8 @@ public interface ListTimeSeriesRequestOrBuilder extends
    */
   com.google.monitoring.v3.TimeInterval getInterval();
   /**
+   *
+   *
    * <pre>
    * The time interval for which results should be returned. Only time series
    * that contain data points in the specified interval are included
@@ -87,6 +100,8 @@ public interface ListTimeSeriesRequestOrBuilder extends
   com.google.monitoring.v3.TimeIntervalOrBuilder getIntervalOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * By default, the raw time series data is returned.
    * Use this field to combine multiple time series for different
@@ -97,6 +112,8 @@ public interface ListTimeSeriesRequestOrBuilder extends
    */
   boolean hasAggregation();
   /**
+   *
+   *
    * <pre>
    * By default, the raw time series data is returned.
    * Use this field to combine multiple time series for different
@@ -107,6 +124,8 @@ public interface ListTimeSeriesRequestOrBuilder extends
    */
   com.google.monitoring.v3.Aggregation getAggregation();
   /**
+   *
+   *
    * <pre>
    * By default, the raw time series data is returned.
    * Use this field to combine multiple time series for different
@@ -118,6 +137,8 @@ public interface ListTimeSeriesRequestOrBuilder extends
   com.google.monitoring.v3.AggregationOrBuilder getAggregationOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Unsupported: must be left blank. The points in each time series are
    * returned in reverse time order.
@@ -127,6 +148,8 @@ public interface ListTimeSeriesRequestOrBuilder extends
    */
   java.lang.String getOrderBy();
   /**
+   *
+   *
    * <pre>
    * Unsupported: must be left blank. The points in each time series are
    * returned in reverse time order.
@@ -134,10 +157,11 @@ public interface ListTimeSeriesRequestOrBuilder extends
    *
    * <code>string order_by = 6;</code>
    */
-  com.google.protobuf.ByteString
-      getOrderByBytes();
+  com.google.protobuf.ByteString getOrderByBytes();
 
   /**
+   *
+   *
    * <pre>
    * Specifies which information is returned about the time series.
    * </pre>
@@ -146,6 +170,8 @@ public interface ListTimeSeriesRequestOrBuilder extends
    */
   int getViewValue();
   /**
+   *
+   *
    * <pre>
    * Specifies which information is returned about the time series.
    * </pre>
@@ -155,6 +181,8 @@ public interface ListTimeSeriesRequestOrBuilder extends
   com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView getView();
 
   /**
+   *
+   *
    * <pre>
    * A positive number that is the maximum number of results to return. If
    * `page_size` is empty or more than 100,000 results, the effective
@@ -168,6 +196,8 @@ public interface ListTimeSeriesRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * If this field is not empty then it must contain the `nextPageToken` value
    * returned by a previous call to this method.  Using this field causes the
@@ -178,6 +208,8 @@ public interface ListTimeSeriesRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * If this field is not empty then it must contain the `nextPageToken` value
    * returned by a previous call to this method.  Using this field causes the
@@ -186,6 +218,5 @@ public interface ListTimeSeriesRequestOrBuilder extends
    *
    * <code>string page_token = 9;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 }

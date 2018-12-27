@@ -15,7 +15,6 @@
  */
 package com.google.cloud.speech.v1p1beta1;
 
-import com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding;
 import com.google.common.base.Preconditions;
 import java.util.logging.Level;
 import java.util.logging.Logger;

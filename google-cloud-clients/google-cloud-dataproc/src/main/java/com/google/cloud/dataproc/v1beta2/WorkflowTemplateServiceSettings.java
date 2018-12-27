@@ -95,6 +95,22 @@ public class WorkflowTemplateServiceSettings
         .instantiateWorkflowTemplateOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to instantiateInlineWorkflowTemplate. */
+  public UnaryCallSettings<InstantiateInlineWorkflowTemplateRequest, Operation>
+      instantiateInlineWorkflowTemplateSettings() {
+    return ((WorkflowTemplateServiceStubSettings) getStubSettings())
+        .instantiateInlineWorkflowTemplateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to instantiateInlineWorkflowTemplate. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public OperationCallSettings<InstantiateInlineWorkflowTemplateRequest, Empty, WorkflowMetadata>
+      instantiateInlineWorkflowTemplateOperationSettings() {
+    return ((WorkflowTemplateServiceStubSettings) getStubSettings())
+        .instantiateInlineWorkflowTemplateOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to updateWorkflowTemplate. */
   public UnaryCallSettings<UpdateWorkflowTemplateRequest, WorkflowTemplate>
       updateWorkflowTemplateSettings() {
@@ -104,7 +120,8 @@ public class WorkflowTemplateServiceSettings
 
   /** Returns the object with the settings used for calls to listWorkflowTemplates. */
   public PagedCallSettings<
-          ListWorkflowTemplatesRequest, ListWorkflowTemplatesResponse,
+          ListWorkflowTemplatesRequest,
+          ListWorkflowTemplatesResponse,
           ListWorkflowTemplatesPagedResponse>
       listWorkflowTemplatesSettings() {
     return ((WorkflowTemplateServiceStubSettings) getStubSettings())
@@ -242,6 +259,21 @@ public class WorkflowTemplateServiceSettings
       return getStubSettingsBuilder().instantiateWorkflowTemplateOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to instantiateInlineWorkflowTemplate. */
+    public UnaryCallSettings.Builder<InstantiateInlineWorkflowTemplateRequest, Operation>
+        instantiateInlineWorkflowTemplateSettings() {
+      return getStubSettingsBuilder().instantiateInlineWorkflowTemplateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to instantiateInlineWorkflowTemplate. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            InstantiateInlineWorkflowTemplateRequest, Empty, WorkflowMetadata>
+        instantiateInlineWorkflowTemplateOperationSettings() {
+      return getStubSettingsBuilder().instantiateInlineWorkflowTemplateOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to updateWorkflowTemplate. */
     public UnaryCallSettings.Builder<UpdateWorkflowTemplateRequest, WorkflowTemplate>
         updateWorkflowTemplateSettings() {
@@ -250,7 +282,8 @@ public class WorkflowTemplateServiceSettings
 
     /** Returns the builder for the settings used for calls to listWorkflowTemplates. */
     public PagedCallSettings.Builder<
-            ListWorkflowTemplatesRequest, ListWorkflowTemplatesResponse,
+            ListWorkflowTemplatesRequest,
+            ListWorkflowTemplatesResponse,
             ListWorkflowTemplatesPagedResponse>
         listWorkflowTemplatesSettings() {
       return getStubSettingsBuilder().listWorkflowTemplatesSettings();

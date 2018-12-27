@@ -3,20 +3,24 @@
 
 package com.google.logging.v2;
 
-public interface ListLogMetricsResponseOrBuilder extends
+public interface ListLogMetricsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.logging.v2.ListLogMetricsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A list of logs-based metrics.
    * </pre>
    *
    * <code>repeated .google.logging.v2.LogMetric metrics = 1;</code>
    */
-  java.util.List<com.google.logging.v2.LogMetric> 
-      getMetricsList();
+  java.util.List<com.google.logging.v2.LogMetric> getMetricsList();
   /**
+   *
+   *
    * <pre>
    * A list of logs-based metrics.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListLogMetricsResponseOrBuilder extends
    */
   com.google.logging.v2.LogMetric getMetrics(int index);
   /**
+   *
+   *
    * <pre>
    * A list of logs-based metrics.
    * </pre>
@@ -33,25 +39,29 @@ public interface ListLogMetricsResponseOrBuilder extends
    */
   int getMetricsCount();
   /**
+   *
+   *
    * <pre>
    * A list of logs-based metrics.
    * </pre>
    *
    * <code>repeated .google.logging.v2.LogMetric metrics = 1;</code>
    */
-  java.util.List<? extends com.google.logging.v2.LogMetricOrBuilder> 
-      getMetricsOrBuilderList();
+  java.util.List<? extends com.google.logging.v2.LogMetricOrBuilder> getMetricsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * A list of logs-based metrics.
    * </pre>
    *
    * <code>repeated .google.logging.v2.LogMetric metrics = 1;</code>
    */
-  com.google.logging.v2.LogMetricOrBuilder getMetricsOrBuilder(
-      int index);
+  com.google.logging.v2.LogMetricOrBuilder getMetricsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * If there might be more results than appear in this response, then
    * `nextPageToken` is included.  To get the next set of results, call this
@@ -62,6 +72,8 @@ public interface ListLogMetricsResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * If there might be more results than appear in this response, then
    * `nextPageToken` is included.  To get the next set of results, call this
@@ -70,6 +82,5 @@ public interface ListLogMetricsResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

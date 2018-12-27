@@ -3,20 +3,24 @@
 
 package com.google.devtools.clouderrorreporting.v1beta1;
 
-public interface ListEventsResponseOrBuilder extends
+public interface ListEventsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.devtools.clouderrorreporting.v1beta1.ListEventsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The error events which match the given request.
    * </pre>
    *
    * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;</code>
    */
-  java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent> 
-      getErrorEventsList();
+  java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent> getErrorEventsList();
   /**
+   *
+   *
    * <pre>
    * The error events which match the given request.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListEventsResponseOrBuilder extends
    */
   com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent getErrorEvents(int index);
   /**
+   *
+   *
    * <pre>
    * The error events which match the given request.
    * </pre>
@@ -33,15 +39,19 @@ public interface ListEventsResponseOrBuilder extends
    */
   int getErrorEventsCount();
   /**
+   *
+   *
    * <pre>
    * The error events which match the given request.
    * </pre>
    *
    * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;</code>
    */
-  java.util.List<? extends com.google.devtools.clouderrorreporting.v1beta1.ErrorEventOrBuilder> 
+  java.util.List<? extends com.google.devtools.clouderrorreporting.v1beta1.ErrorEventOrBuilder>
       getErrorEventsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The error events which match the given request.
    * </pre>
@@ -52,6 +62,8 @@ public interface ListEventsResponseOrBuilder extends
       int index);
 
   /**
+   *
+   *
    * <pre>
    * If non-empty, more results are available.
    * Pass this token, along with the same query parameters as the first
@@ -62,6 +74,8 @@ public interface ListEventsResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * If non-empty, more results are available.
    * Pass this token, along with the same query parameters as the first
@@ -70,10 +84,11 @@ public interface ListEventsResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 
   /**
+   *
+   *
    * <pre>
    * The timestamp specifies the start time to which the request was restricted.
    * </pre>
@@ -82,6 +97,8 @@ public interface ListEventsResponseOrBuilder extends
    */
   boolean hasTimeRangeBegin();
   /**
+   *
+   *
    * <pre>
    * The timestamp specifies the start time to which the request was restricted.
    * </pre>
@@ -90,6 +107,8 @@ public interface ListEventsResponseOrBuilder extends
    */
   com.google.protobuf.Timestamp getTimeRangeBegin();
   /**
+   *
+   *
    * <pre>
    * The timestamp specifies the start time to which the request was restricted.
    * </pre>

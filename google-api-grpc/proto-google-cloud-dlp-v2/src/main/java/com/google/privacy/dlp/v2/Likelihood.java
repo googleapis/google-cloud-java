@@ -4,6 +4,8 @@
 package com.google.privacy.dlp.v2;
 
 /**
+ *
+ *
  * <pre>
  * Categorization of results based on how likely they are to represent a match,
  * based on the number of elements they contain which imply a match.
@@ -11,9 +13,10 @@ package com.google.privacy.dlp.v2;
  *
  * Protobuf enum {@code google.privacy.dlp.v2.Likelihood}
  */
-public enum Likelihood
-    implements com.google.protobuf.ProtocolMessageEnum {
+public enum Likelihood implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   *
+   *
    * <pre>
    * Default value; same as POSSIBLE.
    * </pre>
@@ -22,6 +25,8 @@ public enum Likelihood
    */
   LIKELIHOOD_UNSPECIFIED(0),
   /**
+   *
+   *
    * <pre>
    * Few matching elements.
    * </pre>
@@ -29,11 +34,11 @@ public enum Likelihood
    * <code>VERY_UNLIKELY = 1;</code>
    */
   VERY_UNLIKELY(1),
-  /**
-   * <code>UNLIKELY = 2;</code>
-   */
+  /** <code>UNLIKELY = 2;</code> */
   UNLIKELY(2),
   /**
+   *
+   *
    * <pre>
    * Some matching elements.
    * </pre>
@@ -41,11 +46,11 @@ public enum Likelihood
    * <code>POSSIBLE = 3;</code>
    */
   POSSIBLE(3),
-  /**
-   * <code>LIKELY = 4;</code>
-   */
+  /** <code>LIKELY = 4;</code> */
   LIKELY(4),
   /**
+   *
+   *
    * <pre>
    * Many matching elements.
    * </pre>
@@ -57,6 +62,8 @@ public enum Likelihood
   ;
 
   /**
+   *
+   *
    * <pre>
    * Default value; same as POSSIBLE.
    * </pre>
@@ -65,6 +72,8 @@ public enum Likelihood
    */
   public static final int LIKELIHOOD_UNSPECIFIED_VALUE = 0;
   /**
+   *
+   *
    * <pre>
    * Few matching elements.
    * </pre>
@@ -72,11 +81,11 @@ public enum Likelihood
    * <code>VERY_UNLIKELY = 1;</code>
    */
   public static final int VERY_UNLIKELY_VALUE = 1;
-  /**
-   * <code>UNLIKELY = 2;</code>
-   */
+  /** <code>UNLIKELY = 2;</code> */
   public static final int UNLIKELY_VALUE = 2;
   /**
+   *
+   *
    * <pre>
    * Some matching elements.
    * </pre>
@@ -84,11 +93,11 @@ public enum Likelihood
    * <code>POSSIBLE = 3;</code>
    */
   public static final int POSSIBLE_VALUE = 3;
-  /**
-   * <code>LIKELY = 4;</code>
-   */
+  /** <code>LIKELY = 4;</code> */
   public static final int LIKELY_VALUE = 4;
   /**
+   *
+   *
    * <pre>
    * Many matching elements.
    * </pre>
@@ -96,7 +105,6 @@ public enum Likelihood
    * <code>VERY_LIKELY = 5;</code>
    */
   public static final int VERY_LIKELY_VALUE = 5;
-
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -106,9 +114,7 @@ public enum Likelihood
     return value;
   }
 
-  /**
-   * @deprecated Use {@link #forNumber(int)} instead.
-   */
+  /** @deprecated Use {@link #forNumber(int)} instead. */
   @java.lang.Deprecated
   public static Likelihood valueOf(int value) {
     return forNumber(value);
@@ -116,48 +122,51 @@ public enum Likelihood
 
   public static Likelihood forNumber(int value) {
     switch (value) {
-      case 0: return LIKELIHOOD_UNSPECIFIED;
-      case 1: return VERY_UNLIKELY;
-      case 2: return UNLIKELY;
-      case 3: return POSSIBLE;
-      case 4: return LIKELY;
-      case 5: return VERY_LIKELY;
-      default: return null;
+      case 0:
+        return LIKELIHOOD_UNSPECIFIED;
+      case 1:
+        return VERY_UNLIKELY;
+      case 2:
+        return UNLIKELY;
+      case 3:
+        return POSSIBLE;
+      case 4:
+        return LIKELY;
+      case 5:
+        return VERY_LIKELY;
+      default:
+        return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<Likelihood>
-      internalGetValueMap() {
+  public static com.google.protobuf.Internal.EnumLiteMap<Likelihood> internalGetValueMap() {
     return internalValueMap;
   }
-  private static final com.google.protobuf.Internal.EnumLiteMap<
-      Likelihood> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<Likelihood>() {
-          public Likelihood findValueByNumber(int number) {
-            return Likelihood.forNumber(number);
-          }
-        };
 
-  public final com.google.protobuf.Descriptors.EnumValueDescriptor
-      getValueDescriptor() {
+  private static final com.google.protobuf.Internal.EnumLiteMap<Likelihood> internalValueMap =
+      new com.google.protobuf.Internal.EnumLiteMap<Likelihood>() {
+        public Likelihood findValueByNumber(int number) {
+          return Likelihood.forNumber(number);
+        }
+      };
+
+  public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
     return getDescriptor().getValues().get(ordinal());
   }
-  public final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptorForType() {
+
+  public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
     return getDescriptor();
   }
-  public static final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpStorage.getDescriptor().getEnumTypes().get(0);
   }
 
   private static final Likelihood[] VALUES = values();
 
-  public static Likelihood valueOf(
-      com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+  public static Likelihood valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
-      throw new java.lang.IllegalArgumentException(
-        "EnumValueDescriptor is not for this type.");
+      throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
     }
     if (desc.getIndex() == -1) {
       return UNRECOGNIZED;
@@ -173,4 +182,3 @@ public enum Likelihood
 
   // @@protoc_insertion_point(enum_scope:google.privacy.dlp.v2.Likelihood)
 }
-

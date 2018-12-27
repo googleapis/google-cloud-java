@@ -20,17 +20,16 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNull;
 
-import org.junit.Test;
-
 import java.math.BigInteger;
+import org.junit.Test;
 
 public class ProjectInfoTest {
 
   private static final String ID = "project-id-123";
   private static final BigInteger NUMBER = new BigInteger("123");
   private static final ProjectInfo.Quota QUOTA = new ProjectInfo.Quota(1, 2, 3, 4, 5, 6);
-  private static final ProjectInfo PROJECT_INFO = ProjectInfo.newBuilder()
-      .setId(ID).setNumber(NUMBER).setQuota(QUOTA).build();
+  private static final ProjectInfo PROJECT_INFO =
+      ProjectInfo.newBuilder().setId(ID).setNumber(NUMBER).setQuota(QUOTA).build();
 
   @Test
   public void testBuilder() {
@@ -51,7 +50,6 @@ public class ProjectInfoTest {
     assertEquals(ID, PROJECT_INFO.getId());
   }
 
-
   @Test
   public void testQuotaConstructor() {
     assertEquals(1, QUOTA.getZones());
@@ -61,7 +59,6 @@ public class ProjectInfoTest {
     assertEquals(5, QUOTA.getRrsetsPerZone());
     assertEquals(6, QUOTA.getTotalRrdataSizePerChange());
   }
-
 
   @Test
   public void testEqualsAndNotEqualsQuota() {
@@ -82,20 +79,23 @@ public class ProjectInfoTest {
   public void testEqualsAndNotEquals() {
     ProjectInfo clone = ProjectInfo.newBuilder().build();
     assertNotEquals(PROJECT_INFO, clone);
-    clone = ProjectInfo.newBuilder()
-        .setId(PROJECT_INFO.getId())
-        .setNumber(PROJECT_INFO.getNumber())
-        .build();
+    clone =
+        ProjectInfo.newBuilder()
+            .setId(PROJECT_INFO.getId())
+            .setNumber(PROJECT_INFO.getNumber())
+            .build();
     assertNotEquals(PROJECT_INFO, clone);
-    clone = ProjectInfo.newBuilder()
-        .setId(PROJECT_INFO.getId())
-        .setQuota(PROJECT_INFO.getQuota())
-        .build();
+    clone =
+        ProjectInfo.newBuilder()
+            .setId(PROJECT_INFO.getId())
+            .setQuota(PROJECT_INFO.getQuota())
+            .build();
     assertNotEquals(PROJECT_INFO, clone);
-    clone = ProjectInfo.newBuilder()
-        .setNumber(PROJECT_INFO.getNumber())
-        .setQuota(PROJECT_INFO.getQuota())
-        .build();
+    clone =
+        ProjectInfo.newBuilder()
+            .setNumber(PROJECT_INFO.getNumber())
+            .setQuota(PROJECT_INFO.getQuota())
+            .build();
     assertNotEquals(PROJECT_INFO, clone);
     clone = ProjectInfo.fromPb(PROJECT_INFO.toPb());
     assertEquals(PROJECT_INFO, clone);

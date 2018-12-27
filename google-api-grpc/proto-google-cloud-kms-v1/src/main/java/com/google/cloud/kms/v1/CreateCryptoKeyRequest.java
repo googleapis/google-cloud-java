@@ -4,31 +4,34 @@
 package com.google.cloud.kms.v1;
 
 /**
+ *
+ *
  * <pre>
  * Request message for [KeyManagementService.CreateCryptoKey][google.cloud.kms.v1.KeyManagementService.CreateCryptoKey].
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.CreateCryptoKeyRequest}
  */
-public  final class CreateCryptoKeyRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class CreateCryptoKeyRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.kms.v1.CreateCryptoKeyRequest)
     CreateCryptoKeyRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use CreateCryptoKeyRequest.newBuilder() to construct.
   private CreateCryptoKeyRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private CreateCryptoKeyRequest() {
     parent_ = "";
     cryptoKeyId_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private CreateCryptoKeyRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -48,66 +51,74 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            parent_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+              parent_ = s;
+              break;
+            }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            cryptoKeyId_ = s;
-            break;
-          }
-          case 26: {
-            com.google.cloud.kms.v1.CryptoKey.Builder subBuilder = null;
-            if (cryptoKey_ != null) {
-              subBuilder = cryptoKey_.toBuilder();
+              cryptoKeyId_ = s;
+              break;
             }
-            cryptoKey_ = input.readMessage(com.google.cloud.kms.v1.CryptoKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(cryptoKey_);
-              cryptoKey_ = subBuilder.buildPartial();
-            }
+          case 26:
+            {
+              com.google.cloud.kms.v1.CryptoKey.Builder subBuilder = null;
+              if (cryptoKey_ != null) {
+                subBuilder = cryptoKey_.toBuilder();
+              }
+              cryptoKey_ =
+                  input.readMessage(com.google.cloud.kms.v1.CryptoKey.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(cryptoKey_);
+                cryptoKey_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.kms.v1.KmsProto.internal_static_google_cloud_kms_v1_CreateCryptoKeyRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.kms.v1.KmsProto
+        .internal_static_google_cloud_kms_v1_CreateCryptoKeyRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.kms.v1.KmsProto.internal_static_google_cloud_kms_v1_CreateCryptoKeyRequest_fieldAccessorTable
+    return com.google.cloud.kms.v1.KmsProto
+        .internal_static_google_cloud_kms_v1_CreateCryptoKeyRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.kms.v1.CreateCryptoKeyRequest.class, com.google.cloud.kms.v1.CreateCryptoKeyRequest.Builder.class);
+            com.google.cloud.kms.v1.CreateCryptoKeyRequest.class,
+            com.google.cloud.kms.v1.CreateCryptoKeyRequest.Builder.class);
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
+   *
+   *
    * <pre>
    * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the KeyRing associated with the
    * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
@@ -120,14 +131,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       parent_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the KeyRing associated with the
    * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
@@ -135,13 +147,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string parent = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getParentBytes() {
+  public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       parent_ = b;
       return b;
     } else {
@@ -152,6 +162,8 @@ private static final long serialVersionUID = 0L;
   public static final int CRYPTO_KEY_ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object cryptoKeyId_;
   /**
+   *
+   *
    * <pre>
    * Required. It must be unique within a KeyRing and match the regular
    * expression `[a-zA-Z0-9_-]{1,63}`
@@ -164,14 +176,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       cryptoKeyId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. It must be unique within a KeyRing and match the regular
    * expression `[a-zA-Z0-9_-]{1,63}`
@@ -179,13 +192,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string crypto_key_id = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getCryptoKeyIdBytes() {
+  public com.google.protobuf.ByteString getCryptoKeyIdBytes() {
     java.lang.Object ref = cryptoKeyId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       cryptoKeyId_ = b;
       return b;
     } else {
@@ -196,6 +207,8 @@ private static final long serialVersionUID = 0L;
   public static final int CRYPTO_KEY_FIELD_NUMBER = 3;
   private com.google.cloud.kms.v1.CryptoKey cryptoKey_;
   /**
+   *
+   *
    * <pre>
    * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
    * </pre>
@@ -206,6 +219,8 @@ private static final long serialVersionUID = 0L;
     return cryptoKey_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
    * </pre>
@@ -216,6 +231,8 @@ private static final long serialVersionUID = 0L;
     return cryptoKey_ == null ? com.google.cloud.kms.v1.CryptoKey.getDefaultInstance() : cryptoKey_;
   }
   /**
+   *
+   *
    * <pre>
    * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
    * </pre>
@@ -227,6 +244,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -238,8 +256,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getParentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
@@ -265,8 +282,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, cryptoKeyId_);
     }
     if (cryptoKey_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getCryptoKey());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getCryptoKey());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -276,22 +292,20 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.kms.v1.CreateCryptoKeyRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.kms.v1.CreateCryptoKeyRequest other = (com.google.cloud.kms.v1.CreateCryptoKeyRequest) obj;
+    com.google.cloud.kms.v1.CreateCryptoKeyRequest other =
+        (com.google.cloud.kms.v1.CreateCryptoKeyRequest) obj;
 
     boolean result = true;
-    result = result && getParent()
-        .equals(other.getParent());
-    result = result && getCryptoKeyId()
-        .equals(other.getCryptoKeyId());
+    result = result && getParent().equals(other.getParent());
+    result = result && getCryptoKeyId().equals(other.getCryptoKeyId());
     result = result && (hasCryptoKey() == other.hasCryptoKey());
     if (hasCryptoKey()) {
-      result = result && getCryptoKey()
-          .equals(other.getCryptoKey());
+      result = result && getCryptoKey().equals(other.getCryptoKey());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -317,118 +331,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.kms.v1.CreateCryptoKeyRequest parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.kms.v1.CreateCryptoKeyRequest parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.kms.v1.CreateCryptoKeyRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.kms.v1.CreateCryptoKeyRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.kms.v1.CreateCryptoKeyRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.kms.v1.CreateCryptoKeyRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.kms.v1.CreateCryptoKeyRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.kms.v1.CreateCryptoKeyRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.kms.v1.CreateCryptoKeyRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.kms.v1.CreateCryptoKeyRequest parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.kms.v1.CreateCryptoKeyRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.kms.v1.CreateCryptoKeyRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.kms.v1.CreateCryptoKeyRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.kms.v1.CreateCryptoKeyRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.kms.v1.CreateCryptoKeyRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Request message for [KeyManagementService.CreateCryptoKey][google.cloud.kms.v1.KeyManagementService.CreateCryptoKey].
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.CreateCryptoKeyRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.kms.v1.CreateCryptoKeyRequest)
       com.google.cloud.kms.v1.CreateCryptoKeyRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.kms.v1.KmsProto.internal_static_google_cloud_kms_v1_CreateCryptoKeyRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.kms.v1.KmsProto
+          .internal_static_google_cloud_kms_v1_CreateCryptoKeyRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.kms.v1.KmsProto.internal_static_google_cloud_kms_v1_CreateCryptoKeyRequest_fieldAccessorTable
+      return com.google.cloud.kms.v1.KmsProto
+          .internal_static_google_cloud_kms_v1_CreateCryptoKeyRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.kms.v1.CreateCryptoKeyRequest.class, com.google.cloud.kms.v1.CreateCryptoKeyRequest.Builder.class);
+              com.google.cloud.kms.v1.CreateCryptoKeyRequest.class,
+              com.google.cloud.kms.v1.CreateCryptoKeyRequest.Builder.class);
     }
 
     // Construct using com.google.cloud.kms.v1.CreateCryptoKeyRequest.newBuilder()
@@ -436,16 +459,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -463,9 +485,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.kms.v1.KmsProto.internal_static_google_cloud_kms_v1_CreateCryptoKeyRequest_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.kms.v1.KmsProto
+          .internal_static_google_cloud_kms_v1_CreateCryptoKeyRequest_descriptor;
     }
 
     @java.lang.Override
@@ -484,7 +506,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.kms.v1.CreateCryptoKeyRequest buildPartial() {
-      com.google.cloud.kms.v1.CreateCryptoKeyRequest result = new com.google.cloud.kms.v1.CreateCryptoKeyRequest(this);
+      com.google.cloud.kms.v1.CreateCryptoKeyRequest result =
+          new com.google.cloud.kms.v1.CreateCryptoKeyRequest(this);
       result.parent_ = parent_;
       result.cryptoKeyId_ = cryptoKeyId_;
       if (cryptoKeyBuilder_ == null) {
@@ -500,38 +523,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.kms.v1.CreateCryptoKeyRequest) {
-        return mergeFrom((com.google.cloud.kms.v1.CreateCryptoKeyRequest)other);
+        return mergeFrom((com.google.cloud.kms.v1.CreateCryptoKeyRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -582,6 +606,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object parent_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the KeyRing associated with the
      * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
@@ -592,8 +618,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         parent_ = s;
         return s;
@@ -602,6 +627,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the KeyRing associated with the
      * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
@@ -609,13 +636,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getParentBytes() {
+    public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         parent_ = b;
         return b;
       } else {
@@ -623,6 +648,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the KeyRing associated with the
      * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
@@ -630,17 +657,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public Builder setParent(
-        java.lang.String value) {
+    public Builder setParent(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       parent_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the KeyRing associated with the
      * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
@@ -649,12 +677,14 @@ private static final long serialVersionUID = 0L;
      * <code>string parent = 1;</code>
      */
     public Builder clearParent() {
-      
+
       parent_ = getDefaultInstance().getParent();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the KeyRing associated with the
      * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
@@ -662,13 +692,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public Builder setParentBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       parent_ = value;
       onChanged();
       return this;
@@ -676,6 +705,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object cryptoKeyId_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. It must be unique within a KeyRing and match the regular
      * expression `[a-zA-Z0-9_-]{1,63}`
@@ -686,8 +717,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getCryptoKeyId() {
       java.lang.Object ref = cryptoKeyId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         cryptoKeyId_ = s;
         return s;
@@ -696,6 +726,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. It must be unique within a KeyRing and match the regular
      * expression `[a-zA-Z0-9_-]{1,63}`
@@ -703,13 +735,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string crypto_key_id = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getCryptoKeyIdBytes() {
+    public com.google.protobuf.ByteString getCryptoKeyIdBytes() {
       java.lang.Object ref = cryptoKeyId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         cryptoKeyId_ = b;
         return b;
       } else {
@@ -717,6 +747,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. It must be unique within a KeyRing and match the regular
      * expression `[a-zA-Z0-9_-]{1,63}`
@@ -724,17 +756,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string crypto_key_id = 2;</code>
      */
-    public Builder setCryptoKeyId(
-        java.lang.String value) {
+    public Builder setCryptoKeyId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       cryptoKeyId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. It must be unique within a KeyRing and match the regular
      * expression `[a-zA-Z0-9_-]{1,63}`
@@ -743,12 +776,14 @@ private static final long serialVersionUID = 0L;
      * <code>string crypto_key_id = 2;</code>
      */
     public Builder clearCryptoKeyId() {
-      
+
       cryptoKeyId_ = getDefaultInstance().getCryptoKeyId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. It must be unique within a KeyRing and match the regular
      * expression `[a-zA-Z0-9_-]{1,63}`
@@ -756,13 +791,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string crypto_key_id = 2;</code>
      */
-    public Builder setCryptoKeyIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setCryptoKeyIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       cryptoKeyId_ = value;
       onChanged();
       return this;
@@ -770,8 +804,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.kms.v1.CryptoKey cryptoKey_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.kms.v1.CryptoKey, com.google.cloud.kms.v1.CryptoKey.Builder, com.google.cloud.kms.v1.CryptoKeyOrBuilder> cryptoKeyBuilder_;
+            com.google.cloud.kms.v1.CryptoKey,
+            com.google.cloud.kms.v1.CryptoKey.Builder,
+            com.google.cloud.kms.v1.CryptoKeyOrBuilder>
+        cryptoKeyBuilder_;
     /**
+     *
+     *
      * <pre>
      * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
      * </pre>
@@ -782,6 +821,8 @@ private static final long serialVersionUID = 0L;
       return cryptoKeyBuilder_ != null || cryptoKey_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
      * </pre>
@@ -790,12 +831,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.kms.v1.CryptoKey getCryptoKey() {
       if (cryptoKeyBuilder_ == null) {
-        return cryptoKey_ == null ? com.google.cloud.kms.v1.CryptoKey.getDefaultInstance() : cryptoKey_;
+        return cryptoKey_ == null
+            ? com.google.cloud.kms.v1.CryptoKey.getDefaultInstance()
+            : cryptoKey_;
       } else {
         return cryptoKeyBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
      * </pre>
@@ -816,14 +861,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3;</code>
      */
-    public Builder setCryptoKey(
-        com.google.cloud.kms.v1.CryptoKey.Builder builderForValue) {
+    public Builder setCryptoKey(com.google.cloud.kms.v1.CryptoKey.Builder builderForValue) {
       if (cryptoKeyBuilder_ == null) {
         cryptoKey_ = builderForValue.build();
         onChanged();
@@ -834,6 +880,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
      * </pre>
@@ -844,7 +892,9 @@ private static final long serialVersionUID = 0L;
       if (cryptoKeyBuilder_ == null) {
         if (cryptoKey_ != null) {
           cryptoKey_ =
-            com.google.cloud.kms.v1.CryptoKey.newBuilder(cryptoKey_).mergeFrom(value).buildPartial();
+              com.google.cloud.kms.v1.CryptoKey.newBuilder(cryptoKey_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           cryptoKey_ = value;
         }
@@ -856,6 +906,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
      * </pre>
@@ -874,6 +926,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
      * </pre>
@@ -881,11 +935,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3;</code>
      */
     public com.google.cloud.kms.v1.CryptoKey.Builder getCryptoKeyBuilder() {
-      
+
       onChanged();
       return getCryptoKeyFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
      * </pre>
@@ -896,11 +952,14 @@ private static final long serialVersionUID = 0L;
       if (cryptoKeyBuilder_ != null) {
         return cryptoKeyBuilder_.getMessageOrBuilder();
       } else {
-        return cryptoKey_ == null ?
-            com.google.cloud.kms.v1.CryptoKey.getDefaultInstance() : cryptoKey_;
+        return cryptoKey_ == null
+            ? com.google.cloud.kms.v1.CryptoKey.getDefaultInstance()
+            : cryptoKey_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
      * </pre>
@@ -908,21 +967,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.kms.v1.CryptoKey crypto_key = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.kms.v1.CryptoKey, com.google.cloud.kms.v1.CryptoKey.Builder, com.google.cloud.kms.v1.CryptoKeyOrBuilder> 
+            com.google.cloud.kms.v1.CryptoKey,
+            com.google.cloud.kms.v1.CryptoKey.Builder,
+            com.google.cloud.kms.v1.CryptoKeyOrBuilder>
         getCryptoKeyFieldBuilder() {
       if (cryptoKeyBuilder_ == null) {
-        cryptoKeyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.kms.v1.CryptoKey, com.google.cloud.kms.v1.CryptoKey.Builder, com.google.cloud.kms.v1.CryptoKeyOrBuilder>(
-                getCryptoKey(),
-                getParentForChildren(),
-                isClean());
+        cryptoKeyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.kms.v1.CryptoKey,
+                com.google.cloud.kms.v1.CryptoKey.Builder,
+                com.google.cloud.kms.v1.CryptoKeyOrBuilder>(
+                getCryptoKey(), getParentForChildren(), isClean());
         cryptoKey_ = null;
       }
       return cryptoKeyBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -932,12 +994,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.kms.v1.CreateCryptoKeyRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.kms.v1.CreateCryptoKeyRequest)
   private static final com.google.cloud.kms.v1.CreateCryptoKeyRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.kms.v1.CreateCryptoKeyRequest();
   }
@@ -946,16 +1008,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CreateCryptoKeyRequest>
-      PARSER = new com.google.protobuf.AbstractParser<CreateCryptoKeyRequest>() {
-    @java.lang.Override
-    public CreateCryptoKeyRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new CreateCryptoKeyRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<CreateCryptoKeyRequest> PARSER =
+      new com.google.protobuf.AbstractParser<CreateCryptoKeyRequest>() {
+        @java.lang.Override
+        public CreateCryptoKeyRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new CreateCryptoKeyRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<CreateCryptoKeyRequest> parser() {
     return PARSER;
@@ -970,6 +1032,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.kms.v1.CreateCryptoKeyRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

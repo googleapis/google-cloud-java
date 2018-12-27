@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface RiskAnalysisJobConfigOrBuilder extends
+public interface RiskAnalysisJobConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.RiskAnalysisJobConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Privacy metric to compute.
    * </pre>
@@ -16,6 +19,8 @@ public interface RiskAnalysisJobConfigOrBuilder extends
    */
   boolean hasPrivacyMetric();
   /**
+   *
+   *
    * <pre>
    * Privacy metric to compute.
    * </pre>
@@ -24,6 +29,8 @@ public interface RiskAnalysisJobConfigOrBuilder extends
    */
   com.google.privacy.dlp.v2.PrivacyMetric getPrivacyMetric();
   /**
+   *
+   *
    * <pre>
    * Privacy metric to compute.
    * </pre>
@@ -33,6 +40,8 @@ public interface RiskAnalysisJobConfigOrBuilder extends
   com.google.privacy.dlp.v2.PrivacyMetricOrBuilder getPrivacyMetricOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Input dataset to compute metrics over.
    * </pre>
@@ -41,6 +50,8 @@ public interface RiskAnalysisJobConfigOrBuilder extends
    */
   boolean hasSourceTable();
   /**
+   *
+   *
    * <pre>
    * Input dataset to compute metrics over.
    * </pre>
@@ -49,6 +60,8 @@ public interface RiskAnalysisJobConfigOrBuilder extends
    */
   com.google.privacy.dlp.v2.BigQueryTable getSourceTable();
   /**
+   *
+   *
    * <pre>
    * Input dataset to compute metrics over.
    * </pre>
@@ -58,6 +71,8 @@ public interface RiskAnalysisJobConfigOrBuilder extends
   com.google.privacy.dlp.v2.BigQueryTableOrBuilder getSourceTableOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Actions to execute at the completion of the job. Are executed in the order
    * provided.
@@ -65,9 +80,10 @@ public interface RiskAnalysisJobConfigOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.Action actions = 3;</code>
    */
-  java.util.List<com.google.privacy.dlp.v2.Action> 
-      getActionsList();
+  java.util.List<com.google.privacy.dlp.v2.Action> getActionsList();
   /**
+   *
+   *
    * <pre>
    * Actions to execute at the completion of the job. Are executed in the order
    * provided.
@@ -77,6 +93,8 @@ public interface RiskAnalysisJobConfigOrBuilder extends
    */
   com.google.privacy.dlp.v2.Action getActions(int index);
   /**
+   *
+   *
    * <pre>
    * Actions to execute at the completion of the job. Are executed in the order
    * provided.
@@ -86,6 +104,8 @@ public interface RiskAnalysisJobConfigOrBuilder extends
    */
   int getActionsCount();
   /**
+   *
+   *
    * <pre>
    * Actions to execute at the completion of the job. Are executed in the order
    * provided.
@@ -93,9 +113,10 @@ public interface RiskAnalysisJobConfigOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.Action actions = 3;</code>
    */
-  java.util.List<? extends com.google.privacy.dlp.v2.ActionOrBuilder> 
-      getActionsOrBuilderList();
+  java.util.List<? extends com.google.privacy.dlp.v2.ActionOrBuilder> getActionsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Actions to execute at the completion of the job. Are executed in the order
    * provided.
@@ -103,6 +124,5 @@ public interface RiskAnalysisJobConfigOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.Action actions = 3;</code>
    */
-  com.google.privacy.dlp.v2.ActionOrBuilder getActionsOrBuilder(
-      int index);
+  com.google.privacy.dlp.v2.ActionOrBuilder getActionsOrBuilder(int index);
 }
