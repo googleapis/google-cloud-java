@@ -15,7 +15,6 @@
  */
 package com.google.cloud.examples.bigtable;
 
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -30,17 +29,22 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
+import java.util.Random;
+import java.util.concurrent.TimeUnit;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import org.junit.AfterClass;
 import org.junit.AssumptionViolatedException;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class HelloWorldTest {
+public class ITHelloWorld {
 
   private static final String INSTANCE_PROPERTY_NAME = "bigtable.instance";
+  private static final String TABLE_PREFIX = "table";
   private static String tableId;
-  private static final String columnFamily = "cf1";
+  private static final String COLUMN_FAMILY = "cf1";
   private static BigtableDataClient dataClient;
   private static BigtableTableAdminClient adminClient;
   private static HelloWorld helloWorld;
@@ -49,12 +53,12 @@ public class HelloWorldTest {
   @BeforeClass
   public static void beforeClass() throws IOException {
     String targetInstance = System.getProperty(INSTANCE_PROPERTY_NAME);
-    instanceName = InstanceName.parse(targetInstance);
     if (targetInstance == null) {
       dataClient = null;
       adminClient = null;
       return;
     }
+    instanceName = InstanceName.parse(targetInstance);
     BigtableDataSettings settings =
         BigtableDataSettings.newBuilder().setInstanceName(instanceName).build();
     dataClient = BigtableDataClient.create(settings);
@@ -68,6 +72,7 @@ public class HelloWorldTest {
   @AfterClass
   public static void afterClass() throws Exception {
     adminClient.deleteTable(tableId);
+    garbageCollect();
     dataClient.close();
     adminClient.close();
   }
@@ -78,17 +83,17 @@ public class HelloWorldTest {
       throw new AssumptionViolatedException(
           INSTANCE_PROPERTY_NAME + " property is not set, skipping integration tests.");
     }
-    tableId = "test-table";
+    tableId = generateTableId();
     helloWorld = new HelloWorld(instanceName.getProject(), instanceName.getInstance(), tableId);
     if (!adminClient.exists(tableId)) {
-      adminClient.createTable(CreateTableRequest.of(tableId).addFamily(columnFamily));
+      adminClient.createTable(CreateTableRequest.of(tableId).addFamily(COLUMN_FAMILY));
     }
   }
 
   @Test
   public void testCreateAndDeleteTable() throws IOException {
     // Create table
-    String fakeTable = "fake-table";
+    String fakeTable = generateTableId();
     HelloWorld testHelloWorld =
         new HelloWorld(instanceName.getProject(), instanceName.getInstance(), fakeTable);
     testHelloWorld.createTable();
@@ -127,21 +132,31 @@ public class HelloWorldTest {
     OutputStream outputStream = new ByteArrayOutputStream();
     System.setOut(new PrintStream(outputStream));
     helloWorld.readTable();
-    assertTrue(
-        outputStream.toString().contains("============= Reading the entire table ============="));
+    assertTrue(outputStream.toString().contains("Reading the entire table"));
 
     // Restore normal output
     System.setOut(new PrintStream(System.out));
   }
 
-  @Test
-  public void testGarbageCollect() {
-    boolean exceptionThrown = false;
-    try {
-      helloWorld.garbageCollect();
-    } catch (Exception e) {
-      exceptionThrown = true;
+  private static String generateTableId() {
+    return String.format(
+        "%s-%016x-%d", TABLE_PREFIX, System.currentTimeMillis(), new Random().nextLong());
+  }
+
+  public static void garbageCollect() {
+    Pattern timestampPattern = Pattern.compile(TABLE_PREFIX + "-([0-9]+)");
+    for (String tableId : adminClient.listTables()) {
+      Matcher matcher = timestampPattern.matcher(tableId);
+      if (!matcher.matches()) {
+        continue;
+      }
+      String timestampStr = matcher.group(1);
+      long timestamp = Long.parseLong(timestampStr);
+      if (System.currentTimeMillis() - timestamp < TimeUnit.MINUTES.toMillis(15)) {
+        continue;
+      }
+      System.out.println("Garbage collecting orphaned table: " + tableId);
+      adminClient.deleteTable(tableId);
     }
-    assertFalse(exceptionThrown);
   }
 }

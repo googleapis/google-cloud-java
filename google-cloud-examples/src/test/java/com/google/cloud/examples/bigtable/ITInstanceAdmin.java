@@ -36,7 +36,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class InstanceAdminTest {
+public class ITInstanceAdmin {
 
   private static final String INSTANCE_PROPERTY_NAME = "bigtable.instance";
   private static final String PRODUCTION_INSTANCE = "test-instance";
@@ -46,10 +46,11 @@ public class InstanceAdminTest {
   @BeforeClass
   public static void beforeClass() throws IOException {
     String targetProject = System.getProperty(INSTANCE_PROPERTY_NAME);
-    ProjectName projectName = ProjectName.of(InstanceName.parse(targetProject).getProject());
     if (targetProject == null) {
       adminClient = null;
+      return;
     }
+    ProjectName projectName = ProjectName.of(InstanceName.parse(targetProject).getProject());
     BigtableInstanceAdminSettings instanceAdminSettings =
         BigtableInstanceAdminSettings.newBuilder().setProjectName(projectName).build();
     adminClient = BigtableInstanceAdminClient.create(instanceAdminSettings);

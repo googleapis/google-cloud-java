@@ -33,7 +33,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class TableAdminTest {
+public class ITTableAdmin {
 
   private static final String INSTANCE_PROPERTY_NAME = "bigtable.instance";
   private static final String TABLE_ID = "test-table" + System.currentTimeMillis();
