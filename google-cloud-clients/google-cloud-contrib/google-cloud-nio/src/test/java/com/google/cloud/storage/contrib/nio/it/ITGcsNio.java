@@ -733,6 +733,38 @@ public class ITGcsNio {
     }
   }
 
+
+  /**
+   * Google Cloud Storage allows for a folder and file to have the same name.
+   * Let's make sure directories work in this setting too.
+   */
+  @Test
+  public void testSameNameFileAndDir() throws IOException {
+    // When pseudo-dirs are enabled, NIO wisely prevents us from creating files
+    // ending with "/". So turn it off for this test.
+    CloudStorageFileSystem noPseudoDirBucket = getNoPseudoDirBucket();
+    Path ambiguous = noPseudoDirBucket.getPath("ambiguous/");
+    Files.createFile(ambiguous);
+    Path inambiguous = noPseudoDirBucket.getPath("ambiguous/ambiguous");
+    Files.createFile(inambiguous);
+    try {
+      assertThat(Files.exists(inambiguous)).isTrue();
+      assertThat(Files.exists(ambiguous)).isTrue();
+      // Without pseudodirs we get the straight answer: yes, this is a file.
+      assertThat(Files.isRegularFile(ambiguous)).isTrue();
+      // When pseudodirs is enabled, the "/"-ending file *also* appears as a directory.
+      CloudStorageFileSystem testBucket = getTestBucket();
+      // Yes, this path is a directory
+      Path both = testBucket.getPath("ambiguous/");
+      assertThat(Files.isDirectory(both)).isTrue();
+      // Also yes, this path is a file.
+      assertThat(Files.isRegularFile(both)).isTrue();
+    } finally {
+      Files.delete(ambiguous);
+      Files.delete(inambiguous);
+    }
+  }
+
   /**
    * Delete the given directory and all of its contents if non-empty.
    *
@@ -825,5 +857,15 @@ public class ITGcsNio {
             .userProject(userProject)
             .build();
     return CloudStorageFileSystem.forBucket(REQUESTER_PAYS_BUCKET, config, storageOptions);
+  }
+
+  private CloudStorageFileSystem getNoPseudoDirBucket() throws IOException {
+
+    CloudStorageConfiguration config =
+        CloudStorageConfiguration.builder()
+            .usePseudoDirectories(false)
+            .build();
+    return CloudStorageFileSystem.forBucket(
+        BUCKET, config, storageOptions);
   }
 }

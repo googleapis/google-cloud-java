@@ -51,6 +51,7 @@ import java.nio.file.DirectoryStream;
 import java.nio.file.DirectoryStream.Filter;
 import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.FileStore;
+import java.nio.file.FileSystem;
 import java.nio.file.Files;
 import java.nio.file.LinkOption;
 import java.nio.file.NoSuchFileException;
@@ -768,6 +769,18 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
         }
         CloudStorageObjectAttributes ret;
         ret = new CloudStorageObjectAttributes(blobInfo);
+        FileSystem filesystem = path.getFileSystem();
+        if (filesystem instanceof CloudStorageFileSystem) {
+          CloudStorageFileSystem fs = (CloudStorageFileSystem)filesystem;
+          if (fs.config().usePseudoDirectories() && cloudPath.seemsLikeADirectory()) {
+            // special case handling for files that end with '/': they are both
+            // files and directories. Such files can be created in normal usage
+            // so we really have to deal with them.
+            @SuppressWarnings("unchecked")
+            A result = (A) new CloudStorageFileAndDirectoryAttributes(ret, cloudPath);
+            return result;
+          }
+        }
         @SuppressWarnings("unchecked")
         A result = (A) ret;
         return result;
