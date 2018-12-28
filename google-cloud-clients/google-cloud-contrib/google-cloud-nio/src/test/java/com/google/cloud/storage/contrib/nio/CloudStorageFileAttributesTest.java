@@ -108,7 +108,8 @@ public class CloudStorageFileAttributesTest {
   @Test
   public void testIsPseudoDirectory() throws IOException {
     Files.write(path, EMPTY);
-    assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).isDirectory()).isFalse();
+    assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).isDirectory())
+        .isFalse();
     assertThat(Files.readAttributes(dir, CloudStorageFileAttributes.class).isDirectory()).isTrue();
   }
 
