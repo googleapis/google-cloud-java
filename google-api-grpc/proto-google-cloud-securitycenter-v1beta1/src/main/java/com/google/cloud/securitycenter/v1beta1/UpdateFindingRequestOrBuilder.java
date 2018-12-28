@@ -3,11 +3,14 @@
 
 package com.google.cloud.securitycenter.v1beta1;
 
-public interface UpdateFindingRequestOrBuilder extends
+public interface UpdateFindingRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.securitycenter.v1beta1.UpdateFindingRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The finding resource to update or create if it does not already exist.
    * parent, security_marks, and update_time will be ignored.
@@ -20,6 +23,8 @@ public interface UpdateFindingRequestOrBuilder extends
    */
   boolean hasFinding();
   /**
+   *
+   *
    * <pre>
    * The finding resource to update or create if it does not already exist.
    * parent, security_marks, and update_time will be ignored.
@@ -32,6 +37,8 @@ public interface UpdateFindingRequestOrBuilder extends
    */
   com.google.cloud.securitycenter.v1beta1.Finding getFinding();
   /**
+   *
+   *
    * <pre>
    * The finding resource to update or create if it does not already exist.
    * parent, security_marks, and update_time will be ignored.
@@ -45,6 +52,8 @@ public interface UpdateFindingRequestOrBuilder extends
   com.google.cloud.securitycenter.v1beta1.FindingOrBuilder getFindingOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The FieldMask to use when updating the finding resource. This field is
    * ignored if the finding does not already exist and the finding is created.
@@ -54,6 +63,8 @@ public interface UpdateFindingRequestOrBuilder extends
    */
   boolean hasUpdateMask();
   /**
+   *
+   *
    * <pre>
    * The FieldMask to use when updating the finding resource. This field is
    * ignored if the finding does not already exist and the finding is created.
@@ -63,6 +74,8 @@ public interface UpdateFindingRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
+   *
+   *
    * <pre>
    * The FieldMask to use when updating the finding resource. This field is
    * ignored if the finding does not already exist and the finding is created.

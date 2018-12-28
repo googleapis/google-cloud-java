@@ -4,29 +4,31 @@
 package com.google.cloud.securitycenter.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * Request message for updating a source.
  * </pre>
  *
  * Protobuf type {@code google.cloud.securitycenter.v1beta1.UpdateSourceRequest}
  */
-public  final class UpdateSourceRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1beta1.UpdateSourceRequest)
     UpdateSourceRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use UpdateSourceRequest.newBuilder() to construct.
   private UpdateSourceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private UpdateSourceRequest() {
-  }
+
+  private UpdateSourceRequest() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private UpdateSourceRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -46,67 +48,76 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.cloud.securitycenter.v1beta1.Source.Builder subBuilder = null;
-            if (source_ != null) {
-              subBuilder = source_.toBuilder();
-            }
-            source_ = input.readMessage(com.google.cloud.securitycenter.v1beta1.Source.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(source_);
-              source_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.cloud.securitycenter.v1beta1.Source.Builder subBuilder = null;
+              if (source_ != null) {
+                subBuilder = source_.toBuilder();
+              }
+              source_ =
+                  input.readMessage(
+                      com.google.cloud.securitycenter.v1beta1.Source.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(source_);
+                source_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 18: {
-            com.google.protobuf.FieldMask.Builder subBuilder = null;
-            if (updateMask_ != null) {
-              subBuilder = updateMask_.toBuilder();
+              break;
             }
-            updateMask_ = input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(updateMask_);
-              updateMask_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.protobuf.FieldMask.Builder subBuilder = null;
+              if (updateMask_ != null) {
+                subBuilder = updateMask_.toBuilder();
+              }
+              updateMask_ =
+                  input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(updateMask_);
+                updateMask_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.securitycenter.v1beta1.SecuritycenterService.internal_static_google_cloud_securitycenter_v1beta1_UpdateSourceRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.securitycenter.v1beta1.SecuritycenterService
+        .internal_static_google_cloud_securitycenter_v1beta1_UpdateSourceRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.securitycenter.v1beta1.SecuritycenterService.internal_static_google_cloud_securitycenter_v1beta1_UpdateSourceRequest_fieldAccessorTable
+    return com.google.cloud.securitycenter.v1beta1.SecuritycenterService
+        .internal_static_google_cloud_securitycenter_v1beta1_UpdateSourceRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest.class, com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest.Builder.class);
+            com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest.class,
+            com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest.Builder.class);
   }
 
   public static final int SOURCE_FIELD_NUMBER = 1;
   private com.google.cloud.securitycenter.v1beta1.Source source_;
   /**
+   *
+   *
    * <pre>
    * The source resource to update.
    * </pre>
@@ -117,6 +128,8 @@ private static final long serialVersionUID = 0L;
     return source_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The source resource to update.
    * </pre>
@@ -124,9 +137,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.securitycenter.v1beta1.Source source = 1;</code>
    */
   public com.google.cloud.securitycenter.v1beta1.Source getSource() {
-    return source_ == null ? com.google.cloud.securitycenter.v1beta1.Source.getDefaultInstance() : source_;
+    return source_ == null
+        ? com.google.cloud.securitycenter.v1beta1.Source.getDefaultInstance()
+        : source_;
   }
   /**
+   *
+   *
    * <pre>
    * The source resource to update.
    * </pre>
@@ -140,6 +157,8 @@ private static final long serialVersionUID = 0L;
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
   /**
+   *
+   *
    * <pre>
    * The FieldMask to use when updating the source resource.
    * </pre>
@@ -150,6 +169,8 @@ private static final long serialVersionUID = 0L;
     return updateMask_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The FieldMask to use when updating the source resource.
    * </pre>
@@ -160,6 +181,8 @@ private static final long serialVersionUID = 0L;
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
   /**
+   *
+   *
    * <pre>
    * The FieldMask to use when updating the source resource.
    * </pre>
@@ -171,6 +194,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -182,8 +206,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (source_ != null) {
       output.writeMessage(1, getSource());
     }
@@ -200,12 +223,10 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (source_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getSource());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getSource());
     }
     if (updateMask_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getUpdateMask());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getUpdateMask());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -215,23 +236,22 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest other = (com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest) obj;
+    com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest other =
+        (com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest) obj;
 
     boolean result = true;
     result = result && (hasSource() == other.hasSource());
     if (hasSource()) {
-      result = result && getSource()
-          .equals(other.getSource());
+      result = result && getSource().equals(other.getSource());
     }
     result = result && (hasUpdateMask() == other.hasUpdateMask());
     if (hasUpdateMask()) {
-      result = result && getUpdateMask()
-          .equals(other.getUpdateMask());
+      result = result && getUpdateMask().equals(other.getUpdateMask());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -258,117 +278,127 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest prototype) {
+
+  public static Builder newBuilder(
+      com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Request message for updating a source.
    * </pre>
    *
    * Protobuf type {@code google.cloud.securitycenter.v1beta1.UpdateSourceRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.securitycenter.v1beta1.UpdateSourceRequest)
       com.google.cloud.securitycenter.v1beta1.UpdateSourceRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.securitycenter.v1beta1.SecuritycenterService.internal_static_google_cloud_securitycenter_v1beta1_UpdateSourceRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.securitycenter.v1beta1.SecuritycenterService
+          .internal_static_google_cloud_securitycenter_v1beta1_UpdateSourceRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.securitycenter.v1beta1.SecuritycenterService.internal_static_google_cloud_securitycenter_v1beta1_UpdateSourceRequest_fieldAccessorTable
+      return com.google.cloud.securitycenter.v1beta1.SecuritycenterService
+          .internal_static_google_cloud_securitycenter_v1beta1_UpdateSourceRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest.class, com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest.Builder.class);
+              com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest.class,
+              com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest.Builder.class);
     }
 
     // Construct using com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest.newBuilder()
@@ -376,16 +406,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -405,9 +434,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.securitycenter.v1beta1.SecuritycenterService.internal_static_google_cloud_securitycenter_v1beta1_UpdateSourceRequest_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.securitycenter.v1beta1.SecuritycenterService
+          .internal_static_google_cloud_securitycenter_v1beta1_UpdateSourceRequest_descriptor;
     }
 
     @java.lang.Override
@@ -426,7 +455,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest buildPartial() {
-      com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest result = new com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest(this);
+      com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest result =
+          new com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest(this);
       if (sourceBuilder_ == null) {
         result.source_ = source_;
       } else {
@@ -445,38 +475,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest) {
-        return mergeFrom((com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest)other);
+        return mergeFrom((com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -484,7 +515,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest other) {
-      if (other == com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest.getDefaultInstance()) return this;
+      if (other == com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest.getDefaultInstance())
+        return this;
       if (other.hasSource()) {
         mergeSource(other.getSource());
       }
@@ -510,7 +542,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -522,8 +555,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.securitycenter.v1beta1.Source source_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.securitycenter.v1beta1.Source, com.google.cloud.securitycenter.v1beta1.Source.Builder, com.google.cloud.securitycenter.v1beta1.SourceOrBuilder> sourceBuilder_;
+            com.google.cloud.securitycenter.v1beta1.Source,
+            com.google.cloud.securitycenter.v1beta1.Source.Builder,
+            com.google.cloud.securitycenter.v1beta1.SourceOrBuilder>
+        sourceBuilder_;
     /**
+     *
+     *
      * <pre>
      * The source resource to update.
      * </pre>
@@ -534,6 +572,8 @@ private static final long serialVersionUID = 0L;
       return sourceBuilder_ != null || source_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The source resource to update.
      * </pre>
@@ -542,12 +582,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.securitycenter.v1beta1.Source getSource() {
       if (sourceBuilder_ == null) {
-        return source_ == null ? com.google.cloud.securitycenter.v1beta1.Source.getDefaultInstance() : source_;
+        return source_ == null
+            ? com.google.cloud.securitycenter.v1beta1.Source.getDefaultInstance()
+            : source_;
       } else {
         return sourceBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The source resource to update.
      * </pre>
@@ -568,6 +612,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The source resource to update.
      * </pre>
@@ -586,6 +632,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The source resource to update.
      * </pre>
@@ -596,7 +644,9 @@ private static final long serialVersionUID = 0L;
       if (sourceBuilder_ == null) {
         if (source_ != null) {
           source_ =
-            com.google.cloud.securitycenter.v1beta1.Source.newBuilder(source_).mergeFrom(value).buildPartial();
+              com.google.cloud.securitycenter.v1beta1.Source.newBuilder(source_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           source_ = value;
         }
@@ -608,6 +658,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The source resource to update.
      * </pre>
@@ -626,6 +678,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The source resource to update.
      * </pre>
@@ -633,11 +687,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.securitycenter.v1beta1.Source source = 1;</code>
      */
     public com.google.cloud.securitycenter.v1beta1.Source.Builder getSourceBuilder() {
-      
+
       onChanged();
       return getSourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The source resource to update.
      * </pre>
@@ -648,11 +704,14 @@ private static final long serialVersionUID = 0L;
       if (sourceBuilder_ != null) {
         return sourceBuilder_.getMessageOrBuilder();
       } else {
-        return source_ == null ?
-            com.google.cloud.securitycenter.v1beta1.Source.getDefaultInstance() : source_;
+        return source_ == null
+            ? com.google.cloud.securitycenter.v1beta1.Source.getDefaultInstance()
+            : source_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The source resource to update.
      * </pre>
@@ -660,14 +719,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.securitycenter.v1beta1.Source source = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.securitycenter.v1beta1.Source, com.google.cloud.securitycenter.v1beta1.Source.Builder, com.google.cloud.securitycenter.v1beta1.SourceOrBuilder> 
+            com.google.cloud.securitycenter.v1beta1.Source,
+            com.google.cloud.securitycenter.v1beta1.Source.Builder,
+            com.google.cloud.securitycenter.v1beta1.SourceOrBuilder>
         getSourceFieldBuilder() {
       if (sourceBuilder_ == null) {
-        sourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.securitycenter.v1beta1.Source, com.google.cloud.securitycenter.v1beta1.Source.Builder, com.google.cloud.securitycenter.v1beta1.SourceOrBuilder>(
-                getSource(),
-                getParentForChildren(),
-                isClean());
+        sourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.securitycenter.v1beta1.Source,
+                com.google.cloud.securitycenter.v1beta1.Source.Builder,
+                com.google.cloud.securitycenter.v1beta1.SourceOrBuilder>(
+                getSource(), getParentForChildren(), isClean());
         source_ = null;
       }
       return sourceBuilder_;
@@ -675,8 +737,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.FieldMask updateMask_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> updateMaskBuilder_;
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        updateMaskBuilder_;
     /**
+     *
+     *
      * <pre>
      * The FieldMask to use when updating the source resource.
      * </pre>
@@ -687,6 +754,8 @@ private static final long serialVersionUID = 0L;
       return updateMaskBuilder_ != null || updateMask_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The FieldMask to use when updating the source resource.
      * </pre>
@@ -695,12 +764,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {
-        return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+        return updateMask_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : updateMask_;
       } else {
         return updateMaskBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The FieldMask to use when updating the source resource.
      * </pre>
@@ -721,14 +794,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The FieldMask to use when updating the source resource.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
-    public Builder setUpdateMask(
-        com.google.protobuf.FieldMask.Builder builderForValue) {
+    public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
         onChanged();
@@ -739,6 +813,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The FieldMask to use when updating the source resource.
      * </pre>
@@ -749,7 +825,7 @@ private static final long serialVersionUID = 0L;
       if (updateMaskBuilder_ == null) {
         if (updateMask_ != null) {
           updateMask_ =
-            com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
         } else {
           updateMask_ = value;
         }
@@ -761,6 +837,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The FieldMask to use when updating the source resource.
      * </pre>
@@ -779,6 +857,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The FieldMask to use when updating the source resource.
      * </pre>
@@ -786,11 +866,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-      
+
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The FieldMask to use when updating the source resource.
      * </pre>
@@ -801,11 +883,14 @@ private static final long serialVersionUID = 0L;
       if (updateMaskBuilder_ != null) {
         return updateMaskBuilder_.getMessageOrBuilder();
       } else {
-        return updateMask_ == null ?
-            com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+        return updateMask_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : updateMask_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The FieldMask to use when updating the source resource.
      * </pre>
@@ -813,21 +898,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> 
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
         getUpdateMaskFieldBuilder() {
       if (updateMaskBuilder_ == null) {
-        updateMaskBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder>(
-                getUpdateMask(),
-                getParentForChildren(),
-                isClean());
+        updateMaskBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.FieldMask,
+                com.google.protobuf.FieldMask.Builder,
+                com.google.protobuf.FieldMaskOrBuilder>(
+                getUpdateMask(), getParentForChildren(), isClean());
         updateMask_ = null;
       }
       return updateMaskBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -837,12 +925,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.securitycenter.v1beta1.UpdateSourceRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.securitycenter.v1beta1.UpdateSourceRequest)
   private static final com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest();
   }
@@ -851,16 +939,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<UpdateSourceRequest>
-      PARSER = new com.google.protobuf.AbstractParser<UpdateSourceRequest>() {
-    @java.lang.Override
-    public UpdateSourceRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new UpdateSourceRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<UpdateSourceRequest> PARSER =
+      new com.google.protobuf.AbstractParser<UpdateSourceRequest>() {
+        @java.lang.Override
+        public UpdateSourceRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new UpdateSourceRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<UpdateSourceRequest> parser() {
     return PARSER;
@@ -875,6 +963,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.securitycenter.v1beta1.UpdateSourceRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

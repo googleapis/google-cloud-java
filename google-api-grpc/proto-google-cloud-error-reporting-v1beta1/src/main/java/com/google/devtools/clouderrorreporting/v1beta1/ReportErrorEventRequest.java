@@ -4,30 +4,33 @@
 package com.google.devtools.clouderrorreporting.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * A request for reporting an individual error event.
  * </pre>
  *
  * Protobuf type {@code google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest}
  */
-public  final class ReportErrorEventRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ReportErrorEventRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest)
     ReportErrorEventRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ReportErrorEventRequest.newBuilder() to construct.
   private ReportErrorEventRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ReportErrorEventRequest() {
     projectName_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ReportErrorEventRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -47,60 +50,70 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            projectName_ = s;
-            break;
-          }
-          case 18: {
-            com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent.Builder subBuilder = null;
-            if (event_ != null) {
-              subBuilder = event_.toBuilder();
+              projectName_ = s;
+              break;
             }
-            event_ = input.readMessage(com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(event_);
-              event_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent.Builder
+                  subBuilder = null;
+              if (event_ != null) {
+                subBuilder = event_.toBuilder();
+              }
+              event_ =
+                  input.readMessage(
+                      com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(event_);
+                event_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.devtools.clouderrorreporting.v1beta1.ReportErrorsServiceProto.internal_static_google_devtools_clouderrorreporting_v1beta1_ReportErrorEventRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.devtools.clouderrorreporting.v1beta1.ReportErrorsServiceProto
+        .internal_static_google_devtools_clouderrorreporting_v1beta1_ReportErrorEventRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.devtools.clouderrorreporting.v1beta1.ReportErrorsServiceProto.internal_static_google_devtools_clouderrorreporting_v1beta1_ReportErrorEventRequest_fieldAccessorTable
+    return com.google.devtools.clouderrorreporting.v1beta1.ReportErrorsServiceProto
+        .internal_static_google_devtools_clouderrorreporting_v1beta1_ReportErrorEventRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest.class, com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest.Builder.class);
+            com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest.class,
+            com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest.Builder.class);
   }
 
   public static final int PROJECT_NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object projectName_;
   /**
+   *
+   *
    * <pre>
    * [Required] The resource name of the Google Cloud Platform project. Written
    * as `projects/` plus the
@@ -115,14 +128,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       projectName_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * [Required] The resource name of the Google Cloud Platform project. Written
    * as `projects/` plus the
@@ -132,13 +146,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string project_name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getProjectNameBytes() {
+  public com.google.protobuf.ByteString getProjectNameBytes() {
     java.lang.Object ref = projectName_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       projectName_ = b;
       return b;
     } else {
@@ -149,6 +161,8 @@ private static final long serialVersionUID = 0L;
   public static final int EVENT_FIELD_NUMBER = 2;
   private com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent event_;
   /**
+   *
+   *
    * <pre>
    * [Required] The error event to be reported.
    * </pre>
@@ -159,6 +173,8 @@ private static final long serialVersionUID = 0L;
     return event_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * [Required] The error event to be reported.
    * </pre>
@@ -166,20 +182,26 @@ private static final long serialVersionUID = 0L;
    * <code>.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent event = 2;</code>
    */
   public com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent getEvent() {
-    return event_ == null ? com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent.getDefaultInstance() : event_;
+    return event_ == null
+        ? com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent.getDefaultInstance()
+        : event_;
   }
   /**
+   *
+   *
    * <pre>
    * [Required] The error event to be reported.
    * </pre>
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent event = 2;</code>
    */
-  public com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEventOrBuilder getEventOrBuilder() {
+  public com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEventOrBuilder
+      getEventOrBuilder() {
     return getEvent();
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -191,8 +213,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getProjectNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectName_);
     }
@@ -212,8 +233,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, projectName_);
     }
     if (event_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getEvent());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getEvent());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -223,20 +243,19 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest)) {
       return super.equals(obj);
     }
-    com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest other = (com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest) obj;
+    com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest other =
+        (com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest) obj;
 
     boolean result = true;
-    result = result && getProjectName()
-        .equals(other.getProjectName());
+    result = result && getProjectName().equals(other.getProjectName());
     result = result && (hasEvent() == other.hasEvent());
     if (hasEvent()) {
-      result = result && getEvent()
-          .equals(other.getEvent());
+      result = result && getEvent().equals(other.getEvent());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -261,134 +280,146 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+
+  public static com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
-  public static com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-  }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
+  public static com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest
+      parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+  }
+
+  public static com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest
+      parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
+  public static com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest parseFrom(
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+  }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest prototype) {
+
+  public static Builder newBuilder(
+      com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A request for reporting an individual error event.
    * </pre>
    *
    * Protobuf type {@code google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest)
       com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.devtools.clouderrorreporting.v1beta1.ReportErrorsServiceProto.internal_static_google_devtools_clouderrorreporting_v1beta1_ReportErrorEventRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.devtools.clouderrorreporting.v1beta1.ReportErrorsServiceProto
+          .internal_static_google_devtools_clouderrorreporting_v1beta1_ReportErrorEventRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.devtools.clouderrorreporting.v1beta1.ReportErrorsServiceProto.internal_static_google_devtools_clouderrorreporting_v1beta1_ReportErrorEventRequest_fieldAccessorTable
+      return com.google.devtools.clouderrorreporting.v1beta1.ReportErrorsServiceProto
+          .internal_static_google_devtools_clouderrorreporting_v1beta1_ReportErrorEventRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest.class, com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest.Builder.class);
+              com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest.class,
+              com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest.Builder
+                  .class);
     }
 
-    // Construct using com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest.newBuilder()
+    // Construct using
+    // com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -404,19 +435,22 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.devtools.clouderrorreporting.v1beta1.ReportErrorsServiceProto.internal_static_google_devtools_clouderrorreporting_v1beta1_ReportErrorEventRequest_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.devtools.clouderrorreporting.v1beta1.ReportErrorsServiceProto
+          .internal_static_google_devtools_clouderrorreporting_v1beta1_ReportErrorEventRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest getDefaultInstanceForType() {
-      return com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest.getDefaultInstance();
+    public com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest
+        getDefaultInstanceForType() {
+      return com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest
+          .getDefaultInstance();
     }
 
     @java.lang.Override
     public com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest build() {
-      com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest result = buildPartial();
+      com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest result =
+          buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -425,7 +459,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest buildPartial() {
-      com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest result = new com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest(this);
+      com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest result =
+          new com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest(this);
       result.projectName_ = projectName_;
       if (eventBuilder_ == null) {
         result.event_ = event_;
@@ -440,46 +475,52 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest) {
-        return mergeFrom((com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest)other);
+      if (other
+          instanceof com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest) {
+        return mergeFrom(
+            (com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest other) {
-      if (other == com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(
+        com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest other) {
+      if (other
+          == com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest
+              .getDefaultInstance()) return this;
       if (!other.getProjectName().isEmpty()) {
         projectName_ = other.projectName_;
         onChanged();
@@ -506,7 +547,9 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -518,6 +561,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object projectName_ = "";
     /**
+     *
+     *
      * <pre>
      * [Required] The resource name of the Google Cloud Platform project. Written
      * as `projects/` plus the
@@ -530,8 +575,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getProjectName() {
       java.lang.Object ref = projectName_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         projectName_ = s;
         return s;
@@ -540,6 +584,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Required] The resource name of the Google Cloud Platform project. Written
      * as `projects/` plus the
@@ -549,13 +595,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string project_name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getProjectNameBytes() {
+    public com.google.protobuf.ByteString getProjectNameBytes() {
       java.lang.Object ref = projectName_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         projectName_ = b;
         return b;
       } else {
@@ -563,6 +607,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Required] The resource name of the Google Cloud Platform project. Written
      * as `projects/` plus the
@@ -572,17 +618,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string project_name = 1;</code>
      */
-    public Builder setProjectName(
-        java.lang.String value) {
+    public Builder setProjectName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       projectName_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Required] The resource name of the Google Cloud Platform project. Written
      * as `projects/` plus the
@@ -593,12 +640,14 @@ private static final long serialVersionUID = 0L;
      * <code>string project_name = 1;</code>
      */
     public Builder clearProjectName() {
-      
+
       projectName_ = getDefaultInstance().getProjectName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Required] The resource name of the Google Cloud Platform project. Written
      * as `projects/` plus the
@@ -608,13 +657,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string project_name = 1;</code>
      */
-    public Builder setProjectNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setProjectNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       projectName_ = value;
       onChanged();
       return this;
@@ -622,8 +670,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent event_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent, com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent.Builder, com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEventOrBuilder> eventBuilder_;
+            com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent,
+            com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent.Builder,
+            com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEventOrBuilder>
+        eventBuilder_;
     /**
+     *
+     *
      * <pre>
      * [Required] The error event to be reported.
      * </pre>
@@ -634,6 +687,8 @@ private static final long serialVersionUID = 0L;
       return eventBuilder_ != null || event_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * [Required] The error event to be reported.
      * </pre>
@@ -642,19 +697,25 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent getEvent() {
       if (eventBuilder_ == null) {
-        return event_ == null ? com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent.getDefaultInstance() : event_;
+        return event_ == null
+            ? com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent
+                .getDefaultInstance()
+            : event_;
       } else {
         return eventBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Required] The error event to be reported.
      * </pre>
      *
      * <code>.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent event = 2;</code>
      */
-    public Builder setEvent(com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent value) {
+    public Builder setEvent(
+        com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent value) {
       if (eventBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -668,6 +729,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Required] The error event to be reported.
      * </pre>
@@ -675,7 +738,8 @@ private static final long serialVersionUID = 0L;
      * <code>.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent event = 2;</code>
      */
     public Builder setEvent(
-        com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent.Builder builderForValue) {
+        com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent.Builder
+            builderForValue) {
       if (eventBuilder_ == null) {
         event_ = builderForValue.build();
         onChanged();
@@ -686,17 +750,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Required] The error event to be reported.
      * </pre>
      *
      * <code>.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent event = 2;</code>
      */
-    public Builder mergeEvent(com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent value) {
+    public Builder mergeEvent(
+        com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent value) {
       if (eventBuilder_ == null) {
         if (event_ != null) {
           event_ =
-            com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent.newBuilder(event_).mergeFrom(value).buildPartial();
+              com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent.newBuilder(event_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           event_ = value;
         }
@@ -708,6 +777,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Required] The error event to be reported.
      * </pre>
@@ -726,33 +797,43 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Required] The error event to be reported.
      * </pre>
      *
      * <code>.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent event = 2;</code>
      */
-    public com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent.Builder getEventBuilder() {
-      
+    public com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent.Builder
+        getEventBuilder() {
+
       onChanged();
       return getEventFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * [Required] The error event to be reported.
      * </pre>
      *
      * <code>.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent event = 2;</code>
      */
-    public com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEventOrBuilder getEventOrBuilder() {
+    public com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEventOrBuilder
+        getEventOrBuilder() {
       if (eventBuilder_ != null) {
         return eventBuilder_.getMessageOrBuilder();
       } else {
-        return event_ == null ?
-            com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent.getDefaultInstance() : event_;
+        return event_ == null
+            ? com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent
+                .getDefaultInstance()
+            : event_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Required] The error event to be reported.
      * </pre>
@@ -760,21 +841,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent event = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent, com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent.Builder, com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEventOrBuilder> 
+            com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent,
+            com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent.Builder,
+            com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEventOrBuilder>
         getEventFieldBuilder() {
       if (eventBuilder_ == null) {
-        eventBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent, com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent.Builder, com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEventOrBuilder>(
-                getEvent(),
-                getParentForChildren(),
-                isClean());
+        eventBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent,
+                com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent.Builder,
+                com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEventOrBuilder>(
+                getEvent(), getParentForChildren(), isClean());
         event_ = null;
       }
       return eventBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -784,30 +868,33 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest)
-  private static final com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest DEFAULT_INSTANCE;
+  private static final com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest
+      DEFAULT_INSTANCE;
+
   static {
-    DEFAULT_INSTANCE = new com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest();
+    DEFAULT_INSTANCE =
+        new com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest();
   }
 
-  public static com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest getDefaultInstance() {
+  public static com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest
+      getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ReportErrorEventRequest>
-      PARSER = new com.google.protobuf.AbstractParser<ReportErrorEventRequest>() {
-    @java.lang.Override
-    public ReportErrorEventRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ReportErrorEventRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ReportErrorEventRequest> PARSER =
+      new com.google.protobuf.AbstractParser<ReportErrorEventRequest>() {
+        @java.lang.Override
+        public ReportErrorEventRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ReportErrorEventRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ReportErrorEventRequest> parser() {
     return PARSER;
@@ -819,9 +906,8 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest getDefaultInstanceForType() {
+  public com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest
+      getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

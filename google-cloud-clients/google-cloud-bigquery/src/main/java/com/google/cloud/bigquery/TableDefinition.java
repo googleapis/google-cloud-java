@@ -23,16 +23,12 @@ import com.google.cloud.StringEnumValue;
 import java.io.Serializable;
 import javax.annotation.Nullable;
 
-/**
- * Base class for a Google BigQuery table definition.
- */
+/** Base class for a Google BigQuery table definition. */
 public abstract class TableDefinition implements Serializable {
 
   private static final long serialVersionUID = -374760330662959529L;
 
-  /**
-   * The table type.
-   */
+  /** The table type. */
   public static final class Type extends StringEnumValue {
     private static final long serialVersionUID = -551560816480511474L;
 
@@ -44,9 +40,7 @@ public abstract class TableDefinition implements Serializable {
           }
         };
 
-    private static final StringEnumType<Type> type = new StringEnumType(
-        Type.class,
-        CONSTRUCTOR);
+    private static final StringEnumType<Type> type = new StringEnumType(Type.class, CONSTRUCTOR);
 
     /**
      * A normal BigQuery table. Instances of {@code TableDefinition} for this type are implemented
@@ -74,7 +68,8 @@ public abstract class TableDefinition implements Serializable {
     /**
      * A BigQuery table representing BigQuery ML Model.
      *
-     * @see <a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create#models_in_bqml_name">
+     * @see <a
+     *     href="https://cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create#models_in_bqml_name">
      *     BigQuery ML Model</a>
      */
     public static final Type MODEL = type.createAndRegister("MODEL");
@@ -84,23 +79,19 @@ public abstract class TableDefinition implements Serializable {
     }
 
     /**
-     * Get the Type for the given String constant, and throw an exception if the constant is
-     * not recognized.
+     * Get the Type for the given String constant, and throw an exception if the constant is not
+     * recognized.
      */
     public static Type valueOfStrict(String constant) {
       return type.valueOfStrict(constant);
     }
 
-    /**
-     * Get the Type for the given String constant, and allow unrecognized values.
-     */
+    /** Get the Type for the given String constant, and allow unrecognized values. */
     public static Type valueOf(String constant) {
       return type.valueOf(constant);
     }
 
-    /**
-     * Return the known values for Type.
-     */
+    /** Return the known values for Type. */
     public static Type[] values() {
       return type.values();
     }
@@ -118,9 +109,7 @@ public abstract class TableDefinition implements Serializable {
     /** Sets the table schema. */
     public abstract B setSchema(Schema schema);
 
-    /**
-     * Creates an object.
-     */
+    /** Creates an object. */
     public abstract T build();
 
     B table(Table tablePb) {
@@ -142,9 +131,7 @@ public abstract class TableDefinition implements Serializable {
   @Nullable
   public abstract Schema getSchema();
 
-  /**
-   * Returns a builder for the object.
-   */
+  /** Returns a builder for the object. */
   public abstract Builder toBuilder();
 
   Table toPb() {

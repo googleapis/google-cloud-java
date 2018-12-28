@@ -28,7 +28,6 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.common.io.BaseEncoding;
 import com.google.protobuf.ByteString;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -60,8 +59,7 @@ public final class Policy implements Serializable {
   public abstract static class Marshaller<T> {
 
     @InternalApi("This class should only be extended within google-cloud-java")
-    protected Marshaller() {
-    }
+    protected Marshaller() {}
 
     protected static final ApiFunction<String, Identity> IDENTITY_VALUE_OF_FUNCTION =
         new ApiFunction<String, Identity>() {
@@ -89,19 +87,24 @@ public final class Policy implements Serializable {
     protected Policy fromPb(com.google.iam.v1.Policy policyPb) {
       Map<Role, Set<Identity>> bindings = new HashMap<>();
       for (com.google.iam.v1.Binding bindingPb : policyPb.getBindingsList()) {
-        bindings.put(Role.of(bindingPb.getRole()),
+        bindings.put(
+            Role.of(bindingPb.getRole()),
             ImmutableSet.copyOf(
-                Lists.transform(bindingPb.getMembersList(), new Function<String, Identity>() {
-                  @Override
-                  public Identity apply(String s) {
-                    return IDENTITY_VALUE_OF_FUNCTION.apply(s);
-                  }
-                })));
+                Lists.transform(
+                    bindingPb.getMembersList(),
+                    new Function<String, Identity>() {
+                      @Override
+                      public Identity apply(String s) {
+                        return IDENTITY_VALUE_OF_FUNCTION.apply(s);
+                      }
+                    })));
       }
       return newBuilder()
           .setBindings(bindings)
-          .setEtag(policyPb.getEtag().isEmpty() ? null
-              : BaseEncoding.base64().encode(policyPb.getEtag().toByteArray()))
+          .setEtag(
+              policyPb.getEtag().isEmpty()
+                  ? null
+                  : BaseEncoding.base64().encode(policyPb.getEtag().toByteArray()))
           .setVersion(policyPb.getVersion())
           .build();
     }
@@ -114,12 +117,14 @@ public final class Policy implements Serializable {
         com.google.iam.v1.Binding.Builder bindingBuilder = com.google.iam.v1.Binding.newBuilder();
         bindingBuilder.setRole(binding.getKey().getValue());
         bindingBuilder.addAllMembers(
-            Lists.transform(new ArrayList<>(binding.getValue()), new Function<Identity, String>() {
-              @Override
-              public String apply(Identity identity) {
-                return IDENTITY_STR_VALUE_FUNCTION.apply(identity);
-              }
-            }));
+            Lists.transform(
+                new ArrayList<>(binding.getValue()),
+                new Function<Identity, String>() {
+                  @Override
+                  public String apply(Identity identity) {
+                    return IDENTITY_STR_VALUE_FUNCTION.apply(identity);
+                  }
+                }));
         bindingPbList.add(bindingBuilder.build());
       }
       policyBuilder.addAllBindings(bindingPbList);
@@ -131,9 +136,7 @@ public final class Policy implements Serializable {
     }
   }
 
-  /**
-   * A builder for {@code Policy} objects.
-   */
+  /** A builder for {@code Policy} objects. */
   public static class Builder {
 
     private final Map<Role, Set<Identity>> bindings = new HashMap<>();
@@ -141,8 +144,7 @@ public final class Policy implements Serializable {
     private int version;
 
     @InternalApi("This class should only be extended within google-cloud-java")
-    protected Builder() {
-    }
+    protected Builder() {}
 
     @InternalApi("This class should only be extended within google-cloud-java")
     protected Builder(Policy policy) {
@@ -150,7 +152,6 @@ public final class Policy implements Serializable {
       setEtag(policy.etag);
       setVersion(policy.version);
     }
-
 
     /**
      * Replaces the builder's map of bindings with the given map of bindings.
@@ -173,9 +174,7 @@ public final class Policy implements Serializable {
       return this;
     }
 
-    /**
-     * Removes the role (and all identities associated with that role) from the policy.
-     */
+    /** Removes the role (and all identities associated with that role) from the policy. */
     public final Builder removeRole(Role role) {
       bindings.remove(role);
       return this;
@@ -229,14 +228,13 @@ public final class Policy implements Serializable {
      * use of the etag in the read-modify-write cycle to perform policy updates in order to avoid
      * race conditions. An etag is returned in the response to getIamPolicy, and systems are
      * expected to put that etag in the request to setIamPolicy to ensure that their change will be
-     * applied to the same version of the policy.  If no etag is provided in the call to
+     * applied to the same version of the policy. If no etag is provided in the call to
      * setIamPolicy, then the existing policy is overwritten blindly.
      */
     public final Builder setEtag(String etag) {
       this.etag = etag;
       return this;
     }
-
 
     /**
      * Sets the version of the policy. The default version is 0, meaning only the "owner", "editor",
@@ -247,9 +245,7 @@ public final class Policy implements Serializable {
       return this;
     }
 
-    /**
-     * Creates a {@code Policy} object.
-     */
+    /** Creates a {@code Policy} object. */
     public final Policy build() {
       return new Policy(this);
     }
@@ -265,37 +261,30 @@ public final class Policy implements Serializable {
     this.version = builder.version;
   }
 
-  /**
-   * Returns a builder containing the properties of this IAM Policy.
-   */
+  /** Returns a builder containing the properties of this IAM Policy. */
   public Builder toBuilder() {
     return new Builder(this);
   }
 
-
-  /**
-   * Returns the map of bindings that comprises the policy.
-   */
+  /** Returns the map of bindings that comprises the policy. */
   public Map<Role, Set<Identity>> getBindings() {
     return bindings;
   }
-
 
   /**
    * Returns the policy's etag.
    *
    * <p>Etags are used for optimistic concurrency control as a way to help prevent simultaneous
-   * updates of a policy from overwriting each other. It is strongly suggested that systems make
-   * use of the etag in the read-modify-write cycle to perform policy updates in order to avoid
-   * race conditions. An etag is returned in the response to getIamPolicy, and systems are
-   * expected to put that etag in the request to setIamPolicy to ensure that their change will be
-   * applied to the same version of the policy.  If no etag is provided in the call to
-   * setIamPolicy, then the existing policy is overwritten blindly.
+   * updates of a policy from overwriting each other. It is strongly suggested that systems make use
+   * of the etag in the read-modify-write cycle to perform policy updates in order to avoid race
+   * conditions. An etag is returned in the response to getIamPolicy, and systems are expected to
+   * put that etag in the request to setIamPolicy to ensure that their change will be applied to the
+   * same version of the policy. If no etag is provided in the call to setIamPolicy, then the
+   * existing policy is overwritten blindly.
    */
   public String getEtag() {
     return etag;
   }
-
 
   /**
    * Returns the version of the policy. The default version is 0, meaning only the "owner",
@@ -333,10 +322,7 @@ public final class Policy implements Serializable {
         && Objects.equals(version, other.getVersion());
   }
 
-
-  /**
-   * Returns a builder for {@code Policy} objects.
-   */
+  /** Returns a builder for {@code Policy} objects. */
   public static Builder newBuilder() {
     return new Builder();
   }

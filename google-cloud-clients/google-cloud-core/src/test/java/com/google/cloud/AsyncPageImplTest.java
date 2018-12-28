@@ -22,25 +22,18 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.paging.AsyncPage;
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
 import java.util.concurrent.ExecutionException;
+import org.junit.Test;
 
 public class AsyncPageImplTest {
 
   private static final ImmutableList<String> VALUES1 = ImmutableList.of("1", "2");
   private static final ImmutableList<String> VALUES2 = ImmutableList.of("3", "4");
   private static final ImmutableList<String> VALUES3 = ImmutableList.of("5", "6");
-  private static final ImmutableList<String> ALL_VALUES = ImmutableList.<String>builder()
-      .addAll(VALUES1)
-      .addAll(VALUES2)
-      .addAll(VALUES3)
-      .build();
-  private static final ImmutableList<String> SOME_VALUES = ImmutableList.<String>builder()
-      .addAll(VALUES2)
-      .addAll(VALUES3)
-      .build();
+  private static final ImmutableList<String> ALL_VALUES =
+      ImmutableList.<String>builder().addAll(VALUES1).addAll(VALUES2).addAll(VALUES3).build();
+  private static final ImmutableList<String> SOME_VALUES =
+      ImmutableList.<String>builder().addAll(VALUES2).addAll(VALUES3).build();
 
   private static class TestPageFetcher implements AsyncPageImpl.NextPageFetcher<String> {
     private static final long serialVersionUID = 4703765400378593176L;
@@ -67,7 +60,6 @@ public class AsyncPageImplTest {
     assertEquals(VALUES1, result.getValues());
   }
 
-
   @Test
   public void testPageAsync() throws ExecutionException, InterruptedException {
     final AsyncPageImpl<String> nextResult = new AsyncPageImpl<>(null, "c", VALUES2);
@@ -77,7 +69,6 @@ public class AsyncPageImplTest {
     assertEquals("c", result.getNextPageToken());
     assertEquals(VALUES1, result.getValues());
   }
-
 
   @Test
   public void testIterateAll() {

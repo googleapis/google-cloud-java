@@ -4,15 +4,18 @@
 package com.google.cloud.vision.v1p3beta1;
 
 /**
+ *
+ *
  * <pre>
  * Specifies the fields to include in product search results.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.vision.v1p3beta1.ProductSearchResultsView}
  */
-public enum ProductSearchResultsView
-    implements com.google.protobuf.ProtocolMessageEnum {
+public enum ProductSearchResultsView implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   *
+   *
    * <pre>
    * Product search results contain only `product_category` and `product_id`.
    * Default value.
@@ -22,6 +25,8 @@ public enum ProductSearchResultsView
    */
   BASIC(0),
   /**
+   *
+   *
    * <pre>
    * Product search results contain `product_category`, `product_id`,
    * `image_uri`, and `score`.
@@ -34,6 +39,8 @@ public enum ProductSearchResultsView
   ;
 
   /**
+   *
+   *
    * <pre>
    * Product search results contain only `product_category` and `product_id`.
    * Default value.
@@ -43,6 +50,8 @@ public enum ProductSearchResultsView
    */
   public static final int BASIC_VALUE = 0;
   /**
+   *
+   *
    * <pre>
    * Product search results contain `product_category`, `product_id`,
    * `image_uri`, and `score`.
@@ -52,7 +61,6 @@ public enum ProductSearchResultsView
    */
   public static final int FULL_VALUE = 1;
 
-
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -61,9 +69,7 @@ public enum ProductSearchResultsView
     return value;
   }
 
-  /**
-   * @deprecated Use {@link #forNumber(int)} instead.
-   */
+  /** @deprecated Use {@link #forNumber(int)} instead. */
   @java.lang.Deprecated
   public static ProductSearchResultsView valueOf(int value) {
     return forNumber(value);
@@ -71,9 +77,12 @@ public enum ProductSearchResultsView
 
   public static ProductSearchResultsView forNumber(int value) {
     switch (value) {
-      case 0: return BASIC;
-      case 1: return FULL;
-      default: return null;
+      case 0:
+        return BASIC;
+      case 1:
+        return FULL;
+      default:
+        return null;
     }
   }
 
@@ -81,25 +90,27 @@ public enum ProductSearchResultsView
       internalGetValueMap() {
     return internalValueMap;
   }
-  private static final com.google.protobuf.Internal.EnumLiteMap<
-      ProductSearchResultsView> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<ProductSearchResultsView>() {
-          public ProductSearchResultsView findValueByNumber(int number) {
-            return ProductSearchResultsView.forNumber(number);
-          }
-        };
 
-  public final com.google.protobuf.Descriptors.EnumValueDescriptor
-      getValueDescriptor() {
+  private static final com.google.protobuf.Internal.EnumLiteMap<ProductSearchResultsView>
+      internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<ProductSearchResultsView>() {
+            public ProductSearchResultsView findValueByNumber(int number) {
+              return ProductSearchResultsView.forNumber(number);
+            }
+          };
+
+  public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
     return getDescriptor().getValues().get(ordinal());
   }
-  public final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptorForType() {
+
+  public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
     return getDescriptor();
   }
-  public static final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptor() {
-    return com.google.cloud.vision.v1p3beta1.ProductSearchProto.getDescriptor().getEnumTypes().get(1);
+
+  public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+    return com.google.cloud.vision.v1p3beta1.ProductSearchProto.getDescriptor()
+        .getEnumTypes()
+        .get(1);
   }
 
   private static final ProductSearchResultsView[] VALUES = values();
@@ -107,8 +118,7 @@ public enum ProductSearchResultsView
   public static ProductSearchResultsView valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
-      throw new java.lang.IllegalArgumentException(
-        "EnumValueDescriptor is not for this type.");
+      throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
     }
     if (desc.getIndex() == -1) {
       return UNRECOGNIZED;
@@ -124,4 +134,3 @@ public enum ProductSearchResultsView
 
   // @@protoc_insertion_point(enum_scope:google.cloud.vision.v1p3beta1.ProductSearchResultsView)
 }
-

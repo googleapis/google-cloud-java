@@ -22,7 +22,6 @@ import com.google.cloud.compute.deprecated.Disk;
 import com.google.cloud.compute.deprecated.DiskId;
 import com.google.cloud.compute.deprecated.Operation;
 import com.google.cloud.compute.deprecated.Snapshot;
-
 import java.util.concurrent.TimeoutException;
 
 /**

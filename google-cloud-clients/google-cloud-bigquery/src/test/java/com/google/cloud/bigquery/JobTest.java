@@ -229,24 +229,24 @@ public class JobTest {
   @Test
   public void testWaitForAndGetQueryResultsEmpty() throws InterruptedException {
     QueryJobConfiguration jobConfig =
-            QueryJobConfiguration.newBuilder("CREATE VIEW").setDestinationTable(TABLE_ID1).build();
+        QueryJobConfiguration.newBuilder("CREATE VIEW").setDestinationTable(TABLE_ID1).build();
     QueryStatistics jobStatistics =
-            QueryStatistics.newBuilder()
-                    .setCreationTimestamp(1L)
-                    .setEndTime(3L)
-                    .setStartTime(2L)
-                    .build();
+        QueryStatistics.newBuilder()
+            .setCreationTimestamp(1L)
+            .setEndTime(3L)
+            .setStartTime(2L)
+            .build();
     JobInfo jobInfo =
-            JobInfo.newBuilder(jobConfig)
-                    .setJobId(JOB_ID)
-                    .setStatistics(jobStatistics)
-                    .setJobId(JOB_ID)
-                    .setEtag(ETAG)
-                    .setGeneratedId(GENERATED_ID)
-                    .setSelfLink(SELF_LINK)
-                    .setUserEmail(EMAIL)
-                    .setStatus(JOB_STATUS)
-                    .build();
+        JobInfo.newBuilder(jobConfig)
+            .setJobId(JOB_ID)
+            .setStatistics(jobStatistics)
+            .setJobId(JOB_ID)
+            .setEtag(ETAG)
+            .setGeneratedId(GENERATED_ID)
+            .setSelfLink(SELF_LINK)
+            .setUserEmail(EMAIL)
+            .setStatus(JOB_STATUS)
+            .build();
 
     initializeExpectedJob(2, jobInfo);
     JobStatus status = createStrictMock(JobStatus.class);
@@ -255,44 +255,45 @@ public class JobTest {
     Job completedJob = expectedJob.toBuilder().setStatus(status).build();
     // TODO(pongad): remove when we bump gax to 1.15.
     Page<FieldValueList> emptyPage =
-            new Page<FieldValueList>() {
-              @Override
-              public boolean hasNextPage() {
-                return false;
-              }
+        new Page<FieldValueList>() {
+          @Override
+          public boolean hasNextPage() {
+            return false;
+          }
 
-              @Override
-              public String getNextPageToken() {
-                return "";
-              }
+          @Override
+          public String getNextPageToken() {
+            return "";
+          }
 
-              @Override
-              public Page<FieldValueList> getNextPage() {
-                return null;
-              }
+          @Override
+          public Page<FieldValueList> getNextPage() {
+            return null;
+          }
 
-              @Override
-              public Iterable<FieldValueList> iterateAll() {
-                return Collections.emptyList();
-              }
+          @Override
+          public Iterable<FieldValueList> iterateAll() {
+            return Collections.emptyList();
+          }
 
-              @Override
-              public Iterable<FieldValueList> getValues() {
-                return Collections.emptyList();
-              }
-            };
+          @Override
+          public Iterable<FieldValueList> getValues() {
+            return Collections.emptyList();
+          }
+        };
     QueryResponse completedQuery =
-            QueryResponse.newBuilder()
-                    .setCompleted(true)
-                    .setTotalRows(0)
-                    .setSchema(Schema.of())
-                    .setErrors(ImmutableList.<BigQueryError>of())
-                    .build();
+        QueryResponse.newBuilder()
+            .setCompleted(true)
+            .setTotalRows(0)
+            .setSchema(Schema.of())
+            .setErrors(ImmutableList.<BigQueryError>of())
+            .build();
 
-    expect(bigquery.getQueryResults(jobInfo.getJobId(), Job.DEFAULT_QUERY_WAIT_OPTIONS)).andReturn(completedQuery);
+    expect(bigquery.getQueryResults(jobInfo.getJobId(), Job.DEFAULT_QUERY_WAIT_OPTIONS))
+        .andReturn(completedQuery);
     expect(bigquery.getJob(JOB_INFO.getJobId())).andReturn(completedJob);
     expect(bigquery.getQueryResults(jobInfo.getJobId(), Job.DEFAULT_QUERY_WAIT_OPTIONS))
-            .andReturn(completedQuery);
+        .andReturn(completedQuery);
 
     replay(status, bigquery, mockOptions);
     initializeJob(jobInfo);
@@ -347,7 +348,9 @@ public class JobTest {
           }
 
           @Override
-          public Iterable<FieldValueList> iterateAll() { return Collections.emptyList(); }
+          public Iterable<FieldValueList> iterateAll() {
+            return Collections.emptyList();
+          }
 
           @Override
           public Iterable<FieldValueList> getValues() {
@@ -358,12 +361,13 @@ public class JobTest {
     QueryResponse completedQuery =
         QueryResponse.newBuilder()
             .setCompleted(true)
-            .setTotalRows(1)  // Lies to force call of listTableData().
+            .setTotalRows(1) // Lies to force call of listTableData().
             .setSchema(Schema.of(Field.of("_f0", LegacySQLTypeName.INTEGER)))
             .setErrors(ImmutableList.<BigQueryError>of())
             .build();
 
-    expect(bigquery.getQueryResults(jobInfo.getJobId(), Job.DEFAULT_QUERY_WAIT_OPTIONS)).andReturn(completedQuery);
+    expect(bigquery.getQueryResults(jobInfo.getJobId(), Job.DEFAULT_QUERY_WAIT_OPTIONS))
+        .andReturn(completedQuery);
     expect(bigquery.getJob(JOB_INFO.getJobId())).andReturn(completedJob);
     expect(bigquery.getQueryResults(jobInfo.getJobId(), Job.DEFAULT_QUERY_WAIT_OPTIONS))
         .andReturn(completedQuery);
@@ -525,9 +529,7 @@ public class JobTest {
 
   @Test
   public void testToAndFromPbWithoutConfiguration() {
-    JobInfo jobInfo =
-        JobInfo.newBuilder(null)
-            .build();
+    JobInfo jobInfo = JobInfo.newBuilder(null).build();
     initializeExpectedJob(4, jobInfo);
     replay(bigquery);
     compareJob(expectedJob, Job.fromPb(serviceMockReturnsOptions, expectedJob.toPb()));

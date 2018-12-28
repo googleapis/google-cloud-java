@@ -35,7 +35,6 @@ public class TableIdTest {
     assertEquals("table", TABLE_COMPLETE.getTable());
   }
 
-
   @Test
   public void testEquals() {
     compareTableIds(TABLE, TableId.of("dataset", "table"));

@@ -126,7 +126,8 @@ public class KeyManagementServiceStubSettings
           ListCryptoKeysRequest, ListCryptoKeysResponse, ListCryptoKeysPagedResponse>
       listCryptoKeysSettings;
   private final PagedCallSettings<
-          ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse,
+          ListCryptoKeyVersionsRequest,
+          ListCryptoKeyVersionsResponse,
           ListCryptoKeyVersionsPagedResponse>
       listCryptoKeyVersionsSettings;
   private final UnaryCallSettings<GetKeyRingRequest, KeyRing> getKeyRingSettings;
@@ -173,7 +174,8 @@ public class KeyManagementServiceStubSettings
 
   /** Returns the object with the settings used for calls to listCryptoKeyVersions. */
   public PagedCallSettings<
-          ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse,
+          ListCryptoKeyVersionsRequest,
+          ListCryptoKeyVersionsResponse,
           ListCryptoKeyVersionsPagedResponse>
       listCryptoKeyVersionsSettings() {
     return listCryptoKeyVersionsSettings;
@@ -405,7 +407,9 @@ public class KeyManagementServiceStubSettings
 
             @Override
             public Iterable<KeyRing> extractResources(ListKeyRingsResponse payload) {
-              return payload.getKeyRingsList();
+              return payload.getKeyRingsList() != null
+                  ? payload.getKeyRingsList()
+                  : ImmutableList.<KeyRing>of();
             }
           };
 
@@ -440,7 +444,9 @@ public class KeyManagementServiceStubSettings
 
             @Override
             public Iterable<CryptoKey> extractResources(ListCryptoKeysResponse payload) {
-              return payload.getCryptoKeysList();
+              return payload.getCryptoKeysList() != null
+                  ? payload.getCryptoKeysList()
+                  : ImmutableList.<CryptoKey>of();
             }
           };
 
@@ -479,7 +485,9 @@ public class KeyManagementServiceStubSettings
             @Override
             public Iterable<CryptoKeyVersion> extractResources(
                 ListCryptoKeyVersionsResponse payload) {
-              return payload.getCryptoKeyVersionsList();
+              return payload.getCryptoKeyVersionsList() != null
+                  ? payload.getCryptoKeyVersionsList()
+                  : ImmutableList.<CryptoKeyVersion>of();
             }
           };
 
@@ -518,11 +526,13 @@ public class KeyManagementServiceStubSettings
           };
 
   private static final PagedListResponseFactory<
-          ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse,
+          ListCryptoKeyVersionsRequest,
+          ListCryptoKeyVersionsResponse,
           ListCryptoKeyVersionsPagedResponse>
       LIST_CRYPTO_KEY_VERSIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse,
+              ListCryptoKeyVersionsRequest,
+              ListCryptoKeyVersionsResponse,
               ListCryptoKeyVersionsPagedResponse>() {
             @Override
             public ApiFuture<ListCryptoKeyVersionsPagedResponse> getFuturePagedResponse(
@@ -551,7 +561,8 @@ public class KeyManagementServiceStubSettings
             ListCryptoKeysRequest, ListCryptoKeysResponse, ListCryptoKeysPagedResponse>
         listCryptoKeysSettings;
     private final PagedCallSettings.Builder<
-            ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse,
+            ListCryptoKeyVersionsRequest,
+            ListCryptoKeyVersionsResponse,
             ListCryptoKeyVersionsPagedResponse>
         listCryptoKeyVersionsSettings;
     private final UnaryCallSettings.Builder<GetKeyRingRequest, KeyRing> getKeyRingSettings;
@@ -908,7 +919,8 @@ public class KeyManagementServiceStubSettings
 
     /** Returns the builder for the settings used for calls to listCryptoKeyVersions. */
     public PagedCallSettings.Builder<
-            ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse,
+            ListCryptoKeyVersionsRequest,
+            ListCryptoKeyVersionsResponse,
             ListCryptoKeyVersionsPagedResponse>
         listCryptoKeyVersionsSettings() {
       return listCryptoKeyVersionsSettings;

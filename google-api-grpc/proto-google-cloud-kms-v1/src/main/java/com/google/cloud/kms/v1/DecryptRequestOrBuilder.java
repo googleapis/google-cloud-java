@@ -3,11 +3,14 @@
 
 package com.google.cloud.kms.v1;
 
-public interface DecryptRequestOrBuilder extends
+public interface DecryptRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.kms.v1.DecryptRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to use for decryption.
    * The server will choose the appropriate version.
@@ -17,6 +20,8 @@ public interface DecryptRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to use for decryption.
    * The server will choose the appropriate version.
@@ -24,10 +29,11 @@ public interface DecryptRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The encrypted data originally returned in
    * [EncryptResponse.ciphertext][google.cloud.kms.v1.EncryptResponse.ciphertext].
@@ -38,6 +44,8 @@ public interface DecryptRequestOrBuilder extends
   com.google.protobuf.ByteString getCiphertext();
 
   /**
+   *
+   *
    * <pre>
    * Optional data that must match the data originally supplied in
    * [EncryptRequest.additional_authenticated_data][google.cloud.kms.v1.EncryptRequest.additional_authenticated_data].

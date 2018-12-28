@@ -18,7 +18,6 @@ package com.google.cloud.examples.nio;
 
 import com.google.common.base.Stopwatch;
 import com.google.common.io.BaseEncoding;
-
 import java.io.IOException;
 import java.net.URI;
 import java.nio.ByteBuffer;
@@ -32,21 +31,19 @@ import java.util.concurrent.TimeUnit;
 /**
  * CountBytes will read through the whole file given as input.
  *
- * <p>This example shows how to read a file size using NIO.
- * File.size returns the size of the file as saved in Storage metadata.
- * This class also shows how to read all of the file's contents using NIO,
- * computes a MD5 hash, and reports how long it took.
+ * <p>This example shows how to read a file size using NIO. File.size returns the size of the file
+ * as saved in Storage metadata. This class also shows how to read all of the file's contents using
+ * NIO, computes a MD5 hash, and reports how long it took.
  *
- * <p>See the
- * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/google-cloud-examples/README.md">
+ * <p>See the <a
+ * href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/google-cloud-examples/README.md">
  * README</a> for compilation instructions. Run this code with
+ *
  * <pre>{@code target/appassembler/bin/CountBytes <file>}</pre>
  */
 public class CountBytes {
 
-  /**
-   * See the class documentation.
-   */
+  /** See the class documentation. */
   public static void main(String[] args) throws IOException {
     if (args.length == 0 || args[0].equals("--help")) {
       help();
@@ -60,8 +57,8 @@ public class CountBytes {
   /**
    * Print the length of the indicated file.
    *
-   * <p>This uses the normal Java NIO Api, so it can take advantage of any installed
-   * NIO Filesystem provider without any extra effort.
+   * <p>This uses the normal Java NIO Api, so it can take advantage of any installed NIO Filesystem
+   * provider without any extra effort.
    */
   private static void countFile(String fname) {
     // large buffers pay off
@@ -85,13 +82,25 @@ public class CountBytes {
         }
         readCalls++; // We must count the last call
         long elapsed = sw.elapsed(TimeUnit.SECONDS);
-        System.out.println("Read all " + total + " bytes in " + elapsed + "s. " +
-            "(" + readCalls +" calls to chan.read)");
+        System.out.println(
+            "Read all "
+                + total
+                + " bytes in "
+                + elapsed
+                + "s. "
+                + "("
+                + readCalls
+                + " calls to chan.read)");
         String hex = String.valueOf(BaseEncoding.base16().encode(md.digest()));
         System.out.println("The MD5 is: 0x" + hex);
         if (total != size) {
-          System.out.println("Wait, this doesn't match! We saw " + total + " bytes, " +
-              "yet the file size is listed at " + size + " bytes.");
+          System.out.println(
+              "Wait, this doesn't match! We saw "
+                  + total
+                  + " bytes, "
+                  + "yet the file size is listed at "
+                  + size
+                  + " bytes.");
         }
       }
     } catch (Exception ex) {
@@ -100,10 +109,7 @@ public class CountBytes {
   }
 
   private static void help() {
-    String[] help =
-        {"The argument is a <path>",
-         "and we show the length of that file."
-        };
+    String[] help = {"The argument is a <path>", "and we show the length of that file."};
     for (String s : help) {
       System.out.println(s);
     }

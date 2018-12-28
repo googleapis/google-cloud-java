@@ -23,15 +23,13 @@ import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
-
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.ISODateTimeFormat;
-
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+import org.joda.time.format.DateTimeFormatter;
+import org.joda.time.format.ISODateTimeFormat;
 
 /**
  * A Google Compute Engine VM Instance. An instance is a virtual machine (VM) hosted on Google's
@@ -87,9 +85,7 @@ public class InstanceInfo implements Serializable {
   private final SchedulingOptions schedulingOptions;
   private final String cpuPlatform;
 
-  /**
-   * The status of the instance.
-   */
+  /** The status of the instance. */
   public enum Status {
     /**
      * Indicates that resources are being reserved for the instance. The instance isn't running yet.
@@ -120,23 +116,17 @@ public class InstanceInfo implements Serializable {
     TERMINATED
   }
 
-  /**
-   * A builder for {@code InstanceInfo} objects.
-   */
+  /** A builder for {@code InstanceInfo} objects. */
   public abstract static class Builder {
 
     abstract Builder setGeneratedId(String generatedId);
 
-    /**
-     * Sets the identity of the virtual machine instance.
-     */
+    /** Sets the identity of the virtual machine instance. */
     public abstract Builder setInstanceId(InstanceId instanceId);
 
     abstract Builder setCreationTimestamp(Long creationTimestamp);
 
-    /**
-     * Sets an optional description of this Google Compute Engine instance.
-     */
+    /** Sets an optional description of this Google Compute Engine instance. */
     public abstract Builder setDescription(String description);
 
     abstract Builder setStatus(Status status);
@@ -149,9 +139,7 @@ public class InstanceInfo implements Serializable {
      */
     public abstract Builder setTags(Tags tags);
 
-    /**
-     * Sets the machine type identity.
-     */
+    /** Sets the machine type identity. */
     public abstract Builder setMachineType(MachineTypeId machineType);
 
     /**
@@ -179,19 +167,15 @@ public class InstanceInfo implements Serializable {
 
     /**
      * Sets a list of disks to attach to the instance. One boot disk must be provided (i.e. an
-     * attached disk such that {@link AttachedDisk.AttachedDiskConfiguration#boot()} returns
-     * {@code true}).
+     * attached disk such that {@link AttachedDisk.AttachedDiskConfiguration#boot()} returns {@code
+     * true}).
      */
     public abstract Builder setAttachedDisks(List<AttachedDisk> attachedDisks);
 
-    /**
-     * Sets a list of disks to attach to the instance. One boot disk must be provided.
-     */
+    /** Sets a list of disks to attach to the instance. One boot disk must be provided. */
     public abstract Builder setAttachedDisks(AttachedDisk... attachedDisks);
 
-    /**
-     * Sets the instance metadata.
-     */
+    /** Sets the instance metadata. */
     public abstract Builder setMetadata(Metadata metadata);
 
     /**
@@ -204,16 +188,12 @@ public class InstanceInfo implements Serializable {
      */
     public abstract Builder setServiceAccounts(List<ServiceAccount> serviceAccounts);
 
-    /**
-     * Sets the scheduling options for the instance.
-     */
+    /** Sets the scheduling options for the instance. */
     public abstract Builder setSchedulingOptions(SchedulingOptions schedulingOptions);
 
     abstract Builder setCpuPlatform(String cpuPlatform);
 
-    /**
-     * Creates an {@code InstanceInfo} object.
-     */
+    /** Creates an {@code InstanceInfo} object. */
     public abstract InstanceInfo build();
   }
 
@@ -425,44 +405,32 @@ public class InstanceInfo implements Serializable {
     this.cpuPlatform = builder.cpuPlatform;
   }
 
-  /**
-   * Returns the service-generated unique identifier for the instance.
-   */
+  /** Returns the service-generated unique identifier for the instance. */
   public String getGeneratedId() {
     return generatedId;
   }
 
-  /**
-   * Returns the instance identity.
-   */
+  /** Returns the instance identity. */
   public InstanceId getInstanceId() {
     return instanceId;
   }
 
-  /**
-   * Returns the creation timestamp in milliseconds since epoch.
-   */
+  /** Returns the creation timestamp in milliseconds since epoch. */
   public Long getCreationTimestamp() {
     return creationTimestamp;
   }
 
-  /**
-   * Returns a textual description of the instance.
-   */
+  /** Returns a textual description of the instance. */
   public String getDescription() {
     return description;
   }
 
-  /**
-   * Returns the status of the instance.
-   */
+  /** Returns the status of the instance. */
   public Status getStatus() {
     return status;
   }
 
-  /**
-   * Returns an optional, human-readable explanation of the status.
-   */
+  /** Returns an optional, human-readable explanation of the status. */
   public String getStatusMessage() {
     return statusMessage;
   }
@@ -475,9 +443,7 @@ public class InstanceInfo implements Serializable {
     return tags;
   }
 
-  /**
-   * Returns the machine type identity.
-   */
+  /** Returns the machine type identity. */
   public MachineTypeId getMachineType() {
     return machineType;
   }
@@ -501,16 +467,12 @@ public class InstanceInfo implements Serializable {
     return networkInterfaces;
   }
 
-  /**
-   * Returns a list of disks attached to the instance.
-   */
+  /** Returns a list of disks attached to the instance. */
   public List<AttachedDisk> getAttachedDisks() {
     return attachedDisks;
   }
 
-  /**
-   * Returns the instance metadata.
-   */
+  /** Returns the instance metadata. */
   public Metadata getMetadata() {
     return metadata;
   }
@@ -520,30 +482,24 @@ public class InstanceInfo implements Serializable {
    * Service accounts generate access tokens that can be accessed through the metadata server and
    * used to authenticate applications on the instance.
    *
-   * @see <a href="https://cloud.google.com/compute/docs/authentication">Authenticating from
-   *     Google Compute Engine</a>
+   * @see <a href="https://cloud.google.com/compute/docs/authentication">Authenticating from Google
+   *     Compute Engine</a>
    */
   public List<ServiceAccount> getServiceAccounts() {
     return serviceAccounts;
   }
 
-  /**
-   * Returns the scheduling options for the instance.
-   */
+  /** Returns the scheduling options for the instance. */
   public SchedulingOptions getSchedulingOptions() {
     return schedulingOptions;
   }
 
-  /**
-   * Returns the CPU platform used by this instance.
-   */
+  /** Returns the CPU platform used by this instance. */
   public String getCpuPlatform() {
     return cpuPlatform;
   }
 
-  /**
-   * Returns a builder for the current instance.
-   */
+  /** Returns a builder for the current instance. */
   public Builder toBuilder() {
     return new BuilderImpl(this);
   }
@@ -571,36 +527,54 @@ public class InstanceInfo implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(generatedId, instanceId, creationTimestamp, description, status,
-        statusMessage, tags, machineType, canIpForward, networkInterfaces, attachedDisks, metadata,
-        serviceAccounts, schedulingOptions, cpuPlatform);
+    return Objects.hash(
+        generatedId,
+        instanceId,
+        creationTimestamp,
+        description,
+        status,
+        statusMessage,
+        tags,
+        machineType,
+        canIpForward,
+        networkInterfaces,
+        attachedDisks,
+        metadata,
+        serviceAccounts,
+        schedulingOptions,
+        cpuPlatform);
   }
 
   @Override
   public boolean equals(Object obj) {
     return obj == this
         || obj != null
-        && obj.getClass().equals(InstanceInfo.class)
-        && Objects.equals(toPb(), ((InstanceInfo) obj).toPb());
+            && obj.getClass().equals(InstanceInfo.class)
+            && Objects.equals(toPb(), ((InstanceInfo) obj).toPb());
   }
 
   InstanceInfo setProjectId(final String projectId) {
     Builder builder = toBuilder();
-    builder.setNetworkInterfaces(Lists.transform(networkInterfaces,
-        new Function<NetworkInterface, NetworkInterface>() {
-          @Override
-          public NetworkInterface apply(NetworkInterface networkInterface) {
-            return networkInterface.setProjectId(projectId);
-          }
-        }));
-    builder.setAttachedDisks(Lists.transform(attachedDisks,
-        new Function<AttachedDisk, AttachedDisk>() {
-          @Override
-          public AttachedDisk apply(AttachedDisk attachedDisk) {
-            return attachedDisk.setProjectId(projectId);
-          }
-        }));
-    return builder.setInstanceId(instanceId.setProjectId(projectId))
+    builder.setNetworkInterfaces(
+        Lists.transform(
+            networkInterfaces,
+            new Function<NetworkInterface, NetworkInterface>() {
+              @Override
+              public NetworkInterface apply(NetworkInterface networkInterface) {
+                return networkInterface.setProjectId(projectId);
+              }
+            }));
+    builder.setAttachedDisks(
+        Lists.transform(
+            attachedDisks,
+            new Function<AttachedDisk, AttachedDisk>() {
+              @Override
+              public AttachedDisk apply(AttachedDisk attachedDisk) {
+                return attachedDisk.setProjectId(projectId);
+              }
+            }));
+    return builder
+        .setInstanceId(instanceId.setProjectId(projectId))
         .setMachineType(machineType.setProjectId(projectId))
         .build();
   }
@@ -658,11 +632,14 @@ public class InstanceInfo implements Serializable {
   }
 
   /**
-   * Returns an {@code InstanceInfo} object given the instance identity, the machine type, a disk
-   * to attach to the instance and a network interface. {@code disk} must be a boot disk (i.e.
-   * {@link AttachedDisk.AttachedDiskConfiguration#boot()} returns {@code true}).
+   * Returns an {@code InstanceInfo} object given the instance identity, the machine type, a disk to
+   * attach to the instance and a network interface. {@code disk} must be a boot disk (i.e. {@link
+   * AttachedDisk.AttachedDiskConfiguration#boot()} returns {@code true}).
    */
-  public static InstanceInfo of(InstanceId instanceId, MachineTypeId machineType, AttachedDisk disk,
+  public static InstanceInfo of(
+      InstanceId instanceId,
+      MachineTypeId machineType,
+      AttachedDisk disk,
       NetworkInterface networkInterface) {
     return newBuilder(instanceId, machineType)
         .setAttachedDisks(ImmutableList.of(disk))

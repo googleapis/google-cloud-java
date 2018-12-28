@@ -3,11 +3,14 @@
 
 package com.google.cloud.tasks.v2beta2;
 
-public interface AppEngineHttpRequestOrBuilder extends
+public interface AppEngineHttpRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.tasks.v2beta2.AppEngineHttpRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The HTTP method to use for the request. The default is POST.
    * The app's request handler for the task's target URL must be able to handle
@@ -23,6 +26,8 @@ public interface AppEngineHttpRequestOrBuilder extends
    */
   int getHttpMethodValue();
   /**
+   *
+   *
    * <pre>
    * The HTTP method to use for the request. The default is POST.
    * The app's request handler for the task's target URL must be able to handle
@@ -39,6 +44,8 @@ public interface AppEngineHttpRequestOrBuilder extends
   com.google.cloud.tasks.v2beta2.HttpMethod getHttpMethod();
 
   /**
+   *
+   *
    * <pre>
    * Task-level setting for App Engine routing.
    * If set,
@@ -51,6 +58,8 @@ public interface AppEngineHttpRequestOrBuilder extends
    */
   boolean hasAppEngineRouting();
   /**
+   *
+   *
    * <pre>
    * Task-level setting for App Engine routing.
    * If set,
@@ -63,6 +72,8 @@ public interface AppEngineHttpRequestOrBuilder extends
    */
   com.google.cloud.tasks.v2beta2.AppEngineRouting getAppEngineRouting();
   /**
+   *
+   *
    * <pre>
    * Task-level setting for App Engine routing.
    * If set,
@@ -76,6 +87,8 @@ public interface AppEngineHttpRequestOrBuilder extends
   com.google.cloud.tasks.v2beta2.AppEngineRoutingOrBuilder getAppEngineRoutingOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The relative URL.
    * The relative URL must begin with "/" and must be a valid HTTP relative URL.
@@ -88,6 +101,8 @@ public interface AppEngineHttpRequestOrBuilder extends
    */
   java.lang.String getRelativeUrl();
   /**
+   *
+   *
    * <pre>
    * The relative URL.
    * The relative URL must begin with "/" and must be a valid HTTP relative URL.
@@ -98,10 +113,11 @@ public interface AppEngineHttpRequestOrBuilder extends
    *
    * <code>string relative_url = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getRelativeUrlBytes();
+  com.google.protobuf.ByteString getRelativeUrlBytes();
 
   /**
+   *
+   *
    * <pre>
    * HTTP request headers.
    * This map contains the header field names and values.
@@ -141,6 +157,8 @@ public interface AppEngineHttpRequestOrBuilder extends
    */
   int getHeadersCount();
   /**
+   *
+   *
    * <pre>
    * HTTP request headers.
    * This map contains the header field names and values.
@@ -178,15 +196,13 @@ public interface AppEngineHttpRequestOrBuilder extends
    *
    * <code>map&lt;string, string&gt; headers = 4;</code>
    */
-  boolean containsHeaders(
-      java.lang.String key);
-  /**
-   * Use {@link #getHeadersMap()} instead.
-   */
+  boolean containsHeaders(java.lang.String key);
+  /** Use {@link #getHeadersMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getHeaders();
+  java.util.Map<java.lang.String, java.lang.String> getHeaders();
   /**
+   *
+   *
    * <pre>
    * HTTP request headers.
    * This map contains the header field names and values.
@@ -224,9 +240,10 @@ public interface AppEngineHttpRequestOrBuilder extends
    *
    * <code>map&lt;string, string&gt; headers = 4;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getHeadersMap();
+  java.util.Map<java.lang.String, java.lang.String> getHeadersMap();
   /**
+   *
+   *
    * <pre>
    * HTTP request headers.
    * This map contains the header field names and values.
@@ -264,11 +281,10 @@ public interface AppEngineHttpRequestOrBuilder extends
    *
    * <code>map&lt;string, string&gt; headers = 4;</code>
    */
-
-  java.lang.String getHeadersOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getHeadersOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * HTTP request headers.
    * This map contains the header field names and values.
@@ -306,11 +322,11 @@ public interface AppEngineHttpRequestOrBuilder extends
    *
    * <code>map&lt;string, string&gt; headers = 4;</code>
    */
-
-  java.lang.String getHeadersOrThrow(
-      java.lang.String key);
+  java.lang.String getHeadersOrThrow(java.lang.String key);
 
   /**
+   *
+   *
    * <pre>
    * Payload.
    * The payload will be sent as the HTTP message body. A message

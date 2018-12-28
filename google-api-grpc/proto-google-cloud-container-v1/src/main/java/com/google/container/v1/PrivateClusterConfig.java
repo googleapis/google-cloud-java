@@ -4,21 +4,24 @@
 package com.google.container.v1;
 
 /**
+ *
+ *
  * <pre>
  * Configuration options for private clusters.
  * </pre>
  *
  * Protobuf type {@code google.container.v1.PrivateClusterConfig}
  */
-public  final class PrivateClusterConfig extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.container.v1.PrivateClusterConfig)
     PrivateClusterConfigOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use PrivateClusterConfig.newBuilder() to construct.
   private PrivateClusterConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private PrivateClusterConfig() {
     enablePrivateNodes_ = false;
     enablePrivateEndpoint_ = false;
@@ -28,10 +31,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private PrivateClusterConfig(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -51,69 +54,76 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
-
-            enablePrivateNodes_ = input.readBool();
-            break;
-          }
-          case 16: {
-
-            enablePrivateEndpoint_ = input.readBool();
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            masterIpv4CidrBlock_ = s;
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            privateEndpoint_ = s;
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            publicEndpoint_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 8:
+            {
+              enablePrivateNodes_ = input.readBool();
+              break;
             }
-            break;
-          }
+          case 16:
+            {
+              enablePrivateEndpoint_ = input.readBool();
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              masterIpv4CidrBlock_ = s;
+              break;
+            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              privateEndpoint_ = s;
+              break;
+            }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              publicEndpoint_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_PrivateClusterConfig_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.container.v1.ClusterServiceProto
+        .internal_static_google_container_v1_PrivateClusterConfig_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_PrivateClusterConfig_fieldAccessorTable
+    return com.google.container.v1.ClusterServiceProto
+        .internal_static_google_container_v1_PrivateClusterConfig_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.container.v1.PrivateClusterConfig.class, com.google.container.v1.PrivateClusterConfig.Builder.class);
+            com.google.container.v1.PrivateClusterConfig.class,
+            com.google.container.v1.PrivateClusterConfig.Builder.class);
   }
 
   public static final int ENABLE_PRIVATE_NODES_FIELD_NUMBER = 1;
   private boolean enablePrivateNodes_;
   /**
+   *
+   *
    * <pre>
    * Whether nodes have internal IP addresses only. If enabled, all nodes are
    * given only RFC 1918 private addresses and communicate with the master via
@@ -129,6 +139,8 @@ private static final long serialVersionUID = 0L;
   public static final int ENABLE_PRIVATE_ENDPOINT_FIELD_NUMBER = 2;
   private boolean enablePrivateEndpoint_;
   /**
+   *
+   *
    * <pre>
    * Whether the master's internal IP address is used as the cluster endpoint.
    * </pre>
@@ -142,6 +154,8 @@ private static final long serialVersionUID = 0L;
   public static final int MASTER_IPV4_CIDR_BLOCK_FIELD_NUMBER = 3;
   private volatile java.lang.Object masterIpv4CidrBlock_;
   /**
+   *
+   *
    * <pre>
    * The IP range in CIDR notation to use for the hosted master network. This
    * range will be used for assigning internal IP addresses to the master or
@@ -156,14 +170,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       masterIpv4CidrBlock_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The IP range in CIDR notation to use for the hosted master network. This
    * range will be used for assigning internal IP addresses to the master or
@@ -173,13 +188,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string master_ipv4_cidr_block = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getMasterIpv4CidrBlockBytes() {
+  public com.google.protobuf.ByteString getMasterIpv4CidrBlockBytes() {
     java.lang.Object ref = masterIpv4CidrBlock_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       masterIpv4CidrBlock_ = b;
       return b;
     } else {
@@ -190,6 +203,8 @@ private static final long serialVersionUID = 0L;
   public static final int PRIVATE_ENDPOINT_FIELD_NUMBER = 4;
   private volatile java.lang.Object privateEndpoint_;
   /**
+   *
+   *
    * <pre>
    * Output only. The internal IP address of this cluster's master endpoint.
    * </pre>
@@ -201,27 +216,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       privateEndpoint_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The internal IP address of this cluster's master endpoint.
    * </pre>
    *
    * <code>string private_endpoint = 4;</code>
    */
-  public com.google.protobuf.ByteString
-      getPrivateEndpointBytes() {
+  public com.google.protobuf.ByteString getPrivateEndpointBytes() {
     java.lang.Object ref = privateEndpoint_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       privateEndpoint_ = b;
       return b;
     } else {
@@ -232,6 +246,8 @@ private static final long serialVersionUID = 0L;
   public static final int PUBLIC_ENDPOINT_FIELD_NUMBER = 5;
   private volatile java.lang.Object publicEndpoint_;
   /**
+   *
+   *
    * <pre>
    * Output only. The external IP address of this cluster's master endpoint.
    * </pre>
@@ -243,27 +259,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       publicEndpoint_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The external IP address of this cluster's master endpoint.
    * </pre>
    *
    * <code>string public_endpoint = 5;</code>
    */
-  public com.google.protobuf.ByteString
-      getPublicEndpointBytes() {
+  public com.google.protobuf.ByteString getPublicEndpointBytes() {
     java.lang.Object ref = publicEndpoint_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       publicEndpoint_ = b;
       return b;
     } else {
@@ -272,6 +287,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -283,8 +299,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (enablePrivateNodes_ != false) {
       output.writeBool(1, enablePrivateNodes_);
     }
@@ -310,12 +325,10 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (enablePrivateNodes_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(1, enablePrivateNodes_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, enablePrivateNodes_);
     }
     if (enablePrivateEndpoint_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(2, enablePrivateEndpoint_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, enablePrivateEndpoint_);
     }
     if (!getMasterIpv4CidrBlockBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, masterIpv4CidrBlock_);
@@ -334,24 +347,20 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.container.v1.PrivateClusterConfig)) {
       return super.equals(obj);
     }
-    com.google.container.v1.PrivateClusterConfig other = (com.google.container.v1.PrivateClusterConfig) obj;
+    com.google.container.v1.PrivateClusterConfig other =
+        (com.google.container.v1.PrivateClusterConfig) obj;
 
     boolean result = true;
-    result = result && (getEnablePrivateNodes()
-        == other.getEnablePrivateNodes());
-    result = result && (getEnablePrivateEndpoint()
-        == other.getEnablePrivateEndpoint());
-    result = result && getMasterIpv4CidrBlock()
-        .equals(other.getMasterIpv4CidrBlock());
-    result = result && getPrivateEndpoint()
-        .equals(other.getPrivateEndpoint());
-    result = result && getPublicEndpoint()
-        .equals(other.getPublicEndpoint());
+    result = result && (getEnablePrivateNodes() == other.getEnablePrivateNodes());
+    result = result && (getEnablePrivateEndpoint() == other.getEnablePrivateEndpoint());
+    result = result && getMasterIpv4CidrBlock().equals(other.getMasterIpv4CidrBlock());
+    result = result && getPrivateEndpoint().equals(other.getPrivateEndpoint());
+    result = result && getPublicEndpoint().equals(other.getPublicEndpoint());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -364,11 +373,9 @@ private static final long serialVersionUID = 0L;
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ENABLE_PRIVATE_NODES_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getEnablePrivateNodes());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnablePrivateNodes());
     hash = (37 * hash) + ENABLE_PRIVATE_ENDPOINT_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getEnablePrivateEndpoint());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnablePrivateEndpoint());
     hash = (37 * hash) + MASTER_IPV4_CIDR_BLOCK_FIELD_NUMBER;
     hash = (53 * hash) + getMasterIpv4CidrBlock().hashCode();
     hash = (37 * hash) + PRIVATE_ENDPOINT_FIELD_NUMBER;
@@ -380,118 +387,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.container.v1.PrivateClusterConfig parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.container.v1.PrivateClusterConfig parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.PrivateClusterConfig parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.PrivateClusterConfig parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.PrivateClusterConfig parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.PrivateClusterConfig parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.PrivateClusterConfig parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.PrivateClusterConfig parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.PrivateClusterConfig parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.container.v1.PrivateClusterConfig parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.container.v1.PrivateClusterConfig parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.container.v1.PrivateClusterConfig parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.container.v1.PrivateClusterConfig parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.PrivateClusterConfig parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.container.v1.PrivateClusterConfig prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Configuration options for private clusters.
    * </pre>
    *
    * Protobuf type {@code google.container.v1.PrivateClusterConfig}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.container.v1.PrivateClusterConfig)
       com.google.container.v1.PrivateClusterConfigOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_PrivateClusterConfig_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_PrivateClusterConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_PrivateClusterConfig_fieldAccessorTable
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_PrivateClusterConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.container.v1.PrivateClusterConfig.class, com.google.container.v1.PrivateClusterConfig.Builder.class);
+              com.google.container.v1.PrivateClusterConfig.class,
+              com.google.container.v1.PrivateClusterConfig.Builder.class);
     }
 
     // Construct using com.google.container.v1.PrivateClusterConfig.newBuilder()
@@ -499,16 +515,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -526,9 +541,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_PrivateClusterConfig_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_PrivateClusterConfig_descriptor;
     }
 
     @java.lang.Override
@@ -547,7 +562,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.container.v1.PrivateClusterConfig buildPartial() {
-      com.google.container.v1.PrivateClusterConfig result = new com.google.container.v1.PrivateClusterConfig(this);
+      com.google.container.v1.PrivateClusterConfig result =
+          new com.google.container.v1.PrivateClusterConfig(this);
       result.enablePrivateNodes_ = enablePrivateNodes_;
       result.enablePrivateEndpoint_ = enablePrivateEndpoint_;
       result.masterIpv4CidrBlock_ = masterIpv4CidrBlock_;
@@ -561,38 +577,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.container.v1.PrivateClusterConfig) {
-        return mergeFrom((com.google.container.v1.PrivateClusterConfig)other);
+        return mergeFrom((com.google.container.v1.PrivateClusterConfig) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -648,8 +665,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean enablePrivateNodes_ ;
+    private boolean enablePrivateNodes_;
     /**
+     *
+     *
      * <pre>
      * Whether nodes have internal IP addresses only. If enabled, all nodes are
      * given only RFC 1918 private addresses and communicate with the master via
@@ -662,6 +681,8 @@ private static final long serialVersionUID = 0L;
       return enablePrivateNodes_;
     }
     /**
+     *
+     *
      * <pre>
      * Whether nodes have internal IP addresses only. If enabled, all nodes are
      * given only RFC 1918 private addresses and communicate with the master via
@@ -671,12 +692,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool enable_private_nodes = 1;</code>
      */
     public Builder setEnablePrivateNodes(boolean value) {
-      
+
       enablePrivateNodes_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Whether nodes have internal IP addresses only. If enabled, all nodes are
      * given only RFC 1918 private addresses and communicate with the master via
@@ -686,14 +709,16 @@ private static final long serialVersionUID = 0L;
      * <code>bool enable_private_nodes = 1;</code>
      */
     public Builder clearEnablePrivateNodes() {
-      
+
       enablePrivateNodes_ = false;
       onChanged();
       return this;
     }
 
-    private boolean enablePrivateEndpoint_ ;
+    private boolean enablePrivateEndpoint_;
     /**
+     *
+     *
      * <pre>
      * Whether the master's internal IP address is used as the cluster endpoint.
      * </pre>
@@ -704,6 +729,8 @@ private static final long serialVersionUID = 0L;
       return enablePrivateEndpoint_;
     }
     /**
+     *
+     *
      * <pre>
      * Whether the master's internal IP address is used as the cluster endpoint.
      * </pre>
@@ -711,12 +738,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool enable_private_endpoint = 2;</code>
      */
     public Builder setEnablePrivateEndpoint(boolean value) {
-      
+
       enablePrivateEndpoint_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Whether the master's internal IP address is used as the cluster endpoint.
      * </pre>
@@ -724,7 +753,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool enable_private_endpoint = 2;</code>
      */
     public Builder clearEnablePrivateEndpoint() {
-      
+
       enablePrivateEndpoint_ = false;
       onChanged();
       return this;
@@ -732,6 +761,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object masterIpv4CidrBlock_ = "";
     /**
+     *
+     *
      * <pre>
      * The IP range in CIDR notation to use for the hosted master network. This
      * range will be used for assigning internal IP addresses to the master or
@@ -744,8 +775,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getMasterIpv4CidrBlock() {
       java.lang.Object ref = masterIpv4CidrBlock_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         masterIpv4CidrBlock_ = s;
         return s;
@@ -754,6 +784,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The IP range in CIDR notation to use for the hosted master network. This
      * range will be used for assigning internal IP addresses to the master or
@@ -763,13 +795,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string master_ipv4_cidr_block = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getMasterIpv4CidrBlockBytes() {
+    public com.google.protobuf.ByteString getMasterIpv4CidrBlockBytes() {
       java.lang.Object ref = masterIpv4CidrBlock_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         masterIpv4CidrBlock_ = b;
         return b;
       } else {
@@ -777,6 +807,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The IP range in CIDR notation to use for the hosted master network. This
      * range will be used for assigning internal IP addresses to the master or
@@ -786,17 +818,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string master_ipv4_cidr_block = 3;</code>
      */
-    public Builder setMasterIpv4CidrBlock(
-        java.lang.String value) {
+    public Builder setMasterIpv4CidrBlock(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       masterIpv4CidrBlock_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The IP range in CIDR notation to use for the hosted master network. This
      * range will be used for assigning internal IP addresses to the master or
@@ -807,12 +840,14 @@ private static final long serialVersionUID = 0L;
      * <code>string master_ipv4_cidr_block = 3;</code>
      */
     public Builder clearMasterIpv4CidrBlock() {
-      
+
       masterIpv4CidrBlock_ = getDefaultInstance().getMasterIpv4CidrBlock();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The IP range in CIDR notation to use for the hosted master network. This
      * range will be used for assigning internal IP addresses to the master or
@@ -822,13 +857,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string master_ipv4_cidr_block = 3;</code>
      */
-    public Builder setMasterIpv4CidrBlockBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setMasterIpv4CidrBlockBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       masterIpv4CidrBlock_ = value;
       onChanged();
       return this;
@@ -836,6 +870,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object privateEndpoint_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only. The internal IP address of this cluster's master endpoint.
      * </pre>
@@ -845,8 +881,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getPrivateEndpoint() {
       java.lang.Object ref = privateEndpoint_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         privateEndpoint_ = s;
         return s;
@@ -855,19 +890,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The internal IP address of this cluster's master endpoint.
      * </pre>
      *
      * <code>string private_endpoint = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getPrivateEndpointBytes() {
+    public com.google.protobuf.ByteString getPrivateEndpointBytes() {
       java.lang.Object ref = privateEndpoint_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         privateEndpoint_ = b;
         return b;
       } else {
@@ -875,23 +910,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The internal IP address of this cluster's master endpoint.
      * </pre>
      *
      * <code>string private_endpoint = 4;</code>
      */
-    public Builder setPrivateEndpoint(
-        java.lang.String value) {
+    public Builder setPrivateEndpoint(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       privateEndpoint_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The internal IP address of this cluster's master endpoint.
      * </pre>
@@ -899,25 +937,26 @@ private static final long serialVersionUID = 0L;
      * <code>string private_endpoint = 4;</code>
      */
     public Builder clearPrivateEndpoint() {
-      
+
       privateEndpoint_ = getDefaultInstance().getPrivateEndpoint();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The internal IP address of this cluster's master endpoint.
      * </pre>
      *
      * <code>string private_endpoint = 4;</code>
      */
-    public Builder setPrivateEndpointBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setPrivateEndpointBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       privateEndpoint_ = value;
       onChanged();
       return this;
@@ -925,6 +964,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object publicEndpoint_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only. The external IP address of this cluster's master endpoint.
      * </pre>
@@ -934,8 +975,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getPublicEndpoint() {
       java.lang.Object ref = publicEndpoint_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         publicEndpoint_ = s;
         return s;
@@ -944,19 +984,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The external IP address of this cluster's master endpoint.
      * </pre>
      *
      * <code>string public_endpoint = 5;</code>
      */
-    public com.google.protobuf.ByteString
-        getPublicEndpointBytes() {
+    public com.google.protobuf.ByteString getPublicEndpointBytes() {
       java.lang.Object ref = publicEndpoint_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         publicEndpoint_ = b;
         return b;
       } else {
@@ -964,23 +1004,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The external IP address of this cluster's master endpoint.
      * </pre>
      *
      * <code>string public_endpoint = 5;</code>
      */
-    public Builder setPublicEndpoint(
-        java.lang.String value) {
+    public Builder setPublicEndpoint(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       publicEndpoint_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The external IP address of this cluster's master endpoint.
      * </pre>
@@ -988,32 +1031,33 @@ private static final long serialVersionUID = 0L;
      * <code>string public_endpoint = 5;</code>
      */
     public Builder clearPublicEndpoint() {
-      
+
       publicEndpoint_ = getDefaultInstance().getPublicEndpoint();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The external IP address of this cluster's master endpoint.
      * </pre>
      *
      * <code>string public_endpoint = 5;</code>
      */
-    public Builder setPublicEndpointBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setPublicEndpointBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       publicEndpoint_ = value;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1023,12 +1067,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.container.v1.PrivateClusterConfig)
   }
 
   // @@protoc_insertion_point(class_scope:google.container.v1.PrivateClusterConfig)
   private static final com.google.container.v1.PrivateClusterConfig DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.container.v1.PrivateClusterConfig();
   }
@@ -1037,16 +1081,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<PrivateClusterConfig>
-      PARSER = new com.google.protobuf.AbstractParser<PrivateClusterConfig>() {
-    @java.lang.Override
-    public PrivateClusterConfig parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new PrivateClusterConfig(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<PrivateClusterConfig> PARSER =
+      new com.google.protobuf.AbstractParser<PrivateClusterConfig>() {
+        @java.lang.Override
+        public PrivateClusterConfig parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new PrivateClusterConfig(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<PrivateClusterConfig> parser() {
     return PARSER;
@@ -1061,6 +1105,4 @@ private static final long serialVersionUID = 0L;
   public com.google.container.v1.PrivateClusterConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

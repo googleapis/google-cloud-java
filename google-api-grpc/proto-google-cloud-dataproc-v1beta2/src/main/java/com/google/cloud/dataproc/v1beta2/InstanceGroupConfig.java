@@ -4,6 +4,8 @@
 package com.google.cloud.dataproc.v1beta2;
 
 /**
+ *
+ *
  * <pre>
  * Optional. The config settings for Compute Engine resources in
  * an instance group, such as a master or worker group.
@@ -11,15 +13,16 @@ package com.google.cloud.dataproc.v1beta2;
  *
  * Protobuf type {@code google.cloud.dataproc.v1beta2.InstanceGroupConfig}
  */
-public  final class InstanceGroupConfig extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1beta2.InstanceGroupConfig)
     InstanceGroupConfigOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use InstanceGroupConfig.newBuilder() to construct.
   private InstanceGroupConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private InstanceGroupConfig() {
     numInstances_ = 0;
     instanceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -31,10 +34,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private InstanceGroupConfig(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -54,92 +57,106 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
-
-            numInstances_ = input.readInt32();
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-              instanceNames_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000002;
+          case 8:
+            {
+              numInstances_ = input.readInt32();
+              break;
             }
-            instanceNames_.add(s);
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            imageUri_ = s;
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            machineTypeUri_ = s;
-            break;
-          }
-          case 42: {
-            com.google.cloud.dataproc.v1beta2.DiskConfig.Builder subBuilder = null;
-            if (diskConfig_ != null) {
-              subBuilder = diskConfig_.toBuilder();
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                instanceNames_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              instanceNames_.add(s);
+              break;
             }
-            diskConfig_ = input.readMessage(com.google.cloud.dataproc.v1beta2.DiskConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(diskConfig_);
-              diskConfig_ = subBuilder.buildPartial();
-            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            break;
-          }
-          case 48: {
+              imageUri_ = s;
+              break;
+            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            isPreemptible_ = input.readBool();
-            break;
-          }
-          case 58: {
-            com.google.cloud.dataproc.v1beta2.ManagedGroupConfig.Builder subBuilder = null;
-            if (managedGroupConfig_ != null) {
-              subBuilder = managedGroupConfig_.toBuilder();
+              machineTypeUri_ = s;
+              break;
             }
-            managedGroupConfig_ = input.readMessage(com.google.cloud.dataproc.v1beta2.ManagedGroupConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(managedGroupConfig_);
-              managedGroupConfig_ = subBuilder.buildPartial();
-            }
+          case 42:
+            {
+              com.google.cloud.dataproc.v1beta2.DiskConfig.Builder subBuilder = null;
+              if (diskConfig_ != null) {
+                subBuilder = diskConfig_.toBuilder();
+              }
+              diskConfig_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1beta2.DiskConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(diskConfig_);
+                diskConfig_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 66: {
-            if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
-              accelerators_ = new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.AcceleratorConfig>();
-              mutable_bitField0_ |= 0x00000080;
+              break;
             }
-            accelerators_.add(
-                input.readMessage(com.google.cloud.dataproc.v1beta2.AcceleratorConfig.parser(), extensionRegistry));
-            break;
-          }
-          case 74: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 48:
+            {
+              isPreemptible_ = input.readBool();
+              break;
+            }
+          case 58:
+            {
+              com.google.cloud.dataproc.v1beta2.ManagedGroupConfig.Builder subBuilder = null;
+              if (managedGroupConfig_ != null) {
+                subBuilder = managedGroupConfig_.toBuilder();
+              }
+              managedGroupConfig_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1beta2.ManagedGroupConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(managedGroupConfig_);
+                managedGroupConfig_ = subBuilder.buildPartial();
+              }
 
-            minCpuPlatform_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          case 66:
+            {
+              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+                accelerators_ =
+                    new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.AcceleratorConfig>();
+                mutable_bitField0_ |= 0x00000080;
+              }
+              accelerators_.add(
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1beta2.AcceleratorConfig.parser(),
+                      extensionRegistry));
+              break;
+            }
+          case 74:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              minCpuPlatform_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
         instanceNames_ = instanceNames_.getUnmodifiableView();
@@ -151,23 +168,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.dataproc.v1beta2.ClustersProto.internal_static_google_cloud_dataproc_v1beta2_InstanceGroupConfig_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.dataproc.v1beta2.ClustersProto
+        .internal_static_google_cloud_dataproc_v1beta2_InstanceGroupConfig_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.dataproc.v1beta2.ClustersProto.internal_static_google_cloud_dataproc_v1beta2_InstanceGroupConfig_fieldAccessorTable
+    return com.google.cloud.dataproc.v1beta2.ClustersProto
+        .internal_static_google_cloud_dataproc_v1beta2_InstanceGroupConfig_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.class, com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Builder.class);
+            com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.class,
+            com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Builder.class);
   }
 
   private int bitField0_;
   public static final int NUM_INSTANCES_FIELD_NUMBER = 1;
   private int numInstances_;
   /**
+   *
+   *
    * <pre>
    * Optional. The number of VM instances in the instance group.
    * For master instance groups, must be set to 1.
@@ -182,6 +204,8 @@ private static final long serialVersionUID = 0L;
   public static final int INSTANCE_NAMES_FIELD_NUMBER = 2;
   private com.google.protobuf.LazyStringList instanceNames_;
   /**
+   *
+   *
    * <pre>
    * Output only. The list of instance names. Cloud Dataproc derives the names
    * from `cluster_name`, `num_instances`, and the instance group.
@@ -189,11 +213,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string instance_names = 2;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getInstanceNamesList() {
+  public com.google.protobuf.ProtocolStringList getInstanceNamesList() {
     return instanceNames_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The list of instance names. Cloud Dataproc derives the names
    * from `cluster_name`, `num_instances`, and the instance group.
@@ -205,6 +230,8 @@ private static final long serialVersionUID = 0L;
     return instanceNames_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The list of instance names. Cloud Dataproc derives the names
    * from `cluster_name`, `num_instances`, and the instance group.
@@ -216,6 +243,8 @@ private static final long serialVersionUID = 0L;
     return instanceNames_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The list of instance names. Cloud Dataproc derives the names
    * from `cluster_name`, `num_instances`, and the instance group.
@@ -223,17 +252,19 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string instance_names = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getInstanceNamesBytes(int index) {
+  public com.google.protobuf.ByteString getInstanceNamesBytes(int index) {
     return instanceNames_.getByteString(index);
   }
 
   public static final int IMAGE_URI_FIELD_NUMBER = 3;
   private volatile java.lang.Object imageUri_;
   /**
+   *
+   *
    * <pre>
-   * Output only. The Compute Engine image resource used for cluster
-   * instances. Inferred from `SoftwareConfig.image_version`.
+   * Optional. The Compute Engine image resource used for cluster
+   * instances. It can be specified or may be inferred from
+   * `SoftwareConfig.image_version`.
    * </pre>
    *
    * <code>string image_uri = 3;</code>
@@ -243,28 +274,28 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       imageUri_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
-   * Output only. The Compute Engine image resource used for cluster
-   * instances. Inferred from `SoftwareConfig.image_version`.
+   * Optional. The Compute Engine image resource used for cluster
+   * instances. It can be specified or may be inferred from
+   * `SoftwareConfig.image_version`.
    * </pre>
    *
    * <code>string image_uri = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getImageUriBytes() {
+  public com.google.protobuf.ByteString getImageUriBytes() {
     java.lang.Object ref = imageUri_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       imageUri_ = b;
       return b;
     } else {
@@ -275,6 +306,8 @@ private static final long serialVersionUID = 0L;
   public static final int MACHINE_TYPE_URI_FIELD_NUMBER = 4;
   private volatile java.lang.Object machineTypeUri_;
   /**
+   *
+   *
    * <pre>
    * Optional. The Compute Engine machine type used for cluster instances.
    * A full URL, partial URI, or short name are valid. Examples:
@@ -294,14 +327,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       machineTypeUri_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The Compute Engine machine type used for cluster instances.
    * A full URL, partial URI, or short name are valid. Examples:
@@ -316,13 +350,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string machine_type_uri = 4;</code>
    */
-  public com.google.protobuf.ByteString
-      getMachineTypeUriBytes() {
+  public com.google.protobuf.ByteString getMachineTypeUriBytes() {
     java.lang.Object ref = machineTypeUri_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       machineTypeUri_ = b;
       return b;
     } else {
@@ -333,6 +365,8 @@ private static final long serialVersionUID = 0L;
   public static final int DISK_CONFIG_FIELD_NUMBER = 5;
   private com.google.cloud.dataproc.v1beta2.DiskConfig diskConfig_;
   /**
+   *
+   *
    * <pre>
    * Optional. Disk option config settings.
    * </pre>
@@ -343,6 +377,8 @@ private static final long serialVersionUID = 0L;
     return diskConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Disk option config settings.
    * </pre>
@@ -350,9 +386,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.dataproc.v1beta2.DiskConfig disk_config = 5;</code>
    */
   public com.google.cloud.dataproc.v1beta2.DiskConfig getDiskConfig() {
-    return diskConfig_ == null ? com.google.cloud.dataproc.v1beta2.DiskConfig.getDefaultInstance() : diskConfig_;
+    return diskConfig_ == null
+        ? com.google.cloud.dataproc.v1beta2.DiskConfig.getDefaultInstance()
+        : diskConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Disk option config settings.
    * </pre>
@@ -366,6 +406,8 @@ private static final long serialVersionUID = 0L;
   public static final int IS_PREEMPTIBLE_FIELD_NUMBER = 6;
   private boolean isPreemptible_;
   /**
+   *
+   *
    * <pre>
    * Optional. Specifies that this instance group contains preemptible instances.
    * </pre>
@@ -379,6 +421,8 @@ private static final long serialVersionUID = 0L;
   public static final int MANAGED_GROUP_CONFIG_FIELD_NUMBER = 7;
   private com.google.cloud.dataproc.v1beta2.ManagedGroupConfig managedGroupConfig_;
   /**
+   *
+   *
    * <pre>
    * Output only. The config for Compute Engine Instance Group
    * Manager that manages this group.
@@ -391,6 +435,8 @@ private static final long serialVersionUID = 0L;
     return managedGroupConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The config for Compute Engine Instance Group
    * Manager that manages this group.
@@ -400,9 +446,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.dataproc.v1beta2.ManagedGroupConfig managed_group_config = 7;</code>
    */
   public com.google.cloud.dataproc.v1beta2.ManagedGroupConfig getManagedGroupConfig() {
-    return managedGroupConfig_ == null ? com.google.cloud.dataproc.v1beta2.ManagedGroupConfig.getDefaultInstance() : managedGroupConfig_;
+    return managedGroupConfig_ == null
+        ? com.google.cloud.dataproc.v1beta2.ManagedGroupConfig.getDefaultInstance()
+        : managedGroupConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The config for Compute Engine Instance Group
    * Manager that manages this group.
@@ -411,13 +461,16 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.cloud.dataproc.v1beta2.ManagedGroupConfig managed_group_config = 7;</code>
    */
-  public com.google.cloud.dataproc.v1beta2.ManagedGroupConfigOrBuilder getManagedGroupConfigOrBuilder() {
+  public com.google.cloud.dataproc.v1beta2.ManagedGroupConfigOrBuilder
+      getManagedGroupConfigOrBuilder() {
     return getManagedGroupConfig();
   }
 
   public static final int ACCELERATORS_FIELD_NUMBER = 8;
   private java.util.List<com.google.cloud.dataproc.v1beta2.AcceleratorConfig> accelerators_;
   /**
+   *
+   *
    * <pre>
    * Optional. The Compute Engine accelerator configuration for these
    * instances.
@@ -431,6 +484,8 @@ private static final long serialVersionUID = 0L;
     return accelerators_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The Compute Engine accelerator configuration for these
    * instances.
@@ -440,11 +495,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8;</code>
    */
-  public java.util.List<? extends com.google.cloud.dataproc.v1beta2.AcceleratorConfigOrBuilder> 
+  public java.util.List<? extends com.google.cloud.dataproc.v1beta2.AcceleratorConfigOrBuilder>
       getAcceleratorsOrBuilderList() {
     return accelerators_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The Compute Engine accelerator configuration for these
    * instances.
@@ -458,6 +515,8 @@ private static final long serialVersionUID = 0L;
     return accelerators_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The Compute Engine accelerator configuration for these
    * instances.
@@ -471,6 +530,8 @@ private static final long serialVersionUID = 0L;
     return accelerators_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The Compute Engine accelerator configuration for these
    * instances.
@@ -488,6 +549,8 @@ private static final long serialVersionUID = 0L;
   public static final int MIN_CPU_PLATFORM_FIELD_NUMBER = 9;
   private volatile java.lang.Object minCpuPlatform_;
   /**
+   *
+   *
    * <pre>
    * Optional. Specifies the minimum cpu platform for the Instance Group.
    * See [Cloud Dataproc&amp;rarr;Minimum CPU Platform]
@@ -501,14 +564,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       minCpuPlatform_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Specifies the minimum cpu platform for the Instance Group.
    * See [Cloud Dataproc&amp;rarr;Minimum CPU Platform]
@@ -517,13 +581,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string min_cpu_platform = 9;</code>
    */
-  public com.google.protobuf.ByteString
-      getMinCpuPlatformBytes() {
+  public com.google.protobuf.ByteString getMinCpuPlatformBytes() {
     java.lang.Object ref = minCpuPlatform_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       minCpuPlatform_ = b;
       return b;
     } else {
@@ -532,6 +594,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -543,8 +606,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (numInstances_ != 0) {
       output.writeInt32(1, numInstances_);
     }
@@ -582,8 +644,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (numInstances_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, numInstances_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, numInstances_);
     }
     {
       int dataSize = 0;
@@ -600,20 +661,16 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, machineTypeUri_);
     }
     if (diskConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getDiskConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getDiskConfig());
     }
     if (isPreemptible_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(6, isPreemptible_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, isPreemptible_);
     }
     if (managedGroupConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, getManagedGroupConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getManagedGroupConfig());
     }
     for (int i = 0; i < accelerators_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, accelerators_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, accelerators_.get(i));
     }
     if (!getMinCpuPlatformBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, minCpuPlatform_);
@@ -626,38 +683,30 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.dataproc.v1beta2.InstanceGroupConfig)) {
       return super.equals(obj);
     }
-    com.google.cloud.dataproc.v1beta2.InstanceGroupConfig other = (com.google.cloud.dataproc.v1beta2.InstanceGroupConfig) obj;
+    com.google.cloud.dataproc.v1beta2.InstanceGroupConfig other =
+        (com.google.cloud.dataproc.v1beta2.InstanceGroupConfig) obj;
 
     boolean result = true;
-    result = result && (getNumInstances()
-        == other.getNumInstances());
-    result = result && getInstanceNamesList()
-        .equals(other.getInstanceNamesList());
-    result = result && getImageUri()
-        .equals(other.getImageUri());
-    result = result && getMachineTypeUri()
-        .equals(other.getMachineTypeUri());
+    result = result && (getNumInstances() == other.getNumInstances());
+    result = result && getInstanceNamesList().equals(other.getInstanceNamesList());
+    result = result && getImageUri().equals(other.getImageUri());
+    result = result && getMachineTypeUri().equals(other.getMachineTypeUri());
     result = result && (hasDiskConfig() == other.hasDiskConfig());
     if (hasDiskConfig()) {
-      result = result && getDiskConfig()
-          .equals(other.getDiskConfig());
+      result = result && getDiskConfig().equals(other.getDiskConfig());
     }
-    result = result && (getIsPreemptible()
-        == other.getIsPreemptible());
+    result = result && (getIsPreemptible() == other.getIsPreemptible());
     result = result && (hasManagedGroupConfig() == other.hasManagedGroupConfig());
     if (hasManagedGroupConfig()) {
-      result = result && getManagedGroupConfig()
-          .equals(other.getManagedGroupConfig());
+      result = result && getManagedGroupConfig().equals(other.getManagedGroupConfig());
     }
-    result = result && getAcceleratorsList()
-        .equals(other.getAcceleratorsList());
-    result = result && getMinCpuPlatform()
-        .equals(other.getMinCpuPlatform());
+    result = result && getAcceleratorsList().equals(other.getAcceleratorsList());
+    result = result && getMinCpuPlatform().equals(other.getMinCpuPlatform());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -684,8 +733,7 @@ private static final long serialVersionUID = 0L;
       hash = (53 * hash) + getDiskConfig().hashCode();
     }
     hash = (37 * hash) + IS_PREEMPTIBLE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getIsPreemptible());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsPreemptible());
     if (hasManagedGroupConfig()) {
       hash = (37 * hash) + MANAGED_GROUP_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getManagedGroupConfig().hashCode();
@@ -702,96 +750,104 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.dataproc.v1beta2.InstanceGroupConfig parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.InstanceGroupConfig parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.InstanceGroupConfig parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.InstanceGroupConfig parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.InstanceGroupConfig parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.InstanceGroupConfig parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.dataproc.v1beta2.InstanceGroupConfig parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.dataproc.v1beta2.InstanceGroupConfig parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.dataproc.v1beta2.InstanceGroupConfig parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.dataproc.v1beta2.InstanceGroupConfig parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.InstanceGroupConfig parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.dataproc.v1beta2.InstanceGroupConfig parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.dataproc.v1beta2.InstanceGroupConfig parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dataproc.v1beta2.InstanceGroupConfig parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.dataproc.v1beta2.InstanceGroupConfig prototype) {
+
+  public static Builder newBuilder(
+      com.google.cloud.dataproc.v1beta2.InstanceGroupConfig prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The config settings for Compute Engine resources in
    * an instance group, such as a master or worker group.
@@ -799,21 +855,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.dataproc.v1beta2.InstanceGroupConfig}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dataproc.v1beta2.InstanceGroupConfig)
       com.google.cloud.dataproc.v1beta2.InstanceGroupConfigOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dataproc.v1beta2.ClustersProto.internal_static_google_cloud_dataproc_v1beta2_InstanceGroupConfig_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataproc.v1beta2.ClustersProto
+          .internal_static_google_cloud_dataproc_v1beta2_InstanceGroupConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dataproc.v1beta2.ClustersProto.internal_static_google_cloud_dataproc_v1beta2_InstanceGroupConfig_fieldAccessorTable
+      return com.google.cloud.dataproc.v1beta2.ClustersProto
+          .internal_static_google_cloud_dataproc_v1beta2_InstanceGroupConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.class, com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Builder.class);
+              com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.class,
+              com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Builder.class);
     }
 
     // Construct using com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.newBuilder()
@@ -821,17 +879,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getAcceleratorsFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -869,9 +927,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.dataproc.v1beta2.ClustersProto.internal_static_google_cloud_dataproc_v1beta2_InstanceGroupConfig_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.dataproc.v1beta2.ClustersProto
+          .internal_static_google_cloud_dataproc_v1beta2_InstanceGroupConfig_descriptor;
     }
 
     @java.lang.Override
@@ -890,7 +948,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.dataproc.v1beta2.InstanceGroupConfig buildPartial() {
-      com.google.cloud.dataproc.v1beta2.InstanceGroupConfig result = new com.google.cloud.dataproc.v1beta2.InstanceGroupConfig(this);
+      com.google.cloud.dataproc.v1beta2.InstanceGroupConfig result =
+          new com.google.cloud.dataproc.v1beta2.InstanceGroupConfig(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.numInstances_ = numInstances_;
@@ -931,38 +990,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dataproc.v1beta2.InstanceGroupConfig) {
-        return mergeFrom((com.google.cloud.dataproc.v1beta2.InstanceGroupConfig)other);
+        return mergeFrom((com.google.cloud.dataproc.v1beta2.InstanceGroupConfig) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -970,7 +1030,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.dataproc.v1beta2.InstanceGroupConfig other) {
-      if (other == com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.getDefaultInstance()) return this;
+      if (other == com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.getDefaultInstance())
+        return this;
       if (other.getNumInstances() != 0) {
         setNumInstances(other.getNumInstances());
       }
@@ -1019,9 +1080,10 @@ private static final long serialVersionUID = 0L;
             acceleratorsBuilder_ = null;
             accelerators_ = other.accelerators_;
             bitField0_ = (bitField0_ & ~0x00000080);
-            acceleratorsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getAcceleratorsFieldBuilder() : null;
+            acceleratorsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getAcceleratorsFieldBuilder()
+                    : null;
           } else {
             acceleratorsBuilder_.addAllMessages(other.accelerators_);
           }
@@ -1050,7 +1112,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.dataproc.v1beta2.InstanceGroupConfig) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.dataproc.v1beta2.InstanceGroupConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -1059,10 +1122,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
-    private int numInstances_ ;
+    private int numInstances_;
     /**
+     *
+     *
      * <pre>
      * Optional. The number of VM instances in the instance group.
      * For master instance groups, must be set to 1.
@@ -1074,6 +1140,8 @@ private static final long serialVersionUID = 0L;
       return numInstances_;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The number of VM instances in the instance group.
      * For master instance groups, must be set to 1.
@@ -1082,12 +1150,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 num_instances = 1;</code>
      */
     public Builder setNumInstances(int value) {
-      
+
       numInstances_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The number of VM instances in the instance group.
      * For master instance groups, must be set to 1.
@@ -1096,20 +1166,24 @@ private static final long serialVersionUID = 0L;
      * <code>int32 num_instances = 1;</code>
      */
     public Builder clearNumInstances() {
-      
+
       numInstances_ = 0;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList instanceNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList instanceNames_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureInstanceNamesIsMutable() {
       if (!((bitField0_ & 0x00000002) == 0x00000002)) {
         instanceNames_ = new com.google.protobuf.LazyStringArrayList(instanceNames_);
         bitField0_ |= 0x00000002;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The list of instance names. Cloud Dataproc derives the names
      * from `cluster_name`, `num_instances`, and the instance group.
@@ -1117,11 +1191,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string instance_names = 2;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getInstanceNamesList() {
+    public com.google.protobuf.ProtocolStringList getInstanceNamesList() {
       return instanceNames_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The list of instance names. Cloud Dataproc derives the names
      * from `cluster_name`, `num_instances`, and the instance group.
@@ -1133,6 +1208,8 @@ private static final long serialVersionUID = 0L;
       return instanceNames_.size();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The list of instance names. Cloud Dataproc derives the names
      * from `cluster_name`, `num_instances`, and the instance group.
@@ -1144,6 +1221,8 @@ private static final long serialVersionUID = 0L;
       return instanceNames_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The list of instance names. Cloud Dataproc derives the names
      * from `cluster_name`, `num_instances`, and the instance group.
@@ -1151,11 +1230,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string instance_names = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getInstanceNamesBytes(int index) {
+    public com.google.protobuf.ByteString getInstanceNamesBytes(int index) {
       return instanceNames_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The list of instance names. Cloud Dataproc derives the names
      * from `cluster_name`, `num_instances`, and the instance group.
@@ -1163,17 +1243,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string instance_names = 2;</code>
      */
-    public Builder setInstanceNames(
-        int index, java.lang.String value) {
+    public Builder setInstanceNames(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureInstanceNamesIsMutable();
+        throw new NullPointerException();
+      }
+      ensureInstanceNamesIsMutable();
       instanceNames_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The list of instance names. Cloud Dataproc derives the names
      * from `cluster_name`, `num_instances`, and the instance group.
@@ -1181,17 +1262,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string instance_names = 2;</code>
      */
-    public Builder addInstanceNames(
-        java.lang.String value) {
+    public Builder addInstanceNames(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureInstanceNamesIsMutable();
+        throw new NullPointerException();
+      }
+      ensureInstanceNamesIsMutable();
       instanceNames_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The list of instance names. Cloud Dataproc derives the names
      * from `cluster_name`, `num_instances`, and the instance group.
@@ -1199,15 +1281,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string instance_names = 2;</code>
      */
-    public Builder addAllInstanceNames(
-        java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllInstanceNames(java.lang.Iterable<java.lang.String> values) {
       ensureInstanceNamesIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, instanceNames_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, instanceNames_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The list of instance names. Cloud Dataproc derives the names
      * from `cluster_name`, `num_instances`, and the instance group.
@@ -1222,6 +1304,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The list of instance names. Cloud Dataproc derives the names
      * from `cluster_name`, `num_instances`, and the instance group.
@@ -1229,12 +1313,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string instance_names = 2;</code>
      */
-    public Builder addInstanceNamesBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder addInstanceNamesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureInstanceNamesIsMutable();
       instanceNames_.add(value);
       onChanged();
@@ -1243,9 +1326,12 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object imageUri_ = "";
     /**
+     *
+     *
      * <pre>
-     * Output only. The Compute Engine image resource used for cluster
-     * instances. Inferred from `SoftwareConfig.image_version`.
+     * Optional. The Compute Engine image resource used for cluster
+     * instances. It can be specified or may be inferred from
+     * `SoftwareConfig.image_version`.
      * </pre>
      *
      * <code>string image_uri = 3;</code>
@@ -1253,8 +1339,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getImageUri() {
       java.lang.Object ref = imageUri_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         imageUri_ = s;
         return s;
@@ -1263,20 +1348,21 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Output only. The Compute Engine image resource used for cluster
-     * instances. Inferred from `SoftwareConfig.image_version`.
+     * Optional. The Compute Engine image resource used for cluster
+     * instances. It can be specified or may be inferred from
+     * `SoftwareConfig.image_version`.
      * </pre>
      *
      * <code>string image_uri = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getImageUriBytes() {
+    public com.google.protobuf.ByteString getImageUriBytes() {
       java.lang.Object ref = imageUri_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         imageUri_ = b;
         return b;
       } else {
@@ -1284,52 +1370,59 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Output only. The Compute Engine image resource used for cluster
-     * instances. Inferred from `SoftwareConfig.image_version`.
+     * Optional. The Compute Engine image resource used for cluster
+     * instances. It can be specified or may be inferred from
+     * `SoftwareConfig.image_version`.
      * </pre>
      *
      * <code>string image_uri = 3;</code>
      */
-    public Builder setImageUri(
-        java.lang.String value) {
+    public Builder setImageUri(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       imageUri_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Output only. The Compute Engine image resource used for cluster
-     * instances. Inferred from `SoftwareConfig.image_version`.
+     * Optional. The Compute Engine image resource used for cluster
+     * instances. It can be specified or may be inferred from
+     * `SoftwareConfig.image_version`.
      * </pre>
      *
      * <code>string image_uri = 3;</code>
      */
     public Builder clearImageUri() {
-      
+
       imageUri_ = getDefaultInstance().getImageUri();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Output only. The Compute Engine image resource used for cluster
-     * instances. Inferred from `SoftwareConfig.image_version`.
+     * Optional. The Compute Engine image resource used for cluster
+     * instances. It can be specified or may be inferred from
+     * `SoftwareConfig.image_version`.
      * </pre>
      *
      * <code>string image_uri = 3;</code>
      */
-    public Builder setImageUriBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setImageUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       imageUri_ = value;
       onChanged();
       return this;
@@ -1337,6 +1430,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object machineTypeUri_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine machine type used for cluster instances.
      * A full URL, partial URI, or short name are valid. Examples:
@@ -1354,8 +1449,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getMachineTypeUri() {
       java.lang.Object ref = machineTypeUri_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         machineTypeUri_ = s;
         return s;
@@ -1364,6 +1458,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine machine type used for cluster instances.
      * A full URL, partial URI, or short name are valid. Examples:
@@ -1378,13 +1474,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string machine_type_uri = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getMachineTypeUriBytes() {
+    public com.google.protobuf.ByteString getMachineTypeUriBytes() {
       java.lang.Object ref = machineTypeUri_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         machineTypeUri_ = b;
         return b;
       } else {
@@ -1392,6 +1486,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine machine type used for cluster instances.
      * A full URL, partial URI, or short name are valid. Examples:
@@ -1406,17 +1502,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string machine_type_uri = 4;</code>
      */
-    public Builder setMachineTypeUri(
-        java.lang.String value) {
+    public Builder setMachineTypeUri(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       machineTypeUri_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine machine type used for cluster instances.
      * A full URL, partial URI, or short name are valid. Examples:
@@ -1432,12 +1529,14 @@ private static final long serialVersionUID = 0L;
      * <code>string machine_type_uri = 4;</code>
      */
     public Builder clearMachineTypeUri() {
-      
+
       machineTypeUri_ = getDefaultInstance().getMachineTypeUri();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine machine type used for cluster instances.
      * A full URL, partial URI, or short name are valid. Examples:
@@ -1452,13 +1551,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string machine_type_uri = 4;</code>
      */
-    public Builder setMachineTypeUriBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setMachineTypeUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       machineTypeUri_ = value;
       onChanged();
       return this;
@@ -1466,8 +1564,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.dataproc.v1beta2.DiskConfig diskConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.DiskConfig, com.google.cloud.dataproc.v1beta2.DiskConfig.Builder, com.google.cloud.dataproc.v1beta2.DiskConfigOrBuilder> diskConfigBuilder_;
+            com.google.cloud.dataproc.v1beta2.DiskConfig,
+            com.google.cloud.dataproc.v1beta2.DiskConfig.Builder,
+            com.google.cloud.dataproc.v1beta2.DiskConfigOrBuilder>
+        diskConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * Optional. Disk option config settings.
      * </pre>
@@ -1478,6 +1581,8 @@ private static final long serialVersionUID = 0L;
       return diskConfigBuilder_ != null || diskConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Disk option config settings.
      * </pre>
@@ -1486,12 +1591,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dataproc.v1beta2.DiskConfig getDiskConfig() {
       if (diskConfigBuilder_ == null) {
-        return diskConfig_ == null ? com.google.cloud.dataproc.v1beta2.DiskConfig.getDefaultInstance() : diskConfig_;
+        return diskConfig_ == null
+            ? com.google.cloud.dataproc.v1beta2.DiskConfig.getDefaultInstance()
+            : diskConfig_;
       } else {
         return diskConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Disk option config settings.
      * </pre>
@@ -1512,6 +1621,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Disk option config settings.
      * </pre>
@@ -1530,6 +1641,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Disk option config settings.
      * </pre>
@@ -1540,7 +1653,9 @@ private static final long serialVersionUID = 0L;
       if (diskConfigBuilder_ == null) {
         if (diskConfig_ != null) {
           diskConfig_ =
-            com.google.cloud.dataproc.v1beta2.DiskConfig.newBuilder(diskConfig_).mergeFrom(value).buildPartial();
+              com.google.cloud.dataproc.v1beta2.DiskConfig.newBuilder(diskConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           diskConfig_ = value;
         }
@@ -1552,6 +1667,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Disk option config settings.
      * </pre>
@@ -1570,6 +1687,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Disk option config settings.
      * </pre>
@@ -1577,11 +1696,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.DiskConfig disk_config = 5;</code>
      */
     public com.google.cloud.dataproc.v1beta2.DiskConfig.Builder getDiskConfigBuilder() {
-      
+
       onChanged();
       return getDiskConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Disk option config settings.
      * </pre>
@@ -1592,11 +1713,14 @@ private static final long serialVersionUID = 0L;
       if (diskConfigBuilder_ != null) {
         return diskConfigBuilder_.getMessageOrBuilder();
       } else {
-        return diskConfig_ == null ?
-            com.google.cloud.dataproc.v1beta2.DiskConfig.getDefaultInstance() : diskConfig_;
+        return diskConfig_ == null
+            ? com.google.cloud.dataproc.v1beta2.DiskConfig.getDefaultInstance()
+            : diskConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Disk option config settings.
      * </pre>
@@ -1604,21 +1728,26 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.DiskConfig disk_config = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.DiskConfig, com.google.cloud.dataproc.v1beta2.DiskConfig.Builder, com.google.cloud.dataproc.v1beta2.DiskConfigOrBuilder> 
+            com.google.cloud.dataproc.v1beta2.DiskConfig,
+            com.google.cloud.dataproc.v1beta2.DiskConfig.Builder,
+            com.google.cloud.dataproc.v1beta2.DiskConfigOrBuilder>
         getDiskConfigFieldBuilder() {
       if (diskConfigBuilder_ == null) {
-        diskConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataproc.v1beta2.DiskConfig, com.google.cloud.dataproc.v1beta2.DiskConfig.Builder, com.google.cloud.dataproc.v1beta2.DiskConfigOrBuilder>(
-                getDiskConfig(),
-                getParentForChildren(),
-                isClean());
+        diskConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1beta2.DiskConfig,
+                com.google.cloud.dataproc.v1beta2.DiskConfig.Builder,
+                com.google.cloud.dataproc.v1beta2.DiskConfigOrBuilder>(
+                getDiskConfig(), getParentForChildren(), isClean());
         diskConfig_ = null;
       }
       return diskConfigBuilder_;
     }
 
-    private boolean isPreemptible_ ;
+    private boolean isPreemptible_;
     /**
+     *
+     *
      * <pre>
      * Optional. Specifies that this instance group contains preemptible instances.
      * </pre>
@@ -1629,6 +1758,8 @@ private static final long serialVersionUID = 0L;
       return isPreemptible_;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Specifies that this instance group contains preemptible instances.
      * </pre>
@@ -1636,12 +1767,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool is_preemptible = 6;</code>
      */
     public Builder setIsPreemptible(boolean value) {
-      
+
       isPreemptible_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Specifies that this instance group contains preemptible instances.
      * </pre>
@@ -1649,7 +1782,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool is_preemptible = 6;</code>
      */
     public Builder clearIsPreemptible() {
-      
+
       isPreemptible_ = false;
       onChanged();
       return this;
@@ -1657,8 +1790,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.dataproc.v1beta2.ManagedGroupConfig managedGroupConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.ManagedGroupConfig, com.google.cloud.dataproc.v1beta2.ManagedGroupConfig.Builder, com.google.cloud.dataproc.v1beta2.ManagedGroupConfigOrBuilder> managedGroupConfigBuilder_;
+            com.google.cloud.dataproc.v1beta2.ManagedGroupConfig,
+            com.google.cloud.dataproc.v1beta2.ManagedGroupConfig.Builder,
+            com.google.cloud.dataproc.v1beta2.ManagedGroupConfigOrBuilder>
+        managedGroupConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only. The config for Compute Engine Instance Group
      * Manager that manages this group.
@@ -1671,6 +1809,8 @@ private static final long serialVersionUID = 0L;
       return managedGroupConfigBuilder_ != null || managedGroupConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The config for Compute Engine Instance Group
      * Manager that manages this group.
@@ -1681,12 +1821,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dataproc.v1beta2.ManagedGroupConfig getManagedGroupConfig() {
       if (managedGroupConfigBuilder_ == null) {
-        return managedGroupConfig_ == null ? com.google.cloud.dataproc.v1beta2.ManagedGroupConfig.getDefaultInstance() : managedGroupConfig_;
+        return managedGroupConfig_ == null
+            ? com.google.cloud.dataproc.v1beta2.ManagedGroupConfig.getDefaultInstance()
+            : managedGroupConfig_;
       } else {
         return managedGroupConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The config for Compute Engine Instance Group
      * Manager that manages this group.
@@ -1695,7 +1839,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.dataproc.v1beta2.ManagedGroupConfig managed_group_config = 7;</code>
      */
-    public Builder setManagedGroupConfig(com.google.cloud.dataproc.v1beta2.ManagedGroupConfig value) {
+    public Builder setManagedGroupConfig(
+        com.google.cloud.dataproc.v1beta2.ManagedGroupConfig value) {
       if (managedGroupConfigBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1709,6 +1854,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The config for Compute Engine Instance Group
      * Manager that manages this group.
@@ -1729,6 +1876,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The config for Compute Engine Instance Group
      * Manager that manages this group.
@@ -1737,11 +1886,14 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.dataproc.v1beta2.ManagedGroupConfig managed_group_config = 7;</code>
      */
-    public Builder mergeManagedGroupConfig(com.google.cloud.dataproc.v1beta2.ManagedGroupConfig value) {
+    public Builder mergeManagedGroupConfig(
+        com.google.cloud.dataproc.v1beta2.ManagedGroupConfig value) {
       if (managedGroupConfigBuilder_ == null) {
         if (managedGroupConfig_ != null) {
           managedGroupConfig_ =
-            com.google.cloud.dataproc.v1beta2.ManagedGroupConfig.newBuilder(managedGroupConfig_).mergeFrom(value).buildPartial();
+              com.google.cloud.dataproc.v1beta2.ManagedGroupConfig.newBuilder(managedGroupConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           managedGroupConfig_ = value;
         }
@@ -1753,6 +1905,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The config for Compute Engine Instance Group
      * Manager that manages this group.
@@ -1773,6 +1927,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The config for Compute Engine Instance Group
      * Manager that manages this group.
@@ -1781,12 +1937,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.dataproc.v1beta2.ManagedGroupConfig managed_group_config = 7;</code>
      */
-    public com.google.cloud.dataproc.v1beta2.ManagedGroupConfig.Builder getManagedGroupConfigBuilder() {
-      
+    public com.google.cloud.dataproc.v1beta2.ManagedGroupConfig.Builder
+        getManagedGroupConfigBuilder() {
+
       onChanged();
       return getManagedGroupConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The config for Compute Engine Instance Group
      * Manager that manages this group.
@@ -1795,15 +1954,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.dataproc.v1beta2.ManagedGroupConfig managed_group_config = 7;</code>
      */
-    public com.google.cloud.dataproc.v1beta2.ManagedGroupConfigOrBuilder getManagedGroupConfigOrBuilder() {
+    public com.google.cloud.dataproc.v1beta2.ManagedGroupConfigOrBuilder
+        getManagedGroupConfigOrBuilder() {
       if (managedGroupConfigBuilder_ != null) {
         return managedGroupConfigBuilder_.getMessageOrBuilder();
       } else {
-        return managedGroupConfig_ == null ?
-            com.google.cloud.dataproc.v1beta2.ManagedGroupConfig.getDefaultInstance() : managedGroupConfig_;
+        return managedGroupConfig_ == null
+            ? com.google.cloud.dataproc.v1beta2.ManagedGroupConfig.getDefaultInstance()
+            : managedGroupConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The config for Compute Engine Instance Group
      * Manager that manages this group.
@@ -1813,32 +1976,43 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.ManagedGroupConfig managed_group_config = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.ManagedGroupConfig, com.google.cloud.dataproc.v1beta2.ManagedGroupConfig.Builder, com.google.cloud.dataproc.v1beta2.ManagedGroupConfigOrBuilder> 
+            com.google.cloud.dataproc.v1beta2.ManagedGroupConfig,
+            com.google.cloud.dataproc.v1beta2.ManagedGroupConfig.Builder,
+            com.google.cloud.dataproc.v1beta2.ManagedGroupConfigOrBuilder>
         getManagedGroupConfigFieldBuilder() {
       if (managedGroupConfigBuilder_ == null) {
-        managedGroupConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataproc.v1beta2.ManagedGroupConfig, com.google.cloud.dataproc.v1beta2.ManagedGroupConfig.Builder, com.google.cloud.dataproc.v1beta2.ManagedGroupConfigOrBuilder>(
-                getManagedGroupConfig(),
-                getParentForChildren(),
-                isClean());
+        managedGroupConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1beta2.ManagedGroupConfig,
+                com.google.cloud.dataproc.v1beta2.ManagedGroupConfig.Builder,
+                com.google.cloud.dataproc.v1beta2.ManagedGroupConfigOrBuilder>(
+                getManagedGroupConfig(), getParentForChildren(), isClean());
         managedGroupConfig_ = null;
       }
       return managedGroupConfigBuilder_;
     }
 
     private java.util.List<com.google.cloud.dataproc.v1beta2.AcceleratorConfig> accelerators_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureAcceleratorsIsMutable() {
       if (!((bitField0_ & 0x00000080) == 0x00000080)) {
-        accelerators_ = new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.AcceleratorConfig>(accelerators_);
+        accelerators_ =
+            new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.AcceleratorConfig>(
+                accelerators_);
         bitField0_ |= 0x00000080;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.AcceleratorConfig, com.google.cloud.dataproc.v1beta2.AcceleratorConfig.Builder, com.google.cloud.dataproc.v1beta2.AcceleratorConfigOrBuilder> acceleratorsBuilder_;
+            com.google.cloud.dataproc.v1beta2.AcceleratorConfig,
+            com.google.cloud.dataproc.v1beta2.AcceleratorConfig.Builder,
+            com.google.cloud.dataproc.v1beta2.AcceleratorConfigOrBuilder>
+        acceleratorsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine accelerator configuration for these
      * instances.
@@ -1848,7 +2022,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8;</code>
      */
-    public java.util.List<com.google.cloud.dataproc.v1beta2.AcceleratorConfig> getAcceleratorsList() {
+    public java.util.List<com.google.cloud.dataproc.v1beta2.AcceleratorConfig>
+        getAcceleratorsList() {
       if (acceleratorsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(accelerators_);
       } else {
@@ -1856,6 +2031,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine accelerator configuration for these
      * instances.
@@ -1873,6 +2050,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine accelerator configuration for these
      * instances.
@@ -1890,6 +2069,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine accelerator configuration for these
      * instances.
@@ -1914,6 +2095,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine accelerator configuration for these
      * instances.
@@ -1935,6 +2118,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine accelerator configuration for these
      * instances.
@@ -1958,6 +2143,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine accelerator configuration for these
      * instances.
@@ -1982,6 +2169,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine accelerator configuration for these
      * instances.
@@ -2003,6 +2192,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine accelerator configuration for these
      * instances.
@@ -2024,6 +2215,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine accelerator configuration for these
      * instances.
@@ -2037,8 +2230,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.cloud.dataproc.v1beta2.AcceleratorConfig> values) {
       if (acceleratorsBuilder_ == null) {
         ensureAcceleratorsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, accelerators_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, accelerators_);
         onChanged();
       } else {
         acceleratorsBuilder_.addAllMessages(values);
@@ -2046,6 +2238,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine accelerator configuration for these
      * instances.
@@ -2066,6 +2260,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine accelerator configuration for these
      * instances.
@@ -2086,6 +2282,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine accelerator configuration for these
      * instances.
@@ -2100,6 +2298,8 @@ private static final long serialVersionUID = 0L;
       return getAcceleratorsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine accelerator configuration for these
      * instances.
@@ -2112,11 +2312,14 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.dataproc.v1beta2.AcceleratorConfigOrBuilder getAcceleratorsOrBuilder(
         int index) {
       if (acceleratorsBuilder_ == null) {
-        return accelerators_.get(index);  } else {
+        return accelerators_.get(index);
+      } else {
         return acceleratorsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine accelerator configuration for these
      * instances.
@@ -2126,8 +2329,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8;</code>
      */
-    public java.util.List<? extends com.google.cloud.dataproc.v1beta2.AcceleratorConfigOrBuilder> 
-         getAcceleratorsOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.dataproc.v1beta2.AcceleratorConfigOrBuilder>
+        getAcceleratorsOrBuilderList() {
       if (acceleratorsBuilder_ != null) {
         return acceleratorsBuilder_.getMessageOrBuilderList();
       } else {
@@ -2135,6 +2338,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine accelerator configuration for these
      * instances.
@@ -2145,10 +2350,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8;</code>
      */
     public com.google.cloud.dataproc.v1beta2.AcceleratorConfig.Builder addAcceleratorsBuilder() {
-      return getAcceleratorsFieldBuilder().addBuilder(
-          com.google.cloud.dataproc.v1beta2.AcceleratorConfig.getDefaultInstance());
+      return getAcceleratorsFieldBuilder()
+          .addBuilder(com.google.cloud.dataproc.v1beta2.AcceleratorConfig.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine accelerator configuration for these
      * instances.
@@ -2160,10 +2367,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dataproc.v1beta2.AcceleratorConfig.Builder addAcceleratorsBuilder(
         int index) {
-      return getAcceleratorsFieldBuilder().addBuilder(
-          index, com.google.cloud.dataproc.v1beta2.AcceleratorConfig.getDefaultInstance());
+      return getAcceleratorsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.dataproc.v1beta2.AcceleratorConfig.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine accelerator configuration for these
      * instances.
@@ -2173,16 +2383,22 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8;</code>
      */
-    public java.util.List<com.google.cloud.dataproc.v1beta2.AcceleratorConfig.Builder> 
-         getAcceleratorsBuilderList() {
+    public java.util.List<com.google.cloud.dataproc.v1beta2.AcceleratorConfig.Builder>
+        getAcceleratorsBuilderList() {
       return getAcceleratorsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.AcceleratorConfig, com.google.cloud.dataproc.v1beta2.AcceleratorConfig.Builder, com.google.cloud.dataproc.v1beta2.AcceleratorConfigOrBuilder> 
+            com.google.cloud.dataproc.v1beta2.AcceleratorConfig,
+            com.google.cloud.dataproc.v1beta2.AcceleratorConfig.Builder,
+            com.google.cloud.dataproc.v1beta2.AcceleratorConfigOrBuilder>
         getAcceleratorsFieldBuilder() {
       if (acceleratorsBuilder_ == null) {
-        acceleratorsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.dataproc.v1beta2.AcceleratorConfig, com.google.cloud.dataproc.v1beta2.AcceleratorConfig.Builder, com.google.cloud.dataproc.v1beta2.AcceleratorConfigOrBuilder>(
+        acceleratorsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.dataproc.v1beta2.AcceleratorConfig,
+                com.google.cloud.dataproc.v1beta2.AcceleratorConfig.Builder,
+                com.google.cloud.dataproc.v1beta2.AcceleratorConfigOrBuilder>(
                 accelerators_,
                 ((bitField0_ & 0x00000080) == 0x00000080),
                 getParentForChildren(),
@@ -2194,6 +2410,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object minCpuPlatform_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional. Specifies the minimum cpu platform for the Instance Group.
      * See [Cloud Dataproc&amp;rarr;Minimum CPU Platform]
@@ -2205,8 +2423,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getMinCpuPlatform() {
       java.lang.Object ref = minCpuPlatform_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         minCpuPlatform_ = s;
         return s;
@@ -2215,6 +2432,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Specifies the minimum cpu platform for the Instance Group.
      * See [Cloud Dataproc&amp;rarr;Minimum CPU Platform]
@@ -2223,13 +2442,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string min_cpu_platform = 9;</code>
      */
-    public com.google.protobuf.ByteString
-        getMinCpuPlatformBytes() {
+    public com.google.protobuf.ByteString getMinCpuPlatformBytes() {
       java.lang.Object ref = minCpuPlatform_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         minCpuPlatform_ = b;
         return b;
       } else {
@@ -2237,6 +2454,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Specifies the minimum cpu platform for the Instance Group.
      * See [Cloud Dataproc&amp;rarr;Minimum CPU Platform]
@@ -2245,17 +2464,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string min_cpu_platform = 9;</code>
      */
-    public Builder setMinCpuPlatform(
-        java.lang.String value) {
+    public Builder setMinCpuPlatform(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       minCpuPlatform_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Specifies the minimum cpu platform for the Instance Group.
      * See [Cloud Dataproc&amp;rarr;Minimum CPU Platform]
@@ -2265,12 +2485,14 @@ private static final long serialVersionUID = 0L;
      * <code>string min_cpu_platform = 9;</code>
      */
     public Builder clearMinCpuPlatform() {
-      
+
       minCpuPlatform_ = getDefaultInstance().getMinCpuPlatform();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Specifies the minimum cpu platform for the Instance Group.
      * See [Cloud Dataproc&amp;rarr;Minimum CPU Platform]
@@ -2279,20 +2501,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string min_cpu_platform = 9;</code>
      */
-    public Builder setMinCpuPlatformBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setMinCpuPlatformBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       minCpuPlatform_ = value;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -2302,12 +2523,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.dataproc.v1beta2.InstanceGroupConfig)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.dataproc.v1beta2.InstanceGroupConfig)
   private static final com.google.cloud.dataproc.v1beta2.InstanceGroupConfig DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.dataproc.v1beta2.InstanceGroupConfig();
   }
@@ -2316,16 +2537,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<InstanceGroupConfig>
-      PARSER = new com.google.protobuf.AbstractParser<InstanceGroupConfig>() {
-    @java.lang.Override
-    public InstanceGroupConfig parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new InstanceGroupConfig(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<InstanceGroupConfig> PARSER =
+      new com.google.protobuf.AbstractParser<InstanceGroupConfig>() {
+        @java.lang.Override
+        public InstanceGroupConfig parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new InstanceGroupConfig(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<InstanceGroupConfig> parser() {
     return PARSER;
@@ -2340,6 +2561,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.dataproc.v1beta2.InstanceGroupConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

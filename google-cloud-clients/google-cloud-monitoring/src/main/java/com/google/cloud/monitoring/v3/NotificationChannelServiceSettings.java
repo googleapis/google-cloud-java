@@ -77,7 +77,8 @@ public class NotificationChannelServiceSettings
     extends ClientSettings<NotificationChannelServiceSettings> {
   /** Returns the object with the settings used for calls to listNotificationChannelDescriptors. */
   public PagedCallSettings<
-          ListNotificationChannelDescriptorsRequest, ListNotificationChannelDescriptorsResponse,
+          ListNotificationChannelDescriptorsRequest,
+          ListNotificationChannelDescriptorsResponse,
           ListNotificationChannelDescriptorsPagedResponse>
       listNotificationChannelDescriptorsSettings() {
     return ((NotificationChannelServiceStubSettings) getStubSettings())
@@ -93,7 +94,8 @@ public class NotificationChannelServiceSettings
 
   /** Returns the object with the settings used for calls to listNotificationChannels. */
   public PagedCallSettings<
-          ListNotificationChannelsRequest, ListNotificationChannelsResponse,
+          ListNotificationChannelsRequest,
+          ListNotificationChannelsResponse,
           ListNotificationChannelsPagedResponse>
       listNotificationChannelsSettings() {
     return ((NotificationChannelServiceStubSettings) getStubSettings())
@@ -230,7 +232,8 @@ public class NotificationChannelServiceSettings
      * Returns the builder for the settings used for calls to listNotificationChannelDescriptors.
      */
     public PagedCallSettings.Builder<
-            ListNotificationChannelDescriptorsRequest, ListNotificationChannelDescriptorsResponse,
+            ListNotificationChannelDescriptorsRequest,
+            ListNotificationChannelDescriptorsResponse,
             ListNotificationChannelDescriptorsPagedResponse>
         listNotificationChannelDescriptorsSettings() {
       return getStubSettingsBuilder().listNotificationChannelDescriptorsSettings();
@@ -245,7 +248,8 @@ public class NotificationChannelServiceSettings
 
     /** Returns the builder for the settings used for calls to listNotificationChannels. */
     public PagedCallSettings.Builder<
-            ListNotificationChannelsRequest, ListNotificationChannelsResponse,
+            ListNotificationChannelsRequest,
+            ListNotificationChannelsResponse,
             ListNotificationChannelsPagedResponse>
         listNotificationChannelsSettings() {
       return getStubSettingsBuilder().listNotificationChannelsSettings();

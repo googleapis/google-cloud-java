@@ -20,16 +20,18 @@ import com.google.cloud.Role;
 
 /**
  * IAM roles specific to Storage. An overview of the permissions available to Storage and the
- * capabilities they grant can be found in the 
- * <a href="https://cloud.google.com/storage/docs/access-control/iam">Google Cloud Storage IAM documentation.</a>
+ * capabilities they grant can be found in the <a
+ * href="https://cloud.google.com/storage/docs/access-control/iam">Google Cloud Storage IAM
+ * documentation.</a>
  */
 public class StorageRoles {
 
   /**
    * Grants the following permissions:
+   *
    * <ul>
-   * <li>storage.buckets.*</li>
-   * <li>storage.objects.*</li>
+   *   <li>storage.buckets.*
+   *   <li>storage.objects.*
    * </ul>
    */
   public static Role admin() {
@@ -38,45 +40,49 @@ public class StorageRoles {
 
   /**
    * Grants the following permissions:
+   *
    * <ul>
-   * <li>storage.objects.list</li>
-   * <li>storage.objects.get</li>
+   *   <li>storage.objects.list
+   *   <li>storage.objects.get
    * </ul>
    */
   public static Role objectViewer() {
     return Role.of("roles/storage.objectViewer");
   }
-  
+
   /**
    * Grants the following permissions:
+   *
    * <ul>
-   * <li>storage.objects.create</li>
+   *   <li>storage.objects.create
    * </ul>
    */
   public static Role objectCreator() {
     return Role.of("roles/storage.objectCreator");
   }
-  
+
   /**
    * Grants the following permissions:
+   *
    * <ul>
-   * <li>storage.objects.*</li>
+   *   <li>storage.objects.*
    * </ul>
    */
   public static Role objectAdmin() {
     return Role.of("roles/storage.objectAdmin");
   }
-  
+
   /**
    * Grants the following permissions:
+   *
    * <ul>
-   * <li>storage.buckets.get</li>
-   * <li>storage.buckets.update</li>
-   * <li>storage.buckets.setIamPolicy</li>
-   * <li>storage.buckets.getIamPolicy</li>
-   * <li>storage.objects.list</li>
-   * <li>storage.objects.create</li>
-   * <li>storage.objects.delete</li>
+   *   <li>storage.buckets.get
+   *   <li>storage.buckets.update
+   *   <li>storage.buckets.setIamPolicy
+   *   <li>storage.buckets.getIamPolicy
+   *   <li>storage.objects.list
+   *   <li>storage.objects.create
+   *   <li>storage.objects.delete
    * </ul>
    */
   public static Role legacyBucketOwner() {
@@ -85,11 +91,12 @@ public class StorageRoles {
 
   /**
    * Grants the following permissions:
+   *
    * <ul>
-   * <li>storage.buckets.get</li>
-   * <li>storage.objects.list</li>
-   * <li>storage.objects.create</li>
-   * <li>storage.objects.delete</li>
+   *   <li>storage.buckets.get
+   *   <li>storage.objects.list
+   *   <li>storage.objects.create
+   *   <li>storage.objects.delete
    * </ul>
    */
   public static Role legacyBucketWriter() {
@@ -98,9 +105,10 @@ public class StorageRoles {
 
   /**
    * Grants the following permissions:
+   *
    * <ul>
-   * <li>storage.buckets.get</li>
-   * <li>storage.objects.list</li>
+   *   <li>storage.buckets.get
+   *   <li>storage.objects.list
    * </ul>
    */
   public static Role legacyBucketReader() {
@@ -109,11 +117,12 @@ public class StorageRoles {
 
   /**
    * Grants the following permissions:
+   *
    * <ul>
-   * <li>storage.objects.get</li>
-   * <li>storage.objects.update</li>
-   * <li>storage.objects.getIamPolicy</li>
-   * <li>storage.objects.setIamPolicy</li>
+   *   <li>storage.objects.get
+   *   <li>storage.objects.update
+   *   <li>storage.objects.getIamPolicy
+   *   <li>storage.objects.setIamPolicy
    * </ul>
    */
   public static Role legacyObjectOwner() {
@@ -122,8 +131,9 @@ public class StorageRoles {
 
   /**
    * Grants the following permissions:
+   *
    * <ul>
-   * <li>storage.objects.get</li>
+   *   <li>storage.objects.get
    * </ul>
    */
   public static Role legacyObjectReader() {

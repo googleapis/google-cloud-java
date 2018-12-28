@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p2beta1;
 
-public interface AsyncBatchAnnotateFilesResponseOrBuilder extends
+public interface AsyncBatchAnnotateFilesResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p2beta1.AsyncBatchAnnotateFilesResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The list of file annotation responses, one for each request in
    * AsyncBatchAnnotateFilesRequest.
@@ -15,9 +18,10 @@ public interface AsyncBatchAnnotateFilesResponseOrBuilder extends
    *
    * <code>repeated .google.cloud.vision.v1p2beta1.AsyncAnnotateFileResponse responses = 1;</code>
    */
-  java.util.List<com.google.cloud.vision.v1p2beta1.AsyncAnnotateFileResponse> 
-      getResponsesList();
+  java.util.List<com.google.cloud.vision.v1p2beta1.AsyncAnnotateFileResponse> getResponsesList();
   /**
+   *
+   *
    * <pre>
    * The list of file annotation responses, one for each request in
    * AsyncBatchAnnotateFilesRequest.
@@ -27,6 +31,8 @@ public interface AsyncBatchAnnotateFilesResponseOrBuilder extends
    */
   com.google.cloud.vision.v1p2beta1.AsyncAnnotateFileResponse getResponses(int index);
   /**
+   *
+   *
    * <pre>
    * The list of file annotation responses, one for each request in
    * AsyncBatchAnnotateFilesRequest.
@@ -36,6 +42,8 @@ public interface AsyncBatchAnnotateFilesResponseOrBuilder extends
    */
   int getResponsesCount();
   /**
+   *
+   *
    * <pre>
    * The list of file annotation responses, one for each request in
    * AsyncBatchAnnotateFilesRequest.
@@ -43,9 +51,11 @@ public interface AsyncBatchAnnotateFilesResponseOrBuilder extends
    *
    * <code>repeated .google.cloud.vision.v1p2beta1.AsyncAnnotateFileResponse responses = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.vision.v1p2beta1.AsyncAnnotateFileResponseOrBuilder> 
+  java.util.List<? extends com.google.cloud.vision.v1p2beta1.AsyncAnnotateFileResponseOrBuilder>
       getResponsesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The list of file annotation responses, one for each request in
    * AsyncBatchAnnotateFilesRequest.

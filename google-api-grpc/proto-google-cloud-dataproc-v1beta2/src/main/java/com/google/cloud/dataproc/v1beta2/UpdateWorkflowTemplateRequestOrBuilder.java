@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface UpdateWorkflowTemplateRequestOrBuilder extends
+public interface UpdateWorkflowTemplateRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.UpdateWorkflowTemplateRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The updated workflow template.
    * The `template.version` field must match the current version.
@@ -17,6 +20,8 @@ public interface UpdateWorkflowTemplateRequestOrBuilder extends
    */
   boolean hasTemplate();
   /**
+   *
+   *
    * <pre>
    * Required. The updated workflow template.
    * The `template.version` field must match the current version.
@@ -26,6 +31,8 @@ public interface UpdateWorkflowTemplateRequestOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.WorkflowTemplate getTemplate();
   /**
+   *
+   *
    * <pre>
    * Required. The updated workflow template.
    * The `template.version` field must match the current version.

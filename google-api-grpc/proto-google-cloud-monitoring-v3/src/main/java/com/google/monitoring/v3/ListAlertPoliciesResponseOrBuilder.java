@@ -3,20 +3,24 @@
 
 package com.google.monitoring.v3;
 
-public interface ListAlertPoliciesResponseOrBuilder extends
+public interface ListAlertPoliciesResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.ListAlertPoliciesResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The returned alert policies.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.AlertPolicy alert_policies = 3;</code>
    */
-  java.util.List<com.google.monitoring.v3.AlertPolicy> 
-      getAlertPoliciesList();
+  java.util.List<com.google.monitoring.v3.AlertPolicy> getAlertPoliciesList();
   /**
+   *
+   *
    * <pre>
    * The returned alert policies.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListAlertPoliciesResponseOrBuilder extends
    */
   com.google.monitoring.v3.AlertPolicy getAlertPolicies(int index);
   /**
+   *
+   *
    * <pre>
    * The returned alert policies.
    * </pre>
@@ -33,25 +39,30 @@ public interface ListAlertPoliciesResponseOrBuilder extends
    */
   int getAlertPoliciesCount();
   /**
+   *
+   *
    * <pre>
    * The returned alert policies.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.AlertPolicy alert_policies = 3;</code>
    */
-  java.util.List<? extends com.google.monitoring.v3.AlertPolicyOrBuilder> 
+  java.util.List<? extends com.google.monitoring.v3.AlertPolicyOrBuilder>
       getAlertPoliciesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The returned alert policies.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.AlertPolicy alert_policies = 3;</code>
    */
-  com.google.monitoring.v3.AlertPolicyOrBuilder getAlertPoliciesOrBuilder(
-      int index);
+  com.google.monitoring.v3.AlertPolicyOrBuilder getAlertPoliciesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * If there might be more results than were returned, then this field is set
    * to a non-empty value. To see the additional results,
@@ -62,6 +73,8 @@ public interface ListAlertPoliciesResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * If there might be more results than were returned, then this field is set
    * to a non-empty value. To see the additional results,
@@ -70,6 +83,5 @@ public interface ListAlertPoliciesResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

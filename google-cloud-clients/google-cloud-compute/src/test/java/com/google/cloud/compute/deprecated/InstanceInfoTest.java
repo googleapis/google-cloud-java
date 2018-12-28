@@ -20,10 +20,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
 import java.util.List;
+import org.junit.Test;
 
 public class InstanceInfoTest {
 
@@ -44,10 +42,8 @@ public class InstanceInfoTest {
   private static final AttachedDisk ATTACHED_DISK =
       AttachedDisk.of(AttachedDisk.PersistentDiskConfiguration.of(DISK_ID));
   private static final List<AttachedDisk> ATTACHED_DISKS = ImmutableList.of(ATTACHED_DISK);
-  private static final Metadata METADATA = Metadata.newBuilder()
-      .add("key1", "value1")
-      .add("key2", "value2")
-      .build();
+  private static final Metadata METADATA =
+      Metadata.newBuilder().add("key1", "value1").add("key2", "value2").build();
   private static final ServiceAccount SERVICE_ACCOUNT =
       ServiceAccount.of("email", ImmutableList.of("scope1"));
   private static final List<ServiceAccount> SERVICE_ACCOUNTS = ImmutableList.of(SERVICE_ACCOUNT);
@@ -81,8 +77,8 @@ public class InstanceInfoTest {
 
   @Test
   public void testToBuilderIncomplete() {
-    InstanceInfo instanceInfo = InstanceInfo.of(INSTANCE_ID, MACHINE_TYPE, ATTACHED_DISK,
-        NETWORK_INTERFACE);
+    InstanceInfo instanceInfo =
+        InstanceInfo.of(INSTANCE_ID, MACHINE_TYPE, ATTACHED_DISK, NETWORK_INTERFACE);
     assertEquals(instanceInfo, instanceInfo.toBuilder().build());
   }
 
@@ -103,21 +99,22 @@ public class InstanceInfoTest {
     assertEquals(SERVICE_ACCOUNTS, INSTANCE_INFO.getServiceAccounts());
     assertEquals(SCHEDULING_OPTIONS, INSTANCE_INFO.getSchedulingOptions());
     assertEquals(CPU_PLATFORM, INSTANCE_INFO.getCpuPlatform());
-    InstanceInfo instanceInfo = InstanceInfo.newBuilder(INSTANCE_ID, MACHINE_TYPE)
-        .setGeneratedId(GENERATED_ID)
-        .setCreationTimestamp(CREATION_TIMESTAMP)
-        .setDescription(DESCRIPTION)
-        .setStatus(STATUS)
-        .setStatusMessage(STATUS_MESSAGE)
-        .setTags(TAGS)
-        .setCanIpForward(CAN_IP_FORWARD)
-        .setNetworkInterfaces(NETWORK_INTERFACE)
-        .setAttachedDisks(ATTACHED_DISK)
-        .setMetadata(METADATA)
-        .setServiceAccounts(SERVICE_ACCOUNTS)
-        .setSchedulingOptions(SCHEDULING_OPTIONS)
-        .setCpuPlatform(CPU_PLATFORM)
-        .build();
+    InstanceInfo instanceInfo =
+        InstanceInfo.newBuilder(INSTANCE_ID, MACHINE_TYPE)
+            .setGeneratedId(GENERATED_ID)
+            .setCreationTimestamp(CREATION_TIMESTAMP)
+            .setDescription(DESCRIPTION)
+            .setStatus(STATUS)
+            .setStatusMessage(STATUS_MESSAGE)
+            .setTags(TAGS)
+            .setCanIpForward(CAN_IP_FORWARD)
+            .setNetworkInterfaces(NETWORK_INTERFACE)
+            .setAttachedDisks(ATTACHED_DISK)
+            .setMetadata(METADATA)
+            .setServiceAccounts(SERVICE_ACCOUNTS)
+            .setSchedulingOptions(SCHEDULING_OPTIONS)
+            .setCpuPlatform(CPU_PLATFORM)
+            .build();
     compareInstanceInfo(INSTANCE_INFO, instanceInfo);
   }
 
@@ -152,11 +149,12 @@ public class InstanceInfoTest {
 
   @Test
   public void testSetProjectId() {
-    InstanceInfo instance = InstanceInfo.of(
-        InstanceId.of("zone", "instance"),
-        MachineTypeId.of("zone", "type"),
-        AttachedDisk.of(AttachedDisk.PersistentDiskConfiguration.of(DiskId.of("zone", "disk"))),
-        NetworkInterface.of(NetworkId.of("project", "network")));
+    InstanceInfo instance =
+        InstanceInfo.of(
+            InstanceId.of("zone", "instance"),
+            MachineTypeId.of("zone", "type"),
+            AttachedDisk.of(AttachedDisk.PersistentDiskConfiguration.of(DiskId.of("zone", "disk"))),
+            NetworkInterface.of(NetworkId.of("project", "network")));
     InstanceInfo instanceWithProject =
         InstanceInfo.of(INSTANCE_ID, MACHINE_TYPE, ATTACHED_DISK, NETWORK_INTERFACE);
     compareInstanceInfo(instanceWithProject, instance.setProjectId("project"));

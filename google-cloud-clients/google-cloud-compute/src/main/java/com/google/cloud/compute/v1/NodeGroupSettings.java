@@ -72,7 +72,8 @@ public class NodeGroupSettings extends ClientSettings<NodeGroupSettings> {
 
   /** Returns the object with the settings used for calls to aggregatedListNodeGroups. */
   public PagedCallSettings<
-          AggregatedListNodeGroupsHttpRequest, NodeGroupAggregatedList,
+          AggregatedListNodeGroupsHttpRequest,
+          NodeGroupAggregatedList,
           AggregatedListNodeGroupsPagedResponse>
       aggregatedListNodeGroupsSettings() {
     return ((NodeGroupStubSettings) getStubSettings()).aggregatedListNodeGroupsSettings();
@@ -94,6 +95,12 @@ public class NodeGroupSettings extends ClientSettings<NodeGroupSettings> {
     return ((NodeGroupStubSettings) getStubSettings()).getNodeGroupSettings();
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicyNodeGroup. */
+  public UnaryCallSettings<GetIamPolicyNodeGroupHttpRequest, Policy>
+      getIamPolicyNodeGroupSettings() {
+    return ((NodeGroupStubSettings) getStubSettings()).getIamPolicyNodeGroupSettings();
+  }
+
   /** Returns the object with the settings used for calls to insertNodeGroup. */
   public UnaryCallSettings<InsertNodeGroupHttpRequest, Operation> insertNodeGroupSettings() {
     return ((NodeGroupStubSettings) getStubSettings()).insertNodeGroupSettings();
@@ -112,10 +119,22 @@ public class NodeGroupSettings extends ClientSettings<NodeGroupSettings> {
     return ((NodeGroupStubSettings) getStubSettings()).listNodesNodeGroupsSettings();
   }
 
+  /** Returns the object with the settings used for calls to setIamPolicyNodeGroup. */
+  public UnaryCallSettings<SetIamPolicyNodeGroupHttpRequest, Policy>
+      setIamPolicyNodeGroupSettings() {
+    return ((NodeGroupStubSettings) getStubSettings()).setIamPolicyNodeGroupSettings();
+  }
+
   /** Returns the object with the settings used for calls to setNodeTemplateNodeGroup. */
   public UnaryCallSettings<SetNodeTemplateNodeGroupHttpRequest, Operation>
       setNodeTemplateNodeGroupSettings() {
     return ((NodeGroupStubSettings) getStubSettings()).setNodeTemplateNodeGroupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissionsNodeGroup. */
+  public UnaryCallSettings<TestIamPermissionsNodeGroupHttpRequest, TestPermissionsResponse>
+      testIamPermissionsNodeGroupSettings() {
+    return ((NodeGroupStubSettings) getStubSettings()).testIamPermissionsNodeGroupSettings();
   }
 
   public static final NodeGroupSettings create(NodeGroupStubSettings stub) throws IOException {
@@ -227,7 +246,8 @@ public class NodeGroupSettings extends ClientSettings<NodeGroupSettings> {
 
     /** Returns the builder for the settings used for calls to aggregatedListNodeGroups. */
     public PagedCallSettings.Builder<
-            AggregatedListNodeGroupsHttpRequest, NodeGroupAggregatedList,
+            AggregatedListNodeGroupsHttpRequest,
+            NodeGroupAggregatedList,
             AggregatedListNodeGroupsPagedResponse>
         aggregatedListNodeGroupsSettings() {
       return getStubSettingsBuilder().aggregatedListNodeGroupsSettings();
@@ -250,6 +270,12 @@ public class NodeGroupSettings extends ClientSettings<NodeGroupSettings> {
       return getStubSettingsBuilder().getNodeGroupSettings();
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicyNodeGroup. */
+    public UnaryCallSettings.Builder<GetIamPolicyNodeGroupHttpRequest, Policy>
+        getIamPolicyNodeGroupSettings() {
+      return getStubSettingsBuilder().getIamPolicyNodeGroupSettings();
+    }
+
     /** Returns the builder for the settings used for calls to insertNodeGroup. */
     public UnaryCallSettings.Builder<InsertNodeGroupHttpRequest, Operation>
         insertNodeGroupSettings() {
@@ -270,10 +296,23 @@ public class NodeGroupSettings extends ClientSettings<NodeGroupSettings> {
       return getStubSettingsBuilder().listNodesNodeGroupsSettings();
     }
 
+    /** Returns the builder for the settings used for calls to setIamPolicyNodeGroup. */
+    public UnaryCallSettings.Builder<SetIamPolicyNodeGroupHttpRequest, Policy>
+        setIamPolicyNodeGroupSettings() {
+      return getStubSettingsBuilder().setIamPolicyNodeGroupSettings();
+    }
+
     /** Returns the builder for the settings used for calls to setNodeTemplateNodeGroup. */
     public UnaryCallSettings.Builder<SetNodeTemplateNodeGroupHttpRequest, Operation>
         setNodeTemplateNodeGroupSettings() {
       return getStubSettingsBuilder().setNodeTemplateNodeGroupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissionsNodeGroup. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsNodeGroupHttpRequest, TestPermissionsResponse>
+        testIamPermissionsNodeGroupSettings() {
+      return getStubSettingsBuilder().testIamPermissionsNodeGroupSettings();
     }
 
     @Override

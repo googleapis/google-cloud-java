@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface CloudStorageRegexFileSetOrBuilder extends
+public interface CloudStorageRegexFileSetOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.CloudStorageRegexFileSet)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The name of a Cloud Storage bucket. Required.
    * </pre>
@@ -16,16 +19,19 @@ public interface CloudStorageRegexFileSetOrBuilder extends
    */
   java.lang.String getBucketName();
   /**
+   *
+   *
    * <pre>
    * The name of a Cloud Storage bucket. Required.
    * </pre>
    *
    * <code>string bucket_name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getBucketNameBytes();
+  com.google.protobuf.ByteString getBucketNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * A list of regular expressions matching file paths to include. All files in
    * the bucket that match at least one of these regular expressions will be
@@ -39,9 +45,10 @@ public interface CloudStorageRegexFileSetOrBuilder extends
    *
    * <code>repeated string include_regex = 2;</code>
    */
-  java.util.List<java.lang.String>
-      getIncludeRegexList();
+  java.util.List<java.lang.String> getIncludeRegexList();
   /**
+   *
+   *
    * <pre>
    * A list of regular expressions matching file paths to include. All files in
    * the bucket that match at least one of these regular expressions will be
@@ -57,6 +64,8 @@ public interface CloudStorageRegexFileSetOrBuilder extends
    */
   int getIncludeRegexCount();
   /**
+   *
+   *
    * <pre>
    * A list of regular expressions matching file paths to include. All files in
    * the bucket that match at least one of these regular expressions will be
@@ -72,6 +81,8 @@ public interface CloudStorageRegexFileSetOrBuilder extends
    */
   java.lang.String getIncludeRegex(int index);
   /**
+   *
+   *
    * <pre>
    * A list of regular expressions matching file paths to include. All files in
    * the bucket that match at least one of these regular expressions will be
@@ -85,10 +96,11 @@ public interface CloudStorageRegexFileSetOrBuilder extends
    *
    * <code>repeated string include_regex = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getIncludeRegexBytes(int index);
+  com.google.protobuf.ByteString getIncludeRegexBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * A list of regular expressions matching file paths to exclude. All files in
    * the bucket that match at least one of these regular expressions will be
@@ -100,9 +112,10 @@ public interface CloudStorageRegexFileSetOrBuilder extends
    *
    * <code>repeated string exclude_regex = 3;</code>
    */
-  java.util.List<java.lang.String>
-      getExcludeRegexList();
+  java.util.List<java.lang.String> getExcludeRegexList();
   /**
+   *
+   *
    * <pre>
    * A list of regular expressions matching file paths to exclude. All files in
    * the bucket that match at least one of these regular expressions will be
@@ -116,6 +129,8 @@ public interface CloudStorageRegexFileSetOrBuilder extends
    */
   int getExcludeRegexCount();
   /**
+   *
+   *
    * <pre>
    * A list of regular expressions matching file paths to exclude. All files in
    * the bucket that match at least one of these regular expressions will be
@@ -129,6 +144,8 @@ public interface CloudStorageRegexFileSetOrBuilder extends
    */
   java.lang.String getExcludeRegex(int index);
   /**
+   *
+   *
    * <pre>
    * A list of regular expressions matching file paths to exclude. All files in
    * the bucket that match at least one of these regular expressions will be
@@ -140,6 +157,5 @@ public interface CloudStorageRegexFileSetOrBuilder extends
    *
    * <code>repeated string exclude_regex = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getExcludeRegexBytes(int index);
+  com.google.protobuf.ByteString getExcludeRegexBytes(int index);
 }

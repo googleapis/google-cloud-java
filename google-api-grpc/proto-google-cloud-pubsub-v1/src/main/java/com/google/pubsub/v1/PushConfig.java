@@ -4,30 +4,33 @@
 package com.google.pubsub.v1;
 
 /**
+ *
+ *
  * <pre>
  * Configuration for a push delivery endpoint.
  * </pre>
  *
  * Protobuf type {@code google.pubsub.v1.PushConfig}
  */
-public  final class PushConfig extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.pubsub.v1.PushConfig)
     PushConfigOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use PushConfig.newBuilder() to construct.
   private PushConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private PushConfig() {
     pushEndpoint_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private PushConfig(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -47,65 +50,67 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            pushEndpoint_ = s;
-            break;
-          }
-          case 18: {
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-              attributes_ = com.google.protobuf.MapField.newMapField(
-                  AttributesDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000002;
+              pushEndpoint_ = s;
+              break;
             }
-            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-            attributes__ = input.readMessage(
-                AttributesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            attributes_.getMutableMap().put(
-                attributes__.getKey(), attributes__.getValue());
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 18:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                attributes_ =
+                    com.google.protobuf.MapField.newMapField(
+                        AttributesDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> attributes__ =
+                  input.readMessage(
+                      AttributesDefaultEntryHolder.defaultEntry.getParserForType(),
+                      extensionRegistry);
+              attributes_.getMutableMap().put(attributes__.getKey(), attributes__.getValue());
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_PushConfig_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
   @java.lang.Override
-  protected com.google.protobuf.MapField internalGetMapField(
-      int number) {
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
       case 2:
         return internalGetAttributes();
       default:
-        throw new RuntimeException(
-            "Invalid map field number: " + number);
+        throw new RuntimeException("Invalid map field number: " + number);
     }
   }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_PushConfig_fieldAccessorTable
+    return com.google.pubsub.v1.PubsubProto
+        .internal_static_google_pubsub_v1_PushConfig_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.pubsub.v1.PushConfig.class, com.google.pubsub.v1.PushConfig.Builder.class);
   }
@@ -114,6 +119,8 @@ private static final long serialVersionUID = 0L;
   public static final int PUSH_ENDPOINT_FIELD_NUMBER = 1;
   private volatile java.lang.Object pushEndpoint_;
   /**
+   *
+   *
    * <pre>
    * A URL locating the endpoint to which messages should be pushed.
    * For example, a Webhook endpoint might use "https://example.com/push".
@@ -126,14 +133,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       pushEndpoint_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * A URL locating the endpoint to which messages should be pushed.
    * For example, a Webhook endpoint might use "https://example.com/push".
@@ -141,13 +149,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string push_endpoint = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getPushEndpointBytes() {
+  public com.google.protobuf.ByteString getPushEndpointBytes() {
     java.lang.Object ref = pushEndpoint_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       pushEndpoint_ = b;
       return b;
     } else {
@@ -156,24 +162,23 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ATTRIBUTES_FIELD_NUMBER = 2;
+
   private static final class AttributesDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        java.lang.String, java.lang.String> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<java.lang.String, java.lang.String>newDefaultInstance(
-                com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_PushConfig_AttributesEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "");
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.pubsub.v1.PubsubProto
+                .internal_static_google_pubsub_v1_PushConfig_AttributesEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
   }
-  private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> attributes_;
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetAttributes() {
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> attributes_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetAttributes() {
     if (attributes_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(
-          AttributesDefaultEntryHolder.defaultEntry);
+      return com.google.protobuf.MapField.emptyMapField(AttributesDefaultEntryHolder.defaultEntry);
     }
     return attributes_;
   }
@@ -182,6 +187,8 @@ private static final long serialVersionUID = 0L;
     return internalGetAttributes().getMap().size();
   }
   /**
+   *
+   *
    * <pre>
    * Endpoint configuration attributes.
    * Every endpoint has a set of API supported attributes that can be used to
@@ -203,20 +210,20 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
    */
-
-  public boolean containsAttributes(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public boolean containsAttributes(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     return internalGetAttributes().getMap().containsKey(key);
   }
-  /**
-   * Use {@link #getAttributesMap()} instead.
-   */
+  /** Use {@link #getAttributesMap()} instead. */
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getAttributes() {
     return getAttributesMap();
   }
   /**
+   *
+   *
    * <pre>
    * Endpoint configuration attributes.
    * Every endpoint has a set of API supported attributes that can be used to
@@ -238,11 +245,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
    */
-
   public java.util.Map<java.lang.String, java.lang.String> getAttributesMap() {
     return internalGetAttributes().getMap();
   }
   /**
+   *
+   *
    * <pre>
    * Endpoint configuration attributes.
    * Every endpoint has a set of API supported attributes that can be used to
@@ -264,16 +272,17 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
    */
-
   public java.lang.String getAttributesOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetAttributes().getMap();
+      java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetAttributes().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   *
+   *
    * <pre>
    * Endpoint configuration attributes.
    * Every endpoint has a set of API supported attributes that can be used to
@@ -295,12 +304,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
    */
-
-  public java.lang.String getAttributesOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetAttributes().getMap();
+  public java.lang.String getAttributesOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetAttributes().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
@@ -308,6 +316,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -319,17 +328,12 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getPushEndpointBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, pushEndpoint_);
     }
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetAttributes(),
-        AttributesDefaultEntryHolder.defaultEntry,
-        2);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetAttributes(), AttributesDefaultEntryHolder.defaultEntry, 2);
     unknownFields.writeTo(output);
   }
 
@@ -342,15 +346,15 @@ private static final long serialVersionUID = 0L;
     if (!getPushEndpointBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, pushEndpoint_);
     }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-         : internalGetAttributes().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-      attributes__ = AttributesDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, attributes__);
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetAttributes().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> attributes__ =
+          AttributesDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, attributes__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -360,7 +364,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.pubsub.v1.PushConfig)) {
       return super.equals(obj);
@@ -368,10 +372,8 @@ private static final long serialVersionUID = 0L;
     com.google.pubsub.v1.PushConfig other = (com.google.pubsub.v1.PushConfig) obj;
 
     boolean result = true;
-    result = result && getPushEndpoint()
-        .equals(other.getPushEndpoint());
-    result = result && internalGetAttributes().equals(
-        other.internalGetAttributes());
+    result = result && getPushEndpoint().equals(other.getPushEndpoint());
+    result = result && internalGetAttributes().equals(other.internalGetAttributes());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -394,138 +396,143 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.pubsub.v1.PushConfig parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.pubsub.v1.PushConfig parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.pubsub.v1.PushConfig parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.pubsub.v1.PushConfig parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.pubsub.v1.PushConfig parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.pubsub.v1.PushConfig parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.pubsub.v1.PushConfig parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.pubsub.v1.PushConfig parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.pubsub.v1.PushConfig parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.pubsub.v1.PushConfig parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.pubsub.v1.PushConfig parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.pubsub.v1.PushConfig parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.pubsub.v1.PushConfig parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.pubsub.v1.PushConfig parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.pubsub.v1.PushConfig prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Configuration for a push delivery endpoint.
    * </pre>
    *
    * Protobuf type {@code google.pubsub.v1.PushConfig}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.pubsub.v1.PushConfig)
       com.google.pubsub.v1.PushConfigOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_PushConfig_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_PushConfig_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 2:
           return internalGetAttributes();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
         case 2:
           return internalGetMutableAttributes();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_PushConfig_fieldAccessorTable
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_PushConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.pubsub.v1.PushConfig.class, com.google.pubsub.v1.PushConfig.Builder.class);
     }
@@ -535,16 +542,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -555,9 +561,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_PushConfig_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_PushConfig_descriptor;
     }
 
     @java.lang.Override
@@ -591,38 +597,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.pubsub.v1.PushConfig) {
-        return mergeFrom((com.google.pubsub.v1.PushConfig)other);
+        return mergeFrom((com.google.pubsub.v1.PushConfig) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -635,8 +642,7 @@ private static final long serialVersionUID = 0L;
         pushEndpoint_ = other.pushEndpoint_;
         onChanged();
       }
-      internalGetMutableAttributes().mergeFrom(
-          other.internalGetAttributes());
+      internalGetMutableAttributes().mergeFrom(other.internalGetAttributes());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -665,10 +671,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object pushEndpoint_ = "";
     /**
+     *
+     *
      * <pre>
      * A URL locating the endpoint to which messages should be pushed.
      * For example, a Webhook endpoint might use "https://example.com/push".
@@ -679,8 +688,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getPushEndpoint() {
       java.lang.Object ref = pushEndpoint_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         pushEndpoint_ = s;
         return s;
@@ -689,6 +697,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A URL locating the endpoint to which messages should be pushed.
      * For example, a Webhook endpoint might use "https://example.com/push".
@@ -696,13 +706,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string push_endpoint = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getPushEndpointBytes() {
+    public com.google.protobuf.ByteString getPushEndpointBytes() {
       java.lang.Object ref = pushEndpoint_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         pushEndpoint_ = b;
         return b;
       } else {
@@ -710,6 +718,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A URL locating the endpoint to which messages should be pushed.
      * For example, a Webhook endpoint might use "https://example.com/push".
@@ -717,17 +727,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string push_endpoint = 1;</code>
      */
-    public Builder setPushEndpoint(
-        java.lang.String value) {
+    public Builder setPushEndpoint(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       pushEndpoint_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A URL locating the endpoint to which messages should be pushed.
      * For example, a Webhook endpoint might use "https://example.com/push".
@@ -736,12 +747,14 @@ private static final long serialVersionUID = 0L;
      * <code>string push_endpoint = 1;</code>
      */
     public Builder clearPushEndpoint() {
-      
+
       pushEndpoint_ = getDefaultInstance().getPushEndpoint();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A URL locating the endpoint to which messages should be pushed.
      * For example, a Webhook endpoint might use "https://example.com/push".
@@ -749,34 +762,35 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string push_endpoint = 1;</code>
      */
-    public Builder setPushEndpointBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setPushEndpointBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       pushEndpoint_ = value;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> attributes_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> attributes_;
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetAttributes() {
+        internalGetAttributes() {
       if (attributes_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
             AttributesDefaultEntryHolder.defaultEntry);
       }
       return attributes_;
     }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableAttributes() {
-      onChanged();;
+        internalGetMutableAttributes() {
+      onChanged();
+      ;
       if (attributes_ == null) {
-        attributes_ = com.google.protobuf.MapField.newMapField(
-            AttributesDefaultEntryHolder.defaultEntry);
+        attributes_ =
+            com.google.protobuf.MapField.newMapField(AttributesDefaultEntryHolder.defaultEntry);
       }
       if (!attributes_.isMutable()) {
         attributes_ = attributes_.copy();
@@ -788,6 +802,8 @@ private static final long serialVersionUID = 0L;
       return internalGetAttributes().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * Endpoint configuration attributes.
      * Every endpoint has a set of API supported attributes that can be used to
@@ -809,20 +825,20 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; attributes = 2;</code>
      */
-
-    public boolean containsAttributes(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsAttributes(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetAttributes().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getAttributesMap()} instead.
-     */
+    /** Use {@link #getAttributesMap()} instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getAttributes() {
       return getAttributesMap();
     }
     /**
+     *
+     *
      * <pre>
      * Endpoint configuration attributes.
      * Every endpoint has a set of API supported attributes that can be used to
@@ -844,11 +860,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; attributes = 2;</code>
      */
-
     public java.util.Map<java.lang.String, java.lang.String> getAttributesMap() {
       return internalGetAttributes().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * Endpoint configuration attributes.
      * Every endpoint has a set of API supported attributes that can be used to
@@ -870,16 +887,17 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; attributes = 2;</code>
      */
-
     public java.lang.String getAttributesOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetAttributes().getMap();
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetAttributes().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * Endpoint configuration attributes.
      * Every endpoint has a set of API supported attributes that can be used to
@@ -901,12 +919,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; attributes = 2;</code>
      */
-
-    public java.lang.String getAttributesOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetAttributes().getMap();
+    public java.lang.String getAttributesOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetAttributes().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -914,11 +931,12 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder clearAttributes() {
-      internalGetMutableAttributes().getMutableMap()
-          .clear();
+      internalGetMutableAttributes().getMutableMap().clear();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Endpoint configuration attributes.
      * Every endpoint has a set of API supported attributes that can be used to
@@ -940,23 +958,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; attributes = 2;</code>
      */
-
-    public Builder removeAttributes(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableAttributes().getMutableMap()
-          .remove(key);
+    public Builder removeAttributes(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableAttributes().getMutableMap().remove(key);
       return this;
     }
-    /**
-     * Use alternate mutation accessors instead.
-     */
+    /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String>
-    getMutableAttributes() {
+    public java.util.Map<java.lang.String, java.lang.String> getMutableAttributes() {
       return internalGetMutableAttributes().getMutableMap();
     }
     /**
+     *
+     *
      * <pre>
      * Endpoint configuration attributes.
      * Every endpoint has a set of API supported attributes that can be used to
@@ -978,16 +994,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; attributes = 2;</code>
      */
-    public Builder putAttributes(
-        java.lang.String key,
-        java.lang.String value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableAttributes().getMutableMap()
-          .put(key, value);
+    public Builder putAttributes(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableAttributes().getMutableMap().put(key, value);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Endpoint configuration attributes.
      * Every endpoint has a set of API supported attributes that can be used to
@@ -1009,16 +1028,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; attributes = 2;</code>
      */
-
-    public Builder putAllAttributes(
-        java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableAttributes().getMutableMap()
-          .putAll(values);
+    public Builder putAllAttributes(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableAttributes().getMutableMap().putAll(values);
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1028,12 +1044,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.pubsub.v1.PushConfig)
   }
 
   // @@protoc_insertion_point(class_scope:google.pubsub.v1.PushConfig)
   private static final com.google.pubsub.v1.PushConfig DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.pubsub.v1.PushConfig();
   }
@@ -1042,16 +1058,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<PushConfig>
-      PARSER = new com.google.protobuf.AbstractParser<PushConfig>() {
-    @java.lang.Override
-    public PushConfig parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new PushConfig(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<PushConfig> PARSER =
+      new com.google.protobuf.AbstractParser<PushConfig>() {
+        @java.lang.Override
+        public PushConfig parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new PushConfig(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<PushConfig> parser() {
     return PARSER;
@@ -1066,6 +1082,4 @@ private static final long serialVersionUID = 0L;
   public com.google.pubsub.v1.PushConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

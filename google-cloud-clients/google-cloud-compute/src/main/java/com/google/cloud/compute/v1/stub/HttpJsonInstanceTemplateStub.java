@@ -31,14 +31,20 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.DeleteInstanceTemplateHttpRequest;
+import com.google.cloud.compute.v1.GetIamPolicyInstanceTemplateHttpRequest;
 import com.google.cloud.compute.v1.GetInstanceTemplateHttpRequest;
 import com.google.cloud.compute.v1.InsertInstanceTemplateHttpRequest;
 import com.google.cloud.compute.v1.InstanceTemplate;
 import com.google.cloud.compute.v1.InstanceTemplateList;
 import com.google.cloud.compute.v1.ListInstanceTemplatesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.ProjectGlobalInstanceTemplateName;
+import com.google.cloud.compute.v1.ProjectGlobalInstanceTemplateResourceName;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.SetIamPolicyInstanceTemplateHttpRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsInstanceTemplateHttpRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.common.collect.Sets;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -96,6 +102,29 @@ public class HttpJsonInstanceTemplateStub extends InstanceTemplateStub {
               .build();
 
   @InternalApi
+  public static final ApiMethodDescriptor<GetIamPolicyInstanceTemplateHttpRequest, Policy>
+      getIamPolicyInstanceTemplateMethodDescriptor =
+          ApiMethodDescriptor.<GetIamPolicyInstanceTemplateHttpRequest, Policy>newBuilder()
+              .setFullMethodName("compute.instanceTemplates.getIamPolicy")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter
+                      .<GetIamPolicyInstanceTemplateHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/global/instanceTemplates/{resource}/getIamPolicy"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(
+                          ProjectGlobalInstanceTemplateResourceName.newFactory())
+                      .setResourceNameField("resource")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Policy>newBuilder()
+                      .setResponseInstance(Policy.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
   public static final ApiMethodDescriptor<InsertInstanceTemplateHttpRequest, Operation>
       insertInstanceTemplateMethodDescriptor =
           ApiMethodDescriptor.<InsertInstanceTemplateHttpRequest, Operation>newBuilder()
@@ -134,18 +163,73 @@ public class HttpJsonInstanceTemplateStub extends InstanceTemplateStub {
                       .build())
               .build();
 
+  @InternalApi
+  public static final ApiMethodDescriptor<SetIamPolicyInstanceTemplateHttpRequest, Policy>
+      setIamPolicyInstanceTemplateMethodDescriptor =
+          ApiMethodDescriptor.<SetIamPolicyInstanceTemplateHttpRequest, Policy>newBuilder()
+              .setFullMethodName("compute.instanceTemplates.setIamPolicy")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter
+                      .<SetIamPolicyInstanceTemplateHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/global/instanceTemplates/{resource}/setIamPolicy"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(
+                          ProjectGlobalInstanceTemplateResourceName.newFactory())
+                      .setResourceNameField("resource")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Policy>newBuilder()
+                      .setResponseInstance(Policy.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
+  public static final ApiMethodDescriptor<
+          TestIamPermissionsInstanceTemplateHttpRequest, TestPermissionsResponse>
+      testIamPermissionsInstanceTemplateMethodDescriptor =
+          ApiMethodDescriptor
+              .<TestIamPermissionsInstanceTemplateHttpRequest, TestPermissionsResponse>newBuilder()
+              .setFullMethodName("compute.instanceTemplates.testIamPermissions")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter
+                      .<TestIamPermissionsInstanceTemplateHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/global/instanceTemplates/{resource}/testIamPermissions"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(
+                          ProjectGlobalInstanceTemplateResourceName.newFactory())
+                      .setResourceNameField("resource")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<TestPermissionsResponse>newBuilder()
+                      .setResponseInstance(TestPermissionsResponse.getDefaultInstance())
+                      .build())
+              .build();
+
   private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<DeleteInstanceTemplateHttpRequest, Operation>
       deleteInstanceTemplateCallable;
   private final UnaryCallable<GetInstanceTemplateHttpRequest, InstanceTemplate>
       getInstanceTemplateCallable;
+  private final UnaryCallable<GetIamPolicyInstanceTemplateHttpRequest, Policy>
+      getIamPolicyInstanceTemplateCallable;
   private final UnaryCallable<InsertInstanceTemplateHttpRequest, Operation>
       insertInstanceTemplateCallable;
   private final UnaryCallable<ListInstanceTemplatesHttpRequest, InstanceTemplateList>
       listInstanceTemplatesCallable;
   private final UnaryCallable<ListInstanceTemplatesHttpRequest, ListInstanceTemplatesPagedResponse>
       listInstanceTemplatesPagedCallable;
+  private final UnaryCallable<SetIamPolicyInstanceTemplateHttpRequest, Policy>
+      setIamPolicyInstanceTemplateCallable;
+  private final UnaryCallable<
+          TestIamPermissionsInstanceTemplateHttpRequest, TestPermissionsResponse>
+      testIamPermissionsInstanceTemplateCallable;
 
   private final HttpJsonStubCallableFactory callableFactory;
 
@@ -198,6 +282,11 @@ public class HttpJsonInstanceTemplateStub extends InstanceTemplateStub {
             HttpJsonCallSettings.<GetInstanceTemplateHttpRequest, InstanceTemplate>newBuilder()
                 .setMethodDescriptor(getInstanceTemplateMethodDescriptor)
                 .build();
+    HttpJsonCallSettings<GetIamPolicyInstanceTemplateHttpRequest, Policy>
+        getIamPolicyInstanceTemplateTransportSettings =
+            HttpJsonCallSettings.<GetIamPolicyInstanceTemplateHttpRequest, Policy>newBuilder()
+                .setMethodDescriptor(getIamPolicyInstanceTemplateMethodDescriptor)
+                .build();
     HttpJsonCallSettings<InsertInstanceTemplateHttpRequest, Operation>
         insertInstanceTemplateTransportSettings =
             HttpJsonCallSettings.<InsertInstanceTemplateHttpRequest, Operation>newBuilder()
@@ -209,6 +298,18 @@ public class HttpJsonInstanceTemplateStub extends InstanceTemplateStub {
                 .<ListInstanceTemplatesHttpRequest, InstanceTemplateList>newBuilder()
                 .setMethodDescriptor(listInstanceTemplatesMethodDescriptor)
                 .build();
+    HttpJsonCallSettings<SetIamPolicyInstanceTemplateHttpRequest, Policy>
+        setIamPolicyInstanceTemplateTransportSettings =
+            HttpJsonCallSettings.<SetIamPolicyInstanceTemplateHttpRequest, Policy>newBuilder()
+                .setMethodDescriptor(setIamPolicyInstanceTemplateMethodDescriptor)
+                .build();
+    HttpJsonCallSettings<TestIamPermissionsInstanceTemplateHttpRequest, TestPermissionsResponse>
+        testIamPermissionsInstanceTemplateTransportSettings =
+            HttpJsonCallSettings
+                .<TestIamPermissionsInstanceTemplateHttpRequest, TestPermissionsResponse>
+                    newBuilder()
+                .setMethodDescriptor(testIamPermissionsInstanceTemplateMethodDescriptor)
+                .build();
 
     this.deleteInstanceTemplateCallable =
         callableFactory.createUnaryCallable(
@@ -219,6 +320,11 @@ public class HttpJsonInstanceTemplateStub extends InstanceTemplateStub {
         callableFactory.createUnaryCallable(
             getInstanceTemplateTransportSettings,
             settings.getInstanceTemplateSettings(),
+            clientContext);
+    this.getIamPolicyInstanceTemplateCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyInstanceTemplateTransportSettings,
+            settings.getIamPolicyInstanceTemplateSettings(),
             clientContext);
     this.insertInstanceTemplateCallable =
         callableFactory.createUnaryCallable(
@@ -234,6 +340,16 @@ public class HttpJsonInstanceTemplateStub extends InstanceTemplateStub {
         callableFactory.createPagedCallable(
             listInstanceTemplatesTransportSettings,
             settings.listInstanceTemplatesSettings(),
+            clientContext);
+    this.setIamPolicyInstanceTemplateCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyInstanceTemplateTransportSettings,
+            settings.setIamPolicyInstanceTemplateSettings(),
+            clientContext);
+    this.testIamPermissionsInstanceTemplateCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsInstanceTemplateTransportSettings,
+            settings.testIamPermissionsInstanceTemplateSettings(),
             clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -252,6 +368,12 @@ public class HttpJsonInstanceTemplateStub extends InstanceTemplateStub {
   }
 
   @BetaApi
+  public UnaryCallable<GetIamPolicyInstanceTemplateHttpRequest, Policy>
+      getIamPolicyInstanceTemplateCallable() {
+    return getIamPolicyInstanceTemplateCallable;
+  }
+
+  @BetaApi
   public UnaryCallable<InsertInstanceTemplateHttpRequest, Operation>
       insertInstanceTemplateCallable() {
     return insertInstanceTemplateCallable;
@@ -267,6 +389,18 @@ public class HttpJsonInstanceTemplateStub extends InstanceTemplateStub {
   public UnaryCallable<ListInstanceTemplatesHttpRequest, InstanceTemplateList>
       listInstanceTemplatesCallable() {
     return listInstanceTemplatesCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<SetIamPolicyInstanceTemplateHttpRequest, Policy>
+      setIamPolicyInstanceTemplateCallable() {
+    return setIamPolicyInstanceTemplateCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<TestIamPermissionsInstanceTemplateHttpRequest, TestPermissionsResponse>
+      testIamPermissionsInstanceTemplateCallable() {
+    return testIamPermissionsInstanceTemplateCallable;
   }
 
   @Override

@@ -57,13 +57,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -786,8 +786,9 @@ public class InstanceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param instance Instance name.
-   * @param deviceName Disk device name to detach.
+   * @param instance Instance name for this request.
+   * @param deviceName The device name of the disk to detach. Make a get() request on the instance
+   *     to view currently attached disks and device names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -815,8 +816,9 @@ public class InstanceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param instance Instance name.
-   * @param deviceName Disk device name to detach.
+   * @param instance Instance name for this request.
+   * @param deviceName The device name of the disk to detach. Make a get() request on the instance
+   *     to view currently attached disks and device names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -981,6 +983,108 @@ public class InstanceClient implements BackgroundResource {
   @BetaApi
   public final UnaryCallable<GetInstanceHttpRequest, Instance> getInstanceCallable() {
     return stub.getInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   ProjectZoneInstanceResourceName resource = ProjectZoneInstanceResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   Policy response = instanceClient.getIamPolicyInstance(resource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy getIamPolicyInstance(ProjectZoneInstanceResourceName resource) {
+
+    GetIamPolicyInstanceHttpRequest request =
+        GetIamPolicyInstanceHttpRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .build();
+    return getIamPolicyInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   ProjectZoneInstanceResourceName resource = ProjectZoneInstanceResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   Policy response = instanceClient.getIamPolicyInstance(resource.toString());
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy getIamPolicyInstance(String resource) {
+
+    GetIamPolicyInstanceHttpRequest request =
+        GetIamPolicyInstanceHttpRequest.newBuilder().setResource(resource).build();
+    return getIamPolicyInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   ProjectZoneInstanceResourceName resource = ProjectZoneInstanceResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   GetIamPolicyInstanceHttpRequest request = GetIamPolicyInstanceHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .build();
+   *   Policy response = instanceClient.getIamPolicyInstance(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy getIamPolicyInstance(GetIamPolicyInstanceHttpRequest request) {
+    return getIamPolicyInstanceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   ProjectZoneInstanceResourceName resource = ProjectZoneInstanceResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   GetIamPolicyInstanceHttpRequest request = GetIamPolicyInstanceHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .build();
+   *   ApiFuture&lt;Policy&gt; future = instanceClient.getIamPolicyInstanceCallable().futureCall(request);
+   *   // Do something
+   *   Policy response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<GetIamPolicyInstanceHttpRequest, Policy>
+      getIamPolicyInstanceCallable() {
+    return stub.getIamPolicyInstanceCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1615,7 +1719,7 @@ public class InstanceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param resource Name of the resource for this request.
+   * @param resource Name or id of the resource for this request.
    * @param deletionProtection Whether the resource should be protected against deletion.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1645,7 +1749,7 @@ public class InstanceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param resource Name of the resource for this request.
+   * @param resource Name or id of the resource for this request.
    * @param deletionProtection Whether the resource should be protected against deletion.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1729,9 +1833,10 @@ public class InstanceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param instance The instance name.
+   * @param instance The instance name for this request.
    * @param autoDelete Whether to auto-delete the disk when the instance is deleted.
-   * @param deviceName The device name of the disk to modify.
+   * @param deviceName The device name of the disk to modify. Make a get() request on the instance
+   *     to view currently attached disks and device names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -1762,9 +1867,10 @@ public class InstanceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param instance The instance name.
+   * @param instance The instance name for this request.
    * @param autoDelete Whether to auto-delete the disk when the instance is deleted.
-   * @param deviceName The device name of the disk to modify.
+   * @param deviceName The device name of the disk to modify. Make a get() request on the instance
+   *     to view currently attached disks and device names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -1834,6 +1940,118 @@ public class InstanceClient implements BackgroundResource {
   public final UnaryCallable<SetDiskAutoDeleteInstanceHttpRequest, Operation>
       setDiskAutoDeleteInstanceCallable() {
     return stub.setDiskAutoDeleteInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   ProjectZoneInstanceResourceName resource = ProjectZoneInstanceResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
+   *   Policy response = instanceClient.setIamPolicyInstance(resource, zoneSetPolicyRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @param zoneSetPolicyRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy setIamPolicyInstance(
+      ProjectZoneInstanceResourceName resource, ZoneSetPolicyRequest zoneSetPolicyRequestResource) {
+
+    SetIamPolicyInstanceHttpRequest request =
+        SetIamPolicyInstanceHttpRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .setZoneSetPolicyRequestResource(zoneSetPolicyRequestResource)
+            .build();
+    return setIamPolicyInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   ProjectZoneInstanceResourceName resource = ProjectZoneInstanceResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
+   *   Policy response = instanceClient.setIamPolicyInstance(resource.toString(), zoneSetPolicyRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @param zoneSetPolicyRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy setIamPolicyInstance(
+      String resource, ZoneSetPolicyRequest zoneSetPolicyRequestResource) {
+
+    SetIamPolicyInstanceHttpRequest request =
+        SetIamPolicyInstanceHttpRequest.newBuilder()
+            .setResource(resource)
+            .setZoneSetPolicyRequestResource(zoneSetPolicyRequestResource)
+            .build();
+    return setIamPolicyInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   ProjectZoneInstanceResourceName resource = ProjectZoneInstanceResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
+   *   SetIamPolicyInstanceHttpRequest request = SetIamPolicyInstanceHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setZoneSetPolicyRequestResource(zoneSetPolicyRequestResource)
+   *     .build();
+   *   Policy response = instanceClient.setIamPolicyInstance(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy setIamPolicyInstance(SetIamPolicyInstanceHttpRequest request) {
+    return setIamPolicyInstanceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   ProjectZoneInstanceResourceName resource = ProjectZoneInstanceResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
+   *   SetIamPolicyInstanceHttpRequest request = SetIamPolicyInstanceHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setZoneSetPolicyRequestResource(zoneSetPolicyRequestResource)
+   *     .build();
+   *   ApiFuture&lt;Policy&gt; future = instanceClient.setIamPolicyInstanceCallable().futureCall(request);
+   *   // Do something
+   *   Policy response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<SetIamPolicyInstanceHttpRequest, Policy>
+      setIamPolicyInstanceCallable() {
+    return stub.setIamPolicyInstanceCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -2429,7 +2647,7 @@ public class InstanceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param instance Instance name.
+   * @param instance Instance name for this request.
    * @param schedulingResource Sets the scheduling options for an Instance.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2459,7 +2677,7 @@ public class InstanceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param instance Instance name.
+   * @param instance Instance name for this request.
    * @param schedulingResource Sets the scheduling options for an Instance.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -3185,6 +3403,120 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   ProjectZoneInstanceResourceName resource = ProjectZoneInstanceResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
+   *   TestPermissionsResponse response = instanceClient.testIamPermissionsInstance(resource, testPermissionsRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @param testPermissionsRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final TestPermissionsResponse testIamPermissionsInstance(
+      ProjectZoneInstanceResourceName resource,
+      TestPermissionsRequest testPermissionsRequestResource) {
+
+    TestIamPermissionsInstanceHttpRequest request =
+        TestIamPermissionsInstanceHttpRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .setTestPermissionsRequestResource(testPermissionsRequestResource)
+            .build();
+    return testIamPermissionsInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   ProjectZoneInstanceResourceName resource = ProjectZoneInstanceResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
+   *   TestPermissionsResponse response = instanceClient.testIamPermissionsInstance(resource.toString(), testPermissionsRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @param testPermissionsRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final TestPermissionsResponse testIamPermissionsInstance(
+      String resource, TestPermissionsRequest testPermissionsRequestResource) {
+
+    TestIamPermissionsInstanceHttpRequest request =
+        TestIamPermissionsInstanceHttpRequest.newBuilder()
+            .setResource(resource)
+            .setTestPermissionsRequestResource(testPermissionsRequestResource)
+            .build();
+    return testIamPermissionsInstance(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   ProjectZoneInstanceResourceName resource = ProjectZoneInstanceResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
+   *   TestIamPermissionsInstanceHttpRequest request = TestIamPermissionsInstanceHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
+   *     .build();
+   *   TestPermissionsResponse response = instanceClient.testIamPermissionsInstance(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final TestPermissionsResponse testIamPermissionsInstance(
+      TestIamPermissionsInstanceHttpRequest request) {
+    return testIamPermissionsInstanceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceClient instanceClient = InstanceClient.create()) {
+   *   ProjectZoneInstanceResourceName resource = ProjectZoneInstanceResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
+   *   TestIamPermissionsInstanceHttpRequest request = TestIamPermissionsInstanceHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
+   *     .build();
+   *   ApiFuture&lt;TestPermissionsResponse&gt; future = instanceClient.testIamPermissionsInstanceCallable().futureCall(request);
+   *   // Do something
+   *   TestPermissionsResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<TestIamPermissionsInstanceHttpRequest, TestPermissionsResponse>
+      testIamPermissionsInstanceCallable() {
+    return stub.testIamPermissionsInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Updates the specified access config from an instance's network interface with the data included
    * in the request. This method supports PATCH semantics and uses the JSON merge patch format and
    * processing rules.
@@ -3488,8 +3820,11 @@ public class InstanceClient implements BackgroundResource {
 
   public static class AggregatedListInstancesPagedResponse
       extends AbstractPagedListResponse<
-          AggregatedListInstancesHttpRequest, InstanceAggregatedList, InstancesScopedList,
-          AggregatedListInstancesPage, AggregatedListInstancesFixedSizeCollection> {
+          AggregatedListInstancesHttpRequest,
+          InstanceAggregatedList,
+          InstancesScopedList,
+          AggregatedListInstancesPage,
+          AggregatedListInstancesFixedSizeCollection> {
 
     public static ApiFuture<AggregatedListInstancesPagedResponse> createAsync(
         PageContext<AggregatedListInstancesHttpRequest, InstanceAggregatedList, InstancesScopedList>
@@ -3514,7 +3849,9 @@ public class InstanceClient implements BackgroundResource {
 
   public static class AggregatedListInstancesPage
       extends AbstractPage<
-          AggregatedListInstancesHttpRequest, InstanceAggregatedList, InstancesScopedList,
+          AggregatedListInstancesHttpRequest,
+          InstanceAggregatedList,
+          InstancesScopedList,
           AggregatedListInstancesPage> {
 
     private AggregatedListInstancesPage(
@@ -3547,8 +3884,11 @@ public class InstanceClient implements BackgroundResource {
 
   public static class AggregatedListInstancesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          AggregatedListInstancesHttpRequest, InstanceAggregatedList, InstancesScopedList,
-          AggregatedListInstancesPage, AggregatedListInstancesFixedSizeCollection> {
+          AggregatedListInstancesHttpRequest,
+          InstanceAggregatedList,
+          InstancesScopedList,
+          AggregatedListInstancesPage,
+          AggregatedListInstancesFixedSizeCollection> {
 
     private AggregatedListInstancesFixedSizeCollection(
         List<AggregatedListInstancesPage> pages, int collectionSize) {
@@ -3568,7 +3908,10 @@ public class InstanceClient implements BackgroundResource {
 
   public static class ListInstancesPagedResponse
       extends AbstractPagedListResponse<
-          ListInstancesHttpRequest, InstanceList, Instance, ListInstancesPage,
+          ListInstancesHttpRequest,
+          InstanceList,
+          Instance,
+          ListInstancesPage,
           ListInstancesFixedSizeCollection> {
 
     public static ApiFuture<ListInstancesPagedResponse> createAsync(
@@ -3621,7 +3964,10 @@ public class InstanceClient implements BackgroundResource {
 
   public static class ListInstancesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListInstancesHttpRequest, InstanceList, Instance, ListInstancesPage,
+          ListInstancesHttpRequest,
+          InstanceList,
+          Instance,
+          ListInstancesPage,
           ListInstancesFixedSizeCollection> {
 
     private ListInstancesFixedSizeCollection(List<ListInstancesPage> pages, int collectionSize) {
@@ -3641,8 +3987,11 @@ public class InstanceClient implements BackgroundResource {
 
   public static class ListReferrersInstancesPagedResponse
       extends AbstractPagedListResponse<
-          ListReferrersInstancesHttpRequest, InstanceListReferrers, Reference,
-          ListReferrersInstancesPage, ListReferrersInstancesFixedSizeCollection> {
+          ListReferrersInstancesHttpRequest,
+          InstanceListReferrers,
+          Reference,
+          ListReferrersInstancesPage,
+          ListReferrersInstancesFixedSizeCollection> {
 
     public static ApiFuture<ListReferrersInstancesPagedResponse> createAsync(
         PageContext<ListReferrersInstancesHttpRequest, InstanceListReferrers, Reference> context,
@@ -3666,7 +4015,9 @@ public class InstanceClient implements BackgroundResource {
 
   public static class ListReferrersInstancesPage
       extends AbstractPage<
-          ListReferrersInstancesHttpRequest, InstanceListReferrers, Reference,
+          ListReferrersInstancesHttpRequest,
+          InstanceListReferrers,
+          Reference,
           ListReferrersInstancesPage> {
 
     private ListReferrersInstancesPage(
@@ -3696,8 +4047,11 @@ public class InstanceClient implements BackgroundResource {
 
   public static class ListReferrersInstancesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListReferrersInstancesHttpRequest, InstanceListReferrers, Reference,
-          ListReferrersInstancesPage, ListReferrersInstancesFixedSizeCollection> {
+          ListReferrersInstancesHttpRequest,
+          InstanceListReferrers,
+          Reference,
+          ListReferrersInstancesPage,
+          ListReferrersInstancesFixedSizeCollection> {
 
     private ListReferrersInstancesFixedSizeCollection(
         List<ListReferrersInstancesPage> pages, int collectionSize) {

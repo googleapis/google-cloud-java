@@ -20,14 +20,11 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
-
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Identity for a Google Compute Engine machine type.
- */
+/** Identity for a Google Compute Engine machine type. */
 public final class MachineTypeId extends ResourceId {
 
   static final Function<String, MachineTypeId> FROM_URL_FUNCTION =
@@ -58,23 +55,17 @@ public final class MachineTypeId extends ResourceId {
     this.type = checkNotNull(type);
   }
 
-  /**
-   * Returns the name of the machine type.
-   */
+  /** Returns the name of the machine type. */
   public String getType() {
     return type;
   }
 
-  /**
-   * Returns the name of the zone this machine type belongs to.
-   */
+  /** Returns the name of the zone this machine type belongs to. */
   public String getZone() {
     return zone;
   }
 
-  /**
-   * Returns the identity of the zone this machine type belongs to.
-   */
+  /** Returns the identity of the zone this machine type belongs to. */
   public ZoneId getZoneId() {
     return ZoneId.of(getProject(), zone);
   }
@@ -116,16 +107,12 @@ public final class MachineTypeId extends ResourceId {
     return MachineTypeId.of(projectId, zone, type);
   }
 
-  /**
-   * Returns a machine type identity given the zone and type names.
-   */
+  /** Returns a machine type identity given the zone and type names. */
   public static MachineTypeId of(String zone, String type) {
     return new MachineTypeId(null, zone, type);
   }
 
-  /**
-   * Returns a machine type identity given project, zone and type names.
-   */
+  /** Returns a machine type identity given project, zone and type names. */
   public static MachineTypeId of(String project, String zone, String type) {
     return new MachineTypeId(project, zone, type);
   }

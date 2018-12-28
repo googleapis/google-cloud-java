@@ -42,13 +42,18 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteImageHttpRequest;
 import com.google.cloud.compute.v1.DeprecateImageHttpRequest;
 import com.google.cloud.compute.v1.GetFromFamilyImageHttpRequest;
+import com.google.cloud.compute.v1.GetIamPolicyImageHttpRequest;
 import com.google.cloud.compute.v1.GetImageHttpRequest;
 import com.google.cloud.compute.v1.Image;
 import com.google.cloud.compute.v1.ImageList;
 import com.google.cloud.compute.v1.InsertImageHttpRequest;
 import com.google.cloud.compute.v1.ListImagesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Policy;
+import com.google.cloud.compute.v1.SetIamPolicyImageHttpRequest;
 import com.google.cloud.compute.v1.SetLabelsImageHttpRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsImageHttpRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -103,10 +108,14 @@ public class ImageStubSettings extends StubSettings<ImageStubSettings> {
   private final UnaryCallSettings<DeprecateImageHttpRequest, Operation> deprecateImageSettings;
   private final UnaryCallSettings<GetImageHttpRequest, Image> getImageSettings;
   private final UnaryCallSettings<GetFromFamilyImageHttpRequest, Image> getFromFamilyImageSettings;
+  private final UnaryCallSettings<GetIamPolicyImageHttpRequest, Policy> getIamPolicyImageSettings;
   private final UnaryCallSettings<InsertImageHttpRequest, Operation> insertImageSettings;
   private final PagedCallSettings<ListImagesHttpRequest, ImageList, ListImagesPagedResponse>
       listImagesSettings;
+  private final UnaryCallSettings<SetIamPolicyImageHttpRequest, Policy> setIamPolicyImageSettings;
   private final UnaryCallSettings<SetLabelsImageHttpRequest, Operation> setLabelsImageSettings;
+  private final UnaryCallSettings<TestIamPermissionsImageHttpRequest, TestPermissionsResponse>
+      testIamPermissionsImageSettings;
 
   /** Returns the object with the settings used for calls to deleteImage. */
   public UnaryCallSettings<DeleteImageHttpRequest, Operation> deleteImageSettings() {
@@ -128,6 +137,11 @@ public class ImageStubSettings extends StubSettings<ImageStubSettings> {
     return getFromFamilyImageSettings;
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicyImage. */
+  public UnaryCallSettings<GetIamPolicyImageHttpRequest, Policy> getIamPolicyImageSettings() {
+    return getIamPolicyImageSettings;
+  }
+
   /** Returns the object with the settings used for calls to insertImage. */
   public UnaryCallSettings<InsertImageHttpRequest, Operation> insertImageSettings() {
     return insertImageSettings;
@@ -139,9 +153,20 @@ public class ImageStubSettings extends StubSettings<ImageStubSettings> {
     return listImagesSettings;
   }
 
+  /** Returns the object with the settings used for calls to setIamPolicyImage. */
+  public UnaryCallSettings<SetIamPolicyImageHttpRequest, Policy> setIamPolicyImageSettings() {
+    return setIamPolicyImageSettings;
+  }
+
   /** Returns the object with the settings used for calls to setLabelsImage. */
   public UnaryCallSettings<SetLabelsImageHttpRequest, Operation> setLabelsImageSettings() {
     return setLabelsImageSettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissionsImage. */
+  public UnaryCallSettings<TestIamPermissionsImageHttpRequest, TestPermissionsResponse>
+      testIamPermissionsImageSettings() {
+    return testIamPermissionsImageSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -222,9 +247,12 @@ public class ImageStubSettings extends StubSettings<ImageStubSettings> {
     deprecateImageSettings = settingsBuilder.deprecateImageSettings().build();
     getImageSettings = settingsBuilder.getImageSettings().build();
     getFromFamilyImageSettings = settingsBuilder.getFromFamilyImageSettings().build();
+    getIamPolicyImageSettings = settingsBuilder.getIamPolicyImageSettings().build();
     insertImageSettings = settingsBuilder.insertImageSettings().build();
     listImagesSettings = settingsBuilder.listImagesSettings().build();
+    setIamPolicyImageSettings = settingsBuilder.setIamPolicyImageSettings().build();
     setLabelsImageSettings = settingsBuilder.setLabelsImageSettings().build();
+    testIamPermissionsImageSettings = settingsBuilder.testIamPermissionsImageSettings().build();
   }
 
   private static final PagedListDescriptor<ListImagesHttpRequest, ImageList, Image>
@@ -258,7 +286,9 @@ public class ImageStubSettings extends StubSettings<ImageStubSettings> {
 
             @Override
             public Iterable<Image> extractResources(ImageList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<Image>of();
             }
           };
 
@@ -289,12 +319,19 @@ public class ImageStubSettings extends StubSettings<ImageStubSettings> {
     private final UnaryCallSettings.Builder<GetImageHttpRequest, Image> getImageSettings;
     private final UnaryCallSettings.Builder<GetFromFamilyImageHttpRequest, Image>
         getFromFamilyImageSettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyImageHttpRequest, Policy>
+        getIamPolicyImageSettings;
     private final UnaryCallSettings.Builder<InsertImageHttpRequest, Operation> insertImageSettings;
     private final PagedCallSettings.Builder<
             ListImagesHttpRequest, ImageList, ListImagesPagedResponse>
         listImagesSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyImageHttpRequest, Policy>
+        setIamPolicyImageSettings;
     private final UnaryCallSettings.Builder<SetLabelsImageHttpRequest, Operation>
         setLabelsImageSettings;
+    private final UnaryCallSettings.Builder<
+            TestIamPermissionsImageHttpRequest, TestPermissionsResponse>
+        testIamPermissionsImageSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -345,11 +382,17 @@ public class ImageStubSettings extends StubSettings<ImageStubSettings> {
 
       getFromFamilyImageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      getIamPolicyImageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       insertImageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listImagesSettings = PagedCallSettings.newBuilder(LIST_IMAGES_PAGE_STR_FACT);
 
+      setIamPolicyImageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       setLabelsImageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      testIamPermissionsImageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -357,9 +400,12 @@ public class ImageStubSettings extends StubSettings<ImageStubSettings> {
               deprecateImageSettings,
               getImageSettings,
               getFromFamilyImageSettings,
+              getIamPolicyImageSettings,
               insertImageSettings,
               listImagesSettings,
-              setLabelsImageSettings);
+              setIamPolicyImageSettings,
+              setLabelsImageSettings,
+              testIamPermissionsImageSettings);
 
       initDefaults(this);
     }
@@ -396,6 +442,11 @@ public class ImageStubSettings extends StubSettings<ImageStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .getIamPolicyImageSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .insertImageSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -406,7 +457,17 @@ public class ImageStubSettings extends StubSettings<ImageStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .setIamPolicyImageSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .setLabelsImageSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .testIamPermissionsImageSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -420,9 +481,12 @@ public class ImageStubSettings extends StubSettings<ImageStubSettings> {
       deprecateImageSettings = settings.deprecateImageSettings.toBuilder();
       getImageSettings = settings.getImageSettings.toBuilder();
       getFromFamilyImageSettings = settings.getFromFamilyImageSettings.toBuilder();
+      getIamPolicyImageSettings = settings.getIamPolicyImageSettings.toBuilder();
       insertImageSettings = settings.insertImageSettings.toBuilder();
       listImagesSettings = settings.listImagesSettings.toBuilder();
+      setIamPolicyImageSettings = settings.setIamPolicyImageSettings.toBuilder();
       setLabelsImageSettings = settings.setLabelsImageSettings.toBuilder();
+      testIamPermissionsImageSettings = settings.testIamPermissionsImageSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -430,9 +494,12 @@ public class ImageStubSettings extends StubSettings<ImageStubSettings> {
               deprecateImageSettings,
               getImageSettings,
               getFromFamilyImageSettings,
+              getIamPolicyImageSettings,
               insertImageSettings,
               listImagesSettings,
-              setLabelsImageSettings);
+              setIamPolicyImageSettings,
+              setLabelsImageSettings,
+              testIamPermissionsImageSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -473,6 +540,12 @@ public class ImageStubSettings extends StubSettings<ImageStubSettings> {
       return getFromFamilyImageSettings;
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicyImage. */
+    public UnaryCallSettings.Builder<GetIamPolicyImageHttpRequest, Policy>
+        getIamPolicyImageSettings() {
+      return getIamPolicyImageSettings;
+    }
+
     /** Returns the builder for the settings used for calls to insertImage. */
     public UnaryCallSettings.Builder<InsertImageHttpRequest, Operation> insertImageSettings() {
       return insertImageSettings;
@@ -484,10 +557,22 @@ public class ImageStubSettings extends StubSettings<ImageStubSettings> {
       return listImagesSettings;
     }
 
+    /** Returns the builder for the settings used for calls to setIamPolicyImage. */
+    public UnaryCallSettings.Builder<SetIamPolicyImageHttpRequest, Policy>
+        setIamPolicyImageSettings() {
+      return setIamPolicyImageSettings;
+    }
+
     /** Returns the builder for the settings used for calls to setLabelsImage. */
     public UnaryCallSettings.Builder<SetLabelsImageHttpRequest, Operation>
         setLabelsImageSettings() {
       return setLabelsImageSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissionsImage. */
+    public UnaryCallSettings.Builder<TestIamPermissionsImageHttpRequest, TestPermissionsResponse>
+        testIamPermissionsImageSettings() {
+      return testIamPermissionsImageSettings;
     }
 
     @Override

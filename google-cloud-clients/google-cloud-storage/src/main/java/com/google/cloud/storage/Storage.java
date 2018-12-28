@@ -24,7 +24,6 @@ import com.google.auth.ServiceAccountSigner;
 import com.google.auth.ServiceAccountSigner.SigningException;
 import com.google.cloud.FieldSelector;
 import com.google.cloud.FieldSelector.Helper;
-import com.google.cloud.GcpLaunchStage;
 import com.google.cloud.Policy;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.Service;
@@ -113,7 +112,6 @@ public interface Storage extends Service<StorageOptions> {
     }
   }
 
-
   enum BlobField implements FieldSelector {
     ACL("acl"),
     BUCKET("bucket"),
@@ -159,10 +157,7 @@ public interface Storage extends Service<StorageOptions> {
     }
   }
 
-
-  /**
-   * Class for specifying bucket target options.
-   */
+  /** Class for specifying bucket target options. */
   class BucketTargetOption extends Option {
 
     private static final long serialVersionUID = -5880204616982900975L;
@@ -175,19 +170,15 @@ public interface Storage extends Service<StorageOptions> {
       this(rpcOption, null);
     }
 
-    /**
-     * Returns an option for specifying bucket's predefined ACL configuration.
-     */
+    /** Returns an option for specifying bucket's predefined ACL configuration. */
     public static BucketTargetOption predefinedAcl(PredefinedAcl acl) {
       return new BucketTargetOption(StorageRpc.Option.PREDEFINED_ACL, acl.getEntry());
     }
 
-    /**
-     * Returns an option for specifying bucket's default ACL configuration for blobs.
-     */
+    /** Returns an option for specifying bucket's default ACL configuration for blobs. */
     public static BucketTargetOption predefinedDefaultObjectAcl(PredefinedAcl acl) {
-      return new BucketTargetOption(StorageRpc.Option.PREDEFINED_DEFAULT_OBJECT_ACL,
-          acl.getEntry());
+      return new BucketTargetOption(
+          StorageRpc.Option.PREDEFINED_DEFAULT_OBJECT_ACL, acl.getEntry());
     }
 
     /**
@@ -215,9 +206,7 @@ public interface Storage extends Service<StorageOptions> {
     }
   }
 
-  /**
-   * Class for specifying bucket source options.
-   */
+  /** Class for specifying bucket source options. */
   class BucketSourceOption extends Option {
 
     private static final long serialVersionUID = 5185657617120212117L;
@@ -243,17 +232,15 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
-     * Returns an option for bucket's billing user project. This option is only used by the buckets with
-     * 'requester_pays' flag.
+     * Returns an option for bucket's billing user project. This option is only used by the buckets
+     * with 'requester_pays' flag.
      */
     public static BucketSourceOption userProject(String userProject) {
       return new BucketSourceOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
   }
 
-  /**
-   * Class for specifying bucket get options.
-   */
+  /** Class for specifying bucket get options. */
   class BucketGetOption extends Option {
 
     private static final long serialVersionUID = 1901844869484087395L;
@@ -283,8 +270,8 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
-     * Returns an option for bucket's billing user project. This option is only used by the buckets with
-     * 'requester_pays' flag.
+     * Returns an option for bucket's billing user project. This option is only used by the buckets
+     * with 'requester_pays' flag.
      */
     public static BucketGetOption userProject(String userProject) {
       return new BucketGetOption(StorageRpc.Option.USER_PROJECT, userProject);
@@ -297,14 +284,12 @@ public interface Storage extends Service<StorageOptions> {
      * specified.
      */
     public static BucketGetOption fields(BucketField... fields) {
-      return new BucketGetOption(StorageRpc.Option.FIELDS,
-          Helper.selector(BucketField.REQUIRED_FIELDS, fields));
+      return new BucketGetOption(
+          StorageRpc.Option.FIELDS, Helper.selector(BucketField.REQUIRED_FIELDS, fields));
     }
   }
 
-  /**
-   * Class for specifying blob target options.
-   */
+  /** Class for specifying blob target options. */
   class BlobTargetOption extends Option {
 
     private static final long serialVersionUID = 214616862061934846L;
@@ -317,9 +302,7 @@ public interface Storage extends Service<StorageOptions> {
       this(rpcOption, null);
     }
 
-    /**
-     * Returns an option for specifying blob's predefined ACL configuration.
-     */
+    /** Returns an option for specifying blob's predefined ACL configuration. */
     public static BlobTargetOption predefinedAcl(PredefinedAcl acl) {
       return new BlobTargetOption(StorageRpc.Option.PREDEFINED_ACL, acl.getEntry());
     }
@@ -364,6 +347,14 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
+     * Returns an option for blob's data disabledGzipContent. If this option is used, the request
+     * will create a blob with disableGzipContent; at present, this is only for upload.
+     */
+    public static BlobTargetOption disableGzipContent() {
+      return new BlobTargetOption(StorageRpc.Option.IF_DISABLE_GZIP_CONTENT, true);
+    }
+
+    /**
      * Returns an option to set a customer-supplied AES256 key for server-side encryption of the
      * blob.
      */
@@ -373,8 +364,8 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
-     * Returns an option for blob's billing user project. This option is only used by the buckets with
-     * 'requester_pays' flag.
+     * Returns an option for blob's billing user project. This option is only used by the buckets
+     * with 'requester_pays' flag.
      */
     public static BlobTargetOption userProject(String userProject) {
       return new BlobTargetOption(StorageRpc.Option.USER_PROJECT, userProject);
@@ -390,9 +381,7 @@ public interface Storage extends Service<StorageOptions> {
       return new BlobTargetOption(StorageRpc.Option.CUSTOMER_SUPPLIED_KEY, key);
     }
 
-    /**
-     * Returns an option to set a customer-managed key for server-side encryption of the blob.
-     */
+    /** Returns an option to set a customer-managed key for server-side encryption of the blob. */
     public static BlobTargetOption kmsKeyName(String kmsKeyName) {
       return new BlobTargetOption(StorageRpc.Option.KMS_KEY_NAME, kmsKeyName);
     }
@@ -413,14 +402,12 @@ public interface Storage extends Service<StorageOptions> {
             break;
         }
       }
-      return Tuple.of(infoBuilder.build(),
-          targetOptions.toArray(new BlobTargetOption[targetOptions.size()]));
+      return Tuple.of(
+          infoBuilder.build(), targetOptions.toArray(new BlobTargetOption[targetOptions.size()]));
     }
   }
 
-  /**
-   * Class for specifying blob write options.
-   */
+  /** Class for specifying blob write options. */
   class BlobWriteOption implements Serializable {
 
     private static final long serialVersionUID = -3880421670966224580L;
@@ -429,8 +416,16 @@ public interface Storage extends Service<StorageOptions> {
     private final Object value;
 
     enum Option {
-      PREDEFINED_ACL, IF_GENERATION_MATCH, IF_GENERATION_NOT_MATCH, IF_METAGENERATION_MATCH,
-      IF_METAGENERATION_NOT_MATCH, IF_MD5_MATCH, IF_CRC32C_MATCH, CUSTOMER_SUPPLIED_KEY, KMS_KEY_NAME, USER_PROJECT;
+      PREDEFINED_ACL,
+      IF_GENERATION_MATCH,
+      IF_GENERATION_NOT_MATCH,
+      IF_METAGENERATION_MATCH,
+      IF_METAGENERATION_NOT_MATCH,
+      IF_MD5_MATCH,
+      IF_CRC32C_MATCH,
+      CUSTOMER_SUPPLIED_KEY,
+      KMS_KEY_NAME,
+      USER_PROJECT;
 
       StorageRpc.Option toRpcOption() {
         return StorageRpc.Option.valueOf(this.name());
@@ -467,9 +462,7 @@ public interface Storage extends Service<StorageOptions> {
       return this.option == other.option && Objects.equals(this.value, other.value);
     }
 
-    /**
-     * Returns an option for specifying blob's predefined ACL configuration.
-     */
+    /** Returns an option for specifying blob's predefined ACL configuration. */
     public static BlobWriteOption predefinedAcl(PredefinedAcl acl) {
       return new BlobWriteOption(Option.PREDEFINED_ACL, acl.getEntry());
     }
@@ -549,8 +542,7 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
-     * Returns an option to set a customer-managed KMS key for server-side encryption of the
-     * blob.
+     * Returns an option to set a customer-managed KMS key for server-side encryption of the blob.
      *
      * @param kmsKeyName the KMS key resource id
      */
@@ -559,17 +551,15 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
-     * Returns an option for blob's billing user project. This option is only used by the buckets with
-     * 'requester_pays' flag.
+     * Returns an option for blob's billing user project. This option is only used by the buckets
+     * with 'requester_pays' flag.
      */
     public static BlobWriteOption userProject(String userProject) {
       return new BlobWriteOption(Option.USER_PROJECT, userProject);
     }
   }
 
-  /**
-   * Class for specifying blob source options.
-   */
+  /** Class for specifying blob source options. */
   class BlobSourceOption extends Option {
 
     private static final long serialVersionUID = -3712768261070182991L;
@@ -581,9 +571,9 @@ public interface Storage extends Service<StorageOptions> {
     /**
      * Returns an option for blob's data generation match. If this option is used the request will
      * fail if blob's generation does not match. The generation value to compare with the actual
-     * blob's generation is taken from a source {@link BlobId} object. When this option is passed
-     * to a {@link Storage} method and {@link BlobId#getGeneration()} is {@code null} or no
-     * {@link BlobId} is provided an exception is thrown.
+     * blob's generation is taken from a source {@link BlobId} object. When this option is passed to
+     * a {@link Storage} method and {@link BlobId#getGeneration()} is {@code null} or no {@link
+     * BlobId} is provided an exception is thrown.
      */
     public static BlobSourceOption generationMatch() {
       return new BlobSourceOption(StorageRpc.Option.IF_GENERATION_MATCH, null);
@@ -600,9 +590,9 @@ public interface Storage extends Service<StorageOptions> {
     /**
      * Returns an option for blob's data generation mismatch. If this option is used the request
      * will fail if blob's generation matches. The generation value to compare with the actual
-     * blob's generation is taken from a source {@link BlobId} object. When this option is passed
-     * to a {@link Storage} method and {@link BlobId#getGeneration()} is {@code null} or no
-     * {@link BlobId} is provided an exception is thrown.
+     * blob's generation is taken from a source {@link BlobId} object. When this option is passed to
+     * a {@link Storage} method and {@link BlobId#getGeneration()} is {@code null} or no {@link
+     * BlobId} is provided an exception is thrown.
      */
     public static BlobSourceOption generationNotMatch() {
       return new BlobSourceOption(StorageRpc.Option.IF_GENERATION_NOT_MATCH, null);
@@ -652,17 +642,15 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
-     * Returns an option for blob's billing user project. This option is only used by the buckets with
-     * 'requester_pays' flag.
+     * Returns an option for blob's billing user project. This option is only used by the buckets
+     * with 'requester_pays' flag.
      */
     public static BlobSourceOption userProject(String userProject) {
       return new BlobSourceOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
   }
 
-  /**
-   * Class for specifying blob get options.
-   */
+  /** Class for specifying blob get options. */
   class BlobGetOption extends Option {
 
     private static final long serialVersionUID = 803817709703661480L;
@@ -678,9 +666,9 @@ public interface Storage extends Service<StorageOptions> {
     /**
      * Returns an option for blob's data generation match. If this option is used the request will
      * fail if blob's generation does not match. The generation value to compare with the actual
-     * blob's generation is taken from a source {@link BlobId} object. When this option is passed
-     * to a {@link Storage} method and {@link BlobId#getGeneration()} is {@code null} or no
-     * {@link BlobId} is provided an exception is thrown.
+     * blob's generation is taken from a source {@link BlobId} object. When this option is passed to
+     * a {@link Storage} method and {@link BlobId#getGeneration()} is {@code null} or no {@link
+     * BlobId} is provided an exception is thrown.
      */
     public static BlobGetOption generationMatch() {
       return new BlobGetOption(StorageRpc.Option.IF_GENERATION_MATCH, (Long) null);
@@ -697,9 +685,9 @@ public interface Storage extends Service<StorageOptions> {
     /**
      * Returns an option for blob's data generation mismatch. If this option is used the request
      * will fail if blob's generation matches. The generation value to compare with the actual
-     * blob's generation is taken from a source {@link BlobId} object. When this option is passed
-     * to a {@link Storage} method and {@link BlobId#getGeneration()} is {@code null} or no
-     * {@link BlobId} is provided an exception is thrown.
+     * blob's generation is taken from a source {@link BlobId} object. When this option is passed to
+     * a {@link Storage} method and {@link BlobId#getGeneration()} is {@code null} or no {@link
+     * BlobId} is provided an exception is thrown.
      */
     public static BlobGetOption generationNotMatch() {
       return new BlobGetOption(StorageRpc.Option.IF_GENERATION_NOT_MATCH, (Long) null);
@@ -736,22 +724,20 @@ public interface Storage extends Service<StorageOptions> {
      * specified.
      */
     public static BlobGetOption fields(BlobField... fields) {
-      return new BlobGetOption(StorageRpc.Option.FIELDS,
-          Helper.selector(BlobField.REQUIRED_FIELDS, fields));
+      return new BlobGetOption(
+          StorageRpc.Option.FIELDS, Helper.selector(BlobField.REQUIRED_FIELDS, fields));
     }
 
     /**
-     * Returns an option for blob's billing user project. This option is only used by the buckets with
-     * 'requester_pays' flag.
+     * Returns an option for blob's billing user project. This option is only used by the buckets
+     * with 'requester_pays' flag.
      */
     public static BlobGetOption userProject(String userProject) {
       return new BlobGetOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
   }
 
-  /**
-   * Class for specifying bucket list options.
-   */
+  /** Class for specifying bucket list options. */
   class BucketListOption extends Option {
 
     private static final long serialVersionUID = 8754017079673290353L;
@@ -760,16 +746,12 @@ public interface Storage extends Service<StorageOptions> {
       super(option, value);
     }
 
-    /**
-     * Returns an option to specify the maximum number of buckets returned per page.
-     */
+    /** Returns an option to specify the maximum number of buckets returned per page. */
     public static BucketListOption pageSize(long pageSize) {
       return new BucketListOption(StorageRpc.Option.MAX_RESULTS, pageSize);
     }
 
-    /**
-     * Returns an option to specify the page token from which to start listing buckets.
-     */
+    /** Returns an option to specify the page token from which to start listing buckets. */
     public static BucketListOption pageToken(String pageToken) {
       return new BucketListOption(StorageRpc.Option.PAGE_TOKEN, pageToken);
     }
@@ -783,8 +765,8 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
-     * Returns an option for bucket's billing user project. This option is only used by the buckets with
-     * 'requester_pays' flag.
+     * Returns an option for bucket's billing user project. This option is only used by the buckets
+     * with 'requester_pays' flag.
      */
     public static BucketListOption userProject(String userProject) {
       return new BucketListOption(StorageRpc.Option.USER_PROJECT, userProject);
@@ -797,14 +779,13 @@ public interface Storage extends Service<StorageOptions> {
      * specified.
      */
     public static BucketListOption fields(BucketField... fields) {
-      return new BucketListOption(StorageRpc.Option.FIELDS,
+      return new BucketListOption(
+          StorageRpc.Option.FIELDS,
           Helper.listSelector("items", BucketField.REQUIRED_FIELDS, fields));
     }
   }
 
-  /**
-   * Class for specifying blob list options.
-   */
+  /** Class for specifying blob list options. */
   class BlobListOption extends Option {
 
     private static final String[] TOP_LEVEL_FIELDS = {"prefixes"};
@@ -814,16 +795,12 @@ public interface Storage extends Service<StorageOptions> {
       super(option, value);
     }
 
-    /**
-     * Returns an option to specify the maximum number of blobs returned per page.
-     */
+    /** Returns an option to specify the maximum number of blobs returned per page. */
     public static BlobListOption pageSize(long pageSize) {
       return new BlobListOption(StorageRpc.Option.MAX_RESULTS, pageSize);
     }
 
-    /**
-     * Returns an option to specify the page token from which to start listing blobs.
-     */
+    /** Returns an option to specify the page token from which to start listing blobs. */
     public static BlobListOption pageToken(String pageToken) {
       return new BlobListOption(StorageRpc.Option.PAGE_TOKEN, pageToken);
     }
@@ -842,9 +819,9 @@ public interface Storage extends Service<StorageOptions> {
      * whose names, after a possible {@link #prefix(String)}, contain the '/' delimiter, will have
      * their name truncated after the delimiter and will be returned as {@link Blob} objects where
      * only {@link Blob#getBlobId()}, {@link Blob#getSize()} and {@link Blob#isDirectory()} are set.
-     * For such directory blobs, ({@link BlobId#getGeneration()} returns {@code null}),
-     * {@link Blob#getSize()} returns {@code 0} while {@link Blob#isDirectory()} returns
-     * {@code true}. Duplicate directory blobs are omitted.
+     * For such directory blobs, ({@link BlobId#getGeneration()} returns {@code null}), {@link
+     * Blob#getSize()} returns {@code 0} while {@link Blob#isDirectory()} returns {@code true}.
+     * Duplicate directory blobs are omitted.
      */
     public static BlobListOption currentDirectory() {
       return new BlobListOption(StorageRpc.Option.DELIMITER, true);
@@ -876,14 +853,13 @@ public interface Storage extends Service<StorageOptions> {
      * specified.
      */
     public static BlobListOption fields(BlobField... fields) {
-      return new BlobListOption(StorageRpc.Option.FIELDS,
+      return new BlobListOption(
+          StorageRpc.Option.FIELDS,
           Helper.listSelector(TOP_LEVEL_FIELDS, "items", BlobField.REQUIRED_FIELDS, fields));
     }
   }
 
-  /**
-   * Class for specifying signed URL options.
-   */
+  /** Class for specifying signed URL options. */
   class SignUrlOption implements Serializable {
 
     private static final long serialVersionUID = 7850569877451099267L;
@@ -892,7 +868,12 @@ public interface Storage extends Service<StorageOptions> {
     private final Object value;
 
     enum Option {
-      HTTP_METHOD, CONTENT_TYPE, MD5, EXT_HEADERS, SERVICE_ACCOUNT_CRED
+      HTTP_METHOD,
+      CONTENT_TYPE,
+      MD5,
+      EXT_HEADERS,
+      SERVICE_ACCOUNT_CRED,
+      HOST_NAME
     }
 
     private SignUrlOption(Option option, Object value) {
@@ -909,34 +890,34 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
-     * The HTTP method to be used with the signed URL.
-     * If this method is not called, defaults to GET.
+     * The HTTP method to be used with the signed URL. If this method is not called, defaults to
+     * GET.
      */
     public static SignUrlOption httpMethod(HttpMethod httpMethod) {
       return new SignUrlOption(Option.HTTP_METHOD, httpMethod);
     }
 
     /**
-     * Use it if signature should include the blob's content-type.
-     * When used, users of the signed URL should include the blob's content-type with their request.
-     * If using this URL from a browser, you must include a content type that matches what the browser will send.
+     * Use it if signature should include the blob's content-type. When used, users of the signed
+     * URL should include the blob's content-type with their request. If using this URL from a
+     * browser, you must include a content type that matches what the browser will send.
      */
     public static SignUrlOption withContentType() {
       return new SignUrlOption(Option.CONTENT_TYPE, true);
     }
 
     /**
-     * Use it if signature should include the blob's md5.
-     * When used, users of the signed URL should include the blob's md5 with their request.
+     * Use it if signature should include the blob's md5. When used, users of the signed URL should
+     * include the blob's md5 with their request.
      */
     public static SignUrlOption withMd5() {
       return new SignUrlOption(Option.MD5, true);
     }
 
     /**
-     * Use it if signature should include the blob's canonicalized extended headers.
-     * When used, users of the signed URL should include the canonicalized extended headers with
-     * their request.
+     * Use it if signature should include the blob's canonicalized extended headers. When used,
+     * users of the signed URL should include the canonicalized extended headers with their request.
+     *
      * @see <a href="https://cloud.google.com/storage/docs/xml-api/reference-headers"></a>
      */
     public static SignUrlOption withExtHeaders(Map<String, String> extHeaders) {
@@ -953,13 +934,18 @@ public interface Storage extends Service<StorageOptions> {
     public static SignUrlOption signWith(ServiceAccountSigner signer) {
       return new SignUrlOption(Option.SERVICE_ACCOUNT_CRED, signer);
     }
+
+    /** Use a different host name than the default host name 'storage.googleapis.com' */
+    public static SignUrlOption withHostName(String hostName) {
+      return new SignUrlOption(Option.HOST_NAME, hostName);
+    }
   }
 
   /**
    * A class to contain all information needed for a Google Cloud Storage Compose operation.
    *
-   * @see <a href="https://cloud.google.com/storage/docs/composite-objects#_Compose">
-   *     Compose Operation</a>
+   * @see <a href="https://cloud.google.com/storage/docs/composite-objects#_Compose">Compose
+   *     Operation</a>
    */
   class ComposeRequest implements Serializable {
 
@@ -969,9 +955,7 @@ public interface Storage extends Service<StorageOptions> {
     private final BlobInfo target;
     private final List<BlobTargetOption> targetOptions;
 
-    /**
-     * Class for Compose source blobs.
-     */
+    /** Class for Compose source blobs. */
     public static class SourceBlob implements Serializable {
 
       private static final long serialVersionUID = 4094962795951990439L;
@@ -1003,9 +987,7 @@ public interface Storage extends Service<StorageOptions> {
       private final Set<BlobTargetOption> targetOptions = new LinkedHashSet<>();
       private BlobInfo target;
 
-      /**
-       * Add source blobs for compose operation.
-       */
+      /** Add source blobs for compose operation. */
       public Builder addSource(Iterable<String> blobs) {
         for (String blob : blobs) {
           sourceBlobs.add(new SourceBlob(blob));
@@ -1013,48 +995,36 @@ public interface Storage extends Service<StorageOptions> {
         return this;
       }
 
-      /**
-       * Add source blobs for compose operation.
-       */
+      /** Add source blobs for compose operation. */
       public Builder addSource(String... blobs) {
         return addSource(Arrays.asList(blobs));
       }
 
-      /**
-       * Add a source with a specific generation to match.
-       */
+      /** Add a source with a specific generation to match. */
       public Builder addSource(String blob, long generation) {
         sourceBlobs.add(new SourceBlob(blob, generation));
         return this;
       }
 
-      /**
-       * Sets compose operation's target blob.
-       */
+      /** Sets compose operation's target blob. */
       public Builder setTarget(BlobInfo target) {
         this.target = target;
         return this;
       }
 
-      /**
-       * Sets compose operation's target blob options.
-       */
+      /** Sets compose operation's target blob options. */
       public Builder setTargetOptions(BlobTargetOption... options) {
         Collections.addAll(targetOptions, options);
         return this;
       }
 
-      /**
-       * Sets compose operation's target blob options.
-       */
+      /** Sets compose operation's target blob options. */
       public Builder setTargetOptions(Iterable<BlobTargetOption> options) {
         Iterables.addAll(targetOptions, options);
         return this;
       }
 
-      /**
-       * Creates a {@code ComposeRequest} object.
-       */
+      /** Creates a {@code ComposeRequest} object. */
       public ComposeRequest build() {
         checkArgument(!sourceBlobs.isEmpty());
         checkNotNull(target);
@@ -1068,23 +1038,17 @@ public interface Storage extends Service<StorageOptions> {
       targetOptions = ImmutableList.copyOf(builder.targetOptions);
     }
 
-    /**
-     * Returns compose operation's source blobs.
-     */
+    /** Returns compose operation's source blobs. */
     public List<SourceBlob> getSourceBlobs() {
       return sourceBlobs;
     }
 
-    /**
-     * Returns compose operation's target blob.
-     */
+    /** Returns compose operation's target blob. */
     public BlobInfo getTarget() {
       return target;
     }
 
-    /**
-     * Returns compose operation's target blob's options.
-     */
+    /** Returns compose operation's target blob's options. */
     public List<BlobTargetOption> getTargetOptions() {
       return targetOptions;
     }
@@ -1110,17 +1074,13 @@ public interface Storage extends Service<StorageOptions> {
       return of(sources, BlobInfo.newBuilder(BlobId.of(bucket, target)).build());
     }
 
-    /**
-     * Returns a {@code ComposeRequest} builder.
-     */
+    /** Returns a {@code ComposeRequest} builder. */
     public static Builder newBuilder() {
       return new Builder();
     }
   }
 
-  /**
-   * A class to contain all information needed for a Google Cloud Storage Copy operation.
-   */
+  /** A class to contain all information needed for a Google Cloud Storage Copy operation. */
   class CopyRequest implements Serializable {
 
     private static final long serialVersionUID = -4498650529476219937L;
@@ -1260,9 +1220,7 @@ public interface Storage extends Service<StorageOptions> {
         return this;
       }
 
-      /**
-       * Creates a {@code CopyRequest} object.
-       */
+      /** Creates a {@code CopyRequest} object. */
       public CopyRequest build() {
         return new CopyRequest(this);
       }
@@ -1277,49 +1235,41 @@ public interface Storage extends Service<StorageOptions> {
       megabytesCopiedPerChunk = builder.megabytesCopiedPerChunk;
     }
 
-    /**
-     * Returns the blob to copy, as a {@link BlobId}.
-     */
+    /** Returns the blob to copy, as a {@link BlobId}. */
     public BlobId getSource() {
       return source;
     }
 
-    /**
-     * Returns blob's source options.
-     */
+    /** Returns blob's source options. */
     public List<BlobSourceOption> getSourceOptions() {
       return sourceOptions;
     }
 
-    /**
-     * Returns the {@link BlobInfo} for the target blob.
-     */
+    /** Returns the {@link BlobInfo} for the target blob. */
     public BlobInfo getTarget() {
       return target;
     }
 
     /**
-     * Returns whether to override the target blob information with {@link #getTarget()}.
-     * If {@code true}, the value of {@link #getTarget()} is used to replace source blob information
-     * (e.g. {@code contentType}, {@code contentLanguage}). Target blob information is set exactly
-     * to this value, no information is inherited from the source blob. If {@code false}, target
-     * blob information is inherited from the source blob.
+     * Returns whether to override the target blob information with {@link #getTarget()}. If {@code
+     * true}, the value of {@link #getTarget()} is used to replace source blob information (e.g.
+     * {@code contentType}, {@code contentLanguage}). Target blob information is set exactly to this
+     * value, no information is inherited from the source blob. If {@code false}, target blob
+     * information is inherited from the source blob.
      */
     public boolean overrideInfo() {
       return overrideInfo;
     }
 
-    /**
-     * Returns blob's target options.
-     */
+    /** Returns blob's target options. */
     public List<BlobTargetOption> getTargetOptions() {
       return targetOptions;
     }
 
     /**
      * Returns the maximum number of megabytes to copy for each RPC call. This parameter is ignored
-     * if source and target blob share the same location and storage class as copy is made with
-     * one single RPC.
+     * if source and target blob share the same location and storage class as copy is made with one
+     * single RPC.
      */
     public Long getMegabytesCopiedPerChunk() {
       return megabytesCopiedPerChunk;
@@ -1400,15 +1350,10 @@ public interface Storage extends Service<StorageOptions> {
      * @return a copy request
      */
     public static CopyRequest of(BlobId sourceBlobId, BlobId targetBlobId) {
-      return CopyRequest.newBuilder()
-          .setSource(sourceBlobId)
-          .setTarget(targetBlobId)
-          .build();
+      return CopyRequest.newBuilder().setSource(sourceBlobId).setTarget(targetBlobId).build();
     }
 
-    /**
-     * Creates a builder for {@code CopyRequest} objects.
-     */
+    /** Creates a builder for {@code CopyRequest} objects. */
     public static Builder newBuilder() {
       return new Builder();
     }
@@ -1417,17 +1362,19 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Creates a new bucket.
    *
-   * Accepts an optional userProject {@link BucketTargetOption} option which defines the project id
-   * to assign operational costs.
+   * <p>Accepts an optional userProject {@link BucketTargetOption} option which defines the project
+   * id to assign operational costs.
    *
    * <p>Example of creating a bucket.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * Bucket bucket = storage.create(BucketInfo.of(bucketName));
    * }</pre>
    *
    * <p>Example of creating a bucket with storage class and location.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * Bucket bucket = storage.create(BucketInfo.newBuilder(bucketName)
    *     // See here for possible values: http://g.co/cloud/storage/docs/storage-classes
@@ -1446,7 +1393,8 @@ public interface Storage extends Service<StorageOptions> {
    * Creates a new blob with no content.
    *
    * <p>Example of creating a blob with no content.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * BlobId blobId = BlobId.of(bucketName, blobName);
@@ -1460,14 +1408,14 @@ public interface Storage extends Service<StorageOptions> {
   Blob create(BlobInfo blobInfo, BlobTargetOption... options);
 
   /**
-   * Creates a new blob. Direct upload is used to upload {@code content}. For large content,
-   * {@link #writer} is recommended as it uses resumable upload. MD5 and CRC32C hashes of
-   * {@code content} are computed and used for validating transferred data.
-   * Accepts an optional userProject {@link BlobGetOption} option which defines the project id
-   * to assign operational costs.
+   * Creates a new blob. Direct upload is used to upload {@code content}. For large content, {@link
+   * #writer} is recommended as it uses resumable upload. MD5 and CRC32C hashes of {@code content}
+   * are computed and used for validating transferred data. Accepts an optional userProject {@link
+   * BlobGetOption} option which defines the project id to assign operational costs.
    *
    * <p>Example of creating a blob from a byte array.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * BlobId blobId = BlobId.of(bucketName, blobName);
@@ -1482,17 +1430,18 @@ public interface Storage extends Service<StorageOptions> {
   Blob create(BlobInfo blobInfo, byte[] content, BlobTargetOption... options);
 
   /**
-   * Creates a new blob. Direct upload is used to upload {@code content}. For large content,
-   * {@link #writer} is recommended as it uses resumable upload. By default any md5 and crc32c
-   * values in the given {@code blobInfo} are ignored unless requested via the
-   * {@code BlobWriteOption.md5Match} and {@code BlobWriteOption.crc32cMatch} options. The given
-   * input stream is closed upon success.
+   * Creates a new blob. Direct upload is used to upload {@code content}. For large content, {@link
+   * #writer} is recommended as it uses resumable upload. By default any md5 and crc32c values in
+   * the given {@code blobInfo} are ignored unless requested via the {@code
+   * BlobWriteOption.md5Match} and {@code BlobWriteOption.crc32cMatch} options. The given input
+   * stream is closed upon success.
    *
    * <p>This method is marked as {@link Deprecated} because it cannot safely retry, given that it
    * accepts an {@link InputStream} which can only be consumed once.
    *
    * <p>Example of creating a blob from an input stream.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * InputStream content = new ByteArrayInputStream("Hello, World!".getBytes(UTF_8));
@@ -1502,7 +1451,8 @@ public interface Storage extends Service<StorageOptions> {
    * }</pre>
    *
    * <p>Example of uploading an encrypted blob.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * String encryptionKey = "my_encryption_key";
@@ -1524,12 +1474,13 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Returns the requested bucket or {@code null} if not found.
    *
-   * Accepts an optional userProject {@link BucketGetOption} option which defines the project id
+   * <p>Accepts an optional userProject {@link BucketGetOption} option which defines the project id
    * to assign operational costs.
    *
    * <p>Example of getting information on a bucket, only if its metageneration matches a value,
    * otherwise a {@link StorageException} is thrown.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * long bucketMetageneration = 42;
    * Bucket bucket = storage.get(bucketName,
@@ -1541,16 +1492,18 @@ public interface Storage extends Service<StorageOptions> {
   Bucket get(String bucket, BucketGetOption... options);
 
   /**
-   * Locks bucket retention policy. Requires a local metageneration value in the request. Review example below.
+   * Locks bucket retention policy. Requires a local metageneration value in the request. Review
+   * example below.
    *
-   * <p>Accepts an optional userProject {@link BucketTargetOption} option which defines the project id
-   * to assign operational costs.
+   * <p>Accepts an optional userProject {@link BucketTargetOption} option which defines the project
+   * id to assign operational costs.
    *
    * <p>Warning: Once a retention policy is locked, it can't be unlocked, removed, or shortened.
    *
-   * <p>Example of locking a retention policy on a bucket, only if its local metageneration value matches the bucket's
-   * service metageneration otherwise a {@link StorageException} is thrown.
-   * <pre> {@code
+   * <p>Example of locking a retention policy on a bucket, only if its local metageneration value
+   * matches the bucket's service metageneration otherwise a {@link StorageException} is thrown.
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * Bucket bucket = storage.get(bucketName, BucketGetOption.fields(BucketField.METAGENERATION));
    * storage.lockRetentionPolicy(bucket, BucketTargetOption.metagenerationMatch());
@@ -1564,12 +1517,13 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Returns the requested blob or {@code null} if not found.
    *
-   * Accepts an optional userProject {@link BlobGetOption} option which defines the project id
-   * to assign operational costs.
+   * <p>Accepts an optional userProject {@link BlobGetOption} option which defines the project id to
+   * assign operational costs.
    *
    * <p>Example of getting information on a blob, only if its metageneration matches a value,
    * otherwise a {@link StorageException} is thrown.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * long blobMetageneration = 42;
@@ -1584,12 +1538,13 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Returns the requested blob or {@code null} if not found.
    *
-   * Accepts an optional userProject {@link BlobGetOption} option which defines the project id
-   * to assign operational costs.
+   * <p>Accepts an optional userProject {@link BlobGetOption} option which defines the project id to
+   * assign operational costs.
    *
    * <p>Example of getting information on a blob, only if its metageneration matches a value,
    * otherwise a {@link StorageException} is thrown.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * long blobMetageneration = 42;
@@ -1605,7 +1560,8 @@ public interface Storage extends Service<StorageOptions> {
    * Returns the requested blob or {@code null} if not found.
    *
    * <p>Example of getting information on a blob.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * BlobId blobId = BlobId.of(bucketName, blobName);
@@ -1620,7 +1576,8 @@ public interface Storage extends Service<StorageOptions> {
    * Lists the project's buckets.
    *
    * <p>Example of listing buckets, specifying the page size and a name prefix.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String prefix = "bucket_";
    * Page<Bucket> buckets = storage.list(BucketListOption.pageSize(100),
    *     BucketListOption.prefix(prefix));
@@ -1640,7 +1597,8 @@ public interface Storage extends Service<StorageOptions> {
    * results are returned in a directory-like mode.
    *
    * <p>Example of listing blobs in a provided directory.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String directory = "my_directory/";
    * Page<Blob> blobs = storage.list(bucketName, BlobListOption.currentDirectory(),
@@ -1659,10 +1617,12 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Updates bucket information.
    *
-   * Accepts an optional userProject {@link BucketTargetOption} option which defines the project id
-   * to assign operational costs.
+   * <p>Accepts an optional userProject {@link BucketTargetOption} option which defines the project
+   * id to assign operational costs.
+   *
    * <p>Example of updating bucket information.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * BucketInfo bucketInfo = BucketInfo.newBuilder(bucketName).setVersioningEnabled(true).build();
    * Bucket bucket = storage.update(bucketInfo);
@@ -1674,15 +1634,16 @@ public interface Storage extends Service<StorageOptions> {
   Bucket update(BucketInfo bucketInfo, BucketTargetOption... options);
 
   /**
-   * Updates blob information. Original metadata are merged with metadata in the provided
-   * {@code blobInfo}. To replace metadata instead you first have to unset them. Unsetting metadata
-   * can be done by setting the provided {@code blobInfo}'s metadata to {@code null}.
-   * Accepts an optional userProject {@link BlobTargetOption} option which defines the project id
-   * to assign operational costs.
+   * Updates blob information. Original metadata are merged with metadata in the provided {@code
+   * blobInfo}. To replace metadata instead you first have to unset them. Unsetting metadata can be
+   * done by setting the provided {@code blobInfo}'s metadata to {@code null}. Accepts an optional
+   * userProject {@link BlobTargetOption} option which defines the project id to assign operational
+   * costs.
    *
    * <p>Example of udating a blob, only if the blob's metageneration matches a value, otherwise a
    * {@link StorageException} is thrown.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * Blob blob = storage.get(bucketName, blobName);
@@ -1696,12 +1657,13 @@ public interface Storage extends Service<StorageOptions> {
   Blob update(BlobInfo blobInfo, BlobTargetOption... options);
 
   /**
-   * Updates blob information. Original metadata are merged with metadata in the provided
-   * {@code blobInfo}. To replace metadata instead you first have to unset them. Unsetting metadata
-   * can be done by setting the provided {@code blobInfo}'s metadata to {@code null}.
+   * Updates blob information. Original metadata are merged with metadata in the provided {@code
+   * blobInfo}. To replace metadata instead you first have to unset them. Unsetting metadata can be
+   * done by setting the provided {@code blobInfo}'s metadata to {@code null}.
    *
    * <p>Example of replacing blob's metadata.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * Map<String, String> newMetadata = new HashMap<>();
@@ -1720,12 +1682,13 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Deletes the requested bucket.
    *
-   * Accepts an optional userProject {@link BucketSourceOption} option which defines the project id
-   * to assign operational costs.
+   * <p>Accepts an optional userProject {@link BucketSourceOption} option which defines the project
+   * id to assign operational costs.
    *
-   * <p>Example of deleting a bucket, only if its metageneration matches a value, otherwise a
-   * {@link StorageException} is thrown.
-   * <pre> {@code
+   * <p>Example of deleting a bucket, only if its metageneration matches a value, otherwise a {@link
+   * StorageException} is thrown.
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * long bucketMetageneration = 42;
    * boolean deleted = storage.delete(bucketName,
@@ -1745,9 +1708,10 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Deletes the requested blob.
    *
-   * <p>Example of deleting a blob, only if its generation matches a value, otherwise a
-   * {@link StorageException} is thrown.
-   * <pre> {@code
+   * <p>Example of deleting a blob, only if its generation matches a value, otherwise a {@link
+   * StorageException} is thrown.
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * long blobGeneration = 42;
@@ -1768,12 +1732,13 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Deletes the requested blob.
    *
-   * Accepts an optional userProject {@link BlobSourceOption} option which defines the project id
+   * <p>Accepts an optional userProject {@link BlobSourceOption} option which defines the project id
    * to assign operational costs.
    *
-   * <p>Example of deleting a blob, only if its generation matches a value, otherwise a
-   * {@link StorageException} is thrown.
-   * <pre> {@code
+   * <p>Example of deleting a blob, only if its generation matches a value, otherwise a {@link
+   * StorageException} is thrown.
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * long blobGeneration = 42;
@@ -1795,7 +1760,8 @@ public interface Storage extends Service<StorageOptions> {
    * Deletes the requested blob.
    *
    * <p>Example of deleting a blob.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * BlobId blobId = BlobId.of(bucketName, blobName);
@@ -1815,11 +1781,12 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Sends a compose request.
    *
-   * Accepts an optional userProject {@link BlobTargetOption} option which defines the project id
+   * <p>Accepts an optional userProject {@link BlobTargetOption} option which defines the project id
    * to assign operational costs.
    *
    * <p>Example of composing two blobs.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * String sourceBlob1 = "source_blob_1";
@@ -1841,10 +1808,9 @@ public interface Storage extends Service<StorageOptions> {
 
   /**
    * Sends a copy request. This method copies both blob's data and information. To override source
-   * blob's information supply a {@code BlobInfo} to the
-   * {@code CopyRequest} using either
-   * {@link Storage.CopyRequest.Builder#setTarget(BlobInfo, Storage.BlobTargetOption...)} or
-   * {@link Storage.CopyRequest.Builder#setTarget(BlobInfo, Iterable)}.
+   * blob's information supply a {@code BlobInfo} to the {@code CopyRequest} using either {@link
+   * Storage.CopyRequest.Builder#setTarget(BlobInfo, Storage.BlobTargetOption...)} or {@link
+   * Storage.CopyRequest.Builder#setTarget(BlobInfo, Iterable)}.
    *
    * <p>This method returns a {@link CopyWriter} object for the provided {@code CopyRequest}. If
    * source and destination objects share the same location and storage class the source blob is
@@ -1854,7 +1820,8 @@ public interface Storage extends Service<StorageOptions> {
    * calls depending on blob's size.
    *
    * <p>Example of copying a blob.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * String copyBlobName = "copy_blob_name";
@@ -1866,7 +1833,8 @@ public interface Storage extends Service<StorageOptions> {
    * }</pre>
    *
    * <p>Example of copying a blob in chunks.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * String copyBlobName = "copy_blob_name";
@@ -1882,7 +1850,8 @@ public interface Storage extends Service<StorageOptions> {
    * }</pre>
    *
    * <p>Example of rotating the encryption key of a blob.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * String oldEncryptionKey = "old_encryption_key";
@@ -1906,9 +1875,10 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Reads all the bytes from a blob.
    *
-   * <p>Example of reading all bytes of a blob, if generation matches a value, otherwise a
-   * {@link StorageException} is thrown.
-   * <pre> {@code
+   * <p>Example of reading all bytes of a blob, if generation matches a value, otherwise a {@link
+   * StorageException} is thrown.
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * long blobGeneration = 42";
@@ -1924,9 +1894,10 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Reads all the bytes from a blob.
    *
-   * <p>Example of reading all bytes of a blob's specific generation, otherwise a
-   * {@link StorageException} is thrown.
-   * <pre> {@code
+   * <p>Example of reading all bytes of a blob's specific generation, otherwise a {@link
+   * StorageException} is thrown.
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * long blobGeneration = 42;
@@ -1935,7 +1906,8 @@ public interface Storage extends Service<StorageOptions> {
    * }</pre>
    *
    * <p>Example of reading all bytes of an encrypted blob.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * String decryptionKey = "my_encryption_key";
@@ -1952,7 +1924,8 @@ public interface Storage extends Service<StorageOptions> {
    * Creates a new empty batch for grouping multiple service calls in one underlying RPC call.
    *
    * <p>Example of using a batch request to delete, update and get a blob.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName1 = "my_blob_name1";
    * String blobName2 = "my_blob_name2";
@@ -1973,7 +1946,6 @@ public interface Storage extends Service<StorageOptions> {
    * batch.submit();
    * Blob blob = result.get(); // returns get result or throws StorageException
    * }</pre>
-   *
    */
   StorageBatch batch();
 
@@ -1983,7 +1955,8 @@ public interface Storage extends Service<StorageOptions> {
    * {@code blobReadChannel.read(ByteBuffer)} may throw {@link StorageException}.
    *
    * <p>Example of reading a blob's content through a reader.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * try (ReadChannel reader = storage.reader(bucketName, blobName)) {
@@ -2001,19 +1974,20 @@ public interface Storage extends Service<StorageOptions> {
   ReadChannel reader(String bucket, String blob, BlobSourceOption... options);
 
   /**
-   * Returns a channel for reading the blob's content. If {@code blob.generation()} is set
-   * data corresponding to that generation is read. If {@code blob.generation()} is {@code null}
-   * the blob's latest generation is read. If the blob changes while reading (i.e.
-   * {@link BlobInfo#getEtag()} changes), subsequent calls to {@code blobReadChannel.read(ByteBuffer)}
-   * may throw {@link StorageException}.
+   * Returns a channel for reading the blob's content. If {@code blob.generation()} is set data
+   * corresponding to that generation is read. If {@code blob.generation()} is {@code null} the
+   * blob's latest generation is read. If the blob changes while reading (i.e. {@link
+   * BlobInfo#getEtag()} changes), subsequent calls to {@code blobReadChannel.read(ByteBuffer)} may
+   * throw {@link StorageException}.
    *
-   * <p>The {@link BlobSourceOption#generationMatch()} and
-   * {@link BlobSourceOption#generationMatch(long)} options can be used to ensure that
-   * {@code blobReadChannel.read(ByteBuffer)} calls will throw {@link StorageException} if the
-   * blob`s generation differs from the expected one.
+   * <p>The {@link BlobSourceOption#generationMatch()} and {@link
+   * BlobSourceOption#generationMatch(long)} options can be used to ensure that {@code
+   * blobReadChannel.read(ByteBuffer)} calls will throw {@link StorageException} if the blob`s
+   * generation differs from the expected one.
    *
    * <p>Example of reading a blob's content through a reader.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * BlobId blobId = BlobId.of(bucketName, blobName);
@@ -2033,11 +2007,12 @@ public interface Storage extends Service<StorageOptions> {
 
   /**
    * Creates a blob and return a channel for writing its content. By default any md5 and crc32c
-   * values in the given {@code blobInfo} are ignored unless requested via the
-   * {@code BlobWriteOption.md5Match} and {@code BlobWriteOption.crc32cMatch} options.
+   * values in the given {@code blobInfo} are ignored unless requested via the {@code
+   * BlobWriteOption.md5Match} and {@code BlobWriteOption.crc32cMatch} options.
    *
    * <p>Example of writing a blob's content through a writer.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * BlobId blobId = BlobId.of(bucketName, blobName);
@@ -2060,18 +2035,19 @@ public interface Storage extends Service<StorageOptions> {
    * Generates a signed URL for a blob. If you have a blob that you want to allow access to for a
    * fixed amount of time, you can use this method to generate a URL that is only valid within a
    * certain time period. This is particularly useful if you don't want publicly accessible blobs,
-   * but also don't want to require users to explicitly log in. Signing a URL requires
-   * a service account signer. If an instance of {@link com.google.auth.ServiceAccountSigner} was
-   * passed to {@link StorageOptions}' builder via {@code setCredentials(Credentials)} or the
-   * default credentials are being used and the environment variable
-   * {@code GOOGLE_APPLICATION_CREDENTIALS} is set or your application is running in App Engine,
-   * then {@code signUrl} will use that credentials to sign the URL. If the credentials passed to
-   * {@link StorageOptions} do not implement {@link ServiceAccountSigner} (this is the case, for
-   * instance, for Google Cloud SDK credentials) then {@code signUrl} will throw an
-   * {@link IllegalStateException} unless an implementation of {@link ServiceAccountSigner} is
-   * passed using the {@link SignUrlOption#signWith(ServiceAccountSigner)} option.
+   * but also don't want to require users to explicitly log in. Signing a URL requires a service
+   * account signer. If an instance of {@link com.google.auth.ServiceAccountSigner} was passed to
+   * {@link StorageOptions}' builder via {@code setCredentials(Credentials)} or the default
+   * credentials are being used and the environment variable {@code GOOGLE_APPLICATION_CREDENTIALS}
+   * is set or your application is running in App Engine, then {@code signUrl} will use that
+   * credentials to sign the URL. If the credentials passed to {@link StorageOptions} do not
+   * implement {@link ServiceAccountSigner} (this is the case, for instance, for Google Cloud SDK
+   * credentials) then {@code signUrl} will throw an {@link IllegalStateException} unless an
+   * implementation of {@link ServiceAccountSigner} is passed using the {@link
+   * SignUrlOption#signWith(ServiceAccountSigner)} option.
    *
    * <p>A service account signer is looked for in the following order:
+   *
    * <ol>
    *   <li>The signer passed with the option {@link SignUrlOption#signWith(ServiceAccountSigner)}
    *   <li>The credentials passed to {@link StorageOptions}
@@ -2080,17 +2056,18 @@ public interface Storage extends Service<StorageOptions> {
    *
    * <p>Example of creating a signed URL that is valid for 2 weeks, using the default credentials
    * for signing the URL.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * URL signedUrl = storage.signUrl(BlobInfo.newBuilder(bucketName, blobName).build(), 14,
    *     TimeUnit.DAYS);
    * }</pre>
    *
-   * <p>Example of creating a signed URL passing the
-   * {@link SignUrlOption#signWith(ServiceAccountSigner)} option, that will be used for signing the
-   * URL.
-   * <pre> {@code
+   * <p>Example of creating a signed URL passing the {@link
+   * SignUrlOption#signWith(ServiceAccountSigner)} option, that will be used for signing the URL.
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * String keyPath = "/path/to/key.json";
@@ -2100,18 +2077,19 @@ public interface Storage extends Service<StorageOptions> {
    * }</pre>
    *
    * <p>Note that the {@link ServiceAccountSigner} may require additional configuration to enable
-   * URL signing. See the documentation for the implementation for more details.</p>
+   * URL signing. See the documentation for the implementation for more details.
    *
    * @param blobInfo the blob associated with the signed URL
    * @param duration time until the signed URL expires, expressed in {@code unit}. The finest
    *     granularity supported is 1 second, finer granularities will be truncated
    * @param unit time unit of the {@code duration} parameter
-   * @param options optional URL signing options
+   * @param options optional URL signing options {@code SignUrlOption.withHostName()} option to set
+   *     a custom host name instead of using https://storage.googleapis.com.
    * @throws IllegalStateException if {@link SignUrlOption#signWith(ServiceAccountSigner)} was not
-   *     used and no implementation of {@link ServiceAccountSigner} was provided to
-   *     {@link StorageOptions}
-   * @throws IllegalArgumentException if {@code SignUrlOption.withMd5()} option is used and
-   *     {@code blobInfo.md5()} is {@code null}
+   *     used and no implementation of {@link ServiceAccountSigner} was provided to {@link
+   *     StorageOptions}
+   * @throws IllegalArgumentException if {@code SignUrlOption.withMd5()} option is used and {@code
+   *     blobInfo.md5()} is {@code null}
    * @throws IllegalArgumentException if {@code SignUrlOption.withContentType()} option is used and
    *     {@code blobInfo.contentType()} is {@code null}
    * @throws SigningException if the attempt to sign the URL failed
@@ -2122,9 +2100,9 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Gets the requested blobs. A batch request is used to perform this call.
    *
-   *
    * <p>Example of getting information on several blobs using a single batch request.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName1 = "my_blob_name1";
    * String blobName2 = "my_blob_name2";
@@ -2134,8 +2112,8 @@ public interface Storage extends Service<StorageOptions> {
    * }</pre>
    *
    * @param blobIds blobs to get
-   * @return an immutable list of {@code Blob} objects. If a blob does not exist or access to it
-   *     has been denied the corresponding item in the list is {@code null}.
+   * @return an immutable list of {@code Blob} objects. If a blob does not exist or access to it has
+   *     been denied the corresponding item in the list is {@code null}.
    * @throws StorageException upon failure
    */
   List<Blob> get(BlobId... blobIds);
@@ -2144,7 +2122,8 @@ public interface Storage extends Service<StorageOptions> {
    * Gets the requested blobs. A batch request is used to perform this call.
    *
    * <p>Example of getting information on several blobs using a single batch request.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName1 = "my_blob_name1";
    * String blobName2 = "my_blob_name2";
@@ -2155,8 +2134,8 @@ public interface Storage extends Service<StorageOptions> {
    * }</pre>
    *
    * @param blobIds blobs to get
-   * @return an immutable list of {@code Blob} objects. If a blob does not exist or access to it
-   *     has been denied the corresponding item in the list is {@code null}.
+   * @return an immutable list of {@code Blob} objects. If a blob does not exist or access to it has
+   *     been denied the corresponding item in the list is {@code null}.
    * @throws StorageException upon failure
    */
   List<Blob> get(Iterable<BlobId> blobIds);
@@ -2164,12 +2143,12 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Updates the requested blobs. A batch request is used to perform this call. Original metadata
    * are merged with metadata in the provided {@code BlobInfo} objects. To replace metadata instead
-   * you first have to unset them. Unsetting metadata can be done by setting the provided
-   * {@code BlobInfo} objects metadata to {@code null}. See
-   * {@link #update(BlobInfo)} for a code example.
+   * you first have to unset them. Unsetting metadata can be done by setting the provided {@code
+   * BlobInfo} objects metadata to {@code null}. See {@link #update(BlobInfo)} for a code example.
    *
    * <p>Example of updating information on several blobs using a single batch request.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName1 = "my_blob_name1";
    * String blobName2 = "my_blob_name2";
@@ -2181,8 +2160,8 @@ public interface Storage extends Service<StorageOptions> {
    * }</pre>
    *
    * @param blobInfos blobs to update
-   * @return an immutable list of {@code Blob} objects. If a blob does not exist or access to it
-   *     has been denied the corresponding item in the list is {@code null}.
+   * @return an immutable list of {@code Blob} objects. If a blob does not exist or access to it has
+   *     been denied the corresponding item in the list is {@code null}.
    * @throws StorageException upon failure
    */
   List<Blob> update(BlobInfo... blobInfos);
@@ -2190,12 +2169,12 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Updates the requested blobs. A batch request is used to perform this call. Original metadata
    * are merged with metadata in the provided {@code BlobInfo} objects. To replace metadata instead
-   * you first have to unset them. Unsetting metadata can be done by setting the provided
-   * {@code BlobInfo} objects metadata to {@code null}. See
-   * {@link #update(BlobInfo)} for a code example.
+   * you first have to unset them. Unsetting metadata can be done by setting the provided {@code
+   * BlobInfo} objects metadata to {@code null}. See {@link #update(BlobInfo)} for a code example.
    *
    * <p>Example of updating information on several blobs using a single batch request.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName1 = "my_blob_name1";
    * String blobName2 = "my_blob_name2";
@@ -2208,8 +2187,8 @@ public interface Storage extends Service<StorageOptions> {
    * }</pre>
    *
    * @param blobInfos blobs to update
-   * @return an immutable list of {@code Blob} objects. If a blob does not exist or access to it
-   *     has been denied the corresponding item in the list is {@code null}.
+   * @return an immutable list of {@code Blob} objects. If a blob does not exist or access to it has
+   *     been denied the corresponding item in the list is {@code null}.
    * @throws StorageException upon failure
    */
   List<Blob> update(Iterable<BlobInfo> blobInfos);
@@ -2218,7 +2197,8 @@ public interface Storage extends Service<StorageOptions> {
    * Deletes the requested blobs. A batch request is used to perform this call.
    *
    * <p>Example of deleting several blobs using a single batch request.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName1 = "my_blob_name1";
    * String blobName2 = "my_blob_name2";
@@ -2239,7 +2219,8 @@ public interface Storage extends Service<StorageOptions> {
    * Deletes the requested blobs. A batch request is used to perform this call.
    *
    * <p>Example of deleting several blobs using a single batch request.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName1 = "my_blob_name1";
    * String blobName2 = "my_blob_name2";
@@ -2262,14 +2243,16 @@ public interface Storage extends Service<StorageOptions> {
    * found.
    *
    * <p>Example of getting the ACL entry for an entity on a bucket.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * Acl acl = storage.getAcl(bucketName, User.ofAllAuthenticatedUsers());
    * }</pre>
    *
    * <p>Example of getting the ACL entry for a specific user on a requester_pays bucket with a
    * user_project option.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String userEmail = "google-cloud-java-tests@java-docs-samples-tests.iam.gserviceaccount.com";
    * BucketSourceOption userProjectOption = BucketSourceOption.userProject("myProject");
@@ -2283,16 +2266,15 @@ public interface Storage extends Service<StorageOptions> {
    */
   Acl getAcl(String bucket, Entity entity, BucketSourceOption... options);
 
-  /**
-   * @see #getAcl(String, Entity, BucketSourceOption...)
-   */
+  /** @see #getAcl(String, Entity, BucketSourceOption...) */
   Acl getAcl(String bucket, Entity entity);
 
   /**
    * Deletes the ACL entry for the specified entity on the specified bucket.
    *
    * <p>Example of deleting the ACL entry for an entity on a bucket.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * boolean deleted = storage.deleteAcl(bucketName, User.ofAllAuthenticatedUsers());
    * if (deleted) {
@@ -2304,7 +2286,8 @@ public interface Storage extends Service<StorageOptions> {
    *
    * <p>Example of deleting the ACL entry for a specific user on a requester_pays bucket with a
    * user_project option.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * BucketSourceOption userProject = BucketSourceOption.userProject("myProject");
    * boolean deleted = storage.deleteAcl(bucketName, User.ofAllAuthenticatedUsers(), userProject);
@@ -2318,22 +2301,22 @@ public interface Storage extends Service<StorageOptions> {
    */
   boolean deleteAcl(String bucket, Entity entity, BucketSourceOption... options);
 
-  /**
-   * @see #deleteAcl(String, Entity, BucketSourceOption...)
-   */
+  /** @see #deleteAcl(String, Entity, BucketSourceOption...) */
   boolean deleteAcl(String bucket, Entity entity);
 
   /**
    * Creates a new ACL entry on the specified bucket.
    *
    * <p>Example of creating a new ACL entry on a bucket.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * Acl acl = storage.createAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.READER));
    * }</pre>
    *
    * <p>Example of creating a new ACL entry on a requester_pays bucket with a user_project option.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * Acl acl = storage.createAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.READER),
    *     BucketSourceOption.userProject("myProject"));
@@ -2346,22 +2329,22 @@ public interface Storage extends Service<StorageOptions> {
    */
   Acl createAcl(String bucket, Acl acl, BucketSourceOption... options);
 
-  /**
-   * @see #createAcl(String, Acl, BucketSourceOption...)
-   */
+  /** @see #createAcl(String, Acl, BucketSourceOption...) */
   Acl createAcl(String bucket, Acl acl);
 
   /**
    * Updates an ACL entry on the specified bucket.
    *
    * <p>Example of updating a new ACL entry on a bucket.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * Acl acl = storage.updateAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.OWNER));
    * }</pre>
    *
    * <p>Example of updating a new ACL entry on a requester_pays bucket with a user_project option.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * Acl acl = storage.updateAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.OWNER),
    *     BucketSourceOption.userProject("myProject"));
@@ -2374,16 +2357,15 @@ public interface Storage extends Service<StorageOptions> {
    */
   Acl updateAcl(String bucket, Acl acl, BucketSourceOption... options);
 
-  /**
-   * @see #updateAcl(String, Acl, BucketSourceOption...)
-   */
+  /** @see #updateAcl(String, Acl, BucketSourceOption...) */
   Acl updateAcl(String bucket, Acl acl);
 
   /**
    * Lists the ACL entries for the provided bucket.
    *
    * <p>Example of listing the ACL entries for a blob.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * List<Acl> acls = storage.listAcls(bucketName);
    * for (Acl acl : acls) {
@@ -2393,7 +2375,8 @@ public interface Storage extends Service<StorageOptions> {
    *
    * <p>Example of listing the ACL entries for a blob in a requester_pays bucket with a user_project
    * option.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * List<Acl> acls = storage.listAcls(bucketName, BucketSourceOption.userProject("myProject"));
    * for (Acl acl : acls) {
@@ -2407,20 +2390,19 @@ public interface Storage extends Service<StorageOptions> {
    */
   List<Acl> listAcls(String bucket, BucketSourceOption... options);
 
-  /**
-   * @see #listAcls(String, BucketSourceOption...)
-   */
+  /** @see #listAcls(String, BucketSourceOption...) */
   List<Acl> listAcls(String bucket);
 
   /**
-   * Returns the default object ACL entry for the specified entity on the specified bucket or
-   * {@code null} if not found.
+   * Returns the default object ACL entry for the specified entity on the specified bucket or {@code
+   * null} if not found.
    *
    * <p>Default ACLs are applied to a new blob within the bucket when no ACL was provided for that
    * blob.
    *
    * <p>Example of getting the default ACL entry for an entity on a bucket.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * Acl acl = storage.getDefaultAcl(bucketName, User.ofAllAuthenticatedUsers());
    * }</pre>
@@ -2436,7 +2418,8 @@ public interface Storage extends Service<StorageOptions> {
    * blob.
    *
    * <p>Example of deleting the default ACL entry for an entity on a bucket.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * boolean deleted = storage.deleteDefaultAcl(bucketName, User.ofAllAuthenticatedUsers());
    * if (deleted) {
@@ -2458,7 +2441,8 @@ public interface Storage extends Service<StorageOptions> {
    * blob.
    *
    * <p>Example of creating a new default ACL entry on a bucket.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * Acl acl =
    *     storage.createDefaultAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.READER));
@@ -2475,7 +2459,8 @@ public interface Storage extends Service<StorageOptions> {
    * blob.
    *
    * <p>Example of updating a new default ACL entry on a bucket.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * Acl acl =
    *     storage.updateDefaultAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.OWNER));
@@ -2492,7 +2477,8 @@ public interface Storage extends Service<StorageOptions> {
    * blob.
    *
    * <p>Example of listing the default ACL entries for a blob.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * List<Acl> acls = storage.listDefaultAcls(bucketName);
    * for (Acl acl : acls) {
@@ -2509,7 +2495,8 @@ public interface Storage extends Service<StorageOptions> {
    * found.
    *
    * <p>Example of getting the ACL entry for an entity on a blob.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * long blobGeneration = 42;
@@ -2518,7 +2505,8 @@ public interface Storage extends Service<StorageOptions> {
    * }</pre>
    *
    * <p>Example of getting the ACL entry for a specific user on a blob.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * String userEmail = "google-cloud-java-tests@java-docs-samples-tests.iam.gserviceaccount.com";
@@ -2534,7 +2522,8 @@ public interface Storage extends Service<StorageOptions> {
    * Deletes the ACL entry for the specified entity on the specified blob.
    *
    * <p>Example of deleting the ACL entry for an entity on a blob.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * long blobGeneration = 42;
@@ -2556,7 +2545,8 @@ public interface Storage extends Service<StorageOptions> {
    * Creates a new ACL entry on the specified blob.
    *
    * <p>Example of creating a new ACL entry on a blob.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * long blobGeneration = 42;
@@ -2565,7 +2555,8 @@ public interface Storage extends Service<StorageOptions> {
    * }</pre>
    *
    * <p>Example of updating a blob to be public-read.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * long blobGeneration = 42;
@@ -2581,7 +2572,8 @@ public interface Storage extends Service<StorageOptions> {
    * Updates an ACL entry on the specified blob.
    *
    * <p>Example of updating a new ACL entry on a blob.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * long blobGeneration = 42;
@@ -2597,7 +2589,8 @@ public interface Storage extends Service<StorageOptions> {
    * Lists the ACL entries for the provided blob.
    *
    * <p>Example of listing the ACL entries for a blob.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * long blobGeneration = 42;
@@ -2616,7 +2609,8 @@ public interface Storage extends Service<StorageOptions> {
    * Gets the IAM policy for the provided bucket.
    *
    * <p>Example of getting the IAM policy for a bucket.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * Policy policy = storage.getIamPolicy(bucketName);
    * }</pre>
@@ -2631,6 +2625,7 @@ public interface Storage extends Service<StorageOptions> {
    * Updates the IAM policy on the specified bucket.
    *
    * <p>Example of updating the IAM policy on a bucket.
+   *
    * <pre>{@code
    * // We want to make all objects in our bucket publicly readable.
    * String bucketName = "my_unique_bucket";
@@ -2655,7 +2650,8 @@ public interface Storage extends Service<StorageOptions> {
    * booleans in the same placement and order in which the permissions were specified.
    *
    * <p>Example of testing permissions on a bucket.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String bucketName = "my_unique_bucket";
    * List<Boolean> response =
    *     storage.testIamPermissions(
@@ -2671,13 +2667,15 @@ public interface Storage extends Service<StorageOptions> {
    * @param options extra parameters to apply to this operation
    * @throws StorageException upon failure
    */
-  List<Boolean> testIamPermissions(String bucket, List<String> permissions, BucketSourceOption... options);
+  List<Boolean> testIamPermissions(
+      String bucket, List<String> permissions, BucketSourceOption... options);
 
   /**
    * Returns the service account associated with the given project.
    *
    * <p>Example of getting a service account.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String projectId = "test@gmail.com";
    * ServiceAccount account = storage.getServiceAccount(projectId);
    * }</pre>

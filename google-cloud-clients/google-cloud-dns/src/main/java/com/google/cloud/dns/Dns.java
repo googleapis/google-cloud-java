@@ -16,13 +16,12 @@
 
 package com.google.cloud.dns;
 
+import com.google.api.gax.paging.Page;
 import com.google.cloud.FieldSelector;
 import com.google.cloud.FieldSelector.Helper;
-import com.google.api.gax.paging.Page;
 import com.google.cloud.Service;
 import com.google.cloud.dns.spi.v1.DnsRpc;
 import com.google.common.collect.ImmutableList;
-
 import java.util.List;
 
 /**
@@ -36,8 +35,7 @@ public interface Dns extends Service<DnsOptions> {
    * The fields of a project.
    *
    * <p>These values can be used to specify the fields to include in a partial response when calling
-   * {@link Dns#getProject(ProjectOption...)}. Project ID is always returned, even if not
-   * specified.
+   * {@link Dns#getProject(ProjectOption...)}. Project ID is always returned, even if not specified.
    */
   enum ProjectField implements FieldSelector {
     PROJECT_ID("id"),
@@ -52,7 +50,6 @@ public interface Dns extends Service<DnsOptions> {
       this.selector = selector;
     }
 
-
     @Override
     public String getSelector() {
       return selector;
@@ -63,8 +60,7 @@ public interface Dns extends Service<DnsOptions> {
    * The fields of a zone.
    *
    * <p>These values can be used to specify the fields to include in a partial response when calling
-   * {@link Dns#getZone(String, ZoneOption...)}. The name is always returned, even if not
-   * specified.
+   * {@link Dns#getZone(String, ZoneOption...)}. The name is always returned, even if not specified.
    */
   enum ZoneField implements FieldSelector {
     CREATION_TIME("creationTime"),
@@ -82,7 +78,6 @@ public interface Dns extends Service<DnsOptions> {
     ZoneField(String selector) {
       this.selector = selector;
     }
-
 
     @Override
     public String getSelector() {
@@ -110,7 +105,6 @@ public interface Dns extends Service<DnsOptions> {
     RecordSetField(String selector) {
       this.selector = selector;
     }
-
 
     @Override
     public String getSelector() {
@@ -140,27 +134,23 @@ public interface Dns extends Service<DnsOptions> {
       this.selector = selector;
     }
 
-
     @Override
     public String getSelector() {
       return selector;
     }
   }
 
-  /**
-   * The sorting order for listing.
-   */
+  /** The sorting order for listing. */
   enum SortingOrder {
-    DESCENDING, ASCENDING;
+    DESCENDING,
+    ASCENDING;
 
     public String selector() {
       return name().toLowerCase();
     }
   }
 
-  /**
-   * Class for specifying record set listing options.
-   */
+  /** Class for specifying record set listing options. */
   class RecordSetListOption extends Option {
 
     private static final long serialVersionUID = 1009627025381096098L;
@@ -178,7 +168,8 @@ public interface Dns extends Service<DnsOptions> {
      * of fields that can be used.
      */
     public static RecordSetListOption fields(RecordSetField... fields) {
-      return new RecordSetListOption(DnsRpc.Option.FIELDS,
+      return new RecordSetListOption(
+          DnsRpc.Option.FIELDS,
           Helper.listSelector("rrsets", RecordSetField.REQUIRED_FIELDS, fields));
     }
 
@@ -202,9 +193,7 @@ public interface Dns extends Service<DnsOptions> {
       return new RecordSetListOption(DnsRpc.Option.PAGE_SIZE, pageSize);
     }
 
-    /**
-     * Restricts the list to only record sets with this fully qualified domain name.
-     */
+    /** Restricts the list to only record sets with this fully qualified domain name. */
     public static RecordSetListOption dnsName(String dnsName) {
       return new RecordSetListOption(DnsRpc.Option.NAME, dnsName);
     }
@@ -218,9 +207,7 @@ public interface Dns extends Service<DnsOptions> {
     }
   }
 
-  /**
-   * Class for specifying zone field options.
-   */
+  /** Class for specifying zone field options. */
   class ZoneOption extends Option {
 
     private static final long serialVersionUID = -8065564464895945037L;
@@ -237,14 +224,12 @@ public interface Dns extends Service<DnsOptions> {
      * specified. {@link ZoneField} provides a list of fields that can be used.
      */
     public static ZoneOption fields(ZoneField... fields) {
-      return new ZoneOption(DnsRpc.Option.FIELDS,
-          Helper.selector(ZoneField.REQUIRED_FIELDS, fields));
+      return new ZoneOption(
+          DnsRpc.Option.FIELDS, Helper.selector(ZoneField.REQUIRED_FIELDS, fields));
     }
   }
 
-  /**
-   * Class for specifying zone listing options.
-   */
+  /** Class for specifying zone listing options. */
   class ZoneListOption extends Option {
 
     private static final long serialVersionUID = -2830645032124504717L;
@@ -261,7 +246,8 @@ public interface Dns extends Service<DnsOptions> {
      * specified. {@link ZoneField} provides a list of fields that can be used.
      */
     public static ZoneListOption fields(ZoneField... fields) {
-      return new ZoneListOption(DnsRpc.Option.FIELDS,
+      return new ZoneListOption(
+          DnsRpc.Option.FIELDS,
           Helper.listSelector("managedZones", ZoneField.REQUIRED_FIELDS, fields));
     }
 
@@ -275,9 +261,7 @@ public interface Dns extends Service<DnsOptions> {
       return new ZoneListOption(DnsRpc.Option.PAGE_TOKEN, pageToken);
     }
 
-    /**
-     * Restricts the list to only zone with this fully qualified domain name.
-     */
+    /** Restricts the list to only zone with this fully qualified domain name. */
     public static ZoneListOption dnsName(String dnsName) {
       return new ZoneListOption(DnsRpc.Option.DNS_NAME, dnsName);
     }
@@ -293,9 +277,7 @@ public interface Dns extends Service<DnsOptions> {
     }
   }
 
-  /**
-   * Class for specifying project options.
-   */
+  /** Class for specifying project options. */
   class ProjectOption extends Option {
 
     private static final long serialVersionUID = 6817937338218847748L;
@@ -313,14 +295,12 @@ public interface Dns extends Service<DnsOptions> {
      * can be used.
      */
     public static ProjectOption fields(ProjectField... fields) {
-      return new ProjectOption(DnsRpc.Option.FIELDS,
-          Helper.selector(ProjectField.REQUIRED_FIELDS, fields));
+      return new ProjectOption(
+          DnsRpc.Option.FIELDS, Helper.selector(ProjectField.REQUIRED_FIELDS, fields));
     }
   }
 
-  /**
-   * Class for specifying change request field options.
-   */
+  /** Class for specifying change request field options. */
   class ChangeRequestOption extends Option {
 
     private static final long serialVersionUID = 1067273695061077782L;
@@ -339,14 +319,12 @@ public interface Dns extends Service<DnsOptions> {
      * a list of fields that can be used.
      */
     public static ChangeRequestOption fields(ChangeRequestField... fields) {
-      return new ChangeRequestOption(DnsRpc.Option.FIELDS,
-          Helper.selector(ChangeRequestField.REQUIRED_FIELDS, fields));
+      return new ChangeRequestOption(
+          DnsRpc.Option.FIELDS, Helper.selector(ChangeRequestField.REQUIRED_FIELDS, fields));
     }
   }
 
-  /**
-   * Class for specifying change request listing options.
-   */
+  /** Class for specifying change request listing options. */
   class ChangeRequestListOption extends Option {
 
     private static final long serialVersionUID = -900209143895376089L;
@@ -365,7 +343,8 @@ public interface Dns extends Service<DnsOptions> {
      * a list of fields that can be used.
      */
     public static ChangeRequestListOption fields(ChangeRequestField... fields) {
-      return new ChangeRequestListOption(DnsRpc.Option.FIELDS,
+      return new ChangeRequestListOption(
+          DnsRpc.Option.FIELDS,
           Helper.listSelector("changes", ChangeRequestField.REQUIRED_FIELDS, fields));
     }
 
@@ -412,7 +391,7 @@ public interface Dns extends Service<DnsOptions> {
    *
    * @throws DnsException upon failure
    * @see <a href="https://cloud.google.com/dns/api/v1/managedZones/create">Cloud DNS Managed Zones:
-   * create</a>
+   *     create</a>
    */
   Zone create(ZoneInfo zoneInfo, ZoneOption... options);
 
@@ -422,7 +401,7 @@ public interface Dns extends Service<DnsOptions> {
    *
    * @throws DnsException upon failure
    * @see <a href="https://cloud.google.com/dns/api/v1/managedZones/get">Cloud DNS Managed Zones:
-   * get</a>
+   *     get</a>
    */
   Zone getZone(String zoneName, ZoneOption... options);
 
@@ -436,7 +415,7 @@ public interface Dns extends Service<DnsOptions> {
    * @return a page of zones
    * @throws DnsException upon failure
    * @see <a href="https://cloud.google.com/dns/api/v1/managedZones/list">Cloud DNS Managed Zones:
-   * list</a>
+   *     list</a>
    */
   Page<Zone> listZones(ZoneListOption... options);
 
@@ -447,7 +426,7 @@ public interface Dns extends Service<DnsOptions> {
    * @return {@code true} if zone was found and deleted and {@code false} otherwise
    * @throws DnsException upon failure
    * @see <a href="https://cloud.google.com/dns/api/v1/managedZones/delete">Cloud DNS Managed Zones:
-   * delete</a>
+   *     delete</a>
    */
   boolean delete(String zoneName); // delete does not admit any options
 
@@ -459,7 +438,7 @@ public interface Dns extends Service<DnsOptions> {
    *
    * @throws DnsException upon failure or if the zone cannot be found
    * @see <a href="https://cloud.google.com/dns/api/v1/resourceRecordSets/list">Cloud DNS
-   * ResourceRecordSets: list</a>
+   *     ResourceRecordSets: list</a>
    */
   Page<RecordSet> listRecordSets(String zoneName, RecordSetListOption... options);
 
@@ -481,8 +460,8 @@ public interface Dns extends Service<DnsOptions> {
    * @throws DnsException upon failure or if zone is not found
    * @see <a href="https://cloud.google.com/dns/api/v1/changes/create">Cloud DNS Changes: create</a>
    */
-  ChangeRequest applyChangeRequest(String zoneName, ChangeRequestInfo changeRequest,
-      ChangeRequestOption... options);
+  ChangeRequest applyChangeRequest(
+      String zoneName, ChangeRequestInfo changeRequest, ChangeRequestOption... options);
 
   /**
    * Retrieves updated information about a change request previously submitted for a zone identified
@@ -493,8 +472,8 @@ public interface Dns extends Service<DnsOptions> {
    * @throws DnsException upon failure or if the zone cannot be found
    * @see <a href="https://cloud.google.com/dns/api/v1/changes/get">Cloud DNS Chages: get</a>
    */
-  ChangeRequest getChangeRequest(String zoneName, String changeRequestId,
-      ChangeRequestOption... options);
+  ChangeRequest getChangeRequest(
+      String zoneName, String changeRequestId, ChangeRequestOption... options);
 
   /**
    * Lists the change requests for the zone identified by name that were submitted to the service.
@@ -508,8 +487,6 @@ public interface Dns extends Service<DnsOptions> {
    */
   Page<ChangeRequest> listChangeRequests(String zoneName, ChangeRequestListOption... options);
 
-  /**
-   * Creates a new empty batch for grouping multiple service calls in one underlying RPC call.
-   */
+  /** Creates a new empty batch for grouping multiple service calls in one underlying RPC call. */
   DnsBatch batch();
 }

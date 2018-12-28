@@ -34,7 +34,9 @@ import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -201,9 +203,8 @@ public class WorkflowTemplateServiceClientTest {
 
     WorkflowTemplateName name =
         WorkflowTemplateName.of("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
-    String instanceId = "instanceId-2101995259";
 
-    Empty actualResponse = client.instantiateWorkflowTemplateAsync(name, instanceId).get();
+    Empty actualResponse = client.instantiateWorkflowTemplateAsync(name).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockWorkflowTemplateService.getRequests();
@@ -212,7 +213,6 @@ public class WorkflowTemplateServiceClientTest {
         (InstantiateWorkflowTemplateRequest) actualRequests.get(0);
 
     Assert.assertEquals(name, WorkflowTemplateName.parse(actualRequest.getName()));
-    Assert.assertEquals(instanceId, actualRequest.getInstanceId());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -228,9 +228,106 @@ public class WorkflowTemplateServiceClientTest {
     try {
       WorkflowTemplateName name =
           WorkflowTemplateName.of("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
-      String instanceId = "instanceId-2101995259";
 
-      client.instantiateWorkflowTemplateAsync(name, instanceId).get();
+      client.instantiateWorkflowTemplateAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void instantiateWorkflowTemplateTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("instantiateWorkflowTemplateTest2")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockWorkflowTemplateService.addResponse(resultOperation);
+
+    Map<String, String> parameters = new HashMap<>();
+
+    Empty actualResponse = client.instantiateWorkflowTemplateAsync(parameters).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<GeneratedMessageV3> actualRequests = mockWorkflowTemplateService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    InstantiateWorkflowTemplateRequest actualRequest =
+        (InstantiateWorkflowTemplateRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parameters, actualRequest.getParametersMap());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void instantiateWorkflowTemplateExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockWorkflowTemplateService.addException(exception);
+
+    try {
+      Map<String, String> parameters = new HashMap<>();
+
+      client.instantiateWorkflowTemplateAsync(parameters).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void instantiateInlineWorkflowTemplateTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("instantiateInlineWorkflowTemplateTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockWorkflowTemplateService.addResponse(resultOperation);
+
+    String formattedParent = RegionName.format("[PROJECT]", "[REGION]");
+    WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
+
+    Empty actualResponse =
+        client.instantiateInlineWorkflowTemplateAsync(formattedParent, template).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<GeneratedMessageV3> actualRequests = mockWorkflowTemplateService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    InstantiateInlineWorkflowTemplateRequest actualRequest =
+        (InstantiateInlineWorkflowTemplateRequest) actualRequests.get(0);
+
+    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(template, actualRequest.getTemplate());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void instantiateInlineWorkflowTemplateExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockWorkflowTemplateService.addException(exception);
+
+    try {
+      String formattedParent = RegionName.format("[PROJECT]", "[REGION]");
+      WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
+
+      client.instantiateInlineWorkflowTemplateAsync(formattedParent, template).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

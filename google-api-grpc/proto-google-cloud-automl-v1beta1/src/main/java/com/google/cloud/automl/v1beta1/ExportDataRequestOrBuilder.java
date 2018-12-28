@@ -3,11 +3,14 @@
 
 package com.google.cloud.automl.v1beta1;
 
-public interface ExportDataRequestOrBuilder extends
+public interface ExportDataRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.automl.v1beta1.ExportDataRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The resource name of the dataset.
    * </pre>
@@ -16,16 +19,19 @@ public interface ExportDataRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Required. The resource name of the dataset.
    * </pre>
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The desired output location.
    * </pre>
@@ -34,6 +40,8 @@ public interface ExportDataRequestOrBuilder extends
    */
   boolean hasOutputConfig();
   /**
+   *
+   *
    * <pre>
    * Required. The desired output location.
    * </pre>
@@ -42,6 +50,8 @@ public interface ExportDataRequestOrBuilder extends
    */
   com.google.cloud.automl.v1beta1.OutputConfig getOutputConfig();
   /**
+   *
+   *
    * <pre>
    * Required. The desired output location.
    * </pre>

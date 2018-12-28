@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface NotificationChannelDescriptorOrBuilder extends
+public interface NotificationChannelDescriptorOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.NotificationChannelDescriptor)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The full REST resource name for this descriptor. The syntax is:
    *     projects/[PROJECT_ID]/notificationChannelDescriptors/[TYPE]
@@ -18,6 +21,8 @@ public interface NotificationChannelDescriptorOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The full REST resource name for this descriptor. The syntax is:
    *     projects/[PROJECT_ID]/notificationChannelDescriptors/[TYPE]
@@ -26,10 +31,11 @@ public interface NotificationChannelDescriptorOrBuilder extends
    *
    * <code>string name = 6;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The type of notification channel, such as "email", "sms", etc.
    * Notification channel types are globally unique.
@@ -39,6 +45,8 @@ public interface NotificationChannelDescriptorOrBuilder extends
    */
   java.lang.String getType();
   /**
+   *
+   *
    * <pre>
    * The type of notification channel, such as "email", "sms", etc.
    * Notification channel types are globally unique.
@@ -46,10 +54,11 @@ public interface NotificationChannelDescriptorOrBuilder extends
    *
    * <code>string type = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getTypeBytes();
+  com.google.protobuf.ByteString getTypeBytes();
 
   /**
+   *
+   *
    * <pre>
    * A human-readable name for the notification channel type.  This
    * form of the name is suitable for a user interface.
@@ -59,6 +68,8 @@ public interface NotificationChannelDescriptorOrBuilder extends
    */
   java.lang.String getDisplayName();
   /**
+   *
+   *
    * <pre>
    * A human-readable name for the notification channel type.  This
    * form of the name is suitable for a user interface.
@@ -66,10 +77,11 @@ public interface NotificationChannelDescriptorOrBuilder extends
    *
    * <code>string display_name = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getDisplayNameBytes();
+  com.google.protobuf.ByteString getDisplayNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * A human-readable description of the notification channel
    * type. The description may include a description of the properties
@@ -80,6 +92,8 @@ public interface NotificationChannelDescriptorOrBuilder extends
    */
   java.lang.String getDescription();
   /**
+   *
+   *
    * <pre>
    * A human-readable description of the notification channel
    * type. The description may include a description of the properties
@@ -88,10 +102,11 @@ public interface NotificationChannelDescriptorOrBuilder extends
    *
    * <code>string description = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getDescriptionBytes();
+  com.google.protobuf.ByteString getDescriptionBytes();
 
   /**
+   *
+   *
    * <pre>
    * The set of labels that must be defined to identify a particular
    * channel of the corresponding type. Each label includes a
@@ -100,9 +115,10 @@ public interface NotificationChannelDescriptorOrBuilder extends
    *
    * <code>repeated .google.api.LabelDescriptor labels = 4;</code>
    */
-  java.util.List<com.google.api.LabelDescriptor> 
-      getLabelsList();
+  java.util.List<com.google.api.LabelDescriptor> getLabelsList();
   /**
+   *
+   *
    * <pre>
    * The set of labels that must be defined to identify a particular
    * channel of the corresponding type. Each label includes a
@@ -113,6 +129,8 @@ public interface NotificationChannelDescriptorOrBuilder extends
    */
   com.google.api.LabelDescriptor getLabels(int index);
   /**
+   *
+   *
    * <pre>
    * The set of labels that must be defined to identify a particular
    * channel of the corresponding type. Each label includes a
@@ -123,6 +141,8 @@ public interface NotificationChannelDescriptorOrBuilder extends
    */
   int getLabelsCount();
   /**
+   *
+   *
    * <pre>
    * The set of labels that must be defined to identify a particular
    * channel of the corresponding type. Each label includes a
@@ -131,9 +151,10 @@ public interface NotificationChannelDescriptorOrBuilder extends
    *
    * <code>repeated .google.api.LabelDescriptor labels = 4;</code>
    */
-  java.util.List<? extends com.google.api.LabelDescriptorOrBuilder> 
-      getLabelsOrBuilderList();
+  java.util.List<? extends com.google.api.LabelDescriptorOrBuilder> getLabelsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The set of labels that must be defined to identify a particular
    * channel of the corresponding type. Each label includes a
@@ -142,53 +163,71 @@ public interface NotificationChannelDescriptorOrBuilder extends
    *
    * <code>repeated .google.api.LabelDescriptor labels = 4;</code>
    */
-  com.google.api.LabelDescriptorOrBuilder getLabelsOrBuilder(
-      int index);
+  com.google.api.LabelDescriptorOrBuilder getLabelsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * The tiers that support this notification channel; the project service tier
    * must be one of the supported_tiers.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
+   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
+   * </code>
    */
-  @java.lang.Deprecated java.util.List<com.google.monitoring.v3.ServiceTier> getSupportedTiersList();
+  @java.lang.Deprecated
+  java.util.List<com.google.monitoring.v3.ServiceTier> getSupportedTiersList();
   /**
+   *
+   *
    * <pre>
    * The tiers that support this notification channel; the project service tier
    * must be one of the supported_tiers.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
+   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
+   * </code>
    */
-  @java.lang.Deprecated int getSupportedTiersCount();
+  @java.lang.Deprecated
+  int getSupportedTiersCount();
   /**
+   *
+   *
    * <pre>
    * The tiers that support this notification channel; the project service tier
    * must be one of the supported_tiers.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
+   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
+   * </code>
    */
-  @java.lang.Deprecated com.google.monitoring.v3.ServiceTier getSupportedTiers(int index);
+  @java.lang.Deprecated
+  com.google.monitoring.v3.ServiceTier getSupportedTiers(int index);
   /**
+   *
+   *
    * <pre>
    * The tiers that support this notification channel; the project service tier
    * must be one of the supported_tiers.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
+   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
+   * </code>
    */
-  @java.lang.Deprecated java.util.List<java.lang.Integer>
-  getSupportedTiersValueList();
+  @java.lang.Deprecated
+  java.util.List<java.lang.Integer> getSupportedTiersValueList();
   /**
+   *
+   *
    * <pre>
    * The tiers that support this notification channel; the project service tier
    * must be one of the supported_tiers.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];</code>
+   * <code>repeated .google.monitoring.v3.ServiceTier supported_tiers = 5 [deprecated = true];
+   * </code>
    */
-  @java.lang.Deprecated int getSupportedTiersValue(int index);
+  @java.lang.Deprecated
+  int getSupportedTiersValue(int index);
 }

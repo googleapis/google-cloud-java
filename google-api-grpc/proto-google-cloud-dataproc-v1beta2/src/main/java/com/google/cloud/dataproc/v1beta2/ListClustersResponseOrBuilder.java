@@ -3,20 +3,24 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface ListClustersResponseOrBuilder extends
+public interface ListClustersResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.ListClustersResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Output only. The clusters in the project.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.Cluster clusters = 1;</code>
    */
-  java.util.List<com.google.cloud.dataproc.v1beta2.Cluster> 
-      getClustersList();
+  java.util.List<com.google.cloud.dataproc.v1beta2.Cluster> getClustersList();
   /**
+   *
+   *
    * <pre>
    * Output only. The clusters in the project.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListClustersResponseOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.Cluster getClusters(int index);
   /**
+   *
+   *
    * <pre>
    * Output only. The clusters in the project.
    * </pre>
@@ -33,25 +39,30 @@ public interface ListClustersResponseOrBuilder extends
    */
   int getClustersCount();
   /**
+   *
+   *
    * <pre>
    * Output only. The clusters in the project.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.Cluster clusters = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.dataproc.v1beta2.ClusterOrBuilder> 
+  java.util.List<? extends com.google.cloud.dataproc.v1beta2.ClusterOrBuilder>
       getClustersOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Output only. The clusters in the project.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.Cluster clusters = 1;</code>
    */
-  com.google.cloud.dataproc.v1beta2.ClusterOrBuilder getClustersOrBuilder(
-      int index);
+  com.google.cloud.dataproc.v1beta2.ClusterOrBuilder getClustersOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Output only. This token is included in the response if there are more
    * results to fetch. To fetch additional results, provide this value as the
@@ -62,6 +73,8 @@ public interface ListClustersResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * Output only. This token is included in the response if there are more
    * results to fetch. To fetch additional results, provide this value as the
@@ -70,6 +83,5 @@ public interface ListClustersResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

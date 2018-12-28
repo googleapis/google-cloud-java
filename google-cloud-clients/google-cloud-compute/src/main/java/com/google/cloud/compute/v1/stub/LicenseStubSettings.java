@@ -40,12 +40,15 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteLicenseHttpRequest;
+import com.google.cloud.compute.v1.GetIamPolicyLicenseHttpRequest;
 import com.google.cloud.compute.v1.GetLicenseHttpRequest;
 import com.google.cloud.compute.v1.InsertLicenseHttpRequest;
 import com.google.cloud.compute.v1.License;
 import com.google.cloud.compute.v1.LicensesListResponse;
 import com.google.cloud.compute.v1.ListLicensesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Policy;
+import com.google.cloud.compute.v1.SetIamPolicyLicenseHttpRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsLicenseHttpRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.common.collect.ImmutableList;
@@ -100,10 +103,14 @@ public class LicenseStubSettings extends StubSettings<LicenseStubSettings> {
 
   private final UnaryCallSettings<DeleteLicenseHttpRequest, Operation> deleteLicenseSettings;
   private final UnaryCallSettings<GetLicenseHttpRequest, License> getLicenseSettings;
+  private final UnaryCallSettings<GetIamPolicyLicenseHttpRequest, Policy>
+      getIamPolicyLicenseSettings;
   private final UnaryCallSettings<InsertLicenseHttpRequest, Operation> insertLicenseSettings;
   private final PagedCallSettings<
           ListLicensesHttpRequest, LicensesListResponse, ListLicensesPagedResponse>
       listLicensesSettings;
+  private final UnaryCallSettings<SetIamPolicyLicenseHttpRequest, Policy>
+      setIamPolicyLicenseSettings;
   private final UnaryCallSettings<TestIamPermissionsLicenseHttpRequest, TestPermissionsResponse>
       testIamPermissionsLicenseSettings;
 
@@ -117,6 +124,11 @@ public class LicenseStubSettings extends StubSettings<LicenseStubSettings> {
     return getLicenseSettings;
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicyLicense. */
+  public UnaryCallSettings<GetIamPolicyLicenseHttpRequest, Policy> getIamPolicyLicenseSettings() {
+    return getIamPolicyLicenseSettings;
+  }
+
   /** Returns the object with the settings used for calls to insertLicense. */
   public UnaryCallSettings<InsertLicenseHttpRequest, Operation> insertLicenseSettings() {
     return insertLicenseSettings;
@@ -126,6 +138,11 @@ public class LicenseStubSettings extends StubSettings<LicenseStubSettings> {
   public PagedCallSettings<ListLicensesHttpRequest, LicensesListResponse, ListLicensesPagedResponse>
       listLicensesSettings() {
     return listLicensesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicyLicense. */
+  public UnaryCallSettings<SetIamPolicyLicenseHttpRequest, Policy> setIamPolicyLicenseSettings() {
+    return setIamPolicyLicenseSettings;
   }
 
   /** Returns the object with the settings used for calls to testIamPermissionsLicense. */
@@ -210,8 +227,10 @@ public class LicenseStubSettings extends StubSettings<LicenseStubSettings> {
 
     deleteLicenseSettings = settingsBuilder.deleteLicenseSettings().build();
     getLicenseSettings = settingsBuilder.getLicenseSettings().build();
+    getIamPolicyLicenseSettings = settingsBuilder.getIamPolicyLicenseSettings().build();
     insertLicenseSettings = settingsBuilder.insertLicenseSettings().build();
     listLicensesSettings = settingsBuilder.listLicensesSettings().build();
+    setIamPolicyLicenseSettings = settingsBuilder.setIamPolicyLicenseSettings().build();
     testIamPermissionsLicenseSettings = settingsBuilder.testIamPermissionsLicenseSettings().build();
   }
 
@@ -247,7 +266,9 @@ public class LicenseStubSettings extends StubSettings<LicenseStubSettings> {
 
             @Override
             public Iterable<License> extractResources(LicensesListResponse payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<License>of();
             }
           };
 
@@ -275,11 +296,15 @@ public class LicenseStubSettings extends StubSettings<LicenseStubSettings> {
     private final UnaryCallSettings.Builder<DeleteLicenseHttpRequest, Operation>
         deleteLicenseSettings;
     private final UnaryCallSettings.Builder<GetLicenseHttpRequest, License> getLicenseSettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyLicenseHttpRequest, Policy>
+        getIamPolicyLicenseSettings;
     private final UnaryCallSettings.Builder<InsertLicenseHttpRequest, Operation>
         insertLicenseSettings;
     private final PagedCallSettings.Builder<
             ListLicensesHttpRequest, LicensesListResponse, ListLicensesPagedResponse>
         listLicensesSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyLicenseHttpRequest, Policy>
+        setIamPolicyLicenseSettings;
     private final UnaryCallSettings.Builder<
             TestIamPermissionsLicenseHttpRequest, TestPermissionsResponse>
         testIamPermissionsLicenseSettings;
@@ -329,9 +354,13 @@ public class LicenseStubSettings extends StubSettings<LicenseStubSettings> {
 
       getLicenseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      getIamPolicyLicenseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       insertLicenseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listLicensesSettings = PagedCallSettings.newBuilder(LIST_LICENSES_PAGE_STR_FACT);
+
+      setIamPolicyLicenseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       testIamPermissionsLicenseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -339,8 +368,10 @@ public class LicenseStubSettings extends StubSettings<LicenseStubSettings> {
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               deleteLicenseSettings,
               getLicenseSettings,
+              getIamPolicyLicenseSettings,
               insertLicenseSettings,
               listLicensesSettings,
+              setIamPolicyLicenseSettings,
               testIamPermissionsLicenseSettings);
 
       initDefaults(this);
@@ -368,6 +399,11 @@ public class LicenseStubSettings extends StubSettings<LicenseStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .getIamPolicyLicenseSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .insertLicenseSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -375,6 +411,11 @@ public class LicenseStubSettings extends StubSettings<LicenseStubSettings> {
       builder
           .listLicensesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .setIamPolicyLicenseSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -390,16 +431,20 @@ public class LicenseStubSettings extends StubSettings<LicenseStubSettings> {
 
       deleteLicenseSettings = settings.deleteLicenseSettings.toBuilder();
       getLicenseSettings = settings.getLicenseSettings.toBuilder();
+      getIamPolicyLicenseSettings = settings.getIamPolicyLicenseSettings.toBuilder();
       insertLicenseSettings = settings.insertLicenseSettings.toBuilder();
       listLicensesSettings = settings.listLicensesSettings.toBuilder();
+      setIamPolicyLicenseSettings = settings.setIamPolicyLicenseSettings.toBuilder();
       testIamPermissionsLicenseSettings = settings.testIamPermissionsLicenseSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               deleteLicenseSettings,
               getLicenseSettings,
+              getIamPolicyLicenseSettings,
               insertLicenseSettings,
               listLicensesSettings,
+              setIamPolicyLicenseSettings,
               testIamPermissionsLicenseSettings);
     }
 
@@ -429,6 +474,12 @@ public class LicenseStubSettings extends StubSettings<LicenseStubSettings> {
       return getLicenseSettings;
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicyLicense. */
+    public UnaryCallSettings.Builder<GetIamPolicyLicenseHttpRequest, Policy>
+        getIamPolicyLicenseSettings() {
+      return getIamPolicyLicenseSettings;
+    }
+
     /** Returns the builder for the settings used for calls to insertLicense. */
     public UnaryCallSettings.Builder<InsertLicenseHttpRequest, Operation> insertLicenseSettings() {
       return insertLicenseSettings;
@@ -439,6 +490,12 @@ public class LicenseStubSettings extends StubSettings<LicenseStubSettings> {
             ListLicensesHttpRequest, LicensesListResponse, ListLicensesPagedResponse>
         listLicensesSettings() {
       return listLicensesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicyLicense. */
+    public UnaryCallSettings.Builder<SetIamPolicyLicenseHttpRequest, Policy>
+        setIamPolicyLicenseSettings() {
+      return setIamPolicyLicenseSettings;
     }
 
     /** Returns the builder for the settings used for calls to testIamPermissionsLicense. */

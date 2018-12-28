@@ -224,7 +224,9 @@ public class RegionDiskTypeStubSettings extends StubSettings<RegionDiskTypeStubS
 
             @Override
             public Iterable<DiskType> extractResources(RegionDiskTypeList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<DiskType>of();
             }
           };
 
@@ -232,7 +234,8 @@ public class RegionDiskTypeStubSettings extends StubSettings<RegionDiskTypeStubS
           ListRegionDiskTypesHttpRequest, RegionDiskTypeList, ListRegionDiskTypesPagedResponse>
       LIST_REGION_DISK_TYPES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListRegionDiskTypesHttpRequest, RegionDiskTypeList,
+              ListRegionDiskTypesHttpRequest,
+              RegionDiskTypeList,
               ListRegionDiskTypesPagedResponse>() {
             @Override
             public ApiFuture<ListRegionDiskTypesPagedResponse> getFuturePagedResponse(

@@ -100,7 +100,8 @@ public class RegionCommitmentStubSettings extends StubSettings<RegionCommitmentS
           .build();
 
   private final PagedCallSettings<
-          AggregatedListRegionCommitmentsHttpRequest, CommitmentAggregatedList,
+          AggregatedListRegionCommitmentsHttpRequest,
+          CommitmentAggregatedList,
           AggregatedListRegionCommitmentsPagedResponse>
       aggregatedListRegionCommitmentsSettings;
   private final UnaryCallSettings<GetRegionCommitmentHttpRequest, Commitment>
@@ -113,7 +114,8 @@ public class RegionCommitmentStubSettings extends StubSettings<RegionCommitmentS
 
   /** Returns the object with the settings used for calls to aggregatedListRegionCommitments. */
   public PagedCallSettings<
-          AggregatedListRegionCommitmentsHttpRequest, CommitmentAggregatedList,
+          AggregatedListRegionCommitmentsHttpRequest,
+          CommitmentAggregatedList,
           AggregatedListRegionCommitmentsPagedResponse>
       aggregatedListRegionCommitmentsSettings() {
     return aggregatedListRegionCommitmentsSettings;
@@ -221,11 +223,13 @@ public class RegionCommitmentStubSettings extends StubSettings<RegionCommitmentS
   }
 
   private static final PagedListDescriptor<
-          AggregatedListRegionCommitmentsHttpRequest, CommitmentAggregatedList,
+          AggregatedListRegionCommitmentsHttpRequest,
+          CommitmentAggregatedList,
           CommitmentsScopedList>
       AGGREGATED_LIST_REGION_COMMITMENTS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              AggregatedListRegionCommitmentsHttpRequest, CommitmentAggregatedList,
+              AggregatedListRegionCommitmentsHttpRequest,
+              CommitmentAggregatedList,
               CommitmentsScopedList>() {
             @Override
             public String emptyToken() {
@@ -261,7 +265,9 @@ public class RegionCommitmentStubSettings extends StubSettings<RegionCommitmentS
             @Override
             public Iterable<CommitmentsScopedList> extractResources(
                 CommitmentAggregatedList payload) {
-              return payload.getItemsMap().values();
+              return payload.getItemsMap() != null
+                  ? payload.getItemsMap().values()
+                  : ImmutableList.<CommitmentsScopedList>of();
             }
           };
 
@@ -302,16 +308,20 @@ public class RegionCommitmentStubSettings extends StubSettings<RegionCommitmentS
 
             @Override
             public Iterable<Commitment> extractResources(CommitmentList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<Commitment>of();
             }
           };
 
   private static final PagedListResponseFactory<
-          AggregatedListRegionCommitmentsHttpRequest, CommitmentAggregatedList,
+          AggregatedListRegionCommitmentsHttpRequest,
+          CommitmentAggregatedList,
           AggregatedListRegionCommitmentsPagedResponse>
       AGGREGATED_LIST_REGION_COMMITMENTS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              AggregatedListRegionCommitmentsHttpRequest, CommitmentAggregatedList,
+              AggregatedListRegionCommitmentsHttpRequest,
+              CommitmentAggregatedList,
               AggregatedListRegionCommitmentsPagedResponse>() {
             @Override
             public ApiFuture<AggregatedListRegionCommitmentsPagedResponse> getFuturePagedResponse(
@@ -321,7 +331,8 @@ public class RegionCommitmentStubSettings extends StubSettings<RegionCommitmentS
                 ApiCallContext context,
                 ApiFuture<CommitmentAggregatedList> futureResponse) {
               PageContext<
-                      AggregatedListRegionCommitmentsHttpRequest, CommitmentAggregatedList,
+                      AggregatedListRegionCommitmentsHttpRequest,
+                      CommitmentAggregatedList,
                       CommitmentsScopedList>
                   pageContext =
                       PageContext.create(
@@ -338,7 +349,8 @@ public class RegionCommitmentStubSettings extends StubSettings<RegionCommitmentS
           ListRegionCommitmentsHttpRequest, CommitmentList, ListRegionCommitmentsPagedResponse>
       LIST_REGION_COMMITMENTS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListRegionCommitmentsHttpRequest, CommitmentList,
+              ListRegionCommitmentsHttpRequest,
+              CommitmentList,
               ListRegionCommitmentsPagedResponse>() {
             @Override
             public ApiFuture<ListRegionCommitmentsPagedResponse> getFuturePagedResponse(
@@ -359,7 +371,8 @@ public class RegionCommitmentStubSettings extends StubSettings<RegionCommitmentS
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final PagedCallSettings.Builder<
-            AggregatedListRegionCommitmentsHttpRequest, CommitmentAggregatedList,
+            AggregatedListRegionCommitmentsHttpRequest,
+            CommitmentAggregatedList,
             AggregatedListRegionCommitmentsPagedResponse>
         aggregatedListRegionCommitmentsSettings;
     private final UnaryCallSettings.Builder<GetRegionCommitmentHttpRequest, Commitment>
@@ -500,7 +513,8 @@ public class RegionCommitmentStubSettings extends StubSettings<RegionCommitmentS
 
     /** Returns the builder for the settings used for calls to aggregatedListRegionCommitments. */
     public PagedCallSettings.Builder<
-            AggregatedListRegionCommitmentsHttpRequest, CommitmentAggregatedList,
+            AggregatedListRegionCommitmentsHttpRequest,
+            CommitmentAggregatedList,
             AggregatedListRegionCommitmentsPagedResponse>
         aggregatedListRegionCommitmentsSettings() {
       return aggregatedListRegionCommitmentsSettings;

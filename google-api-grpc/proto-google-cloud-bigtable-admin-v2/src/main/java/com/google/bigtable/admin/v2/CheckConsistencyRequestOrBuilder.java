@@ -3,11 +3,14 @@
 
 package com.google.bigtable.admin.v2;
 
-public interface CheckConsistencyRequestOrBuilder extends
+public interface CheckConsistencyRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.CheckConsistencyRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The unique name of the Table for which to check replication consistency.
    * Values are of the form
@@ -18,6 +21,8 @@ public interface CheckConsistencyRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The unique name of the Table for which to check replication consistency.
    * Values are of the form
@@ -26,10 +31,11 @@ public interface CheckConsistencyRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The token created using GenerateConsistencyToken for the Table.
    * </pre>
@@ -38,12 +44,13 @@ public interface CheckConsistencyRequestOrBuilder extends
    */
   java.lang.String getConsistencyToken();
   /**
+   *
+   *
    * <pre>
    * The token created using GenerateConsistencyToken for the Table.
    * </pre>
    *
    * <code>string consistency_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getConsistencyTokenBytes();
+  com.google.protobuf.ByteString getConsistencyTokenBytes();
 }

@@ -162,13 +162,23 @@ class FirestoreImpl implements Firestore {
 
   @Nonnull
   @Override
-  public ApiFuture<List<DocumentSnapshot>> getAll(final DocumentReference... documentReferences) {
-    return this.getAll(documentReferences, null);
+  public ApiFuture<List<DocumentSnapshot>> getAll(
+      @Nonnull DocumentReference... documentReferences) {
+    return this.getAll(documentReferences, null, null);
+  }
+
+  @Nonnull
+  @Override
+  public ApiFuture<List<DocumentSnapshot>> getAll(
+      @Nonnull DocumentReference[] documentReferences, @Nullable FieldMask fieldMask) {
+    return this.getAll(documentReferences, fieldMask, null);
   }
 
   /** Internal getAll() method that accepts an optional transaction id. */
   ApiFuture<List<DocumentSnapshot>> getAll(
-      final DocumentReference[] documentReferences, @Nullable ByteString transactionId) {
+      final DocumentReference[] documentReferences,
+      @Nullable FieldMask fieldMask,
+      @Nullable ByteString transactionId) {
     final SettableApiFuture<List<DocumentSnapshot>> futureList = SettableApiFuture.create();
     final Map<DocumentReference, DocumentSnapshot> resultMap = new HashMap<>();
 
@@ -237,6 +247,10 @@ class FirestoreImpl implements Firestore {
 
     BatchGetDocumentsRequest.Builder request = BatchGetDocumentsRequest.newBuilder();
     request.setDatabase(getDatabaseName());
+
+    if (fieldMask != null) {
+      request.setMask(fieldMask.toPb());
+    }
 
     if (transactionId != null) {
       request.setTransaction(transactionId);

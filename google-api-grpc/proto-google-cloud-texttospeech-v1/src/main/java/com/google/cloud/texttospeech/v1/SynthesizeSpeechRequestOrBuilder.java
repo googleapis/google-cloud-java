@@ -3,11 +3,14 @@
 
 package com.google.cloud.texttospeech.v1;
 
-public interface SynthesizeSpeechRequestOrBuilder extends
+public interface SynthesizeSpeechRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.texttospeech.v1.SynthesizeSpeechRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The Synthesizer requires either plain text or SSML as input.
    * </pre>
@@ -16,6 +19,8 @@ public interface SynthesizeSpeechRequestOrBuilder extends
    */
   boolean hasInput();
   /**
+   *
+   *
    * <pre>
    * Required. The Synthesizer requires either plain text or SSML as input.
    * </pre>
@@ -24,6 +29,8 @@ public interface SynthesizeSpeechRequestOrBuilder extends
    */
   com.google.cloud.texttospeech.v1.SynthesisInput getInput();
   /**
+   *
+   *
    * <pre>
    * Required. The Synthesizer requires either plain text or SSML as input.
    * </pre>
@@ -33,6 +40,8 @@ public interface SynthesizeSpeechRequestOrBuilder extends
   com.google.cloud.texttospeech.v1.SynthesisInputOrBuilder getInputOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Required. The desired voice of the synthesized audio.
    * </pre>
@@ -41,6 +50,8 @@ public interface SynthesizeSpeechRequestOrBuilder extends
    */
   boolean hasVoice();
   /**
+   *
+   *
    * <pre>
    * Required. The desired voice of the synthesized audio.
    * </pre>
@@ -49,6 +60,8 @@ public interface SynthesizeSpeechRequestOrBuilder extends
    */
   com.google.cloud.texttospeech.v1.VoiceSelectionParams getVoice();
   /**
+   *
+   *
    * <pre>
    * Required. The desired voice of the synthesized audio.
    * </pre>
@@ -58,6 +71,8 @@ public interface SynthesizeSpeechRequestOrBuilder extends
   com.google.cloud.texttospeech.v1.VoiceSelectionParamsOrBuilder getVoiceOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Required. The configuration of the synthesized audio.
    * </pre>
@@ -66,6 +81,8 @@ public interface SynthesizeSpeechRequestOrBuilder extends
    */
   boolean hasAudioConfig();
   /**
+   *
+   *
    * <pre>
    * Required. The configuration of the synthesized audio.
    * </pre>
@@ -74,6 +91,8 @@ public interface SynthesizeSpeechRequestOrBuilder extends
    */
   com.google.cloud.texttospeech.v1.AudioConfig getAudioConfig();
   /**
+   *
+   *
    * <pre>
    * Required. The configuration of the synthesized audio.
    * </pre>

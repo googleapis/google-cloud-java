@@ -21,7 +21,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.protobuf.ByteString;
-
 import java.io.BufferedInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -30,11 +29,10 @@ import java.io.Serializable;
 import java.nio.ByteBuffer;
 
 /**
- * A Google Cloud Datastore Blob.
- * This class is immutable.
+ * A Google Cloud Datastore Blob. This class is immutable.
  *
- * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">
- *   Google Cloud Datastore Entities, Properties, and Keys</a>
+ * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">Google Cloud Datastore
+ *     Entities, Properties, and Keys</a>
  */
 public final class Blob implements Serializable {
 
@@ -69,35 +67,27 @@ public final class Blob implements Serializable {
     return obj == this || obj instanceof Blob && byteString.equals(((Blob) obj).byteString);
   }
 
-
-  /**
-   * Returns the size of this blob.
-   */
+  /** Returns the size of this blob. */
   public int getLength() {
     return byteString.size();
   }
 
-  /**
-   * Returns a copy as byte array.
-   */
+  /** Returns a copy as byte array. */
   public byte[] toByteArray() {
     return byteString.toByteArray();
   }
 
-  /**
-   * Returns a read-only {@link ByteBuffer} for this blob content.
-   */
+  /** Returns a read-only {@link ByteBuffer} for this blob content. */
   public ByteBuffer asReadOnlyByteBuffer() {
     return byteString.asReadOnlyByteBuffer();
   }
 
-  /**
-   * Returns an {@link InputStream} for this blob content.
-   */
+  /** Returns an {@link InputStream} for this blob content. */
   public InputStream asInputStream() {
     final ByteBuffer byteBuffer = asReadOnlyByteBuffer();
     return new InputStream() {
-      @Override public int read() {
+      @Override
+      public int read() {
         return !byteBuffer.hasRemaining() ? -1 : byteBuffer.get() & 0xFF;
       }
     };
@@ -107,8 +97,8 @@ public final class Blob implements Serializable {
    * Copies bytes into a ByteBuffer.
    *
    * @throws java.nio.ReadOnlyBufferException if the target is read-only
-   * @throws java.nio.BufferOverflowException if the target's remaining() space is not large
-   *        enough to hold the data
+   * @throws java.nio.BufferOverflowException if the target's remaining() space is not large enough
+   *     to hold the data
    */
   public void copyTo(ByteBuffer target) {
     byteString.copyTo(target);

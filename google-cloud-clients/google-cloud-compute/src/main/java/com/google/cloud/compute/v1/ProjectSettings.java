@@ -100,7 +100,8 @@ public class ProjectSettings extends ClientSettings<ProjectSettings> {
 
   /** Returns the object with the settings used for calls to getXpnResourcesProjects. */
   public PagedCallSettings<
-          GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources,
+          GetXpnResourcesProjectsHttpRequest,
+          ProjectsGetXpnResources,
           GetXpnResourcesProjectsPagedResponse>
       getXpnResourcesProjectsSettings() {
     return ((ProjectStubSettings) getStubSettings()).getXpnResourcesProjectsSettings();
@@ -280,7 +281,8 @@ public class ProjectSettings extends ClientSettings<ProjectSettings> {
 
     /** Returns the builder for the settings used for calls to getXpnResourcesProjects. */
     public PagedCallSettings.Builder<
-            GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources,
+            GetXpnResourcesProjectsHttpRequest,
+            ProjectsGetXpnResources,
             GetXpnResourcesProjectsPagedResponse>
         getXpnResourcesProjectsSettings() {
       return getStubSettingsBuilder().getXpnResourcesProjectsSettings();

@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface ClusterConfigOrBuilder extends
+public interface ClusterConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.ClusterConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Optional. A Cloud Storage staging bucket used for sharing generated
    * SSH keys and config. If you do not specify a staging bucket, Cloud
@@ -21,6 +24,8 @@ public interface ClusterConfigOrBuilder extends
    */
   java.lang.String getConfigBucket();
   /**
+   *
+   *
    * <pre>
    * Optional. A Cloud Storage staging bucket used for sharing generated
    * SSH keys and config. If you do not specify a staging bucket, Cloud
@@ -32,10 +37,11 @@ public interface ClusterConfigOrBuilder extends
    *
    * <code>string config_bucket = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getConfigBucketBytes();
+  com.google.protobuf.ByteString getConfigBucketBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The shared Compute Engine config settings for
    * all instances in a cluster.
@@ -45,6 +51,8 @@ public interface ClusterConfigOrBuilder extends
    */
   boolean hasGceClusterConfig();
   /**
+   *
+   *
    * <pre>
    * Required. The shared Compute Engine config settings for
    * all instances in a cluster.
@@ -54,6 +62,8 @@ public interface ClusterConfigOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.GceClusterConfig getGceClusterConfig();
   /**
+   *
+   *
    * <pre>
    * Required. The shared Compute Engine config settings for
    * all instances in a cluster.
@@ -64,6 +74,8 @@ public interface ClusterConfigOrBuilder extends
   com.google.cloud.dataproc.v1beta2.GceClusterConfigOrBuilder getGceClusterConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The Compute Engine config settings for
    * the master instance in a cluster.
@@ -73,6 +85,8 @@ public interface ClusterConfigOrBuilder extends
    */
   boolean hasMasterConfig();
   /**
+   *
+   *
    * <pre>
    * Optional. The Compute Engine config settings for
    * the master instance in a cluster.
@@ -82,6 +96,8 @@ public interface ClusterConfigOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.InstanceGroupConfig getMasterConfig();
   /**
+   *
+   *
    * <pre>
    * Optional. The Compute Engine config settings for
    * the master instance in a cluster.
@@ -92,6 +108,8 @@ public interface ClusterConfigOrBuilder extends
   com.google.cloud.dataproc.v1beta2.InstanceGroupConfigOrBuilder getMasterConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The Compute Engine config settings for
    * worker instances in a cluster.
@@ -101,6 +119,8 @@ public interface ClusterConfigOrBuilder extends
    */
   boolean hasWorkerConfig();
   /**
+   *
+   *
    * <pre>
    * Optional. The Compute Engine config settings for
    * worker instances in a cluster.
@@ -110,6 +130,8 @@ public interface ClusterConfigOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.InstanceGroupConfig getWorkerConfig();
   /**
+   *
+   *
    * <pre>
    * Optional. The Compute Engine config settings for
    * worker instances in a cluster.
@@ -120,6 +142,8 @@ public interface ClusterConfigOrBuilder extends
   com.google.cloud.dataproc.v1beta2.InstanceGroupConfigOrBuilder getWorkerConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The Compute Engine config settings for
    * additional worker instances in a cluster.
@@ -129,6 +153,8 @@ public interface ClusterConfigOrBuilder extends
    */
   boolean hasSecondaryWorkerConfig();
   /**
+   *
+   *
    * <pre>
    * Optional. The Compute Engine config settings for
    * additional worker instances in a cluster.
@@ -138,6 +164,8 @@ public interface ClusterConfigOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.InstanceGroupConfig getSecondaryWorkerConfig();
   /**
+   *
+   *
    * <pre>
    * Optional. The Compute Engine config settings for
    * additional worker instances in a cluster.
@@ -145,9 +173,12 @@ public interface ClusterConfigOrBuilder extends
    *
    * <code>.google.cloud.dataproc.v1beta2.InstanceGroupConfig secondary_worker_config = 12;</code>
    */
-  com.google.cloud.dataproc.v1beta2.InstanceGroupConfigOrBuilder getSecondaryWorkerConfigOrBuilder();
+  com.google.cloud.dataproc.v1beta2.InstanceGroupConfigOrBuilder
+      getSecondaryWorkerConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The config settings for software inside the cluster.
    * </pre>
@@ -156,6 +187,8 @@ public interface ClusterConfigOrBuilder extends
    */
   boolean hasSoftwareConfig();
   /**
+   *
+   *
    * <pre>
    * Optional. The config settings for software inside the cluster.
    * </pre>
@@ -164,6 +197,8 @@ public interface ClusterConfigOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.SoftwareConfig getSoftwareConfig();
   /**
+   *
+   *
    * <pre>
    * Optional. The config settings for software inside the cluster.
    * </pre>
@@ -173,6 +208,8 @@ public interface ClusterConfigOrBuilder extends
   com.google.cloud.dataproc.v1beta2.SoftwareConfigOrBuilder getSoftwareConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The config setting for auto delete cluster schedule.
    * </pre>
@@ -181,6 +218,8 @@ public interface ClusterConfigOrBuilder extends
    */
   boolean hasLifecycleConfig();
   /**
+   *
+   *
    * <pre>
    * Optional. The config setting for auto delete cluster schedule.
    * </pre>
@@ -189,6 +228,8 @@ public interface ClusterConfigOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.LifecycleConfig getLifecycleConfig();
   /**
+   *
+   *
    * <pre>
    * Optional. The config setting for auto delete cluster schedule.
    * </pre>
@@ -198,6 +239,8 @@ public interface ClusterConfigOrBuilder extends
   com.google.cloud.dataproc.v1beta2.LifecycleConfigOrBuilder getLifecycleConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. Commands to execute on each node after config is
    * completed. By default, executables are run on master and all worker nodes.
@@ -211,11 +254,15 @@ public interface ClusterConfigOrBuilder extends
    *     fi
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;
+   * </code>
    */
-  java.util.List<com.google.cloud.dataproc.v1beta2.NodeInitializationAction> 
+  java.util.List<com.google.cloud.dataproc.v1beta2.NodeInitializationAction>
       getInitializationActionsList();
   /**
+   *
+   *
    * <pre>
    * Optional. Commands to execute on each node after config is
    * completed. By default, executables are run on master and all worker nodes.
@@ -229,10 +276,14 @@ public interface ClusterConfigOrBuilder extends
    *     fi
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;
+   * </code>
    */
   com.google.cloud.dataproc.v1beta2.NodeInitializationAction getInitializationActions(int index);
   /**
+   *
+   *
    * <pre>
    * Optional. Commands to execute on each node after config is
    * completed. By default, executables are run on master and all worker nodes.
@@ -246,10 +297,14 @@ public interface ClusterConfigOrBuilder extends
    *     fi
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;
+   * </code>
    */
   int getInitializationActionsCount();
   /**
+   *
+   *
    * <pre>
    * Optional. Commands to execute on each node after config is
    * completed. By default, executables are run on master and all worker nodes.
@@ -263,11 +318,15 @@ public interface ClusterConfigOrBuilder extends
    *     fi
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;
+   * </code>
    */
-  java.util.List<? extends com.google.cloud.dataproc.v1beta2.NodeInitializationActionOrBuilder> 
+  java.util.List<? extends com.google.cloud.dataproc.v1beta2.NodeInitializationActionOrBuilder>
       getInitializationActionsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Optional. Commands to execute on each node after config is
    * completed. By default, executables are run on master and all worker nodes.
@@ -281,8 +340,41 @@ public interface ClusterConfigOrBuilder extends
    *     fi
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;
+   * </code>
    */
-  com.google.cloud.dataproc.v1beta2.NodeInitializationActionOrBuilder getInitializationActionsOrBuilder(
-      int index);
+  com.google.cloud.dataproc.v1beta2.NodeInitializationActionOrBuilder
+      getInitializationActionsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Encryption settings for the cluster.
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1beta2.EncryptionConfig encryption_config = 15;</code>
+   */
+  boolean hasEncryptionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Encryption settings for the cluster.
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1beta2.EncryptionConfig encryption_config = 15;</code>
+   */
+  com.google.cloud.dataproc.v1beta2.EncryptionConfig getEncryptionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Encryption settings for the cluster.
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1beta2.EncryptionConfig encryption_config = 15;</code>
+   */
+  com.google.cloud.dataproc.v1beta2.EncryptionConfigOrBuilder getEncryptionConfigOrBuilder();
 }

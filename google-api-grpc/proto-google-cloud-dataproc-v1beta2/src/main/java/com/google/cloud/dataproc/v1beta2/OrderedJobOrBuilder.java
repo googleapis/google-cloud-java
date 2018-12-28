@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface OrderedJobOrBuilder extends
+public interface OrderedJobOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.OrderedJob)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The step id. The id must be unique among all jobs
    * within the template.
@@ -24,6 +27,8 @@ public interface OrderedJobOrBuilder extends
    */
   java.lang.String getStepId();
   /**
+   *
+   *
    * <pre>
    * Required. The step id. The id must be unique among all jobs
    * within the template.
@@ -38,10 +43,11 @@ public interface OrderedJobOrBuilder extends
    *
    * <code>string step_id = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getStepIdBytes();
+  com.google.protobuf.ByteString getStepIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Job is a Hadoop job.
    * </pre>
@@ -50,6 +56,8 @@ public interface OrderedJobOrBuilder extends
    */
   boolean hasHadoopJob();
   /**
+   *
+   *
    * <pre>
    * Job is a Hadoop job.
    * </pre>
@@ -58,6 +66,8 @@ public interface OrderedJobOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.HadoopJob getHadoopJob();
   /**
+   *
+   *
    * <pre>
    * Job is a Hadoop job.
    * </pre>
@@ -67,6 +77,8 @@ public interface OrderedJobOrBuilder extends
   com.google.cloud.dataproc.v1beta2.HadoopJobOrBuilder getHadoopJobOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Job is a Spark job.
    * </pre>
@@ -75,6 +87,8 @@ public interface OrderedJobOrBuilder extends
    */
   boolean hasSparkJob();
   /**
+   *
+   *
    * <pre>
    * Job is a Spark job.
    * </pre>
@@ -83,6 +97,8 @@ public interface OrderedJobOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.SparkJob getSparkJob();
   /**
+   *
+   *
    * <pre>
    * Job is a Spark job.
    * </pre>
@@ -92,6 +108,8 @@ public interface OrderedJobOrBuilder extends
   com.google.cloud.dataproc.v1beta2.SparkJobOrBuilder getSparkJobOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Job is a Pyspark job.
    * </pre>
@@ -100,6 +118,8 @@ public interface OrderedJobOrBuilder extends
    */
   boolean hasPysparkJob();
   /**
+   *
+   *
    * <pre>
    * Job is a Pyspark job.
    * </pre>
@@ -108,6 +128,8 @@ public interface OrderedJobOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.PySparkJob getPysparkJob();
   /**
+   *
+   *
    * <pre>
    * Job is a Pyspark job.
    * </pre>
@@ -117,6 +139,8 @@ public interface OrderedJobOrBuilder extends
   com.google.cloud.dataproc.v1beta2.PySparkJobOrBuilder getPysparkJobOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Job is a Hive job.
    * </pre>
@@ -125,6 +149,8 @@ public interface OrderedJobOrBuilder extends
    */
   boolean hasHiveJob();
   /**
+   *
+   *
    * <pre>
    * Job is a Hive job.
    * </pre>
@@ -133,6 +159,8 @@ public interface OrderedJobOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.HiveJob getHiveJob();
   /**
+   *
+   *
    * <pre>
    * Job is a Hive job.
    * </pre>
@@ -142,6 +170,8 @@ public interface OrderedJobOrBuilder extends
   com.google.cloud.dataproc.v1beta2.HiveJobOrBuilder getHiveJobOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Job is a Pig job.
    * </pre>
@@ -150,6 +180,8 @@ public interface OrderedJobOrBuilder extends
    */
   boolean hasPigJob();
   /**
+   *
+   *
    * <pre>
    * Job is a Pig job.
    * </pre>
@@ -158,6 +190,8 @@ public interface OrderedJobOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.PigJob getPigJob();
   /**
+   *
+   *
    * <pre>
    * Job is a Pig job.
    * </pre>
@@ -167,6 +201,8 @@ public interface OrderedJobOrBuilder extends
   com.google.cloud.dataproc.v1beta2.PigJobOrBuilder getPigJobOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Job is a SparkSql job.
    * </pre>
@@ -175,6 +211,8 @@ public interface OrderedJobOrBuilder extends
    */
   boolean hasSparkSqlJob();
   /**
+   *
+   *
    * <pre>
    * Job is a SparkSql job.
    * </pre>
@@ -183,6 +221,8 @@ public interface OrderedJobOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.SparkSqlJob getSparkSqlJob();
   /**
+   *
+   *
    * <pre>
    * Job is a SparkSql job.
    * </pre>
@@ -192,6 +232,8 @@ public interface OrderedJobOrBuilder extends
   com.google.cloud.dataproc.v1beta2.SparkSqlJobOrBuilder getSparkSqlJobOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The labels to associate with this job.
    * Label keys must be between 1 and 63 characters long, and must conform to
@@ -206,6 +248,8 @@ public interface OrderedJobOrBuilder extends
    */
   int getLabelsCount();
   /**
+   *
+   *
    * <pre>
    * Optional. The labels to associate with this job.
    * Label keys must be between 1 and 63 characters long, and must conform to
@@ -218,15 +262,13 @@ public interface OrderedJobOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
-  boolean containsLabels(
-      java.lang.String key);
-  /**
-   * Use {@link #getLabelsMap()} instead.
-   */
+  boolean containsLabels(java.lang.String key);
+  /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabels();
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
   /**
+   *
+   *
    * <pre>
    * Optional. The labels to associate with this job.
    * Label keys must be between 1 and 63 characters long, and must conform to
@@ -239,9 +281,10 @@ public interface OrderedJobOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabelsMap();
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
+   *
+   *
    * <pre>
    * Optional. The labels to associate with this job.
    * Label keys must be between 1 and 63 characters long, and must conform to
@@ -254,11 +297,10 @@ public interface OrderedJobOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
-
-  java.lang.String getLabelsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * Optional. The labels to associate with this job.
    * Label keys must be between 1 and 63 characters long, and must conform to
@@ -271,11 +313,11 @@ public interface OrderedJobOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
-
-  java.lang.String getLabelsOrThrow(
-      java.lang.String key);
+  java.lang.String getLabelsOrThrow(java.lang.String key);
 
   /**
+   *
+   *
    * <pre>
    * Optional. Job scheduling configuration.
    * </pre>
@@ -284,6 +326,8 @@ public interface OrderedJobOrBuilder extends
    */
   boolean hasScheduling();
   /**
+   *
+   *
    * <pre>
    * Optional. Job scheduling configuration.
    * </pre>
@@ -292,6 +336,8 @@ public interface OrderedJobOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.JobScheduling getScheduling();
   /**
+   *
+   *
    * <pre>
    * Optional. Job scheduling configuration.
    * </pre>
@@ -301,6 +347,8 @@ public interface OrderedJobOrBuilder extends
   com.google.cloud.dataproc.v1beta2.JobSchedulingOrBuilder getSchedulingOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The optional list of prerequisite job step_ids.
    * If not specified, the job will start at the beginning of workflow.
@@ -308,9 +356,10 @@ public interface OrderedJobOrBuilder extends
    *
    * <code>repeated string prerequisite_step_ids = 10;</code>
    */
-  java.util.List<java.lang.String>
-      getPrerequisiteStepIdsList();
+  java.util.List<java.lang.String> getPrerequisiteStepIdsList();
   /**
+   *
+   *
    * <pre>
    * Optional. The optional list of prerequisite job step_ids.
    * If not specified, the job will start at the beginning of workflow.
@@ -320,6 +369,8 @@ public interface OrderedJobOrBuilder extends
    */
   int getPrerequisiteStepIdsCount();
   /**
+   *
+   *
    * <pre>
    * Optional. The optional list of prerequisite job step_ids.
    * If not specified, the job will start at the beginning of workflow.
@@ -329,6 +380,8 @@ public interface OrderedJobOrBuilder extends
    */
   java.lang.String getPrerequisiteStepIds(int index);
   /**
+   *
+   *
    * <pre>
    * Optional. The optional list of prerequisite job step_ids.
    * If not specified, the job will start at the beginning of workflow.
@@ -336,8 +389,7 @@ public interface OrderedJobOrBuilder extends
    *
    * <code>repeated string prerequisite_step_ids = 10;</code>
    */
-  com.google.protobuf.ByteString
-      getPrerequisiteStepIdsBytes(int index);
+  com.google.protobuf.ByteString getPrerequisiteStepIdsBytes(int index);
 
   public com.google.cloud.dataproc.v1beta2.OrderedJob.JobTypeCase getJobTypeCase();
 }

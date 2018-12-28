@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface ListWorkflowTemplatesRequestOrBuilder extends
+public interface ListWorkflowTemplatesRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.ListWorkflowTemplatesRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The "resource name" of the region, as described
    * in https://cloud.google.com/apis/design/resource_names of the form
@@ -18,6 +21,8 @@ public interface ListWorkflowTemplatesRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required. The "resource name" of the region, as described
    * in https://cloud.google.com/apis/design/resource_names of the form
@@ -26,10 +31,11 @@ public interface ListWorkflowTemplatesRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The maximum number of results to return in each response.
    * </pre>
@@ -39,6 +45,8 @@ public interface ListWorkflowTemplatesRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The page token, returned by a previous call, to request the
    * next page of results.
@@ -48,6 +56,8 @@ public interface ListWorkflowTemplatesRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * Optional. The page token, returned by a previous call, to request the
    * next page of results.
@@ -55,6 +65,5 @@ public interface ListWorkflowTemplatesRequestOrBuilder extends
    *
    * <code>string page_token = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 }

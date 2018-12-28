@@ -23,7 +23,20 @@ import com.google.cloud.storage.StorageOptions;
 import com.google.cloud.storage.contrib.nio.testing.LocalStorageHelper;
 import com.google.common.testing.EqualsTester;
 import com.google.common.testing.NullPointerTester;
-
+import java.io.IOException;
+import java.net.URI;
+import java.nio.channels.SeekableByteChannel;
+import java.nio.file.FileSystem;
+import java.nio.file.FileSystems;
+import java.nio.file.FileVisitResult;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.PathMatcher;
+import java.nio.file.Paths;
+import java.nio.file.SimpleFileVisitor;
+import java.nio.file.attribute.BasicFileAttributes;
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -31,24 +44,7 @@ import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-import java.io.IOException;
-import java.net.URI;
-import java.nio.channels.SeekableByteChannel;
-import java.nio.file.FileSystem;
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.PathMatcher;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
-import java.nio.file.SimpleFileVisitor;
-import java.nio.file.FileVisitResult;
-import java.nio.file.attribute.BasicFileAttributes;
-
-/**
- * Unit tests for {@link CloudStorageFileSystem}.
- */
+/** Unit tests for {@link CloudStorageFileSystem}. */
 @RunWith(JUnit4.class)
 public class CloudStorageFileSystemTest {
 
@@ -62,8 +58,7 @@ public class CloudStorageFileSystemTest {
           + "The Heart-ache, and the thousand Natural shocks\n"
           + "That Flesh is heir to? 'Tis a consummation\n";
 
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Before
   public void before() {
@@ -74,20 +69,19 @@ public class CloudStorageFileSystemTest {
   public void checkDefaultOptions() throws IOException {
     // 1. We get the normal default if we don't do anything special.
     Path path = Paths.get(URI.create("gs://bucket/file"));
-    CloudStorageFileSystem gcs = (CloudStorageFileSystem)path.getFileSystem();
+    CloudStorageFileSystem gcs = (CloudStorageFileSystem) path.getFileSystem();
     assertThat(gcs.config().maxChannelReopens()).isEqualTo(0);
 
     // 2(a). Override the default, and see it reflected.
     CloudStorageFileSystemProvider.setDefaultCloudStorageConfiguration(
-        CloudStorageConfiguration.builder()
-        .maxChannelReopens(123).build());
+        CloudStorageConfiguration.builder().maxChannelReopens(123).build());
     Path path2 = Paths.get(URI.create("gs://newbucket/file"));
-    CloudStorageFileSystem gcs2 = (CloudStorageFileSystem)path2.getFileSystem();
+    CloudStorageFileSystem gcs2 = (CloudStorageFileSystem) path2.getFileSystem();
     assertThat(gcs2.config().maxChannelReopens()).isEqualTo(123);
 
     // 2(b) ...even reflected if we try to open a file.
     try (FileSystem fs = CloudStorageFileSystem.forBucket("bucket")) {
-      CloudStorageFileSystem csfs = (CloudStorageFileSystem)fs;
+      CloudStorageFileSystem csfs = (CloudStorageFileSystem) fs;
       assertThat(csfs.config().maxChannelReopens()).isEqualTo(123);
       Files.write(fs.getPath("/angel"), ALONE.getBytes(UTF_8));
       path2 = Paths.get(URI.create("gs://bucket/angel"));
@@ -100,7 +94,7 @@ public class CloudStorageFileSystemTest {
     // 4. Clean up.
     CloudStorageFileSystemProvider.setDefaultCloudStorageConfiguration(null);
     Path path3 = Paths.get(URI.create("gs://newbucket/file"));
-    CloudStorageFileSystem gcs3 = (CloudStorageFileSystem)path3.getFileSystem();
+    CloudStorageFileSystem gcs3 = (CloudStorageFileSystem) path3.getFileSystem();
     assertThat(gcs3.config().maxChannelReopens()).isEqualTo(0);
   }
 
@@ -108,12 +102,13 @@ public class CloudStorageFileSystemTest {
   public void canOverrideDefaultOptions() throws IOException {
     // Set a new default.
     CloudStorageFileSystemProvider.setDefaultCloudStorageConfiguration(
-        CloudStorageConfiguration.builder()
-            .maxChannelReopens(123).build());
+        CloudStorageConfiguration.builder().maxChannelReopens(123).build());
 
     // This code wants its own value.
-    try (FileSystem fs = CloudStorageFileSystem.forBucket("bucket", CloudStorageConfiguration.builder().maxChannelReopens(7).build())) {
-      CloudStorageFileSystem csfs = (CloudStorageFileSystem)fs;
+    try (FileSystem fs =
+        CloudStorageFileSystem.forBucket(
+            "bucket", CloudStorageConfiguration.builder().maxChannelReopens(7).build())) {
+      CloudStorageFileSystem csfs = (CloudStorageFileSystem) fs;
       assertThat(csfs.config().maxChannelReopens()).isEqualTo(7);
     }
 
@@ -341,22 +336,27 @@ public class CloudStorageFileSystemTest {
 
   /**
    * Delete the given directory and all of its contents if non-empty.
+   *
    * @param directory the directory to delete
    * @throws IOException
    */
   private static void deleteRecursive(Path directory) throws IOException {
-    Files.walkFileTree(directory, new SimpleFileVisitor<Path>() {
-      @Override
-      public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-        Files.delete(file);
-        return FileVisitResult.CONTINUE;
-      }
-      @Override
-      public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
-        Files.delete(dir);
-        return FileVisitResult.CONTINUE;
-      }
-    });
+    Files.walkFileTree(
+        directory,
+        new SimpleFileVisitor<Path>() {
+          @Override
+          public FileVisitResult visitFile(Path file, BasicFileAttributes attrs)
+              throws IOException {
+            Files.delete(file);
+            return FileVisitResult.CONTINUE;
+          }
+
+          @Override
+          public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
+            Files.delete(dir);
+            return FileVisitResult.CONTINUE;
+          }
+        });
   }
 
   private void assertMatches(FileSystem fs, PathMatcher matcher, String toMatch, boolean expected) {

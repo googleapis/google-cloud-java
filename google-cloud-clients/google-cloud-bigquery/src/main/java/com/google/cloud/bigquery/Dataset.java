@@ -33,10 +33,8 @@ import java.util.Objects;
  * A Google BigQuery Dataset.
  *
  * <p>Objects of this class are immutable. Operations that modify the dataset like {@link #update}
- * return a new object. To get a {@code Dataset} object with the most recent information use
- * {@link #reload}. {@code Dataset} adds a layer of service-related functionality over
- * {@link DatasetInfo}.
- * </p>
+ * return a new object. To get a {@code Dataset} object with the most recent information use {@link
+ * #reload}. {@code Dataset} adds a layer of service-related functionality over {@link DatasetInfo}.
  */
 public class Dataset extends DatasetInfo {
 
@@ -45,9 +43,7 @@ public class Dataset extends DatasetInfo {
   private final BigQueryOptions options;
   private transient BigQuery bigquery;
 
-  /**
-   * A builder for {@code Dataset} objects.
-   */
+  /** A builder for {@code Dataset} objects. */
   public static final class Builder extends DatasetInfo.Builder {
 
     private final BigQuery bigquery;
@@ -64,13 +60,11 @@ public class Dataset extends DatasetInfo {
       this.infoBuilder = new DatasetInfo.BuilderImpl(dataset);
     }
 
-
     @Override
     public Builder setDatasetId(DatasetId datasetId) {
       infoBuilder.setDatasetId(datasetId);
       return this;
     }
-
 
     @Override
     public Builder setAcl(List<Acl> acl) {
@@ -84,13 +78,11 @@ public class Dataset extends DatasetInfo {
       return this;
     }
 
-
     @Override
     public Builder setDefaultTableLifetime(Long defaultTableLifetime) {
       infoBuilder.setDefaultTableLifetime(defaultTableLifetime);
       return this;
     }
-
 
     @Override
     public Builder setDescription(String description) {
@@ -103,7 +95,6 @@ public class Dataset extends DatasetInfo {
       infoBuilder.setEtag(etag);
       return this;
     }
-
 
     @Override
     public Builder setFriendlyName(String friendlyName) {
@@ -122,7 +113,6 @@ public class Dataset extends DatasetInfo {
       infoBuilder.setLastModified(lastModified);
       return this;
     }
-
 
     @Override
     public Builder setLocation(String location) {
@@ -158,7 +148,8 @@ public class Dataset extends DatasetInfo {
    * Checks if this dataset exists.
    *
    * <p>Example of checking whether a dataset exists.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * boolean exists = dataset.exists();
    * if (exists) {
    *   // the dataset exists
@@ -179,7 +170,8 @@ public class Dataset extends DatasetInfo {
    * exist.
    *
    * <p>Example of reloading a dataset.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * Dataset latestDataset = dataset.reload();
    * if (latestDataset == null) {
    *   // The dataset was not found
@@ -199,7 +191,8 @@ public class Dataset extends DatasetInfo {
    * cannot be changed. A new {@code Dataset} object is returned.
    *
    * <p>Example of updating a dataset.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String friendlyName = "my_friendly_name";
    * Builder builder = dataset.toBuilder();
    * builder.setFriendlyName(friendlyName);
@@ -218,7 +211,8 @@ public class Dataset extends DatasetInfo {
    * Deletes this dataset.
    *
    * <p>Example of deleting a dataset.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * boolean deleted = dataset.delete();
    * if (deleted) {
    *   // The dataset was deleted
@@ -238,7 +232,8 @@ public class Dataset extends DatasetInfo {
    * Returns the paginated list of tables in this dataset.
    *
    * <p>Example of listing tables in the dataset.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * Page<Table> tables = dataset.list();
    * for (Table table : tables.iterateAll()) {
    *   // do something with the table
@@ -256,7 +251,8 @@ public class Dataset extends DatasetInfo {
    * Returns the requested table in this dataset or {@code null} if not found.
    *
    * <p>Example of getting a table in the dataset.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String tableName = “my_table”;
    * Table table = dataset.get(tableName);
    * }</pre>
@@ -273,7 +269,8 @@ public class Dataset extends DatasetInfo {
    * Creates a new table in this dataset.
    *
    * <p>Example of creating a table in the dataset with schema and time partitioning.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String tableName = “my_table”;
    * String fieldName = “my_field”;
    * Schema schema = Schema.of(Field.of(fieldName, LegacySQLTypeName.STRING));
@@ -296,10 +293,7 @@ public class Dataset extends DatasetInfo {
     return bigquery.create(tableInfo, options);
   }
 
-
-  /**
-   * Returns the dataset's {@code BigQuery} object used to issue requests.
-   */
+  /** Returns the dataset's {@code BigQuery} object used to issue requests. */
   public BigQuery getBigQuery() {
     return bigquery;
   }
@@ -318,8 +312,7 @@ public class Dataset extends DatasetInfo {
       return false;
     }
     Dataset other = (Dataset) obj;
-    return Objects.equals(toPb(), other.toPb())
-        && Objects.equals(options, other.options);
+    return Objects.equals(toPb(), other.toPb()) && Objects.equals(options, other.options);
   }
 
   @Override
@@ -332,8 +325,8 @@ public class Dataset extends DatasetInfo {
     this.bigquery = options.getService();
   }
 
-  static Dataset fromPb(BigQuery bigquery,
-      com.google.api.services.bigquery.model.Dataset datasetPb) {
+  static Dataset fromPb(
+      BigQuery bigquery, com.google.api.services.bigquery.model.Dataset datasetPb) {
     return new Dataset(bigquery, new DatasetInfo.BuilderImpl(datasetPb));
   }
 }

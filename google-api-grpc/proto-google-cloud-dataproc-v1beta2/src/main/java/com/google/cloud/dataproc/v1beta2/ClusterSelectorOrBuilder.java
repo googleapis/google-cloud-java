@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface ClusterSelectorOrBuilder extends
+public interface ClusterSelectorOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.ClusterSelector)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Optional. The zone where workflow process executes. This parameter does not
    * affect the selection of the cluster.
@@ -19,6 +22,8 @@ public interface ClusterSelectorOrBuilder extends
    */
   java.lang.String getZone();
   /**
+   *
+   *
    * <pre>
    * Optional. The zone where workflow process executes. This parameter does not
    * affect the selection of the cluster.
@@ -28,10 +33,11 @@ public interface ClusterSelectorOrBuilder extends
    *
    * <code>string zone = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getZoneBytes();
+  com.google.protobuf.ByteString getZoneBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The cluster labels. Cluster must have all labels
    * to match.
@@ -41,6 +47,8 @@ public interface ClusterSelectorOrBuilder extends
    */
   int getClusterLabelsCount();
   /**
+   *
+   *
    * <pre>
    * Required. The cluster labels. Cluster must have all labels
    * to match.
@@ -48,15 +56,13 @@ public interface ClusterSelectorOrBuilder extends
    *
    * <code>map&lt;string, string&gt; cluster_labels = 2;</code>
    */
-  boolean containsClusterLabels(
-      java.lang.String key);
-  /**
-   * Use {@link #getClusterLabelsMap()} instead.
-   */
+  boolean containsClusterLabels(java.lang.String key);
+  /** Use {@link #getClusterLabelsMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getClusterLabels();
+  java.util.Map<java.lang.String, java.lang.String> getClusterLabels();
   /**
+   *
+   *
    * <pre>
    * Required. The cluster labels. Cluster must have all labels
    * to match.
@@ -64,9 +70,10 @@ public interface ClusterSelectorOrBuilder extends
    *
    * <code>map&lt;string, string&gt; cluster_labels = 2;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getClusterLabelsMap();
+  java.util.Map<java.lang.String, java.lang.String> getClusterLabelsMap();
   /**
+   *
+   *
    * <pre>
    * Required. The cluster labels. Cluster must have all labels
    * to match.
@@ -74,11 +81,10 @@ public interface ClusterSelectorOrBuilder extends
    *
    * <code>map&lt;string, string&gt; cluster_labels = 2;</code>
    */
-
-  java.lang.String getClusterLabelsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getClusterLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * Required. The cluster labels. Cluster must have all labels
    * to match.
@@ -86,7 +92,5 @@ public interface ClusterSelectorOrBuilder extends
    *
    * <code>map&lt;string, string&gt; cluster_labels = 2;</code>
    */
-
-  java.lang.String getClusterLabelsOrThrow(
-      java.lang.String key);
+  java.lang.String getClusterLabelsOrThrow(java.lang.String key);
 }

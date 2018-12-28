@@ -329,7 +329,9 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
 
             @Override
             public Iterable<DataSource> extractResources(ListDataSourcesResponse payload) {
-              return payload.getDataSourcesList();
+              return payload.getDataSourcesList() != null
+                  ? payload.getDataSourcesList()
+                  : ImmutableList.<DataSource>of();
             }
           };
 
@@ -367,7 +369,9 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
 
             @Override
             public Iterable<TransferConfig> extractResources(ListTransferConfigsResponse payload) {
-              return payload.getTransferConfigsList();
+              return payload.getTransferConfigsList() != null
+                  ? payload.getTransferConfigsList()
+                  : ImmutableList.<TransferConfig>of();
             }
           };
 
@@ -405,7 +409,9 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
 
             @Override
             public Iterable<TransferRun> extractResources(ListTransferRunsResponse payload) {
-              return payload.getTransferRunsList();
+              return payload.getTransferRunsList() != null
+                  ? payload.getTransferRunsList()
+                  : ImmutableList.<TransferRun>of();
             }
           };
 
@@ -443,7 +449,9 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
 
             @Override
             public Iterable<TransferMessage> extractResources(ListTransferLogsResponse payload) {
-              return payload.getTransferMessagesList();
+              return payload.getTransferMessagesList() != null
+                  ? payload.getTransferMessagesList()
+                  : ImmutableList.<TransferMessage>of();
             }
           };
 
@@ -468,7 +476,8 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
           ListTransferConfigsRequest, ListTransferConfigsResponse, ListTransferConfigsPagedResponse>
       LIST_TRANSFER_CONFIGS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListTransferConfigsRequest, ListTransferConfigsResponse,
+              ListTransferConfigsRequest,
+              ListTransferConfigsResponse,
               ListTransferConfigsPagedResponse>() {
             @Override
             public ApiFuture<ListTransferConfigsPagedResponse> getFuturePagedResponse(
@@ -540,7 +549,8 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
     private final UnaryCallSettings.Builder<GetTransferConfigRequest, TransferConfig>
         getTransferConfigSettings;
     private final PagedCallSettings.Builder<
-            ListTransferConfigsRequest, ListTransferConfigsResponse,
+            ListTransferConfigsRequest,
+            ListTransferConfigsResponse,
             ListTransferConfigsPagedResponse>
         listTransferConfigsSettings;
     private final UnaryCallSettings.Builder<
@@ -813,7 +823,8 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
 
     /** Returns the builder for the settings used for calls to listTransferConfigs. */
     public PagedCallSettings.Builder<
-            ListTransferConfigsRequest, ListTransferConfigsResponse,
+            ListTransferConfigsRequest,
+            ListTransferConfigsResponse,
             ListTransferConfigsPagedResponse>
         listTransferConfigsSettings() {
       return listTransferConfigsSettings;

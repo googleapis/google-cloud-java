@@ -3,20 +3,24 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface ListStoredInfoTypesResponseOrBuilder extends
+public interface ListStoredInfoTypesResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.ListStoredInfoTypesResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * List of storedInfoTypes, up to page_size in ListStoredInfoTypesRequest.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.StoredInfoType stored_info_types = 1;</code>
    */
-  java.util.List<com.google.privacy.dlp.v2.StoredInfoType> 
-      getStoredInfoTypesList();
+  java.util.List<com.google.privacy.dlp.v2.StoredInfoType> getStoredInfoTypesList();
   /**
+   *
+   *
    * <pre>
    * List of storedInfoTypes, up to page_size in ListStoredInfoTypesRequest.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListStoredInfoTypesResponseOrBuilder extends
    */
   com.google.privacy.dlp.v2.StoredInfoType getStoredInfoTypes(int index);
   /**
+   *
+   *
    * <pre>
    * List of storedInfoTypes, up to page_size in ListStoredInfoTypesRequest.
    * </pre>
@@ -33,25 +39,30 @@ public interface ListStoredInfoTypesResponseOrBuilder extends
    */
   int getStoredInfoTypesCount();
   /**
+   *
+   *
    * <pre>
    * List of storedInfoTypes, up to page_size in ListStoredInfoTypesRequest.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.StoredInfoType stored_info_types = 1;</code>
    */
-  java.util.List<? extends com.google.privacy.dlp.v2.StoredInfoTypeOrBuilder> 
+  java.util.List<? extends com.google.privacy.dlp.v2.StoredInfoTypeOrBuilder>
       getStoredInfoTypesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * List of storedInfoTypes, up to page_size in ListStoredInfoTypesRequest.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.StoredInfoType stored_info_types = 1;</code>
    */
-  com.google.privacy.dlp.v2.StoredInfoTypeOrBuilder getStoredInfoTypesOrBuilder(
-      int index);
+  com.google.privacy.dlp.v2.StoredInfoTypeOrBuilder getStoredInfoTypesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * If the next page is available then the next page token to be used
    * in following ListStoredInfoTypes request.
@@ -61,6 +72,8 @@ public interface ListStoredInfoTypesResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * If the next page is available then the next page token to be used
    * in following ListStoredInfoTypes request.
@@ -68,6 +81,5 @@ public interface ListStoredInfoTypesResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

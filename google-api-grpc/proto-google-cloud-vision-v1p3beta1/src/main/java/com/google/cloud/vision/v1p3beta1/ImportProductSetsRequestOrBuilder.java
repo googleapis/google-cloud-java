@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p3beta1;
 
-public interface ImportProductSetsRequestOrBuilder extends
+public interface ImportProductSetsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p3beta1.ImportProductSetsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The project in which the ProductSets should be imported.
    * Format is `projects/PROJECT_ID/locations/LOC_ID`.
@@ -17,6 +20,8 @@ public interface ImportProductSetsRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The project in which the ProductSets should be imported.
    * Format is `projects/PROJECT_ID/locations/LOC_ID`.
@@ -24,10 +29,11 @@ public interface ImportProductSetsRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The input content for the list of requests.
    * </pre>
@@ -36,6 +42,8 @@ public interface ImportProductSetsRequestOrBuilder extends
    */
   boolean hasInputConfig();
   /**
+   *
+   *
    * <pre>
    * The input content for the list of requests.
    * </pre>
@@ -44,6 +52,8 @@ public interface ImportProductSetsRequestOrBuilder extends
    */
   com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig getInputConfig();
   /**
+   *
+   *
    * <pre>
    * The input content for the list of requests.
    * </pre>

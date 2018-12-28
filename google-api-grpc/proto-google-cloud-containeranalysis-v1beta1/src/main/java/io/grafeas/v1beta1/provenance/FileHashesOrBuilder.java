@@ -3,20 +3,24 @@
 
 package io.grafeas.v1beta1.provenance;
 
-public interface FileHashesOrBuilder extends
+public interface FileHashesOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.provenance.FileHashes)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Collection of file hashes.
    * </pre>
    *
    * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
    */
-  java.util.List<io.grafeas.v1beta1.provenance.Hash> 
-      getFileHashList();
+  java.util.List<io.grafeas.v1beta1.provenance.Hash> getFileHashList();
   /**
+   *
+   *
    * <pre>
    * Collection of file hashes.
    * </pre>
@@ -25,6 +29,8 @@ public interface FileHashesOrBuilder extends
    */
   io.grafeas.v1beta1.provenance.Hash getFileHash(int index);
   /**
+   *
+   *
    * <pre>
    * Collection of file hashes.
    * </pre>
@@ -33,21 +39,23 @@ public interface FileHashesOrBuilder extends
    */
   int getFileHashCount();
   /**
+   *
+   *
    * <pre>
    * Collection of file hashes.
    * </pre>
    *
    * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
    */
-  java.util.List<? extends io.grafeas.v1beta1.provenance.HashOrBuilder> 
-      getFileHashOrBuilderList();
+  java.util.List<? extends io.grafeas.v1beta1.provenance.HashOrBuilder> getFileHashOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Collection of file hashes.
    * </pre>
    *
    * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
    */
-  io.grafeas.v1beta1.provenance.HashOrBuilder getFileHashOrBuilder(
-      int index);
+  io.grafeas.v1beta1.provenance.HashOrBuilder getFileHashOrBuilder(int index);
 }

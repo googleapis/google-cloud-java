@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1;
 
-public interface DeleteOccurrenceRequestOrBuilder extends
+public interface DeleteOccurrenceRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.DeleteOccurrenceRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The name of the occurrence in the form of
    * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
@@ -17,6 +20,8 @@ public interface DeleteOccurrenceRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The name of the occurrence in the form of
    * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
@@ -24,6 +29,5 @@ public interface DeleteOccurrenceRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

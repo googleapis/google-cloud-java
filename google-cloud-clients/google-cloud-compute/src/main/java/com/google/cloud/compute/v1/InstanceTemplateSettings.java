@@ -75,6 +75,13 @@ public class InstanceTemplateSettings extends ClientSettings<InstanceTemplateSet
     return ((InstanceTemplateStubSettings) getStubSettings()).getInstanceTemplateSettings();
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicyInstanceTemplate. */
+  public UnaryCallSettings<GetIamPolicyInstanceTemplateHttpRequest, Policy>
+      getIamPolicyInstanceTemplateSettings() {
+    return ((InstanceTemplateStubSettings) getStubSettings())
+        .getIamPolicyInstanceTemplateSettings();
+  }
+
   /** Returns the object with the settings used for calls to insertInstanceTemplate. */
   public UnaryCallSettings<InsertInstanceTemplateHttpRequest, Operation>
       insertInstanceTemplateSettings() {
@@ -83,10 +90,25 @@ public class InstanceTemplateSettings extends ClientSettings<InstanceTemplateSet
 
   /** Returns the object with the settings used for calls to listInstanceTemplates. */
   public PagedCallSettings<
-          ListInstanceTemplatesHttpRequest, InstanceTemplateList,
+          ListInstanceTemplatesHttpRequest,
+          InstanceTemplateList,
           ListInstanceTemplatesPagedResponse>
       listInstanceTemplatesSettings() {
     return ((InstanceTemplateStubSettings) getStubSettings()).listInstanceTemplatesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicyInstanceTemplate. */
+  public UnaryCallSettings<SetIamPolicyInstanceTemplateHttpRequest, Policy>
+      setIamPolicyInstanceTemplateSettings() {
+    return ((InstanceTemplateStubSettings) getStubSettings())
+        .setIamPolicyInstanceTemplateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissionsInstanceTemplate. */
+  public UnaryCallSettings<TestIamPermissionsInstanceTemplateHttpRequest, TestPermissionsResponse>
+      testIamPermissionsInstanceTemplateSettings() {
+    return ((InstanceTemplateStubSettings) getStubSettings())
+        .testIamPermissionsInstanceTemplateSettings();
   }
 
   public static final InstanceTemplateSettings create(InstanceTemplateStubSettings stub)
@@ -203,6 +225,12 @@ public class InstanceTemplateSettings extends ClientSettings<InstanceTemplateSet
       return getStubSettingsBuilder().getInstanceTemplateSettings();
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicyInstanceTemplate. */
+    public UnaryCallSettings.Builder<GetIamPolicyInstanceTemplateHttpRequest, Policy>
+        getIamPolicyInstanceTemplateSettings() {
+      return getStubSettingsBuilder().getIamPolicyInstanceTemplateSettings();
+    }
+
     /** Returns the builder for the settings used for calls to insertInstanceTemplate. */
     public UnaryCallSettings.Builder<InsertInstanceTemplateHttpRequest, Operation>
         insertInstanceTemplateSettings() {
@@ -211,10 +239,26 @@ public class InstanceTemplateSettings extends ClientSettings<InstanceTemplateSet
 
     /** Returns the builder for the settings used for calls to listInstanceTemplates. */
     public PagedCallSettings.Builder<
-            ListInstanceTemplatesHttpRequest, InstanceTemplateList,
+            ListInstanceTemplatesHttpRequest,
+            InstanceTemplateList,
             ListInstanceTemplatesPagedResponse>
         listInstanceTemplatesSettings() {
       return getStubSettingsBuilder().listInstanceTemplatesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicyInstanceTemplate. */
+    public UnaryCallSettings.Builder<SetIamPolicyInstanceTemplateHttpRequest, Policy>
+        setIamPolicyInstanceTemplateSettings() {
+      return getStubSettingsBuilder().setIamPolicyInstanceTemplateSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to testIamPermissionsInstanceTemplate.
+     */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsInstanceTemplateHttpRequest, TestPermissionsResponse>
+        testIamPermissionsInstanceTemplateSettings() {
+      return getStubSettingsBuilder().testIamPermissionsInstanceTemplateSettings();
     }
 
     @Override

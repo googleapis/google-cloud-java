@@ -65,7 +65,8 @@ import javax.annotation.Generated;
 public class SessionEntityTypesSettings extends ClientSettings<SessionEntityTypesSettings> {
   /** Returns the object with the settings used for calls to listSessionEntityTypes. */
   public PagedCallSettings<
-          ListSessionEntityTypesRequest, ListSessionEntityTypesResponse,
+          ListSessionEntityTypesRequest,
+          ListSessionEntityTypesResponse,
           ListSessionEntityTypesPagedResponse>
       listSessionEntityTypesSettings() {
     return ((SessionEntityTypesStubSettings) getStubSettings()).listSessionEntityTypesSettings();
@@ -194,7 +195,8 @@ public class SessionEntityTypesSettings extends ClientSettings<SessionEntityType
 
     /** Returns the builder for the settings used for calls to listSessionEntityTypes. */
     public PagedCallSettings.Builder<
-            ListSessionEntityTypesRequest, ListSessionEntityTypesResponse,
+            ListSessionEntityTypesRequest,
+            ListSessionEntityTypesResponse,
             ListSessionEntityTypesPagedResponse>
         listSessionEntityTypesSettings() {
       return getStubSettingsBuilder().listSessionEntityTypesSettings();

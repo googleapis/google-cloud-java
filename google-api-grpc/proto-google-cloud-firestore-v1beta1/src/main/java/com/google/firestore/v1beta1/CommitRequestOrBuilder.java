@@ -3,11 +3,14 @@
 
 package com.google.firestore.v1beta1;
 
-public interface CommitRequestOrBuilder extends
+public interface CommitRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.firestore.v1beta1.CommitRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The database name. In the format:
    * `projects/{project_id}/databases/{database_id}`.
@@ -17,6 +20,8 @@ public interface CommitRequestOrBuilder extends
    */
   java.lang.String getDatabase();
   /**
+   *
+   *
    * <pre>
    * The database name. In the format:
    * `projects/{project_id}/databases/{database_id}`.
@@ -24,10 +29,11 @@ public interface CommitRequestOrBuilder extends
    *
    * <code>string database = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getDatabaseBytes();
+  com.google.protobuf.ByteString getDatabaseBytes();
 
   /**
+   *
+   *
    * <pre>
    * The writes to apply.
    * Always executed atomically and in order.
@@ -35,9 +41,10 @@ public interface CommitRequestOrBuilder extends
    *
    * <code>repeated .google.firestore.v1beta1.Write writes = 2;</code>
    */
-  java.util.List<com.google.firestore.v1beta1.Write> 
-      getWritesList();
+  java.util.List<com.google.firestore.v1beta1.Write> getWritesList();
   /**
+   *
+   *
    * <pre>
    * The writes to apply.
    * Always executed atomically and in order.
@@ -47,6 +54,8 @@ public interface CommitRequestOrBuilder extends
    */
   com.google.firestore.v1beta1.Write getWrites(int index);
   /**
+   *
+   *
    * <pre>
    * The writes to apply.
    * Always executed atomically and in order.
@@ -56,6 +65,8 @@ public interface CommitRequestOrBuilder extends
    */
   int getWritesCount();
   /**
+   *
+   *
    * <pre>
    * The writes to apply.
    * Always executed atomically and in order.
@@ -63,9 +74,10 @@ public interface CommitRequestOrBuilder extends
    *
    * <code>repeated .google.firestore.v1beta1.Write writes = 2;</code>
    */
-  java.util.List<? extends com.google.firestore.v1beta1.WriteOrBuilder> 
-      getWritesOrBuilderList();
+  java.util.List<? extends com.google.firestore.v1beta1.WriteOrBuilder> getWritesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The writes to apply.
    * Always executed atomically and in order.
@@ -73,10 +85,11 @@ public interface CommitRequestOrBuilder extends
    *
    * <code>repeated .google.firestore.v1beta1.Write writes = 2;</code>
    */
-  com.google.firestore.v1beta1.WriteOrBuilder getWritesOrBuilder(
-      int index);
+  com.google.firestore.v1beta1.WriteOrBuilder getWritesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * If set, applies all writes in this transaction, and commits it.
    * </pre>

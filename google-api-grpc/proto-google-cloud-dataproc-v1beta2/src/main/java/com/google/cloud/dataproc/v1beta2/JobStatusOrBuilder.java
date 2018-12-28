@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface JobStatusOrBuilder extends
+public interface JobStatusOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.JobStatus)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Output only. A state message specifying the overall job state.
    * </pre>
@@ -16,6 +19,8 @@ public interface JobStatusOrBuilder extends
    */
   int getStateValue();
   /**
+   *
+   *
    * <pre>
    * Output only. A state message specifying the overall job state.
    * </pre>
@@ -25,6 +30,8 @@ public interface JobStatusOrBuilder extends
   com.google.cloud.dataproc.v1beta2.JobStatus.State getState();
 
   /**
+   *
+   *
    * <pre>
    * Output only. Optional job state details, such as an error
    * description if the state is &lt;code&gt;ERROR&lt;/code&gt;.
@@ -34,6 +41,8 @@ public interface JobStatusOrBuilder extends
    */
   java.lang.String getDetails();
   /**
+   *
+   *
    * <pre>
    * Output only. Optional job state details, such as an error
    * description if the state is &lt;code&gt;ERROR&lt;/code&gt;.
@@ -41,10 +50,11 @@ public interface JobStatusOrBuilder extends
    *
    * <code>string details = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getDetailsBytes();
+  com.google.protobuf.ByteString getDetailsBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The time when this state was entered.
    * </pre>
@@ -53,6 +63,8 @@ public interface JobStatusOrBuilder extends
    */
   boolean hasStateStartTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time when this state was entered.
    * </pre>
@@ -61,6 +73,8 @@ public interface JobStatusOrBuilder extends
    */
   com.google.protobuf.Timestamp getStateStartTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time when this state was entered.
    * </pre>
@@ -70,6 +84,8 @@ public interface JobStatusOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getStateStartTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. Additional state information, which includes
    * status reported by the agent.
@@ -79,6 +95,8 @@ public interface JobStatusOrBuilder extends
    */
   int getSubstateValue();
   /**
+   *
+   *
    * <pre>
    * Output only. Additional state information, which includes
    * status reported by the agent.

@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface CreateUptimeCheckConfigRequestOrBuilder extends
+public interface CreateUptimeCheckConfigRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.CreateUptimeCheckConfigRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The project in which to create the uptime check. The format
    *   is `projects/[PROJECT_ID]`.
@@ -17,6 +20,8 @@ public interface CreateUptimeCheckConfigRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The project in which to create the uptime check. The format
    *   is `projects/[PROJECT_ID]`.
@@ -24,10 +29,11 @@ public interface CreateUptimeCheckConfigRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The new uptime check configuration.
    * </pre>
@@ -36,6 +42,8 @@ public interface CreateUptimeCheckConfigRequestOrBuilder extends
    */
   boolean hasUptimeCheckConfig();
   /**
+   *
+   *
    * <pre>
    * The new uptime check configuration.
    * </pre>
@@ -44,6 +52,8 @@ public interface CreateUptimeCheckConfigRequestOrBuilder extends
    */
   com.google.monitoring.v3.UptimeCheckConfig getUptimeCheckConfig();
   /**
+   *
+   *
    * <pre>
    * The new uptime check configuration.
    * </pre>

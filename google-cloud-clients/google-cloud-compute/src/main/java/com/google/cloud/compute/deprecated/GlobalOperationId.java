@@ -19,9 +19,7 @@ package com.google.cloud.compute.deprecated;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Identity for a Google Compute Engine global operation.
- */
+/** Identity for a Google Compute Engine global operation. */
 public final class GlobalOperationId extends OperationId {
 
   private static final String REGEX = ResourceId.REGEX + "global/operations/([^/]+)";
@@ -60,16 +58,12 @@ public final class GlobalOperationId extends OperationId {
     return GlobalOperationId.of(projectId, getOperation());
   }
 
-  /**
-   * Returns a global operation identity given the operation name.
-   */
+  /** Returns a global operation identity given the operation name. */
   public static GlobalOperationId of(String operation) {
     return new GlobalOperationId(null, operation);
   }
 
-  /**
-   * Returns a global operation identity given project and operation names.
-   */
+  /** Returns a global operation identity given project and operation names. */
   public static GlobalOperationId of(String project, String operation) {
     return new GlobalOperationId(project, operation);
   }

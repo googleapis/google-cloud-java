@@ -24,10 +24,10 @@ package com.google.cloud.examples.storage.snippets;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
+import com.google.api.gax.paging.Page;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.BatchResult;
-import com.google.api.gax.paging.Page;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.Acl;
@@ -44,7 +44,6 @@ import com.google.cloud.storage.Storage.BlobGetOption;
 import com.google.cloud.storage.Storage.BlobListOption;
 import com.google.cloud.storage.Storage.BlobSourceOption;
 import com.google.cloud.storage.Storage.BlobTargetOption;
-import com.google.cloud.storage.Storage.BlobWriteOption;
 import com.google.cloud.storage.Storage.BucketField;
 import com.google.cloud.storage.Storage.BucketGetOption;
 import com.google.cloud.storage.Storage.BucketListOption;
@@ -57,17 +56,14 @@ import com.google.cloud.storage.StorageBatchResult;
 import com.google.cloud.storage.StorageClass;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
-import java.util.Date;
-
 import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.PrintStream;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.file.Path;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -1154,7 +1150,8 @@ public class StorageSnippets {
     System.out.println("Last Metadata Update: " + new Date(blob.getUpdateTime()));
     Boolean temporaryHoldIsEnabled = (blob.getTemporaryHold() != null && blob.getTemporaryHold());
     System.out.println("temporaryHold: " + (temporaryHoldIsEnabled ? "enabled" : "disabled"));
-    Boolean eventBasedHoldIsEnabled = (blob.getEventBasedHold() != null && blob.getEventBasedHold());
+    Boolean eventBasedHoldIsEnabled =
+        (blob.getEventBasedHold() != null && blob.getEventBasedHold());
     System.out.println("eventBasedHold: " + (eventBasedHoldIsEnabled ? "enabled" : "disabled"));
     if (blob.getRetentionExpirationTime() != null) {
       System.out.println("retentionExpirationTime: " + new Date(blob.getRetentionExpirationTime()));
@@ -1186,13 +1183,17 @@ public class StorageSnippets {
             BucketInfo.newBuilder(bucketName).setRetentionPeriod(retentionPeriod).build());
 
     System.out.println(
-        "Retention period for " + bucketName + " is now " + bucketWithRetentionPolicy.getRetentionPeriod());
+        "Retention period for "
+            + bucketName
+            + " is now "
+            + bucketWithRetentionPolicy.getRetentionPeriod());
     // [END storage_set_retention_policy]
     return bucketWithRetentionPolicy;
   }
 
   /** Example of removing a retention policy on a bucket */
-  public Bucket removeRetentionPolicy(String bucketName) throws StorageException, IllegalArgumentException {
+  public Bucket removeRetentionPolicy(String bucketName)
+      throws StorageException, IllegalArgumentException {
     // [START storage_remove_retention_policy]
     // Instantiate a Google Cloud Storage client
     Storage storage = StorageOptions.getDefaultInstance().getService();
@@ -1202,10 +1203,12 @@ public class StorageSnippets {
 
     Bucket bucket = storage.get(bucketName, BucketGetOption.fields(BucketField.RETENTION_POLICY));
     if (bucket.retentionPolicyIsLocked() != null && bucket.retentionPolicyIsLocked()) {
-       throw new IllegalArgumentException("Unable to remove retention period as retention policy is locked.");
+      throw new IllegalArgumentException(
+          "Unable to remove retention period as retention policy is locked.");
     }
 
-    Bucket bucketWithoutRetentionPolicy = bucket.toBuilder().setRetentionPeriod(null).build().update();
+    Bucket bucketWithoutRetentionPolicy =
+        bucket.toBuilder().setRetentionPeriod(null).build().update();
 
     System.out.println("Retention period for " + bucketName + " has been removed");
     // [END storage_remove_retention_policy]

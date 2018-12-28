@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface GetMetricDescriptorRequestOrBuilder extends
+public interface GetMetricDescriptorRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.GetMetricDescriptorRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The metric descriptor on which to execute the request. The format is
    * `"projects/{project_id_or_number}/metricDescriptors/{metric_id}"`.
@@ -19,6 +22,8 @@ public interface GetMetricDescriptorRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The metric descriptor on which to execute the request. The format is
    * `"projects/{project_id_or_number}/metricDescriptors/{metric_id}"`.
@@ -28,6 +33,5 @@ public interface GetMetricDescriptorRequestOrBuilder extends
    *
    * <code>string name = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

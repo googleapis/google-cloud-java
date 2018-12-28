@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p2beta1;
 
-public interface VertexOrBuilder extends
+public interface VertexOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p2beta1.Vertex)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * X coordinate.
    * </pre>
@@ -17,6 +20,8 @@ public interface VertexOrBuilder extends
   int getX();
 
   /**
+   *
+   *
    * <pre>
    * Y coordinate.
    * </pre>

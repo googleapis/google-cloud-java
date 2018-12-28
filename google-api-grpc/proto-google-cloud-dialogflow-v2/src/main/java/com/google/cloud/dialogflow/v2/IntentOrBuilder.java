@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2;
 
-public interface IntentOrBuilder extends
+public interface IntentOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.Intent)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required for all methods except `create` (`create` populates the name
    * automatically.
@@ -19,6 +22,8 @@ public interface IntentOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Required for all methods except `create` (`create` populates the name
    * automatically.
@@ -28,10 +33,11 @@ public interface IntentOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The name of this intent.
    * </pre>
@@ -40,16 +46,19 @@ public interface IntentOrBuilder extends
    */
   java.lang.String getDisplayName();
   /**
+   *
+   *
    * <pre>
    * Required. The name of this intent.
    * </pre>
    *
    * <code>string display_name = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getDisplayNameBytes();
+  com.google.protobuf.ByteString getDisplayNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. Indicates whether webhooks are enabled for the intent.
    * </pre>
@@ -58,6 +67,8 @@ public interface IntentOrBuilder extends
    */
   int getWebhookStateValue();
   /**
+   *
+   *
    * <pre>
    * Required. Indicates whether webhooks are enabled for the intent.
    * </pre>
@@ -67,6 +78,8 @@ public interface IntentOrBuilder extends
   com.google.cloud.dialogflow.v2.Intent.WebhookState getWebhookState();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The priority of this intent. Higher numbers represent higher
    * priorities. Zero or negative numbers mean that the intent is disabled.
@@ -77,6 +90,8 @@ public interface IntentOrBuilder extends
   int getPriority();
 
   /**
+   *
+   *
    * <pre>
    * Optional. Indicates whether this is a fallback intent.
    * </pre>
@@ -86,6 +101,8 @@ public interface IntentOrBuilder extends
   boolean getIsFallback();
 
   /**
+   *
+   *
    * <pre>
    * Optional. Indicates whether Machine Learning is disabled for the intent.
    * Note: If `ml_diabled` setting is set to true, then this intent is not
@@ -98,6 +115,8 @@ public interface IntentOrBuilder extends
   boolean getMlDisabled();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The list of context names required for this intent to be
    * triggered.
@@ -106,9 +125,10 @@ public interface IntentOrBuilder extends
    *
    * <code>repeated string input_context_names = 7;</code>
    */
-  java.util.List<java.lang.String>
-      getInputContextNamesList();
+  java.util.List<java.lang.String> getInputContextNamesList();
   /**
+   *
+   *
    * <pre>
    * Optional. The list of context names required for this intent to be
    * triggered.
@@ -119,6 +139,8 @@ public interface IntentOrBuilder extends
    */
   int getInputContextNamesCount();
   /**
+   *
+   *
    * <pre>
    * Optional. The list of context names required for this intent to be
    * triggered.
@@ -129,6 +151,8 @@ public interface IntentOrBuilder extends
    */
   java.lang.String getInputContextNames(int index);
   /**
+   *
+   *
    * <pre>
    * Optional. The list of context names required for this intent to be
    * triggered.
@@ -137,10 +161,11 @@ public interface IntentOrBuilder extends
    *
    * <code>repeated string input_context_names = 7;</code>
    */
-  com.google.protobuf.ByteString
-      getInputContextNamesBytes(int index);
+  com.google.protobuf.ByteString getInputContextNamesBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of event names that trigger the intent.
    * If the collection of input contexts is not empty, all of the contexts must
@@ -149,9 +174,10 @@ public interface IntentOrBuilder extends
    *
    * <code>repeated string events = 8;</code>
    */
-  java.util.List<java.lang.String>
-      getEventsList();
+  java.util.List<java.lang.String> getEventsList();
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of event names that trigger the intent.
    * If the collection of input contexts is not empty, all of the contexts must
@@ -162,6 +188,8 @@ public interface IntentOrBuilder extends
    */
   int getEventsCount();
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of event names that trigger the intent.
    * If the collection of input contexts is not empty, all of the contexts must
@@ -172,6 +200,8 @@ public interface IntentOrBuilder extends
    */
   java.lang.String getEvents(int index);
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of event names that trigger the intent.
    * If the collection of input contexts is not empty, all of the contexts must
@@ -180,10 +210,11 @@ public interface IntentOrBuilder extends
    *
    * <code>repeated string events = 8;</code>
    */
-  com.google.protobuf.ByteString
-      getEventsBytes(int index);
+  com.google.protobuf.ByteString getEventsBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of examples/templates that the agent is
    * trained on.
@@ -191,9 +222,10 @@ public interface IntentOrBuilder extends
    *
    * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9;</code>
    */
-  java.util.List<com.google.cloud.dialogflow.v2.Intent.TrainingPhrase> 
-      getTrainingPhrasesList();
+  java.util.List<com.google.cloud.dialogflow.v2.Intent.TrainingPhrase> getTrainingPhrasesList();
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of examples/templates that the agent is
    * trained on.
@@ -203,6 +235,8 @@ public interface IntentOrBuilder extends
    */
   com.google.cloud.dialogflow.v2.Intent.TrainingPhrase getTrainingPhrases(int index);
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of examples/templates that the agent is
    * trained on.
@@ -212,6 +246,8 @@ public interface IntentOrBuilder extends
    */
   int getTrainingPhrasesCount();
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of examples/templates that the agent is
    * trained on.
@@ -219,9 +255,11 @@ public interface IntentOrBuilder extends
    *
    * <code>repeated .google.cloud.dialogflow.v2.Intent.TrainingPhrase training_phrases = 9;</code>
    */
-  java.util.List<? extends com.google.cloud.dialogflow.v2.Intent.TrainingPhraseOrBuilder> 
+  java.util.List<? extends com.google.cloud.dialogflow.v2.Intent.TrainingPhraseOrBuilder>
       getTrainingPhrasesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of examples/templates that the agent is
    * trained on.
@@ -233,6 +271,8 @@ public interface IntentOrBuilder extends
       int index);
 
   /**
+   *
+   *
    * <pre>
    * Optional. The name of the action associated with the intent.
    * </pre>
@@ -241,16 +281,19 @@ public interface IntentOrBuilder extends
    */
   java.lang.String getAction();
   /**
+   *
+   *
    * <pre>
    * Optional. The name of the action associated with the intent.
    * </pre>
    *
    * <code>string action = 10;</code>
    */
-  com.google.protobuf.ByteString
-      getActionBytes();
+  com.google.protobuf.ByteString getActionBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of contexts that are activated when the intent
    * is matched. Context messages in this collection should not set the
@@ -261,9 +304,10 @@ public interface IntentOrBuilder extends
    *
    * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 11;</code>
    */
-  java.util.List<com.google.cloud.dialogflow.v2.Context> 
-      getOutputContextsList();
+  java.util.List<com.google.cloud.dialogflow.v2.Context> getOutputContextsList();
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of contexts that are activated when the intent
    * is matched. Context messages in this collection should not set the
@@ -276,6 +320,8 @@ public interface IntentOrBuilder extends
    */
   com.google.cloud.dialogflow.v2.Context getOutputContexts(int index);
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of contexts that are activated when the intent
    * is matched. Context messages in this collection should not set the
@@ -288,6 +334,8 @@ public interface IntentOrBuilder extends
    */
   int getOutputContextsCount();
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of contexts that are activated when the intent
    * is matched. Context messages in this collection should not set the
@@ -298,9 +346,11 @@ public interface IntentOrBuilder extends
    *
    * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 11;</code>
    */
-  java.util.List<? extends com.google.cloud.dialogflow.v2.ContextOrBuilder> 
+  java.util.List<? extends com.google.cloud.dialogflow.v2.ContextOrBuilder>
       getOutputContextsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of contexts that are activated when the intent
    * is matched. Context messages in this collection should not set the
@@ -311,10 +361,11 @@ public interface IntentOrBuilder extends
    *
    * <code>repeated .google.cloud.dialogflow.v2.Context output_contexts = 11;</code>
    */
-  com.google.cloud.dialogflow.v2.ContextOrBuilder getOutputContextsOrBuilder(
-      int index);
+  com.google.cloud.dialogflow.v2.ContextOrBuilder getOutputContextsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Optional. Indicates whether to delete all contexts in the current
    * session when this intent is matched.
@@ -325,15 +376,18 @@ public interface IntentOrBuilder extends
   boolean getResetContexts();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of parameters associated with the intent.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13;</code>
    */
-  java.util.List<com.google.cloud.dialogflow.v2.Intent.Parameter> 
-      getParametersList();
+  java.util.List<com.google.cloud.dialogflow.v2.Intent.Parameter> getParametersList();
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of parameters associated with the intent.
    * </pre>
@@ -342,6 +396,8 @@ public interface IntentOrBuilder extends
    */
   com.google.cloud.dialogflow.v2.Intent.Parameter getParameters(int index);
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of parameters associated with the intent.
    * </pre>
@@ -350,25 +406,30 @@ public interface IntentOrBuilder extends
    */
   int getParametersCount();
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of parameters associated with the intent.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13;</code>
    */
-  java.util.List<? extends com.google.cloud.dialogflow.v2.Intent.ParameterOrBuilder> 
+  java.util.List<? extends com.google.cloud.dialogflow.v2.Intent.ParameterOrBuilder>
       getParametersOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of parameters associated with the intent.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.Intent.Parameter parameters = 13;</code>
    */
-  com.google.cloud.dialogflow.v2.Intent.ParameterOrBuilder getParametersOrBuilder(
-      int index);
+  com.google.cloud.dialogflow.v2.Intent.ParameterOrBuilder getParametersOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of rich messages corresponding to the
    * `Response` field in the Dialogflow console.
@@ -376,9 +437,10 @@ public interface IntentOrBuilder extends
    *
    * <code>repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14;</code>
    */
-  java.util.List<com.google.cloud.dialogflow.v2.Intent.Message> 
-      getMessagesList();
+  java.util.List<com.google.cloud.dialogflow.v2.Intent.Message> getMessagesList();
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of rich messages corresponding to the
    * `Response` field in the Dialogflow console.
@@ -388,6 +450,8 @@ public interface IntentOrBuilder extends
    */
   com.google.cloud.dialogflow.v2.Intent.Message getMessages(int index);
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of rich messages corresponding to the
    * `Response` field in the Dialogflow console.
@@ -397,6 +461,8 @@ public interface IntentOrBuilder extends
    */
   int getMessagesCount();
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of rich messages corresponding to the
    * `Response` field in the Dialogflow console.
@@ -404,9 +470,11 @@ public interface IntentOrBuilder extends
    *
    * <code>repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14;</code>
    */
-  java.util.List<? extends com.google.cloud.dialogflow.v2.Intent.MessageOrBuilder> 
+  java.util.List<? extends com.google.cloud.dialogflow.v2.Intent.MessageOrBuilder>
       getMessagesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of rich messages corresponding to the
    * `Response` field in the Dialogflow console.
@@ -414,57 +482,78 @@ public interface IntentOrBuilder extends
    *
    * <code>repeated .google.cloud.dialogflow.v2.Intent.Message messages = 14;</code>
    */
-  com.google.cloud.dialogflow.v2.Intent.MessageOrBuilder getMessagesOrBuilder(
-      int index);
+  com.google.cloud.dialogflow.v2.Intent.MessageOrBuilder getMessagesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Optional. The list of platforms for which the first response will be
    * taken from among the messages assigned to the DEFAULT_PLATFORM.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15;
+   * </code>
    */
-  java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.Platform> getDefaultResponsePlatformsList();
+  java.util.List<com.google.cloud.dialogflow.v2.Intent.Message.Platform>
+      getDefaultResponsePlatformsList();
   /**
+   *
+   *
    * <pre>
    * Optional. The list of platforms for which the first response will be
    * taken from among the messages assigned to the DEFAULT_PLATFORM.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15;
+   * </code>
    */
   int getDefaultResponsePlatformsCount();
   /**
+   *
+   *
    * <pre>
    * Optional. The list of platforms for which the first response will be
    * taken from among the messages assigned to the DEFAULT_PLATFORM.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15;
+   * </code>
    */
   com.google.cloud.dialogflow.v2.Intent.Message.Platform getDefaultResponsePlatforms(int index);
   /**
+   *
+   *
    * <pre>
    * Optional. The list of platforms for which the first response will be
    * taken from among the messages assigned to the DEFAULT_PLATFORM.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15;
+   * </code>
    */
-  java.util.List<java.lang.Integer>
-  getDefaultResponsePlatformsValueList();
+  java.util.List<java.lang.Integer> getDefaultResponsePlatformsValueList();
   /**
+   *
+   *
    * <pre>
    * Optional. The list of platforms for which the first response will be
    * taken from among the messages assigned to the DEFAULT_PLATFORM.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15;</code>
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.Intent.Message.Platform default_response_platforms = 15;
+   * </code>
    */
   int getDefaultResponsePlatformsValue(int index);
 
   /**
+   *
+   *
    * <pre>
    * The unique identifier of the root intent in the chain of followup intents.
    * It identifies the correct followup intents chain for this intent.
@@ -475,6 +564,8 @@ public interface IntentOrBuilder extends
    */
   java.lang.String getRootFollowupIntentName();
   /**
+   *
+   *
    * <pre>
    * The unique identifier of the root intent in the chain of followup intents.
    * It identifies the correct followup intents chain for this intent.
@@ -483,10 +574,11 @@ public interface IntentOrBuilder extends
    *
    * <code>string root_followup_intent_name = 16;</code>
    */
-  com.google.protobuf.ByteString
-      getRootFollowupIntentNameBytes();
+  com.google.protobuf.ByteString getRootFollowupIntentNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The unique identifier of the parent intent in the chain of followup
    * intents.
@@ -498,6 +590,8 @@ public interface IntentOrBuilder extends
    */
   java.lang.String getParentFollowupIntentName();
   /**
+   *
+   *
    * <pre>
    * The unique identifier of the parent intent in the chain of followup
    * intents.
@@ -507,54 +601,68 @@ public interface IntentOrBuilder extends
    *
    * <code>string parent_followup_intent_name = 17;</code>
    */
-  com.google.protobuf.ByteString
-      getParentFollowupIntentNameBytes();
+  com.google.protobuf.ByteString getParentFollowupIntentNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. Collection of information about all followup intents that have
    * name of this intent as a root_name.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;</code>
+   * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
+   * </code>
    */
-  java.util.List<com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo> 
+  java.util.List<com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo>
       getFollowupIntentInfoList();
   /**
+   *
+   *
    * <pre>
    * Optional. Collection of information about all followup intents that have
    * name of this intent as a root_name.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;</code>
+   * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
+   * </code>
    */
   com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo getFollowupIntentInfo(int index);
   /**
+   *
+   *
    * <pre>
    * Optional. Collection of information about all followup intents that have
    * name of this intent as a root_name.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;</code>
+   * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
+   * </code>
    */
   int getFollowupIntentInfoCount();
   /**
+   *
+   *
    * <pre>
    * Optional. Collection of information about all followup intents that have
    * name of this intent as a root_name.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;</code>
+   * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
+   * </code>
    */
-  java.util.List<? extends com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfoOrBuilder> 
+  java.util.List<? extends com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfoOrBuilder>
       getFollowupIntentInfoOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Optional. Collection of information about all followup intents that have
    * name of this intent as a root_name.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;</code>
+   * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;
+   * </code>
    */
   com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfoOrBuilder getFollowupIntentInfoOrBuilder(
       int index);

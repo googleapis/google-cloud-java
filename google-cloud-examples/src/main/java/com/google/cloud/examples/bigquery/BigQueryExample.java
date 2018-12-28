@@ -56,9 +56,10 @@ import java.util.Map;
  *
  * <p>This example demonstrates a simple/typical BigQuery usage.
  *
- * <p>See the
- * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/google-cloud-examples/README.md">
+ * <p>See the <a
+ * href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/google-cloud-examples/README.md">
  * README</a> for compilation instructions. Run this code with
+ *
  * <pre>{@code target/appassembler/bin/BigQueryExample [<project_id>]
  * list datasets |
  * list tables <dataset> |
@@ -84,11 +85,11 @@ import java.util.Map;
  * supplied). Second parameter is a BigQuery operation and can be used to demonstrate its usage. For
  * operations that apply to more than one entity (`list`, `create`, `info` and `delete`) the third
  * parameter specifies the entity. {@code <primitiveType>} indicates that only primitive types are
- * supported by the {@code create table} and {@code create external-table} operations
- * ({@code string}, {@code float}, {@code integer}, {@code timestamp}, {@code boolean},
- * {@code bytes}). {@code <sourceUri>}, {@code <sourceUris>} and {@code <destinationUris>}
- * parameters are URIs to Google Cloud Storage blobs, in the form {@code gs://bucket/path}.
- * See each action's run method for the specific BigQuery interaction.
+ * supported by the {@code create table} and {@code create external-table} operations ({@code
+ * string}, {@code float}, {@code integer}, {@code timestamp}, {@code boolean}, {@code bytes}).
+ * {@code <sourceUri>}, {@code <sourceUris>} and {@code <destinationUris>} parameters are URIs to
+ * Google Cloud Storage blobs, in the form {@code gs://bucket/path}. See each action's run method
+ * for the specific BigQuery interaction.
  */
 public class BigQueryExample {
 
@@ -467,8 +468,10 @@ public class BigQueryExample {
         String table = args[1];
         TableId tableId = TableId.of(dataset, table);
         ExternalTableDefinition externalTableDefinition =
-            ExternalTableDefinition.of(args[args.length - 1],
-                parseSchema(args, 3, args.length - 1), FormatOptions.of(args[2]));
+            ExternalTableDefinition.of(
+                args[args.length - 1],
+                parseSchema(args, 3, args.length - 1),
+                FormatOptions.of(args[2]));
         return TableInfo.of(tableId, externalTableDefinition);
       }
       throw new IllegalArgumentException("Missing required arguments.");
@@ -481,8 +484,8 @@ public class BigQueryExample {
   }
 
   /**
-   * This class demonstrates how to create a BigQuery View Table (i.e. a table created from a
-   * {@link ViewDefinition}).
+   * This class demonstrates how to create a BigQuery View Table (i.e. a table created from a {@link
+   * ViewDefinition}).
    *
    * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables/insert">Tables: insert
    *     </a>
@@ -543,8 +546,9 @@ public class BigQueryExample {
         String table = args[1];
         String format = args[2];
         TableId tableId = TableId.of(dataset, table);
-        LoadJobConfiguration configuration = LoadJobConfiguration.of(
-            tableId, Arrays.asList(args).subList(3, args.length), FormatOptions.of(format));
+        LoadJobConfiguration configuration =
+            LoadJobConfiguration.of(
+                tableId, Arrays.asList(args).subList(3, args.length), FormatOptions.of(format));
         return JobInfo.of(configuration);
       }
       throw new IllegalArgumentException("Missing required arguments.");
@@ -569,8 +573,9 @@ public class BigQueryExample {
         String table = args[1];
         String format = args[2];
         TableId tableId = TableId.of(dataset, table);
-        ExtractJobConfiguration configuration = ExtractJobConfiguration.of(
-            tableId, Arrays.asList(args).subList(3, args.length), format);
+        ExtractJobConfiguration configuration =
+            ExtractJobConfiguration.of(
+                tableId, Arrays.asList(args).subList(3, args.length), format);
         return JobInfo.of(configuration);
       }
       throw new IllegalArgumentException("Missing required arguments.");
@@ -629,7 +634,7 @@ public class BigQueryExample {
       String message;
       if (args.length == 1) {
         return QueryJobConfiguration.of(args[0]);
-      }  else if (args.length > 1) {
+      } else if (args.length > 1) {
         message = "Too many arguments.";
       } else {
         message = "Missing required query.";
@@ -723,7 +728,8 @@ public class BigQueryExample {
         actionAndParams.append(' ').append(param.replace("\n", "\n\t\t"));
       }
     }
-    System.out.printf("Usage: %s [<project_id>] operation [entity] <args>*%s%n",
+    System.out.printf(
+        "Usage: %s [<project_id>] operation [entity] <args>*%s%n",
         BigQueryExample.class.getSimpleName(), actionAndParams);
   }
 

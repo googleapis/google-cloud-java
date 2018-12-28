@@ -14,13 +14,12 @@
 
 package com.google.logging.v2;
 
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import com.google.api.pathtemplate.PathTemplate;
-import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
@@ -56,18 +55,11 @@ public class ProjectMetricName extends MetricName {
   }
 
   public static ProjectMetricName of(String project, String metric) {
-    return newBuilder()
-      .setProject(project)
-      .setMetric(metric)
-      .build();
+    return newBuilder().setProject(project).setMetric(metric).build();
   }
 
   public static String format(String project, String metric) {
-    return newBuilder()
-      .setProject(project)
-      .setMetric(metric)
-      .build()
-      .toString();
+    return newBuilder().setProject(project).setMetric(metric).build().toString();
   }
 
   public static ProjectMetricName parse(String formattedString) {
@@ -75,7 +67,8 @@ public class ProjectMetricName extends MetricName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "ProjectMetricName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "ProjectMetricName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("metric"));
   }
 
@@ -150,8 +143,7 @@ public class ProjectMetricName extends MetricName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(ProjectMetricName projectMetricName) {
       project = projectMetricName.project;
@@ -170,8 +162,7 @@ public class ProjectMetricName extends MetricName {
     }
     if (o instanceof ProjectMetricName) {
       ProjectMetricName that = (ProjectMetricName) o;
-      return (this.project.equals(that.project))
-          && (this.metric.equals(that.metric));
+      return (this.project.equals(that.project)) && (this.metric.equals(that.metric));
     }
     return false;
   }
@@ -186,4 +177,3 @@ public class ProjectMetricName extends MetricName {
     return h;
   }
 }
-

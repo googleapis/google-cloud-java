@@ -3,20 +3,24 @@
 
 package com.google.containeranalysis.v1beta1;
 
-public interface ListScanConfigsResponseOrBuilder extends
+public interface ListScanConfigsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.devtools.containeranalysis.v1beta1.ListScanConfigsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The scan configurations requested.
    * </pre>
    *
    * <code>repeated .google.devtools.containeranalysis.v1beta1.ScanConfig scan_configs = 1;</code>
    */
-  java.util.List<com.google.containeranalysis.v1beta1.ScanConfig> 
-      getScanConfigsList();
+  java.util.List<com.google.containeranalysis.v1beta1.ScanConfig> getScanConfigsList();
   /**
+   *
+   *
    * <pre>
    * The scan configurations requested.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListScanConfigsResponseOrBuilder extends
    */
   com.google.containeranalysis.v1beta1.ScanConfig getScanConfigs(int index);
   /**
+   *
+   *
    * <pre>
    * The scan configurations requested.
    * </pre>
@@ -33,25 +39,30 @@ public interface ListScanConfigsResponseOrBuilder extends
    */
   int getScanConfigsCount();
   /**
+   *
+   *
    * <pre>
    * The scan configurations requested.
    * </pre>
    *
    * <code>repeated .google.devtools.containeranalysis.v1beta1.ScanConfig scan_configs = 1;</code>
    */
-  java.util.List<? extends com.google.containeranalysis.v1beta1.ScanConfigOrBuilder> 
+  java.util.List<? extends com.google.containeranalysis.v1beta1.ScanConfigOrBuilder>
       getScanConfigsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The scan configurations requested.
    * </pre>
    *
    * <code>repeated .google.devtools.containeranalysis.v1beta1.ScanConfig scan_configs = 1;</code>
    */
-  com.google.containeranalysis.v1beta1.ScanConfigOrBuilder getScanConfigsOrBuilder(
-      int index);
+  com.google.containeranalysis.v1beta1.ScanConfigOrBuilder getScanConfigsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * The next pagination token in the list response. It should be used as
    * `page_token` for the following request. An empty value means no more
@@ -62,6 +73,8 @@ public interface ListScanConfigsResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * The next pagination token in the list response. It should be used as
    * `page_token` for the following request. An empty value means no more
@@ -70,6 +83,5 @@ public interface ListScanConfigsResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

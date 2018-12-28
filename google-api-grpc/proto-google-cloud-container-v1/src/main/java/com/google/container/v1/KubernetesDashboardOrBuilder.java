@@ -3,11 +3,14 @@
 
 package com.google.container.v1;
 
-public interface KubernetesDashboardOrBuilder extends
+public interface KubernetesDashboardOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.KubernetesDashboard)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Whether the Kubernetes Dashboard is enabled for this cluster.
    * </pre>

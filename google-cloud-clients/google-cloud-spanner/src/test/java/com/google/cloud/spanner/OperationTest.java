@@ -45,12 +45,9 @@ public class OperationTest {
   private static final String NAME =
       "projects/test-project/instances/test-instance/databases/database-1";
 
-  @Mock
-  private SpannerRpc rpc;
-  @Mock
-  private DatabaseAdminClient dbClient;
-  @Mock
-  private ApiClock clock;
+  @Mock private SpannerRpc rpc;
+  @Mock private DatabaseAdminClient dbClient;
+  @Mock private ApiClock clock;
 
   @Rule public ExpectedException expectedException = ExpectedException.none();
 
@@ -164,8 +161,10 @@ public class OperationTest {
         newBuilder().setName("op1").setDone(true).setResponse(Any.pack(db)).build();
     when(rpc.getOperation("op1")).thenReturn(proto, proto2);
 
-    op = op.waitFor(RetryOption.totalTimeout(Duration.ofSeconds(3)),
-        RetryOption.initialRetryDelay(Duration.ZERO));
+    op =
+        op.waitFor(
+            RetryOption.totalTimeout(Duration.ofSeconds(3)),
+            RetryOption.initialRetryDelay(Duration.ZERO));
 
     assertThat(op.getName()).isEqualTo("op1");
     assertThat(op.isDone()).isTrue();
@@ -182,7 +181,8 @@ public class OperationTest {
     when(clock.nanoTime()).thenReturn(0L, 50_000_000L, 100_000_000L, 150_000_000L);
 
     expectedException.expect(isSpannerException(ErrorCode.DEADLINE_EXCEEDED));
-    op.waitFor(RetryOption.totalTimeout(Duration.ofMillis(100L)),
+    op.waitFor(
+        RetryOption.totalTimeout(Duration.ofMillis(100L)),
         RetryOption.initialRetryDelay(Duration.ZERO));
   }
 }

@@ -22,24 +22,19 @@ import static org.junit.Assert.fail;
 
 import com.google.cloud.ExceptionHandler.Interceptor;
 import com.google.cloud.ExceptionHandler.Interceptor.RetryResult;
-
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.channels.ClosedByInterruptException;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicReference;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
-/**
- * Tests for {@link ExceptionHandler}.
- */
+/** Tests for {@link ExceptionHandler}. */
 public class ExceptionHandlerTest {
 
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void testVerifyCaller() {
@@ -50,8 +45,7 @@ public class ExceptionHandlerTest {
       }
     }
 
-    class B extends A {
-    }
+    class B extends A {}
 
     class C extends A {
       @Override
@@ -90,9 +84,10 @@ public class ExceptionHandlerTest {
     assertValidCallable(new E(), handler);
     assertInvalidCallable(new F(), handler);
 
-    handler = ExceptionHandler.newBuilder()
-        .retryOn(FileNotFoundException.class, NullPointerException.class)
-        .build();
+    handler =
+        ExceptionHandler.newBuilder()
+            .retryOn(FileNotFoundException.class, NullPointerException.class)
+            .build();
     assertInvalidCallable(new A(), handler);
     assertInvalidCallable(new B(), handler);
     assertValidCallable(new C(), handler);
@@ -121,10 +116,13 @@ public class ExceptionHandlerTest {
     assertTrue(handler.shouldRetry(new ClosedByInterruptException(), null));
     assertFalse(handler.shouldRetry(new RuntimeException(), null));
 
-    ExceptionHandler.Builder builder = ExceptionHandler.newBuilder()
-        .retryOn(IOException.class, NullPointerException.class)
-        .abortOn(RuntimeException.class, ClosedByInterruptException.class,
-            InterruptedException.class);
+    ExceptionHandler.Builder builder =
+        ExceptionHandler.newBuilder()
+            .retryOn(IOException.class, NullPointerException.class)
+            .abortOn(
+                RuntimeException.class,
+                ClosedByInterruptException.class,
+                InterruptedException.class);
 
     handler = builder.build();
     assertTrue(handler.shouldRetry(new IOException(), null));
@@ -135,18 +133,19 @@ public class ExceptionHandlerTest {
 
     final AtomicReference<RetryResult> before = new AtomicReference<>(RetryResult.NO_RETRY);
     @SuppressWarnings("serial")
-    Interceptor interceptor = new Interceptor() {
+    Interceptor interceptor =
+        new Interceptor() {
 
-      @Override
-      public RetryResult afterEval(Exception exception, RetryResult retryResult) {
-        return retryResult == RetryResult.NO_RETRY ? RetryResult.RETRY : RetryResult.NO_RETRY;
-      }
+          @Override
+          public RetryResult afterEval(Exception exception, RetryResult retryResult) {
+            return retryResult == RetryResult.NO_RETRY ? RetryResult.RETRY : RetryResult.NO_RETRY;
+          }
 
-      @Override
-      public RetryResult beforeEval(Exception exception) {
-        return before.get();
-      }
-    };
+          @Override
+          public RetryResult beforeEval(Exception exception) {
+            return before.get();
+          }
+        };
 
     builder.addInterceptors(interceptor);
     handler = builder.build();
@@ -174,19 +173,19 @@ public class ExceptionHandlerTest {
   @Test
   public void testNullRetryResultFromBeforeEval() {
     @SuppressWarnings("serial")
-    Interceptor interceptor = new Interceptor() {
+    Interceptor interceptor =
+        new Interceptor() {
 
-      @Override
-      public RetryResult beforeEval(Exception exception) {
-        return null;
-      }
+          @Override
+          public RetryResult beforeEval(Exception exception) {
+            return null;
+          }
 
-      @Override
-      public RetryResult afterEval(Exception exception, RetryResult retryResult) {
-        return RetryResult.CONTINUE_EVALUATION;
-      }
-
-    };
+          @Override
+          public RetryResult afterEval(Exception exception, RetryResult retryResult) {
+            return RetryResult.CONTINUE_EVALUATION;
+          }
+        };
 
     ExceptionHandler handler = ExceptionHandler.newBuilder().addInterceptors(interceptor).build();
     thrown.expect(NullPointerException.class);
@@ -196,19 +195,19 @@ public class ExceptionHandlerTest {
   @Test
   public void testNullRetryResultFromAfterEval() {
     @SuppressWarnings("serial")
-    Interceptor interceptor = new Interceptor() {
+    Interceptor interceptor =
+        new Interceptor() {
 
-      @Override
-      public RetryResult beforeEval(Exception exception) {
-        return RetryResult.CONTINUE_EVALUATION;
-      }
+          @Override
+          public RetryResult beforeEval(Exception exception) {
+            return RetryResult.CONTINUE_EVALUATION;
+          }
 
-      @Override
-      public RetryResult afterEval(Exception exception, RetryResult retryResult) {
-        return null;
-      }
-
-    };
+          @Override
+          public RetryResult afterEval(Exception exception, RetryResult retryResult) {
+            return null;
+          }
+        };
 
     ExceptionHandler handler = ExceptionHandler.newBuilder().addInterceptors(interceptor).build();
     thrown.expect(NullPointerException.class);

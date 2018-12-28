@@ -41,7 +41,7 @@ abstract class PublisherStats {
   }
 
   @AutoValue.Builder
-  public static abstract class Builder {
+  public abstract static class Builder {
     public abstract Builder setAckedMessages(long value);
 
     public abstract Builder setFailedMessages(long value);

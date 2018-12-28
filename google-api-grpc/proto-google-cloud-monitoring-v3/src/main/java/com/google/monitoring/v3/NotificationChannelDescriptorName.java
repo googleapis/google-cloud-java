@@ -14,20 +14,21 @@
 
 package com.google.monitoring.v3;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class NotificationChannelDescriptorName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/notificationChannelDescriptors/{channel_descriptor}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/notificationChannelDescriptors/{channel_descriptor}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -56,18 +57,15 @@ public class NotificationChannelDescriptorName implements ResourceName {
   }
 
   public static NotificationChannelDescriptorName of(String project, String channelDescriptor) {
-    return newBuilder()
-      .setProject(project)
-      .setChannelDescriptor(channelDescriptor)
-      .build();
+    return newBuilder().setProject(project).setChannelDescriptor(channelDescriptor).build();
   }
 
   public static String format(String project, String channelDescriptor) {
     return newBuilder()
-      .setProject(project)
-      .setChannelDescriptor(channelDescriptor)
-      .build()
-      .toString();
+        .setProject(project)
+        .setChannelDescriptor(channelDescriptor)
+        .build()
+        .toString();
   }
 
   public static NotificationChannelDescriptorName parse(String formattedString) {
@@ -75,7 +73,9 @@ public class NotificationChannelDescriptorName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "NotificationChannelDescriptorName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString,
+            "NotificationChannelDescriptorName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("channel_descriptor"));
   }
 
@@ -150,8 +150,7 @@ public class NotificationChannelDescriptorName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(NotificationChannelDescriptorName notificationChannelDescriptorName) {
       project = notificationChannelDescriptorName.project;
@@ -186,4 +185,3 @@ public class NotificationChannelDescriptorName implements ResourceName {
     return h;
   }
 }
-

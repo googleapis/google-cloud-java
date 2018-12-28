@@ -3,13 +3,16 @@
 
 package com.google.cloud.iot.v1;
 
-public interface UpdateDeviceRequestOrBuilder extends
+public interface UpdateDeviceRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.iot.v1.UpdateDeviceRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
-   * The new values for the device registry. The `id` and `num_id` fields must
+   * The new values for the device. The `id` and `num_id` fields must
    * be empty, and the field `name` must specify the name path. For example,
    * `projects/p0/locations/us-central1/registries/registry0/devices/device0`or
    * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
@@ -19,8 +22,10 @@ public interface UpdateDeviceRequestOrBuilder extends
    */
   boolean hasDevice();
   /**
+   *
+   *
    * <pre>
-   * The new values for the device registry. The `id` and `num_id` fields must
+   * The new values for the device. The `id` and `num_id` fields must
    * be empty, and the field `name` must specify the name path. For example,
    * `projects/p0/locations/us-central1/registries/registry0/devices/device0`or
    * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
@@ -30,8 +35,10 @@ public interface UpdateDeviceRequestOrBuilder extends
    */
   com.google.cloud.iot.v1.Device getDevice();
   /**
+   *
+   *
    * <pre>
-   * The new values for the device registry. The `id` and `num_id` fields must
+   * The new values for the device. The `id` and `num_id` fields must
    * be empty, and the field `name` must specify the name path. For example,
    * `projects/p0/locations/us-central1/registries/registry0/devices/device0`or
    * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
@@ -42,6 +49,8 @@ public interface UpdateDeviceRequestOrBuilder extends
   com.google.cloud.iot.v1.DeviceOrBuilder getDeviceOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Only updates the `device` fields indicated by this mask.
    * The field mask must not be empty, and it must not contain fields that
@@ -53,6 +62,8 @@ public interface UpdateDeviceRequestOrBuilder extends
    */
   boolean hasUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Only updates the `device` fields indicated by this mask.
    * The field mask must not be empty, and it must not contain fields that
@@ -64,6 +75,8 @@ public interface UpdateDeviceRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Only updates the `device` fields indicated by this mask.
    * The field mask must not be empty, and it must not contain fields that

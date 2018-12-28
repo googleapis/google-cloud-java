@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface AggregationOrBuilder extends
+public interface AggregationOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.Aggregation)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The alignment period for per-[time series][google.monitoring.v3.TimeSeries]
    * alignment. If present, `alignmentPeriod` must be at least 60
@@ -23,6 +26,8 @@ public interface AggregationOrBuilder extends
    */
   boolean hasAlignmentPeriod();
   /**
+   *
+   *
    * <pre>
    * The alignment period for per-[time series][google.monitoring.v3.TimeSeries]
    * alignment. If present, `alignmentPeriod` must be at least 60
@@ -38,6 +43,8 @@ public interface AggregationOrBuilder extends
    */
   com.google.protobuf.Duration getAlignmentPeriod();
   /**
+   *
+   *
    * <pre>
    * The alignment period for per-[time series][google.monitoring.v3.TimeSeries]
    * alignment. If present, `alignmentPeriod` must be at least 60
@@ -54,6 +61,8 @@ public interface AggregationOrBuilder extends
   com.google.protobuf.DurationOrBuilder getAlignmentPeriodOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The approach to be used to align individual time series. Not all
    * alignment functions may be applied to all time series, depending
@@ -71,6 +80,8 @@ public interface AggregationOrBuilder extends
    */
   int getPerSeriesAlignerValue();
   /**
+   *
+   *
    * <pre>
    * The approach to be used to align individual time series. Not all
    * alignment functions may be applied to all time series, depending
@@ -89,6 +100,8 @@ public interface AggregationOrBuilder extends
   com.google.monitoring.v3.Aggregation.Aligner getPerSeriesAligner();
 
   /**
+   *
+   *
    * <pre>
    * The approach to be used to combine time series. Not all reducer
    * functions may be applied to all time series, depending on the
@@ -106,6 +119,8 @@ public interface AggregationOrBuilder extends
    */
   int getCrossSeriesReducerValue();
   /**
+   *
+   *
    * <pre>
    * The approach to be used to combine time series. Not all reducer
    * functions may be applied to all time series, depending on the
@@ -124,6 +139,8 @@ public interface AggregationOrBuilder extends
   com.google.monitoring.v3.Aggregation.Reducer getCrossSeriesReducer();
 
   /**
+   *
+   *
    * <pre>
    * The set of fields to preserve when `crossSeriesReducer` is
    * specified. The `groupByFields` determine how the time series are
@@ -143,9 +160,10 @@ public interface AggregationOrBuilder extends
    *
    * <code>repeated string group_by_fields = 5;</code>
    */
-  java.util.List<java.lang.String>
-      getGroupByFieldsList();
+  java.util.List<java.lang.String> getGroupByFieldsList();
   /**
+   *
+   *
    * <pre>
    * The set of fields to preserve when `crossSeriesReducer` is
    * specified. The `groupByFields` determine how the time series are
@@ -167,6 +185,8 @@ public interface AggregationOrBuilder extends
    */
   int getGroupByFieldsCount();
   /**
+   *
+   *
    * <pre>
    * The set of fields to preserve when `crossSeriesReducer` is
    * specified. The `groupByFields` determine how the time series are
@@ -188,6 +208,8 @@ public interface AggregationOrBuilder extends
    */
   java.lang.String getGroupByFields(int index);
   /**
+   *
+   *
    * <pre>
    * The set of fields to preserve when `crossSeriesReducer` is
    * specified. The `groupByFields` determine how the time series are
@@ -207,6 +229,5 @@ public interface AggregationOrBuilder extends
    *
    * <code>repeated string group_by_fields = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getGroupByFieldsBytes(int index);
+  com.google.protobuf.ByteString getGroupByFieldsBytes(int index);
 }

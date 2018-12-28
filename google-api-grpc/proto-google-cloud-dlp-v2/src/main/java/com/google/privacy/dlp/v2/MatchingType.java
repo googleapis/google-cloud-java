@@ -4,6 +4,8 @@
 package com.google.privacy.dlp.v2;
 
 /**
+ *
+ *
  * <pre>
  * Type of the match which can be applied to different ways of matching, like
  * Dictionary, regular expression and intersecting with findings of another
@@ -12,9 +14,10 @@ package com.google.privacy.dlp.v2;
  *
  * Protobuf enum {@code google.privacy.dlp.v2.MatchingType}
  */
-public enum MatchingType
-    implements com.google.protobuf.ProtocolMessageEnum {
+public enum MatchingType implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   *
+   *
    * <pre>
    * Invalid.
    * </pre>
@@ -23,6 +26,8 @@ public enum MatchingType
    */
   MATCHING_TYPE_UNSPECIFIED(0),
   /**
+   *
+   *
    * <pre>
    * Full match.
    * - Dictionary: join of Dictionary results matched complete finding quote
@@ -34,6 +39,8 @@ public enum MatchingType
    */
   MATCHING_TYPE_FULL_MATCH(1),
   /**
+   *
+   *
    * <pre>
    * Partial match.
    * - Dictionary: at least one of the tokens in the finding matches
@@ -45,6 +52,8 @@ public enum MatchingType
    */
   MATCHING_TYPE_PARTIAL_MATCH(2),
   /**
+   *
+   *
    * <pre>
    * Inverse match.
    * - Dictionary: no tokens in the finding match the dictionary
@@ -59,6 +68,8 @@ public enum MatchingType
   ;
 
   /**
+   *
+   *
    * <pre>
    * Invalid.
    * </pre>
@@ -67,6 +78,8 @@ public enum MatchingType
    */
   public static final int MATCHING_TYPE_UNSPECIFIED_VALUE = 0;
   /**
+   *
+   *
    * <pre>
    * Full match.
    * - Dictionary: join of Dictionary results matched complete finding quote
@@ -78,6 +91,8 @@ public enum MatchingType
    */
   public static final int MATCHING_TYPE_FULL_MATCH_VALUE = 1;
   /**
+   *
+   *
    * <pre>
    * Partial match.
    * - Dictionary: at least one of the tokens in the finding matches
@@ -89,6 +104,8 @@ public enum MatchingType
    */
   public static final int MATCHING_TYPE_PARTIAL_MATCH_VALUE = 2;
   /**
+   *
+   *
    * <pre>
    * Inverse match.
    * - Dictionary: no tokens in the finding match the dictionary
@@ -100,7 +117,6 @@ public enum MatchingType
    */
   public static final int MATCHING_TYPE_INVERSE_MATCH_VALUE = 3;
 
-
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -109,9 +125,7 @@ public enum MatchingType
     return value;
   }
 
-  /**
-   * @deprecated Use {@link #forNumber(int)} instead.
-   */
+  /** @deprecated Use {@link #forNumber(int)} instead. */
   @java.lang.Deprecated
   public static MatchingType valueOf(int value) {
     return forNumber(value);
@@ -119,46 +133,47 @@ public enum MatchingType
 
   public static MatchingType forNumber(int value) {
     switch (value) {
-      case 0: return MATCHING_TYPE_UNSPECIFIED;
-      case 1: return MATCHING_TYPE_FULL_MATCH;
-      case 2: return MATCHING_TYPE_PARTIAL_MATCH;
-      case 3: return MATCHING_TYPE_INVERSE_MATCH;
-      default: return null;
+      case 0:
+        return MATCHING_TYPE_UNSPECIFIED;
+      case 1:
+        return MATCHING_TYPE_FULL_MATCH;
+      case 2:
+        return MATCHING_TYPE_PARTIAL_MATCH;
+      case 3:
+        return MATCHING_TYPE_INVERSE_MATCH;
+      default:
+        return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<MatchingType>
-      internalGetValueMap() {
+  public static com.google.protobuf.Internal.EnumLiteMap<MatchingType> internalGetValueMap() {
     return internalValueMap;
   }
-  private static final com.google.protobuf.Internal.EnumLiteMap<
-      MatchingType> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<MatchingType>() {
-          public MatchingType findValueByNumber(int number) {
-            return MatchingType.forNumber(number);
-          }
-        };
 
-  public final com.google.protobuf.Descriptors.EnumValueDescriptor
-      getValueDescriptor() {
+  private static final com.google.protobuf.Internal.EnumLiteMap<MatchingType> internalValueMap =
+      new com.google.protobuf.Internal.EnumLiteMap<MatchingType>() {
+        public MatchingType findValueByNumber(int number) {
+          return MatchingType.forNumber(number);
+        }
+      };
+
+  public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
     return getDescriptor().getValues().get(ordinal());
   }
-  public final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptorForType() {
+
+  public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
     return getDescriptor();
   }
-  public static final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(1);
   }
 
   private static final MatchingType[] VALUES = values();
 
-  public static MatchingType valueOf(
-      com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+  public static MatchingType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
-      throw new java.lang.IllegalArgumentException(
-        "EnumValueDescriptor is not for this type.");
+      throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
     }
     if (desc.getIndex() == -1) {
       return UNRECOGNIZED;
@@ -174,4 +189,3 @@ public enum MatchingType
 
   // @@protoc_insertion_point(enum_scope:google.privacy.dlp.v2.MatchingType)
 }
-

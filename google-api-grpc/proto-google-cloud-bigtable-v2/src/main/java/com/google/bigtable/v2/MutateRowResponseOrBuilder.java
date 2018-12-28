@@ -3,7 +3,7 @@
 
 package com.google.bigtable.v2;
 
-public interface MutateRowResponseOrBuilder extends
+public interface MutateRowResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.v2.MutateRowResponse)
-    com.google.protobuf.MessageOrBuilder {
-}
+    com.google.protobuf.MessageOrBuilder {}

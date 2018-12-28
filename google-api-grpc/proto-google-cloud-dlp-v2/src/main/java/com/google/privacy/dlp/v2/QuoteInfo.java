@@ -4,29 +4,31 @@
 package com.google.privacy.dlp.v2;
 
 /**
+ *
+ *
  * <pre>
  * Message for infoType-dependent details parsed from quote.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.QuoteInfo}
  */
-public  final class QuoteInfo extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class QuoteInfo extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.QuoteInfo)
     QuoteInfoOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use QuoteInfo.newBuilder() to construct.
   private QuoteInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private QuoteInfo() {
-  }
+
+  private QuoteInfo() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private QuoteInfo(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -46,65 +48,67 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 18: {
-            com.google.privacy.dlp.v2.DateTime.Builder subBuilder = null;
-            if (parsedQuoteCase_ == 2) {
-              subBuilder = ((com.google.privacy.dlp.v2.DateTime) parsedQuote_).toBuilder();
+          case 18:
+            {
+              com.google.privacy.dlp.v2.DateTime.Builder subBuilder = null;
+              if (parsedQuoteCase_ == 2) {
+                subBuilder = ((com.google.privacy.dlp.v2.DateTime) parsedQuote_).toBuilder();
+              }
+              parsedQuote_ =
+                  input.readMessage(com.google.privacy.dlp.v2.DateTime.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.privacy.dlp.v2.DateTime) parsedQuote_);
+                parsedQuote_ = subBuilder.buildPartial();
+              }
+              parsedQuoteCase_ = 2;
+              break;
             }
-            parsedQuote_ =
-                input.readMessage(com.google.privacy.dlp.v2.DateTime.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.privacy.dlp.v2.DateTime) parsedQuote_);
-              parsedQuote_ = subBuilder.buildPartial();
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            parsedQuoteCase_ = 2;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_QuoteInfo_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_QuoteInfo_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_QuoteInfo_fieldAccessorTable
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_QuoteInfo_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.privacy.dlp.v2.QuoteInfo.class, com.google.privacy.dlp.v2.QuoteInfo.Builder.class);
+            com.google.privacy.dlp.v2.QuoteInfo.class,
+            com.google.privacy.dlp.v2.QuoteInfo.Builder.class);
   }
 
   private int parsedQuoteCase_ = 0;
   private java.lang.Object parsedQuote_;
-  public enum ParsedQuoteCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum ParsedQuoteCase implements com.google.protobuf.Internal.EnumLite {
     DATE_TIME(2),
     PARSEDQUOTE_NOT_SET(0);
     private final int value;
+
     private ParsedQuoteCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static ParsedQuoteCase valueOf(int value) {
       return forNumber(value);
@@ -112,24 +116,28 @@ private static final long serialVersionUID = 0L;
 
     public static ParsedQuoteCase forNumber(int value) {
       switch (value) {
-        case 2: return DATE_TIME;
-        case 0: return PARSEDQUOTE_NOT_SET;
-        default: return null;
+        case 2:
+          return DATE_TIME;
+        case 0:
+          return PARSEDQUOTE_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public ParsedQuoteCase
-  getParsedQuoteCase() {
-    return ParsedQuoteCase.forNumber(
-        parsedQuoteCase_);
+  public ParsedQuoteCase getParsedQuoteCase() {
+    return ParsedQuoteCase.forNumber(parsedQuoteCase_);
   }
 
   public static final int DATE_TIME_FIELD_NUMBER = 2;
   /**
+   *
+   *
    * <pre>
    * The date time indicated by the quote.
    * </pre>
@@ -140,6 +148,8 @@ private static final long serialVersionUID = 0L;
     return parsedQuoteCase_ == 2;
   }
   /**
+   *
+   *
    * <pre>
    * The date time indicated by the quote.
    * </pre>
@@ -148,11 +158,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.privacy.dlp.v2.DateTime getDateTime() {
     if (parsedQuoteCase_ == 2) {
-       return (com.google.privacy.dlp.v2.DateTime) parsedQuote_;
+      return (com.google.privacy.dlp.v2.DateTime) parsedQuote_;
     }
     return com.google.privacy.dlp.v2.DateTime.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * The date time indicated by the quote.
    * </pre>
@@ -161,12 +173,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.privacy.dlp.v2.DateTimeOrBuilder getDateTimeOrBuilder() {
     if (parsedQuoteCase_ == 2) {
-       return (com.google.privacy.dlp.v2.DateTime) parsedQuote_;
+      return (com.google.privacy.dlp.v2.DateTime) parsedQuote_;
     }
     return com.google.privacy.dlp.v2.DateTime.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -178,8 +191,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (parsedQuoteCase_ == 2) {
       output.writeMessage(2, (com.google.privacy.dlp.v2.DateTime) parsedQuote_);
     }
@@ -193,8 +205,9 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (parsedQuoteCase_ == 2) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, (com.google.privacy.dlp.v2.DateTime) parsedQuote_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, (com.google.privacy.dlp.v2.DateTime) parsedQuote_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -204,7 +217,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.privacy.dlp.v2.QuoteInfo)) {
       return super.equals(obj);
@@ -212,13 +225,11 @@ private static final long serialVersionUID = 0L;
     com.google.privacy.dlp.v2.QuoteInfo other = (com.google.privacy.dlp.v2.QuoteInfo) obj;
 
     boolean result = true;
-    result = result && getParsedQuoteCase().equals(
-        other.getParsedQuoteCase());
+    result = result && getParsedQuoteCase().equals(other.getParsedQuoteCase());
     if (!result) return false;
     switch (parsedQuoteCase_) {
       case 2:
-        result = result && getDateTime()
-            .equals(other.getDateTime());
+        result = result && getDateTime().equals(other.getDateTime());
         break;
       case 0:
       default:
@@ -247,118 +258,126 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.privacy.dlp.v2.QuoteInfo parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.privacy.dlp.v2.QuoteInfo parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.QuoteInfo parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.privacy.dlp.v2.QuoteInfo parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.privacy.dlp.v2.QuoteInfo parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.QuoteInfo parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.QuoteInfo parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.QuoteInfo parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.QuoteInfo parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.QuoteInfo parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.QuoteInfo parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.QuoteInfo parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.QuoteInfo parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.QuoteInfo parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.privacy.dlp.v2.QuoteInfo prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Message for infoType-dependent details parsed from quote.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.QuoteInfo}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.QuoteInfo)
       com.google.privacy.dlp.v2.QuoteInfoOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_QuoteInfo_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_QuoteInfo_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_QuoteInfo_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_QuoteInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.QuoteInfo.class, com.google.privacy.dlp.v2.QuoteInfo.Builder.class);
+              com.google.privacy.dlp.v2.QuoteInfo.class,
+              com.google.privacy.dlp.v2.QuoteInfo.Builder.class);
     }
 
     // Construct using com.google.privacy.dlp.v2.QuoteInfo.newBuilder()
@@ -366,16 +385,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -385,9 +403,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_QuoteInfo_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_QuoteInfo_descriptor;
     }
 
     @java.lang.Override
@@ -423,38 +441,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.privacy.dlp.v2.QuoteInfo) {
-        return mergeFrom((com.google.privacy.dlp.v2.QuoteInfo)other);
+        return mergeFrom((com.google.privacy.dlp.v2.QuoteInfo) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -464,13 +483,15 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.google.privacy.dlp.v2.QuoteInfo other) {
       if (other == com.google.privacy.dlp.v2.QuoteInfo.getDefaultInstance()) return this;
       switch (other.getParsedQuoteCase()) {
-        case DATE_TIME: {
-          mergeDateTime(other.getDateTime());
-          break;
-        }
-        case PARSEDQUOTE_NOT_SET: {
-          break;
-        }
+        case DATE_TIME:
+          {
+            mergeDateTime(other.getDateTime());
+            break;
+          }
+        case PARSEDQUOTE_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -500,12 +521,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int parsedQuoteCase_ = 0;
     private java.lang.Object parsedQuote_;
-    public ParsedQuoteCase
-        getParsedQuoteCase() {
-      return ParsedQuoteCase.forNumber(
-          parsedQuoteCase_);
+
+    public ParsedQuoteCase getParsedQuoteCase() {
+      return ParsedQuoteCase.forNumber(parsedQuoteCase_);
     }
 
     public Builder clearParsedQuote() {
@@ -515,10 +536,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.DateTime, com.google.privacy.dlp.v2.DateTime.Builder, com.google.privacy.dlp.v2.DateTimeOrBuilder> dateTimeBuilder_;
+            com.google.privacy.dlp.v2.DateTime,
+            com.google.privacy.dlp.v2.DateTime.Builder,
+            com.google.privacy.dlp.v2.DateTimeOrBuilder>
+        dateTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * The date time indicated by the quote.
      * </pre>
@@ -529,6 +554,8 @@ private static final long serialVersionUID = 0L;
       return parsedQuoteCase_ == 2;
     }
     /**
+     *
+     *
      * <pre>
      * The date time indicated by the quote.
      * </pre>
@@ -549,6 +576,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The date time indicated by the quote.
      * </pre>
@@ -569,14 +598,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The date time indicated by the quote.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DateTime date_time = 2;</code>
      */
-    public Builder setDateTime(
-        com.google.privacy.dlp.v2.DateTime.Builder builderForValue) {
+    public Builder setDateTime(com.google.privacy.dlp.v2.DateTime.Builder builderForValue) {
       if (dateTimeBuilder_ == null) {
         parsedQuote_ = builderForValue.build();
         onChanged();
@@ -587,6 +617,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The date time indicated by the quote.
      * </pre>
@@ -595,10 +627,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeDateTime(com.google.privacy.dlp.v2.DateTime value) {
       if (dateTimeBuilder_ == null) {
-        if (parsedQuoteCase_ == 2 &&
-            parsedQuote_ != com.google.privacy.dlp.v2.DateTime.getDefaultInstance()) {
-          parsedQuote_ = com.google.privacy.dlp.v2.DateTime.newBuilder((com.google.privacy.dlp.v2.DateTime) parsedQuote_)
-              .mergeFrom(value).buildPartial();
+        if (parsedQuoteCase_ == 2
+            && parsedQuote_ != com.google.privacy.dlp.v2.DateTime.getDefaultInstance()) {
+          parsedQuote_ =
+              com.google.privacy.dlp.v2.DateTime.newBuilder(
+                      (com.google.privacy.dlp.v2.DateTime) parsedQuote_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           parsedQuote_ = value;
         }
@@ -613,6 +648,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The date time indicated by the quote.
      * </pre>
@@ -636,6 +673,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The date time indicated by the quote.
      * </pre>
@@ -646,6 +685,8 @@ private static final long serialVersionUID = 0L;
       return getDateTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The date time indicated by the quote.
      * </pre>
@@ -663,6 +704,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The date time indicated by the quote.
      * </pre>
@@ -670,26 +713,32 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.DateTime date_time = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.DateTime, com.google.privacy.dlp.v2.DateTime.Builder, com.google.privacy.dlp.v2.DateTimeOrBuilder> 
+            com.google.privacy.dlp.v2.DateTime,
+            com.google.privacy.dlp.v2.DateTime.Builder,
+            com.google.privacy.dlp.v2.DateTimeOrBuilder>
         getDateTimeFieldBuilder() {
       if (dateTimeBuilder_ == null) {
         if (!(parsedQuoteCase_ == 2)) {
           parsedQuote_ = com.google.privacy.dlp.v2.DateTime.getDefaultInstance();
         }
-        dateTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.DateTime, com.google.privacy.dlp.v2.DateTime.Builder, com.google.privacy.dlp.v2.DateTimeOrBuilder>(
+        dateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.DateTime,
+                com.google.privacy.dlp.v2.DateTime.Builder,
+                com.google.privacy.dlp.v2.DateTimeOrBuilder>(
                 (com.google.privacy.dlp.v2.DateTime) parsedQuote_,
                 getParentForChildren(),
                 isClean());
         parsedQuote_ = null;
       }
       parsedQuoteCase_ = 2;
-      onChanged();;
+      onChanged();
+      ;
       return dateTimeBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -699,12 +748,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.QuoteInfo)
   }
 
   // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.QuoteInfo)
   private static final com.google.privacy.dlp.v2.QuoteInfo DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.QuoteInfo();
   }
@@ -713,16 +762,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<QuoteInfo>
-      PARSER = new com.google.protobuf.AbstractParser<QuoteInfo>() {
-    @java.lang.Override
-    public QuoteInfo parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new QuoteInfo(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<QuoteInfo> PARSER =
+      new com.google.protobuf.AbstractParser<QuoteInfo>() {
+        @java.lang.Override
+        public QuoteInfo parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new QuoteInfo(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<QuoteInfo> parser() {
     return PARSER;
@@ -737,6 +786,4 @@ private static final long serialVersionUID = 0L;
   public com.google.privacy.dlp.v2.QuoteInfo getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

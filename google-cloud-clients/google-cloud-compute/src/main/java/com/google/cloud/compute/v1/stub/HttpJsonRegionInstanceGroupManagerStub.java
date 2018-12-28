@@ -39,6 +39,7 @@ import com.google.cloud.compute.v1.InstanceGroupManager;
 import com.google.cloud.compute.v1.ListManagedInstancesRegionInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.ListRegionInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PatchRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.ProjectRegionInstanceGroupManagerName;
 import com.google.cloud.compute.v1.ProjectRegionName;
 import com.google.cloud.compute.v1.RecreateInstancesRegionInstanceGroupManagerHttpRequest;
@@ -232,6 +233,28 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
               .build();
 
   @InternalApi
+  public static final ApiMethodDescriptor<PatchRegionInstanceGroupManagerHttpRequest, Operation>
+      patchRegionInstanceGroupManagerMethodDescriptor =
+          ApiMethodDescriptor.<PatchRegionInstanceGroupManagerHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.regionInstanceGroupManagers.patch")
+              .setHttpMethod(HttpMethods.PATCH)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter
+                      .<PatchRegionInstanceGroupManagerHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/regions/{region}/instanceGroupManagers/{instanceGroupManager}"))
+                      .setQueryParams(Sets.<String>newHashSet("requestId"))
+                      .setResourceNameFactory(ProjectRegionInstanceGroupManagerName.newFactory())
+                      .setResourceNameField("instanceGroupManager")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
   public static final ApiMethodDescriptor<
           RecreateInstancesRegionInstanceGroupManagerHttpRequest, Operation>
       recreateInstancesRegionInstanceGroupManagerMethodDescriptor =
@@ -347,6 +370,8 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
           ListManagedInstancesRegionInstanceGroupManagersHttpRequest,
           RegionInstanceGroupManagersListInstancesResponse>
       listManagedInstancesRegionInstanceGroupManagersCallable;
+  private final UnaryCallable<PatchRegionInstanceGroupManagerHttpRequest, Operation>
+      patchRegionInstanceGroupManagerCallable;
   private final UnaryCallable<RecreateInstancesRegionInstanceGroupManagerHttpRequest, Operation>
       recreateInstancesRegionInstanceGroupManagerCallable;
   private final UnaryCallable<ResizeRegionInstanceGroupManagerHttpRequest, Operation>
@@ -448,6 +473,11 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
                 .setMethodDescriptor(
                     listManagedInstancesRegionInstanceGroupManagersMethodDescriptor)
                 .build();
+    HttpJsonCallSettings<PatchRegionInstanceGroupManagerHttpRequest, Operation>
+        patchRegionInstanceGroupManagerTransportSettings =
+            HttpJsonCallSettings.<PatchRegionInstanceGroupManagerHttpRequest, Operation>newBuilder()
+                .setMethodDescriptor(patchRegionInstanceGroupManagerMethodDescriptor)
+                .build();
     HttpJsonCallSettings<RecreateInstancesRegionInstanceGroupManagerHttpRequest, Operation>
         recreateInstancesRegionInstanceGroupManagerTransportSettings =
             HttpJsonCallSettings
@@ -512,6 +542,11 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
         callableFactory.createUnaryCallable(
             listManagedInstancesRegionInstanceGroupManagersTransportSettings,
             settings.listManagedInstancesRegionInstanceGroupManagersSettings(),
+            clientContext);
+    this.patchRegionInstanceGroupManagerCallable =
+        callableFactory.createUnaryCallable(
+            patchRegionInstanceGroupManagerTransportSettings,
+            settings.patchRegionInstanceGroupManagerSettings(),
             clientContext);
     this.recreateInstancesRegionInstanceGroupManagerCallable =
         callableFactory.createUnaryCallable(
@@ -586,6 +621,12 @@ public class HttpJsonRegionInstanceGroupManagerStub extends RegionInstanceGroupM
           RegionInstanceGroupManagersListInstancesResponse>
       listManagedInstancesRegionInstanceGroupManagersCallable() {
     return listManagedInstancesRegionInstanceGroupManagersCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<PatchRegionInstanceGroupManagerHttpRequest, Operation>
+      patchRegionInstanceGroupManagerCallable() {
+    return patchRegionInstanceGroupManagerCallable;
   }
 
   @BetaApi

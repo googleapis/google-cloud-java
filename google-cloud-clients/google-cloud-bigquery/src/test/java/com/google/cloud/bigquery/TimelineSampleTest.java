@@ -27,15 +27,14 @@ public class TimelineSampleTest {
   private static final Long PENDING_UNITS = 14L;
   private static final Long SLOT_MILLIS = 1220012L;
 
-  private static final TimelineSample TIMELINE_SAMPLE = TimelineSample.newBuilder()
-      .setElapsedMs(ELAPSED_MS)
-      .setActiveUnits(ACTIVE_UNITS)
-      .setCompletedUnits(COMPLETED_UNITS)
-      .setPendingUnits(PENDING_UNITS)
-      .setSlotMillis(SLOT_MILLIS)
-      .build();
-
-
+  private static final TimelineSample TIMELINE_SAMPLE =
+      TimelineSample.newBuilder()
+          .setElapsedMs(ELAPSED_MS)
+          .setActiveUnits(ACTIVE_UNITS)
+          .setCompletedUnits(COMPLETED_UNITS)
+          .setPendingUnits(PENDING_UNITS)
+          .setSlotMillis(SLOT_MILLIS)
+          .build();
 
   @Test
   public void testTimelineSampleBuilder() {
@@ -50,5 +49,4 @@ public class TimelineSampleTest {
   public void TestEquals() {
     assertEquals(TIMELINE_SAMPLE, TIMELINE_SAMPLE);
   }
-
 }

@@ -3,11 +3,14 @@
 
 package com.google.bigtable.v2;
 
-public interface ValueRangeOrBuilder extends
+public interface ValueRangeOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.v2.ValueRange)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Used when giving an inclusive lower bound for the range.
    * </pre>
@@ -17,6 +20,8 @@ public interface ValueRangeOrBuilder extends
   com.google.protobuf.ByteString getStartValueClosed();
 
   /**
+   *
+   *
    * <pre>
    * Used when giving an exclusive lower bound for the range.
    * </pre>
@@ -26,6 +31,8 @@ public interface ValueRangeOrBuilder extends
   com.google.protobuf.ByteString getStartValueOpen();
 
   /**
+   *
+   *
    * <pre>
    * Used when giving an inclusive upper bound for the range.
    * </pre>
@@ -35,6 +42,8 @@ public interface ValueRangeOrBuilder extends
   com.google.protobuf.ByteString getEndValueClosed();
 
   /**
+   *
+   *
    * <pre>
    * Used when giving an exclusive upper bound for the range.
    * </pre>
