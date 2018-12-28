@@ -78,7 +78,7 @@ public class ReadIT {
     List<Row> expectedRows = Lists.newArrayList();
     String uniqueKey = prefix + "-read";
 
-    long timestampMicros = System.nanoTime() * 1_000;
+    long timestampMicros = System.currentTimeMillis() * 1_000;
 
     for (int i = 0; i < numRows; i++) {
       testEnvRule
@@ -101,10 +101,10 @@ public class ReadIT {
                       ByteString.copyFromUtf8("my-value")))));
     }
 
+    String tableId = testEnvRule.env().getTableName().getTable();
+
     // Sync
-    Query query =
-        Query.create(testEnvRule.env().getTableName().getTable())
-            .range(uniqueKey + "-0", uniqueKey + "-" + numRows);
+    Query query = Query.create(tableId).range(uniqueKey + "-0", uniqueKey + "-" + numRows);
     ArrayList<Row> actualResults =
         Lists.newArrayList(testEnvRule.env().getDataClient().readRows(query));
 
@@ -115,6 +115,16 @@ public class ReadIT {
     testEnvRule.env().getDataClient().readRowsAsync(query, observer);
     observer.awaitCompletion();
     assertThat(observer.responses).containsExactlyElementsIn(expectedRows);
+
+    // Point Sync
+    Row actualRow =
+        testEnvRule.env().getDataClient().readRow(tableId, expectedRows.get(0).getKey());
+    assertThat(actualRow).isEqualTo(expectedRows.get(0));
+
+    // Point Async
+    ApiFuture<Row> actualRowFuture =
+        testEnvRule.env().getDataClient().readRowAsync(tableId, expectedRows.get(0).getKey());
+    assertThat(actualRowFuture.get()).isEqualTo(expectedRows.get(0));
   }
 
   @Test
