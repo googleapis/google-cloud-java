@@ -436,7 +436,7 @@ public class BigtableDataClient implements AutoCloseable {
    *   String tableId = "[TABLE]";
    *
    *   Query query = Query.create(tableId)
-   *          .range("[START KEY]", "[END KEY]")
+   *          .rowKey("[KEY]")
    *          .filter(FILTERS.qualifier().regex("[COLUMN PREFIX].*"));
    *
    *   // Synchronous invocation
@@ -489,7 +489,7 @@ public class BigtableDataClient implements AutoCloseable {
    *   String tableId = "[TABLE]";
    *
    *   Query query = Query.create(tableId)
-   *          .range("[START KEY]", "[END KEY]")
+   *          .rowKey("[KEY]")
    *          .filter(FILTERS.qualifier().regex("[COLUMN PREFIX].*"));
    *
    *   // Synchronous invocation
