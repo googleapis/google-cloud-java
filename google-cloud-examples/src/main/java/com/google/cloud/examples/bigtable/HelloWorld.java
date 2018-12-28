@@ -15,7 +15,7 @@
  */
 package com.google.cloud.examples.bigtable;
 
-import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
@@ -34,9 +34,6 @@ public class HelloWorld {
   private static final String COLUMN_FAMILY = "cf1";
   private static final String COLUMN_QUALIFIER = "greeting";
   private static final String ROW_KEY_PREFIX = "rowKey";
-
-  private final String projectId;
-  private final String instanceId;
   private final String tableId;
   private final BigtableDataClient dataClient;
   private final BigtableTableAdminClient adminClient;
@@ -54,8 +51,6 @@ public class HelloWorld {
   }
 
   public HelloWorld(String projectId, String instanceId, String tableId) throws IOException {
-    this.projectId = projectId;
-    this.instanceId = instanceId;
     this.tableId = tableId;
 
     // [START connecting_to_bigtable]
@@ -115,7 +110,7 @@ public class HelloWorld {
         dataClient.mutateRow(rowMutation);
         System.out.println(greetings[i]);
       }
-    } catch (ApiException e) {
+    } catch (NotFoundException e) {
       System.err.println("Exception while writing to table: " + e.getMessage());
     }
     // [END writing_rows]
@@ -132,7 +127,7 @@ public class HelloWorld {
             "Family: %s    Qualifier: %s    Value: %s%n",
             cell.getFamily(), cell.getQualifier().toStringUtf8(), cell.getValue().toStringUtf8());
       }
-    } catch (ApiException e) {
+    } catch (NotFoundException e) {
       System.err.println("Exception while reading a single row: " + e.getMessage());
     }
     // [END reading_a_row]
@@ -152,7 +147,7 @@ public class HelloWorld {
               cell.getFamily(), cell.getQualifier().toStringUtf8(), cell.getValue().toStringUtf8());
         }
       }
-    } catch (ApiException e) {
+    } catch (NotFoundException e) {
       System.err.println("Exception while reading table: " + e.getMessage());
     }
     // [END scanning_all_rows]
@@ -160,11 +155,11 @@ public class HelloWorld {
 
   public void deleteTable() {
     // [START deleting_a_table]
-    System.out.println("\nDeleting table");
+    System.out.println("\nDeleting table: " + tableId);
     try {
       adminClient.deleteTable(tableId);
       System.out.printf("Table %s deleted successfully%n", tableId);
-    } catch (ApiException e) {
+    } catch (NotFoundException e) {
       System.err.println("Exception while deleting table: " + e.getMessage());
     }
     // [END deleting_a_table]

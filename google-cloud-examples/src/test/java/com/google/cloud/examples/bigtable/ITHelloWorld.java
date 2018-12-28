@@ -43,8 +43,8 @@ public class ITHelloWorld {
 
   private static final String INSTANCE_PROPERTY_NAME = "bigtable.instance";
   private static final String TABLE_PREFIX = "table";
-  private static String tableId;
   private static final String COLUMN_FAMILY = "cf1";
+  private static String tableId;
   private static BigtableDataClient dataClient;
   private static BigtableTableAdminClient adminClient;
   private static HelloWorld helloWorld;
