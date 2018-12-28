@@ -422,7 +422,88 @@ public class BigtableDataClient implements AutoCloseable {
     if (filter != null) {
       query = query.filter(filter);
     }
-    return readRowsCallable().first().futureCall(query);
+    return readRowCallable().futureCall(query);
+  }
+
+  /**
+   * Reads a single row. The returned callable object allows for customization of api invocation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
+   *   String tableId = "[TABLE]";
+   *
+   *   Query query = Query.create(tableId)
+   *          .rowKey("[KEY]")
+   *          .filter(FILTERS.qualifier().regex("[COLUMN PREFIX].*"));
+   *
+   *   // Synchronous invocation
+   *   try {
+   *     Row row = bigtableDataClient.readRowCallable().call(query);
+   *     if (row == null) {
+   *       System.out.println("Row not found");
+   *     }
+   *   } catch (RuntimeException e) {
+   *     e.printStackTrace();
+   *   }
+   *
+   *   // Asynchronous invocation
+   *   ApiFuture<Row> rowFuture = bigtableDataClient.readRowCallable().futureCall(query);
+   *
+   *   ApiFutures.addCallback(rowFuture, new ApiFutureCallback<Row>() {
+   *     public void onFailure(Throwable t) {
+   *       if (t instanceof NotFoundException) {
+   *         System.out.println("Tried to read a non-existent table");
+   *       } else {
+   *         t.printStackTrace();
+   *       }
+   *     }
+   *     public void onSuccess(Row row) {
+   *       if (row == null) {
+   *         System.out.println("Row not found");
+   *       }
+   *     }
+   *   }, MoreExecutors.directExecutor());
+   * }
+   * }</pre>
+   *
+   * @see UnaryCallable For call styles.
+   * @see Query For query options.
+   * @see com.google.cloud.bigtable.data.v2.models.Filters For the filter building DSL.
+   */
+  public UnaryCallable<Query, Row> readRowCallable() {
+    return stub.readRowCallable();
+  }
+
+  /**
+   * Reads a single row. This callable allows for customization of the logical representation of a
+   * row. It's meant for advanced use cases.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
+   *   String tableId = "[TABLE]";
+   *
+   *   Query query = Query.create(tableId)
+   *          .rowKey("[KEY]")
+   *          .filter(FILTERS.qualifier().regex("[COLUMN PREFIX].*"));
+   *
+   *   // Synchronous invocation
+   *   CustomRow row = bigtableDataClient.readRowCallable(new CustomRowAdapter()).call(query));
+   *   // Do something with row
+   * }
+   * }</pre>
+   *
+   * @see ServerStreamingCallable For call styles.
+   * @see Query For query options.
+   * @see com.google.cloud.bigtable.data.v2.models.Filters For the filter building DSL.
+   */
+  public <RowT> UnaryCallable<Query, RowT> readRowCallable(RowAdapter<RowT> rowAdapter) {
+    return stub.createReadRowCallable(rowAdapter);
   }
 
   /**
