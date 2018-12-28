@@ -141,6 +141,7 @@ public class GapicSpannerRpc implements SpannerRpc {
       systemProperty(PROPERTY_PERIOD_SECONDS, DEFAULT_PERIOD_SECONDS);
 
   private final ScheduledExecutorService spannerWatchdog;
+
   public static GapicSpannerRpc create(SpannerOptions options) {
     return new GapicSpannerRpc(options);
   }
