@@ -329,6 +329,16 @@ public class TableInfo implements Serializable {
     return (T) definition;
   }
 
+  /** Returns the size of this table in bytes */
+  public Long getNumBytes() {
+    return getDefinition().toPb().getNumBytes();
+  }
+
+  /** Returns the number of rows of data in this table */
+  public BigInteger getNumRows() {
+    return getDefinition().toPb().getNumRows();
+  }
+
   /**
    * Return a map for labels applied to the table.
    *
