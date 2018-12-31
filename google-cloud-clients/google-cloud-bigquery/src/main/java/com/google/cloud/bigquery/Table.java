@@ -25,6 +25,7 @@ import com.google.cloud.bigquery.TableInfo.Builder;
 import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.math.BigInteger;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -117,6 +118,18 @@ public class Table extends TableInfo {
     @Override
     public Builder setDefinition(TableDefinition definition) {
       infoBuilder.setDefinition(definition);
+      return this;
+    }
+
+    @Override
+    Builder setNumBytes(Long numBytes) {
+      infoBuilder.setNumBytes(numBytes);
+      return this;
+    }
+
+    @Override
+    Builder setNumRows(BigInteger numRows) {
+      infoBuilder.setNumRows(numRows);
       return this;
     }
 
