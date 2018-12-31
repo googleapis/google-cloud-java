@@ -22,7 +22,6 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.api.services.bigquery.model.Streamingbuffer;
 import com.google.cloud.bigquery.StandardTableDefinition.StreamingBuffer;
-
 import com.google.common.collect.ImmutableList;
 import org.junit.Test;
 
@@ -51,7 +50,7 @@ public class StandardTableDefinitionTest {
   private static final TimePartitioning TIME_PARTITIONING =
       TimePartitioning.of(TimePartitioning.Type.DAY, 42);
   private static final Clustering CLUSTERING =
-      Clustering.newBuilder().setFields(ImmutableList.of("Foo","Bar")).build();
+      Clustering.newBuilder().setFields(ImmutableList.of("Foo", "Bar")).build();
   private static final StandardTableDefinition TABLE_DEFINITION =
       StandardTableDefinition.newBuilder()
           .setLocation(LOCATION)
@@ -69,9 +68,7 @@ public class StandardTableDefinitionTest {
     StandardTableDefinition tableDefinition =
         TABLE_DEFINITION.toBuilder().setLocation("EU").build();
     assertEquals("EU", tableDefinition.getLocation());
-    tableDefinition = tableDefinition.toBuilder()
-        .setLocation(LOCATION)
-        .build();
+    tableDefinition = tableDefinition.toBuilder().setLocation(LOCATION).build();
     compareStandardTableDefinition(TABLE_DEFINITION, tableDefinition);
   }
 
@@ -93,7 +90,6 @@ public class StandardTableDefinitionTest {
     assertEquals(CLUSTERING, TABLE_DEFINITION.getClustering());
   }
 
-
   @Test
   public void testOf() {
     StandardTableDefinition definition = StandardTableDefinition.of(TABLE_SCHEMA);
@@ -110,12 +106,12 @@ public class StandardTableDefinitionTest {
   @Test
   public void testToAndFromPb() {
     assertTrue(TableDefinition.fromPb(TABLE_DEFINITION.toPb()) instanceof StandardTableDefinition);
-    compareStandardTableDefinition(TABLE_DEFINITION,
-        TableDefinition.<StandardTableDefinition>fromPb(TABLE_DEFINITION.toPb()));
+    compareStandardTableDefinition(
+        TABLE_DEFINITION, TableDefinition.<StandardTableDefinition>fromPb(TABLE_DEFINITION.toPb()));
     StandardTableDefinition definition = StandardTableDefinition.of(TABLE_SCHEMA);
     assertTrue(TableDefinition.fromPb(definition.toPb()) instanceof StandardTableDefinition);
-    compareStandardTableDefinition(definition,
-        TableDefinition.<StandardTableDefinition>fromPb(definition.toPb()));
+    compareStandardTableDefinition(
+        definition, TableDefinition.<StandardTableDefinition>fromPb(definition.toPb()));
   }
 
   @Test
@@ -124,8 +120,13 @@ public class StandardTableDefinitionTest {
         TABLE_DEFINITION.toPb().setStreamingBuffer(new Streamingbuffer()));
   }
 
-  private void compareStandardTableDefinition(StandardTableDefinition expected,
-      StandardTableDefinition value) {
+  @Test
+  public void testStreamingBufferWithNullFieldsToPb() {
+    new StreamingBuffer(null, null, null).toPb();
+  }
+
+  private void compareStandardTableDefinition(
+      StandardTableDefinition expected, StandardTableDefinition value) {
     assertEquals(expected, value);
     assertEquals(expected.getSchema(), value.getSchema());
     assertEquals(expected.getType(), value.getType());

@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface UptimeCheckIpOrBuilder extends
+public interface UptimeCheckIpOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.UptimeCheckIp)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A broad region category in which the IP address is located.
    * </pre>
@@ -16,6 +19,8 @@ public interface UptimeCheckIpOrBuilder extends
    */
   int getRegionValue();
   /**
+   *
+   *
    * <pre>
    * A broad region category in which the IP address is located.
    * </pre>
@@ -25,6 +30,8 @@ public interface UptimeCheckIpOrBuilder extends
   com.google.monitoring.v3.UptimeCheckRegion getRegion();
 
   /**
+   *
+   *
    * <pre>
    * A more specific location within the region that typically encodes
    * a particular city/town/metro (and its containing state/province or country)
@@ -35,6 +42,8 @@ public interface UptimeCheckIpOrBuilder extends
    */
   java.lang.String getLocation();
   /**
+   *
+   *
    * <pre>
    * A more specific location within the region that typically encodes
    * a particular city/town/metro (and its containing state/province or country)
@@ -43,10 +52,11 @@ public interface UptimeCheckIpOrBuilder extends
    *
    * <code>string location = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getLocationBytes();
+  com.google.protobuf.ByteString getLocationBytes();
 
   /**
+   *
+   *
    * <pre>
    * The IP address from which the uptime check originates. This is a full
    * IP address (not an IP address range). Most IP addresses, as of this
@@ -59,6 +69,8 @@ public interface UptimeCheckIpOrBuilder extends
    */
   java.lang.String getIpAddress();
   /**
+   *
+   *
    * <pre>
    * The IP address from which the uptime check originates. This is a full
    * IP address (not an IP address range). Most IP addresses, as of this
@@ -69,6 +81,5 @@ public interface UptimeCheckIpOrBuilder extends
    *
    * <code>string ip_address = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getIpAddressBytes();
+  com.google.protobuf.ByteString getIpAddressBytes();
 }

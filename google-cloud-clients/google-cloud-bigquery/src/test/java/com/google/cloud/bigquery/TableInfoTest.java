@@ -96,16 +96,17 @@ public class TableInfoTest {
           .setSelfLink(SELF_LINK)
           .setLabels(Collections.singletonMap("a", "b"))
           .build();
-  private static final TableInfo VIEW_INFO = TableInfo.newBuilder(TABLE_ID, VIEW_DEFINITION)
-      .setCreationTime(CREATION_TIME)
-      .setDescription(DESCRIPTION)
-      .setEtag(ETAG)
-      .setExpirationTime(EXPIRATION_TIME)
-      .setFriendlyName(FRIENDLY_NAME)
-      .setGeneratedId(GENERATED_ID)
-      .setLastModifiedTime(LAST_MODIFIED_TIME)
-      .setSelfLink(SELF_LINK)
-      .build();
+  private static final TableInfo VIEW_INFO =
+      TableInfo.newBuilder(TABLE_ID, VIEW_DEFINITION)
+          .setCreationTime(CREATION_TIME)
+          .setDescription(DESCRIPTION)
+          .setEtag(ETAG)
+          .setExpirationTime(EXPIRATION_TIME)
+          .setFriendlyName(FRIENDLY_NAME)
+          .setGeneratedId(GENERATED_ID)
+          .setLastModifiedTime(LAST_MODIFIED_TIME)
+          .setSelfLink(SELF_LINK)
+          .build();
   private static final TableInfo EXTERNAL_TABLE_INFO =
       TableInfo.newBuilder(TABLE_ID, EXTERNAL_TABLE_DEFINITION)
           .setCreationTime(CREATION_TIME)
@@ -123,13 +124,9 @@ public class TableInfoTest {
     compareTableInfo(TABLE_INFO, TABLE_INFO.toBuilder().build());
     compareTableInfo(VIEW_INFO, VIEW_INFO.toBuilder().build());
     compareTableInfo(EXTERNAL_TABLE_INFO, EXTERNAL_TABLE_INFO.toBuilder().build());
-    TableInfo tableInfo = TABLE_INFO.toBuilder()
-        .setDescription("newDescription")
-        .build();
+    TableInfo tableInfo = TABLE_INFO.toBuilder().setDescription("newDescription").build();
     assertEquals("newDescription", tableInfo.getDescription());
-    tableInfo = tableInfo.toBuilder()
-        .setDescription("description")
-        .build();
+    tableInfo = tableInfo.toBuilder().setDescription("description").build();
     compareTableInfo(TABLE_INFO, tableInfo);
   }
 
@@ -177,7 +174,6 @@ public class TableInfoTest {
     assertEquals(EXTERNAL_TABLE_DEFINITION, EXTERNAL_TABLE_INFO.getDefinition());
     assertEquals(SELF_LINK, EXTERNAL_TABLE_INFO.getSelfLink());
   }
-
 
   @Test
   public void testOf() {
@@ -228,6 +224,13 @@ public class TableInfoTest {
     assertEquals("project", TABLE_INFO.setProjectId("project").getTableId().getProject());
     assertEquals("project", EXTERNAL_TABLE_INFO.setProjectId("project").getTableId().getProject());
     assertEquals("project", VIEW_INFO.setProjectId("project").getTableId().getProject());
+  }
+
+  @Test
+  public void testSetProjectIdDoNotOverride() {
+    TableInfo tableInfo = TableInfo.of(TABLE_ID, TABLE_DEFINITION).setProjectId("project");
+    tableInfo.setProjectId("not-override-project").toBuilder();
+    assertEquals("project", tableInfo.getTableId().getProject());
   }
 
   private void compareTableInfo(TableInfo expected, TableInfo value) {

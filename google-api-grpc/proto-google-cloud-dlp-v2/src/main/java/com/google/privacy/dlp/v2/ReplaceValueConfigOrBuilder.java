@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface ReplaceValueConfigOrBuilder extends
+public interface ReplaceValueConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.ReplaceValueConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Value to replace it with.
    * </pre>
@@ -16,6 +19,8 @@ public interface ReplaceValueConfigOrBuilder extends
    */
   boolean hasNewValue();
   /**
+   *
+   *
    * <pre>
    * Value to replace it with.
    * </pre>
@@ -24,6 +29,8 @@ public interface ReplaceValueConfigOrBuilder extends
    */
   com.google.privacy.dlp.v2.Value getNewValue();
   /**
+   *
+   *
    * <pre>
    * Value to replace it with.
    * </pre>

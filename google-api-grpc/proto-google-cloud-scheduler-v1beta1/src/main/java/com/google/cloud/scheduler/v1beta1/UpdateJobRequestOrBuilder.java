@@ -3,11 +3,14 @@
 
 package com.google.cloud.scheduler.v1beta1;
 
-public interface UpdateJobRequestOrBuilder extends
+public interface UpdateJobRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.scheduler.v1beta1.UpdateJobRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * The new job properties. [name][google.cloud.scheduler.v1beta1.Job.name] must be specified.
@@ -19,6 +22,8 @@ public interface UpdateJobRequestOrBuilder extends
    */
   boolean hasJob();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The new job properties. [name][google.cloud.scheduler.v1beta1.Job.name] must be specified.
@@ -30,6 +35,8 @@ public interface UpdateJobRequestOrBuilder extends
    */
   com.google.cloud.scheduler.v1beta1.Job getJob();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The new job properties. [name][google.cloud.scheduler.v1beta1.Job.name] must be specified.
@@ -42,6 +49,8 @@ public interface UpdateJobRequestOrBuilder extends
   com.google.cloud.scheduler.v1beta1.JobOrBuilder getJobOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A  mask used to specify which fields of the job are being updated.
    * </pre>
@@ -50,6 +59,8 @@ public interface UpdateJobRequestOrBuilder extends
    */
   boolean hasUpdateMask();
   /**
+   *
+   *
    * <pre>
    * A  mask used to specify which fields of the job are being updated.
    * </pre>
@@ -58,6 +69,8 @@ public interface UpdateJobRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
+   *
+   *
    * <pre>
    * A  mask used to specify which fields of the job are being updated.
    * </pre>

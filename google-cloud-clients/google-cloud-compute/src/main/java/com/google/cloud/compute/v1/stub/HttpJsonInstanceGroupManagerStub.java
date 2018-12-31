@@ -44,6 +44,7 @@ import com.google.cloud.compute.v1.InstanceGroupManagersListManagedInstancesResp
 import com.google.cloud.compute.v1.ListInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.ListManagedInstancesInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PatchInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.ProjectZoneInstanceGroupManagerName;
 import com.google.cloud.compute.v1.ProjectZoneName;
@@ -253,6 +254,27 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
               .build();
 
   @InternalApi
+  public static final ApiMethodDescriptor<PatchInstanceGroupManagerHttpRequest, Operation>
+      patchInstanceGroupManagerMethodDescriptor =
+          ApiMethodDescriptor.<PatchInstanceGroupManagerHttpRequest, Operation>newBuilder()
+              .setFullMethodName("compute.instanceGroupManagers.patch")
+              .setHttpMethod(HttpMethods.PATCH)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<PatchInstanceGroupManagerHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/zones/{zone}/instanceGroupManagers/{instanceGroupManager}"))
+                      .setQueryParams(Sets.<String>newHashSet("requestId"))
+                      .setResourceNameFactory(ProjectZoneInstanceGroupManagerName.newFactory())
+                      .setResourceNameField("instanceGroupManager")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Operation>newBuilder()
+                      .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
   public static final ApiMethodDescriptor<
           RecreateInstancesInstanceGroupManagerHttpRequest, Operation>
       recreateInstancesInstanceGroupManagerMethodDescriptor =
@@ -371,6 +393,8 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
           ListManagedInstancesInstanceGroupManagersHttpRequest,
           InstanceGroupManagersListManagedInstancesResponse>
       listManagedInstancesInstanceGroupManagersCallable;
+  private final UnaryCallable<PatchInstanceGroupManagerHttpRequest, Operation>
+      patchInstanceGroupManagerCallable;
   private final UnaryCallable<RecreateInstancesInstanceGroupManagerHttpRequest, Operation>
       recreateInstancesInstanceGroupManagerCallable;
   private final UnaryCallable<ResizeInstanceGroupManagerHttpRequest, Operation>
@@ -474,6 +498,11 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
                     newBuilder()
                 .setMethodDescriptor(listManagedInstancesInstanceGroupManagersMethodDescriptor)
                 .build();
+    HttpJsonCallSettings<PatchInstanceGroupManagerHttpRequest, Operation>
+        patchInstanceGroupManagerTransportSettings =
+            HttpJsonCallSettings.<PatchInstanceGroupManagerHttpRequest, Operation>newBuilder()
+                .setMethodDescriptor(patchInstanceGroupManagerMethodDescriptor)
+                .build();
     HttpJsonCallSettings<RecreateInstancesInstanceGroupManagerHttpRequest, Operation>
         recreateInstancesInstanceGroupManagerTransportSettings =
             HttpJsonCallSettings
@@ -547,6 +576,11 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
         callableFactory.createUnaryCallable(
             listManagedInstancesInstanceGroupManagersTransportSettings,
             settings.listManagedInstancesInstanceGroupManagersSettings(),
+            clientContext);
+    this.patchInstanceGroupManagerCallable =
+        callableFactory.createUnaryCallable(
+            patchInstanceGroupManagerTransportSettings,
+            settings.patchInstanceGroupManagerSettings(),
             clientContext);
     this.recreateInstancesInstanceGroupManagerCallable =
         callableFactory.createUnaryCallable(
@@ -635,6 +669,12 @@ public class HttpJsonInstanceGroupManagerStub extends InstanceGroupManagerStub {
           InstanceGroupManagersListManagedInstancesResponse>
       listManagedInstancesInstanceGroupManagersCallable() {
     return listManagedInstancesInstanceGroupManagersCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<PatchInstanceGroupManagerHttpRequest, Operation>
+      patchInstanceGroupManagerCallable() {
+    return patchInstanceGroupManagerCallable;
   }
 
   @BetaApi

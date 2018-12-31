@@ -20,32 +20,27 @@ import static com.google.common.base.MoreObjects.firstNonNull;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotSame;
 
-import org.junit.Test;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import org.junit.Test;
 
 /**
- * Base class for serialization tests. To use this class in your tests override the
- * {@code serializableObjects()} method to return all objects that must be serializable. Also
- * override {@code restorableObjects()} method to return all restorable objects whose state must be
- * tested for proper serialization. Both methods can return {@code null} if no such object needs to
- * be tested.
+ * Base class for serialization tests. To use this class in your tests override the {@code
+ * serializableObjects()} method to return all objects that must be serializable. Also override
+ * {@code restorableObjects()} method to return all restorable objects whose state must be tested
+ * for proper serialization. Both methods can return {@code null} if no such object needs to be
+ * tested.
  */
 public abstract class BaseSerializationTest {
 
-  /**
-   * Returns all objects for which correct serialization must be tested.
-   */
+  /** Returns all objects for which correct serialization must be tested. */
   protected abstract Serializable[] serializableObjects();
 
-  /**
-   * Returns all restorable objects whose state must be tested for proper serialization.
-   */
+  /** Returns all restorable objects whose state must be tested for proper serialization. */
   protected abstract Restorable<?>[] restorableObjects();
 
   @Test

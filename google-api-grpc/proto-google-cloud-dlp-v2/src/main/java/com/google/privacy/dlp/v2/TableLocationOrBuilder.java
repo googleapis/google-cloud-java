@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface TableLocationOrBuilder extends
+public interface TableLocationOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.TableLocation)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The zero-based index of the row where the finding is located.
    * </pre>

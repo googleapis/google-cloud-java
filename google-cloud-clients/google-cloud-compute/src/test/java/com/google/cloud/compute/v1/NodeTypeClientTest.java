@@ -86,18 +86,18 @@ public class NodeTypeClientTest {
   @Test
   @SuppressWarnings("all")
   public void aggregatedListNodeTypesTest() {
+    String id = "id3355";
     String kind = "kind3292052";
     String nextPageToken = "";
-    String id = "id3355";
     String selfLink = "selfLink-1691268851";
     NodeTypesScopedList itemsItem = NodeTypesScopedList.newBuilder().build();
     Map<String, NodeTypesScopedList> items = new HashMap<>();
     items.put("items", itemsItem);
     NodeTypeAggregatedList expectedResponse =
         NodeTypeAggregatedList.newBuilder()
+            .setId(id)
             .setKind(kind)
             .setNextPageToken(nextPageToken)
-            .setId(id)
             .setSelfLink(selfLink)
             .putAllItems(items)
             .build();
@@ -149,30 +149,30 @@ public class NodeTypeClientTest {
   @Test
   @SuppressWarnings("all")
   public void getNodeTypeTest() {
-    Integer memoryMb = 1726613907;
-    Integer guestCpus = 1754126894;
-    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-    String kind = "kind3292052";
-    String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
-    String description = "description-1724546052";
     String cpuPlatform = "cpuPlatform947156266";
+    String creationTimestamp = "creationTimestamp567396278";
+    String description = "description-1724546052";
+    Integer guestCpus = 1754126894;
     String id = "id3355";
+    String kind = "kind3292052";
     Integer localSsdGb = 1281375158;
+    Integer memoryMb = 1726613907;
+    String name = "name3373707";
     String selfLink = "selfLink-1691268851";
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     NodeType expectedResponse =
         NodeType.newBuilder()
-            .setMemoryMb(memoryMb)
-            .setGuestCpus(guestCpus)
-            .setZone(zone.toString())
-            .setKind(kind)
-            .setCreationTimestamp(creationTimestamp)
-            .setName(name)
-            .setDescription(description)
             .setCpuPlatform(cpuPlatform)
+            .setCreationTimestamp(creationTimestamp)
+            .setDescription(description)
+            .setGuestCpus(guestCpus)
             .setId(id)
+            .setKind(kind)
             .setLocalSsdGb(localSsdGb)
+            .setMemoryMb(memoryMb)
+            .setName(name)
             .setSelfLink(selfLink)
+            .setZone(zone.toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -219,17 +219,17 @@ public class NodeTypeClientTest {
   @Test
   @SuppressWarnings("all")
   public void listNodeTypesTest() {
+    String id = "id3355";
     String kind = "kind3292052";
     String nextPageToken = "";
-    String id = "id3355";
     String selfLink = "selfLink-1691268851";
     NodeType itemsElement = NodeType.newBuilder().build();
     List<NodeType> items = Arrays.asList(itemsElement);
     NodeTypeList expectedResponse =
         NodeTypeList.newBuilder()
+            .setId(id)
             .setKind(kind)
             .setNextPageToken(nextPageToken)
-            .setId(id)
             .setSelfLink(selfLink)
             .addAllItems(items)
             .build();

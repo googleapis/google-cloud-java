@@ -3,20 +3,24 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface ListInspectTemplatesResponseOrBuilder extends
+public interface ListInspectTemplatesResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.ListInspectTemplatesResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * List of inspectTemplates, up to page_size in ListInspectTemplatesRequest.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InspectTemplate inspect_templates = 1;</code>
    */
-  java.util.List<com.google.privacy.dlp.v2.InspectTemplate> 
-      getInspectTemplatesList();
+  java.util.List<com.google.privacy.dlp.v2.InspectTemplate> getInspectTemplatesList();
   /**
+   *
+   *
    * <pre>
    * List of inspectTemplates, up to page_size in ListInspectTemplatesRequest.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListInspectTemplatesResponseOrBuilder extends
    */
   com.google.privacy.dlp.v2.InspectTemplate getInspectTemplates(int index);
   /**
+   *
+   *
    * <pre>
    * List of inspectTemplates, up to page_size in ListInspectTemplatesRequest.
    * </pre>
@@ -33,25 +39,30 @@ public interface ListInspectTemplatesResponseOrBuilder extends
    */
   int getInspectTemplatesCount();
   /**
+   *
+   *
    * <pre>
    * List of inspectTemplates, up to page_size in ListInspectTemplatesRequest.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InspectTemplate inspect_templates = 1;</code>
    */
-  java.util.List<? extends com.google.privacy.dlp.v2.InspectTemplateOrBuilder> 
+  java.util.List<? extends com.google.privacy.dlp.v2.InspectTemplateOrBuilder>
       getInspectTemplatesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * List of inspectTemplates, up to page_size in ListInspectTemplatesRequest.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InspectTemplate inspect_templates = 1;</code>
    */
-  com.google.privacy.dlp.v2.InspectTemplateOrBuilder getInspectTemplatesOrBuilder(
-      int index);
+  com.google.privacy.dlp.v2.InspectTemplateOrBuilder getInspectTemplatesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * If the next page is available then the next page token to be used
    * in following ListInspectTemplates request.
@@ -61,6 +72,8 @@ public interface ListInspectTemplatesResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * If the next page is available then the next page token to be used
    * in following ListInspectTemplates request.
@@ -68,6 +81,5 @@ public interface ListInspectTemplatesResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

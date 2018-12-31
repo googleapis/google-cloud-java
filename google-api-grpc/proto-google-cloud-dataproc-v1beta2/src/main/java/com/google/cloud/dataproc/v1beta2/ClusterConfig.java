@@ -4,31 +4,34 @@
 package com.google.cloud.dataproc.v1beta2;
 
 /**
+ *
+ *
  * <pre>
  * The cluster config.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1beta2.ClusterConfig}
  */
-public  final class ClusterConfig extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1beta2.ClusterConfig)
     ClusterConfigOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ClusterConfig.newBuilder() to construct.
   private ClusterConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ClusterConfig() {
     configBucket_ = "";
     initializationActions_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ClusterConfig(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -48,113 +51,158 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            configBucket_ = s;
-            break;
-          }
-          case 66: {
-            com.google.cloud.dataproc.v1beta2.GceClusterConfig.Builder subBuilder = null;
-            if (gceClusterConfig_ != null) {
-              subBuilder = gceClusterConfig_.toBuilder();
+              configBucket_ = s;
+              break;
             }
-            gceClusterConfig_ = input.readMessage(com.google.cloud.dataproc.v1beta2.GceClusterConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(gceClusterConfig_);
-              gceClusterConfig_ = subBuilder.buildPartial();
-            }
+          case 66:
+            {
+              com.google.cloud.dataproc.v1beta2.GceClusterConfig.Builder subBuilder = null;
+              if (gceClusterConfig_ != null) {
+                subBuilder = gceClusterConfig_.toBuilder();
+              }
+              gceClusterConfig_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1beta2.GceClusterConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(gceClusterConfig_);
+                gceClusterConfig_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 74: {
-            com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Builder subBuilder = null;
-            if (masterConfig_ != null) {
-              subBuilder = masterConfig_.toBuilder();
+              break;
             }
-            masterConfig_ = input.readMessage(com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(masterConfig_);
-              masterConfig_ = subBuilder.buildPartial();
-            }
+          case 74:
+            {
+              com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Builder subBuilder = null;
+              if (masterConfig_ != null) {
+                subBuilder = masterConfig_.toBuilder();
+              }
+              masterConfig_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(masterConfig_);
+                masterConfig_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 82: {
-            com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Builder subBuilder = null;
-            if (workerConfig_ != null) {
-              subBuilder = workerConfig_.toBuilder();
+              break;
             }
-            workerConfig_ = input.readMessage(com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(workerConfig_);
-              workerConfig_ = subBuilder.buildPartial();
-            }
+          case 82:
+            {
+              com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Builder subBuilder = null;
+              if (workerConfig_ != null) {
+                subBuilder = workerConfig_.toBuilder();
+              }
+              workerConfig_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(workerConfig_);
+                workerConfig_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 90: {
-            if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
-              initializationActions_ = new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.NodeInitializationAction>();
-              mutable_bitField0_ |= 0x00000080;
+              break;
             }
-            initializationActions_.add(
-                input.readMessage(com.google.cloud.dataproc.v1beta2.NodeInitializationAction.parser(), extensionRegistry));
-            break;
-          }
-          case 98: {
-            com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Builder subBuilder = null;
-            if (secondaryWorkerConfig_ != null) {
-              subBuilder = secondaryWorkerConfig_.toBuilder();
+          case 90:
+            {
+              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+                initializationActions_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.dataproc.v1beta2.NodeInitializationAction>();
+                mutable_bitField0_ |= 0x00000080;
+              }
+              initializationActions_.add(
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1beta2.NodeInitializationAction.parser(),
+                      extensionRegistry));
+              break;
             }
-            secondaryWorkerConfig_ = input.readMessage(com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(secondaryWorkerConfig_);
-              secondaryWorkerConfig_ = subBuilder.buildPartial();
-            }
+          case 98:
+            {
+              com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Builder subBuilder = null;
+              if (secondaryWorkerConfig_ != null) {
+                subBuilder = secondaryWorkerConfig_.toBuilder();
+              }
+              secondaryWorkerConfig_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(secondaryWorkerConfig_);
+                secondaryWorkerConfig_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 106: {
-            com.google.cloud.dataproc.v1beta2.SoftwareConfig.Builder subBuilder = null;
-            if (softwareConfig_ != null) {
-              subBuilder = softwareConfig_.toBuilder();
+              break;
             }
-            softwareConfig_ = input.readMessage(com.google.cloud.dataproc.v1beta2.SoftwareConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(softwareConfig_);
-              softwareConfig_ = subBuilder.buildPartial();
-            }
+          case 106:
+            {
+              com.google.cloud.dataproc.v1beta2.SoftwareConfig.Builder subBuilder = null;
+              if (softwareConfig_ != null) {
+                subBuilder = softwareConfig_.toBuilder();
+              }
+              softwareConfig_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1beta2.SoftwareConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(softwareConfig_);
+                softwareConfig_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 114: {
-            com.google.cloud.dataproc.v1beta2.LifecycleConfig.Builder subBuilder = null;
-            if (lifecycleConfig_ != null) {
-              subBuilder = lifecycleConfig_.toBuilder();
+              break;
             }
-            lifecycleConfig_ = input.readMessage(com.google.cloud.dataproc.v1beta2.LifecycleConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(lifecycleConfig_);
-              lifecycleConfig_ = subBuilder.buildPartial();
-            }
+          case 114:
+            {
+              com.google.cloud.dataproc.v1beta2.LifecycleConfig.Builder subBuilder = null;
+              if (lifecycleConfig_ != null) {
+                subBuilder = lifecycleConfig_.toBuilder();
+              }
+              lifecycleConfig_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1beta2.LifecycleConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(lifecycleConfig_);
+                lifecycleConfig_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          case 122:
+            {
+              com.google.cloud.dataproc.v1beta2.EncryptionConfig.Builder subBuilder = null;
+              if (encryptionConfig_ != null) {
+                subBuilder = encryptionConfig_.toBuilder();
+              }
+              encryptionConfig_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1beta2.EncryptionConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(encryptionConfig_);
+                encryptionConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
         initializationActions_ = java.util.Collections.unmodifiableList(initializationActions_);
@@ -163,23 +211,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.dataproc.v1beta2.ClustersProto.internal_static_google_cloud_dataproc_v1beta2_ClusterConfig_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.dataproc.v1beta2.ClustersProto
+        .internal_static_google_cloud_dataproc_v1beta2_ClusterConfig_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.dataproc.v1beta2.ClustersProto.internal_static_google_cloud_dataproc_v1beta2_ClusterConfig_fieldAccessorTable
+    return com.google.cloud.dataproc.v1beta2.ClustersProto
+        .internal_static_google_cloud_dataproc_v1beta2_ClusterConfig_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dataproc.v1beta2.ClusterConfig.class, com.google.cloud.dataproc.v1beta2.ClusterConfig.Builder.class);
+            com.google.cloud.dataproc.v1beta2.ClusterConfig.class,
+            com.google.cloud.dataproc.v1beta2.ClusterConfig.Builder.class);
   }
 
   private int bitField0_;
   public static final int CONFIG_BUCKET_FIELD_NUMBER = 1;
   private volatile java.lang.Object configBucket_;
   /**
+   *
+   *
    * <pre>
    * Optional. A Cloud Storage staging bucket used for sharing generated
    * SSH keys and config. If you do not specify a staging bucket, Cloud
@@ -196,14 +249,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       configBucket_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional. A Cloud Storage staging bucket used for sharing generated
    * SSH keys and config. If you do not specify a staging bucket, Cloud
@@ -215,13 +269,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string config_bucket = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getConfigBucketBytes() {
+  public com.google.protobuf.ByteString getConfigBucketBytes() {
     java.lang.Object ref = configBucket_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       configBucket_ = b;
       return b;
     } else {
@@ -232,6 +284,8 @@ private static final long serialVersionUID = 0L;
   public static final int GCE_CLUSTER_CONFIG_FIELD_NUMBER = 8;
   private com.google.cloud.dataproc.v1beta2.GceClusterConfig gceClusterConfig_;
   /**
+   *
+   *
    * <pre>
    * Required. The shared Compute Engine config settings for
    * all instances in a cluster.
@@ -243,6 +297,8 @@ private static final long serialVersionUID = 0L;
     return gceClusterConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The shared Compute Engine config settings for
    * all instances in a cluster.
@@ -251,9 +307,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.dataproc.v1beta2.GceClusterConfig gce_cluster_config = 8;</code>
    */
   public com.google.cloud.dataproc.v1beta2.GceClusterConfig getGceClusterConfig() {
-    return gceClusterConfig_ == null ? com.google.cloud.dataproc.v1beta2.GceClusterConfig.getDefaultInstance() : gceClusterConfig_;
+    return gceClusterConfig_ == null
+        ? com.google.cloud.dataproc.v1beta2.GceClusterConfig.getDefaultInstance()
+        : gceClusterConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The shared Compute Engine config settings for
    * all instances in a cluster.
@@ -261,13 +321,16 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.cloud.dataproc.v1beta2.GceClusterConfig gce_cluster_config = 8;</code>
    */
-  public com.google.cloud.dataproc.v1beta2.GceClusterConfigOrBuilder getGceClusterConfigOrBuilder() {
+  public com.google.cloud.dataproc.v1beta2.GceClusterConfigOrBuilder
+      getGceClusterConfigOrBuilder() {
     return getGceClusterConfig();
   }
 
   public static final int MASTER_CONFIG_FIELD_NUMBER = 9;
   private com.google.cloud.dataproc.v1beta2.InstanceGroupConfig masterConfig_;
   /**
+   *
+   *
    * <pre>
    * Optional. The Compute Engine config settings for
    * the master instance in a cluster.
@@ -279,6 +342,8 @@ private static final long serialVersionUID = 0L;
     return masterConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The Compute Engine config settings for
    * the master instance in a cluster.
@@ -287,9 +352,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.dataproc.v1beta2.InstanceGroupConfig master_config = 9;</code>
    */
   public com.google.cloud.dataproc.v1beta2.InstanceGroupConfig getMasterConfig() {
-    return masterConfig_ == null ? com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.getDefaultInstance() : masterConfig_;
+    return masterConfig_ == null
+        ? com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.getDefaultInstance()
+        : masterConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The Compute Engine config settings for
    * the master instance in a cluster.
@@ -304,6 +373,8 @@ private static final long serialVersionUID = 0L;
   public static final int WORKER_CONFIG_FIELD_NUMBER = 10;
   private com.google.cloud.dataproc.v1beta2.InstanceGroupConfig workerConfig_;
   /**
+   *
+   *
    * <pre>
    * Optional. The Compute Engine config settings for
    * worker instances in a cluster.
@@ -315,6 +386,8 @@ private static final long serialVersionUID = 0L;
     return workerConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The Compute Engine config settings for
    * worker instances in a cluster.
@@ -323,9 +396,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.dataproc.v1beta2.InstanceGroupConfig worker_config = 10;</code>
    */
   public com.google.cloud.dataproc.v1beta2.InstanceGroupConfig getWorkerConfig() {
-    return workerConfig_ == null ? com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.getDefaultInstance() : workerConfig_;
+    return workerConfig_ == null
+        ? com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.getDefaultInstance()
+        : workerConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The Compute Engine config settings for
    * worker instances in a cluster.
@@ -340,6 +417,8 @@ private static final long serialVersionUID = 0L;
   public static final int SECONDARY_WORKER_CONFIG_FIELD_NUMBER = 12;
   private com.google.cloud.dataproc.v1beta2.InstanceGroupConfig secondaryWorkerConfig_;
   /**
+   *
+   *
    * <pre>
    * Optional. The Compute Engine config settings for
    * additional worker instances in a cluster.
@@ -351,6 +430,8 @@ private static final long serialVersionUID = 0L;
     return secondaryWorkerConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The Compute Engine config settings for
    * additional worker instances in a cluster.
@@ -359,9 +440,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.dataproc.v1beta2.InstanceGroupConfig secondary_worker_config = 12;</code>
    */
   public com.google.cloud.dataproc.v1beta2.InstanceGroupConfig getSecondaryWorkerConfig() {
-    return secondaryWorkerConfig_ == null ? com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.getDefaultInstance() : secondaryWorkerConfig_;
+    return secondaryWorkerConfig_ == null
+        ? com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.getDefaultInstance()
+        : secondaryWorkerConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The Compute Engine config settings for
    * additional worker instances in a cluster.
@@ -369,13 +454,16 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.cloud.dataproc.v1beta2.InstanceGroupConfig secondary_worker_config = 12;</code>
    */
-  public com.google.cloud.dataproc.v1beta2.InstanceGroupConfigOrBuilder getSecondaryWorkerConfigOrBuilder() {
+  public com.google.cloud.dataproc.v1beta2.InstanceGroupConfigOrBuilder
+      getSecondaryWorkerConfigOrBuilder() {
     return getSecondaryWorkerConfig();
   }
 
   public static final int SOFTWARE_CONFIG_FIELD_NUMBER = 13;
   private com.google.cloud.dataproc.v1beta2.SoftwareConfig softwareConfig_;
   /**
+   *
+   *
    * <pre>
    * Optional. The config settings for software inside the cluster.
    * </pre>
@@ -386,6 +474,8 @@ private static final long serialVersionUID = 0L;
     return softwareConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The config settings for software inside the cluster.
    * </pre>
@@ -393,9 +483,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.dataproc.v1beta2.SoftwareConfig software_config = 13;</code>
    */
   public com.google.cloud.dataproc.v1beta2.SoftwareConfig getSoftwareConfig() {
-    return softwareConfig_ == null ? com.google.cloud.dataproc.v1beta2.SoftwareConfig.getDefaultInstance() : softwareConfig_;
+    return softwareConfig_ == null
+        ? com.google.cloud.dataproc.v1beta2.SoftwareConfig.getDefaultInstance()
+        : softwareConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The config settings for software inside the cluster.
    * </pre>
@@ -409,6 +503,8 @@ private static final long serialVersionUID = 0L;
   public static final int LIFECYCLE_CONFIG_FIELD_NUMBER = 14;
   private com.google.cloud.dataproc.v1beta2.LifecycleConfig lifecycleConfig_;
   /**
+   *
+   *
    * <pre>
    * Optional. The config setting for auto delete cluster schedule.
    * </pre>
@@ -419,6 +515,8 @@ private static final long serialVersionUID = 0L;
     return lifecycleConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The config setting for auto delete cluster schedule.
    * </pre>
@@ -426,9 +524,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.dataproc.v1beta2.LifecycleConfig lifecycle_config = 14;</code>
    */
   public com.google.cloud.dataproc.v1beta2.LifecycleConfig getLifecycleConfig() {
-    return lifecycleConfig_ == null ? com.google.cloud.dataproc.v1beta2.LifecycleConfig.getDefaultInstance() : lifecycleConfig_;
+    return lifecycleConfig_ == null
+        ? com.google.cloud.dataproc.v1beta2.LifecycleConfig.getDefaultInstance()
+        : lifecycleConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The config setting for auto delete cluster schedule.
    * </pre>
@@ -440,8 +542,11 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int INITIALIZATION_ACTIONS_FIELD_NUMBER = 11;
-  private java.util.List<com.google.cloud.dataproc.v1beta2.NodeInitializationAction> initializationActions_;
+  private java.util.List<com.google.cloud.dataproc.v1beta2.NodeInitializationAction>
+      initializationActions_;
   /**
+   *
+   *
    * <pre>
    * Optional. Commands to execute on each node after config is
    * completed. By default, executables are run on master and all worker nodes.
@@ -455,12 +560,17 @@ private static final long serialVersionUID = 0L;
    *     fi
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;
+   * </code>
    */
-  public java.util.List<com.google.cloud.dataproc.v1beta2.NodeInitializationAction> getInitializationActionsList() {
+  public java.util.List<com.google.cloud.dataproc.v1beta2.NodeInitializationAction>
+      getInitializationActionsList() {
     return initializationActions_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Commands to execute on each node after config is
    * completed. By default, executables are run on master and all worker nodes.
@@ -474,13 +584,18 @@ private static final long serialVersionUID = 0L;
    *     fi
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;
+   * </code>
    */
-  public java.util.List<? extends com.google.cloud.dataproc.v1beta2.NodeInitializationActionOrBuilder> 
+  public java.util.List<
+          ? extends com.google.cloud.dataproc.v1beta2.NodeInitializationActionOrBuilder>
       getInitializationActionsOrBuilderList() {
     return initializationActions_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Commands to execute on each node after config is
    * completed. By default, executables are run on master and all worker nodes.
@@ -494,12 +609,16 @@ private static final long serialVersionUID = 0L;
    *     fi
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;
+   * </code>
    */
   public int getInitializationActionsCount() {
     return initializationActions_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Commands to execute on each node after config is
    * completed. By default, executables are run on master and all worker nodes.
@@ -513,33 +632,83 @@ private static final long serialVersionUID = 0L;
    *     fi
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;</code>
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;
+   * </code>
    */
-  public com.google.cloud.dataproc.v1beta2.NodeInitializationAction getInitializationActions(int index) {
-    return initializationActions_.get(index);
-  }
-  /**
-   * <pre>
-   * Optional. Commands to execute on each node after config is
-   * completed. By default, executables are run on master and all worker nodes.
-   * You can test a node's &lt;code&gt;role&lt;/code&gt; metadata to run an executable on
-   * a master or worker node, as shown below using `curl` (you can also use `wget`):
-   *     ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1beta2/instance/attributes/dataproc-role)
-   *     if [[ "${ROLE}" == 'Master' ]]; then
-   *       ... master specific actions ...
-   *     else
-   *       ... worker specific actions ...
-   *     fi
-   * </pre>
-   *
-   * <code>repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;</code>
-   */
-  public com.google.cloud.dataproc.v1beta2.NodeInitializationActionOrBuilder getInitializationActionsOrBuilder(
+  public com.google.cloud.dataproc.v1beta2.NodeInitializationAction getInitializationActions(
       int index) {
     return initializationActions_.get(index);
   }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Commands to execute on each node after config is
+   * completed. By default, executables are run on master and all worker nodes.
+   * You can test a node's &lt;code&gt;role&lt;/code&gt; metadata to run an executable on
+   * a master or worker node, as shown below using `curl` (you can also use `wget`):
+   *     ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1beta2/instance/attributes/dataproc-role)
+   *     if [[ "${ROLE}" == 'Master' ]]; then
+   *       ... master specific actions ...
+   *     else
+   *       ... worker specific actions ...
+   *     fi
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;
+   * </code>
+   */
+  public com.google.cloud.dataproc.v1beta2.NodeInitializationActionOrBuilder
+      getInitializationActionsOrBuilder(int index) {
+    return initializationActions_.get(index);
+  }
+
+  public static final int ENCRYPTION_CONFIG_FIELD_NUMBER = 15;
+  private com.google.cloud.dataproc.v1beta2.EncryptionConfig encryptionConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Encryption settings for the cluster.
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1beta2.EncryptionConfig encryption_config = 15;</code>
+   */
+  public boolean hasEncryptionConfig() {
+    return encryptionConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Encryption settings for the cluster.
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1beta2.EncryptionConfig encryption_config = 15;</code>
+   */
+  public com.google.cloud.dataproc.v1beta2.EncryptionConfig getEncryptionConfig() {
+    return encryptionConfig_ == null
+        ? com.google.cloud.dataproc.v1beta2.EncryptionConfig.getDefaultInstance()
+        : encryptionConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Encryption settings for the cluster.
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1beta2.EncryptionConfig encryption_config = 15;</code>
+   */
+  public com.google.cloud.dataproc.v1beta2.EncryptionConfigOrBuilder
+      getEncryptionConfigOrBuilder() {
+    return getEncryptionConfig();
+  }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -551,8 +720,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getConfigBucketBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, configBucket_);
     }
@@ -577,6 +745,9 @@ private static final long serialVersionUID = 0L;
     if (lifecycleConfig_ != null) {
       output.writeMessage(14, getLifecycleConfig());
     }
+    if (encryptionConfig_ != null) {
+      output.writeMessage(15, getEncryptionConfig());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -590,32 +761,31 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, configBucket_);
     }
     if (gceClusterConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, getGceClusterConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getGceClusterConfig());
     }
     if (masterConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, getMasterConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getMasterConfig());
     }
     if (workerConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, getWorkerConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getWorkerConfig());
     }
     for (int i = 0; i < initializationActions_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(11, initializationActions_.get(i));
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              11, initializationActions_.get(i));
     }
     if (secondaryWorkerConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(12, getSecondaryWorkerConfig());
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(12, getSecondaryWorkerConfig());
     }
     if (softwareConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(13, getSoftwareConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getSoftwareConfig());
     }
     if (lifecycleConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(14, getLifecycleConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getLifecycleConfig());
+    }
+    if (encryptionConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getEncryptionConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -625,48 +795,45 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.dataproc.v1beta2.ClusterConfig)) {
       return super.equals(obj);
     }
-    com.google.cloud.dataproc.v1beta2.ClusterConfig other = (com.google.cloud.dataproc.v1beta2.ClusterConfig) obj;
+    com.google.cloud.dataproc.v1beta2.ClusterConfig other =
+        (com.google.cloud.dataproc.v1beta2.ClusterConfig) obj;
 
     boolean result = true;
-    result = result && getConfigBucket()
-        .equals(other.getConfigBucket());
+    result = result && getConfigBucket().equals(other.getConfigBucket());
     result = result && (hasGceClusterConfig() == other.hasGceClusterConfig());
     if (hasGceClusterConfig()) {
-      result = result && getGceClusterConfig()
-          .equals(other.getGceClusterConfig());
+      result = result && getGceClusterConfig().equals(other.getGceClusterConfig());
     }
     result = result && (hasMasterConfig() == other.hasMasterConfig());
     if (hasMasterConfig()) {
-      result = result && getMasterConfig()
-          .equals(other.getMasterConfig());
+      result = result && getMasterConfig().equals(other.getMasterConfig());
     }
     result = result && (hasWorkerConfig() == other.hasWorkerConfig());
     if (hasWorkerConfig()) {
-      result = result && getWorkerConfig()
-          .equals(other.getWorkerConfig());
+      result = result && getWorkerConfig().equals(other.getWorkerConfig());
     }
     result = result && (hasSecondaryWorkerConfig() == other.hasSecondaryWorkerConfig());
     if (hasSecondaryWorkerConfig()) {
-      result = result && getSecondaryWorkerConfig()
-          .equals(other.getSecondaryWorkerConfig());
+      result = result && getSecondaryWorkerConfig().equals(other.getSecondaryWorkerConfig());
     }
     result = result && (hasSoftwareConfig() == other.hasSoftwareConfig());
     if (hasSoftwareConfig()) {
-      result = result && getSoftwareConfig()
-          .equals(other.getSoftwareConfig());
+      result = result && getSoftwareConfig().equals(other.getSoftwareConfig());
     }
     result = result && (hasLifecycleConfig() == other.hasLifecycleConfig());
     if (hasLifecycleConfig()) {
-      result = result && getLifecycleConfig()
-          .equals(other.getLifecycleConfig());
+      result = result && getLifecycleConfig().equals(other.getLifecycleConfig());
     }
-    result = result && getInitializationActionsList()
-        .equals(other.getInitializationActionsList());
+    result = result && getInitializationActionsList().equals(other.getInitializationActionsList());
+    result = result && (hasEncryptionConfig() == other.hasEncryptionConfig());
+    if (hasEncryptionConfig()) {
+      result = result && getEncryptionConfig().equals(other.getEncryptionConfig());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -708,123 +875,136 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + INITIALIZATION_ACTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getInitializationActionsList().hashCode();
     }
+    if (hasEncryptionConfig()) {
+      hash = (37 * hash) + ENCRYPTION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptionConfig().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.dataproc.v1beta2.ClusterConfig parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.dataproc.v1beta2.ClusterConfig parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.ClusterConfig parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.ClusterConfig parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.ClusterConfig parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.ClusterConfig parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.ClusterConfig parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.ClusterConfig parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dataproc.v1beta2.ClusterConfig parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.dataproc.v1beta2.ClusterConfig parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.dataproc.v1beta2.ClusterConfig parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.dataproc.v1beta2.ClusterConfig parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.dataproc.v1beta2.ClusterConfig parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dataproc.v1beta2.ClusterConfig parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.dataproc.v1beta2.ClusterConfig prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The cluster config.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1beta2.ClusterConfig}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dataproc.v1beta2.ClusterConfig)
       com.google.cloud.dataproc.v1beta2.ClusterConfigOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dataproc.v1beta2.ClustersProto.internal_static_google_cloud_dataproc_v1beta2_ClusterConfig_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataproc.v1beta2.ClustersProto
+          .internal_static_google_cloud_dataproc_v1beta2_ClusterConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dataproc.v1beta2.ClustersProto.internal_static_google_cloud_dataproc_v1beta2_ClusterConfig_fieldAccessorTable
+      return com.google.cloud.dataproc.v1beta2.ClustersProto
+          .internal_static_google_cloud_dataproc_v1beta2_ClusterConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dataproc.v1beta2.ClusterConfig.class, com.google.cloud.dataproc.v1beta2.ClusterConfig.Builder.class);
+              com.google.cloud.dataproc.v1beta2.ClusterConfig.class,
+              com.google.cloud.dataproc.v1beta2.ClusterConfig.Builder.class);
     }
 
     // Construct using com.google.cloud.dataproc.v1beta2.ClusterConfig.newBuilder()
@@ -832,17 +1012,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getInitializationActionsFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -890,13 +1070,19 @@ private static final long serialVersionUID = 0L;
       } else {
         initializationActionsBuilder_.clear();
       }
+      if (encryptionConfigBuilder_ == null) {
+        encryptionConfig_ = null;
+      } else {
+        encryptionConfig_ = null;
+        encryptionConfigBuilder_ = null;
+      }
       return this;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.dataproc.v1beta2.ClustersProto.internal_static_google_cloud_dataproc_v1beta2_ClusterConfig_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.dataproc.v1beta2.ClustersProto
+          .internal_static_google_cloud_dataproc_v1beta2_ClusterConfig_descriptor;
     }
 
     @java.lang.Override
@@ -915,7 +1101,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.dataproc.v1beta2.ClusterConfig buildPartial() {
-      com.google.cloud.dataproc.v1beta2.ClusterConfig result = new com.google.cloud.dataproc.v1beta2.ClusterConfig(this);
+      com.google.cloud.dataproc.v1beta2.ClusterConfig result =
+          new com.google.cloud.dataproc.v1beta2.ClusterConfig(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.configBucket_ = configBucket_;
@@ -958,6 +1145,11 @@ private static final long serialVersionUID = 0L;
       } else {
         result.initializationActions_ = initializationActionsBuilder_.build();
       }
+      if (encryptionConfigBuilder_ == null) {
+        result.encryptionConfig_ = encryptionConfig_;
+      } else {
+        result.encryptionConfig_ = encryptionConfigBuilder_.build();
+      }
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -967,38 +1159,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dataproc.v1beta2.ClusterConfig) {
-        return mergeFrom((com.google.cloud.dataproc.v1beta2.ClusterConfig)other);
+        return mergeFrom((com.google.cloud.dataproc.v1beta2.ClusterConfig) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1006,7 +1199,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.dataproc.v1beta2.ClusterConfig other) {
-      if (other == com.google.cloud.dataproc.v1beta2.ClusterConfig.getDefaultInstance()) return this;
+      if (other == com.google.cloud.dataproc.v1beta2.ClusterConfig.getDefaultInstance())
+        return this;
       if (!other.getConfigBucket().isEmpty()) {
         configBucket_ = other.configBucket_;
         onChanged();
@@ -1047,13 +1241,17 @@ private static final long serialVersionUID = 0L;
             initializationActionsBuilder_ = null;
             initializationActions_ = other.initializationActions_;
             bitField0_ = (bitField0_ & ~0x00000080);
-            initializationActionsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getInitializationActionsFieldBuilder() : null;
+            initializationActionsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getInitializationActionsFieldBuilder()
+                    : null;
           } else {
             initializationActionsBuilder_.addAllMessages(other.initializationActions_);
           }
         }
+      }
+      if (other.hasEncryptionConfig()) {
+        mergeEncryptionConfig(other.getEncryptionConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1083,10 +1281,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object configBucket_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional. A Cloud Storage staging bucket used for sharing generated
      * SSH keys and config. If you do not specify a staging bucket, Cloud
@@ -1101,8 +1302,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getConfigBucket() {
       java.lang.Object ref = configBucket_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         configBucket_ = s;
         return s;
@@ -1111,6 +1311,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A Cloud Storage staging bucket used for sharing generated
      * SSH keys and config. If you do not specify a staging bucket, Cloud
@@ -1122,13 +1324,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string config_bucket = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getConfigBucketBytes() {
+    public com.google.protobuf.ByteString getConfigBucketBytes() {
       java.lang.Object ref = configBucket_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         configBucket_ = b;
         return b;
       } else {
@@ -1136,6 +1336,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A Cloud Storage staging bucket used for sharing generated
      * SSH keys and config. If you do not specify a staging bucket, Cloud
@@ -1147,17 +1349,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string config_bucket = 1;</code>
      */
-    public Builder setConfigBucket(
-        java.lang.String value) {
+    public Builder setConfigBucket(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       configBucket_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A Cloud Storage staging bucket used for sharing generated
      * SSH keys and config. If you do not specify a staging bucket, Cloud
@@ -1170,12 +1373,14 @@ private static final long serialVersionUID = 0L;
      * <code>string config_bucket = 1;</code>
      */
     public Builder clearConfigBucket() {
-      
+
       configBucket_ = getDefaultInstance().getConfigBucket();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A Cloud Storage staging bucket used for sharing generated
      * SSH keys and config. If you do not specify a staging bucket, Cloud
@@ -1187,13 +1392,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string config_bucket = 1;</code>
      */
-    public Builder setConfigBucketBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setConfigBucketBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       configBucket_ = value;
       onChanged();
       return this;
@@ -1201,8 +1405,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.dataproc.v1beta2.GceClusterConfig gceClusterConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.GceClusterConfig, com.google.cloud.dataproc.v1beta2.GceClusterConfig.Builder, com.google.cloud.dataproc.v1beta2.GceClusterConfigOrBuilder> gceClusterConfigBuilder_;
+            com.google.cloud.dataproc.v1beta2.GceClusterConfig,
+            com.google.cloud.dataproc.v1beta2.GceClusterConfig.Builder,
+            com.google.cloud.dataproc.v1beta2.GceClusterConfigOrBuilder>
+        gceClusterConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * Required. The shared Compute Engine config settings for
      * all instances in a cluster.
@@ -1214,6 +1423,8 @@ private static final long serialVersionUID = 0L;
       return gceClusterConfigBuilder_ != null || gceClusterConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The shared Compute Engine config settings for
      * all instances in a cluster.
@@ -1223,12 +1434,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dataproc.v1beta2.GceClusterConfig getGceClusterConfig() {
       if (gceClusterConfigBuilder_ == null) {
-        return gceClusterConfig_ == null ? com.google.cloud.dataproc.v1beta2.GceClusterConfig.getDefaultInstance() : gceClusterConfig_;
+        return gceClusterConfig_ == null
+            ? com.google.cloud.dataproc.v1beta2.GceClusterConfig.getDefaultInstance()
+            : gceClusterConfig_;
       } else {
         return gceClusterConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The shared Compute Engine config settings for
      * all instances in a cluster.
@@ -1250,6 +1465,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The shared Compute Engine config settings for
      * all instances in a cluster.
@@ -1269,6 +1486,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The shared Compute Engine config settings for
      * all instances in a cluster.
@@ -1280,7 +1499,9 @@ private static final long serialVersionUID = 0L;
       if (gceClusterConfigBuilder_ == null) {
         if (gceClusterConfig_ != null) {
           gceClusterConfig_ =
-            com.google.cloud.dataproc.v1beta2.GceClusterConfig.newBuilder(gceClusterConfig_).mergeFrom(value).buildPartial();
+              com.google.cloud.dataproc.v1beta2.GceClusterConfig.newBuilder(gceClusterConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           gceClusterConfig_ = value;
         }
@@ -1292,6 +1513,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The shared Compute Engine config settings for
      * all instances in a cluster.
@@ -1311,6 +1534,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The shared Compute Engine config settings for
      * all instances in a cluster.
@@ -1319,11 +1544,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.GceClusterConfig gce_cluster_config = 8;</code>
      */
     public com.google.cloud.dataproc.v1beta2.GceClusterConfig.Builder getGceClusterConfigBuilder() {
-      
+
       onChanged();
       return getGceClusterConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Required. The shared Compute Engine config settings for
      * all instances in a cluster.
@@ -1331,15 +1558,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.dataproc.v1beta2.GceClusterConfig gce_cluster_config = 8;</code>
      */
-    public com.google.cloud.dataproc.v1beta2.GceClusterConfigOrBuilder getGceClusterConfigOrBuilder() {
+    public com.google.cloud.dataproc.v1beta2.GceClusterConfigOrBuilder
+        getGceClusterConfigOrBuilder() {
       if (gceClusterConfigBuilder_ != null) {
         return gceClusterConfigBuilder_.getMessageOrBuilder();
       } else {
-        return gceClusterConfig_ == null ?
-            com.google.cloud.dataproc.v1beta2.GceClusterConfig.getDefaultInstance() : gceClusterConfig_;
+        return gceClusterConfig_ == null
+            ? com.google.cloud.dataproc.v1beta2.GceClusterConfig.getDefaultInstance()
+            : gceClusterConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The shared Compute Engine config settings for
      * all instances in a cluster.
@@ -1348,14 +1579,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.GceClusterConfig gce_cluster_config = 8;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.GceClusterConfig, com.google.cloud.dataproc.v1beta2.GceClusterConfig.Builder, com.google.cloud.dataproc.v1beta2.GceClusterConfigOrBuilder> 
+            com.google.cloud.dataproc.v1beta2.GceClusterConfig,
+            com.google.cloud.dataproc.v1beta2.GceClusterConfig.Builder,
+            com.google.cloud.dataproc.v1beta2.GceClusterConfigOrBuilder>
         getGceClusterConfigFieldBuilder() {
       if (gceClusterConfigBuilder_ == null) {
-        gceClusterConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataproc.v1beta2.GceClusterConfig, com.google.cloud.dataproc.v1beta2.GceClusterConfig.Builder, com.google.cloud.dataproc.v1beta2.GceClusterConfigOrBuilder>(
-                getGceClusterConfig(),
-                getParentForChildren(),
-                isClean());
+        gceClusterConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1beta2.GceClusterConfig,
+                com.google.cloud.dataproc.v1beta2.GceClusterConfig.Builder,
+                com.google.cloud.dataproc.v1beta2.GceClusterConfigOrBuilder>(
+                getGceClusterConfig(), getParentForChildren(), isClean());
         gceClusterConfig_ = null;
       }
       return gceClusterConfigBuilder_;
@@ -1363,8 +1597,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.dataproc.v1beta2.InstanceGroupConfig masterConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.InstanceGroupConfig, com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Builder, com.google.cloud.dataproc.v1beta2.InstanceGroupConfigOrBuilder> masterConfigBuilder_;
+            com.google.cloud.dataproc.v1beta2.InstanceGroupConfig,
+            com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Builder,
+            com.google.cloud.dataproc.v1beta2.InstanceGroupConfigOrBuilder>
+        masterConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine config settings for
      * the master instance in a cluster.
@@ -1376,6 +1615,8 @@ private static final long serialVersionUID = 0L;
       return masterConfigBuilder_ != null || masterConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine config settings for
      * the master instance in a cluster.
@@ -1385,12 +1626,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dataproc.v1beta2.InstanceGroupConfig getMasterConfig() {
       if (masterConfigBuilder_ == null) {
-        return masterConfig_ == null ? com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.getDefaultInstance() : masterConfig_;
+        return masterConfig_ == null
+            ? com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.getDefaultInstance()
+            : masterConfig_;
       } else {
         return masterConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine config settings for
      * the master instance in a cluster.
@@ -1412,6 +1657,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine config settings for
      * the master instance in a cluster.
@@ -1431,6 +1678,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine config settings for
      * the master instance in a cluster.
@@ -1442,7 +1691,9 @@ private static final long serialVersionUID = 0L;
       if (masterConfigBuilder_ == null) {
         if (masterConfig_ != null) {
           masterConfig_ =
-            com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.newBuilder(masterConfig_).mergeFrom(value).buildPartial();
+              com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.newBuilder(masterConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           masterConfig_ = value;
         }
@@ -1454,6 +1705,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine config settings for
      * the master instance in a cluster.
@@ -1473,6 +1726,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine config settings for
      * the master instance in a cluster.
@@ -1481,11 +1736,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.InstanceGroupConfig master_config = 9;</code>
      */
     public com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Builder getMasterConfigBuilder() {
-      
+
       onChanged();
       return getMasterConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine config settings for
      * the master instance in a cluster.
@@ -1493,15 +1750,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.dataproc.v1beta2.InstanceGroupConfig master_config = 9;</code>
      */
-    public com.google.cloud.dataproc.v1beta2.InstanceGroupConfigOrBuilder getMasterConfigOrBuilder() {
+    public com.google.cloud.dataproc.v1beta2.InstanceGroupConfigOrBuilder
+        getMasterConfigOrBuilder() {
       if (masterConfigBuilder_ != null) {
         return masterConfigBuilder_.getMessageOrBuilder();
       } else {
-        return masterConfig_ == null ?
-            com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.getDefaultInstance() : masterConfig_;
+        return masterConfig_ == null
+            ? com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.getDefaultInstance()
+            : masterConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine config settings for
      * the master instance in a cluster.
@@ -1510,14 +1771,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.InstanceGroupConfig master_config = 9;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.InstanceGroupConfig, com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Builder, com.google.cloud.dataproc.v1beta2.InstanceGroupConfigOrBuilder> 
+            com.google.cloud.dataproc.v1beta2.InstanceGroupConfig,
+            com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Builder,
+            com.google.cloud.dataproc.v1beta2.InstanceGroupConfigOrBuilder>
         getMasterConfigFieldBuilder() {
       if (masterConfigBuilder_ == null) {
-        masterConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataproc.v1beta2.InstanceGroupConfig, com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Builder, com.google.cloud.dataproc.v1beta2.InstanceGroupConfigOrBuilder>(
-                getMasterConfig(),
-                getParentForChildren(),
-                isClean());
+        masterConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1beta2.InstanceGroupConfig,
+                com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Builder,
+                com.google.cloud.dataproc.v1beta2.InstanceGroupConfigOrBuilder>(
+                getMasterConfig(), getParentForChildren(), isClean());
         masterConfig_ = null;
       }
       return masterConfigBuilder_;
@@ -1525,8 +1789,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.dataproc.v1beta2.InstanceGroupConfig workerConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.InstanceGroupConfig, com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Builder, com.google.cloud.dataproc.v1beta2.InstanceGroupConfigOrBuilder> workerConfigBuilder_;
+            com.google.cloud.dataproc.v1beta2.InstanceGroupConfig,
+            com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Builder,
+            com.google.cloud.dataproc.v1beta2.InstanceGroupConfigOrBuilder>
+        workerConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine config settings for
      * worker instances in a cluster.
@@ -1538,6 +1807,8 @@ private static final long serialVersionUID = 0L;
       return workerConfigBuilder_ != null || workerConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine config settings for
      * worker instances in a cluster.
@@ -1547,12 +1818,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dataproc.v1beta2.InstanceGroupConfig getWorkerConfig() {
       if (workerConfigBuilder_ == null) {
-        return workerConfig_ == null ? com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.getDefaultInstance() : workerConfig_;
+        return workerConfig_ == null
+            ? com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.getDefaultInstance()
+            : workerConfig_;
       } else {
         return workerConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine config settings for
      * worker instances in a cluster.
@@ -1574,6 +1849,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine config settings for
      * worker instances in a cluster.
@@ -1593,6 +1870,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine config settings for
      * worker instances in a cluster.
@@ -1604,7 +1883,9 @@ private static final long serialVersionUID = 0L;
       if (workerConfigBuilder_ == null) {
         if (workerConfig_ != null) {
           workerConfig_ =
-            com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.newBuilder(workerConfig_).mergeFrom(value).buildPartial();
+              com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.newBuilder(workerConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           workerConfig_ = value;
         }
@@ -1616,6 +1897,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine config settings for
      * worker instances in a cluster.
@@ -1635,6 +1918,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine config settings for
      * worker instances in a cluster.
@@ -1643,11 +1928,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.InstanceGroupConfig worker_config = 10;</code>
      */
     public com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Builder getWorkerConfigBuilder() {
-      
+
       onChanged();
       return getWorkerConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine config settings for
      * worker instances in a cluster.
@@ -1655,15 +1942,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.dataproc.v1beta2.InstanceGroupConfig worker_config = 10;</code>
      */
-    public com.google.cloud.dataproc.v1beta2.InstanceGroupConfigOrBuilder getWorkerConfigOrBuilder() {
+    public com.google.cloud.dataproc.v1beta2.InstanceGroupConfigOrBuilder
+        getWorkerConfigOrBuilder() {
       if (workerConfigBuilder_ != null) {
         return workerConfigBuilder_.getMessageOrBuilder();
       } else {
-        return workerConfig_ == null ?
-            com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.getDefaultInstance() : workerConfig_;
+        return workerConfig_ == null
+            ? com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.getDefaultInstance()
+            : workerConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine config settings for
      * worker instances in a cluster.
@@ -1672,14 +1963,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.InstanceGroupConfig worker_config = 10;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.InstanceGroupConfig, com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Builder, com.google.cloud.dataproc.v1beta2.InstanceGroupConfigOrBuilder> 
+            com.google.cloud.dataproc.v1beta2.InstanceGroupConfig,
+            com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Builder,
+            com.google.cloud.dataproc.v1beta2.InstanceGroupConfigOrBuilder>
         getWorkerConfigFieldBuilder() {
       if (workerConfigBuilder_ == null) {
-        workerConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataproc.v1beta2.InstanceGroupConfig, com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Builder, com.google.cloud.dataproc.v1beta2.InstanceGroupConfigOrBuilder>(
-                getWorkerConfig(),
-                getParentForChildren(),
-                isClean());
+        workerConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1beta2.InstanceGroupConfig,
+                com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Builder,
+                com.google.cloud.dataproc.v1beta2.InstanceGroupConfigOrBuilder>(
+                getWorkerConfig(), getParentForChildren(), isClean());
         workerConfig_ = null;
       }
       return workerConfigBuilder_;
@@ -1687,8 +1981,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.dataproc.v1beta2.InstanceGroupConfig secondaryWorkerConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.InstanceGroupConfig, com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Builder, com.google.cloud.dataproc.v1beta2.InstanceGroupConfigOrBuilder> secondaryWorkerConfigBuilder_;
+            com.google.cloud.dataproc.v1beta2.InstanceGroupConfig,
+            com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Builder,
+            com.google.cloud.dataproc.v1beta2.InstanceGroupConfigOrBuilder>
+        secondaryWorkerConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine config settings for
      * additional worker instances in a cluster.
@@ -1700,6 +1999,8 @@ private static final long serialVersionUID = 0L;
       return secondaryWorkerConfigBuilder_ != null || secondaryWorkerConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine config settings for
      * additional worker instances in a cluster.
@@ -1709,12 +2010,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dataproc.v1beta2.InstanceGroupConfig getSecondaryWorkerConfig() {
       if (secondaryWorkerConfigBuilder_ == null) {
-        return secondaryWorkerConfig_ == null ? com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.getDefaultInstance() : secondaryWorkerConfig_;
+        return secondaryWorkerConfig_ == null
+            ? com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.getDefaultInstance()
+            : secondaryWorkerConfig_;
       } else {
         return secondaryWorkerConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine config settings for
      * additional worker instances in a cluster.
@@ -1722,7 +2027,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.dataproc.v1beta2.InstanceGroupConfig secondary_worker_config = 12;</code>
      */
-    public Builder setSecondaryWorkerConfig(com.google.cloud.dataproc.v1beta2.InstanceGroupConfig value) {
+    public Builder setSecondaryWorkerConfig(
+        com.google.cloud.dataproc.v1beta2.InstanceGroupConfig value) {
       if (secondaryWorkerConfigBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1736,6 +2042,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine config settings for
      * additional worker instances in a cluster.
@@ -1755,6 +2063,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine config settings for
      * additional worker instances in a cluster.
@@ -1762,11 +2072,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.dataproc.v1beta2.InstanceGroupConfig secondary_worker_config = 12;</code>
      */
-    public Builder mergeSecondaryWorkerConfig(com.google.cloud.dataproc.v1beta2.InstanceGroupConfig value) {
+    public Builder mergeSecondaryWorkerConfig(
+        com.google.cloud.dataproc.v1beta2.InstanceGroupConfig value) {
       if (secondaryWorkerConfigBuilder_ == null) {
         if (secondaryWorkerConfig_ != null) {
           secondaryWorkerConfig_ =
-            com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.newBuilder(secondaryWorkerConfig_).mergeFrom(value).buildPartial();
+              com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.newBuilder(
+                      secondaryWorkerConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           secondaryWorkerConfig_ = value;
         }
@@ -1778,6 +2092,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine config settings for
      * additional worker instances in a cluster.
@@ -1797,6 +2113,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine config settings for
      * additional worker instances in a cluster.
@@ -1804,12 +2122,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.dataproc.v1beta2.InstanceGroupConfig secondary_worker_config = 12;</code>
      */
-    public com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Builder getSecondaryWorkerConfigBuilder() {
-      
+    public com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Builder
+        getSecondaryWorkerConfigBuilder() {
+
       onChanged();
       return getSecondaryWorkerConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine config settings for
      * additional worker instances in a cluster.
@@ -1817,15 +2138,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.dataproc.v1beta2.InstanceGroupConfig secondary_worker_config = 12;</code>
      */
-    public com.google.cloud.dataproc.v1beta2.InstanceGroupConfigOrBuilder getSecondaryWorkerConfigOrBuilder() {
+    public com.google.cloud.dataproc.v1beta2.InstanceGroupConfigOrBuilder
+        getSecondaryWorkerConfigOrBuilder() {
       if (secondaryWorkerConfigBuilder_ != null) {
         return secondaryWorkerConfigBuilder_.getMessageOrBuilder();
       } else {
-        return secondaryWorkerConfig_ == null ?
-            com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.getDefaultInstance() : secondaryWorkerConfig_;
+        return secondaryWorkerConfig_ == null
+            ? com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.getDefaultInstance()
+            : secondaryWorkerConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The Compute Engine config settings for
      * additional worker instances in a cluster.
@@ -1834,14 +2159,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.InstanceGroupConfig secondary_worker_config = 12;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.InstanceGroupConfig, com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Builder, com.google.cloud.dataproc.v1beta2.InstanceGroupConfigOrBuilder> 
+            com.google.cloud.dataproc.v1beta2.InstanceGroupConfig,
+            com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Builder,
+            com.google.cloud.dataproc.v1beta2.InstanceGroupConfigOrBuilder>
         getSecondaryWorkerConfigFieldBuilder() {
       if (secondaryWorkerConfigBuilder_ == null) {
-        secondaryWorkerConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataproc.v1beta2.InstanceGroupConfig, com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Builder, com.google.cloud.dataproc.v1beta2.InstanceGroupConfigOrBuilder>(
-                getSecondaryWorkerConfig(),
-                getParentForChildren(),
-                isClean());
+        secondaryWorkerConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1beta2.InstanceGroupConfig,
+                com.google.cloud.dataproc.v1beta2.InstanceGroupConfig.Builder,
+                com.google.cloud.dataproc.v1beta2.InstanceGroupConfigOrBuilder>(
+                getSecondaryWorkerConfig(), getParentForChildren(), isClean());
         secondaryWorkerConfig_ = null;
       }
       return secondaryWorkerConfigBuilder_;
@@ -1849,8 +2177,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.dataproc.v1beta2.SoftwareConfig softwareConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.SoftwareConfig, com.google.cloud.dataproc.v1beta2.SoftwareConfig.Builder, com.google.cloud.dataproc.v1beta2.SoftwareConfigOrBuilder> softwareConfigBuilder_;
+            com.google.cloud.dataproc.v1beta2.SoftwareConfig,
+            com.google.cloud.dataproc.v1beta2.SoftwareConfig.Builder,
+            com.google.cloud.dataproc.v1beta2.SoftwareConfigOrBuilder>
+        softwareConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * Optional. The config settings for software inside the cluster.
      * </pre>
@@ -1861,6 +2194,8 @@ private static final long serialVersionUID = 0L;
       return softwareConfigBuilder_ != null || softwareConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The config settings for software inside the cluster.
      * </pre>
@@ -1869,12 +2204,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dataproc.v1beta2.SoftwareConfig getSoftwareConfig() {
       if (softwareConfigBuilder_ == null) {
-        return softwareConfig_ == null ? com.google.cloud.dataproc.v1beta2.SoftwareConfig.getDefaultInstance() : softwareConfig_;
+        return softwareConfig_ == null
+            ? com.google.cloud.dataproc.v1beta2.SoftwareConfig.getDefaultInstance()
+            : softwareConfig_;
       } else {
         return softwareConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The config settings for software inside the cluster.
      * </pre>
@@ -1895,6 +2234,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The config settings for software inside the cluster.
      * </pre>
@@ -1913,6 +2254,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The config settings for software inside the cluster.
      * </pre>
@@ -1923,7 +2266,9 @@ private static final long serialVersionUID = 0L;
       if (softwareConfigBuilder_ == null) {
         if (softwareConfig_ != null) {
           softwareConfig_ =
-            com.google.cloud.dataproc.v1beta2.SoftwareConfig.newBuilder(softwareConfig_).mergeFrom(value).buildPartial();
+              com.google.cloud.dataproc.v1beta2.SoftwareConfig.newBuilder(softwareConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           softwareConfig_ = value;
         }
@@ -1935,6 +2280,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The config settings for software inside the cluster.
      * </pre>
@@ -1953,6 +2300,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The config settings for software inside the cluster.
      * </pre>
@@ -1960,11 +2309,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.SoftwareConfig software_config = 13;</code>
      */
     public com.google.cloud.dataproc.v1beta2.SoftwareConfig.Builder getSoftwareConfigBuilder() {
-      
+
       onChanged();
       return getSoftwareConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The config settings for software inside the cluster.
      * </pre>
@@ -1975,11 +2326,14 @@ private static final long serialVersionUID = 0L;
       if (softwareConfigBuilder_ != null) {
         return softwareConfigBuilder_.getMessageOrBuilder();
       } else {
-        return softwareConfig_ == null ?
-            com.google.cloud.dataproc.v1beta2.SoftwareConfig.getDefaultInstance() : softwareConfig_;
+        return softwareConfig_ == null
+            ? com.google.cloud.dataproc.v1beta2.SoftwareConfig.getDefaultInstance()
+            : softwareConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The config settings for software inside the cluster.
      * </pre>
@@ -1987,14 +2341,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.SoftwareConfig software_config = 13;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.SoftwareConfig, com.google.cloud.dataproc.v1beta2.SoftwareConfig.Builder, com.google.cloud.dataproc.v1beta2.SoftwareConfigOrBuilder> 
+            com.google.cloud.dataproc.v1beta2.SoftwareConfig,
+            com.google.cloud.dataproc.v1beta2.SoftwareConfig.Builder,
+            com.google.cloud.dataproc.v1beta2.SoftwareConfigOrBuilder>
         getSoftwareConfigFieldBuilder() {
       if (softwareConfigBuilder_ == null) {
-        softwareConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataproc.v1beta2.SoftwareConfig, com.google.cloud.dataproc.v1beta2.SoftwareConfig.Builder, com.google.cloud.dataproc.v1beta2.SoftwareConfigOrBuilder>(
-                getSoftwareConfig(),
-                getParentForChildren(),
-                isClean());
+        softwareConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1beta2.SoftwareConfig,
+                com.google.cloud.dataproc.v1beta2.SoftwareConfig.Builder,
+                com.google.cloud.dataproc.v1beta2.SoftwareConfigOrBuilder>(
+                getSoftwareConfig(), getParentForChildren(), isClean());
         softwareConfig_ = null;
       }
       return softwareConfigBuilder_;
@@ -2002,8 +2359,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.dataproc.v1beta2.LifecycleConfig lifecycleConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.LifecycleConfig, com.google.cloud.dataproc.v1beta2.LifecycleConfig.Builder, com.google.cloud.dataproc.v1beta2.LifecycleConfigOrBuilder> lifecycleConfigBuilder_;
+            com.google.cloud.dataproc.v1beta2.LifecycleConfig,
+            com.google.cloud.dataproc.v1beta2.LifecycleConfig.Builder,
+            com.google.cloud.dataproc.v1beta2.LifecycleConfigOrBuilder>
+        lifecycleConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * Optional. The config setting for auto delete cluster schedule.
      * </pre>
@@ -2014,6 +2376,8 @@ private static final long serialVersionUID = 0L;
       return lifecycleConfigBuilder_ != null || lifecycleConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The config setting for auto delete cluster schedule.
      * </pre>
@@ -2022,12 +2386,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dataproc.v1beta2.LifecycleConfig getLifecycleConfig() {
       if (lifecycleConfigBuilder_ == null) {
-        return lifecycleConfig_ == null ? com.google.cloud.dataproc.v1beta2.LifecycleConfig.getDefaultInstance() : lifecycleConfig_;
+        return lifecycleConfig_ == null
+            ? com.google.cloud.dataproc.v1beta2.LifecycleConfig.getDefaultInstance()
+            : lifecycleConfig_;
       } else {
         return lifecycleConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The config setting for auto delete cluster schedule.
      * </pre>
@@ -2048,6 +2416,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The config setting for auto delete cluster schedule.
      * </pre>
@@ -2066,6 +2436,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The config setting for auto delete cluster schedule.
      * </pre>
@@ -2076,7 +2448,9 @@ private static final long serialVersionUID = 0L;
       if (lifecycleConfigBuilder_ == null) {
         if (lifecycleConfig_ != null) {
           lifecycleConfig_ =
-            com.google.cloud.dataproc.v1beta2.LifecycleConfig.newBuilder(lifecycleConfig_).mergeFrom(value).buildPartial();
+              com.google.cloud.dataproc.v1beta2.LifecycleConfig.newBuilder(lifecycleConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           lifecycleConfig_ = value;
         }
@@ -2088,6 +2462,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The config setting for auto delete cluster schedule.
      * </pre>
@@ -2106,6 +2482,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The config setting for auto delete cluster schedule.
      * </pre>
@@ -2113,26 +2491,32 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.LifecycleConfig lifecycle_config = 14;</code>
      */
     public com.google.cloud.dataproc.v1beta2.LifecycleConfig.Builder getLifecycleConfigBuilder() {
-      
+
       onChanged();
       return getLifecycleConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The config setting for auto delete cluster schedule.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.LifecycleConfig lifecycle_config = 14;</code>
      */
-    public com.google.cloud.dataproc.v1beta2.LifecycleConfigOrBuilder getLifecycleConfigOrBuilder() {
+    public com.google.cloud.dataproc.v1beta2.LifecycleConfigOrBuilder
+        getLifecycleConfigOrBuilder() {
       if (lifecycleConfigBuilder_ != null) {
         return lifecycleConfigBuilder_.getMessageOrBuilder();
       } else {
-        return lifecycleConfig_ == null ?
-            com.google.cloud.dataproc.v1beta2.LifecycleConfig.getDefaultInstance() : lifecycleConfig_;
+        return lifecycleConfig_ == null
+            ? com.google.cloud.dataproc.v1beta2.LifecycleConfig.getDefaultInstance()
+            : lifecycleConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The config setting for auto delete cluster schedule.
      * </pre>
@@ -2140,32 +2524,43 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.LifecycleConfig lifecycle_config = 14;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.LifecycleConfig, com.google.cloud.dataproc.v1beta2.LifecycleConfig.Builder, com.google.cloud.dataproc.v1beta2.LifecycleConfigOrBuilder> 
+            com.google.cloud.dataproc.v1beta2.LifecycleConfig,
+            com.google.cloud.dataproc.v1beta2.LifecycleConfig.Builder,
+            com.google.cloud.dataproc.v1beta2.LifecycleConfigOrBuilder>
         getLifecycleConfigFieldBuilder() {
       if (lifecycleConfigBuilder_ == null) {
-        lifecycleConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataproc.v1beta2.LifecycleConfig, com.google.cloud.dataproc.v1beta2.LifecycleConfig.Builder, com.google.cloud.dataproc.v1beta2.LifecycleConfigOrBuilder>(
-                getLifecycleConfig(),
-                getParentForChildren(),
-                isClean());
+        lifecycleConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1beta2.LifecycleConfig,
+                com.google.cloud.dataproc.v1beta2.LifecycleConfig.Builder,
+                com.google.cloud.dataproc.v1beta2.LifecycleConfigOrBuilder>(
+                getLifecycleConfig(), getParentForChildren(), isClean());
         lifecycleConfig_ = null;
       }
       return lifecycleConfigBuilder_;
     }
 
-    private java.util.List<com.google.cloud.dataproc.v1beta2.NodeInitializationAction> initializationActions_ =
-      java.util.Collections.emptyList();
+    private java.util.List<com.google.cloud.dataproc.v1beta2.NodeInitializationAction>
+        initializationActions_ = java.util.Collections.emptyList();
+
     private void ensureInitializationActionsIsMutable() {
       if (!((bitField0_ & 0x00000080) == 0x00000080)) {
-        initializationActions_ = new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.NodeInitializationAction>(initializationActions_);
+        initializationActions_ =
+            new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.NodeInitializationAction>(
+                initializationActions_);
         bitField0_ |= 0x00000080;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.NodeInitializationAction, com.google.cloud.dataproc.v1beta2.NodeInitializationAction.Builder, com.google.cloud.dataproc.v1beta2.NodeInitializationActionOrBuilder> initializationActionsBuilder_;
+            com.google.cloud.dataproc.v1beta2.NodeInitializationAction,
+            com.google.cloud.dataproc.v1beta2.NodeInitializationAction.Builder,
+            com.google.cloud.dataproc.v1beta2.NodeInitializationActionOrBuilder>
+        initializationActionsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Optional. Commands to execute on each node after config is
      * completed. By default, executables are run on master and all worker nodes.
@@ -2179,9 +2574,12 @@ private static final long serialVersionUID = 0L;
      *     fi
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;
+     * </code>
      */
-    public java.util.List<com.google.cloud.dataproc.v1beta2.NodeInitializationAction> getInitializationActionsList() {
+    public java.util.List<com.google.cloud.dataproc.v1beta2.NodeInitializationAction>
+        getInitializationActionsList() {
       if (initializationActionsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(initializationActions_);
       } else {
@@ -2189,6 +2587,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Commands to execute on each node after config is
      * completed. By default, executables are run on master and all worker nodes.
@@ -2202,7 +2602,9 @@ private static final long serialVersionUID = 0L;
      *     fi
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;
+     * </code>
      */
     public int getInitializationActionsCount() {
       if (initializationActionsBuilder_ == null) {
@@ -2212,6 +2614,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Commands to execute on each node after config is
      * completed. By default, executables are run on master and all worker nodes.
@@ -2225,9 +2629,12 @@ private static final long serialVersionUID = 0L;
      *     fi
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;
+     * </code>
      */
-    public com.google.cloud.dataproc.v1beta2.NodeInitializationAction getInitializationActions(int index) {
+    public com.google.cloud.dataproc.v1beta2.NodeInitializationAction getInitializationActions(
+        int index) {
       if (initializationActionsBuilder_ == null) {
         return initializationActions_.get(index);
       } else {
@@ -2235,6 +2642,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Commands to execute on each node after config is
      * completed. By default, executables are run on master and all worker nodes.
@@ -2248,7 +2657,9 @@ private static final long serialVersionUID = 0L;
      *     fi
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;
+     * </code>
      */
     public Builder setInitializationActions(
         int index, com.google.cloud.dataproc.v1beta2.NodeInitializationAction value) {
@@ -2265,6 +2676,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Commands to execute on each node after config is
      * completed. By default, executables are run on master and all worker nodes.
@@ -2278,10 +2691,13 @@ private static final long serialVersionUID = 0L;
      *     fi
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;
+     * </code>
      */
     public Builder setInitializationActions(
-        int index, com.google.cloud.dataproc.v1beta2.NodeInitializationAction.Builder builderForValue) {
+        int index,
+        com.google.cloud.dataproc.v1beta2.NodeInitializationAction.Builder builderForValue) {
       if (initializationActionsBuilder_ == null) {
         ensureInitializationActionsIsMutable();
         initializationActions_.set(index, builderForValue.build());
@@ -2292,6 +2708,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Commands to execute on each node after config is
      * completed. By default, executables are run on master and all worker nodes.
@@ -2305,9 +2723,12 @@ private static final long serialVersionUID = 0L;
      *     fi
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;
+     * </code>
      */
-    public Builder addInitializationActions(com.google.cloud.dataproc.v1beta2.NodeInitializationAction value) {
+    public Builder addInitializationActions(
+        com.google.cloud.dataproc.v1beta2.NodeInitializationAction value) {
       if (initializationActionsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2321,6 +2742,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Commands to execute on each node after config is
      * completed. By default, executables are run on master and all worker nodes.
@@ -2334,7 +2757,9 @@ private static final long serialVersionUID = 0L;
      *     fi
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;
+     * </code>
      */
     public Builder addInitializationActions(
         int index, com.google.cloud.dataproc.v1beta2.NodeInitializationAction value) {
@@ -2351,6 +2776,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Commands to execute on each node after config is
      * completed. By default, executables are run on master and all worker nodes.
@@ -2364,7 +2791,9 @@ private static final long serialVersionUID = 0L;
      *     fi
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;
+     * </code>
      */
     public Builder addInitializationActions(
         com.google.cloud.dataproc.v1beta2.NodeInitializationAction.Builder builderForValue) {
@@ -2378,6 +2807,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Commands to execute on each node after config is
      * completed. By default, executables are run on master and all worker nodes.
@@ -2391,10 +2822,13 @@ private static final long serialVersionUID = 0L;
      *     fi
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;
+     * </code>
      */
     public Builder addInitializationActions(
-        int index, com.google.cloud.dataproc.v1beta2.NodeInitializationAction.Builder builderForValue) {
+        int index,
+        com.google.cloud.dataproc.v1beta2.NodeInitializationAction.Builder builderForValue) {
       if (initializationActionsBuilder_ == null) {
         ensureInitializationActionsIsMutable();
         initializationActions_.add(index, builderForValue.build());
@@ -2405,6 +2839,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Commands to execute on each node after config is
      * completed. By default, executables are run on master and all worker nodes.
@@ -2418,14 +2854,16 @@ private static final long serialVersionUID = 0L;
      *     fi
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;
+     * </code>
      */
     public Builder addAllInitializationActions(
-        java.lang.Iterable<? extends com.google.cloud.dataproc.v1beta2.NodeInitializationAction> values) {
+        java.lang.Iterable<? extends com.google.cloud.dataproc.v1beta2.NodeInitializationAction>
+            values) {
       if (initializationActionsBuilder_ == null) {
         ensureInitializationActionsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, initializationActions_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, initializationActions_);
         onChanged();
       } else {
         initializationActionsBuilder_.addAllMessages(values);
@@ -2433,6 +2871,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Commands to execute on each node after config is
      * completed. By default, executables are run on master and all worker nodes.
@@ -2446,7 +2886,9 @@ private static final long serialVersionUID = 0L;
      *     fi
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;
+     * </code>
      */
     public Builder clearInitializationActions() {
       if (initializationActionsBuilder_ == null) {
@@ -2459,6 +2901,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Commands to execute on each node after config is
      * completed. By default, executables are run on master and all worker nodes.
@@ -2472,7 +2916,9 @@ private static final long serialVersionUID = 0L;
      *     fi
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;
+     * </code>
      */
     public Builder removeInitializationActions(int index) {
       if (initializationActionsBuilder_ == null) {
@@ -2485,6 +2931,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Commands to execute on each node after config is
      * completed. By default, executables are run on master and all worker nodes.
@@ -2498,13 +2946,17 @@ private static final long serialVersionUID = 0L;
      *     fi
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;
+     * </code>
      */
-    public com.google.cloud.dataproc.v1beta2.NodeInitializationAction.Builder getInitializationActionsBuilder(
-        int index) {
+    public com.google.cloud.dataproc.v1beta2.NodeInitializationAction.Builder
+        getInitializationActionsBuilder(int index) {
       return getInitializationActionsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Commands to execute on each node after config is
      * completed. By default, executables are run on master and all worker nodes.
@@ -2518,16 +2970,21 @@ private static final long serialVersionUID = 0L;
      *     fi
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;
+     * </code>
      */
-    public com.google.cloud.dataproc.v1beta2.NodeInitializationActionOrBuilder getInitializationActionsOrBuilder(
-        int index) {
+    public com.google.cloud.dataproc.v1beta2.NodeInitializationActionOrBuilder
+        getInitializationActionsOrBuilder(int index) {
       if (initializationActionsBuilder_ == null) {
-        return initializationActions_.get(index);  } else {
+        return initializationActions_.get(index);
+      } else {
         return initializationActionsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Commands to execute on each node after config is
      * completed. By default, executables are run on master and all worker nodes.
@@ -2541,10 +2998,13 @@ private static final long serialVersionUID = 0L;
      *     fi
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;
+     * </code>
      */
-    public java.util.List<? extends com.google.cloud.dataproc.v1beta2.NodeInitializationActionOrBuilder> 
-         getInitializationActionsOrBuilderList() {
+    public java.util.List<
+            ? extends com.google.cloud.dataproc.v1beta2.NodeInitializationActionOrBuilder>
+        getInitializationActionsOrBuilderList() {
       if (initializationActionsBuilder_ != null) {
         return initializationActionsBuilder_.getMessageOrBuilderList();
       } else {
@@ -2552,6 +3012,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Commands to execute on each node after config is
      * completed. By default, executables are run on master and all worker nodes.
@@ -2565,13 +3027,19 @@ private static final long serialVersionUID = 0L;
      *     fi
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;
+     * </code>
      */
-    public com.google.cloud.dataproc.v1beta2.NodeInitializationAction.Builder addInitializationActionsBuilder() {
-      return getInitializationActionsFieldBuilder().addBuilder(
-          com.google.cloud.dataproc.v1beta2.NodeInitializationAction.getDefaultInstance());
+    public com.google.cloud.dataproc.v1beta2.NodeInitializationAction.Builder
+        addInitializationActionsBuilder() {
+      return getInitializationActionsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.dataproc.v1beta2.NodeInitializationAction.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Commands to execute on each node after config is
      * completed. By default, executables are run on master and all worker nodes.
@@ -2585,14 +3053,20 @@ private static final long serialVersionUID = 0L;
      *     fi
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;
+     * </code>
      */
-    public com.google.cloud.dataproc.v1beta2.NodeInitializationAction.Builder addInitializationActionsBuilder(
-        int index) {
-      return getInitializationActionsFieldBuilder().addBuilder(
-          index, com.google.cloud.dataproc.v1beta2.NodeInitializationAction.getDefaultInstance());
+    public com.google.cloud.dataproc.v1beta2.NodeInitializationAction.Builder
+        addInitializationActionsBuilder(int index) {
+      return getInitializationActionsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.dataproc.v1beta2.NodeInitializationAction.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Commands to execute on each node after config is
      * completed. By default, executables are run on master and all worker nodes.
@@ -2606,18 +3080,26 @@ private static final long serialVersionUID = 0L;
      *     fi
      * </pre>
      *
-     * <code>repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;</code>
+     * <code>
+     * repeated .google.cloud.dataproc.v1beta2.NodeInitializationAction initialization_actions = 11;
+     * </code>
      */
-    public java.util.List<com.google.cloud.dataproc.v1beta2.NodeInitializationAction.Builder> 
-         getInitializationActionsBuilderList() {
+    public java.util.List<com.google.cloud.dataproc.v1beta2.NodeInitializationAction.Builder>
+        getInitializationActionsBuilderList() {
       return getInitializationActionsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.NodeInitializationAction, com.google.cloud.dataproc.v1beta2.NodeInitializationAction.Builder, com.google.cloud.dataproc.v1beta2.NodeInitializationActionOrBuilder> 
+            com.google.cloud.dataproc.v1beta2.NodeInitializationAction,
+            com.google.cloud.dataproc.v1beta2.NodeInitializationAction.Builder,
+            com.google.cloud.dataproc.v1beta2.NodeInitializationActionOrBuilder>
         getInitializationActionsFieldBuilder() {
       if (initializationActionsBuilder_ == null) {
-        initializationActionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.dataproc.v1beta2.NodeInitializationAction, com.google.cloud.dataproc.v1beta2.NodeInitializationAction.Builder, com.google.cloud.dataproc.v1beta2.NodeInitializationActionOrBuilder>(
+        initializationActionsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.dataproc.v1beta2.NodeInitializationAction,
+                com.google.cloud.dataproc.v1beta2.NodeInitializationAction.Builder,
+                com.google.cloud.dataproc.v1beta2.NodeInitializationActionOrBuilder>(
                 initializationActions_,
                 ((bitField0_ & 0x00000080) == 0x00000080),
                 getParentForChildren(),
@@ -2626,9 +3108,192 @@ private static final long serialVersionUID = 0L;
       }
       return initializationActionsBuilder_;
     }
+
+    private com.google.cloud.dataproc.v1beta2.EncryptionConfig encryptionConfig_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1beta2.EncryptionConfig,
+            com.google.cloud.dataproc.v1beta2.EncryptionConfig.Builder,
+            com.google.cloud.dataproc.v1beta2.EncryptionConfigOrBuilder>
+        encryptionConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Encryption settings for the cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1beta2.EncryptionConfig encryption_config = 15;</code>
+     */
+    public boolean hasEncryptionConfig() {
+      return encryptionConfigBuilder_ != null || encryptionConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Encryption settings for the cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1beta2.EncryptionConfig encryption_config = 15;</code>
+     */
+    public com.google.cloud.dataproc.v1beta2.EncryptionConfig getEncryptionConfig() {
+      if (encryptionConfigBuilder_ == null) {
+        return encryptionConfig_ == null
+            ? com.google.cloud.dataproc.v1beta2.EncryptionConfig.getDefaultInstance()
+            : encryptionConfig_;
+      } else {
+        return encryptionConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Encryption settings for the cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1beta2.EncryptionConfig encryption_config = 15;</code>
+     */
+    public Builder setEncryptionConfig(com.google.cloud.dataproc.v1beta2.EncryptionConfig value) {
+      if (encryptionConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        encryptionConfig_ = value;
+        onChanged();
+      } else {
+        encryptionConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Encryption settings for the cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1beta2.EncryptionConfig encryption_config = 15;</code>
+     */
+    public Builder setEncryptionConfig(
+        com.google.cloud.dataproc.v1beta2.EncryptionConfig.Builder builderForValue) {
+      if (encryptionConfigBuilder_ == null) {
+        encryptionConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        encryptionConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Encryption settings for the cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1beta2.EncryptionConfig encryption_config = 15;</code>
+     */
+    public Builder mergeEncryptionConfig(com.google.cloud.dataproc.v1beta2.EncryptionConfig value) {
+      if (encryptionConfigBuilder_ == null) {
+        if (encryptionConfig_ != null) {
+          encryptionConfig_ =
+              com.google.cloud.dataproc.v1beta2.EncryptionConfig.newBuilder(encryptionConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          encryptionConfig_ = value;
+        }
+        onChanged();
+      } else {
+        encryptionConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Encryption settings for the cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1beta2.EncryptionConfig encryption_config = 15;</code>
+     */
+    public Builder clearEncryptionConfig() {
+      if (encryptionConfigBuilder_ == null) {
+        encryptionConfig_ = null;
+        onChanged();
+      } else {
+        encryptionConfig_ = null;
+        encryptionConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Encryption settings for the cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1beta2.EncryptionConfig encryption_config = 15;</code>
+     */
+    public com.google.cloud.dataproc.v1beta2.EncryptionConfig.Builder getEncryptionConfigBuilder() {
+
+      onChanged();
+      return getEncryptionConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Encryption settings for the cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1beta2.EncryptionConfig encryption_config = 15;</code>
+     */
+    public com.google.cloud.dataproc.v1beta2.EncryptionConfigOrBuilder
+        getEncryptionConfigOrBuilder() {
+      if (encryptionConfigBuilder_ != null) {
+        return encryptionConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return encryptionConfig_ == null
+            ? com.google.cloud.dataproc.v1beta2.EncryptionConfig.getDefaultInstance()
+            : encryptionConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Encryption settings for the cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1beta2.EncryptionConfig encryption_config = 15;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1beta2.EncryptionConfig,
+            com.google.cloud.dataproc.v1beta2.EncryptionConfig.Builder,
+            com.google.cloud.dataproc.v1beta2.EncryptionConfigOrBuilder>
+        getEncryptionConfigFieldBuilder() {
+      if (encryptionConfigBuilder_ == null) {
+        encryptionConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1beta2.EncryptionConfig,
+                com.google.cloud.dataproc.v1beta2.EncryptionConfig.Builder,
+                com.google.cloud.dataproc.v1beta2.EncryptionConfigOrBuilder>(
+                getEncryptionConfig(), getParentForChildren(), isClean());
+        encryptionConfig_ = null;
+      }
+      return encryptionConfigBuilder_;
+    }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -2638,12 +3303,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.dataproc.v1beta2.ClusterConfig)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.dataproc.v1beta2.ClusterConfig)
   private static final com.google.cloud.dataproc.v1beta2.ClusterConfig DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.dataproc.v1beta2.ClusterConfig();
   }
@@ -2652,16 +3317,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ClusterConfig>
-      PARSER = new com.google.protobuf.AbstractParser<ClusterConfig>() {
-    @java.lang.Override
-    public ClusterConfig parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ClusterConfig(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ClusterConfig> PARSER =
+      new com.google.protobuf.AbstractParser<ClusterConfig>() {
+        @java.lang.Override
+        public ClusterConfig parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ClusterConfig(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ClusterConfig> parser() {
     return PARSER;
@@ -2676,6 +3341,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.dataproc.v1beta2.ClusterConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

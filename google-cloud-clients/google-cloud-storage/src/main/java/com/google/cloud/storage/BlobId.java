@@ -20,14 +20,13 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.storage.model.StorageObject;
 import com.google.common.base.MoreObjects;
-
 import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * Google Storage Object identifier. A {@code BlobId} object includes the name of the containing
- * bucket, the blob's name and possibly the blob's generation. If {@link #getGeneration()} is
- * {@code null} the identifier refers to the latest blob's generation.
+ * bucket, the blob's name and possibly the blob's generation. If {@link #getGeneration()} is {@code
+ * null} the identifier refers to the latest blob's generation.
  */
 public final class BlobId implements Serializable {
 
@@ -42,23 +41,17 @@ public final class BlobId implements Serializable {
     this.generation = generation;
   }
 
-    /**
-   * Returns the name of the bucket containing the blob.
-   */
+  /** Returns the name of the bucket containing the blob. */
   public String getBucket() {
     return bucket;
   }
 
-    /**
-   * Returns the name of the blob.
-   */
+  /** Returns the name of the blob. */
   public String getName() {
     return name;
   }
 
-    /**
-   * Returns blob's data generation. Used for versioning.
-   */
+  /** Returns blob's data generation. Used for versioning. */
   public Long getGeneration() {
     return generation;
   }
@@ -122,7 +115,7 @@ public final class BlobId implements Serializable {
   }
 
   static BlobId fromPb(StorageObject storageObject) {
-    return BlobId.of(storageObject.getBucket(), storageObject.getName(),
-        storageObject.getGeneration());
+    return BlobId.of(
+        storageObject.getBucket(), storageObject.getName(), storageObject.getGeneration());
   }
 }

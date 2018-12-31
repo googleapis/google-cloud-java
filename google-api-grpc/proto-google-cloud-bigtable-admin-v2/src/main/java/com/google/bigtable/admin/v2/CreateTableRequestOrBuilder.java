@@ -3,11 +3,14 @@
 
 package com.google.bigtable.admin.v2;
 
-public interface CreateTableRequestOrBuilder extends
+public interface CreateTableRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.CreateTableRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The unique name of the instance in which to create the table.
    * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
@@ -17,6 +20,8 @@ public interface CreateTableRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The unique name of the instance in which to create the table.
    * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
@@ -24,10 +29,11 @@ public interface CreateTableRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The name by which the new table should be referred to within the parent
    * instance, e.g., `foobar` rather than `&lt;parent&gt;/tables/foobar`.
@@ -37,6 +43,8 @@ public interface CreateTableRequestOrBuilder extends
    */
   java.lang.String getTableId();
   /**
+   *
+   *
    * <pre>
    * The name by which the new table should be referred to within the parent
    * instance, e.g., `foobar` rather than `&lt;parent&gt;/tables/foobar`.
@@ -44,10 +52,11 @@ public interface CreateTableRequestOrBuilder extends
    *
    * <code>string table_id = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getTableIdBytes();
+  com.google.protobuf.ByteString getTableIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The Table to create.
    * </pre>
@@ -56,6 +65,8 @@ public interface CreateTableRequestOrBuilder extends
    */
   boolean hasTable();
   /**
+   *
+   *
    * <pre>
    * The Table to create.
    * </pre>
@@ -64,6 +75,8 @@ public interface CreateTableRequestOrBuilder extends
    */
   com.google.bigtable.admin.v2.Table getTable();
   /**
+   *
+   *
    * <pre>
    * The Table to create.
    * </pre>
@@ -73,6 +86,8 @@ public interface CreateTableRequestOrBuilder extends
   com.google.bigtable.admin.v2.TableOrBuilder getTableOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The optional list of row keys that will be used to initially split the
    * table into several tablets (tablets are similar to HBase regions).
@@ -92,9 +107,10 @@ public interface CreateTableRequestOrBuilder extends
    *
    * <code>repeated .google.bigtable.admin.v2.CreateTableRequest.Split initial_splits = 4;</code>
    */
-  java.util.List<com.google.bigtable.admin.v2.CreateTableRequest.Split> 
-      getInitialSplitsList();
+  java.util.List<com.google.bigtable.admin.v2.CreateTableRequest.Split> getInitialSplitsList();
   /**
+   *
+   *
    * <pre>
    * The optional list of row keys that will be used to initially split the
    * table into several tablets (tablets are similar to HBase regions).
@@ -116,6 +132,8 @@ public interface CreateTableRequestOrBuilder extends
    */
   com.google.bigtable.admin.v2.CreateTableRequest.Split getInitialSplits(int index);
   /**
+   *
+   *
    * <pre>
    * The optional list of row keys that will be used to initially split the
    * table into several tablets (tablets are similar to HBase regions).
@@ -137,6 +155,8 @@ public interface CreateTableRequestOrBuilder extends
    */
   int getInitialSplitsCount();
   /**
+   *
+   *
    * <pre>
    * The optional list of row keys that will be used to initially split the
    * table into several tablets (tablets are similar to HBase regions).
@@ -156,9 +176,11 @@ public interface CreateTableRequestOrBuilder extends
    *
    * <code>repeated .google.bigtable.admin.v2.CreateTableRequest.Split initial_splits = 4;</code>
    */
-  java.util.List<? extends com.google.bigtable.admin.v2.CreateTableRequest.SplitOrBuilder> 
+  java.util.List<? extends com.google.bigtable.admin.v2.CreateTableRequest.SplitOrBuilder>
       getInitialSplitsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The optional list of row keys that will be used to initially split the
    * table into several tablets (tablets are similar to HBase regions).

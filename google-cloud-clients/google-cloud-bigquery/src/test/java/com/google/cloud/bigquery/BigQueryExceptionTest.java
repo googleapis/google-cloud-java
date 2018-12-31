@@ -98,9 +98,8 @@ public class BigQueryExceptionTest {
     assertTrue(exception.isRetryable());
     assertSame(cause, exception.getCause());
 
-
     HttpResponseException httpResponseException =
-            new HttpResponseException.Builder(404, "Service Unavailable", new HttpHeaders()).build();
+        new HttpResponseException.Builder(404, "Service Unavailable", new HttpHeaders()).build();
     exception = new BigQueryException(httpResponseException);
     assertEquals(404, exception.getCode());
     assertFalse(exception.isRetryable());
@@ -124,7 +123,6 @@ public class BigQueryExceptionTest {
     exception = new BigQueryException(httpResponseException);
     assertEquals(500, exception.getCode());
     assertTrue(exception.isRetryable());
-
   }
 
   @Test

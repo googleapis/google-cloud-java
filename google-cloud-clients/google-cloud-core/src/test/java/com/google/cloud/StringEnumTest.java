@@ -26,8 +26,7 @@ import org.junit.rules.ExpectedException;
 
 public class StringEnumTest {
 
-  @Rule
-  public ExpectedException expectedException = ExpectedException.none();
+  @Rule public ExpectedException expectedException = ExpectedException.none();
 
   public static class Letter extends StringEnumValue {
     private static final long serialVersionUID = -1717976087182628526L;
@@ -44,9 +43,8 @@ public class StringEnumTest {
           }
         };
 
-    private static final StringEnumType<Letter> type = new StringEnumType(
-        Letter.class,
-        CONSTRUCTOR);
+    private static final StringEnumType<Letter> type =
+        new StringEnumType(Letter.class, CONSTRUCTOR);
 
     public static final Letter A = type.createAndRegister("A");
     public static final Letter B = type.createAndRegister("B");
@@ -56,16 +54,12 @@ public class StringEnumTest {
       return type.valueOfStrict(constant);
     }
 
-    /**
-     * Get the StorageClass for the given String constant, and allow unrecognized values.
-     */
+    /** Get the StorageClass for the given String constant, and allow unrecognized values. */
     public static Letter valueOf(String constant) {
       return type.valueOf(constant);
     }
 
-    /**
-     * Return the known values for StorageClass.
-     */
+    /** Return the known values for StorageClass. */
     public static Letter[] values() {
       return type.values();
     }
@@ -110,8 +104,8 @@ public class StringEnumTest {
     tester.addEqualityGroup(Letter.A, Letter.valueOf("A"), Letter.valueOfStrict("A"));
     tester.addEqualityGroup(Letter.B, Letter.valueOf("B"), Letter.valueOfStrict("B"));
     tester.addEqualityGroup(Letter.C, Letter.valueOf("C"), Letter.valueOfStrict("C"));
-    tester
-        .addEqualityGroup(Letter.valueOf("NonExistentLetter"), Letter.valueOf("NonExistentLetter"));
+    tester.addEqualityGroup(
+        Letter.valueOf("NonExistentLetter"), Letter.valueOf("NonExistentLetter"));
   }
 
   @Test

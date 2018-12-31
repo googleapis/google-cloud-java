@@ -110,7 +110,8 @@ public class BackendServiceStubSettings extends StubSettings<BackendServiceStubS
   private final UnaryCallSettings<AddSignedUrlKeyBackendServiceHttpRequest, Operation>
       addSignedUrlKeyBackendServiceSettings;
   private final PagedCallSettings<
-          AggregatedListBackendServicesHttpRequest, BackendServiceAggregatedList,
+          AggregatedListBackendServicesHttpRequest,
+          BackendServiceAggregatedList,
           AggregatedListBackendServicesPagedResponse>
       aggregatedListBackendServicesSettings;
   private final UnaryCallSettings<DeleteBackendServiceHttpRequest, Operation>
@@ -141,7 +142,8 @@ public class BackendServiceStubSettings extends StubSettings<BackendServiceStubS
 
   /** Returns the object with the settings used for calls to aggregatedListBackendServices. */
   public PagedCallSettings<
-          AggregatedListBackendServicesHttpRequest, BackendServiceAggregatedList,
+          AggregatedListBackendServicesHttpRequest,
+          BackendServiceAggregatedList,
           AggregatedListBackendServicesPagedResponse>
       aggregatedListBackendServicesSettings() {
     return aggregatedListBackendServicesSettings;
@@ -295,11 +297,13 @@ public class BackendServiceStubSettings extends StubSettings<BackendServiceStubS
   }
 
   private static final PagedListDescriptor<
-          AggregatedListBackendServicesHttpRequest, BackendServiceAggregatedList,
+          AggregatedListBackendServicesHttpRequest,
+          BackendServiceAggregatedList,
           BackendServicesScopedList>
       AGGREGATED_LIST_BACKEND_SERVICES_PAGE_STR_DESC =
           new PagedListDescriptor<
-              AggregatedListBackendServicesHttpRequest, BackendServiceAggregatedList,
+              AggregatedListBackendServicesHttpRequest,
+              BackendServiceAggregatedList,
               BackendServicesScopedList>() {
             @Override
             public String emptyToken() {
@@ -335,7 +339,9 @@ public class BackendServiceStubSettings extends StubSettings<BackendServiceStubS
             @Override
             public Iterable<BackendServicesScopedList> extractResources(
                 BackendServiceAggregatedList payload) {
-              return payload.getItemsMap().values();
+              return payload.getItemsMap() != null
+                  ? payload.getItemsMap().values()
+                  : ImmutableList.<BackendServicesScopedList>of();
             }
           };
 
@@ -375,16 +381,20 @@ public class BackendServiceStubSettings extends StubSettings<BackendServiceStubS
 
             @Override
             public Iterable<BackendService> extractResources(BackendServiceList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<BackendService>of();
             }
           };
 
   private static final PagedListResponseFactory<
-          AggregatedListBackendServicesHttpRequest, BackendServiceAggregatedList,
+          AggregatedListBackendServicesHttpRequest,
+          BackendServiceAggregatedList,
           AggregatedListBackendServicesPagedResponse>
       AGGREGATED_LIST_BACKEND_SERVICES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              AggregatedListBackendServicesHttpRequest, BackendServiceAggregatedList,
+              AggregatedListBackendServicesHttpRequest,
+              BackendServiceAggregatedList,
               AggregatedListBackendServicesPagedResponse>() {
             @Override
             public ApiFuture<AggregatedListBackendServicesPagedResponse> getFuturePagedResponse(
@@ -395,7 +405,8 @@ public class BackendServiceStubSettings extends StubSettings<BackendServiceStubS
                 ApiCallContext context,
                 ApiFuture<BackendServiceAggregatedList> futureResponse) {
               PageContext<
-                      AggregatedListBackendServicesHttpRequest, BackendServiceAggregatedList,
+                      AggregatedListBackendServicesHttpRequest,
+                      BackendServiceAggregatedList,
                       BackendServicesScopedList>
                   pageContext =
                       PageContext.create(
@@ -412,7 +423,8 @@ public class BackendServiceStubSettings extends StubSettings<BackendServiceStubS
           ListBackendServicesHttpRequest, BackendServiceList, ListBackendServicesPagedResponse>
       LIST_BACKEND_SERVICES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListBackendServicesHttpRequest, BackendServiceList,
+              ListBackendServicesHttpRequest,
+              BackendServiceList,
               ListBackendServicesPagedResponse>() {
             @Override
             public ApiFuture<ListBackendServicesPagedResponse> getFuturePagedResponse(
@@ -435,7 +447,8 @@ public class BackendServiceStubSettings extends StubSettings<BackendServiceStubS
     private final UnaryCallSettings.Builder<AddSignedUrlKeyBackendServiceHttpRequest, Operation>
         addSignedUrlKeyBackendServiceSettings;
     private final PagedCallSettings.Builder<
-            AggregatedListBackendServicesHttpRequest, BackendServiceAggregatedList,
+            AggregatedListBackendServicesHttpRequest,
+            BackendServiceAggregatedList,
             AggregatedListBackendServicesPagedResponse>
         aggregatedListBackendServicesSettings;
     private final UnaryCallSettings.Builder<DeleteBackendServiceHttpRequest, Operation>
@@ -668,7 +681,8 @@ public class BackendServiceStubSettings extends StubSettings<BackendServiceStubS
 
     /** Returns the builder for the settings used for calls to aggregatedListBackendServices. */
     public PagedCallSettings.Builder<
-            AggregatedListBackendServicesHttpRequest, BackendServiceAggregatedList,
+            AggregatedListBackendServicesHttpRequest,
+            BackendServiceAggregatedList,
             AggregatedListBackendServicesPagedResponse>
         aggregatedListBackendServicesSettings() {
       return aggregatedListBackendServicesSettings;

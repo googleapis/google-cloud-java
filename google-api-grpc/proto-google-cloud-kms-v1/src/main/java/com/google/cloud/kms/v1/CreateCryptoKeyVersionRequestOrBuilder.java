@@ -3,11 +3,14 @@
 
 package com.google.cloud.kms.v1;
 
-public interface CreateCryptoKeyVersionRequestOrBuilder extends
+public interface CreateCryptoKeyVersionRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.kms.v1.CreateCryptoKeyVersionRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the [CryptoKey][google.cloud.kms.v1.CryptoKey] associated with
    * the [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
@@ -17,6 +20,8 @@ public interface CreateCryptoKeyVersionRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required. The [name][google.cloud.kms.v1.CryptoKey.name] of the [CryptoKey][google.cloud.kms.v1.CryptoKey] associated with
    * the [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
@@ -24,10 +29,11 @@ public interface CreateCryptoKeyVersionRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
    * </pre>
@@ -36,6 +42,8 @@ public interface CreateCryptoKeyVersionRequestOrBuilder extends
    */
   boolean hasCryptoKeyVersion();
   /**
+   *
+   *
    * <pre>
    * A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
    * </pre>
@@ -44,6 +52,8 @@ public interface CreateCryptoKeyVersionRequestOrBuilder extends
    */
   com.google.cloud.kms.v1.CryptoKeyVersion getCryptoKeyVersion();
   /**
+   *
+   *
    * <pre>
    * A [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with initial field values.
    * </pre>

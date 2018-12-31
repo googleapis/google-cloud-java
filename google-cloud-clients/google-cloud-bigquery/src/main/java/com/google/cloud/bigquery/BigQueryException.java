@@ -28,17 +28,15 @@ import java.util.concurrent.ExecutionException;
 /**
  * BigQuery service exception.
  *
- * @see <a href="https://cloud.google.com/bigquery/troubleshooting-errors">Google Cloud
- *      BigQuery error codes</a>
+ * @see <a href="https://cloud.google.com/bigquery/troubleshooting-errors">Google Cloud BigQuery
+ *     error codes</a>
  */
 public final class BigQueryException extends BaseHttpServiceException {
 
   // see: https://cloud.google.com/bigquery/troubleshooting-errors
-  private static final Set<Error> RETRYABLE_ERRORS = ImmutableSet.of(
-      new Error(500, null),
-      new Error(502, null),
-      new Error(503, null),
-      new Error(504, null));
+  private static final Set<Error> RETRYABLE_ERRORS =
+      ImmutableSet.of(
+          new Error(500, null), new Error(502, null), new Error(503, null), new Error(504, null));
   private static final long serialVersionUID = -5006625989225438209L;
 
   private final BigQueryError error;
@@ -65,7 +63,6 @@ public final class BigQueryException extends BaseHttpServiceException {
     }
     this.error = error;
   }
-
 
   /**
    * Returns the {@link BigQueryError} that caused this exception. Returns {@code null} if none

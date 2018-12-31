@@ -46,70 +46,61 @@ public class UpdateInstanceRequestTest {
 
   @Test
   public void testDisplayName() {
-    UpdateInstanceRequest input = UpdateInstanceRequest.of("my-instance")
-        .setDisplayName("my display name");
+    UpdateInstanceRequest input =
+        UpdateInstanceRequest.of("my-instance").setDisplayName("my display name");
 
     PartialUpdateInstanceRequest actual = input.toProto(ProjectName.of("my-project"));
 
-    PartialUpdateInstanceRequest expected = PartialUpdateInstanceRequest.newBuilder()
-        .setUpdateMask(
-            FieldMask.newBuilder()
-                .addPaths("display_name")
-        )
-        .setInstance(
-            Instance.newBuilder()
-                .setName("projects/my-project/instances/my-instance")
-                .setDisplayName("my display name")
-        )
-        .build();
+    PartialUpdateInstanceRequest expected =
+        PartialUpdateInstanceRequest.newBuilder()
+            .setUpdateMask(FieldMask.newBuilder().addPaths("display_name"))
+            .setInstance(
+                Instance.newBuilder()
+                    .setName("projects/my-project/instances/my-instance")
+                    .setDisplayName("my display name"))
+            .build();
 
     assertThat(actual).isEqualTo(expected);
   }
 
   @Test
   public void testLabels() {
-    UpdateInstanceRequest input = UpdateInstanceRequest.of("my-instance")
-        .setAllLabels(ImmutableMap.of(
-            "label1", "value1",
-            "label2", "value2"
-        ));
+    UpdateInstanceRequest input =
+        UpdateInstanceRequest.of("my-instance")
+            .setAllLabels(
+                ImmutableMap.of(
+                    "label1", "value1",
+                    "label2", "value2"));
 
     PartialUpdateInstanceRequest actual = input.toProto(ProjectName.of("my-project"));
 
-    PartialUpdateInstanceRequest expected = PartialUpdateInstanceRequest.newBuilder()
-        .setUpdateMask(
-            FieldMask.newBuilder()
-                .addPaths("labels")
-        )
-        .setInstance(
-            Instance.newBuilder()
-                .setName("projects/my-project/instances/my-instance")
-                .putLabels("label1", "value1")
-                .putLabels("label2", "value2")
-        )
-        .build();
+    PartialUpdateInstanceRequest expected =
+        PartialUpdateInstanceRequest.newBuilder()
+            .setUpdateMask(FieldMask.newBuilder().addPaths("labels"))
+            .setInstance(
+                Instance.newBuilder()
+                    .setName("projects/my-project/instances/my-instance")
+                    .putLabels("label1", "value1")
+                    .putLabels("label2", "value2"))
+            .build();
 
     assertThat(actual).isEqualTo(expected);
   }
 
   @Test
   public void testType() {
-    UpdateInstanceRequest input = UpdateInstanceRequest.of("my-instance")
-        .setProductionType();
+    UpdateInstanceRequest input = UpdateInstanceRequest.of("my-instance").setProductionType();
 
     PartialUpdateInstanceRequest actual = input.toProto(ProjectName.of("my-project"));
 
-    PartialUpdateInstanceRequest expected = PartialUpdateInstanceRequest.newBuilder()
-        .setUpdateMask(
-            FieldMask.newBuilder()
-                .addPaths("type")
-        )
-        .setInstance(
-            Instance.newBuilder()
-                .setName("projects/my-project/instances/my-instance")
-                .setType(Type.PRODUCTION)
-        )
-        .build();
+    PartialUpdateInstanceRequest expected =
+        PartialUpdateInstanceRequest.newBuilder()
+            .setUpdateMask(FieldMask.newBuilder().addPaths("type"))
+            .setInstance(
+                Instance.newBuilder()
+                    .setName("projects/my-project/instances/my-instance")
+                    .setType(Type.PRODUCTION))
+            .build();
 
     assertThat(actual).isEqualTo(expected);
   }

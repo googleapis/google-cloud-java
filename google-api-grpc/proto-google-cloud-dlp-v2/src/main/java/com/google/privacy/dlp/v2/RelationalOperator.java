@@ -4,19 +4,20 @@
 package com.google.privacy.dlp.v2;
 
 /**
+ *
+ *
  * <pre>
  * Operators available for comparing the value of fields.
  * </pre>
  *
  * Protobuf enum {@code google.privacy.dlp.v2.RelationalOperator}
  */
-public enum RelationalOperator
-    implements com.google.protobuf.ProtocolMessageEnum {
-  /**
-   * <code>RELATIONAL_OPERATOR_UNSPECIFIED = 0;</code>
-   */
+public enum RelationalOperator implements com.google.protobuf.ProtocolMessageEnum {
+  /** <code>RELATIONAL_OPERATOR_UNSPECIFIED = 0;</code> */
   RELATIONAL_OPERATOR_UNSPECIFIED(0),
   /**
+   *
+   *
    * <pre>
    * Equal.
    * </pre>
@@ -25,6 +26,8 @@ public enum RelationalOperator
    */
   EQUAL_TO(1),
   /**
+   *
+   *
    * <pre>
    * Not equal to.
    * </pre>
@@ -33,6 +36,8 @@ public enum RelationalOperator
    */
   NOT_EQUAL_TO(2),
   /**
+   *
+   *
    * <pre>
    * Greater than.
    * </pre>
@@ -41,6 +46,8 @@ public enum RelationalOperator
    */
   GREATER_THAN(3),
   /**
+   *
+   *
    * <pre>
    * Less than.
    * </pre>
@@ -49,6 +56,8 @@ public enum RelationalOperator
    */
   LESS_THAN(4),
   /**
+   *
+   *
    * <pre>
    * Greater than or equals.
    * </pre>
@@ -57,6 +66,8 @@ public enum RelationalOperator
    */
   GREATER_THAN_OR_EQUALS(5),
   /**
+   *
+   *
    * <pre>
    * Less than or equals.
    * </pre>
@@ -65,6 +76,8 @@ public enum RelationalOperator
    */
   LESS_THAN_OR_EQUALS(6),
   /**
+   *
+   *
    * <pre>
    * Exists
    * </pre>
@@ -75,11 +88,11 @@ public enum RelationalOperator
   UNRECOGNIZED(-1),
   ;
 
-  /**
-   * <code>RELATIONAL_OPERATOR_UNSPECIFIED = 0;</code>
-   */
+  /** <code>RELATIONAL_OPERATOR_UNSPECIFIED = 0;</code> */
   public static final int RELATIONAL_OPERATOR_UNSPECIFIED_VALUE = 0;
   /**
+   *
+   *
    * <pre>
    * Equal.
    * </pre>
@@ -88,6 +101,8 @@ public enum RelationalOperator
    */
   public static final int EQUAL_TO_VALUE = 1;
   /**
+   *
+   *
    * <pre>
    * Not equal to.
    * </pre>
@@ -96,6 +111,8 @@ public enum RelationalOperator
    */
   public static final int NOT_EQUAL_TO_VALUE = 2;
   /**
+   *
+   *
    * <pre>
    * Greater than.
    * </pre>
@@ -104,6 +121,8 @@ public enum RelationalOperator
    */
   public static final int GREATER_THAN_VALUE = 3;
   /**
+   *
+   *
    * <pre>
    * Less than.
    * </pre>
@@ -112,6 +131,8 @@ public enum RelationalOperator
    */
   public static final int LESS_THAN_VALUE = 4;
   /**
+   *
+   *
    * <pre>
    * Greater than or equals.
    * </pre>
@@ -120,6 +141,8 @@ public enum RelationalOperator
    */
   public static final int GREATER_THAN_OR_EQUALS_VALUE = 5;
   /**
+   *
+   *
    * <pre>
    * Less than or equals.
    * </pre>
@@ -128,6 +151,8 @@ public enum RelationalOperator
    */
   public static final int LESS_THAN_OR_EQUALS_VALUE = 6;
   /**
+   *
+   *
    * <pre>
    * Exists
    * </pre>
@@ -135,7 +160,6 @@ public enum RelationalOperator
    * <code>EXISTS = 7;</code>
    */
   public static final int EXISTS_VALUE = 7;
-
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -145,9 +169,7 @@ public enum RelationalOperator
     return value;
   }
 
-  /**
-   * @deprecated Use {@link #forNumber(int)} instead.
-   */
+  /** @deprecated Use {@link #forNumber(int)} instead. */
   @java.lang.Deprecated
   public static RelationalOperator valueOf(int value) {
     return forNumber(value);
@@ -155,40 +177,48 @@ public enum RelationalOperator
 
   public static RelationalOperator forNumber(int value) {
     switch (value) {
-      case 0: return RELATIONAL_OPERATOR_UNSPECIFIED;
-      case 1: return EQUAL_TO;
-      case 2: return NOT_EQUAL_TO;
-      case 3: return GREATER_THAN;
-      case 4: return LESS_THAN;
-      case 5: return GREATER_THAN_OR_EQUALS;
-      case 6: return LESS_THAN_OR_EQUALS;
-      case 7: return EXISTS;
-      default: return null;
+      case 0:
+        return RELATIONAL_OPERATOR_UNSPECIFIED;
+      case 1:
+        return EQUAL_TO;
+      case 2:
+        return NOT_EQUAL_TO;
+      case 3:
+        return GREATER_THAN;
+      case 4:
+        return LESS_THAN;
+      case 5:
+        return GREATER_THAN_OR_EQUALS;
+      case 6:
+        return LESS_THAN_OR_EQUALS;
+      case 7:
+        return EXISTS;
+      default:
+        return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<RelationalOperator>
-      internalGetValueMap() {
+  public static com.google.protobuf.Internal.EnumLiteMap<RelationalOperator> internalGetValueMap() {
     return internalValueMap;
   }
-  private static final com.google.protobuf.Internal.EnumLiteMap<
-      RelationalOperator> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<RelationalOperator>() {
-          public RelationalOperator findValueByNumber(int number) {
-            return RelationalOperator.forNumber(number);
-          }
-        };
 
-  public final com.google.protobuf.Descriptors.EnumValueDescriptor
-      getValueDescriptor() {
+  private static final com.google.protobuf.Internal.EnumLiteMap<RelationalOperator>
+      internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<RelationalOperator>() {
+            public RelationalOperator findValueByNumber(int number) {
+              return RelationalOperator.forNumber(number);
+            }
+          };
+
+  public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
     return getDescriptor().getValues().get(ordinal());
   }
-  public final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptorForType() {
+
+  public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
     return getDescriptor();
   }
-  public static final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(3);
   }
 
@@ -197,8 +227,7 @@ public enum RelationalOperator
   public static RelationalOperator valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
-      throw new java.lang.IllegalArgumentException(
-        "EnumValueDescriptor is not for this type.");
+      throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
     }
     if (desc.getIndex() == -1) {
       return UNRECOGNIZED;
@@ -214,4 +243,3 @@ public enum RelationalOperator
 
   // @@protoc_insertion_point(enum_scope:google.privacy.dlp.v2.RelationalOperator)
 }
-

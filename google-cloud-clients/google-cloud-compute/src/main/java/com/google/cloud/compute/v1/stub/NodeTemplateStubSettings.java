@@ -42,6 +42,7 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListNodeTemplatesHttpRequest;
 import com.google.cloud.compute.v1.DeleteNodeTemplateHttpRequest;
+import com.google.cloud.compute.v1.GetIamPolicyNodeTemplateHttpRequest;
 import com.google.cloud.compute.v1.GetNodeTemplateHttpRequest;
 import com.google.cloud.compute.v1.InsertNodeTemplateHttpRequest;
 import com.google.cloud.compute.v1.ListNodeTemplatesHttpRequest;
@@ -50,6 +51,10 @@ import com.google.cloud.compute.v1.NodeTemplateAggregatedList;
 import com.google.cloud.compute.v1.NodeTemplateList;
 import com.google.cloud.compute.v1.NodeTemplatesScopedList;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Policy;
+import com.google.cloud.compute.v1.SetIamPolicyNodeTemplateHttpRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsNodeTemplateHttpRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -101,21 +106,30 @@ public class NodeTemplateStubSettings extends StubSettings<NodeTemplateStubSetti
           .build();
 
   private final PagedCallSettings<
-          AggregatedListNodeTemplatesHttpRequest, NodeTemplateAggregatedList,
+          AggregatedListNodeTemplatesHttpRequest,
+          NodeTemplateAggregatedList,
           AggregatedListNodeTemplatesPagedResponse>
       aggregatedListNodeTemplatesSettings;
   private final UnaryCallSettings<DeleteNodeTemplateHttpRequest, Operation>
       deleteNodeTemplateSettings;
   private final UnaryCallSettings<GetNodeTemplateHttpRequest, NodeTemplate> getNodeTemplateSettings;
+  private final UnaryCallSettings<GetIamPolicyNodeTemplateHttpRequest, Policy>
+      getIamPolicyNodeTemplateSettings;
   private final UnaryCallSettings<InsertNodeTemplateHttpRequest, Operation>
       insertNodeTemplateSettings;
   private final PagedCallSettings<
           ListNodeTemplatesHttpRequest, NodeTemplateList, ListNodeTemplatesPagedResponse>
       listNodeTemplatesSettings;
+  private final UnaryCallSettings<SetIamPolicyNodeTemplateHttpRequest, Policy>
+      setIamPolicyNodeTemplateSettings;
+  private final UnaryCallSettings<
+          TestIamPermissionsNodeTemplateHttpRequest, TestPermissionsResponse>
+      testIamPermissionsNodeTemplateSettings;
 
   /** Returns the object with the settings used for calls to aggregatedListNodeTemplates. */
   public PagedCallSettings<
-          AggregatedListNodeTemplatesHttpRequest, NodeTemplateAggregatedList,
+          AggregatedListNodeTemplatesHttpRequest,
+          NodeTemplateAggregatedList,
           AggregatedListNodeTemplatesPagedResponse>
       aggregatedListNodeTemplatesSettings() {
     return aggregatedListNodeTemplatesSettings;
@@ -131,6 +145,12 @@ public class NodeTemplateStubSettings extends StubSettings<NodeTemplateStubSetti
     return getNodeTemplateSettings;
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicyNodeTemplate. */
+  public UnaryCallSettings<GetIamPolicyNodeTemplateHttpRequest, Policy>
+      getIamPolicyNodeTemplateSettings() {
+    return getIamPolicyNodeTemplateSettings;
+  }
+
   /** Returns the object with the settings used for calls to insertNodeTemplate. */
   public UnaryCallSettings<InsertNodeTemplateHttpRequest, Operation> insertNodeTemplateSettings() {
     return insertNodeTemplateSettings;
@@ -141,6 +161,18 @@ public class NodeTemplateStubSettings extends StubSettings<NodeTemplateStubSetti
           ListNodeTemplatesHttpRequest, NodeTemplateList, ListNodeTemplatesPagedResponse>
       listNodeTemplatesSettings() {
     return listNodeTemplatesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicyNodeTemplate. */
+  public UnaryCallSettings<SetIamPolicyNodeTemplateHttpRequest, Policy>
+      setIamPolicyNodeTemplateSettings() {
+    return setIamPolicyNodeTemplateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissionsNodeTemplate. */
+  public UnaryCallSettings<TestIamPermissionsNodeTemplateHttpRequest, TestPermissionsResponse>
+      testIamPermissionsNodeTemplateSettings() {
+    return testIamPermissionsNodeTemplateSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -222,16 +254,22 @@ public class NodeTemplateStubSettings extends StubSettings<NodeTemplateStubSetti
         settingsBuilder.aggregatedListNodeTemplatesSettings().build();
     deleteNodeTemplateSettings = settingsBuilder.deleteNodeTemplateSettings().build();
     getNodeTemplateSettings = settingsBuilder.getNodeTemplateSettings().build();
+    getIamPolicyNodeTemplateSettings = settingsBuilder.getIamPolicyNodeTemplateSettings().build();
     insertNodeTemplateSettings = settingsBuilder.insertNodeTemplateSettings().build();
     listNodeTemplatesSettings = settingsBuilder.listNodeTemplatesSettings().build();
+    setIamPolicyNodeTemplateSettings = settingsBuilder.setIamPolicyNodeTemplateSettings().build();
+    testIamPermissionsNodeTemplateSettings =
+        settingsBuilder.testIamPermissionsNodeTemplateSettings().build();
   }
 
   private static final PagedListDescriptor<
-          AggregatedListNodeTemplatesHttpRequest, NodeTemplateAggregatedList,
+          AggregatedListNodeTemplatesHttpRequest,
+          NodeTemplateAggregatedList,
           NodeTemplatesScopedList>
       AGGREGATED_LIST_NODE_TEMPLATES_PAGE_STR_DESC =
           new PagedListDescriptor<
-              AggregatedListNodeTemplatesHttpRequest, NodeTemplateAggregatedList,
+              AggregatedListNodeTemplatesHttpRequest,
+              NodeTemplateAggregatedList,
               NodeTemplatesScopedList>() {
             @Override
             public String emptyToken() {
@@ -267,7 +305,9 @@ public class NodeTemplateStubSettings extends StubSettings<NodeTemplateStubSetti
             @Override
             public Iterable<NodeTemplatesScopedList> extractResources(
                 NodeTemplateAggregatedList payload) {
-              return payload.getItemsMap().values();
+              return payload.getItemsMap() != null
+                  ? payload.getItemsMap().values()
+                  : ImmutableList.<NodeTemplatesScopedList>of();
             }
           };
 
@@ -306,16 +346,20 @@ public class NodeTemplateStubSettings extends StubSettings<NodeTemplateStubSetti
 
             @Override
             public Iterable<NodeTemplate> extractResources(NodeTemplateList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<NodeTemplate>of();
             }
           };
 
   private static final PagedListResponseFactory<
-          AggregatedListNodeTemplatesHttpRequest, NodeTemplateAggregatedList,
+          AggregatedListNodeTemplatesHttpRequest,
+          NodeTemplateAggregatedList,
           AggregatedListNodeTemplatesPagedResponse>
       AGGREGATED_LIST_NODE_TEMPLATES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              AggregatedListNodeTemplatesHttpRequest, NodeTemplateAggregatedList,
+              AggregatedListNodeTemplatesHttpRequest,
+              NodeTemplateAggregatedList,
               AggregatedListNodeTemplatesPagedResponse>() {
             @Override
             public ApiFuture<AggregatedListNodeTemplatesPagedResponse> getFuturePagedResponse(
@@ -325,7 +369,8 @@ public class NodeTemplateStubSettings extends StubSettings<NodeTemplateStubSetti
                 ApiCallContext context,
                 ApiFuture<NodeTemplateAggregatedList> futureResponse) {
               PageContext<
-                      AggregatedListNodeTemplatesHttpRequest, NodeTemplateAggregatedList,
+                      AggregatedListNodeTemplatesHttpRequest,
+                      NodeTemplateAggregatedList,
                       NodeTemplatesScopedList>
                   pageContext =
                       PageContext.create(
@@ -359,18 +404,26 @@ public class NodeTemplateStubSettings extends StubSettings<NodeTemplateStubSetti
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final PagedCallSettings.Builder<
-            AggregatedListNodeTemplatesHttpRequest, NodeTemplateAggregatedList,
+            AggregatedListNodeTemplatesHttpRequest,
+            NodeTemplateAggregatedList,
             AggregatedListNodeTemplatesPagedResponse>
         aggregatedListNodeTemplatesSettings;
     private final UnaryCallSettings.Builder<DeleteNodeTemplateHttpRequest, Operation>
         deleteNodeTemplateSettings;
     private final UnaryCallSettings.Builder<GetNodeTemplateHttpRequest, NodeTemplate>
         getNodeTemplateSettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyNodeTemplateHttpRequest, Policy>
+        getIamPolicyNodeTemplateSettings;
     private final UnaryCallSettings.Builder<InsertNodeTemplateHttpRequest, Operation>
         insertNodeTemplateSettings;
     private final PagedCallSettings.Builder<
             ListNodeTemplatesHttpRequest, NodeTemplateList, ListNodeTemplatesPagedResponse>
         listNodeTemplatesSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyNodeTemplateHttpRequest, Policy>
+        setIamPolicyNodeTemplateSettings;
+    private final UnaryCallSettings.Builder<
+            TestIamPermissionsNodeTemplateHttpRequest, TestPermissionsResponse>
+        testIamPermissionsNodeTemplateSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -420,17 +473,26 @@ public class NodeTemplateStubSettings extends StubSettings<NodeTemplateStubSetti
 
       getNodeTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      getIamPolicyNodeTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       insertNodeTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listNodeTemplatesSettings = PagedCallSettings.newBuilder(LIST_NODE_TEMPLATES_PAGE_STR_FACT);
+
+      setIamPolicyNodeTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      testIamPermissionsNodeTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               aggregatedListNodeTemplatesSettings,
               deleteNodeTemplateSettings,
               getNodeTemplateSettings,
+              getIamPolicyNodeTemplateSettings,
               insertNodeTemplateSettings,
-              listNodeTemplatesSettings);
+              listNodeTemplatesSettings,
+              setIamPolicyNodeTemplateSettings,
+              testIamPermissionsNodeTemplateSettings);
 
       initDefaults(this);
     }
@@ -462,6 +524,11 @@ public class NodeTemplateStubSettings extends StubSettings<NodeTemplateStubSetti
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .getIamPolicyNodeTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .insertNodeTemplateSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -469,6 +536,16 @@ public class NodeTemplateStubSettings extends StubSettings<NodeTemplateStubSetti
       builder
           .listNodeTemplatesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .setIamPolicyNodeTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .testIamPermissionsNodeTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       return builder;
@@ -481,16 +558,23 @@ public class NodeTemplateStubSettings extends StubSettings<NodeTemplateStubSetti
           settings.aggregatedListNodeTemplatesSettings.toBuilder();
       deleteNodeTemplateSettings = settings.deleteNodeTemplateSettings.toBuilder();
       getNodeTemplateSettings = settings.getNodeTemplateSettings.toBuilder();
+      getIamPolicyNodeTemplateSettings = settings.getIamPolicyNodeTemplateSettings.toBuilder();
       insertNodeTemplateSettings = settings.insertNodeTemplateSettings.toBuilder();
       listNodeTemplatesSettings = settings.listNodeTemplatesSettings.toBuilder();
+      setIamPolicyNodeTemplateSettings = settings.setIamPolicyNodeTemplateSettings.toBuilder();
+      testIamPermissionsNodeTemplateSettings =
+          settings.testIamPermissionsNodeTemplateSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               aggregatedListNodeTemplatesSettings,
               deleteNodeTemplateSettings,
               getNodeTemplateSettings,
+              getIamPolicyNodeTemplateSettings,
               insertNodeTemplateSettings,
-              listNodeTemplatesSettings);
+              listNodeTemplatesSettings,
+              setIamPolicyNodeTemplateSettings,
+              testIamPermissionsNodeTemplateSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -511,7 +595,8 @@ public class NodeTemplateStubSettings extends StubSettings<NodeTemplateStubSetti
 
     /** Returns the builder for the settings used for calls to aggregatedListNodeTemplates. */
     public PagedCallSettings.Builder<
-            AggregatedListNodeTemplatesHttpRequest, NodeTemplateAggregatedList,
+            AggregatedListNodeTemplatesHttpRequest,
+            NodeTemplateAggregatedList,
             AggregatedListNodeTemplatesPagedResponse>
         aggregatedListNodeTemplatesSettings() {
       return aggregatedListNodeTemplatesSettings;
@@ -529,6 +614,12 @@ public class NodeTemplateStubSettings extends StubSettings<NodeTemplateStubSetti
       return getNodeTemplateSettings;
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicyNodeTemplate. */
+    public UnaryCallSettings.Builder<GetIamPolicyNodeTemplateHttpRequest, Policy>
+        getIamPolicyNodeTemplateSettings() {
+      return getIamPolicyNodeTemplateSettings;
+    }
+
     /** Returns the builder for the settings used for calls to insertNodeTemplate. */
     public UnaryCallSettings.Builder<InsertNodeTemplateHttpRequest, Operation>
         insertNodeTemplateSettings() {
@@ -540,6 +631,19 @@ public class NodeTemplateStubSettings extends StubSettings<NodeTemplateStubSetti
             ListNodeTemplatesHttpRequest, NodeTemplateList, ListNodeTemplatesPagedResponse>
         listNodeTemplatesSettings() {
       return listNodeTemplatesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicyNodeTemplate. */
+    public UnaryCallSettings.Builder<SetIamPolicyNodeTemplateHttpRequest, Policy>
+        setIamPolicyNodeTemplateSettings() {
+      return setIamPolicyNodeTemplateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissionsNodeTemplate. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsNodeTemplateHttpRequest, TestPermissionsResponse>
+        testIamPermissionsNodeTemplateSettings() {
+      return testIamPermissionsNodeTemplateSettings;
     }
 
     @Override

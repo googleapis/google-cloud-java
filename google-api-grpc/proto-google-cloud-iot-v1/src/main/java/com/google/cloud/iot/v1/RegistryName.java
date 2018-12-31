@@ -14,20 +14,21 @@
 
 package com.google.cloud.iot.v1;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class RegistryName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/locations/{location}/registries/{registry}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/registries/{registry}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -62,20 +63,16 @@ public class RegistryName implements ResourceName {
   }
 
   public static RegistryName of(String project, String location, String registry) {
-    return newBuilder()
-      .setProject(project)
-      .setLocation(location)
-      .setRegistry(registry)
-      .build();
+    return newBuilder().setProject(project).setLocation(location).setRegistry(registry).build();
   }
 
   public static String format(String project, String location, String registry) {
     return newBuilder()
-      .setProject(project)
-      .setLocation(location)
-      .setRegistry(registry)
-      .build()
-      .toString();
+        .setProject(project)
+        .setLocation(location)
+        .setRegistry(registry)
+        .build()
+        .toString();
   }
 
   public static RegistryName parse(String formattedString) {
@@ -83,7 +80,8 @@ public class RegistryName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "RegistryName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "RegistryName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("location"), matchMap.get("registry"));
   }
 
@@ -132,7 +130,8 @@ public class RegistryName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "location", location, "registry", registry);
+    return PATH_TEMPLATE.instantiate(
+        "project", project, "location", location, "registry", registry);
   }
 
   /** Builder for RegistryName. */
@@ -169,8 +168,7 @@ public class RegistryName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(RegistryName registryName) {
       project = registryName.project;
@@ -209,4 +207,3 @@ public class RegistryName implements ResourceName {
     return h;
   }
 }
-

@@ -35,19 +35,25 @@ import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AggregatedListSubnetworksHttpRequest;
 import com.google.cloud.compute.v1.DeleteSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.ExpandIpCidrRangeSubnetworkHttpRequest;
+import com.google.cloud.compute.v1.GetIamPolicySubnetworkHttpRequest;
 import com.google.cloud.compute.v1.GetSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.InsertSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.ListSubnetworksHttpRequest;
 import com.google.cloud.compute.v1.ListUsableSubnetworksHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchSubnetworkHttpRequest;
+import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.ProjectRegionName;
 import com.google.cloud.compute.v1.ProjectRegionSubnetworkName;
+import com.google.cloud.compute.v1.ProjectRegionSubnetworkResourceName;
+import com.google.cloud.compute.v1.SetIamPolicySubnetworkHttpRequest;
 import com.google.cloud.compute.v1.SetPrivateIpGoogleAccessSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.Subnetwork;
 import com.google.cloud.compute.v1.SubnetworkAggregatedList;
 import com.google.cloud.compute.v1.SubnetworkList;
+import com.google.cloud.compute.v1.TestIamPermissionsSubnetworkHttpRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UsableSubnetworksAggregatedList;
 import com.google.common.collect.Sets;
 import java.io.IOException;
@@ -150,6 +156,27 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
               .build();
 
   @InternalApi
+  public static final ApiMethodDescriptor<GetIamPolicySubnetworkHttpRequest, Policy>
+      getIamPolicySubnetworkMethodDescriptor =
+          ApiMethodDescriptor.<GetIamPolicySubnetworkHttpRequest, Policy>newBuilder()
+              .setFullMethodName("compute.subnetworks.getIamPolicy")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<GetIamPolicySubnetworkHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/regions/{region}/subnetworks/{resource}/getIamPolicy"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(ProjectRegionSubnetworkResourceName.newFactory())
+                      .setResourceNameField("resource")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Policy>newBuilder()
+                      .setResponseInstance(Policy.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
   public static final ApiMethodDescriptor<InsertSubnetworkHttpRequest, Operation>
       insertSubnetworkMethodDescriptor =
           ApiMethodDescriptor.<InsertSubnetworkHttpRequest, Operation>newBuilder()
@@ -235,6 +262,27 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
               .build();
 
   @InternalApi
+  public static final ApiMethodDescriptor<SetIamPolicySubnetworkHttpRequest, Policy>
+      setIamPolicySubnetworkMethodDescriptor =
+          ApiMethodDescriptor.<SetIamPolicySubnetworkHttpRequest, Policy>newBuilder()
+              .setFullMethodName("compute.subnetworks.setIamPolicy")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<SetIamPolicySubnetworkHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/regions/{region}/subnetworks/{resource}/setIamPolicy"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(ProjectRegionSubnetworkResourceName.newFactory())
+                      .setResourceNameField("resource")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Policy>newBuilder()
+                      .setResponseInstance(Policy.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
   public static final ApiMethodDescriptor<SetPrivateIpGoogleAccessSubnetworkHttpRequest, Operation>
       setPrivateIpGoogleAccessSubnetworkMethodDescriptor =
           ApiMethodDescriptor.<SetPrivateIpGoogleAccessSubnetworkHttpRequest, Operation>newBuilder()
@@ -256,6 +304,30 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
                       .build())
               .build();
 
+  @InternalApi
+  public static final ApiMethodDescriptor<
+          TestIamPermissionsSubnetworkHttpRequest, TestPermissionsResponse>
+      testIamPermissionsSubnetworkMethodDescriptor =
+          ApiMethodDescriptor
+              .<TestIamPermissionsSubnetworkHttpRequest, TestPermissionsResponse>newBuilder()
+              .setFullMethodName("compute.subnetworks.testIamPermissions")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter
+                      .<TestIamPermissionsSubnetworkHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/regions/{region}/subnetworks/{resource}/testIamPermissions"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(ProjectRegionSubnetworkResourceName.newFactory())
+                      .setResourceNameField("resource")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<TestPermissionsResponse>newBuilder()
+                      .setResponseInstance(TestPermissionsResponse.getDefaultInstance())
+                      .build())
+              .build();
+
   private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<AggregatedListSubnetworksHttpRequest, SubnetworkAggregatedList>
@@ -267,6 +339,8 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
   private final UnaryCallable<ExpandIpCidrRangeSubnetworkHttpRequest, Operation>
       expandIpCidrRangeSubnetworkCallable;
   private final UnaryCallable<GetSubnetworkHttpRequest, Subnetwork> getSubnetworkCallable;
+  private final UnaryCallable<GetIamPolicySubnetworkHttpRequest, Policy>
+      getIamPolicySubnetworkCallable;
   private final UnaryCallable<InsertSubnetworkHttpRequest, Operation> insertSubnetworkCallable;
   private final UnaryCallable<ListSubnetworksHttpRequest, SubnetworkList> listSubnetworksCallable;
   private final UnaryCallable<ListSubnetworksHttpRequest, ListSubnetworksPagedResponse>
@@ -276,8 +350,12 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
   private final UnaryCallable<ListUsableSubnetworksHttpRequest, ListUsableSubnetworksPagedResponse>
       listUsableSubnetworksPagedCallable;
   private final UnaryCallable<PatchSubnetworkHttpRequest, Operation> patchSubnetworkCallable;
+  private final UnaryCallable<SetIamPolicySubnetworkHttpRequest, Policy>
+      setIamPolicySubnetworkCallable;
   private final UnaryCallable<SetPrivateIpGoogleAccessSubnetworkHttpRequest, Operation>
       setPrivateIpGoogleAccessSubnetworkCallable;
+  private final UnaryCallable<TestIamPermissionsSubnetworkHttpRequest, TestPermissionsResponse>
+      testIamPermissionsSubnetworkCallable;
 
   private final HttpJsonStubCallableFactory callableFactory;
 
@@ -338,6 +416,11 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
         HttpJsonCallSettings.<GetSubnetworkHttpRequest, Subnetwork>newBuilder()
             .setMethodDescriptor(getSubnetworkMethodDescriptor)
             .build();
+    HttpJsonCallSettings<GetIamPolicySubnetworkHttpRequest, Policy>
+        getIamPolicySubnetworkTransportSettings =
+            HttpJsonCallSettings.<GetIamPolicySubnetworkHttpRequest, Policy>newBuilder()
+                .setMethodDescriptor(getIamPolicySubnetworkMethodDescriptor)
+                .build();
     HttpJsonCallSettings<InsertSubnetworkHttpRequest, Operation> insertSubnetworkTransportSettings =
         HttpJsonCallSettings.<InsertSubnetworkHttpRequest, Operation>newBuilder()
             .setMethodDescriptor(insertSubnetworkMethodDescriptor)
@@ -357,11 +440,22 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
         HttpJsonCallSettings.<PatchSubnetworkHttpRequest, Operation>newBuilder()
             .setMethodDescriptor(patchSubnetworkMethodDescriptor)
             .build();
+    HttpJsonCallSettings<SetIamPolicySubnetworkHttpRequest, Policy>
+        setIamPolicySubnetworkTransportSettings =
+            HttpJsonCallSettings.<SetIamPolicySubnetworkHttpRequest, Policy>newBuilder()
+                .setMethodDescriptor(setIamPolicySubnetworkMethodDescriptor)
+                .build();
     HttpJsonCallSettings<SetPrivateIpGoogleAccessSubnetworkHttpRequest, Operation>
         setPrivateIpGoogleAccessSubnetworkTransportSettings =
             HttpJsonCallSettings
                 .<SetPrivateIpGoogleAccessSubnetworkHttpRequest, Operation>newBuilder()
                 .setMethodDescriptor(setPrivateIpGoogleAccessSubnetworkMethodDescriptor)
+                .build();
+    HttpJsonCallSettings<TestIamPermissionsSubnetworkHttpRequest, TestPermissionsResponse>
+        testIamPermissionsSubnetworkTransportSettings =
+            HttpJsonCallSettings
+                .<TestIamPermissionsSubnetworkHttpRequest, TestPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsSubnetworkMethodDescriptor)
                 .build();
 
     this.aggregatedListSubnetworksCallable =
@@ -385,6 +479,11 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
     this.getSubnetworkCallable =
         callableFactory.createUnaryCallable(
             getSubnetworkTransportSettings, settings.getSubnetworkSettings(), clientContext);
+    this.getIamPolicySubnetworkCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicySubnetworkTransportSettings,
+            settings.getIamPolicySubnetworkSettings(),
+            clientContext);
     this.insertSubnetworkCallable =
         callableFactory.createUnaryCallable(
             insertSubnetworkTransportSettings, settings.insertSubnetworkSettings(), clientContext);
@@ -407,10 +506,20 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
     this.patchSubnetworkCallable =
         callableFactory.createUnaryCallable(
             patchSubnetworkTransportSettings, settings.patchSubnetworkSettings(), clientContext);
+    this.setIamPolicySubnetworkCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicySubnetworkTransportSettings,
+            settings.setIamPolicySubnetworkSettings(),
+            clientContext);
     this.setPrivateIpGoogleAccessSubnetworkCallable =
         callableFactory.createUnaryCallable(
             setPrivateIpGoogleAccessSubnetworkTransportSettings,
             settings.setPrivateIpGoogleAccessSubnetworkSettings(),
+            clientContext);
+    this.testIamPermissionsSubnetworkCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsSubnetworkTransportSettings,
+            settings.testIamPermissionsSubnetworkSettings(),
             clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -442,6 +551,11 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
   @BetaApi
   public UnaryCallable<GetSubnetworkHttpRequest, Subnetwork> getSubnetworkCallable() {
     return getSubnetworkCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<GetIamPolicySubnetworkHttpRequest, Policy> getIamPolicySubnetworkCallable() {
+    return getIamPolicySubnetworkCallable;
   }
 
   @BetaApi
@@ -478,9 +592,20 @@ public class HttpJsonSubnetworkStub extends SubnetworkStub {
   }
 
   @BetaApi
+  public UnaryCallable<SetIamPolicySubnetworkHttpRequest, Policy> setIamPolicySubnetworkCallable() {
+    return setIamPolicySubnetworkCallable;
+  }
+
+  @BetaApi
   public UnaryCallable<SetPrivateIpGoogleAccessSubnetworkHttpRequest, Operation>
       setPrivateIpGoogleAccessSubnetworkCallable() {
     return setPrivateIpGoogleAccessSubnetworkCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<TestIamPermissionsSubnetworkHttpRequest, TestPermissionsResponse>
+      testIamPermissionsSubnetworkCallable() {
+    return testIamPermissionsSubnetworkCallable;
   }
 
   @Override

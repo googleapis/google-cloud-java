@@ -25,7 +25,6 @@ import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
-import com.google.cloud.redis.v1beta1.Instance.Tier;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;

@@ -16,13 +16,21 @@
 
 import synthtool as s
 import synthtool.gcp as gcp
+import synthtool.languages.java as java
 
 gapic = gcp.DiscoGAPICGenerator()
 
-library = gapic.java_library(
-    service='compute',
-    version='v1',
-    config_path='artman_compute.yaml',
-    artman_output_name='')
+service = 'compute'
+versions = ['v1']
+config_pattern = '/gapic/google/compute/artman_compute.yaml'
 
-s.copy(library / 'gapic-google-cloud-compute-v1/src', 'src')
+for version in versions:
+  library = gapic.java_library(
+      service=service,
+      version=version,
+      config_path=config_pattern.format(version=version),
+      artman_output_name='')
+
+  s.copy(library / f'gapic-google-cloud-{service}-{version}/src', 'src')
+
+  java.format_code('./src')

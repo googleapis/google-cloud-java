@@ -26,16 +26,13 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
-
 import java.io.Serializable;
 import java.lang.reflect.Method;
 import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.Callable;
 
-/**
- * Exception retry algorithm implementation used by {@link RetryHelper}.
- */
+/** Exception retry algorithm implementation used by {@link RetryHelper}. */
 @BetaApi
 public final class ExceptionHandler implements ResultRetryAlgorithm<Object>, Serializable {
 
@@ -52,16 +49,18 @@ public final class ExceptionHandler implements ResultRetryAlgorithm<Object>, Ser
   public interface Interceptor extends Serializable {
 
     enum RetryResult {
-      NO_RETRY, RETRY, CONTINUE_EVALUATION;
+      NO_RETRY,
+      RETRY,
+      CONTINUE_EVALUATION;
     }
 
     /**
      * This method is called before exception evaluation and could short-circuit the process.
      *
      * @param exception the exception that is being evaluated
-     * @return {@link RetryResult} to indicate if the exception should be ignored (
-     *         {@link RetryResult#RETRY}), propagated ({@link RetryResult#NO_RETRY}), or evaluation
-     *         should proceed ({@link RetryResult#CONTINUE_EVALUATION}).
+     * @return {@link RetryResult} to indicate if the exception should be ignored ( {@link
+     *     RetryResult#RETRY}), propagated ({@link RetryResult#NO_RETRY}), or evaluation should
+     *     proceed ({@link RetryResult#CONTINUE_EVALUATION}).
      */
     RetryResult beforeEval(Exception exception);
 
@@ -70,16 +69,14 @@ public final class ExceptionHandler implements ResultRetryAlgorithm<Object>, Ser
      *
      * @param exception the exception that is being evaluated
      * @param retryResult the result of the evaluation so far
-     * @return {@link RetryResult} to indicate if the exception should be ignored (
-     *         {@link RetryResult#RETRY}), propagated ({@link RetryResult#NO_RETRY}), or evaluation
-     *         should proceed ({@link RetryResult#CONTINUE_EVALUATION}).
+     * @return {@link RetryResult} to indicate if the exception should be ignored ( {@link
+     *     RetryResult#RETRY}), propagated ({@link RetryResult#NO_RETRY}), or evaluation should
+     *     proceed ({@link RetryResult#CONTINUE_EVALUATION}).
      */
     RetryResult afterEval(Exception exception, RetryResult retryResult);
   }
 
-  /**
-   * ExceptionHandler builder.
-   */
+  /** ExceptionHandler builder. */
   public static class Builder {
 
     private final ImmutableList.Builder<Interceptor> interceptors = ImmutableList.builder();
@@ -89,8 +86,6 @@ public final class ExceptionHandler implements ResultRetryAlgorithm<Object>, Ser
         ImmutableSet.builder();
 
     private Builder() {}
-
-
 
     /**
      * Adds the exception handler interceptors. Call order will be maintained.
@@ -133,9 +128,7 @@ public final class ExceptionHandler implements ResultRetryAlgorithm<Object>, Ser
       return this;
     }
 
-    /**
-     * Returns a new ExceptionHandler instance.
-     */
+    /** Returns a new ExceptionHandler instance. */
     public ExceptionHandler build() {
       return new ExceptionHandler(this);
     }
@@ -201,8 +194,8 @@ public final class ExceptionHandler implements ResultRetryAlgorithm<Object>, Ser
     dest.add(retryInfo);
   }
 
-  private static RetryInfo findMostSpecificRetryInfo(Set<RetryInfo> retryInfo,
-      Class<? extends Exception> exception) {
+  private static RetryInfo findMostSpecificRetryInfo(
+      Set<RetryInfo> retryInfo, Class<? extends Exception> exception) {
     for (RetryInfo current : retryInfo) {
       if (current.exception.isAssignableFrom(exception)) {
         RetryInfo match = findMostSpecificRetryInfo(current.children, exception);
@@ -228,18 +221,20 @@ public final class ExceptionHandler implements ResultRetryAlgorithm<Object>, Ser
   void verifyCaller(Callable<?> callable) {
     Method callMethod = getCallableMethod(callable.getClass());
     for (Class<?> exceptionOrError : callMethod.getExceptionTypes()) {
-      Preconditions.checkArgument(Exception.class.isAssignableFrom(exceptionOrError),
+      Preconditions.checkArgument(
+          Exception.class.isAssignableFrom(exceptionOrError),
           "Callable method exceptions must be derived from Exception");
       @SuppressWarnings("unchecked")
       Class<? extends Exception> exception = (Class<? extends Exception>) exceptionOrError;
-      Preconditions.checkArgument(findMostSpecificRetryInfo(retryInfo, exception) != null,
+      Preconditions.checkArgument(
+          findMostSpecificRetryInfo(retryInfo, exception) != null,
           "Declared exception '" + exception + "' is not covered by exception handler");
     }
   }
 
   @Override
   public boolean shouldRetry(Throwable prevThrowable, Object prevResponse) {
-    if(!(prevThrowable instanceof Exception)) {
+    if (!(prevThrowable instanceof Exception)) {
       return false;
     }
     Exception ex = (Exception) prevThrowable;
@@ -263,8 +258,8 @@ public final class ExceptionHandler implements ResultRetryAlgorithm<Object>, Ser
   }
 
   @Override
-  public TimedAttemptSettings createNextAttempt(Throwable prevThrowable, Object prevResponse,
-      TimedAttemptSettings prevSettings) {
+  public TimedAttemptSettings createNextAttempt(
+      Throwable prevThrowable, Object prevResponse, TimedAttemptSettings prevSettings) {
     // Return null to indicate that this implementation does not provide any specific attempt
     // settings, so by default the TimedRetryAlgorithm options can be used instead.
     return null;
@@ -290,14 +285,10 @@ public final class ExceptionHandler implements ResultRetryAlgorithm<Object>, Ser
         && Objects.equals(retryInfo, other.retryInfo);
   }
 
-
-  /**
-   * Returns an instance which retry any checked exception and abort on any runtime exception.
-   */
+  /** Returns an instance which retry any checked exception and abort on any runtime exception. */
   public static ExceptionHandler getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
-
 
   public static Builder newBuilder() {
     return new Builder();

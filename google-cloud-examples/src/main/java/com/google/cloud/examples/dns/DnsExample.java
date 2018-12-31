@@ -26,25 +26,24 @@ import com.google.cloud.dns.Zone;
 import com.google.cloud.dns.ZoneInfo;
 import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableList;
-
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
-
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 
 /**
  * An example of using Google Cloud DNS.
  *
- * <p>This example creates, deletes, gets, and lists zones. It also creates and deletes
- * record sets of type A, and lists record sets.
+ * <p>This example creates, deletes, gets, and lists zones. It also creates and deletes record sets
+ * of type A, and lists record sets.
  *
- * <p>See the
- * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/google-cloud-examples/README.md">
+ * <p>See the <a
+ * href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/google-cloud-examples/README.md">
  * README</a> for compilation instructions. Run this code with
+ *
  * <pre>{@code target/appassembler/bin/DnsExample [<project_id>]
  * create <zone_name> <dns_name> <description> |
  * get <zone_name> |
@@ -76,9 +75,7 @@ public class DnsExample {
 
   private static class CreateZoneAction implements DnsAction {
 
-    /**
-     * Creates a zone with the provided name, DNS name and description (in this order).
-     */
+    /** Creates a zone with the provided name, DNS name and description (in this order). */
     @Override
     public void run(Dns dns, String... args) {
       String zoneName = args[0];
@@ -86,7 +83,8 @@ public class DnsExample {
       String description = args[2];
       ZoneInfo zoneInfo = ZoneInfo.of(zoneName, dnsName, description);
       Zone zone = dns.create(zoneInfo);
-      System.out.printf("Successfully created zone with name %s which was assigned ID %s.%n",
+      System.out.printf(
+          "Successfully created zone with name %s which was assigned ID %s.%n",
           zone.getName(), zone.getGeneratedId());
     }
 
@@ -103,9 +101,7 @@ public class DnsExample {
 
   private static class ListZonesAction implements DnsAction {
 
-    /**
-     * Lists all zones within the project.
-     */
+    /** Lists all zones within the project. */
     @Override
     public void run(Dns dns, String... args) {
       Iterator<Zone> zoneIterator = dns.listZones().iterateAll().iterator();
@@ -132,9 +128,7 @@ public class DnsExample {
 
   private static class GetZoneAction implements DnsAction {
 
-    /**
-     * Gets details about a zone with the given name.
-     */
+    /** Gets details about a zone with the given name. */
     @Override
     public void run(Dns dns, String... args) {
       String zoneName = args[0];
@@ -159,9 +153,7 @@ public class DnsExample {
 
   private static class DeleteZoneAction implements DnsAction {
 
-    /**
-     * Deletes a zone with the given name.
-     */
+    /** Deletes a zone with the given name. */
     @Override
     public void run(Dns dns, String... args) {
       String zoneName = args[0];
@@ -182,7 +174,6 @@ public class DnsExample {
     public boolean check(String... args) {
       return args.length == 1;
     }
-
   }
 
   private static class DeleteDnsRecordAction implements DnsAction {
@@ -201,17 +192,17 @@ public class DnsExample {
       if (args.length > 3) {
         ttl = Integer.parseInt(args[3]);
       }
-      RecordSet recordSet = RecordSet.newBuilder(recordName, RecordSet.Type.A)
-          .setRecords(ImmutableList.of(ip))
-          .setTtl(ttl, TimeUnit.SECONDS)
-          .build();
-      ChangeRequestInfo changeRequest = ChangeRequest.newBuilder()
-          .delete(recordSet)
-          .build();
+      RecordSet recordSet =
+          RecordSet.newBuilder(recordName, RecordSet.Type.A)
+              .setRecords(ImmutableList.of(ip))
+              .setTtl(ttl, TimeUnit.SECONDS)
+              .build();
+      ChangeRequestInfo changeRequest = ChangeRequest.newBuilder().delete(recordSet).build();
       changeRequest = dns.applyChangeRequest(zoneName, changeRequest);
-      System.out.printf("The request for deleting A record %s for zone %s was successfully "
-          + "submitted and assigned ID %s.%n", recordName, zoneName,
-          changeRequest.getGeneratedId());
+      System.out.printf(
+          "The request for deleting A record %s for zone %s was successfully "
+              + "submitted and assigned ID %s.%n",
+          recordName, zoneName, changeRequest.getGeneratedId());
       System.out.print("Waiting for deletion to happen...");
       waitForChangeToFinish(dns, zoneName, changeRequest);
       System.out.printf("%nThe deletion has been completed.%n");
@@ -249,15 +240,17 @@ public class DnsExample {
       if (args.length > 3) {
         ttl = Integer.parseInt(args[3]);
       }
-      RecordSet recordSet = RecordSet.newBuilder(recordName, RecordSet.Type.A)
-          .setRecords(ImmutableList.of(ip))
-          .setTtl(ttl, TimeUnit.SECONDS)
-          .build();
+      RecordSet recordSet =
+          RecordSet.newBuilder(recordName, RecordSet.Type.A)
+              .setRecords(ImmutableList.of(ip))
+              .setTtl(ttl, TimeUnit.SECONDS)
+              .build();
       ChangeRequestInfo changeRequest = ChangeRequest.newBuilder().add(recordSet).build();
       changeRequest = dns.applyChangeRequest(zoneName, changeRequest);
-      System.out.printf("The request for adding A record %s for zone %s was successfully "
-          + "submitted and assigned ID %s.%n", recordName, zoneName,
-          changeRequest.getGeneratedId());
+      System.out.printf(
+          "The request for adding A record %s for zone %s was successfully "
+              + "submitted and assigned ID %s.%n",
+          recordName, zoneName, changeRequest.getGeneratedId());
       System.out.print("Waiting for addition to happen...");
       waitForChangeToFinish(dns, zoneName, changeRequest);
       System.out.printf("The addition has been completed.%n");
@@ -282,9 +275,7 @@ public class DnsExample {
 
   private static class ListDnsRecordsAction implements DnsAction {
 
-    /**
-     * Lists all the record sets in the given zone.
-     */
+    /** Lists all the record sets in the given zone. */
     @Override
     public void run(Dns dns, String... args) {
       String zoneName = args[0];
@@ -293,8 +284,11 @@ public class DnsExample {
         System.out.printf("Record sets for zone %s:%n", zoneName);
         while (iterator.hasNext()) {
           RecordSet recordSet = iterator.next();
-          System.out.printf("%nRecord name: %s%nTTL: %s%nRecords: %s%n", recordSet.getName(),
-              recordSet.getTtl(), Joiner.on(", ").join(recordSet.getRecords()));
+          System.out.printf(
+              "%nRecord name: %s%nTTL: %s%nRecords: %s%n",
+              recordSet.getName(),
+              recordSet.getTtl(),
+              Joiner.on(", ").join(recordSet.getRecords()));
         }
       } else {
         System.out.printf("Zone %s has no record sets records.%n", zoneName);
@@ -324,8 +318,10 @@ public class DnsExample {
       Iterator<ChangeRequest> iterator;
       if (args.length > 2) {
         Dns.SortingOrder sortOrder = Dns.SortingOrder.valueOf(args[2].toUpperCase());
-        iterator = dns.listChangeRequests(zoneName,
-            Dns.ChangeRequestListOption.sortOrder(sortOrder)).iterateAll().iterator();
+        iterator =
+            dns.listChangeRequests(zoneName, Dns.ChangeRequestListOption.sortOrder(sortOrder))
+                .iterateAll()
+                .iterator();
       } else {
         iterator = dns.listChangeRequests(zoneName).iterateAll().iterator();
       }
@@ -353,7 +349,7 @@ public class DnsExample {
     public boolean check(String... args) {
       return args.length == 2
           || (args.length == 3
-          && ImmutableList.of("descending", "ascending").contains(args[2].toLowerCase()));
+              && ImmutableList.of("descending", "ascending").contains(args[2].toLowerCase()));
     }
   }
 
@@ -361,8 +357,8 @@ public class DnsExample {
 
     /**
      * Invokes a list action. If no parameter is provided, lists all zones. If zone name is the only
-     * parameter provided, lists both record sets and changes. Otherwise, invokes listing
-     * changes or zones based on the parameter provided.
+     * parameter provided, lists both record sets and changes. Otherwise, invokes listing changes or
+     * zones based on the parameter provided.
      */
     @Override
     public void run(Dns dns, String... args) {
@@ -407,12 +403,10 @@ public class DnsExample {
       System.out.printf("Project id: %s%nQuota:%n", dns.getOptions().getProjectId());
       System.out.printf("\tZones: %d%n", quota.getZones());
       System.out.printf("\tRecord sets per zone: %d%n", quota.getRrsetsPerZone());
-      System.out.printf("\tRecord sets per DNS record: %d%n",
-          quota.getResourceRecordsPerRrset());
+      System.out.printf("\tRecord sets per DNS record: %d%n", quota.getResourceRecordsPerRrset());
       System.out.printf("\tAdditions per change: %d%n", quota.getRrsetAdditionsPerChange());
       System.out.printf("\tDeletions per change: %d%n", quota.getRrsetDeletionsPerChange());
-      System.out.printf("\tTotal data size per change: %d%n",
-          quota.getTotalRrdataSizePerChange());
+      System.out.printf("\tTotal data size per change: %d%n", quota.getTotalRrdataSizePerChange());
     }
 
     @Override
@@ -444,8 +438,8 @@ public class DnsExample {
     System.out.printf("Name servers: %s%n", Joiner.on(", ").join(zone.getNameServers()));
   }
 
-  private static ChangeRequestInfo waitForChangeToFinish(Dns dns, String zoneName,
-      ChangeRequestInfo request) {
+  private static ChangeRequestInfo waitForChangeToFinish(
+      Dns dns, String zoneName, ChangeRequestInfo request) {
     ChangeRequestInfo current = request;
     while (current.status().equals(ChangeRequest.Status.PENDING)) {
       System.out.print(".");
@@ -468,7 +462,8 @@ public class DnsExample {
         actionAndParams.append(' ').append(param);
       }
     }
-    System.out.printf("Usage: %s [<project_id>] operation <args>*%s%n",
+    System.out.printf(
+        "Usage: %s [<project_id>] operation <args>*%s%n",
         DnsExample.class.getSimpleName(), actionAndParams);
   }
 

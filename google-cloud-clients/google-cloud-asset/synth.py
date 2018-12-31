@@ -16,17 +16,25 @@
 
 import synthtool as s
 import synthtool.gcp as gcp
+import synthtool.languages.java as java
 
 gapic = gcp.GAPICGenerator()
-common_templates = gcp.CommonTemplates()
 
-# tasks has two product names, and a poorly named artman yaml
-v1beta1_library = gapic.java_library(
-    service='asset',
-    version='v1beta1',
-    config_path='artman_cloudasset_v1beta1.yaml',
-    artman_output_name='')
+service = 'asset'
+versions = ['v1beta1']
+config_pattern = '/google/cloud/asset/artman_cloudasset_{version}.yaml'
 
-s.copy(v1beta1_library / 'gapic-google-cloud-asset-v1beta1/src', 'src')
-s.copy(v1beta1_library / 'grpc-google-cloud-asset-v1beta1/src', '../../google-api-grpc/grpc-google-cloud-asset-v1beta1/src')
-s.copy(v1beta1_library / 'proto-google-cloud-asset-v1beta1/src', '../../google-api-grpc/proto-google-cloud-asset-v1beta1/src')
+for version in versions:
+  library = gapic.java_library(
+      service=service,
+      version=version,
+      config_path=config_pattern.format(version=version),
+      artman_output_name='')
+
+  s.copy(library / f'gapic-google-cloud-{service}-{version}/src', 'src')
+  s.copy(library / f'grpc-google-cloud-{service}-{version}/src', f'../../google-api-grpc/grpc-google-cloud-{service}-{version}/src')
+  s.copy(library / f'proto-google-cloud-{service}-{version}/src', f'../../google-api-grpc/proto-google-cloud-{service}-{version}/src')
+
+  java.format_code('./src')
+  java.format_code(f'../../google-api-grpc/grpc-google-cloud-{service}-{version}/src')
+  java.format_code(f'../../google-api-grpc/proto-google-cloud-{service}-{version}/src')

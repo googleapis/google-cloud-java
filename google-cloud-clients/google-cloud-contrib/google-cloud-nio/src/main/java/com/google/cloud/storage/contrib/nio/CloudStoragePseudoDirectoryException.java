@@ -18,9 +18,7 @@ package com.google.cloud.storage.contrib.nio;
 
 import java.nio.file.InvalidPathException;
 
-/**
- * Exception thrown when erroneously trying to operate on a path with a trailing slash.
- */
+/** Exception thrown when erroneously trying to operate on a path with a trailing slash. */
 public final class CloudStoragePseudoDirectoryException extends InvalidPathException {
 
   CloudStoragePseudoDirectoryException(CloudStoragePath path) {

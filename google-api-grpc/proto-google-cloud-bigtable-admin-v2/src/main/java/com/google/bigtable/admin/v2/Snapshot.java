@@ -4,6 +4,8 @@
 package com.google.bigtable.admin.v2;
 
 /**
+ *
+ *
  * <pre>
  * A snapshot of a table at a particular time. A snapshot can be used as a
  * checkpoint for data restoration or a data source for a new table.
@@ -15,15 +17,16 @@ package com.google.bigtable.admin.v2;
  *
  * Protobuf type {@code google.bigtable.admin.v2.Snapshot}
  */
-public  final class Snapshot extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Snapshot)
     SnapshotOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Snapshot.newBuilder() to construct.
   private Snapshot(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Snapshot() {
     name_ = "";
     dataSizeBytes_ = 0L;
@@ -32,10 +35,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Snapshot(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -55,110 +58,124 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 18: {
-            com.google.bigtable.admin.v2.Table.Builder subBuilder = null;
-            if (sourceTable_ != null) {
-              subBuilder = sourceTable_.toBuilder();
+              name_ = s;
+              break;
             }
-            sourceTable_ = input.readMessage(com.google.bigtable.admin.v2.Table.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(sourceTable_);
-              sourceTable_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.bigtable.admin.v2.Table.Builder subBuilder = null;
+              if (sourceTable_ != null) {
+                subBuilder = sourceTable_.toBuilder();
+              }
+              sourceTable_ =
+                  input.readMessage(com.google.bigtable.admin.v2.Table.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sourceTable_);
+                sourceTable_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 24: {
-
-            dataSizeBytes_ = input.readInt64();
-            break;
-          }
-          case 34: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (createTime_ != null) {
-              subBuilder = createTime_.toBuilder();
+              break;
             }
-            createTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(createTime_);
-              createTime_ = subBuilder.buildPartial();
+          case 24:
+            {
+              dataSizeBytes_ = input.readInt64();
+              break;
             }
+          case 34:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (createTime_ != null) {
+                subBuilder = createTime_.toBuilder();
+              }
+              createTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(createTime_);
+                createTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 42: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (deleteTime_ != null) {
-              subBuilder = deleteTime_.toBuilder();
+              break;
             }
-            deleteTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(deleteTime_);
-              deleteTime_ = subBuilder.buildPartial();
+          case 42:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (deleteTime_ != null) {
+                subBuilder = deleteTime_.toBuilder();
+              }
+              deleteTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(deleteTime_);
+                deleteTime_ = subBuilder.buildPartial();
+              }
+
+              break;
             }
+          case 48:
+            {
+              int rawValue = input.readEnum();
 
-            break;
-          }
-          case 48: {
-            int rawValue = input.readEnum();
-
-            state_ = rawValue;
-            break;
-          }
-          case 58: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            description_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              state_ = rawValue;
+              break;
             }
-            break;
-          }
+          case 58:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.bigtable.admin.v2.TableProto.internal_static_google_bigtable_admin_v2_Snapshot_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.bigtable.admin.v2.TableProto
+        .internal_static_google_bigtable_admin_v2_Snapshot_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.bigtable.admin.v2.TableProto.internal_static_google_bigtable_admin_v2_Snapshot_fieldAccessorTable
+    return com.google.bigtable.admin.v2.TableProto
+        .internal_static_google_bigtable_admin_v2_Snapshot_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.bigtable.admin.v2.Snapshot.class, com.google.bigtable.admin.v2.Snapshot.Builder.class);
+            com.google.bigtable.admin.v2.Snapshot.class,
+            com.google.bigtable.admin.v2.Snapshot.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * Possible states of a snapshot.
    * </pre>
    *
    * Protobuf enum {@code google.bigtable.admin.v2.Snapshot.State}
    */
-  public enum State
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum State implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * The state of the snapshot could not be determined.
      * </pre>
@@ -167,6 +184,8 @@ private static final long serialVersionUID = 0L;
      */
     STATE_NOT_KNOWN(0),
     /**
+     *
+     *
      * <pre>
      * The snapshot has been successfully created and can serve all requests.
      * </pre>
@@ -175,6 +194,8 @@ private static final long serialVersionUID = 0L;
      */
     READY(1),
     /**
+     *
+     *
      * <pre>
      * The snapshot is currently being created, and may be destroyed if the
      * creation process encounters an error. A snapshot may not be restored to a
@@ -188,6 +209,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * The state of the snapshot could not be determined.
      * </pre>
@@ -196,6 +219,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int STATE_NOT_KNOWN_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * The snapshot has been successfully created and can serve all requests.
      * </pre>
@@ -204,6 +229,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int READY_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * The snapshot is currently being created, and may be destroyed if the
      * creation process encounters an error. A snapshot may not be restored to a
@@ -214,7 +241,6 @@ private static final long serialVersionUID = 0L;
      */
     public static final int CREATING_VALUE = 2;
 
-
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -223,9 +249,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static State valueOf(int value) {
       return forNumber(value);
@@ -233,45 +257,45 @@ private static final long serialVersionUID = 0L;
 
     public static State forNumber(int value) {
       switch (value) {
-        case 0: return STATE_NOT_KNOWN;
-        case 1: return READY;
-        case 2: return CREATING;
-        default: return null;
+        case 0:
+          return STATE_NOT_KNOWN;
+        case 1:
+          return READY;
+        case 2:
+          return CREATING;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<State>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<State> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        State> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<State>() {
-            public State findValueByNumber(int number) {
-              return State.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<State> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<State>() {
+          public State findValueByNumber(int number) {
+            return State.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.bigtable.admin.v2.Snapshot.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final State[] VALUES = values();
 
-    public static State valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static State valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -291,6 +315,8 @@ private static final long serialVersionUID = 0L;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The unique name of the snapshot.
@@ -305,14 +331,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The unique name of the snapshot.
@@ -322,13 +349,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -339,6 +364,8 @@ private static final long serialVersionUID = 0L;
   public static final int SOURCE_TABLE_FIELD_NUMBER = 2;
   private com.google.bigtable.admin.v2.Table sourceTable_;
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The source table at the time the snapshot was taken.
@@ -350,6 +377,8 @@ private static final long serialVersionUID = 0L;
     return sourceTable_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The source table at the time the snapshot was taken.
@@ -358,9 +387,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
    */
   public com.google.bigtable.admin.v2.Table getSourceTable() {
-    return sourceTable_ == null ? com.google.bigtable.admin.v2.Table.getDefaultInstance() : sourceTable_;
+    return sourceTable_ == null
+        ? com.google.bigtable.admin.v2.Table.getDefaultInstance()
+        : sourceTable_;
   }
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The source table at the time the snapshot was taken.
@@ -375,6 +408,8 @@ private static final long serialVersionUID = 0L;
   public static final int DATA_SIZE_BYTES_FIELD_NUMBER = 3;
   private long dataSizeBytes_;
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The size of the data in the source table at the time the snapshot was
@@ -391,6 +426,8 @@ private static final long serialVersionUID = 0L;
   public static final int CREATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp createTime_;
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The time when the snapshot is created.
@@ -402,6 +439,8 @@ private static final long serialVersionUID = 0L;
     return createTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The time when the snapshot is created.
@@ -413,6 +452,8 @@ private static final long serialVersionUID = 0L;
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The time when the snapshot is created.
@@ -427,6 +468,8 @@ private static final long serialVersionUID = 0L;
   public static final int DELETE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp deleteTime_;
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The time when the snapshot will be deleted. The maximum amount of time a
@@ -440,6 +483,8 @@ private static final long serialVersionUID = 0L;
     return deleteTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The time when the snapshot will be deleted. The maximum amount of time a
@@ -453,6 +498,8 @@ private static final long serialVersionUID = 0L;
     return deleteTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteTime_;
   }
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The time when the snapshot will be deleted. The maximum amount of time a
@@ -469,6 +516,8 @@ private static final long serialVersionUID = 0L;
   public static final int STATE_FIELD_NUMBER = 6;
   private int state_;
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The current state of the snapshot.
@@ -480,6 +529,8 @@ private static final long serialVersionUID = 0L;
     return state_;
   }
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The current state of the snapshot.
@@ -489,13 +540,16 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.bigtable.admin.v2.Snapshot.State getState() {
     @SuppressWarnings("deprecation")
-    com.google.bigtable.admin.v2.Snapshot.State result = com.google.bigtable.admin.v2.Snapshot.State.valueOf(state_);
+    com.google.bigtable.admin.v2.Snapshot.State result =
+        com.google.bigtable.admin.v2.Snapshot.State.valueOf(state_);
     return result == null ? com.google.bigtable.admin.v2.Snapshot.State.UNRECOGNIZED : result;
   }
 
   public static final int DESCRIPTION_FIELD_NUMBER = 7;
   private volatile java.lang.Object description_;
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * Description of the snapshot.
@@ -508,14 +562,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       description_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * Description of the snapshot.
@@ -523,13 +578,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string description = 7;</code>
    */
-  public com.google.protobuf.ByteString
-      getDescriptionBytes() {
+  public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       description_ = b;
       return b;
     } else {
@@ -538,6 +591,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -549,8 +603,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
@@ -585,24 +638,19 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (sourceTable_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getSourceTable());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getSourceTable());
     }
     if (dataSizeBytes_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, dataSizeBytes_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, dataSizeBytes_);
     }
     if (createTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getCreateTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getCreateTime());
     }
     if (deleteTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getDeleteTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getDeleteTime());
     }
     if (state_ != com.google.bigtable.admin.v2.Snapshot.State.STATE_NOT_KNOWN.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(6, state_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, state_);
     }
     if (!getDescriptionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, description_);
@@ -615,7 +663,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.bigtable.admin.v2.Snapshot)) {
       return super.equals(obj);
@@ -623,28 +671,22 @@ private static final long serialVersionUID = 0L;
     com.google.bigtable.admin.v2.Snapshot other = (com.google.bigtable.admin.v2.Snapshot) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
+    result = result && getName().equals(other.getName());
     result = result && (hasSourceTable() == other.hasSourceTable());
     if (hasSourceTable()) {
-      result = result && getSourceTable()
-          .equals(other.getSourceTable());
+      result = result && getSourceTable().equals(other.getSourceTable());
     }
-    result = result && (getDataSizeBytes()
-        == other.getDataSizeBytes());
+    result = result && (getDataSizeBytes() == other.getDataSizeBytes());
     result = result && (hasCreateTime() == other.hasCreateTime());
     if (hasCreateTime()) {
-      result = result && getCreateTime()
-          .equals(other.getCreateTime());
+      result = result && getCreateTime().equals(other.getCreateTime());
     }
     result = result && (hasDeleteTime() == other.hasDeleteTime());
     if (hasDeleteTime()) {
-      result = result && getDeleteTime()
-          .equals(other.getDeleteTime());
+      result = result && getDeleteTime().equals(other.getDeleteTime());
     }
     result = result && state_ == other.state_;
-    result = result && getDescription()
-        .equals(other.getDescription());
+    result = result && getDescription().equals(other.getDescription());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -663,8 +705,7 @@ private static final long serialVersionUID = 0L;
       hash = (53 * hash) + getSourceTable().hashCode();
     }
     hash = (37 * hash) + DATA_SIZE_BYTES_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getDataSizeBytes());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getDataSizeBytes());
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
@@ -682,97 +723,103 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.bigtable.admin.v2.Snapshot parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.bigtable.admin.v2.Snapshot parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.bigtable.admin.v2.Snapshot parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.bigtable.admin.v2.Snapshot parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.bigtable.admin.v2.Snapshot parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.bigtable.admin.v2.Snapshot parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.bigtable.admin.v2.Snapshot parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.bigtable.admin.v2.Snapshot parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.bigtable.admin.v2.Snapshot parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.bigtable.admin.v2.Snapshot parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.bigtable.admin.v2.Snapshot parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.bigtable.admin.v2.Snapshot parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.bigtable.admin.v2.Snapshot parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.bigtable.admin.v2.Snapshot parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.bigtable.admin.v2.Snapshot prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A snapshot of a table at a particular time. A snapshot can be used as a
    * checkpoint for data restoration or a data source for a new table.
@@ -784,21 +831,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.bigtable.admin.v2.Snapshot}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.bigtable.admin.v2.Snapshot)
       com.google.bigtable.admin.v2.SnapshotOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.bigtable.admin.v2.TableProto.internal_static_google_bigtable_admin_v2_Snapshot_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.bigtable.admin.v2.TableProto
+          .internal_static_google_bigtable_admin_v2_Snapshot_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.bigtable.admin.v2.TableProto.internal_static_google_bigtable_admin_v2_Snapshot_fieldAccessorTable
+      return com.google.bigtable.admin.v2.TableProto
+          .internal_static_google_bigtable_admin_v2_Snapshot_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.bigtable.admin.v2.Snapshot.class, com.google.bigtable.admin.v2.Snapshot.Builder.class);
+              com.google.bigtable.admin.v2.Snapshot.class,
+              com.google.bigtable.admin.v2.Snapshot.Builder.class);
     }
 
     // Construct using com.google.bigtable.admin.v2.Snapshot.newBuilder()
@@ -806,16 +855,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -849,9 +897,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.bigtable.admin.v2.TableProto.internal_static_google_bigtable_admin_v2_Snapshot_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.bigtable.admin.v2.TableProto
+          .internal_static_google_bigtable_admin_v2_Snapshot_descriptor;
     }
 
     @java.lang.Override
@@ -870,7 +918,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.bigtable.admin.v2.Snapshot buildPartial() {
-      com.google.bigtable.admin.v2.Snapshot result = new com.google.bigtable.admin.v2.Snapshot(this);
+      com.google.bigtable.admin.v2.Snapshot result =
+          new com.google.bigtable.admin.v2.Snapshot(this);
       result.name_ = name_;
       if (sourceTableBuilder_ == null) {
         result.sourceTable_ = sourceTable_;
@@ -898,38 +947,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.bigtable.admin.v2.Snapshot) {
-        return mergeFrom((com.google.bigtable.admin.v2.Snapshot)other);
+        return mergeFrom((com.google.bigtable.admin.v2.Snapshot) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -992,6 +1042,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The unique name of the snapshot.
@@ -1004,8 +1056,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -1014,6 +1065,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The unique name of the snapshot.
@@ -1023,13 +1076,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -1037,6 +1088,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The unique name of the snapshot.
@@ -1046,17 +1099,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The unique name of the snapshot.
@@ -1067,12 +1121,14 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The unique name of the snapshot.
@@ -1082,13 +1138,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
@@ -1096,8 +1151,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.bigtable.admin.v2.Table sourceTable_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.bigtable.admin.v2.Table, com.google.bigtable.admin.v2.Table.Builder, com.google.bigtable.admin.v2.TableOrBuilder> sourceTableBuilder_;
+            com.google.bigtable.admin.v2.Table,
+            com.google.bigtable.admin.v2.Table.Builder,
+            com.google.bigtable.admin.v2.TableOrBuilder>
+        sourceTableBuilder_;
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The source table at the time the snapshot was taken.
@@ -1109,6 +1169,8 @@ private static final long serialVersionUID = 0L;
       return sourceTableBuilder_ != null || sourceTable_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The source table at the time the snapshot was taken.
@@ -1118,12 +1180,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.bigtable.admin.v2.Table getSourceTable() {
       if (sourceTableBuilder_ == null) {
-        return sourceTable_ == null ? com.google.bigtable.admin.v2.Table.getDefaultInstance() : sourceTable_;
+        return sourceTable_ == null
+            ? com.google.bigtable.admin.v2.Table.getDefaultInstance()
+            : sourceTable_;
       } else {
         return sourceTableBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The source table at the time the snapshot was taken.
@@ -1145,6 +1211,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The source table at the time the snapshot was taken.
@@ -1152,8 +1220,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
      */
-    public Builder setSourceTable(
-        com.google.bigtable.admin.v2.Table.Builder builderForValue) {
+    public Builder setSourceTable(com.google.bigtable.admin.v2.Table.Builder builderForValue) {
       if (sourceTableBuilder_ == null) {
         sourceTable_ = builderForValue.build();
         onChanged();
@@ -1164,6 +1231,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The source table at the time the snapshot was taken.
@@ -1175,7 +1244,9 @@ private static final long serialVersionUID = 0L;
       if (sourceTableBuilder_ == null) {
         if (sourceTable_ != null) {
           sourceTable_ =
-            com.google.bigtable.admin.v2.Table.newBuilder(sourceTable_).mergeFrom(value).buildPartial();
+              com.google.bigtable.admin.v2.Table.newBuilder(sourceTable_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           sourceTable_ = value;
         }
@@ -1187,6 +1258,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The source table at the time the snapshot was taken.
@@ -1206,6 +1279,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The source table at the time the snapshot was taken.
@@ -1214,11 +1289,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
      */
     public com.google.bigtable.admin.v2.Table.Builder getSourceTableBuilder() {
-      
+
       onChanged();
       return getSourceTableFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The source table at the time the snapshot was taken.
@@ -1230,11 +1307,14 @@ private static final long serialVersionUID = 0L;
       if (sourceTableBuilder_ != null) {
         return sourceTableBuilder_.getMessageOrBuilder();
       } else {
-        return sourceTable_ == null ?
-            com.google.bigtable.admin.v2.Table.getDefaultInstance() : sourceTable_;
+        return sourceTable_ == null
+            ? com.google.bigtable.admin.v2.Table.getDefaultInstance()
+            : sourceTable_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The source table at the time the snapshot was taken.
@@ -1243,21 +1323,26 @@ private static final long serialVersionUID = 0L;
      * <code>.google.bigtable.admin.v2.Table source_table = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.bigtable.admin.v2.Table, com.google.bigtable.admin.v2.Table.Builder, com.google.bigtable.admin.v2.TableOrBuilder> 
+            com.google.bigtable.admin.v2.Table,
+            com.google.bigtable.admin.v2.Table.Builder,
+            com.google.bigtable.admin.v2.TableOrBuilder>
         getSourceTableFieldBuilder() {
       if (sourceTableBuilder_ == null) {
-        sourceTableBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.bigtable.admin.v2.Table, com.google.bigtable.admin.v2.Table.Builder, com.google.bigtable.admin.v2.TableOrBuilder>(
-                getSourceTable(),
-                getParentForChildren(),
-                isClean());
+        sourceTableBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.admin.v2.Table,
+                com.google.bigtable.admin.v2.Table.Builder,
+                com.google.bigtable.admin.v2.TableOrBuilder>(
+                getSourceTable(), getParentForChildren(), isClean());
         sourceTable_ = null;
       }
       return sourceTableBuilder_;
     }
 
-    private long dataSizeBytes_ ;
+    private long dataSizeBytes_;
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The size of the data in the source table at the time the snapshot was
@@ -1271,6 +1356,8 @@ private static final long serialVersionUID = 0L;
       return dataSizeBytes_;
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The size of the data in the source table at the time the snapshot was
@@ -1281,12 +1368,14 @@ private static final long serialVersionUID = 0L;
      * <code>int64 data_size_bytes = 3;</code>
      */
     public Builder setDataSizeBytes(long value) {
-      
+
       dataSizeBytes_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The size of the data in the source table at the time the snapshot was
@@ -1297,7 +1386,7 @@ private static final long serialVersionUID = 0L;
      * <code>int64 data_size_bytes = 3;</code>
      */
     public Builder clearDataSizeBytes() {
-      
+
       dataSizeBytes_ = 0L;
       onChanged();
       return this;
@@ -1305,8 +1394,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp createTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        createTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The time when the snapshot is created.
@@ -1318,6 +1412,8 @@ private static final long serialVersionUID = 0L;
       return createTimeBuilder_ != null || createTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The time when the snapshot is created.
@@ -1327,12 +1423,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
-        return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
       } else {
         return createTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The time when the snapshot is created.
@@ -1354,6 +1454,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The time when the snapshot is created.
@@ -1361,8 +1463,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
      */
-    public Builder setCreateTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
         onChanged();
@@ -1373,6 +1474,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The time when the snapshot is created.
@@ -1384,7 +1487,7 @@ private static final long serialVersionUID = 0L;
       if (createTimeBuilder_ == null) {
         if (createTime_ != null) {
           createTime_ =
-            com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
         } else {
           createTime_ = value;
         }
@@ -1396,6 +1499,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The time when the snapshot is created.
@@ -1415,6 +1520,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The time when the snapshot is created.
@@ -1423,11 +1530,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      
+
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The time when the snapshot is created.
@@ -1439,11 +1548,14 @@ private static final long serialVersionUID = 0L;
       if (createTimeBuilder_ != null) {
         return createTimeBuilder_.getMessageOrBuilder();
       } else {
-        return createTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The time when the snapshot is created.
@@ -1452,14 +1564,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp create_time = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getCreateTimeFieldBuilder() {
       if (createTimeBuilder_ == null) {
-        createTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getCreateTime(),
-                getParentForChildren(),
-                isClean());
+        createTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(), getParentForChildren(), isClean());
         createTime_ = null;
       }
       return createTimeBuilder_;
@@ -1467,8 +1582,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp deleteTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> deleteTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        deleteTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The time when the snapshot will be deleted. The maximum amount of time a
@@ -1482,6 +1602,8 @@ private static final long serialVersionUID = 0L;
       return deleteTimeBuilder_ != null || deleteTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The time when the snapshot will be deleted. The maximum amount of time a
@@ -1493,12 +1615,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getDeleteTime() {
       if (deleteTimeBuilder_ == null) {
-        return deleteTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteTime_;
+        return deleteTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : deleteTime_;
       } else {
         return deleteTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The time when the snapshot will be deleted. The maximum amount of time a
@@ -1522,6 +1648,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The time when the snapshot will be deleted. The maximum amount of time a
@@ -1531,8 +1659,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp delete_time = 5;</code>
      */
-    public Builder setDeleteTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setDeleteTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (deleteTimeBuilder_ == null) {
         deleteTime_ = builderForValue.build();
         onChanged();
@@ -1543,6 +1670,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The time when the snapshot will be deleted. The maximum amount of time a
@@ -1556,7 +1685,7 @@ private static final long serialVersionUID = 0L;
       if (deleteTimeBuilder_ == null) {
         if (deleteTime_ != null) {
           deleteTime_ =
-            com.google.protobuf.Timestamp.newBuilder(deleteTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(deleteTime_).mergeFrom(value).buildPartial();
         } else {
           deleteTime_ = value;
         }
@@ -1568,6 +1697,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The time when the snapshot will be deleted. The maximum amount of time a
@@ -1589,6 +1720,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The time when the snapshot will be deleted. The maximum amount of time a
@@ -1599,11 +1732,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp delete_time = 5;</code>
      */
     public com.google.protobuf.Timestamp.Builder getDeleteTimeBuilder() {
-      
+
       onChanged();
       return getDeleteTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The time when the snapshot will be deleted. The maximum amount of time a
@@ -1617,11 +1752,14 @@ private static final long serialVersionUID = 0L;
       if (deleteTimeBuilder_ != null) {
         return deleteTimeBuilder_.getMessageOrBuilder();
       } else {
-        return deleteTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : deleteTime_;
+        return deleteTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : deleteTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The time when the snapshot will be deleted. The maximum amount of time a
@@ -1632,14 +1770,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp delete_time = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getDeleteTimeFieldBuilder() {
       if (deleteTimeBuilder_ == null) {
-        deleteTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getDeleteTime(),
-                getParentForChildren(),
-                isClean());
+        deleteTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getDeleteTime(), getParentForChildren(), isClean());
         deleteTime_ = null;
       }
       return deleteTimeBuilder_;
@@ -1647,6 +1788,8 @@ private static final long serialVersionUID = 0L;
 
     private int state_ = 0;
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The current state of the snapshot.
@@ -1658,6 +1801,8 @@ private static final long serialVersionUID = 0L;
       return state_;
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The current state of the snapshot.
@@ -1671,6 +1816,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The current state of the snapshot.
@@ -1680,10 +1827,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.bigtable.admin.v2.Snapshot.State getState() {
       @SuppressWarnings("deprecation")
-      com.google.bigtable.admin.v2.Snapshot.State result = com.google.bigtable.admin.v2.Snapshot.State.valueOf(state_);
+      com.google.bigtable.admin.v2.Snapshot.State result =
+          com.google.bigtable.admin.v2.Snapshot.State.valueOf(state_);
       return result == null ? com.google.bigtable.admin.v2.Snapshot.State.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The current state of the snapshot.
@@ -1695,12 +1845,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       state_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The current state of the snapshot.
@@ -1709,7 +1861,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.bigtable.admin.v2.Snapshot.State state = 6;</code>
      */
     public Builder clearState() {
-      
+
       state_ = 0;
       onChanged();
       return this;
@@ -1717,6 +1869,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object description_ = "";
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * Description of the snapshot.
@@ -1727,8 +1881,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         description_ = s;
         return s;
@@ -1737,6 +1890,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * Description of the snapshot.
@@ -1744,13 +1899,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string description = 7;</code>
      */
-    public com.google.protobuf.ByteString
-        getDescriptionBytes() {
+    public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         description_ = b;
         return b;
       } else {
@@ -1758,6 +1911,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * Description of the snapshot.
@@ -1765,17 +1920,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string description = 7;</code>
      */
-    public Builder setDescription(
-        java.lang.String value) {
+    public Builder setDescription(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       description_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * Description of the snapshot.
@@ -1784,12 +1940,14 @@ private static final long serialVersionUID = 0L;
      * <code>string description = 7;</code>
      */
     public Builder clearDescription() {
-      
+
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * Description of the snapshot.
@@ -1797,20 +1955,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string description = 7;</code>
      */
-    public Builder setDescriptionBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       description_ = value;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1820,12 +1977,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.bigtable.admin.v2.Snapshot)
   }
 
   // @@protoc_insertion_point(class_scope:google.bigtable.admin.v2.Snapshot)
   private static final com.google.bigtable.admin.v2.Snapshot DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.bigtable.admin.v2.Snapshot();
   }
@@ -1834,16 +1991,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Snapshot>
-      PARSER = new com.google.protobuf.AbstractParser<Snapshot>() {
-    @java.lang.Override
-    public Snapshot parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Snapshot(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Snapshot> PARSER =
+      new com.google.protobuf.AbstractParser<Snapshot>() {
+        @java.lang.Override
+        public Snapshot parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Snapshot(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Snapshot> parser() {
     return PARSER;
@@ -1858,6 +2015,4 @@ private static final long serialVersionUID = 0L;
   public com.google.bigtable.admin.v2.Snapshot getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

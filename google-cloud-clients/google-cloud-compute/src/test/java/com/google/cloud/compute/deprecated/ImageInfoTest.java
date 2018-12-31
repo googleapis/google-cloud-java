@@ -21,10 +21,8 @@ import static org.junit.Assert.assertNull;
 
 import com.google.cloud.compute.deprecated.ImageConfiguration.SourceType;
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
 import java.util.List;
+import org.junit.Test;
 
 public class ImageInfoTest {
 
@@ -33,13 +31,13 @@ public class ImageInfoTest {
   private static final Long CREATION_TIMESTAMP = 1453293540000L;
   private static final String DESCRIPTION = "description";
   private static final ImageInfo.Status STATUS = ImageInfo.Status.READY;
-  private static final List<LicenseId> LICENSES = ImmutableList.of(
-      LicenseId.of("project", "license1"), LicenseId.of("project", "license2"));
+  private static final List<LicenseId> LICENSES =
+      ImmutableList.of(LicenseId.of("project", "license1"), LicenseId.of("project", "license2"));
   private static final Long DISK_SIZE_GB = 42L;
   private static final String STORAGE_SOURCE = "source";
   private static final Long ARCHIVE_SIZE_BYTES = 24L;
   private static final String SHA1_CHECKSUM = "checksum";
-  private static final DiskId SOURCE_DISK =  DiskId.of("project", "zone", "disk");
+  private static final DiskId SOURCE_DISK = DiskId.of("project", "zone", "disk");
   private static final String SOURCE_DISK_ID = "diskId";
   private static final SourceType SOURCE_TYPE = SourceType.RAW;
   private static final StorageImageConfiguration STORAGE_CONFIGURATION =
@@ -154,12 +152,13 @@ public class ImageInfoTest {
 
   @Test
   public void testSetProjectId() {
-    ImageInfo imageInfo = DISK_IMAGE.toBuilder()
-        .setImageId(ImageId.of("image"))
-        .setConfiguration(DISK_CONFIGURATION.toBuilder()
-            .setSourceDisk(DiskId.of("zone", "disk"))
-            .build())
-        .build();
+    ImageInfo imageInfo =
+        DISK_IMAGE
+            .toBuilder()
+            .setImageId(ImageId.of("image"))
+            .setConfiguration(
+                DISK_CONFIGURATION.toBuilder().setSourceDisk(DiskId.of("zone", "disk")).build())
+            .build();
     compareImageInfo(DISK_IMAGE, imageInfo.setProjectId("project"));
   }
 

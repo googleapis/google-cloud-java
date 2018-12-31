@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface PointOrBuilder extends
+public interface PointOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.Point)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The time interval to which the data point applies.  For `GAUGE` metrics,
    * only the end time of the interval is used.  For `DELTA` metrics, the start
@@ -23,6 +26,8 @@ public interface PointOrBuilder extends
    */
   boolean hasInterval();
   /**
+   *
+   *
    * <pre>
    * The time interval to which the data point applies.  For `GAUGE` metrics,
    * only the end time of the interval is used.  For `DELTA` metrics, the start
@@ -38,6 +43,8 @@ public interface PointOrBuilder extends
    */
   com.google.monitoring.v3.TimeInterval getInterval();
   /**
+   *
+   *
    * <pre>
    * The time interval to which the data point applies.  For `GAUGE` metrics,
    * only the end time of the interval is used.  For `DELTA` metrics, the start
@@ -54,6 +61,8 @@ public interface PointOrBuilder extends
   com.google.monitoring.v3.TimeIntervalOrBuilder getIntervalOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The value of the data point.
    * </pre>
@@ -62,6 +71,8 @@ public interface PointOrBuilder extends
    */
   boolean hasValue();
   /**
+   *
+   *
    * <pre>
    * The value of the data point.
    * </pre>
@@ -70,6 +81,8 @@ public interface PointOrBuilder extends
    */
   com.google.monitoring.v3.TypedValue getValue();
   /**
+   *
+   *
    * <pre>
    * The value of the data point.
    * </pre>

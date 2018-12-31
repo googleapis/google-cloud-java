@@ -105,7 +105,8 @@ public class GlobalForwardingRuleStubSettings
   private final UnaryCallSettings<InsertGlobalForwardingRuleHttpRequest, Operation>
       insertGlobalForwardingRuleSettings;
   private final PagedCallSettings<
-          ListGlobalForwardingRulesHttpRequest, ForwardingRuleList,
+          ListGlobalForwardingRulesHttpRequest,
+          ForwardingRuleList,
           ListGlobalForwardingRulesPagedResponse>
       listGlobalForwardingRulesSettings;
   private final UnaryCallSettings<SetTargetGlobalForwardingRuleHttpRequest, Operation>
@@ -131,7 +132,8 @@ public class GlobalForwardingRuleStubSettings
 
   /** Returns the object with the settings used for calls to listGlobalForwardingRules. */
   public PagedCallSettings<
-          ListGlobalForwardingRulesHttpRequest, ForwardingRuleList,
+          ListGlobalForwardingRulesHttpRequest,
+          ForwardingRuleList,
           ListGlobalForwardingRulesPagedResponse>
       listGlobalForwardingRulesSettings() {
     return listGlobalForwardingRulesSettings;
@@ -266,16 +268,20 @@ public class GlobalForwardingRuleStubSettings
 
             @Override
             public Iterable<ForwardingRule> extractResources(ForwardingRuleList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<ForwardingRule>of();
             }
           };
 
   private static final PagedListResponseFactory<
-          ListGlobalForwardingRulesHttpRequest, ForwardingRuleList,
+          ListGlobalForwardingRulesHttpRequest,
+          ForwardingRuleList,
           ListGlobalForwardingRulesPagedResponse>
       LIST_GLOBAL_FORWARDING_RULES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListGlobalForwardingRulesHttpRequest, ForwardingRuleList,
+              ListGlobalForwardingRulesHttpRequest,
+              ForwardingRuleList,
               ListGlobalForwardingRulesPagedResponse>() {
             @Override
             public ApiFuture<ListGlobalForwardingRulesPagedResponse> getFuturePagedResponse(
@@ -304,7 +310,8 @@ public class GlobalForwardingRuleStubSettings
     private final UnaryCallSettings.Builder<InsertGlobalForwardingRuleHttpRequest, Operation>
         insertGlobalForwardingRuleSettings;
     private final PagedCallSettings.Builder<
-            ListGlobalForwardingRulesHttpRequest, ForwardingRuleList,
+            ListGlobalForwardingRulesHttpRequest,
+            ForwardingRuleList,
             ListGlobalForwardingRulesPagedResponse>
         listGlobalForwardingRulesSettings;
     private final UnaryCallSettings.Builder<SetTargetGlobalForwardingRuleHttpRequest, Operation>
@@ -467,7 +474,8 @@ public class GlobalForwardingRuleStubSettings
 
     /** Returns the builder for the settings used for calls to listGlobalForwardingRules. */
     public PagedCallSettings.Builder<
-            ListGlobalForwardingRulesHttpRequest, ForwardingRuleList,
+            ListGlobalForwardingRulesHttpRequest,
+            ForwardingRuleList,
             ListGlobalForwardingRulesPagedResponse>
         listGlobalForwardingRulesSettings() {
       return listGlobalForwardingRulesSettings;

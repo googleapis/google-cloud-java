@@ -58,13 +58,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -342,6 +342,46 @@ public class JobControllerClient implements BackgroundResource {
   public final ListJobsPagedResponse listJobs(String projectId, String region) {
     ListJobsRequest request =
         ListJobsRequest.newBuilder().setProjectId(projectId).setRegion(region).build();
+    return listJobs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists regions/{region}/jobs in a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
+   *   String projectId = "";
+   *   String region = "";
+   *   String filter = "";
+   *   for (Job element : jobControllerClient.listJobs(projectId, region, filter).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param projectId Required. The ID of the Google Cloud Platform project that the job belongs to.
+   * @param region Required. The Cloud Dataproc region in which to handle the request.
+   * @param filter Optional. A filter constraining the jobs to list. Filters are case-sensitive and
+   *     have the following syntax:
+   *     <p>[field = value] AND [field [= value]] ...
+   *     <p>where &#42;&#42;field&#42;&#42; is `status.state` or `labels.[KEY]`, and `[KEY]` is a
+   *     label key. &#42;&#42;value&#42;&#42; can be `&#42;` to match all values. `status.state` can
+   *     be either `ACTIVE` or `NON_ACTIVE`. Only the logical `AND` operator is supported;
+   *     space-separated items are treated as having an implicit `AND` operator.
+   *     <p>Example filter:
+   *     <p>status.state = ACTIVE AND labels.env = staging AND labels.starred = &#42;
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListJobsPagedResponse listJobs(String projectId, String region, String filter) {
+    ListJobsRequest request =
+        ListJobsRequest.newBuilder()
+            .setProjectId(projectId)
+            .setRegion(region)
+            .setFilter(filter)
+            .build();
     return listJobs(request);
   }
 

@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface AcceleratorConfigOrBuilder extends
+public interface AcceleratorConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.AcceleratorConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Full URL, partial URI, or short name of the accelerator type resource to
    * expose to this instance. See [Compute Engine AcceleratorTypes](
@@ -26,6 +29,8 @@ public interface AcceleratorConfigOrBuilder extends
    */
   java.lang.String getAcceleratorTypeUri();
   /**
+   *
+   *
    * <pre>
    * Full URL, partial URI, or short name of the accelerator type resource to
    * expose to this instance. See [Compute Engine AcceleratorTypes](
@@ -42,10 +47,11 @@ public interface AcceleratorConfigOrBuilder extends
    *
    * <code>string accelerator_type_uri = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getAcceleratorTypeUriBytes();
+  com.google.protobuf.ByteString getAcceleratorTypeUriBytes();
 
   /**
+   *
+   *
    * <pre>
    * The number of the accelerator cards of this type exposed to this instance.
    * </pre>

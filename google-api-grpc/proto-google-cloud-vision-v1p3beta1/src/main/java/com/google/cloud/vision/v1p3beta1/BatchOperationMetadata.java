@@ -4,6 +4,8 @@
 package com.google.cloud.vision.v1p3beta1;
 
 /**
+ *
+ *
  * <pre>
  * Metadata for the batch operations such as the current state.
  * This is included in the `metadata` field of the `Operation` returned by the
@@ -12,24 +14,25 @@ package com.google.cloud.vision.v1p3beta1;
  *
  * Protobuf type {@code google.cloud.vision.v1p3beta1.BatchOperationMetadata}
  */
-public  final class BatchOperationMetadata extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class BatchOperationMetadata extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p3beta1.BatchOperationMetadata)
     BatchOperationMetadataOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use BatchOperationMetadata.newBuilder() to construct.
   private BatchOperationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private BatchOperationMetadata() {
     state_ = 0;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private BatchOperationMetadata(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -49,80 +52,90 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
-            int rawValue = input.readEnum();
+          case 8:
+            {
+              int rawValue = input.readEnum();
 
-            state_ = rawValue;
-            break;
-          }
-          case 18: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (submitTime_ != null) {
-              subBuilder = submitTime_.toBuilder();
+              state_ = rawValue;
+              break;
             }
-            submitTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(submitTime_);
-              submitTime_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (submitTime_ != null) {
+                subBuilder = submitTime_.toBuilder();
+              }
+              submitTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(submitTime_);
+                submitTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 26: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (endTime_ != null) {
-              subBuilder = endTime_.toBuilder();
+              break;
             }
-            endTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(endTime_);
-              endTime_ = subBuilder.buildPartial();
-            }
+          case 26:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (endTime_ != null) {
+                subBuilder = endTime_.toBuilder();
+              }
+              endTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(endTime_);
+                endTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto.internal_static_google_cloud_vision_v1p3beta1_BatchOperationMetadata_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto
+        .internal_static_google_cloud_vision_v1p3beta1_BatchOperationMetadata_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto.internal_static_google_cloud_vision_v1p3beta1_BatchOperationMetadata_fieldAccessorTable
+    return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto
+        .internal_static_google_cloud_vision_v1p3beta1_BatchOperationMetadata_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.class, com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.Builder.class);
+            com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.class,
+            com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * Enumerates the possible states that the batch request can be in.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.vision.v1p3beta1.BatchOperationMetadata.State}
    */
-  public enum State
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum State implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Invalid.
      * </pre>
@@ -131,6 +144,8 @@ private static final long serialVersionUID = 0L;
      */
     STATE_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * Request is actively being processed.
      * </pre>
@@ -139,6 +154,8 @@ private static final long serialVersionUID = 0L;
      */
     PROCESSING(1),
     /**
+     *
+     *
      * <pre>
      * The request is done and at least one item has been successfully
      * processed.
@@ -148,6 +165,8 @@ private static final long serialVersionUID = 0L;
      */
     SUCCESSFUL(2),
     /**
+     *
+     *
      * <pre>
      * The request is done and no item has been successfully processed.
      * </pre>
@@ -156,6 +175,8 @@ private static final long serialVersionUID = 0L;
      */
     FAILED(3),
     /**
+     *
+     *
      * <pre>
      * The request is done after the longrunning.Operations.CancelOperation has
      * been called by the user.  Any records that were processed before the
@@ -169,6 +190,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Invalid.
      * </pre>
@@ -177,6 +200,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Request is actively being processed.
      * </pre>
@@ -185,6 +210,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PROCESSING_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * The request is done and at least one item has been successfully
      * processed.
@@ -194,6 +221,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int SUCCESSFUL_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * The request is done and no item has been successfully processed.
      * </pre>
@@ -202,6 +231,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int FAILED_VALUE = 3;
     /**
+     *
+     *
      * <pre>
      * The request is done after the longrunning.Operations.CancelOperation has
      * been called by the user.  Any records that were processed before the
@@ -212,7 +243,6 @@ private static final long serialVersionUID = 0L;
      */
     public static final int CANCELLED_VALUE = 4;
 
-
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -221,9 +251,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static State valueOf(int value) {
       return forNumber(value);
@@ -231,47 +259,51 @@ private static final long serialVersionUID = 0L;
 
     public static State forNumber(int value) {
       switch (value) {
-        case 0: return STATE_UNSPECIFIED;
-        case 1: return PROCESSING;
-        case 2: return SUCCESSFUL;
-        case 3: return FAILED;
-        case 4: return CANCELLED;
-        default: return null;
+        case 0:
+          return STATE_UNSPECIFIED;
+        case 1:
+          return PROCESSING;
+        case 2:
+          return SUCCESSFUL;
+        case 3:
+          return FAILED;
+        case 4:
+          return CANCELLED;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<State>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<State> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        State> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<State>() {
-            public State findValueByNumber(int number) {
-              return State.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<State> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<State>() {
+          public State findValueByNumber(int number) {
+            return State.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.getDescriptor().getEnumTypes().get(0);
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.getDescriptor()
+          .getEnumTypes()
+          .get(0);
     }
 
     private static final State[] VALUES = values();
 
-    public static State valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static State valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -291,6 +323,8 @@ private static final long serialVersionUID = 0L;
   public static final int STATE_FIELD_NUMBER = 1;
   private int state_;
   /**
+   *
+   *
    * <pre>
    * The current state of the batch operation.
    * </pre>
@@ -301,6 +335,8 @@ private static final long serialVersionUID = 0L;
     return state_;
   }
   /**
+   *
+   *
    * <pre>
    * The current state of the batch operation.
    * </pre>
@@ -309,13 +345,18 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.State getState() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.State result = com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.State.valueOf(state_);
-    return result == null ? com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.State.UNRECOGNIZED : result;
+    com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.State result =
+        com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.State.valueOf(state_);
+    return result == null
+        ? com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.State.UNRECOGNIZED
+        : result;
   }
 
   public static final int SUBMIT_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp submitTime_;
   /**
+   *
+   *
    * <pre>
    * The time when the batch request was submitted to the server.
    * </pre>
@@ -326,6 +367,8 @@ private static final long serialVersionUID = 0L;
     return submitTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The time when the batch request was submitted to the server.
    * </pre>
@@ -336,6 +379,8 @@ private static final long serialVersionUID = 0L;
     return submitTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : submitTime_;
   }
   /**
+   *
+   *
    * <pre>
    * The time when the batch request was submitted to the server.
    * </pre>
@@ -349,6 +394,8 @@ private static final long serialVersionUID = 0L;
   public static final int END_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp endTime_;
   /**
+   *
+   *
    * <pre>
    * The time when the batch request is finished and
    * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
@@ -360,6 +407,8 @@ private static final long serialVersionUID = 0L;
     return endTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The time when the batch request is finished and
    * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
@@ -371,6 +420,8 @@ private static final long serialVersionUID = 0L;
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
   /**
+   *
+   *
    * <pre>
    * The time when the batch request is finished and
    * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
@@ -383,6 +434,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -394,9 +446,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
-    if (state_ != com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.State.STATE_UNSPECIFIED.getNumber()) {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (state_
+        != com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.State.STATE_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(1, state_);
     }
     if (submitTime_ != null) {
@@ -414,17 +467,16 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (state_ != com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.State.STATE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, state_);
+    if (state_
+        != com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.State.STATE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, state_);
     }
     if (submitTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getSubmitTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getSubmitTime());
     }
     if (endTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getEndTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getEndTime());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -434,24 +486,23 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.vision.v1p3beta1.BatchOperationMetadata)) {
       return super.equals(obj);
     }
-    com.google.cloud.vision.v1p3beta1.BatchOperationMetadata other = (com.google.cloud.vision.v1p3beta1.BatchOperationMetadata) obj;
+    com.google.cloud.vision.v1p3beta1.BatchOperationMetadata other =
+        (com.google.cloud.vision.v1p3beta1.BatchOperationMetadata) obj;
 
     boolean result = true;
     result = result && state_ == other.state_;
     result = result && (hasSubmitTime() == other.hasSubmitTime());
     if (hasSubmitTime()) {
-      result = result && getSubmitTime()
-          .equals(other.getSubmitTime());
+      result = result && getSubmitTime().equals(other.getSubmitTime());
     }
     result = result && (hasEndTime() == other.hasEndTime());
     if (hasEndTime()) {
-      result = result && getEndTime()
-          .equals(other.getEndTime());
+      result = result && getEndTime().equals(other.getEndTime());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -480,96 +531,104 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.vision.v1p3beta1.BatchOperationMetadata parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1p3beta1.BatchOperationMetadata parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1p3beta1.BatchOperationMetadata parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1p3beta1.BatchOperationMetadata parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1p3beta1.BatchOperationMetadata parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1p3beta1.BatchOperationMetadata parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.vision.v1p3beta1.BatchOperationMetadata parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.vision.v1p3beta1.BatchOperationMetadata parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.vision.v1p3beta1.BatchOperationMetadata parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.vision.v1p3beta1.BatchOperationMetadata parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1p3beta1.BatchOperationMetadata parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.vision.v1p3beta1.BatchOperationMetadata parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.vision.v1p3beta1.BatchOperationMetadata parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.vision.v1p3beta1.BatchOperationMetadata parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.vision.v1p3beta1.BatchOperationMetadata prototype) {
+
+  public static Builder newBuilder(
+      com.google.cloud.vision.v1p3beta1.BatchOperationMetadata prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Metadata for the batch operations such as the current state.
    * This is included in the `metadata` field of the `Operation` returned by the
@@ -578,21 +637,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.vision.v1p3beta1.BatchOperationMetadata}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.vision.v1p3beta1.BatchOperationMetadata)
       com.google.cloud.vision.v1p3beta1.BatchOperationMetadataOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto.internal_static_google_cloud_vision_v1p3beta1_BatchOperationMetadata_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto
+          .internal_static_google_cloud_vision_v1p3beta1_BatchOperationMetadata_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto.internal_static_google_cloud_vision_v1p3beta1_BatchOperationMetadata_fieldAccessorTable
+      return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto
+          .internal_static_google_cloud_vision_v1p3beta1_BatchOperationMetadata_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.class, com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.Builder.class);
+              com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.class,
+              com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.Builder.class);
     }
 
     // Construct using com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.newBuilder()
@@ -600,16 +661,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -631,9 +691,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto.internal_static_google_cloud_vision_v1p3beta1_BatchOperationMetadata_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.vision.v1p3beta1.ProductSearchServiceProto
+          .internal_static_google_cloud_vision_v1p3beta1_BatchOperationMetadata_descriptor;
     }
 
     @java.lang.Override
@@ -652,7 +712,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.vision.v1p3beta1.BatchOperationMetadata buildPartial() {
-      com.google.cloud.vision.v1p3beta1.BatchOperationMetadata result = new com.google.cloud.vision.v1p3beta1.BatchOperationMetadata(this);
+      com.google.cloud.vision.v1p3beta1.BatchOperationMetadata result =
+          new com.google.cloud.vision.v1p3beta1.BatchOperationMetadata(this);
       result.state_ = state_;
       if (submitTimeBuilder_ == null) {
         result.submitTime_ = submitTime_;
@@ -672,38 +733,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.vision.v1p3beta1.BatchOperationMetadata) {
-        return mergeFrom((com.google.cloud.vision.v1p3beta1.BatchOperationMetadata)other);
+        return mergeFrom((com.google.cloud.vision.v1p3beta1.BatchOperationMetadata) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -711,7 +773,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.vision.v1p3beta1.BatchOperationMetadata other) {
-      if (other == com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.getDefaultInstance()) return this;
+      if (other == com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.getDefaultInstance())
+        return this;
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
       }
@@ -740,7 +803,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.vision.v1p3beta1.BatchOperationMetadata) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.vision.v1p3beta1.BatchOperationMetadata) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -752,6 +816,8 @@ private static final long serialVersionUID = 0L;
 
     private int state_ = 0;
     /**
+     *
+     *
      * <pre>
      * The current state of the batch operation.
      * </pre>
@@ -762,6 +828,8 @@ private static final long serialVersionUID = 0L;
       return state_;
     }
     /**
+     *
+     *
      * <pre>
      * The current state of the batch operation.
      * </pre>
@@ -774,6 +842,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The current state of the batch operation.
      * </pre>
@@ -782,10 +852,15 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.State getState() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.State result = com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.State.valueOf(state_);
-      return result == null ? com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.State.UNRECOGNIZED : result;
+      com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.State result =
+          com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.State.valueOf(state_);
+      return result == null
+          ? com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.State.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * The current state of the batch operation.
      * </pre>
@@ -796,12 +871,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       state_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The current state of the batch operation.
      * </pre>
@@ -809,7 +886,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1p3beta1.BatchOperationMetadata.State state = 1;</code>
      */
     public Builder clearState() {
-      
+
       state_ = 0;
       onChanged();
       return this;
@@ -817,8 +894,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp submitTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> submitTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        submitTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * The time when the batch request was submitted to the server.
      * </pre>
@@ -829,6 +911,8 @@ private static final long serialVersionUID = 0L;
       return submitTimeBuilder_ != null || submitTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The time when the batch request was submitted to the server.
      * </pre>
@@ -837,12 +921,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getSubmitTime() {
       if (submitTimeBuilder_ == null) {
-        return submitTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : submitTime_;
+        return submitTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : submitTime_;
       } else {
         return submitTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The time when the batch request was submitted to the server.
      * </pre>
@@ -863,14 +951,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time when the batch request was submitted to the server.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp submit_time = 2;</code>
      */
-    public Builder setSubmitTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setSubmitTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (submitTimeBuilder_ == null) {
         submitTime_ = builderForValue.build();
         onChanged();
@@ -881,6 +970,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time when the batch request was submitted to the server.
      * </pre>
@@ -891,7 +982,7 @@ private static final long serialVersionUID = 0L;
       if (submitTimeBuilder_ == null) {
         if (submitTime_ != null) {
           submitTime_ =
-            com.google.protobuf.Timestamp.newBuilder(submitTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(submitTime_).mergeFrom(value).buildPartial();
         } else {
           submitTime_ = value;
         }
@@ -903,6 +994,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time when the batch request was submitted to the server.
      * </pre>
@@ -921,6 +1014,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time when the batch request was submitted to the server.
      * </pre>
@@ -928,11 +1023,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp submit_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getSubmitTimeBuilder() {
-      
+
       onChanged();
       return getSubmitTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The time when the batch request was submitted to the server.
      * </pre>
@@ -943,11 +1040,14 @@ private static final long serialVersionUID = 0L;
       if (submitTimeBuilder_ != null) {
         return submitTimeBuilder_.getMessageOrBuilder();
       } else {
-        return submitTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : submitTime_;
+        return submitTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : submitTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The time when the batch request was submitted to the server.
      * </pre>
@@ -955,14 +1055,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp submit_time = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getSubmitTimeFieldBuilder() {
       if (submitTimeBuilder_ == null) {
-        submitTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getSubmitTime(),
-                getParentForChildren(),
-                isClean());
+        submitTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getSubmitTime(), getParentForChildren(), isClean());
         submitTime_ = null;
       }
       return submitTimeBuilder_;
@@ -970,8 +1073,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp endTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> endTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        endTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * The time when the batch request is finished and
      * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
@@ -983,6 +1091,8 @@ private static final long serialVersionUID = 0L;
       return endTimeBuilder_ != null || endTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The time when the batch request is finished and
      * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
@@ -998,6 +1108,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The time when the batch request is finished and
      * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
@@ -1019,6 +1131,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time when the batch request is finished and
      * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
@@ -1026,8 +1140,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp end_time = 3;</code>
      */
-    public Builder setEndTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
         onChanged();
@@ -1038,6 +1151,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time when the batch request is finished and
      * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
@@ -1049,7 +1164,7 @@ private static final long serialVersionUID = 0L;
       if (endTimeBuilder_ == null) {
         if (endTime_ != null) {
           endTime_ =
-            com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
         } else {
           endTime_ = value;
         }
@@ -1061,6 +1176,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time when the batch request is finished and
      * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
@@ -1080,6 +1197,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time when the batch request is finished and
      * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
@@ -1088,11 +1207,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp end_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-      
+
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The time when the batch request is finished and
      * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
@@ -1104,11 +1225,12 @@ private static final long serialVersionUID = 0L;
       if (endTimeBuilder_ != null) {
         return endTimeBuilder_.getMessageOrBuilder();
       } else {
-        return endTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+        return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The time when the batch request is finished and
      * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
@@ -1117,21 +1239,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp end_time = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getEndTimeFieldBuilder() {
       if (endTimeBuilder_ == null) {
-        endTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getEndTime(),
-                getParentForChildren(),
-                isClean());
+        endTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getEndTime(), getParentForChildren(), isClean());
         endTime_ = null;
       }
       return endTimeBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1141,12 +1266,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.vision.v1p3beta1.BatchOperationMetadata)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.vision.v1p3beta1.BatchOperationMetadata)
   private static final com.google.cloud.vision.v1p3beta1.BatchOperationMetadata DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.vision.v1p3beta1.BatchOperationMetadata();
   }
@@ -1155,16 +1280,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<BatchOperationMetadata>
-      PARSER = new com.google.protobuf.AbstractParser<BatchOperationMetadata>() {
-    @java.lang.Override
-    public BatchOperationMetadata parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new BatchOperationMetadata(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<BatchOperationMetadata> PARSER =
+      new com.google.protobuf.AbstractParser<BatchOperationMetadata>() {
+        @java.lang.Override
+        public BatchOperationMetadata parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new BatchOperationMetadata(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<BatchOperationMetadata> parser() {
     return PARSER;
@@ -1179,6 +1304,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.vision.v1p3beta1.BatchOperationMetadata getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

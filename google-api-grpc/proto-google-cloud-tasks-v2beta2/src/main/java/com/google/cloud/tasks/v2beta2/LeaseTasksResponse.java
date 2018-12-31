@@ -4,30 +4,33 @@
 package com.google.cloud.tasks.v2beta2;
 
 /**
+ *
+ *
  * <pre>
  * Response message for leasing tasks using [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tasks.v2beta2.LeaseTasksResponse}
  */
-public  final class LeaseTasksResponse extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class LeaseTasksResponse extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.tasks.v2beta2.LeaseTasksResponse)
     LeaseTasksResponseOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use LeaseTasksResponse.newBuilder() to construct.
   private LeaseTasksResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private LeaseTasksResponse() {
     tasks_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private LeaseTasksResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -47,29 +50,30 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              tasks_ = new java.util.ArrayList<com.google.cloud.tasks.v2beta2.Task>();
-              mutable_bitField0_ |= 0x00000001;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                tasks_ = new java.util.ArrayList<com.google.cloud.tasks.v2beta2.Task>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              tasks_.add(
+                  input.readMessage(
+                      com.google.cloud.tasks.v2beta2.Task.parser(), extensionRegistry));
+              break;
             }
-            tasks_.add(
-                input.readMessage(com.google.cloud.tasks.v2beta2.Task.parser(), extensionRegistry));
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         tasks_ = java.util.Collections.unmodifiableList(tasks_);
@@ -78,22 +82,27 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.tasks.v2beta2.CloudTasksProto.internal_static_google_cloud_tasks_v2beta2_LeaseTasksResponse_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.tasks.v2beta2.CloudTasksProto
+        .internal_static_google_cloud_tasks_v2beta2_LeaseTasksResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.tasks.v2beta2.CloudTasksProto.internal_static_google_cloud_tasks_v2beta2_LeaseTasksResponse_fieldAccessorTable
+    return com.google.cloud.tasks.v2beta2.CloudTasksProto
+        .internal_static_google_cloud_tasks_v2beta2_LeaseTasksResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.tasks.v2beta2.LeaseTasksResponse.class, com.google.cloud.tasks.v2beta2.LeaseTasksResponse.Builder.class);
+            com.google.cloud.tasks.v2beta2.LeaseTasksResponse.class,
+            com.google.cloud.tasks.v2beta2.LeaseTasksResponse.Builder.class);
   }
 
   public static final int TASKS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.tasks.v2beta2.Task> tasks_;
   /**
+   *
+   *
    * <pre>
    * The leased tasks.
    * </pre>
@@ -104,17 +113,21 @@ private static final long serialVersionUID = 0L;
     return tasks_;
   }
   /**
+   *
+   *
    * <pre>
    * The leased tasks.
    * </pre>
    *
    * <code>repeated .google.cloud.tasks.v2beta2.Task tasks = 1;</code>
    */
-  public java.util.List<? extends com.google.cloud.tasks.v2beta2.TaskOrBuilder> 
+  public java.util.List<? extends com.google.cloud.tasks.v2beta2.TaskOrBuilder>
       getTasksOrBuilderList() {
     return tasks_;
   }
   /**
+   *
+   *
    * <pre>
    * The leased tasks.
    * </pre>
@@ -125,6 +138,8 @@ private static final long serialVersionUID = 0L;
     return tasks_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The leased tasks.
    * </pre>
@@ -135,18 +150,20 @@ private static final long serialVersionUID = 0L;
     return tasks_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The leased tasks.
    * </pre>
    *
    * <code>repeated .google.cloud.tasks.v2beta2.Task tasks = 1;</code>
    */
-  public com.google.cloud.tasks.v2beta2.TaskOrBuilder getTasksOrBuilder(
-      int index) {
+  public com.google.cloud.tasks.v2beta2.TaskOrBuilder getTasksOrBuilder(int index) {
     return tasks_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -158,8 +175,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < tasks_.size(); i++) {
       output.writeMessage(1, tasks_.get(i));
     }
@@ -173,8 +189,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     for (int i = 0; i < tasks_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, tasks_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, tasks_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -184,16 +199,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.tasks.v2beta2.LeaseTasksResponse)) {
       return super.equals(obj);
     }
-    com.google.cloud.tasks.v2beta2.LeaseTasksResponse other = (com.google.cloud.tasks.v2beta2.LeaseTasksResponse) obj;
+    com.google.cloud.tasks.v2beta2.LeaseTasksResponse other =
+        (com.google.cloud.tasks.v2beta2.LeaseTasksResponse) obj;
 
     boolean result = true;
-    result = result && getTasksList()
-        .equals(other.getTasksList());
+    result = result && getTasksList().equals(other.getTasksList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -215,117 +230,126 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.tasks.v2beta2.LeaseTasksResponse parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.tasks.v2beta2.LeaseTasksResponse parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.tasks.v2beta2.LeaseTasksResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.tasks.v2beta2.LeaseTasksResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.tasks.v2beta2.LeaseTasksResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.tasks.v2beta2.LeaseTasksResponse parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.tasks.v2beta2.LeaseTasksResponse parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.tasks.v2beta2.LeaseTasksResponse parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.tasks.v2beta2.LeaseTasksResponse parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.tasks.v2beta2.LeaseTasksResponse parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.tasks.v2beta2.LeaseTasksResponse parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.tasks.v2beta2.LeaseTasksResponse parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.tasks.v2beta2.LeaseTasksResponse parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.tasks.v2beta2.LeaseTasksResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.tasks.v2beta2.LeaseTasksResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Response message for leasing tasks using [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tasks.v2beta2.LeaseTasksResponse}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.tasks.v2beta2.LeaseTasksResponse)
       com.google.cloud.tasks.v2beta2.LeaseTasksResponseOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.tasks.v2beta2.CloudTasksProto.internal_static_google_cloud_tasks_v2beta2_LeaseTasksResponse_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.tasks.v2beta2.CloudTasksProto
+          .internal_static_google_cloud_tasks_v2beta2_LeaseTasksResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.tasks.v2beta2.CloudTasksProto.internal_static_google_cloud_tasks_v2beta2_LeaseTasksResponse_fieldAccessorTable
+      return com.google.cloud.tasks.v2beta2.CloudTasksProto
+          .internal_static_google_cloud_tasks_v2beta2_LeaseTasksResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.tasks.v2beta2.LeaseTasksResponse.class, com.google.cloud.tasks.v2beta2.LeaseTasksResponse.Builder.class);
+              com.google.cloud.tasks.v2beta2.LeaseTasksResponse.class,
+              com.google.cloud.tasks.v2beta2.LeaseTasksResponse.Builder.class);
     }
 
     // Construct using com.google.cloud.tasks.v2beta2.LeaseTasksResponse.newBuilder()
@@ -333,17 +357,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getTasksFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -357,9 +381,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.tasks.v2beta2.CloudTasksProto.internal_static_google_cloud_tasks_v2beta2_LeaseTasksResponse_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.tasks.v2beta2.CloudTasksProto
+          .internal_static_google_cloud_tasks_v2beta2_LeaseTasksResponse_descriptor;
     }
 
     @java.lang.Override
@@ -378,7 +402,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.tasks.v2beta2.LeaseTasksResponse buildPartial() {
-      com.google.cloud.tasks.v2beta2.LeaseTasksResponse result = new com.google.cloud.tasks.v2beta2.LeaseTasksResponse(this);
+      com.google.cloud.tasks.v2beta2.LeaseTasksResponse result =
+          new com.google.cloud.tasks.v2beta2.LeaseTasksResponse(this);
       int from_bitField0_ = bitField0_;
       if (tasksBuilder_ == null) {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -397,38 +422,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.tasks.v2beta2.LeaseTasksResponse) {
-        return mergeFrom((com.google.cloud.tasks.v2beta2.LeaseTasksResponse)other);
+        return mergeFrom((com.google.cloud.tasks.v2beta2.LeaseTasksResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -436,7 +462,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.tasks.v2beta2.LeaseTasksResponse other) {
-      if (other == com.google.cloud.tasks.v2beta2.LeaseTasksResponse.getDefaultInstance()) return this;
+      if (other == com.google.cloud.tasks.v2beta2.LeaseTasksResponse.getDefaultInstance())
+        return this;
       if (tasksBuilder_ == null) {
         if (!other.tasks_.isEmpty()) {
           if (tasks_.isEmpty()) {
@@ -455,9 +482,10 @@ private static final long serialVersionUID = 0L;
             tasksBuilder_ = null;
             tasks_ = other.tasks_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            tasksBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getTasksFieldBuilder() : null;
+            tasksBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getTasksFieldBuilder()
+                    : null;
           } else {
             tasksBuilder_.addAllMessages(other.tasks_);
           }
@@ -482,7 +510,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.tasks.v2beta2.LeaseTasksResponse) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.tasks.v2beta2.LeaseTasksResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -491,21 +520,28 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.util.List<com.google.cloud.tasks.v2beta2.Task> tasks_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureTasksIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
         tasks_ = new java.util.ArrayList<com.google.cloud.tasks.v2beta2.Task>(tasks_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.tasks.v2beta2.Task, com.google.cloud.tasks.v2beta2.Task.Builder, com.google.cloud.tasks.v2beta2.TaskOrBuilder> tasksBuilder_;
+            com.google.cloud.tasks.v2beta2.Task,
+            com.google.cloud.tasks.v2beta2.Task.Builder,
+            com.google.cloud.tasks.v2beta2.TaskOrBuilder>
+        tasksBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * The leased tasks.
      * </pre>
@@ -520,6 +556,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The leased tasks.
      * </pre>
@@ -534,6 +572,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The leased tasks.
      * </pre>
@@ -548,14 +588,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The leased tasks.
      * </pre>
      *
      * <code>repeated .google.cloud.tasks.v2beta2.Task tasks = 1;</code>
      */
-    public Builder setTasks(
-        int index, com.google.cloud.tasks.v2beta2.Task value) {
+    public Builder setTasks(int index, com.google.cloud.tasks.v2beta2.Task value) {
       if (tasksBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -569,6 +610,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The leased tasks.
      * </pre>
@@ -587,6 +630,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The leased tasks.
      * </pre>
@@ -607,14 +652,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The leased tasks.
      * </pre>
      *
      * <code>repeated .google.cloud.tasks.v2beta2.Task tasks = 1;</code>
      */
-    public Builder addTasks(
-        int index, com.google.cloud.tasks.v2beta2.Task value) {
+    public Builder addTasks(int index, com.google.cloud.tasks.v2beta2.Task value) {
       if (tasksBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -628,14 +674,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The leased tasks.
      * </pre>
      *
      * <code>repeated .google.cloud.tasks.v2beta2.Task tasks = 1;</code>
      */
-    public Builder addTasks(
-        com.google.cloud.tasks.v2beta2.Task.Builder builderForValue) {
+    public Builder addTasks(com.google.cloud.tasks.v2beta2.Task.Builder builderForValue) {
       if (tasksBuilder_ == null) {
         ensureTasksIsMutable();
         tasks_.add(builderForValue.build());
@@ -646,6 +693,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The leased tasks.
      * </pre>
@@ -664,6 +713,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The leased tasks.
      * </pre>
@@ -674,8 +725,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.cloud.tasks.v2beta2.Task> values) {
       if (tasksBuilder_ == null) {
         ensureTasksIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, tasks_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tasks_);
         onChanged();
       } else {
         tasksBuilder_.addAllMessages(values);
@@ -683,6 +733,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The leased tasks.
      * </pre>
@@ -700,6 +752,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The leased tasks.
      * </pre>
@@ -717,39 +771,44 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The leased tasks.
      * </pre>
      *
      * <code>repeated .google.cloud.tasks.v2beta2.Task tasks = 1;</code>
      */
-    public com.google.cloud.tasks.v2beta2.Task.Builder getTasksBuilder(
-        int index) {
+    public com.google.cloud.tasks.v2beta2.Task.Builder getTasksBuilder(int index) {
       return getTasksFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * The leased tasks.
      * </pre>
      *
      * <code>repeated .google.cloud.tasks.v2beta2.Task tasks = 1;</code>
      */
-    public com.google.cloud.tasks.v2beta2.TaskOrBuilder getTasksOrBuilder(
-        int index) {
+    public com.google.cloud.tasks.v2beta2.TaskOrBuilder getTasksOrBuilder(int index) {
       if (tasksBuilder_ == null) {
-        return tasks_.get(index);  } else {
+        return tasks_.get(index);
+      } else {
         return tasksBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * The leased tasks.
      * </pre>
      *
      * <code>repeated .google.cloud.tasks.v2beta2.Task tasks = 1;</code>
      */
-    public java.util.List<? extends com.google.cloud.tasks.v2beta2.TaskOrBuilder> 
-         getTasksOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.tasks.v2beta2.TaskOrBuilder>
+        getTasksOrBuilderList() {
       if (tasksBuilder_ != null) {
         return tasksBuilder_.getMessageOrBuilderList();
       } else {
@@ -757,6 +816,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The leased tasks.
      * </pre>
@@ -764,38 +825,46 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.tasks.v2beta2.Task tasks = 1;</code>
      */
     public com.google.cloud.tasks.v2beta2.Task.Builder addTasksBuilder() {
-      return getTasksFieldBuilder().addBuilder(
-          com.google.cloud.tasks.v2beta2.Task.getDefaultInstance());
+      return getTasksFieldBuilder()
+          .addBuilder(com.google.cloud.tasks.v2beta2.Task.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The leased tasks.
      * </pre>
      *
      * <code>repeated .google.cloud.tasks.v2beta2.Task tasks = 1;</code>
      */
-    public com.google.cloud.tasks.v2beta2.Task.Builder addTasksBuilder(
-        int index) {
-      return getTasksFieldBuilder().addBuilder(
-          index, com.google.cloud.tasks.v2beta2.Task.getDefaultInstance());
+    public com.google.cloud.tasks.v2beta2.Task.Builder addTasksBuilder(int index) {
+      return getTasksFieldBuilder()
+          .addBuilder(index, com.google.cloud.tasks.v2beta2.Task.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The leased tasks.
      * </pre>
      *
      * <code>repeated .google.cloud.tasks.v2beta2.Task tasks = 1;</code>
      */
-    public java.util.List<com.google.cloud.tasks.v2beta2.Task.Builder> 
-         getTasksBuilderList() {
+    public java.util.List<com.google.cloud.tasks.v2beta2.Task.Builder> getTasksBuilderList() {
       return getTasksFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.tasks.v2beta2.Task, com.google.cloud.tasks.v2beta2.Task.Builder, com.google.cloud.tasks.v2beta2.TaskOrBuilder> 
+            com.google.cloud.tasks.v2beta2.Task,
+            com.google.cloud.tasks.v2beta2.Task.Builder,
+            com.google.cloud.tasks.v2beta2.TaskOrBuilder>
         getTasksFieldBuilder() {
       if (tasksBuilder_ == null) {
-        tasksBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.tasks.v2beta2.Task, com.google.cloud.tasks.v2beta2.Task.Builder, com.google.cloud.tasks.v2beta2.TaskOrBuilder>(
+        tasksBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.tasks.v2beta2.Task,
+                com.google.cloud.tasks.v2beta2.Task.Builder,
+                com.google.cloud.tasks.v2beta2.TaskOrBuilder>(
                 tasks_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -804,9 +873,9 @@ private static final long serialVersionUID = 0L;
       }
       return tasksBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -816,12 +885,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.tasks.v2beta2.LeaseTasksResponse)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.tasks.v2beta2.LeaseTasksResponse)
   private static final com.google.cloud.tasks.v2beta2.LeaseTasksResponse DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.tasks.v2beta2.LeaseTasksResponse();
   }
@@ -830,16 +899,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<LeaseTasksResponse>
-      PARSER = new com.google.protobuf.AbstractParser<LeaseTasksResponse>() {
-    @java.lang.Override
-    public LeaseTasksResponse parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new LeaseTasksResponse(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<LeaseTasksResponse> PARSER =
+      new com.google.protobuf.AbstractParser<LeaseTasksResponse>() {
+        @java.lang.Override
+        public LeaseTasksResponse parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new LeaseTasksResponse(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<LeaseTasksResponse> parser() {
     return PARSER;
@@ -854,6 +923,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.tasks.v2beta2.LeaseTasksResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

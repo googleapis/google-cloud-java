@@ -17,7 +17,6 @@
 package com.google.cloud.examples.nio.snippets;
 
 import com.google.cloud.storage.contrib.nio.CloudStorageFileSystem;
-
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;

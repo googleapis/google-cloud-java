@@ -25,8 +25,7 @@ import org.junit.rules.ExpectedException;
 
 public class LatLngTest {
 
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
   private static LatLng gp1 = new LatLng(37.422035, -122.084124);
   private static LatLng gp2 = new LatLng(0.0, 0.0);
@@ -41,7 +40,6 @@ public class LatLngTest {
     assertEquals(37.422035, gp1.getLatitude(), 0);
     assertEquals(-122.084124, gp1.getLongitude(), 0);
   }
-
 
   @Test
   public void testEquals() {

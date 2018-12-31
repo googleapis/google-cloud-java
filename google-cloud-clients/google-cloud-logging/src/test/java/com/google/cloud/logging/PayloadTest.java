@@ -30,12 +30,10 @@ import com.google.protobuf.ListValue;
 import com.google.protobuf.NullValue;
 import com.google.protobuf.Struct;
 import com.google.protobuf.Value;
-
-import org.junit.Test;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.junit.Test;
 
 public class PayloadTest {
 
@@ -49,33 +47,40 @@ public class PayloadTest {
   private static final Boolean BOOLEAN = true;
   private static final Value BOOLEAN_VALUE = Value.newBuilder().setBoolValue(BOOLEAN).build();
   private static final List<Object> LIST = ImmutableList.<Object>of(NUMBER, STRING, BOOLEAN);
-  private static final Value VALUE_LIST = Value.newBuilder()
-      .setListValue(ListValue.newBuilder()
-          .addValues(NUMBER_VALUE)
-          .addValues(STRING_VALUE)
-          .addValues(BOOLEAN_VALUE)
-          .build())
-      .build();
+  private static final Value VALUE_LIST =
+      Value.newBuilder()
+          .setListValue(
+              ListValue.newBuilder()
+                  .addValues(NUMBER_VALUE)
+                  .addValues(STRING_VALUE)
+                  .addValues(BOOLEAN_VALUE)
+                  .build())
+          .build();
   private static final Map<String, Object> INNER_MAP = new HashMap<>();
   private static final Map<String, Object> JSON_DATA = new HashMap<>();
-  private static final Struct INNER_STRUCT = Struct.newBuilder()
-      .putAllFields(ImmutableMap.of(
-          "null", NULL_VALUE,
-          "number", NUMBER_VALUE,
-          "string", STRING_VALUE,
-          "boolean", BOOLEAN_VALUE,
-          "list", VALUE_LIST))
-      .build();
-  private static final Struct STRUCT_DATA = Struct.newBuilder()
-      .putAllFields(ImmutableMap.<String, Value>builder()
-          .put("null", NULL_VALUE)
-          .put("number", NUMBER_VALUE)
-          .put("string", STRING_VALUE)
-          .put("boolean", BOOLEAN_VALUE)
-          .put("list", VALUE_LIST)
-          .put("struct", Value.newBuilder().setStructValue(INNER_STRUCT).build())
-          .build())
-      .build();
+  private static final Struct INNER_STRUCT =
+      Struct.newBuilder()
+          .putAllFields(
+              ImmutableMap.of(
+                  "null", NULL_VALUE,
+                  "number", NUMBER_VALUE,
+                  "string", STRING_VALUE,
+                  "boolean", BOOLEAN_VALUE,
+                  "list", VALUE_LIST))
+          .build();
+  private static final Struct STRUCT_DATA =
+      Struct.newBuilder()
+          .putAllFields(
+              ImmutableMap.<String, Value>builder()
+                  .put("null", NULL_VALUE)
+                  .put("number", NUMBER_VALUE)
+                  .put("string", STRING_VALUE)
+                  .put("boolean", BOOLEAN_VALUE)
+                  .put("list", VALUE_LIST)
+                  .put("struct", Value.newBuilder().setStructValue(INNER_STRUCT).build())
+                  .build())
+          .build();
+
   static {
     INNER_MAP.put("null", null);
     INNER_MAP.put("number", NUMBER);
@@ -89,6 +94,7 @@ public class PayloadTest {
     JSON_DATA.put("list", LIST);
     JSON_DATA.put("struct", INNER_MAP);
   }
+
   private static final Any PROTO_DATA = Any.getDefaultInstance();
   private static final StringPayload STRING_PAYLOAD = StringPayload.of(STRING_DATA);
   private static final JsonPayload JSON_PAYLOAD = JsonPayload.of(JSON_DATA);
@@ -108,7 +114,6 @@ public class PayloadTest {
     assertEquals(STRUCT_DATA, jsonPayload.getData());
     assertEquals(JSON_DATA, jsonPayload.getDataAsMap());
   }
-
 
   @Test
   public void testToAndFromPb() {

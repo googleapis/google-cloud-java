@@ -27,10 +27,10 @@ import javax.annotation.Nonnull;
 /**
  * Parameters for creating a new Cloud Bigtable app profile.
  *
- * <p>An application profile, or app profile, stores settings that tell your Cloud Bigtable
- * instance how to handle incoming requests from an application. When one of your applications
- * connects to a Cloud Bigtable instance, it can specify an app profile, and Cloud Bigtable uses
- * that app profile for any requests that the application sends over that connection.
+ * <p>An application profile, or app profile, stores settings that tell your Cloud Bigtable instance
+ * how to handle incoming requests from an application. When one of your applications connects to a
+ * Cloud Bigtable instance, it can specify an app profile, and Cloud Bigtable uses that app profile
+ * for any requests that the application sends over that connection.
  *
  * <p>Sample code:
  *
@@ -79,9 +79,13 @@ public final class CreateAppProfileRequest {
     Preconditions.checkNotNull(routingPolicy);
 
     if (routingPolicy instanceof MultiClusterRoutingPolicy) {
-      proto.getAppProfileBuilder().setMultiClusterRoutingUseAny(((MultiClusterRoutingPolicy)routingPolicy).toProto());
+      proto
+          .getAppProfileBuilder()
+          .setMultiClusterRoutingUseAny(((MultiClusterRoutingPolicy) routingPolicy).toProto());
     } else if (routingPolicy instanceof SingleClusterRoutingPolicy) {
-      proto.getAppProfileBuilder().setSingleClusterRouting(((SingleClusterRoutingPolicy)routingPolicy).toProto());
+      proto
+          .getAppProfileBuilder()
+          .setSingleClusterRouting(((SingleClusterRoutingPolicy) routingPolicy).toProto());
     } else {
       throw new IllegalArgumentException("Unknown policy type: " + routingPolicy);
     }

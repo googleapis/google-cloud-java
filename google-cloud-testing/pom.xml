@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-testing</artifactId>
-  <version>0.71.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-testing:current} -->
+  <version>0.74.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-testing:current} -->
   <packaging>pom</packaging>
 
   <name>Google Cloud Testing</name>
@@ -32,9 +32,15 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.71.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-bom:current} -->
+        <version>0.74.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-bom:current} -->
         <type>pom</type>
         <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-core</artifactId>
+        <version>1.56.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-core:current} -->
+        <type>test-jar</type>
       </dependency>
       <dependency>
         <groupId>${project.groupId}</groupId>
@@ -85,7 +91,7 @@
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.5.1</version>
+        <version>3.7.0</version>
         <configuration>
           <source>1.7</source>
           <target>1.7</target>

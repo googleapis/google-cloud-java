@@ -3,20 +3,24 @@
 
 package com.google.monitoring.v3;
 
-public interface ListTimeSeriesResponseOrBuilder extends
+public interface ListTimeSeriesResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.ListTimeSeriesResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * One or more time series that match the filter included in the request.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.TimeSeries time_series = 1;</code>
    */
-  java.util.List<com.google.monitoring.v3.TimeSeries> 
-      getTimeSeriesList();
+  java.util.List<com.google.monitoring.v3.TimeSeries> getTimeSeriesList();
   /**
+   *
+   *
    * <pre>
    * One or more time series that match the filter included in the request.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListTimeSeriesResponseOrBuilder extends
    */
   com.google.monitoring.v3.TimeSeries getTimeSeries(int index);
   /**
+   *
+   *
    * <pre>
    * One or more time series that match the filter included in the request.
    * </pre>
@@ -33,25 +39,30 @@ public interface ListTimeSeriesResponseOrBuilder extends
    */
   int getTimeSeriesCount();
   /**
+   *
+   *
    * <pre>
    * One or more time series that match the filter included in the request.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.TimeSeries time_series = 1;</code>
    */
-  java.util.List<? extends com.google.monitoring.v3.TimeSeriesOrBuilder> 
+  java.util.List<? extends com.google.monitoring.v3.TimeSeriesOrBuilder>
       getTimeSeriesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * One or more time series that match the filter included in the request.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.TimeSeries time_series = 1;</code>
    */
-  com.google.monitoring.v3.TimeSeriesOrBuilder getTimeSeriesOrBuilder(
-      int index);
+  com.google.monitoring.v3.TimeSeriesOrBuilder getTimeSeriesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * If there are more results than have been returned, then this field is set
    * to a non-empty value.  To see the additional results,
@@ -62,6 +73,8 @@ public interface ListTimeSeriesResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * If there are more results than have been returned, then this field is set
    * to a non-empty value.  To see the additional results,
@@ -70,10 +83,11 @@ public interface ListTimeSeriesResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 
   /**
+   *
+   *
    * <pre>
    * Query execution errors that may have caused the time series data returned
    * to be incomplete.
@@ -81,9 +95,10 @@ public interface ListTimeSeriesResponseOrBuilder extends
    *
    * <code>repeated .google.rpc.Status execution_errors = 3;</code>
    */
-  java.util.List<com.google.rpc.Status> 
-      getExecutionErrorsList();
+  java.util.List<com.google.rpc.Status> getExecutionErrorsList();
   /**
+   *
+   *
    * <pre>
    * Query execution errors that may have caused the time series data returned
    * to be incomplete.
@@ -93,6 +108,8 @@ public interface ListTimeSeriesResponseOrBuilder extends
    */
   com.google.rpc.Status getExecutionErrors(int index);
   /**
+   *
+   *
    * <pre>
    * Query execution errors that may have caused the time series data returned
    * to be incomplete.
@@ -102,6 +119,8 @@ public interface ListTimeSeriesResponseOrBuilder extends
    */
   int getExecutionErrorsCount();
   /**
+   *
+   *
    * <pre>
    * Query execution errors that may have caused the time series data returned
    * to be incomplete.
@@ -109,9 +128,10 @@ public interface ListTimeSeriesResponseOrBuilder extends
    *
    * <code>repeated .google.rpc.Status execution_errors = 3;</code>
    */
-  java.util.List<? extends com.google.rpc.StatusOrBuilder> 
-      getExecutionErrorsOrBuilderList();
+  java.util.List<? extends com.google.rpc.StatusOrBuilder> getExecutionErrorsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Query execution errors that may have caused the time series data returned
    * to be incomplete.
@@ -119,6 +139,5 @@ public interface ListTimeSeriesResponseOrBuilder extends
    *
    * <code>repeated .google.rpc.Status execution_errors = 3;</code>
    */
-  com.google.rpc.StatusOrBuilder getExecutionErrorsOrBuilder(
-      int index);
+  com.google.rpc.StatusOrBuilder getExecutionErrorsOrBuilder(int index);
 }

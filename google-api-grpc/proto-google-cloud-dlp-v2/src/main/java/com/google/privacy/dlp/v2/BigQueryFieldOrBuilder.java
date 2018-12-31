@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface BigQueryFieldOrBuilder extends
+public interface BigQueryFieldOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.BigQueryField)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Source table of the field.
    * </pre>
@@ -16,6 +19,8 @@ public interface BigQueryFieldOrBuilder extends
    */
   boolean hasTable();
   /**
+   *
+   *
    * <pre>
    * Source table of the field.
    * </pre>
@@ -24,6 +29,8 @@ public interface BigQueryFieldOrBuilder extends
    */
   com.google.privacy.dlp.v2.BigQueryTable getTable();
   /**
+   *
+   *
    * <pre>
    * Source table of the field.
    * </pre>
@@ -33,6 +40,8 @@ public interface BigQueryFieldOrBuilder extends
   com.google.privacy.dlp.v2.BigQueryTableOrBuilder getTableOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Designated field in the BigQuery table.
    * </pre>
@@ -41,6 +50,8 @@ public interface BigQueryFieldOrBuilder extends
    */
   boolean hasField();
   /**
+   *
+   *
    * <pre>
    * Designated field in the BigQuery table.
    * </pre>
@@ -49,6 +60,8 @@ public interface BigQueryFieldOrBuilder extends
    */
   com.google.privacy.dlp.v2.FieldId getField();
   /**
+   *
+   *
    * <pre>
    * Designated field in the BigQuery table.
    * </pre>

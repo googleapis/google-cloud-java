@@ -3,20 +3,24 @@
 
 package com.google.cloud.vision.v1p1beta1;
 
-public interface BoundingPolyOrBuilder extends
+public interface BoundingPolyOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p1beta1.BoundingPoly)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The bounding polygon vertices.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p1beta1.Vertex vertices = 1;</code>
    */
-  java.util.List<com.google.cloud.vision.v1p1beta1.Vertex> 
-      getVerticesList();
+  java.util.List<com.google.cloud.vision.v1p1beta1.Vertex> getVerticesList();
   /**
+   *
+   *
    * <pre>
    * The bounding polygon vertices.
    * </pre>
@@ -25,6 +29,8 @@ public interface BoundingPolyOrBuilder extends
    */
   com.google.cloud.vision.v1p1beta1.Vertex getVertices(int index);
   /**
+   *
+   *
    * <pre>
    * The bounding polygon vertices.
    * </pre>
@@ -33,21 +39,24 @@ public interface BoundingPolyOrBuilder extends
    */
   int getVerticesCount();
   /**
+   *
+   *
    * <pre>
    * The bounding polygon vertices.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p1beta1.Vertex vertices = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.vision.v1p1beta1.VertexOrBuilder> 
+  java.util.List<? extends com.google.cloud.vision.v1p1beta1.VertexOrBuilder>
       getVerticesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The bounding polygon vertices.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p1beta1.Vertex vertices = 1;</code>
    */
-  com.google.cloud.vision.v1p1beta1.VertexOrBuilder getVerticesOrBuilder(
-      int index);
+  com.google.cloud.vision.v1p1beta1.VertexOrBuilder getVerticesOrBuilder(int index);
 }

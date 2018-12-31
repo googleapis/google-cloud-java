@@ -100,14 +100,16 @@ public class NotificationChannelServiceStubSettings
           .build();
 
   private final PagedCallSettings<
-          ListNotificationChannelDescriptorsRequest, ListNotificationChannelDescriptorsResponse,
+          ListNotificationChannelDescriptorsRequest,
+          ListNotificationChannelDescriptorsResponse,
           ListNotificationChannelDescriptorsPagedResponse>
       listNotificationChannelDescriptorsSettings;
   private final UnaryCallSettings<
           GetNotificationChannelDescriptorRequest, NotificationChannelDescriptor>
       getNotificationChannelDescriptorSettings;
   private final PagedCallSettings<
-          ListNotificationChannelsRequest, ListNotificationChannelsResponse,
+          ListNotificationChannelsRequest,
+          ListNotificationChannelsResponse,
           ListNotificationChannelsPagedResponse>
       listNotificationChannelsSettings;
   private final UnaryCallSettings<GetNotificationChannelRequest, NotificationChannel>
@@ -121,7 +123,8 @@ public class NotificationChannelServiceStubSettings
 
   /** Returns the object with the settings used for calls to listNotificationChannelDescriptors. */
   public PagedCallSettings<
-          ListNotificationChannelDescriptorsRequest, ListNotificationChannelDescriptorsResponse,
+          ListNotificationChannelDescriptorsRequest,
+          ListNotificationChannelDescriptorsResponse,
           ListNotificationChannelDescriptorsPagedResponse>
       listNotificationChannelDescriptorsSettings() {
     return listNotificationChannelDescriptorsSettings;
@@ -135,7 +138,8 @@ public class NotificationChannelServiceStubSettings
 
   /** Returns the object with the settings used for calls to listNotificationChannels. */
   public PagedCallSettings<
-          ListNotificationChannelsRequest, ListNotificationChannelsResponse,
+          ListNotificationChannelsRequest,
+          ListNotificationChannelsResponse,
           ListNotificationChannelsPagedResponse>
       listNotificationChannelsSettings() {
     return listNotificationChannelsSettings;
@@ -245,11 +249,13 @@ public class NotificationChannelServiceStubSettings
   }
 
   private static final PagedListDescriptor<
-          ListNotificationChannelDescriptorsRequest, ListNotificationChannelDescriptorsResponse,
+          ListNotificationChannelDescriptorsRequest,
+          ListNotificationChannelDescriptorsResponse,
           NotificationChannelDescriptor>
       LIST_NOTIFICATION_CHANNEL_DESCRIPTORS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ListNotificationChannelDescriptorsRequest, ListNotificationChannelDescriptorsResponse,
+              ListNotificationChannelDescriptorsRequest,
+              ListNotificationChannelDescriptorsResponse,
               NotificationChannelDescriptor>() {
             @Override
             public String emptyToken() {
@@ -293,7 +299,8 @@ public class NotificationChannelServiceStubSettings
           ListNotificationChannelsRequest, ListNotificationChannelsResponse, NotificationChannel>
       LIST_NOTIFICATION_CHANNELS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ListNotificationChannelsRequest, ListNotificationChannelsResponse,
+              ListNotificationChannelsRequest,
+              ListNotificationChannelsResponse,
               NotificationChannel>() {
             @Override
             public String emptyToken() {
@@ -334,11 +341,13 @@ public class NotificationChannelServiceStubSettings
           };
 
   private static final PagedListResponseFactory<
-          ListNotificationChannelDescriptorsRequest, ListNotificationChannelDescriptorsResponse,
+          ListNotificationChannelDescriptorsRequest,
+          ListNotificationChannelDescriptorsResponse,
           ListNotificationChannelDescriptorsPagedResponse>
       LIST_NOTIFICATION_CHANNEL_DESCRIPTORS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListNotificationChannelDescriptorsRequest, ListNotificationChannelDescriptorsResponse,
+              ListNotificationChannelDescriptorsRequest,
+              ListNotificationChannelDescriptorsResponse,
               ListNotificationChannelDescriptorsPagedResponse>() {
             @Override
             public ApiFuture<ListNotificationChannelDescriptorsPagedResponse>
@@ -352,7 +361,8 @@ public class NotificationChannelServiceStubSettings
                     ApiFuture<ListNotificationChannelDescriptorsResponse> futureResponse) {
               PageContext<
                       ListNotificationChannelDescriptorsRequest,
-                      ListNotificationChannelDescriptorsResponse, NotificationChannelDescriptor>
+                      ListNotificationChannelDescriptorsResponse,
+                      NotificationChannelDescriptor>
                   pageContext =
                       PageContext.create(
                           callable,
@@ -365,11 +375,13 @@ public class NotificationChannelServiceStubSettings
           };
 
   private static final PagedListResponseFactory<
-          ListNotificationChannelsRequest, ListNotificationChannelsResponse,
+          ListNotificationChannelsRequest,
+          ListNotificationChannelsResponse,
           ListNotificationChannelsPagedResponse>
       LIST_NOTIFICATION_CHANNELS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListNotificationChannelsRequest, ListNotificationChannelsResponse,
+              ListNotificationChannelsRequest,
+              ListNotificationChannelsResponse,
               ListNotificationChannelsPagedResponse>() {
             @Override
             public ApiFuture<ListNotificationChannelsPagedResponse> getFuturePagedResponse(
@@ -379,7 +391,8 @@ public class NotificationChannelServiceStubSettings
                 ApiCallContext context,
                 ApiFuture<ListNotificationChannelsResponse> futureResponse) {
               PageContext<
-                      ListNotificationChannelsRequest, ListNotificationChannelsResponse,
+                      ListNotificationChannelsRequest,
+                      ListNotificationChannelsResponse,
                       NotificationChannel>
                   pageContext =
                       PageContext.create(
@@ -394,14 +407,16 @@ public class NotificationChannelServiceStubSettings
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final PagedCallSettings.Builder<
-            ListNotificationChannelDescriptorsRequest, ListNotificationChannelDescriptorsResponse,
+            ListNotificationChannelDescriptorsRequest,
+            ListNotificationChannelDescriptorsResponse,
             ListNotificationChannelDescriptorsPagedResponse>
         listNotificationChannelDescriptorsSettings;
     private final UnaryCallSettings.Builder<
             GetNotificationChannelDescriptorRequest, NotificationChannelDescriptor>
         getNotificationChannelDescriptorSettings;
     private final PagedCallSettings.Builder<
-            ListNotificationChannelsRequest, ListNotificationChannelsResponse,
+            ListNotificationChannelsRequest,
+            ListNotificationChannelsResponse,
             ListNotificationChannelsPagedResponse>
         listNotificationChannelsSettings;
     private final UnaryCallSettings.Builder<GetNotificationChannelRequest, NotificationChannel>
@@ -576,7 +591,8 @@ public class NotificationChannelServiceStubSettings
      * Returns the builder for the settings used for calls to listNotificationChannelDescriptors.
      */
     public PagedCallSettings.Builder<
-            ListNotificationChannelDescriptorsRequest, ListNotificationChannelDescriptorsResponse,
+            ListNotificationChannelDescriptorsRequest,
+            ListNotificationChannelDescriptorsResponse,
             ListNotificationChannelDescriptorsPagedResponse>
         listNotificationChannelDescriptorsSettings() {
       return listNotificationChannelDescriptorsSettings;
@@ -591,7 +607,8 @@ public class NotificationChannelServiceStubSettings
 
     /** Returns the builder for the settings used for calls to listNotificationChannels. */
     public PagedCallSettings.Builder<
-            ListNotificationChannelsRequest, ListNotificationChannelsResponse,
+            ListNotificationChannelsRequest,
+            ListNotificationChannelsResponse,
             ListNotificationChannelsPagedResponse>
         listNotificationChannelsSettings() {
       return listNotificationChannelsSettings;

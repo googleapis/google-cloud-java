@@ -3,11 +3,14 @@
 
 package com.google.container.v1;
 
-public interface PrivateClusterConfigOrBuilder extends
+public interface PrivateClusterConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.PrivateClusterConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Whether nodes have internal IP addresses only. If enabled, all nodes are
    * given only RFC 1918 private addresses and communicate with the master via
@@ -19,6 +22,8 @@ public interface PrivateClusterConfigOrBuilder extends
   boolean getEnablePrivateNodes();
 
   /**
+   *
+   *
    * <pre>
    * Whether the master's internal IP address is used as the cluster endpoint.
    * </pre>
@@ -28,6 +33,8 @@ public interface PrivateClusterConfigOrBuilder extends
   boolean getEnablePrivateEndpoint();
 
   /**
+   *
+   *
    * <pre>
    * The IP range in CIDR notation to use for the hosted master network. This
    * range will be used for assigning internal IP addresses to the master or
@@ -39,6 +46,8 @@ public interface PrivateClusterConfigOrBuilder extends
    */
   java.lang.String getMasterIpv4CidrBlock();
   /**
+   *
+   *
    * <pre>
    * The IP range in CIDR notation to use for the hosted master network. This
    * range will be used for assigning internal IP addresses to the master or
@@ -48,10 +57,11 @@ public interface PrivateClusterConfigOrBuilder extends
    *
    * <code>string master_ipv4_cidr_block = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getMasterIpv4CidrBlockBytes();
+  com.google.protobuf.ByteString getMasterIpv4CidrBlockBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The internal IP address of this cluster's master endpoint.
    * </pre>
@@ -60,16 +70,19 @@ public interface PrivateClusterConfigOrBuilder extends
    */
   java.lang.String getPrivateEndpoint();
   /**
+   *
+   *
    * <pre>
    * Output only. The internal IP address of this cluster's master endpoint.
    * </pre>
    *
    * <code>string private_endpoint = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getPrivateEndpointBytes();
+  com.google.protobuf.ByteString getPrivateEndpointBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The external IP address of this cluster's master endpoint.
    * </pre>
@@ -78,12 +91,13 @@ public interface PrivateClusterConfigOrBuilder extends
    */
   java.lang.String getPublicEndpoint();
   /**
+   *
+   *
    * <pre>
    * Output only. The external IP address of this cluster's master endpoint.
    * </pre>
    *
    * <code>string public_endpoint = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getPublicEndpointBytes();
+  com.google.protobuf.ByteString getPublicEndpointBytes();
 }

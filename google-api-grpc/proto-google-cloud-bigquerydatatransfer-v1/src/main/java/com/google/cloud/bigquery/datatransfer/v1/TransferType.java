@@ -4,15 +4,18 @@
 package com.google.cloud.bigquery.datatransfer.v1;
 
 /**
+ *
+ *
  * <pre>
  * DEPRECATED. Represents data transfer type.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.bigquery.datatransfer.v1.TransferType}
  */
-public enum TransferType
-    implements com.google.protobuf.ProtocolMessageEnum {
+public enum TransferType implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   *
+   *
    * <pre>
    * Invalid or Unknown transfer type placeholder.
    * </pre>
@@ -21,6 +24,8 @@ public enum TransferType
    */
   TRANSFER_TYPE_UNSPECIFIED(0),
   /**
+   *
+   *
    * <pre>
    * Batch data transfer.
    * </pre>
@@ -29,6 +34,8 @@ public enum TransferType
    */
   BATCH(1),
   /**
+   *
+   *
    * <pre>
    * Streaming data transfer. Streaming data source currently doesn't
    * support multiple transfer configs per project.
@@ -41,6 +48,8 @@ public enum TransferType
   ;
 
   /**
+   *
+   *
    * <pre>
    * Invalid or Unknown transfer type placeholder.
    * </pre>
@@ -49,6 +58,8 @@ public enum TransferType
    */
   public static final int TRANSFER_TYPE_UNSPECIFIED_VALUE = 0;
   /**
+   *
+   *
    * <pre>
    * Batch data transfer.
    * </pre>
@@ -57,6 +68,8 @@ public enum TransferType
    */
   public static final int BATCH_VALUE = 1;
   /**
+   *
+   *
    * <pre>
    * Streaming data transfer. Streaming data source currently doesn't
    * support multiple transfer configs per project.
@@ -66,7 +79,6 @@ public enum TransferType
    */
   public static final int STREAMING_VALUE = 2;
 
-
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -75,9 +87,7 @@ public enum TransferType
     return value;
   }
 
-  /**
-   * @deprecated Use {@link #forNumber(int)} instead.
-   */
+  /** @deprecated Use {@link #forNumber(int)} instead. */
   @java.lang.Deprecated
   public static TransferType valueOf(int value) {
     return forNumber(value);
@@ -85,45 +95,47 @@ public enum TransferType
 
   public static TransferType forNumber(int value) {
     switch (value) {
-      case 0: return TRANSFER_TYPE_UNSPECIFIED;
-      case 1: return BATCH;
-      case 2: return STREAMING;
-      default: return null;
+      case 0:
+        return TRANSFER_TYPE_UNSPECIFIED;
+      case 1:
+        return BATCH;
+      case 2:
+        return STREAMING;
+      default:
+        return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<TransferType>
-      internalGetValueMap() {
+  public static com.google.protobuf.Internal.EnumLiteMap<TransferType> internalGetValueMap() {
     return internalValueMap;
   }
-  private static final com.google.protobuf.Internal.EnumLiteMap<
-      TransferType> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<TransferType>() {
-          public TransferType findValueByNumber(int number) {
-            return TransferType.forNumber(number);
-          }
-        };
 
-  public final com.google.protobuf.Descriptors.EnumValueDescriptor
-      getValueDescriptor() {
+  private static final com.google.protobuf.Internal.EnumLiteMap<TransferType> internalValueMap =
+      new com.google.protobuf.Internal.EnumLiteMap<TransferType>() {
+        public TransferType findValueByNumber(int number) {
+          return TransferType.forNumber(number);
+        }
+      };
+
+  public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
     return getDescriptor().getValues().get(ordinal());
   }
-  public final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptorForType() {
+
+  public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
     return getDescriptor();
   }
-  public static final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptor() {
-    return com.google.cloud.bigquery.datatransfer.v1.TransferProto.getDescriptor().getEnumTypes().get(0);
+
+  public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+    return com.google.cloud.bigquery.datatransfer.v1.TransferProto.getDescriptor()
+        .getEnumTypes()
+        .get(0);
   }
 
   private static final TransferType[] VALUES = values();
 
-  public static TransferType valueOf(
-      com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+  public static TransferType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
-      throw new java.lang.IllegalArgumentException(
-        "EnumValueDescriptor is not for this type.");
+      throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
     }
     if (desc.getIndex() == -1) {
       return UNRECOGNIZED;
@@ -139,4 +151,3 @@ public enum TransferType
 
   // @@protoc_insertion_point(enum_scope:google.cloud.bigquery.datatransfer.v1.TransferType)
 }
-

@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <artifactId>google-cloud-bigquerystorage</artifactId>
-    <version>0.71.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-scheduler:current} -->
+    <version>0.74.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-scheduler:current} -->
     <packaging>jar</packaging>
     <name>Google Cloud Bigquery Storage</name>
     <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-bigquerystorage</url>
@@ -12,7 +12,7 @@
     <parent>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-clients</artifactId>
-        <version>0.71.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
+        <version>0.74.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
     </parent>
     <properties>
         <site.installationModule>google-cloud-bigquerystorage</site.installationModule>
@@ -34,11 +34,14 @@
             <groupId>com.google.api.grpc</groupId>
             <artifactId>grpc-google-cloud-bigquerystorage-v1beta1</artifactId>
         </dependency>
+
+        <!-- Test dependencies -->
         <dependency>
             <groupId>com.google.api</groupId>
             <artifactId>gax-grpc</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- Need testing utility classes for generated gRPC clients tests -->
         <dependency>
             <groupId>com.google.api</groupId>
             <artifactId>gax-grpc</artifactId>
@@ -50,11 +53,25 @@
             <artifactId>gax</artifactId>
             <scope>test</scope>
         </dependency>
-
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.truth</groupId>
+            <artifactId>truth</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-testing</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>

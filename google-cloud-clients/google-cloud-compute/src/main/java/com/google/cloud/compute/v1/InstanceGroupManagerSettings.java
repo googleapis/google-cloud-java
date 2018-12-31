@@ -75,7 +75,8 @@ public class InstanceGroupManagerSettings extends ClientSettings<InstanceGroupMa
 
   /** Returns the object with the settings used for calls to aggregatedListInstanceGroupManagers. */
   public PagedCallSettings<
-          AggregatedListInstanceGroupManagersHttpRequest, InstanceGroupManagerAggregatedList,
+          AggregatedListInstanceGroupManagersHttpRequest,
+          InstanceGroupManagerAggregatedList,
           AggregatedListInstanceGroupManagersPagedResponse>
       aggregatedListInstanceGroupManagersSettings() {
     return ((InstanceGroupManagerStubSettings) getStubSettings())
@@ -111,7 +112,8 @@ public class InstanceGroupManagerSettings extends ClientSettings<InstanceGroupMa
 
   /** Returns the object with the settings used for calls to listInstanceGroupManagers. */
   public PagedCallSettings<
-          ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList,
+          ListInstanceGroupManagersHttpRequest,
+          InstanceGroupManagerList,
           ListInstanceGroupManagersPagedResponse>
       listInstanceGroupManagersSettings() {
     return ((InstanceGroupManagerStubSettings) getStubSettings())
@@ -128,6 +130,13 @@ public class InstanceGroupManagerSettings extends ClientSettings<InstanceGroupMa
       listManagedInstancesInstanceGroupManagersSettings() {
     return ((InstanceGroupManagerStubSettings) getStubSettings())
         .listManagedInstancesInstanceGroupManagersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to patchInstanceGroupManager. */
+  public UnaryCallSettings<PatchInstanceGroupManagerHttpRequest, Operation>
+      patchInstanceGroupManagerSettings() {
+    return ((InstanceGroupManagerStubSettings) getStubSettings())
+        .patchInstanceGroupManagerSettings();
   }
 
   /**
@@ -277,7 +286,8 @@ public class InstanceGroupManagerSettings extends ClientSettings<InstanceGroupMa
      * Returns the builder for the settings used for calls to aggregatedListInstanceGroupManagers.
      */
     public PagedCallSettings.Builder<
-            AggregatedListInstanceGroupManagersHttpRequest, InstanceGroupManagerAggregatedList,
+            AggregatedListInstanceGroupManagersHttpRequest,
+            InstanceGroupManagerAggregatedList,
             AggregatedListInstanceGroupManagersPagedResponse>
         aggregatedListInstanceGroupManagersSettings() {
       return getStubSettingsBuilder().aggregatedListInstanceGroupManagersSettings();
@@ -311,7 +321,8 @@ public class InstanceGroupManagerSettings extends ClientSettings<InstanceGroupMa
 
     /** Returns the builder for the settings used for calls to listInstanceGroupManagers. */
     public PagedCallSettings.Builder<
-            ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList,
+            ListInstanceGroupManagersHttpRequest,
+            InstanceGroupManagerList,
             ListInstanceGroupManagersPagedResponse>
         listInstanceGroupManagersSettings() {
       return getStubSettingsBuilder().listInstanceGroupManagersSettings();
@@ -326,6 +337,12 @@ public class InstanceGroupManagerSettings extends ClientSettings<InstanceGroupMa
             InstanceGroupManagersListManagedInstancesResponse>
         listManagedInstancesInstanceGroupManagersSettings() {
       return getStubSettingsBuilder().listManagedInstancesInstanceGroupManagersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patchInstanceGroupManager. */
+    public UnaryCallSettings.Builder<PatchInstanceGroupManagerHttpRequest, Operation>
+        patchInstanceGroupManagerSettings() {
+      return getStubSettingsBuilder().patchInstanceGroupManagerSettings();
     }
 
     /**

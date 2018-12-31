@@ -3,11 +3,14 @@
 
 package com.google.container.v1;
 
-public interface ClientCertificateConfigOrBuilder extends
+public interface ClientCertificateConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.ClientCertificateConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Issue a client certificate.
    * </pre>

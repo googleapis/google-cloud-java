@@ -25,7 +25,6 @@ import com.google.api.services.storage.model.Policy;
 import com.google.api.services.storage.model.ServiceAccount;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.api.services.storage.model.TestIamPermissionsResponse;
-import com.google.cloud.GcpLaunchStage;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.Tuple;
 import com.google.cloud.storage.StorageException;
@@ -49,6 +48,7 @@ public interface StorageRpc extends ServiceRpc {
     IF_SOURCE_METAGENERATION_NOT_MATCH("ifSourceMetagenerationNotMatch"),
     IF_SOURCE_GENERATION_MATCH("ifSourceGenerationMatch"),
     IF_SOURCE_GENERATION_NOT_MATCH("ifSourceGenerationNotMatch"),
+    IF_DISABLE_GZIP_CONTENT("disableGzipContent"),
     PREFIX("prefix"),
     MAX_RESULTS("maxResults"),
     PAGE_TOKEN("pageToken"),
@@ -96,8 +96,12 @@ public interface StorageRpc extends ServiceRpc {
     public final Map<StorageRpc.Option, ?> targetOptions;
     public final Long megabytesRewrittenPerCall;
 
-    public RewriteRequest(StorageObject source, Map<StorageRpc.Option, ?> sourceOptions,
-        boolean overrideInfo, StorageObject target, Map<StorageRpc.Option, ?> targetOptions,
+    public RewriteRequest(
+        StorageObject source,
+        Map<StorageRpc.Option, ?> sourceOptions,
+        boolean overrideInfo,
+        StorageObject target,
+        Map<StorageRpc.Option, ?> targetOptions,
         Long megabytesRewrittenPerCall) {
       this.source = source;
       this.sourceOptions = sourceOptions;
@@ -126,8 +130,8 @@ public interface StorageRpc extends ServiceRpc {
 
     @Override
     public int hashCode() {
-      return Objects.hash(source, sourceOptions, overrideInfo, target, targetOptions,
-          megabytesRewrittenPerCall);
+      return Objects.hash(
+          source, sourceOptions, overrideInfo, target, targetOptions, megabytesRewrittenPerCall);
     }
   }
 
@@ -140,8 +144,13 @@ public interface StorageRpc extends ServiceRpc {
     public final String rewriteToken;
     public final long totalBytesRewritten;
 
-    public RewriteResponse(RewriteRequest rewriteRequest, StorageObject result, long blobSize,
-        boolean isDone, String rewriteToken, long totalBytesRewritten) {
+    public RewriteResponse(
+        RewriteRequest rewriteRequest,
+        StorageObject result,
+        long blobSize,
+        boolean isDone,
+        String rewriteToken,
+        long totalBytesRewritten) {
       this.rewriteRequest = rewriteRequest;
       this.result = result;
       this.blobSize = blobSize;
@@ -169,8 +178,8 @@ public interface StorageRpc extends ServiceRpc {
 
     @Override
     public int hashCode() {
-      return Objects.hash(rewriteRequest, result, blobSize, isDone, rewriteToken,
-          totalBytesRewritten);
+      return Objects.hash(
+          rewriteRequest, result, blobSize, isDone, rewriteToken, totalBytesRewritten);
     }
   }
 
@@ -247,9 +256,7 @@ public interface StorageRpc extends ServiceRpc {
    */
   boolean delete(StorageObject object, Map<Option, ?> options);
 
-  /**
-   * Creates an empty batch.
-   */
+  /** Creates an empty batch. */
   RpcBatch createBatch();
 
   /**
@@ -257,8 +264,8 @@ public interface StorageRpc extends ServiceRpc {
    *
    * @throws StorageException upon failure
    */
-  StorageObject compose(Iterable<StorageObject> sources, StorageObject target,
-      Map<Option, ?> targetOptions);
+  StorageObject compose(
+      Iterable<StorageObject> sources, StorageObject target, Map<Option, ?> targetOptions);
 
   /**
    * Reads all the bytes from a storage object.
@@ -286,7 +293,12 @@ public interface StorageRpc extends ServiceRpc {
    *
    * @throws StorageException upon failure
    */
-  void write(String uploadId, byte[] toWrite, int toWriteOffset, long destOffset, int length,
+  void write(
+      String uploadId,
+      byte[] toWrite,
+      int toWriteOffset,
+      long destOffset,
+      int length,
       boolean last);
 
   /**
@@ -341,8 +353,8 @@ public interface StorageRpc extends ServiceRpc {
   List<BucketAccessControl> listAcls(String bucket, Map<Option, ?> options);
 
   /**
-   * Returns the default object ACL entry for the specified entity on the specified bucket or
-   * {@code null} if not found.
+   * Returns the default object ACL entry for the specified entity on the specified bucket or {@code
+   * null} if not found.
    *
    * @throws StorageException upon failure
    */
@@ -433,7 +445,8 @@ public interface StorageRpc extends ServiceRpc {
    *
    * @throws StorageException upon failure
    */
-  TestIamPermissionsResponse testIamPermissions(String bucket, List<String> permissions, Map<Option, ?> options);
+  TestIamPermissionsResponse testIamPermissions(
+      String bucket, List<String> permissions, Map<Option, ?> options);
 
   /**
    * Deletes the notification with the specified name on the specified object.

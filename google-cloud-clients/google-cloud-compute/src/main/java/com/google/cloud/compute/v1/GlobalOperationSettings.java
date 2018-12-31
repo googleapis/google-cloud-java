@@ -66,7 +66,8 @@ import javax.annotation.Generated;
 public class GlobalOperationSettings extends ClientSettings<GlobalOperationSettings> {
   /** Returns the object with the settings used for calls to aggregatedListGlobalOperations. */
   public PagedCallSettings<
-          AggregatedListGlobalOperationsHttpRequest, OperationAggregatedList,
+          AggregatedListGlobalOperationsHttpRequest,
+          OperationAggregatedList,
           AggregatedListGlobalOperationsPagedResponse>
       aggregatedListGlobalOperationsSettings() {
     return ((GlobalOperationStubSettings) getStubSettings())
@@ -194,7 +195,8 @@ public class GlobalOperationSettings extends ClientSettings<GlobalOperationSetti
 
     /** Returns the builder for the settings used for calls to aggregatedListGlobalOperations. */
     public PagedCallSettings.Builder<
-            AggregatedListGlobalOperationsHttpRequest, OperationAggregatedList,
+            AggregatedListGlobalOperationsHttpRequest,
+            OperationAggregatedList,
             AggregatedListGlobalOperationsPagedResponse>
         aggregatedListGlobalOperationsSettings() {
       return getStubSettingsBuilder().aggregatedListGlobalOperationsSettings();

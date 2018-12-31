@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p3beta1;
 
-public interface ListReferenceImagesRequestOrBuilder extends
+public interface ListReferenceImagesRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p3beta1.ListReferenceImagesRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Resource name of the product containing the reference images.
    * Format is
@@ -18,6 +21,8 @@ public interface ListReferenceImagesRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Resource name of the product containing the reference images.
    * Format is
@@ -26,10 +31,11 @@ public interface ListReferenceImagesRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The maximum number of items to return. Default 10, maximum 100.
    * </pre>
@@ -39,6 +45,8 @@ public interface ListReferenceImagesRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * A token identifying a page of results to be returned. This is the value
    * of `nextPageToken` returned in a previous reference image list request.
@@ -49,6 +57,8 @@ public interface ListReferenceImagesRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * A token identifying a page of results to be returned. This is the value
    * of `nextPageToken` returned in a previous reference image list request.
@@ -57,6 +67,5 @@ public interface ListReferenceImagesRequestOrBuilder extends
    *
    * <code>string page_token = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 }

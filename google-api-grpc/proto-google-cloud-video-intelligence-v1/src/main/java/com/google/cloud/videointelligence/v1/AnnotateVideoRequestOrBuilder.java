@@ -3,11 +3,14 @@
 
 package com.google.cloud.videointelligence.v1;
 
-public interface AnnotateVideoRequestOrBuilder extends
+public interface AnnotateVideoRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.videointelligence.v1.AnnotateVideoRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Input video location. Currently, only
    * [Google Cloud Storage](https://cloud.google.com/storage/) URIs are
@@ -25,6 +28,8 @@ public interface AnnotateVideoRequestOrBuilder extends
    */
   java.lang.String getInputUri();
   /**
+   *
+   *
    * <pre>
    * Input video location. Currently, only
    * [Google Cloud Storage](https://cloud.google.com/storage/) URIs are
@@ -40,10 +45,11 @@ public interface AnnotateVideoRequestOrBuilder extends
    *
    * <code>string input_uri = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getInputUriBytes();
+  com.google.protobuf.ByteString getInputUriBytes();
 
   /**
+   *
+   *
    * <pre>
    * The video data bytes.
    * If unset, the input video(s) should be specified via `input_uri`.
@@ -55,6 +61,8 @@ public interface AnnotateVideoRequestOrBuilder extends
   com.google.protobuf.ByteString getInputContent();
 
   /**
+   *
+   *
    * <pre>
    * Requested video annotation features.
    * </pre>
@@ -63,6 +71,8 @@ public interface AnnotateVideoRequestOrBuilder extends
    */
   java.util.List<com.google.cloud.videointelligence.v1.Feature> getFeaturesList();
   /**
+   *
+   *
    * <pre>
    * Requested video annotation features.
    * </pre>
@@ -71,6 +81,8 @@ public interface AnnotateVideoRequestOrBuilder extends
    */
   int getFeaturesCount();
   /**
+   *
+   *
    * <pre>
    * Requested video annotation features.
    * </pre>
@@ -79,15 +91,18 @@ public interface AnnotateVideoRequestOrBuilder extends
    */
   com.google.cloud.videointelligence.v1.Feature getFeatures(int index);
   /**
+   *
+   *
    * <pre>
    * Requested video annotation features.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1.Feature features = 2;</code>
    */
-  java.util.List<java.lang.Integer>
-  getFeaturesValueList();
+  java.util.List<java.lang.Integer> getFeaturesValueList();
   /**
+   *
+   *
    * <pre>
    * Requested video annotation features.
    * </pre>
@@ -97,6 +112,8 @@ public interface AnnotateVideoRequestOrBuilder extends
   int getFeaturesValue(int index);
 
   /**
+   *
+   *
    * <pre>
    * Additional video context and/or feature-specific parameters.
    * </pre>
@@ -105,6 +122,8 @@ public interface AnnotateVideoRequestOrBuilder extends
    */
   boolean hasVideoContext();
   /**
+   *
+   *
    * <pre>
    * Additional video context and/or feature-specific parameters.
    * </pre>
@@ -113,6 +132,8 @@ public interface AnnotateVideoRequestOrBuilder extends
    */
   com.google.cloud.videointelligence.v1.VideoContext getVideoContext();
   /**
+   *
+   *
    * <pre>
    * Additional video context and/or feature-specific parameters.
    * </pre>
@@ -122,6 +143,8 @@ public interface AnnotateVideoRequestOrBuilder extends
   com.google.cloud.videointelligence.v1.VideoContextOrBuilder getVideoContextOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional location where the output (in JSON format) should be stored.
    * Currently, only [Google Cloud Storage](https://cloud.google.com/storage/)
@@ -135,6 +158,8 @@ public interface AnnotateVideoRequestOrBuilder extends
    */
   java.lang.String getOutputUri();
   /**
+   *
+   *
    * <pre>
    * Optional location where the output (in JSON format) should be stored.
    * Currently, only [Google Cloud Storage](https://cloud.google.com/storage/)
@@ -146,10 +171,11 @@ public interface AnnotateVideoRequestOrBuilder extends
    *
    * <code>string output_uri = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getOutputUriBytes();
+  com.google.protobuf.ByteString getOutputUriBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional cloud region where annotation should take place. Supported cloud
    * regions: `us-east1`, `us-west1`, `europe-west1`, `asia-east1`. If no region
@@ -160,6 +186,8 @@ public interface AnnotateVideoRequestOrBuilder extends
    */
   java.lang.String getLocationId();
   /**
+   *
+   *
    * <pre>
    * Optional cloud region where annotation should take place. Supported cloud
    * regions: `us-east1`, `us-west1`, `europe-west1`, `asia-east1`. If no region
@@ -168,6 +196,5 @@ public interface AnnotateVideoRequestOrBuilder extends
    *
    * <code>string location_id = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getLocationIdBytes();
+  com.google.protobuf.ByteString getLocationIdBytes();
 }

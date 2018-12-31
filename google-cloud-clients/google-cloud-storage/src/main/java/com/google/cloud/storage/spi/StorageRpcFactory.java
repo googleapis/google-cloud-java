@@ -20,9 +20,7 @@ import com.google.cloud.spi.ServiceRpcFactory;
 import com.google.cloud.storage.StorageOptions;
 
 /**
- * An interface for Storage RPC factory.
- * Implementation will be loaded via {@link java.util.ServiceLoader}.
+ * An interface for Storage RPC factory. Implementation will be loaded via {@link
+ * java.util.ServiceLoader}.
  */
-public interface StorageRpcFactory extends ServiceRpcFactory<StorageOptions> {
-}
-
+public interface StorageRpcFactory extends ServiceRpcFactory<StorageOptions> {}

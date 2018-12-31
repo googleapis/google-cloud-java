@@ -4,15 +4,18 @@
 package com.google.cloud.kms.v1;
 
 /**
+ *
+ *
  * <pre>
  * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] specifies how cryptographic operations are performed.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.kms.v1.ProtectionLevel}
  */
-public enum ProtectionLevel
-    implements com.google.protobuf.ProtocolMessageEnum {
+public enum ProtectionLevel implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   *
+   *
    * <pre>
    * Not specified.
    * </pre>
@@ -21,6 +24,8 @@ public enum ProtectionLevel
    */
   PROTECTION_LEVEL_UNSPECIFIED(0),
   /**
+   *
+   *
    * <pre>
    * Crypto operations are performed in software.
    * </pre>
@@ -29,6 +34,8 @@ public enum ProtectionLevel
    */
   SOFTWARE(1),
   /**
+   *
+   *
    * <pre>
    * Crypto operations are performed in a Hardware Security Module.
    * </pre>
@@ -40,6 +47,8 @@ public enum ProtectionLevel
   ;
 
   /**
+   *
+   *
    * <pre>
    * Not specified.
    * </pre>
@@ -48,6 +57,8 @@ public enum ProtectionLevel
    */
   public static final int PROTECTION_LEVEL_UNSPECIFIED_VALUE = 0;
   /**
+   *
+   *
    * <pre>
    * Crypto operations are performed in software.
    * </pre>
@@ -56,6 +67,8 @@ public enum ProtectionLevel
    */
   public static final int SOFTWARE_VALUE = 1;
   /**
+   *
+   *
    * <pre>
    * Crypto operations are performed in a Hardware Security Module.
    * </pre>
@@ -63,7 +76,6 @@ public enum ProtectionLevel
    * <code>HSM = 2;</code>
    */
   public static final int HSM_VALUE = 2;
-
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -73,9 +85,7 @@ public enum ProtectionLevel
     return value;
   }
 
-  /**
-   * @deprecated Use {@link #forNumber(int)} instead.
-   */
+  /** @deprecated Use {@link #forNumber(int)} instead. */
   @java.lang.Deprecated
   public static ProtectionLevel valueOf(int value) {
     return forNumber(value);
@@ -83,45 +93,45 @@ public enum ProtectionLevel
 
   public static ProtectionLevel forNumber(int value) {
     switch (value) {
-      case 0: return PROTECTION_LEVEL_UNSPECIFIED;
-      case 1: return SOFTWARE;
-      case 2: return HSM;
-      default: return null;
+      case 0:
+        return PROTECTION_LEVEL_UNSPECIFIED;
+      case 1:
+        return SOFTWARE;
+      case 2:
+        return HSM;
+      default:
+        return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<ProtectionLevel>
-      internalGetValueMap() {
+  public static com.google.protobuf.Internal.EnumLiteMap<ProtectionLevel> internalGetValueMap() {
     return internalValueMap;
   }
-  private static final com.google.protobuf.Internal.EnumLiteMap<
-      ProtectionLevel> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<ProtectionLevel>() {
-          public ProtectionLevel findValueByNumber(int number) {
-            return ProtectionLevel.forNumber(number);
-          }
-        };
 
-  public final com.google.protobuf.Descriptors.EnumValueDescriptor
-      getValueDescriptor() {
+  private static final com.google.protobuf.Internal.EnumLiteMap<ProtectionLevel> internalValueMap =
+      new com.google.protobuf.Internal.EnumLiteMap<ProtectionLevel>() {
+        public ProtectionLevel findValueByNumber(int number) {
+          return ProtectionLevel.forNumber(number);
+        }
+      };
+
+  public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
     return getDescriptor().getValues().get(ordinal());
   }
-  public final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptorForType() {
+
+  public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
     return getDescriptor();
   }
-  public static final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.kms.v1.KmsResourcesProto.getDescriptor().getEnumTypes().get(0);
   }
 
   private static final ProtectionLevel[] VALUES = values();
 
-  public static ProtectionLevel valueOf(
-      com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+  public static ProtectionLevel valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
-      throw new java.lang.IllegalArgumentException(
-        "EnumValueDescriptor is not for this type.");
+      throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
     }
     if (desc.getIndex() == -1) {
       return UNRECOGNIZED;
@@ -137,4 +147,3 @@ public enum ProtectionLevel
 
   // @@protoc_insertion_point(enum_scope:google.cloud.kms.v1.ProtectionLevel)
 }
-

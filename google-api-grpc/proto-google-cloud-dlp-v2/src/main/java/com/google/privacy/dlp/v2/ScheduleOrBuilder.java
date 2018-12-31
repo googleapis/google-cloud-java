@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface ScheduleOrBuilder extends
+public interface ScheduleOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.Schedule)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * With this option a job is started a regular periodic basis. For
    * example: every day (86400 seconds).
@@ -21,6 +24,8 @@ public interface ScheduleOrBuilder extends
    */
   boolean hasRecurrencePeriodDuration();
   /**
+   *
+   *
    * <pre>
    * With this option a job is started a regular periodic basis. For
    * example: every day (86400 seconds).
@@ -34,6 +39,8 @@ public interface ScheduleOrBuilder extends
    */
   com.google.protobuf.Duration getRecurrencePeriodDuration();
   /**
+   *
+   *
    * <pre>
    * With this option a job is started a regular periodic basis. For
    * example: every day (86400 seconds).

@@ -3,20 +3,24 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface BucketingConfigOrBuilder extends
+public interface BucketingConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.BucketingConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Set of buckets. Ranges must be non-overlapping.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.BucketingConfig.Bucket buckets = 1;</code>
    */
-  java.util.List<com.google.privacy.dlp.v2.BucketingConfig.Bucket> 
-      getBucketsList();
+  java.util.List<com.google.privacy.dlp.v2.BucketingConfig.Bucket> getBucketsList();
   /**
+   *
+   *
    * <pre>
    * Set of buckets. Ranges must be non-overlapping.
    * </pre>
@@ -25,6 +29,8 @@ public interface BucketingConfigOrBuilder extends
    */
   com.google.privacy.dlp.v2.BucketingConfig.Bucket getBuckets(int index);
   /**
+   *
+   *
    * <pre>
    * Set of buckets. Ranges must be non-overlapping.
    * </pre>
@@ -33,21 +39,24 @@ public interface BucketingConfigOrBuilder extends
    */
   int getBucketsCount();
   /**
+   *
+   *
    * <pre>
    * Set of buckets. Ranges must be non-overlapping.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.BucketingConfig.Bucket buckets = 1;</code>
    */
-  java.util.List<? extends com.google.privacy.dlp.v2.BucketingConfig.BucketOrBuilder> 
+  java.util.List<? extends com.google.privacy.dlp.v2.BucketingConfig.BucketOrBuilder>
       getBucketsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Set of buckets. Ranges must be non-overlapping.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.BucketingConfig.Bucket buckets = 1;</code>
    */
-  com.google.privacy.dlp.v2.BucketingConfig.BucketOrBuilder getBucketsOrBuilder(
-      int index);
+  com.google.privacy.dlp.v2.BucketingConfig.BucketOrBuilder getBucketsOrBuilder(int index);
 }

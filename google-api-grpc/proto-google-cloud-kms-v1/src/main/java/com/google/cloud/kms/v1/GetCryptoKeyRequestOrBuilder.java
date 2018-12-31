@@ -3,11 +3,14 @@
 
 package com.google.cloud.kms.v1;
 
-public interface GetCryptoKeyRequestOrBuilder extends
+public interface GetCryptoKeyRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.kms.v1.GetCryptoKeyRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The [name][google.cloud.kms.v1.CryptoKey.name] of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
    * </pre>
@@ -16,12 +19,13 @@ public interface GetCryptoKeyRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The [name][google.cloud.kms.v1.CryptoKey.name] of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
    * </pre>
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

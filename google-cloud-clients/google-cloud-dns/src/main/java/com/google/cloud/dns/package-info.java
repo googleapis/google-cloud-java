@@ -17,31 +17,29 @@
 /**
  * A client for Cloud DNS - A highly available global DNS network.
  *
- * <p>
- * Here are two simple usage examples from within Compute/App Engine.
+ * <p>Here are two simple usage examples from within Compute/App Engine.
  *
- * The first snippet shows how to create a zone resource. The complete source code can be found on
- * <a href=
+ * <p>The first snippet shows how to create a zone resource. The complete source code can be found
+ * on <a href=
  * "https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/dns/snippets/CreateAndListZones.java">
  * CreateAndListZones.java</a>. Note that you need to replace the {@code domainName} with a domain
  * name that you own and the ownership of which you verified with Google.
  *
- * <pre> {@code
+ * <pre>{@code
  * Dns dns = DnsOptions.getDefaultInstance().getService();
  * String zoneName = "my-unique-zone";
  * String domainName = "someexampledomain.com.";
  * String description = "This is a google-cloud-dns sample zone.";
  * ZoneInfo zoneInfo = ZoneInfo.of(zoneName, domainName, description);
  * Zone createdZone = dns.create(zoneInfo);
- * } </pre>
+ * }</pre>
  *
- * <p>
- * The second example shows how to create records inside a zone. The complete code can be found on
- * <a href=
+ * <p>The second example shows how to create records inside a zone. The complete code can be found
+ * on <a href=
  * "https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/dns/snippets/CreateAndListDnsRecords.java">
  * CreateAndListDnsRecords.java</a>.
  *
- * <pre> {@code
+ * <pre>{@code
  * Dns dns = DnsOptions.getDefaultInstance().getService();
  * String zoneName = "my-unique-zone";
  * Zone zone = dns.getZone(zoneName);
@@ -52,13 +50,11 @@
  *   .build();
  * ChangeRequestInfo changeRequest = ChangeRequestInfo.newBuilder().add(toCreate).build();
  * zone.applyChangeRequest(changeRequest);
- * } </pre>
+ * }</pre>
  *
- * <p>
- * When using google-cloud from outside of App/Compute Engine, you have to
- * <a href="https://github.com/googleapis/google-cloud-java#specifying-a-project-id">specify a
- * project ID</a> and
- * <a href="https://github.com/googleapis/google-cloud-java#authentication">provide
+ * <p>When using google-cloud from outside of App/Compute Engine, you have to <a
+ * href="https://github.com/googleapis/google-cloud-java#specifying-a-project-id">specify a project
+ * ID</a> and <a href="https://github.com/googleapis/google-cloud-java#authentication">provide
  * credentials</a>.
  *
  * @see <a href="https://cloud.google.com/dns/">Google Cloud DNS</a>

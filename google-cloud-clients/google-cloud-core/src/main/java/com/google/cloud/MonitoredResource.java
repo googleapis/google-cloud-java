@@ -20,7 +20,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableMap;
-
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
@@ -33,9 +32,9 @@ import java.util.Objects;
  * the resource's schema. Information in the labels field identifies the actual resource and its
  * attributes according to the schema.
  *
- * <p>For example, the monitored resource for Google Compute Engine VM instances has
- * {@code gce_instance} type and specifies values for the labels {@code instance_id} and
- * {@code zone} to identify particular VM instances.
+ * <p>For example, the monitored resource for Google Compute Engine VM instances has {@code
+ * gce_instance} type and specifies values for the labels {@code instance_id} and {@code zone} to
+ * identify particular VM instances.
  */
 public final class MonitoredResource implements Serializable {
 
@@ -44,9 +43,7 @@ public final class MonitoredResource implements Serializable {
   private final String type;
   private final Map<String, String> labels;
 
-  /**
-   * A builder for {@code MonitoredResource} objects.
-   */
+  /** A builder for {@code MonitoredResource} objects. */
   public static class Builder {
 
     private String type;
@@ -61,17 +58,15 @@ public final class MonitoredResource implements Serializable {
       this.labels = new HashMap<>(monitoredResource.labels);
     }
 
-
     /**
-     * Sets the monitored resource type. This value must match the one of
-     * {@link MonitoredResourceDescriptor#getType()} of a {@code MonitoredResourceDescriptor} object.
-     * For example, the type {@code cloudsql_database} represent databases in Google Cloud SQL.
+     * Sets the monitored resource type. This value must match the one of {@link
+     * MonitoredResourceDescriptor#getType()} of a {@code MonitoredResourceDescriptor} object. For
+     * example, the type {@code cloudsql_database} represent databases in Google Cloud SQL.
      */
     public Builder setType(String type) {
       this.type = type;
       return this;
     }
-
 
     /**
      * Sets the values for all the labels required by the corresponding monitored resource
@@ -83,17 +78,13 @@ public final class MonitoredResource implements Serializable {
       return this;
     }
 
-    /**
-     * Adds a label to the labels of the monitored resource.
-     */
+    /** Adds a label to the labels of the monitored resource. */
     public Builder addLabel(String key, String value) {
       this.labels.put(key, value);
       return this;
     }
 
-    /**
-     * Clears all the labels of the monitored resource.
-     */
+    /** Clears all the labels of the monitored resource. */
     public Builder clearLabels() {
       this.labels.clear();
       return this;
@@ -109,16 +100,14 @@ public final class MonitoredResource implements Serializable {
     this.labels = ImmutableMap.copyOf(builder.labels);
   }
 
-
   /**
-   * Returns the monitored resource type. This value must match the one of
-   * {@link MonitoredResourceDescriptor#getType()} of a {@code MonitoredResourceDescriptor} object.
-   * For example, the type {@code cloudsql_database} represent databases in Google Cloud SQL.
+   * Returns the monitored resource type. This value must match the one of {@link
+   * MonitoredResourceDescriptor#getType()} of a {@code MonitoredResourceDescriptor} object. For
+   * example, the type {@code cloudsql_database} represent databases in Google Cloud SQL.
    */
   public String getType() {
     return type;
   }
-
 
   /**
    * Returns the values for all the labels required by the corresponding monitored resource
@@ -148,37 +137,24 @@ public final class MonitoredResource implements Serializable {
 
   @Override
   public String toString() {
-    return MoreObjects.toStringHelper(this)
-        .add("type", type)
-        .add("labels", labels)
-        .toString();
+    return MoreObjects.toStringHelper(this).add("type", type).add("labels", labels).toString();
   }
 
   public com.google.api.MonitoredResource toPb() {
-    return com.google.api.MonitoredResource.newBuilder()
-        .setType(type)
-        .putAllLabels(labels)
-        .build();
+    return com.google.api.MonitoredResource.newBuilder().setType(type).putAllLabels(labels).build();
   }
 
-  /**
-   * Returns a builder for this {@code MonitoredResource} object.
-   */
+  /** Returns a builder for this {@code MonitoredResource} object. */
   public Builder toBuilder() {
     return new Builder(this);
   }
 
-
-  /**
-   * Returns a builder for {@code MonitoredResource} objects given the resource's type.
-   */
+  /** Returns a builder for {@code MonitoredResource} objects given the resource's type. */
   public static Builder newBuilder(String type) {
     return new Builder(type);
   }
 
-  /**
-   * Creates a {@code MonitoredResource} object given the resource's type and labels.
-   */
+  /** Creates a {@code MonitoredResource} object given the resource's type and labels. */
   public static MonitoredResource of(String type, Map<String, String> labels) {
     return newBuilder(type).setLabels(labels).build();
   }

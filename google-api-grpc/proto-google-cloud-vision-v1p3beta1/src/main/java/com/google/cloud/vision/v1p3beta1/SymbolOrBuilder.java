@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p3beta1;
 
-public interface SymbolOrBuilder extends
+public interface SymbolOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p3beta1.Symbol)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Additional information detected for the symbol.
    * </pre>
@@ -16,6 +19,8 @@ public interface SymbolOrBuilder extends
    */
   boolean hasProperty();
   /**
+   *
+   *
    * <pre>
    * Additional information detected for the symbol.
    * </pre>
@@ -24,6 +29,8 @@ public interface SymbolOrBuilder extends
    */
   com.google.cloud.vision.v1p3beta1.TextAnnotation.TextProperty getProperty();
   /**
+   *
+   *
    * <pre>
    * Additional information detected for the symbol.
    * </pre>
@@ -33,6 +40,8 @@ public interface SymbolOrBuilder extends
   com.google.cloud.vision.v1p3beta1.TextAnnotation.TextPropertyOrBuilder getPropertyOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The bounding box for the symbol.
    * The vertices are in the order of top-left, top-right, bottom-right,
@@ -55,6 +64,8 @@ public interface SymbolOrBuilder extends
    */
   boolean hasBoundingBox();
   /**
+   *
+   *
    * <pre>
    * The bounding box for the symbol.
    * The vertices are in the order of top-left, top-right, bottom-right,
@@ -77,6 +88,8 @@ public interface SymbolOrBuilder extends
    */
   com.google.cloud.vision.v1p3beta1.BoundingPoly getBoundingBox();
   /**
+   *
+   *
    * <pre>
    * The bounding box for the symbol.
    * The vertices are in the order of top-left, top-right, bottom-right,
@@ -100,6 +113,8 @@ public interface SymbolOrBuilder extends
   com.google.cloud.vision.v1p3beta1.BoundingPolyOrBuilder getBoundingBoxOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The actual UTF-8 representation of the symbol.
    * </pre>
@@ -108,16 +123,19 @@ public interface SymbolOrBuilder extends
    */
   java.lang.String getText();
   /**
+   *
+   *
    * <pre>
    * The actual UTF-8 representation of the symbol.
    * </pre>
    *
    * <code>string text = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getTextBytes();
+  com.google.protobuf.ByteString getTextBytes();
 
   /**
+   *
+   *
    * <pre>
    * Confidence of the OCR results for the symbol. Range [0, 1].
    * </pre>

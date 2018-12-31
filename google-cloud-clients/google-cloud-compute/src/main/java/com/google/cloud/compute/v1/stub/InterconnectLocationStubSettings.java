@@ -97,7 +97,8 @@ public class InterconnectLocationStubSettings
   private final UnaryCallSettings<GetInterconnectLocationHttpRequest, InterconnectLocation>
       getInterconnectLocationSettings;
   private final PagedCallSettings<
-          ListInterconnectLocationsHttpRequest, InterconnectLocationList,
+          ListInterconnectLocationsHttpRequest,
+          InterconnectLocationList,
           ListInterconnectLocationsPagedResponse>
       listInterconnectLocationsSettings;
 
@@ -109,7 +110,8 @@ public class InterconnectLocationStubSettings
 
   /** Returns the object with the settings used for calls to listInterconnectLocations. */
   public PagedCallSettings<
-          ListInterconnectLocationsHttpRequest, InterconnectLocationList,
+          ListInterconnectLocationsHttpRequest,
+          InterconnectLocationList,
           ListInterconnectLocationsPagedResponse>
       listInterconnectLocationsSettings() {
     return listInterconnectLocationsSettings;
@@ -198,7 +200,8 @@ public class InterconnectLocationStubSettings
           ListInterconnectLocationsHttpRequest, InterconnectLocationList, InterconnectLocation>
       LIST_INTERCONNECT_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ListInterconnectLocationsHttpRequest, InterconnectLocationList,
+              ListInterconnectLocationsHttpRequest,
+              InterconnectLocationList,
               InterconnectLocation>() {
             @Override
             public String emptyToken() {
@@ -234,16 +237,20 @@ public class InterconnectLocationStubSettings
             @Override
             public Iterable<InterconnectLocation> extractResources(
                 InterconnectLocationList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<InterconnectLocation>of();
             }
           };
 
   private static final PagedListResponseFactory<
-          ListInterconnectLocationsHttpRequest, InterconnectLocationList,
+          ListInterconnectLocationsHttpRequest,
+          InterconnectLocationList,
           ListInterconnectLocationsPagedResponse>
       LIST_INTERCONNECT_LOCATIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListInterconnectLocationsHttpRequest, InterconnectLocationList,
+              ListInterconnectLocationsHttpRequest,
+              InterconnectLocationList,
               ListInterconnectLocationsPagedResponse>() {
             @Override
             public ApiFuture<ListInterconnectLocationsPagedResponse> getFuturePagedResponse(
@@ -253,7 +260,8 @@ public class InterconnectLocationStubSettings
                 ApiCallContext context,
                 ApiFuture<InterconnectLocationList> futureResponse) {
               PageContext<
-                      ListInterconnectLocationsHttpRequest, InterconnectLocationList,
+                      ListInterconnectLocationsHttpRequest,
+                      InterconnectLocationList,
                       InterconnectLocation>
                   pageContext =
                       PageContext.create(
@@ -272,7 +280,8 @@ public class InterconnectLocationStubSettings
             GetInterconnectLocationHttpRequest, InterconnectLocation>
         getInterconnectLocationSettings;
     private final PagedCallSettings.Builder<
-            ListInterconnectLocationsHttpRequest, InterconnectLocationList,
+            ListInterconnectLocationsHttpRequest,
+            InterconnectLocationList,
             ListInterconnectLocationsPagedResponse>
         listInterconnectLocationsSettings;
 
@@ -388,7 +397,8 @@ public class InterconnectLocationStubSettings
 
     /** Returns the builder for the settings used for calls to listInterconnectLocations. */
     public PagedCallSettings.Builder<
-            ListInterconnectLocationsHttpRequest, InterconnectLocationList,
+            ListInterconnectLocationsHttpRequest,
+            InterconnectLocationList,
             ListInterconnectLocationsPagedResponse>
         listInterconnectLocationsSettings() {
       return listInterconnectLocationsSettings;

@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface UnwrappedCryptoKeyOrBuilder extends
+public interface UnwrappedCryptoKeyOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.UnwrappedCryptoKey)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The AES 128/192/256 bit key. [required]
    * </pre>

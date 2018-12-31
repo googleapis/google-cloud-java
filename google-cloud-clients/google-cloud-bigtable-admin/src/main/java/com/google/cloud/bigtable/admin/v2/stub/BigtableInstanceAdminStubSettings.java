@@ -421,7 +421,9 @@ public class BigtableInstanceAdminStubSettings
 
             @Override
             public Iterable<AppProfile> extractResources(ListAppProfilesResponse payload) {
-              return payload.getAppProfilesList();
+              return payload.getAppProfilesList() != null
+                  ? payload.getAppProfilesList()
+                  : ImmutableList.<AppProfile>of();
             }
           };
 

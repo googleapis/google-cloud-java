@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1;
 
-public interface ListJobsRequestOrBuilder extends
+public interface ListJobsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1.ListJobsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The ID of the Google Cloud Platform project that the job
    * belongs to.
@@ -17,6 +20,8 @@ public interface ListJobsRequestOrBuilder extends
    */
   java.lang.String getProjectId();
   /**
+   *
+   *
    * <pre>
    * Required. The ID of the Google Cloud Platform project that the job
    * belongs to.
@@ -24,10 +29,11 @@ public interface ListJobsRequestOrBuilder extends
    *
    * <code>string project_id = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getProjectIdBytes();
+  com.google.protobuf.ByteString getProjectIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
@@ -36,16 +42,19 @@ public interface ListJobsRequestOrBuilder extends
    */
   java.lang.String getRegion();
   /**
+   *
+   *
    * <pre>
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
    *
    * <code>string region = 6;</code>
    */
-  com.google.protobuf.ByteString
-      getRegionBytes();
+  com.google.protobuf.ByteString getRegionBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The number of results to return in each response.
    * </pre>
@@ -55,6 +64,8 @@ public interface ListJobsRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The page token, returned by a previous call, to request the
    * next page of results.
@@ -64,6 +75,8 @@ public interface ListJobsRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * Optional. The page token, returned by a previous call, to request the
    * next page of results.
@@ -71,10 +84,11 @@ public interface ListJobsRequestOrBuilder extends
    *
    * <code>string page_token = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. If set, the returned jobs list includes only jobs that were
    * submitted to the named cluster.
@@ -84,6 +98,8 @@ public interface ListJobsRequestOrBuilder extends
    */
   java.lang.String getClusterName();
   /**
+   *
+   *
    * <pre>
    * Optional. If set, the returned jobs list includes only jobs that were
    * submitted to the named cluster.
@@ -91,10 +107,11 @@ public interface ListJobsRequestOrBuilder extends
    *
    * <code>string cluster_name = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getClusterNameBytes();
+  com.google.protobuf.ByteString getClusterNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. Specifies enumerated categories of jobs to list.
    * (default = match ALL jobs).
@@ -105,6 +122,8 @@ public interface ListJobsRequestOrBuilder extends
    */
   int getJobStateMatcherValue();
   /**
+   *
+   *
    * <pre>
    * Optional. Specifies enumerated categories of jobs to list.
    * (default = match ALL jobs).
@@ -116,6 +135,8 @@ public interface ListJobsRequestOrBuilder extends
   com.google.cloud.dataproc.v1.ListJobsRequest.JobStateMatcher getJobStateMatcher();
 
   /**
+   *
+   *
    * <pre>
    * Optional. A filter constraining the jobs to list. Filters are
    * case-sensitive and have the following syntax:
@@ -133,6 +154,8 @@ public interface ListJobsRequestOrBuilder extends
    */
   java.lang.String getFilter();
   /**
+   *
+   *
    * <pre>
    * Optional. A filter constraining the jobs to list. Filters are
    * case-sensitive and have the following syntax:
@@ -148,6 +171,5 @@ public interface ListJobsRequestOrBuilder extends
    *
    * <code>string filter = 7;</code>
    */
-  com.google.protobuf.ByteString
-      getFilterBytes();
+  com.google.protobuf.ByteString getFilterBytes();
 }

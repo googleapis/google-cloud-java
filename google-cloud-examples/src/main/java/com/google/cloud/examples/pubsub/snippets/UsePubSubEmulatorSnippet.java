@@ -27,7 +27,6 @@ import com.google.cloud.pubsub.v1.TopicAdminSettings;
 import com.google.pubsub.v1.ProjectTopicName;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
-
 import java.io.IOException;
 
 /**

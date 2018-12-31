@@ -4,21 +4,24 @@
 package com.google.logging.v2;
 
 /**
+ *
+ *
  * <pre>
  * The parameters to WriteLogEntries.
  * </pre>
  *
  * Protobuf type {@code google.logging.v2.WriteLogEntriesRequest}
  */
-public  final class WriteLogEntriesRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.logging.v2.WriteLogEntriesRequest)
     WriteLogEntriesRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use WriteLogEntriesRequest.newBuilder() to construct.
   private WriteLogEntriesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private WriteLogEntriesRequest() {
     logName_ = "";
     entries_ = java.util.Collections.emptyList();
@@ -27,10 +30,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private WriteLogEntriesRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -50,71 +53,74 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            logName_ = s;
-            break;
-          }
-          case 18: {
-            com.google.api.MonitoredResource.Builder subBuilder = null;
-            if (resource_ != null) {
-              subBuilder = resource_.toBuilder();
+              logName_ = s;
+              break;
             }
-            resource_ = input.readMessage(com.google.api.MonitoredResource.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(resource_);
-              resource_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.api.MonitoredResource.Builder subBuilder = null;
+              if (resource_ != null) {
+                subBuilder = resource_.toBuilder();
+              }
+              resource_ =
+                  input.readMessage(com.google.api.MonitoredResource.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(resource_);
+                resource_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 26: {
-            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-              labels_ = com.google.protobuf.MapField.newMapField(
-                  LabelsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000004;
+              break;
             }
-            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-            labels__ = input.readMessage(
-                LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            labels_.getMutableMap().put(
-                labels__.getKey(), labels__.getValue());
-            break;
-          }
-          case 34: {
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-              entries_ = new java.util.ArrayList<com.google.logging.v2.LogEntry>();
-              mutable_bitField0_ |= 0x00000008;
+          case 26:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                labels_ =
+                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000004;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                  input.readMessage(
+                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
+              break;
             }
-            entries_.add(
-                input.readMessage(com.google.logging.v2.LogEntry.parser(), extensionRegistry));
-            break;
-          }
-          case 40: {
-
-            partialSuccess_ = input.readBool();
-            break;
-          }
-          case 48: {
-
-            dryRun_ = input.readBool();
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 34:
+            {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                entries_ = new java.util.ArrayList<com.google.logging.v2.LogEntry>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              entries_.add(
+                  input.readMessage(com.google.logging.v2.LogEntry.parser(), extensionRegistry));
+              break;
             }
-            break;
-          }
+          case 40:
+            {
+              partialSuccess_ = input.readBool();
+              break;
+            }
+          case 48:
+            {
+              dryRun_ = input.readBool();
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
         entries_ = java.util.Collections.unmodifiableList(entries_);
@@ -123,35 +129,39 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.logging.v2.LoggingProto.internal_static_google_logging_v2_WriteLogEntriesRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.logging.v2.LoggingProto
+        .internal_static_google_logging_v2_WriteLogEntriesRequest_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
   @java.lang.Override
-  protected com.google.protobuf.MapField internalGetMapField(
-      int number) {
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
       case 3:
         return internalGetLabels();
       default:
-        throw new RuntimeException(
-            "Invalid map field number: " + number);
+        throw new RuntimeException("Invalid map field number: " + number);
     }
   }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.logging.v2.LoggingProto.internal_static_google_logging_v2_WriteLogEntriesRequest_fieldAccessorTable
+    return com.google.logging.v2.LoggingProto
+        .internal_static_google_logging_v2_WriteLogEntriesRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.logging.v2.WriteLogEntriesRequest.class, com.google.logging.v2.WriteLogEntriesRequest.Builder.class);
+            com.google.logging.v2.WriteLogEntriesRequest.class,
+            com.google.logging.v2.WriteLogEntriesRequest.Builder.class);
   }
 
   private int bitField0_;
   public static final int LOG_NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object logName_;
   /**
+   *
+   *
    * <pre>
    * Optional. A default log resource name that is assigned to all log entries
    * in `entries` that do not specify a value for `log_name`:
@@ -175,14 +185,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       logName_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional. A default log resource name that is assigned to all log entries
    * in `entries` that do not specify a value for `log_name`:
@@ -201,13 +212,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string log_name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getLogNameBytes() {
+  public com.google.protobuf.ByteString getLogNameBytes() {
     java.lang.Object ref = logName_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       logName_ = b;
       return b;
     } else {
@@ -218,6 +227,8 @@ private static final long serialVersionUID = 0L;
   public static final int RESOURCE_FIELD_NUMBER = 2;
   private com.google.api.MonitoredResource resource_;
   /**
+   *
+   *
    * <pre>
    * Optional. A default monitored resource object that is assigned to all log
    * entries in `entries` that do not specify a value for `resource`. Example:
@@ -233,6 +244,8 @@ private static final long serialVersionUID = 0L;
     return resource_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. A default monitored resource object that is assigned to all log
    * entries in `entries` that do not specify a value for `resource`. Example:
@@ -248,6 +261,8 @@ private static final long serialVersionUID = 0L;
     return resource_ == null ? com.google.api.MonitoredResource.getDefaultInstance() : resource_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. A default monitored resource object that is assigned to all log
    * entries in `entries` that do not specify a value for `resource`. Example:
@@ -264,24 +279,23 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int LABELS_FIELD_NUMBER = 3;
+
   private static final class LabelsDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        java.lang.String, java.lang.String> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<java.lang.String, java.lang.String>newDefaultInstance(
-                com.google.logging.v2.LoggingProto.internal_static_google_logging_v2_WriteLogEntriesRequest_LabelsEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "");
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.logging.v2.LoggingProto
+                .internal_static_google_logging_v2_WriteLogEntriesRequest_LabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
   }
-  private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> labels_;
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetLabels() {
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
     if (labels_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(
-          LabelsDefaultEntryHolder.defaultEntry);
+      return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
     }
     return labels_;
   }
@@ -290,6 +304,8 @@ private static final long serialVersionUID = 0L;
     return internalGetLabels().getMap().size();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Default labels that are added to the `labels` field of all log
    * entries in `entries`. If a log entry already has a label with the same key
@@ -299,20 +315,20 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
-
-  public boolean containsLabels(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public boolean containsLabels(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     return internalGetLabels().getMap().containsKey(key);
   }
-  /**
-   * Use {@link #getLabelsMap()} instead.
-   */
+  /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Default labels that are added to the `labels` field of all log
    * entries in `entries`. If a log entry already has a label with the same key
@@ -322,11 +338,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
-
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Default labels that are added to the `labels` field of all log
    * entries in `entries`. If a log entry already has a label with the same key
@@ -336,16 +353,16 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
-
-  public java.lang.String getLabelsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetLabels().getMap();
+  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Default labels that are added to the `labels` field of all log
    * entries in `entries`. If a log entry already has a label with the same key
@@ -355,12 +372,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
-
-  public java.lang.String getLabelsOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetLabels().getMap();
+  public java.lang.String getLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
@@ -370,6 +386,8 @@ private static final long serialVersionUID = 0L;
   public static final int ENTRIES_FIELD_NUMBER = 4;
   private java.util.List<com.google.logging.v2.LogEntry> entries_;
   /**
+   *
+   *
    * <pre>
    * Required. The log entries to send to Logging. The order of log
    * entries in this list does not matter. Values supplied in this method's
@@ -399,6 +417,8 @@ private static final long serialVersionUID = 0L;
     return entries_;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The log entries to send to Logging. The order of log
    * entries in this list does not matter. Values supplied in this method's
@@ -424,11 +444,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
    */
-  public java.util.List<? extends com.google.logging.v2.LogEntryOrBuilder> 
+  public java.util.List<? extends com.google.logging.v2.LogEntryOrBuilder>
       getEntriesOrBuilderList() {
     return entries_;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The log entries to send to Logging. The order of log
    * entries in this list does not matter. Values supplied in this method's
@@ -458,6 +480,8 @@ private static final long serialVersionUID = 0L;
     return entries_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Required. The log entries to send to Logging. The order of log
    * entries in this list does not matter. Values supplied in this method's
@@ -487,6 +511,8 @@ private static final long serialVersionUID = 0L;
     return entries_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Required. The log entries to send to Logging. The order of log
    * entries in this list does not matter. Values supplied in this method's
@@ -512,14 +538,15 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
    */
-  public com.google.logging.v2.LogEntryOrBuilder getEntriesOrBuilder(
-      int index) {
+  public com.google.logging.v2.LogEntryOrBuilder getEntriesOrBuilder(int index) {
     return entries_.get(index);
   }
 
   public static final int PARTIAL_SUCCESS_FIELD_NUMBER = 5;
   private boolean partialSuccess_;
   /**
+   *
+   *
    * <pre>
    * Optional. Whether valid entries should be written even if some other
    * entries fail due to INVALID_ARGUMENT or PERMISSION_DENIED errors. If any
@@ -537,6 +564,8 @@ private static final long serialVersionUID = 0L;
   public static final int DRY_RUN_FIELD_NUMBER = 6;
   private boolean dryRun_;
   /**
+   *
+   *
    * <pre>
    * Optional. If true, the request should expect normal response, but the
    * entries won't be persisted nor exported. Useful for checking whether the
@@ -550,6 +579,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -561,20 +591,15 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getLogNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, logName_);
     }
     if (resource_ != null) {
       output.writeMessage(2, getResource());
     }
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetLabels(),
-        LabelsDefaultEntryHolder.defaultEntry,
-        3);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 3);
     for (int i = 0; i < entries_.size(); i++) {
       output.writeMessage(4, entries_.get(i));
     }
@@ -597,30 +622,26 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, logName_);
     }
     if (resource_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getResource());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getResource());
     }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-         : internalGetLabels().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-      labels__ = LabelsDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, labels__);
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+          LabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, labels__);
     }
     for (int i = 0; i < entries_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, entries_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, entries_.get(i));
     }
     if (partialSuccess_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(5, partialSuccess_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, partialSuccess_);
     }
     if (dryRun_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(6, dryRun_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, dryRun_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -630,29 +651,24 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.logging.v2.WriteLogEntriesRequest)) {
       return super.equals(obj);
     }
-    com.google.logging.v2.WriteLogEntriesRequest other = (com.google.logging.v2.WriteLogEntriesRequest) obj;
+    com.google.logging.v2.WriteLogEntriesRequest other =
+        (com.google.logging.v2.WriteLogEntriesRequest) obj;
 
     boolean result = true;
-    result = result && getLogName()
-        .equals(other.getLogName());
+    result = result && getLogName().equals(other.getLogName());
     result = result && (hasResource() == other.hasResource());
     if (hasResource()) {
-      result = result && getResource()
-          .equals(other.getResource());
+      result = result && getResource().equals(other.getResource());
     }
-    result = result && internalGetLabels().equals(
-        other.internalGetLabels());
-    result = result && getEntriesList()
-        .equals(other.getEntriesList());
-    result = result && (getPartialSuccess()
-        == other.getPartialSuccess());
-    result = result && (getDryRun()
-        == other.getDryRun());
+    result = result && internalGetLabels().equals(other.internalGetLabels());
+    result = result && getEntriesList().equals(other.getEntriesList());
+    result = result && (getPartialSuccess() == other.getPartialSuccess());
+    result = result && (getDryRun() == other.getDryRun());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -679,150 +695,155 @@ private static final long serialVersionUID = 0L;
       hash = (53 * hash) + getEntriesList().hashCode();
     }
     hash = (37 * hash) + PARTIAL_SUCCESS_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getPartialSuccess());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPartialSuccess());
     hash = (37 * hash) + DRY_RUN_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getDryRun());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDryRun());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.logging.v2.WriteLogEntriesRequest parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.logging.v2.WriteLogEntriesRequest parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.logging.v2.WriteLogEntriesRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.logging.v2.WriteLogEntriesRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.logging.v2.WriteLogEntriesRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.logging.v2.WriteLogEntriesRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.logging.v2.WriteLogEntriesRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.logging.v2.WriteLogEntriesRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.logging.v2.WriteLogEntriesRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.logging.v2.WriteLogEntriesRequest parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.logging.v2.WriteLogEntriesRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.logging.v2.WriteLogEntriesRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.logging.v2.WriteLogEntriesRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.logging.v2.WriteLogEntriesRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.logging.v2.WriteLogEntriesRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The parameters to WriteLogEntries.
    * </pre>
    *
    * Protobuf type {@code google.logging.v2.WriteLogEntriesRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.logging.v2.WriteLogEntriesRequest)
       com.google.logging.v2.WriteLogEntriesRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.logging.v2.LoggingProto.internal_static_google_logging_v2_WriteLogEntriesRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.logging.v2.LoggingProto
+          .internal_static_google_logging_v2_WriteLogEntriesRequest_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 3:
           return internalGetLabels();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
         case 3:
           return internalGetMutableLabels();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.logging.v2.LoggingProto.internal_static_google_logging_v2_WriteLogEntriesRequest_fieldAccessorTable
+      return com.google.logging.v2.LoggingProto
+          .internal_static_google_logging_v2_WriteLogEntriesRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.logging.v2.WriteLogEntriesRequest.class, com.google.logging.v2.WriteLogEntriesRequest.Builder.class);
+              com.google.logging.v2.WriteLogEntriesRequest.class,
+              com.google.logging.v2.WriteLogEntriesRequest.Builder.class);
     }
 
     // Construct using com.google.logging.v2.WriteLogEntriesRequest.newBuilder()
@@ -830,17 +851,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getEntriesFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -867,9 +888,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.logging.v2.LoggingProto.internal_static_google_logging_v2_WriteLogEntriesRequest_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.logging.v2.LoggingProto
+          .internal_static_google_logging_v2_WriteLogEntriesRequest_descriptor;
     }
 
     @java.lang.Override
@@ -888,7 +909,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.logging.v2.WriteLogEntriesRequest buildPartial() {
-      com.google.logging.v2.WriteLogEntriesRequest result = new com.google.logging.v2.WriteLogEntriesRequest(this);
+      com.google.logging.v2.WriteLogEntriesRequest result =
+          new com.google.logging.v2.WriteLogEntriesRequest(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.logName_ = logName_;
@@ -919,38 +941,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.logging.v2.WriteLogEntriesRequest) {
-        return mergeFrom((com.google.logging.v2.WriteLogEntriesRequest)other);
+        return mergeFrom((com.google.logging.v2.WriteLogEntriesRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -966,8 +989,7 @@ private static final long serialVersionUID = 0L;
       if (other.hasResource()) {
         mergeResource(other.getResource());
       }
-      internalGetMutableLabels().mergeFrom(
-          other.internalGetLabels());
+      internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       if (entriesBuilder_ == null) {
         if (!other.entries_.isEmpty()) {
           if (entries_.isEmpty()) {
@@ -986,9 +1008,10 @@ private static final long serialVersionUID = 0L;
             entriesBuilder_ = null;
             entries_ = other.entries_;
             bitField0_ = (bitField0_ & ~0x00000008);
-            entriesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getEntriesFieldBuilder() : null;
+            entriesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getEntriesFieldBuilder()
+                    : null;
           } else {
             entriesBuilder_.addAllMessages(other.entries_);
           }
@@ -1028,10 +1051,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object logName_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional. A default log resource name that is assigned to all log entries
      * in `entries` that do not specify a value for `log_name`:
@@ -1053,8 +1079,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getLogName() {
       java.lang.Object ref = logName_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         logName_ = s;
         return s;
@@ -1063,6 +1088,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A default log resource name that is assigned to all log entries
      * in `entries` that do not specify a value for `log_name`:
@@ -1081,13 +1108,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string log_name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getLogNameBytes() {
+    public com.google.protobuf.ByteString getLogNameBytes() {
       java.lang.Object ref = logName_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         logName_ = b;
         return b;
       } else {
@@ -1095,6 +1120,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A default log resource name that is assigned to all log entries
      * in `entries` that do not specify a value for `log_name`:
@@ -1113,17 +1140,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string log_name = 1;</code>
      */
-    public Builder setLogName(
-        java.lang.String value) {
+    public Builder setLogName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       logName_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A default log resource name that is assigned to all log entries
      * in `entries` that do not specify a value for `log_name`:
@@ -1143,12 +1171,14 @@ private static final long serialVersionUID = 0L;
      * <code>string log_name = 1;</code>
      */
     public Builder clearLogName() {
-      
+
       logName_ = getDefaultInstance().getLogName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A default log resource name that is assigned to all log entries
      * in `entries` that do not specify a value for `log_name`:
@@ -1167,13 +1197,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string log_name = 1;</code>
      */
-    public Builder setLogNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setLogNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       logName_ = value;
       onChanged();
       return this;
@@ -1181,8 +1210,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.api.MonitoredResource resource_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.api.MonitoredResource, com.google.api.MonitoredResource.Builder, com.google.api.MonitoredResourceOrBuilder> resourceBuilder_;
+            com.google.api.MonitoredResource,
+            com.google.api.MonitoredResource.Builder,
+            com.google.api.MonitoredResourceOrBuilder>
+        resourceBuilder_;
     /**
+     *
+     *
      * <pre>
      * Optional. A default monitored resource object that is assigned to all log
      * entries in `entries` that do not specify a value for `resource`. Example:
@@ -1198,6 +1232,8 @@ private static final long serialVersionUID = 0L;
       return resourceBuilder_ != null || resource_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A default monitored resource object that is assigned to all log
      * entries in `entries` that do not specify a value for `resource`. Example:
@@ -1211,12 +1247,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.api.MonitoredResource getResource() {
       if (resourceBuilder_ == null) {
-        return resource_ == null ? com.google.api.MonitoredResource.getDefaultInstance() : resource_;
+        return resource_ == null
+            ? com.google.api.MonitoredResource.getDefaultInstance()
+            : resource_;
       } else {
         return resourceBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A default monitored resource object that is assigned to all log
      * entries in `entries` that do not specify a value for `resource`. Example:
@@ -1242,6 +1282,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A default monitored resource object that is assigned to all log
      * entries in `entries` that do not specify a value for `resource`. Example:
@@ -1253,8 +1295,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.api.MonitoredResource resource = 2;</code>
      */
-    public Builder setResource(
-        com.google.api.MonitoredResource.Builder builderForValue) {
+    public Builder setResource(com.google.api.MonitoredResource.Builder builderForValue) {
       if (resourceBuilder_ == null) {
         resource_ = builderForValue.build();
         onChanged();
@@ -1265,6 +1306,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A default monitored resource object that is assigned to all log
      * entries in `entries` that do not specify a value for `resource`. Example:
@@ -1280,7 +1323,9 @@ private static final long serialVersionUID = 0L;
       if (resourceBuilder_ == null) {
         if (resource_ != null) {
           resource_ =
-            com.google.api.MonitoredResource.newBuilder(resource_).mergeFrom(value).buildPartial();
+              com.google.api.MonitoredResource.newBuilder(resource_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           resource_ = value;
         }
@@ -1292,6 +1337,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A default monitored resource object that is assigned to all log
      * entries in `entries` that do not specify a value for `resource`. Example:
@@ -1315,6 +1362,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A default monitored resource object that is assigned to all log
      * entries in `entries` that do not specify a value for `resource`. Example:
@@ -1327,11 +1376,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.api.MonitoredResource resource = 2;</code>
      */
     public com.google.api.MonitoredResource.Builder getResourceBuilder() {
-      
+
       onChanged();
       return getResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A default monitored resource object that is assigned to all log
      * entries in `entries` that do not specify a value for `resource`. Example:
@@ -1347,11 +1398,14 @@ private static final long serialVersionUID = 0L;
       if (resourceBuilder_ != null) {
         return resourceBuilder_.getMessageOrBuilder();
       } else {
-        return resource_ == null ?
-            com.google.api.MonitoredResource.getDefaultInstance() : resource_;
+        return resource_ == null
+            ? com.google.api.MonitoredResource.getDefaultInstance()
+            : resource_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A default monitored resource object that is assigned to all log
      * entries in `entries` that do not specify a value for `resource`. Example:
@@ -1364,35 +1418,37 @@ private static final long serialVersionUID = 0L;
      * <code>.google.api.MonitoredResource resource = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.api.MonitoredResource, com.google.api.MonitoredResource.Builder, com.google.api.MonitoredResourceOrBuilder> 
+            com.google.api.MonitoredResource,
+            com.google.api.MonitoredResource.Builder,
+            com.google.api.MonitoredResourceOrBuilder>
         getResourceFieldBuilder() {
       if (resourceBuilder_ == null) {
-        resourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.api.MonitoredResource, com.google.api.MonitoredResource.Builder, com.google.api.MonitoredResourceOrBuilder>(
-                getResource(),
-                getParentForChildren(),
-                isClean());
+        resourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.api.MonitoredResource,
+                com.google.api.MonitoredResource.Builder,
+                com.google.api.MonitoredResourceOrBuilder>(
+                getResource(), getParentForChildren(), isClean());
         resource_ = null;
       }
       return resourceBuilder_;
     }
 
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> labels_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetLabels() {
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
       if (labels_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            LabelsDefaultEntryHolder.defaultEntry);
+        return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       return labels_;
     }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableLabels() {
-      onChanged();;
+        internalGetMutableLabels() {
+      onChanged();
+      ;
       if (labels_ == null) {
-        labels_ = com.google.protobuf.MapField.newMapField(
-            LabelsDefaultEntryHolder.defaultEntry);
+        labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
@@ -1404,6 +1460,8 @@ private static final long serialVersionUID = 0L;
       return internalGetLabels().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Default labels that are added to the `labels` field of all log
      * entries in `entries`. If a log entry already has a label with the same key
@@ -1413,20 +1471,20 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
-
-    public boolean containsLabels(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetLabels().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getLabelsMap()} instead.
-     */
+    /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Default labels that are added to the `labels` field of all log
      * entries in `entries`. If a log entry already has a label with the same key
@@ -1436,11 +1494,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
-
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Default labels that are added to the `labels` field of all log
      * entries in `entries`. If a log entry already has a label with the same key
@@ -1450,16 +1509,17 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
-
     public java.lang.String getLabelsOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetLabels().getMap();
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Default labels that are added to the `labels` field of all log
      * entries in `entries`. If a log entry already has a label with the same key
@@ -1469,12 +1529,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
-
-    public java.lang.String getLabelsOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetLabels().getMap();
+    public java.lang.String getLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -1482,11 +1541,12 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder clearLabels() {
-      internalGetMutableLabels().getMutableMap()
-          .clear();
+      internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Default labels that are added to the `labels` field of all log
      * entries in `entries`. If a log entry already has a label with the same key
@@ -1496,23 +1556,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
-
-    public Builder removeLabels(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableLabels().getMutableMap()
-          .remove(key);
+    public Builder removeLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-    /**
-     * Use alternate mutation accessors instead.
-     */
+    /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String>
-    getMutableLabels() {
+    public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       return internalGetMutableLabels().getMutableMap();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Default labels that are added to the `labels` field of all log
      * entries in `entries`. If a log entry already has a label with the same key
@@ -1522,16 +1580,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
-    public Builder putLabels(
-        java.lang.String key,
-        java.lang.String value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableLabels().getMutableMap()
-          .put(key, value);
+    public Builder putLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableLabels().getMutableMap().put(key, value);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Default labels that are added to the `labels` field of all log
      * entries in `entries`. If a log entry already has a label with the same key
@@ -1541,27 +1602,30 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
-
-    public Builder putAllLabels(
-        java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableLabels().getMutableMap()
-          .putAll(values);
+    public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableLabels().getMutableMap().putAll(values);
       return this;
     }
 
     private java.util.List<com.google.logging.v2.LogEntry> entries_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureEntriesIsMutable() {
       if (!((bitField0_ & 0x00000008) == 0x00000008)) {
         entries_ = new java.util.ArrayList<com.google.logging.v2.LogEntry>(entries_);
         bitField0_ |= 0x00000008;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.logging.v2.LogEntry, com.google.logging.v2.LogEntry.Builder, com.google.logging.v2.LogEntryOrBuilder> entriesBuilder_;
+            com.google.logging.v2.LogEntry,
+            com.google.logging.v2.LogEntry.Builder,
+            com.google.logging.v2.LogEntryOrBuilder>
+        entriesBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Required. The log entries to send to Logging. The order of log
      * entries in this list does not matter. Values supplied in this method's
@@ -1595,6 +1659,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The log entries to send to Logging. The order of log
      * entries in this list does not matter. Values supplied in this method's
@@ -1628,6 +1694,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The log entries to send to Logging. The order of log
      * entries in this list does not matter. Values supplied in this method's
@@ -1661,6 +1729,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The log entries to send to Logging. The order of log
      * entries in this list does not matter. Values supplied in this method's
@@ -1686,8 +1756,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
      */
-    public Builder setEntries(
-        int index, com.google.logging.v2.LogEntry value) {
+    public Builder setEntries(int index, com.google.logging.v2.LogEntry value) {
       if (entriesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1701,6 +1770,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The log entries to send to Logging. The order of log
      * entries in this list does not matter. Values supplied in this method's
@@ -1726,8 +1797,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
      */
-    public Builder setEntries(
-        int index, com.google.logging.v2.LogEntry.Builder builderForValue) {
+    public Builder setEntries(int index, com.google.logging.v2.LogEntry.Builder builderForValue) {
       if (entriesBuilder_ == null) {
         ensureEntriesIsMutable();
         entries_.set(index, builderForValue.build());
@@ -1738,6 +1808,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The log entries to send to Logging. The order of log
      * entries in this list does not matter. Values supplied in this method's
@@ -1777,6 +1849,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The log entries to send to Logging. The order of log
      * entries in this list does not matter. Values supplied in this method's
@@ -1802,8 +1876,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
      */
-    public Builder addEntries(
-        int index, com.google.logging.v2.LogEntry value) {
+    public Builder addEntries(int index, com.google.logging.v2.LogEntry value) {
       if (entriesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1817,6 +1890,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The log entries to send to Logging. The order of log
      * entries in this list does not matter. Values supplied in this method's
@@ -1842,8 +1917,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
      */
-    public Builder addEntries(
-        com.google.logging.v2.LogEntry.Builder builderForValue) {
+    public Builder addEntries(com.google.logging.v2.LogEntry.Builder builderForValue) {
       if (entriesBuilder_ == null) {
         ensureEntriesIsMutable();
         entries_.add(builderForValue.build());
@@ -1854,6 +1928,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The log entries to send to Logging. The order of log
      * entries in this list does not matter. Values supplied in this method's
@@ -1879,8 +1955,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
      */
-    public Builder addEntries(
-        int index, com.google.logging.v2.LogEntry.Builder builderForValue) {
+    public Builder addEntries(int index, com.google.logging.v2.LogEntry.Builder builderForValue) {
       if (entriesBuilder_ == null) {
         ensureEntriesIsMutable();
         entries_.add(index, builderForValue.build());
@@ -1891,6 +1966,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The log entries to send to Logging. The order of log
      * entries in this list does not matter. Values supplied in this method's
@@ -1920,8 +1997,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.logging.v2.LogEntry> values) {
       if (entriesBuilder_ == null) {
         ensureEntriesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, entries_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, entries_);
         onChanged();
       } else {
         entriesBuilder_.addAllMessages(values);
@@ -1929,6 +2005,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The log entries to send to Logging. The order of log
      * entries in this list does not matter. Values supplied in this method's
@@ -1965,6 +2043,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The log entries to send to Logging. The order of log
      * entries in this list does not matter. Values supplied in this method's
@@ -2001,6 +2081,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The log entries to send to Logging. The order of log
      * entries in this list does not matter. Values supplied in this method's
@@ -2026,11 +2108,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
      */
-    public com.google.logging.v2.LogEntry.Builder getEntriesBuilder(
-        int index) {
+    public com.google.logging.v2.LogEntry.Builder getEntriesBuilder(int index) {
       return getEntriesFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Required. The log entries to send to Logging. The order of log
      * entries in this list does not matter. Values supplied in this method's
@@ -2056,14 +2139,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
      */
-    public com.google.logging.v2.LogEntryOrBuilder getEntriesOrBuilder(
-        int index) {
+    public com.google.logging.v2.LogEntryOrBuilder getEntriesOrBuilder(int index) {
       if (entriesBuilder_ == null) {
-        return entries_.get(index);  } else {
+        return entries_.get(index);
+      } else {
         return entriesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The log entries to send to Logging. The order of log
      * entries in this list does not matter. Values supplied in this method's
@@ -2089,8 +2174,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
      */
-    public java.util.List<? extends com.google.logging.v2.LogEntryOrBuilder> 
-         getEntriesOrBuilderList() {
+    public java.util.List<? extends com.google.logging.v2.LogEntryOrBuilder>
+        getEntriesOrBuilderList() {
       if (entriesBuilder_ != null) {
         return entriesBuilder_.getMessageOrBuilderList();
       } else {
@@ -2098,6 +2183,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The log entries to send to Logging. The order of log
      * entries in this list does not matter. Values supplied in this method's
@@ -2124,10 +2211,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
      */
     public com.google.logging.v2.LogEntry.Builder addEntriesBuilder() {
-      return getEntriesFieldBuilder().addBuilder(
-          com.google.logging.v2.LogEntry.getDefaultInstance());
+      return getEntriesFieldBuilder()
+          .addBuilder(com.google.logging.v2.LogEntry.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Required. The log entries to send to Logging. The order of log
      * entries in this list does not matter. Values supplied in this method's
@@ -2153,12 +2242,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
      */
-    public com.google.logging.v2.LogEntry.Builder addEntriesBuilder(
-        int index) {
-      return getEntriesFieldBuilder().addBuilder(
-          index, com.google.logging.v2.LogEntry.getDefaultInstance());
+    public com.google.logging.v2.LogEntry.Builder addEntriesBuilder(int index) {
+      return getEntriesFieldBuilder()
+          .addBuilder(index, com.google.logging.v2.LogEntry.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Required. The log entries to send to Logging. The order of log
      * entries in this list does not matter. Values supplied in this method's
@@ -2184,16 +2274,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
      */
-    public java.util.List<com.google.logging.v2.LogEntry.Builder> 
-         getEntriesBuilderList() {
+    public java.util.List<com.google.logging.v2.LogEntry.Builder> getEntriesBuilderList() {
       return getEntriesFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.logging.v2.LogEntry, com.google.logging.v2.LogEntry.Builder, com.google.logging.v2.LogEntryOrBuilder> 
+            com.google.logging.v2.LogEntry,
+            com.google.logging.v2.LogEntry.Builder,
+            com.google.logging.v2.LogEntryOrBuilder>
         getEntriesFieldBuilder() {
       if (entriesBuilder_ == null) {
-        entriesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.logging.v2.LogEntry, com.google.logging.v2.LogEntry.Builder, com.google.logging.v2.LogEntryOrBuilder>(
+        entriesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.logging.v2.LogEntry,
+                com.google.logging.v2.LogEntry.Builder,
+                com.google.logging.v2.LogEntryOrBuilder>(
                 entries_,
                 ((bitField0_ & 0x00000008) == 0x00000008),
                 getParentForChildren(),
@@ -2203,8 +2298,10 @@ private static final long serialVersionUID = 0L;
       return entriesBuilder_;
     }
 
-    private boolean partialSuccess_ ;
+    private boolean partialSuccess_;
     /**
+     *
+     *
      * <pre>
      * Optional. Whether valid entries should be written even if some other
      * entries fail due to INVALID_ARGUMENT or PERMISSION_DENIED errors. If any
@@ -2219,6 +2316,8 @@ private static final long serialVersionUID = 0L;
       return partialSuccess_;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Whether valid entries should be written even if some other
      * entries fail due to INVALID_ARGUMENT or PERMISSION_DENIED errors. If any
@@ -2230,12 +2329,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool partial_success = 5;</code>
      */
     public Builder setPartialSuccess(boolean value) {
-      
+
       partialSuccess_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Whether valid entries should be written even if some other
      * entries fail due to INVALID_ARGUMENT or PERMISSION_DENIED errors. If any
@@ -2247,14 +2348,16 @@ private static final long serialVersionUID = 0L;
      * <code>bool partial_success = 5;</code>
      */
     public Builder clearPartialSuccess() {
-      
+
       partialSuccess_ = false;
       onChanged();
       return this;
     }
 
-    private boolean dryRun_ ;
+    private boolean dryRun_;
     /**
+     *
+     *
      * <pre>
      * Optional. If true, the request should expect normal response, but the
      * entries won't be persisted nor exported. Useful for checking whether the
@@ -2267,6 +2370,8 @@ private static final long serialVersionUID = 0L;
       return dryRun_;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. If true, the request should expect normal response, but the
      * entries won't be persisted nor exported. Useful for checking whether the
@@ -2276,12 +2381,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool dry_run = 6;</code>
      */
     public Builder setDryRun(boolean value) {
-      
+
       dryRun_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. If true, the request should expect normal response, but the
      * entries won't be persisted nor exported. Useful for checking whether the
@@ -2291,14 +2398,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool dry_run = 6;</code>
      */
     public Builder clearDryRun() {
-      
+
       dryRun_ = false;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -2308,12 +2415,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.logging.v2.WriteLogEntriesRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.logging.v2.WriteLogEntriesRequest)
   private static final com.google.logging.v2.WriteLogEntriesRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.logging.v2.WriteLogEntriesRequest();
   }
@@ -2322,16 +2429,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<WriteLogEntriesRequest>
-      PARSER = new com.google.protobuf.AbstractParser<WriteLogEntriesRequest>() {
-    @java.lang.Override
-    public WriteLogEntriesRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new WriteLogEntriesRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<WriteLogEntriesRequest> PARSER =
+      new com.google.protobuf.AbstractParser<WriteLogEntriesRequest>() {
+        @java.lang.Override
+        public WriteLogEntriesRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new WriteLogEntriesRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<WriteLogEntriesRequest> parser() {
     return PARSER;
@@ -2346,6 +2453,4 @@ private static final long serialVersionUID = 0L;
   public com.google.logging.v2.WriteLogEntriesRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

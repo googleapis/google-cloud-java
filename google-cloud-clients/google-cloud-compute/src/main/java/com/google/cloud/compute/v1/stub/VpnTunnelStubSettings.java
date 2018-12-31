@@ -101,7 +101,8 @@ public class VpnTunnelStubSettings extends StubSettings<VpnTunnelStubSettings> {
           .build();
 
   private final PagedCallSettings<
-          AggregatedListVpnTunnelsHttpRequest, VpnTunnelAggregatedList,
+          AggregatedListVpnTunnelsHttpRequest,
+          VpnTunnelAggregatedList,
           AggregatedListVpnTunnelsPagedResponse>
       aggregatedListVpnTunnelsSettings;
   private final UnaryCallSettings<DeleteVpnTunnelHttpRequest, Operation> deleteVpnTunnelSettings;
@@ -113,7 +114,8 @@ public class VpnTunnelStubSettings extends StubSettings<VpnTunnelStubSettings> {
 
   /** Returns the object with the settings used for calls to aggregatedListVpnTunnels. */
   public PagedCallSettings<
-          AggregatedListVpnTunnelsHttpRequest, VpnTunnelAggregatedList,
+          AggregatedListVpnTunnelsHttpRequest,
+          VpnTunnelAggregatedList,
           AggregatedListVpnTunnelsPagedResponse>
       aggregatedListVpnTunnelsSettings() {
     return aggregatedListVpnTunnelsSettings;
@@ -225,7 +227,8 @@ public class VpnTunnelStubSettings extends StubSettings<VpnTunnelStubSettings> {
           AggregatedListVpnTunnelsHttpRequest, VpnTunnelAggregatedList, VpnTunnelsScopedList>
       AGGREGATED_LIST_VPN_TUNNELS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              AggregatedListVpnTunnelsHttpRequest, VpnTunnelAggregatedList,
+              AggregatedListVpnTunnelsHttpRequest,
+              VpnTunnelAggregatedList,
               VpnTunnelsScopedList>() {
             @Override
             public String emptyToken() {
@@ -261,7 +264,9 @@ public class VpnTunnelStubSettings extends StubSettings<VpnTunnelStubSettings> {
             @Override
             public Iterable<VpnTunnelsScopedList> extractResources(
                 VpnTunnelAggregatedList payload) {
-              return payload.getItemsMap().values();
+              return payload.getItemsMap() != null
+                  ? payload.getItemsMap().values()
+                  : ImmutableList.<VpnTunnelsScopedList>of();
             }
           };
 
@@ -297,16 +302,20 @@ public class VpnTunnelStubSettings extends StubSettings<VpnTunnelStubSettings> {
 
             @Override
             public Iterable<VpnTunnel> extractResources(VpnTunnelList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<VpnTunnel>of();
             }
           };
 
   private static final PagedListResponseFactory<
-          AggregatedListVpnTunnelsHttpRequest, VpnTunnelAggregatedList,
+          AggregatedListVpnTunnelsHttpRequest,
+          VpnTunnelAggregatedList,
           AggregatedListVpnTunnelsPagedResponse>
       AGGREGATED_LIST_VPN_TUNNELS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              AggregatedListVpnTunnelsHttpRequest, VpnTunnelAggregatedList,
+              AggregatedListVpnTunnelsHttpRequest,
+              VpnTunnelAggregatedList,
               AggregatedListVpnTunnelsPagedResponse>() {
             @Override
             public ApiFuture<AggregatedListVpnTunnelsPagedResponse> getFuturePagedResponse(
@@ -316,7 +325,8 @@ public class VpnTunnelStubSettings extends StubSettings<VpnTunnelStubSettings> {
                 ApiCallContext context,
                 ApiFuture<VpnTunnelAggregatedList> futureResponse) {
               PageContext<
-                      AggregatedListVpnTunnelsHttpRequest, VpnTunnelAggregatedList,
+                      AggregatedListVpnTunnelsHttpRequest,
+                      VpnTunnelAggregatedList,
                       VpnTunnelsScopedList>
                   pageContext =
                       PageContext.create(
@@ -347,7 +357,8 @@ public class VpnTunnelStubSettings extends StubSettings<VpnTunnelStubSettings> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final PagedCallSettings.Builder<
-            AggregatedListVpnTunnelsHttpRequest, VpnTunnelAggregatedList,
+            AggregatedListVpnTunnelsHttpRequest,
+            VpnTunnelAggregatedList,
             AggregatedListVpnTunnelsPagedResponse>
         aggregatedListVpnTunnelsSettings;
     private final UnaryCallSettings.Builder<DeleteVpnTunnelHttpRequest, Operation>
@@ -498,7 +509,8 @@ public class VpnTunnelStubSettings extends StubSettings<VpnTunnelStubSettings> {
 
     /** Returns the builder for the settings used for calls to aggregatedListVpnTunnels. */
     public PagedCallSettings.Builder<
-            AggregatedListVpnTunnelsHttpRequest, VpnTunnelAggregatedList,
+            AggregatedListVpnTunnelsHttpRequest,
+            VpnTunnelAggregatedList,
             AggregatedListVpnTunnelsPagedResponse>
         aggregatedListVpnTunnelsSettings() {
       return aggregatedListVpnTunnelsSettings;

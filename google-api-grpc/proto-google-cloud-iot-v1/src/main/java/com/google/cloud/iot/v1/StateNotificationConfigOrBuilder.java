@@ -3,11 +3,14 @@
 
 package com.google.cloud.iot.v1;
 
-public interface StateNotificationConfigOrBuilder extends
+public interface StateNotificationConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.iot.v1.StateNotificationConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A Cloud Pub/Sub topic name. For example,
    * `projects/myProject/topics/deviceEvents`.
@@ -17,6 +20,8 @@ public interface StateNotificationConfigOrBuilder extends
    */
   java.lang.String getPubsubTopicName();
   /**
+   *
+   *
    * <pre>
    * A Cloud Pub/Sub topic name. For example,
    * `projects/myProject/topics/deviceEvents`.
@@ -24,6 +29,5 @@ public interface StateNotificationConfigOrBuilder extends
    *
    * <code>string pubsub_topic_name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getPubsubTopicNameBytes();
+  com.google.protobuf.ByteString getPubsubTopicNameBytes();
 }

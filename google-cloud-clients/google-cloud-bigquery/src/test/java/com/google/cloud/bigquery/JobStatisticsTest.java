@@ -36,7 +36,8 @@ public class JobStatisticsTest {
   private static final TableId DDL_TARGET_TABLE = TableId.of("foo", "bar", "baz");
   private static final Long ESTIMATE_BYTES_PROCESSED = 101L;
   private static final Long NUM_DML_AFFECTED_ROWS = 88L;
-  private static final QueryStatistics.StatementType STATEMENT_TYPE = QueryStatistics.StatementType.SELECT;
+  private static final QueryStatistics.StatementType STATEMENT_TYPE =
+      QueryStatistics.StatementType.SELECT;
   private static final Long TOTAL_BYTES_BILLED = 24L;
   private static final Long TOTAL_BYTES_PROCESSED = 42L;
   private static final Long TOTAL_PARTITION_PROCESSED = 63L;
@@ -45,104 +46,116 @@ public class JobStatisticsTest {
   private static final Long INPUT_FILES = 2L;
   private static final Long OUTPUT_BYTES = 3L;
   private static final Long OUTPUT_ROWS = 4L;
-  private static final List<TableId> REFERENCED_TABLES = ImmutableList.of(
-      TableId.of("foo", "bar", "table1"),
-      TableId.of("foo","bar","table2"));
+  private static final Long BAD_RECORDS = 1L;
+  private static final List<TableId> REFERENCED_TABLES =
+      ImmutableList.of(TableId.of("foo", "bar", "table1"), TableId.of("foo", "bar", "table2"));
   private static final List<Long> FILE_COUNT = ImmutableList.of(1L, 2L, 3L);
   private static final Long CREATION_TIME = 10L;
   private static final Long END_TIME = 20L;
   private static final Long START_TIME = 15L;
-  private static final CopyStatistics COPY_STATISTICS = CopyStatistics.newBuilder()
-      .setCreationTimestamp(CREATION_TIME)
-      .setEndTime(END_TIME)
-      .setStartTime(START_TIME)
-      .build();
-  private static final ExtractStatistics EXTRACT_STATISTICS = ExtractStatistics.newBuilder()
-      .setCreationTimestamp(CREATION_TIME)
-      .setEndTime(END_TIME)
-      .setStartTime(START_TIME)
-      .setDestinationUriFileCounts(FILE_COUNT)
-      .build();
-  private static final LoadStatistics LOAD_STATISTICS = LoadStatistics.newBuilder()
-      .setCreationTimestamp(CREATION_TIME)
-      .setEndTime(END_TIME)
-      .setStartTime(START_TIME)
-      .setInputBytes(INPUT_BYTES)
-      .setInputFiles(INPUT_FILES)
-      .setOutputBytes(OUTPUT_BYTES)
-      .setOutputRows(OUTPUT_ROWS)
-      .build();
-  private static final LoadStatistics LOAD_STATISTICS_INCOMPLETE = LoadStatistics.newBuilder()
-      .setCreationTimestamp(CREATION_TIME)
-      .setEndTime(END_TIME)
-      .setStartTime(START_TIME)
-      .setInputBytes(INPUT_BYTES)
-      .setInputFiles(INPUT_FILES)
-      .build();
+  private static final CopyStatistics COPY_STATISTICS =
+      CopyStatistics.newBuilder()
+          .setCreationTimestamp(CREATION_TIME)
+          .setEndTime(END_TIME)
+          .setStartTime(START_TIME)
+          .build();
+  private static final ExtractStatistics EXTRACT_STATISTICS =
+      ExtractStatistics.newBuilder()
+          .setCreationTimestamp(CREATION_TIME)
+          .setEndTime(END_TIME)
+          .setStartTime(START_TIME)
+          .setDestinationUriFileCounts(FILE_COUNT)
+          .build();
+  private static final LoadStatistics LOAD_STATISTICS =
+      LoadStatistics.newBuilder()
+          .setCreationTimestamp(CREATION_TIME)
+          .setEndTime(END_TIME)
+          .setStartTime(START_TIME)
+          .setInputBytes(INPUT_BYTES)
+          .setInputFiles(INPUT_FILES)
+          .setOutputBytes(OUTPUT_BYTES)
+          .setOutputRows(OUTPUT_ROWS)
+          .setBadRecords(BAD_RECORDS)
+          .build();
+  private static final LoadStatistics LOAD_STATISTICS_INCOMPLETE =
+      LoadStatistics.newBuilder()
+          .setCreationTimestamp(CREATION_TIME)
+          .setEndTime(END_TIME)
+          .setStartTime(START_TIME)
+          .setInputBytes(INPUT_BYTES)
+          .setInputFiles(INPUT_FILES)
+          .setBadRecords(BAD_RECORDS)
+          .build();
   private static final List<String> SUBSTEPS1 = ImmutableList.of("substep1", "substep2");
   private static final List<String> SUBSTEPS2 = ImmutableList.of("substep3", "substep4");
   private static final QueryStep QUERY_STEP1 = new QueryStep("KIND", SUBSTEPS1);
   private static final QueryStep QUERY_STEP2 = new QueryStep("KIND", SUBSTEPS2);
-  private static final QueryStage QUERY_STAGE = QueryStage.newBuilder()
-      .setComputeRatioAvg(1.1)
-      .setComputeRatioMax(2.2)
-      .setGeneratedId(42L)
-      .setName("stage")
-      .setReadRatioAvg(3.3)
-      .setReadRatioMax(4.4)
-      .setRecordsRead(5L)
-      .setRecordsWritten(6L)
-      .setSteps(ImmutableList.of(QUERY_STEP1, QUERY_STEP2))
-      .setWaitRatioAvg(7.7)
-      .setWaitRatioMax(8.8)
-      .setWriteRatioAvg(9.9)
-      .setWriteRatioMax(10.10)
-      .build();
+  private static final QueryStage QUERY_STAGE =
+      QueryStage.newBuilder()
+          .setComputeRatioAvg(1.1)
+          .setComputeRatioMax(2.2)
+          .setGeneratedId(42L)
+          .setName("stage")
+          .setReadRatioAvg(3.3)
+          .setReadRatioMax(4.4)
+          .setRecordsRead(5L)
+          .setRecordsWritten(6L)
+          .setSteps(ImmutableList.of(QUERY_STEP1, QUERY_STEP2))
+          .setWaitRatioAvg(7.7)
+          .setWaitRatioMax(8.8)
+          .setWriteRatioAvg(9.9)
+          .setWriteRatioMax(10.10)
+          .build();
 
-  private static final TimelineSample TIMELINE_SAMPLE1 = TimelineSample.newBuilder()
-      .setElapsedMs(1001L)
-      .setActiveUnits(100L)
-      .setCompletedUnits(200L)
-      .setPendingUnits(50L)
-      .setSlotMillis(12345L)
-      .build();
-  private static final TimelineSample TIMELINE_SAMPLE2 = TimelineSample.newBuilder()
-      .setElapsedMs(2002L)
-      .setActiveUnits(48L)
-      .setCompletedUnits(302L)
-      .setPendingUnits(0L)
-      .setSlotMillis(23456L)
-      .build();
-  private static final List<TimelineSample> TIMELINE = ImmutableList.of(TIMELINE_SAMPLE1, TIMELINE_SAMPLE2);
+  private static final TimelineSample TIMELINE_SAMPLE1 =
+      TimelineSample.newBuilder()
+          .setElapsedMs(1001L)
+          .setActiveUnits(100L)
+          .setCompletedUnits(200L)
+          .setPendingUnits(50L)
+          .setSlotMillis(12345L)
+          .build();
+  private static final TimelineSample TIMELINE_SAMPLE2 =
+      TimelineSample.newBuilder()
+          .setElapsedMs(2002L)
+          .setActiveUnits(48L)
+          .setCompletedUnits(302L)
+          .setPendingUnits(0L)
+          .setSlotMillis(23456L)
+          .build();
+  private static final List<TimelineSample> TIMELINE =
+      ImmutableList.of(TIMELINE_SAMPLE1, TIMELINE_SAMPLE2);
   private static final List<QueryStage> QUERY_PLAN = ImmutableList.of(QUERY_STAGE);
   private static final Schema SCHEMA = Schema.of(Field.of("column", LegacySQLTypeName.DATETIME));
-  private static final QueryStatistics QUERY_STATISTICS = QueryStatistics.newBuilder()
-      .setCreationTimestamp(CREATION_TIME)
-      .setEndTime(END_TIME)
-      .setStartTime(START_TIME)
-      .setBillingTier(BILLING_TIER)
-      .setCacheHit(CACHE_HIT)
-      .setDDLOperationPerformed(DDL_OPERATION_PERFORMED)
-      .setDDLTargetTable(DDL_TARGET_TABLE)
-      .setEstimatedBytesProcessed(ESTIMATE_BYTES_PROCESSED)
-      .setNumDmlAffectedRows(NUM_DML_AFFECTED_ROWS)
-      .setReferenceTables(REFERENCED_TABLES)
-      .setStatementType(STATEMENT_TYPE)
-      .setTotalBytesBilled(TOTAL_BYTES_BILLED)
-      .setTotalBytesProcessed(TOTAL_BYTES_PROCESSED)
-      .setTotalPartitionsProcessed(TOTAL_PARTITION_PROCESSED)
-      .setTotalSlotMs(TOTAL_SLOT_MS)
-      .setQueryPlan(QUERY_PLAN)
-      .setTimeline(TIMELINE)
-      .setSchema(SCHEMA)
-      .build();
-  private static final QueryStatistics QUERY_STATISTICS_INCOMPLETE = QueryStatistics.newBuilder()
-      .setCreationTimestamp(CREATION_TIME)
-      .setEndTime(END_TIME)
-      .setStartTime(START_TIME)
-      .setBillingTier(BILLING_TIER)
-      .setCacheHit(CACHE_HIT)
-      .build();
+  private static final QueryStatistics QUERY_STATISTICS =
+      QueryStatistics.newBuilder()
+          .setCreationTimestamp(CREATION_TIME)
+          .setEndTime(END_TIME)
+          .setStartTime(START_TIME)
+          .setBillingTier(BILLING_TIER)
+          .setCacheHit(CACHE_HIT)
+          .setDDLOperationPerformed(DDL_OPERATION_PERFORMED)
+          .setDDLTargetTable(DDL_TARGET_TABLE)
+          .setEstimatedBytesProcessed(ESTIMATE_BYTES_PROCESSED)
+          .setNumDmlAffectedRows(NUM_DML_AFFECTED_ROWS)
+          .setReferenceTables(REFERENCED_TABLES)
+          .setStatementType(STATEMENT_TYPE)
+          .setTotalBytesBilled(TOTAL_BYTES_BILLED)
+          .setTotalBytesProcessed(TOTAL_BYTES_PROCESSED)
+          .setTotalPartitionsProcessed(TOTAL_PARTITION_PROCESSED)
+          .setTotalSlotMs(TOTAL_SLOT_MS)
+          .setQueryPlan(QUERY_PLAN)
+          .setTimeline(TIMELINE)
+          .setSchema(SCHEMA)
+          .build();
+  private static final QueryStatistics QUERY_STATISTICS_INCOMPLETE =
+      QueryStatistics.newBuilder()
+          .setCreationTimestamp(CREATION_TIME)
+          .setEndTime(END_TIME)
+          .setStartTime(START_TIME)
+          .setBillingTier(BILLING_TIER)
+          .setCacheHit(CACHE_HIT)
+          .build();
 
   @Test
   public void testBuilder() {
@@ -158,6 +171,7 @@ public class JobStatisticsTest {
     assertEquals(INPUT_FILES, LOAD_STATISTICS.getInputFiles());
     assertEquals(OUTPUT_BYTES, LOAD_STATISTICS.getOutputBytes());
     assertEquals(OUTPUT_ROWS, LOAD_STATISTICS.getOutputRows());
+    assertEquals(BAD_RECORDS, LOAD_STATISTICS.getBadRecords());
 
     assertEquals(CREATION_TIME, QUERY_STATISTICS.getCreationTime());
     assertEquals(START_TIME, QUERY_STATISTICS.getStartTime());
@@ -182,6 +196,7 @@ public class JobStatisticsTest {
     assertEquals(END_TIME, LOAD_STATISTICS_INCOMPLETE.getEndTime());
     assertEquals(INPUT_BYTES, LOAD_STATISTICS_INCOMPLETE.getInputBytes());
     assertEquals(INPUT_FILES, LOAD_STATISTICS_INCOMPLETE.getInputFiles());
+    assertEquals(BAD_RECORDS, LOAD_STATISTICS_INCOMPLETE.getBadRecords());
     assertEquals(null, LOAD_STATISTICS_INCOMPLETE.getOutputBytes());
     assertEquals(null, LOAD_STATISTICS_INCOMPLETE.getOutputRows());
 
@@ -204,8 +219,8 @@ public class JobStatisticsTest {
 
   @Test
   public void testToPbAndFromPb() {
-    compareExtractStatistics(EXTRACT_STATISTICS,
-        ExtractStatistics.fromPb(EXTRACT_STATISTICS.toPb()));
+    compareExtractStatistics(
+        EXTRACT_STATISTICS, ExtractStatistics.fromPb(EXTRACT_STATISTICS.toPb()));
     compareLoadStatistics(LOAD_STATISTICS, LoadStatistics.fromPb(LOAD_STATISTICS.toPb()));
     compareQueryStatistics(QUERY_STATISTICS, QueryStatistics.fromPb(QUERY_STATISTICS.toPb()));
     compareStatistics(COPY_STATISTICS, CopyStatistics.fromPb(COPY_STATISTICS.toPb()));

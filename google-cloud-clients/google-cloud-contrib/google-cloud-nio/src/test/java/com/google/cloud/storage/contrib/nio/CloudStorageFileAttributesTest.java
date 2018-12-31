@@ -23,21 +23,17 @@ import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.contrib.nio.testing.LocalStorageHelper;
 import com.google.common.testing.EqualsTester;
 import com.google.common.testing.NullPointerTester;
-
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
-
 import java.io.IOException;
 import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
-/**
- * Unit tests for {@link CloudStorageFileAttributes}.
- */
+/** Unit tests for {@link CloudStorageFileAttributes}. */
 @RunWith(JUnit4.class)
 public class CloudStorageFileAttributesTest {
 

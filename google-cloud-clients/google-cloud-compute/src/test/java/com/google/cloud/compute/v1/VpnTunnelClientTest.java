@@ -90,18 +90,18 @@ public class VpnTunnelClientTest {
   @Test
   @SuppressWarnings("all")
   public void aggregatedListVpnTunnelsTest() {
+    String id = "id3355";
     String kind = "kind3292052";
     String nextPageToken = "";
-    String id = "id3355";
     String selfLink = "selfLink-1691268851";
     VpnTunnelsScopedList itemsItem = VpnTunnelsScopedList.newBuilder().build();
     Map<String, VpnTunnelsScopedList> items = new HashMap<>();
     items.put("items", itemsItem);
     VpnTunnelAggregatedList expectedResponse =
         VpnTunnelAggregatedList.newBuilder()
+            .setId(id)
             .setKind(kind)
             .setNextPageToken(nextPageToken)
-            .setId(id)
             .setSelfLink(selfLink)
             .putAllItems(items)
             .build();
@@ -153,50 +153,50 @@ public class VpnTunnelClientTest {
   @Test
   @SuppressWarnings("all")
   public void deleteVpnTunnelTest() {
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    String targetId = "targetId-815576439";
-    String kind = "kind3292052";
-    String description = "description-1724546052";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String insertTime = "insertTime-103148397";
-    Integer httpErrorStatusCode = 1386087020;
-    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-    String targetLink = "targetLink-2084812312";
-    String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
-    Integer progress = 1001078227;
-    String operationType = "operationType-1432962286";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
-    String id = "id3355";
-    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
-    String user = "user3599307";
+    String creationTimestamp = "creationTimestamp567396278";
+    String description = "description-1724546052";
+    String endTime = "endTime1725551537";
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    Integer httpErrorStatusCode = 1386087020;
+    String id = "id3355";
+    String insertTime = "insertTime-103148397";
+    String kind = "kind3292052";
+    String name = "name3373707";
+    String operationType = "operationType-1432962286";
+    Integer progress = 1001078227;
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String selfLink = "selfLink-1691268851";
+    String startTime = "startTime-1573145462";
     String status = "status-892481550";
+    String statusMessage = "statusMessage-239442758";
+    String targetId = "targetId-815576439";
+    String targetLink = "targetLink-2084812312";
+    String user = "user3599307";
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     Operation expectedResponse =
         Operation.newBuilder()
-            .setHttpErrorMessage(httpErrorMessage)
-            .setTargetId(targetId)
-            .setKind(kind)
-            .setDescription(description)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setInsertTime(insertTime)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setZone(zone.toString())
-            .setTargetLink(targetLink)
-            .setCreationTimestamp(creationTimestamp)
-            .setName(name)
-            .setProgress(progress)
-            .setOperationType(operationType)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
-            .setId(id)
-            .setRegion(region.toString())
             .setClientOperationId(clientOperationId)
-            .setUser(user)
+            .setCreationTimestamp(creationTimestamp)
+            .setDescription(description)
+            .setEndTime(endTime)
+            .setHttpErrorMessage(httpErrorMessage)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setId(id)
+            .setInsertTime(insertTime)
+            .setKind(kind)
+            .setName(name)
+            .setOperationType(operationType)
+            .setProgress(progress)
+            .setRegion(region.toString())
+            .setSelfLink(selfLink)
+            .setStartTime(startTime)
             .setStatus(status)
+            .setStatusMessage(statusMessage)
+            .setTargetId(targetId)
+            .setTargetLink(targetLink)
+            .setUser(user)
+            .setZone(zone.toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -243,40 +243,40 @@ public class VpnTunnelClientTest {
   @Test
   @SuppressWarnings("all")
   public void getVpnTunnelTest() {
-    String sharedSecretHash = "sharedSecretHash935752803";
-    String kind = "kind3292052";
+    String creationTimestamp = "creationTimestamp567396278";
     String description = "description-1724546052";
+    String detailedStatus = "detailedStatus-740240799";
+    String id = "id3355";
     Integer ikeVersion = 1292118044;
-    String selfLink = "selfLink-1691268851";
+    String kind = "kind3292052";
+    String name = "name3373707";
+    String peerIp = "peerIp-690492124";
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     ProjectRegionRouterName router =
         ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
-    String detailedStatus = "detailedStatus-740240799";
-    String peerIp = "peerIp-690492124";
-    String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
-    String id = "id3355";
-    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String selfLink = "selfLink-1691268851";
     String sharedSecret = "sharedSecret-154938422";
+    String sharedSecretHash = "sharedSecretHash935752803";
+    String status = "status-892481550";
     ProjectRegionTargetVpnGatewayName targetVpnGateway =
         ProjectRegionTargetVpnGatewayName.of("[PROJECT]", "[REGION]", "[TARGET_VPN_GATEWAY]");
-    String status = "status-892481550";
     VpnTunnel expectedResponse =
         VpnTunnel.newBuilder()
-            .setSharedSecretHash(sharedSecretHash)
-            .setKind(kind)
-            .setDescription(description)
-            .setIkeVersion(ikeVersion)
-            .setSelfLink(selfLink)
-            .setRouter(router.toString())
-            .setDetailedStatus(detailedStatus)
-            .setPeerIp(peerIp)
             .setCreationTimestamp(creationTimestamp)
-            .setName(name)
+            .setDescription(description)
+            .setDetailedStatus(detailedStatus)
             .setId(id)
+            .setIkeVersion(ikeVersion)
+            .setKind(kind)
+            .setName(name)
+            .setPeerIp(peerIp)
             .setRegion(region.toString())
+            .setRouter(router.toString())
+            .setSelfLink(selfLink)
             .setSharedSecret(sharedSecret)
-            .setTargetVpnGateway(targetVpnGateway.toString())
+            .setSharedSecretHash(sharedSecretHash)
             .setStatus(status)
+            .setTargetVpnGateway(targetVpnGateway.toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -323,50 +323,50 @@ public class VpnTunnelClientTest {
   @Test
   @SuppressWarnings("all")
   public void insertVpnTunnelTest() {
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    String targetId = "targetId-815576439";
-    String kind = "kind3292052";
-    String description = "description-1724546052";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String insertTime = "insertTime-103148397";
-    Integer httpErrorStatusCode = 1386087020;
-    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-    String targetLink = "targetLink-2084812312";
-    String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
-    Integer progress = 1001078227;
-    String operationType = "operationType-1432962286";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
-    String id = "id3355";
-    ProjectRegionName region2 = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
-    String user = "user3599307";
+    String creationTimestamp = "creationTimestamp567396278";
+    String description = "description-1724546052";
+    String endTime = "endTime1725551537";
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    Integer httpErrorStatusCode = 1386087020;
+    String id = "id3355";
+    String insertTime = "insertTime-103148397";
+    String kind = "kind3292052";
+    String name = "name3373707";
+    String operationType = "operationType-1432962286";
+    Integer progress = 1001078227;
+    ProjectRegionName region2 = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String selfLink = "selfLink-1691268851";
+    String startTime = "startTime-1573145462";
     String status = "status-892481550";
+    String statusMessage = "statusMessage-239442758";
+    String targetId = "targetId-815576439";
+    String targetLink = "targetLink-2084812312";
+    String user = "user3599307";
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     Operation expectedResponse =
         Operation.newBuilder()
-            .setHttpErrorMessage(httpErrorMessage)
-            .setTargetId(targetId)
-            .setKind(kind)
-            .setDescription(description)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setInsertTime(insertTime)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setZone(zone.toString())
-            .setTargetLink(targetLink)
-            .setCreationTimestamp(creationTimestamp)
-            .setName(name)
-            .setProgress(progress)
-            .setOperationType(operationType)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
-            .setId(id)
-            .setRegion(region2.toString())
             .setClientOperationId(clientOperationId)
-            .setUser(user)
+            .setCreationTimestamp(creationTimestamp)
+            .setDescription(description)
+            .setEndTime(endTime)
+            .setHttpErrorMessage(httpErrorMessage)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setId(id)
+            .setInsertTime(insertTime)
+            .setKind(kind)
+            .setName(name)
+            .setOperationType(operationType)
+            .setProgress(progress)
+            .setRegion(region2.toString())
+            .setSelfLink(selfLink)
+            .setStartTime(startTime)
             .setStatus(status)
+            .setStatusMessage(statusMessage)
+            .setTargetId(targetId)
+            .setTargetLink(targetLink)
+            .setUser(user)
+            .setZone(zone.toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -413,17 +413,17 @@ public class VpnTunnelClientTest {
   @Test
   @SuppressWarnings("all")
   public void listVpnTunnelsTest() {
+    String id = "id3355";
     String kind = "kind3292052";
     String nextPageToken = "";
-    String id = "id3355";
     String selfLink = "selfLink-1691268851";
     VpnTunnel itemsElement = VpnTunnel.newBuilder().build();
     List<VpnTunnel> items = Arrays.asList(itemsElement);
     VpnTunnelList expectedResponse =
         VpnTunnelList.newBuilder()
+            .setId(id)
             .setKind(kind)
             .setNextPageToken(nextPageToken)
-            .setId(id)
             .setSelfLink(selfLink)
             .addAllItems(items)
             .build();

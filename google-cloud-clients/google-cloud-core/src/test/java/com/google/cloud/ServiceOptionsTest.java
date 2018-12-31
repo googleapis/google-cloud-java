@@ -25,32 +25,29 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.api.core.ApiClock;
-import com.google.api.core.CurrentMillisClock;
-import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.HttpRequest;
+import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.HttpTransport;
-import com.google.api.client.http.LowLevelHttpResponse;
 import com.google.api.client.http.LowLevelHttpRequest;
+import com.google.api.client.http.LowLevelHttpResponse;
 import com.google.api.client.testing.http.HttpTesting;
 import com.google.api.client.testing.http.MockHttpTransport;
 import com.google.api.client.testing.http.MockLowLevelHttpRequest;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
+import com.google.api.core.ApiClock;
+import com.google.api.core.CurrentMillisClock;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.spi.ServiceRpcFactory;
-
+import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.Multimap;
+import com.google.common.io.Files;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.charset.Charset;
 import java.util.Map;
 import java.util.Set;
 import java.util.regex.Pattern;
-
-import com.google.common.collect.ArrayListMultimap;
-import com.google.common.collect.Multimap;
-import com.google.common.io.Files;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -154,8 +151,7 @@ public class ServiceOptionsTest {
       TestServiceOptions.newBuilder().setProjectId("project-id").build();
   private static final TestServiceOptions OPTIONS_COPY = OPTIONS.toBuilder().build();
   private static final String LIBRARY_NAME = "gcloud-java";
-  private static final Pattern APPLICATION_NAME_PATTERN =
-      Pattern.compile(LIBRARY_NAME + "/.*");
+  private static final Pattern APPLICATION_NAME_PATTERN = Pattern.compile(LIBRARY_NAME + "/.*");
 
   @Rule public ExpectedException thrown = ExpectedException.none();
 
@@ -171,7 +167,7 @@ public class ServiceOptionsTest {
     }
   }
 
-  private interface TestService extends Service<TestServiceOptions> {}
+  interface TestService extends Service<TestServiceOptions> {}
 
   private static class TestServiceImpl extends BaseService<TestServiceOptions>
       implements TestService {
@@ -180,7 +176,7 @@ public class ServiceOptionsTest {
     }
   }
 
-  private interface TestServiceFactory extends ServiceFactory<TestService, TestServiceOptions> {}
+  public interface TestServiceFactory extends ServiceFactory<TestService, TestServiceOptions> {}
 
   private static class DefaultTestServiceFactory implements TestServiceFactory {
     private static final TestServiceFactory INSTANCE = new DefaultTestServiceFactory();
@@ -191,8 +187,7 @@ public class ServiceOptionsTest {
     }
   }
 
-  private interface TestServiceRpcFactory
-      extends ServiceRpcFactory<TestServiceOptions> {}
+  public interface TestServiceRpcFactory extends ServiceRpcFactory<TestServiceOptions> {}
 
   private static class DefaultTestServiceRpcFactory implements TestServiceRpcFactory {
     private static final TestServiceRpcFactory INSTANCE = new DefaultTestServiceRpcFactory();
@@ -209,8 +204,7 @@ public class ServiceOptionsTest {
     DefaultTestServiceRpc(TestServiceOptions options) {}
   }
 
-  private static class TestServiceOptions
-      extends ServiceOptions<TestService, TestServiceOptions> {
+  static class TestServiceOptions extends ServiceOptions<TestService, TestServiceOptions> {
     private static class Builder
         extends ServiceOptions.Builder<TestService, TestServiceOptions, Builder> {
       private Builder() {}
@@ -226,12 +220,15 @@ public class ServiceOptionsTest {
     }
 
     private TestServiceOptions(Builder builder) {
-      super(TestServiceFactory.class, TestServiceRpcFactory.class, builder,
+      super(
+          TestServiceFactory.class,
+          TestServiceRpcFactory.class,
+          builder,
           new TestServiceDefaults());
     }
 
-    private static class TestServiceDefaults implements
-        ServiceDefaults<TestService, TestServiceOptions> {
+    private static class TestServiceDefaults
+        implements ServiceDefaults<TestService, TestServiceOptions> {
 
       @Override
       public TestServiceFactory getDefaultServiceFactory() {
@@ -280,8 +277,7 @@ public class ServiceOptionsTest {
     assertSame(TEST_CLOCK, OPTIONS.getClock());
     assertEquals("host", OPTIONS.getHost());
     assertEquals("project-id", OPTIONS.getProjectId());
-    assertSame(ServiceOptions.getNoRetrySettings(),
-        OPTIONS.getRetrySettings());
+    assertSame(ServiceOptions.getNoRetrySettings(), OPTIONS.getRetrySettings());
     assertSame(CurrentMillisClock.getDefaultClock(), DEFAULT_OPTIONS.getClock());
     assertEquals("https://www.googleapis.com", DEFAULT_OPTIONS.getHost());
     assertSame(ServiceOptions.getDefaultRetrySettings(), DEFAULT_OPTIONS.getRetrySettings());
@@ -307,27 +303,28 @@ public class ServiceOptionsTest {
 
   @Test
   public void testBuilderServiceAccount_setsProjectId() {
-    TestServiceOptions options = TestServiceOptions.newBuilder()
-        .setCredentials(credentialsWithProjectId)
-        .build();
+    TestServiceOptions options =
+        TestServiceOptions.newBuilder().setCredentials(credentialsWithProjectId).build();
     assertEquals("someprojectid", options.getProjectId());
   }
 
   @Test
   public void testBuilderServiceAccount_explicitSetProjectIdBefore() {
-    TestServiceOptions options = TestServiceOptions.newBuilder()
-        .setProjectId("override-project-id")
-        .setCredentials(credentialsWithProjectId)
-        .build();
+    TestServiceOptions options =
+        TestServiceOptions.newBuilder()
+            .setProjectId("override-project-id")
+            .setCredentials(credentialsWithProjectId)
+            .build();
     assertEquals("override-project-id", options.getProjectId());
   }
 
   @Test
   public void testBuilderServiceAccount_explicitSetProjectIdAfter() {
-    TestServiceOptions options = TestServiceOptions.newBuilder()
-        .setCredentials(credentialsWithProjectId)
-        .setProjectId("override-project-id")
-        .build();
+    TestServiceOptions options =
+        TestServiceOptions.newBuilder()
+            .setCredentials(credentialsWithProjectId)
+            .setProjectId("override-project-id")
+            .build();
     assertEquals("override-project-id", options.getProjectId());
   }
 
@@ -374,7 +371,8 @@ public class ServiceOptionsTest {
     credentialsFile.deleteOnExit();
     Files.write("{\"project_id\":\"my-project-id\"}".getBytes(), credentialsFile);
 
-    assertEquals("my-project-id", ServiceOptions.getServiceAccountProjectId(credentialsFile.getPath()));
+    assertEquals(
+        "my-project-id", ServiceOptions.getServiceAccountProjectId(credentialsFile.getPath()));
   }
 
   @Test
@@ -402,29 +400,32 @@ public class ServiceOptionsTest {
   }
 
   @Test
-  public void testResponseHeaderDoesNotContainMetaDataFlavor() throws Exception {  
+  public void testResponseHeaderDoesNotContainMetaDataFlavor() throws Exception {
     Multimap<String, String> headers = ArrayListMultimap.create();
     HttpResponse httpResponse = createHttpResponseWithHeader(headers);
-    assertThat(ServiceOptions.headerContainsMetadataFlavor(httpResponse)).isFalse(); 
+    assertThat(ServiceOptions.headerContainsMetadataFlavor(httpResponse)).isFalse();
   }
 
-  private HttpResponse createHttpResponseWithHeader(final Multimap<String, String> headers) throws Exception {
-    HttpTransport mockHttpTransport = new MockHttpTransport() {
-      @Override
-      public LowLevelHttpRequest buildRequest(String method, String url) throws IOException {
-        return new MockLowLevelHttpRequest() {
+  private HttpResponse createHttpResponseWithHeader(final Multimap<String, String> headers)
+      throws Exception {
+    HttpTransport mockHttpTransport =
+        new MockHttpTransport() {
           @Override
-          public LowLevelHttpResponse execute() throws IOException {
-            MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
-            for (Map.Entry<String, String> entry : headers.entries()) {
-              response.addHeader(entry.getKey(), entry.getValue());
-            }            
-            return response;
+          public LowLevelHttpRequest buildRequest(String method, String url) throws IOException {
+            return new MockLowLevelHttpRequest() {
+              @Override
+              public LowLevelHttpResponse execute() throws IOException {
+                MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
+                for (Map.Entry<String, String> entry : headers.entries()) {
+                  response.addHeader(entry.getKey(), entry.getValue());
+                }
+                return response;
+              }
+            };
           }
         };
-      }
-    };
-    HttpRequest request = mockHttpTransport.createRequestFactory().buildGetRequest(HttpTesting.SIMPLE_GENERIC_URL);
+    HttpRequest request =
+        mockHttpTransport.createRequestFactory().buildGetRequest(HttpTesting.SIMPLE_GENERIC_URL);
     return request.execute();
   }
 }

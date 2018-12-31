@@ -3,11 +3,14 @@
 
 package com.google.cloud.videointelligence.v1p2beta1;
 
-public interface ShotChangeDetectionConfigOrBuilder extends
+public interface ShotChangeDetectionConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.videointelligence.v1p2beta1.ShotChangeDetectionConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Model to use for shot change detection.
    * Supported values: "builtin/stable" (the default if unset) and
@@ -18,6 +21,8 @@ public interface ShotChangeDetectionConfigOrBuilder extends
    */
   java.lang.String getModel();
   /**
+   *
+   *
    * <pre>
    * Model to use for shot change detection.
    * Supported values: "builtin/stable" (the default if unset) and
@@ -26,6 +31,5 @@ public interface ShotChangeDetectionConfigOrBuilder extends
    *
    * <code>string model = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getModelBytes();
+  com.google.protobuf.ByteString getModelBytes();
 }

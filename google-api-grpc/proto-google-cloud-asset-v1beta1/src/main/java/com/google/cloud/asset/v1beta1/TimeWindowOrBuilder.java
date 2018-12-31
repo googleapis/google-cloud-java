@@ -3,11 +3,14 @@
 
 package com.google.cloud.asset.v1beta1;
 
-public interface TimeWindowOrBuilder extends
+public interface TimeWindowOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.asset.v1beta1.TimeWindow)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Start time of the time window (inclusive).
    * </pre>
@@ -16,6 +19,8 @@ public interface TimeWindowOrBuilder extends
    */
   boolean hasStartTime();
   /**
+   *
+   *
    * <pre>
    * Start time of the time window (inclusive).
    * </pre>
@@ -24,6 +29,8 @@ public interface TimeWindowOrBuilder extends
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
+   *
+   *
    * <pre>
    * Start time of the time window (inclusive).
    * </pre>
@@ -33,6 +40,8 @@ public interface TimeWindowOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * End time of the time window (exclusive).
    * Current timestamp if not specified.
@@ -42,6 +51,8 @@ public interface TimeWindowOrBuilder extends
    */
   boolean hasEndTime();
   /**
+   *
+   *
    * <pre>
    * End time of the time window (exclusive).
    * Current timestamp if not specified.
@@ -51,6 +62,8 @@ public interface TimeWindowOrBuilder extends
    */
   com.google.protobuf.Timestamp getEndTime();
   /**
+   *
+   *
    * <pre>
    * End time of the time window (exclusive).
    * Current timestamp if not specified.

@@ -16,8 +16,15 @@
 
 package com.google.cloud.storage.contrib.nio;
 
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
+import java.net.URI;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -25,17 +32,7 @@ import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-import java.net.URI;
-
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.never;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-
-/**
- * Unit tests for {@link CloudStorageFileSystemProvider} late initialization.
- */
+/** Unit tests for {@link CloudStorageFileSystemProvider} late initialization. */
 @RunWith(JUnit4.class)
 public class CloudStorageLateInitializationTest {
 
@@ -72,5 +69,4 @@ public class CloudStorageLateInitializationTest {
     provider.getFileSystem(URI.create("gs://bucket2"));
     verify(mockOptions, times(1)).getService();
   }
-
 }

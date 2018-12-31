@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface DeidentifyTemplateOrBuilder extends
+public interface DeidentifyTemplateOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.DeidentifyTemplate)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The template name. Output only.
    * The template will have one of the following formats:
@@ -19,6 +22,8 @@ public interface DeidentifyTemplateOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The template name. Output only.
    * The template will have one of the following formats:
@@ -28,10 +33,11 @@ public interface DeidentifyTemplateOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Display name (max 256 chars).
    * </pre>
@@ -40,16 +46,19 @@ public interface DeidentifyTemplateOrBuilder extends
    */
   java.lang.String getDisplayName();
   /**
+   *
+   *
    * <pre>
    * Display name (max 256 chars).
    * </pre>
    *
    * <code>string display_name = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getDisplayNameBytes();
+  com.google.protobuf.ByteString getDisplayNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Short description (max 256 chars).
    * </pre>
@@ -58,16 +67,19 @@ public interface DeidentifyTemplateOrBuilder extends
    */
   java.lang.String getDescription();
   /**
+   *
+   *
    * <pre>
    * Short description (max 256 chars).
    * </pre>
    *
    * <code>string description = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getDescriptionBytes();
+  com.google.protobuf.ByteString getDescriptionBytes();
 
   /**
+   *
+   *
    * <pre>
    * The creation timestamp of a inspectTemplate, output only field.
    * </pre>
@@ -76,6 +88,8 @@ public interface DeidentifyTemplateOrBuilder extends
    */
   boolean hasCreateTime();
   /**
+   *
+   *
    * <pre>
    * The creation timestamp of a inspectTemplate, output only field.
    * </pre>
@@ -84,6 +98,8 @@ public interface DeidentifyTemplateOrBuilder extends
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
+   *
+   *
    * <pre>
    * The creation timestamp of a inspectTemplate, output only field.
    * </pre>
@@ -93,6 +109,8 @@ public interface DeidentifyTemplateOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The last update timestamp of a inspectTemplate, output only field.
    * </pre>
@@ -101,6 +119,8 @@ public interface DeidentifyTemplateOrBuilder extends
    */
   boolean hasUpdateTime();
   /**
+   *
+   *
    * <pre>
    * The last update timestamp of a inspectTemplate, output only field.
    * </pre>
@@ -109,6 +129,8 @@ public interface DeidentifyTemplateOrBuilder extends
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
+   *
+   *
    * <pre>
    * The last update timestamp of a inspectTemplate, output only field.
    * </pre>
@@ -118,6 +140,8 @@ public interface DeidentifyTemplateOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * ///////////// // The core content of the template  // ///////////////
    * </pre>
@@ -126,6 +150,8 @@ public interface DeidentifyTemplateOrBuilder extends
    */
   boolean hasDeidentifyConfig();
   /**
+   *
+   *
    * <pre>
    * ///////////// // The core content of the template  // ///////////////
    * </pre>
@@ -134,6 +160,8 @@ public interface DeidentifyTemplateOrBuilder extends
    */
   com.google.privacy.dlp.v2.DeidentifyConfig getDeidentifyConfig();
   /**
+   *
+   *
    * <pre>
    * ///////////// // The core content of the template  // ///////////////
    * </pre>

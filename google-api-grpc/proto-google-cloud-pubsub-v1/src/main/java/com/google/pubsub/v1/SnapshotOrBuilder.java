@@ -3,11 +3,14 @@
 
 package com.google.pubsub.v1;
 
-public interface SnapshotOrBuilder extends
+public interface SnapshotOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.pubsub.v1.Snapshot)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The name of the snapshot.
    * </pre>
@@ -16,16 +19,19 @@ public interface SnapshotOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The name of the snapshot.
    * </pre>
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The name of the topic from which this snapshot is retaining messages.
    * </pre>
@@ -34,16 +40,19 @@ public interface SnapshotOrBuilder extends
    */
   java.lang.String getTopic();
   /**
+   *
+   *
    * <pre>
    * The name of the topic from which this snapshot is retaining messages.
    * </pre>
    *
    * <code>string topic = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getTopicBytes();
+  com.google.protobuf.ByteString getTopicBytes();
 
   /**
+   *
+   *
    * <pre>
    * The snapshot is guaranteed to exist up until this time.
    * A newly-created snapshot expires no later than 7 days from the time of its
@@ -61,6 +70,8 @@ public interface SnapshotOrBuilder extends
    */
   boolean hasExpireTime();
   /**
+   *
+   *
    * <pre>
    * The snapshot is guaranteed to exist up until this time.
    * A newly-created snapshot expires no later than 7 days from the time of its
@@ -78,6 +89,8 @@ public interface SnapshotOrBuilder extends
    */
   com.google.protobuf.Timestamp getExpireTime();
   /**
+   *
+   *
    * <pre>
    * The snapshot is guaranteed to exist up until this time.
    * A newly-created snapshot expires no later than 7 days from the time of its
@@ -96,6 +109,8 @@ public interface SnapshotOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
@@ -104,48 +119,46 @@ public interface SnapshotOrBuilder extends
    */
   int getLabelsCount();
   /**
+   *
+   *
    * <pre>
    * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
-  boolean containsLabels(
-      java.lang.String key);
-  /**
-   * Use {@link #getLabelsMap()} instead.
-   */
+  boolean containsLabels(java.lang.String key);
+  /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabels();
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
   /**
+   *
+   *
    * <pre>
    * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabelsMap();
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
+   *
+   *
    * <pre>
    * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
-
-  java.lang.String getLabelsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
-
-  java.lang.String getLabelsOrThrow(
-      java.lang.String key);
+  java.lang.String getLabelsOrThrow(java.lang.String key);
 }

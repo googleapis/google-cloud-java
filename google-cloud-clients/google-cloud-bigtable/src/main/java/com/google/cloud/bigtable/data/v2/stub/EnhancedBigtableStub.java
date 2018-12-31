@@ -74,6 +74,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
   private final RequestContext requestContext;
 
   private final ServerStreamingCallable<Query, Row> readRowsCallable;
+  private final UnaryCallable<Query, Row> readRowCallable;
   private final UnaryCallable<String, List<KeyOffset>> sampleRowKeysCallable;
   private final UnaryCallable<RowMutation, Void> mutateRowCallable;
   private final UnaryCallable<BulkMutation, Void> bulkMutateRowsCallable;
@@ -151,6 +152,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
         RequestContext.create(settings.getInstanceName(), settings.getAppProfileId());
 
     readRowsCallable = createReadRowsCallable(new DefaultRowAdapter());
+    readRowCallable = createReadRowCallable(new DefaultRowAdapter());
     sampleRowKeysCallable = createSampleRowKeysCallable();
     mutateRowCallable = createMutateRowCallable();
     bulkMutateRowsCallable = createBulkMutateRowsCallable();
@@ -160,6 +162,48 @@ public class EnhancedBigtableStub implements AutoCloseable {
   }
 
   // <editor-fold desc="Callable creators">
+
+  /**
+   * Creates a callable chain to handle streaming ReadRows RPCs. The chain will:
+   *
+   * <ul>
+   *   <li>Convert a {@link Query} into a {@link com.google.bigtable.v2.ReadRowsRequest} and
+   *       dispatch the RPC.
+   *   <li>Upon receiving the response stream, it will merge the {@link
+   *       com.google.bigtable.v2.ReadRowsResponse.CellChunk}s in logical rows. The actual row
+   *       implementation can be configured in by the {@code rowAdapter} parameter.
+   *   <li>Retry/resume on failure.
+   *   <li>Filter out marker rows.
+   * </ul>
+   */
+  public <RowT> ServerStreamingCallable<Query, RowT> createReadRowsCallable(
+      RowAdapter<RowT> rowAdapter) {
+    return createReadRowsCallable(settings.readRowsSettings(), rowAdapter);
+  }
+
+  /**
+   * Creates a callable chain to handle point ReadRows RPCs. The chain will:
+   *
+   * <ul>
+   *   <li>Convert a {@link Query} into a {@link com.google.bigtable.v2.ReadRowsRequest} and
+   *       dispatch the RPC.
+   *   <li>Upon receiving the response stream, it will merge the {@link
+   *       com.google.bigtable.v2.ReadRowsResponse.CellChunk}s in logical rows. The actual row
+   *       implementation can be configured in by the {@code rowAdapter} parameter.
+   *   <li>Retry/resume on failure.
+   *   <li>Filter out marker rows.
+   * </ul>
+   */
+  public <RowT> UnaryCallable<Query, RowT> createReadRowCallable(RowAdapter<RowT> rowAdapter) {
+    return createReadRowsCallable(
+            ServerStreamingCallSettings.<Query, Row>newBuilder()
+                .setRetryableCodes(settings.readRowSettings().getRetryableCodes())
+                .setRetrySettings(settings.readRowSettings().getRetrySettings())
+                .setIdleTimeout(settings.readRowSettings().getRetrySettings().getTotalTimeout())
+                .build(),
+            rowAdapter)
+        .first();
+  }
 
   /**
    * Creates a callable chain to handle ReadRows RPCs. The chain will:
@@ -174,8 +218,8 @@ public class EnhancedBigtableStub implements AutoCloseable {
    *   <li>Filter out marker rows.
    * </ul>
    */
-  public <RowT> ServerStreamingCallable<Query, RowT> createReadRowsCallable(
-      RowAdapter<RowT> rowAdapter) {
+  private <RowT> ServerStreamingCallable<Query, RowT> createReadRowsCallable(
+      ServerStreamingCallSettings<Query, Row> readRowsSettings, RowAdapter<RowT> rowAdapter) {
 
     ServerStreamingCallable<ReadRowsRequest, RowT> merging =
         new RowMergingCallable<>(stub.readRowsCallable(), rowAdapter);
@@ -185,9 +229,9 @@ public class EnhancedBigtableStub implements AutoCloseable {
     ServerStreamingCallSettings<ReadRowsRequest, RowT> innerSettings =
         ServerStreamingCallSettings.<ReadRowsRequest, RowT>newBuilder()
             .setResumptionStrategy(new ReadRowsResumptionStrategy<>(rowAdapter))
-            .setRetryableCodes(settings.readRowsSettings().getRetryableCodes())
-            .setRetrySettings(settings.readRowsSettings().getRetrySettings())
-            .setIdleTimeout(settings.readRowsSettings().getIdleTimeout())
+            .setRetryableCodes(readRowsSettings.getRetryableCodes())
+            .setRetrySettings(readRowsSettings.getRetrySettings())
+            .setIdleTimeout(readRowsSettings.getIdleTimeout())
             .build();
 
     // Retry logic is split into 2 parts to workaround a rare edge case described in
@@ -356,8 +400,14 @@ public class EnhancedBigtableStub implements AutoCloseable {
   // </editor-fold>
 
   // <editor-fold desc="Callable accessors">
+  /** Returns a streaming read rows callable */
   public ServerStreamingCallable<Query, Row> readRowsCallable() {
     return readRowsCallable;
+  }
+
+  /** Return a point read callable */
+  public UnaryCallable<Query, Row> readRowCallable() {
+    return readRowCallable;
   }
 
   public UnaryCallable<String, List<KeyOffset>> sampleRowKeysCallable() {

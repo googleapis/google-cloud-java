@@ -39,7 +39,6 @@ public class RoleTest {
     assertThat(Role.of(customRole).getValue()).isEqualTo(customRole);
   }
 
-
   @Test
   public void testViewer() {
     assertThat(Role.viewer().getValue()).isEqualTo("roles/viewer");

@@ -28,11 +28,16 @@ import com.google.cloud.compute.v1.Disk;
 import com.google.cloud.compute.v1.DiskAggregatedList;
 import com.google.cloud.compute.v1.DiskList;
 import com.google.cloud.compute.v1.GetDiskHttpRequest;
+import com.google.cloud.compute.v1.GetIamPolicyDiskHttpRequest;
 import com.google.cloud.compute.v1.InsertDiskHttpRequest;
 import com.google.cloud.compute.v1.ListDisksHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.ResizeDiskHttpRequest;
+import com.google.cloud.compute.v1.SetIamPolicyDiskHttpRequest;
 import com.google.cloud.compute.v1.SetLabelsDiskHttpRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsDiskHttpRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -73,6 +78,11 @@ public abstract class DiskStub implements BackgroundResource {
   }
 
   @BetaApi
+  public UnaryCallable<GetIamPolicyDiskHttpRequest, Policy> getIamPolicyDiskCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyDiskCallable()");
+  }
+
+  @BetaApi
   public UnaryCallable<InsertDiskHttpRequest, Operation> insertDiskCallable() {
     throw new UnsupportedOperationException("Not implemented: insertDiskCallable()");
   }
@@ -93,8 +103,19 @@ public abstract class DiskStub implements BackgroundResource {
   }
 
   @BetaApi
+  public UnaryCallable<SetIamPolicyDiskHttpRequest, Policy> setIamPolicyDiskCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyDiskCallable()");
+  }
+
+  @BetaApi
   public UnaryCallable<SetLabelsDiskHttpRequest, Operation> setLabelsDiskCallable() {
     throw new UnsupportedOperationException("Not implemented: setLabelsDiskCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<TestIamPermissionsDiskHttpRequest, TestPermissionsResponse>
+      testIamPermissionsDiskCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsDiskCallable()");
   }
 
   @Override

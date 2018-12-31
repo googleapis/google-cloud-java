@@ -3,11 +3,14 @@
 
 package com.google.devtools.clouderrorreporting.v1beta1;
 
-public interface TimedCountOrBuilder extends
+public interface TimedCountOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.devtools.clouderrorreporting.v1beta1.TimedCount)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Approximate number of occurrences in the given time period.
    * </pre>
@@ -17,6 +20,8 @@ public interface TimedCountOrBuilder extends
   long getCount();
 
   /**
+   *
+   *
    * <pre>
    * Start of the time period to which `count` refers (included).
    * </pre>
@@ -25,6 +30,8 @@ public interface TimedCountOrBuilder extends
    */
   boolean hasStartTime();
   /**
+   *
+   *
    * <pre>
    * Start of the time period to which `count` refers (included).
    * </pre>
@@ -33,6 +40,8 @@ public interface TimedCountOrBuilder extends
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
+   *
+   *
    * <pre>
    * Start of the time period to which `count` refers (included).
    * </pre>
@@ -42,6 +51,8 @@ public interface TimedCountOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * End of the time period to which `count` refers (excluded).
    * </pre>
@@ -50,6 +61,8 @@ public interface TimedCountOrBuilder extends
    */
   boolean hasEndTime();
   /**
+   *
+   *
    * <pre>
    * End of the time period to which `count` refers (excluded).
    * </pre>
@@ -58,6 +71,8 @@ public interface TimedCountOrBuilder extends
    */
   com.google.protobuf.Timestamp getEndTime();
   /**
+   *
+   *
    * <pre>
    * End of the time period to which `count` refers (excluded).
    * </pre>

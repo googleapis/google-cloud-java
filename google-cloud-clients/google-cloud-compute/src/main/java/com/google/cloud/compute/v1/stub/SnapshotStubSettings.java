@@ -40,12 +40,17 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteSnapshotHttpRequest;
+import com.google.cloud.compute.v1.GetIamPolicySnapshotHttpRequest;
 import com.google.cloud.compute.v1.GetSnapshotHttpRequest;
 import com.google.cloud.compute.v1.ListSnapshotsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Policy;
+import com.google.cloud.compute.v1.SetIamPolicySnapshotHttpRequest;
 import com.google.cloud.compute.v1.SetLabelsSnapshotHttpRequest;
 import com.google.cloud.compute.v1.Snapshot;
 import com.google.cloud.compute.v1.SnapshotList;
+import com.google.cloud.compute.v1.TestIamPermissionsSnapshotHttpRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -98,11 +103,17 @@ public class SnapshotStubSettings extends StubSettings<SnapshotStubSettings> {
 
   private final UnaryCallSettings<DeleteSnapshotHttpRequest, Operation> deleteSnapshotSettings;
   private final UnaryCallSettings<GetSnapshotHttpRequest, Snapshot> getSnapshotSettings;
+  private final UnaryCallSettings<GetIamPolicySnapshotHttpRequest, Policy>
+      getIamPolicySnapshotSettings;
   private final PagedCallSettings<
           ListSnapshotsHttpRequest, SnapshotList, ListSnapshotsPagedResponse>
       listSnapshotsSettings;
+  private final UnaryCallSettings<SetIamPolicySnapshotHttpRequest, Policy>
+      setIamPolicySnapshotSettings;
   private final UnaryCallSettings<SetLabelsSnapshotHttpRequest, Operation>
       setLabelsSnapshotSettings;
+  private final UnaryCallSettings<TestIamPermissionsSnapshotHttpRequest, TestPermissionsResponse>
+      testIamPermissionsSnapshotSettings;
 
   /** Returns the object with the settings used for calls to deleteSnapshot. */
   public UnaryCallSettings<DeleteSnapshotHttpRequest, Operation> deleteSnapshotSettings() {
@@ -114,15 +125,31 @@ public class SnapshotStubSettings extends StubSettings<SnapshotStubSettings> {
     return getSnapshotSettings;
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicySnapshot. */
+  public UnaryCallSettings<GetIamPolicySnapshotHttpRequest, Policy> getIamPolicySnapshotSettings() {
+    return getIamPolicySnapshotSettings;
+  }
+
   /** Returns the object with the settings used for calls to listSnapshots. */
   public PagedCallSettings<ListSnapshotsHttpRequest, SnapshotList, ListSnapshotsPagedResponse>
       listSnapshotsSettings() {
     return listSnapshotsSettings;
   }
 
+  /** Returns the object with the settings used for calls to setIamPolicySnapshot. */
+  public UnaryCallSettings<SetIamPolicySnapshotHttpRequest, Policy> setIamPolicySnapshotSettings() {
+    return setIamPolicySnapshotSettings;
+  }
+
   /** Returns the object with the settings used for calls to setLabelsSnapshot. */
   public UnaryCallSettings<SetLabelsSnapshotHttpRequest, Operation> setLabelsSnapshotSettings() {
     return setLabelsSnapshotSettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissionsSnapshot. */
+  public UnaryCallSettings<TestIamPermissionsSnapshotHttpRequest, TestPermissionsResponse>
+      testIamPermissionsSnapshotSettings() {
+    return testIamPermissionsSnapshotSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -201,8 +228,12 @@ public class SnapshotStubSettings extends StubSettings<SnapshotStubSettings> {
 
     deleteSnapshotSettings = settingsBuilder.deleteSnapshotSettings().build();
     getSnapshotSettings = settingsBuilder.getSnapshotSettings().build();
+    getIamPolicySnapshotSettings = settingsBuilder.getIamPolicySnapshotSettings().build();
     listSnapshotsSettings = settingsBuilder.listSnapshotsSettings().build();
+    setIamPolicySnapshotSettings = settingsBuilder.setIamPolicySnapshotSettings().build();
     setLabelsSnapshotSettings = settingsBuilder.setLabelsSnapshotSettings().build();
+    testIamPermissionsSnapshotSettings =
+        settingsBuilder.testIamPermissionsSnapshotSettings().build();
   }
 
   private static final PagedListDescriptor<ListSnapshotsHttpRequest, SnapshotList, Snapshot>
@@ -237,7 +268,9 @@ public class SnapshotStubSettings extends StubSettings<SnapshotStubSettings> {
 
             @Override
             public Iterable<Snapshot> extractResources(SnapshotList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<Snapshot>of();
             }
           };
 
@@ -265,11 +298,18 @@ public class SnapshotStubSettings extends StubSettings<SnapshotStubSettings> {
     private final UnaryCallSettings.Builder<DeleteSnapshotHttpRequest, Operation>
         deleteSnapshotSettings;
     private final UnaryCallSettings.Builder<GetSnapshotHttpRequest, Snapshot> getSnapshotSettings;
+    private final UnaryCallSettings.Builder<GetIamPolicySnapshotHttpRequest, Policy>
+        getIamPolicySnapshotSettings;
     private final PagedCallSettings.Builder<
             ListSnapshotsHttpRequest, SnapshotList, ListSnapshotsPagedResponse>
         listSnapshotsSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicySnapshotHttpRequest, Policy>
+        setIamPolicySnapshotSettings;
     private final UnaryCallSettings.Builder<SetLabelsSnapshotHttpRequest, Operation>
         setLabelsSnapshotSettings;
+    private final UnaryCallSettings.Builder<
+            TestIamPermissionsSnapshotHttpRequest, TestPermissionsResponse>
+        testIamPermissionsSnapshotSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -316,16 +356,25 @@ public class SnapshotStubSettings extends StubSettings<SnapshotStubSettings> {
 
       getSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      getIamPolicySnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       listSnapshotsSettings = PagedCallSettings.newBuilder(LIST_SNAPSHOTS_PAGE_STR_FACT);
 
+      setIamPolicySnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       setLabelsSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      testIamPermissionsSnapshotSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               deleteSnapshotSettings,
               getSnapshotSettings,
+              getIamPolicySnapshotSettings,
               listSnapshotsSettings,
-              setLabelsSnapshotSettings);
+              setIamPolicySnapshotSettings,
+              setLabelsSnapshotSettings,
+              testIamPermissionsSnapshotSettings);
 
       initDefaults(this);
     }
@@ -352,12 +401,27 @@ public class SnapshotStubSettings extends StubSettings<SnapshotStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .getIamPolicySnapshotSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .listSnapshotsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .setIamPolicySnapshotSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .setLabelsSnapshotSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .testIamPermissionsSnapshotSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -369,15 +433,21 @@ public class SnapshotStubSettings extends StubSettings<SnapshotStubSettings> {
 
       deleteSnapshotSettings = settings.deleteSnapshotSettings.toBuilder();
       getSnapshotSettings = settings.getSnapshotSettings.toBuilder();
+      getIamPolicySnapshotSettings = settings.getIamPolicySnapshotSettings.toBuilder();
       listSnapshotsSettings = settings.listSnapshotsSettings.toBuilder();
+      setIamPolicySnapshotSettings = settings.setIamPolicySnapshotSettings.toBuilder();
       setLabelsSnapshotSettings = settings.setLabelsSnapshotSettings.toBuilder();
+      testIamPermissionsSnapshotSettings = settings.testIamPermissionsSnapshotSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               deleteSnapshotSettings,
               getSnapshotSettings,
+              getIamPolicySnapshotSettings,
               listSnapshotsSettings,
-              setLabelsSnapshotSettings);
+              setIamPolicySnapshotSettings,
+              setLabelsSnapshotSettings,
+              testIamPermissionsSnapshotSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -407,6 +477,12 @@ public class SnapshotStubSettings extends StubSettings<SnapshotStubSettings> {
       return getSnapshotSettings;
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicySnapshot. */
+    public UnaryCallSettings.Builder<GetIamPolicySnapshotHttpRequest, Policy>
+        getIamPolicySnapshotSettings() {
+      return getIamPolicySnapshotSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listSnapshots. */
     public PagedCallSettings.Builder<
             ListSnapshotsHttpRequest, SnapshotList, ListSnapshotsPagedResponse>
@@ -414,10 +490,22 @@ public class SnapshotStubSettings extends StubSettings<SnapshotStubSettings> {
       return listSnapshotsSettings;
     }
 
+    /** Returns the builder for the settings used for calls to setIamPolicySnapshot. */
+    public UnaryCallSettings.Builder<SetIamPolicySnapshotHttpRequest, Policy>
+        setIamPolicySnapshotSettings() {
+      return setIamPolicySnapshotSettings;
+    }
+
     /** Returns the builder for the settings used for calls to setLabelsSnapshot. */
     public UnaryCallSettings.Builder<SetLabelsSnapshotHttpRequest, Operation>
         setLabelsSnapshotSettings() {
       return setLabelsSnapshotSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissionsSnapshot. */
+    public UnaryCallSettings.Builder<TestIamPermissionsSnapshotHttpRequest, TestPermissionsResponse>
+        testIamPermissionsSnapshotSettings() {
+      return testIamPermissionsSnapshotSettings;
     }
 
     @Override

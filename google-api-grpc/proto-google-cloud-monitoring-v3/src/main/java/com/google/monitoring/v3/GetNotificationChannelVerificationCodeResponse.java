@@ -4,30 +4,35 @@
 package com.google.monitoring.v3;
 
 /**
+ *
+ *
  * <pre>
  * The `GetNotificationChannelVerificationCode` request.
  * </pre>
  *
  * Protobuf type {@code google.monitoring.v3.GetNotificationChannelVerificationCodeResponse}
  */
-public  final class GetNotificationChannelVerificationCodeResponse extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class GetNotificationChannelVerificationCodeResponse
+    extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.GetNotificationChannelVerificationCodeResponse)
     GetNotificationChannelVerificationCodeResponseOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use GetNotificationChannelVerificationCodeResponse.newBuilder() to construct.
-  private GetNotificationChannelVerificationCodeResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  private GetNotificationChannelVerificationCodeResponse(
+      com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private GetNotificationChannelVerificationCodeResponse() {
     code_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private GetNotificationChannelVerificationCodeResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -47,60 +52,67 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            code_ = s;
-            break;
-          }
-          case 18: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (expireTime_ != null) {
-              subBuilder = expireTime_.toBuilder();
+              code_ = s;
+              break;
             }
-            expireTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(expireTime_);
-              expireTime_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (expireTime_ != null) {
+                subBuilder = expireTime_.toBuilder();
+              }
+              expireTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(expireTime_);
+                expireTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.monitoring.v3.NotificationServiceProto.internal_static_google_monitoring_v3_GetNotificationChannelVerificationCodeResponse_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.monitoring.v3.NotificationServiceProto
+        .internal_static_google_monitoring_v3_GetNotificationChannelVerificationCodeResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.monitoring.v3.NotificationServiceProto.internal_static_google_monitoring_v3_GetNotificationChannelVerificationCodeResponse_fieldAccessorTable
+    return com.google.monitoring.v3.NotificationServiceProto
+        .internal_static_google_monitoring_v3_GetNotificationChannelVerificationCodeResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse.class, com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse.Builder.class);
+            com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse.class,
+            com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse.Builder.class);
   }
 
   public static final int CODE_FIELD_NUMBER = 1;
   private volatile java.lang.Object code_;
   /**
+   *
+   *
    * <pre>
    * The verification code, which may be used to verify other channels
    * that have an equivalent identity (i.e. other channels of the same
@@ -115,14 +127,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       code_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The verification code, which may be used to verify other channels
    * that have an equivalent identity (i.e. other channels of the same
@@ -132,13 +145,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string code = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getCodeBytes() {
+  public com.google.protobuf.ByteString getCodeBytes() {
     java.lang.Object ref = code_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       code_ = b;
       return b;
     } else {
@@ -149,6 +160,8 @@ private static final long serialVersionUID = 0L;
   public static final int EXPIRE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp expireTime_;
   /**
+   *
+   *
    * <pre>
    * The expiration time associated with the code that was returned. If
    * an expiration was provided in the request, this is the minimum of the
@@ -161,6 +174,8 @@ private static final long serialVersionUID = 0L;
     return expireTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The expiration time associated with the code that was returned. If
    * an expiration was provided in the request, this is the minimum of the
@@ -173,6 +188,8 @@ private static final long serialVersionUID = 0L;
     return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
   /**
+   *
+   *
    * <pre>
    * The expiration time associated with the code that was returned. If
    * an expiration was provided in the request, this is the minimum of the
@@ -186,6 +203,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -197,8 +215,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getCodeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, code_);
     }
@@ -218,8 +235,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, code_);
     }
     if (expireTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getExpireTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getExpireTime());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -229,20 +245,19 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse)) {
       return super.equals(obj);
     }
-    com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse other = (com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse) obj;
+    com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse other =
+        (com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse) obj;
 
     boolean result = true;
-    result = result && getCode()
-        .equals(other.getCode());
+    result = result && getCode().equals(other.getCode());
     result = result && (hasExpireTime() == other.hasExpireTime());
     if (hasExpireTime()) {
-      result = result && getExpireTime()
-          .equals(other.getExpireTime());
+      result = result && getExpireTime().equals(other.getExpireTime());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -267,134 +282,146 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+
+  public static com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
-  public static com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-  }
+
   public static com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse parseFrom(
-      com.google.protobuf.CodedInputStream input)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
+  public static com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse
+      parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+  }
+
+  public static com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse
+      parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
+  public static com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse parseFrom(
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+  }
+
   public static com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse prototype) {
+
+  public static Builder newBuilder(
+      com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The `GetNotificationChannelVerificationCode` request.
    * </pre>
    *
    * Protobuf type {@code google.monitoring.v3.GetNotificationChannelVerificationCodeResponse}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.monitoring.v3.GetNotificationChannelVerificationCodeResponse)
       com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponseOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.monitoring.v3.NotificationServiceProto.internal_static_google_monitoring_v3_GetNotificationChannelVerificationCodeResponse_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.monitoring.v3.NotificationServiceProto
+          .internal_static_google_monitoring_v3_GetNotificationChannelVerificationCodeResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.monitoring.v3.NotificationServiceProto.internal_static_google_monitoring_v3_GetNotificationChannelVerificationCodeResponse_fieldAccessorTable
+      return com.google.monitoring.v3.NotificationServiceProto
+          .internal_static_google_monitoring_v3_GetNotificationChannelVerificationCodeResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse.class, com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse.Builder.class);
+              com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse.class,
+              com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse.Builder
+                  .class);
     }
 
-    // Construct using com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse.newBuilder()
+    // Construct using
+    // com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -410,19 +437,22 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.monitoring.v3.NotificationServiceProto.internal_static_google_monitoring_v3_GetNotificationChannelVerificationCodeResponse_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.monitoring.v3.NotificationServiceProto
+          .internal_static_google_monitoring_v3_GetNotificationChannelVerificationCodeResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse getDefaultInstanceForType() {
-      return com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse.getDefaultInstance();
+    public com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse
+        getDefaultInstanceForType() {
+      return com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse
+          .getDefaultInstance();
     }
 
     @java.lang.Override
     public com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse build() {
-      com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse result = buildPartial();
+      com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse result =
+          buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -431,7 +461,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse buildPartial() {
-      com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse result = new com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse(this);
+      com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse result =
+          new com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse(this);
       result.code_ = code_;
       if (expireTimeBuilder_ == null) {
         result.expireTime_ = expireTime_;
@@ -446,46 +477,52 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse) {
-        return mergeFrom((com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse)other);
+      if (other
+          instanceof com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse) {
+        return mergeFrom(
+            (com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse other) {
-      if (other == com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(
+        com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse other) {
+      if (other
+          == com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse
+              .getDefaultInstance()) return this;
       if (!other.getCode().isEmpty()) {
         code_ = other.code_;
         onChanged();
@@ -512,7 +549,9 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -524,6 +563,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object code_ = "";
     /**
+     *
+     *
      * <pre>
      * The verification code, which may be used to verify other channels
      * that have an equivalent identity (i.e. other channels of the same
@@ -536,8 +577,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getCode() {
       java.lang.Object ref = code_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         code_ = s;
         return s;
@@ -546,6 +586,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The verification code, which may be used to verify other channels
      * that have an equivalent identity (i.e. other channels of the same
@@ -555,13 +597,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string code = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getCodeBytes() {
+    public com.google.protobuf.ByteString getCodeBytes() {
       java.lang.Object ref = code_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         code_ = b;
         return b;
       } else {
@@ -569,6 +609,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The verification code, which may be used to verify other channels
      * that have an equivalent identity (i.e. other channels of the same
@@ -578,17 +620,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string code = 1;</code>
      */
-    public Builder setCode(
-        java.lang.String value) {
+    public Builder setCode(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       code_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The verification code, which may be used to verify other channels
      * that have an equivalent identity (i.e. other channels of the same
@@ -599,12 +642,14 @@ private static final long serialVersionUID = 0L;
      * <code>string code = 1;</code>
      */
     public Builder clearCode() {
-      
+
       code_ = getDefaultInstance().getCode();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The verification code, which may be used to verify other channels
      * that have an equivalent identity (i.e. other channels of the same
@@ -614,13 +659,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string code = 1;</code>
      */
-    public Builder setCodeBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       code_ = value;
       onChanged();
       return this;
@@ -628,8 +672,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp expireTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> expireTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        expireTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * The expiration time associated with the code that was returned. If
      * an expiration was provided in the request, this is the minimum of the
@@ -642,6 +691,8 @@ private static final long serialVersionUID = 0L;
       return expireTimeBuilder_ != null || expireTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The expiration time associated with the code that was returned. If
      * an expiration was provided in the request, this is the minimum of the
@@ -652,12 +703,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getExpireTime() {
       if (expireTimeBuilder_ == null) {
-        return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
+        return expireTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : expireTime_;
       } else {
         return expireTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The expiration time associated with the code that was returned. If
      * an expiration was provided in the request, this is the minimum of the
@@ -680,6 +735,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The expiration time associated with the code that was returned. If
      * an expiration was provided in the request, this is the minimum of the
@@ -688,8 +745,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp expire_time = 2;</code>
      */
-    public Builder setExpireTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setExpireTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (expireTimeBuilder_ == null) {
         expireTime_ = builderForValue.build();
         onChanged();
@@ -700,6 +756,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The expiration time associated with the code that was returned. If
      * an expiration was provided in the request, this is the minimum of the
@@ -712,7 +770,7 @@ private static final long serialVersionUID = 0L;
       if (expireTimeBuilder_ == null) {
         if (expireTime_ != null) {
           expireTime_ =
-            com.google.protobuf.Timestamp.newBuilder(expireTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(expireTime_).mergeFrom(value).buildPartial();
         } else {
           expireTime_ = value;
         }
@@ -724,6 +782,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The expiration time associated with the code that was returned. If
      * an expiration was provided in the request, this is the minimum of the
@@ -744,6 +804,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The expiration time associated with the code that was returned. If
      * an expiration was provided in the request, this is the minimum of the
@@ -753,11 +815,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp expire_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getExpireTimeBuilder() {
-      
+
       onChanged();
       return getExpireTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The expiration time associated with the code that was returned. If
      * an expiration was provided in the request, this is the minimum of the
@@ -770,11 +834,14 @@ private static final long serialVersionUID = 0L;
       if (expireTimeBuilder_ != null) {
         return expireTimeBuilder_.getMessageOrBuilder();
       } else {
-        return expireTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
+        return expireTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : expireTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The expiration time associated with the code that was returned. If
      * an expiration was provided in the request, this is the minimum of the
@@ -784,21 +851,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp expire_time = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getExpireTimeFieldBuilder() {
       if (expireTimeBuilder_ == null) {
-        expireTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getExpireTime(),
-                getParentForChildren(),
-                isClean());
+        expireTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getExpireTime(), getParentForChildren(), isClean());
         expireTime_ = null;
       }
       return expireTimeBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -808,44 +878,49 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.monitoring.v3.GetNotificationChannelVerificationCodeResponse)
   }
 
   // @@protoc_insertion_point(class_scope:google.monitoring.v3.GetNotificationChannelVerificationCodeResponse)
-  private static final com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse DEFAULT_INSTANCE;
+  private static final com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse
+      DEFAULT_INSTANCE;
+
   static {
-    DEFAULT_INSTANCE = new com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse();
+    DEFAULT_INSTANCE =
+        new com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse();
   }
 
-  public static com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse getDefaultInstance() {
+  public static com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse
+      getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
   private static final com.google.protobuf.Parser<GetNotificationChannelVerificationCodeResponse>
-      PARSER = new com.google.protobuf.AbstractParser<GetNotificationChannelVerificationCodeResponse>() {
-    @java.lang.Override
-    public GetNotificationChannelVerificationCodeResponse parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new GetNotificationChannelVerificationCodeResponse(input, extensionRegistry);
-    }
-  };
+      PARSER =
+          new com.google.protobuf.AbstractParser<GetNotificationChannelVerificationCodeResponse>() {
+            @java.lang.Override
+            public GetNotificationChannelVerificationCodeResponse parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              return new GetNotificationChannelVerificationCodeResponse(input, extensionRegistry);
+            }
+          };
 
-  public static com.google.protobuf.Parser<GetNotificationChannelVerificationCodeResponse> parser() {
+  public static com.google.protobuf.Parser<GetNotificationChannelVerificationCodeResponse>
+      parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<GetNotificationChannelVerificationCodeResponse> getParserForType() {
+  public com.google.protobuf.Parser<GetNotificationChannelVerificationCodeResponse>
+      getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse getDefaultInstanceForType() {
+  public com.google.monitoring.v3.GetNotificationChannelVerificationCodeResponse
+      getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

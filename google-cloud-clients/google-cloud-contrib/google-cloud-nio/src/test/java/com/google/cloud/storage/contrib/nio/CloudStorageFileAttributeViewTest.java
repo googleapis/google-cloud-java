@@ -22,14 +22,6 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import com.google.cloud.storage.contrib.nio.testing.LocalStorageHelper;
 import com.google.common.testing.EqualsTester;
 import com.google.common.testing.NullPointerTester;
-
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
-
 import java.io.IOException;
 import java.net.URI;
 import java.nio.file.Files;
@@ -37,10 +29,14 @@ import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.attribute.FileTime;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
-/**
- * Unit tests for {@link CloudStorageFileAttributeView}.
- */
+/** Unit tests for {@link CloudStorageFileAttributeView}. */
 @RunWith(JUnit4.class)
 public class CloudStorageFileAttributeViewTest {
 

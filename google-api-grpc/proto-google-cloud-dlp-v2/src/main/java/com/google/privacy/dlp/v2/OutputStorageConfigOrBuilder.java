@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface OutputStorageConfigOrBuilder extends
+public interface OutputStorageConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.OutputStorageConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Store findings in an existing table or a new table in an existing
    * dataset. If table_id is not set a new one will be generated
@@ -27,6 +30,8 @@ public interface OutputStorageConfigOrBuilder extends
    */
   boolean hasTable();
   /**
+   *
+   *
    * <pre>
    * Store findings in an existing table or a new table in an existing
    * dataset. If table_id is not set a new one will be generated
@@ -46,6 +51,8 @@ public interface OutputStorageConfigOrBuilder extends
    */
   com.google.privacy.dlp.v2.BigQueryTable getTable();
   /**
+   *
+   *
    * <pre>
    * Store findings in an existing table or a new table in an existing
    * dataset. If table_id is not set a new one will be generated
@@ -66,6 +73,8 @@ public interface OutputStorageConfigOrBuilder extends
   com.google.privacy.dlp.v2.BigQueryTableOrBuilder getTableOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Schema used for writing the findings for Inspect jobs. This field is only
    * used for Inspect and must be unspecified for Risk jobs. Columns are derived
@@ -81,6 +90,8 @@ public interface OutputStorageConfigOrBuilder extends
    */
   int getOutputSchemaValue();
   /**
+   *
+   *
    * <pre>
    * Schema used for writing the findings for Inspect jobs. This field is only
    * used for Inspect and must be unspecified for Risk jobs. Columns are derived

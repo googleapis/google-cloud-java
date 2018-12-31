@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface JobOrBuilder extends
+public interface JobOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.Job)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Optional. The fully qualified reference to the job, which can be used to
    * obtain the equivalent REST path of the job resource. If this property
@@ -19,6 +22,8 @@ public interface JobOrBuilder extends
    */
   boolean hasReference();
   /**
+   *
+   *
    * <pre>
    * Optional. The fully qualified reference to the job, which can be used to
    * obtain the equivalent REST path of the job resource. If this property
@@ -30,6 +35,8 @@ public interface JobOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.JobReference getReference();
   /**
+   *
+   *
    * <pre>
    * Optional. The fully qualified reference to the job, which can be used to
    * obtain the equivalent REST path of the job resource. If this property
@@ -42,6 +49,8 @@ public interface JobOrBuilder extends
   com.google.cloud.dataproc.v1beta2.JobReferenceOrBuilder getReferenceOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Required. Job information, including how, when, and where to
    * run the job.
@@ -51,6 +60,8 @@ public interface JobOrBuilder extends
    */
   boolean hasPlacement();
   /**
+   *
+   *
    * <pre>
    * Required. Job information, including how, when, and where to
    * run the job.
@@ -60,6 +71,8 @@ public interface JobOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.JobPlacement getPlacement();
   /**
+   *
+   *
    * <pre>
    * Required. Job information, including how, when, and where to
    * run the job.
@@ -70,6 +83,8 @@ public interface JobOrBuilder extends
   com.google.cloud.dataproc.v1beta2.JobPlacementOrBuilder getPlacementOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Job is a Hadoop job.
    * </pre>
@@ -78,6 +93,8 @@ public interface JobOrBuilder extends
    */
   boolean hasHadoopJob();
   /**
+   *
+   *
    * <pre>
    * Job is a Hadoop job.
    * </pre>
@@ -86,6 +103,8 @@ public interface JobOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.HadoopJob getHadoopJob();
   /**
+   *
+   *
    * <pre>
    * Job is a Hadoop job.
    * </pre>
@@ -95,6 +114,8 @@ public interface JobOrBuilder extends
   com.google.cloud.dataproc.v1beta2.HadoopJobOrBuilder getHadoopJobOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Job is a Spark job.
    * </pre>
@@ -103,6 +124,8 @@ public interface JobOrBuilder extends
    */
   boolean hasSparkJob();
   /**
+   *
+   *
    * <pre>
    * Job is a Spark job.
    * </pre>
@@ -111,6 +134,8 @@ public interface JobOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.SparkJob getSparkJob();
   /**
+   *
+   *
    * <pre>
    * Job is a Spark job.
    * </pre>
@@ -120,6 +145,8 @@ public interface JobOrBuilder extends
   com.google.cloud.dataproc.v1beta2.SparkJobOrBuilder getSparkJobOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Job is a Pyspark job.
    * </pre>
@@ -128,6 +155,8 @@ public interface JobOrBuilder extends
    */
   boolean hasPysparkJob();
   /**
+   *
+   *
    * <pre>
    * Job is a Pyspark job.
    * </pre>
@@ -136,6 +165,8 @@ public interface JobOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.PySparkJob getPysparkJob();
   /**
+   *
+   *
    * <pre>
    * Job is a Pyspark job.
    * </pre>
@@ -145,6 +176,8 @@ public interface JobOrBuilder extends
   com.google.cloud.dataproc.v1beta2.PySparkJobOrBuilder getPysparkJobOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Job is a Hive job.
    * </pre>
@@ -153,6 +186,8 @@ public interface JobOrBuilder extends
    */
   boolean hasHiveJob();
   /**
+   *
+   *
    * <pre>
    * Job is a Hive job.
    * </pre>
@@ -161,6 +196,8 @@ public interface JobOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.HiveJob getHiveJob();
   /**
+   *
+   *
    * <pre>
    * Job is a Hive job.
    * </pre>
@@ -170,6 +207,8 @@ public interface JobOrBuilder extends
   com.google.cloud.dataproc.v1beta2.HiveJobOrBuilder getHiveJobOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Job is a Pig job.
    * </pre>
@@ -178,6 +217,8 @@ public interface JobOrBuilder extends
    */
   boolean hasPigJob();
   /**
+   *
+   *
    * <pre>
    * Job is a Pig job.
    * </pre>
@@ -186,6 +227,8 @@ public interface JobOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.PigJob getPigJob();
   /**
+   *
+   *
    * <pre>
    * Job is a Pig job.
    * </pre>
@@ -195,6 +238,8 @@ public interface JobOrBuilder extends
   com.google.cloud.dataproc.v1beta2.PigJobOrBuilder getPigJobOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Job is a SparkSql job.
    * </pre>
@@ -203,6 +248,8 @@ public interface JobOrBuilder extends
    */
   boolean hasSparkSqlJob();
   /**
+   *
+   *
    * <pre>
    * Job is a SparkSql job.
    * </pre>
@@ -211,6 +258,8 @@ public interface JobOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.SparkSqlJob getSparkSqlJob();
   /**
+   *
+   *
    * <pre>
    * Job is a SparkSql job.
    * </pre>
@@ -220,6 +269,8 @@ public interface JobOrBuilder extends
   com.google.cloud.dataproc.v1beta2.SparkSqlJobOrBuilder getSparkSqlJobOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The job status. Additional application-specific
    * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
@@ -230,6 +281,8 @@ public interface JobOrBuilder extends
    */
   boolean hasStatus();
   /**
+   *
+   *
    * <pre>
    * Output only. The job status. Additional application-specific
    * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
@@ -240,6 +293,8 @@ public interface JobOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.JobStatus getStatus();
   /**
+   *
+   *
    * <pre>
    * Output only. The job status. Additional application-specific
    * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
@@ -251,15 +306,18 @@ public interface JobOrBuilder extends
   com.google.cloud.dataproc.v1beta2.JobStatusOrBuilder getStatusOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The previous job status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.JobStatus status_history = 13;</code>
    */
-  java.util.List<com.google.cloud.dataproc.v1beta2.JobStatus> 
-      getStatusHistoryList();
+  java.util.List<com.google.cloud.dataproc.v1beta2.JobStatus> getStatusHistoryList();
   /**
+   *
+   *
    * <pre>
    * Output only. The previous job status.
    * </pre>
@@ -268,6 +326,8 @@ public interface JobOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.JobStatus getStatusHistory(int index);
   /**
+   *
+   *
    * <pre>
    * Output only. The previous job status.
    * </pre>
@@ -276,25 +336,30 @@ public interface JobOrBuilder extends
    */
   int getStatusHistoryCount();
   /**
+   *
+   *
    * <pre>
    * Output only. The previous job status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.JobStatus status_history = 13;</code>
    */
-  java.util.List<? extends com.google.cloud.dataproc.v1beta2.JobStatusOrBuilder> 
+  java.util.List<? extends com.google.cloud.dataproc.v1beta2.JobStatusOrBuilder>
       getStatusHistoryOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Output only. The previous job status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.JobStatus status_history = 13;</code>
    */
-  com.google.cloud.dataproc.v1beta2.JobStatusOrBuilder getStatusHistoryOrBuilder(
-      int index);
+  com.google.cloud.dataproc.v1beta2.JobStatusOrBuilder getStatusHistoryOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Output only. The collection of YARN applications spun up by this job.
    * **Beta** Feature: This report is available for testing purposes only. It may
@@ -303,9 +368,10 @@ public interface JobOrBuilder extends
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9;</code>
    */
-  java.util.List<com.google.cloud.dataproc.v1beta2.YarnApplication> 
-      getYarnApplicationsList();
+  java.util.List<com.google.cloud.dataproc.v1beta2.YarnApplication> getYarnApplicationsList();
   /**
+   *
+   *
    * <pre>
    * Output only. The collection of YARN applications spun up by this job.
    * **Beta** Feature: This report is available for testing purposes only. It may
@@ -316,6 +382,8 @@ public interface JobOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.YarnApplication getYarnApplications(int index);
   /**
+   *
+   *
    * <pre>
    * Output only. The collection of YARN applications spun up by this job.
    * **Beta** Feature: This report is available for testing purposes only. It may
@@ -326,6 +394,8 @@ public interface JobOrBuilder extends
    */
   int getYarnApplicationsCount();
   /**
+   *
+   *
    * <pre>
    * Output only. The collection of YARN applications spun up by this job.
    * **Beta** Feature: This report is available for testing purposes only. It may
@@ -334,9 +404,11 @@ public interface JobOrBuilder extends
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9;</code>
    */
-  java.util.List<? extends com.google.cloud.dataproc.v1beta2.YarnApplicationOrBuilder> 
+  java.util.List<? extends com.google.cloud.dataproc.v1beta2.YarnApplicationOrBuilder>
       getYarnApplicationsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Output only. The collection of YARN applications spun up by this job.
    * **Beta** Feature: This report is available for testing purposes only. It may
@@ -349,6 +421,31 @@ public interface JobOrBuilder extends
       int index);
 
   /**
+   *
+   *
+   * <pre>
+   * Output only. The email address of the user submitting the job. For jobs
+   * submitted on the cluster, the address is &lt;code&gt;username&#64;hostname&lt;/code&gt;.
+   * </pre>
+   *
+   * <code>string submitted_by = 10;</code>
+   */
+  java.lang.String getSubmittedBy();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The email address of the user submitting the job. For jobs
+   * submitted on the cluster, the address is &lt;code&gt;username&#64;hostname&lt;/code&gt;.
+   * </pre>
+   *
+   * <code>string submitted_by = 10;</code>
+   */
+  com.google.protobuf.ByteString getSubmittedByBytes();
+
+  /**
+   *
+   *
    * <pre>
    * Output only. A URI pointing to the location of the stdout of the job's
    * driver program.
@@ -358,6 +455,8 @@ public interface JobOrBuilder extends
    */
   java.lang.String getDriverOutputResourceUri();
   /**
+   *
+   *
    * <pre>
    * Output only. A URI pointing to the location of the stdout of the job's
    * driver program.
@@ -365,10 +464,11 @@ public interface JobOrBuilder extends
    *
    * <code>string driver_output_resource_uri = 17;</code>
    */
-  com.google.protobuf.ByteString
-      getDriverOutputResourceUriBytes();
+  com.google.protobuf.ByteString getDriverOutputResourceUriBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only. If present, the location of miscellaneous control files
    * which may be used as part of job setup and handling. If not present,
@@ -379,6 +479,8 @@ public interface JobOrBuilder extends
    */
   java.lang.String getDriverControlFilesUri();
   /**
+   *
+   *
    * <pre>
    * Output only. If present, the location of miscellaneous control files
    * which may be used as part of job setup and handling. If not present,
@@ -387,10 +489,11 @@ public interface JobOrBuilder extends
    *
    * <code>string driver_control_files_uri = 15;</code>
    */
-  com.google.protobuf.ByteString
-      getDriverControlFilesUriBytes();
+  com.google.protobuf.ByteString getDriverControlFilesUriBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The labels to associate with this job.
    * Label **keys** must contain 1 to 63 characters, and must conform to
@@ -404,6 +507,8 @@ public interface JobOrBuilder extends
    */
   int getLabelsCount();
   /**
+   *
+   *
    * <pre>
    * Optional. The labels to associate with this job.
    * Label **keys** must contain 1 to 63 characters, and must conform to
@@ -415,15 +520,13 @@ public interface JobOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 18;</code>
    */
-  boolean containsLabels(
-      java.lang.String key);
-  /**
-   * Use {@link #getLabelsMap()} instead.
-   */
+  boolean containsLabels(java.lang.String key);
+  /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabels();
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
   /**
+   *
+   *
    * <pre>
    * Optional. The labels to associate with this job.
    * Label **keys** must contain 1 to 63 characters, and must conform to
@@ -435,9 +538,10 @@ public interface JobOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 18;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabelsMap();
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
+   *
+   *
    * <pre>
    * Optional. The labels to associate with this job.
    * Label **keys** must contain 1 to 63 characters, and must conform to
@@ -449,11 +553,10 @@ public interface JobOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 18;</code>
    */
-
-  java.lang.String getLabelsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * Optional. The labels to associate with this job.
    * Label **keys** must contain 1 to 63 characters, and must conform to
@@ -465,11 +568,11 @@ public interface JobOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 18;</code>
    */
-
-  java.lang.String getLabelsOrThrow(
-      java.lang.String key);
+  java.lang.String getLabelsOrThrow(java.lang.String key);
 
   /**
+   *
+   *
    * <pre>
    * Optional. Job scheduling configuration.
    * </pre>
@@ -478,6 +581,8 @@ public interface JobOrBuilder extends
    */
   boolean hasScheduling();
   /**
+   *
+   *
    * <pre>
    * Optional. Job scheduling configuration.
    * </pre>
@@ -486,6 +591,8 @@ public interface JobOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.JobScheduling getScheduling();
   /**
+   *
+   *
    * <pre>
    * Optional. Job scheduling configuration.
    * </pre>
@@ -493,6 +600,31 @@ public interface JobOrBuilder extends
    * <code>.google.cloud.dataproc.v1beta2.JobScheduling scheduling = 20;</code>
    */
   com.google.cloud.dataproc.v1beta2.JobSchedulingOrBuilder getSchedulingOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A UUID that uniquely identifies a job within the project
+   * over time. This is in contrast to a user-settable reference.job_id that
+   * may be reused over time.
+   * </pre>
+   *
+   * <code>string job_uuid = 22;</code>
+   */
+  java.lang.String getJobUuid();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A UUID that uniquely identifies a job within the project
+   * over time. This is in contrast to a user-settable reference.job_id that
+   * may be reused over time.
+   * </pre>
+   *
+   * <code>string job_uuid = 22;</code>
+   */
+  com.google.protobuf.ByteString getJobUuidBytes();
 
   public com.google.cloud.dataproc.v1beta2.Job.TypeJobCase getTypeJobCase();
 }

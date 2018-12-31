@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2;
 
-public interface StreamingDetectIntentRequestOrBuilder extends
+public interface StreamingDetectIntentRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.StreamingDetectIntentRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The name of the session the query is sent to.
    * Format of the session name:
@@ -21,6 +24,8 @@ public interface StreamingDetectIntentRequestOrBuilder extends
    */
   java.lang.String getSession();
   /**
+   *
+   *
    * <pre>
    * Required. The name of the session the query is sent to.
    * Format of the session name:
@@ -32,10 +37,11 @@ public interface StreamingDetectIntentRequestOrBuilder extends
    *
    * <code>string session = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getSessionBytes();
+  com.google.protobuf.ByteString getSessionBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The parameters of this query.
    * </pre>
@@ -44,6 +50,8 @@ public interface StreamingDetectIntentRequestOrBuilder extends
    */
   boolean hasQueryParams();
   /**
+   *
+   *
    * <pre>
    * Optional. The parameters of this query.
    * </pre>
@@ -52,6 +60,8 @@ public interface StreamingDetectIntentRequestOrBuilder extends
    */
   com.google.cloud.dialogflow.v2.QueryParameters getQueryParams();
   /**
+   *
+   *
    * <pre>
    * Optional. The parameters of this query.
    * </pre>
@@ -61,6 +71,8 @@ public interface StreamingDetectIntentRequestOrBuilder extends
   com.google.cloud.dialogflow.v2.QueryParametersOrBuilder getQueryParamsOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Required. The input specification. It can be set to:
    * 1.  an audio config which instructs the speech recognizer how to process
@@ -73,6 +85,8 @@ public interface StreamingDetectIntentRequestOrBuilder extends
    */
   boolean hasQueryInput();
   /**
+   *
+   *
    * <pre>
    * Required. The input specification. It can be set to:
    * 1.  an audio config which instructs the speech recognizer how to process
@@ -85,6 +99,8 @@ public interface StreamingDetectIntentRequestOrBuilder extends
    */
   com.google.cloud.dialogflow.v2.QueryInput getQueryInput();
   /**
+   *
+   *
    * <pre>
    * Required. The input specification. It can be set to:
    * 1.  an audio config which instructs the speech recognizer how to process
@@ -98,6 +114,8 @@ public interface StreamingDetectIntentRequestOrBuilder extends
   com.google.cloud.dialogflow.v2.QueryInputOrBuilder getQueryInputOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. If `false` (default), recognition does not cease until the
    * client closes the stream.
@@ -114,6 +132,8 @@ public interface StreamingDetectIntentRequestOrBuilder extends
   boolean getSingleUtterance();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The input audio content to be recognized. Must be sent if
    * `query_input` was set to a streaming input audio config. The complete audio

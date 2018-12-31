@@ -3,11 +3,14 @@
 
 package com.google.cloud.language.v1;
 
-public interface PartOfSpeechOrBuilder extends
+public interface PartOfSpeechOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.language.v1.PartOfSpeech)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The part of speech tag.
    * </pre>
@@ -16,6 +19,8 @@ public interface PartOfSpeechOrBuilder extends
    */
   int getTagValue();
   /**
+   *
+   *
    * <pre>
    * The part of speech tag.
    * </pre>
@@ -25,6 +30,8 @@ public interface PartOfSpeechOrBuilder extends
   com.google.cloud.language.v1.PartOfSpeech.Tag getTag();
 
   /**
+   *
+   *
    * <pre>
    * The grammatical aspect.
    * </pre>
@@ -33,6 +40,8 @@ public interface PartOfSpeechOrBuilder extends
    */
   int getAspectValue();
   /**
+   *
+   *
    * <pre>
    * The grammatical aspect.
    * </pre>
@@ -42,6 +51,8 @@ public interface PartOfSpeechOrBuilder extends
   com.google.cloud.language.v1.PartOfSpeech.Aspect getAspect();
 
   /**
+   *
+   *
    * <pre>
    * The grammatical case.
    * </pre>
@@ -50,6 +61,8 @@ public interface PartOfSpeechOrBuilder extends
    */
   int getCaseValue();
   /**
+   *
+   *
    * <pre>
    * The grammatical case.
    * </pre>
@@ -59,6 +72,8 @@ public interface PartOfSpeechOrBuilder extends
   com.google.cloud.language.v1.PartOfSpeech.Case getCase();
 
   /**
+   *
+   *
    * <pre>
    * The grammatical form.
    * </pre>
@@ -67,6 +82,8 @@ public interface PartOfSpeechOrBuilder extends
    */
   int getFormValue();
   /**
+   *
+   *
    * <pre>
    * The grammatical form.
    * </pre>
@@ -76,6 +93,8 @@ public interface PartOfSpeechOrBuilder extends
   com.google.cloud.language.v1.PartOfSpeech.Form getForm();
 
   /**
+   *
+   *
    * <pre>
    * The grammatical gender.
    * </pre>
@@ -84,6 +103,8 @@ public interface PartOfSpeechOrBuilder extends
    */
   int getGenderValue();
   /**
+   *
+   *
    * <pre>
    * The grammatical gender.
    * </pre>
@@ -93,6 +114,8 @@ public interface PartOfSpeechOrBuilder extends
   com.google.cloud.language.v1.PartOfSpeech.Gender getGender();
 
   /**
+   *
+   *
    * <pre>
    * The grammatical mood.
    * </pre>
@@ -101,6 +124,8 @@ public interface PartOfSpeechOrBuilder extends
    */
   int getMoodValue();
   /**
+   *
+   *
    * <pre>
    * The grammatical mood.
    * </pre>
@@ -110,6 +135,8 @@ public interface PartOfSpeechOrBuilder extends
   com.google.cloud.language.v1.PartOfSpeech.Mood getMood();
 
   /**
+   *
+   *
    * <pre>
    * The grammatical number.
    * </pre>
@@ -118,6 +145,8 @@ public interface PartOfSpeechOrBuilder extends
    */
   int getNumberValue();
   /**
+   *
+   *
    * <pre>
    * The grammatical number.
    * </pre>
@@ -127,6 +156,8 @@ public interface PartOfSpeechOrBuilder extends
   com.google.cloud.language.v1.PartOfSpeech.Number getNumber();
 
   /**
+   *
+   *
    * <pre>
    * The grammatical person.
    * </pre>
@@ -135,6 +166,8 @@ public interface PartOfSpeechOrBuilder extends
    */
   int getPersonValue();
   /**
+   *
+   *
    * <pre>
    * The grammatical person.
    * </pre>
@@ -144,6 +177,8 @@ public interface PartOfSpeechOrBuilder extends
   com.google.cloud.language.v1.PartOfSpeech.Person getPerson();
 
   /**
+   *
+   *
    * <pre>
    * The grammatical properness.
    * </pre>
@@ -152,6 +187,8 @@ public interface PartOfSpeechOrBuilder extends
    */
   int getProperValue();
   /**
+   *
+   *
    * <pre>
    * The grammatical properness.
    * </pre>
@@ -161,6 +198,8 @@ public interface PartOfSpeechOrBuilder extends
   com.google.cloud.language.v1.PartOfSpeech.Proper getProper();
 
   /**
+   *
+   *
    * <pre>
    * The grammatical reciprocity.
    * </pre>
@@ -169,6 +208,8 @@ public interface PartOfSpeechOrBuilder extends
    */
   int getReciprocityValue();
   /**
+   *
+   *
    * <pre>
    * The grammatical reciprocity.
    * </pre>
@@ -178,6 +219,8 @@ public interface PartOfSpeechOrBuilder extends
   com.google.cloud.language.v1.PartOfSpeech.Reciprocity getReciprocity();
 
   /**
+   *
+   *
    * <pre>
    * The grammatical tense.
    * </pre>
@@ -186,6 +229,8 @@ public interface PartOfSpeechOrBuilder extends
    */
   int getTenseValue();
   /**
+   *
+   *
    * <pre>
    * The grammatical tense.
    * </pre>
@@ -195,6 +240,8 @@ public interface PartOfSpeechOrBuilder extends
   com.google.cloud.language.v1.PartOfSpeech.Tense getTense();
 
   /**
+   *
+   *
    * <pre>
    * The grammatical voice.
    * </pre>
@@ -203,6 +250,8 @@ public interface PartOfSpeechOrBuilder extends
    */
   int getVoiceValue();
   /**
+   *
+   *
    * <pre>
    * The grammatical voice.
    * </pre>

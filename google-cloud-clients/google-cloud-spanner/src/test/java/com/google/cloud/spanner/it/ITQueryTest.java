@@ -508,10 +508,7 @@ public class ITQueryTest {
             + "This query can return a null-valued array of struct, "
             + "which is not supported by Spanner.");
     execute(
-        Statement.newBuilder("SELECT @p")
-            .bind("p")
-            .toStructArray(p.getType(), asList(p))
-            .build(),
+        Statement.newBuilder("SELECT @p").bind("p").toStructArray(p.getType(), asList(p)).build(),
         p.getType());
   }
 

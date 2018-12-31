@@ -21,7 +21,6 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.compute.deprecated.DiskConfiguration.Type;
-
 import org.junit.Test;
 
 public class SnapshotDiskConfigurationTest {
@@ -41,19 +40,23 @@ public class SnapshotDiskConfigurationTest {
   public void testToBuilder() {
     compareSnapshotDiskConfiguration(DISK_CONFIGURATION, DISK_CONFIGURATION.toBuilder().build());
     SnapshotId newSnapshot = SnapshotId.of("newProject", "newSnapshot");
-    SnapshotDiskConfiguration diskConfiguration = DISK_CONFIGURATION.toBuilder()
-        .setSizeGb(24L)
-        .setSourceSnapshot(newSnapshot)
-        .setSourceSnapshotId("newSnapshotId")
-        .build();
+    SnapshotDiskConfiguration diskConfiguration =
+        DISK_CONFIGURATION
+            .toBuilder()
+            .setSizeGb(24L)
+            .setSourceSnapshot(newSnapshot)
+            .setSourceSnapshotId("newSnapshotId")
+            .build();
     assertEquals(24L, diskConfiguration.getSizeGb().longValue());
     assertEquals(newSnapshot, diskConfiguration.getSourceSnapshot());
     assertEquals("newSnapshotId", diskConfiguration.getSourceSnapshotId());
-    diskConfiguration = diskConfiguration.toBuilder()
-        .setSizeGb(SIZE)
-        .setSourceSnapshot(SNAPSHOT)
-        .setSourceSnapshotId(SNAPSHOT_ID)
-        .build();
+    diskConfiguration =
+        diskConfiguration
+            .toBuilder()
+            .setSizeGb(SIZE)
+            .setSourceSnapshot(SNAPSHOT)
+            .setSourceSnapshotId(SNAPSHOT_ID)
+            .build();
     compareSnapshotDiskConfiguration(DISK_CONFIGURATION, diskConfiguration);
   }
 
@@ -74,9 +77,10 @@ public class SnapshotDiskConfigurationTest {
 
   @Test
   public void testToAndFromPb() {
-    assertTrue(DiskConfiguration.fromPb(DISK_CONFIGURATION.toPb())
-        instanceof SnapshotDiskConfiguration);
-    compareSnapshotDiskConfiguration(DISK_CONFIGURATION,
+    assertTrue(
+        DiskConfiguration.fromPb(DISK_CONFIGURATION.toPb()) instanceof SnapshotDiskConfiguration);
+    compareSnapshotDiskConfiguration(
+        DISK_CONFIGURATION,
         DiskConfiguration.<SnapshotDiskConfiguration>fromPb(DISK_CONFIGURATION.toPb()));
   }
 
@@ -92,15 +96,17 @@ public class SnapshotDiskConfigurationTest {
 
   @Test
   public void testSetProjectId() {
-    SnapshotDiskConfiguration configuration = DISK_CONFIGURATION.toBuilder()
-        .setDiskType(DiskTypeId.of(DISK_TYPE.getZone(), DISK_TYPE.getType()))
-        .setSourceSnapshot(SnapshotId.of(SNAPSHOT.getSnapshot()))
-        .build();
+    SnapshotDiskConfiguration configuration =
+        DISK_CONFIGURATION
+            .toBuilder()
+            .setDiskType(DiskTypeId.of(DISK_TYPE.getZone(), DISK_TYPE.getType()))
+            .setSourceSnapshot(SnapshotId.of(SNAPSHOT.getSnapshot()))
+            .build();
     compareSnapshotDiskConfiguration(DISK_CONFIGURATION, configuration.setProjectId("project"));
   }
 
-  private void compareSnapshotDiskConfiguration(SnapshotDiskConfiguration expected,
-      SnapshotDiskConfiguration value) {
+  private void compareSnapshotDiskConfiguration(
+      SnapshotDiskConfiguration expected, SnapshotDiskConfiguration value) {
     assertEquals(expected, value);
     assertEquals(expected.getDiskType(), value.getDiskType());
     assertEquals(expected.getSizeGb(), value.getSizeGb());

@@ -3,11 +3,14 @@
 
 package com.google.container.v1;
 
-public interface LegacyAbacOrBuilder extends
+public interface LegacyAbacOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.LegacyAbac)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Whether the ABAC authorizer is enabled for this cluster. When enabled,
    * identities in the system, including service accounts, nodes, and

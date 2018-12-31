@@ -16,6 +16,4 @@
 
 package com.google.cloud;
 
-public interface ServiceRpc {
-
-}
+public interface ServiceRpc {}

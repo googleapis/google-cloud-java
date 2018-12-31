@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface InfoTypeDescriptionOrBuilder extends
+public interface InfoTypeDescriptionOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.InfoTypeDescription)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Internal name of the infoType.
    * </pre>
@@ -16,16 +19,19 @@ public interface InfoTypeDescriptionOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Internal name of the infoType.
    * </pre>
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Human readable form of the infoType name.
    * </pre>
@@ -34,16 +40,19 @@ public interface InfoTypeDescriptionOrBuilder extends
    */
   java.lang.String getDisplayName();
   /**
+   *
+   *
    * <pre>
    * Human readable form of the infoType name.
    * </pre>
    *
    * <code>string display_name = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getDisplayNameBytes();
+  com.google.protobuf.ByteString getDisplayNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Which parts of the API supports this InfoType.
    * </pre>
@@ -52,6 +61,8 @@ public interface InfoTypeDescriptionOrBuilder extends
    */
   java.util.List<com.google.privacy.dlp.v2.InfoTypeSupportedBy> getSupportedByList();
   /**
+   *
+   *
    * <pre>
    * Which parts of the API supports this InfoType.
    * </pre>
@@ -60,6 +71,8 @@ public interface InfoTypeDescriptionOrBuilder extends
    */
   int getSupportedByCount();
   /**
+   *
+   *
    * <pre>
    * Which parts of the API supports this InfoType.
    * </pre>
@@ -68,15 +81,18 @@ public interface InfoTypeDescriptionOrBuilder extends
    */
   com.google.privacy.dlp.v2.InfoTypeSupportedBy getSupportedBy(int index);
   /**
+   *
+   *
    * <pre>
    * Which parts of the API supports this InfoType.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InfoTypeSupportedBy supported_by = 3;</code>
    */
-  java.util.List<java.lang.Integer>
-  getSupportedByValueList();
+  java.util.List<java.lang.Integer> getSupportedByValueList();
   /**
+   *
+   *
    * <pre>
    * Which parts of the API supports this InfoType.
    * </pre>

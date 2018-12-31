@@ -22,13 +22,11 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+import org.junit.Test;
 
 public class CommandWrapperTest {
 

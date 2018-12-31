@@ -40,10 +40,12 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteInterconnectHttpRequest;
+import com.google.cloud.compute.v1.GetDiagnosticsInterconnectHttpRequest;
 import com.google.cloud.compute.v1.GetInterconnectHttpRequest;
 import com.google.cloud.compute.v1.InsertInterconnectHttpRequest;
 import com.google.cloud.compute.v1.Interconnect;
 import com.google.cloud.compute.v1.InterconnectList;
+import com.google.cloud.compute.v1.InterconnectsGetDiagnosticsResponse;
 import com.google.cloud.compute.v1.ListInterconnectsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchInterconnectHttpRequest;
@@ -100,6 +102,9 @@ public class InterconnectStubSettings extends StubSettings<InterconnectStubSetti
   private final UnaryCallSettings<DeleteInterconnectHttpRequest, Operation>
       deleteInterconnectSettings;
   private final UnaryCallSettings<GetInterconnectHttpRequest, Interconnect> getInterconnectSettings;
+  private final UnaryCallSettings<
+          GetDiagnosticsInterconnectHttpRequest, InterconnectsGetDiagnosticsResponse>
+      getDiagnosticsInterconnectSettings;
   private final UnaryCallSettings<InsertInterconnectHttpRequest, Operation>
       insertInterconnectSettings;
   private final PagedCallSettings<
@@ -116,6 +121,13 @@ public class InterconnectStubSettings extends StubSettings<InterconnectStubSetti
   /** Returns the object with the settings used for calls to getInterconnect. */
   public UnaryCallSettings<GetInterconnectHttpRequest, Interconnect> getInterconnectSettings() {
     return getInterconnectSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getDiagnosticsInterconnect. */
+  public UnaryCallSettings<
+          GetDiagnosticsInterconnectHttpRequest, InterconnectsGetDiagnosticsResponse>
+      getDiagnosticsInterconnectSettings() {
+    return getDiagnosticsInterconnectSettings;
   }
 
   /** Returns the object with the settings used for calls to insertInterconnect. */
@@ -212,6 +224,8 @@ public class InterconnectStubSettings extends StubSettings<InterconnectStubSetti
 
     deleteInterconnectSettings = settingsBuilder.deleteInterconnectSettings().build();
     getInterconnectSettings = settingsBuilder.getInterconnectSettings().build();
+    getDiagnosticsInterconnectSettings =
+        settingsBuilder.getDiagnosticsInterconnectSettings().build();
     insertInterconnectSettings = settingsBuilder.insertInterconnectSettings().build();
     listInterconnectsSettings = settingsBuilder.listInterconnectsSettings().build();
     patchInterconnectSettings = settingsBuilder.patchInterconnectSettings().build();
@@ -252,7 +266,9 @@ public class InterconnectStubSettings extends StubSettings<InterconnectStubSetti
 
             @Override
             public Iterable<Interconnect> extractResources(InterconnectList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<Interconnect>of();
             }
           };
 
@@ -283,6 +299,9 @@ public class InterconnectStubSettings extends StubSettings<InterconnectStubSetti
         deleteInterconnectSettings;
     private final UnaryCallSettings.Builder<GetInterconnectHttpRequest, Interconnect>
         getInterconnectSettings;
+    private final UnaryCallSettings.Builder<
+            GetDiagnosticsInterconnectHttpRequest, InterconnectsGetDiagnosticsResponse>
+        getDiagnosticsInterconnectSettings;
     private final UnaryCallSettings.Builder<InsertInterconnectHttpRequest, Operation>
         insertInterconnectSettings;
     private final PagedCallSettings.Builder<
@@ -336,6 +355,8 @@ public class InterconnectStubSettings extends StubSettings<InterconnectStubSetti
 
       getInterconnectSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      getDiagnosticsInterconnectSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       insertInterconnectSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listInterconnectsSettings = PagedCallSettings.newBuilder(LIST_INTERCONNECTS_PAGE_STR_FACT);
@@ -346,6 +367,7 @@ public class InterconnectStubSettings extends StubSettings<InterconnectStubSetti
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               deleteInterconnectSettings,
               getInterconnectSettings,
+              getDiagnosticsInterconnectSettings,
               insertInterconnectSettings,
               listInterconnectsSettings,
               patchInterconnectSettings);
@@ -375,6 +397,11 @@ public class InterconnectStubSettings extends StubSettings<InterconnectStubSetti
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .getDiagnosticsInterconnectSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .insertInterconnectSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -397,6 +424,7 @@ public class InterconnectStubSettings extends StubSettings<InterconnectStubSetti
 
       deleteInterconnectSettings = settings.deleteInterconnectSettings.toBuilder();
       getInterconnectSettings = settings.getInterconnectSettings.toBuilder();
+      getDiagnosticsInterconnectSettings = settings.getDiagnosticsInterconnectSettings.toBuilder();
       insertInterconnectSettings = settings.insertInterconnectSettings.toBuilder();
       listInterconnectsSettings = settings.listInterconnectsSettings.toBuilder();
       patchInterconnectSettings = settings.patchInterconnectSettings.toBuilder();
@@ -405,6 +433,7 @@ public class InterconnectStubSettings extends StubSettings<InterconnectStubSetti
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               deleteInterconnectSettings,
               getInterconnectSettings,
+              getDiagnosticsInterconnectSettings,
               insertInterconnectSettings,
               listInterconnectsSettings,
               patchInterconnectSettings);
@@ -436,6 +465,13 @@ public class InterconnectStubSettings extends StubSettings<InterconnectStubSetti
     public UnaryCallSettings.Builder<GetInterconnectHttpRequest, Interconnect>
         getInterconnectSettings() {
       return getInterconnectSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getDiagnosticsInterconnect. */
+    public UnaryCallSettings.Builder<
+            GetDiagnosticsInterconnectHttpRequest, InterconnectsGetDiagnosticsResponse>
+        getDiagnosticsInterconnectSettings() {
+      return getDiagnosticsInterconnectSettings;
     }
 
     /** Returns the builder for the settings used for calls to insertInterconnect. */

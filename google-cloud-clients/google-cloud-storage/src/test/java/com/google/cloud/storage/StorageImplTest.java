@@ -112,8 +112,12 @@ public class StorageImplTest {
   private static final BucketInfo BUCKET_INFO1 =
       BucketInfo.newBuilder(BUCKET_NAME1).setMetageneration(42L).build();
   private static final BucketInfo BUCKET_INFO2 = BucketInfo.newBuilder(BUCKET_NAME2).build();
-  private static final BucketInfo BUCKET_INFO3 = BucketInfo.newBuilder(BUCKET_NAME3)
-      .setRetentionPeriod(RETENTION_PERIOD).setRetentionPolicyIsLocked(true).setMetageneration(42L).build();
+  private static final BucketInfo BUCKET_INFO3 =
+      BucketInfo.newBuilder(BUCKET_NAME3)
+          .setRetentionPeriod(RETENTION_PERIOD)
+          .setRetentionPolicyIsLocked(true)
+          .setMetageneration(42L)
+          .build();
 
   // BlobInfo objects
   private static final BlobInfo BLOB_INFO1 =
@@ -141,13 +145,17 @@ public class StorageImplTest {
           StorageRpc.Option.PREDEFINED_ACL, BUCKET_TARGET_PREDEFINED_ACL.getValue());
   private static final Map<StorageRpc.Option, ?> BUCKET_TARGET_OPTIONS_LOCK_RETENTION_POLICY =
       ImmutableMap.of(
-          StorageRpc.Option.IF_METAGENERATION_MATCH, BUCKET_INFO3.getMetageneration(),
-          StorageRpc.Option.USER_PROJECT, USER_PROJECT);
+          StorageRpc.Option.IF_METAGENERATION_MATCH,
+          BUCKET_INFO3.getMetageneration(),
+          StorageRpc.Option.USER_PROJECT,
+          USER_PROJECT);
 
   // Blob target options (create, update, compose)
   private static final BlobTargetOption BLOB_TARGET_GENERATION = BlobTargetOption.generationMatch();
   private static final BlobTargetOption BLOB_TARGET_METAGENERATION =
       BlobTargetOption.metagenerationMatch();
+  private static final BlobTargetOption BLOB_TARGET_DISABLE_GZIP_CONTENT =
+      BlobTargetOption.disableGzipContent();
   private static final BlobTargetOption BLOB_TARGET_NOT_EXIST = BlobTargetOption.doesNotExist();
   private static final BlobTargetOption BLOB_TARGET_PREDEFINED_ACL =
       BlobTargetOption.predefinedAcl(Storage.PredefinedAcl.PRIVATE);
@@ -156,6 +164,8 @@ public class StorageImplTest {
           StorageRpc.Option.IF_METAGENERATION_MATCH, BLOB_INFO1.getMetageneration(),
           StorageRpc.Option.IF_GENERATION_MATCH, 0L,
           StorageRpc.Option.PREDEFINED_ACL, BUCKET_TARGET_PREDEFINED_ACL.getValue());
+  private static final Map<StorageRpc.Option, ?> BLOB_TARGET_OPTIONS_CREATE_DISABLE_GZIP_CONTENT =
+      ImmutableMap.of(StorageRpc.Option.IF_DISABLE_GZIP_CONTENT, true);
   private static final Map<StorageRpc.Option, ?> BLOB_TARGET_OPTIONS_UPDATE =
       ImmutableMap.of(
           StorageRpc.Option.IF_METAGENERATION_MATCH, BLOB_INFO1.getMetageneration(),
@@ -278,16 +288,14 @@ public class StorageImplTest {
 
   private static final com.google.api.services.storage.model.Policy API_POLICY1 =
       new com.google.api.services.storage.model.Policy()
-          .setBindings(ImmutableList.of(
-              new Bindings()
-                  .setMembers(ImmutableList.of("allUsers"))
-                  .setRole("roles/storage.objectViewer"),
-              new Bindings()
-                  .setMembers(
-                      ImmutableList.of(
-                          "user:test1@gmail.com",
-                          "user:test2@gmail.com"))
-                  .setRole("roles/storage.objectAdmin")))
+          .setBindings(
+              ImmutableList.of(
+                  new Bindings()
+                      .setMembers(ImmutableList.of("allUsers"))
+                      .setRole("roles/storage.objectViewer"),
+                  new Bindings()
+                      .setMembers(ImmutableList.of("user:test1@gmail.com", "user:test2@gmail.com"))
+                      .setRole("roles/storage.objectAdmin")))
           .setEtag(POLICY_ETAG1);
 
   private static final String PRIVATE_KEY_STRING =
@@ -441,19 +449,16 @@ public class StorageImplTest {
   public void testCreateBlobRetry() throws IOException {
     Capture<ByteArrayInputStream> capturedStream1 = Capture.newInstance();
     Capture<ByteArrayInputStream> capturedStream2 = Capture.newInstance();
-    StorageObject storageObject = BLOB_INFO1
-        .toBuilder()
-        .setMd5(CONTENT_MD5)
-        .setCrc32c(CONTENT_CRC32C)
-        .build()
-        .toPb();
+    StorageObject storageObject =
+        BLOB_INFO1.toBuilder().setMd5(CONTENT_MD5).setCrc32c(CONTENT_CRC32C).build().toPb();
 
     EasyMock.expect(
             storageRpcMock.create(
                 EasyMock.eq(storageObject),
                 EasyMock.capture(capturedStream1),
                 EasyMock.eq(EMPTY_RPC_OPTIONS)))
-        .andThrow(new StorageException(500, "internalError")).once();
+        .andThrow(new StorageException(500, "internalError"))
+        .once();
 
     EasyMock.expect(
             storageRpcMock.create(
@@ -545,6 +550,32 @@ public class StorageImplTest {
   }
 
   @Test
+  public void testCreateBlobWithDisabledGzipContent() throws IOException {
+    Capture<ByteArrayInputStream> capturedStream = Capture.newInstance();
+    EasyMock.expect(
+            storageRpcMock.create(
+                EasyMock.eq(
+                    BLOB_INFO1
+                        .toBuilder()
+                        .setMd5(CONTENT_MD5)
+                        .setCrc32c(CONTENT_CRC32C)
+                        .build()
+                        .toPb()),
+                EasyMock.capture(capturedStream),
+                EasyMock.eq(BLOB_TARGET_OPTIONS_CREATE_DISABLE_GZIP_CONTENT)))
+        .andReturn(BLOB_INFO1.toPb());
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    Blob blob = storage.create(BLOB_INFO1, BLOB_CONTENT, BLOB_TARGET_DISABLE_GZIP_CONTENT);
+    assertEquals(expectedBlob1, blob);
+    ByteArrayInputStream byteStream = capturedStream.getValue();
+    byte[] streamBytes = new byte[BLOB_CONTENT.length];
+    assertEquals(BLOB_CONTENT.length, byteStream.read(streamBytes));
+    assertArrayEquals(BLOB_CONTENT, streamBytes);
+    assertEquals(-1, byteStream.read(streamBytes));
+  }
+
+  @Test
   public void testCreateBlobWithEncryptionKey() throws IOException {
     Capture<ByteArrayInputStream> capturedStream = Capture.newInstance();
     EasyMock.expect(
@@ -583,17 +614,17 @@ public class StorageImplTest {
     Capture<ByteArrayInputStream> capturedStream = Capture.newInstance();
     EasyMock.expect(
             storageRpcMock.create(
-                    EasyMock.eq(
-                            BLOB_INFO1
-                                    .toBuilder()
-                                    .setMd5(CONTENT_MD5)
-                                    .setCrc32c(CONTENT_CRC32C)
-                                    .build()
-                                    .toPb()),
-                    EasyMock.capture(capturedStream),
-                    EasyMock.eq(KMS_KEY_NAME_OPTIONS)))
-            .andReturn(BLOB_INFO1.toPb())
-            .times(2);
+                EasyMock.eq(
+                    BLOB_INFO1
+                        .toBuilder()
+                        .setMd5(CONTENT_MD5)
+                        .setCrc32c(CONTENT_CRC32C)
+                        .build()
+                        .toPb()),
+                EasyMock.capture(capturedStream),
+                EasyMock.eq(KMS_KEY_NAME_OPTIONS)))
+        .andReturn(BLOB_INFO1.toPb())
+        .times(2);
     EasyMock.replay(storageRpcMock);
     initializeService();
     Blob blob = storage.create(BLOB_INFO1, BLOB_CONTENT, BlobTargetOption.kmsKeyName(KMS_KEY_NAME));
@@ -620,11 +651,11 @@ public class StorageImplTest {
     BlobInfo.Builder infoBuilder = BLOB_INFO1.toBuilder();
     BlobInfo infoWithHashes = infoBuilder.setMd5(CONTENT_MD5).setCrc32c(CONTENT_CRC32C).build();
     BlobInfo infoWithoutHashes = infoBuilder.setMd5(null).setCrc32c(null).build();
-    EasyMock.expect(storageRpcMock
-        .create(
-            EasyMock.eq(infoWithoutHashes.toPb()),
-            EasyMock.capture(capturedStream),
-            EasyMock.eq(EMPTY_RPC_OPTIONS)))
+    EasyMock.expect(
+            storageRpcMock.create(
+                EasyMock.eq(infoWithoutHashes.toPb()),
+                EasyMock.capture(capturedStream),
+                EasyMock.eq(EMPTY_RPC_OPTIONS)))
         .andReturn(BLOB_INFO1.toPb());
     EasyMock.replay(storageRpcMock);
     initializeService();
@@ -665,12 +696,13 @@ public class StorageImplTest {
     BlobInfo.Builder infoBuilder = BLOB_INFO1.toBuilder();
     BlobInfo infoWithHashes = infoBuilder.setMd5(CONTENT_MD5).setCrc32c(CONTENT_CRC32C).build();
     BlobInfo infoWithoutHashes = infoBuilder.setMd5(null).setCrc32c(null).build();
-    EasyMock.expect(storageRpcMock
-        .create(
-            EasyMock.eq(infoWithoutHashes.toPb()),
-            EasyMock.capture(capturedStream),
-            EasyMock.eq(EMPTY_RPC_OPTIONS)))
-        .andThrow(new StorageException(500, "internalError")).once();
+    EasyMock.expect(
+            storageRpcMock.create(
+                EasyMock.eq(infoWithoutHashes.toPb()),
+                EasyMock.capture(capturedStream),
+                EasyMock.eq(EMPTY_RPC_OPTIONS)))
+        .andThrow(new StorageException(500, "internalError"))
+        .once();
 
     EasyMock.replay(storageRpcMock);
     storage =
@@ -1292,21 +1324,21 @@ public class StorageImplTest {
   @Test
   public void testCopyFromEncryptionKeyToKmsKeyName() {
     CopyRequest request =
-            Storage.CopyRequest.newBuilder()
-                    .setSource(BLOB_INFO2.getBlobId())
-                    .setSourceOptions(BlobSourceOption.decryptionKey(KEY))
-                    .setTarget(BLOB_INFO1, BlobTargetOption.kmsKeyName(KMS_KEY_NAME))
-                    .build();
+        Storage.CopyRequest.newBuilder()
+            .setSource(BLOB_INFO2.getBlobId())
+            .setSourceOptions(BlobSourceOption.decryptionKey(KEY))
+            .setTarget(BLOB_INFO1, BlobTargetOption.kmsKeyName(KMS_KEY_NAME))
+            .build();
     StorageRpc.RewriteRequest rpcRequest =
-            new StorageRpc.RewriteRequest(
-                    request.getSource().toPb(),
-                    ENCRYPTION_KEY_OPTIONS,
-                    true,
-                    request.getTarget().toPb(),
-                    KMS_KEY_NAME_OPTIONS,
-                    null);
+        new StorageRpc.RewriteRequest(
+            request.getSource().toPb(),
+            ENCRYPTION_KEY_OPTIONS,
+            true,
+            request.getTarget().toPb(),
+            KMS_KEY_NAME_OPTIONS,
+            null);
     StorageRpc.RewriteResponse rpcResponse =
-            new StorageRpc.RewriteResponse(rpcRequest, null, 42L, false, "token", 21L);
+        new StorageRpc.RewriteResponse(rpcRequest, null, 42L, false, "token", 21L);
     EasyMock.expect(storageRpcMock.openRewrite(rpcRequest)).andReturn(rpcResponse).times(2);
     EasyMock.replay(storageRpcMock);
     initializeService();
@@ -1315,11 +1347,11 @@ public class StorageImplTest {
     assertEquals(21L, writer.getTotalBytesCopied());
     assertTrue(!writer.isDone());
     request =
-            Storage.CopyRequest.newBuilder()
-                    .setSource(BLOB_INFO2.getBlobId())
-                    .setSourceOptions(BlobSourceOption.decryptionKey(BASE64_KEY))
-                    .setTarget(BLOB_INFO1, BlobTargetOption.kmsKeyName(KMS_KEY_NAME))
-                    .build();
+        Storage.CopyRequest.newBuilder()
+            .setSource(BLOB_INFO2.getBlobId())
+            .setSourceOptions(BlobSourceOption.decryptionKey(BASE64_KEY))
+            .setTarget(BLOB_INFO1, BlobTargetOption.kmsKeyName(KMS_KEY_NAME))
+            .build();
     writer = storage.copy(request);
     assertEquals(42L, writer.getBlobSize());
     assertEquals(21L, writer.getTotalBytesCopied());
@@ -1581,8 +1613,8 @@ public class StorageImplTest {
   public void testWriterWithKmsKeyName() {
     BlobInfo info = BLOB_INFO1.toBuilder().setMd5(null).setCrc32c(null).build();
     EasyMock.expect(storageRpcMock.open(info.toPb(), KMS_KEY_NAME_OPTIONS))
-            .andReturn("upload-id")
-            .times(2);
+        .andReturn("upload-id")
+        .times(2);
     EasyMock.replay(storageRpcMock);
     initializeService();
     WriteChannel channel = storage.writer(info, BlobWriteOption.kmsKeyName(KMS_KEY_NAME));
@@ -1605,6 +1637,52 @@ public class StorageImplTest {
     String stringUrl = url.toString();
     String expectedUrl =
         new StringBuilder("https://storage.googleapis.com/")
+            .append(BUCKET_NAME1)
+            .append('/')
+            .append(BLOB_NAME1)
+            .append("?GoogleAccessId=")
+            .append(ACCOUNT)
+            .append("&Expires=")
+            .append(42L + 1209600)
+            .append("&Signature=")
+            .toString();
+    assertTrue(stringUrl.startsWith(expectedUrl));
+    String signature = stringUrl.substring(expectedUrl.length());
+
+    StringBuilder signedMessageBuilder = new StringBuilder();
+    signedMessageBuilder
+        .append(HttpMethod.GET)
+        .append("\n\n\n")
+        .append(42L + 1209600)
+        .append("\n/")
+        .append(BUCKET_NAME1)
+        .append('/')
+        .append(BLOB_NAME1);
+
+    Signature signer = Signature.getInstance("SHA256withRSA");
+    signer.initVerify(publicKey);
+    signer.update(signedMessageBuilder.toString().getBytes(UTF_8));
+    assertTrue(
+        signer.verify(BaseEncoding.base64().decode(URLDecoder.decode(signature, UTF_8.name()))));
+  }
+
+  @Test
+  public void testSignUrlWithHostName()
+      throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
+          UnsupportedEncodingException {
+    EasyMock.replay(storageRpcMock);
+    ServiceAccountCredentials credentials =
+        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
+    storage = options.toBuilder().setCredentials(credentials).build().getService();
+    URL url =
+        storage.signUrl(
+            BLOB_INFO1,
+            14,
+            TimeUnit.DAYS,
+            Storage.SignUrlOption.withHostName("https://example.com"));
+    String stringUrl = url.toString();
+    String expectedUrl =
+        new StringBuilder("https://example.com/")
             .append(BUCKET_NAME1)
             .append('/')
             .append(BLOB_NAME1)
@@ -1677,6 +1755,52 @@ public class StorageImplTest {
   }
 
   @Test
+  public void testSignUrlLeadingSlashWithHostName()
+      throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
+          UnsupportedEncodingException {
+    String blobName = "/b1";
+    EasyMock.replay(storageRpcMock);
+    ServiceAccountCredentials credentials =
+        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
+    storage = options.toBuilder().setCredentials(credentials).build().getService();
+    URL url =
+        storage.signUrl(
+            BlobInfo.newBuilder(BUCKET_NAME1, blobName).build(),
+            14,
+            TimeUnit.DAYS,
+            Storage.SignUrlOption.withHostName("https://example.com"));
+    String escapedBlobName = UrlEscapers.urlFragmentEscaper().escape(blobName);
+    String stringUrl = url.toString();
+    String expectedUrl =
+        new StringBuilder("https://example.com/")
+            .append(BUCKET_NAME1)
+            .append(escapedBlobName)
+            .append("?GoogleAccessId=")
+            .append(ACCOUNT)
+            .append("&Expires=")
+            .append(42L + 1209600)
+            .append("&Signature=")
+            .toString();
+    assertTrue(stringUrl.startsWith(expectedUrl));
+    String signature = stringUrl.substring(expectedUrl.length());
+
+    StringBuilder signedMessageBuilder = new StringBuilder();
+    signedMessageBuilder
+        .append(HttpMethod.GET)
+        .append("\n\n\n")
+        .append(42L + 1209600)
+        .append("\n/")
+        .append(BUCKET_NAME1)
+        .append(escapedBlobName);
+
+    Signature signer = Signature.getInstance("SHA256withRSA");
+    signer.initVerify(publicKey);
+    signer.update(signedMessageBuilder.toString().getBytes(UTF_8));
+    assertTrue(
+        signer.verify(BaseEncoding.base64().decode(URLDecoder.decode(signature, UTF_8.name()))));
+  }
+
+  @Test
   public void testSignUrlWithOptions()
       throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
           UnsupportedEncodingException {
@@ -1695,6 +1819,59 @@ public class StorageImplTest {
     String stringUrl = url.toString();
     String expectedUrl =
         new StringBuilder("https://storage.googleapis.com/")
+            .append(BUCKET_NAME1)
+            .append('/')
+            .append(BLOB_NAME1)
+            .append("?GoogleAccessId=")
+            .append(ACCOUNT)
+            .append("&Expires=")
+            .append(42L + 1209600)
+            .append("&Signature=")
+            .toString();
+    assertTrue(stringUrl.startsWith(expectedUrl));
+    String signature = stringUrl.substring(expectedUrl.length());
+
+    StringBuilder signedMessageBuilder = new StringBuilder();
+    signedMessageBuilder
+        .append(HttpMethod.POST)
+        .append('\n')
+        .append(BLOB_INFO1.getMd5())
+        .append('\n')
+        .append(BLOB_INFO1.getContentType())
+        .append('\n')
+        .append(42L + 1209600)
+        .append("\n/")
+        .append(BUCKET_NAME1)
+        .append('/')
+        .append(BLOB_NAME1);
+
+    Signature signer = Signature.getInstance("SHA256withRSA");
+    signer.initVerify(publicKey);
+    signer.update(signedMessageBuilder.toString().getBytes(UTF_8));
+    assertTrue(
+        signer.verify(BaseEncoding.base64().decode(URLDecoder.decode(signature, UTF_8.name()))));
+  }
+
+  @Test
+  public void testSignUrlWithOptionsAndHostName()
+      throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
+          UnsupportedEncodingException {
+    EasyMock.replay(storageRpcMock);
+    ServiceAccountCredentials credentials =
+        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
+    storage = options.toBuilder().setCredentials(credentials).build().getService();
+    URL url =
+        storage.signUrl(
+            BLOB_INFO1,
+            14,
+            TimeUnit.DAYS,
+            Storage.SignUrlOption.httpMethod(HttpMethod.POST),
+            Storage.SignUrlOption.withContentType(),
+            Storage.SignUrlOption.withMd5(),
+            Storage.SignUrlOption.withHostName("https://example.com"));
+    String stringUrl = url.toString();
+    String expectedUrl =
+        new StringBuilder("https://example.com/")
             .append(BUCKET_NAME1)
             .append('/')
             .append(BLOB_NAME1)
@@ -1779,7 +1956,63 @@ public class StorageImplTest {
           signer.verify(BaseEncoding.base64().decode(URLDecoder.decode(signature, UTF_8.name()))));
     }
   }
-  
+
+  @Test
+  public void testSignUrlForBlobWithSpecialCharsAndHostName()
+      throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
+          UnsupportedEncodingException {
+    // List of chars under test were taken from
+    // https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters
+    char[] specialChars =
+        new char[] {
+          '!', '#', '$', '&', '\'', '(', ')', '*', '+', ',', ':', ';', '=', '?', '@', '[', ']'
+        };
+    EasyMock.replay(storageRpcMock);
+    ServiceAccountCredentials credentials =
+        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
+    storage = options.toBuilder().setCredentials(credentials).build().getService();
+
+    for (char specialChar : specialChars) {
+      String blobName = "/a" + specialChar + "b";
+      URL url =
+          storage.signUrl(
+              BlobInfo.newBuilder(BUCKET_NAME1, blobName).build(),
+              14,
+              TimeUnit.DAYS,
+              Storage.SignUrlOption.withHostName("https://example.com"));
+      String escapedBlobName =
+          UrlEscapers.urlFragmentEscaper().escape(blobName).replace("?", "%3F");
+      String stringUrl = url.toString();
+      String expectedUrl =
+          new StringBuilder("https://example.com/")
+              .append(BUCKET_NAME1)
+              .append(escapedBlobName)
+              .append("?GoogleAccessId=")
+              .append(ACCOUNT)
+              .append("&Expires=")
+              .append(42L + 1209600)
+              .append("&Signature=")
+              .toString();
+      assertTrue(stringUrl.startsWith(expectedUrl));
+      String signature = stringUrl.substring(expectedUrl.length());
+
+      StringBuilder signedMessageBuilder = new StringBuilder();
+      signedMessageBuilder
+          .append(HttpMethod.GET)
+          .append("\n\n\n")
+          .append(42L + 1209600)
+          .append("\n/")
+          .append(BUCKET_NAME1)
+          .append(escapedBlobName);
+
+      Signature signer = Signature.getInstance("SHA256withRSA");
+      signer.initVerify(publicKey);
+      signer.update(signedMessageBuilder.toString().getBytes(UTF_8));
+      assertTrue(
+          signer.verify(BaseEncoding.base64().decode(URLDecoder.decode(signature, UTF_8.name()))));
+    }
+  }
+
   @Test
   public void testSignUrlWithExtHeaders()
       throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
@@ -1838,6 +2071,64 @@ public class StorageImplTest {
   }
 
   @Test
+  public void testSignUrlWithExtHeadersAndHostName()
+      throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
+          UnsupportedEncodingException {
+    EasyMock.replay(storageRpcMock);
+    ServiceAccountCredentials credentials =
+        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
+    storage = options.toBuilder().setCredentials(credentials).build().getService();
+    Map<String, String> extHeaders = new HashMap<String, String>();
+    extHeaders.put("x-goog-acl", "public-read");
+    extHeaders.put("x-goog-meta-owner", "myself");
+    URL url =
+        storage.signUrl(
+            BLOB_INFO1,
+            14,
+            TimeUnit.DAYS,
+            Storage.SignUrlOption.httpMethod(HttpMethod.PUT),
+            Storage.SignUrlOption.withContentType(),
+            Storage.SignUrlOption.withExtHeaders(extHeaders),
+            Storage.SignUrlOption.withHostName("https://example.com"));
+    String stringUrl = url.toString();
+    String expectedUrl =
+        new StringBuilder("https://example.com/")
+            .append(BUCKET_NAME1)
+            .append('/')
+            .append(BLOB_NAME1)
+            .append("?GoogleAccessId=")
+            .append(ACCOUNT)
+            .append("&Expires=")
+            .append(42L + 1209600)
+            .append("&Signature=")
+            .toString();
+    assertTrue(stringUrl.startsWith(expectedUrl));
+    String signature = stringUrl.substring(expectedUrl.length());
+
+    StringBuilder signedMessageBuilder = new StringBuilder();
+    signedMessageBuilder
+        .append(HttpMethod.PUT)
+        .append('\n')
+        .append('\n')
+        .append(BLOB_INFO1.getContentType())
+        .append('\n')
+        .append(42L + 1209600)
+        .append('\n')
+        .append("x-goog-acl:public-read\n")
+        .append("x-goog-meta-owner:myself\n")
+        .append('/')
+        .append(BUCKET_NAME1)
+        .append('/')
+        .append(BLOB_NAME1);
+
+    Signature signer = Signature.getInstance("SHA256withRSA");
+    signer.initVerify(publicKey);
+    signer.update(signedMessageBuilder.toString().getBytes(UTF_8));
+    assertTrue(
+        signer.verify(BaseEncoding.base64().decode(URLDecoder.decode(signature, UTF_8.name()))));
+  }
+
+  @Test
   public void testSignUrlForBlobWithSlashes()
       throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
           UnsupportedEncodingException {
@@ -1853,6 +2144,53 @@ public class StorageImplTest {
     String stringUrl = url.toString();
     String expectedUrl =
         new StringBuilder("https://storage.googleapis.com/")
+            .append(BUCKET_NAME1)
+            .append(escapedBlobName)
+            .append("?GoogleAccessId=")
+            .append(ACCOUNT)
+            .append("&Expires=")
+            .append(42L + 1209600)
+            .append("&Signature=")
+            .toString();
+    assertTrue(stringUrl.startsWith(expectedUrl));
+    String signature = stringUrl.substring(expectedUrl.length());
+
+    StringBuilder signedMessageBuilder = new StringBuilder();
+    signedMessageBuilder
+        .append(HttpMethod.GET)
+        .append("\n\n\n")
+        .append(42L + 1209600)
+        .append("\n/")
+        .append(BUCKET_NAME1)
+        .append(escapedBlobName);
+
+    Signature signer = Signature.getInstance("SHA256withRSA");
+    signer.initVerify(publicKey);
+    signer.update(signedMessageBuilder.toString().getBytes(UTF_8));
+    assertTrue(
+        signer.verify(BaseEncoding.base64().decode(URLDecoder.decode(signature, UTF_8.name()))));
+  }
+
+  @Test
+  public void testSignUrlForBlobWithSlashesAndHostName()
+      throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
+          UnsupportedEncodingException {
+    EasyMock.replay(storageRpcMock);
+    ServiceAccountCredentials credentials =
+        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
+    storage = options.toBuilder().setCredentials(credentials).build().getService();
+
+    String blobName = "/foo/bar/baz #%20other cool stuff.txt";
+    URL url =
+        storage.signUrl(
+            BlobInfo.newBuilder(BUCKET_NAME1, blobName).build(),
+            14,
+            TimeUnit.DAYS,
+            Storage.SignUrlOption.withHostName("https://example.com"));
+    String escapedBlobName = UrlEscapers.urlFragmentEscaper().escape(blobName);
+    String stringUrl = url.toString();
+    String expectedUrl =
+        new StringBuilder("https://example.com/")
             .append(BUCKET_NAME1)
             .append(escapedBlobName)
             .append("?GoogleAccessId=")
@@ -2046,7 +2384,9 @@ public class StorageImplTest {
 
   @Test
   public void testGetBucketAcl() {
-    EasyMock.expect(storageRpcMock.getAcl(BUCKET_NAME1, "allAuthenticatedUsers", new HashMap<StorageRpc.Option, Object>()))
+    EasyMock.expect(
+            storageRpcMock.getAcl(
+                BUCKET_NAME1, "allAuthenticatedUsers", new HashMap<StorageRpc.Option, Object>()))
         .andReturn(ACL.toBucketPb());
     EasyMock.replay(storageRpcMock);
     initializeService();
@@ -2056,7 +2396,10 @@ public class StorageImplTest {
 
   @Test
   public void testGetBucketAclNull() {
-    EasyMock.expect(storageRpcMock.getAcl(BUCKET_NAME1, "allAuthenticatedUsers", new HashMap<StorageRpc.Option, Object>())).andReturn(null);
+    EasyMock.expect(
+            storageRpcMock.getAcl(
+                BUCKET_NAME1, "allAuthenticatedUsers", new HashMap<StorageRpc.Option, Object>()))
+        .andReturn(null);
     EasyMock.replay(storageRpcMock);
     initializeService();
     assertNull(storage.getAcl(BUCKET_NAME1, User.ofAllAuthenticatedUsers()));
@@ -2064,7 +2407,9 @@ public class StorageImplTest {
 
   @Test
   public void testDeleteBucketAcl() {
-    EasyMock.expect(storageRpcMock.deleteAcl(BUCKET_NAME1, "allAuthenticatedUsers", new HashMap<StorageRpc.Option, Object>()))
+    EasyMock.expect(
+            storageRpcMock.deleteAcl(
+                BUCKET_NAME1, "allAuthenticatedUsers", new HashMap<StorageRpc.Option, Object>()))
         .andReturn(true);
     EasyMock.replay(storageRpcMock);
     initializeService();
@@ -2074,7 +2419,9 @@ public class StorageImplTest {
   @Test
   public void testCreateBucketAcl() {
     Acl returnedAcl = ACL.toBuilder().setEtag("ETAG").setId("ID").build();
-    EasyMock.expect(storageRpcMock.createAcl(ACL.toBucketPb().setBucket(BUCKET_NAME1), new HashMap<StorageRpc.Option, Object>()))
+    EasyMock.expect(
+            storageRpcMock.createAcl(
+                ACL.toBucketPb().setBucket(BUCKET_NAME1), new HashMap<StorageRpc.Option, Object>()))
         .andReturn(returnedAcl.toBucketPb());
     EasyMock.replay(storageRpcMock);
     initializeService();
@@ -2085,7 +2432,9 @@ public class StorageImplTest {
   @Test
   public void testUpdateBucketAcl() {
     Acl returnedAcl = ACL.toBuilder().setEtag("ETAG").setId("ID").build();
-    EasyMock.expect(storageRpcMock.patchAcl(ACL.toBucketPb().setBucket(BUCKET_NAME1), new HashMap<StorageRpc.Option, Object>()))
+    EasyMock.expect(
+            storageRpcMock.patchAcl(
+                ACL.toBucketPb().setBucket(BUCKET_NAME1), new HashMap<StorageRpc.Option, Object>()))
         .andReturn(returnedAcl.toBucketPb());
     EasyMock.replay(storageRpcMock);
     initializeService();
@@ -2236,7 +2585,8 @@ public class StorageImplTest {
 
   @Test
   public void testGetIamPolicy() {
-    EasyMock.expect(storageRpcMock.getIamPolicy(BUCKET_NAME1, EMPTY_RPC_OPTIONS)).andReturn(API_POLICY1);
+    EasyMock.expect(storageRpcMock.getIamPolicy(BUCKET_NAME1, EMPTY_RPC_OPTIONS))
+        .andReturn(API_POLICY1);
     EasyMock.replay(storageRpcMock);
     initializeService();
     assertEquals(LIB_POLICY1, storage.getIamPolicy(BUCKET_NAME1));
@@ -2246,36 +2596,34 @@ public class StorageImplTest {
   public void testSetIamPolicy() {
     com.google.api.services.storage.model.Policy preCommitApiPolicy =
         new com.google.api.services.storage.model.Policy()
-            .setBindings(ImmutableList.of(
-                new Bindings()
-                    .setMembers(ImmutableList.of("allUsers"))
-                    .setRole("roles/storage.objectViewer"),
-                new Bindings()
-                    .setMembers(
-                        ImmutableList.of(
-                            "user:test1@gmail.com",
-                            "user:test2@gmail.com"))
-                    .setRole("roles/storage.objectAdmin"),
-                new Bindings()
-                    .setMembers(ImmutableList.of("group:test-group@gmail.com"))
-                    .setRole("roles/storage.admin")))
+            .setBindings(
+                ImmutableList.of(
+                    new Bindings()
+                        .setMembers(ImmutableList.of("allUsers"))
+                        .setRole("roles/storage.objectViewer"),
+                    new Bindings()
+                        .setMembers(
+                            ImmutableList.of("user:test1@gmail.com", "user:test2@gmail.com"))
+                        .setRole("roles/storage.objectAdmin"),
+                    new Bindings()
+                        .setMembers(ImmutableList.of("group:test-group@gmail.com"))
+                        .setRole("roles/storage.admin")))
             .setEtag(POLICY_ETAG1);
     // postCommitApiPolicy is identical but for the etag, which has been updated.
     com.google.api.services.storage.model.Policy postCommitApiPolicy =
         new com.google.api.services.storage.model.Policy()
-            .setBindings(ImmutableList.of(
-                new Bindings()
-                    .setMembers(ImmutableList.of("allUsers"))
-                    .setRole("roles/storage.objectViewer"),
-                new Bindings()
-                    .setMembers(
-                        ImmutableList.of(
-                            "user:test1@gmail.com",
-                            "user:test2@gmail.com"))
-                    .setRole("roles/storage.objectAdmin"),
-                new Bindings()
-                    .setMembers(ImmutableList.of("group:test-group@gmail.com"))
-                    .setRole("roles/storage.admin")))
+            .setBindings(
+                ImmutableList.of(
+                    new Bindings()
+                        .setMembers(ImmutableList.of("allUsers"))
+                        .setRole("roles/storage.objectViewer"),
+                    new Bindings()
+                        .setMembers(
+                            ImmutableList.of("user:test1@gmail.com", "user:test2@gmail.com"))
+                        .setRole("roles/storage.objectAdmin"),
+                    new Bindings()
+                        .setMembers(ImmutableList.of("group:test-group@gmail.com"))
+                        .setRole("roles/storage.admin")))
             .setEtag(POLICY_ETAG2);
     Policy postCommitLibPolicy =
         Policy.newBuilder()
@@ -2288,12 +2636,13 @@ public class StorageImplTest {
             .setEtag(POLICY_ETAG2)
             .build();
 
-    EasyMock.expect(storageRpcMock.getIamPolicy(BUCKET_NAME1, EMPTY_RPC_OPTIONS)).andReturn(API_POLICY1);
+    EasyMock.expect(storageRpcMock.getIamPolicy(BUCKET_NAME1, EMPTY_RPC_OPTIONS))
+        .andReturn(API_POLICY1);
     EasyMock.expect(
-        storageRpcMock.setIamPolicy(
-            EasyMock.eq(BUCKET_NAME1),
-            eqApiPolicy(preCommitApiPolicy),
-            EasyMock.eq(EMPTY_RPC_OPTIONS)))
+            storageRpcMock.setIamPolicy(
+                EasyMock.eq(BUCKET_NAME1),
+                eqApiPolicy(preCommitApiPolicy),
+                EasyMock.eq(EMPTY_RPC_OPTIONS)))
         .andReturn(postCommitApiPolicy);
     EasyMock.replay(storageRpcMock);
     initializeService();
@@ -2302,7 +2651,8 @@ public class StorageImplTest {
     Policy updatedPolicy =
         storage.setIamPolicy(
             BUCKET_NAME1,
-            currentPolicy.toBuilder()
+            currentPolicy
+                .toBuilder()
                 .addIdentity(StorageRoles.admin(), Identity.group("test-group@gmail.com"))
                 .build());
     assertEquals(updatedPolicy, postCommitLibPolicy);
@@ -2312,10 +2662,11 @@ public class StorageImplTest {
   public void testTestIamPermissionsNull() {
     ImmutableList<Boolean> expectedPermissions = ImmutableList.of(false, false, false);
     ImmutableList<String> checkedPermissions =
-        ImmutableList
-            .of("storage.buckets.get", "storage.buckets.getIamPolicy", "storage.objects.list");
+        ImmutableList.of(
+            "storage.buckets.get", "storage.buckets.getIamPolicy", "storage.objects.list");
 
-    EasyMock.expect(storageRpcMock.testIamPermissions(BUCKET_NAME1, checkedPermissions, EMPTY_RPC_OPTIONS))
+    EasyMock.expect(
+            storageRpcMock.testIamPermissions(BUCKET_NAME1, checkedPermissions, EMPTY_RPC_OPTIONS))
         .andReturn(new TestIamPermissionsResponse());
     EasyMock.replay(storageRpcMock);
     initializeService();
@@ -2326,12 +2677,14 @@ public class StorageImplTest {
   public void testTestIamPermissionsNonNull() {
     ImmutableList<Boolean> expectedPermissions = ImmutableList.of(true, false, true);
     ImmutableList<String> checkedPermissions =
-        ImmutableList
-            .of("storage.buckets.get", "storage.buckets.getIamPolicy", "storage.objects.list");
+        ImmutableList.of(
+            "storage.buckets.get", "storage.buckets.getIamPolicy", "storage.objects.list");
 
-    EasyMock.expect(storageRpcMock.testIamPermissions(BUCKET_NAME1, checkedPermissions, EMPTY_RPC_OPTIONS))
-        .andReturn(new TestIamPermissionsResponse()
-            .setPermissions(ImmutableList.of("storage.objects.list", "storage.buckets.get")));
+    EasyMock.expect(
+            storageRpcMock.testIamPermissions(BUCKET_NAME1, checkedPermissions, EMPTY_RPC_OPTIONS))
+        .andReturn(
+            new TestIamPermissionsResponse()
+                .setPermissions(ImmutableList.of("storage.objects.list", "storage.buckets.get")));
     EasyMock.replay(storageRpcMock);
     initializeService();
     assertEquals(expectedPermissions, storage.testIamPermissions(BUCKET_NAME1, checkedPermissions));
@@ -2339,12 +2692,15 @@ public class StorageImplTest {
 
   @Test
   public void testLockRetentionPolicy() {
-    EasyMock.expect(storageRpcMock
-        .lockRetentionPolicy(BUCKET_INFO3.toPb(), BUCKET_TARGET_OPTIONS_LOCK_RETENTION_POLICY))
+    EasyMock.expect(
+            storageRpcMock.lockRetentionPolicy(
+                BUCKET_INFO3.toPb(), BUCKET_TARGET_OPTIONS_LOCK_RETENTION_POLICY))
         .andReturn(BUCKET_INFO3.toPb());
     EasyMock.replay(storageRpcMock);
     initializeService();
-    Bucket bucket = storage.lockRetentionPolicy(BUCKET_INFO3, BUCKET_TARGET_METAGENERATION, BUCKET_TARGET_USER_PROJECT);
+    Bucket bucket =
+        storage.lockRetentionPolicy(
+            BUCKET_INFO3, BUCKET_TARGET_METAGENERATION, BUCKET_TARGET_USER_PROJECT);
     assertEquals(expectedBucket3, bucket);
   }
 
