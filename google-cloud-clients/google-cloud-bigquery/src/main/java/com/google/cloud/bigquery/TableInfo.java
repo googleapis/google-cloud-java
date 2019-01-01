@@ -94,6 +94,10 @@ public class TableInfo implements Serializable {
 
     abstract Builder setLastModifiedTime(Long lastModifiedTime);
 
+    abstract Builder setNumBytes(Long numBytes);
+
+    abstract Builder setNumRows(BigInteger numRows);
+
     abstract Builder setSelfLink(String selfLink);
 
     /** Sets the table identity. */
@@ -222,6 +226,18 @@ public class TableInfo implements Serializable {
     @Override
     Builder setLastModifiedTime(Long lastModifiedTime) {
       this.lastModifiedTime = lastModifiedTime;
+      return this;
+    }
+
+    @Override
+    Builder setNumBytes(Long numBytes) {
+      this.numBytes = numBytes;
+      return this;
+    }
+
+    @Override
+    Builder setNumRows(BigInteger numRows) {
+      this.numRows = numRows;
       return this;
     }
 
@@ -431,8 +447,6 @@ public class TableInfo implements Serializable {
     if (lastModifiedTime != null) {
       tablePb.setLastModifiedTime(BigInteger.valueOf(lastModifiedTime));
     }
-    tablePb.setNumBytes(numBytes);
-    tablePb.setNumRows(numRows);
     tablePb.setCreationTime(creationTime);
     tablePb.setDescription(description);
     tablePb.setEtag(etag);

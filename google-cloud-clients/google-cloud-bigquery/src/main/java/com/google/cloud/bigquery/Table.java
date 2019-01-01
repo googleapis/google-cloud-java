@@ -24,6 +24,7 @@ import com.google.cloud.bigquery.BigQuery.TableOption;
 import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.math.BigInteger;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -98,6 +99,18 @@ public class Table extends TableInfo {
     @Override
     Builder setLastModifiedTime(Long lastModifiedTime) {
       infoBuilder.setLastModifiedTime(lastModifiedTime);
+      return this;
+    }
+
+    @Override
+    Builder setNumBytes(Long numBytes) {
+      infoBuilder.setNumBytes(numBytes);
+      return this;
+    }
+
+    @Override
+    Builder setNumRows(BigInteger numRows) {
+      infoBuilder.setNumRows(numRows);
       return this;
     }
 
