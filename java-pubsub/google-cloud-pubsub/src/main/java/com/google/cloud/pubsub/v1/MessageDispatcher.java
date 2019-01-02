@@ -133,6 +133,7 @@ class MessageDispatcher {
     private final int outstandingBytes;
     private final long receivedTimeMillis;
     private final Instant totalExpiration;
+    private boolean extending = true;
 
     AckHandler(String ackId, int outstandingBytes, Instant totalExpiration) {
       this.ackId = ackId;
@@ -151,6 +152,7 @@ class MessageDispatcher {
          */
         return;
       }
+      extending = false;
       flowController.release(1, outstandingBytes);
       messagesWaiter.incrementPendingMessages(-1);
       processOutstandingBatches();
@@ -417,6 +419,11 @@ class MessageDispatcher {
             public void nack() {
               response.set(AckReply.NACK);
             }
+
+            @Override
+            public void abandon() {
+              ackHandler.forget();
+            }
           };
       ApiFutures.addCallback(response, ackHandler, MoreExecutors.directExecutor());
       executor.execute(
@@ -471,6 +478,9 @@ class MessageDispatcher {
     Instant extendTo = now.plusSeconds(extendSeconds);
 
     for (Map.Entry<String, AckHandler> entry : pendingMessages.entrySet()) {
+      if (!entry.getValue().extending) {
+        continue;
+      }
       String ackId = entry.getKey();
       Instant totalExpiration = entry.getValue().totalExpiration;
       if (totalExpiration.isAfter(extendTo)) {

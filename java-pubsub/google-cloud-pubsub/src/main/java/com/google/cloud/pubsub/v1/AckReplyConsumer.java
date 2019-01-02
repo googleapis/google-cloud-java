@@ -29,4 +29,6 @@ public interface AckReplyConsumer {
    * message.
    */
   void nack();
+
+  void abandon();
 }
