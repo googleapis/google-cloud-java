@@ -19,6 +19,11 @@ package com.google.cloud.bigquery;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 public class FieldTest {
 
@@ -90,6 +95,22 @@ public class FieldTest {
     compareFieldSchemas(FIELD_SCHEMA3, Field.fromPb(FIELD_SCHEMA3.toPb()));
     Field field = Field.newBuilder(FIELD_NAME1, FIELD_TYPE1).build();
     compareFieldSchemas(field, Field.fromPb(field.toPb()));
+  }
+
+  @Test
+  public void testSubFieldWithClonedType() throws Exception {
+    LegacySQLTypeName record = LegacySQLTypeName.RECORD;
+    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+    ObjectOutputStream oos = new ObjectOutputStream(baos);
+    oos.writeObject(record);
+    oos.flush();
+    oos.close();
+    InputStream is = new ByteArrayInputStream(baos.toByteArray());
+    ObjectInputStream ois = new ObjectInputStream(is);
+    LegacySQLTypeName clonedRecord = (LegacySQLTypeName) ois.readObject();
+    ois.close();
+
+    Field.of("field", clonedRecord, Field.of("subfield", LegacySQLTypeName.BOOLEAN));
   }
 
   private void compareFieldSchemas(Field expected, Field value) {

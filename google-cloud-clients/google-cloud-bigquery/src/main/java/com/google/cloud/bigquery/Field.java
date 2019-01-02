@@ -125,7 +125,8 @@ public final class Field implements Serializable {
      *     Types</a>
      */
     public Builder setType(LegacySQLTypeName type, FieldList subFields) {
-      if (type == LegacySQLTypeName.RECORD) {
+      // LegacySQLTypeName is not an enum, cannot use reference equal.
+      if (LegacySQLTypeName.RECORD.equals(type)) {
         if (subFields == null || subFields.isEmpty()) {
           throw new IllegalArgumentException(
               "The " + type + " field must have at least one sub-field");
