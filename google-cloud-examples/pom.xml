@@ -31,6 +31,14 @@
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-bigtable-admin</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-bigtable</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-compute</artifactId>
     </dependency>
     <dependency>
@@ -188,7 +196,7 @@
         <version>2.19.1</version>
         <configuration>
           <excludes>
-            <exclude>**/IT*Snippets.java</exclude>
+            <exclude>**/IT*.java</exclude>
           </excludes>
         </configuration>
       </plugin>
