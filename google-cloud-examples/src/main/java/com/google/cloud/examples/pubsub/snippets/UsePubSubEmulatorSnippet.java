@@ -39,7 +39,7 @@ public class UsePubSubEmulatorSnippet {
   public static void main(String... args) throws IOException {
     // [START use_pubsub_emulator]
     String hostport = System.getenv("PUBSUB_EMULATOR_HOST");
-    ManagedChannel channel = ManagedChannelBuilder.forTarget(hostport).usePlaintext(true).build();
+    ManagedChannel channel = ManagedChannelBuilder.forTarget(hostport).usePlaintext().build();
     try {
       TransportChannelProvider channelProvider =
           FixedTransportChannelProvider.create(GrpcTransportChannel.create(channel));
