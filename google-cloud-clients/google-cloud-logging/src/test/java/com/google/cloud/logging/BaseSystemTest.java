@@ -229,6 +229,7 @@ public abstract class BaseSystemTest {
             .build();
     logging().write(ImmutableList.of(firstEntry));
     logging().write(ImmutableList.of(secondEntry));
+    logging().flush();
     String filter = createEqualityFilter("logName", logName);
     EntryListOption[] options = {EntryListOption.filter(filter), EntryListOption.pageSize(1)};
     Page<LogEntry> page = logging().listLogEntries(options);
