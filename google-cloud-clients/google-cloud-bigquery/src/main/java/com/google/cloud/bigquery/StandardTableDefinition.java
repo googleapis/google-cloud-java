@@ -57,12 +57,12 @@ public abstract class StandardTableDefinition extends TableDefinition {
     }
 
     /** Returns a lower-bound estimate of the number of rows currently in the streaming buffer. */
-    public long getEstimatedRows() {
+    public Long getEstimatedRows() {
       return estimatedRows;
     }
 
     /** Returns a lower-bound estimate of the number of bytes currently in the streaming buffer. */
-    public long getEstimatedBytes() {
+    public Long getEstimatedBytes() {
       return estimatedBytes;
     }
 
@@ -95,10 +95,17 @@ public abstract class StandardTableDefinition extends TableDefinition {
     }
 
     Streamingbuffer toPb() {
-      return new Streamingbuffer()
-          .setEstimatedBytes(BigInteger.valueOf(estimatedBytes))
-          .setEstimatedRows(BigInteger.valueOf(estimatedRows))
-          .setOldestEntryTime(BigInteger.valueOf(oldestEntryTime));
+      Streamingbuffer buffer = new Streamingbuffer();
+      if (estimatedBytes != null) {
+        buffer.setEstimatedBytes(BigInteger.valueOf(estimatedBytes));
+      }
+      if (estimatedRows != null) {
+        buffer.setEstimatedRows(BigInteger.valueOf(estimatedRows));
+      }
+      if (oldestEntryTime != null) {
+        buffer.setOldestEntryTime(BigInteger.valueOf(oldestEntryTime));
+      }
+      return buffer;
     }
 
     static StreamingBuffer fromPb(Streamingbuffer streamingBufferPb) {

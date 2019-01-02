@@ -24,6 +24,8 @@ import com.google.cloud.bigtable.data.v2.internal.ByteStringComparator;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.internal.RowSetUtil;
 import com.google.cloud.bigtable.data.v2.models.Range.ByteStringRange;
+import com.google.common.base.MoreObjects;
+import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableSortedSet;
 import com.google.common.collect.Lists;
@@ -263,5 +265,35 @@ public final class Query implements Serializable {
       return null;
     }
     return ByteString.copyFromUtf8(key);
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    Query query = (Query) o;
+    return Objects.equal(tableId, query.tableId)
+        && Objects.equal(builder.build(), query.builder.build());
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hashCode(tableId, builder.build());
+  }
+
+  @Override
+  public String toString() {
+    ReadRowsRequest request = builder.build();
+
+    return MoreObjects.toStringHelper(this)
+        .add("tableId", tableId)
+        .add("keys", request.getRows().getRowKeysList())
+        .add("ranges", request.getRows().getRowRangesList())
+        .add("filter", request.getFilter())
+        .toString();
   }
 }
