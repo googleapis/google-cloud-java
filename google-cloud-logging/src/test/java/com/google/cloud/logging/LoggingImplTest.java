@@ -1189,6 +1189,41 @@ public class LoggingImplTest {
   }
 
   @Test
+  public void testWriteLogEntriesDoesnotEnableFlushByDefault() {
+    WriteLogEntriesRequest request =
+        WriteLogEntriesRequest.newBuilder()
+            .addAllEntries(
+                Iterables.transform(
+                    ImmutableList.of(
+                        LOG_ENTRY1, LOG_ENTRY2.toBuilder().setSeverity(Severity.EMERGENCY).build()),
+                    LogEntry.toPbFunction(PROJECT)))
+            .build();
+    ApiFuture<WriteLogEntriesResponse> apiFuture = SettableApiFuture.create();
+    EasyMock.expect(loggingRpcMock.write(request)).andReturn(apiFuture);
+    EasyMock.replay(rpcFactoryMock, loggingRpcMock);
+    logging = options.getService();
+    logging.write(
+        ImmutableList.of(
+            LOG_ENTRY1, LOG_ENTRY2.toBuilder().setSeverity(Severity.EMERGENCY).build()));
+  }
+
+  @Test
+  public void testWriteLogEntriesWithSeverityFlushEnabled() {
+    WriteLogEntriesRequest request =
+        WriteLogEntriesRequest.newBuilder()
+            .addAllEntries(
+                Iterables.transform(
+                    ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2), LogEntry.toPbFunction(PROJECT)))
+            .build();
+    WriteLogEntriesResponse response = WriteLogEntriesResponse.newBuilder().build();
+    EasyMock.expect(loggingRpcMock.write(request)).andReturn(ApiFutures.immediateFuture(response));
+    EasyMock.replay(rpcFactoryMock, loggingRpcMock);
+    logging = options.getService();
+    logging.setFlushSeverity(Severity.DEFAULT);
+    logging.write(ImmutableList.of(LOG_ENTRY1, LOG_ENTRY2));
+  }
+
+  @Test
   public void testWriteLogEntriesWithOptions() {
     Map<String, String> labels = ImmutableMap.of("key", "value");
     WriteLogEntriesRequest request =
