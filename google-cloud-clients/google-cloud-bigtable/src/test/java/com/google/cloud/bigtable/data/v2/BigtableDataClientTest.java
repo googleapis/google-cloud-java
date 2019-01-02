@@ -27,9 +27,6 @@ import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.bigtable.v2.ReadRowsRequest;
-import com.google.bigtable.v2.RowSet;
-import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.BulkMutationBatcher;
 import com.google.cloud.bigtable.data.v2.models.BulkMutationBatcher.BulkMutationFailure;
@@ -43,6 +40,7 @@ import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowCell;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
+import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import io.grpc.Status.Code;
@@ -53,7 +51,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Answers;
-import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
@@ -68,6 +65,7 @@ public class BigtableDataClientTest {
   @Mock(answer = Answers.RETURNS_DEEP_STUBS)
   private ServerStreamingCallable<Query, Row> mockReadRowsCallable;
 
+  @Mock private UnaryCallable<Query, Row> mockReadRowCallable;
   @Mock private UnaryCallable<String, List<KeyOffset>> mockSampleRowKeysCallable;
   @Mock private UnaryCallable<RowMutation, Void> mockMutateRowCallable;
   @Mock private UnaryCallable<ConditionalRowMutation, Boolean> mockCheckAndMutateRowCallable;
@@ -81,6 +79,7 @@ public class BigtableDataClientTest {
   public void setUp() {
     bigtableDataClient = new BigtableDataClient(mockStub);
     Mockito.when(mockStub.readRowsCallable()).thenReturn(mockReadRowsCallable);
+    Mockito.when(mockStub.readRowCallable()).thenReturn(mockReadRowCallable);
     Mockito.when(mockStub.sampleRowKeysCallable()).thenReturn(mockSampleRowKeysCallable);
     Mockito.when(mockStub.mutateRowCallable()).thenReturn(mockMutateRowCallable);
     Mockito.when(mockStub.bulkMutateRowsCallable()).thenReturn(mockBulkMutateRowsCallable);
@@ -104,36 +103,15 @@ public class BigtableDataClientTest {
   @Test
   public void proxyReadRowAsyncTest() {
     bigtableDataClient.readRowAsync("fake-table", ByteString.copyFromUtf8("fake-row-key"));
-
-    ArgumentCaptor<Query> requestCaptor = ArgumentCaptor.forClass(Query.class);
-    Mockito.verify(mockReadRowsCallable.first()).futureCall(requestCaptor.capture());
-
-    RequestContext ctx = RequestContext.create("fake-project", "fake-instance", "fake-profile");
-    // NOTE: limit(1) is added by the mocked first() call, so it's not tested here
-    assertThat(requestCaptor.getValue().toProto(ctx))
-        .isEqualTo(
-            ReadRowsRequest.newBuilder()
-                .setTableName("projects/fake-project/instances/fake-instance/tables/fake-table")
-                .setAppProfileId("fake-profile")
-                .setRows(RowSet.newBuilder().addRowKeys(ByteString.copyFromUtf8("fake-row-key")))
-                .build());
+    Mockito.verify(mockReadRowCallable)
+        .futureCall(Query.create("fake-table").rowKey("fake-row-key"));
   }
 
   @Test
   public void proxyReadRowStrAsyncTest() {
     bigtableDataClient.readRowAsync("fake-table", "fake-row-key");
-    ArgumentCaptor<Query> requestCaptor = ArgumentCaptor.forClass(Query.class);
-    Mockito.verify(mockReadRowsCallable.first()).futureCall(requestCaptor.capture());
-
-    RequestContext ctx = RequestContext.create("fake-project", "fake-instance", "fake-profile");
-    // NOTE: limit(1) is added by the mocked first() call, so it's not tested here
-    assertThat(requestCaptor.getValue().toProto(ctx))
-        .isEqualTo(
-            ReadRowsRequest.newBuilder()
-                .setTableName("projects/fake-project/instances/fake-instance/tables/fake-table")
-                .setAppProfileId("fake-profile")
-                .setRows(RowSet.newBuilder().addRowKeys(ByteString.copyFromUtf8("fake-row-key")))
-                .build());
+    Mockito.verify(mockReadRowCallable)
+        .futureCall(Query.create("fake-table").rowKey("fake-row-key"));
   }
 
   @Test
@@ -145,24 +123,9 @@ public class BigtableDataClientTest {
             .filter(FILTERS.qualifier().regex("prefix.*"))
             .filter(FILTERS.limit().cellsPerRow(10));
     bigtableDataClient.readRowAsync("fake-table", ByteString.copyFromUtf8("fake-row-key"), filter);
-    ArgumentCaptor<Query> requestCaptor = ArgumentCaptor.forClass(Query.class);
-    Mockito.verify(mockReadRowsCallable.first()).futureCall(requestCaptor.capture());
 
-    RequestContext ctx = RequestContext.create("fake-project", "fake-instance", "fake-profile");
-    // NOTE: limit(1) is added by the mocked first() call, so it's not tested here
-    assertThat(requestCaptor.getValue().toProto(ctx))
-        .isEqualTo(
-            ReadRowsRequest.newBuilder()
-                .setTableName("projects/fake-project/instances/fake-instance/tables/fake-table")
-                .setAppProfileId("fake-profile")
-                .setRows(RowSet.newBuilder().addRowKeys(ByteString.copyFromUtf8("fake-row-key")))
-                .setFilter(
-                    FILTERS
-                        .chain()
-                        .filter(FILTERS.qualifier().regex("prefix.*"))
-                        .filter(FILTERS.limit().cellsPerRow(10))
-                        .toProto())
-                .build());
+    Mockito.verify(mockReadRowCallable)
+        .futureCall(Query.create("fake-table").rowKey("fake-row-key").filter(filter));
   }
 
   @Test
@@ -174,70 +137,34 @@ public class BigtableDataClientTest {
             .filter(FILTERS.qualifier().regex("prefix.*"))
             .filter(FILTERS.limit().cellsPerRow(10));
     bigtableDataClient.readRowAsync("fake-table", "fake-row-key", filter);
-    ArgumentCaptor<Query> requestCaptor = ArgumentCaptor.forClass(Query.class);
-    Mockito.verify(mockReadRowsCallable.first()).futureCall(requestCaptor.capture());
 
-    RequestContext ctx = RequestContext.create("fake-project", "fake-instance", "fake-profile");
-    // NOTE: limit(1) is added by the mocked first() call, so it's not tested here
-    assertThat(requestCaptor.getValue().toProto(ctx))
-        .isEqualTo(
-            ReadRowsRequest.newBuilder()
-                .setTableName("projects/fake-project/instances/fake-instance/tables/fake-table")
-                .setAppProfileId("fake-profile")
-                .setRows(RowSet.newBuilder().addRowKeys(ByteString.copyFromUtf8("fake-row-key")))
-                .setFilter(
-                    FILTERS
-                        .chain()
-                        .filter(FILTERS.qualifier().regex("prefix.*"))
-                        .filter(FILTERS.limit().cellsPerRow(10))
-                        .toProto())
-                .build());
+    Mockito.verify(mockReadRowCallable)
+        .futureCall(Query.create("fake-table").rowKey("fake-row-key").filter(filter));
   }
 
   @Test
   public void readRowTest() {
-    Mockito.when(mockReadRowsCallable.first().futureCall(any(Query.class)))
-        .thenReturn(
-            ApiFutures.immediateFuture(
-                Row.create(
-                    ByteString.copyFromUtf8("fake-row-key"), Collections.<RowCell>emptyList())));
-    bigtableDataClient.readRow("fake-table", ByteString.copyFromUtf8("fake-row-key"));
+    Row expectedRow =
+        Row.create(ByteString.copyFromUtf8("fake-row-key"), ImmutableList.<RowCell>of());
+    Mockito.when(mockReadRowCallable.futureCall(Query.create("fake-table").rowKey("fake-row-key")))
+        .thenReturn(ApiFutures.immediateFuture(expectedRow));
 
-    ArgumentCaptor<Query> requestCaptor = ArgumentCaptor.forClass(Query.class);
-    Mockito.verify(mockReadRowsCallable.first()).futureCall(requestCaptor.capture());
+    Row actualRow =
+        bigtableDataClient.readRow("fake-table", ByteString.copyFromUtf8("fake-row-key"));
 
-    RequestContext ctx = RequestContext.create("fake-project", "fake-instance", "fake-profile");
-    // NOTE: limit(1) is added by the mocked first() call, so it's not tested here
-    assertThat(requestCaptor.getValue().toProto(ctx))
-        .isEqualTo(
-            ReadRowsRequest.newBuilder()
-                .setTableName("projects/fake-project/instances/fake-instance/tables/fake-table")
-                .setAppProfileId("fake-profile")
-                .setRows(RowSet.newBuilder().addRowKeys(ByteString.copyFromUtf8("fake-row-key")))
-                .build());
+    assertThat(actualRow).isEqualTo(expectedRow);
   }
 
   @Test
   public void readRowStrTest() {
-    Mockito.when(mockReadRowsCallable.first().futureCall(any(Query.class)))
-        .thenReturn(
-            ApiFutures.immediateFuture(
-                Row.create(
-                    ByteString.copyFromUtf8("fake-row-key"), Collections.<RowCell>emptyList())));
-    bigtableDataClient.readRow("fake-table", "fake-row-key");
+    Row expectedRow =
+        Row.create(ByteString.copyFromUtf8("fake-row-key"), ImmutableList.<RowCell>of());
+    Mockito.when(mockReadRowCallable.futureCall(Query.create("fake-table").rowKey("fake-row-key")))
+        .thenReturn(ApiFutures.immediateFuture(expectedRow));
 
-    ArgumentCaptor<Query> requestCaptor = ArgumentCaptor.forClass(Query.class);
-    Mockito.verify(mockReadRowsCallable.first()).futureCall(requestCaptor.capture());
+    Row actualRow = bigtableDataClient.readRow("fake-table", "fake-row-key");
 
-    RequestContext ctx = RequestContext.create("fake-project", "fake-instance", "fake-profile");
-    // NOTE: limit(1) is added by the mocked first() call, so it's not tested here
-    assertThat(requestCaptor.getValue().toProto(ctx))
-        .isEqualTo(
-            ReadRowsRequest.newBuilder()
-                .setTableName("projects/fake-project/instances/fake-instance/tables/fake-table")
-                .setAppProfileId("fake-profile")
-                .setRows(RowSet.newBuilder().addRowKeys(ByteString.copyFromUtf8("fake-row-key")))
-                .build());
+    assertThat(actualRow).isEqualTo(expectedRow);
   }
 
   @Test
@@ -248,31 +175,18 @@ public class BigtableDataClientTest {
             .chain()
             .filter(FILTERS.qualifier().regex("prefix.*"))
             .filter(FILTERS.limit().cellsPerRow(10));
-    Mockito.when(mockReadRowsCallable.first().futureCall(any(Query.class)))
-        .thenReturn(
-            ApiFutures.immediateFuture(
-                Row.create(
-                    ByteString.copyFromUtf8("fake-row-key"), Collections.<RowCell>emptyList())));
-    bigtableDataClient.readRow("fake-table", ByteString.copyFromUtf8("fake-row-key"), filter);
 
-    ArgumentCaptor<Query> requestCaptor = ArgumentCaptor.forClass(Query.class);
-    Mockito.verify(mockReadRowsCallable.first()).futureCall(requestCaptor.capture());
+    Row expectedRow =
+        Row.create(ByteString.copyFromUtf8("fake-row-key"), ImmutableList.<RowCell>of());
+    Mockito.when(
+            mockReadRowCallable.futureCall(
+                Query.create("fake-table").rowKey("fake-row-key").filter(filter)))
+        .thenReturn(ApiFutures.immediateFuture(expectedRow));
 
-    RequestContext ctx = RequestContext.create("fake-project", "fake-instance", "fake-profile");
-    // NOTE: limit(1) is added by the mocked first() call, so it's not tested here
-    assertThat(requestCaptor.getValue().toProto(ctx))
-        .isEqualTo(
-            ReadRowsRequest.newBuilder()
-                .setTableName("projects/fake-project/instances/fake-instance/tables/fake-table")
-                .setAppProfileId("fake-profile")
-                .setRows(RowSet.newBuilder().addRowKeys(ByteString.copyFromUtf8("fake-row-key")))
-                .setFilter(
-                    FILTERS
-                        .chain()
-                        .filter(FILTERS.qualifier().regex("prefix.*"))
-                        .filter(FILTERS.limit().cellsPerRow(10))
-                        .toProto())
-                .build());
+    Row actualRow =
+        bigtableDataClient.readRow("fake-table", ByteString.copyFromUtf8("fake-row-key"), filter);
+
+    assertThat(actualRow).isEqualTo(expectedRow);
   }
 
   @Test
@@ -283,31 +197,16 @@ public class BigtableDataClientTest {
             .chain()
             .filter(FILTERS.qualifier().regex("prefix.*"))
             .filter(FILTERS.limit().cellsPerRow(10));
-    Mockito.when(mockReadRowsCallable.first().futureCall(any(Query.class)))
-        .thenReturn(
-            ApiFutures.immediateFuture(
-                Row.create(
-                    ByteString.copyFromUtf8("fake-row-key"), Collections.<RowCell>emptyList())));
-    bigtableDataClient.readRow("fake-table", "fake-row-key", filter);
+    Row expectedRow =
+        Row.create(ByteString.copyFromUtf8("fake-row-key"), ImmutableList.<RowCell>of());
+    Mockito.when(
+            mockReadRowCallable.futureCall(
+                Query.create("fake-table").rowKey("fake-row-key").filter(filter)))
+        .thenReturn(ApiFutures.immediateFuture(expectedRow));
 
-    ArgumentCaptor<Query> requestCaptor = ArgumentCaptor.forClass(Query.class);
-    Mockito.verify(mockReadRowsCallable.first()).futureCall(requestCaptor.capture());
+    Row actualRow = bigtableDataClient.readRow("fake-table", "fake-row-key", filter);
 
-    RequestContext ctx = RequestContext.create("fake-project", "fake-instance", "fake-profile");
-    // NOTE: limit(1) is added by the mocked first() call, so it's not tested here
-    assertThat(requestCaptor.getValue().toProto(ctx))
-        .isEqualTo(
-            ReadRowsRequest.newBuilder()
-                .setTableName("projects/fake-project/instances/fake-instance/tables/fake-table")
-                .setAppProfileId("fake-profile")
-                .setRows(RowSet.newBuilder().addRowKeys(ByteString.copyFromUtf8("fake-row-key")))
-                .setFilter(
-                    FILTERS
-                        .chain()
-                        .filter(FILTERS.qualifier().regex("prefix.*"))
-                        .filter(FILTERS.limit().cellsPerRow(10))
-                        .toProto())
-                .build());
+    assertThat(actualRow).isEqualTo(expectedRow);
   }
 
   @Test

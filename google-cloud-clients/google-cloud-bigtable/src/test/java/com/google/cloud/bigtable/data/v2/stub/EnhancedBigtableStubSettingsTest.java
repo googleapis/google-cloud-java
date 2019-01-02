@@ -184,6 +184,9 @@ public class EnhancedBigtableStubSettingsTest {
         .setRetrySettings(retrySettings)
         .build();
 
+    // Point readRow settings must match streaming settings
+    builder.readRowSettings().setRetryableCodes(Code.ABORTED, Code.DEADLINE_EXCEEDED);
+
     assertThat(builder.readRowsSettings().getIdleTimeout()).isEqualTo(Duration.ofMinutes(5));
     assertThat(builder.readRowsSettings().getRetryableCodes())
         .containsAllOf(Code.ABORTED, Code.DEADLINE_EXCEEDED);
@@ -209,6 +212,84 @@ public class EnhancedBigtableStubSettingsTest {
         EnhancedBigtableStubSettings.newBuilder().readRowsSettings();
 
     verifyRetrySettingAreSane(builder.getRetryableCodes(), builder.getRetrySettings());
+  }
+
+  @Test
+  public void readRowIsNotLostTest() {
+    EnhancedBigtableStubSettings.Builder builder =
+        EnhancedBigtableStubSettings.newBuilder()
+            .setProjectId("my-project")
+            .setInstanceId("my-instance");
+
+    RetrySettings retrySettings =
+        RetrySettings.newBuilder()
+            .setMaxAttempts(10)
+            .setTotalTimeout(Duration.ofHours(1))
+            .setInitialRpcTimeout(Duration.ofSeconds(10))
+            .setRpcTimeoutMultiplier(1)
+            .setMaxRpcTimeout(Duration.ofSeconds(10))
+            .setJittered(true)
+            .build();
+
+    builder
+        .readRowSettings()
+        .setRetryableCodes(Code.ABORTED, Code.DEADLINE_EXCEEDED)
+        .setRetrySettings(retrySettings)
+        .build();
+
+    // Streaming readRows settings must match point lookup settings.
+    builder.readRowsSettings().setRetryableCodes(Code.ABORTED, Code.DEADLINE_EXCEEDED);
+
+    assertThat(builder.readRowSettings().getRetryableCodes())
+        .containsAllOf(Code.ABORTED, Code.DEADLINE_EXCEEDED);
+    assertThat(builder.readRowSettings().getRetrySettings()).isEqualTo(retrySettings);
+
+    assertThat(builder.build().readRowSettings().getRetryableCodes())
+        .containsAllOf(Code.ABORTED, Code.DEADLINE_EXCEEDED);
+    assertThat(builder.build().readRowSettings().getRetrySettings()).isEqualTo(retrySettings);
+
+    assertThat(builder.build().toBuilder().readRowSettings().getRetryableCodes())
+        .containsAllOf(Code.ABORTED, Code.DEADLINE_EXCEEDED);
+    assertThat(builder.build().toBuilder().readRowSettings().getRetrySettings())
+        .isEqualTo(retrySettings);
+  }
+
+  @Test
+  public void readRowHasSaneDefaultsTest() {
+    UnaryCallSettings.Builder<Query, Row> builder =
+        EnhancedBigtableStubSettings.newBuilder().readRowSettings();
+
+    verifyRetrySettingAreSane(builder.getRetryableCodes(), builder.getRetrySettings());
+  }
+
+  @Test
+  public void readRowRetryCodesMustMatch() {
+    EnhancedBigtableStubSettings.Builder builder =
+        EnhancedBigtableStubSettings.newBuilder()
+            .setProjectId("my-project")
+            .setInstanceId("my-instance");
+
+    builder.readRowsSettings().setRetryableCodes(Code.DEADLINE_EXCEEDED);
+
+    builder.readRowSettings().setRetryableCodes(Code.ABORTED);
+
+    Exception actualError = null;
+    try {
+      builder.build();
+    } catch (Exception e) {
+      actualError = e;
+    }
+    assertThat(actualError).isNotNull();
+
+    builder.readRowSettings().setRetryableCodes(Code.DEADLINE_EXCEEDED);
+
+    actualError = null;
+    try {
+      builder.build();
+    } catch (Exception e) {
+      actualError = e;
+    }
+    assertThat(actualError).isNull();
   }
 
   @Test
