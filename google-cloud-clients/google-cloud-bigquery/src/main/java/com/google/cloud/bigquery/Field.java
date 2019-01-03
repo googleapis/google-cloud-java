@@ -106,7 +106,7 @@ public final class Field implements Serializable {
      * @throws IllegalArgumentException
      *    if {@code type == LegacySQLTypeName.RECORD && subFields.length == 0}
      *    or if {@code type != LegacySQLTypeName.RECORD && subFields.length != 0}
-     * @see <a href="https://cloud.google.com/bigquery/preparing-data-for-bigquery#datatypes">
+     * @see <a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types">
      *     Data Types</a>
      */
     public Builder setType(LegacySQLTypeName type, Field... subFields) {
@@ -122,7 +122,7 @@ public final class Field implements Serializable {
      * @throws IllegalArgumentException
      *    if {@code type == LegacySQLTypeName.RECORD && (subFields == null || subFields.isEmpty())}
      *    or if {@code type != LegacySQLTypeName.RECORD && subFields != null}
-     * @see <a href="https://cloud.google.com/bigquery/preparing-data-for-bigquery#datatypes">
+     * @see <a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types">
      *     Data Types</a>
      */
 
