@@ -80,7 +80,6 @@ import org.junit.Test;
 @javax.annotation.Generated("by GAPIC")
 public class SubscriptionAdminClientTest {
   private static MockPublisher mockPublisher;
-  private static MockIAMPolicy mockIAMPolicy;
   private static MockSubscriber mockSubscriber;
   private static MockServiceHelper serviceHelper;
   private SubscriptionAdminClient client;
@@ -89,12 +88,10 @@ public class SubscriptionAdminClientTest {
   @BeforeClass
   public static void startStaticServer() {
     mockPublisher = new MockPublisher();
-    mockIAMPolicy = new MockIAMPolicy();
     mockSubscriber = new MockSubscriber();
     serviceHelper =
         new MockServiceHelper(
-            "in-process-1",
-            Arrays.<MockGrpcService>asList(mockPublisher, mockIAMPolicy, mockSubscriber));
+            "in-process-1", Arrays.<MockGrpcService>asList(mockPublisher, mockSubscriber));
     serviceHelper.start();
   }
 
@@ -699,7 +696,7 @@ public class SubscriptionAdminClientTest {
     int version = 351608024;
     ByteString etag = ByteString.copyFromUtf8("21");
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
-    mockIAMPolicy.addResponse(expectedResponse);
+    mockSubscriber.addResponse(expectedResponse);
 
     String formattedResource = ProjectSubscriptionName.format("[PROJECT]", "[SUBSCRIPTION]");
     Policy policy = Policy.newBuilder().build();
@@ -707,7 +704,7 @@ public class SubscriptionAdminClientTest {
     Policy actualResponse = client.setIamPolicy(formattedResource, policy);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockIAMPolicy.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockSubscriber.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SetIamPolicyRequest actualRequest = (SetIamPolicyRequest) actualRequests.get(0);
 
@@ -723,7 +720,7 @@ public class SubscriptionAdminClientTest {
   @SuppressWarnings("all")
   public void setIamPolicyExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockIAMPolicy.addException(exception);
+    mockSubscriber.addException(exception);
 
     try {
       String formattedResource = ProjectSubscriptionName.format("[PROJECT]", "[SUBSCRIPTION]");
@@ -742,14 +739,14 @@ public class SubscriptionAdminClientTest {
     int version = 351608024;
     ByteString etag = ByteString.copyFromUtf8("21");
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
-    mockIAMPolicy.addResponse(expectedResponse);
+    mockSubscriber.addResponse(expectedResponse);
 
     String formattedResource = ProjectSubscriptionName.format("[PROJECT]", "[SUBSCRIPTION]");
 
     Policy actualResponse = client.getIamPolicy(formattedResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockIAMPolicy.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockSubscriber.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetIamPolicyRequest actualRequest = (GetIamPolicyRequest) actualRequests.get(0);
 
@@ -764,7 +761,7 @@ public class SubscriptionAdminClientTest {
   @SuppressWarnings("all")
   public void getIamPolicyExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockIAMPolicy.addException(exception);
+    mockSubscriber.addException(exception);
 
     try {
       String formattedResource = ProjectSubscriptionName.format("[PROJECT]", "[SUBSCRIPTION]");
@@ -780,7 +777,7 @@ public class SubscriptionAdminClientTest {
   @SuppressWarnings("all")
   public void testIamPermissionsTest() {
     TestIamPermissionsResponse expectedResponse = TestIamPermissionsResponse.newBuilder().build();
-    mockIAMPolicy.addResponse(expectedResponse);
+    mockSubscriber.addResponse(expectedResponse);
 
     String formattedResource = ProjectSubscriptionName.format("[PROJECT]", "[SUBSCRIPTION]");
     List<String> permissions = new ArrayList<>();
@@ -789,7 +786,7 @@ public class SubscriptionAdminClientTest {
         client.testIamPermissions(formattedResource, permissions);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockIAMPolicy.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockSubscriber.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     TestIamPermissionsRequest actualRequest = (TestIamPermissionsRequest) actualRequests.get(0);
 
@@ -805,7 +802,7 @@ public class SubscriptionAdminClientTest {
   @SuppressWarnings("all")
   public void testIamPermissionsExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockIAMPolicy.addException(exception);
+    mockSubscriber.addException(exception);
 
     try {
       String formattedResource = ProjectSubscriptionName.format("[PROJECT]", "[SUBSCRIPTION]");

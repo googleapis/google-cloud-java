@@ -63,7 +63,6 @@ import org.junit.Test;
 @javax.annotation.Generated("by GAPIC")
 public class TopicAdminClientTest {
   private static MockPublisher mockPublisher;
-  private static MockIAMPolicy mockIAMPolicy;
   private static MockSubscriber mockSubscriber;
   private static MockServiceHelper serviceHelper;
   private TopicAdminClient client;
@@ -72,12 +71,10 @@ public class TopicAdminClientTest {
   @BeforeClass
   public static void startStaticServer() {
     mockPublisher = new MockPublisher();
-    mockIAMPolicy = new MockIAMPolicy();
     mockSubscriber = new MockSubscriber();
     serviceHelper =
         new MockServiceHelper(
-            "in-process-1",
-            Arrays.<MockGrpcService>asList(mockPublisher, mockIAMPolicy, mockSubscriber));
+            "in-process-1", Arrays.<MockGrpcService>asList(mockPublisher, mockSubscriber));
     serviceHelper.start();
   }
 
@@ -376,7 +373,7 @@ public class TopicAdminClientTest {
     int version = 351608024;
     ByteString etag = ByteString.copyFromUtf8("21");
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
-    mockIAMPolicy.addResponse(expectedResponse);
+    mockPublisher.addResponse(expectedResponse);
 
     String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
     Policy policy = Policy.newBuilder().build();
@@ -384,7 +381,7 @@ public class TopicAdminClientTest {
     Policy actualResponse = client.setIamPolicy(formattedResource, policy);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockIAMPolicy.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockPublisher.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SetIamPolicyRequest actualRequest = (SetIamPolicyRequest) actualRequests.get(0);
 
@@ -400,7 +397,7 @@ public class TopicAdminClientTest {
   @SuppressWarnings("all")
   public void setIamPolicyExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockIAMPolicy.addException(exception);
+    mockPublisher.addException(exception);
 
     try {
       String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
@@ -419,14 +416,14 @@ public class TopicAdminClientTest {
     int version = 351608024;
     ByteString etag = ByteString.copyFromUtf8("21");
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
-    mockIAMPolicy.addResponse(expectedResponse);
+    mockPublisher.addResponse(expectedResponse);
 
     String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
 
     Policy actualResponse = client.getIamPolicy(formattedResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockIAMPolicy.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockPublisher.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetIamPolicyRequest actualRequest = (GetIamPolicyRequest) actualRequests.get(0);
 
@@ -441,7 +438,7 @@ public class TopicAdminClientTest {
   @SuppressWarnings("all")
   public void getIamPolicyExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockIAMPolicy.addException(exception);
+    mockPublisher.addException(exception);
 
     try {
       String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
@@ -457,7 +454,7 @@ public class TopicAdminClientTest {
   @SuppressWarnings("all")
   public void testIamPermissionsTest() {
     TestIamPermissionsResponse expectedResponse = TestIamPermissionsResponse.newBuilder().build();
-    mockIAMPolicy.addResponse(expectedResponse);
+    mockPublisher.addResponse(expectedResponse);
 
     String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
     List<String> permissions = new ArrayList<>();
@@ -466,7 +463,7 @@ public class TopicAdminClientTest {
         client.testIamPermissions(formattedResource, permissions);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessageV3> actualRequests = mockIAMPolicy.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockPublisher.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     TestIamPermissionsRequest actualRequest = (TestIamPermissionsRequest) actualRequests.get(0);
 
@@ -482,7 +479,7 @@ public class TopicAdminClientTest {
   @SuppressWarnings("all")
   public void testIamPermissionsExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
-    mockIAMPolicy.addException(exception);
+    mockPublisher.addException(exception);
 
     try {
       String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");

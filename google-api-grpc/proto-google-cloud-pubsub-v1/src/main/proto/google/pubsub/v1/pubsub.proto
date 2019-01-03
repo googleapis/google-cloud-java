@@ -105,6 +105,79 @@ service Publisher {
       delete: "/v1/{topic=projects/*/topics/*}"
     };
   }
+
+
+  // Sets the access control policy on the specified note or occurrence.
+  // Requires `containeranalysis.notes.setIamPolicy` or
+  // `containeranalysis.occurrences.setIamPolicy` permission if the resource is
+  // a note or an occurrence, respectively.
+  //
+  // The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for
+  // notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for
+  // occurrences.
+  rpc SetIamPolicy(google.iam.v1.SetIamPolicyRequest)
+    returns (google.iam.v1.Policy) {
+    option (google.api.http) = {
+      post: "/v1/{resource=projects/*/topics/*}:setIamPolicy"
+      body: "*"
+      additional_bindings {
+        post: "/v1/{resource=projects/*/subscriptions/*}:setIamPolicy"
+        body: "*"
+      }
+      additional_bindings {
+        post: "/v1/{resource=projects/*/snapshots/*}:setIamPolicy"
+        body: "*"
+      }
+    };
+  }
+
+  // Gets the access control policy for a note or an occurrence resource.
+  // Requires `containeranalysis.notes.setIamPolicy` or
+  // `containeranalysis.occurrences.setIamPolicy` permission if the resource is
+  // a note or occurrence, respectively.
+  //
+  // The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for
+  // notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for
+  // occurrences.
+  rpc GetIamPolicy(google.iam.v1.GetIamPolicyRequest)
+    returns (google.iam.v1.Policy) {
+    option (google.api.http) = {
+      post: "/v1/{resource=projects/*/subscriptions/*}:getIamPolicy"
+      body: "*"
+      additional_bindings {
+        post: "/v1/{resource=projects/*/topics/*}:getIamPolicy"
+        body: "*"
+      }
+      additional_bindings {
+        post: "/v1/{resource=projects/*/snapshots/*}:getIamPolicy"
+        body: "*"
+      }
+    };
+  }
+
+  // Returns the permissions that a caller has on the specified note or
+  // occurrence. Requires list permission on the project (for example,
+  // `containeranalysis.notes.list`).
+  //
+  // The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for
+  // notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for
+  // occurrences.
+  rpc TestIamPermissions(google.iam.v1.TestIamPermissionsRequest)
+    returns (google.iam.v1.TestIamPermissionsResponse) {
+    option (google.api.http) = {
+      post: "/v1/{resource=projects/*/subscriptions/*}:testIamPermissions"
+      body: "*"
+      additional_bindings {
+        post: "/v1/{resource=projects/*/topics/*}:testIamPermissions"
+        body: "*"
+      }
+      additional_bindings {
+        post: "/v1/{resource=projects/*/snapshots/*}:testIamPermissions"
+        body: "*"
+      }
+    };
+  }
+
 }
 
 // The service that an application uses to manipulate subscriptions and to

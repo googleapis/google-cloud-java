@@ -430,6 +430,153 @@ public final class PublisherGrpc {
     return getDeleteTopicMethod;
   }
 
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getSetIamPolicyMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
+      METHOD_SET_IAM_POLICY = getSetIamPolicyMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
+      getSetIamPolicyMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
+      getSetIamPolicyMethod() {
+    return getSetIamPolicyMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
+      getSetIamPolicyMethodHelper() {
+    io.grpc.MethodDescriptor<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
+        getSetIamPolicyMethod;
+    if ((getSetIamPolicyMethod = PublisherGrpc.getSetIamPolicyMethod) == null) {
+      synchronized (PublisherGrpc.class) {
+        if ((getSetIamPolicyMethod = PublisherGrpc.getSetIamPolicyMethod) == null) {
+          PublisherGrpc.getSetIamPolicyMethod =
+              getSetIamPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName("google.pubsub.v1.Publisher", "SetIamPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.SetIamPolicyRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.Policy.getDefaultInstance()))
+                      .setSchemaDescriptor(new PublisherMethodDescriptorSupplier("SetIamPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getSetIamPolicyMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetIamPolicyMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
+      METHOD_GET_IAM_POLICY = getGetIamPolicyMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
+      getGetIamPolicyMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
+      getGetIamPolicyMethod() {
+    return getGetIamPolicyMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
+      getGetIamPolicyMethodHelper() {
+    io.grpc.MethodDescriptor<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
+        getGetIamPolicyMethod;
+    if ((getGetIamPolicyMethod = PublisherGrpc.getGetIamPolicyMethod) == null) {
+      synchronized (PublisherGrpc.class) {
+        if ((getGetIamPolicyMethod = PublisherGrpc.getGetIamPolicyMethod) == null) {
+          PublisherGrpc.getGetIamPolicyMethod =
+              getGetIamPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName("google.pubsub.v1.Publisher", "GetIamPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.GetIamPolicyRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.Policy.getDefaultInstance()))
+                      .setSchemaDescriptor(new PublisherMethodDescriptorSupplier("GetIamPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getGetIamPolicyMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getTestIamPermissionsMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>
+      METHOD_TEST_IAM_PERMISSIONS = getTestIamPermissionsMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>
+      getTestIamPermissionsMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>
+      getTestIamPermissionsMethod() {
+    return getTestIamPermissionsMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>
+      getTestIamPermissionsMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.iam.v1.TestIamPermissionsRequest,
+            com.google.iam.v1.TestIamPermissionsResponse>
+        getTestIamPermissionsMethod;
+    if ((getTestIamPermissionsMethod = PublisherGrpc.getTestIamPermissionsMethod) == null) {
+      synchronized (PublisherGrpc.class) {
+        if ((getTestIamPermissionsMethod = PublisherGrpc.getTestIamPermissionsMethod) == null) {
+          PublisherGrpc.getTestIamPermissionsMethod =
+              getTestIamPermissionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.iam.v1.TestIamPermissionsRequest,
+                          com.google.iam.v1.TestIamPermissionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.pubsub.v1.Publisher", "TestIamPermissions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.TestIamPermissionsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.TestIamPermissionsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new PublisherMethodDescriptorSupplier("TestIamPermissions"))
+                      .build();
+        }
+      }
+    }
+    return getTestIamPermissionsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static PublisherStub newStub(io.grpc.Channel channel) {
     return new PublisherStub(channel);
@@ -573,6 +720,63 @@ public final class PublisherGrpc {
       asyncUnimplementedUnaryCall(getDeleteTopicMethodHelper(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Sets the access control policy on the specified note or occurrence.
+     * Requires `containeranalysis.notes.setIamPolicy` or
+     * `containeranalysis.occurrences.setIamPolicy` permission if the resource is
+     * a note or an occurrence, respectively.
+     * The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for
+     * notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for
+     * occurrences.
+     * </pre>
+     */
+    public void setIamPolicy(
+        com.google.iam.v1.SetIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
+      asyncUnimplementedUnaryCall(getSetIamPolicyMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the access control policy for a note or an occurrence resource.
+     * Requires `containeranalysis.notes.setIamPolicy` or
+     * `containeranalysis.occurrences.setIamPolicy` permission if the resource is
+     * a note or occurrence, respectively.
+     * The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for
+     * notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for
+     * occurrences.
+     * </pre>
+     */
+    public void getIamPolicy(
+        com.google.iam.v1.GetIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetIamPolicyMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the permissions that a caller has on the specified note or
+     * occurrence. Requires list permission on the project (for example,
+     * `containeranalysis.notes.list`).
+     * The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for
+     * notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for
+     * occurrences.
+     * </pre>
+     */
+    public void testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getTestIamPermissionsMethodHelper(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -625,6 +829,25 @@ public final class PublisherGrpc {
                   new MethodHandlers<
                       com.google.pubsub.v1.DeleteTopicRequest, com.google.protobuf.Empty>(
                       this, METHODID_DELETE_TOPIC)))
+          .addMethod(
+              getSetIamPolicyMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
+                      this, METHODID_SET_IAM_POLICY)))
+          .addMethod(
+              getGetIamPolicyMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
+                      this, METHODID_GET_IAM_POLICY)))
+          .addMethod(
+              getTestIamPermissionsMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.iam.v1.TestIamPermissionsRequest,
+                      com.google.iam.v1.TestIamPermissionsResponse>(
+                      this, METHODID_TEST_IAM_PERMISSIONS)))
           .build();
     }
   }
@@ -790,6 +1013,72 @@ public final class PublisherGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the access control policy on the specified note or occurrence.
+     * Requires `containeranalysis.notes.setIamPolicy` or
+     * `containeranalysis.occurrences.setIamPolicy` permission if the resource is
+     * a note or an occurrence, respectively.
+     * The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for
+     * notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for
+     * occurrences.
+     * </pre>
+     */
+    public void setIamPolicy(
+        com.google.iam.v1.SetIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getSetIamPolicyMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the access control policy for a note or an occurrence resource.
+     * Requires `containeranalysis.notes.setIamPolicy` or
+     * `containeranalysis.occurrences.setIamPolicy` permission if the resource is
+     * a note or occurrence, respectively.
+     * The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for
+     * notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for
+     * occurrences.
+     * </pre>
+     */
+    public void getIamPolicy(
+        com.google.iam.v1.GetIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetIamPolicyMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the permissions that a caller has on the specified note or
+     * occurrence. Requires list permission on the project (for example,
+     * `containeranalysis.notes.list`).
+     * The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for
+     * notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for
+     * occurrences.
+     * </pre>
+     */
+    public void testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getTestIamPermissionsMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -922,6 +1211,60 @@ public final class PublisherGrpc {
     public com.google.protobuf.Empty deleteTopic(com.google.pubsub.v1.DeleteTopicRequest request) {
       return blockingUnaryCall(
           getChannel(), getDeleteTopicMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the access control policy on the specified note or occurrence.
+     * Requires `containeranalysis.notes.setIamPolicy` or
+     * `containeranalysis.occurrences.setIamPolicy` permission if the resource is
+     * a note or an occurrence, respectively.
+     * The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for
+     * notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for
+     * occurrences.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getSetIamPolicyMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the access control policy for a note or an occurrence resource.
+     * Requires `containeranalysis.notes.setIamPolicy` or
+     * `containeranalysis.occurrences.setIamPolicy` permission if the resource is
+     * a note or occurrence, respectively.
+     * The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for
+     * notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for
+     * occurrences.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetIamPolicyMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the permissions that a caller has on the specified note or
+     * occurrence. Requires list permission on the project (for example,
+     * `containeranalysis.notes.list`).
+     * The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for
+     * notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for
+     * occurrences.
+     * </pre>
+     */
+    public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getTestIamPermissionsMethodHelper(), getCallOptions(), request);
     }
   }
 
@@ -1064,6 +1407,63 @@ public final class PublisherGrpc {
       return futureUnaryCall(
           getChannel().newCall(getDeleteTopicMethodHelper(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the access control policy on the specified note or occurrence.
+     * Requires `containeranalysis.notes.setIamPolicy` or
+     * `containeranalysis.occurrences.setIamPolicy` permission if the resource is
+     * a note or an occurrence, respectively.
+     * The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for
+     * notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for
+     * occurrences.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
+        setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getSetIamPolicyMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the access control policy for a note or an occurrence resource.
+     * Requires `containeranalysis.notes.setIamPolicy` or
+     * `containeranalysis.occurrences.setIamPolicy` permission if the resource is
+     * a note or occurrence, respectively.
+     * The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for
+     * notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for
+     * occurrences.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
+        getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetIamPolicyMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the permissions that a caller has on the specified note or
+     * occurrence. Requires list permission on the project (for example,
+     * `containeranalysis.notes.list`).
+     * The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for
+     * notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for
+     * occurrences.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.iam.v1.TestIamPermissionsResponse>
+        testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getTestIamPermissionsMethodHelper(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_TOPIC = 0;
@@ -1074,6 +1474,9 @@ public final class PublisherGrpc {
   private static final int METHODID_LIST_TOPIC_SUBSCRIPTIONS = 5;
   private static final int METHODID_LIST_TOPIC_SNAPSHOTS = 6;
   private static final int METHODID_DELETE_TOPIC = 7;
+  private static final int METHODID_SET_IAM_POLICY = 8;
+  private static final int METHODID_GET_IAM_POLICY = 9;
+  private static final int METHODID_TEST_IAM_PERMISSIONS = 10;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1134,6 +1537,22 @@ public final class PublisherGrpc {
           serviceImpl.deleteTopic(
               (com.google.pubsub.v1.DeleteTopicRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_SET_IAM_POLICY:
+          serviceImpl.setIamPolicy(
+              (com.google.iam.v1.SetIamPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.iam.v1.Policy>) responseObserver);
+          break;
+        case METHODID_GET_IAM_POLICY:
+          serviceImpl.getIamPolicy(
+              (com.google.iam.v1.GetIamPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.iam.v1.Policy>) responseObserver);
+          break;
+        case METHODID_TEST_IAM_PERMISSIONS:
+          serviceImpl.testIamPermissions(
+              (com.google.iam.v1.TestIamPermissionsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1207,6 +1626,9 @@ public final class PublisherGrpc {
                       .addMethod(getListTopicSubscriptionsMethodHelper())
                       .addMethod(getListTopicSnapshotsMethodHelper())
                       .addMethod(getDeleteTopicMethodHelper())
+                      .addMethod(getSetIamPolicyMethodHelper())
+                      .addMethod(getGetIamPolicyMethodHelper())
+                      .addMethod(getTestIamPermissionsMethodHelper())
                       .build();
         }
       }
