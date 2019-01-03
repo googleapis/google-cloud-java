@@ -226,4 +226,48 @@ public class QueryTest {
         .setTableName(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
         .setAppProfileId(APP_PROFILE_ID);
   }
+
+  @Test
+  public void testFromProto() {
+    ReadRowsRequest request = ReadRowsRequest.newBuilder()
+        .setTableName(TABLE_NAME.toString())
+        .setAppProfileId(APP_PROFILE_ID)
+        .setFilter(
+            RowFilter.newBuilder()
+                .setRowKeyRegexFilter(ByteString.copyFromUtf8(".*")))
+        .setRows(RowSet.newBuilder()
+                .addRowKeys(ByteString.copyFromUtf8("row-key"))
+                .addRowRanges(
+                    RowRange.newBuilder()
+                        .setStartKeyClosed(ByteString.copyFromUtf8("j"))
+                        .setEndKeyClosed(ByteString.copyFromUtf8("z"))))
+        .build();
+    Query query = Query.fromProto(request);
+
+    assertThat(query.toProto(requestContext))
+        .isEqualTo(request);
+  }
+
+  @Test
+  public void testFromProtoWithEmptyTableId() {
+	TableName EMPTY_TABLE_NAME = TableName.of("", "", "");
+	ReadRowsRequest request = ReadRowsRequest.newBuilder()
+      .setTableName(EMPTY_TABLE_NAME.toString())
+      .setFilter(
+          RowFilter.newBuilder()
+              .setRowKeyRegexFilter(
+                  ByteString.copyFromUtf8(".*")))
+      .setRows(
+          RowSet.newBuilder()
+              .addRowKeys(ByteString.copyFromUtf8("row-key"))
+              .addRowRanges(
+                  RowRange.newBuilder()
+                      .setStartKeyClosed(ByteString.copyFromUtf8("j"))
+                      .setEndKeyClosed(ByteString.copyFromUtf8("z"))))
+		  .build();
+	
+	RequestContext reqContext = RequestContext.create(InstanceName.of("", ""), "");
+	assertThat(Query.fromProto(request).toProto(reqContext))
+		    .isEqualTo(request);
+  }
 }
