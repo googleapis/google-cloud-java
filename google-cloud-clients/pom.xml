@@ -700,90 +700,6 @@
         <version>3.4</version>
         <configuration>
           <skipDeploy>true</skipDeploy>
-          <reportPlugins>
-            <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-project-info-reports-plugin</artifactId>
-              <version>2.8.1</version>
-              <reportSets>
-                <reportSet>
-                  <reports>
-                    <report>index</report>
-                    <report>dependency-info</report>
-                    <report>project-team</report>
-                    <report>cim</report>
-                    <report>issue-tracking</report>
-                    <report>license</report>
-                    <report>scm</report>
-                    <report>dependency-management</report>
-                    <report>distribution-management</report>
-                    <report>summary</report>
-                    <report>modules</report>
-                  </reports>
-                </reportSet>
-              </reportSets>
-              <configuration>
-                <aggregate>true</aggregate>
-                <quiet>true</quiet>
-                <dependencyDetailsEnabled>true</dependencyDetailsEnabled>
-                <dependencyLocationsEnabled>true</dependencyLocationsEnabled>
-                <artifactId>${site.installationModule}</artifactId>
-                <packaging>jar</packaging>
-              </configuration>
-            </plugin>
-            <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-javadoc-plugin</artifactId>
-              <version>3.0.1</version>
-              <reportSets>
-                <reportSet>
-                  <id>html</id>
-                  <reports>
-                    <report>javadoc</report>
-                  </reports>
-                </reportSet>
-              </reportSets>
-              <configuration>
-                <doclint>none</doclint>
-                <aggregate>true</aggregate>
-                <show>protected</show>
-                <nohelp>true</nohelp>
-                <outputDirectory>${project.build.directory}/javadoc</outputDirectory>
-                <groups>
-                  <group>
-                    <title>API packages</title>
-                    <packages>com.google.cloud*</packages>
-                  </group>
-                  <group>
-                    <title>Test helpers packages</title>
-                    <packages>com.google.cloud.bigquery.testing:com.google.cloud.testing:com.google.cloud.datastore.testing:com.google.cloud.dns.testing:com.google.cloud.logging.testing:com.google.cloud.pubsub.testing:com.google.cloud.resourcemanager.testing:com.google.cloud.storage.testing:com.google.cloud.translate.testing:com.google.cloud.spanner.testing:com.google.cloud.storage.contrib.nio.testing</packages>
-                  </group>
-                  <group>
-                    <title>Example packages</title>
-                    <packages>com.google.cloud.examples.*:com.google.cloud.nio.examples</packages>
-                  </group>
-                  <group>
-                    <title>SPI packages</title>
-                    <packages>com.google.cloud.spi*:com.google.cloud.bigquery.spi*:com.google.cloud.datastore.spi*:com.google.cloud.dns.spi*:com.google.cloud.firestore.spi*:com.google.cloud.logging.spi*:com.google.cloud.resourcemanager.spi*:com.google.cloud.spanner.spi*:com.google.cloud.storage.spi*:com.google.cloud.translate.spi*</packages>
-                  </group>
-                  <group>
-                    <title>Stub packages</title>
-                    <packages>com.google.cloud.asset.v1beta1.stub:com.google.cloud.automl.v1beta1.stub:com.google.cloud.bigquerydatatransfer.v1.stub:com.google.cloud.bigquerystorage.v1beta1.stub:com.google.cloud.bigtable-admin.v2.stub:com.google.cloud.bigtable.v2.stub:com.google.cloud.container.v1.stub:com.google.cloud.containeranalysis.v1beta1.stub:com.google.cloud.dataproc.v1.stub:com.google.cloud.dataproc.v1beta2.stub:com.google.cloud.dialogflow.v2.stub:com.google.cloud.dialogflow.v2beta1.stub:com.google.cloud.dlp.v2.stub:com.google.cloud.error-reporting.v1beta1.stub:com.google.cloud.firestore.v1beta1.stub:com.google.cloud.iamcredentials.v1.stub:com.google.cloud.iot.v1.stub:com.google.cloud.kms.v1.stub:com.google.cloud.language.v1.stub:com.google.cloud.language.v1beta2.stub:com.google.cloud.logging.v2.stub:com.google.cloud.monitoring.v3.stub:com.google.cloud.os-login.v1.stub:com.google.cloud.pubsub.v1.stub:com.google.cloud.redis.v1.stub:com.google.cloud.redis.v1beta1.stub:com.google.cloud.scheduler.v1beta1.stub:com.google.cloud.securitycenter.v1beta1.stub:com.google.cloud.spanner-admin-database.v1.stub:com.google.cloud.spanner-admin-instance.v1.stub:com.google.cloud.spanner.v1.stub:com.google.cloud.speech.v1.stub:com.google.cloud.speech.v1beta1.stub:com.google.cloud.speech.v1p1beta1.stub:com.google.cloud.tasks.v2beta2.stub:com.google.cloud.tasks.v2beta3.stub:com.google.cloud.texttospeech.v1.stub:com.google.cloud.texttospeech.v1beta1.stub:com.google.cloud.trace.v1.stub:com.google.cloud.trace.v2.stub:com.google.cloud.video-intelligence.v1.stub:com.google.cloud.video-intelligence.v1beta1.stub:com.google.cloud.video-intelligence.v1beta2.stub:com.google.cloud.video-intelligence.v1p1beta1.stub:com.google.cloud.video-intelligence.v1p2beta1.stub:com.google.cloud.vision.v1.stub:com.google.cloud.vision.v1p1beta1.stub:com.google.cloud.vision.v1p2beta1.stub:com.google.cloud.vision.v1p3beta1.stub:com.google.cloud.websecurityscanner.v1alpha.stub</packages>
-                  </group>
-                  <group>
-                    <title>Deprecated packages</title>
-                    <packages>com.google.cloud.compute.deprecated*</packages>
-                  </group>
-                </groups>
-                <links>
-                  <link>https://developers.google.com/protocol-buffers/docs/reference/java/</link>
-                  <link>http://google.github.io/google-auth-library-java/releases/latest/apidocs/</link>
-                  <link>http://googleapis.github.io/gax-java/${gax.version}/apidocs/</link>
-                  <link>https://googleapis.github.io/api-common-java/${api.common.java.version}/apidocs/</link>
-                </links>
-              </configuration>
-            </plugin>
-          </reportPlugins>
         </configuration>
       </plugin>
       <plugin>
@@ -813,7 +729,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>3.0.0</version>
+        <version>2.8.1</version>
         <reportSets>
           <reportSet>
             <reports>
@@ -832,8 +748,6 @@
           </reportSet>
         </reportSets>
         <configuration>
-          <aggregate>true</aggregate>
-          <quiet>true</quiet>
           <dependencyDetailsEnabled>true</dependencyDetailsEnabled>
           <dependencyLocationsEnabled>true</dependencyLocationsEnabled>
           <artifactId>${site.installationModule}</artifactId>
@@ -848,6 +762,7 @@
           <reportSet>
             <id>html</id>
             <reports>
+              <report>aggregate</report>
               <report>javadoc</report>
             </reports>
           </reportSet>
@@ -942,6 +857,12 @@
                 <goals>
                   <goal>sign</goal>
                 </goals>
+                <configuration>
+                  <gpgArguments>
+                    <arg>--pinentry-mode</arg>
+                    <arg>loopback</arg>
+                  </gpgArguments>
+                </configuration>
               </execution>
             </executions>
           </plugin>
