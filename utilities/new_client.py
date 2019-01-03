@@ -206,7 +206,7 @@ def update_stub_packages(ctx: Context) -> None:
 
 def write_readme(ctx: Context) -> None:
     """Creates a README.md from a template."""
-    template = ctx.jinja_env.get_template("README.md")
+    template = ctx.jinja_env.get_template("README.md.tmpl")
     pom = template.stream(
         api_version=ctx.api_version,
         description=ctx.description,
