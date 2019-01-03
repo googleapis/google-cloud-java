@@ -26,7 +26,7 @@ public interface RecognitionAudioOrBuilder extends
    * supported, which must be specified in the following format:
    * `gs://bucket_name/object_name` (other URI formats return
    * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
-   * [Request URIs](https://cloud.google.com/storage/docs/reference-uris).
+   * <a href="https://cloud.google.com/storage/docs/reference-uris">Request URIs</a>.
    * </pre>
    *
    * <code>string uri = 2;</code>
