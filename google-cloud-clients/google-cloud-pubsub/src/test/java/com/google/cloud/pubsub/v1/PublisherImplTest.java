@@ -33,6 +33,7 @@ import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.rpc.DataLossException;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.pubsub.v1.Publisher.Builder;
+import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.PublishResponse;
@@ -242,6 +243,53 @@ public class PublisherImplTest {
   }
 
   @Test
+  public void testPublishAtomicallyShouldThrowOnNullArgument() throws Exception {
+    Publisher publisher = getTestPublisherBuilder().build();
+    try {
+      publisher.publishAtomically(null);
+      fail("should have thrown IllegalArgumentException");
+    } catch (IllegalArgumentException e) {
+      // Expected
+    } finally {
+      publisher.shutdown();
+      publisher.awaitTermination(1, TimeUnit.MINUTES);
+    }
+  }
+
+  @Test
+  public void testPublishAtomicallyShouldThrowOnEmptyList() throws Exception {
+    Publisher publisher = getTestPublisherBuilder().build();
+    try {
+      publisher.publishAtomically(ImmutableList.<PubsubMessage>of());
+      fail("should have thrown IllegalArgumentException");
+    } catch (IllegalArgumentException e) {
+      // Expected
+    } finally {
+      publisher.shutdown();
+      publisher.awaitTermination(1, TimeUnit.MINUTES);
+    }
+  }
+
+  @Test
+  public void testPublishAtomically() throws Exception {
+    Publisher publisher = getTestPublisherBuilder().build();
+    testPublisherServiceImpl.addPublishResponse(
+        PublishResponse.newBuilder().addMessageIds("1").addMessageIds("2"));
+
+    ApiFuture<PublishResponse> responseApiFuture =
+        publisher.publishAtomically(
+            ImmutableList.of(
+                PubsubMessage.newBuilder().setData(ByteString.copyFromUtf8("message1")).build(),
+                PubsubMessage.newBuilder().setData(ByteString.copyFromUtf8("message2")).build()));
+
+    assertEquals(2, responseApiFuture.get().getMessageIdsCount());
+    assertEquals(2, testPublisherServiceImpl.getCapturedRequests().get(0).getMessagesCount());
+
+    publisher.shutdown();
+    publisher.awaitTermination(1, TimeUnit.MINUTES);
+  }
+
+  @Test
   public void testErrorPropagation() throws Exception {
     Publisher publisher =
         getTestPublisherBuilder()
@@ -405,6 +453,7 @@ public class PublisherImplTest {
             .setRequestByteThreshold(10L)
             .setDelayThreshold(Duration.ofMillis(11))
             .setElementCountThreshold(12L)
+            .setIsEnabled(false)
             .build());
     builder.setCredentialsProvider(NoCredentialsProvider.create());
     Publisher publisher = builder.build();
@@ -431,6 +480,8 @@ public class PublisherImplTest {
         Publisher.Builder.DEFAULT_ELEMENT_COUNT_THRESHOLD,
         builder.batchingSettings.getElementCountThreshold().longValue());
     assertEquals(Publisher.Builder.DEFAULT_RETRY_SETTINGS, builder.retrySettings);
+    assertEquals(
+        Builder.DEFAULT_BATCHING_SETTINGS.getIsEnabled(), builder.batchingSettings.getIsEnabled());
   }
 
   @Test
@@ -539,7 +590,13 @@ public class PublisherImplTest {
     } catch (IllegalArgumentException expected) {
       // Expected
     }
-
+    try {
+      builder.setBatchingSettings(
+          Publisher.Builder.DEFAULT_BATCHING_SETTINGS.toBuilder().setIsEnabled(true).build());
+      fail("Should have thrown an IllegalArgumentException");
+    } catch (IllegalArgumentException expected) {
+      // Expected
+    }
     builder.setRetrySettings(
         Publisher.Builder.DEFAULT_RETRY_SETTINGS
             .toBuilder()

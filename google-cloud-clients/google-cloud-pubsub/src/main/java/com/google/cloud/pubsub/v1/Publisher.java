@@ -145,7 +145,7 @@ public class Publisher {
             StatusCode.Code.UNKNOWN,
             StatusCode.Code.UNAVAILABLE)
         .setRetrySettings(retrySettings)
-        .setBatchingSettings(BatchingSettings.newBuilder().setIsEnabled(false).build());
+        .setBatchingSettings(batchingSettings);
     this.publisherStub = GrpcPublisherStub.create(stubSettings.build());
 
     shutdown = new AtomicBoolean(false);
@@ -160,6 +160,41 @@ public class Publisher {
   /** Topic which the publisher publishes to. */
   public String getTopicNameString() {
     return topicName;
+  }
+
+  /**
+   * Publishes list of messages atomically.
+   *
+   * <p>Example of publishing a list of messages.
+   *
+   * <pre>{@code
+   * String message = "my_message";
+   * ByteString data = ByteString.copyFromUtf8(message);
+   * PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
+   * List<PubsubMessage> messages = new ArrayList<>();
+   * messages.add(PubsubMessage.newBuilder().setData(data).build());
+   * messages.add(PubsubMessage.newBuilder().setData(data).build());
+   * ApiFuture<PublishResponse> response = publisher.publishAtomically(messages);
+   * ApiFutures.addCallback(response, new ApiFutureCallback<PublishResponse>() {
+   *   public void onSuccess(PublishResponse response) {
+   *     System.out.println("published batch");
+   *   }
+   *
+   *   public void onFailure(Throwable t) {
+   *     System.out.println("failed to publish: " + t);
+   *   }
+   * });
+   * }</pre>
+   *
+   * @param messageList List of messages to publish atomically.
+   * @return the publish respose wrapper in future.
+   */
+  public ApiFuture<PublishResponse> publishAtomically(List<PubsubMessage> messageList) {
+    Preconditions.checkArgument(
+        messageList != null && messageList.size() > 0, "messageList can not be null or 0 size");
+    PublishRequest publishRequest =
+        PublishRequest.newBuilder().setTopic(topicName).addAllMessages(messageList).build();
+    return publisherStub.publishCallable().futureCall(publishRequest);
   }
 
   /**
@@ -493,6 +528,7 @@ public class Publisher {
             .setDelayThreshold(DEFAULT_DELAY_THRESHOLD)
             .setRequestByteThreshold(DEFAULT_REQUEST_BYTES_THRESHOLD)
             .setElementCountThreshold(DEFAULT_ELEMENT_COUNT_THRESHOLD)
+            .setIsEnabled(false)
             .build();
     static final RetrySettings DEFAULT_RETRY_SETTINGS =
         RetrySettings.newBuilder()
@@ -590,6 +626,7 @@ public class Publisher {
       Preconditions.checkArgument(batchingSettings.getRequestByteThreshold() > 0);
       Preconditions.checkNotNull(batchingSettings.getDelayThreshold());
       Preconditions.checkArgument(batchingSettings.getDelayThreshold().toMillis() > 0);
+      Preconditions.checkArgument(!batchingSettings.getIsEnabled());
       this.batchingSettings = batchingSettings;
       return this;
     }
