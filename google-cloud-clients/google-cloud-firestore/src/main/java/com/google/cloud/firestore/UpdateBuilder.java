@@ -43,7 +43,7 @@ import javax.annotation.Nullable;
  * Abstract class that collects and bundles all write operations for {@link Transaction} and {@link
  * WriteBatch}.
  */
-abstract class UpdateBuilder<T extends UpdateBuilder> {
+public abstract class UpdateBuilder<T extends UpdateBuilder> {
 
   private static class Mutation {
     Write.Builder document;
