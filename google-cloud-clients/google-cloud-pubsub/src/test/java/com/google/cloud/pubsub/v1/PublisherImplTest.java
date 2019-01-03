@@ -453,7 +453,6 @@ public class PublisherImplTest {
             .setRequestByteThreshold(10L)
             .setDelayThreshold(Duration.ofMillis(11))
             .setElementCountThreshold(12L)
-            .setIsEnabled(false)
             .build());
     builder.setCredentialsProvider(NoCredentialsProvider.create());
     Publisher publisher = builder.build();
