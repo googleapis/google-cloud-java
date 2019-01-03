@@ -4,6 +4,7 @@ com.google.cloud.asset.v1beta1.stub
 com.google.cloud.automl.v1beta1
 com.google.cloud.automl.v1beta1.stub
 com.google.cloud.bigquery
+com.google.cloud.bigquery.benchmark
 com.google.cloud.bigquery.datatransfer.v1
 com.google.cloud.bigquery.datatransfer.v1.stub
 com.google.cloud.bigquery.spi
