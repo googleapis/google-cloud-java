@@ -590,13 +590,6 @@ public class PublisherImplTest {
     } catch (IllegalArgumentException expected) {
       // Expected
     }
-    try {
-      builder.setBatchingSettings(
-          Publisher.Builder.DEFAULT_BATCHING_SETTINGS.toBuilder().setIsEnabled(true).build());
-      fail("Should have thrown an IllegalArgumentException");
-    } catch (IllegalArgumentException expected) {
-      // Expected
-    }
     builder.setRetrySettings(
         Publisher.Builder.DEFAULT_RETRY_SETTINGS
             .toBuilder()

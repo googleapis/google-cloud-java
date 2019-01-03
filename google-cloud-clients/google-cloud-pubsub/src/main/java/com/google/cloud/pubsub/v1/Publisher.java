@@ -109,7 +109,8 @@ public class Publisher {
   private Publisher(Builder builder) throws IOException {
     topicName = builder.topicName;
 
-    this.batchingSettings = builder.batchingSettings;
+    // Disable gax batching.
+    this.batchingSettings = builder.batchingSettings.toBuilder().setIsEnabled(false).build();
 
     messagesBatch = new LinkedList<>();
     messagesBatchLock = new ReentrantLock();
@@ -626,7 +627,6 @@ public class Publisher {
       Preconditions.checkArgument(batchingSettings.getRequestByteThreshold() > 0);
       Preconditions.checkNotNull(batchingSettings.getDelayThreshold());
       Preconditions.checkArgument(batchingSettings.getDelayThreshold().toMillis() > 0);
-      Preconditions.checkArgument(!batchingSettings.getIsEnabled());
       this.batchingSettings = batchingSettings;
       return this;
     }
