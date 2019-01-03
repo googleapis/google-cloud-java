@@ -20,7 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 import com.google.bigtable.v2.CheckAndMutateRowRequest;
 import com.google.bigtable.v2.Mutation.DeleteFromColumn;
 import com.google.bigtable.v2.RowFilter;
-import com.google.bigtable.v2.TableName;
+import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.protobuf.ByteString;
 import java.io.ByteArrayInputStream;
@@ -34,15 +34,13 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class ConditionalRowMutationTest {
-  private static final InstanceName INSTANCE_NAME =
-      InstanceName.of("fake-project", "fake-instance");
-  private static final TableName TABLE_NAME =
-      TableName.of(INSTANCE_NAME.getProject(), INSTANCE_NAME.getInstance(), "fake-table");
-  private static final String TABLE_ID = TABLE_NAME.getTable();
+  private static final String PROJECT_ID = "fake-project";
+  private static final String INSTANCE_ID = "fake-instance";
+  private static final String TABLE_ID = "fake-table";
 
   private static final String APP_PROFILE_ID = "fake-profile";
   private static final RequestContext REQUEST_CONTEXT =
-      RequestContext.create(INSTANCE_NAME, APP_PROFILE_ID);
+      RequestContext.create(PROJECT_ID, INSTANCE_ID, APP_PROFILE_ID);
 
   private static final ByteString TEST_KEY = ByteString.copyFromUtf8("fake-key");
 
@@ -58,7 +56,7 @@ public class ConditionalRowMutationTest {
     assertThat(actualProto)
         .isEqualTo(
             CheckAndMutateRowRequest.newBuilder()
-                .setTableName(TABLE_NAME.toString())
+                .setTableName(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
                 .setAppProfileId(APP_PROFILE_ID)
                 .setRowKey(TEST_KEY)
                 .build());

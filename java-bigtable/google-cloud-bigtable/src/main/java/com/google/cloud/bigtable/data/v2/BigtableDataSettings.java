@@ -20,7 +20,6 @@ import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
-import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
@@ -49,7 +48,8 @@ import javax.annotation.Nonnull;
  *
  * <pre>{@code
  * BigtableDataSettings.Builder settingsBuilder = BigtableDataSettings.newBuilder()
- *   .setInstanceName(InstanceName.of("my-project", "my-instance-id"))
+ *   .setProjectId("my-project")
+ *   .setInstanceId("my-instance-id")
  *   .setAppProfileId("default");
  *
  * settingsBuilder.readRowsSettings().setRetryableCodes(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE);
@@ -67,12 +67,27 @@ public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
     return new Builder();
   }
 
-  /** Returns the target instance */
-  public InstanceName getInstanceName() {
+  /**
+   * Returns the target instance.
+   *
+   * @deprecated Please use {@link #getProjectId()} and {@link #getInstanceId()}.
+   */
+  @Deprecated()
+  public com.google.cloud.bigtable.data.v2.models.InstanceName getInstanceName() {
     return getTypedStubSettings().getInstanceName();
   }
 
-  /** Returns the configured AppProfile to use */
+  /** Returns the target project id. */
+  public String getProjectId() {
+    return getTypedStubSettings().getProjectId();
+  }
+
+  /** Returns the target instance id. */
+  public String getInstanceId() {
+    return getTypedStubSettings().getInstanceId();
+  }
+
+  /** Returns the configured AppProfile id to use. */
   public String getAppProfileId() {
     return getTypedStubSettings().getAppProfileId();
   }
@@ -142,15 +157,53 @@ public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
     /**
      * Sets the target instance. This setting is required. All RPCs will be made in the context of
      * this setting.
+     *
+     * @deprecated Please use {@link #setProjectId(String)} and {@link #setInstanceId(String)}.
      */
-    public Builder setInstanceName(@Nonnull InstanceName instanceName) {
+    @Deprecated
+    public Builder setInstanceName(
+        @Nonnull com.google.cloud.bigtable.data.v2.models.InstanceName instanceName) {
       getTypedStubSettings().setInstanceName(instanceName);
       return this;
     }
 
-    /** Gets the {@link InstanceName} that was previously set on this Builder. */
-    public InstanceName getInstanceName() {
+    /**
+     * Gets the {@link com.google.cloud.bigtable.data.v2.models.InstanceName} that was previously
+     * set on this Builder.
+     *
+     * @deprecated Please use {@link #getProjectId()} and {@link #getInstanceId()}.
+     */
+    @Deprecated
+    public com.google.cloud.bigtable.data.v2.models.InstanceName getInstanceName() {
       return getTypedStubSettings().getInstanceName();
+    }
+
+    /**
+     * Sets the target project. This setting is required. All RPCs will be made in the context of
+     * this setting.
+     */
+    public Builder setProjectId(@Nonnull String projectId) {
+      getTypedStubSettings().setProjectId(projectId);
+      return this;
+    }
+
+    /** Gets the project id that was previously set on this Builder. */
+    public String getProjectId() {
+      return getTypedStubSettings().getProjectId();
+    }
+
+    /**
+     * Sets the target instance. This setting is required. All RPCs will be made in the context of
+     * this setting.
+     */
+    public Builder setInstanceId(@Nonnull String instanceId) {
+      getTypedStubSettings().setInstanceId(instanceId);
+      return this;
+    }
+
+    /** Gets the instance id that was previously set on this Builder. */
+    public String getInstanceId() {
+      return getTypedStubSettings().getInstanceId();
     }
 
     /**

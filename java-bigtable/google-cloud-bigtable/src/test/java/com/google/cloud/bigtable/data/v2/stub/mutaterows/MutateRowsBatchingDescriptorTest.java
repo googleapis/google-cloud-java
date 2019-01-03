@@ -30,7 +30,7 @@ import com.google.bigtable.v2.MutateRowsRequest.Entry;
 import com.google.bigtable.v2.MutateRowsRequest.Entry.Builder;
 import com.google.bigtable.v2.Mutation;
 import com.google.bigtable.v2.Mutation.SetCell;
-import com.google.bigtable.v2.TableName;
+import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.models.MutateRowsException;
 import com.google.cloud.bigtable.data.v2.models.MutateRowsException.FailedMutation;
 import com.google.common.collect.ImmutableList;
@@ -48,8 +48,9 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class MutateRowsBatchingDescriptorTest {
-  private static final TableName TABLE_NAME =
-      TableName.of("fake-project", "fake-instance", "fake-table");
+  private static final String PROJECT_ID = "fake-project";
+  private static final String INSTANCE_ID = "fake-instance";
+  private static final String TABLE_ID = "fake-table";
 
   private MutateRowsBatchingDescriptor descriptor;
 
@@ -74,13 +75,12 @@ public class MutateRowsBatchingDescriptorTest {
 
   @Test
   public void partitionKeyTest() {
-    TableName myTableName = TableName.of("my-project", "my-instance", "my-table");
+    String myTableName = NameUtil.formatTableName("my-project", "my-instance", "my-table");
 
-    MutateRowsRequest request =
-        createRequest(2).toBuilder().setTableName(myTableName.toString()).build();
+    MutateRowsRequest request = createRequest(2).toBuilder().setTableName(myTableName).build();
 
     PartitionKey actual = descriptor.getBatchPartitionKey(request);
-    assertThat(actual).isEqualTo(new PartitionKey(myTableName.toString()));
+    assertThat(actual).isEqualTo(new PartitionKey(myTableName));
   }
 
   @Test
@@ -92,7 +92,7 @@ public class MutateRowsBatchingDescriptorTest {
     for (Entry entry : expected.getEntriesList()) {
       MutateRowsRequest singleReq =
           MutateRowsRequest.newBuilder()
-              .setTableName(TABLE_NAME.toString())
+              .setTableName(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
               .addEntries(entry)
               .build();
 
@@ -205,7 +205,8 @@ public class MutateRowsBatchingDescriptorTest {
 
   private static MutateRowsRequest createRequest(int count) {
     MutateRowsRequest.Builder request =
-        MutateRowsRequest.newBuilder().setTableName(TABLE_NAME.toString());
+        MutateRowsRequest.newBuilder()
+            .setTableName(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID));
 
     for (int i = 0; i < count; i++) {
       Builder entry =

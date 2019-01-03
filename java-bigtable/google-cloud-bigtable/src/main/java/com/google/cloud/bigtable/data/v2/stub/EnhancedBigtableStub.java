@@ -149,7 +149,8 @@ public class EnhancedBigtableStub implements AutoCloseable {
     this.clientContext = clientContext;
     this.stub = stub;
     this.requestContext =
-        RequestContext.create(settings.getInstanceName(), settings.getAppProfileId());
+        RequestContext.create(
+            settings.getProjectId(), settings.getInstanceId(), settings.getAppProfileId());
 
     readRowsCallable = createReadRowsCallable(new DefaultRowAdapter());
     readRowCallable = createReadRowCallable(new DefaultRowAdapter());

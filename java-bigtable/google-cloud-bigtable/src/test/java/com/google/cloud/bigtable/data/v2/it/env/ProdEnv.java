@@ -18,9 +18,7 @@ package com.google.cloud.bigtable.data.v2.it.env;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.rpc.ServerStream;
-import com.google.bigtable.v2.TableName;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
-import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
@@ -43,30 +41,35 @@ import java.util.concurrent.TimeoutException;
  * </ul>
  */
 public class ProdEnv implements TestEnv {
+  private static final String PROJECT_PROPERTY_NAME = "bigtable.project";
+  private static final String INSTANCE_PROPERTY_NAME = "bigtable.instance";
   private static final String TABLE_PROPERTY_NAME = "bigtable.table";
 
-  private TableName tableName;
+  private final String projectId;
+  private final String instanceId;
+  private final String tableId;
   private static final String FAMILY_ID = "cf";
   private String rowPrefix;
 
   private BigtableDataClient dataClient;
 
   static ProdEnv fromSystemProperties() {
-    String tableNameStr = getRequiredProperty(TABLE_PROPERTY_NAME);
-    TableName tableName = TableName.parse(tableNameStr);
-
-    return new ProdEnv(tableName);
+    return new ProdEnv(
+        getRequiredProperty(PROJECT_PROPERTY_NAME),
+        getRequiredProperty(INSTANCE_PROPERTY_NAME),
+        getRequiredProperty(TABLE_PROPERTY_NAME));
   }
 
-  ProdEnv(TableName tableName) {
-    this.tableName = tableName;
+  public ProdEnv(String projectId, String instanceId, String tableId) {
+    this.projectId = projectId;
+    this.instanceId = instanceId;
+    this.tableId = tableId;
+    this.rowPrefix = UUID.randomUUID() + "-";
   }
 
   @Override
   public void start() throws IOException {
-    rowPrefix = UUID.randomUUID() + "-";
-    dataClient =
-        BigtableDataClient.create(InstanceName.of(tableName.getProject(), tableName.getInstance()));
+    dataClient = BigtableDataClient.create(projectId, instanceId);
   }
 
   @Override
@@ -81,8 +84,18 @@ public class ProdEnv implements TestEnv {
   }
 
   @Override
-  public TableName getTableName() {
-    return tableName;
+  public String getProjectId() {
+    return projectId;
+  }
+
+  @Override
+  public String getInstanceId() {
+    return instanceId;
+  }
+
+  @Override
+  public String getTableId() {
+    return tableId;
   }
 
   @Override
@@ -96,14 +109,13 @@ public class ProdEnv implements TestEnv {
   }
 
   private void deleteRows() throws InterruptedException, ExecutionException, TimeoutException {
-    Query query = Query.create(tableName.getTable()).prefix(rowPrefix);
+    Query query = Query.create(tableId).prefix(rowPrefix);
 
     List<ApiFuture<Void>> futures = Lists.newArrayList();
     ServerStream<Row> rows = dataClient.readRows(query);
     for (Row row : rows) {
       ApiFuture<Void> future =
-          dataClient.mutateRowAsync(
-              RowMutation.create(tableName.getTable(), row.getKey()).deleteRow());
+          dataClient.mutateRowAsync(RowMutation.create(tableId, row.getKey()).deleteRow());
       futures.add(future);
     }
 

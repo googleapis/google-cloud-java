@@ -18,7 +18,7 @@ package com.google.cloud.bigtable.data.v2.models;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.bigtable.v2.MutateRowsRequest;
-import com.google.bigtable.v2.TableName;
+import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.TextFormat;
@@ -34,12 +34,12 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class BulkMutationTest {
-  private static final InstanceName INSTANCE_NAME =
-      InstanceName.of("fake-project", "fake-instance");
+  private static final String PROJECT_ID = "fake-project";
+  private static final String INSTANCE_ID = "fake-instance";
   private static final String TABLE_ID = "fake-table";
   private static final String APP_PROFILE = "fake-profile";
   private static final RequestContext REQUEST_CONTEXT =
-      RequestContext.create(INSTANCE_NAME, APP_PROFILE);
+      RequestContext.create(PROJECT_ID, INSTANCE_ID, APP_PROFILE);
 
   @Test
   public void test() throws ParseException {
@@ -58,8 +58,7 @@ public class BulkMutationTest {
 
     MutateRowsRequest.Builder expected =
         MutateRowsRequest.newBuilder()
-            .setTableName(
-                TableName.format(INSTANCE_NAME.getProject(), INSTANCE_NAME.getInstance(), TABLE_ID))
+            .setTableName(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
             .setAppProfileId(APP_PROFILE);
     TextFormat.merge(
         "entries {"

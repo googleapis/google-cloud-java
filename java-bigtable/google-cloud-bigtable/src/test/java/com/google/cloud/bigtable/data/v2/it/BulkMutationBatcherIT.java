@@ -39,7 +39,7 @@ public class BulkMutationBatcherIT {
   @Test
   public void test() throws Exception {
     BigtableDataClient client = testEnvRule.env().getDataClient();
-    String tableId = testEnvRule.env().getTableName().getTable();
+    String tableId = testEnvRule.env().getTableId();
     String family = testEnvRule.env().getFamilyId();
     String rowPrefix = testEnvRule.env().getRowPrefix();
 

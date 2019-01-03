@@ -19,8 +19,8 @@ import com.google.api.core.InternalApi;
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.RowRange;
 import com.google.bigtable.v2.RowSet;
-import com.google.bigtable.v2.TableName;
 import com.google.cloud.bigtable.data.v2.internal.ByteStringComparator;
+import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.internal.RowSetUtil;
 import com.google.cloud.bigtable.data.v2.models.Range.ByteStringRange;
@@ -248,14 +248,12 @@ public final class Query implements Serializable {
    */
   @InternalApi
   public ReadRowsRequest toProto(RequestContext requestContext) {
-    TableName tableName =
-        TableName.of(
-            requestContext.getInstanceName().getProject(),
-            requestContext.getInstanceName().getInstance(),
-            tableId);
+    String tableName =
+        NameUtil.formatTableName(
+            requestContext.getProjectId(), requestContext.getInstanceId(), tableId);
 
     return builder
-        .setTableName(tableName.toString())
+        .setTableName(tableName)
         .setAppProfileId(requestContext.getAppProfileId())
         .build();
   }

@@ -27,7 +27,6 @@ import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.WatchdogProvider;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
-import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
@@ -59,7 +58,8 @@ public class EnhancedBigtableStubSettingsTest {
 
   @Test
   public void settingsAreNotLostTest() {
-    InstanceName instanceName = InstanceName.of("my-project", "my-instance");
+    String projectId = "my-project";
+    String instanceId = "my-instance";
     String appProfileId = "my-app-profile-id";
     String endpoint = "some.other.host:123";
     CredentialsProvider credentialsProvider = Mockito.mock(CredentialsProvider.class);
@@ -68,7 +68,8 @@ public class EnhancedBigtableStubSettingsTest {
 
     EnhancedBigtableStubSettings.Builder builder =
         EnhancedBigtableStubSettings.newBuilder()
-            .setInstanceName(instanceName)
+            .setProjectId(projectId)
+            .setInstanceId(instanceId)
             .setAppProfileId(appProfileId)
             .setEndpoint(endpoint)
             .setCredentialsProvider(credentialsProvider)
@@ -77,7 +78,8 @@ public class EnhancedBigtableStubSettingsTest {
 
     verifyBuilder(
         builder,
-        instanceName,
+        projectId,
+        instanceId,
         appProfileId,
         endpoint,
         credentialsProvider,
@@ -85,7 +87,8 @@ public class EnhancedBigtableStubSettingsTest {
         watchdogInterval);
     verifySettings(
         builder.build(),
-        instanceName,
+        projectId,
+        instanceId,
         appProfileId,
         endpoint,
         credentialsProvider,
@@ -93,7 +96,8 @@ public class EnhancedBigtableStubSettingsTest {
         watchdogInterval);
     verifyBuilder(
         builder.build().toBuilder(),
-        instanceName,
+        projectId,
+        instanceId,
         appProfileId,
         endpoint,
         credentialsProvider,
@@ -103,13 +107,15 @@ public class EnhancedBigtableStubSettingsTest {
 
   private void verifyBuilder(
       EnhancedBigtableStubSettings.Builder builder,
-      InstanceName instanceName,
+      String projectId,
+      String instanceId,
       String appProfileId,
       String endpoint,
       CredentialsProvider credentialsProvider,
       WatchdogProvider watchdogProvider,
       Duration watchdogInterval) {
-    assertThat(builder.getInstanceName()).isEqualTo(instanceName);
+    assertThat(builder.getProjectId()).isEqualTo(projectId);
+    assertThat(builder.getInstanceId()).isEqualTo(instanceId);
     assertThat(builder.getAppProfileId()).isEqualTo(appProfileId);
     assertThat(builder.getEndpoint()).isEqualTo(endpoint);
     assertThat(builder.getCredentialsProvider()).isEqualTo(credentialsProvider);
@@ -119,13 +125,15 @@ public class EnhancedBigtableStubSettingsTest {
 
   private void verifySettings(
       EnhancedBigtableStubSettings settings,
-      InstanceName instanceName,
+      String projectId,
+      String instanceId,
       String appProfileId,
       String endpoint,
       CredentialsProvider credentialsProvider,
       WatchdogProvider watchdogProvider,
       Duration watchdogInterval) {
-    assertThat(settings.getInstanceName()).isEqualTo(instanceName);
+    assertThat(settings.getProjectId()).isEqualTo(projectId);
+    assertThat(settings.getInstanceId()).isEqualTo(instanceId);
     assertThat(settings.getAppProfileId()).isEqualTo(appProfileId);
     assertThat(settings.getEndpoint()).isEqualTo(endpoint);
     assertThat(settings.getCredentialsProvider()).isEqualTo(credentialsProvider);
@@ -135,10 +143,13 @@ public class EnhancedBigtableStubSettingsTest {
 
   @Test
   public void multipleChannelsByDefaultTest() {
-    InstanceName dummyInstanceName = InstanceName.of("my-project", "my-instance");
+    String dummyProjectId = "my-project";
+    String dummyInstanceId = "my-instance";
 
     EnhancedBigtableStubSettings.Builder builder =
-        EnhancedBigtableStubSettings.newBuilder().setInstanceName(dummyInstanceName);
+        EnhancedBigtableStubSettings.newBuilder()
+            .setProjectId(dummyProjectId)
+            .setInstanceId(dummyInstanceId);
 
     InstantiatingGrpcChannelProvider provider =
         (InstantiatingGrpcChannelProvider) builder.getTransportChannelProvider();
@@ -148,10 +159,13 @@ public class EnhancedBigtableStubSettingsTest {
 
   @Test
   public void readRowsIsNotLostTest() {
-    InstanceName dummyInstanceName = InstanceName.of("my-project", "my-instance");
+    String dummyProjectId = "my-project";
+    String dummyInstanceId = "my-instance";
 
     EnhancedBigtableStubSettings.Builder builder =
-        EnhancedBigtableStubSettings.newBuilder().setInstanceName(dummyInstanceName);
+        EnhancedBigtableStubSettings.newBuilder()
+            .setProjectId(dummyProjectId)
+            .setInstanceId(dummyInstanceId);
 
     RetrySettings retrySettings =
         RetrySettings.newBuilder()
@@ -202,10 +216,10 @@ public class EnhancedBigtableStubSettingsTest {
 
   @Test
   public void readRowIsNotLostTest() {
-    InstanceName dummyInstanceName = InstanceName.of("my-project", "my-instance");
-
     EnhancedBigtableStubSettings.Builder builder =
-        EnhancedBigtableStubSettings.newBuilder().setInstanceName(dummyInstanceName);
+        EnhancedBigtableStubSettings.newBuilder()
+            .setProjectId("my-project")
+            .setInstanceId("my-instance");
 
     RetrySettings retrySettings =
         RetrySettings.newBuilder()
@@ -250,10 +264,10 @@ public class EnhancedBigtableStubSettingsTest {
 
   @Test
   public void readRowRetryCodesMustMatch() {
-    InstanceName dummyInstanceName = InstanceName.of("my-project", "my-instance");
-
     EnhancedBigtableStubSettings.Builder builder =
-        EnhancedBigtableStubSettings.newBuilder().setInstanceName(dummyInstanceName);
+        EnhancedBigtableStubSettings.newBuilder()
+            .setProjectId("my-project")
+            .setInstanceId("my-instance");
 
     builder.readRowsSettings().setRetryableCodes(Code.DEADLINE_EXCEEDED);
 
@@ -280,10 +294,13 @@ public class EnhancedBigtableStubSettingsTest {
 
   @Test
   public void sampleRowKeysSettingsAreNotLostTest() {
-    InstanceName dummyInstanceName = InstanceName.of("my-project", "my-instance");
+    String dummyProjectId = "my-project";
+    String dummyInstanceId = "my-instance";
 
     EnhancedBigtableStubSettings.Builder builder =
-        EnhancedBigtableStubSettings.newBuilder().setInstanceName(dummyInstanceName);
+        EnhancedBigtableStubSettings.newBuilder()
+            .setProjectId(dummyProjectId)
+            .setInstanceId(dummyInstanceId);
 
     RetrySettings retrySettings =
         RetrySettings.newBuilder()
@@ -324,10 +341,13 @@ public class EnhancedBigtableStubSettingsTest {
 
   @Test
   public void mutateRowSettingsAreNotLostTest() {
-    InstanceName dummyInstanceName = InstanceName.of("my-project", "my-instance");
+    String dummyProjectId = "my-project";
+    String dummyInstanceId = "my-instance";
 
     EnhancedBigtableStubSettings.Builder builder =
-        EnhancedBigtableStubSettings.newBuilder().setInstanceName(dummyInstanceName);
+        EnhancedBigtableStubSettings.newBuilder()
+            .setProjectId(dummyProjectId)
+            .setInstanceId(dummyInstanceId);
 
     RetrySettings retrySettings =
         RetrySettings.newBuilder()
@@ -368,10 +388,13 @@ public class EnhancedBigtableStubSettingsTest {
 
   @Test
   public void bulkMutateRowsSettingsAreNotLostTest() {
-    InstanceName dummyInstanceName = InstanceName.of("my-project", "my-instance");
+    String dummyProjectId = "my-project";
+    String dummyInstanceId = "my-instance";
 
     EnhancedBigtableStubSettings.Builder builder =
-        EnhancedBigtableStubSettings.newBuilder().setInstanceName(dummyInstanceName);
+        EnhancedBigtableStubSettings.newBuilder()
+            .setProjectId(dummyProjectId)
+            .setInstanceId(dummyInstanceId);
 
     RetrySettings retrySettings =
         RetrySettings.newBuilder()
@@ -436,10 +459,13 @@ public class EnhancedBigtableStubSettingsTest {
 
   @Test
   public void checkAndMutateRowSettingsAreNotLostTest() {
-    InstanceName dummyInstanceName = InstanceName.of("my-project", "my-instance");
+    String dummyProjectId = "my-project";
+    String dummyInstanceId = "my-instance";
 
     EnhancedBigtableStubSettings.Builder builder =
-        EnhancedBigtableStubSettings.newBuilder().setInstanceName(dummyInstanceName);
+        EnhancedBigtableStubSettings.newBuilder()
+            .setProjectId(dummyProjectId)
+            .setInstanceId(dummyInstanceId);
 
     RetrySettings retrySettings = RetrySettings.newBuilder().build();
     builder

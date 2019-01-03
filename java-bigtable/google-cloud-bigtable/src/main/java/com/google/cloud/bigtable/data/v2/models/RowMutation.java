@@ -19,7 +19,7 @@ import com.google.api.core.InternalApi;
 import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.MutateRowsRequest.Entry;
-import com.google.bigtable.v2.TableName;
+import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.Range.TimestampRange;
 import com.google.protobuf.ByteString;
@@ -158,15 +158,13 @@ public final class RowMutation implements MutationApi<RowMutation>, Serializable
 
   @InternalApi
   public MutateRowRequest toProto(RequestContext requestContext) {
-    TableName tableName =
-        TableName.of(
-            requestContext.getInstanceName().getProject(),
-            requestContext.getInstanceName().getInstance(),
-            tableId);
+    String tableName =
+        NameUtil.formatTableName(
+            requestContext.getProjectId(), requestContext.getInstanceId(), tableId);
 
     return MutateRowRequest.newBuilder()
         .setAppProfileId(requestContext.getAppProfileId())
-        .setTableName(tableName.toString())
+        .setTableName(tableName)
         .setRowKey(key)
         .addAllMutations(mutation.getMutations())
         .build();
@@ -178,15 +176,13 @@ public final class RowMutation implements MutationApi<RowMutation>, Serializable
    */
   @InternalApi
   public MutateRowsRequest toBulkProto(RequestContext requestContext) {
-    TableName tableName =
-        TableName.of(
-            requestContext.getInstanceName().getProject(),
-            requestContext.getInstanceName().getInstance(),
-            tableId);
+    String tableName =
+        NameUtil.formatTableName(
+            requestContext.getProjectId(), requestContext.getInstanceId(), tableId);
 
     return MutateRowsRequest.newBuilder()
         .setAppProfileId(requestContext.getAppProfileId())
-        .setTableName(tableName.toString())
+        .setTableName(tableName)
         .addEntries(
             Entry.newBuilder().setRowKey(key).addAllMutations(mutation.getMutations()).build())
         .build();

@@ -25,10 +25,9 @@ import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.bigtable.v2.ReadRowsResponse.CellChunk;
 import com.google.bigtable.v2.RowRange;
-import com.google.bigtable.v2.TableName;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
-import com.google.cloud.bigtable.data.v2.models.InstanceName;
+import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Range.ByteStringRange;
 import com.google.cloud.bigtable.data.v2.models.Row;
@@ -54,10 +53,9 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
 public class ReadRowsRetryTest {
-  private static final InstanceName instanceName = InstanceName.of("fake-project", "fake-instance");
-
-  private static final TableName tableName =
-      TableName.of(instanceName.getProject(), instanceName.getInstance(), "fake-table");
+  private static final String PROJECT_ID = "fake-project";
+  private static final String INSTANCE_ID = "fake-instance";
+  private static final String TABLE_ID = "fake-table";
 
   @Rule public GrpcServerRule serverRule = new GrpcServerRule();
   private TestBigtableService service;
@@ -70,7 +68,8 @@ public class ReadRowsRetryTest {
 
     BigtableDataSettings settings =
         BigtableDataSettings.newBuilder()
-            .setInstanceName(instanceName)
+            .setProjectId(PROJECT_ID)
+            .setInstanceId(INSTANCE_ID)
             .setCredentialsProvider(NoCredentialsProvider.create())
             .setTransportChannelProvider(
                 FixedTransportChannelProvider.create(
@@ -93,8 +92,7 @@ public class ReadRowsRetryTest {
             .expectRequest(Range.closedOpen("r1", "r3"))
             .respondWith("k1", "r1", "r2"));
 
-    List<String> actualResults =
-        getResults(Query.create(tableName.getTable()).rowKey("k1").range("r1", "r3"));
+    List<String> actualResults = getResults(Query.create(TABLE_ID).rowKey("k1").range("r1", "r3"));
     Truth.assertThat(actualResults).containsExactly("k1", "r1", "r2").inOrder();
   }
 
@@ -111,8 +109,7 @@ public class ReadRowsRetryTest {
             .expectRequest(Range.closedOpen("r1", "r3"))
             .respondWith("k1", "r1", "r2"));
 
-    List<String> actualResults =
-        getResults(Query.create(tableName.getTable()).rowKey("k1").range("r1", "r3"));
+    List<String> actualResults = getResults(Query.create(TABLE_ID).rowKey("k1").range("r1", "r3"));
     Truth.assertThat(actualResults).containsExactly("k1", "r1", "r2").inOrder();
   }
 
@@ -135,7 +132,7 @@ public class ReadRowsRetryTest {
     service.expectations.add(
         RpcExpectation.create().expectRequest(Range.open("r7", "r9")).respondWith("r8"));
 
-    List<String> actualResults = getResults(Query.create(tableName.getTable()).range("r1", "r9"));
+    List<String> actualResults = getResults(Query.create(TABLE_ID).range("r1", "r9"));
     Truth.assertThat(actualResults)
         .containsExactly("r1", "r2", "r3", "r4", "r5", "r6", "r7", "r8")
         .inOrder();
@@ -155,8 +152,7 @@ public class ReadRowsRetryTest {
             .expectRowLimit(1)
             .respondWith("r2"));
 
-    List<String> actualResults =
-        getResults(Query.create(tableName.getTable()).range("r1", "r3").limit(2));
+    List<String> actualResults = getResults(Query.create(TABLE_ID).range("r1", "r3").limit(2));
     Truth.assertThat(actualResults).containsExactly("r1", "r2").inOrder();
   }
 
@@ -171,8 +167,7 @@ public class ReadRowsRetryTest {
 
     // Second retry request is handled locally in ReadRowsRetryCompletedCallable
 
-    List<String> actualResults =
-        getResults(Query.create(tableName.getTable()).range("r1", "r3").limit(2));
+    List<String> actualResults = getResults(Query.create(TABLE_ID).range("r1", "r3").limit(2));
 
     Truth.assertThat(actualResults).containsExactly("r1", "r2");
   }
@@ -188,8 +183,7 @@ public class ReadRowsRetryTest {
 
     // Second retry request is handled locally in ReadRowsRetryCompletedCallable
 
-    List<String> actualResults =
-        getResults(Query.create(tableName.getTable()).range("r1", "r3").rowKey("r4"));
+    List<String> actualResults = getResults(Query.create(TABLE_ID).range("r1", "r3").rowKey("r4"));
 
     Truth.assertThat(actualResults).containsExactly("r2", "r4");
   }
@@ -203,8 +197,7 @@ public class ReadRowsRetryTest {
             .respondWithStatus(Code.UNAVAILABLE));
     service.expectations.add(RpcExpectation.create().expectRequest("r2").respondWith("r2"));
 
-    List<String> actualResults =
-        getResults(Query.create(tableName.getTable()).rowKey("r1").rowKey("r2"));
+    List<String> actualResults = getResults(Query.create(TABLE_ID).rowKey("r1").rowKey("r2"));
     Truth.assertThat(actualResults).containsExactly("r1", "r2").inOrder();
   }
 
@@ -214,7 +207,7 @@ public class ReadRowsRetryTest {
         RpcExpectation.create().respondWith("r1").respondWithStatus(Code.UNAVAILABLE));
     service.expectations.add(
         RpcExpectation.create().expectRequest(Range.greaterThan("r1")).respondWith("r2"));
-    List<String> actualResults = getResults(Query.create(tableName.getTable()));
+    List<String> actualResults = getResults(Query.create(TABLE_ID));
     Truth.assertThat(actualResults).containsExactly("r1", "r2").inOrder();
   }
 
@@ -229,8 +222,7 @@ public class ReadRowsRetryTest {
         RpcExpectation.create().expectRequest(Range.open("r1", "r9")).respondWith("r2"));
 
     List<String> actualResults =
-        getResults(
-            Query.create(tableName.getTable()).range(ByteStringRange.unbounded().endOpen("r9")));
+        getResults(Query.create(TABLE_ID).range(ByteStringRange.unbounded().endOpen("r9")));
     Truth.assertThat(actualResults).containsExactly("r1", "r2").inOrder();
   }
 
@@ -245,9 +237,7 @@ public class ReadRowsRetryTest {
         RpcExpectation.create().expectRequest(Range.greaterThan("r1")).respondWith("r2"));
 
     List<String> actualResults =
-        getResults(
-            Query.create(tableName.getTable())
-                .range(ByteStringRange.unbounded().startClosed("r1")));
+        getResults(Query.create(TABLE_ID).range(ByteStringRange.unbounded().startClosed("r1")));
     Truth.assertThat(actualResults).containsExactly("r1", "r2").inOrder();
   }
 
@@ -261,7 +251,7 @@ public class ReadRowsRetryTest {
     service.expectations.add(
         RpcExpectation.create().expectRequest(Range.open("r5", "r9")).respondWith("r7"));
     List<String> actualResults =
-        getResults(Query.create(tableName.getTable()).range(ByteStringRange.create("r1", "r9")));
+        getResults(Query.create(TABLE_ID).range(ByteStringRange.create("r1", "r9")));
     Truth.assertThat(actualResults).containsExactly("r7").inOrder();
   }
 
@@ -309,7 +299,9 @@ public class ReadRowsRetryTest {
     List<ReadRowsResponse> responses;
 
     private RpcExpectation() {
-      this.requestBuilder = ReadRowsRequest.newBuilder().setTableName(tableName.toString());
+      this.requestBuilder =
+          ReadRowsRequest.newBuilder()
+              .setTableName(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID));
       this.statusCode = Status.Code.OK;
       this.responses = Lists.newArrayList();
     }

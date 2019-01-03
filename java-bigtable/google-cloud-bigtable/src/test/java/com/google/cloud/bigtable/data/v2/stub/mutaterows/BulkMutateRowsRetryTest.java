@@ -30,11 +30,9 @@ import com.google.bigtable.v2.BigtableGrpc;
 import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.MutateRowsRequest.Entry;
 import com.google.bigtable.v2.MutateRowsResponse;
-import com.google.bigtable.v2.TableName;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.models.BulkMutationBatcher;
-import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Queues;
@@ -56,11 +54,9 @@ import org.threeten.bp.Duration;
 
 @RunWith(MockitoJUnitRunner.class)
 public class BulkMutateRowsRetryTest {
-  private static final InstanceName INSTANCE_NAME =
-      InstanceName.of("fake-project", "fake-instance");
-  private static final TableName TABLE_NAME =
-      TableName.of(INSTANCE_NAME.getProject(), INSTANCE_NAME.getInstance(), "fake-table");
-  private static final String TABLE_ID = TABLE_NAME.getTable();
+  private static final String PROJECT_ID = "fake-project";
+  private static final String INSTANCE_ID = "fake-instance";
+  private static final String TABLE_ID = "fake-table";
 
   private static final int MAX_ATTEMPTS = 5;
   private static final long FLUSH_COUNT = 10;
@@ -78,7 +74,8 @@ public class BulkMutateRowsRetryTest {
 
     BigtableDataSettings.Builder settings =
         BigtableDataSettings.newBuilder()
-            .setInstanceName(INSTANCE_NAME)
+            .setProjectId(PROJECT_ID)
+            .setInstanceId(INSTANCE_ID)
             .setCredentialsProvider(NoCredentialsProvider.create())
             .setTransportChannelProvider(
                 FixedTransportChannelProvider.create(
