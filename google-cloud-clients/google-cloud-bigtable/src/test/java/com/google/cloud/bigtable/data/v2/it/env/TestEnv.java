@@ -15,7 +15,6 @@
  */
 package com.google.cloud.bigtable.data.v2.it.env;
 
-import com.google.bigtable.v2.TableName;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 
 /**
@@ -30,7 +29,11 @@ public interface TestEnv {
 
   BigtableDataClient getDataClient();
 
-  TableName getTableName();
+  String getProjectId();
+
+  String getInstanceId();
+
+  String getTableId();
 
   String getFamilyId();
 

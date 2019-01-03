@@ -23,7 +23,6 @@ import com.google.bigtable.admin.v2.BigtableTableAdminGrpc;
 import com.google.bigtable.admin.v2.BigtableTableAdminGrpc.BigtableTableAdminBlockingStub;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
-import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.common.io.CharStreams;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
@@ -57,8 +56,8 @@ class Emulator {
   private BigtableTableAdminBlockingStub tableAdminClient;
   private BigtableDataClient dataClient;
 
-  private static final InstanceName INSTANCE_NAME =
-      InstanceName.of("fake-project", "fake-instance");
+  private static final String PROJECT_ID = "fake-project";
+  private static final String INSTANCE_ID = "fake-instance";
 
   // Use the gcloud installed emulator
   static Emulator createGCloud() {
@@ -101,7 +100,10 @@ class Emulator {
 
     dataClient =
         BigtableDataClient.create(
-            configureClient(BigtableDataSettings.newBuilder().setInstanceName(INSTANCE_NAME))
+            configureClient(
+                    BigtableDataSettings.newBuilder()
+                        .setProjectId(PROJECT_ID)
+                        .setInstanceId(INSTANCE_ID))
                 .build());
 
     Runtime.getRuntime()

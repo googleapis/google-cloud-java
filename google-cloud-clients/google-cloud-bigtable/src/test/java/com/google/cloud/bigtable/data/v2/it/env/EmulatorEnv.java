@@ -18,13 +18,12 @@ package com.google.cloud.bigtable.data.v2.it.env;
 import com.google.bigtable.admin.v2.ColumnFamily;
 import com.google.bigtable.admin.v2.CreateTableRequest;
 import com.google.bigtable.admin.v2.Table;
-import com.google.bigtable.v2.TableName;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
-import com.google.cloud.bigtable.data.v2.models.InstanceName;
+import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 
 public class EmulatorEnv implements TestEnv {
-  private static final InstanceName INSTANCE_NAME =
-      InstanceName.of("fake-project", "fake-instance");
+  private static final String PROJECT_ID = "fake-project";
+  private static final String INSTANCE_ID = "fake-instance";
   private static final String TABLE_ID = "default-table";
   private static final String FAMILY_ID = "cf";
 
@@ -39,7 +38,7 @@ public class EmulatorEnv implements TestEnv {
         .getTableAdminClient()
         .createTable(
             CreateTableRequest.newBuilder()
-                .setParent(INSTANCE_NAME.toString())
+                .setParent(NameUtil.formatInstanceName(PROJECT_ID, INSTANCE_ID))
                 .setTableId(TABLE_ID)
                 .setTable(
                     Table.newBuilder()
@@ -53,8 +52,18 @@ public class EmulatorEnv implements TestEnv {
   }
 
   @Override
-  public TableName getTableName() {
-    return TableName.of(INSTANCE_NAME.getProject(), INSTANCE_NAME.getInstance(), TABLE_ID);
+  public String getProjectId() {
+    return PROJECT_ID;
+  }
+
+  @Override
+  public String getInstanceId() {
+    return INSTANCE_ID;
+  }
+
+  @Override
+  public String getTableId() {
+    return TABLE_ID;
   }
 
   @Override

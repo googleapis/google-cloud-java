@@ -17,7 +17,6 @@ package com.google.cloud.bigtable.data.v2.stub.readrows;
 
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
-import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.gaxx.testing.FakeStreamingApi.ServerStreamingStashCallable;
@@ -29,7 +28,7 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class ReadRowsUserCallableTest {
   private static final RequestContext REQUEST_CONTEXT =
-      RequestContext.create(InstanceName.of("fake-project", "fake-instance"), "fake-profile");
+      RequestContext.create("fake-project", "fake-instance", "fake-profile");
 
   @Test
   public void testRequestConverted() {

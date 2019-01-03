@@ -59,7 +59,7 @@ public class ReadIT {
   public void readEmpty() throws Throwable {
     String uniqueKey = prefix + "-readEmpty";
 
-    Query query = Query.create(testEnvRule.env().getTableName().getTable()).rowKey(uniqueKey);
+    Query query = Query.create(testEnvRule.env().getTableId()).rowKey(uniqueKey);
 
     // Sync
     ArrayList<Row> rows = Lists.newArrayList(testEnvRule.env().getDataClient().readRows(query));
@@ -86,7 +86,7 @@ public class ReadIT {
           .getDataClient()
           .mutateRowCallable()
           .call(
-              RowMutation.create(testEnvRule.env().getTableName().getTable(), uniqueKey + "-" + i)
+              RowMutation.create(testEnvRule.env().getTableId(), uniqueKey + "-" + i)
                   .setCell(testEnvRule.env().getFamilyId(), "q", timestampMicros, "my-value"));
 
       expectedRows.add(
@@ -101,7 +101,7 @@ public class ReadIT {
                       ByteString.copyFromUtf8("my-value")))));
     }
 
-    String tableId = testEnvRule.env().getTableName().getTable();
+    String tableId = testEnvRule.env().getTableId();
 
     // Sync
     Query query = Query.create(tableId).range(uniqueKey + "-0", uniqueKey + "-" + numRows);
@@ -133,7 +133,7 @@ public class ReadIT {
         testEnvRule
             .env()
             .getDataClient()
-            .readRowAsync(testEnvRule.env().getTableName().getTable(), "somenonexistentkey");
+            .readRowAsync(testEnvRule.env().getTableId(), "somenonexistentkey");
 
     final AtomicBoolean found = new AtomicBoolean();
     final CountDownLatch latch = new CountDownLatch(1);
