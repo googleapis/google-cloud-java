@@ -109,8 +109,7 @@ public class Publisher {
   private Publisher(Builder builder) throws IOException {
     topicName = builder.topicName;
 
-    // Disable gax batching.
-    this.batchingSettings = builder.batchingSettings.toBuilder().setIsEnabled(false).build();
+    this.batchingSettings = builder.batchingSettings;
 
     messagesBatch = new LinkedList<>();
     messagesBatchLock = new ReentrantLock();
@@ -146,7 +145,8 @@ public class Publisher {
             StatusCode.Code.UNKNOWN,
             StatusCode.Code.UNAVAILABLE)
         .setRetrySettings(retrySettings)
-        .setBatchingSettings(batchingSettings);
+        // disable gax batching
+        .setBatchingSettings(BatchingSettings.newBuilder().setIsEnabled(false).build());
     this.publisherStub = GrpcPublisherStub.create(stubSettings.build());
 
     shutdown = new AtomicBoolean(false);
@@ -529,7 +529,6 @@ public class Publisher {
             .setDelayThreshold(DEFAULT_DELAY_THRESHOLD)
             .setRequestByteThreshold(DEFAULT_REQUEST_BYTES_THRESHOLD)
             .setElementCountThreshold(DEFAULT_ELEMENT_COUNT_THRESHOLD)
-            .setIsEnabled(false)
             .build();
     static final RetrySettings DEFAULT_RETRY_SETTINGS =
         RetrySettings.newBuilder()

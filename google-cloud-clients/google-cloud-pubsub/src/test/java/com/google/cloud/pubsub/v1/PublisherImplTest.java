@@ -480,8 +480,6 @@ public class PublisherImplTest {
         Publisher.Builder.DEFAULT_ELEMENT_COUNT_THRESHOLD,
         builder.batchingSettings.getElementCountThreshold().longValue());
     assertEquals(Publisher.Builder.DEFAULT_RETRY_SETTINGS, builder.retrySettings);
-    assertEquals(
-        Builder.DEFAULT_BATCHING_SETTINGS.getIsEnabled(), builder.batchingSettings.getIsEnabled());
   }
 
   @Test
