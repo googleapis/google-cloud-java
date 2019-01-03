@@ -30,6 +30,7 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.AssumptionViolatedException;
 import org.junit.Before;
@@ -68,7 +69,6 @@ public class ITHelloWorld {
   @AfterClass
   public static void afterClass() throws Exception {
     garbageCollect();
-    adminClient.deleteTable(tableId);
     dataClient.close();
     adminClient.close();
   }
@@ -82,6 +82,13 @@ public class ITHelloWorld {
     tableId = generateTableId();
     helloWorld = new HelloWorld(instanceName.getProject(), instanceName.getInstance(), tableId);
     adminClient.createTable(CreateTableRequest.of(tableId).addFamily("cf1"));
+  }
+
+  @After
+  public void after() {
+    if (adminClient.exists(tableId)) {
+      adminClient.deleteTable(tableId);
+    }
   }
 
   @Test
@@ -99,31 +106,39 @@ public class ITHelloWorld {
   }
 
   @Test
-  public void testWriteToAndReadFromTable() {
+  public void testWriteToTable() {
     // Write to table
     helloWorld.writeToTable();
     Row row = dataClient.readRow(tableId, "rowKey0");
     assertNotNull(row);
   }
 
+  // TODO: add test for helloWorld.readSingleRow()
+  // TODO: add test for helloWorld.readTable()
+
+  @Test
+  public void testRunDoesNotFail() throws Exception {
+      helloWorld.run();
+  }
+
   private String generateTableId() {
     return String.format(
-        "%s-%016x-%d", TABLE_PREFIX, System.currentTimeMillis(), new Random().nextLong());
+        "%s-%016x-%x", TABLE_PREFIX, System.currentTimeMillis(), new Random().nextLong());
   }
 
   private static void garbageCollect() {
-    Pattern timestampPattern = Pattern.compile(TABLE_PREFIX + "-([0-9]+)");
+    Pattern timestampPattern = Pattern.compile(TABLE_PREFIX + "-([0-9a-f]+)-([0-9a-f]+)");
     for (String tableId : adminClient.listTables()) {
       Matcher matcher = timestampPattern.matcher(tableId);
       if (!matcher.matches()) {
         continue;
       }
       String timestampStr = matcher.group(1);
-      long timestamp = Long.parseLong(timestampStr);
+      long timestamp = Long.parseLong(timestampStr, 16);
       if (System.currentTimeMillis() - timestamp < TimeUnit.MINUTES.toMillis(15)) {
         continue;
       }
-      System.out.println("Garbage collecting orphaned table: " + tableId);
+      System.out.println("\nGarbage collecting orphaned table: " + tableId);
       adminClient.deleteTable(tableId);
     }
   }
