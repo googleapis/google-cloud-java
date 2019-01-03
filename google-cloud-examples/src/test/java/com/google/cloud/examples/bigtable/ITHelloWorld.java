@@ -118,7 +118,7 @@ public class ITHelloWorld {
 
   @Test
   public void testRunDoesNotFail() throws Exception {
-      helloWorld.run();
+    helloWorld.run();
   }
 
   private String generateTableId() {
