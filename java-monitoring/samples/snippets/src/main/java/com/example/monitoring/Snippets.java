@@ -24,6 +24,7 @@ import com.google.cloud.monitoring.v3.MetricServiceClient;
 import com.google.cloud.monitoring.v3.MetricServiceClient.ListMetricDescriptorsPagedResponse;
 import com.google.cloud.monitoring.v3.MetricServiceClient.ListMonitoredResourceDescriptorsPagedResponse;
 import com.google.cloud.monitoring.v3.MetricServiceClient.ListTimeSeriesPagedResponse;
+import com.google.gson.Gson;
 import com.google.monitoring.v3.Aggregation;
 import com.google.monitoring.v3.CreateMetricDescriptorRequest;
 import com.google.monitoring.v3.CreateTimeSeriesRequest;
@@ -39,6 +40,7 @@ import com.google.monitoring.v3.TimeSeries;
 import com.google.monitoring.v3.TypedValue;
 import com.google.protobuf.Duration;
 import com.google.protobuf.util.Timestamps;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -49,8 +51,8 @@ import java.util.Map;
 
 
 public class Snippets {
-
   private static final String CUSTOM_METRIC_DOMAIN = "custom.googleapis.com";
+  private static final Gson gson = new Gson();
 
   /**
    * Exercises the methods defined in this class.
@@ -391,6 +393,17 @@ public class Snippets {
     }
     // [END monitoring_list_resources]
   }
+
+  // [START monitoring_get_resource]
+  void getMonitoredResource(String resourceId) throws IOException {
+    String projectId = System.getProperty("projectId");
+    MetricServiceClient client = MetricServiceClient.create();
+    MonitoredResourceDescriptorName name =
+        MonitoredResourceDescriptorName.of(projectId, resourceId);
+    MonitoredResourceDescriptor response = client.getMonitoredResourceDescriptor(name);
+    System.out.println("Retrieved Monitored Resource: " + gson.toJson(response));
+  }
+  // [END monitoring_get_resource]
 
   /**
    * Gets full information for a monitored resource.

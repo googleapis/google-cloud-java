@@ -20,6 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -68,6 +69,19 @@ public class SnippetsIT {
     // Assert
     String got = bout.toString();
     assertThat(got).contains("metricDescriptors/bigquery.googleapis.com/query/count");
+  }
+
+  @Test
+  public void testGetMetricsDescriptor() throws Exception {
+    // Act
+    System.setProperty("projectId", SnippetsIT.getProjectId());
+    Snippets snippets = new Snippets();
+
+    snippets.getMonitoredResource("api");
+
+    // Assert
+    String got = bout.toString();
+    assertThat(got).contains("Produced API");
   }
 
   @Test
