@@ -260,6 +260,25 @@ public final class Query implements Serializable {
         .build();
   }
 
+  /**
+   * Wraps the protobuf {@link ReadRowsRequest}. This method is considered an internal implementation detail
+   * and not meant to be used by applications.
+   */
+  @InternalApi
+  public static Query fromProto(ReadRowsRequest request) {
+    Preconditions.checkArgument(request != null, "ReadRowsRequest must not be null");
+
+    TableName tableName = TableName.parse(request.getTableName());
+    String tableId = "";
+    if (tableName != null) {
+      tableId = tableName.getTable();
+    }
+
+    Query query = new Query(tableId);
+    query.builder = ReadRowsRequest.newBuilder(request);
+    return query;
+  }
+
   private static ByteString wrapKey(String key) {
     if (key == null) {
       return null;
