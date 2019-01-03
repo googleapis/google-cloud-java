@@ -84,50 +84,6 @@ public class MockSubscriberImpl extends SubscriberImplBase {
   }
 
   @Override
-  public void setIamPolicy(SetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
-    Object response = responses.remove();
-    if (response instanceof Policy) {
-      requests.add(request);
-      responseObserver.onNext((Policy) response);
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
-    } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
-    }
-  }
-
-  @Override
-  public void getIamPolicy(GetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
-    Object response = responses.remove();
-    if (response instanceof Policy) {
-      requests.add(request);
-      responseObserver.onNext((Policy) response);
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
-    } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
-    }
-  }
-
-  @Override
-  public void testIamPermissions(
-      TestIamPermissionsRequest request,
-      StreamObserver<TestIamPermissionsResponse> responseObserver) {
-    Object response = responses.remove();
-    if (response instanceof TestIamPermissionsResponse) {
-      requests.add(request);
-      responseObserver.onNext((TestIamPermissionsResponse) response);
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
-    } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
-    }
-  }
-
-  @Override
   public void createSubscription(
       Subscription request, StreamObserver<Subscription> responseObserver) {
     Object response = responses.remove();
@@ -357,6 +313,50 @@ public class MockSubscriberImpl extends SubscriberImplBase {
     if (response instanceof SeekResponse) {
       requests.add(request);
       responseObserver.onNext((SeekResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void setIamPolicy(SetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Policy) {
+      requests.add(request);
+      responseObserver.onNext((Policy) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void getIamPolicy(GetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof Policy) {
+      requests.add(request);
+      responseObserver.onNext((Policy) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void testIamPermissions(
+      TestIamPermissionsRequest request,
+      StreamObserver<TestIamPermissionsResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof TestIamPermissionsResponse) {
+      requests.add(request);
+      responseObserver.onNext((TestIamPermissionsResponse) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);
