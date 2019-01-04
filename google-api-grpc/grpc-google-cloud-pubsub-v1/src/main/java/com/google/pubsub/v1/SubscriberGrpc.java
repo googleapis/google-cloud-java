@@ -1286,13 +1286,8 @@ public final class SubscriberGrpc {
      *
      *
      * <pre>
-     * Sets the access control policy on the specified note or occurrence.
-     * Requires `containeranalysis.notes.setIamPolicy` or
-     * `containeranalysis.occurrences.setIamPolicy` permission if the resource is
-     * a note or an occurrence, respectively.
-     * The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for
-     * notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for
-     * occurrences.
+     * Sets the access control policy on the specified resource.
+     * Replaces any existing policy.
      * </pre>
      */
     public void setIamPolicy(
@@ -1305,13 +1300,8 @@ public final class SubscriberGrpc {
      *
      *
      * <pre>
-     * Gets the access control policy for a note or an occurrence resource.
-     * Requires `containeranalysis.notes.setIamPolicy` or
-     * `containeranalysis.occurrences.setIamPolicy` permission if the resource is
-     * a note or occurrence, respectively.
-     * The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for
-     * notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for
-     * occurrences.
+     * Gets the access control policy for a resource. Returns an empty policy
+     * if the resource exists and does not have a policy set.
      * </pre>
      */
     public void getIamPolicy(
@@ -1324,12 +1314,9 @@ public final class SubscriberGrpc {
      *
      *
      * <pre>
-     * Returns the permissions that a caller has on the specified note or
-     * occurrence. Requires list permission on the project (for example,
-     * `containeranalysis.notes.list`).
-     * The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for
-     * notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for
-     * occurrences.
+     * Returns permissions that a caller has on the specified resource.
+     * If the resource does not exist, this will return an empty set of
+     * permissions, not a NOT_FOUND error.
      * </pre>
      */
     public void testIamPermissions(
@@ -1809,13 +1796,8 @@ public final class SubscriberGrpc {
      *
      *
      * <pre>
-     * Sets the access control policy on the specified note or occurrence.
-     * Requires `containeranalysis.notes.setIamPolicy` or
-     * `containeranalysis.occurrences.setIamPolicy` permission if the resource is
-     * a note or an occurrence, respectively.
-     * The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for
-     * notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for
-     * occurrences.
+     * Sets the access control policy on the specified resource.
+     * Replaces any existing policy.
      * </pre>
      */
     public void setIamPolicy(
@@ -1831,13 +1813,8 @@ public final class SubscriberGrpc {
      *
      *
      * <pre>
-     * Gets the access control policy for a note or an occurrence resource.
-     * Requires `containeranalysis.notes.setIamPolicy` or
-     * `containeranalysis.occurrences.setIamPolicy` permission if the resource is
-     * a note or occurrence, respectively.
-     * The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for
-     * notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for
-     * occurrences.
+     * Gets the access control policy for a resource. Returns an empty policy
+     * if the resource exists and does not have a policy set.
      * </pre>
      */
     public void getIamPolicy(
@@ -1853,12 +1830,9 @@ public final class SubscriberGrpc {
      *
      *
      * <pre>
-     * Returns the permissions that a caller has on the specified note or
-     * occurrence. Requires list permission on the project (for example,
-     * `containeranalysis.notes.list`).
-     * The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for
-     * notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for
-     * occurrences.
+     * Returns permissions that a caller has on the specified resource.
+     * If the resource does not exist, this will return an empty set of
+     * permissions, not a NOT_FOUND error.
      * </pre>
      */
     public void testIamPermissions(
@@ -2155,13 +2129,8 @@ public final class SubscriberGrpc {
      *
      *
      * <pre>
-     * Sets the access control policy on the specified note or occurrence.
-     * Requires `containeranalysis.notes.setIamPolicy` or
-     * `containeranalysis.occurrences.setIamPolicy` permission if the resource is
-     * a note or an occurrence, respectively.
-     * The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for
-     * notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for
-     * occurrences.
+     * Sets the access control policy on the specified resource.
+     * Replaces any existing policy.
      * </pre>
      */
     public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
@@ -2173,13 +2142,8 @@ public final class SubscriberGrpc {
      *
      *
      * <pre>
-     * Gets the access control policy for a note or an occurrence resource.
-     * Requires `containeranalysis.notes.setIamPolicy` or
-     * `containeranalysis.occurrences.setIamPolicy` permission if the resource is
-     * a note or occurrence, respectively.
-     * The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for
-     * notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for
-     * occurrences.
+     * Gets the access control policy for a resource. Returns an empty policy
+     * if the resource exists and does not have a policy set.
      * </pre>
      */
     public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
@@ -2191,12 +2155,9 @@ public final class SubscriberGrpc {
      *
      *
      * <pre>
-     * Returns the permissions that a caller has on the specified note or
-     * occurrence. Requires list permission on the project (for example,
-     * `containeranalysis.notes.list`).
-     * The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for
-     * notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for
-     * occurrences.
+     * Returns permissions that a caller has on the specified resource.
+     * If the resource does not exist, this will return an empty set of
+     * permissions, not a NOT_FOUND error.
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
@@ -2495,13 +2456,8 @@ public final class SubscriberGrpc {
      *
      *
      * <pre>
-     * Sets the access control policy on the specified note or occurrence.
-     * Requires `containeranalysis.notes.setIamPolicy` or
-     * `containeranalysis.occurrences.setIamPolicy` permission if the resource is
-     * a note or an occurrence, respectively.
-     * The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for
-     * notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for
-     * occurrences.
+     * Sets the access control policy on the specified resource.
+     * Replaces any existing policy.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
@@ -2514,13 +2470,8 @@ public final class SubscriberGrpc {
      *
      *
      * <pre>
-     * Gets the access control policy for a note or an occurrence resource.
-     * Requires `containeranalysis.notes.setIamPolicy` or
-     * `containeranalysis.occurrences.setIamPolicy` permission if the resource is
-     * a note or occurrence, respectively.
-     * The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for
-     * notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for
-     * occurrences.
+     * Gets the access control policy for a resource. Returns an empty policy
+     * if the resource exists and does not have a policy set.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
@@ -2533,12 +2484,9 @@ public final class SubscriberGrpc {
      *
      *
      * <pre>
-     * Returns the permissions that a caller has on the specified note or
-     * occurrence. Requires list permission on the project (for example,
-     * `containeranalysis.notes.list`).
-     * The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for
-     * notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for
-     * occurrences.
+     * Returns permissions that a caller has on the specified resource.
+     * If the resource does not exist, this will return an empty set of
+     * permissions, not a NOT_FOUND error.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
