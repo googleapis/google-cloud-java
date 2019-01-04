@@ -106,75 +106,34 @@ service Publisher {
     };
   }
 
-
-  // Sets the access control policy on the specified note or occurrence.
-  // Requires `containeranalysis.notes.setIamPolicy` or
-  // `containeranalysis.occurrences.setIamPolicy` permission if the resource is
-  // a note or an occurrence, respectively.
-  //
-  // The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for
-  // notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for
-  // occurrences.
+  // Sets the access control policy on the specified resource.
+  // Replaces any existing policy.
   rpc SetIamPolicy(google.iam.v1.SetIamPolicyRequest)
     returns (google.iam.v1.Policy) {
     option (google.api.http) = {
       post: "/v1/{resource=projects/*/topics/*}:setIamPolicy"
       body: "*"
-      additional_bindings {
-        post: "/v1/{resource=projects/*/subscriptions/*}:setIamPolicy"
-        body: "*"
-      }
-      additional_bindings {
-        post: "/v1/{resource=projects/*/snapshots/*}:setIamPolicy"
-        body: "*"
-      }
     };
   }
 
-  // Gets the access control policy for a note or an occurrence resource.
-  // Requires `containeranalysis.notes.setIamPolicy` or
-  // `containeranalysis.occurrences.setIamPolicy` permission if the resource is
-  // a note or occurrence, respectively.
-  //
-  // The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for
-  // notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for
-  // occurrences.
+  // Gets the access control policy for a resource. Returns an empty policy
+  // if the resource exists and does not have a policy set.
   rpc GetIamPolicy(google.iam.v1.GetIamPolicyRequest)
     returns (google.iam.v1.Policy) {
     option (google.api.http) = {
-      post: "/v1/{resource=projects/*/subscriptions/*}:getIamPolicy"
-      body: "*"
-      additional_bindings {
-        post: "/v1/{resource=projects/*/topics/*}:getIamPolicy"
-        body: "*"
-      }
-      additional_bindings {
-        post: "/v1/{resource=projects/*/snapshots/*}:getIamPolicy"
-        body: "*"
-      }
+      get: "/v1/{resource=projects/*/topics/*}:getIamPolicy"
+      body: "";
     };
   }
 
-  // Returns the permissions that a caller has on the specified note or
-  // occurrence. Requires list permission on the project (for example,
-  // `containeranalysis.notes.list`).
-  //
-  // The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for
-  // notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for
-  // occurrences.
+  // Returns permissions that a caller has on the specified resource.
+  // If the resource does not exist, this will return an empty set of
+  // permissions, not a NOT_FOUND error.
   rpc TestIamPermissions(google.iam.v1.TestIamPermissionsRequest)
     returns (google.iam.v1.TestIamPermissionsResponse) {
     option (google.api.http) = {
-      post: "/v1/{resource=projects/*/subscriptions/*}:testIamPermissions"
+      post: "/v1/{resource=projects/*/topics/*}:testIamPermissions"
       body: "*"
-      additional_bindings {
-        post: "/v1/{resource=projects/*/topics/*}:testIamPermissions"
-        body: "*"
-      }
-      additional_bindings {
-        post: "/v1/{resource=projects/*/snapshots/*}:testIamPermissions"
-        body: "*"
-      }
     };
   }
 
@@ -375,23 +334,13 @@ service Subscriber {
     };
   }
 
-  // Sets the access control policy on the specified note or occurrence.
-  // Requires `containeranalysis.notes.setIamPolicy` or
-  // `containeranalysis.occurrences.setIamPolicy` permission if the resource is
-  // a note or an occurrence, respectively.
-  //
-  // The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for
-  // notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for
-  // occurrences.
+  // Sets the access control policy on the specified resource.
+  // Replaces any existing policy.
   rpc SetIamPolicy(google.iam.v1.SetIamPolicyRequest)
     returns (google.iam.v1.Policy) {
     option (google.api.http) = {
-      post: "/v1/{resource=projects/*/topics/*}:setIamPolicy"
+      post: "/v1/{resource=projects/*/subscriptions/*}:setIamPolicy"
       body: "*"
-      additional_bindings {
-        post: "/v1/{resource=projects/*/subscriptions/*}:setIamPolicy"
-        body: "*"
-      }
       additional_bindings {
         post: "/v1/{resource=projects/*/snapshots/*}:setIamPolicy"
         body: "*"
@@ -399,46 +348,27 @@ service Subscriber {
     };
   }
 
-  // Gets the access control policy for a note or an occurrence resource.
-  // Requires `containeranalysis.notes.setIamPolicy` or
-  // `containeranalysis.occurrences.setIamPolicy` permission if the resource is
-  // a note or occurrence, respectively.
-  //
-  // The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for
-  // notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for
-  // occurrences.
+  // Gets the access control policy for a resource. Returns an empty policy
+  // if the resource exists and does not have a policy set.
   rpc GetIamPolicy(google.iam.v1.GetIamPolicyRequest)
     returns (google.iam.v1.Policy) {
     option (google.api.http) = {
-      post: "/v1/{resource=projects/*/subscriptions/*}:getIamPolicy"
-      body: "*"
+      get: "/v1/{resource=projects/*/subscriptions/*}:getIamPolicy"
+      body: ""
       additional_bindings {
-        post: "/v1/{resource=projects/*/topics/*}:getIamPolicy"
-        body: "*"
-      }
-      additional_bindings {
-        post: "/v1/{resource=projects/*/snapshots/*}:getIamPolicy"
-        body: "*"
-      }
-    };
+        get: "/v1/{resource=projects/*/snapshots/*}:getIamPolicy"
+        body: ""
+      }};
   }
 
-  // Returns the permissions that a caller has on the specified note or
-  // occurrence. Requires list permission on the project (for example,
-  // `containeranalysis.notes.list`).
-  //
-  // The resource takes the format `projects/[PROJECT_ID]/notes/[NOTE_ID]` for
-  // notes and `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]` for
-  // occurrences.
+  // Returns permissions that a caller has on the specified resource.
+  // If the resource does not exist, this will return an empty set of
+  // permissions, not a NOT_FOUND error.
   rpc TestIamPermissions(google.iam.v1.TestIamPermissionsRequest)
     returns (google.iam.v1.TestIamPermissionsResponse) {
     option (google.api.http) = {
       post: "/v1/{resource=projects/*/subscriptions/*}:testIamPermissions"
       body: "*"
-      additional_bindings {
-        post: "/v1/{resource=projects/*/topics/*}:testIamPermissions"
-        body: "*"
-      }
       additional_bindings {
         post: "/v1/{resource=projects/*/snapshots/*}:testIamPermissions"
         body: "*"
