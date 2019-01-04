@@ -135,15 +135,9 @@
               <shadedPattern>shaded.cloud_nio.google</shadedPattern>
             </relocation>
           </relocations>
-          <filters>
-            <filter>
-              <artifact>*:*</artifact>
-              <excludes>
-                <exclude>META-INF/services/com.fasterxml.jackson.core.*</exclude>
-                <exclude>META-INF/services/org.threeten.bp.zone.*</exclude>
-              </excludes>
-            </filter>
-          </filters>
+          <transformers>
+            <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+          </transformers>
         </configuration>
         <executions>
           <execution>
