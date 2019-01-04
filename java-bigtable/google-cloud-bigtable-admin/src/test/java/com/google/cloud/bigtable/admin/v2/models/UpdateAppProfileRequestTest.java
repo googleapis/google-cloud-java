@@ -19,7 +19,6 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny;
 import com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting;
-import com.google.bigtable.admin.v2.ProjectName;
 import com.google.cloud.bigtable.admin.v2.models.AppProfile.SingleClusterRoutingPolicy;
 import com.google.protobuf.FieldMask;
 import org.junit.Test;
@@ -36,7 +35,7 @@ public class UpdateAppProfileRequestTest {
             .setRoutingPolicy(SingleClusterRoutingPolicy.of("my-cluster", true))
             .setIgnoreWarnings(true);
 
-    assertThat(wrapper.toProto(ProjectName.of("my-project")))
+    assertThat(wrapper.toProto("my-project"))
         .isEqualTo(
             com.google.bigtable.admin.v2.UpdateAppProfileRequest.newBuilder()
                 .setAppProfile(
@@ -70,7 +69,7 @@ public class UpdateAppProfileRequestTest {
     UpdateAppProfileRequest updateWrapper =
         UpdateAppProfileRequest.of(existingWrapper).setDescription("new description");
 
-    assertThat(updateWrapper.toProto(ProjectName.of("my-project")))
+    assertThat(updateWrapper.toProto("my-project"))
         .isEqualTo(
             com.google.bigtable.admin.v2.UpdateAppProfileRequest.newBuilder()
                 .setAppProfile(existingProto.toBuilder().setDescription("new description"))

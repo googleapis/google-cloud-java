@@ -24,11 +24,10 @@ import com.google.api.gax.rpc.NotFoundException;
 import com.google.bigtable.admin.v2.DeleteTableRequest;
 import com.google.bigtable.admin.v2.DropRowRangeRequest;
 import com.google.bigtable.admin.v2.GetTableRequest;
-import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.admin.v2.ListTablesRequest;
-import com.google.bigtable.admin.v2.TableName;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPage;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
+import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.admin.v2.models.ModifyColumnFamiliesRequest;
 import com.google.cloud.bigtable.admin.v2.models.Table;
@@ -52,7 +51,7 @@ import javax.annotation.Nonnull;
  * <p>Sample code to get started:
  *
  * <pre>{@code
- * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create(InstanceName.of("[PROJECT]", "[INSTANCE]"))) {
+ * try(BigtableTableAdminClient client =  BigtableTableAdminClient.create("[PROJECT]", "[INSTANCE]")) {
  *   CreateTable request =
  *     CreateTableRequest.of("my-table")
  *       .addFamily("cf1")
@@ -73,7 +72,8 @@ import javax.annotation.Nonnull;
  *
  * <pre>{@code
  * BigtableTableAdminSettings tableAdminSettings = BigtableTableAdminSettings.newBuilder()
- *   .setInstanceName(InstanceName.of("[PROJECT]", "[INSTANCE]"))
+ *   .setProjectId("[PROJECT]")
+ *   .setInstanceId("[INSTANCE]")
  *   .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *   .build();
  *
@@ -85,20 +85,38 @@ import javax.annotation.Nonnull;
  *
  * <pre>{@code
  * BigtableTableAdminSettings tableAdminSettings = BigtableTableAdminSettings.newBuilder()
- *   .setInstanceName(InstanceName.of("[PROJECT]", "[INSTANCE]"))
+ *   .setProjectId("[PROJECT]")
+ *   .setInstanceId("[INSTANCE]")
  *   .setEndpoint(myEndpoint).build();
  *
  * BigtableTableAdminClient client = BigtableTableAdminClient.create(tableAdminSettings);
  * }</pre>
  */
 public final class BigtableTableAdminClient implements AutoCloseable {
-  private final EnhancedBigtableTableAdminStub stub;
-  private final InstanceName instanceName;
 
-  /** Constructs an instance of BigtableTableAdminClient with the given instanceName. */
-  public static BigtableTableAdminClient create(@Nonnull InstanceName instanceName)
-      throws IOException {
-    return create(BigtableTableAdminSettings.newBuilder().setInstanceName(instanceName).build());
+  private final EnhancedBigtableTableAdminStub stub;
+  private final String projectId;
+  private final String instanceId;
+
+  /** Constructs an instance of BigtableTableAdminClient with the given project and instance ids. */
+  public static BigtableTableAdminClient create(
+      @Nonnull String projectId, @Nonnull String instanceId) throws IOException {
+    return create(
+        BigtableTableAdminSettings.newBuilder()
+            .setProjectId(projectId)
+            .setInstanceId(instanceId)
+            .build());
+  }
+
+  /**
+   * Constructs an instance of BigtableTableAdminClient with the given instanceName.
+   *
+   * @deprecated Please {@link #create(String, String)}.
+   */
+  @Deprecated
+  public static BigtableTableAdminClient create(
+      @Nonnull com.google.bigtable.admin.v2.InstanceName instanceName) throws IOException {
+    return create(instanceName.getProject(), instanceName.getInstance());
   }
 
   /** Constructs an instance of BigtableTableAdminClient with the given settings. */
@@ -106,26 +124,47 @@ public final class BigtableTableAdminClient implements AutoCloseable {
       throws IOException {
     EnhancedBigtableTableAdminStub stub =
         EnhancedBigtableTableAdminStub.createEnhanced(settings.getStubSettings());
-    return create(settings.getInstanceName(), stub);
+    return create(settings.getProjectId(), settings.getInstanceId(), stub);
   }
 
   /** Constructs an instance of BigtableTableAdminClient with the given instanceName and stub. */
   public static BigtableTableAdminClient create(
-      @Nonnull InstanceName instanceName, @Nonnull EnhancedBigtableTableAdminStub stub) {
-    return new BigtableTableAdminClient(instanceName, stub);
+      @Nonnull String projectId,
+      @Nonnull String instanceId,
+      @Nonnull EnhancedBigtableTableAdminStub stub) {
+    return new BigtableTableAdminClient(projectId, instanceId, stub);
   }
 
   private BigtableTableAdminClient(
-      @Nonnull InstanceName instanceName, @Nonnull EnhancedBigtableTableAdminStub stub) {
-    Preconditions.checkNotNull(instanceName);
+      @Nonnull String projectId,
+      @Nonnull String instanceId,
+      @Nonnull EnhancedBigtableTableAdminStub stub) {
+    Preconditions.checkNotNull(projectId);
+    Preconditions.checkNotNull(instanceId);
     Preconditions.checkNotNull(stub);
-    this.instanceName = instanceName;
+    this.projectId = projectId;
+    this.instanceId = instanceId;
     this.stub = stub;
   }
 
-  /** Gets the instanceName this client is associated with. */
-  public InstanceName getInstanceName() {
-    return instanceName;
+  /** Gets the project id of the instance whose tables this client manages. */
+  public String getProjectId() {
+    return projectId;
+  }
+
+  /** Gets the id of the instance whose tables this client manages. */
+  public String getInstanceId() {
+    return instanceId;
+  }
+
+  /**
+   * Gets the instanceName this client is associated with.
+   *
+   * @deprecated Please use {@link #getProjectId()} and {@link #getInstanceId()}.
+   */
+  @Deprecated
+  public com.google.bigtable.admin.v2.InstanceName getInstanceName() {
+    return com.google.bigtable.admin.v2.InstanceName.of(projectId, instanceId);
   }
 
   @Override
@@ -183,7 +222,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   @SuppressWarnings("WeakerAccess")
   public ApiFuture<Table> createTableAsync(CreateTableRequest request) {
     return transformToTableResponse(
-        this.stub.createTableCallable().futureCall(request.toProto(instanceName)));
+        this.stub.createTableCallable().futureCall(request.toProto(projectId, instanceId)));
   }
 
   /**
@@ -275,7 +314,9 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   @SuppressWarnings("WeakerAccess")
   public ApiFuture<Table> modifyFamiliesAsync(ModifyColumnFamiliesRequest request) {
     return transformToTableResponse(
-        this.stub.modifyColumnFamiliesCallable().futureCall(request.toProto(instanceName)));
+        this.stub
+            .modifyColumnFamiliesCallable()
+            .futureCall(request.toProto(projectId, instanceId)));
   }
 
   /**
@@ -500,7 +541,9 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   @SuppressWarnings("WeakerAccess")
   public ApiFuture<List<String>> listTablesAsync() {
     ListTablesRequest request =
-        ListTablesRequest.newBuilder().setParent(instanceName.toString()).build();
+        ListTablesRequest.newBuilder()
+            .setParent(NameUtil.formatInstanceName(projectId, instanceId))
+            .build();
 
     // TODO(igorbernstein2): try to upstream pagination spooling or figure out a way to expose the
     // paginated responses while maintaining the wrapper facade.
@@ -550,7 +593,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
           public List<String> apply(List<com.google.bigtable.admin.v2.Table> protos) {
             List<String> results = Lists.newArrayListWithCapacity(protos.size());
             for (com.google.bigtable.admin.v2.Table proto : protos) {
-              results.add(TableName.parse(proto.getName()).getTable());
+              results.add(NameUtil.extractTableIdFromTableName(proto.getName()));
             }
             return results;
           }
@@ -718,8 +761,10 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public void awaitReplication(String tableId) {
-    TableName tableName =
-        TableName.of(instanceName.getProject(), instanceName.getInstance(), tableId);
+    // TODO(igorbernstein2): remove usage of typesafe names
+    com.google.bigtable.admin.v2.TableName tableName =
+        com.google.bigtable.admin.v2.TableName.of(projectId, instanceId, tableId);
+
     ApiExceptions.callAndTranslateApiException(
         stub.awaitReplicationCallable().futureCall(tableName));
   }
@@ -752,8 +797,9 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public ApiFuture<Void> awaitReplicationAsync(final String tableId) {
-    TableName tableName =
-        TableName.of(instanceName.getProject(), instanceName.getInstance(), tableId);
+    // TODO(igorbernstein2): remove usage of trypesafe names
+    com.google.bigtable.admin.v2.TableName tableName =
+        com.google.bigtable.admin.v2.TableName.of(projectId, instanceId, tableId);
     return stub.awaitReplicationCallable().futureCall(tableName);
   }
 
@@ -762,7 +808,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * projects/{project}/instances/{instance}/tables/{tableId}
    */
   private String getTableName(String tableId) {
-    return TableName.of(instanceName.getProject(), instanceName.getInstance(), tableId).toString();
+    return NameUtil.formatTableName(projectId, instanceId, tableId);
   }
 
   // TODO(igorbernstein): rename methods to make clear that they deal with futures.

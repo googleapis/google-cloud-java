@@ -21,7 +21,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import com.google.bigtable.admin.v2.InstanceName;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
 import com.google.cloud.bigtable.admin.v2.models.ColumnFamily;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
@@ -31,12 +30,15 @@ import com.google.cloud.bigtable.admin.v2.models.GCRules.UnionRule;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.VersionRule;
 import com.google.cloud.bigtable.admin.v2.models.ModifyColumnFamiliesRequest;
 import com.google.cloud.bigtable.admin.v2.models.Table;
+import com.google.common.base.Joiner;
+import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.protobuf.ByteString;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Logger;
 import org.junit.AfterClass;
 import org.junit.AssumptionViolatedException;
 import org.junit.Before;
@@ -45,22 +47,35 @@ import org.junit.Test;
 import org.threeten.bp.Duration;
 
 public class BigtableTableAdminClientIT {
+  private static final Logger LOGGER = Logger.getLogger(BigtableTableAdminClientIT.class.getName());
+
+  private static final String PROJECT_PROPERTY_NAME = "bigtable.project";
   private static final String INSTANCE_PROPERTY_NAME = "bigtable.instance";
+  private static List<String> missingProperties;
 
   private static BigtableTableAdminClient tableAdmin;
   private static String prefix;
 
   @BeforeClass
   public static void createClient() throws IOException {
-    String targetInstance = System.getProperty(INSTANCE_PROPERTY_NAME);
+    missingProperties = Lists.newArrayList();
 
+    String targetProject = System.getProperty(PROJECT_PROPERTY_NAME);
+    if (targetProject == null) {
+      missingProperties.add(PROJECT_PROPERTY_NAME);
+    }
+
+    String targetInstance = System.getProperty(INSTANCE_PROPERTY_NAME);
     if (targetInstance == null) {
-      tableAdmin = null;
+      missingProperties.add(INSTANCE_PROPERTY_NAME);
+    }
+
+    if (!missingProperties.isEmpty()) {
+      LOGGER.warning("Missing properties: " + Joiner.on(",").join(missingProperties));
       return;
     }
 
-    InstanceName instanceName = InstanceName.parse(targetInstance);
-    tableAdmin = BigtableTableAdminClient.create(instanceName);
+    tableAdmin = BigtableTableAdminClient.create(targetProject, targetInstance);
 
     // Setup a prefix to avoid collisions between concurrent test runs
     prefix = String.format("020%d", System.currentTimeMillis());
@@ -86,7 +101,7 @@ public class BigtableTableAdminClientIT {
   public void setup() {
     if (tableAdmin == null) {
       throw new AssumptionViolatedException(
-          INSTANCE_PROPERTY_NAME + " property is not set, skipping integration tests.");
+          "Required properties are not set, skipping integration tests.");
     }
   }
 

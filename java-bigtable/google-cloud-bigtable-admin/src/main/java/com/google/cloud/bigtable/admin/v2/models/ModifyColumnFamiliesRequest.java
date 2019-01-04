@@ -16,11 +16,11 @@
 package com.google.cloud.bigtable.admin.v2.models;
 
 import com.google.api.core.InternalApi;
-import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification;
-import com.google.bigtable.admin.v2.TableName;
+import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.GCRule;
 import com.google.common.base.Preconditions;
+import javax.annotation.Nonnull;
 
 /**
  * Fluent wrapper for {@link com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest}
@@ -106,10 +106,11 @@ public final class ModifyColumnFamiliesRequest {
 
   @InternalApi
   public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest toProto(
-      InstanceName instanceName) {
-    Preconditions.checkNotNull(instanceName);
-    String tableName =
-        TableName.of(instanceName.getProject(), instanceName.getInstance(), tableId).toString();
+      @Nonnull String projectId, @Nonnull String instanceId) {
+    Preconditions.checkNotNull(projectId, "Project id can't be null");
+    Preconditions.checkNotNull(instanceId, "Instance id can't be null");
+
+    String tableName = NameUtil.formatTableName(projectId, instanceId, tableId);
     return modFamilyRequest.setName(tableName).build();
   }
 }

@@ -18,7 +18,6 @@ package com.google.cloud.bigtable.admin.v2;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.gax.rpc.StatusCode.Code;
-import com.google.bigtable.admin.v2.ProjectName;
 import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings.Builder;
 import java.io.IOException;
 import org.junit.Test;
@@ -26,12 +25,12 @@ import org.junit.Test;
 public class BigtableInstanceAdminSettingsTest {
   @Test
   public void testProjectName() throws Exception {
-    ProjectName projectName = ProjectName.of("my-project");
-    Builder builder = BigtableInstanceAdminSettings.newBuilder().setProjectName(projectName);
+    String projectId = "my-project";
+    Builder builder = BigtableInstanceAdminSettings.newBuilder().setProjectId(projectId);
 
-    assertThat(builder.getProjectName()).isEqualTo(projectName);
-    assertThat(builder.build().getProjectName()).isEqualTo(projectName);
-    assertThat(builder.build().toBuilder().getProjectName()).isEqualTo(projectName);
+    assertThat(builder.getProjectId()).isEqualTo(projectId);
+    assertThat(builder.build().getProjectId()).isEqualTo(projectId);
+    assertThat(builder.build().toBuilder().getProjectId()).isEqualTo(projectId);
   }
 
   @Test
@@ -39,7 +38,7 @@ public class BigtableInstanceAdminSettingsTest {
     Exception actualException = null;
 
     Builder settingsBuilder = BigtableInstanceAdminSettings.newBuilder();
-    assertThat(settingsBuilder.getProjectName()).isNull();
+    assertThat(settingsBuilder.getProjectId()).isNull();
 
     try {
       settingsBuilder.build();
@@ -52,10 +51,10 @@ public class BigtableInstanceAdminSettingsTest {
 
   @Test
   public void testStubSettings() throws IOException {
-    ProjectName projectName = ProjectName.of("my-project");
+    String projectId = "my-project";
 
     BigtableInstanceAdminSettings.Builder builder =
-        BigtableInstanceAdminSettings.newBuilder().setProjectName(projectName);
+        BigtableInstanceAdminSettings.newBuilder().setProjectId(projectId);
 
     builder.stubSettings().createInstanceSettings().setRetryableCodes(Code.INVALID_ARGUMENT);
 

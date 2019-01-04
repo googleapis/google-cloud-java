@@ -27,13 +27,13 @@ import com.google.bigtable.admin.v2.DeleteTableRequest;
 import com.google.bigtable.admin.v2.DropRowRangeRequest;
 import com.google.bigtable.admin.v2.GcRule;
 import com.google.bigtable.admin.v2.GetTableRequest;
-import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.admin.v2.ListTablesRequest;
 import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification;
 import com.google.bigtable.admin.v2.Table.View;
 import com.google.bigtable.admin.v2.TableName;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPage;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
+import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.admin.v2.models.ModifyColumnFamiliesRequest;
 import com.google.cloud.bigtable.admin.v2.models.Table;
@@ -57,9 +57,14 @@ import org.mockito.stubbing.Answer;
 @RunWith(MockitoJUnitRunner.class)
 public class BigtableTableAdminClientTest {
 
-  private static final InstanceName INSTANCE_NAME = InstanceName.of("my-project", "my-instance");
-  private static final TableName TABLE_NAME =
-      TableName.of(INSTANCE_NAME.getProject(), INSTANCE_NAME.getInstance(), "my-table");
+  private static final String PROJECT_ID = "my-project";
+  private static final String INSTANCE_ID = "my-instance";
+  private static final String TABLE_ID = "my-table";
+
+  private static final String PROJECT_NAME = NameUtil.formatProjectName(PROJECT_ID);
+  private static final String INSTANCE_NAME = NameUtil.formatInstanceName(PROJECT_ID, INSTANCE_ID);
+  private static final String TABLE_NAME =
+      NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID);
 
   private BigtableTableAdminClient adminClient;
   @Mock private EnhancedBigtableTableAdminStub mockStub;
@@ -86,7 +91,7 @@ public class BigtableTableAdminClientTest {
 
   @Before
   public void setUp() {
-    adminClient = BigtableTableAdminClient.create(INSTANCE_NAME, mockStub);
+    adminClient = BigtableTableAdminClient.create(PROJECT_ID, INSTANCE_ID, mockStub);
 
     Mockito.when(mockStub.createTableCallable()).thenReturn(mockCreateTableCallable);
     Mockito.when(mockStub.modifyColumnFamiliesCallable()).thenReturn(mockModifyTableCallable);
@@ -108,8 +113,8 @@ public class BigtableTableAdminClientTest {
     // Setup
     com.google.bigtable.admin.v2.CreateTableRequest expectedRequest =
         com.google.bigtable.admin.v2.CreateTableRequest.newBuilder()
-            .setParent(INSTANCE_NAME.toString())
-            .setTableId(TABLE_NAME.getTable())
+            .setParent(INSTANCE_NAME)
+            .setTableId(TABLE_ID)
             .setTable(com.google.bigtable.admin.v2.Table.getDefaultInstance())
             .build();
 
@@ -120,7 +125,7 @@ public class BigtableTableAdminClientTest {
         .thenReturn(ApiFutures.immediateFuture(expectedResponse));
 
     // Execute
-    Table result = adminClient.createTable(CreateTableRequest.of(TABLE_NAME.getTable()));
+    Table result = adminClient.createTable(CreateTableRequest.of(TABLE_ID));
 
     // Verify
     assertThat(result).isEqualTo(Table.fromProto(expectedResponse));
@@ -131,7 +136,7 @@ public class BigtableTableAdminClientTest {
     // Setup
     com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest expectedRequest =
         com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.newBuilder()
-            .setName(TABLE_NAME.toString())
+            .setName(TABLE_NAME)
             .addModifications(
                 Modification.newBuilder()
                     .setId("cf")
@@ -140,7 +145,7 @@ public class BigtableTableAdminClientTest {
 
     com.google.bigtable.admin.v2.Table fakeResponse =
         com.google.bigtable.admin.v2.Table.newBuilder()
-            .setName(TABLE_NAME.toString())
+            .setName(TABLE_NAME)
             .putColumnFamilies(
                 "cf", ColumnFamily.newBuilder().setGcRule(GcRule.getDefaultInstance()).build())
             .build();
@@ -150,8 +155,7 @@ public class BigtableTableAdminClientTest {
 
     // Execute
     Table actualResult =
-        adminClient.modifyFamilies(
-            ModifyColumnFamiliesRequest.of(TABLE_NAME.getTable()).addFamily("cf"));
+        adminClient.modifyFamilies(ModifyColumnFamiliesRequest.of(TABLE_ID).addFamily("cf"));
 
     // Verify
     assertThat(actualResult).isEqualTo(Table.fromProto(fakeResponse));
@@ -176,7 +180,7 @@ public class BigtableTableAdminClientTest {
             });
 
     // Execute
-    adminClient.deleteTable(TABLE_NAME.getTable());
+    adminClient.deleteTable(TABLE_ID);
 
     // Verify
     assertThat(wasCalled.get()).isTrue();
@@ -198,7 +202,7 @@ public class BigtableTableAdminClientTest {
         .thenReturn(ApiFutures.immediateFuture(expectedResponse));
 
     // Execute
-    Table actualResult = adminClient.getTable(TABLE_NAME.getTable());
+    Table actualResult = adminClient.getTable(TABLE_ID);
 
     // Verify
     assertThat(actualResult).isEqualTo(Table.fromProto(expectedResponse));
@@ -209,16 +213,14 @@ public class BigtableTableAdminClientTest {
     // Setup
     com.google.bigtable.admin.v2.ListTablesRequest expectedRequest =
         com.google.bigtable.admin.v2.ListTablesRequest.newBuilder()
-            .setParent(INSTANCE_NAME.toString())
+            .setParent(INSTANCE_NAME)
             .build();
 
     // 3 Tables spread across 2 pages
     List<com.google.bigtable.admin.v2.Table> expectedProtos = Lists.newArrayList();
     for (int i = 0; i < 3; i++) {
       expectedProtos.add(
-          com.google.bigtable.admin.v2.Table.newBuilder()
-              .setName(TABLE_NAME.toString() + i)
-              .build());
+          com.google.bigtable.admin.v2.Table.newBuilder().setName(TABLE_NAME + i).build());
     }
     // 2 on the first page
     ListTablesPage page0 = Mockito.mock(ListTablesPage.class);
@@ -257,7 +259,7 @@ public class BigtableTableAdminClientTest {
     // Setup
     DropRowRangeRequest expectedRequest =
         DropRowRangeRequest.newBuilder()
-            .setName(TABLE_NAME.toString())
+            .setName(TABLE_NAME)
             .setRowKeyPrefix(ByteString.copyFromUtf8("rowKeyPrefix"))
             .build();
 
@@ -276,7 +278,7 @@ public class BigtableTableAdminClientTest {
             });
 
     // Execute
-    adminClient.dropRowRange(TABLE_NAME.getTable(), "rowKeyPrefix");
+    adminClient.dropRowRange(TABLE_ID, "rowKeyPrefix");
 
     // Verify
     assertThat(wasCalled.get()).isTrue();
@@ -286,7 +288,7 @@ public class BigtableTableAdminClientTest {
   public void testAwaitReplication() {
     // Setup
     @SuppressWarnings("UnnecessaryLocalVariable")
-    TableName expectedRequest = TABLE_NAME;
+    TableName expectedRequest = TableName.parse(TABLE_NAME);
 
     final AtomicBoolean wasCalled = new AtomicBoolean(false);
 
@@ -294,14 +296,14 @@ public class BigtableTableAdminClientTest {
         .thenAnswer(
             new Answer<ApiFuture<Void>>() {
               @Override
-              public ApiFuture<Void> answer(InvocationOnMock invocationOnMock) throws Throwable {
+              public ApiFuture<Void> answer(InvocationOnMock invocationOnMock) {
                 wasCalled.set(true);
                 return ApiFutures.immediateFuture(null);
               }
             });
 
     // Execute
-    adminClient.awaitReplication(TABLE_NAME.getTable());
+    adminClient.awaitReplication(TABLE_ID);
 
     // Verify
     assertThat(wasCalled.get()).isTrue();
@@ -317,7 +319,7 @@ public class BigtableTableAdminClientTest {
         .thenReturn(ApiFutures.immediateFuture(expectedResponse));
 
     // Execute
-    boolean found = adminClient.exists(TABLE_NAME.getTable());
+    boolean found = adminClient.exists(TABLE_ID);
 
     // Verify
     assertThat(found).isTrue();
@@ -334,7 +336,7 @@ public class BigtableTableAdminClientTest {
             ApiFutures.<com.google.bigtable.admin.v2.Table>immediateFailedFuture(exception));
 
     // Execute
-    boolean found = adminClient.exists(TABLE_NAME.getTable());
+    boolean found = adminClient.exists(TABLE_ID);
 
     // Verify
     assertThat(found).isFalse();

@@ -18,9 +18,7 @@ package com.google.cloud.bigtable.admin.v2.models;
 import static com.google.cloud.bigtable.admin.v2.models.StorageType.SSD;
 
 import com.google.api.core.InternalApi;
-import com.google.bigtable.admin.v2.InstanceName;
-import com.google.bigtable.admin.v2.LocationName;
-import com.google.bigtable.admin.v2.ProjectName;
+import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import com.google.common.base.Preconditions;
 import javax.annotation.Nonnull;
 
@@ -111,11 +109,9 @@ public final class CreateClusterRequest {
    * not meant to be used by applications.
    */
   @InternalApi
-  public com.google.bigtable.admin.v2.CreateClusterRequest toProto(ProjectName projectName) {
-    proto.setParent(InstanceName.of(projectName.getProject(), instanceId).toString());
-    proto
-        .getClusterBuilder()
-        .setLocation(LocationName.of(projectName.getProject(), zone).toString());
+  public com.google.bigtable.admin.v2.CreateClusterRequest toProto(String projectId) {
+    proto.setParent(NameUtil.formatInstanceName(projectId, instanceId));
+    proto.getClusterBuilder().setLocation(NameUtil.formatLocationName(projectId, zone));
 
     return proto.build();
   }
@@ -140,10 +136,8 @@ public final class CreateClusterRequest {
    * applications.
    */
   @InternalApi
-  com.google.bigtable.admin.v2.Cluster toEmbeddedProto(ProjectName projectName) {
-    proto
-        .getClusterBuilder()
-        .setLocation(LocationName.of(projectName.getProject(), zone).toString());
+  com.google.bigtable.admin.v2.Cluster toEmbeddedProto(String projectId) {
+    proto.getClusterBuilder().setLocation(NameUtil.formatLocationName(projectId, zone));
 
     return proto.getClusterBuilder().build();
   }
