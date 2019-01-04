@@ -25,7 +25,15 @@ versions = ['v1']
 config_pattern = '/google/pubsub/artman_pubsub.yaml'
 
 for version in versions:
+  library = gapic.java_library(
+      service=service,
+      version=version,
+      config_path=config_pattern.format(version=version),
+      artman_output_name='')
 
+  s.copy(library / f'gapic-google-cloud-{service}-{version}/src', 'src')
+  s.copy(library / f'grpc-google-cloud-{service}-{version}/src', f'../../google-api-grpc/grpc-google-cloud-{service}-{version}/src')
+  s.copy(library / f'proto-google-cloud-{service}-{version}/src', f'../../google-api-grpc/proto-google-cloud-{service}-{version}/src')
 
   s.replace(
       '**/stub/SubscriberStubSettings.java',
