@@ -20,6 +20,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
 import com.google.common.collect.ImmutableList;
+import java.math.BigInteger;
 import java.util.Collections;
 import java.util.List;
 import org.junit.Test;
@@ -93,6 +94,8 @@ public class TableInfoTest {
           .setFriendlyName(FRIENDLY_NAME)
           .setGeneratedId(GENERATED_ID)
           .setLastModifiedTime(LAST_MODIFIED_TIME)
+          .setNumBytes(NUM_BYTES)
+          .setNumRows(BigInteger.valueOf(NUM_ROWS))
           .setSelfLink(SELF_LINK)
           .setLabels(Collections.singletonMap("a", "b"))
           .build();
@@ -244,6 +247,8 @@ public class TableInfoTest {
     assertEquals(expected.getFriendlyName(), value.getFriendlyName());
     assertEquals(expected.getGeneratedId(), value.getGeneratedId());
     assertEquals(expected.getLastModifiedTime(), value.getLastModifiedTime());
+    assertEquals(expected.getNumBytes(), value.getNumBytes());
+    assertEquals(expected.getNumRows(), value.getNumRows());
     assertEquals(expected.getSelfLink(), value.getSelfLink());
     assertEquals(expected.getLabels(), value.getLabels());
     assertEquals(expected.hashCode(), value.hashCode());

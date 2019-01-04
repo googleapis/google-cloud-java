@@ -29,7 +29,6 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.bigtable.data.v2.internal.DummyBatchingDescriptor;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
-import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
@@ -61,7 +60,8 @@ import org.threeten.bp.Duration;
  *
  * <pre>{@code
  * BigtableDataSettings.Builder settingsBuilder = BigtableDataSettings.newBuilder()
- *   .setInstanceName(InstanceName.of("my-project", "my-instance-id"))
+ *   .setProjectId("my-project-id")
+ *   .setInstanceId("my-instance-id")
  *   .setAppProfileId("default");
  *
  * settingsBuilder.readRowsSettings()
@@ -108,7 +108,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
           .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
 
-  private final InstanceName instanceName;
+  private final String projectId;
+  private final String instanceId;
   private final String appProfileId;
 
   private final ServerStreamingCallSettings<Query, Row> readRowsSettings;
@@ -131,7 +132,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
             .equals(builder.readRowsSettings.getRetryableCodes()),
         "Single ReadRow retry codes must match ReadRows retry codes");
 
-    instanceName = builder.instanceName;
+    projectId = builder.projectId;
+    instanceId = builder.instanceId;
     appProfileId = builder.appProfileId;
 
     // Per method settings.
@@ -149,9 +151,24 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     return new Builder();
   }
 
-  /** Returns the target instance */
-  public InstanceName getInstanceName() {
-    return instanceName;
+  /**
+   * Returns the target instance.
+   *
+   * @deprecated Please use {@link #getProjectId()} and {@link #getInstanceId()}
+   */
+  @Deprecated
+  public com.google.cloud.bigtable.data.v2.models.InstanceName getInstanceName() {
+    return com.google.cloud.bigtable.data.v2.models.InstanceName.of(projectId, instanceId);
+  }
+
+  /** Returns the project id of the target instance. */
+  public String getProjectId() {
+    return projectId;
+  }
+
+  /** Returns the target instance id. */
+  public String getInstanceId() {
+    return instanceId;
   }
 
   /** Returns the configured AppProfile to use */
@@ -213,7 +230,9 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
 
   /** Builder for BigtableDataSettings. */
   public static class Builder extends StubSettings.Builder<EnhancedBigtableStubSettings, Builder> {
-    private InstanceName instanceName;
+
+    private String projectId;
+    private String instanceId;
     private String appProfileId;
 
     private final ServerStreamingCallSettings.Builder<Query, Row> readRowsSettings;
@@ -304,7 +323,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
 
     private Builder(EnhancedBigtableStubSettings settings) {
       super(settings);
-      instanceName = settings.instanceName;
+      projectId = settings.projectId;
+      instanceId = settings.instanceId;
       appProfileId = settings.appProfileId;
 
       // Per method settings.
@@ -333,16 +353,60 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     /**
      * Sets the target instance. This setting is required. All RPCs will be made in the context of
      * this setting.
+     *
+     * @deprecated Please use {@link #setProjectId(String)} and {@link #setInstanceId(String)}.
      */
-    public Builder setInstanceName(@Nonnull InstanceName instanceName) {
+    @Deprecated
+    public Builder setInstanceName(
+        @Nonnull com.google.cloud.bigtable.data.v2.models.InstanceName instanceName) {
       Preconditions.checkNotNull(instanceName);
-      this.instanceName = instanceName;
+      this.projectId = instanceName.getProject();
+      this.instanceId = instanceName.getInstance();
       return this;
     }
 
-    /** Gets the {@link InstanceName} that was previously set on this Builder. */
-    public InstanceName getInstanceName() {
-      return instanceName;
+    /**
+     * Gets the {@link com.google.cloud.bigtable.data.v2.models.InstanceName} that was previously
+     * set on this Builder.
+     *
+     * @deprecated Please use {@link #getProjectId()} and {@link #getInstanceId()}.
+     */
+    @Deprecated
+    public com.google.cloud.bigtable.data.v2.models.InstanceName getInstanceName() {
+      if (projectId != null && instanceId != null) {
+        return com.google.cloud.bigtable.data.v2.models.InstanceName.of(projectId, instanceId);
+      }
+      return null;
+    }
+
+    /**
+     * Sets the project id of that target instance. This setting is required. All RPCs will be made
+     * in the context of this setting.
+     */
+    public Builder setProjectId(@Nonnull String projectId) {
+      Preconditions.checkNotNull(projectId);
+      this.projectId = projectId;
+      return this;
+    }
+
+    /** Gets the project id of the target instance that was previously set on this Builder. */
+    public String getProjectId() {
+      return projectId;
+    }
+
+    /**
+     * Sets the target instance id. This setting is required. All RPCs will be made in the context
+     * of this setting.
+     */
+    public Builder setInstanceId(@Nonnull String instanceId) {
+      Preconditions.checkNotNull(instanceId);
+      this.instanceId = instanceId;
+      return this;
+    }
+
+    /** Gets the target instance id that was previously set on this Builder. */
+    public String getInstanceId() {
+      return instanceId;
     }
 
     /**
@@ -399,7 +463,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
 
     @SuppressWarnings("unchecked")
     public EnhancedBigtableStubSettings build() {
-      Preconditions.checkState(instanceName != null, "InstanceName must be set");
+      Preconditions.checkState(projectId != null, "Project id must be set");
+      Preconditions.checkState(instanceId != null, "Instance id must be set");
 
       return new EnhancedBigtableStubSettings(this);
     }

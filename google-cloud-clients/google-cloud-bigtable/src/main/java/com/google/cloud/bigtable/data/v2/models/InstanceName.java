@@ -24,8 +24,9 @@ import java.util.List;
 import java.util.Map;
 
 // Copied from com.google.bigtable.admin.v2
-// TODO: figure out how to unify admin & data resource names
-/** Typesafe representation of a fully qualified Bigtable instance name */
+
+/** @deprecated Please use project id and instance id strings instead. */
+@Deprecated
 public class InstanceName implements ResourceName {
   private static final PathTemplate PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/instances/{instance}");

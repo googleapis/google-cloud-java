@@ -65,6 +65,8 @@ public class TableInfo implements Serializable {
   private final Long creationTime;
   private final Long expirationTime;
   private final Long lastModifiedTime;
+  private final Long numBytes;
+  private final BigInteger numRows;
   private final TableDefinition definition;
   private final EncryptionConfiguration encryptionConfiguration;
   private final Labels labels;
@@ -91,6 +93,10 @@ public class TableInfo implements Serializable {
     abstract Builder setGeneratedId(String generatedId);
 
     abstract Builder setLastModifiedTime(Long lastModifiedTime);
+
+    abstract Builder setNumBytes(Long numBytes);
+
+    abstract Builder setNumRows(BigInteger numRows);
 
     abstract Builder setSelfLink(String selfLink);
 
@@ -134,6 +140,8 @@ public class TableInfo implements Serializable {
     private Long creationTime;
     private Long expirationTime;
     private Long lastModifiedTime;
+    private Long numBytes;
+    private BigInteger numRows;
     private TableDefinition definition;
     private EncryptionConfiguration encryptionConfiguration;
     private Labels labels = Labels.ZERO;
@@ -150,6 +158,8 @@ public class TableInfo implements Serializable {
       this.creationTime = tableInfo.creationTime;
       this.expirationTime = tableInfo.expirationTime;
       this.lastModifiedTime = tableInfo.lastModifiedTime;
+      this.numBytes = tableInfo.numBytes;
+      this.numRows = tableInfo.numRows;
       this.definition = tableInfo.definition;
       this.encryptionConfiguration = tableInfo.encryptionConfiguration;
       this.labels = tableInfo.labels;
@@ -167,6 +177,8 @@ public class TableInfo implements Serializable {
       this.etag = tablePb.getEtag();
       this.generatedId = tablePb.getId();
       this.selfLink = tablePb.getSelfLink();
+      this.numBytes = tablePb.getNumBytes();
+      this.numRows = tablePb.getNumRows();
       this.definition = TableDefinition.fromPb(tablePb);
       if (tablePb.getEncryptionConfiguration() != null) {
         this.encryptionConfiguration =
@@ -218,6 +230,18 @@ public class TableInfo implements Serializable {
     }
 
     @Override
+    Builder setNumBytes(Long numBytes) {
+      this.numBytes = numBytes;
+      return this;
+    }
+
+    @Override
+    Builder setNumRows(BigInteger numRows) {
+      this.numRows = numRows;
+      return this;
+    }
+
+    @Override
     Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
@@ -263,6 +287,8 @@ public class TableInfo implements Serializable {
     this.creationTime = builder.creationTime;
     this.expirationTime = builder.expirationTime;
     this.lastModifiedTime = builder.lastModifiedTime;
+    this.numBytes = builder.numBytes;
+    this.numRows = builder.numRows;
     this.definition = builder.definition;
     this.encryptionConfiguration = builder.encryptionConfiguration;
     labels = builder.labels;
@@ -329,6 +355,16 @@ public class TableInfo implements Serializable {
     return (T) definition;
   }
 
+  /** Returns the size of this table in bytes */
+  public Long getNumBytes() {
+    return numBytes;
+  }
+
+  /** Returns the number of rows of data in this table */
+  public BigInteger getNumRows() {
+    return numRows;
+  }
+
   /**
    * Return a map for labels applied to the table.
    *
@@ -357,6 +393,8 @@ public class TableInfo implements Serializable {
         .add("expirationTime", expirationTime)
         .add("creationTime", creationTime)
         .add("lastModifiedTime", lastModifiedTime)
+        .add("numBytes", numBytes)
+        .add("numRows", numRows)
         .add("definition", definition)
         .add("encryptionConfiguration", encryptionConfiguration)
         .add("labels", labels)
