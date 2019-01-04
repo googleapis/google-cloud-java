@@ -18,12 +18,12 @@ package com.google.cloud.bigquery;
 
 import static org.junit.Assert.assertEquals;
 
-import org.junit.Test;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import org.junit.Test;
 
 public class FieldTest {
 
