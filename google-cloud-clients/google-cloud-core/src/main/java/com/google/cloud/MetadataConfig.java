@@ -43,7 +43,7 @@ public class MetadataConfig {
 
   public static String getZone() {
     String zoneId = getAttribute("instance/zone");
-    if (zoneId.contains("/")) {
+    if (zoneId != null && zoneId.contains("/")) {
       return zoneId.substring(zoneId.lastIndexOf('/') + 1);
     }
     return zoneId;
