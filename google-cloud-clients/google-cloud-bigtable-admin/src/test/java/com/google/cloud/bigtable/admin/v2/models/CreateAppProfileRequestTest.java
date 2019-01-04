@@ -20,7 +20,6 @@ import static com.google.common.truth.Truth.assertThat;
 import com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny;
 import com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting;
 import com.google.bigtable.admin.v2.InstanceName;
-import com.google.bigtable.admin.v2.ProjectName;
 import com.google.cloud.bigtable.admin.v2.models.AppProfile.MultiClusterRoutingPolicy;
 import com.google.cloud.bigtable.admin.v2.models.AppProfile.SingleClusterRoutingPolicy;
 import org.junit.Test;
@@ -37,7 +36,7 @@ public class CreateAppProfileRequestTest {
             .setRoutingPolicy(SingleClusterRoutingPolicy.of("my-cluster", true))
             .setIgnoreWarnings(true);
 
-    assertThat(wrapper.toProto(ProjectName.of("my-project")))
+    assertThat(wrapper.toProto("my-project"))
         .isEqualTo(
             com.google.bigtable.admin.v2.CreateAppProfileRequest.newBuilder()
                 .setParent(InstanceName.of("my-project", "my-instance").toString())
@@ -59,11 +58,7 @@ public class CreateAppProfileRequestTest {
         CreateAppProfileRequest.of("my-instance", "my-profile")
             .setRoutingPolicy(MultiClusterRoutingPolicy.of());
 
-    assertThat(
-            wrapper
-                .toProto(ProjectName.of("my-project"))
-                .getAppProfile()
-                .getMultiClusterRoutingUseAny())
+    assertThat(wrapper.toProto("my-project").getAppProfile().getMultiClusterRoutingUseAny())
         .isEqualTo(MultiClusterRoutingUseAny.getDefaultInstance());
   }
 
@@ -73,7 +68,7 @@ public class CreateAppProfileRequestTest {
         CreateAppProfileRequest.of("my-instance", "my-profile")
             .setRoutingPolicy(MultiClusterRoutingPolicy.of());
 
-    assertThat(wrapper.toProto(ProjectName.of("my-project")).getAppProfile().getDescription())
+    assertThat(wrapper.toProto("my-project").getAppProfile().getDescription())
         .isEqualTo("my-profile");
   }
 }

@@ -17,7 +17,7 @@ package com.google.cloud.bigtable.admin.v2.models;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.bigtable.admin.v2.ProjectName;
+import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -31,12 +31,11 @@ public class CreateClusterRequestTest {
             .setType(Instance.Type.PRODUCTION)
             .addCluster("cluster1", "us-east1-c", 3, StorageType.SSD);
 
-    com.google.bigtable.admin.v2.CreateInstanceRequest actual =
-        input.toProto(ProjectName.of("my-project"));
+    com.google.bigtable.admin.v2.CreateInstanceRequest actual = input.toProto("my-project");
 
     com.google.bigtable.admin.v2.CreateInstanceRequest expected =
         com.google.bigtable.admin.v2.CreateInstanceRequest.newBuilder()
-            .setParent(ProjectName.of("my-project").toString())
+            .setParent(NameUtil.formatProjectName("my-project"))
             .setInstanceId("my-instance")
             .setInstance(
                 com.google.bigtable.admin.v2.Instance.newBuilder()
@@ -62,12 +61,11 @@ public class CreateClusterRequestTest {
             .addCluster("cluster1", "us-east1-c", 3, StorageType.SSD)
             .addCluster("cluster2", "us-east1-a", 3, StorageType.SSD);
 
-    com.google.bigtable.admin.v2.CreateInstanceRequest actual =
-        input.toProto(ProjectName.of("my-project"));
+    com.google.bigtable.admin.v2.CreateInstanceRequest actual = input.toProto("my-project");
 
     com.google.bigtable.admin.v2.CreateInstanceRequest expected =
         com.google.bigtable.admin.v2.CreateInstanceRequest.newBuilder()
-            .setParent(ProjectName.of("my-project").toString())
+            .setParent(NameUtil.formatProjectName("my-project"))
             .setInstanceId("my-instance")
             .setInstance(
                 com.google.bigtable.admin.v2.Instance.newBuilder()
@@ -99,12 +97,11 @@ public class CreateClusterRequestTest {
             .setType(Instance.Type.DEVELOPMENT)
             .addCluster("cluster1", "us-east1-c", 1, StorageType.SSD);
 
-    com.google.bigtable.admin.v2.CreateInstanceRequest actual =
-        input.toProto(ProjectName.of("my-project"));
+    com.google.bigtable.admin.v2.CreateInstanceRequest actual = input.toProto("my-project");
 
     com.google.bigtable.admin.v2.CreateInstanceRequest expected =
         com.google.bigtable.admin.v2.CreateInstanceRequest.newBuilder()
-            .setParent(ProjectName.of("my-project").toString())
+            .setParent(NameUtil.formatProjectName("my-project"))
             .setInstanceId("my-instance")
             .setInstance(
                 com.google.bigtable.admin.v2.Instance.newBuilder()
@@ -132,12 +129,11 @@ public class CreateClusterRequestTest {
             .setType(Instance.Type.DEVELOPMENT)
             .addCluster("cluster1", "us-east1-c", 1, StorageType.SSD);
 
-    com.google.bigtable.admin.v2.CreateInstanceRequest actual =
-        input.toProto(ProjectName.of("my-project"));
+    com.google.bigtable.admin.v2.CreateInstanceRequest actual = input.toProto("my-project");
 
     com.google.bigtable.admin.v2.CreateInstanceRequest expected =
         com.google.bigtable.admin.v2.CreateInstanceRequest.newBuilder()
-            .setParent(ProjectName.of("my-project").toString())
+            .setParent(NameUtil.formatProjectName("my-project"))
             .setInstanceId("my-instance")
             .setInstance(
                 com.google.bigtable.admin.v2.Instance.newBuilder()

@@ -26,14 +26,13 @@ import javax.annotation.Nullable;
 /**
  * Settings class to configure an instance of {@link BigtableInstanceAdminClient}.
  *
- * <p>It must be configured with a {@link ProjectName} and can be used to change default RPC
- * settings.
+ * <p>It must be configured with a project id and can be used to change default RPC settings.
  *
  * <p>Example usage:
  *
  * <pre>{@code
  * BigtableInstanceAdminSettings.Builder settingsBuilder = BigtableInstanceAdminSettings.newBuilder()
- *  .setProjectName(ProjectName.of("my-project"));
+ *  .setProjectId("my-project");
  *
  * settingsBuilder.stubSettings().createInstanceSettings()
  *   .setRetrySettings(
@@ -45,21 +44,32 @@ import javax.annotation.Nullable;
  * }</pre>
  */
 public final class BigtableInstanceAdminSettings {
-  private final ProjectName projectName;
+  private final String projectId;
   private final BigtableInstanceAdminStubSettings stubSettings;
 
   private BigtableInstanceAdminSettings(Builder builder) throws IOException {
-    Preconditions.checkNotNull(builder.projectName, "ProjectName must be set");
+    Preconditions.checkNotNull(builder.projectId, "Project ud must be set");
     Verify.verifyNotNull(builder.stubSettings, "stubSettings should never be null");
 
-    this.projectName = builder.projectName;
+    this.projectId = builder.projectId;
     this.stubSettings = builder.stubSettings.build();
   }
 
-  /** Gets the anme of the project whose instances the client will manager. */
+  /** Gets the id of the project whose instances the client will manage. */
   @Nonnull
-  public ProjectName getProjectName() {
-    return projectName;
+  public String getProjectId() {
+    return projectId;
+  }
+
+  /**
+   * Gets the name of the project whose instances the client will manager.
+   *
+   * @deprecated Please use {@link #getProjectId()}.
+   */
+  @Deprecated
+  @Nonnull
+  public com.google.bigtable.admin.v2.ProjectName getProjectName() {
+    return ProjectName.of(projectId);
   }
 
   /** Gets the underlying RPC settings. */
@@ -80,7 +90,7 @@ public final class BigtableInstanceAdminSettings {
 
   /** Builder for BigtableInstanceAdminSettings. */
   public static final class Builder {
-    @Nullable private ProjectName projectName;
+    @Nullable private String projectId;
     private final BigtableInstanceAdminStubSettings.Builder stubSettings;
 
     private Builder() {
@@ -88,21 +98,45 @@ public final class BigtableInstanceAdminSettings {
     }
 
     private Builder(BigtableInstanceAdminSettings settings) {
-      this.projectName = settings.projectName;
+      this.projectId = settings.projectId;
       this.stubSettings = settings.stubSettings.toBuilder();
     }
 
-    /** Sets the name of instance whose tables the client will manage. */
-    public Builder setProjectName(@Nonnull ProjectName projectName) {
-      Preconditions.checkNotNull(projectName);
-      this.projectName = projectName;
+    /** Sets the id of the project whose instances the client will manage. */
+    public Builder setProjectId(@Nonnull String projectId) {
+      Preconditions.checkNotNull(projectId);
+      this.projectId = projectId;
       return this;
     }
 
-    /** Gets the name of the project whose instances the client will manage. */
+    /** Gets the id of the project whose instances the client will manage. */
+    @Nullable
+    public String getProjectId() {
+      return projectId;
+    }
+
+    /**
+     * Sets the name of instance whose tables the client will manage.
+     *
+     * @deprecated Please use {@link #setProjectId(String)}.
+     */
+    @Deprecated
+    public Builder setProjectName(@Nonnull com.google.bigtable.admin.v2.ProjectName projectName) {
+      return setProjectId(projectName.getProject());
+    }
+
+    /**
+     * Gets the name of the project whose instances the client will manage.
+     *
+     * @deprecated Please use {@link #getProjectId()}.
+     */
+    @Deprecated
     @Nullable
     public ProjectName getProjectName() {
-      return projectName;
+      if (projectId != null) {
+        return ProjectName.of(projectId);
+      }
+      return null;
     }
 
     /**

@@ -17,7 +17,7 @@ package com.google.cloud.bigtable.admin.v2.models;
 
 import com.google.api.core.InternalApi;
 import com.google.bigtable.admin.v2.Instance.Type;
-import com.google.bigtable.admin.v2.ProjectName;
+import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import java.util.List;
@@ -151,12 +151,11 @@ public final class CreateInstanceRequest {
    * not meant to be used by applications.
    */
   @InternalApi
-  public com.google.bigtable.admin.v2.CreateInstanceRequest toProto(ProjectName projectName) {
-    builder.setParent(projectName.toString()).clearClusters();
+  public com.google.bigtable.admin.v2.CreateInstanceRequest toProto(String projectId) {
+    builder.setParent(NameUtil.formatProjectName(projectId)).clearClusters();
 
     for (CreateClusterRequest clusterRequest : clusterRequests) {
-      builder.putClusters(
-          clusterRequest.getClusterId(), clusterRequest.toEmbeddedProto(projectName));
+      builder.putClusters(clusterRequest.getClusterId(), clusterRequest.toEmbeddedProto(projectId));
     }
 
     return builder.build();

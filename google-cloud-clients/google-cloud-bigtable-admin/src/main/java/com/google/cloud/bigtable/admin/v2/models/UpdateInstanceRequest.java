@@ -18,9 +18,8 @@ package com.google.cloud.bigtable.admin.v2.models;
 import com.google.api.core.InternalApi;
 import com.google.bigtable.admin.v2.Instance;
 import com.google.bigtable.admin.v2.Instance.Type;
-import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.admin.v2.PartialUpdateInstanceRequest;
-import com.google.bigtable.admin.v2.ProjectName;
+import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.util.FieldMaskUtil;
@@ -97,14 +96,13 @@ public class UpdateInstanceRequest {
    * not meant to be used by applications.
    */
   @InternalApi
-  public PartialUpdateInstanceRequest toProto(ProjectName projectName) {
+  public PartialUpdateInstanceRequest toProto(String projectId) {
     // Empty field mask implies full resource replacement, which would clear all fields in an empty
     // update request.
     Preconditions.checkState(
         !builder.getUpdateMask().getPathsList().isEmpty(), "Update request is empty");
 
-    InstanceName instanceName = InstanceName.of(projectName.getProject(), instanceId);
-    builder.getInstanceBuilder().setName(instanceName.toString());
+    builder.getInstanceBuilder().setName(NameUtil.formatInstanceName(projectId, instanceId));
 
     return builder.build();
   }

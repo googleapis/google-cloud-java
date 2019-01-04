@@ -20,7 +20,6 @@ import static com.google.common.truth.Truth.assertThat;
 import com.google.bigtable.admin.v2.Instance;
 import com.google.bigtable.admin.v2.Instance.Type;
 import com.google.bigtable.admin.v2.PartialUpdateInstanceRequest;
-import com.google.bigtable.admin.v2.ProjectName;
 import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.FieldMask;
 import org.junit.Test;
@@ -36,7 +35,7 @@ public class UpdateInstanceRequestTest {
     Exception actualError = null;
 
     try {
-      input.toProto(ProjectName.of("my-project"));
+      input.toProto("my-project");
     } catch (Exception e) {
       actualError = e;
     }
@@ -49,7 +48,7 @@ public class UpdateInstanceRequestTest {
     UpdateInstanceRequest input =
         UpdateInstanceRequest.of("my-instance").setDisplayName("my display name");
 
-    PartialUpdateInstanceRequest actual = input.toProto(ProjectName.of("my-project"));
+    PartialUpdateInstanceRequest actual = input.toProto("my-project");
 
     PartialUpdateInstanceRequest expected =
         PartialUpdateInstanceRequest.newBuilder()
@@ -72,7 +71,7 @@ public class UpdateInstanceRequestTest {
                     "label1", "value1",
                     "label2", "value2"));
 
-    PartialUpdateInstanceRequest actual = input.toProto(ProjectName.of("my-project"));
+    PartialUpdateInstanceRequest actual = input.toProto("my-project");
 
     PartialUpdateInstanceRequest expected =
         PartialUpdateInstanceRequest.newBuilder()
@@ -91,7 +90,7 @@ public class UpdateInstanceRequestTest {
   public void testType() {
     UpdateInstanceRequest input = UpdateInstanceRequest.of("my-instance").setProductionType();
 
-    PartialUpdateInstanceRequest actual = input.toProto(ProjectName.of("my-project"));
+    PartialUpdateInstanceRequest actual = input.toProto("my-project");
 
     PartialUpdateInstanceRequest expected =
         PartialUpdateInstanceRequest.newBuilder()

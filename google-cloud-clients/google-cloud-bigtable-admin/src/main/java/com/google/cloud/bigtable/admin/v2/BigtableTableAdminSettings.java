@@ -15,7 +15,6 @@
  */
 package com.google.cloud.bigtable.admin.v2;
 
-import com.google.bigtable.admin.v2.InstanceName;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStubSettings;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Verify;
@@ -26,14 +25,14 @@ import javax.annotation.Nullable;
 /**
  * Settings class to configure an instance of {@link BigtableTableAdminClient}.
  *
- * <p>It must be configured with an {@link InstanceName} and can be used to change default RPC
- * settings.
+ * <p>It must be configured with a project id and instance id.
  *
  * <p>Example usage:
  *
  * <pre>{@code
  * BigtableTableAdminSettings.Builder tableAdminSettingsBuilder = BigtableTableAdminSettings.newBuilder()
- *   .setInstanceName(InstanceName.of("my-project", "my-instance");
+ *   .setProjectId("my-project")
+ *   .setInstanceId("my-instance");
  *
  * tableAdminSettingsBuilder.stubSettings().createTableSettings()
  *   .setRetrySettings(
@@ -45,20 +44,36 @@ import javax.annotation.Nullable;
  * }</pre>
  */
 public final class BigtableTableAdminSettings {
-  private final InstanceName instanceName;
+  private final String projectId;
+  private final String instanceId;
   private final BigtableTableAdminStubSettings stubSettings;
 
   private BigtableTableAdminSettings(Builder builder) throws IOException {
-    this.instanceName =
-        Preconditions.checkNotNull(builder.instanceName, "InstanceName must be set");
+    this.projectId = Preconditions.checkNotNull(builder.projectId, "Project id must be set");
+    this.instanceId = Preconditions.checkNotNull(builder.instanceId, "Instance id must be set");
     this.stubSettings =
         Verify.verifyNotNull(builder.stubSettings, "stubSettings should never be null").build();
   }
 
-  /** Gets the name of instance whose tables the client will manage. */
+  /** Gets the project id of instance whose tables the client will manage. */
+  public String getProjectId() {
+    return projectId;
+  }
+
+  /** Gets the instance id whose tables the client will manage. */
+  public String getInstanceId() {
+    return instanceId;
+  }
+
+  /**
+   * Gets the name of instance whose tables the client will manage.
+   *
+   * @deprecated Please use {@link #getProjectId()} and {@link #getInstanceId()}.
+   */
+  @Deprecated
   @Nonnull
-  public InstanceName getInstanceName() {
-    return instanceName;
+  public com.google.bigtable.admin.v2.InstanceName getInstanceName() {
+    return com.google.bigtable.admin.v2.InstanceName.of(projectId, instanceId);
   }
 
   /** Gets the underlying RPC settings. */
@@ -78,7 +93,8 @@ public final class BigtableTableAdminSettings {
 
   /** Builder for BigtableTableAdminSettings. */
   public static final class Builder {
-    @Nullable private InstanceName instanceName;
+    @Nullable private String projectId;
+    @Nullable private String instanceId;
     private final BigtableTableAdminStubSettings.Builder stubSettings;
 
     private Builder() {
@@ -86,21 +102,63 @@ public final class BigtableTableAdminSettings {
     }
 
     private Builder(BigtableTableAdminSettings settings) {
-      this.instanceName = settings.instanceName;
+      this.projectId = settings.projectId;
+      this.instanceId = settings.instanceId;
       this.stubSettings = settings.stubSettings.toBuilder();
     }
 
-    /** Sets the name of instance whose tables the client will manage. */
-    public Builder setInstanceName(@Nonnull InstanceName instanceName) {
-      Preconditions.checkNotNull(instanceName);
-      this.instanceName = instanceName;
+    /** Sets the project id of the instance whose tables the client will manage. */
+    public Builder setProjectId(@Nullable String projectId) {
+      Preconditions.checkNotNull(projectId);
+      this.projectId = projectId;
       return this;
     }
 
-    /** Gets the name of instance whose tables the client will manage. */
+    /** Gets the project id of the instance whose tables the client will manage. */
     @Nullable
-    public InstanceName getInstanceName() {
-      return instanceName;
+    public String getProjectId() {
+      return projectId;
+    }
+
+    /** Sets the instance id of the instance whose tables the client will manage. */
+    public Builder setInstanceId(@Nullable String instanceId) {
+      Preconditions.checkNotNull(instanceId);
+      this.instanceId = instanceId;
+      return this;
+    }
+
+    /** Gets the instance id of the instance whose tables the client will manage. */
+    @Nullable
+    public String getInstanceId() {
+      return instanceId;
+    }
+
+    /**
+     * Sets the name of instance whose tables the client will manage.
+     *
+     * @deprecated Please use {@link #setProjectId(String)} and {@link #setInstanceId(String)}.
+     */
+    @Deprecated
+    public Builder setInstanceName(
+        @Nonnull com.google.bigtable.admin.v2.InstanceName instanceName) {
+      Preconditions.checkNotNull(instanceName);
+      this.projectId = instanceName.getProject();
+      this.instanceId = instanceName.getInstance();
+      return this;
+    }
+
+    /**
+     * Gets the name of instance whose tables the client will manage.
+     *
+     * @deprecated Please use {@link #getProjectId()} and {@link #getInstanceId()}.
+     */
+    @Deprecated
+    @Nullable
+    public com.google.bigtable.admin.v2.InstanceName getInstanceName() {
+      if (projectId != null && instanceId != null) {
+        return com.google.bigtable.admin.v2.InstanceName.of(projectId, instanceId);
+      }
+      return null;
     }
 
     /**
