@@ -1,25 +1,25 @@
 {
   "channelPool": {
-    "maxSize": 10,
-    "maxConcurrentStreamsLowWatermark": 1
+    "maxSize": 5,
+    "maxConcurrentStreamsLowWatermark": 2
   },
   "method": [
     {
-      "name": [ "/google.spanner.v1.Spanner/CreateSession" ],
+      "name": [ "google.spanner.v1.Spanner/CreateSession" ],
       "affinity": {
         "command": "BIND",
         "affinityKey": "name"
       }
     },
     {
-      "name": [ "/google.spanner.v1.Spanner/GetSession" ],
+      "name": [ "google.spanner.v1.Spanner/GetSession" ],
       "affinity": {
         "command": "BOUND",
         "affinityKey": "name"
       }
     },
     {
-      "name": [ "/google.spanner.v1.Spanner/DeleteSession" ],
+      "name": [ "google.spanner.v1.Spanner/DeleteSession" ],
       "affinity": {
         "command": "UNBIND",
         "affinityKey": "name"

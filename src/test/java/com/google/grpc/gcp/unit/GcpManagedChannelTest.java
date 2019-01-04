@@ -18,6 +18,12 @@ package com.google.grpc.gcp;
 
 import static org.junit.Assert.assertEquals;
 
+import com.google.grpc.gcp.proto.AffinityConfig;
+import com.google.grpc.gcp.proto.ApiConfig;
+import com.google.grpc.gcp.proto.ChannelPoolConfig;
+import com.google.grpc.gcp.proto.MethodConfig;
+import com.google.spanner.v1.PartitionReadRequest;
+import com.google.spanner.v1.TransactionSelector;
 import io.grpc.ConnectivityState;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
@@ -33,6 +39,10 @@ public final class GcpManagedChannelTest {
 
   private static final String TARGET = "www.jenny.com";
   private static final String API_FILE = "src/test/resources/apiconfigtests/apiconfig.json";
+  private static final String EMPTY_METHOD_FILE =
+      "src/test/resources/apiconfigtests/empty_method.json";
+  private static final String EMPTY_CHANNEL_FILE =
+      "src/test/resources/apiconfigtests/empty_channel.json";
 
   private static final int MAX_CHANNEL = 10;
   private static final int MAX_STREAM = 100;
@@ -62,8 +72,8 @@ public final class GcpManagedChannelTest {
     resetGcpChannel();
     gcpChannel = new GcpManagedChannel(builder, API_FILE);
     assertEquals(1, gcpChannel.channelRefs.size());
-    assertEquals(10, gcpChannel.getMaxSize());
-    assertEquals(1, gcpChannel.getStreamsLowWatermark());
+    assertEquals(5, gcpChannel.getMaxSize());
+    assertEquals(2, gcpChannel.getStreamsLowWatermark());
     assertEquals(3, gcpChannel.methodToAffinity.size());
   }
 
@@ -83,7 +93,7 @@ public final class GcpManagedChannelTest {
     resetGcpChannel();
     for (int i = 0; i < 5; i++) {
       ManagedChannel channel = builder.build();
-      gcpChannel.channelRefs.add(new ChannelRef(channel, i, i, MAX_STREAM));
+      gcpChannel.channelRefs.add(gcpChannel.new ChannelRef(channel, i, i, MAX_STREAM));
     }
     assertEquals(5, gcpChannel.channelRefs.size());
     assertEquals(0, gcpChannel.getChannelRef().getAffinityCount());
@@ -93,7 +103,7 @@ public final class GcpManagedChannelTest {
     int[] streams = new int[] {-1, 5, 7, 1};
     for (int i = 6; i < 10; i++) {
       ManagedChannel channel = builder.build();
-      gcpChannel.channelRefs.add(new ChannelRef(channel, i, i, streams[i - 6]));
+      gcpChannel.channelRefs.add(gcpChannel.new ChannelRef(channel, i, i, streams[i - 6]));
     }
     assertEquals(10, gcpChannel.channelRefs.size());
     assertEquals(6, gcpChannel.getChannelRef().getAffinityCount());
@@ -104,7 +114,7 @@ public final class GcpManagedChannelTest {
     resetGcpChannel();
     for (int i = 0; i < MAX_CHANNEL; i++) {
       ManagedChannel channel = builder.build();
-      gcpChannel.channelRefs.add(new ChannelRef(channel, i, i, MAX_STREAM));
+      gcpChannel.channelRefs.add(gcpChannel.new ChannelRef(channel, i, i, MAX_STREAM));
     }
     assertEquals(MAX_CHANNEL, gcpChannel.channelRefs.size());
     assertEquals(MAX_STREAM, gcpChannel.getChannelRef().getActiveStreamsCount());
@@ -114,19 +124,16 @@ public final class GcpManagedChannelTest {
   @Test
   public void testBindUnbindKey() throws Exception {
     // Initialize the channel and bind the key, check the affinity count.
-    ChannelRef cf1 = new ChannelRef(builder.build(), 1, 0, 5);
-    ChannelRef cf2 = new ChannelRef(builder.build(), 1, 0, 4);
+    GcpManagedChannel.ChannelRef cf1 = gcpChannel.new ChannelRef(builder.build(), 1, 0, 5);
+    GcpManagedChannel.ChannelRef cf2 = gcpChannel.new ChannelRef(builder.build(), 1, 0, 4);
     gcpChannel.channelRefs.add(cf1);
     gcpChannel.channelRefs.add(cf2);
-    gcpChannel.bind(1, "key1");
-    gcpChannel.bind(2, "key2");
-    gcpChannel.bind(1, "key1");
+    gcpChannel.bind(cf1, "key1");
+    gcpChannel.bind(cf2, "key2");
+    gcpChannel.bind(cf1, "key1");
     assertEquals(2, gcpChannel.channelRefs.get(1).getAffinityCount());
     assertEquals(1, gcpChannel.channelRefs.get(2).getAffinityCount());
     assertEquals(2, gcpChannel.affinityKeyToChannelRef.size());
-
-    // Try to use the channel with the affinity key.
-    assertEquals(cf1, gcpChannel.getChannelRef("key1"));
 
     // Unbind the affinity key.
     gcpChannel.unbind("key1");
@@ -136,9 +143,98 @@ public final class GcpManagedChannelTest {
     assertEquals(0, gcpChannel.affinityKeyToChannelRef.size());
     assertEquals(0, gcpChannel.channelRefs.get(1).getAffinityCount());
     assertEquals(0, gcpChannel.channelRefs.get(2).getAffinityCount());
+  }
 
-    // Finally, get the channelRef again.
-    ChannelRef cf = gcpChannel.getChannelRef("key1");
-    assertEquals(0, cf.getActiveStreamsCount());
+  @Test
+  public void testGetKeyFromRequest() throws Exception {
+    String expected = "thisisaname";
+    TransactionSelector selector = TransactionSelector.getDefaultInstance();
+    PartitionReadRequest req =
+        PartitionReadRequest.newBuilder()
+            .setSession(expected)
+            .setTable("jenny")
+            .setTransaction(selector)
+            .addColumns("users")
+            .build();
+    String result = gcpChannel.getKeyFromMessage(req.toString(), "session");
+    assertEquals(expected, result);
+    result = gcpChannel.getKeyFromMessage(req.toString(), "fakesession");
+    assertEquals(null, result);
+  }
+
+  @Test
+  public void testParseGoodJsonFile() throws Exception {
+    ApiConfig apiconfig = GcpManagedChannel.parseJson(API_FILE);
+    ChannelPoolConfig expectedChannel =
+        ChannelPoolConfig.newBuilder()
+            .setMaxSize(5)
+            .setMaxConcurrentStreamsLowWatermark(2)
+            .build();
+    assertEquals(expectedChannel, apiconfig.getChannelPool());
+
+    assertEquals(3, apiconfig.getMethodCount());
+    MethodConfig.Builder expectedMethod1 = MethodConfig.newBuilder();
+    expectedMethod1.addName("google.spanner.v1.Spanner/CreateSession");
+    expectedMethod1.setAffinity(
+        AffinityConfig.newBuilder()
+            .setAffinityKey("name")
+            .setCommand(AffinityConfig.Command.BIND)
+            .build());
+    assertEquals(expectedMethod1.build(), apiconfig.getMethod(0));
+    MethodConfig.Builder expectedMethod2 = MethodConfig.newBuilder();
+    expectedMethod2.addName("google.spanner.v1.Spanner/GetSession");
+    expectedMethod2.setAffinity(
+        AffinityConfig.newBuilder()
+            .setAffinityKey("name")
+            .setCommand(AffinityConfig.Command.BOUND)
+            .build());
+    assertEquals(expectedMethod2.build(), apiconfig.getMethod(1));
+    MethodConfig.Builder expectedMethod3 = MethodConfig.newBuilder();
+    expectedMethod3.addName("google.spanner.v1.Spanner/DeleteSession");
+    expectedMethod3.setAffinity(
+        AffinityConfig.newBuilder()
+            .setAffinityKey("name")
+            .setCommand(AffinityConfig.Command.UNBIND)
+            .build());
+    assertEquals(expectedMethod3.build(), apiconfig.getMethod(2));
+  }
+
+  @Test
+  public void testParseEmptyMethodJsonFile() throws Exception {
+    ApiConfig apiconfig = GcpManagedChannel.parseJson(EMPTY_METHOD_FILE);
+    ChannelPoolConfig expectedChannel =
+        ChannelPoolConfig.newBuilder()
+            .setMaxSize(5)
+            .setIdleTimeout(1000)
+            .setMaxConcurrentStreamsLowWatermark(5)
+            .build();
+    assertEquals(expectedChannel, apiconfig.getChannelPool());
+
+    assertEquals(0, apiconfig.getMethodCount());
+  }
+
+  @Test
+  public void testParseEmptyChannelJsonFile() throws Exception {
+    ApiConfig apiconfig = GcpManagedChannel.parseJson(EMPTY_CHANNEL_FILE);
+    assertEquals(ChannelPoolConfig.getDefaultInstance(), apiconfig.getChannelPool());
+
+    assertEquals(3, apiconfig.getMethodCount());
+    MethodConfig.Builder expectedMethod1 = MethodConfig.newBuilder();
+    expectedMethod1.addName("/google.spanner.v1.Spanner/CreateSession");
+    expectedMethod1.setAffinity(
+        AffinityConfig.newBuilder()
+            .setAffinityKey("name")
+            .setCommand(AffinityConfig.Command.BIND)
+            .build());
+    assertEquals(expectedMethod1.build(), apiconfig.getMethod(0));
+    MethodConfig.Builder expectedMethod2 = MethodConfig.newBuilder();
+    expectedMethod2.addName("/google.spanner.v1.Spanner/GetSession").addName("additional name");
+    expectedMethod2.setAffinity(
+        AffinityConfig.newBuilder()
+            .setAffinityKey("name")
+            .setCommand(AffinityConfig.Command.BOUND)
+            .build());
+    assertEquals(expectedMethod2.build(), apiconfig.getMethod(1));
+    assertEquals(MethodConfig.getDefaultInstance(), apiconfig.getMethod(2));
   }
 }

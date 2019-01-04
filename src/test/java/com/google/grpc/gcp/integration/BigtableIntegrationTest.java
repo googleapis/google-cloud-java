@@ -196,7 +196,7 @@ public class BigtableIntegrationTest {
     for (AsyncResponseObserver<MutateRowResponse> observer : clearObservers) {
       observer.awaitCompletion();
     }
-    for (ChannelRef channelRef : gcpChannel.channelRefs) {
+    for (GcpManagedChannel.ChannelRef channelRef : gcpChannel.channelRefs) {
       assertEquals(0, channelRef.getActiveStreamsCount());
     }
   }
