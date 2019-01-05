@@ -733,10 +733,9 @@ public class ITGcsNio {
     }
   }
 
-
   /**
-   * Google Cloud Storage allows for a folder and file to have the same name.
-   * Let's make sure directories work in this setting too.
+   * Google Cloud Storage allows for a folder and file to have the same name. Let's make sure
+   * directories work in this setting too.
    */
   @Test
   public void testSameNameFileAndDir() throws IOException {
@@ -862,10 +861,7 @@ public class ITGcsNio {
   private CloudStorageFileSystem getNoPseudoDirBucket() throws IOException {
 
     CloudStorageConfiguration config =
-        CloudStorageConfiguration.builder()
-            .usePseudoDirectories(false)
-            .build();
-    return CloudStorageFileSystem.forBucket(
-        BUCKET, config, storageOptions);
+        CloudStorageConfiguration.builder().usePseudoDirectories(false).build();
+    return CloudStorageFileSystem.forBucket(BUCKET, config, storageOptions);
   }
 }

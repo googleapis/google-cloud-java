@@ -771,7 +771,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
         ret = new CloudStorageObjectAttributes(blobInfo);
         FileSystem filesystem = path.getFileSystem();
         if (filesystem instanceof CloudStorageFileSystem) {
-          CloudStorageFileSystem fs = (CloudStorageFileSystem)filesystem;
+          CloudStorageFileSystem fs = (CloudStorageFileSystem) filesystem;
           if (fs.config().usePseudoDirectories() && cloudPath.seemsLikeADirectory()) {
             // special case handling for files that end with '/': they are both
             // files and directories. Such files can be created in normal usage

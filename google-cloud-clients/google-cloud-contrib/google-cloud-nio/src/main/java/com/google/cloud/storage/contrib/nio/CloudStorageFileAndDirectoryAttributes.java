@@ -19,7 +19,6 @@ package com.google.cloud.storage.contrib.nio;
 import com.google.cloud.storage.Acl;
 import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableMap;
-
 import java.nio.file.attribute.FileTime;
 import java.util.List;
 
@@ -30,7 +29,8 @@ final class CloudStorageFileAndDirectoryAttributes implements CloudStorageFileAt
   // attributes of the underlying file
   private final CloudStorageObjectAttributes attrib;
 
-  CloudStorageFileAndDirectoryAttributes(CloudStorageObjectAttributes attrib, CloudStoragePath path) {
+  CloudStorageFileAndDirectoryAttributes(
+      CloudStorageObjectAttributes attrib, CloudStoragePath path) {
     this.id = path.toUri().toString();
     this.attrib = attrib;
   }
