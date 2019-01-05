@@ -3,11 +3,14 @@
 
 package com.google.bigtable.admin.v2;
 
-public interface DeleteInstanceRequestOrBuilder extends
+public interface DeleteInstanceRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.DeleteInstanceRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The unique name of the instance to be deleted.
    * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
@@ -17,6 +20,8 @@ public interface DeleteInstanceRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The unique name of the instance to be deleted.
    * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
@@ -24,6 +29,5 @@ public interface DeleteInstanceRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

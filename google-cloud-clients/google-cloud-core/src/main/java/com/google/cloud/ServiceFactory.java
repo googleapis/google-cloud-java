@@ -19,8 +19,8 @@ package com.google.cloud;
 /**
  * A base interface for all service factories.
  *
- * <p>Implementation must provide a public no-arg constructor.
- * Loading of a factory implementation is done via {@link java.util.ServiceLoader}.
+ * <p>Implementation must provide a public no-arg constructor. Loading of a factory implementation
+ * is done via {@link java.util.ServiceLoader}.
  *
  * @param <ServiceT> the service subclass
  * @param <ServiceOptionsT> the {@code ServiceOptions} subclass corresponding to the service

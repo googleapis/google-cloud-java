@@ -32,9 +32,7 @@ import com.google.cloud.spanner.Struct;
 import com.google.spanner.v1.ResultSetStats;
 import java.util.Arrays;
 
-/**
- * This class contains snippets for {@link com.google.cloud.spanner.ReadContext} interface.
- */
+/** This class contains snippets for {@link com.google.cloud.spanner.ReadContext} interface. */
 public class ReadContextSnippets {
   private final DatabaseClient dbClient;
 
@@ -62,10 +60,7 @@ public class ReadContextSnippets {
     ReadContext readContext = dbClient.singleUse();
     ResultSet resultSet =
         readContext.readUsingIndex(
-            "Albums",
-            "AlbumsByAlbumTitle",
-            KeySet.all(),
-            Arrays.asList("AlbumId", "AlbumTitle"));
+            "Albums", "AlbumsByAlbumTitle", KeySet.all(), Arrays.asList("AlbumId", "AlbumTitle"));
     // [END read_context_read_index]
 
     return resultSet;
@@ -74,8 +69,7 @@ public class ReadContextSnippets {
   Struct readRow() {
     // [START read_context_read_row]
     ReadContext readContext = dbClient.singleUse();
-    Struct row =
-        readContext.readRow("Albums", Key.of(2, 1), Arrays.asList("MarketingBudget"));
+    Struct row = readContext.readRow("Albums", Key.of(2, 1), Arrays.asList("MarketingBudget"));
     // [END read_context_read_row]
 
     return row;
@@ -85,7 +79,10 @@ public class ReadContextSnippets {
     // [START read_context_read_index]
     ReadContext readContext = dbClient.singleUse();
     Struct row =
-        readContext.readRowUsingIndex("Albums", "AlbumsByAlbumId", Key.of(1, "Green"),
+        readContext.readRowUsingIndex(
+            "Albums",
+            "AlbumsByAlbumId",
+            Key.of(1, "Green"),
             Arrays.asList("AlbumId", "AlbumTitle"));
     // [END read_context_read_index]
 
@@ -99,8 +96,7 @@ public class ReadContextSnippets {
     ReadContext readContext = dbClient.singleUse();
     ResultSet resultSet =
         readContext.executeQuery(
-            Statement.of(
-                "SELECT SingerId, AlbumId, MarketingBudget, LastUpdateTime FROM Albums"));
+            Statement.of("SELECT SingerId, AlbumId, MarketingBudget, LastUpdateTime FROM Albums"));
     // [END read_context_execute_query]
     return resultSet;
   }
@@ -121,4 +117,3 @@ public class ReadContextSnippets {
     return stats;
   }
 }
-

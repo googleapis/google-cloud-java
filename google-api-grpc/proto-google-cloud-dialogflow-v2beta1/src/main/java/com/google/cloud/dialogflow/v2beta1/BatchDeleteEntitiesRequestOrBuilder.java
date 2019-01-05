@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-public interface BatchDeleteEntitiesRequestOrBuilder extends
+public interface BatchDeleteEntitiesRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.BatchDeleteEntitiesRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The name of the entity type to delete entries for. Format:
    * `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
@@ -17,6 +20,8 @@ public interface BatchDeleteEntitiesRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required. The name of the entity type to delete entries for. Format:
    * `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
@@ -24,10 +29,11 @@ public interface BatchDeleteEntitiesRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The canonical `values` of the entities to delete. Note that
    * these are not fully-qualified names, i.e. they don't start with
@@ -36,9 +42,10 @@ public interface BatchDeleteEntitiesRequestOrBuilder extends
    *
    * <code>repeated string entity_values = 2;</code>
    */
-  java.util.List<java.lang.String>
-      getEntityValuesList();
+  java.util.List<java.lang.String> getEntityValuesList();
   /**
+   *
+   *
    * <pre>
    * Required. The canonical `values` of the entities to delete. Note that
    * these are not fully-qualified names, i.e. they don't start with
@@ -49,6 +56,8 @@ public interface BatchDeleteEntitiesRequestOrBuilder extends
    */
   int getEntityValuesCount();
   /**
+   *
+   *
    * <pre>
    * Required. The canonical `values` of the entities to delete. Note that
    * these are not fully-qualified names, i.e. they don't start with
@@ -59,6 +68,8 @@ public interface BatchDeleteEntitiesRequestOrBuilder extends
    */
   java.lang.String getEntityValues(int index);
   /**
+   *
+   *
    * <pre>
    * Required. The canonical `values` of the entities to delete. Note that
    * these are not fully-qualified names, i.e. they don't start with
@@ -67,10 +78,11 @@ public interface BatchDeleteEntitiesRequestOrBuilder extends
    *
    * <code>repeated string entity_values = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getEntityValuesBytes(int index);
+  com.google.protobuf.ByteString getEntityValuesBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * Optional. The language of entity synonyms defined in `entities`. If not
    * specified, the agent's default language is used.
@@ -83,6 +95,8 @@ public interface BatchDeleteEntitiesRequestOrBuilder extends
    */
   java.lang.String getLanguageCode();
   /**
+   *
+   *
    * <pre>
    * Optional. The language of entity synonyms defined in `entities`. If not
    * specified, the agent's default language is used.
@@ -93,6 +107,5 @@ public interface BatchDeleteEntitiesRequestOrBuilder extends
    *
    * <code>string language_code = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getLanguageCodeBytes();
+  com.google.protobuf.ByteString getLanguageCodeBytes();
 }

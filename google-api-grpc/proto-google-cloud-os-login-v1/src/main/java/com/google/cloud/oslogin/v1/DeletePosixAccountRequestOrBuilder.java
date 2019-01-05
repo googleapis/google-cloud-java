@@ -3,11 +3,14 @@
 
 package com.google.cloud.oslogin.v1;
 
-public interface DeletePosixAccountRequestOrBuilder extends
+public interface DeletePosixAccountRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.oslogin.v1.DeletePosixAccountRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A reference to the POSIX account to update. POSIX accounts are identified
    * by the project ID they are associated with. A reference to the POSIX
@@ -18,6 +21,8 @@ public interface DeletePosixAccountRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * A reference to the POSIX account to update. POSIX accounts are identified
    * by the project ID they are associated with. A reference to the POSIX
@@ -26,6 +31,5 @@ public interface DeletePosixAccountRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

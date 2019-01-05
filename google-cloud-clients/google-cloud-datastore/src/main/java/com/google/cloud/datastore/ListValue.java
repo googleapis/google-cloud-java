@@ -21,13 +21,10 @@ import static com.google.datastore.v1.Value.ARRAY_VALUE_FIELD_NUMBER;
 import com.google.cloud.Timestamp;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
-
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * A Google Cloud Datastore list value. A list value is a list of {@link Value} objects.
- */
+/** A Google Cloud Datastore list value. A list value is a list of {@link Value} objects. */
 public final class ListValue extends Value<List<? extends Value<?>>> {
 
   private static final long serialVersionUID = -5121887228607148857L;
@@ -62,13 +59,13 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
           for (Value<?> property : from.get()) {
             propertiesPb.add(property.toPb());
           }
-          to.setArrayValue(com.google.datastore.v1.ArrayValue.newBuilder()
-              .addAllValues(propertiesPb));
+          to.setArrayValue(
+              com.google.datastore.v1.ArrayValue.newBuilder().addAllValues(propertiesPb));
         }
       };
 
-  public static final class Builder extends
-      Value.BaseBuilder<List<? extends Value<?>>, ListValue, Builder> {
+  public static final class Builder
+      extends Value.BaseBuilder<List<? extends Value<?>>, ListValue, Builder> {
 
     private ImmutableList.Builder<Value<?>> listBuilder = ImmutableList.builder();
 
@@ -82,9 +79,7 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
       listBuilder.add(value);
     }
 
-    /**
-     * Adds the provided values to the {@code ListValue} builder.
-     */
+    /** Adds the provided values to the {@code ListValue} builder. */
     public Builder addValue(Value<?> first, Value<?>... other) {
       addValueHelper(first);
       for (Value<?> value : other) {
@@ -93,9 +88,7 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
       return this;
     }
 
-    /**
-     * Adds the provided string values to the {@code ListValue} builder.
-     */
+    /** Adds the provided string values to the {@code ListValue} builder. */
     public Builder addValue(String first, String... other) {
       listBuilder.add(StringValue.of(first));
       for (String value : other) {
@@ -104,9 +97,7 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
       return this;
     }
 
-    /**
-     * Adds the provided long values to the {@code ListValue} builder.
-     */
+    /** Adds the provided long values to the {@code ListValue} builder. */
     public Builder addValue(long first, long... other) {
       listBuilder.add(LongValue.of(first));
       for (long value : other) {
@@ -115,9 +106,7 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
       return this;
     }
 
-    /**
-     * Adds the provided double values to the {@code ListValue} builder.
-     */
+    /** Adds the provided double values to the {@code ListValue} builder. */
     public Builder addValue(double first, double... other) {
       listBuilder.add(DoubleValue.of(first));
       for (double value : other) {
@@ -126,9 +115,7 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
       return this;
     }
 
-    /**
-     * Adds the provided boolean values to the {@code ListValue} builder.
-     */
+    /** Adds the provided boolean values to the {@code ListValue} builder. */
     public Builder addValue(boolean first, boolean... other) {
       listBuilder.add(BooleanValue.of(first));
       for (boolean value : other) {
@@ -137,9 +124,7 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
       return this;
     }
 
-    /**
-     * Adds the provided {@code Timestamp} values to the {@code ListValue} builder.
-     */
+    /** Adds the provided {@code Timestamp} values to the {@code ListValue} builder. */
     public Builder addValue(Timestamp first, Timestamp... other) {
       listBuilder.add(TimestampValue.of(first));
       for (Timestamp value : other) {
@@ -148,9 +133,7 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
       return this;
     }
 
-    /**
-     * Adds the provided {@code LatLng} values to the {@code ListValue} builder.
-     */
+    /** Adds the provided {@code LatLng} values to the {@code ListValue} builder. */
     public Builder addValue(LatLng first, LatLng... other) {
       listBuilder.add(LatLngValue.of(first));
       for (LatLng value : other) {
@@ -159,9 +142,7 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
       return this;
     }
 
-    /**
-     * Adds the provided {@code Key} values to the {@code ListValue} builder.
-     */
+    /** Adds the provided {@code Key} values to the {@code ListValue} builder. */
     public Builder addValue(Key first, Key... other) {
       listBuilder.add(KeyValue.of(first));
       for (Key value : other) {
@@ -170,9 +151,7 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
       return this;
     }
 
-    /**
-     * Adds the provided {@code FullEntity} values to the {@code ListValue} builder.
-     */
+    /** Adds the provided {@code FullEntity} values to the {@code ListValue} builder. */
     public Builder addValue(FullEntity<?> first, FullEntity<?>... other) {
       listBuilder.add(EntityValue.of(first));
       for (FullEntity<?> value : other) {
@@ -181,9 +160,7 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
       return this;
     }
 
-    /**
-     * Adds the provided {@code Blob} values to the {@code ListValue} builder.
-     */
+    /** Adds the provided {@code Blob} values to the {@code ListValue} builder. */
     public Builder addValue(Blob first, Blob... other) {
       listBuilder.add(BlobValue.of(first));
       for (Blob value : other) {
@@ -212,9 +189,7 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
       return listBuilder.build();
     }
 
-    /**
-     * Creates a {@code ListValue} object.
-     */
+    /** Creates a {@code ListValue} object. */
     @Override
     public ListValue build() {
       return new ListValue(this);
@@ -233,95 +208,68 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
     super(builder);
   }
 
-  /**
-   * Returns a builder for the list value object.
-   */
+  /** Returns a builder for the list value object. */
   @Override
   public Builder toBuilder() {
     return new Builder().mergeFrom(this);
   }
 
-  /**
-   * Creates a {@code ListValue} object given a list of {@code Value} objects.
-   */
+  /** Creates a {@code ListValue} object given a list of {@code Value} objects. */
   public static ListValue of(List<? extends Value<?>> values) {
     return new ListValue(values);
   }
 
-  /**
-   * Creates a {@code ListValue} object given a number of {@code Value} objects.
-   */
+  /** Creates a {@code ListValue} object given a number of {@code Value} objects. */
   public static ListValue of(Value<?> first, Value<?>... other) {
     return new ListValue(first, other);
   }
 
-  /**
-   * Creates a {@code ListValue} object given a number of string values.
-   */
+  /** Creates a {@code ListValue} object given a number of string values. */
   public static ListValue of(String first, String... other) {
     return newBuilder().addValue(first, other).build();
   }
 
-  /**
-   * Creates a {@code ListValue} object given a number of long values.
-   */
+  /** Creates a {@code ListValue} object given a number of long values. */
   public static ListValue of(long first, long... other) {
     return newBuilder().addValue(first, other).build();
   }
 
-  /**
-   * Creates a {@code ListValue} object given a number of double values.
-   */
+  /** Creates a {@code ListValue} object given a number of double values. */
   public static ListValue of(double first, double... other) {
     return newBuilder().addValue(first, other).build();
   }
 
-  /**
-   * Creates a {@code ListValue} object given a number of boolean values.
-   */
+  /** Creates a {@code ListValue} object given a number of boolean values. */
   public static ListValue of(boolean first, boolean... other) {
     return newBuilder().addValue(first, other).build();
   }
 
-  /**
-   * Creates a {@code ListValue} object given a number of {@code Timestamp} values.
-   */
+  /** Creates a {@code ListValue} object given a number of {@code Timestamp} values. */
   public static ListValue of(Timestamp first, Timestamp... other) {
     return newBuilder().addValue(first, other).build();
   }
 
-  /**
-   * Creates a {@code ListValue} object given a number of {@code LatLng} values.
-   */
+  /** Creates a {@code ListValue} object given a number of {@code LatLng} values. */
   public static ListValue of(LatLng first, LatLng... other) {
     return newBuilder().addValue(first, other).build();
   }
 
-  /**
-   * Creates a {@code ListValue} object given a number of {@code Key} values.
-   */
+  /** Creates a {@code ListValue} object given a number of {@code Key} values. */
   public static ListValue of(Key first, Key... other) {
     return newBuilder().addValue(first, other).build();
   }
 
-  /**
-   * Creates a {@code ListValue} object given a number of {@code FullEntity} values.
-   */
+  /** Creates a {@code ListValue} object given a number of {@code FullEntity} values. */
   public static ListValue of(FullEntity<?> first, FullEntity<?>... other) {
     return newBuilder().addValue(first, other).build();
   }
 
-  /**
-   * Creates a {@code ListValue} object given a number of {@code Blob} values.
-   */
+  /** Creates a {@code ListValue} object given a number of {@code Blob} values. */
   public static ListValue of(Blob first, Blob... other) {
     return newBuilder().addValue(first, other).build();
   }
 
-
-  /**
-   * Returns a builder for {@code ListValue} objects.
-   */
+  /** Returns a builder for {@code ListValue} objects. */
   public static Builder newBuilder() {
     return new Builder();
   }

@@ -35,6 +35,7 @@ public final class Firewall implements ApiMessage {
   private final Boolean disabled;
   private final String id;
   private final String kind;
+  private final FirewallLogConfig logConfig;
   private final String name;
   private final String network;
   private final Integer priority;
@@ -55,6 +56,7 @@ public final class Firewall implements ApiMessage {
     this.disabled = null;
     this.id = null;
     this.kind = null;
+    this.logConfig = null;
     this.name = null;
     this.network = null;
     this.priority = null;
@@ -76,6 +78,7 @@ public final class Firewall implements ApiMessage {
       Boolean disabled,
       String id,
       String kind,
+      FirewallLogConfig logConfig,
       String name,
       String network,
       Integer priority,
@@ -94,6 +97,7 @@ public final class Firewall implements ApiMessage {
     this.disabled = disabled;
     this.id = id;
     this.kind = kind;
+    this.logConfig = logConfig;
     this.name = name;
     this.network = network;
     this.priority = priority;
@@ -133,6 +137,9 @@ public final class Firewall implements ApiMessage {
     }
     if (fieldName.equals("kind")) {
       return kind;
+    }
+    if (fieldName.equals("logConfig")) {
+      return logConfig;
     }
     if (fieldName.equals("name")) {
       return name;
@@ -212,6 +219,10 @@ public final class Firewall implements ApiMessage {
     return kind;
   }
 
+  public FirewallLogConfig getLogConfig() {
+    return logConfig;
+  }
+
   public String getName() {
     return name;
   }
@@ -280,6 +291,7 @@ public final class Firewall implements ApiMessage {
     private Boolean disabled;
     private String id;
     private String kind;
+    private FirewallLogConfig logConfig;
     private String name;
     private String network;
     private Integer priority;
@@ -321,6 +333,9 @@ public final class Firewall implements ApiMessage {
       if (other.getKind() != null) {
         this.kind = other.kind;
       }
+      if (other.getLogConfig() != null) {
+        this.logConfig = other.logConfig;
+      }
       if (other.getName() != null) {
         this.name = other.name;
       }
@@ -361,6 +376,7 @@ public final class Firewall implements ApiMessage {
       this.disabled = source.disabled;
       this.id = source.id;
       this.kind = source.kind;
+      this.logConfig = source.logConfig;
       this.name = source.name;
       this.network = source.network;
       this.priority = source.priority;
@@ -483,6 +499,15 @@ public final class Firewall implements ApiMessage {
 
     public Builder setKind(String kind) {
       this.kind = kind;
+      return this;
+    }
+
+    public FirewallLogConfig getLogConfig() {
+      return logConfig;
+    }
+
+    public Builder setLogConfig(FirewallLogConfig logConfig) {
+      this.logConfig = logConfig;
       return this;
     }
 
@@ -634,6 +659,7 @@ public final class Firewall implements ApiMessage {
           disabled,
           id,
           kind,
+          logConfig,
           name,
           network,
           priority,
@@ -656,6 +682,7 @@ public final class Firewall implements ApiMessage {
       newBuilder.setDisabled(this.disabled);
       newBuilder.setId(this.id);
       newBuilder.setKind(this.kind);
+      newBuilder.setLogConfig(this.logConfig);
       newBuilder.setName(this.name);
       newBuilder.setNetwork(this.network);
       newBuilder.setPriority(this.priority);
@@ -698,6 +725,9 @@ public final class Firewall implements ApiMessage {
         + ", "
         + "kind="
         + kind
+        + ", "
+        + "logConfig="
+        + logConfig
         + ", "
         + "name="
         + name
@@ -744,6 +774,7 @@ public final class Firewall implements ApiMessage {
           && Objects.equals(this.disabled, that.getDisabled())
           && Objects.equals(this.id, that.getId())
           && Objects.equals(this.kind, that.getKind())
+          && Objects.equals(this.logConfig, that.getLogConfig())
           && Objects.equals(this.name, that.getName())
           && Objects.equals(this.network, that.getNetwork())
           && Objects.equals(this.priority, that.getPriority())
@@ -769,6 +800,7 @@ public final class Firewall implements ApiMessage {
         disabled,
         id,
         kind,
+        logConfig,
         name,
         network,
         priority,

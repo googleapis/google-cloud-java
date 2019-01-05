@@ -18,7 +18,6 @@ package com.google.cloud.bigtable.admin.v2;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.gax.rpc.StatusCode.Code;
-import com.google.bigtable.admin.v2.InstanceName;
 import java.io.IOException;
 import org.junit.Test;
 
@@ -26,14 +25,17 @@ public class BigtableTableAdminSettingsTest {
 
   @Test
   public void testInstanceName() throws IOException {
-    InstanceName instanceName = InstanceName.of("my-project", "my-instance");
+    BigtableTableAdminSettings.Builder builder =
+        BigtableTableAdminSettings.newBuilder()
+            .setProjectId("my-project")
+            .setInstanceId("my-instance");
 
-    BigtableTableAdminSettings.Builder builder = BigtableTableAdminSettings.newBuilder()
-        .setInstanceName(instanceName);
-
-    assertThat(builder.getInstanceName()).isEqualTo(instanceName);
-    assertThat(builder.build().getInstanceName()).isEqualTo(instanceName);
-    assertThat(builder.build().toBuilder().getInstanceName()).isEqualTo(instanceName);
+    assertThat(builder.getProjectId()).isEqualTo("my-project");
+    assertThat(builder.getInstanceId()).isEqualTo("my-instance");
+    assertThat(builder.build().getProjectId()).isEqualTo("my-project");
+    assertThat(builder.build().getInstanceId()).isEqualTo("my-instance");
+    assertThat(builder.build().toBuilder().getProjectId()).isEqualTo("my-project");
+    assertThat(builder.build().toBuilder().getInstanceId()).isEqualTo("my-instance");
   }
 
   @Test
@@ -51,19 +53,24 @@ public class BigtableTableAdminSettingsTest {
 
   @Test
   public void testStubSettings() throws IOException {
-    InstanceName instanceName = InstanceName.of("my-project", "my-instance");
+    BigtableTableAdminSettings.Builder builder =
+        BigtableTableAdminSettings.newBuilder()
+            .setProjectId("my-project")
+            .setInstanceId("my-instance");
 
-    BigtableTableAdminSettings.Builder builder = BigtableTableAdminSettings.newBuilder()
-        .setInstanceName(instanceName);
-
-    builder.stubSettings().createTableSettings()
-        .setRetryableCodes(Code.INVALID_ARGUMENT);
+    builder.stubSettings().createTableSettings().setRetryableCodes(Code.INVALID_ARGUMENT);
 
     assertThat(builder.build().getStubSettings().createTableSettings().getRetryableCodes())
         .containsExactly(Code.INVALID_ARGUMENT);
 
-    assertThat(builder.build().toBuilder().build().getStubSettings().createTableSettings()
-        .getRetryableCodes())
+    assertThat(
+            builder
+                .build()
+                .toBuilder()
+                .build()
+                .getStubSettings()
+                .createTableSettings()
+                .getRetryableCodes())
         .containsExactly(Code.INVALID_ARGUMENT);
   }
 }

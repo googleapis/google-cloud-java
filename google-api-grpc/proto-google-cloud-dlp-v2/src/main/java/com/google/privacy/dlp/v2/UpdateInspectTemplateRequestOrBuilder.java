@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface UpdateInspectTemplateRequestOrBuilder extends
+public interface UpdateInspectTemplateRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.UpdateInspectTemplateRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Resource name of organization and inspectTemplate to be updated, for
    * example `organizations/433245324/inspectTemplates/432452342` or
@@ -18,6 +21,8 @@ public interface UpdateInspectTemplateRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Resource name of organization and inspectTemplate to be updated, for
    * example `organizations/433245324/inspectTemplates/432452342` or
@@ -26,10 +31,11 @@ public interface UpdateInspectTemplateRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * New InspectTemplate value.
    * </pre>
@@ -38,6 +44,8 @@ public interface UpdateInspectTemplateRequestOrBuilder extends
    */
   boolean hasInspectTemplate();
   /**
+   *
+   *
    * <pre>
    * New InspectTemplate value.
    * </pre>
@@ -46,6 +54,8 @@ public interface UpdateInspectTemplateRequestOrBuilder extends
    */
   com.google.privacy.dlp.v2.InspectTemplate getInspectTemplate();
   /**
+   *
+   *
    * <pre>
    * New InspectTemplate value.
    * </pre>
@@ -55,6 +65,8 @@ public interface UpdateInspectTemplateRequestOrBuilder extends
   com.google.privacy.dlp.v2.InspectTemplateOrBuilder getInspectTemplateOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Mask to control which fields get updated.
    * </pre>
@@ -63,6 +75,8 @@ public interface UpdateInspectTemplateRequestOrBuilder extends
    */
   boolean hasUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Mask to control which fields get updated.
    * </pre>
@@ -71,6 +85,8 @@ public interface UpdateInspectTemplateRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Mask to control which fields get updated.
    * </pre>

@@ -105,9 +105,9 @@ public class MessageDispatcherTest {
     flowController =
         new FlowController(
             FlowControlSettings.newBuilder()
-              .setMaxOutstandingElementCount(1L)
-              .setLimitExceededBehavior(FlowController.LimitExceededBehavior.ThrowException)
-              .build());
+                .setMaxOutstandingElementCount(1L)
+                .setLimitExceededBehavior(FlowController.LimitExceededBehavior.ThrowException)
+                .build());
 
     dispatcher =
         new MessageDispatcher(
@@ -146,6 +146,14 @@ public class MessageDispatcherTest {
     consumers.take().nack();
     dispatcher.processOutstandingAckOperations();
     assertThat(sentModAcks).contains(ModAckItem.of(TEST_MESSAGE.getAckId(), 0));
+  }
+
+  @Test
+  public void testAbandon() throws Exception {
+    dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE), NOOP_RUNNABLE);
+    consumers.take().abandon();
+    dispatcher.extendDeadlines();
+    assertThat(sentModAcks).doesNotContain(TEST_MESSAGE.getAckId());
   }
 
   @Test

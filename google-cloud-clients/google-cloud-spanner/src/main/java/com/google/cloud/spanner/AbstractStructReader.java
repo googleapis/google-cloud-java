@@ -358,5 +358,4 @@ public abstract class AbstractStructReader implements StructReader {
         actualType);
     checkNonNull(columnIndex, columnNameForError);
   }
-
 }

@@ -4,6 +4,8 @@
 package com.google.cloud.websecurityscanner.v1alpha;
 
 /**
+ *
+ *
  * <pre>
  * A Finding resource represents a vulnerability instance identified during a
  * ScanRun.
@@ -11,15 +13,16 @@ package com.google.cloud.websecurityscanner.v1alpha;
  *
  * Protobuf type {@code google.cloud.websecurityscanner.v1alpha.Finding}
  */
-public  final class Finding extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Finding extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.websecurityscanner.v1alpha.Finding)
     FindingOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Finding.newBuilder() to construct.
   private Finding(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Finding() {
     name_ = "";
     findingType_ = 0;
@@ -34,10 +37,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Finding(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -57,160 +60,192 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 16: {
-            int rawValue = input.readEnum();
-
-            findingType_ = rawValue;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            httpMethod_ = s;
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            fuzzedUrl_ = s;
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            body_ = s;
-            break;
-          }
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            description_ = s;
-            break;
-          }
-          case 58: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            reproductionUrl_ = s;
-            break;
-          }
-          case 66: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            frameUrl_ = s;
-            break;
-          }
-          case 74: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            finalUrl_ = s;
-            break;
-          }
-          case 82: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            trackingId_ = s;
-            break;
-          }
-          case 90: {
-            com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary.Builder subBuilder = null;
-            if (outdatedLibrary_ != null) {
-              subBuilder = outdatedLibrary_.toBuilder();
+              name_ = s;
+              break;
             }
-            outdatedLibrary_ = input.readMessage(com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(outdatedLibrary_);
-              outdatedLibrary_ = subBuilder.buildPartial();
-            }
+          case 16:
+            {
+              int rawValue = input.readEnum();
 
-            break;
-          }
-          case 98: {
-            com.google.cloud.websecurityscanner.v1alpha.ViolatingResource.Builder subBuilder = null;
-            if (violatingResource_ != null) {
-              subBuilder = violatingResource_.toBuilder();
+              findingType_ = rawValue;
+              break;
             }
-            violatingResource_ = input.readMessage(com.google.cloud.websecurityscanner.v1alpha.ViolatingResource.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(violatingResource_);
-              violatingResource_ = subBuilder.buildPartial();
-            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            break;
-          }
-          case 106: {
-            com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters.Builder subBuilder = null;
-            if (vulnerableParameters_ != null) {
-              subBuilder = vulnerableParameters_.toBuilder();
+              httpMethod_ = s;
+              break;
             }
-            vulnerableParameters_ = input.readMessage(com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(vulnerableParameters_);
-              vulnerableParameters_ = subBuilder.buildPartial();
-            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            break;
-          }
-          case 114: {
-            com.google.cloud.websecurityscanner.v1alpha.Xss.Builder subBuilder = null;
-            if (xss_ != null) {
-              subBuilder = xss_.toBuilder();
+              fuzzedUrl_ = s;
+              break;
             }
-            xss_ = input.readMessage(com.google.cloud.websecurityscanner.v1alpha.Xss.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(xss_);
-              xss_ = subBuilder.buildPartial();
-            }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              body_ = s;
+              break;
             }
-            break;
-          }
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
+          case 58:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              reproductionUrl_ = s;
+              break;
+            }
+          case 66:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              frameUrl_ = s;
+              break;
+            }
+          case 74:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              finalUrl_ = s;
+              break;
+            }
+          case 82:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              trackingId_ = s;
+              break;
+            }
+          case 90:
+            {
+              com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary.Builder subBuilder = null;
+              if (outdatedLibrary_ != null) {
+                subBuilder = outdatedLibrary_.toBuilder();
+              }
+              outdatedLibrary_ =
+                  input.readMessage(
+                      com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(outdatedLibrary_);
+                outdatedLibrary_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 98:
+            {
+              com.google.cloud.websecurityscanner.v1alpha.ViolatingResource.Builder subBuilder =
+                  null;
+              if (violatingResource_ != null) {
+                subBuilder = violatingResource_.toBuilder();
+              }
+              violatingResource_ =
+                  input.readMessage(
+                      com.google.cloud.websecurityscanner.v1alpha.ViolatingResource.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(violatingResource_);
+                violatingResource_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 106:
+            {
+              com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters.Builder subBuilder =
+                  null;
+              if (vulnerableParameters_ != null) {
+                subBuilder = vulnerableParameters_.toBuilder();
+              }
+              vulnerableParameters_ =
+                  input.readMessage(
+                      com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(vulnerableParameters_);
+                vulnerableParameters_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 114:
+            {
+              com.google.cloud.websecurityscanner.v1alpha.Xss.Builder subBuilder = null;
+              if (xss_ != null) {
+                subBuilder = xss_.toBuilder();
+              }
+              xss_ =
+                  input.readMessage(
+                      com.google.cloud.websecurityscanner.v1alpha.Xss.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(xss_);
+                xss_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.websecurityscanner.v1alpha.FindingProto.internal_static_google_cloud_websecurityscanner_v1alpha_Finding_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.websecurityscanner.v1alpha.FindingProto
+        .internal_static_google_cloud_websecurityscanner_v1alpha_Finding_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.websecurityscanner.v1alpha.FindingProto.internal_static_google_cloud_websecurityscanner_v1alpha_Finding_fieldAccessorTable
+    return com.google.cloud.websecurityscanner.v1alpha.FindingProto
+        .internal_static_google_cloud_websecurityscanner_v1alpha_Finding_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.websecurityscanner.v1alpha.Finding.class, com.google.cloud.websecurityscanner.v1alpha.Finding.Builder.class);
+            com.google.cloud.websecurityscanner.v1alpha.Finding.class,
+            com.google.cloud.websecurityscanner.v1alpha.Finding.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * Types of Findings.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.websecurityscanner.v1alpha.Finding.FindingType}
    */
-  public enum FindingType
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum FindingType implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * The invalid finding type.
      * </pre>
@@ -219,6 +254,8 @@ private static final long serialVersionUID = 0L;
      */
     FINDING_TYPE_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * A page that was served over HTTPS also resources over HTTP. A
      * man-in-the-middle attacker could tamper with the HTTP resource and gain
@@ -230,6 +267,8 @@ private static final long serialVersionUID = 0L;
      */
     MIXED_CONTENT(1),
     /**
+     *
+     *
      * <pre>
      * The version of an included library is known to contain a security issue.
      * The scanner checks the version of library in use against a known list of
@@ -241,6 +280,8 @@ private static final long serialVersionUID = 0L;
      */
     OUTDATED_LIBRARY(2),
     /**
+     *
+     *
      * <pre>
      * This type of vulnerability occurs when the value of a request parameter
      * is reflected at the beginning of the response, for example, in requests
@@ -254,6 +295,8 @@ private static final long serialVersionUID = 0L;
      */
     ROSETTA_FLASH(5),
     /**
+     *
+     *
      * <pre>
      * A cross-site scripting (XSS) bug is found via JavaScript callback. For
      * detailed explanations on XSS, see
@@ -264,6 +307,8 @@ private static final long serialVersionUID = 0L;
      */
     XSS_CALLBACK(3),
     /**
+     *
+     *
      * <pre>
      * A potential cross-site scripting (XSS) bug due to JavaScript breakage.
      * In some circumstances, the application under test might modify the test
@@ -280,6 +325,8 @@ private static final long serialVersionUID = 0L;
      */
     XSS_ERROR(4),
     /**
+     *
+     *
      * <pre>
      * An application appears to be transmitting a password field in clear text.
      * An attacker can eavesdrop network traffic and sniff the password field.
@@ -292,6 +339,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * The invalid finding type.
      * </pre>
@@ -300,6 +349,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int FINDING_TYPE_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * A page that was served over HTTPS also resources over HTTP. A
      * man-in-the-middle attacker could tamper with the HTTP resource and gain
@@ -311,6 +362,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int MIXED_CONTENT_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * The version of an included library is known to contain a security issue.
      * The scanner checks the version of library in use against a known list of
@@ -322,6 +375,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int OUTDATED_LIBRARY_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * This type of vulnerability occurs when the value of a request parameter
      * is reflected at the beginning of the response, for example, in requests
@@ -335,6 +390,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ROSETTA_FLASH_VALUE = 5;
     /**
+     *
+     *
      * <pre>
      * A cross-site scripting (XSS) bug is found via JavaScript callback. For
      * detailed explanations on XSS, see
@@ -345,6 +402,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int XSS_CALLBACK_VALUE = 3;
     /**
+     *
+     *
      * <pre>
      * A potential cross-site scripting (XSS) bug due to JavaScript breakage.
      * In some circumstances, the application under test might modify the test
@@ -361,6 +420,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int XSS_ERROR_VALUE = 4;
     /**
+     *
+     *
      * <pre>
      * An application appears to be transmitting a password field in clear text.
      * An attacker can eavesdrop network traffic and sniff the password field.
@@ -370,7 +431,6 @@ private static final long serialVersionUID = 0L;
      */
     public static final int CLEAR_TEXT_PASSWORD_VALUE = 6;
 
-
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -379,9 +439,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static FindingType valueOf(int value) {
       return forNumber(value);
@@ -389,49 +447,55 @@ private static final long serialVersionUID = 0L;
 
     public static FindingType forNumber(int value) {
       switch (value) {
-        case 0: return FINDING_TYPE_UNSPECIFIED;
-        case 1: return MIXED_CONTENT;
-        case 2: return OUTDATED_LIBRARY;
-        case 5: return ROSETTA_FLASH;
-        case 3: return XSS_CALLBACK;
-        case 4: return XSS_ERROR;
-        case 6: return CLEAR_TEXT_PASSWORD;
-        default: return null;
+        case 0:
+          return FINDING_TYPE_UNSPECIFIED;
+        case 1:
+          return MIXED_CONTENT;
+        case 2:
+          return OUTDATED_LIBRARY;
+        case 5:
+          return ROSETTA_FLASH;
+        case 3:
+          return XSS_CALLBACK;
+        case 4:
+          return XSS_ERROR;
+        case 6:
+          return CLEAR_TEXT_PASSWORD;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<FindingType>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<FindingType> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        FindingType> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<FindingType>() {
-            public FindingType findValueByNumber(int number) {
-              return FindingType.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<FindingType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<FindingType>() {
+          public FindingType findValueByNumber(int number) {
+            return FindingType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.google.cloud.websecurityscanner.v1alpha.Finding.getDescriptor().getEnumTypes().get(0);
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.websecurityscanner.v1alpha.Finding.getDescriptor()
+          .getEnumTypes()
+          .get(0);
     }
 
     private static final FindingType[] VALUES = values();
 
-    public static FindingType valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static FindingType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -451,6 +515,8 @@ private static final long serialVersionUID = 0L;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The resource name of the Finding. The name follows the format of
@@ -465,14 +531,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The resource name of the Finding. The name follows the format of
@@ -482,13 +549,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -499,6 +564,8 @@ private static final long serialVersionUID = 0L;
   public static final int FINDING_TYPE_FIELD_NUMBER = 2;
   private int findingType_;
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The type of the Finding.
@@ -510,6 +577,8 @@ private static final long serialVersionUID = 0L;
     return findingType_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The type of the Finding.
@@ -519,13 +588,18 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType getFindingType() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType result = com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType.valueOf(findingType_);
-    return result == null ? com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType.UNRECOGNIZED : result;
+    com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType result =
+        com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType.valueOf(findingType_);
+    return result == null
+        ? com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType.UNRECOGNIZED
+        : result;
   }
 
   public static final int HTTP_METHOD_FIELD_NUMBER = 3;
   private volatile java.lang.Object httpMethod_;
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The http method of the request that triggered the vulnerability, in
@@ -539,14 +613,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       httpMethod_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The http method of the request that triggered the vulnerability, in
@@ -555,13 +630,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string http_method = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getHttpMethodBytes() {
+  public com.google.protobuf.ByteString getHttpMethodBytes() {
     java.lang.Object ref = httpMethod_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       httpMethod_ = b;
       return b;
     } else {
@@ -572,6 +645,8 @@ private static final long serialVersionUID = 0L;
   public static final int FUZZED_URL_FIELD_NUMBER = 4;
   private volatile java.lang.Object fuzzedUrl_;
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The URL produced by the server-side fuzzer and used in the request that
@@ -585,14 +660,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       fuzzedUrl_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The URL produced by the server-side fuzzer and used in the request that
@@ -601,13 +677,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string fuzzed_url = 4;</code>
    */
-  public com.google.protobuf.ByteString
-      getFuzzedUrlBytes() {
+  public com.google.protobuf.ByteString getFuzzedUrlBytes() {
     java.lang.Object ref = fuzzedUrl_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       fuzzedUrl_ = b;
       return b;
     } else {
@@ -618,6 +692,8 @@ private static final long serialVersionUID = 0L;
   public static final int BODY_FIELD_NUMBER = 5;
   private volatile java.lang.Object body_;
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The body of the request that triggered the vulnerability.
@@ -630,14 +706,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       body_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The body of the request that triggered the vulnerability.
@@ -645,13 +722,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string body = 5;</code>
    */
-  public com.google.protobuf.ByteString
-      getBodyBytes() {
+  public com.google.protobuf.ByteString getBodyBytes() {
     java.lang.Object ref = body_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       body_ = b;
       return b;
     } else {
@@ -662,6 +737,8 @@ private static final long serialVersionUID = 0L;
   public static final int DESCRIPTION_FIELD_NUMBER = 6;
   private volatile java.lang.Object description_;
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The description of the vulnerability.
@@ -674,14 +751,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       description_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The description of the vulnerability.
@@ -689,13 +767,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string description = 6;</code>
    */
-  public com.google.protobuf.ByteString
-      getDescriptionBytes() {
+  public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       description_ = b;
       return b;
     } else {
@@ -706,6 +782,8 @@ private static final long serialVersionUID = 0L;
   public static final int REPRODUCTION_URL_FIELD_NUMBER = 7;
   private volatile java.lang.Object reproductionUrl_;
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The URL containing human-readable payload that user can leverage to
@@ -719,14 +797,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       reproductionUrl_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The URL containing human-readable payload that user can leverage to
@@ -735,13 +814,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string reproduction_url = 7;</code>
    */
-  public com.google.protobuf.ByteString
-      getReproductionUrlBytes() {
+  public com.google.protobuf.ByteString getReproductionUrlBytes() {
     java.lang.Object ref = reproductionUrl_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       reproductionUrl_ = b;
       return b;
     } else {
@@ -752,6 +829,8 @@ private static final long serialVersionUID = 0L;
   public static final int FRAME_URL_FIELD_NUMBER = 8;
   private volatile java.lang.Object frameUrl_;
   /**
+   *
+   *
    * <pre>
    * Output only.
    * If the vulnerability was originated from nested IFrame, the immediate
@@ -765,14 +844,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       frameUrl_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * If the vulnerability was originated from nested IFrame, the immediate
@@ -781,13 +861,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string frame_url = 8;</code>
    */
-  public com.google.protobuf.ByteString
-      getFrameUrlBytes() {
+  public com.google.protobuf.ByteString getFrameUrlBytes() {
     java.lang.Object ref = frameUrl_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       frameUrl_ = b;
       return b;
     } else {
@@ -798,6 +876,8 @@ private static final long serialVersionUID = 0L;
   public static final int FINAL_URL_FIELD_NUMBER = 9;
   private volatile java.lang.Object finalUrl_;
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The URL where the browser lands when the vulnerability is detected.
@@ -810,14 +890,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       finalUrl_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The URL where the browser lands when the vulnerability is detected.
@@ -825,13 +906,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string final_url = 9;</code>
    */
-  public com.google.protobuf.ByteString
-      getFinalUrlBytes() {
+  public com.google.protobuf.ByteString getFinalUrlBytes() {
     java.lang.Object ref = finalUrl_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       finalUrl_ = b;
       return b;
     } else {
@@ -842,6 +921,8 @@ private static final long serialVersionUID = 0L;
   public static final int TRACKING_ID_FIELD_NUMBER = 10;
   private volatile java.lang.Object trackingId_;
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The tracking ID uniquely identifies a vulnerability instance across
@@ -855,14 +936,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       trackingId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The tracking ID uniquely identifies a vulnerability instance across
@@ -871,13 +953,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string tracking_id = 10;</code>
    */
-  public com.google.protobuf.ByteString
-      getTrackingIdBytes() {
+  public com.google.protobuf.ByteString getTrackingIdBytes() {
     java.lang.Object ref = trackingId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       trackingId_ = b;
       return b;
     } else {
@@ -888,6 +968,8 @@ private static final long serialVersionUID = 0L;
   public static final int OUTDATED_LIBRARY_FIELD_NUMBER = 11;
   private com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary outdatedLibrary_;
   /**
+   *
+   *
    * <pre>
    * Output only.
    * An addon containing information about outdated libraries.
@@ -899,6 +981,8 @@ private static final long serialVersionUID = 0L;
     return outdatedLibrary_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * An addon containing information about outdated libraries.
@@ -907,9 +991,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary outdated_library = 11;</code>
    */
   public com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary getOutdatedLibrary() {
-    return outdatedLibrary_ == null ? com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary.getDefaultInstance() : outdatedLibrary_;
+    return outdatedLibrary_ == null
+        ? com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary.getDefaultInstance()
+        : outdatedLibrary_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * An addon containing information about outdated libraries.
@@ -917,91 +1005,119 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary outdated_library = 11;</code>
    */
-  public com.google.cloud.websecurityscanner.v1alpha.OutdatedLibraryOrBuilder getOutdatedLibraryOrBuilder() {
+  public com.google.cloud.websecurityscanner.v1alpha.OutdatedLibraryOrBuilder
+      getOutdatedLibraryOrBuilder() {
     return getOutdatedLibrary();
   }
 
   public static final int VIOLATING_RESOURCE_FIELD_NUMBER = 12;
   private com.google.cloud.websecurityscanner.v1alpha.ViolatingResource violatingResource_;
   /**
+   *
+   *
    * <pre>
    * Output only.
    * An addon containing detailed information regarding any resource causing the
    * vulnerability such as JavaScript sources, image, audio files, etc.
    * </pre>
    *
-   * <code>.google.cloud.websecurityscanner.v1alpha.ViolatingResource violating_resource = 12;</code>
+   * <code>.google.cloud.websecurityscanner.v1alpha.ViolatingResource violating_resource = 12;
+   * </code>
    */
   public boolean hasViolatingResource() {
     return violatingResource_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * An addon containing detailed information regarding any resource causing the
    * vulnerability such as JavaScript sources, image, audio files, etc.
    * </pre>
    *
-   * <code>.google.cloud.websecurityscanner.v1alpha.ViolatingResource violating_resource = 12;</code>
+   * <code>.google.cloud.websecurityscanner.v1alpha.ViolatingResource violating_resource = 12;
+   * </code>
    */
   public com.google.cloud.websecurityscanner.v1alpha.ViolatingResource getViolatingResource() {
-    return violatingResource_ == null ? com.google.cloud.websecurityscanner.v1alpha.ViolatingResource.getDefaultInstance() : violatingResource_;
+    return violatingResource_ == null
+        ? com.google.cloud.websecurityscanner.v1alpha.ViolatingResource.getDefaultInstance()
+        : violatingResource_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * An addon containing detailed information regarding any resource causing the
    * vulnerability such as JavaScript sources, image, audio files, etc.
    * </pre>
    *
-   * <code>.google.cloud.websecurityscanner.v1alpha.ViolatingResource violating_resource = 12;</code>
+   * <code>.google.cloud.websecurityscanner.v1alpha.ViolatingResource violating_resource = 12;
+   * </code>
    */
-  public com.google.cloud.websecurityscanner.v1alpha.ViolatingResourceOrBuilder getViolatingResourceOrBuilder() {
+  public com.google.cloud.websecurityscanner.v1alpha.ViolatingResourceOrBuilder
+      getViolatingResourceOrBuilder() {
     return getViolatingResource();
   }
 
   public static final int VULNERABLE_PARAMETERS_FIELD_NUMBER = 13;
   private com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters vulnerableParameters_;
   /**
+   *
+   *
    * <pre>
    * Output only.
    * An addon containing information about request parameters which were found
    * to be vulnerable.
    * </pre>
    *
-   * <code>.google.cloud.websecurityscanner.v1alpha.VulnerableParameters vulnerable_parameters = 13;</code>
+   * <code>.google.cloud.websecurityscanner.v1alpha.VulnerableParameters vulnerable_parameters = 13;
+   * </code>
    */
   public boolean hasVulnerableParameters() {
     return vulnerableParameters_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * An addon containing information about request parameters which were found
    * to be vulnerable.
    * </pre>
    *
-   * <code>.google.cloud.websecurityscanner.v1alpha.VulnerableParameters vulnerable_parameters = 13;</code>
+   * <code>.google.cloud.websecurityscanner.v1alpha.VulnerableParameters vulnerable_parameters = 13;
+   * </code>
    */
-  public com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters getVulnerableParameters() {
-    return vulnerableParameters_ == null ? com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters.getDefaultInstance() : vulnerableParameters_;
+  public com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters
+      getVulnerableParameters() {
+    return vulnerableParameters_ == null
+        ? com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters.getDefaultInstance()
+        : vulnerableParameters_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * An addon containing information about request parameters which were found
    * to be vulnerable.
    * </pre>
    *
-   * <code>.google.cloud.websecurityscanner.v1alpha.VulnerableParameters vulnerable_parameters = 13;</code>
+   * <code>.google.cloud.websecurityscanner.v1alpha.VulnerableParameters vulnerable_parameters = 13;
+   * </code>
    */
-  public com.google.cloud.websecurityscanner.v1alpha.VulnerableParametersOrBuilder getVulnerableParametersOrBuilder() {
+  public com.google.cloud.websecurityscanner.v1alpha.VulnerableParametersOrBuilder
+      getVulnerableParametersOrBuilder() {
     return getVulnerableParameters();
   }
 
   public static final int XSS_FIELD_NUMBER = 14;
   private com.google.cloud.websecurityscanner.v1alpha.Xss xss_;
   /**
+   *
+   *
    * <pre>
    * Output only.
    * An addon containing information reported for an XSS, if any.
@@ -1013,6 +1129,8 @@ private static final long serialVersionUID = 0L;
     return xss_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * An addon containing information reported for an XSS, if any.
@@ -1021,9 +1139,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.websecurityscanner.v1alpha.Xss xss = 14;</code>
    */
   public com.google.cloud.websecurityscanner.v1alpha.Xss getXss() {
-    return xss_ == null ? com.google.cloud.websecurityscanner.v1alpha.Xss.getDefaultInstance() : xss_;
+    return xss_ == null
+        ? com.google.cloud.websecurityscanner.v1alpha.Xss.getDefaultInstance()
+        : xss_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * An addon containing information reported for an XSS, if any.
@@ -1036,6 +1158,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -1047,12 +1170,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (findingType_ != com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType.FINDING_TYPE_UNSPECIFIED.getNumber()) {
+    if (findingType_
+        != com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType.FINDING_TYPE_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(2, findingType_);
     }
     if (!getHttpMethodBytes().isEmpty()) {
@@ -1103,9 +1227,10 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (findingType_ != com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType.FINDING_TYPE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(2, findingType_);
+    if (findingType_
+        != com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType.FINDING_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, findingType_);
     }
     if (!getHttpMethodBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, httpMethod_);
@@ -1132,20 +1257,17 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, trackingId_);
     }
     if (outdatedLibrary_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(11, getOutdatedLibrary());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getOutdatedLibrary());
     }
     if (violatingResource_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(12, getViolatingResource());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getViolatingResource());
     }
     if (vulnerableParameters_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(13, getVulnerableParameters());
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(13, getVulnerableParameters());
     }
     if (xss_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(14, getXss());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getXss());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1155,52 +1277,40 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.websecurityscanner.v1alpha.Finding)) {
       return super.equals(obj);
     }
-    com.google.cloud.websecurityscanner.v1alpha.Finding other = (com.google.cloud.websecurityscanner.v1alpha.Finding) obj;
+    com.google.cloud.websecurityscanner.v1alpha.Finding other =
+        (com.google.cloud.websecurityscanner.v1alpha.Finding) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
+    result = result && getName().equals(other.getName());
     result = result && findingType_ == other.findingType_;
-    result = result && getHttpMethod()
-        .equals(other.getHttpMethod());
-    result = result && getFuzzedUrl()
-        .equals(other.getFuzzedUrl());
-    result = result && getBody()
-        .equals(other.getBody());
-    result = result && getDescription()
-        .equals(other.getDescription());
-    result = result && getReproductionUrl()
-        .equals(other.getReproductionUrl());
-    result = result && getFrameUrl()
-        .equals(other.getFrameUrl());
-    result = result && getFinalUrl()
-        .equals(other.getFinalUrl());
-    result = result && getTrackingId()
-        .equals(other.getTrackingId());
+    result = result && getHttpMethod().equals(other.getHttpMethod());
+    result = result && getFuzzedUrl().equals(other.getFuzzedUrl());
+    result = result && getBody().equals(other.getBody());
+    result = result && getDescription().equals(other.getDescription());
+    result = result && getReproductionUrl().equals(other.getReproductionUrl());
+    result = result && getFrameUrl().equals(other.getFrameUrl());
+    result = result && getFinalUrl().equals(other.getFinalUrl());
+    result = result && getTrackingId().equals(other.getTrackingId());
     result = result && (hasOutdatedLibrary() == other.hasOutdatedLibrary());
     if (hasOutdatedLibrary()) {
-      result = result && getOutdatedLibrary()
-          .equals(other.getOutdatedLibrary());
+      result = result && getOutdatedLibrary().equals(other.getOutdatedLibrary());
     }
     result = result && (hasViolatingResource() == other.hasViolatingResource());
     if (hasViolatingResource()) {
-      result = result && getViolatingResource()
-          .equals(other.getViolatingResource());
+      result = result && getViolatingResource().equals(other.getViolatingResource());
     }
     result = result && (hasVulnerableParameters() == other.hasVulnerableParameters());
     if (hasVulnerableParameters()) {
-      result = result && getVulnerableParameters()
-          .equals(other.getVulnerableParameters());
+      result = result && getVulnerableParameters().equals(other.getVulnerableParameters());
     }
     result = result && (hasXss() == other.hasXss());
     if (hasXss()) {
-      result = result && getXss()
-          .equals(other.getXss());
+      result = result && getXss().equals(other.getXss());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -1255,96 +1365,103 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.websecurityscanner.v1alpha.Finding parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.websecurityscanner.v1alpha.Finding parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.websecurityscanner.v1alpha.Finding parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.websecurityscanner.v1alpha.Finding parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.websecurityscanner.v1alpha.Finding parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.websecurityscanner.v1alpha.Finding parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.websecurityscanner.v1alpha.Finding parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.websecurityscanner.v1alpha.Finding parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.websecurityscanner.v1alpha.Finding parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.websecurityscanner.v1alpha.Finding parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.websecurityscanner.v1alpha.Finding parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.websecurityscanner.v1alpha.Finding parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.websecurityscanner.v1alpha.Finding parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.websecurityscanner.v1alpha.Finding parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.websecurityscanner.v1alpha.Finding prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A Finding resource represents a vulnerability instance identified during a
    * ScanRun.
@@ -1352,21 +1469,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.websecurityscanner.v1alpha.Finding}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.websecurityscanner.v1alpha.Finding)
       com.google.cloud.websecurityscanner.v1alpha.FindingOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.websecurityscanner.v1alpha.FindingProto.internal_static_google_cloud_websecurityscanner_v1alpha_Finding_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.websecurityscanner.v1alpha.FindingProto
+          .internal_static_google_cloud_websecurityscanner_v1alpha_Finding_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.websecurityscanner.v1alpha.FindingProto.internal_static_google_cloud_websecurityscanner_v1alpha_Finding_fieldAccessorTable
+      return com.google.cloud.websecurityscanner.v1alpha.FindingProto
+          .internal_static_google_cloud_websecurityscanner_v1alpha_Finding_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.websecurityscanner.v1alpha.Finding.class, com.google.cloud.websecurityscanner.v1alpha.Finding.Builder.class);
+              com.google.cloud.websecurityscanner.v1alpha.Finding.class,
+              com.google.cloud.websecurityscanner.v1alpha.Finding.Builder.class);
     }
 
     // Construct using com.google.cloud.websecurityscanner.v1alpha.Finding.newBuilder()
@@ -1374,16 +1493,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -1435,9 +1553,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.websecurityscanner.v1alpha.FindingProto.internal_static_google_cloud_websecurityscanner_v1alpha_Finding_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.websecurityscanner.v1alpha.FindingProto
+          .internal_static_google_cloud_websecurityscanner_v1alpha_Finding_descriptor;
     }
 
     @java.lang.Override
@@ -1456,7 +1574,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.websecurityscanner.v1alpha.Finding buildPartial() {
-      com.google.cloud.websecurityscanner.v1alpha.Finding result = new com.google.cloud.websecurityscanner.v1alpha.Finding(this);
+      com.google.cloud.websecurityscanner.v1alpha.Finding result =
+          new com.google.cloud.websecurityscanner.v1alpha.Finding(this);
       result.name_ = name_;
       result.findingType_ = findingType_;
       result.httpMethod_ = httpMethod_;
@@ -1495,38 +1614,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.websecurityscanner.v1alpha.Finding) {
-        return mergeFrom((com.google.cloud.websecurityscanner.v1alpha.Finding)other);
+        return mergeFrom((com.google.cloud.websecurityscanner.v1alpha.Finding) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1534,7 +1654,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.websecurityscanner.v1alpha.Finding other) {
-      if (other == com.google.cloud.websecurityscanner.v1alpha.Finding.getDefaultInstance()) return this;
+      if (other == com.google.cloud.websecurityscanner.v1alpha.Finding.getDefaultInstance())
+        return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
@@ -1605,7 +1726,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.websecurityscanner.v1alpha.Finding) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.websecurityscanner.v1alpha.Finding) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -1617,6 +1739,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The resource name of the Finding. The name follows the format of
@@ -1629,8 +1753,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -1639,6 +1762,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The resource name of the Finding. The name follows the format of
@@ -1648,13 +1773,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -1662,6 +1785,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The resource name of the Finding. The name follows the format of
@@ -1671,17 +1796,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The resource name of the Finding. The name follows the format of
@@ -1692,12 +1818,14 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The resource name of the Finding. The name follows the format of
@@ -1707,13 +1835,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
@@ -1721,6 +1848,8 @@ private static final long serialVersionUID = 0L;
 
     private int findingType_ = 0;
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The type of the Finding.
@@ -1732,6 +1861,8 @@ private static final long serialVersionUID = 0L;
       return findingType_;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The type of the Finding.
@@ -1745,6 +1876,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The type of the Finding.
@@ -1754,10 +1887,15 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType getFindingType() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType result = com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType.valueOf(findingType_);
-      return result == null ? com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType.UNRECOGNIZED : result;
+      com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType result =
+          com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType.valueOf(findingType_);
+      return result == null
+          ? com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The type of the Finding.
@@ -1765,16 +1903,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.Finding.FindingType finding_type = 2;</code>
      */
-    public Builder setFindingType(com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType value) {
+    public Builder setFindingType(
+        com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       findingType_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The type of the Finding.
@@ -1783,7 +1924,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.websecurityscanner.v1alpha.Finding.FindingType finding_type = 2;</code>
      */
     public Builder clearFindingType() {
-      
+
       findingType_ = 0;
       onChanged();
       return this;
@@ -1791,6 +1932,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object httpMethod_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The http method of the request that triggered the vulnerability, in
@@ -1802,8 +1945,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getHttpMethod() {
       java.lang.Object ref = httpMethod_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         httpMethod_ = s;
         return s;
@@ -1812,6 +1954,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The http method of the request that triggered the vulnerability, in
@@ -1820,13 +1964,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string http_method = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getHttpMethodBytes() {
+    public com.google.protobuf.ByteString getHttpMethodBytes() {
       java.lang.Object ref = httpMethod_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         httpMethod_ = b;
         return b;
       } else {
@@ -1834,6 +1976,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The http method of the request that triggered the vulnerability, in
@@ -1842,17 +1986,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string http_method = 3;</code>
      */
-    public Builder setHttpMethod(
-        java.lang.String value) {
+    public Builder setHttpMethod(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       httpMethod_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The http method of the request that triggered the vulnerability, in
@@ -1862,12 +2007,14 @@ private static final long serialVersionUID = 0L;
      * <code>string http_method = 3;</code>
      */
     public Builder clearHttpMethod() {
-      
+
       httpMethod_ = getDefaultInstance().getHttpMethod();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The http method of the request that triggered the vulnerability, in
@@ -1876,13 +2023,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string http_method = 3;</code>
      */
-    public Builder setHttpMethodBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setHttpMethodBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       httpMethod_ = value;
       onChanged();
       return this;
@@ -1890,6 +2036,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object fuzzedUrl_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The URL produced by the server-side fuzzer and used in the request that
@@ -1901,8 +2049,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getFuzzedUrl() {
       java.lang.Object ref = fuzzedUrl_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         fuzzedUrl_ = s;
         return s;
@@ -1911,6 +2058,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The URL produced by the server-side fuzzer and used in the request that
@@ -1919,13 +2068,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string fuzzed_url = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getFuzzedUrlBytes() {
+    public com.google.protobuf.ByteString getFuzzedUrlBytes() {
       java.lang.Object ref = fuzzedUrl_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         fuzzedUrl_ = b;
         return b;
       } else {
@@ -1933,6 +2080,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The URL produced by the server-side fuzzer and used in the request that
@@ -1941,17 +2090,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string fuzzed_url = 4;</code>
      */
-    public Builder setFuzzedUrl(
-        java.lang.String value) {
+    public Builder setFuzzedUrl(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       fuzzedUrl_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The URL produced by the server-side fuzzer and used in the request that
@@ -1961,12 +2111,14 @@ private static final long serialVersionUID = 0L;
      * <code>string fuzzed_url = 4;</code>
      */
     public Builder clearFuzzedUrl() {
-      
+
       fuzzedUrl_ = getDefaultInstance().getFuzzedUrl();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The URL produced by the server-side fuzzer and used in the request that
@@ -1975,13 +2127,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string fuzzed_url = 4;</code>
      */
-    public Builder setFuzzedUrlBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setFuzzedUrlBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       fuzzedUrl_ = value;
       onChanged();
       return this;
@@ -1989,6 +2140,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object body_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The body of the request that triggered the vulnerability.
@@ -1999,8 +2152,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getBody() {
       java.lang.Object ref = body_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         body_ = s;
         return s;
@@ -2009,6 +2161,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The body of the request that triggered the vulnerability.
@@ -2016,13 +2170,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string body = 5;</code>
      */
-    public com.google.protobuf.ByteString
-        getBodyBytes() {
+    public com.google.protobuf.ByteString getBodyBytes() {
       java.lang.Object ref = body_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         body_ = b;
         return b;
       } else {
@@ -2030,6 +2182,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The body of the request that triggered the vulnerability.
@@ -2037,17 +2191,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string body = 5;</code>
      */
-    public Builder setBody(
-        java.lang.String value) {
+    public Builder setBody(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       body_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The body of the request that triggered the vulnerability.
@@ -2056,12 +2211,14 @@ private static final long serialVersionUID = 0L;
      * <code>string body = 5;</code>
      */
     public Builder clearBody() {
-      
+
       body_ = getDefaultInstance().getBody();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The body of the request that triggered the vulnerability.
@@ -2069,13 +2226,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string body = 5;</code>
      */
-    public Builder setBodyBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setBodyBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       body_ = value;
       onChanged();
       return this;
@@ -2083,6 +2239,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object description_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The description of the vulnerability.
@@ -2093,8 +2251,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         description_ = s;
         return s;
@@ -2103,6 +2260,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The description of the vulnerability.
@@ -2110,13 +2269,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string description = 6;</code>
      */
-    public com.google.protobuf.ByteString
-        getDescriptionBytes() {
+    public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         description_ = b;
         return b;
       } else {
@@ -2124,6 +2281,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The description of the vulnerability.
@@ -2131,17 +2290,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string description = 6;</code>
      */
-    public Builder setDescription(
-        java.lang.String value) {
+    public Builder setDescription(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       description_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The description of the vulnerability.
@@ -2150,12 +2310,14 @@ private static final long serialVersionUID = 0L;
      * <code>string description = 6;</code>
      */
     public Builder clearDescription() {
-      
+
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The description of the vulnerability.
@@ -2163,13 +2325,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string description = 6;</code>
      */
-    public Builder setDescriptionBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       description_ = value;
       onChanged();
       return this;
@@ -2177,6 +2338,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object reproductionUrl_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The URL containing human-readable payload that user can leverage to
@@ -2188,8 +2351,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getReproductionUrl() {
       java.lang.Object ref = reproductionUrl_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         reproductionUrl_ = s;
         return s;
@@ -2198,6 +2360,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The URL containing human-readable payload that user can leverage to
@@ -2206,13 +2370,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string reproduction_url = 7;</code>
      */
-    public com.google.protobuf.ByteString
-        getReproductionUrlBytes() {
+    public com.google.protobuf.ByteString getReproductionUrlBytes() {
       java.lang.Object ref = reproductionUrl_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         reproductionUrl_ = b;
         return b;
       } else {
@@ -2220,6 +2382,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The URL containing human-readable payload that user can leverage to
@@ -2228,17 +2392,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string reproduction_url = 7;</code>
      */
-    public Builder setReproductionUrl(
-        java.lang.String value) {
+    public Builder setReproductionUrl(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       reproductionUrl_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The URL containing human-readable payload that user can leverage to
@@ -2248,12 +2413,14 @@ private static final long serialVersionUID = 0L;
      * <code>string reproduction_url = 7;</code>
      */
     public Builder clearReproductionUrl() {
-      
+
       reproductionUrl_ = getDefaultInstance().getReproductionUrl();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The URL containing human-readable payload that user can leverage to
@@ -2262,13 +2429,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string reproduction_url = 7;</code>
      */
-    public Builder setReproductionUrlBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setReproductionUrlBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       reproductionUrl_ = value;
       onChanged();
       return this;
@@ -2276,6 +2442,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object frameUrl_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only.
      * If the vulnerability was originated from nested IFrame, the immediate
@@ -2287,8 +2455,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getFrameUrl() {
       java.lang.Object ref = frameUrl_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         frameUrl_ = s;
         return s;
@@ -2297,6 +2464,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * If the vulnerability was originated from nested IFrame, the immediate
@@ -2305,13 +2474,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string frame_url = 8;</code>
      */
-    public com.google.protobuf.ByteString
-        getFrameUrlBytes() {
+    public com.google.protobuf.ByteString getFrameUrlBytes() {
       java.lang.Object ref = frameUrl_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         frameUrl_ = b;
         return b;
       } else {
@@ -2319,6 +2486,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * If the vulnerability was originated from nested IFrame, the immediate
@@ -2327,17 +2496,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string frame_url = 8;</code>
      */
-    public Builder setFrameUrl(
-        java.lang.String value) {
+    public Builder setFrameUrl(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       frameUrl_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * If the vulnerability was originated from nested IFrame, the immediate
@@ -2347,12 +2517,14 @@ private static final long serialVersionUID = 0L;
      * <code>string frame_url = 8;</code>
      */
     public Builder clearFrameUrl() {
-      
+
       frameUrl_ = getDefaultInstance().getFrameUrl();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * If the vulnerability was originated from nested IFrame, the immediate
@@ -2361,13 +2533,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string frame_url = 8;</code>
      */
-    public Builder setFrameUrlBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setFrameUrlBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       frameUrl_ = value;
       onChanged();
       return this;
@@ -2375,6 +2546,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object finalUrl_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The URL where the browser lands when the vulnerability is detected.
@@ -2385,8 +2558,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getFinalUrl() {
       java.lang.Object ref = finalUrl_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         finalUrl_ = s;
         return s;
@@ -2395,6 +2567,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The URL where the browser lands when the vulnerability is detected.
@@ -2402,13 +2576,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string final_url = 9;</code>
      */
-    public com.google.protobuf.ByteString
-        getFinalUrlBytes() {
+    public com.google.protobuf.ByteString getFinalUrlBytes() {
       java.lang.Object ref = finalUrl_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         finalUrl_ = b;
         return b;
       } else {
@@ -2416,6 +2588,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The URL where the browser lands when the vulnerability is detected.
@@ -2423,17 +2597,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string final_url = 9;</code>
      */
-    public Builder setFinalUrl(
-        java.lang.String value) {
+    public Builder setFinalUrl(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       finalUrl_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The URL where the browser lands when the vulnerability is detected.
@@ -2442,12 +2617,14 @@ private static final long serialVersionUID = 0L;
      * <code>string final_url = 9;</code>
      */
     public Builder clearFinalUrl() {
-      
+
       finalUrl_ = getDefaultInstance().getFinalUrl();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The URL where the browser lands when the vulnerability is detected.
@@ -2455,13 +2632,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string final_url = 9;</code>
      */
-    public Builder setFinalUrlBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setFinalUrlBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       finalUrl_ = value;
       onChanged();
       return this;
@@ -2469,6 +2645,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object trackingId_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The tracking ID uniquely identifies a vulnerability instance across
@@ -2480,8 +2658,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getTrackingId() {
       java.lang.Object ref = trackingId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         trackingId_ = s;
         return s;
@@ -2490,6 +2667,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The tracking ID uniquely identifies a vulnerability instance across
@@ -2498,13 +2677,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string tracking_id = 10;</code>
      */
-    public com.google.protobuf.ByteString
-        getTrackingIdBytes() {
+    public com.google.protobuf.ByteString getTrackingIdBytes() {
       java.lang.Object ref = trackingId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         trackingId_ = b;
         return b;
       } else {
@@ -2512,6 +2689,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The tracking ID uniquely identifies a vulnerability instance across
@@ -2520,17 +2699,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string tracking_id = 10;</code>
      */
-    public Builder setTrackingId(
-        java.lang.String value) {
+    public Builder setTrackingId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       trackingId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The tracking ID uniquely identifies a vulnerability instance across
@@ -2540,12 +2720,14 @@ private static final long serialVersionUID = 0L;
      * <code>string tracking_id = 10;</code>
      */
     public Builder clearTrackingId() {
-      
+
       trackingId_ = getDefaultInstance().getTrackingId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The tracking ID uniquely identifies a vulnerability instance across
@@ -2554,13 +2736,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string tracking_id = 10;</code>
      */
-    public Builder setTrackingIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setTrackingIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       trackingId_ = value;
       onChanged();
       return this;
@@ -2568,8 +2749,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary outdatedLibrary_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary, com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary.Builder, com.google.cloud.websecurityscanner.v1alpha.OutdatedLibraryOrBuilder> outdatedLibraryBuilder_;
+            com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary,
+            com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary.Builder,
+            com.google.cloud.websecurityscanner.v1alpha.OutdatedLibraryOrBuilder>
+        outdatedLibraryBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only.
      * An addon containing information about outdated libraries.
@@ -2581,6 +2767,8 @@ private static final long serialVersionUID = 0L;
       return outdatedLibraryBuilder_ != null || outdatedLibrary_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * An addon containing information about outdated libraries.
@@ -2590,12 +2778,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary getOutdatedLibrary() {
       if (outdatedLibraryBuilder_ == null) {
-        return outdatedLibrary_ == null ? com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary.getDefaultInstance() : outdatedLibrary_;
+        return outdatedLibrary_ == null
+            ? com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary.getDefaultInstance()
+            : outdatedLibrary_;
       } else {
         return outdatedLibraryBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * An addon containing information about outdated libraries.
@@ -2603,7 +2795,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary outdated_library = 11;</code>
      */
-    public Builder setOutdatedLibrary(com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary value) {
+    public Builder setOutdatedLibrary(
+        com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary value) {
       if (outdatedLibraryBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2617,6 +2810,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * An addon containing information about outdated libraries.
@@ -2636,6 +2831,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * An addon containing information about outdated libraries.
@@ -2643,11 +2840,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary outdated_library = 11;</code>
      */
-    public Builder mergeOutdatedLibrary(com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary value) {
+    public Builder mergeOutdatedLibrary(
+        com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary value) {
       if (outdatedLibraryBuilder_ == null) {
         if (outdatedLibrary_ != null) {
           outdatedLibrary_ =
-            com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary.newBuilder(outdatedLibrary_).mergeFrom(value).buildPartial();
+              com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary.newBuilder(
+                      outdatedLibrary_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           outdatedLibrary_ = value;
         }
@@ -2659,6 +2860,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * An addon containing information about outdated libraries.
@@ -2678,6 +2881,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * An addon containing information about outdated libraries.
@@ -2685,12 +2890,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary outdated_library = 11;</code>
      */
-    public com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary.Builder getOutdatedLibraryBuilder() {
-      
+    public com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary.Builder
+        getOutdatedLibraryBuilder() {
+
       onChanged();
       return getOutdatedLibraryFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * An addon containing information about outdated libraries.
@@ -2698,15 +2906,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary outdated_library = 11;</code>
      */
-    public com.google.cloud.websecurityscanner.v1alpha.OutdatedLibraryOrBuilder getOutdatedLibraryOrBuilder() {
+    public com.google.cloud.websecurityscanner.v1alpha.OutdatedLibraryOrBuilder
+        getOutdatedLibraryOrBuilder() {
       if (outdatedLibraryBuilder_ != null) {
         return outdatedLibraryBuilder_.getMessageOrBuilder();
       } else {
-        return outdatedLibrary_ == null ?
-            com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary.getDefaultInstance() : outdatedLibrary_;
+        return outdatedLibrary_ == null
+            ? com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary.getDefaultInstance()
+            : outdatedLibrary_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * An addon containing information about outdated libraries.
@@ -2715,14 +2927,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary outdated_library = 11;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary, com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary.Builder, com.google.cloud.websecurityscanner.v1alpha.OutdatedLibraryOrBuilder> 
+            com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary,
+            com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary.Builder,
+            com.google.cloud.websecurityscanner.v1alpha.OutdatedLibraryOrBuilder>
         getOutdatedLibraryFieldBuilder() {
       if (outdatedLibraryBuilder_ == null) {
-        outdatedLibraryBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary, com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary.Builder, com.google.cloud.websecurityscanner.v1alpha.OutdatedLibraryOrBuilder>(
-                getOutdatedLibrary(),
-                getParentForChildren(),
-                isClean());
+        outdatedLibraryBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary,
+                com.google.cloud.websecurityscanner.v1alpha.OutdatedLibrary.Builder,
+                com.google.cloud.websecurityscanner.v1alpha.OutdatedLibraryOrBuilder>(
+                getOutdatedLibrary(), getParentForChildren(), isClean());
         outdatedLibrary_ = null;
       }
       return outdatedLibraryBuilder_;
@@ -2730,45 +2945,60 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.websecurityscanner.v1alpha.ViolatingResource violatingResource_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.websecurityscanner.v1alpha.ViolatingResource, com.google.cloud.websecurityscanner.v1alpha.ViolatingResource.Builder, com.google.cloud.websecurityscanner.v1alpha.ViolatingResourceOrBuilder> violatingResourceBuilder_;
+            com.google.cloud.websecurityscanner.v1alpha.ViolatingResource,
+            com.google.cloud.websecurityscanner.v1alpha.ViolatingResource.Builder,
+            com.google.cloud.websecurityscanner.v1alpha.ViolatingResourceOrBuilder>
+        violatingResourceBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only.
      * An addon containing detailed information regarding any resource causing the
      * vulnerability such as JavaScript sources, image, audio files, etc.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ViolatingResource violating_resource = 12;</code>
+     * <code>.google.cloud.websecurityscanner.v1alpha.ViolatingResource violating_resource = 12;
+     * </code>
      */
     public boolean hasViolatingResource() {
       return violatingResourceBuilder_ != null || violatingResource_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * An addon containing detailed information regarding any resource causing the
      * vulnerability such as JavaScript sources, image, audio files, etc.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ViolatingResource violating_resource = 12;</code>
+     * <code>.google.cloud.websecurityscanner.v1alpha.ViolatingResource violating_resource = 12;
+     * </code>
      */
     public com.google.cloud.websecurityscanner.v1alpha.ViolatingResource getViolatingResource() {
       if (violatingResourceBuilder_ == null) {
-        return violatingResource_ == null ? com.google.cloud.websecurityscanner.v1alpha.ViolatingResource.getDefaultInstance() : violatingResource_;
+        return violatingResource_ == null
+            ? com.google.cloud.websecurityscanner.v1alpha.ViolatingResource.getDefaultInstance()
+            : violatingResource_;
       } else {
         return violatingResourceBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * An addon containing detailed information regarding any resource causing the
      * vulnerability such as JavaScript sources, image, audio files, etc.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ViolatingResource violating_resource = 12;</code>
+     * <code>.google.cloud.websecurityscanner.v1alpha.ViolatingResource violating_resource = 12;
+     * </code>
      */
-    public Builder setViolatingResource(com.google.cloud.websecurityscanner.v1alpha.ViolatingResource value) {
+    public Builder setViolatingResource(
+        com.google.cloud.websecurityscanner.v1alpha.ViolatingResource value) {
       if (violatingResourceBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2782,13 +3012,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * An addon containing detailed information regarding any resource causing the
      * vulnerability such as JavaScript sources, image, audio files, etc.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ViolatingResource violating_resource = 12;</code>
+     * <code>.google.cloud.websecurityscanner.v1alpha.ViolatingResource violating_resource = 12;
+     * </code>
      */
     public Builder setViolatingResource(
         com.google.cloud.websecurityscanner.v1alpha.ViolatingResource.Builder builderForValue) {
@@ -2802,19 +3035,26 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * An addon containing detailed information regarding any resource causing the
      * vulnerability such as JavaScript sources, image, audio files, etc.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ViolatingResource violating_resource = 12;</code>
+     * <code>.google.cloud.websecurityscanner.v1alpha.ViolatingResource violating_resource = 12;
+     * </code>
      */
-    public Builder mergeViolatingResource(com.google.cloud.websecurityscanner.v1alpha.ViolatingResource value) {
+    public Builder mergeViolatingResource(
+        com.google.cloud.websecurityscanner.v1alpha.ViolatingResource value) {
       if (violatingResourceBuilder_ == null) {
         if (violatingResource_ != null) {
           violatingResource_ =
-            com.google.cloud.websecurityscanner.v1alpha.ViolatingResource.newBuilder(violatingResource_).mergeFrom(value).buildPartial();
+              com.google.cloud.websecurityscanner.v1alpha.ViolatingResource.newBuilder(
+                      violatingResource_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           violatingResource_ = value;
         }
@@ -2826,13 +3066,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * An addon containing detailed information regarding any resource causing the
      * vulnerability such as JavaScript sources, image, audio files, etc.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ViolatingResource violating_resource = 12;</code>
+     * <code>.google.cloud.websecurityscanner.v1alpha.ViolatingResource violating_resource = 12;
+     * </code>
      */
     public Builder clearViolatingResource() {
       if (violatingResourceBuilder_ == null) {
@@ -2846,100 +3089,135 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * An addon containing detailed information regarding any resource causing the
      * vulnerability such as JavaScript sources, image, audio files, etc.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ViolatingResource violating_resource = 12;</code>
+     * <code>.google.cloud.websecurityscanner.v1alpha.ViolatingResource violating_resource = 12;
+     * </code>
      */
-    public com.google.cloud.websecurityscanner.v1alpha.ViolatingResource.Builder getViolatingResourceBuilder() {
-      
+    public com.google.cloud.websecurityscanner.v1alpha.ViolatingResource.Builder
+        getViolatingResourceBuilder() {
+
       onChanged();
       return getViolatingResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * An addon containing detailed information regarding any resource causing the
      * vulnerability such as JavaScript sources, image, audio files, etc.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ViolatingResource violating_resource = 12;</code>
+     * <code>.google.cloud.websecurityscanner.v1alpha.ViolatingResource violating_resource = 12;
+     * </code>
      */
-    public com.google.cloud.websecurityscanner.v1alpha.ViolatingResourceOrBuilder getViolatingResourceOrBuilder() {
+    public com.google.cloud.websecurityscanner.v1alpha.ViolatingResourceOrBuilder
+        getViolatingResourceOrBuilder() {
       if (violatingResourceBuilder_ != null) {
         return violatingResourceBuilder_.getMessageOrBuilder();
       } else {
-        return violatingResource_ == null ?
-            com.google.cloud.websecurityscanner.v1alpha.ViolatingResource.getDefaultInstance() : violatingResource_;
+        return violatingResource_ == null
+            ? com.google.cloud.websecurityscanner.v1alpha.ViolatingResource.getDefaultInstance()
+            : violatingResource_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * An addon containing detailed information regarding any resource causing the
      * vulnerability such as JavaScript sources, image, audio files, etc.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ViolatingResource violating_resource = 12;</code>
+     * <code>.google.cloud.websecurityscanner.v1alpha.ViolatingResource violating_resource = 12;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.websecurityscanner.v1alpha.ViolatingResource, com.google.cloud.websecurityscanner.v1alpha.ViolatingResource.Builder, com.google.cloud.websecurityscanner.v1alpha.ViolatingResourceOrBuilder> 
+            com.google.cloud.websecurityscanner.v1alpha.ViolatingResource,
+            com.google.cloud.websecurityscanner.v1alpha.ViolatingResource.Builder,
+            com.google.cloud.websecurityscanner.v1alpha.ViolatingResourceOrBuilder>
         getViolatingResourceFieldBuilder() {
       if (violatingResourceBuilder_ == null) {
-        violatingResourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.websecurityscanner.v1alpha.ViolatingResource, com.google.cloud.websecurityscanner.v1alpha.ViolatingResource.Builder, com.google.cloud.websecurityscanner.v1alpha.ViolatingResourceOrBuilder>(
-                getViolatingResource(),
-                getParentForChildren(),
-                isClean());
+        violatingResourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.websecurityscanner.v1alpha.ViolatingResource,
+                com.google.cloud.websecurityscanner.v1alpha.ViolatingResource.Builder,
+                com.google.cloud.websecurityscanner.v1alpha.ViolatingResourceOrBuilder>(
+                getViolatingResource(), getParentForChildren(), isClean());
         violatingResource_ = null;
       }
       return violatingResourceBuilder_;
     }
 
-    private com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters vulnerableParameters_ = null;
+    private com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters vulnerableParameters_ =
+        null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters, com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters.Builder, com.google.cloud.websecurityscanner.v1alpha.VulnerableParametersOrBuilder> vulnerableParametersBuilder_;
+            com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters,
+            com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters.Builder,
+            com.google.cloud.websecurityscanner.v1alpha.VulnerableParametersOrBuilder>
+        vulnerableParametersBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only.
      * An addon containing information about request parameters which were found
      * to be vulnerable.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.VulnerableParameters vulnerable_parameters = 13;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1alpha.VulnerableParameters vulnerable_parameters = 13;
+     * </code>
      */
     public boolean hasVulnerableParameters() {
       return vulnerableParametersBuilder_ != null || vulnerableParameters_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * An addon containing information about request parameters which were found
      * to be vulnerable.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.VulnerableParameters vulnerable_parameters = 13;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1alpha.VulnerableParameters vulnerable_parameters = 13;
+     * </code>
      */
-    public com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters getVulnerableParameters() {
+    public com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters
+        getVulnerableParameters() {
       if (vulnerableParametersBuilder_ == null) {
-        return vulnerableParameters_ == null ? com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters.getDefaultInstance() : vulnerableParameters_;
+        return vulnerableParameters_ == null
+            ? com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters.getDefaultInstance()
+            : vulnerableParameters_;
       } else {
         return vulnerableParametersBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * An addon containing information about request parameters which were found
      * to be vulnerable.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.VulnerableParameters vulnerable_parameters = 13;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1alpha.VulnerableParameters vulnerable_parameters = 13;
+     * </code>
      */
-    public Builder setVulnerableParameters(com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters value) {
+    public Builder setVulnerableParameters(
+        com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters value) {
       if (vulnerableParametersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2953,13 +3231,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * An addon containing information about request parameters which were found
      * to be vulnerable.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.VulnerableParameters vulnerable_parameters = 13;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1alpha.VulnerableParameters vulnerable_parameters = 13;
+     * </code>
      */
     public Builder setVulnerableParameters(
         com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters.Builder builderForValue) {
@@ -2973,19 +3255,27 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * An addon containing information about request parameters which were found
      * to be vulnerable.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.VulnerableParameters vulnerable_parameters = 13;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1alpha.VulnerableParameters vulnerable_parameters = 13;
+     * </code>
      */
-    public Builder mergeVulnerableParameters(com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters value) {
+    public Builder mergeVulnerableParameters(
+        com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters value) {
       if (vulnerableParametersBuilder_ == null) {
         if (vulnerableParameters_ != null) {
           vulnerableParameters_ =
-            com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters.newBuilder(vulnerableParameters_).mergeFrom(value).buildPartial();
+              com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters.newBuilder(
+                      vulnerableParameters_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           vulnerableParameters_ = value;
         }
@@ -2997,13 +3287,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * An addon containing information about request parameters which were found
      * to be vulnerable.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.VulnerableParameters vulnerable_parameters = 13;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1alpha.VulnerableParameters vulnerable_parameters = 13;
+     * </code>
      */
     public Builder clearVulnerableParameters() {
       if (vulnerableParametersBuilder_ == null) {
@@ -3017,54 +3311,72 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * An addon containing information about request parameters which were found
      * to be vulnerable.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.VulnerableParameters vulnerable_parameters = 13;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1alpha.VulnerableParameters vulnerable_parameters = 13;
+     * </code>
      */
-    public com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters.Builder getVulnerableParametersBuilder() {
-      
+    public com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters.Builder
+        getVulnerableParametersBuilder() {
+
       onChanged();
       return getVulnerableParametersFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * An addon containing information about request parameters which were found
      * to be vulnerable.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.VulnerableParameters vulnerable_parameters = 13;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1alpha.VulnerableParameters vulnerable_parameters = 13;
+     * </code>
      */
-    public com.google.cloud.websecurityscanner.v1alpha.VulnerableParametersOrBuilder getVulnerableParametersOrBuilder() {
+    public com.google.cloud.websecurityscanner.v1alpha.VulnerableParametersOrBuilder
+        getVulnerableParametersOrBuilder() {
       if (vulnerableParametersBuilder_ != null) {
         return vulnerableParametersBuilder_.getMessageOrBuilder();
       } else {
-        return vulnerableParameters_ == null ?
-            com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters.getDefaultInstance() : vulnerableParameters_;
+        return vulnerableParameters_ == null
+            ? com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters.getDefaultInstance()
+            : vulnerableParameters_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * An addon containing information about request parameters which were found
      * to be vulnerable.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.VulnerableParameters vulnerable_parameters = 13;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1alpha.VulnerableParameters vulnerable_parameters = 13;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters, com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters.Builder, com.google.cloud.websecurityscanner.v1alpha.VulnerableParametersOrBuilder> 
+            com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters,
+            com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters.Builder,
+            com.google.cloud.websecurityscanner.v1alpha.VulnerableParametersOrBuilder>
         getVulnerableParametersFieldBuilder() {
       if (vulnerableParametersBuilder_ == null) {
-        vulnerableParametersBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters, com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters.Builder, com.google.cloud.websecurityscanner.v1alpha.VulnerableParametersOrBuilder>(
-                getVulnerableParameters(),
-                getParentForChildren(),
-                isClean());
+        vulnerableParametersBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters,
+                com.google.cloud.websecurityscanner.v1alpha.VulnerableParameters.Builder,
+                com.google.cloud.websecurityscanner.v1alpha.VulnerableParametersOrBuilder>(
+                getVulnerableParameters(), getParentForChildren(), isClean());
         vulnerableParameters_ = null;
       }
       return vulnerableParametersBuilder_;
@@ -3072,8 +3384,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.websecurityscanner.v1alpha.Xss xss_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.websecurityscanner.v1alpha.Xss, com.google.cloud.websecurityscanner.v1alpha.Xss.Builder, com.google.cloud.websecurityscanner.v1alpha.XssOrBuilder> xssBuilder_;
+            com.google.cloud.websecurityscanner.v1alpha.Xss,
+            com.google.cloud.websecurityscanner.v1alpha.Xss.Builder,
+            com.google.cloud.websecurityscanner.v1alpha.XssOrBuilder>
+        xssBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only.
      * An addon containing information reported for an XSS, if any.
@@ -3085,6 +3402,8 @@ private static final long serialVersionUID = 0L;
       return xssBuilder_ != null || xss_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * An addon containing information reported for an XSS, if any.
@@ -3094,12 +3413,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.websecurityscanner.v1alpha.Xss getXss() {
       if (xssBuilder_ == null) {
-        return xss_ == null ? com.google.cloud.websecurityscanner.v1alpha.Xss.getDefaultInstance() : xss_;
+        return xss_ == null
+            ? com.google.cloud.websecurityscanner.v1alpha.Xss.getDefaultInstance()
+            : xss_;
       } else {
         return xssBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * An addon containing information reported for an XSS, if any.
@@ -3121,6 +3444,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * An addon containing information reported for an XSS, if any.
@@ -3128,8 +3453,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.Xss xss = 14;</code>
      */
-    public Builder setXss(
-        com.google.cloud.websecurityscanner.v1alpha.Xss.Builder builderForValue) {
+    public Builder setXss(com.google.cloud.websecurityscanner.v1alpha.Xss.Builder builderForValue) {
       if (xssBuilder_ == null) {
         xss_ = builderForValue.build();
         onChanged();
@@ -3140,6 +3464,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * An addon containing information reported for an XSS, if any.
@@ -3151,7 +3477,9 @@ private static final long serialVersionUID = 0L;
       if (xssBuilder_ == null) {
         if (xss_ != null) {
           xss_ =
-            com.google.cloud.websecurityscanner.v1alpha.Xss.newBuilder(xss_).mergeFrom(value).buildPartial();
+              com.google.cloud.websecurityscanner.v1alpha.Xss.newBuilder(xss_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           xss_ = value;
         }
@@ -3163,6 +3491,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * An addon containing information reported for an XSS, if any.
@@ -3182,6 +3512,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * An addon containing information reported for an XSS, if any.
@@ -3190,11 +3522,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.websecurityscanner.v1alpha.Xss xss = 14;</code>
      */
     public com.google.cloud.websecurityscanner.v1alpha.Xss.Builder getXssBuilder() {
-      
+
       onChanged();
       return getXssFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * An addon containing information reported for an XSS, if any.
@@ -3206,11 +3540,14 @@ private static final long serialVersionUID = 0L;
       if (xssBuilder_ != null) {
         return xssBuilder_.getMessageOrBuilder();
       } else {
-        return xss_ == null ?
-            com.google.cloud.websecurityscanner.v1alpha.Xss.getDefaultInstance() : xss_;
+        return xss_ == null
+            ? com.google.cloud.websecurityscanner.v1alpha.Xss.getDefaultInstance()
+            : xss_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * An addon containing information reported for an XSS, if any.
@@ -3219,21 +3556,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.websecurityscanner.v1alpha.Xss xss = 14;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.websecurityscanner.v1alpha.Xss, com.google.cloud.websecurityscanner.v1alpha.Xss.Builder, com.google.cloud.websecurityscanner.v1alpha.XssOrBuilder> 
+            com.google.cloud.websecurityscanner.v1alpha.Xss,
+            com.google.cloud.websecurityscanner.v1alpha.Xss.Builder,
+            com.google.cloud.websecurityscanner.v1alpha.XssOrBuilder>
         getXssFieldBuilder() {
       if (xssBuilder_ == null) {
-        xssBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.websecurityscanner.v1alpha.Xss, com.google.cloud.websecurityscanner.v1alpha.Xss.Builder, com.google.cloud.websecurityscanner.v1alpha.XssOrBuilder>(
-                getXss(),
-                getParentForChildren(),
-                isClean());
+        xssBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.websecurityscanner.v1alpha.Xss,
+                com.google.cloud.websecurityscanner.v1alpha.Xss.Builder,
+                com.google.cloud.websecurityscanner.v1alpha.XssOrBuilder>(
+                getXss(), getParentForChildren(), isClean());
         xss_ = null;
       }
       return xssBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -3243,12 +3583,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.websecurityscanner.v1alpha.Finding)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.websecurityscanner.v1alpha.Finding)
   private static final com.google.cloud.websecurityscanner.v1alpha.Finding DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.websecurityscanner.v1alpha.Finding();
   }
@@ -3257,16 +3597,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Finding>
-      PARSER = new com.google.protobuf.AbstractParser<Finding>() {
-    @java.lang.Override
-    public Finding parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Finding(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Finding> PARSER =
+      new com.google.protobuf.AbstractParser<Finding>() {
+        @java.lang.Override
+        public Finding parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Finding(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Finding> parser() {
     return PARSER;
@@ -3281,6 +3621,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.websecurityscanner.v1alpha.Finding getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

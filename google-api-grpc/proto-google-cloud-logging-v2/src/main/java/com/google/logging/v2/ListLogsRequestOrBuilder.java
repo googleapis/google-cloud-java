@@ -3,11 +3,14 @@
 
 package com.google.logging.v2;
 
-public interface ListLogsRequestOrBuilder extends
+public interface ListLogsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.logging.v2.ListLogsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The resource name that owns the logs:
    *     "projects/[PROJECT_ID]"
@@ -20,6 +23,8 @@ public interface ListLogsRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required. The resource name that owns the logs:
    *     "projects/[PROJECT_ID]"
@@ -30,10 +35,11 @@ public interface ListLogsRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The maximum number of results to return from this request.
    * Non-positive values are ignored.  The presence of `nextPageToken` in the
@@ -45,6 +51,8 @@ public interface ListLogsRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * Optional. If present, then retrieve the next batch of results from the
    * preceding call to this method.  `pageToken` must be the value of
@@ -56,6 +64,8 @@ public interface ListLogsRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * Optional. If present, then retrieve the next batch of results from the
    * preceding call to this method.  `pageToken` must be the value of
@@ -65,6 +75,5 @@ public interface ListLogsRequestOrBuilder extends
    *
    * <code>string page_token = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 }

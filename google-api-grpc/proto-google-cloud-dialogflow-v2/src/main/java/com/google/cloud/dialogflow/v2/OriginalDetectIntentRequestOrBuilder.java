@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2;
 
-public interface OriginalDetectIntentRequestOrBuilder extends
+public interface OriginalDetectIntentRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.OriginalDetectIntentRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The source of this request, e.g., `google`, `facebook`, `slack`. It is set
    * by Dialogflow-owned servers.
@@ -17,6 +20,8 @@ public interface OriginalDetectIntentRequestOrBuilder extends
    */
   java.lang.String getSource();
   /**
+   *
+   *
    * <pre>
    * The source of this request, e.g., `google`, `facebook`, `slack`. It is set
    * by Dialogflow-owned servers.
@@ -24,10 +29,11 @@ public interface OriginalDetectIntentRequestOrBuilder extends
    *
    * <code>string source = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getSourceBytes();
+  com.google.protobuf.ByteString getSourceBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. This field is set to the value of `QueryParameters.payload` field
    * passed in the request.
@@ -37,6 +43,8 @@ public interface OriginalDetectIntentRequestOrBuilder extends
    */
   boolean hasPayload();
   /**
+   *
+   *
    * <pre>
    * Optional. This field is set to the value of `QueryParameters.payload` field
    * passed in the request.
@@ -46,6 +54,8 @@ public interface OriginalDetectIntentRequestOrBuilder extends
    */
   com.google.protobuf.Struct getPayload();
   /**
+   *
+   *
    * <pre>
    * Optional. This field is set to the value of `QueryParameters.payload` field
    * passed in the request.

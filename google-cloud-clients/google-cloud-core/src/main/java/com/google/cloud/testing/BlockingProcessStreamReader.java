@@ -19,7 +19,6 @@ package com.google.cloud.testing;
 import static com.google.common.base.MoreObjects.firstNonNull;
 
 import com.google.common.base.Strings;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -45,8 +44,8 @@ class BlockingProcessStreamReader extends Thread {
   private final String emulatorTag;
   private final Pattern logLinePattern;
 
-  private BlockingProcessStreamReader(String emulator, InputStream stream, String blockUntil,
-      Logger logger) throws IOException {
+  private BlockingProcessStreamReader(
+      String emulator, InputStream stream, String blockUntil, Logger logger) throws IOException {
     super("blocking-process-stream-reader");
     setDaemon(true);
     errorReader = new BufferedReader(new InputStreamReader(stream));
@@ -66,7 +65,7 @@ class BlockingProcessStreamReader extends Thread {
     String previousLine = "";
     String nextLine = "";
     try {
-      for (;;) {
+      for (; ; ) {
         previousLine = nextLine;
         nextLine = errorReader.readLine();
         if (nextLine == null) {
@@ -131,8 +130,8 @@ class BlockingProcessStreamReader extends Thread {
     }
   }
 
-  static BlockingProcessStreamReader start(String emulator, InputStream stream, String blockUntil,
-      Logger logger) throws IOException {
+  static BlockingProcessStreamReader start(
+      String emulator, InputStream stream, String blockUntil, Logger logger) throws IOException {
     BlockingProcessStreamReader thread =
         new BlockingProcessStreamReader(emulator, stream, blockUntil, logger);
     thread.start();

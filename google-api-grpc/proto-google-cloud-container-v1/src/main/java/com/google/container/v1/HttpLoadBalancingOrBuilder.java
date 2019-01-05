@@ -3,11 +3,14 @@
 
 package com.google.container.v1;
 
-public interface HttpLoadBalancingOrBuilder extends
+public interface HttpLoadBalancingOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.HttpLoadBalancing)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Whether the HTTP Load Balancing controller is enabled in the cluster.
    * When enabled, it runs a small pod in the cluster that manages the load

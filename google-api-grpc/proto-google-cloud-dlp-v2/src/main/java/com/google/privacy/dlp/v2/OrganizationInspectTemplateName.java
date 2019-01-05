@@ -14,20 +14,20 @@
 
 package com.google.privacy.dlp.v2;
 
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import com.google.api.pathtemplate.PathTemplate;
-import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class OrganizationInspectTemplateName extends InspectTemplateName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("organizations/{organization}/inspectTemplates/{inspect_template}");
+      PathTemplate.createWithoutUrlEncoding(
+          "organizations/{organization}/inspectTemplates/{inspect_template}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -56,18 +56,15 @@ public class OrganizationInspectTemplateName extends InspectTemplateName {
   }
 
   public static OrganizationInspectTemplateName of(String organization, String inspectTemplate) {
-    return newBuilder()
-      .setOrganization(organization)
-      .setInspectTemplate(inspectTemplate)
-      .build();
+    return newBuilder().setOrganization(organization).setInspectTemplate(inspectTemplate).build();
   }
 
   public static String format(String organization, String inspectTemplate) {
     return newBuilder()
-      .setOrganization(organization)
-      .setInspectTemplate(inspectTemplate)
-      .build()
-      .toString();
+        .setOrganization(organization)
+        .setInspectTemplate(inspectTemplate)
+        .build()
+        .toString();
   }
 
   public static OrganizationInspectTemplateName parse(String formattedString) {
@@ -75,7 +72,9 @@ public class OrganizationInspectTemplateName extends InspectTemplateName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "OrganizationInspectTemplateName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString,
+            "OrganizationInspectTemplateName.parse: formattedString not in valid format");
     return of(matchMap.get("organization"), matchMap.get("inspect_template"));
   }
 
@@ -123,7 +122,8 @@ public class OrganizationInspectTemplateName extends InspectTemplateName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("organization", organization, "inspect_template", inspectTemplate);
+    return PATH_TEMPLATE.instantiate(
+        "organization", organization, "inspect_template", inspectTemplate);
   }
 
   /** Builder for OrganizationInspectTemplateName. */
@@ -150,8 +150,7 @@ public class OrganizationInspectTemplateName extends InspectTemplateName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(OrganizationInspectTemplateName organizationInspectTemplateName) {
       organization = organizationInspectTemplateName.organization;
@@ -186,4 +185,3 @@ public class OrganizationInspectTemplateName extends InspectTemplateName {
     return h;
   }
 }
-

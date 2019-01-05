@@ -4,21 +4,24 @@
 package com.google.bigtable.v2;
 
 /**
+ *
+ *
  * <pre>
  * Request message for Bigtable.ReadModifyWriteRow.
  * </pre>
  *
  * Protobuf type {@code google.bigtable.v2.ReadModifyWriteRowRequest}
  */
-public  final class ReadModifyWriteRowRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ReadModifyWriteRowRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.bigtable.v2.ReadModifyWriteRowRequest)
     ReadModifyWriteRowRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ReadModifyWriteRowRequest.newBuilder() to construct.
   private ReadModifyWriteRowRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ReadModifyWriteRowRequest() {
     tableName_ = "";
     appProfileId_ = "";
@@ -27,10 +30,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ReadModifyWriteRowRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -50,46 +53,49 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            tableName_ = s;
-            break;
-          }
-          case 18: {
-
-            rowKey_ = input.readBytes();
-            break;
-          }
-          case 26: {
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-              rules_ = new java.util.ArrayList<com.google.bigtable.v2.ReadModifyWriteRule>();
-              mutable_bitField0_ |= 0x00000008;
+              tableName_ = s;
+              break;
             }
-            rules_.add(
-                input.readMessage(com.google.bigtable.v2.ReadModifyWriteRule.parser(), extensionRegistry));
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            appProfileId_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 18:
+            {
+              rowKey_ = input.readBytes();
+              break;
             }
-            break;
-          }
+          case 26:
+            {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                rules_ = new java.util.ArrayList<com.google.bigtable.v2.ReadModifyWriteRule>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              rules_.add(
+                  input.readMessage(
+                      com.google.bigtable.v2.ReadModifyWriteRule.parser(), extensionRegistry));
+              break;
+            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              appProfileId_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
         rules_ = java.util.Collections.unmodifiableList(rules_);
@@ -98,23 +104,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.bigtable.v2.BigtableProto.internal_static_google_bigtable_v2_ReadModifyWriteRowRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.bigtable.v2.BigtableProto
+        .internal_static_google_bigtable_v2_ReadModifyWriteRowRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.bigtable.v2.BigtableProto.internal_static_google_bigtable_v2_ReadModifyWriteRowRequest_fieldAccessorTable
+    return com.google.bigtable.v2.BigtableProto
+        .internal_static_google_bigtable_v2_ReadModifyWriteRowRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.bigtable.v2.ReadModifyWriteRowRequest.class, com.google.bigtable.v2.ReadModifyWriteRowRequest.Builder.class);
+            com.google.bigtable.v2.ReadModifyWriteRowRequest.class,
+            com.google.bigtable.v2.ReadModifyWriteRowRequest.Builder.class);
   }
 
   private int bitField0_;
   public static final int TABLE_NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object tableName_;
   /**
+   *
+   *
    * <pre>
    * The unique name of the table to which the read/modify/write rules should be
    * applied.
@@ -129,14 +140,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       tableName_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The unique name of the table to which the read/modify/write rules should be
    * applied.
@@ -146,13 +158,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string table_name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getTableNameBytes() {
+  public com.google.protobuf.ByteString getTableNameBytes() {
     java.lang.Object ref = tableName_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       tableName_ = b;
       return b;
     } else {
@@ -163,6 +173,8 @@ private static final long serialVersionUID = 0L;
   public static final int APP_PROFILE_ID_FIELD_NUMBER = 4;
   private volatile java.lang.Object appProfileId_;
   /**
+   *
+   *
    * <pre>
    * This value specifies routing for replication. If not specified, the
    * "default" application profile will be used.
@@ -175,14 +187,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       appProfileId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * This value specifies routing for replication. If not specified, the
    * "default" application profile will be used.
@@ -190,13 +203,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string app_profile_id = 4;</code>
    */
-  public com.google.protobuf.ByteString
-      getAppProfileIdBytes() {
+  public com.google.protobuf.ByteString getAppProfileIdBytes() {
     java.lang.Object ref = appProfileId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       appProfileId_ = b;
       return b;
     } else {
@@ -207,6 +218,8 @@ private static final long serialVersionUID = 0L;
   public static final int ROW_KEY_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString rowKey_;
   /**
+   *
+   *
    * <pre>
    * The key of the row to which the read/modify/write rules should be applied.
    * </pre>
@@ -220,6 +233,8 @@ private static final long serialVersionUID = 0L;
   public static final int RULES_FIELD_NUMBER = 3;
   private java.util.List<com.google.bigtable.v2.ReadModifyWriteRule> rules_;
   /**
+   *
+   *
    * <pre>
    * Rules specifying how the specified row's contents are to be transformed
    * into writes. Entries are applied in order, meaning that earlier rules will
@@ -232,6 +247,8 @@ private static final long serialVersionUID = 0L;
     return rules_;
   }
   /**
+   *
+   *
    * <pre>
    * Rules specifying how the specified row's contents are to be transformed
    * into writes. Entries are applied in order, meaning that earlier rules will
@@ -240,11 +257,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.bigtable.v2.ReadModifyWriteRule rules = 3;</code>
    */
-  public java.util.List<? extends com.google.bigtable.v2.ReadModifyWriteRuleOrBuilder> 
+  public java.util.List<? extends com.google.bigtable.v2.ReadModifyWriteRuleOrBuilder>
       getRulesOrBuilderList() {
     return rules_;
   }
   /**
+   *
+   *
    * <pre>
    * Rules specifying how the specified row's contents are to be transformed
    * into writes. Entries are applied in order, meaning that earlier rules will
@@ -257,6 +276,8 @@ private static final long serialVersionUID = 0L;
     return rules_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Rules specifying how the specified row's contents are to be transformed
    * into writes. Entries are applied in order, meaning that earlier rules will
@@ -269,6 +290,8 @@ private static final long serialVersionUID = 0L;
     return rules_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Rules specifying how the specified row's contents are to be transformed
    * into writes. Entries are applied in order, meaning that earlier rules will
@@ -277,12 +300,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.bigtable.v2.ReadModifyWriteRule rules = 3;</code>
    */
-  public com.google.bigtable.v2.ReadModifyWriteRuleOrBuilder getRulesOrBuilder(
-      int index) {
+  public com.google.bigtable.v2.ReadModifyWriteRuleOrBuilder getRulesOrBuilder(int index) {
     return rules_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -294,8 +317,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getTableNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tableName_);
     }
@@ -321,12 +343,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tableName_);
     }
     if (!rowKey_.isEmpty()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(2, rowKey_);
+      size += com.google.protobuf.CodedOutputStream.computeBytesSize(2, rowKey_);
     }
     for (int i = 0; i < rules_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, rules_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, rules_.get(i));
     }
     if (!getAppProfileIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, appProfileId_);
@@ -339,22 +359,19 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.bigtable.v2.ReadModifyWriteRowRequest)) {
       return super.equals(obj);
     }
-    com.google.bigtable.v2.ReadModifyWriteRowRequest other = (com.google.bigtable.v2.ReadModifyWriteRowRequest) obj;
+    com.google.bigtable.v2.ReadModifyWriteRowRequest other =
+        (com.google.bigtable.v2.ReadModifyWriteRowRequest) obj;
 
     boolean result = true;
-    result = result && getTableName()
-        .equals(other.getTableName());
-    result = result && getAppProfileId()
-        .equals(other.getAppProfileId());
-    result = result && getRowKey()
-        .equals(other.getRowKey());
-    result = result && getRulesList()
-        .equals(other.getRulesList());
+    result = result && getTableName().equals(other.getTableName());
+    result = result && getAppProfileId().equals(other.getAppProfileId());
+    result = result && getRowKey().equals(other.getRowKey());
+    result = result && getRulesList().equals(other.getRulesList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -381,118 +398,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.bigtable.v2.ReadModifyWriteRowRequest parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.bigtable.v2.ReadModifyWriteRowRequest parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.bigtable.v2.ReadModifyWriteRowRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.bigtable.v2.ReadModifyWriteRowRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.bigtable.v2.ReadModifyWriteRowRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.bigtable.v2.ReadModifyWriteRowRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.bigtable.v2.ReadModifyWriteRowRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.bigtable.v2.ReadModifyWriteRowRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.bigtable.v2.ReadModifyWriteRowRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.bigtable.v2.ReadModifyWriteRowRequest parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.bigtable.v2.ReadModifyWriteRowRequest parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.bigtable.v2.ReadModifyWriteRowRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.bigtable.v2.ReadModifyWriteRowRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.bigtable.v2.ReadModifyWriteRowRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.bigtable.v2.ReadModifyWriteRowRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.bigtable.v2.ReadModifyWriteRowRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Request message for Bigtable.ReadModifyWriteRow.
    * </pre>
    *
    * Protobuf type {@code google.bigtable.v2.ReadModifyWriteRowRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.bigtable.v2.ReadModifyWriteRowRequest)
       com.google.bigtable.v2.ReadModifyWriteRowRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.bigtable.v2.BigtableProto.internal_static_google_bigtable_v2_ReadModifyWriteRowRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.bigtable.v2.BigtableProto
+          .internal_static_google_bigtable_v2_ReadModifyWriteRowRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.bigtable.v2.BigtableProto.internal_static_google_bigtable_v2_ReadModifyWriteRowRequest_fieldAccessorTable
+      return com.google.bigtable.v2.BigtableProto
+          .internal_static_google_bigtable_v2_ReadModifyWriteRowRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.bigtable.v2.ReadModifyWriteRowRequest.class, com.google.bigtable.v2.ReadModifyWriteRowRequest.Builder.class);
+              com.google.bigtable.v2.ReadModifyWriteRowRequest.class,
+              com.google.bigtable.v2.ReadModifyWriteRowRequest.Builder.class);
     }
 
     // Construct using com.google.bigtable.v2.ReadModifyWriteRowRequest.newBuilder()
@@ -500,17 +526,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getRulesFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -530,9 +556,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.bigtable.v2.BigtableProto.internal_static_google_bigtable_v2_ReadModifyWriteRowRequest_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.bigtable.v2.BigtableProto
+          .internal_static_google_bigtable_v2_ReadModifyWriteRowRequest_descriptor;
     }
 
     @java.lang.Override
@@ -551,7 +577,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.bigtable.v2.ReadModifyWriteRowRequest buildPartial() {
-      com.google.bigtable.v2.ReadModifyWriteRowRequest result = new com.google.bigtable.v2.ReadModifyWriteRowRequest(this);
+      com.google.bigtable.v2.ReadModifyWriteRowRequest result =
+          new com.google.bigtable.v2.ReadModifyWriteRowRequest(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.tableName_ = tableName_;
@@ -575,38 +602,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.bigtable.v2.ReadModifyWriteRowRequest) {
-        return mergeFrom((com.google.bigtable.v2.ReadModifyWriteRowRequest)other);
+        return mergeFrom((com.google.bigtable.v2.ReadModifyWriteRowRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -614,7 +642,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.bigtable.v2.ReadModifyWriteRowRequest other) {
-      if (other == com.google.bigtable.v2.ReadModifyWriteRowRequest.getDefaultInstance()) return this;
+      if (other == com.google.bigtable.v2.ReadModifyWriteRowRequest.getDefaultInstance())
+        return this;
       if (!other.getTableName().isEmpty()) {
         tableName_ = other.tableName_;
         onChanged();
@@ -644,9 +673,10 @@ private static final long serialVersionUID = 0L;
             rulesBuilder_ = null;
             rules_ = other.rules_;
             bitField0_ = (bitField0_ & ~0x00000008);
-            rulesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getRulesFieldBuilder() : null;
+            rulesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getRulesFieldBuilder()
+                    : null;
           } else {
             rulesBuilder_.addAllMessages(other.rules_);
           }
@@ -680,10 +710,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object tableName_ = "";
     /**
+     *
+     *
      * <pre>
      * The unique name of the table to which the read/modify/write rules should be
      * applied.
@@ -696,8 +729,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getTableName() {
       java.lang.Object ref = tableName_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         tableName_ = s;
         return s;
@@ -706,6 +738,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The unique name of the table to which the read/modify/write rules should be
      * applied.
@@ -715,13 +749,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string table_name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getTableNameBytes() {
+    public com.google.protobuf.ByteString getTableNameBytes() {
       java.lang.Object ref = tableName_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         tableName_ = b;
         return b;
       } else {
@@ -729,6 +761,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The unique name of the table to which the read/modify/write rules should be
      * applied.
@@ -738,17 +772,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string table_name = 1;</code>
      */
-    public Builder setTableName(
-        java.lang.String value) {
+    public Builder setTableName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       tableName_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The unique name of the table to which the read/modify/write rules should be
      * applied.
@@ -759,12 +794,14 @@ private static final long serialVersionUID = 0L;
      * <code>string table_name = 1;</code>
      */
     public Builder clearTableName() {
-      
+
       tableName_ = getDefaultInstance().getTableName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The unique name of the table to which the read/modify/write rules should be
      * applied.
@@ -774,13 +811,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string table_name = 1;</code>
      */
-    public Builder setTableNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setTableNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       tableName_ = value;
       onChanged();
       return this;
@@ -788,6 +824,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object appProfileId_ = "";
     /**
+     *
+     *
      * <pre>
      * This value specifies routing for replication. If not specified, the
      * "default" application profile will be used.
@@ -798,8 +836,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getAppProfileId() {
       java.lang.Object ref = appProfileId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         appProfileId_ = s;
         return s;
@@ -808,6 +845,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * This value specifies routing for replication. If not specified, the
      * "default" application profile will be used.
@@ -815,13 +854,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string app_profile_id = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getAppProfileIdBytes() {
+    public com.google.protobuf.ByteString getAppProfileIdBytes() {
       java.lang.Object ref = appProfileId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         appProfileId_ = b;
         return b;
       } else {
@@ -829,6 +866,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * This value specifies routing for replication. If not specified, the
      * "default" application profile will be used.
@@ -836,17 +875,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string app_profile_id = 4;</code>
      */
-    public Builder setAppProfileId(
-        java.lang.String value) {
+    public Builder setAppProfileId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       appProfileId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * This value specifies routing for replication. If not specified, the
      * "default" application profile will be used.
@@ -855,12 +895,14 @@ private static final long serialVersionUID = 0L;
      * <code>string app_profile_id = 4;</code>
      */
     public Builder clearAppProfileId() {
-      
+
       appProfileId_ = getDefaultInstance().getAppProfileId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * This value specifies routing for replication. If not specified, the
      * "default" application profile will be used.
@@ -868,13 +910,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string app_profile_id = 4;</code>
      */
-    public Builder setAppProfileIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setAppProfileIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       appProfileId_ = value;
       onChanged();
       return this;
@@ -882,6 +923,8 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.ByteString rowKey_ = com.google.protobuf.ByteString.EMPTY;
     /**
+     *
+     *
      * <pre>
      * The key of the row to which the read/modify/write rules should be applied.
      * </pre>
@@ -892,6 +935,8 @@ private static final long serialVersionUID = 0L;
       return rowKey_;
     }
     /**
+     *
+     *
      * <pre>
      * The key of the row to which the read/modify/write rules should be applied.
      * </pre>
@@ -900,14 +945,16 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setRowKey(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       rowKey_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The key of the row to which the read/modify/write rules should be applied.
      * </pre>
@@ -915,25 +962,31 @@ private static final long serialVersionUID = 0L;
      * <code>bytes row_key = 2;</code>
      */
     public Builder clearRowKey() {
-      
+
       rowKey_ = getDefaultInstance().getRowKey();
       onChanged();
       return this;
     }
 
     private java.util.List<com.google.bigtable.v2.ReadModifyWriteRule> rules_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureRulesIsMutable() {
       if (!((bitField0_ & 0x00000008) == 0x00000008)) {
         rules_ = new java.util.ArrayList<com.google.bigtable.v2.ReadModifyWriteRule>(rules_);
         bitField0_ |= 0x00000008;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.bigtable.v2.ReadModifyWriteRule, com.google.bigtable.v2.ReadModifyWriteRule.Builder, com.google.bigtable.v2.ReadModifyWriteRuleOrBuilder> rulesBuilder_;
+            com.google.bigtable.v2.ReadModifyWriteRule,
+            com.google.bigtable.v2.ReadModifyWriteRule.Builder,
+            com.google.bigtable.v2.ReadModifyWriteRuleOrBuilder>
+        rulesBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Rules specifying how the specified row's contents are to be transformed
      * into writes. Entries are applied in order, meaning that earlier rules will
@@ -950,6 +1003,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Rules specifying how the specified row's contents are to be transformed
      * into writes. Entries are applied in order, meaning that earlier rules will
@@ -966,6 +1021,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Rules specifying how the specified row's contents are to be transformed
      * into writes. Entries are applied in order, meaning that earlier rules will
@@ -982,6 +1039,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Rules specifying how the specified row's contents are to be transformed
      * into writes. Entries are applied in order, meaning that earlier rules will
@@ -990,8 +1049,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.bigtable.v2.ReadModifyWriteRule rules = 3;</code>
      */
-    public Builder setRules(
-        int index, com.google.bigtable.v2.ReadModifyWriteRule value) {
+    public Builder setRules(int index, com.google.bigtable.v2.ReadModifyWriteRule value) {
       if (rulesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1005,6 +1063,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Rules specifying how the specified row's contents are to be transformed
      * into writes. Entries are applied in order, meaning that earlier rules will
@@ -1025,6 +1085,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Rules specifying how the specified row's contents are to be transformed
      * into writes. Entries are applied in order, meaning that earlier rules will
@@ -1047,6 +1109,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Rules specifying how the specified row's contents are to be transformed
      * into writes. Entries are applied in order, meaning that earlier rules will
@@ -1055,8 +1119,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.bigtable.v2.ReadModifyWriteRule rules = 3;</code>
      */
-    public Builder addRules(
-        int index, com.google.bigtable.v2.ReadModifyWriteRule value) {
+    public Builder addRules(int index, com.google.bigtable.v2.ReadModifyWriteRule value) {
       if (rulesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1070,6 +1133,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Rules specifying how the specified row's contents are to be transformed
      * into writes. Entries are applied in order, meaning that earlier rules will
@@ -1078,8 +1143,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.bigtable.v2.ReadModifyWriteRule rules = 3;</code>
      */
-    public Builder addRules(
-        com.google.bigtable.v2.ReadModifyWriteRule.Builder builderForValue) {
+    public Builder addRules(com.google.bigtable.v2.ReadModifyWriteRule.Builder builderForValue) {
       if (rulesBuilder_ == null) {
         ensureRulesIsMutable();
         rules_.add(builderForValue.build());
@@ -1090,6 +1154,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Rules specifying how the specified row's contents are to be transformed
      * into writes. Entries are applied in order, meaning that earlier rules will
@@ -1110,6 +1176,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Rules specifying how the specified row's contents are to be transformed
      * into writes. Entries are applied in order, meaning that earlier rules will
@@ -1122,8 +1190,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.bigtable.v2.ReadModifyWriteRule> values) {
       if (rulesBuilder_ == null) {
         ensureRulesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, rules_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, rules_);
         onChanged();
       } else {
         rulesBuilder_.addAllMessages(values);
@@ -1131,6 +1198,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Rules specifying how the specified row's contents are to be transformed
      * into writes. Entries are applied in order, meaning that earlier rules will
@@ -1150,6 +1219,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Rules specifying how the specified row's contents are to be transformed
      * into writes. Entries are applied in order, meaning that earlier rules will
@@ -1169,6 +1240,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Rules specifying how the specified row's contents are to be transformed
      * into writes. Entries are applied in order, meaning that earlier rules will
@@ -1177,11 +1250,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.bigtable.v2.ReadModifyWriteRule rules = 3;</code>
      */
-    public com.google.bigtable.v2.ReadModifyWriteRule.Builder getRulesBuilder(
-        int index) {
+    public com.google.bigtable.v2.ReadModifyWriteRule.Builder getRulesBuilder(int index) {
       return getRulesFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Rules specifying how the specified row's contents are to be transformed
      * into writes. Entries are applied in order, meaning that earlier rules will
@@ -1190,14 +1264,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.bigtable.v2.ReadModifyWriteRule rules = 3;</code>
      */
-    public com.google.bigtable.v2.ReadModifyWriteRuleOrBuilder getRulesOrBuilder(
-        int index) {
+    public com.google.bigtable.v2.ReadModifyWriteRuleOrBuilder getRulesOrBuilder(int index) {
       if (rulesBuilder_ == null) {
-        return rules_.get(index);  } else {
+        return rules_.get(index);
+      } else {
         return rulesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Rules specifying how the specified row's contents are to be transformed
      * into writes. Entries are applied in order, meaning that earlier rules will
@@ -1206,8 +1282,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.bigtable.v2.ReadModifyWriteRule rules = 3;</code>
      */
-    public java.util.List<? extends com.google.bigtable.v2.ReadModifyWriteRuleOrBuilder> 
-         getRulesOrBuilderList() {
+    public java.util.List<? extends com.google.bigtable.v2.ReadModifyWriteRuleOrBuilder>
+        getRulesOrBuilderList() {
       if (rulesBuilder_ != null) {
         return rulesBuilder_.getMessageOrBuilderList();
       } else {
@@ -1215,6 +1291,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Rules specifying how the specified row's contents are to be transformed
      * into writes. Entries are applied in order, meaning that earlier rules will
@@ -1224,10 +1302,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.bigtable.v2.ReadModifyWriteRule rules = 3;</code>
      */
     public com.google.bigtable.v2.ReadModifyWriteRule.Builder addRulesBuilder() {
-      return getRulesFieldBuilder().addBuilder(
-          com.google.bigtable.v2.ReadModifyWriteRule.getDefaultInstance());
+      return getRulesFieldBuilder()
+          .addBuilder(com.google.bigtable.v2.ReadModifyWriteRule.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Rules specifying how the specified row's contents are to be transformed
      * into writes. Entries are applied in order, meaning that earlier rules will
@@ -1236,12 +1316,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.bigtable.v2.ReadModifyWriteRule rules = 3;</code>
      */
-    public com.google.bigtable.v2.ReadModifyWriteRule.Builder addRulesBuilder(
-        int index) {
-      return getRulesFieldBuilder().addBuilder(
-          index, com.google.bigtable.v2.ReadModifyWriteRule.getDefaultInstance());
+    public com.google.bigtable.v2.ReadModifyWriteRule.Builder addRulesBuilder(int index) {
+      return getRulesFieldBuilder()
+          .addBuilder(index, com.google.bigtable.v2.ReadModifyWriteRule.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Rules specifying how the specified row's contents are to be transformed
      * into writes. Entries are applied in order, meaning that earlier rules will
@@ -1250,16 +1331,22 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.bigtable.v2.ReadModifyWriteRule rules = 3;</code>
      */
-    public java.util.List<com.google.bigtable.v2.ReadModifyWriteRule.Builder> 
-         getRulesBuilderList() {
+    public java.util.List<com.google.bigtable.v2.ReadModifyWriteRule.Builder>
+        getRulesBuilderList() {
       return getRulesFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.bigtable.v2.ReadModifyWriteRule, com.google.bigtable.v2.ReadModifyWriteRule.Builder, com.google.bigtable.v2.ReadModifyWriteRuleOrBuilder> 
+            com.google.bigtable.v2.ReadModifyWriteRule,
+            com.google.bigtable.v2.ReadModifyWriteRule.Builder,
+            com.google.bigtable.v2.ReadModifyWriteRuleOrBuilder>
         getRulesFieldBuilder() {
       if (rulesBuilder_ == null) {
-        rulesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.bigtable.v2.ReadModifyWriteRule, com.google.bigtable.v2.ReadModifyWriteRule.Builder, com.google.bigtable.v2.ReadModifyWriteRuleOrBuilder>(
+        rulesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.bigtable.v2.ReadModifyWriteRule,
+                com.google.bigtable.v2.ReadModifyWriteRule.Builder,
+                com.google.bigtable.v2.ReadModifyWriteRuleOrBuilder>(
                 rules_,
                 ((bitField0_ & 0x00000008) == 0x00000008),
                 getParentForChildren(),
@@ -1268,9 +1355,9 @@ private static final long serialVersionUID = 0L;
       }
       return rulesBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1280,12 +1367,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.bigtable.v2.ReadModifyWriteRowRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.bigtable.v2.ReadModifyWriteRowRequest)
   private static final com.google.bigtable.v2.ReadModifyWriteRowRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.bigtable.v2.ReadModifyWriteRowRequest();
   }
@@ -1294,16 +1381,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ReadModifyWriteRowRequest>
-      PARSER = new com.google.protobuf.AbstractParser<ReadModifyWriteRowRequest>() {
-    @java.lang.Override
-    public ReadModifyWriteRowRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ReadModifyWriteRowRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ReadModifyWriteRowRequest> PARSER =
+      new com.google.protobuf.AbstractParser<ReadModifyWriteRowRequest>() {
+        @java.lang.Override
+        public ReadModifyWriteRowRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ReadModifyWriteRowRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ReadModifyWriteRowRequest> parser() {
     return PARSER;
@@ -1318,6 +1405,4 @@ private static final long serialVersionUID = 0L;
   public com.google.bigtable.v2.ReadModifyWriteRowRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

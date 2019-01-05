@@ -22,6 +22,7 @@ import com.google.api.core.ApiFutures;
 import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.pubsub.v1.Publisher;
 import com.google.cloud.pubsub.v1.TopicAdminClient;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.PubsubMessage;
@@ -100,25 +101,28 @@ public class CreateTopicAndPublishMessages {
         ApiFuture<String> future = publisher.publish(pubsubMessage);
 
         // Add an asynchronous callback to handle success / failure
-        ApiFutures.addCallback(future, new ApiFutureCallback<String>() {
+        ApiFutures.addCallback(
+            future,
+            new ApiFutureCallback<String>() {
 
-          @Override
-          public void onFailure(Throwable throwable) {
-            if (throwable instanceof ApiException) {
-              ApiException apiException = ((ApiException) throwable);
-              // details on the API exception
-              System.out.println(apiException.getStatusCode().getCode());
-              System.out.println(apiException.isRetryable());
-            }
-            System.out.println("Error publishing message : " + message);
-          }
+              @Override
+              public void onFailure(Throwable throwable) {
+                if (throwable instanceof ApiException) {
+                  ApiException apiException = ((ApiException) throwable);
+                  // details on the API exception
+                  System.out.println(apiException.getStatusCode().getCode());
+                  System.out.println(apiException.isRetryable());
+                }
+                System.out.println("Error publishing message : " + message);
+              }
 
-          @Override
-          public void onSuccess(String messageId) {
-            // Once published, returns server-assigned message ids (unique within the topic)
-            System.out.println(messageId);
-          }
-        });
+              @Override
+              public void onSuccess(String messageId) {
+                // Once published, returns server-assigned message ids (unique within the topic)
+                System.out.println(messageId);
+              }
+            },
+            MoreExecutors.directExecutor());
       }
     } finally {
       if (publisher != null) {

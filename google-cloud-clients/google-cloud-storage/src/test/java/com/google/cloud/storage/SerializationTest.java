@@ -24,14 +24,14 @@ import com.google.cloud.Restorable;
 import com.google.cloud.storage.Acl.Project.ProjectRole;
 import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.common.collect.ImmutableMap;
-
 import java.io.Serializable;
 import java.util.Collections;
 import java.util.Map;
 
 public class SerializationTest extends BaseSerializationTest {
 
-  private static final Storage STORAGE = StorageOptions.newBuilder().setProjectId("p").build().getService();
+  private static final Storage STORAGE =
+      StorageOptions.newBuilder().setProjectId("p").build().getService();
   private static final Acl.Domain ACL_DOMAIN = new Acl.Domain("domain");
   private static final Acl.Group ACL_GROUP = new Acl.Group("group");
   private static final Acl.Project ACL_PROJECT_ = new Acl.Project(ProjectRole.VIEWERS, "pid");
@@ -64,26 +64,47 @@ public class SerializationTest extends BaseSerializationTest {
 
   @Override
   protected Serializable[] serializableObjects() {
-    StorageOptions options = StorageOptions.newBuilder()
-        .setProjectId("p1")
-        .setCredentials(NoCredentials.getInstance())
-        .build();
+    StorageOptions options =
+        StorageOptions.newBuilder()
+            .setProjectId("p1")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
     StorageOptions otherOptions = options.toBuilder().setProjectId("p2").build();
-    return new Serializable[]{ACL_DOMAIN, ACL_GROUP, ACL_PROJECT_, ACL_USER, ACL_RAW, ACL,
-        BLOB_INFO, BLOB, BUCKET_INFO, BUCKET, ORIGIN, CORS, PAGE_RESULT, BLOB_LIST_OPTIONS,
-        BLOB_SOURCE_OPTIONS, BLOB_TARGET_OPTIONS, BUCKET_LIST_OPTIONS, BUCKET_SOURCE_OPTIONS,
-        BUCKET_TARGET_OPTIONS, STORAGE_EXCEPTION, options, otherOptions};
+    return new Serializable[] {
+      ACL_DOMAIN,
+      ACL_GROUP,
+      ACL_PROJECT_,
+      ACL_USER,
+      ACL_RAW,
+      ACL,
+      BLOB_INFO,
+      BLOB,
+      BUCKET_INFO,
+      BUCKET,
+      ORIGIN,
+      CORS,
+      PAGE_RESULT,
+      BLOB_LIST_OPTIONS,
+      BLOB_SOURCE_OPTIONS,
+      BLOB_TARGET_OPTIONS,
+      BUCKET_LIST_OPTIONS,
+      BUCKET_SOURCE_OPTIONS,
+      BUCKET_TARGET_OPTIONS,
+      STORAGE_EXCEPTION,
+      options,
+      otherOptions
+    };
   }
 
   @Override
   protected Restorable<?>[] restorableObjects() {
     StorageOptions options = StorageOptions.newBuilder().setProjectId("p2").build();
-    ReadChannel reader =
-        new BlobReadChannel(options, BlobId.of("b", "n"), EMPTY_RPC_OPTIONS);
+    ReadChannel reader = new BlobReadChannel(options, BlobId.of("b", "n"), EMPTY_RPC_OPTIONS);
     // avoid closing when you don't want partial writes to GCS upon failure
     @SuppressWarnings("resource")
-    BlobWriteChannel writer = new BlobWriteChannel(options,
-        BlobInfo.newBuilder(BlobId.of("b", "n")).build(), "upload-id");
-    return new Restorable<?>[]{reader, writer};
+    BlobWriteChannel writer =
+        new BlobWriteChannel(
+            options, BlobInfo.newBuilder(BlobId.of("b", "n")).build(), "upload-id");
+    return new Restorable<?>[] {reader, writer};
   }
 }

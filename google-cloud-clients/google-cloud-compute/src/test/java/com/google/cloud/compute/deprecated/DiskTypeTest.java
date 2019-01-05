@@ -30,15 +30,16 @@ public class DiskTypeTest {
   private static final DiskTypeId DISK_TYPE_ID = DiskTypeId.of("project", "zone", "diskType");
   private static final DeprecationStatus<DiskTypeId> DEPRECATION_STATUS =
       DeprecationStatus.of(DeprecationStatus.Status.DELETED, DISK_TYPE_ID);
-  private static final DiskType DISK_TYPE = DiskType.newBuilder()
-      .setGeneratedId(GENERATED_ID)
-      .setDiskTypeId(DISK_TYPE_ID)
-      .setCreationTimestamp(CREATION_TIMESTAMP)
-      .setDescription(DESCRIPTION)
-      .setValidDiskSize(VALID_DISK_SIZE)
-      .setDefaultDiskSizeGb(DEFAULT_DISK_SIZE_GB)
-      .setDeprecationStatus(DEPRECATION_STATUS)
-      .build();
+  private static final DiskType DISK_TYPE =
+      DiskType.newBuilder()
+          .setGeneratedId(GENERATED_ID)
+          .setDiskTypeId(DISK_TYPE_ID)
+          .setCreationTimestamp(CREATION_TIMESTAMP)
+          .setDescription(DESCRIPTION)
+          .setValidDiskSize(VALID_DISK_SIZE)
+          .setDefaultDiskSizeGb(DEFAULT_DISK_SIZE_GB)
+          .setDeprecationStatus(DEPRECATION_STATUS)
+          .build();
 
   @Test
   public void testBuilder() {

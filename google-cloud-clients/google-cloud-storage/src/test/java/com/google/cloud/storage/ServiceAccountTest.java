@@ -22,8 +22,7 @@ import org.junit.Test;
 
 public class ServiceAccountTest {
 
-  private static final ServiceAccount SERVICE_ACCOUNT =
-      ServiceAccount.of("email");
+  private static final ServiceAccount SERVICE_ACCOUNT = ServiceAccount.of("email");
 
   @Test
   public void testOf() {

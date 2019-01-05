@@ -3,11 +3,14 @@
 
 package com.google.cloud.iot.v1;
 
-public interface PublicKeyCertificateOrBuilder extends
+public interface PublicKeyCertificateOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.iot.v1.PublicKeyCertificate)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The certificate format.
    * </pre>
@@ -16,6 +19,8 @@ public interface PublicKeyCertificateOrBuilder extends
    */
   int getFormatValue();
   /**
+   *
+   *
    * <pre>
    * The certificate format.
    * </pre>
@@ -25,6 +30,8 @@ public interface PublicKeyCertificateOrBuilder extends
   com.google.cloud.iot.v1.PublicKeyCertificateFormat getFormat();
 
   /**
+   *
+   *
    * <pre>
    * The certificate data.
    * </pre>
@@ -33,16 +40,19 @@ public interface PublicKeyCertificateOrBuilder extends
    */
   java.lang.String getCertificate();
   /**
+   *
+   *
    * <pre>
    * The certificate data.
    * </pre>
    *
    * <code>string certificate = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getCertificateBytes();
+  com.google.protobuf.ByteString getCertificateBytes();
 
   /**
+   *
+   *
    * <pre>
    * [Output only] The certificate details. Used only for X.509 certificates.
    * </pre>
@@ -51,6 +61,8 @@ public interface PublicKeyCertificateOrBuilder extends
    */
   boolean hasX509Details();
   /**
+   *
+   *
    * <pre>
    * [Output only] The certificate details. Used only for X.509 certificates.
    * </pre>
@@ -59,6 +71,8 @@ public interface PublicKeyCertificateOrBuilder extends
    */
   com.google.cloud.iot.v1.X509CertificateDetails getX509Details();
   /**
+   *
+   *
    * <pre>
    * [Output only] The certificate details. Used only for X.509 certificates.
    * </pre>

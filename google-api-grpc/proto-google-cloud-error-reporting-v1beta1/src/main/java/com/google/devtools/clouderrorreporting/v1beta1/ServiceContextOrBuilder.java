@@ -3,11 +3,14 @@
 
 package com.google.devtools.clouderrorreporting.v1beta1;
 
-public interface ServiceContextOrBuilder extends
+public interface ServiceContextOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.devtools.clouderrorreporting.v1beta1.ServiceContext)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * An identifier of the service, such as the name of the
    * executable, job, or Google App Engine service name. This field is expected
@@ -21,6 +24,8 @@ public interface ServiceContextOrBuilder extends
    */
   java.lang.String getService();
   /**
+   *
+   *
    * <pre>
    * An identifier of the service, such as the name of the
    * executable, job, or Google App Engine service name. This field is expected
@@ -32,10 +37,11 @@ public interface ServiceContextOrBuilder extends
    *
    * <code>string service = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getServiceBytes();
+  com.google.protobuf.ByteString getServiceBytes();
 
   /**
+   *
+   *
    * <pre>
    * Represents the source code version that the developer provided,
    * which could represent a version label or a Git SHA-1 hash, for example.
@@ -45,6 +51,8 @@ public interface ServiceContextOrBuilder extends
    */
   java.lang.String getVersion();
   /**
+   *
+   *
    * <pre>
    * Represents the source code version that the developer provided,
    * which could represent a version label or a Git SHA-1 hash, for example.
@@ -52,10 +60,11 @@ public interface ServiceContextOrBuilder extends
    *
    * <code>string version = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getVersionBytes();
+  com.google.protobuf.ByteString getVersionBytes();
 
   /**
+   *
+   *
    * <pre>
    * Type of the MonitoredResource. List of possible values:
    * https://cloud.google.com/monitoring/api/resources
@@ -67,6 +76,8 @@ public interface ServiceContextOrBuilder extends
    */
   java.lang.String getResourceType();
   /**
+   *
+   *
    * <pre>
    * Type of the MonitoredResource. List of possible values:
    * https://cloud.google.com/monitoring/api/resources
@@ -76,6 +87,5 @@ public interface ServiceContextOrBuilder extends
    *
    * <code>string resource_type = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getResourceTypeBytes();
+  com.google.protobuf.ByteString getResourceTypeBytes();
 }

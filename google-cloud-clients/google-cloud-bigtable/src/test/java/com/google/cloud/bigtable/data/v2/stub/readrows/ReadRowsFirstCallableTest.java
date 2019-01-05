@@ -18,7 +18,6 @@ package com.google.cloud.bigtable.data.v2.stub.readrows;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
@@ -33,7 +32,7 @@ import org.mockito.Mockito;
 @RunWith(JUnit4.class)
 public class ReadRowsFirstCallableTest {
   private static final RequestContext REQUEST_CONTEXT =
-      RequestContext.create(InstanceName.of("fake-project", "fake-instance"), "fake-profile");;
+      RequestContext.create("fake-project", "fake-instance", "fake-profile");
   private UnaryCallable<Query, Row> innerCallable;
   private ArgumentCaptor<Query> innerQuery;
   private SettableApiFuture<Row> innerResult;

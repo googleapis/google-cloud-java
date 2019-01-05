@@ -31,8 +31,9 @@ public final class ProjectGlobalBackendServiceName implements ResourceName {
   private final String backendService;
   private final String project;
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/global/backendServices/{backendService}");
+      PathTemplate.createWithoutUrlEncoding("{project}/global/backendServices/{backendService}");
+
+  public static final String SERVICE_ADDRESS = "https://www.googleapis.com/compute/v1/projects/";
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -93,15 +94,23 @@ public final class ProjectGlobalBackendServiceName implements ResourceName {
   }
 
   public static ProjectGlobalBackendServiceName parse(String formattedString) {
+    String resourcePath = formattedString;
+    if (formattedString.startsWith(SERVICE_ADDRESS)) {
+      resourcePath = formattedString.substring(SERVICE_ADDRESS.length());
+    }
     Map<String, String> matchMap =
         PATH_TEMPLATE.validatedMatch(
-            formattedString,
+            resourcePath,
             "ProjectGlobalBackendServiceName.parse: formattedString not in valid format");
     return of(matchMap.get("backendService"), matchMap.get("project"));
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    String resourcePath = formattedString;
+    if (formattedString.startsWith(SERVICE_ADDRESS)) {
+      resourcePath = formattedString.substring(SERVICE_ADDRESS.length());
+    }
+    return PATH_TEMPLATE.matches(resourcePath);
   }
 
   public static class Builder {

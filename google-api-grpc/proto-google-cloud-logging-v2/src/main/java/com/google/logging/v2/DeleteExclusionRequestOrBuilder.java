@@ -3,11 +3,14 @@
 
 package com.google.logging.v2;
 
-public interface DeleteExclusionRequestOrBuilder extends
+public interface DeleteExclusionRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.logging.v2.DeleteExclusionRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The resource name of an existing exclusion to delete:
    *     "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
@@ -21,6 +24,8 @@ public interface DeleteExclusionRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Required. The resource name of an existing exclusion to delete:
    *     "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
@@ -32,6 +37,5 @@ public interface DeleteExclusionRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

@@ -17,7 +17,7 @@ package com.google.cloud.bigtable.admin.v2.models;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.bigtable.admin.v2.ProjectName;
+import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -26,29 +26,28 @@ import org.junit.runners.JUnit4;
 public class CreateClusterRequestTest {
   @Test
   public void testProductionSingle() {
-    CreateInstanceRequest input = CreateInstanceRequest.of("my-instance")
-        .setType(Instance.Type.PRODUCTION)
-        .addCluster("cluster1", "us-east1-c", 3, StorageType.SSD);
+    CreateInstanceRequest input =
+        CreateInstanceRequest.of("my-instance")
+            .setType(Instance.Type.PRODUCTION)
+            .addCluster("cluster1", "us-east1-c", 3, StorageType.SSD);
 
-    com.google.bigtable.admin.v2.CreateInstanceRequest actual = input
-        .toProto(ProjectName.of("my-project"));
+    com.google.bigtable.admin.v2.CreateInstanceRequest actual = input.toProto("my-project");
 
     com.google.bigtable.admin.v2.CreateInstanceRequest expected =
         com.google.bigtable.admin.v2.CreateInstanceRequest.newBuilder()
-            .setParent(ProjectName.of("my-project").toString())
+            .setParent(NameUtil.formatProjectName("my-project"))
             .setInstanceId("my-instance")
             .setInstance(
                 com.google.bigtable.admin.v2.Instance.newBuilder()
                     .setDisplayName("my-instance")
-                    .setType(com.google.bigtable.admin.v2.Instance.Type.PRODUCTION)
-            )
-            .putClusters("cluster1",
+                    .setType(com.google.bigtable.admin.v2.Instance.Type.PRODUCTION))
+            .putClusters(
+                "cluster1",
                 com.google.bigtable.admin.v2.Cluster.newBuilder()
                     .setLocation("projects/my-project/locations/us-east1-c")
                     .setServeNodes(3)
                     .setDefaultStorageType(com.google.bigtable.admin.v2.StorageType.SSD)
-                    .build()
-            )
+                    .build())
             .build();
 
     assertThat(actual).isEqualTo(expected);
@@ -56,37 +55,36 @@ public class CreateClusterRequestTest {
 
   @Test
   public void testProductionReplication() {
-    CreateInstanceRequest input = CreateInstanceRequest.of("my-instance")
-        .setType(Instance.Type.PRODUCTION)
-        .addCluster("cluster1", "us-east1-c", 3, StorageType.SSD)
-        .addCluster("cluster2", "us-east1-a", 3, StorageType.SSD);
+    CreateInstanceRequest input =
+        CreateInstanceRequest.of("my-instance")
+            .setType(Instance.Type.PRODUCTION)
+            .addCluster("cluster1", "us-east1-c", 3, StorageType.SSD)
+            .addCluster("cluster2", "us-east1-a", 3, StorageType.SSD);
 
-    com.google.bigtable.admin.v2.CreateInstanceRequest actual = input
-        .toProto(ProjectName.of("my-project"));
+    com.google.bigtable.admin.v2.CreateInstanceRequest actual = input.toProto("my-project");
 
     com.google.bigtable.admin.v2.CreateInstanceRequest expected =
         com.google.bigtable.admin.v2.CreateInstanceRequest.newBuilder()
-            .setParent(ProjectName.of("my-project").toString())
+            .setParent(NameUtil.formatProjectName("my-project"))
             .setInstanceId("my-instance")
             .setInstance(
                 com.google.bigtable.admin.v2.Instance.newBuilder()
                     .setDisplayName("my-instance")
-                    .setType(com.google.bigtable.admin.v2.Instance.Type.PRODUCTION)
-            )
-            .putClusters("cluster1",
+                    .setType(com.google.bigtable.admin.v2.Instance.Type.PRODUCTION))
+            .putClusters(
+                "cluster1",
                 com.google.bigtable.admin.v2.Cluster.newBuilder()
                     .setLocation("projects/my-project/locations/us-east1-c")
                     .setServeNodes(3)
                     .setDefaultStorageType(com.google.bigtable.admin.v2.StorageType.SSD)
-                    .build()
-            )
-            .putClusters("cluster2",
+                    .build())
+            .putClusters(
+                "cluster2",
                 com.google.bigtable.admin.v2.Cluster.newBuilder()
                     .setLocation("projects/my-project/locations/us-east1-a")
                     .setServeNodes(3)
                     .setDefaultStorageType(com.google.bigtable.admin.v2.StorageType.SSD)
-                    .build()
-            )
+                    .build())
             .build();
 
     assertThat(actual).isEqualTo(expected);
@@ -94,29 +92,28 @@ public class CreateClusterRequestTest {
 
   @Test
   public void testDevelopment() {
-    CreateInstanceRequest input = CreateInstanceRequest.of("my-instance")
-        .setType(Instance.Type.DEVELOPMENT)
-        .addCluster("cluster1", "us-east1-c", 1, StorageType.SSD);
+    CreateInstanceRequest input =
+        CreateInstanceRequest.of("my-instance")
+            .setType(Instance.Type.DEVELOPMENT)
+            .addCluster("cluster1", "us-east1-c", 1, StorageType.SSD);
 
-    com.google.bigtable.admin.v2.CreateInstanceRequest actual = input
-        .toProto(ProjectName.of("my-project"));
+    com.google.bigtable.admin.v2.CreateInstanceRequest actual = input.toProto("my-project");
 
     com.google.bigtable.admin.v2.CreateInstanceRequest expected =
         com.google.bigtable.admin.v2.CreateInstanceRequest.newBuilder()
-            .setParent(ProjectName.of("my-project").toString())
+            .setParent(NameUtil.formatProjectName("my-project"))
             .setInstanceId("my-instance")
             .setInstance(
                 com.google.bigtable.admin.v2.Instance.newBuilder()
                     .setDisplayName("my-instance")
-                    .setType(com.google.bigtable.admin.v2.Instance.Type.DEVELOPMENT)
-            )
-            .putClusters("cluster1",
+                    .setType(com.google.bigtable.admin.v2.Instance.Type.DEVELOPMENT))
+            .putClusters(
+                "cluster1",
                 com.google.bigtable.admin.v2.Cluster.newBuilder()
                     .setLocation("projects/my-project/locations/us-east1-c")
                     .setServeNodes(1)
                     .setDefaultStorageType(com.google.bigtable.admin.v2.StorageType.SSD)
-                    .build()
-            )
+                    .build())
             .build();
 
     assertThat(actual).isEqualTo(expected);
@@ -124,34 +121,33 @@ public class CreateClusterRequestTest {
 
   @Test
   public void testOptionalFields() {
-    CreateInstanceRequest input = CreateInstanceRequest.of("my-instance")
-        .setDisplayName("custom display name")
-        .addLabel("my label", "with some value")
-        .addLabel("my other label", "with some value")
-        .setType(Instance.Type.DEVELOPMENT)
-        .addCluster("cluster1", "us-east1-c", 1, StorageType.SSD);
+    CreateInstanceRequest input =
+        CreateInstanceRequest.of("my-instance")
+            .setDisplayName("custom display name")
+            .addLabel("my label", "with some value")
+            .addLabel("my other label", "with some value")
+            .setType(Instance.Type.DEVELOPMENT)
+            .addCluster("cluster1", "us-east1-c", 1, StorageType.SSD);
 
-    com.google.bigtable.admin.v2.CreateInstanceRequest actual = input
-        .toProto(ProjectName.of("my-project"));
+    com.google.bigtable.admin.v2.CreateInstanceRequest actual = input.toProto("my-project");
 
     com.google.bigtable.admin.v2.CreateInstanceRequest expected =
         com.google.bigtable.admin.v2.CreateInstanceRequest.newBuilder()
-            .setParent(ProjectName.of("my-project").toString())
+            .setParent(NameUtil.formatProjectName("my-project"))
             .setInstanceId("my-instance")
             .setInstance(
                 com.google.bigtable.admin.v2.Instance.newBuilder()
                     .setDisplayName("custom display name")
                     .putLabels("my label", "with some value")
                     .putLabels("my other label", "with some value")
-                    .setType(com.google.bigtable.admin.v2.Instance.Type.DEVELOPMENT)
-            )
-            .putClusters("cluster1",
+                    .setType(com.google.bigtable.admin.v2.Instance.Type.DEVELOPMENT))
+            .putClusters(
+                "cluster1",
                 com.google.bigtable.admin.v2.Cluster.newBuilder()
                     .setLocation("projects/my-project/locations/us-east1-c")
                     .setServeNodes(1)
                     .setDefaultStorageType(com.google.bigtable.admin.v2.StorageType.SSD)
-                    .build()
-            )
+                    .build())
             .build();
 
     assertThat(actual).isEqualTo(expected);

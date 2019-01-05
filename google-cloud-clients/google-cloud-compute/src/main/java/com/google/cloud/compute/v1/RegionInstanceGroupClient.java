@@ -56,13 +56,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -713,8 +713,11 @@ public class RegionInstanceGroupClient implements BackgroundResource {
 
   public static class ListRegionInstanceGroupsPagedResponse
       extends AbstractPagedListResponse<
-          ListRegionInstanceGroupsHttpRequest, RegionInstanceGroupList, InstanceGroup,
-          ListRegionInstanceGroupsPage, ListRegionInstanceGroupsFixedSizeCollection> {
+          ListRegionInstanceGroupsHttpRequest,
+          RegionInstanceGroupList,
+          InstanceGroup,
+          ListRegionInstanceGroupsPage,
+          ListRegionInstanceGroupsFixedSizeCollection> {
 
     public static ApiFuture<ListRegionInstanceGroupsPagedResponse> createAsync(
         PageContext<ListRegionInstanceGroupsHttpRequest, RegionInstanceGroupList, InstanceGroup>
@@ -739,7 +742,9 @@ public class RegionInstanceGroupClient implements BackgroundResource {
 
   public static class ListRegionInstanceGroupsPage
       extends AbstractPage<
-          ListRegionInstanceGroupsHttpRequest, RegionInstanceGroupList, InstanceGroup,
+          ListRegionInstanceGroupsHttpRequest,
+          RegionInstanceGroupList,
+          InstanceGroup,
           ListRegionInstanceGroupsPage> {
 
     private ListRegionInstanceGroupsPage(
@@ -772,8 +777,11 @@ public class RegionInstanceGroupClient implements BackgroundResource {
 
   public static class ListRegionInstanceGroupsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListRegionInstanceGroupsHttpRequest, RegionInstanceGroupList, InstanceGroup,
-          ListRegionInstanceGroupsPage, ListRegionInstanceGroupsFixedSizeCollection> {
+          ListRegionInstanceGroupsHttpRequest,
+          RegionInstanceGroupList,
+          InstanceGroup,
+          ListRegionInstanceGroupsPage,
+          ListRegionInstanceGroupsFixedSizeCollection> {
 
     private ListRegionInstanceGroupsFixedSizeCollection(
         List<ListRegionInstanceGroupsPage> pages, int collectionSize) {
@@ -793,13 +801,16 @@ public class RegionInstanceGroupClient implements BackgroundResource {
 
   public static class ListInstancesRegionInstanceGroupsPagedResponse
       extends AbstractPagedListResponse<
-          ListInstancesRegionInstanceGroupsHttpRequest, RegionInstanceGroupsListInstances,
-          InstanceWithNamedPorts, ListInstancesRegionInstanceGroupsPage,
+          ListInstancesRegionInstanceGroupsHttpRequest,
+          RegionInstanceGroupsListInstances,
+          InstanceWithNamedPorts,
+          ListInstancesRegionInstanceGroupsPage,
           ListInstancesRegionInstanceGroupsFixedSizeCollection> {
 
     public static ApiFuture<ListInstancesRegionInstanceGroupsPagedResponse> createAsync(
         PageContext<
-                ListInstancesRegionInstanceGroupsHttpRequest, RegionInstanceGroupsListInstances,
+                ListInstancesRegionInstanceGroupsHttpRequest,
+                RegionInstanceGroupsListInstances,
                 InstanceWithNamedPorts>
             context,
         ApiFuture<RegionInstanceGroupsListInstances> futureResponse) {
@@ -827,12 +838,15 @@ public class RegionInstanceGroupClient implements BackgroundResource {
 
   public static class ListInstancesRegionInstanceGroupsPage
       extends AbstractPage<
-          ListInstancesRegionInstanceGroupsHttpRequest, RegionInstanceGroupsListInstances,
-          InstanceWithNamedPorts, ListInstancesRegionInstanceGroupsPage> {
+          ListInstancesRegionInstanceGroupsHttpRequest,
+          RegionInstanceGroupsListInstances,
+          InstanceWithNamedPorts,
+          ListInstancesRegionInstanceGroupsPage> {
 
     private ListInstancesRegionInstanceGroupsPage(
         PageContext<
-                ListInstancesRegionInstanceGroupsHttpRequest, RegionInstanceGroupsListInstances,
+                ListInstancesRegionInstanceGroupsHttpRequest,
+                RegionInstanceGroupsListInstances,
                 InstanceWithNamedPorts>
             context,
         RegionInstanceGroupsListInstances response) {
@@ -846,7 +860,8 @@ public class RegionInstanceGroupClient implements BackgroundResource {
     @Override
     protected ListInstancesRegionInstanceGroupsPage createPage(
         PageContext<
-                ListInstancesRegionInstanceGroupsHttpRequest, RegionInstanceGroupsListInstances,
+                ListInstancesRegionInstanceGroupsHttpRequest,
+                RegionInstanceGroupsListInstances,
                 InstanceWithNamedPorts>
             context,
         RegionInstanceGroupsListInstances response) {
@@ -856,7 +871,8 @@ public class RegionInstanceGroupClient implements BackgroundResource {
     @Override
     public ApiFuture<ListInstancesRegionInstanceGroupsPage> createPageAsync(
         PageContext<
-                ListInstancesRegionInstanceGroupsHttpRequest, RegionInstanceGroupsListInstances,
+                ListInstancesRegionInstanceGroupsHttpRequest,
+                RegionInstanceGroupsListInstances,
                 InstanceWithNamedPorts>
             context,
         ApiFuture<RegionInstanceGroupsListInstances> futureResponse) {
@@ -866,8 +882,10 @@ public class RegionInstanceGroupClient implements BackgroundResource {
 
   public static class ListInstancesRegionInstanceGroupsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListInstancesRegionInstanceGroupsHttpRequest, RegionInstanceGroupsListInstances,
-          InstanceWithNamedPorts, ListInstancesRegionInstanceGroupsPage,
+          ListInstancesRegionInstanceGroupsHttpRequest,
+          RegionInstanceGroupsListInstances,
+          InstanceWithNamedPorts,
+          ListInstancesRegionInstanceGroupsPage,
           ListInstancesRegionInstanceGroupsFixedSizeCollection> {
 
     private ListInstancesRegionInstanceGroupsFixedSizeCollection(

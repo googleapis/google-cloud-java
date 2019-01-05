@@ -4,6 +4,8 @@
 package com.google.cloud.speech.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * `StreamingRecognizeResponse` is the only message returned to the client by
  * `StreamingRecognize`. A series of one or more `StreamingRecognizeResponse`
@@ -53,15 +55,16 @@ package com.google.cloud.speech.v1beta1;
  *
  * Protobuf type {@code google.cloud.speech.v1beta1.StreamingRecognizeResponse}
  */
-public  final class StreamingRecognizeResponse extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class StreamingRecognizeResponse extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v1beta1.StreamingRecognizeResponse)
     StreamingRecognizeResponseOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use StreamingRecognizeResponse.newBuilder() to construct.
   private StreamingRecognizeResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private StreamingRecognizeResponse() {
     results_ = java.util.Collections.emptyList();
     resultIndex_ = 0;
@@ -69,10 +72,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private StreamingRecognizeResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -92,53 +95,59 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            break;
-          }
-          case 10: {
-            com.google.rpc.Status.Builder subBuilder = null;
-            if (error_ != null) {
-              subBuilder = error_.toBuilder();
-            }
-            error_ = input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(error_);
-              error_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.rpc.Status.Builder subBuilder = null;
+              if (error_ != null) {
+                subBuilder = error_.toBuilder();
+              }
+              error_ = input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(error_);
+                error_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 18: {
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-              results_ = new java.util.ArrayList<com.google.cloud.speech.v1beta1.StreamingRecognitionResult>();
-              mutable_bitField0_ |= 0x00000002;
+              break;
             }
-            results_.add(
-                input.readMessage(com.google.cloud.speech.v1beta1.StreamingRecognitionResult.parser(), extensionRegistry));
-            break;
-          }
-          case 24: {
+          case 18:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                results_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.speech.v1beta1.StreamingRecognitionResult>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              results_.add(
+                  input.readMessage(
+                      com.google.cloud.speech.v1beta1.StreamingRecognitionResult.parser(),
+                      extensionRegistry));
+              break;
+            }
+          case 24:
+            {
+              resultIndex_ = input.readInt32();
+              break;
+            }
+          case 32:
+            {
+              int rawValue = input.readEnum();
 
-            resultIndex_ = input.readInt32();
-            break;
-          }
-          case 32: {
-            int rawValue = input.readEnum();
-
-            endpointerType_ = rawValue;
-            break;
-          }
+              endpointerType_ = rawValue;
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
         results_ = java.util.Collections.unmodifiableList(results_);
@@ -147,28 +156,34 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.speech.v1beta1.SpeechProto.internal_static_google_cloud_speech_v1beta1_StreamingRecognizeResponse_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.speech.v1beta1.SpeechProto
+        .internal_static_google_cloud_speech_v1beta1_StreamingRecognizeResponse_descriptor;
   }
 
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.speech.v1beta1.SpeechProto.internal_static_google_cloud_speech_v1beta1_StreamingRecognizeResponse_fieldAccessorTable
+    return com.google.cloud.speech.v1beta1.SpeechProto
+        .internal_static_google_cloud_speech_v1beta1_StreamingRecognizeResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.class, com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.Builder.class);
+            com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.class,
+            com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * Indicates the type of endpointer event.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType}
    */
-  public enum EndpointerType
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum EndpointerType implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * No endpointer event specified.
      * </pre>
@@ -177,6 +192,8 @@ private static final long serialVersionUID = 0L;
      */
     ENDPOINTER_EVENT_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * Speech has been detected in the audio stream, and the service is
      * beginning to process it.
@@ -186,6 +203,8 @@ private static final long serialVersionUID = 0L;
      */
     START_OF_SPEECH(1),
     /**
+     *
+     *
      * <pre>
      * Speech has ceased to be detected in the audio stream. (For example, the
      * user may have paused after speaking.) If `single_utterance` is `false`,
@@ -197,6 +216,8 @@ private static final long serialVersionUID = 0L;
      */
     END_OF_SPEECH(2),
     /**
+     *
+     *
      * <pre>
      * This event is sent after the client has half-closed the input stream gRPC
      * connection and the server has received all of the audio. (The server may
@@ -208,6 +229,8 @@ private static final long serialVersionUID = 0L;
      */
     END_OF_AUDIO(3),
     /**
+     *
+     *
      * <pre>
      * This event is only sent when `single_utterance` is `true`. It indicates
      * that the server has detected the end of the user's speech utterance and
@@ -225,6 +248,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * No endpointer event specified.
      * </pre>
@@ -233,6 +258,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ENDPOINTER_EVENT_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Speech has been detected in the audio stream, and the service is
      * beginning to process it.
@@ -242,6 +269,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int START_OF_SPEECH_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Speech has ceased to be detected in the audio stream. (For example, the
      * user may have paused after speaking.) If `single_utterance` is `false`,
@@ -253,6 +282,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int END_OF_SPEECH_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * This event is sent after the client has half-closed the input stream gRPC
      * connection and the server has received all of the audio. (The server may
@@ -264,6 +295,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int END_OF_AUDIO_VALUE = 3;
     /**
+     *
+     *
      * <pre>
      * This event is only sent when `single_utterance` is `true`. It indicates
      * that the server has detected the end of the user's speech utterance and
@@ -278,7 +311,6 @@ private static final long serialVersionUID = 0L;
      */
     public static final int END_OF_UTTERANCE_VALUE = 4;
 
-
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -287,9 +319,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static EndpointerType valueOf(int value) {
       return forNumber(value);
@@ -297,47 +327,51 @@ private static final long serialVersionUID = 0L;
 
     public static EndpointerType forNumber(int value) {
       switch (value) {
-        case 0: return ENDPOINTER_EVENT_UNSPECIFIED;
-        case 1: return START_OF_SPEECH;
-        case 2: return END_OF_SPEECH;
-        case 3: return END_OF_AUDIO;
-        case 4: return END_OF_UTTERANCE;
-        default: return null;
+        case 0:
+          return ENDPOINTER_EVENT_UNSPECIFIED;
+        case 1:
+          return START_OF_SPEECH;
+        case 2:
+          return END_OF_SPEECH;
+        case 3:
+          return END_OF_AUDIO;
+        case 4:
+          return END_OF_UTTERANCE;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<EndpointerType>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<EndpointerType> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        EndpointerType> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<EndpointerType>() {
-            public EndpointerType findValueByNumber(int number) {
-              return EndpointerType.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<EndpointerType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<EndpointerType>() {
+          public EndpointerType findValueByNumber(int number) {
+            return EndpointerType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.getDescriptor().getEnumTypes().get(0);
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.getDescriptor()
+          .getEnumTypes()
+          .get(0);
     }
 
     private static final EndpointerType[] VALUES = values();
 
-    public static EndpointerType valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static EndpointerType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -358,6 +392,8 @@ private static final long serialVersionUID = 0L;
   public static final int ERROR_FIELD_NUMBER = 1;
   private com.google.rpc.Status error_;
   /**
+   *
+   *
    * <pre>
    * *Output-only* If set, returns a [google.rpc.Status][google.rpc.Status] message that
    * specifies the error for the operation.
@@ -369,6 +405,8 @@ private static final long serialVersionUID = 0L;
     return error_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * *Output-only* If set, returns a [google.rpc.Status][google.rpc.Status] message that
    * specifies the error for the operation.
@@ -380,6 +418,8 @@ private static final long serialVersionUID = 0L;
     return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
   /**
+   *
+   *
    * <pre>
    * *Output-only* If set, returns a [google.rpc.Status][google.rpc.Status] message that
    * specifies the error for the operation.
@@ -394,6 +434,8 @@ private static final long serialVersionUID = 0L;
   public static final int RESULTS_FIELD_NUMBER = 2;
   private java.util.List<com.google.cloud.speech.v1beta1.StreamingRecognitionResult> results_;
   /**
+   *
+   *
    * <pre>
    * *Output-only* This repeated list contains zero or more results that
    * correspond to consecutive portions of the audio currently being processed.
@@ -403,10 +445,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code>
    */
-  public java.util.List<com.google.cloud.speech.v1beta1.StreamingRecognitionResult> getResultsList() {
+  public java.util.List<com.google.cloud.speech.v1beta1.StreamingRecognitionResult>
+      getResultsList() {
     return results_;
   }
   /**
+   *
+   *
    * <pre>
    * *Output-only* This repeated list contains zero or more results that
    * correspond to consecutive portions of the audio currently being processed.
@@ -416,11 +461,14 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code>
    */
-  public java.util.List<? extends com.google.cloud.speech.v1beta1.StreamingRecognitionResultOrBuilder> 
+  public java.util.List<
+          ? extends com.google.cloud.speech.v1beta1.StreamingRecognitionResultOrBuilder>
       getResultsOrBuilderList() {
     return results_;
   }
   /**
+   *
+   *
    * <pre>
    * *Output-only* This repeated list contains zero or more results that
    * correspond to consecutive portions of the audio currently being processed.
@@ -434,6 +482,8 @@ private static final long serialVersionUID = 0L;
     return results_.size();
   }
   /**
+   *
+   *
    * <pre>
    * *Output-only* This repeated list contains zero or more results that
    * correspond to consecutive portions of the audio currently being processed.
@@ -447,6 +497,8 @@ private static final long serialVersionUID = 0L;
     return results_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * *Output-only* This repeated list contains zero or more results that
    * correspond to consecutive portions of the audio currently being processed.
@@ -464,6 +516,8 @@ private static final long serialVersionUID = 0L;
   public static final int RESULT_INDEX_FIELD_NUMBER = 3;
   private int resultIndex_;
   /**
+   *
+   *
    * <pre>
    * *Output-only* Indicates the lowest index in the `results` array that has
    * changed. The repeated `StreamingRecognitionResult` results overwrite past
@@ -479,28 +533,42 @@ private static final long serialVersionUID = 0L;
   public static final int ENDPOINTER_TYPE_FIELD_NUMBER = 4;
   private int endpointerType_;
   /**
+   *
+   *
    * <pre>
    * *Output-only* Indicates the type of endpointer event.
    * </pre>
    *
-   * <code>.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType endpointer_type = 4;</code>
+   * <code>
+   * .google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType endpointer_type = 4;
+   * </code>
    */
   public int getEndpointerTypeValue() {
     return endpointerType_;
   }
   /**
+   *
+   *
    * <pre>
    * *Output-only* Indicates the type of endpointer event.
    * </pre>
    *
-   * <code>.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType endpointer_type = 4;</code>
+   * <code>
+   * .google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType endpointer_type = 4;
+   * </code>
    */
-  public com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType getEndpointerType() {
-    com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType result = com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType.valueOf(endpointerType_);
-    return result == null ? com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType.UNRECOGNIZED : result;
+  public com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType
+      getEndpointerType() {
+    com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType result =
+        com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType.valueOf(
+            endpointerType_);
+    return result == null
+        ? com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType.UNRECOGNIZED
+        : result;
   }
 
   private byte memoizedIsInitialized = -1;
+
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -510,8 +578,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (error_ != null) {
       output.writeMessage(1, getError());
     }
@@ -521,7 +588,9 @@ private static final long serialVersionUID = 0L;
     if (resultIndex_ != 0) {
       output.writeInt32(3, resultIndex_);
     }
-    if (endpointerType_ != com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType.ENDPOINTER_EVENT_UNSPECIFIED.getNumber()) {
+    if (endpointerType_
+        != com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType
+            .ENDPOINTER_EVENT_UNSPECIFIED.getNumber()) {
       output.writeEnum(4, endpointerType_);
     }
     unknownFields.writeTo(output);
@@ -533,20 +602,18 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (error_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getError());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getError());
     }
     for (int i = 0; i < results_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, results_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, results_.get(i));
     }
     if (resultIndex_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(3, resultIndex_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, resultIndex_);
     }
-    if (endpointerType_ != com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType.ENDPOINTER_EVENT_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(4, endpointerType_);
+    if (endpointerType_
+        != com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType
+            .ENDPOINTER_EVENT_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, endpointerType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -556,23 +623,21 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.speech.v1beta1.StreamingRecognizeResponse)) {
       return super.equals(obj);
     }
-    com.google.cloud.speech.v1beta1.StreamingRecognizeResponse other = (com.google.cloud.speech.v1beta1.StreamingRecognizeResponse) obj;
+    com.google.cloud.speech.v1beta1.StreamingRecognizeResponse other =
+        (com.google.cloud.speech.v1beta1.StreamingRecognizeResponse) obj;
 
     boolean result = true;
     result = result && (hasError() == other.hasError());
     if (hasError()) {
-      result = result && getError()
-          .equals(other.getError());
+      result = result && getError().equals(other.getError());
     }
-    result = result && getResultsList()
-        .equals(other.getResultsList());
-    result = result && (getResultIndex()
-        == other.getResultIndex());
+    result = result && getResultsList().equals(other.getResultsList());
+    result = result && (getResultIndex() == other.getResultIndex());
     result = result && endpointerType_ == other.endpointerType_;
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -603,94 +668,102 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.speech.v1beta1.StreamingRecognizeResponse parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.speech.v1beta1.StreamingRecognizeResponse parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.speech.v1beta1.StreamingRecognizeResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.speech.v1beta1.StreamingRecognizeResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.speech.v1beta1.StreamingRecognizeResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.speech.v1beta1.StreamingRecognizeResponse parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.speech.v1beta1.StreamingRecognizeResponse parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.speech.v1beta1.StreamingRecognizeResponse parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.speech.v1beta1.StreamingRecognizeResponse parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.speech.v1beta1.StreamingRecognizeResponse parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.speech.v1beta1.StreamingRecognizeResponse parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.speech.v1beta1.StreamingRecognizeResponse parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.speech.v1beta1.StreamingRecognizeResponse parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.speech.v1beta1.StreamingRecognizeResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.speech.v1beta1.StreamingRecognizeResponse prototype) {
+
+  public static Builder newBuilder(
+      com.google.cloud.speech.v1beta1.StreamingRecognizeResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * `StreamingRecognizeResponse` is the only message returned to the client by
    * `StreamingRecognize`. A series of one or more `StreamingRecognizeResponse`
@@ -740,20 +813,22 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.speech.v1beta1.StreamingRecognizeResponse}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.speech.v1beta1.StreamingRecognizeResponse)
       com.google.cloud.speech.v1beta1.StreamingRecognizeResponseOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.speech.v1beta1.SpeechProto.internal_static_google_cloud_speech_v1beta1_StreamingRecognizeResponse_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.speech.v1beta1.SpeechProto
+          .internal_static_google_cloud_speech_v1beta1_StreamingRecognizeResponse_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.speech.v1beta1.SpeechProto.internal_static_google_cloud_speech_v1beta1_StreamingRecognizeResponse_fieldAccessorTable
+      return com.google.cloud.speech.v1beta1.SpeechProto
+          .internal_static_google_cloud_speech_v1beta1_StreamingRecognizeResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.class, com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.Builder.class);
+              com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.class,
+              com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.Builder.class);
     }
 
     // Construct using com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.newBuilder()
@@ -761,17 +836,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getResultsFieldBuilder();
       }
     }
+
     public Builder clear() {
       super.clear();
       if (errorBuilder_ == null) {
@@ -793,9 +868,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.speech.v1beta1.SpeechProto.internal_static_google_cloud_speech_v1beta1_StreamingRecognizeResponse_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.speech.v1beta1.SpeechProto
+          .internal_static_google_cloud_speech_v1beta1_StreamingRecognizeResponse_descriptor;
     }
 
     public com.google.cloud.speech.v1beta1.StreamingRecognizeResponse getDefaultInstanceForType() {
@@ -811,7 +886,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public com.google.cloud.speech.v1beta1.StreamingRecognizeResponse buildPartial() {
-      com.google.cloud.speech.v1beta1.StreamingRecognizeResponse result = new com.google.cloud.speech.v1beta1.StreamingRecognizeResponse(this);
+      com.google.cloud.speech.v1beta1.StreamingRecognizeResponse result =
+          new com.google.cloud.speech.v1beta1.StreamingRecognizeResponse(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (errorBuilder_ == null) {
@@ -838,32 +914,33 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.speech.v1beta1.StreamingRecognizeResponse) {
-        return mergeFrom((com.google.cloud.speech.v1beta1.StreamingRecognizeResponse)other);
+        return mergeFrom((com.google.cloud.speech.v1beta1.StreamingRecognizeResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -871,7 +948,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.speech.v1beta1.StreamingRecognizeResponse other) {
-      if (other == com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.getDefaultInstance()) return this;
+      if (other == com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.getDefaultInstance())
+        return this;
       if (other.hasError()) {
         mergeError(other.getError());
       }
@@ -893,9 +971,10 @@ private static final long serialVersionUID = 0L;
             resultsBuilder_ = null;
             results_ = other.results_;
             bitField0_ = (bitField0_ & ~0x00000002);
-            resultsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getResultsFieldBuilder() : null;
+            resultsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getResultsFieldBuilder()
+                    : null;
           } else {
             resultsBuilder_.addAllMessages(other.results_);
           }
@@ -924,7 +1003,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.speech.v1beta1.StreamingRecognizeResponse) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.speech.v1beta1.StreamingRecognizeResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -933,12 +1013,16 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private com.google.rpc.Status error_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder> errorBuilder_;
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        errorBuilder_;
     /**
+     *
+     *
      * <pre>
      * *Output-only* If set, returns a [google.rpc.Status][google.rpc.Status] message that
      * specifies the error for the operation.
@@ -950,6 +1034,8 @@ private static final long serialVersionUID = 0L;
       return errorBuilder_ != null || error_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * *Output-only* If set, returns a [google.rpc.Status][google.rpc.Status] message that
      * specifies the error for the operation.
@@ -965,6 +1051,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * *Output-only* If set, returns a [google.rpc.Status][google.rpc.Status] message that
      * specifies the error for the operation.
@@ -986,6 +1074,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Output-only* If set, returns a [google.rpc.Status][google.rpc.Status] message that
      * specifies the error for the operation.
@@ -993,8 +1083,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.rpc.Status error = 1;</code>
      */
-    public Builder setError(
-        com.google.rpc.Status.Builder builderForValue) {
+    public Builder setError(com.google.rpc.Status.Builder builderForValue) {
       if (errorBuilder_ == null) {
         error_ = builderForValue.build();
         onChanged();
@@ -1005,6 +1094,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Output-only* If set, returns a [google.rpc.Status][google.rpc.Status] message that
      * specifies the error for the operation.
@@ -1015,8 +1106,7 @@ private static final long serialVersionUID = 0L;
     public Builder mergeError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
         if (error_ != null) {
-          error_ =
-            com.google.rpc.Status.newBuilder(error_).mergeFrom(value).buildPartial();
+          error_ = com.google.rpc.Status.newBuilder(error_).mergeFrom(value).buildPartial();
         } else {
           error_ = value;
         }
@@ -1028,6 +1118,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Output-only* If set, returns a [google.rpc.Status][google.rpc.Status] message that
      * specifies the error for the operation.
@@ -1047,6 +1139,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Output-only* If set, returns a [google.rpc.Status][google.rpc.Status] message that
      * specifies the error for the operation.
@@ -1055,11 +1149,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.rpc.Status error = 1;</code>
      */
     public com.google.rpc.Status.Builder getErrorBuilder() {
-      
+
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * *Output-only* If set, returns a [google.rpc.Status][google.rpc.Status] message that
      * specifies the error for the operation.
@@ -1071,11 +1167,12 @@ private static final long serialVersionUID = 0L;
       if (errorBuilder_ != null) {
         return errorBuilder_.getMessageOrBuilder();
       } else {
-        return error_ == null ?
-            com.google.rpc.Status.getDefaultInstance() : error_;
+        return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * *Output-only* If set, returns a [google.rpc.Status][google.rpc.Status] message that
      * specifies the error for the operation.
@@ -1084,32 +1181,40 @@ private static final long serialVersionUID = 0L;
      * <code>.google.rpc.Status error = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder> 
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         getErrorFieldBuilder() {
       if (errorBuilder_ == null) {
-        errorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>(
-                getError(),
-                getParentForChildren(),
-                isClean());
+        errorBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.rpc.Status,
+                com.google.rpc.Status.Builder,
+                com.google.rpc.StatusOrBuilder>(getError(), getParentForChildren(), isClean());
         error_ = null;
       }
       return errorBuilder_;
     }
 
     private java.util.List<com.google.cloud.speech.v1beta1.StreamingRecognitionResult> results_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureResultsIsMutable() {
       if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-        results_ = new java.util.ArrayList<com.google.cloud.speech.v1beta1.StreamingRecognitionResult>(results_);
+        results_ =
+            new java.util.ArrayList<com.google.cloud.speech.v1beta1.StreamingRecognitionResult>(
+                results_);
         bitField0_ |= 0x00000002;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.speech.v1beta1.StreamingRecognitionResult, com.google.cloud.speech.v1beta1.StreamingRecognitionResult.Builder, com.google.cloud.speech.v1beta1.StreamingRecognitionResultOrBuilder> resultsBuilder_;
+            com.google.cloud.speech.v1beta1.StreamingRecognitionResult,
+            com.google.cloud.speech.v1beta1.StreamingRecognitionResult.Builder,
+            com.google.cloud.speech.v1beta1.StreamingRecognitionResultOrBuilder>
+        resultsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * *Output-only* This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
@@ -1119,7 +1224,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code>
      */
-    public java.util.List<com.google.cloud.speech.v1beta1.StreamingRecognitionResult> getResultsList() {
+    public java.util.List<com.google.cloud.speech.v1beta1.StreamingRecognitionResult>
+        getResultsList() {
       if (resultsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(results_);
       } else {
@@ -1127,6 +1233,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * *Output-only* This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
@@ -1144,6 +1252,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * *Output-only* This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
@@ -1161,6 +1271,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * *Output-only* This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
@@ -1185,6 +1297,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Output-only* This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
@@ -1195,7 +1309,8 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code>
      */
     public Builder setResults(
-        int index, com.google.cloud.speech.v1beta1.StreamingRecognitionResult.Builder builderForValue) {
+        int index,
+        com.google.cloud.speech.v1beta1.StreamingRecognitionResult.Builder builderForValue) {
       if (resultsBuilder_ == null) {
         ensureResultsIsMutable();
         results_.set(index, builderForValue.build());
@@ -1206,6 +1321,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Output-only* This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
@@ -1229,6 +1346,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Output-only* This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
@@ -1253,6 +1372,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Output-only* This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
@@ -1274,6 +1395,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Output-only* This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
@@ -1284,7 +1407,8 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code>
      */
     public Builder addResults(
-        int index, com.google.cloud.speech.v1beta1.StreamingRecognitionResult.Builder builderForValue) {
+        int index,
+        com.google.cloud.speech.v1beta1.StreamingRecognitionResult.Builder builderForValue) {
       if (resultsBuilder_ == null) {
         ensureResultsIsMutable();
         results_.add(index, builderForValue.build());
@@ -1295,6 +1419,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Output-only* This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
@@ -1305,11 +1431,11 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code>
      */
     public Builder addAllResults(
-        java.lang.Iterable<? extends com.google.cloud.speech.v1beta1.StreamingRecognitionResult> values) {
+        java.lang.Iterable<? extends com.google.cloud.speech.v1beta1.StreamingRecognitionResult>
+            values) {
       if (resultsBuilder_ == null) {
         ensureResultsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, results_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, results_);
         onChanged();
       } else {
         resultsBuilder_.addAllMessages(values);
@@ -1317,6 +1443,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Output-only* This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
@@ -1337,6 +1465,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Output-only* This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
@@ -1357,6 +1487,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Output-only* This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
@@ -1371,6 +1503,8 @@ private static final long serialVersionUID = 0L;
       return getResultsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * *Output-only* This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
@@ -1383,11 +1517,14 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.speech.v1beta1.StreamingRecognitionResultOrBuilder getResultsOrBuilder(
         int index) {
       if (resultsBuilder_ == null) {
-        return results_.get(index);  } else {
+        return results_.get(index);
+      } else {
         return resultsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * *Output-only* This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
@@ -1397,8 +1534,9 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code>
      */
-    public java.util.List<? extends com.google.cloud.speech.v1beta1.StreamingRecognitionResultOrBuilder> 
-         getResultsOrBuilderList() {
+    public java.util.List<
+            ? extends com.google.cloud.speech.v1beta1.StreamingRecognitionResultOrBuilder>
+        getResultsOrBuilderList() {
       if (resultsBuilder_ != null) {
         return resultsBuilder_.getMessageOrBuilderList();
       } else {
@@ -1406,6 +1544,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * *Output-only* This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
@@ -1416,10 +1556,13 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code>
      */
     public com.google.cloud.speech.v1beta1.StreamingRecognitionResult.Builder addResultsBuilder() {
-      return getResultsFieldBuilder().addBuilder(
-          com.google.cloud.speech.v1beta1.StreamingRecognitionResult.getDefaultInstance());
+      return getResultsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.speech.v1beta1.StreamingRecognitionResult.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * *Output-only* This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
@@ -1431,10 +1574,14 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.speech.v1beta1.StreamingRecognitionResult.Builder addResultsBuilder(
         int index) {
-      return getResultsFieldBuilder().addBuilder(
-          index, com.google.cloud.speech.v1beta1.StreamingRecognitionResult.getDefaultInstance());
+      return getResultsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.speech.v1beta1.StreamingRecognitionResult.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * *Output-only* This repeated list contains zero or more results that
      * correspond to consecutive portions of the audio currently being processed.
@@ -1444,16 +1591,22 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.speech.v1beta1.StreamingRecognitionResult results = 2;</code>
      */
-    public java.util.List<com.google.cloud.speech.v1beta1.StreamingRecognitionResult.Builder> 
-         getResultsBuilderList() {
+    public java.util.List<com.google.cloud.speech.v1beta1.StreamingRecognitionResult.Builder>
+        getResultsBuilderList() {
       return getResultsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.speech.v1beta1.StreamingRecognitionResult, com.google.cloud.speech.v1beta1.StreamingRecognitionResult.Builder, com.google.cloud.speech.v1beta1.StreamingRecognitionResultOrBuilder> 
+            com.google.cloud.speech.v1beta1.StreamingRecognitionResult,
+            com.google.cloud.speech.v1beta1.StreamingRecognitionResult.Builder,
+            com.google.cloud.speech.v1beta1.StreamingRecognitionResultOrBuilder>
         getResultsFieldBuilder() {
       if (resultsBuilder_ == null) {
-        resultsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.speech.v1beta1.StreamingRecognitionResult, com.google.cloud.speech.v1beta1.StreamingRecognitionResult.Builder, com.google.cloud.speech.v1beta1.StreamingRecognitionResultOrBuilder>(
+        resultsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.speech.v1beta1.StreamingRecognitionResult,
+                com.google.cloud.speech.v1beta1.StreamingRecognitionResult.Builder,
+                com.google.cloud.speech.v1beta1.StreamingRecognitionResultOrBuilder>(
                 results_,
                 ((bitField0_ & 0x00000002) == 0x00000002),
                 getParentForChildren(),
@@ -1463,8 +1616,10 @@ private static final long serialVersionUID = 0L;
       return resultsBuilder_;
     }
 
-    private int resultIndex_ ;
+    private int resultIndex_;
     /**
+     *
+     *
      * <pre>
      * *Output-only* Indicates the lowest index in the `results` array that has
      * changed. The repeated `StreamingRecognitionResult` results overwrite past
@@ -1477,6 +1632,8 @@ private static final long serialVersionUID = 0L;
       return resultIndex_;
     }
     /**
+     *
+     *
      * <pre>
      * *Output-only* Indicates the lowest index in the `results` array that has
      * changed. The repeated `StreamingRecognitionResult` results overwrite past
@@ -1486,12 +1643,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 result_index = 3;</code>
      */
     public Builder setResultIndex(int value) {
-      
+
       resultIndex_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Output-only* Indicates the lowest index in the `results` array that has
      * changed. The repeated `StreamingRecognitionResult` results overwrite past
@@ -1501,7 +1660,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 result_index = 3;</code>
      */
     public Builder clearResultIndex() {
-      
+
       resultIndex_ = 0;
       onChanged();
       return this;
@@ -1509,21 +1668,29 @@ private static final long serialVersionUID = 0L;
 
     private int endpointerType_ = 0;
     /**
+     *
+     *
      * <pre>
      * *Output-only* Indicates the type of endpointer event.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType endpointer_type = 4;</code>
+     * <code>
+     * .google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType endpointer_type = 4;
+     * </code>
      */
     public int getEndpointerTypeValue() {
       return endpointerType_;
     }
     /**
+     *
+     *
      * <pre>
      * *Output-only* Indicates the type of endpointer event.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType endpointer_type = 4;</code>
+     * <code>
+     * .google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType endpointer_type = 4;
+     * </code>
      */
     public Builder setEndpointerTypeValue(int value) {
       endpointerType_ = value;
@@ -1531,47 +1698,65 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Output-only* Indicates the type of endpointer event.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType endpointer_type = 4;</code>
+     * <code>
+     * .google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType endpointer_type = 4;
+     * </code>
      */
-    public com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType getEndpointerType() {
-      com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType result = com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType.valueOf(endpointerType_);
-      return result == null ? com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType.UNRECOGNIZED : result;
+    public com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType
+        getEndpointerType() {
+      com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType result =
+          com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType.valueOf(
+              endpointerType_);
+      return result == null
+          ? com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * *Output-only* Indicates the type of endpointer event.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType endpointer_type = 4;</code>
+     * <code>
+     * .google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType endpointer_type = 4;
+     * </code>
      */
-    public Builder setEndpointerType(com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType value) {
+    public Builder setEndpointerType(
+        com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       endpointerType_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Output-only* Indicates the type of endpointer event.
      * </pre>
      *
-     * <code>.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType endpointer_type = 4;</code>
+     * <code>
+     * .google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType endpointer_type = 4;
+     * </code>
      */
     public Builder clearEndpointerType() {
-      
+
       endpointerType_ = 0;
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1580,12 +1765,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.speech.v1beta1.StreamingRecognizeResponse)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.speech.v1beta1.StreamingRecognizeResponse)
   private static final com.google.cloud.speech.v1beta1.StreamingRecognizeResponse DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.speech.v1beta1.StreamingRecognizeResponse();
   }
@@ -1594,15 +1779,15 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<StreamingRecognizeResponse>
-      PARSER = new com.google.protobuf.AbstractParser<StreamingRecognizeResponse>() {
-    public StreamingRecognizeResponse parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new StreamingRecognizeResponse(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<StreamingRecognizeResponse> PARSER =
+      new com.google.protobuf.AbstractParser<StreamingRecognizeResponse>() {
+        public StreamingRecognizeResponse parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new StreamingRecognizeResponse(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<StreamingRecognizeResponse> parser() {
     return PARSER;
@@ -1616,6 +1801,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.speech.v1beta1.StreamingRecognizeResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

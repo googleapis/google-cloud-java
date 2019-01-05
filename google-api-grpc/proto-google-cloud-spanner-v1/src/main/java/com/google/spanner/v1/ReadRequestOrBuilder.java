@@ -3,11 +3,14 @@
 
 package com.google.spanner.v1;
 
-public interface ReadRequestOrBuilder extends
+public interface ReadRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.v1.ReadRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The session in which the read should be performed.
    * </pre>
@@ -16,16 +19,19 @@ public interface ReadRequestOrBuilder extends
    */
   java.lang.String getSession();
   /**
+   *
+   *
    * <pre>
    * Required. The session in which the read should be performed.
    * </pre>
    *
    * <code>string session = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getSessionBytes();
+  com.google.protobuf.ByteString getSessionBytes();
 
   /**
+   *
+   *
    * <pre>
    * The transaction to use. If none is provided, the default is a
    * temporary read-only transaction with strong concurrency.
@@ -35,6 +41,8 @@ public interface ReadRequestOrBuilder extends
    */
   boolean hasTransaction();
   /**
+   *
+   *
    * <pre>
    * The transaction to use. If none is provided, the default is a
    * temporary read-only transaction with strong concurrency.
@@ -44,6 +52,8 @@ public interface ReadRequestOrBuilder extends
    */
   com.google.spanner.v1.TransactionSelector getTransaction();
   /**
+   *
+   *
    * <pre>
    * The transaction to use. If none is provided, the default is a
    * temporary read-only transaction with strong concurrency.
@@ -54,6 +64,8 @@ public interface ReadRequestOrBuilder extends
   com.google.spanner.v1.TransactionSelectorOrBuilder getTransactionOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Required. The name of the table in the database to be read.
    * </pre>
@@ -62,16 +74,19 @@ public interface ReadRequestOrBuilder extends
    */
   java.lang.String getTable();
   /**
+   *
+   *
    * <pre>
    * Required. The name of the table in the database to be read.
    * </pre>
    *
    * <code>string table = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getTableBytes();
+  com.google.protobuf.ByteString getTableBytes();
 
   /**
+   *
+   *
    * <pre>
    * If non-empty, the name of an index on [table][google.spanner.v1.ReadRequest.table]. This index is
    * used instead of the table primary key when interpreting [key_set][google.spanner.v1.ReadRequest.key_set]
@@ -82,6 +97,8 @@ public interface ReadRequestOrBuilder extends
    */
   java.lang.String getIndex();
   /**
+   *
+   *
    * <pre>
    * If non-empty, the name of an index on [table][google.spanner.v1.ReadRequest.table]. This index is
    * used instead of the table primary key when interpreting [key_set][google.spanner.v1.ReadRequest.key_set]
@@ -90,10 +107,11 @@ public interface ReadRequestOrBuilder extends
    *
    * <code>string index = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getIndexBytes();
+  com.google.protobuf.ByteString getIndexBytes();
 
   /**
+   *
+   *
    * <pre>
    * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned for each row matching
    * this request.
@@ -101,9 +119,10 @@ public interface ReadRequestOrBuilder extends
    *
    * <code>repeated string columns = 5;</code>
    */
-  java.util.List<java.lang.String>
-      getColumnsList();
+  java.util.List<java.lang.String> getColumnsList();
   /**
+   *
+   *
    * <pre>
    * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned for each row matching
    * this request.
@@ -113,6 +132,8 @@ public interface ReadRequestOrBuilder extends
    */
   int getColumnsCount();
   /**
+   *
+   *
    * <pre>
    * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned for each row matching
    * this request.
@@ -122,6 +143,8 @@ public interface ReadRequestOrBuilder extends
    */
   java.lang.String getColumns(int index);
   /**
+   *
+   *
    * <pre>
    * The columns of [table][google.spanner.v1.ReadRequest.table] to be returned for each row matching
    * this request.
@@ -129,10 +152,11 @@ public interface ReadRequestOrBuilder extends
    *
    * <code>repeated string columns = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getColumnsBytes(int index);
+  com.google.protobuf.ByteString getColumnsBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * Required. `key_set` identifies the rows to be yielded. `key_set` names the
    * primary keys of the rows in [table][google.spanner.v1.ReadRequest.table] to be yielded, unless [index][google.spanner.v1.ReadRequest.index]
@@ -150,6 +174,8 @@ public interface ReadRequestOrBuilder extends
    */
   boolean hasKeySet();
   /**
+   *
+   *
    * <pre>
    * Required. `key_set` identifies the rows to be yielded. `key_set` names the
    * primary keys of the rows in [table][google.spanner.v1.ReadRequest.table] to be yielded, unless [index][google.spanner.v1.ReadRequest.index]
@@ -167,6 +193,8 @@ public interface ReadRequestOrBuilder extends
    */
   com.google.spanner.v1.KeySet getKeySet();
   /**
+   *
+   *
    * <pre>
    * Required. `key_set` identifies the rows to be yielded. `key_set` names the
    * primary keys of the rows in [table][google.spanner.v1.ReadRequest.table] to be yielded, unless [index][google.spanner.v1.ReadRequest.index]
@@ -185,6 +213,8 @@ public interface ReadRequestOrBuilder extends
   com.google.spanner.v1.KeySetOrBuilder getKeySetOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * If greater than zero, only the first `limit` rows are yielded. If `limit`
    * is zero, the default is no limit. A limit cannot be specified if
@@ -196,6 +226,8 @@ public interface ReadRequestOrBuilder extends
   long getLimit();
 
   /**
+   *
+   *
    * <pre>
    * If this request is resuming a previously interrupted read,
    * `resume_token` should be copied from the last
@@ -210,6 +242,8 @@ public interface ReadRequestOrBuilder extends
   com.google.protobuf.ByteString getResumeToken();
 
   /**
+   *
+   *
    * <pre>
    * If present, results will be restricted to the specified partition
    * previously created using PartitionRead().    There must be an exact

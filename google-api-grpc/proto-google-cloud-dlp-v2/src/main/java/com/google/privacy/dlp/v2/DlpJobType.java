@@ -4,19 +4,20 @@
 package com.google.privacy.dlp.v2;
 
 /**
+ *
+ *
  * <pre>
  * An enum to represent the various type of DLP jobs.
  * </pre>
  *
  * Protobuf enum {@code google.privacy.dlp.v2.DlpJobType}
  */
-public enum DlpJobType
-    implements com.google.protobuf.ProtocolMessageEnum {
-  /**
-   * <code>DLP_JOB_TYPE_UNSPECIFIED = 0;</code>
-   */
+public enum DlpJobType implements com.google.protobuf.ProtocolMessageEnum {
+  /** <code>DLP_JOB_TYPE_UNSPECIFIED = 0;</code> */
   DLP_JOB_TYPE_UNSPECIFIED(0),
   /**
+   *
+   *
    * <pre>
    * The job inspected Google Cloud for sensitive data.
    * </pre>
@@ -25,6 +26,8 @@ public enum DlpJobType
    */
   INSPECT_JOB(1),
   /**
+   *
+   *
    * <pre>
    * The job executed a Risk Analysis computation.
    * </pre>
@@ -35,11 +38,11 @@ public enum DlpJobType
   UNRECOGNIZED(-1),
   ;
 
-  /**
-   * <code>DLP_JOB_TYPE_UNSPECIFIED = 0;</code>
-   */
+  /** <code>DLP_JOB_TYPE_UNSPECIFIED = 0;</code> */
   public static final int DLP_JOB_TYPE_UNSPECIFIED_VALUE = 0;
   /**
+   *
+   *
    * <pre>
    * The job inspected Google Cloud for sensitive data.
    * </pre>
@@ -48,6 +51,8 @@ public enum DlpJobType
    */
   public static final int INSPECT_JOB_VALUE = 1;
   /**
+   *
+   *
    * <pre>
    * The job executed a Risk Analysis computation.
    * </pre>
@@ -55,7 +60,6 @@ public enum DlpJobType
    * <code>RISK_ANALYSIS_JOB = 2;</code>
    */
   public static final int RISK_ANALYSIS_JOB_VALUE = 2;
-
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -65,9 +69,7 @@ public enum DlpJobType
     return value;
   }
 
-  /**
-   * @deprecated Use {@link #forNumber(int)} instead.
-   */
+  /** @deprecated Use {@link #forNumber(int)} instead. */
   @java.lang.Deprecated
   public static DlpJobType valueOf(int value) {
     return forNumber(value);
@@ -75,45 +77,45 @@ public enum DlpJobType
 
   public static DlpJobType forNumber(int value) {
     switch (value) {
-      case 0: return DLP_JOB_TYPE_UNSPECIFIED;
-      case 1: return INSPECT_JOB;
-      case 2: return RISK_ANALYSIS_JOB;
-      default: return null;
+      case 0:
+        return DLP_JOB_TYPE_UNSPECIFIED;
+      case 1:
+        return INSPECT_JOB;
+      case 2:
+        return RISK_ANALYSIS_JOB;
+      default:
+        return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<DlpJobType>
-      internalGetValueMap() {
+  public static com.google.protobuf.Internal.EnumLiteMap<DlpJobType> internalGetValueMap() {
     return internalValueMap;
   }
-  private static final com.google.protobuf.Internal.EnumLiteMap<
-      DlpJobType> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<DlpJobType>() {
-          public DlpJobType findValueByNumber(int number) {
-            return DlpJobType.forNumber(number);
-          }
-        };
 
-  public final com.google.protobuf.Descriptors.EnumValueDescriptor
-      getValueDescriptor() {
+  private static final com.google.protobuf.Internal.EnumLiteMap<DlpJobType> internalValueMap =
+      new com.google.protobuf.Internal.EnumLiteMap<DlpJobType>() {
+        public DlpJobType findValueByNumber(int number) {
+          return DlpJobType.forNumber(number);
+        }
+      };
+
+  public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
     return getDescriptor().getValues().get(ordinal());
   }
-  public final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptorForType() {
+
+  public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
     return getDescriptor();
   }
-  public static final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(4);
   }
 
   private static final DlpJobType[] VALUES = values();
 
-  public static DlpJobType valueOf(
-      com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+  public static DlpJobType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
-      throw new java.lang.IllegalArgumentException(
-        "EnumValueDescriptor is not for this type.");
+      throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
     }
     if (desc.getIndex() == -1) {
       return UNRECOGNIZED;
@@ -129,4 +131,3 @@ public enum DlpJobType
 
   // @@protoc_insertion_point(enum_scope:google.privacy.dlp.v2.DlpJobType)
 }
-

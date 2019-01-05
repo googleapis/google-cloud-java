@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-examples</artifactId>
-  <version>0.72.0-alpha</version><!-- {x-version-update:google-cloud-examples:current} -->
+  <version>0.75.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-examples:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Examples</name>
   <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples</url>
@@ -18,7 +18,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.72.0-alpha</version><!-- {x-version-update:google-cloud-bom:current} -->
+        <version>0.75.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-bom:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -28,6 +28,14 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigquery</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-bigtable-admin</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-bigtable</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
@@ -94,7 +102,7 @@
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.5.1</version>
+        <version>3.7.0</version>
         <configuration>
           <source>1.7</source>
           <target>1.7</target>
@@ -188,7 +196,7 @@
         <version>2.19.1</version>
         <configuration>
           <excludes>
-            <exclude>**/IT*Snippets.java</exclude>
+            <exclude>**/IT*.java</exclude>
           </excludes>
         </configuration>
       </plugin>

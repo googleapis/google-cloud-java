@@ -93,7 +93,8 @@ public class DeviceManagerSettings extends ClientSettings<DeviceManagerSettings>
 
   /** Returns the object with the settings used for calls to listDeviceRegistries. */
   public PagedCallSettings<
-          ListDeviceRegistriesRequest, ListDeviceRegistriesResponse,
+          ListDeviceRegistriesRequest,
+          ListDeviceRegistriesResponse,
           ListDeviceRegistriesPagedResponse>
       listDeviceRegistriesSettings() {
     return ((DeviceManagerStubSettings) getStubSettings()).listDeviceRegistriesSettings();
@@ -300,7 +301,8 @@ public class DeviceManagerSettings extends ClientSettings<DeviceManagerSettings>
 
     /** Returns the builder for the settings used for calls to listDeviceRegistries. */
     public PagedCallSettings.Builder<
-            ListDeviceRegistriesRequest, ListDeviceRegistriesResponse,
+            ListDeviceRegistriesRequest,
+            ListDeviceRegistriesResponse,
             ListDeviceRegistriesPagedResponse>
         listDeviceRegistriesSettings() {
       return getStubSettingsBuilder().listDeviceRegistriesSettings();

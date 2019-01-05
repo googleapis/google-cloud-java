@@ -16,8 +16,7 @@
 package com.google.cloud.bigtable.admin.v2.models;
 
 import com.google.api.core.InternalApi;
-import com.google.bigtable.admin.v2.AppProfileName;
-import com.google.bigtable.admin.v2.ProjectName;
+import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import com.google.cloud.bigtable.admin.v2.models.AppProfile.MultiClusterRoutingPolicy;
 import com.google.cloud.bigtable.admin.v2.models.AppProfile.RoutingPolicy;
 import com.google.cloud.bigtable.admin.v2.models.AppProfile.SingleClusterRoutingPolicy;
@@ -53,20 +52,25 @@ public final class UpdateAppProfileRequest {
    * concurrency control using etags.
    */
   public static UpdateAppProfileRequest of(@Nonnull AppProfile appProfile) {
-    return new UpdateAppProfileRequest(appProfile.getInstanceId(), appProfile.getId(),
+    return new UpdateAppProfileRequest(
+        appProfile.getInstanceId(),
+        appProfile.getId(),
         com.google.bigtable.admin.v2.UpdateAppProfileRequest.newBuilder()
-            .setAppProfile(appProfile.toProto())
-    );
+            .setAppProfile(appProfile.toProto()));
   }
 
   /** Builds a new update request using an existing AppProfile. */
-  public static UpdateAppProfileRequest of(@Nonnull String instanceId,
-      @Nonnull String appProfileId) {
-    return new UpdateAppProfileRequest(instanceId, appProfileId,
+  public static UpdateAppProfileRequest of(
+      @Nonnull String instanceId, @Nonnull String appProfileId) {
+    return new UpdateAppProfileRequest(
+        instanceId,
+        appProfileId,
         com.google.bigtable.admin.v2.UpdateAppProfileRequest.newBuilder());
   }
 
-  private UpdateAppProfileRequest(@Nonnull String instanceId, @Nonnull String appProfileId,
+  private UpdateAppProfileRequest(
+      @Nonnull String instanceId,
+      @Nonnull String appProfileId,
       @Nonnull com.google.bigtable.admin.v2.UpdateAppProfileRequest.Builder proto) {
     Preconditions.checkNotNull(instanceId, "instanceId must be set");
     Preconditions.checkNotNull(appProfileId, "appProfileId must be set");
@@ -100,12 +104,14 @@ public final class UpdateAppProfileRequest {
     Preconditions.checkNotNull(routingPolicy);
 
     if (routingPolicy instanceof MultiClusterRoutingPolicy) {
-      proto.getAppProfileBuilder()
+      proto
+          .getAppProfileBuilder()
           .setMultiClusterRoutingUseAny(((MultiClusterRoutingPolicy) routingPolicy).toProto());
       updateFieldMask(
           com.google.bigtable.admin.v2.AppProfile.MULTI_CLUSTER_ROUTING_USE_ANY_FIELD_NUMBER);
     } else if (routingPolicy instanceof SingleClusterRoutingPolicy) {
-      proto.getAppProfileBuilder()
+      proto
+          .getAppProfileBuilder()
           .setSingleClusterRouting(((SingleClusterRoutingPolicy) routingPolicy).toProto());
       updateFieldMask(com.google.bigtable.admin.v2.AppProfile.SINGLE_CLUSTER_ROUTING_FIELD_NUMBER);
     } else {
@@ -116,8 +122,8 @@ public final class UpdateAppProfileRequest {
   }
 
   private void updateFieldMask(int fieldNumber) {
-    FieldMask newMask = FieldMaskUtil
-        .fromFieldNumbers(com.google.bigtable.admin.v2.AppProfile.class, fieldNumber);
+    FieldMask newMask =
+        FieldMaskUtil.fromFieldNumbers(com.google.bigtable.admin.v2.AppProfile.class, fieldNumber);
     proto.setUpdateMask(FieldMaskUtil.union(proto.getUpdateMask(), newMask));
   }
 
@@ -126,10 +132,10 @@ public final class UpdateAppProfileRequest {
    * not meant to be used by applications.
    */
   @InternalApi
-  public com.google.bigtable.admin.v2.UpdateAppProfileRequest toProto(ProjectName projectName) {
-    AppProfileName name = AppProfileName.of(projectName.getProject(), instanceId, appProfileId);
+  public com.google.bigtable.admin.v2.UpdateAppProfileRequest toProto(String projectId) {
+    String name = NameUtil.formatAppProfileName(projectId, instanceId, appProfileId);
 
-    proto.getAppProfileBuilder().setName(name.toString());
+    proto.getAppProfileBuilder().setName(name);
 
     return proto.build();
   }
@@ -143,9 +149,9 @@ public final class UpdateAppProfileRequest {
       return false;
     }
     UpdateAppProfileRequest that = (UpdateAppProfileRequest) o;
-    return Objects.equal(instanceId, that.instanceId) &&
-        Objects.equal(appProfileId, that.appProfileId) &&
-        Objects.equal(proto, that.proto);
+    return Objects.equal(instanceId, that.instanceId)
+        && Objects.equal(appProfileId, that.appProfileId)
+        && Objects.equal(proto, that.proto);
   }
 
   @Override

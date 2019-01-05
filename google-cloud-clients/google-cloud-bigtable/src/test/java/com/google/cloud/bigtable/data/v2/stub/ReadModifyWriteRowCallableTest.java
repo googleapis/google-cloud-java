@@ -23,13 +23,13 @@ import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.bigtable.v2.Cell;
 import com.google.bigtable.v2.Column;
 import com.google.bigtable.v2.Family;
 import com.google.bigtable.v2.ReadModifyWriteRowRequest;
 import com.google.bigtable.v2.ReadModifyWriteRowResponse;
 import com.google.bigtable.v2.ReadModifyWriteRule;
+import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.Row;
@@ -47,7 +47,7 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class ReadModifyWriteRowCallableTest {
   private final RequestContext requestContext =
-      RequestContext.create(InstanceName.of("my-project", "my-instance"), "my-app-profile");
+      RequestContext.create("fake-project", "fake-instance", "fake-profile");
   private FakeCallable inner;
   private ReadModifyWriteRowCallable callable;
 
@@ -65,7 +65,9 @@ public class ReadModifyWriteRowCallableTest {
     assertThat(inner.request)
         .isEqualTo(
             ReadModifyWriteRowRequest.newBuilder()
-                .setTableName(requestContext.getInstanceName() + "/tables/my-table")
+                .setTableName(
+                    NameUtil.formatTableName(
+                        requestContext.getProjectId(), requestContext.getInstanceId(), "my-table"))
                 .setAppProfileId(requestContext.getAppProfileId())
                 .setRowKey(ByteString.copyFromUtf8("my-key"))
                 .addRules(

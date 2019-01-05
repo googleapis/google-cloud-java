@@ -84,13 +84,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -931,7 +931,10 @@ public class AgentsClient implements BackgroundResource {
 
   public static class SearchAgentsPagedResponse
       extends AbstractPagedListResponse<
-          SearchAgentsRequest, SearchAgentsResponse, Agent, SearchAgentsPage,
+          SearchAgentsRequest,
+          SearchAgentsResponse,
+          Agent,
+          SearchAgentsPage,
           SearchAgentsFixedSizeCollection> {
 
     public static ApiFuture<SearchAgentsPagedResponse> createAsync(
@@ -984,7 +987,10 @@ public class AgentsClient implements BackgroundResource {
 
   public static class SearchAgentsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          SearchAgentsRequest, SearchAgentsResponse, Agent, SearchAgentsPage,
+          SearchAgentsRequest,
+          SearchAgentsResponse,
+          Agent,
+          SearchAgentsPage,
           SearchAgentsFixedSizeCollection> {
 
     private SearchAgentsFixedSizeCollection(List<SearchAgentsPage> pages, int collectionSize) {

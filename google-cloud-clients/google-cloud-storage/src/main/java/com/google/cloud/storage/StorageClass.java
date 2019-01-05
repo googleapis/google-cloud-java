@@ -20,8 +20,8 @@ import com.google.cloud.StringEnumType;
 import com.google.cloud.StringEnumValue;
 
 /**
- * Enums for the storage classes.
- * See https://cloud.google.com/storage/docs/storage-classes for details.
+ * Enums for the storage classes. See https://cloud.google.com/storage/docs/storage-classes for
+ * details.
  */
 public final class StorageClass extends StringEnumValue {
   private static final long serialVersionUID = -6938125060419556331L;
@@ -38,40 +38,27 @@ public final class StorageClass extends StringEnumValue {
         }
       };
 
-  private static final StringEnumType<StorageClass> type = new StringEnumType(
-      StorageClass.class,
-      CONSTRUCTOR);
+  private static final StringEnumType<StorageClass> type =
+      new StringEnumType(StorageClass.class, CONSTRUCTOR);
 
-  /**
-   * Regional storage class.
-   */
+  /** Regional storage class. */
   public static final StorageClass REGIONAL = type.createAndRegister("REGIONAL");
 
-  /**
-   * Multi-regional storage class.
-   */
+  /** Multi-regional storage class. */
   public static final StorageClass MULTI_REGIONAL = type.createAndRegister("MULTI_REGIONAL");
 
-  /**
-   * Nearline storage class.
-   */
+  /** Nearline storage class. */
   public static final StorageClass NEARLINE = type.createAndRegister("NEARLINE");
 
-  /**
-   * Coldline storage class.
-   */
+  /** Coldline storage class. */
   public static final StorageClass COLDLINE = type.createAndRegister("COLDLINE");
 
-  /**
-   * Standard storage class.
-   */
+  /** Standard storage class. */
   public static final StorageClass STANDARD = type.createAndRegister("STANDARD");
 
-  /**
-   * Durable Reduced Availability (deprecated)
-   */
-  public static final StorageClass DURABLE_REDUCED_AVAILABILITY = type.createAndRegister(
-      "DURABLE_REDUCED_AVAILABILITY");
+  /** Durable Reduced Availability (deprecated) */
+  public static final StorageClass DURABLE_REDUCED_AVAILABILITY =
+      type.createAndRegister("DURABLE_REDUCED_AVAILABILITY");
 
   /**
    * Get the StorageClass for the given String constant, and throw an exception if the constant is
@@ -81,16 +68,12 @@ public final class StorageClass extends StringEnumValue {
     return type.valueOfStrict(constant);
   }
 
-  /**
-   * Get the StorageClass for the given String constant, and allow unrecognized values.
-   */
+  /** Get the StorageClass for the given String constant, and allow unrecognized values. */
   public static StorageClass valueOf(String constant) {
     return type.valueOf(constant);
   }
 
-  /**
-   * Return the known values for StorageClass.
-   */
+  /** Return the known values for StorageClass. */
   public static StorageClass[] values() {
     return type.values();
   }

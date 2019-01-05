@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1;
 
-public interface SparkSqlJobOrBuilder extends
+public interface SparkSqlJobOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1.SparkSqlJob)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The HCFS URI of the script that contains SQL queries.
    * </pre>
@@ -16,16 +19,19 @@ public interface SparkSqlJobOrBuilder extends
    */
   java.lang.String getQueryFileUri();
   /**
+   *
+   *
    * <pre>
    * The HCFS URI of the script that contains SQL queries.
    * </pre>
    *
    * <code>string query_file_uri = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getQueryFileUriBytes();
+  com.google.protobuf.ByteString getQueryFileUriBytes();
 
   /**
+   *
+   *
    * <pre>
    * A list of queries.
    * </pre>
@@ -34,6 +40,8 @@ public interface SparkSqlJobOrBuilder extends
    */
   boolean hasQueryList();
   /**
+   *
+   *
    * <pre>
    * A list of queries.
    * </pre>
@@ -42,6 +50,8 @@ public interface SparkSqlJobOrBuilder extends
    */
   com.google.cloud.dataproc.v1.QueryList getQueryList();
   /**
+   *
+   *
    * <pre>
    * A list of queries.
    * </pre>
@@ -51,6 +61,8 @@ public interface SparkSqlJobOrBuilder extends
   com.google.cloud.dataproc.v1.QueryListOrBuilder getQueryListOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. Mapping of query variable names to values (equivalent to the
    * Spark SQL command: SET `name="value";`).
@@ -60,6 +72,8 @@ public interface SparkSqlJobOrBuilder extends
    */
   int getScriptVariablesCount();
   /**
+   *
+   *
    * <pre>
    * Optional. Mapping of query variable names to values (equivalent to the
    * Spark SQL command: SET `name="value";`).
@@ -67,15 +81,13 @@ public interface SparkSqlJobOrBuilder extends
    *
    * <code>map&lt;string, string&gt; script_variables = 3;</code>
    */
-  boolean containsScriptVariables(
-      java.lang.String key);
-  /**
-   * Use {@link #getScriptVariablesMap()} instead.
-   */
+  boolean containsScriptVariables(java.lang.String key);
+  /** Use {@link #getScriptVariablesMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getScriptVariables();
+  java.util.Map<java.lang.String, java.lang.String> getScriptVariables();
   /**
+   *
+   *
    * <pre>
    * Optional. Mapping of query variable names to values (equivalent to the
    * Spark SQL command: SET `name="value";`).
@@ -83,9 +95,10 @@ public interface SparkSqlJobOrBuilder extends
    *
    * <code>map&lt;string, string&gt; script_variables = 3;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getScriptVariablesMap();
+  java.util.Map<java.lang.String, java.lang.String> getScriptVariablesMap();
   /**
+   *
+   *
    * <pre>
    * Optional. Mapping of query variable names to values (equivalent to the
    * Spark SQL command: SET `name="value";`).
@@ -93,11 +106,10 @@ public interface SparkSqlJobOrBuilder extends
    *
    * <code>map&lt;string, string&gt; script_variables = 3;</code>
    */
-
-  java.lang.String getScriptVariablesOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getScriptVariablesOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * Optional. Mapping of query variable names to values (equivalent to the
    * Spark SQL command: SET `name="value";`).
@@ -105,11 +117,11 @@ public interface SparkSqlJobOrBuilder extends
    *
    * <code>map&lt;string, string&gt; script_variables = 3;</code>
    */
-
-  java.lang.String getScriptVariablesOrThrow(
-      java.lang.String key);
+  java.lang.String getScriptVariablesOrThrow(java.lang.String key);
 
   /**
+   *
+   *
    * <pre>
    * Optional. A mapping of property names to values, used to configure
    * Spark SQL's SparkConf. Properties that conflict with values set by the
@@ -120,6 +132,8 @@ public interface SparkSqlJobOrBuilder extends
    */
   int getPropertiesCount();
   /**
+   *
+   *
    * <pre>
    * Optional. A mapping of property names to values, used to configure
    * Spark SQL's SparkConf. Properties that conflict with values set by the
@@ -128,15 +142,13 @@ public interface SparkSqlJobOrBuilder extends
    *
    * <code>map&lt;string, string&gt; properties = 4;</code>
    */
-  boolean containsProperties(
-      java.lang.String key);
-  /**
-   * Use {@link #getPropertiesMap()} instead.
-   */
+  boolean containsProperties(java.lang.String key);
+  /** Use {@link #getPropertiesMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getProperties();
+  java.util.Map<java.lang.String, java.lang.String> getProperties();
   /**
+   *
+   *
    * <pre>
    * Optional. A mapping of property names to values, used to configure
    * Spark SQL's SparkConf. Properties that conflict with values set by the
@@ -145,9 +157,10 @@ public interface SparkSqlJobOrBuilder extends
    *
    * <code>map&lt;string, string&gt; properties = 4;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getPropertiesMap();
+  java.util.Map<java.lang.String, java.lang.String> getPropertiesMap();
   /**
+   *
+   *
    * <pre>
    * Optional. A mapping of property names to values, used to configure
    * Spark SQL's SparkConf. Properties that conflict with values set by the
@@ -156,11 +169,10 @@ public interface SparkSqlJobOrBuilder extends
    *
    * <code>map&lt;string, string&gt; properties = 4;</code>
    */
-
-  java.lang.String getPropertiesOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getPropertiesOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * Optional. A mapping of property names to values, used to configure
    * Spark SQL's SparkConf. Properties that conflict with values set by the
@@ -169,20 +181,21 @@ public interface SparkSqlJobOrBuilder extends
    *
    * <code>map&lt;string, string&gt; properties = 4;</code>
    */
-
-  java.lang.String getPropertiesOrThrow(
-      java.lang.String key);
+  java.lang.String getPropertiesOrThrow(java.lang.String key);
 
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
    * </pre>
    *
    * <code>repeated string jar_file_uris = 56;</code>
    */
-  java.util.List<java.lang.String>
-      getJarFileUrisList();
+  java.util.List<java.lang.String> getJarFileUrisList();
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
    * </pre>
@@ -191,6 +204,8 @@ public interface SparkSqlJobOrBuilder extends
    */
   int getJarFileUrisCount();
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
    * </pre>
@@ -199,16 +214,19 @@ public interface SparkSqlJobOrBuilder extends
    */
   java.lang.String getJarFileUris(int index);
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
    * </pre>
    *
    * <code>repeated string jar_file_uris = 56;</code>
    */
-  com.google.protobuf.ByteString
-      getJarFileUrisBytes(int index);
+  com.google.protobuf.ByteString getJarFileUrisBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * Optional. The runtime log config for job execution.
    * </pre>
@@ -217,6 +235,8 @@ public interface SparkSqlJobOrBuilder extends
    */
   boolean hasLoggingConfig();
   /**
+   *
+   *
    * <pre>
    * Optional. The runtime log config for job execution.
    * </pre>
@@ -225,6 +245,8 @@ public interface SparkSqlJobOrBuilder extends
    */
   com.google.cloud.dataproc.v1.LoggingConfig getLoggingConfig();
   /**
+   *
+   *
    * <pre>
    * Optional. The runtime log config for job execution.
    * </pre>

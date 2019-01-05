@@ -3,11 +3,14 @@
 
 package com.google.logging.v2;
 
-public interface UpdateLogMetricRequestOrBuilder extends
+public interface UpdateLogMetricRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.logging.v2.UpdateLogMetricRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The resource name of the metric to update:
    *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
@@ -20,6 +23,8 @@ public interface UpdateLogMetricRequestOrBuilder extends
    */
   java.lang.String getMetricName();
   /**
+   *
+   *
    * <pre>
    * The resource name of the metric to update:
    *     "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
@@ -30,10 +35,11 @@ public interface UpdateLogMetricRequestOrBuilder extends
    *
    * <code>string metric_name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getMetricNameBytes();
+  com.google.protobuf.ByteString getMetricNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The updated metric.
    * </pre>
@@ -42,6 +48,8 @@ public interface UpdateLogMetricRequestOrBuilder extends
    */
   boolean hasMetric();
   /**
+   *
+   *
    * <pre>
    * The updated metric.
    * </pre>
@@ -50,6 +58,8 @@ public interface UpdateLogMetricRequestOrBuilder extends
    */
   com.google.logging.v2.LogMetric getMetric();
   /**
+   *
+   *
    * <pre>
    * The updated metric.
    * </pre>

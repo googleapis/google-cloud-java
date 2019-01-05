@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface AlertPolicyOrBuilder extends
+public interface AlertPolicyOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.AlertPolicy)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required if the policy exists. The resource name for this policy. The
    * syntax is:
@@ -23,6 +26,8 @@ public interface AlertPolicyOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Required if the policy exists. The resource name for this policy. The
    * syntax is:
@@ -36,10 +41,11 @@ public interface AlertPolicyOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * A short name or phrase used to identify the policy in dashboards,
    * notifications, and incidents. To avoid confusion, don't use the same
@@ -51,6 +57,8 @@ public interface AlertPolicyOrBuilder extends
    */
   java.lang.String getDisplayName();
   /**
+   *
+   *
    * <pre>
    * A short name or phrase used to identify the policy in dashboards,
    * notifications, and incidents. To avoid confusion, don't use the same
@@ -60,10 +68,11 @@ public interface AlertPolicyOrBuilder extends
    *
    * <code>string display_name = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getDisplayNameBytes();
+  com.google.protobuf.ByteString getDisplayNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Documentation that is included with notifications and incidents related to
    * this policy. Best practice is for the documentation to include information
@@ -76,6 +85,8 @@ public interface AlertPolicyOrBuilder extends
    */
   boolean hasDocumentation();
   /**
+   *
+   *
    * <pre>
    * Documentation that is included with notifications and incidents related to
    * this policy. Best practice is for the documentation to include information
@@ -88,6 +99,8 @@ public interface AlertPolicyOrBuilder extends
    */
   com.google.monitoring.v3.AlertPolicy.Documentation getDocumentation();
   /**
+   *
+   *
    * <pre>
    * Documentation that is included with notifications and incidents related to
    * this policy. Best practice is for the documentation to include information
@@ -101,6 +114,8 @@ public interface AlertPolicyOrBuilder extends
   com.google.monitoring.v3.AlertPolicy.DocumentationOrBuilder getDocumentationOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * User-supplied key/value data to be used for organizing and
    * identifying the `AlertPolicy` objects.
@@ -114,6 +129,8 @@ public interface AlertPolicyOrBuilder extends
    */
   int getUserLabelsCount();
   /**
+   *
+   *
    * <pre>
    * User-supplied key/value data to be used for organizing and
    * identifying the `AlertPolicy` objects.
@@ -125,15 +142,13 @@ public interface AlertPolicyOrBuilder extends
    *
    * <code>map&lt;string, string&gt; user_labels = 16;</code>
    */
-  boolean containsUserLabels(
-      java.lang.String key);
-  /**
-   * Use {@link #getUserLabelsMap()} instead.
-   */
+  boolean containsUserLabels(java.lang.String key);
+  /** Use {@link #getUserLabelsMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getUserLabels();
+  java.util.Map<java.lang.String, java.lang.String> getUserLabels();
   /**
+   *
+   *
    * <pre>
    * User-supplied key/value data to be used for organizing and
    * identifying the `AlertPolicy` objects.
@@ -145,9 +160,10 @@ public interface AlertPolicyOrBuilder extends
    *
    * <code>map&lt;string, string&gt; user_labels = 16;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getUserLabelsMap();
+  java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap();
   /**
+   *
+   *
    * <pre>
    * User-supplied key/value data to be used for organizing and
    * identifying the `AlertPolicy` objects.
@@ -159,11 +175,10 @@ public interface AlertPolicyOrBuilder extends
    *
    * <code>map&lt;string, string&gt; user_labels = 16;</code>
    */
-
-  java.lang.String getUserLabelsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getUserLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * User-supplied key/value data to be used for organizing and
    * identifying the `AlertPolicy` objects.
@@ -175,11 +190,11 @@ public interface AlertPolicyOrBuilder extends
    *
    * <code>map&lt;string, string&gt; user_labels = 16;</code>
    */
-
-  java.lang.String getUserLabelsOrThrow(
-      java.lang.String key);
+  java.lang.String getUserLabelsOrThrow(java.lang.String key);
 
   /**
+   *
+   *
    * <pre>
    * A list of conditions for the policy. The conditions are combined by AND or
    * OR according to the `combiner` field. If the combined conditions evaluate
@@ -189,9 +204,10 @@ public interface AlertPolicyOrBuilder extends
    *
    * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
    */
-  java.util.List<com.google.monitoring.v3.AlertPolicy.Condition> 
-      getConditionsList();
+  java.util.List<com.google.monitoring.v3.AlertPolicy.Condition> getConditionsList();
   /**
+   *
+   *
    * <pre>
    * A list of conditions for the policy. The conditions are combined by AND or
    * OR according to the `combiner` field. If the combined conditions evaluate
@@ -203,6 +219,8 @@ public interface AlertPolicyOrBuilder extends
    */
   com.google.monitoring.v3.AlertPolicy.Condition getConditions(int index);
   /**
+   *
+   *
    * <pre>
    * A list of conditions for the policy. The conditions are combined by AND or
    * OR according to the `combiner` field. If the combined conditions evaluate
@@ -214,6 +232,8 @@ public interface AlertPolicyOrBuilder extends
    */
   int getConditionsCount();
   /**
+   *
+   *
    * <pre>
    * A list of conditions for the policy. The conditions are combined by AND or
    * OR according to the `combiner` field. If the combined conditions evaluate
@@ -223,9 +243,11 @@ public interface AlertPolicyOrBuilder extends
    *
    * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
    */
-  java.util.List<? extends com.google.monitoring.v3.AlertPolicy.ConditionOrBuilder> 
+  java.util.List<? extends com.google.monitoring.v3.AlertPolicy.ConditionOrBuilder>
       getConditionsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * A list of conditions for the policy. The conditions are combined by AND or
    * OR according to the `combiner` field. If the combined conditions evaluate
@@ -235,10 +257,11 @@ public interface AlertPolicyOrBuilder extends
    *
    * <code>repeated .google.monitoring.v3.AlertPolicy.Condition conditions = 12;</code>
    */
-  com.google.monitoring.v3.AlertPolicy.ConditionOrBuilder getConditionsOrBuilder(
-      int index);
+  com.google.monitoring.v3.AlertPolicy.ConditionOrBuilder getConditionsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * How to combine the results of multiple conditions
    * to determine if an incident should be opened.
@@ -248,6 +271,8 @@ public interface AlertPolicyOrBuilder extends
    */
   int getCombinerValue();
   /**
+   *
+   *
    * <pre>
    * How to combine the results of multiple conditions
    * to determine if an incident should be opened.
@@ -258,6 +283,8 @@ public interface AlertPolicyOrBuilder extends
   com.google.monitoring.v3.AlertPolicy.ConditionCombinerType getCombiner();
 
   /**
+   *
+   *
    * <pre>
    * Whether or not the policy is enabled. On write, the default interpretation
    * if unset is that the policy is enabled. On read, clients should not make
@@ -270,6 +297,8 @@ public interface AlertPolicyOrBuilder extends
    */
   boolean hasEnabled();
   /**
+   *
+   *
    * <pre>
    * Whether or not the policy is enabled. On write, the default interpretation
    * if unset is that the policy is enabled. On read, clients should not make
@@ -282,6 +311,8 @@ public interface AlertPolicyOrBuilder extends
    */
   com.google.protobuf.BoolValue getEnabled();
   /**
+   *
+   *
    * <pre>
    * Whether or not the policy is enabled. On write, the default interpretation
    * if unset is that the policy is enabled. On read, clients should not make
@@ -295,6 +326,8 @@ public interface AlertPolicyOrBuilder extends
   com.google.protobuf.BoolValueOrBuilder getEnabledOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Identifies the notification channels to which notifications should be sent
    * when incidents are opened or closed or when new violations occur on
@@ -309,9 +342,10 @@ public interface AlertPolicyOrBuilder extends
    *
    * <code>repeated string notification_channels = 14;</code>
    */
-  java.util.List<java.lang.String>
-      getNotificationChannelsList();
+  java.util.List<java.lang.String> getNotificationChannelsList();
   /**
+   *
+   *
    * <pre>
    * Identifies the notification channels to which notifications should be sent
    * when incidents are opened or closed or when new violations occur on
@@ -328,6 +362,8 @@ public interface AlertPolicyOrBuilder extends
    */
   int getNotificationChannelsCount();
   /**
+   *
+   *
    * <pre>
    * Identifies the notification channels to which notifications should be sent
    * when incidents are opened or closed or when new violations occur on
@@ -344,6 +380,8 @@ public interface AlertPolicyOrBuilder extends
    */
   java.lang.String getNotificationChannels(int index);
   /**
+   *
+   *
    * <pre>
    * Identifies the notification channels to which notifications should be sent
    * when incidents are opened or closed or when new violations occur on
@@ -358,10 +396,11 @@ public interface AlertPolicyOrBuilder extends
    *
    * <code>repeated string notification_channels = 14;</code>
    */
-  com.google.protobuf.ByteString
-      getNotificationChannelsBytes(int index);
+  com.google.protobuf.ByteString getNotificationChannelsBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * A read-only record of the creation of the alerting policy. If provided
    * in a call to create or update, this field will be ignored.
@@ -371,6 +410,8 @@ public interface AlertPolicyOrBuilder extends
    */
   boolean hasCreationRecord();
   /**
+   *
+   *
    * <pre>
    * A read-only record of the creation of the alerting policy. If provided
    * in a call to create or update, this field will be ignored.
@@ -380,6 +421,8 @@ public interface AlertPolicyOrBuilder extends
    */
   com.google.monitoring.v3.MutationRecord getCreationRecord();
   /**
+   *
+   *
    * <pre>
    * A read-only record of the creation of the alerting policy. If provided
    * in a call to create or update, this field will be ignored.
@@ -390,6 +433,8 @@ public interface AlertPolicyOrBuilder extends
   com.google.monitoring.v3.MutationRecordOrBuilder getCreationRecordOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A read-only record of the most recent change to the alerting policy. If
    * provided in a call to create or update, this field will be ignored.
@@ -399,6 +444,8 @@ public interface AlertPolicyOrBuilder extends
    */
   boolean hasMutationRecord();
   /**
+   *
+   *
    * <pre>
    * A read-only record of the most recent change to the alerting policy. If
    * provided in a call to create or update, this field will be ignored.
@@ -408,6 +455,8 @@ public interface AlertPolicyOrBuilder extends
    */
   com.google.monitoring.v3.MutationRecord getMutationRecord();
   /**
+   *
+   *
    * <pre>
    * A read-only record of the most recent change to the alerting policy. If
    * provided in a call to create or update, this field will be ignored.

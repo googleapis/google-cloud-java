@@ -98,7 +98,8 @@ public class MachineTypeStubSettings extends StubSettings<MachineTypeStubSetting
           .build();
 
   private final PagedCallSettings<
-          AggregatedListMachineTypesHttpRequest, MachineTypeAggregatedList,
+          AggregatedListMachineTypesHttpRequest,
+          MachineTypeAggregatedList,
           AggregatedListMachineTypesPagedResponse>
       aggregatedListMachineTypesSettings;
   private final UnaryCallSettings<GetMachineTypeHttpRequest, MachineType> getMachineTypeSettings;
@@ -108,7 +109,8 @@ public class MachineTypeStubSettings extends StubSettings<MachineTypeStubSetting
 
   /** Returns the object with the settings used for calls to aggregatedListMachineTypes. */
   public PagedCallSettings<
-          AggregatedListMachineTypesHttpRequest, MachineTypeAggregatedList,
+          AggregatedListMachineTypesHttpRequest,
+          MachineTypeAggregatedList,
           AggregatedListMachineTypesPagedResponse>
       aggregatedListMachineTypesSettings() {
     return aggregatedListMachineTypesSettings;
@@ -211,7 +213,8 @@ public class MachineTypeStubSettings extends StubSettings<MachineTypeStubSetting
           AggregatedListMachineTypesHttpRequest, MachineTypeAggregatedList, MachineTypesScopedList>
       AGGREGATED_LIST_MACHINE_TYPES_PAGE_STR_DESC =
           new PagedListDescriptor<
-              AggregatedListMachineTypesHttpRequest, MachineTypeAggregatedList,
+              AggregatedListMachineTypesHttpRequest,
+              MachineTypeAggregatedList,
               MachineTypesScopedList>() {
             @Override
             public String emptyToken() {
@@ -295,11 +298,13 @@ public class MachineTypeStubSettings extends StubSettings<MachineTypeStubSetting
           };
 
   private static final PagedListResponseFactory<
-          AggregatedListMachineTypesHttpRequest, MachineTypeAggregatedList,
+          AggregatedListMachineTypesHttpRequest,
+          MachineTypeAggregatedList,
           AggregatedListMachineTypesPagedResponse>
       AGGREGATED_LIST_MACHINE_TYPES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              AggregatedListMachineTypesHttpRequest, MachineTypeAggregatedList,
+              AggregatedListMachineTypesHttpRequest,
+              MachineTypeAggregatedList,
               AggregatedListMachineTypesPagedResponse>() {
             @Override
             public ApiFuture<AggregatedListMachineTypesPagedResponse> getFuturePagedResponse(
@@ -309,7 +314,8 @@ public class MachineTypeStubSettings extends StubSettings<MachineTypeStubSetting
                 ApiCallContext context,
                 ApiFuture<MachineTypeAggregatedList> futureResponse) {
               PageContext<
-                      AggregatedListMachineTypesHttpRequest, MachineTypeAggregatedList,
+                      AggregatedListMachineTypesHttpRequest,
+                      MachineTypeAggregatedList,
                       MachineTypesScopedList>
                   pageContext =
                       PageContext.create(
@@ -341,7 +347,8 @@ public class MachineTypeStubSettings extends StubSettings<MachineTypeStubSetting
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final PagedCallSettings.Builder<
-            AggregatedListMachineTypesHttpRequest, MachineTypeAggregatedList,
+            AggregatedListMachineTypesHttpRequest,
+            MachineTypeAggregatedList,
             AggregatedListMachineTypesPagedResponse>
         aggregatedListMachineTypesSettings;
     private final UnaryCallSettings.Builder<GetMachineTypeHttpRequest, MachineType>
@@ -464,7 +471,8 @@ public class MachineTypeStubSettings extends StubSettings<MachineTypeStubSetting
 
     /** Returns the builder for the settings used for calls to aggregatedListMachineTypes. */
     public PagedCallSettings.Builder<
-            AggregatedListMachineTypesHttpRequest, MachineTypeAggregatedList,
+            AggregatedListMachineTypesHttpRequest,
+            MachineTypeAggregatedList,
             AggregatedListMachineTypesPagedResponse>
         aggregatedListMachineTypesSettings() {
       return aggregatedListMachineTypesSettings;

@@ -3,11 +3,14 @@
 
 package com.google.cloud.videointelligence.v1;
 
-public interface LabelDetectionConfigOrBuilder extends
+public interface LabelDetectionConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.videointelligence.v1.LabelDetectionConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * What labels should be detected with LABEL_DETECTION, in addition to
    * video-level labels or segment-level labels.
@@ -18,6 +21,8 @@ public interface LabelDetectionConfigOrBuilder extends
    */
   int getLabelDetectionModeValue();
   /**
+   *
+   *
    * <pre>
    * What labels should be detected with LABEL_DETECTION, in addition to
    * video-level labels or segment-level labels.
@@ -29,6 +34,8 @@ public interface LabelDetectionConfigOrBuilder extends
   com.google.cloud.videointelligence.v1.LabelDetectionMode getLabelDetectionMode();
 
   /**
+   *
+   *
    * <pre>
    * Whether the video has been shot from a stationary (i.e. non-moving) camera.
    * When set to true, might improve detection accuracy for moving objects.
@@ -40,6 +47,8 @@ public interface LabelDetectionConfigOrBuilder extends
   boolean getStationaryCamera();
 
   /**
+   *
+   *
    * <pre>
    * Model to use for label detection.
    * Supported values: "builtin/stable" (the default if unset) and
@@ -50,6 +59,8 @@ public interface LabelDetectionConfigOrBuilder extends
    */
   java.lang.String getModel();
   /**
+   *
+   *
    * <pre>
    * Model to use for label detection.
    * Supported values: "builtin/stable" (the default if unset) and
@@ -58,6 +69,5 @@ public interface LabelDetectionConfigOrBuilder extends
    *
    * <code>string model = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getModelBytes();
+  com.google.protobuf.ByteString getModelBytes();
 }

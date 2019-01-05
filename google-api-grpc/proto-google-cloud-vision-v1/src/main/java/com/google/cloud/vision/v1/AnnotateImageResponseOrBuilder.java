@@ -3,20 +3,24 @@
 
 package com.google.cloud.vision.v1;
 
-public interface AnnotateImageResponseOrBuilder extends
+public interface AnnotateImageResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1.AnnotateImageResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * If present, face detection has completed successfully.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.FaceAnnotation face_annotations = 1;</code>
    */
-  java.util.List<com.google.cloud.vision.v1.FaceAnnotation> 
-      getFaceAnnotationsList();
+  java.util.List<com.google.cloud.vision.v1.FaceAnnotation> getFaceAnnotationsList();
   /**
+   *
+   *
    * <pre>
    * If present, face detection has completed successfully.
    * </pre>
@@ -25,6 +29,8 @@ public interface AnnotateImageResponseOrBuilder extends
    */
   com.google.cloud.vision.v1.FaceAnnotation getFaceAnnotations(int index);
   /**
+   *
+   *
    * <pre>
    * If present, face detection has completed successfully.
    * </pre>
@@ -33,34 +39,40 @@ public interface AnnotateImageResponseOrBuilder extends
    */
   int getFaceAnnotationsCount();
   /**
+   *
+   *
    * <pre>
    * If present, face detection has completed successfully.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.FaceAnnotation face_annotations = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.vision.v1.FaceAnnotationOrBuilder> 
+  java.util.List<? extends com.google.cloud.vision.v1.FaceAnnotationOrBuilder>
       getFaceAnnotationsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * If present, face detection has completed successfully.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.FaceAnnotation face_annotations = 1;</code>
    */
-  com.google.cloud.vision.v1.FaceAnnotationOrBuilder getFaceAnnotationsOrBuilder(
-      int index);
+  com.google.cloud.vision.v1.FaceAnnotationOrBuilder getFaceAnnotationsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * If present, landmark detection has completed successfully.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.EntityAnnotation landmark_annotations = 2;</code>
    */
-  java.util.List<com.google.cloud.vision.v1.EntityAnnotation> 
-      getLandmarkAnnotationsList();
+  java.util.List<com.google.cloud.vision.v1.EntityAnnotation> getLandmarkAnnotationsList();
   /**
+   *
+   *
    * <pre>
    * If present, landmark detection has completed successfully.
    * </pre>
@@ -69,6 +81,8 @@ public interface AnnotateImageResponseOrBuilder extends
    */
   com.google.cloud.vision.v1.EntityAnnotation getLandmarkAnnotations(int index);
   /**
+   *
+   *
    * <pre>
    * If present, landmark detection has completed successfully.
    * </pre>
@@ -77,34 +91,40 @@ public interface AnnotateImageResponseOrBuilder extends
    */
   int getLandmarkAnnotationsCount();
   /**
+   *
+   *
    * <pre>
    * If present, landmark detection has completed successfully.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.EntityAnnotation landmark_annotations = 2;</code>
    */
-  java.util.List<? extends com.google.cloud.vision.v1.EntityAnnotationOrBuilder> 
+  java.util.List<? extends com.google.cloud.vision.v1.EntityAnnotationOrBuilder>
       getLandmarkAnnotationsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * If present, landmark detection has completed successfully.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.EntityAnnotation landmark_annotations = 2;</code>
    */
-  com.google.cloud.vision.v1.EntityAnnotationOrBuilder getLandmarkAnnotationsOrBuilder(
-      int index);
+  com.google.cloud.vision.v1.EntityAnnotationOrBuilder getLandmarkAnnotationsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * If present, logo detection has completed successfully.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.EntityAnnotation logo_annotations = 3;</code>
    */
-  java.util.List<com.google.cloud.vision.v1.EntityAnnotation> 
-      getLogoAnnotationsList();
+  java.util.List<com.google.cloud.vision.v1.EntityAnnotation> getLogoAnnotationsList();
   /**
+   *
+   *
    * <pre>
    * If present, logo detection has completed successfully.
    * </pre>
@@ -113,6 +133,8 @@ public interface AnnotateImageResponseOrBuilder extends
    */
   com.google.cloud.vision.v1.EntityAnnotation getLogoAnnotations(int index);
   /**
+   *
+   *
    * <pre>
    * If present, logo detection has completed successfully.
    * </pre>
@@ -121,34 +143,40 @@ public interface AnnotateImageResponseOrBuilder extends
    */
   int getLogoAnnotationsCount();
   /**
+   *
+   *
    * <pre>
    * If present, logo detection has completed successfully.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.EntityAnnotation logo_annotations = 3;</code>
    */
-  java.util.List<? extends com.google.cloud.vision.v1.EntityAnnotationOrBuilder> 
+  java.util.List<? extends com.google.cloud.vision.v1.EntityAnnotationOrBuilder>
       getLogoAnnotationsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * If present, logo detection has completed successfully.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.EntityAnnotation logo_annotations = 3;</code>
    */
-  com.google.cloud.vision.v1.EntityAnnotationOrBuilder getLogoAnnotationsOrBuilder(
-      int index);
+  com.google.cloud.vision.v1.EntityAnnotationOrBuilder getLogoAnnotationsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * If present, label detection has completed successfully.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.EntityAnnotation label_annotations = 4;</code>
    */
-  java.util.List<com.google.cloud.vision.v1.EntityAnnotation> 
-      getLabelAnnotationsList();
+  java.util.List<com.google.cloud.vision.v1.EntityAnnotation> getLabelAnnotationsList();
   /**
+   *
+   *
    * <pre>
    * If present, label detection has completed successfully.
    * </pre>
@@ -157,6 +185,8 @@ public interface AnnotateImageResponseOrBuilder extends
    */
   com.google.cloud.vision.v1.EntityAnnotation getLabelAnnotations(int index);
   /**
+   *
+   *
    * <pre>
    * If present, label detection has completed successfully.
    * </pre>
@@ -165,83 +195,109 @@ public interface AnnotateImageResponseOrBuilder extends
    */
   int getLabelAnnotationsCount();
   /**
+   *
+   *
    * <pre>
    * If present, label detection has completed successfully.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.EntityAnnotation label_annotations = 4;</code>
    */
-  java.util.List<? extends com.google.cloud.vision.v1.EntityAnnotationOrBuilder> 
+  java.util.List<? extends com.google.cloud.vision.v1.EntityAnnotationOrBuilder>
       getLabelAnnotationsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * If present, label detection has completed successfully.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.EntityAnnotation label_annotations = 4;</code>
    */
-  com.google.cloud.vision.v1.EntityAnnotationOrBuilder getLabelAnnotationsOrBuilder(
-      int index);
+  com.google.cloud.vision.v1.EntityAnnotationOrBuilder getLabelAnnotationsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * If present, localized object detection has completed successfully.
    * This will be sorted descending by confidence score.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;
+   * </code>
    */
-  java.util.List<com.google.cloud.vision.v1.LocalizedObjectAnnotation> 
+  java.util.List<com.google.cloud.vision.v1.LocalizedObjectAnnotation>
       getLocalizedObjectAnnotationsList();
   /**
+   *
+   *
    * <pre>
    * If present, localized object detection has completed successfully.
    * This will be sorted descending by confidence score.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;
+   * </code>
    */
   com.google.cloud.vision.v1.LocalizedObjectAnnotation getLocalizedObjectAnnotations(int index);
   /**
+   *
+   *
    * <pre>
    * If present, localized object detection has completed successfully.
    * This will be sorted descending by confidence score.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;
+   * </code>
    */
   int getLocalizedObjectAnnotationsCount();
   /**
+   *
+   *
    * <pre>
    * If present, localized object detection has completed successfully.
    * This will be sorted descending by confidence score.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;
+   * </code>
    */
-  java.util.List<? extends com.google.cloud.vision.v1.LocalizedObjectAnnotationOrBuilder> 
+  java.util.List<? extends com.google.cloud.vision.v1.LocalizedObjectAnnotationOrBuilder>
       getLocalizedObjectAnnotationsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * If present, localized object detection has completed successfully.
    * This will be sorted descending by confidence score.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1.LocalizedObjectAnnotation localized_object_annotations = 22;
+   * </code>
    */
-  com.google.cloud.vision.v1.LocalizedObjectAnnotationOrBuilder getLocalizedObjectAnnotationsOrBuilder(
-      int index);
+  com.google.cloud.vision.v1.LocalizedObjectAnnotationOrBuilder
+      getLocalizedObjectAnnotationsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * If present, text (OCR) detection has completed successfully.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.EntityAnnotation text_annotations = 5;</code>
    */
-  java.util.List<com.google.cloud.vision.v1.EntityAnnotation> 
-      getTextAnnotationsList();
+  java.util.List<com.google.cloud.vision.v1.EntityAnnotation> getTextAnnotationsList();
   /**
+   *
+   *
    * <pre>
    * If present, text (OCR) detection has completed successfully.
    * </pre>
@@ -250,6 +306,8 @@ public interface AnnotateImageResponseOrBuilder extends
    */
   com.google.cloud.vision.v1.EntityAnnotation getTextAnnotations(int index);
   /**
+   *
+   *
    * <pre>
    * If present, text (OCR) detection has completed successfully.
    * </pre>
@@ -258,25 +316,30 @@ public interface AnnotateImageResponseOrBuilder extends
    */
   int getTextAnnotationsCount();
   /**
+   *
+   *
    * <pre>
    * If present, text (OCR) detection has completed successfully.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.EntityAnnotation text_annotations = 5;</code>
    */
-  java.util.List<? extends com.google.cloud.vision.v1.EntityAnnotationOrBuilder> 
+  java.util.List<? extends com.google.cloud.vision.v1.EntityAnnotationOrBuilder>
       getTextAnnotationsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * If present, text (OCR) detection has completed successfully.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.EntityAnnotation text_annotations = 5;</code>
    */
-  com.google.cloud.vision.v1.EntityAnnotationOrBuilder getTextAnnotationsOrBuilder(
-      int index);
+  com.google.cloud.vision.v1.EntityAnnotationOrBuilder getTextAnnotationsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * If present, text (OCR) detection or document (OCR) text detection has
    * completed successfully.
@@ -288,6 +351,8 @@ public interface AnnotateImageResponseOrBuilder extends
    */
   boolean hasFullTextAnnotation();
   /**
+   *
+   *
    * <pre>
    * If present, text (OCR) detection or document (OCR) text detection has
    * completed successfully.
@@ -299,6 +364,8 @@ public interface AnnotateImageResponseOrBuilder extends
    */
   com.google.cloud.vision.v1.TextAnnotation getFullTextAnnotation();
   /**
+   *
+   *
    * <pre>
    * If present, text (OCR) detection or document (OCR) text detection has
    * completed successfully.
@@ -311,6 +378,8 @@ public interface AnnotateImageResponseOrBuilder extends
   com.google.cloud.vision.v1.TextAnnotationOrBuilder getFullTextAnnotationOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * If present, safe-search annotation has completed successfully.
    * </pre>
@@ -319,6 +388,8 @@ public interface AnnotateImageResponseOrBuilder extends
    */
   boolean hasSafeSearchAnnotation();
   /**
+   *
+   *
    * <pre>
    * If present, safe-search annotation has completed successfully.
    * </pre>
@@ -327,6 +398,8 @@ public interface AnnotateImageResponseOrBuilder extends
    */
   com.google.cloud.vision.v1.SafeSearchAnnotation getSafeSearchAnnotation();
   /**
+   *
+   *
    * <pre>
    * If present, safe-search annotation has completed successfully.
    * </pre>
@@ -336,6 +409,8 @@ public interface AnnotateImageResponseOrBuilder extends
   com.google.cloud.vision.v1.SafeSearchAnnotationOrBuilder getSafeSearchAnnotationOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * If present, image properties were extracted successfully.
    * </pre>
@@ -344,6 +419,8 @@ public interface AnnotateImageResponseOrBuilder extends
    */
   boolean hasImagePropertiesAnnotation();
   /**
+   *
+   *
    * <pre>
    * If present, image properties were extracted successfully.
    * </pre>
@@ -352,6 +429,8 @@ public interface AnnotateImageResponseOrBuilder extends
    */
   com.google.cloud.vision.v1.ImageProperties getImagePropertiesAnnotation();
   /**
+   *
+   *
    * <pre>
    * If present, image properties were extracted successfully.
    * </pre>
@@ -361,6 +440,8 @@ public interface AnnotateImageResponseOrBuilder extends
   com.google.cloud.vision.v1.ImagePropertiesOrBuilder getImagePropertiesAnnotationOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * If present, crop hints have completed successfully.
    * </pre>
@@ -369,6 +450,8 @@ public interface AnnotateImageResponseOrBuilder extends
    */
   boolean hasCropHintsAnnotation();
   /**
+   *
+   *
    * <pre>
    * If present, crop hints have completed successfully.
    * </pre>
@@ -377,6 +460,8 @@ public interface AnnotateImageResponseOrBuilder extends
    */
   com.google.cloud.vision.v1.CropHintsAnnotation getCropHintsAnnotation();
   /**
+   *
+   *
    * <pre>
    * If present, crop hints have completed successfully.
    * </pre>
@@ -386,6 +471,8 @@ public interface AnnotateImageResponseOrBuilder extends
   com.google.cloud.vision.v1.CropHintsAnnotationOrBuilder getCropHintsAnnotationOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * If present, web detection has completed successfully.
    * </pre>
@@ -394,6 +481,8 @@ public interface AnnotateImageResponseOrBuilder extends
    */
   boolean hasWebDetection();
   /**
+   *
+   *
    * <pre>
    * If present, web detection has completed successfully.
    * </pre>
@@ -402,6 +491,8 @@ public interface AnnotateImageResponseOrBuilder extends
    */
   com.google.cloud.vision.v1.WebDetection getWebDetection();
   /**
+   *
+   *
    * <pre>
    * If present, web detection has completed successfully.
    * </pre>
@@ -411,6 +502,8 @@ public interface AnnotateImageResponseOrBuilder extends
   com.google.cloud.vision.v1.WebDetectionOrBuilder getWebDetectionOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * If present, product search has completed successfully.
    * </pre>
@@ -419,6 +512,8 @@ public interface AnnotateImageResponseOrBuilder extends
    */
   boolean hasProductSearchResults();
   /**
+   *
+   *
    * <pre>
    * If present, product search has completed successfully.
    * </pre>
@@ -427,6 +522,8 @@ public interface AnnotateImageResponseOrBuilder extends
    */
   com.google.cloud.vision.v1.ProductSearchResults getProductSearchResults();
   /**
+   *
+   *
    * <pre>
    * If present, product search has completed successfully.
    * </pre>
@@ -436,6 +533,8 @@ public interface AnnotateImageResponseOrBuilder extends
   com.google.cloud.vision.v1.ProductSearchResultsOrBuilder getProductSearchResultsOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * If set, represents the error message for the operation.
    * Note that filled-in image annotations are guaranteed to be
@@ -446,6 +545,8 @@ public interface AnnotateImageResponseOrBuilder extends
    */
   boolean hasError();
   /**
+   *
+   *
    * <pre>
    * If set, represents the error message for the operation.
    * Note that filled-in image annotations are guaranteed to be
@@ -456,6 +557,8 @@ public interface AnnotateImageResponseOrBuilder extends
    */
   com.google.rpc.Status getError();
   /**
+   *
+   *
    * <pre>
    * If set, represents the error message for the operation.
    * Note that filled-in image annotations are guaranteed to be
@@ -467,6 +570,8 @@ public interface AnnotateImageResponseOrBuilder extends
   com.google.rpc.StatusOrBuilder getErrorOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * If present, contextual information is needed to understand where this image
    * comes from.
@@ -476,6 +581,8 @@ public interface AnnotateImageResponseOrBuilder extends
    */
   boolean hasContext();
   /**
+   *
+   *
    * <pre>
    * If present, contextual information is needed to understand where this image
    * comes from.
@@ -485,6 +592,8 @@ public interface AnnotateImageResponseOrBuilder extends
    */
   com.google.cloud.vision.v1.ImageAnnotationContext getContext();
   /**
+   *
+   *
    * <pre>
    * If present, contextual information is needed to understand where this image
    * comes from.

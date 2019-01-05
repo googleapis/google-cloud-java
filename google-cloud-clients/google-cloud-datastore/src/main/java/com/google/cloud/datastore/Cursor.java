@@ -22,12 +22,11 @@ import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.io.BaseEncoding;
 import com.google.protobuf.ByteString;
-
 import java.io.Serializable;
 
 /**
- * A Google Cloud Datastore cursor.
- * The cursor can be used to as a starting point or an ending point for a {@link Query}
+ * A Google Cloud Datastore cursor. The cursor can be used to as a starting point or an ending point
+ * for a {@link Query}
  */
 public final class Cursor implements Serializable {
 
@@ -63,16 +62,12 @@ public final class Cursor implements Serializable {
     return byteString;
   }
 
-  /**
-   * Returns the cursor in an encoded form that can be used as part of a URL.
-   */
+  /** Returns the cursor in an encoded form that can be used as part of a URL. */
   public String toUrlSafe() {
     return BaseEncoding.base64Url().encode(byteString.toByteArray());
   }
 
-  /**
-   * Create a {@code Cursor} given its URL safe encoded form.
-   */
+  /** Create a {@code Cursor} given its URL safe encoded form. */
   public static Cursor fromUrlSafe(String urlSafe) {
     try {
       return Cursor.copyFrom(BaseEncoding.base64Url().decode(urlSafe));

@@ -77,7 +77,6 @@ public final class LongValue extends Value<Long> {
     return new LongValue(value);
   }
 
-
   public static Builder newBuilder(long value) {
     return new Builder().set(value);
   }

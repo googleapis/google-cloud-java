@@ -3,11 +3,14 @@
 
 package com.google.cloud.iot.v1;
 
-public interface SendCommandToDeviceRequestOrBuilder extends
+public interface SendCommandToDeviceRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.iot.v1.SendCommandToDeviceRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The name of the device. For example,
    * `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
@@ -18,6 +21,8 @@ public interface SendCommandToDeviceRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The name of the device. For example,
    * `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
@@ -26,10 +31,11 @@ public interface SendCommandToDeviceRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The command data to send to the device.
    * </pre>
@@ -39,6 +45,8 @@ public interface SendCommandToDeviceRequestOrBuilder extends
   com.google.protobuf.ByteString getBinaryData();
 
   /**
+   *
+   *
    * <pre>
    * Optional subfolder for the command. If empty, the command will be delivered
    * to the /devices/{device-id}/commands topic, otherwise it will be delivered
@@ -51,6 +59,8 @@ public interface SendCommandToDeviceRequestOrBuilder extends
    */
   java.lang.String getSubfolder();
   /**
+   *
+   *
    * <pre>
    * Optional subfolder for the command. If empty, the command will be delivered
    * to the /devices/{device-id}/commands topic, otherwise it will be delivered
@@ -61,6 +71,5 @@ public interface SendCommandToDeviceRequestOrBuilder extends
    *
    * <code>string subfolder = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getSubfolderBytes();
+  com.google.protobuf.ByteString getSubfolderBytes();
 }

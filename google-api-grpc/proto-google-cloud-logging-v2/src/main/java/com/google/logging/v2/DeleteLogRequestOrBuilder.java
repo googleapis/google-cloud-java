@@ -3,11 +3,14 @@
 
 package com.google.logging.v2;
 
-public interface DeleteLogRequestOrBuilder extends
+public interface DeleteLogRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.logging.v2.DeleteLogRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The resource name of the log to delete:
    *     "projects/[PROJECT_ID]/logs/[LOG_ID]"
@@ -25,6 +28,8 @@ public interface DeleteLogRequestOrBuilder extends
    */
   java.lang.String getLogName();
   /**
+   *
+   *
    * <pre>
    * Required. The resource name of the log to delete:
    *     "projects/[PROJECT_ID]/logs/[LOG_ID]"
@@ -40,6 +45,5 @@ public interface DeleteLogRequestOrBuilder extends
    *
    * <code>string log_name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getLogNameBytes();
+  com.google.protobuf.ByteString getLogNameBytes();
 }

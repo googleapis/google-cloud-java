@@ -29,8 +29,12 @@ import com.google.cloud.ReadChannel;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.Storage;
-
 import com.google.cloud.storage.StorageException;
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.channels.ClosedChannelException;
+import java.nio.channels.NonWritableChannelException;
+import javax.net.ssl.SSLHandshakeException;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -39,15 +43,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.ArgumentCaptor;
 
-import javax.net.ssl.SSLHandshakeException;
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.nio.channels.ClosedChannelException;
-import java.nio.channels.NonWritableChannelException;
-
-/**
- * Unit tests for {@link CloudStorageReadChannel}.
- */
+/** Unit tests for {@link CloudStorageReadChannel}. */
 @RunWith(JUnit4.class)
 public class CloudStorageReadChannelTest {
 
@@ -64,11 +60,20 @@ public class CloudStorageReadChannelTest {
   public void before() throws IOException {
     when(metadata.getSize()).thenReturn(42L);
     when(metadata.getGeneration()).thenReturn(2L);
-    when(gcsStorage.get(file, Storage.BlobGetOption.fields(Storage.BlobField.GENERATION, Storage.BlobField.SIZE))).thenReturn(metadata);
-    when(gcsStorage.reader(file, Storage.BlobSourceOption.generationMatch(2L))).thenReturn(gcsChannel);
+    when(gcsStorage.get(
+            file,
+            Storage.BlobGetOption.fields(Storage.BlobField.GENERATION, Storage.BlobField.SIZE)))
+        .thenReturn(metadata);
+    when(gcsStorage.reader(file, Storage.BlobSourceOption.generationMatch(2L)))
+        .thenReturn(gcsChannel);
     when(gcsChannel.isOpen()).thenReturn(true);
-    chan = CloudStorageReadChannel.create(gcsStorage, file, 0, 1, CloudStorageConfiguration.DEFAULT, "");
-    verify(gcsStorage).get(eq(file), eq(Storage.BlobGetOption.fields(Storage.BlobField.GENERATION, Storage.BlobField.SIZE)));
+    chan =
+        CloudStorageReadChannel.create(
+            gcsStorage, file, 0, 1, CloudStorageConfiguration.DEFAULT, "");
+    verify(gcsStorage)
+        .get(
+            eq(file),
+            eq(Storage.BlobGetOption.fields(Storage.BlobField.GENERATION, Storage.BlobField.SIZE)));
     verify(gcsStorage).reader(eq(file), eq(Storage.BlobSourceOption.generationMatch(2L)));
   }
 
@@ -87,7 +92,12 @@ public class CloudStorageReadChannelTest {
   public void testReadRetry() throws IOException {
     ByteBuffer buffer = ByteBuffer.allocate(1);
     when(gcsChannel.read(eq(buffer)))
-        .thenThrow(new StorageException(new IOException("outer", new IOException("Connection closed prematurely: bytesRead = 33554432, Content-Length = 41943040"))))
+        .thenThrow(
+            new StorageException(
+                new IOException(
+                    "outer",
+                    new IOException(
+                        "Connection closed prematurely: bytesRead = 33554432, Content-Length = 41943040"))))
         .thenReturn(1);
     assertThat(chan.position()).isEqualTo(0L);
     assertThat(chan.read(buffer)).isEqualTo(1);
@@ -99,7 +109,13 @@ public class CloudStorageReadChannelTest {
   public void testReadRetrySSLHandshake() throws IOException {
     ByteBuffer buffer = ByteBuffer.allocate(1);
     when(gcsChannel.read(eq(buffer)))
-        .thenThrow(new StorageException(new IOException("something", new IOException("thing", new SSLHandshakeException("connection closed due to throttling")))))
+        .thenThrow(
+            new StorageException(
+                new IOException(
+                    "something",
+                    new IOException(
+                        "thing",
+                        new SSLHandshakeException("connection closed due to throttling")))))
         .thenReturn(1);
     assertThat(chan.position()).isEqualTo(0L);
     assertThat(chan.read(buffer)).isEqualTo(1);
@@ -111,8 +127,14 @@ public class CloudStorageReadChannelTest {
   public void testReadRetryEventuallyGivesUp() throws IOException {
     ByteBuffer buffer = ByteBuffer.allocate(1);
     when(gcsChannel.read(eq(buffer)))
-        .thenThrow(new StorageException(new IOException("Connection closed prematurely: bytesRead = 33554432, Content-Length = 41943040")))
-        .thenThrow(new StorageException(new IOException("Connection closed prematurely: bytesRead = 33554432, Content-Length = 41943040")))
+        .thenThrow(
+            new StorageException(
+                new IOException(
+                    "Connection closed prematurely: bytesRead = 33554432, Content-Length = 41943040")))
+        .thenThrow(
+            new StorageException(
+                new IOException(
+                    "Connection closed prematurely: bytesRead = 33554432, Content-Length = 41943040")))
         .thenReturn(1);
     assertThat(chan.position()).isEqualTo(0L);
     thrown.expect(StorageException.class);
@@ -208,9 +230,11 @@ public class CloudStorageReadChannelTest {
 
     // Invoke CloudStorageReadChannel.create() to trigger a call to the private
     // CloudStorageReadChannel.innerOpen() method, which does a seek on our gcsChannel.
-    CloudStorageReadChannel.create(gcsStorage, file, startPosition, 1, CloudStorageConfiguration.DEFAULT, "");
+    CloudStorageReadChannel.create(
+        gcsStorage, file, startPosition, 1, CloudStorageConfiguration.DEFAULT, "");
 
-    // Confirm that our position did not overflow during the seek in CloudStorageReadChannel.innerOpen()
+    // Confirm that our position did not overflow during the seek in
+    // CloudStorageReadChannel.innerOpen()
     verify(gcsChannel).seek(captor.capture());
     assertThat(captor.getValue()).isEqualTo(startPosition);
   }

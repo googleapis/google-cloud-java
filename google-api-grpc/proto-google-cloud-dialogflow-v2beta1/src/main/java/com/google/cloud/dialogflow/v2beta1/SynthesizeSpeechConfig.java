@@ -4,21 +4,24 @@
 package com.google.cloud.dialogflow.v2beta1;
 
 /**
+ *
+ *
  * <pre>
  * Configuration of how speech should be synthesized.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig}
  */
-public  final class SynthesizeSpeechConfig extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class SynthesizeSpeechConfig extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig)
     SynthesizeSpeechConfigOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use SynthesizeSpeechConfig.newBuilder() to construct.
   private SynthesizeSpeechConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private SynthesizeSpeechConfig() {
     speakingRate_ = 0D;
     pitch_ = 0D;
@@ -27,10 +30,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private SynthesizeSpeechConfig(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -50,57 +53,61 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 9: {
-
-            speakingRate_ = input.readDouble();
-            break;
-          }
-          case 17: {
-
-            pitch_ = input.readDouble();
-            break;
-          }
-          case 25: {
-
-            volumeGainDb_ = input.readDouble();
-            break;
-          }
-          case 34: {
-            com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams.Builder subBuilder = null;
-            if (voice_ != null) {
-              subBuilder = voice_.toBuilder();
+          case 9:
+            {
+              speakingRate_ = input.readDouble();
+              break;
             }
-            voice_ = input.readMessage(com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(voice_);
-              voice_ = subBuilder.buildPartial();
+          case 17:
+            {
+              pitch_ = input.readDouble();
+              break;
             }
+          case 25:
+            {
+              volumeGainDb_ = input.readDouble();
+              break;
+            }
+          case 34:
+            {
+              com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams.Builder subBuilder = null;
+              if (voice_ != null) {
+                subBuilder = voice_.toBuilder();
+              }
+              voice_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(voice_);
+                voice_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-              effectsProfileId_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000008;
+              break;
             }
-            effectsProfileId_.add(s);
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                effectsProfileId_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              effectsProfileId_.add(s);
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
         effectsProfileId_ = effectsProfileId_.getUnmodifiableView();
@@ -109,23 +116,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.dialogflow.v2beta1.AudioConfigProto.internal_static_google_cloud_dialogflow_v2beta1_SynthesizeSpeechConfig_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.dialogflow.v2beta1.AudioConfigProto
+        .internal_static_google_cloud_dialogflow_v2beta1_SynthesizeSpeechConfig_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.dialogflow.v2beta1.AudioConfigProto.internal_static_google_cloud_dialogflow_v2beta1_SynthesizeSpeechConfig_fieldAccessorTable
+    return com.google.cloud.dialogflow.v2beta1.AudioConfigProto
+        .internal_static_google_cloud_dialogflow_v2beta1_SynthesizeSpeechConfig_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.class, com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.Builder.class);
+            com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.class,
+            com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.Builder.class);
   }
 
   private int bitField0_;
   public static final int SPEAKING_RATE_FIELD_NUMBER = 1;
   private double speakingRate_;
   /**
+   *
+   *
    * <pre>
    * Optional. Speaking rate/speed, in the range [0.25, 4.0]. 1.0 is the normal
    * native speed supported by the specific voice. 2.0 is twice as fast, and
@@ -142,6 +154,8 @@ private static final long serialVersionUID = 0L;
   public static final int PITCH_FIELD_NUMBER = 2;
   private double pitch_;
   /**
+   *
+   *
    * <pre>
    * Optional. Speaking pitch, in the range [-20.0, 20.0]. 20 means increase 20
    * semitones from the original pitch. -20 means decrease 20 semitones from the
@@ -157,6 +171,8 @@ private static final long serialVersionUID = 0L;
   public static final int VOLUME_GAIN_DB_FIELD_NUMBER = 3;
   private double volumeGainDb_;
   /**
+   *
+   *
    * <pre>
    * Optional. Volume gain (in dB) of the normal native volume supported by the
    * specific voice, in the range [-96.0, 16.0]. If unset, or set to a value of
@@ -177,6 +193,8 @@ private static final long serialVersionUID = 0L;
   public static final int EFFECTS_PROFILE_ID_FIELD_NUMBER = 5;
   private com.google.protobuf.LazyStringList effectsProfileId_;
   /**
+   *
+   *
    * <pre>
    * Optional. An identifier which selects 'audio effects' profiles that are
    * applied on (post synthesized) text to speech. Effects are applied on top of
@@ -185,11 +203,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string effects_profile_id = 5;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getEffectsProfileIdList() {
+  public com.google.protobuf.ProtocolStringList getEffectsProfileIdList() {
     return effectsProfileId_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. An identifier which selects 'audio effects' profiles that are
    * applied on (post synthesized) text to speech. Effects are applied on top of
@@ -202,6 +221,8 @@ private static final long serialVersionUID = 0L;
     return effectsProfileId_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. An identifier which selects 'audio effects' profiles that are
    * applied on (post synthesized) text to speech. Effects are applied on top of
@@ -214,6 +235,8 @@ private static final long serialVersionUID = 0L;
     return effectsProfileId_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Optional. An identifier which selects 'audio effects' profiles that are
    * applied on (post synthesized) text to speech. Effects are applied on top of
@@ -222,14 +245,15 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string effects_profile_id = 5;</code>
    */
-  public com.google.protobuf.ByteString
-      getEffectsProfileIdBytes(int index) {
+  public com.google.protobuf.ByteString getEffectsProfileIdBytes(int index) {
     return effectsProfileId_.getByteString(index);
   }
 
   public static final int VOICE_FIELD_NUMBER = 4;
   private com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams voice_;
   /**
+   *
+   *
    * <pre>
    * Optional. The desired voice of the synthesized audio.
    * </pre>
@@ -240,6 +264,8 @@ private static final long serialVersionUID = 0L;
     return voice_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The desired voice of the synthesized audio.
    * </pre>
@@ -247,9 +273,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.dialogflow.v2beta1.VoiceSelectionParams voice = 4;</code>
    */
   public com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams getVoice() {
-    return voice_ == null ? com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams.getDefaultInstance() : voice_;
+    return voice_ == null
+        ? com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams.getDefaultInstance()
+        : voice_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The desired voice of the synthesized audio.
    * </pre>
@@ -261,6 +291,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -272,8 +303,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (speakingRate_ != 0D) {
       output.writeDouble(1, speakingRate_);
     }
@@ -299,20 +329,16 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (speakingRate_ != 0D) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(1, speakingRate_);
+      size += com.google.protobuf.CodedOutputStream.computeDoubleSize(1, speakingRate_);
     }
     if (pitch_ != 0D) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(2, pitch_);
+      size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, pitch_);
     }
     if (volumeGainDb_ != 0D) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(3, volumeGainDb_);
+      size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, volumeGainDb_);
     }
     if (voice_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getVoice());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getVoice());
     }
     {
       int dataSize = 0;
@@ -330,32 +356,31 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig)) {
       return super.equals(obj);
     }
-    com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig other = (com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig) obj;
+    com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig other =
+        (com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig) obj;
 
     boolean result = true;
-    result = result && (
-        java.lang.Double.doubleToLongBits(getSpeakingRate())
-        == java.lang.Double.doubleToLongBits(
-            other.getSpeakingRate()));
-    result = result && (
-        java.lang.Double.doubleToLongBits(getPitch())
-        == java.lang.Double.doubleToLongBits(
-            other.getPitch()));
-    result = result && (
-        java.lang.Double.doubleToLongBits(getVolumeGainDb())
-        == java.lang.Double.doubleToLongBits(
-            other.getVolumeGainDb()));
-    result = result && getEffectsProfileIdList()
-        .equals(other.getEffectsProfileIdList());
+    result =
+        result
+            && (java.lang.Double.doubleToLongBits(getSpeakingRate())
+                == java.lang.Double.doubleToLongBits(other.getSpeakingRate()));
+    result =
+        result
+            && (java.lang.Double.doubleToLongBits(getPitch())
+                == java.lang.Double.doubleToLongBits(other.getPitch()));
+    result =
+        result
+            && (java.lang.Double.doubleToLongBits(getVolumeGainDb())
+                == java.lang.Double.doubleToLongBits(other.getVolumeGainDb()));
+    result = result && getEffectsProfileIdList().equals(other.getEffectsProfileIdList());
     result = result && (hasVoice() == other.hasVoice());
     if (hasVoice()) {
-      result = result && getVoice()
-          .equals(other.getVoice());
+      result = result && getVoice().equals(other.getVoice());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -369,14 +394,19 @@ private static final long serialVersionUID = 0L;
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + SPEAKING_RATE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getSpeakingRate()));
+    hash =
+        (53 * hash)
+            + com.google.protobuf.Internal.hashLong(
+                java.lang.Double.doubleToLongBits(getSpeakingRate()));
     hash = (37 * hash) + PITCH_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getPitch()));
+    hash =
+        (53 * hash)
+            + com.google.protobuf.Internal.hashLong(java.lang.Double.doubleToLongBits(getPitch()));
     hash = (37 * hash) + VOLUME_GAIN_DB_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getVolumeGainDb()));
+    hash =
+        (53 * hash)
+            + com.google.protobuf.Internal.hashLong(
+                java.lang.Double.doubleToLongBits(getVolumeGainDb()));
     if (getEffectsProfileIdCount() > 0) {
       hash = (37 * hash) + EFFECTS_PROFILE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getEffectsProfileIdList().hashCode();
@@ -391,117 +421,127 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig prototype) {
+
+  public static Builder newBuilder(
+      com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Configuration of how speech should be synthesized.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig)
       com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfigOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dialogflow.v2beta1.AudioConfigProto.internal_static_google_cloud_dialogflow_v2beta1_SynthesizeSpeechConfig_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2beta1.AudioConfigProto
+          .internal_static_google_cloud_dialogflow_v2beta1_SynthesizeSpeechConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dialogflow.v2beta1.AudioConfigProto.internal_static_google_cloud_dialogflow_v2beta1_SynthesizeSpeechConfig_fieldAccessorTable
+      return com.google.cloud.dialogflow.v2beta1.AudioConfigProto
+          .internal_static_google_cloud_dialogflow_v2beta1_SynthesizeSpeechConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.class, com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.Builder.class);
+              com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.class,
+              com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.Builder.class);
     }
 
     // Construct using com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.newBuilder()
@@ -509,16 +549,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -540,9 +579,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.dialogflow.v2beta1.AudioConfigProto.internal_static_google_cloud_dialogflow_v2beta1_SynthesizeSpeechConfig_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.dialogflow.v2beta1.AudioConfigProto
+          .internal_static_google_cloud_dialogflow_v2beta1_SynthesizeSpeechConfig_descriptor;
     }
 
     @java.lang.Override
@@ -561,7 +600,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig buildPartial() {
-      com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig result = new com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig(this);
+      com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig result =
+          new com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.speakingRate_ = speakingRate_;
@@ -586,38 +626,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig) {
-        return mergeFrom((com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig)other);
+        return mergeFrom((com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -625,7 +666,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig other) {
-      if (other == com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.getDefaultInstance()) return this;
+      if (other == com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig.getDefaultInstance())
+        return this;
       if (other.getSpeakingRate() != 0D) {
         setSpeakingRate(other.getSpeakingRate());
       }
@@ -667,7 +709,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -676,10 +719,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
-    private double speakingRate_ ;
+    private double speakingRate_;
     /**
+     *
+     *
      * <pre>
      * Optional. Speaking rate/speed, in the range [0.25, 4.0]. 1.0 is the normal
      * native speed supported by the specific voice. 2.0 is twice as fast, and
@@ -693,6 +739,8 @@ private static final long serialVersionUID = 0L;
       return speakingRate_;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Speaking rate/speed, in the range [0.25, 4.0]. 1.0 is the normal
      * native speed supported by the specific voice. 2.0 is twice as fast, and
@@ -703,12 +751,14 @@ private static final long serialVersionUID = 0L;
      * <code>double speaking_rate = 1;</code>
      */
     public Builder setSpeakingRate(double value) {
-      
+
       speakingRate_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Speaking rate/speed, in the range [0.25, 4.0]. 1.0 is the normal
      * native speed supported by the specific voice. 2.0 is twice as fast, and
@@ -719,14 +769,16 @@ private static final long serialVersionUID = 0L;
      * <code>double speaking_rate = 1;</code>
      */
     public Builder clearSpeakingRate() {
-      
+
       speakingRate_ = 0D;
       onChanged();
       return this;
     }
 
-    private double pitch_ ;
+    private double pitch_;
     /**
+     *
+     *
      * <pre>
      * Optional. Speaking pitch, in the range [-20.0, 20.0]. 20 means increase 20
      * semitones from the original pitch. -20 means decrease 20 semitones from the
@@ -739,6 +791,8 @@ private static final long serialVersionUID = 0L;
       return pitch_;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Speaking pitch, in the range [-20.0, 20.0]. 20 means increase 20
      * semitones from the original pitch. -20 means decrease 20 semitones from the
@@ -748,12 +802,14 @@ private static final long serialVersionUID = 0L;
      * <code>double pitch = 2;</code>
      */
     public Builder setPitch(double value) {
-      
+
       pitch_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Speaking pitch, in the range [-20.0, 20.0]. 20 means increase 20
      * semitones from the original pitch. -20 means decrease 20 semitones from the
@@ -763,14 +819,16 @@ private static final long serialVersionUID = 0L;
      * <code>double pitch = 2;</code>
      */
     public Builder clearPitch() {
-      
+
       pitch_ = 0D;
       onChanged();
       return this;
     }
 
-    private double volumeGainDb_ ;
+    private double volumeGainDb_;
     /**
+     *
+     *
      * <pre>
      * Optional. Volume gain (in dB) of the normal native volume supported by the
      * specific voice, in the range [-96.0, 16.0]. If unset, or set to a value of
@@ -788,6 +846,8 @@ private static final long serialVersionUID = 0L;
       return volumeGainDb_;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Volume gain (in dB) of the normal native volume supported by the
      * specific voice, in the range [-96.0, 16.0]. If unset, or set to a value of
@@ -802,12 +862,14 @@ private static final long serialVersionUID = 0L;
      * <code>double volume_gain_db = 3;</code>
      */
     public Builder setVolumeGainDb(double value) {
-      
+
       volumeGainDb_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Volume gain (in dB) of the normal native volume supported by the
      * specific voice, in the range [-96.0, 16.0]. If unset, or set to a value of
@@ -822,20 +884,24 @@ private static final long serialVersionUID = 0L;
      * <code>double volume_gain_db = 3;</code>
      */
     public Builder clearVolumeGainDb() {
-      
+
       volumeGainDb_ = 0D;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList effectsProfileId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList effectsProfileId_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureEffectsProfileIdIsMutable() {
       if (!((bitField0_ & 0x00000008) == 0x00000008)) {
         effectsProfileId_ = new com.google.protobuf.LazyStringArrayList(effectsProfileId_);
         bitField0_ |= 0x00000008;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. An identifier which selects 'audio effects' profiles that are
      * applied on (post synthesized) text to speech. Effects are applied on top of
@@ -844,11 +910,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string effects_profile_id = 5;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getEffectsProfileIdList() {
+    public com.google.protobuf.ProtocolStringList getEffectsProfileIdList() {
       return effectsProfileId_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. An identifier which selects 'audio effects' profiles that are
      * applied on (post synthesized) text to speech. Effects are applied on top of
@@ -861,6 +928,8 @@ private static final long serialVersionUID = 0L;
       return effectsProfileId_.size();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. An identifier which selects 'audio effects' profiles that are
      * applied on (post synthesized) text to speech. Effects are applied on top of
@@ -873,6 +942,8 @@ private static final long serialVersionUID = 0L;
       return effectsProfileId_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * Optional. An identifier which selects 'audio effects' profiles that are
      * applied on (post synthesized) text to speech. Effects are applied on top of
@@ -881,11 +952,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string effects_profile_id = 5;</code>
      */
-    public com.google.protobuf.ByteString
-        getEffectsProfileIdBytes(int index) {
+    public com.google.protobuf.ByteString getEffectsProfileIdBytes(int index) {
       return effectsProfileId_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
      * Optional. An identifier which selects 'audio effects' profiles that are
      * applied on (post synthesized) text to speech. Effects are applied on top of
@@ -894,17 +966,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string effects_profile_id = 5;</code>
      */
-    public Builder setEffectsProfileId(
-        int index, java.lang.String value) {
+    public Builder setEffectsProfileId(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureEffectsProfileIdIsMutable();
+        throw new NullPointerException();
+      }
+      ensureEffectsProfileIdIsMutable();
       effectsProfileId_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. An identifier which selects 'audio effects' profiles that are
      * applied on (post synthesized) text to speech. Effects are applied on top of
@@ -913,17 +986,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string effects_profile_id = 5;</code>
      */
-    public Builder addEffectsProfileId(
-        java.lang.String value) {
+    public Builder addEffectsProfileId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureEffectsProfileIdIsMutable();
+        throw new NullPointerException();
+      }
+      ensureEffectsProfileIdIsMutable();
       effectsProfileId_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. An identifier which selects 'audio effects' profiles that are
      * applied on (post synthesized) text to speech. Effects are applied on top of
@@ -932,15 +1006,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string effects_profile_id = 5;</code>
      */
-    public Builder addAllEffectsProfileId(
-        java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllEffectsProfileId(java.lang.Iterable<java.lang.String> values) {
       ensureEffectsProfileIdIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, effectsProfileId_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, effectsProfileId_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. An identifier which selects 'audio effects' profiles that are
      * applied on (post synthesized) text to speech. Effects are applied on top of
@@ -956,6 +1030,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. An identifier which selects 'audio effects' profiles that are
      * applied on (post synthesized) text to speech. Effects are applied on top of
@@ -964,12 +1040,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string effects_profile_id = 5;</code>
      */
-    public Builder addEffectsProfileIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder addEffectsProfileIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureEffectsProfileIdIsMutable();
       effectsProfileId_.add(value);
       onChanged();
@@ -978,8 +1053,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams voice_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams, com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams.Builder, com.google.cloud.dialogflow.v2beta1.VoiceSelectionParamsOrBuilder> voiceBuilder_;
+            com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams,
+            com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams.Builder,
+            com.google.cloud.dialogflow.v2beta1.VoiceSelectionParamsOrBuilder>
+        voiceBuilder_;
     /**
+     *
+     *
      * <pre>
      * Optional. The desired voice of the synthesized audio.
      * </pre>
@@ -990,6 +1070,8 @@ private static final long serialVersionUID = 0L;
       return voiceBuilder_ != null || voice_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The desired voice of the synthesized audio.
      * </pre>
@@ -998,12 +1080,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams getVoice() {
       if (voiceBuilder_ == null) {
-        return voice_ == null ? com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams.getDefaultInstance() : voice_;
+        return voice_ == null
+            ? com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams.getDefaultInstance()
+            : voice_;
       } else {
         return voiceBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The desired voice of the synthesized audio.
      * </pre>
@@ -1024,6 +1110,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The desired voice of the synthesized audio.
      * </pre>
@@ -1042,6 +1130,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The desired voice of the synthesized audio.
      * </pre>
@@ -1052,7 +1142,9 @@ private static final long serialVersionUID = 0L;
       if (voiceBuilder_ == null) {
         if (voice_ != null) {
           voice_ =
-            com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams.newBuilder(voice_).mergeFrom(value).buildPartial();
+              com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams.newBuilder(voice_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           voice_ = value;
         }
@@ -1064,6 +1156,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The desired voice of the synthesized audio.
      * </pre>
@@ -1082,6 +1176,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The desired voice of the synthesized audio.
      * </pre>
@@ -1089,11 +1185,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dialogflow.v2beta1.VoiceSelectionParams voice = 4;</code>
      */
     public com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams.Builder getVoiceBuilder() {
-      
+
       onChanged();
       return getVoiceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The desired voice of the synthesized audio.
      * </pre>
@@ -1104,11 +1202,14 @@ private static final long serialVersionUID = 0L;
       if (voiceBuilder_ != null) {
         return voiceBuilder_.getMessageOrBuilder();
       } else {
-        return voice_ == null ?
-            com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams.getDefaultInstance() : voice_;
+        return voice_ == null
+            ? com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams.getDefaultInstance()
+            : voice_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The desired voice of the synthesized audio.
      * </pre>
@@ -1116,21 +1217,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dialogflow.v2beta1.VoiceSelectionParams voice = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams, com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams.Builder, com.google.cloud.dialogflow.v2beta1.VoiceSelectionParamsOrBuilder> 
+            com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams,
+            com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams.Builder,
+            com.google.cloud.dialogflow.v2beta1.VoiceSelectionParamsOrBuilder>
         getVoiceFieldBuilder() {
       if (voiceBuilder_ == null) {
-        voiceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams, com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams.Builder, com.google.cloud.dialogflow.v2beta1.VoiceSelectionParamsOrBuilder>(
-                getVoice(),
-                getParentForChildren(),
-                isClean());
+        voiceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams,
+                com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams.Builder,
+                com.google.cloud.dialogflow.v2beta1.VoiceSelectionParamsOrBuilder>(
+                getVoice(), getParentForChildren(), isClean());
         voice_ = null;
       }
       return voiceBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1140,12 +1244,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig)
   private static final com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig();
   }
@@ -1154,16 +1258,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<SynthesizeSpeechConfig>
-      PARSER = new com.google.protobuf.AbstractParser<SynthesizeSpeechConfig>() {
-    @java.lang.Override
-    public SynthesizeSpeechConfig parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new SynthesizeSpeechConfig(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<SynthesizeSpeechConfig> PARSER =
+      new com.google.protobuf.AbstractParser<SynthesizeSpeechConfig>() {
+        @java.lang.Override
+        public SynthesizeSpeechConfig parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new SynthesizeSpeechConfig(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<SynthesizeSpeechConfig> parser() {
     return PARSER;
@@ -1178,6 +1282,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

@@ -36,7 +36,8 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
     private static final long serialVersionUID = -6857294816115909271L;
 
     enum OptionType implements Option.OptionType {
-      PAGE_SIZE, PAGE_TOKEN;
+      PAGE_SIZE,
+      PAGE_TOKEN;
 
       @SuppressWarnings("unchecked")
       <T> T get(Map<Option.OptionType, ?> options) {
@@ -48,30 +49,26 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
       super(option, value);
     }
 
-    /**
-     * Returns an option to specify the maximum number of resources returned per page.
-     */
+    /** Returns an option to specify the maximum number of resources returned per page. */
     public static ListOption pageSize(int pageSize) {
       return new ListOption(OptionType.PAGE_SIZE, pageSize);
     }
 
-    /**
-     * Returns an option to specify the page token from which to start listing resources.
-     */
+    /** Returns an option to specify the page token from which to start listing resources. */
     public static ListOption pageToken(String pageToken) {
       return new ListOption(OptionType.PAGE_TOKEN, pageToken);
     }
   }
 
-  /**
-   * Class for specifying options for writing log entries.
-   */
+  /** Class for specifying options for writing log entries. */
   final class WriteOption extends Option {
 
     private static final long serialVersionUID = 715900132268584612L;
 
     enum OptionType implements Option.OptionType {
-      LOG_NAME, RESOURCE, LABELS;
+      LOG_NAME,
+      RESOURCE,
+      LABELS;
 
       @SuppressWarnings("unchecked")
       <T> T get(Map<Option.OptionType, ?> options) {
@@ -92,26 +89,24 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
     }
 
     /**
-     * Returns an option to specify a default monitored resource (see {@link LogEntry#getResource()})
-     * for those log entries that do not specify their own resource.
+     * Returns an option to specify a default monitored resource (see {@link
+     * LogEntry#getResource()}) for those log entries that do not specify their own resource.
      */
     public static WriteOption resource(MonitoredResource resource) {
       return new WriteOption(OptionType.RESOURCE, resource);
     }
 
     /**
-     * Sets an option to specify (key, value) pairs that are added to the
-     * {@link LogEntry#getLabels()} of each log entry written, except when a log entry already has a
-     * value associated to the same key.
+     * Sets an option to specify (key, value) pairs that are added to the {@link
+     * LogEntry#getLabels()} of each log entry written, except when a log entry already has a value
+     * associated to the same key.
      */
     public static WriteOption labels(Map<String, String> labels) {
       return new WriteOption(OptionType.LABELS, ImmutableMap.copyOf(labels));
     }
   }
 
-  /**
-   * Fields according to which log entries can be sorted.
-   */
+  /** Fields according to which log entries can be sorted. */
   enum SortingField {
     TIMESTAMP;
 
@@ -120,9 +115,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
     }
   }
 
-  /**
-   * Sorting orders available when listing log entries.
-   */
+  /** Sorting orders available when listing log entries. */
   enum SortingOrder {
     DESCENDING("desc"),
     ASCENDING("asc");
@@ -138,9 +131,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
     }
   }
 
-  /**
-   * Class for specifying options for listing log entries.
-   */
+  /** Class for specifying options for listing log entries. */
   final class EntryListOption extends Option {
 
     private static final long serialVersionUID = -1561159676386917050L;
@@ -159,16 +150,12 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
       super(option, value);
     }
 
-    /**
-     * Returns an option to specify the maximum number of log entries returned per page.
-     */
+    /** Returns an option to specify the maximum number of log entries returned per page. */
     public static EntryListOption pageSize(int pageSize) {
       return new EntryListOption(ListOption.OptionType.PAGE_SIZE, pageSize);
     }
 
-    /**
-     * Returns an option to specify the page token from which to start listing log entries.
-     */
+    /** Returns an option to specify the page token from which to start listing log entries. */
     public static EntryListOption pageToken(String pageToken) {
       return new EntryListOption(ListOption.OptionType.PAGE_TOKEN, pageToken);
     }
@@ -199,8 +186,15 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
   Synchronicity getWriteSynchronicity();
 
   /**
-   * Sets flush severity for asynchronous logging writes. Default is ERROR.
-   * Logs will be immediately written out for entries at or higher than flush severity.
+   * Sets flush severity for asynchronous logging writes. It is disabled by default, enabled when
+   * this method is called with not null value. Logs will be immediately written out for entries at
+   * or higher than flush severity.
+   *
+   * <p>Enabling this can cause the leaking and hanging threads, see BUG(2796) BUG(3880). However
+   * you can explicitly call {@link #flush}.
+   *
+   * <p>TODO: Enable this by default once functionality to trigger rpc is available in generated
+   * code.
    */
   void setFlushSeverity(Severity flushSeverity);
 
@@ -210,9 +204,10 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
   /**
    * Creates a new sink.
    *
-   * <p>Example of creating a sink to export logs to a BigQuery dataset (in the
-   * {@link LoggingOptions#getProjectId()} project).
-   * <pre> {@code
+   * <p>Example of creating a sink to export logs to a BigQuery dataset (in the {@link
+   * LoggingOptions#getProjectId()} project).
+   *
+   * <pre>{@code
    * String sinkName = "my_sink_name";
    * String datasetName = "my_dataset";
    * SinkInfo sinkInfo = SinkInfo.of(sinkName, DatasetDestination.of(datasetName));
@@ -225,12 +220,13 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
   Sink create(SinkInfo sink);
 
   /**
-   * Sends a request for creating a sink. This method returns a {@code ApiFuture} object to consume the
-   * result. {@link ApiFuture#get()} returns the created sink.
+   * Sends a request for creating a sink. This method returns a {@code ApiFuture} object to consume
+   * the result. {@link ApiFuture#get()} returns the created sink.
    *
    * <p>Example of asynchronously creating a sink to export logs to a BigQuery dataset (in the
    * {@link LoggingOptions#getProjectId()} project).
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String sinkName = "my_sink_name";
    * String datasetName = "my_dataset";
    * SinkInfo sinkInfo = SinkInfo.of(sinkName, DatasetDestination.of(datasetName));
@@ -238,7 +234,6 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * // ...
    * Sink sink = future.get();
    * }</pre>
-   *
    */
   ApiFuture<Sink> createAsync(SinkInfo sink);
 
@@ -246,7 +241,8 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * Updates a sink or creates one if it does not exist.
    *
    * <p>Example of updating a sink.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String sinkName = "my_sink_name";
    * String datasetName = "my_dataset";
    * SinkInfo sinkInfo = SinkInfo.newBuilder(sinkName, DatasetDestination.of(datasetName))
@@ -267,7 +263,8 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * updated/created sink or {@code null} if not found.
    *
    * <p>Example of asynchronously updating a sink.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String sinkName = "my_sink_name";
    * String datasetName = "my_dataset";
    * SinkInfo sinkInfo = SinkInfo.newBuilder(sinkName, DatasetDestination.of(datasetName))
@@ -278,7 +275,6 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * // ...
    * Sink sink = future.get();
    * }</pre>
-   *
    */
   ApiFuture<Sink> updateAsync(SinkInfo sink);
 
@@ -286,7 +282,8 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * Returns the requested sink or {@code null} if not found.
    *
    * <p>Example of getting a sink.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String sinkName = "my_sink_name";
    * Sink sink = logging.getSink(sinkName);
    * if (sink == null) {
@@ -299,11 +296,12 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
   Sink getSink(String sink);
 
   /**
-   * Sends a request for getting a sink. This method returns a {@code ApiFuture} object to consume the
-   * result. {@link ApiFuture#get()} returns the requested sink or {@code null} if not found.
+   * Sends a request for getting a sink. This method returns a {@code ApiFuture} object to consume
+   * the result. {@link ApiFuture#get()} returns the requested sink or {@code null} if not found.
    *
    * <p>Example of asynchronously getting a sink.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String sinkName = "my_sink_name";
    * ApiFuture<Sink> future = logging.getSinkAsync(sinkName);
    * // ...
@@ -323,7 +321,8 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * to start listing sinks.
    *
    * <p>Example of listing sinks, specifying the page size.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * Page<Sink> sinks = logging.listSinks(ListOption.pageSize(100));
    * Iterator<Sink> sinkIterator = sinks.iterateAll();
    * while (sinkIterator.hasNext()) {
@@ -343,7 +342,8 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * page token from which to start listing sinks.
    *
    * <p>Example of asynchronously listing sinks, specifying the page size.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * ApiFuture<AsyncPage<Sink>> future = logging.listSinksAsync(ListOption.pageSize(100));
    * // ...
    * AsyncPage<Sink> sinks = future.get();
@@ -353,7 +353,6 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *   // do something with the sink
    * }
    * }</pre>
-   *
    */
   ApiFuture<AsyncPage<Sink>> listSinksAsync(ListOption... options);
 
@@ -361,7 +360,8 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * Deletes the requested sink.
    *
    * <p>Example of deleting a sink.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String sinkName = "my_sink_name";
    * boolean deleted = logging.deleteSink(sinkName);
    * if (deleted) {
@@ -376,12 +376,13 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
   boolean deleteSink(String sink);
 
   /**
-   * Sends a request for deleting a sink. This method returns a {@code ApiFuture} object to consume the
-   * result. {@link ApiFuture#get()} returns {@code true} if the sink was deleted, {@code false} if it
-   * was not found.
+   * Sends a request for deleting a sink. This method returns a {@code ApiFuture} object to consume
+   * the result. {@link ApiFuture#get()} returns {@code true} if the sink was deleted, {@code false}
+   * if it was not found.
    *
    * <p>Example of asynchronously deleting a sink.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String sinkName = "my_sink_name";
    * ApiFuture<Boolean> future = logging.deleteSinkAsync(sinkName);
    * // ...
@@ -392,7 +393,6 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *   // the sink was not found
    * }
    * }</pre>
-   *
    */
   ApiFuture<Boolean> deleteSinkAsync(String sink);
 
@@ -400,7 +400,8 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * Deletes a log and all its log entries. The log will reappear if new entries are written to it.
    *
    * <p>Example of deleting a log.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String logName = "my_log_name";
    * boolean deleted = logging.deleteLog(logName);
    * if (deleted) {
@@ -415,12 +416,13 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
   boolean deleteLog(String log);
 
   /**
-   * Sends a request for deleting a log and all its log entries. This method returns a
-   * {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns {@code true} if the
+   * Sends a request for deleting a log and all its log entries. This method returns a {@code
+   * ApiFuture} object to consume the result. {@link ApiFuture#get()} returns {@code true} if the
    * log was deleted, {@code false} if it was not found.
    *
    * <p>Example of asynchronously deleting a log.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String logName = "my_log_name";
    * ApiFuture<Boolean> future = logging.deleteLogAsync(logName);
    * // ...
@@ -431,7 +433,6 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *   // the log was not found
    * }
    * }</pre>
-   *
    */
   ApiFuture<Boolean> deleteLogAsync(String log);
 
@@ -441,7 +442,8 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * specify the page size or the page token from which to start listing resource descriptors.
    *
    * <p>Example of listing monitored resource descriptors, specifying the page size.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * Page<MonitoredResourceDescriptor> descriptors =
    *     logging.listMonitoredResourceDescriptors(ListOption.pageSize(100));
    * Iterator<MonitoredResourceDescriptor> descriptorIterator = descriptors.iterateAll();
@@ -457,13 +459,14 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
 
   /**
    * Sends a request for listing monitored resource descriptors used by Stackdriver Logging. This
-   * method returns a {@code ApiFuture} object to consume the result. {@link ApiFuture#get()} returns an
-   * {@link AsyncPage} object that can be used to asynchronously handle paginated results. Use
-   * {@link ListOption} to specify the page size or the page token from which to start listing
-   * resource descriptors.
+   * method returns a {@code ApiFuture} object to consume the result. {@link ApiFuture#get()}
+   * returns an {@link AsyncPage} object that can be used to asynchronously handle paginated
+   * results. Use {@link ListOption} to specify the page size or the page token from which to start
+   * listing resource descriptors.
    *
    * <p>Example of asynchronously listing monitored resource descriptors, specifying the page size.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * ApiFuture<AsyncPage<MonitoredResourceDescriptor>> future =
    *     logging.listMonitoredResourceDescriptorsAsync(ListOption.pageSize(100));
    * // ...
@@ -474,7 +477,6 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *   // do something with the descriptor
    * }
    * }</pre>
-   *
    */
   ApiFuture<AsyncPage<MonitoredResourceDescriptor>> listMonitoredResourceDescriptorsAsync(
       ListOption... options);
@@ -483,7 +485,8 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * Creates a new metric.
    *
    * <p>Example of creating a metric for logs with severity higher or equal to ERROR.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String metricName = "my_metric_name";
    * MetricInfo metricInfo = MetricInfo.of(metricName, "severity>=ERROR");
    * Metric metric = logging.create(metricInfo);
@@ -495,18 +498,18 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
   Metric create(MetricInfo metric);
 
   /**
-   * Sends a request for creating a metric. This method returns a {@code ApiFuture} object to consume
-   * the result. {@link ApiFuture#get()} returns the created metric.
+   * Sends a request for creating a metric. This method returns a {@code ApiFuture} object to
+   * consume the result. {@link ApiFuture#get()} returns the created metric.
    *
    * <p>Example of asynchronously creating a metric for logs with severity higher or equal to ERROR.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String metricName = "my_metric_name";
    * MetricInfo metricInfo = MetricInfo.of(metricName, "severity>=ERROR");
    * ApiFuture<Metric> future = logging.createAsync(metricInfo);
    * // ...
    * Metric metric = future.get();
    * }</pre>
-   *
    */
   ApiFuture<Metric> createAsync(MetricInfo metric);
 
@@ -514,7 +517,8 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * Updates a metric or creates one if it does not exist.
    *
    * <p>Example of updating a metric.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String metricName = "my_metric_name";
    * MetricInfo metricInfo = MetricInfo.newBuilder(metricName, "severity>=ERROR")
    *     .setDescription("new description")
@@ -533,7 +537,8 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * updated/created metric or {@code null} if not found.
    *
    * <p>Example of asynchronously updating a metric.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String metricName = "my_metric_name";
    * MetricInfo metricInfo = MetricInfo.newBuilder(metricName, "severity>=ERROR")
    *     .setDescription("new description")
@@ -542,7 +547,6 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * // ...
    * Metric metric = future.get();
    * }</pre>
-   *
    */
   ApiFuture<Metric> updateAsync(MetricInfo metric);
 
@@ -550,7 +554,8 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * Returns the requested metric or {@code null} if not found.
    *
    * <p>Example of getting a metric.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String metricName = "my_metric_name";
    * Metric metric = logging.getMetric(metricName);
    * if (metric == null) {
@@ -567,7 +572,8 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * the result. {@link ApiFuture#get()} returns the requested metric or {@code null} if not found.
    *
    * <p>Example of asynchronously getting a metric.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String metricName = "my_metric_name";
    * ApiFuture<Metric> future = logging.getMetricAsync(metricName);
    * // ...
@@ -587,7 +593,8 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * to start listing metrics.
    *
    * <p>Example of listing metrics, specifying the page size.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * Page<Metric> metrics = logging.listMetrics(ListOption.pageSize(100));
    * Iterator<Metric> metricIterator = metrics.iterateAll();
    * while (metricIterator.hasNext()) {
@@ -607,7 +614,8 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * page token from which to start listing metrics.
    *
    * <p>Example of asynchronously listing metrics, specifying the page size.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * ApiFuture<AsyncPage<Metric>> future = logging.listMetricsAsync(ListOption.pageSize(100));
    * // ...
    * AsyncPage<Metric> metrics = future.get();
@@ -617,7 +625,6 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *   // do something with the metric
    * }
    * }</pre>
-   *
    */
   ApiFuture<AsyncPage<Metric>> listMetricsAsync(ListOption... options);
 
@@ -625,7 +632,8 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * Deletes the requested metric.
    *
    * <p>Example of deleting a metric.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String metricName = "my_metric_name";
    * boolean deleted = logging.deleteMetric(metricName);
    * if (deleted) {
@@ -640,12 +648,13 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
   boolean deleteMetric(String metric);
 
   /**
-   * Sends a request for deleting a metric. This method returns a {@code ApiFuture} object to consume
-   * the result. {@link ApiFuture#get()} returns {@code true} if the metric was deleted, {@code false}
-   * if it was not found.
+   * Sends a request for deleting a metric. This method returns a {@code ApiFuture} object to
+   * consume the result. {@link ApiFuture#get()} returns {@code true} if the metric was deleted,
+   * {@code false} if it was not found.
    *
    * <p>Example of asynchronously deleting a metric.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String metricName = "my_metric_name";
    * ApiFuture<Boolean> future = logging.deleteMetricAsync(metricName);
    * // ...
@@ -656,30 +665,28 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *   // the metric was not found
    * }
    * }</pre>
-   *
    */
   ApiFuture<Boolean> deleteMetricAsync(String metric);
 
   /**
-   * Flushes any pending asynchronous logging writes.
-   * Logs are automatically flushed based on time and message count that be configured via
-   * {@link com.google.api.gax.batching.BatchingSettings},
-   * Logs are also flushed if at or above flush severity, see {@link #setFlushSeverity}.
-   * Logging frameworks require support for an explicit flush.
-   * See usage in the java.util.logging handler{@link LoggingHandler}.
+   * Flushes any pending asynchronous logging writes. Logs are automatically flushed based on time
+   * and message count that be configured via {@link com.google.api.gax.batching.BatchingSettings},
+   * Logs are also flushed if enabled, at or above flush severity, see {@link #setFlushSeverity}.
+   * Logging frameworks require support for an explicit flush. See usage in the java.util.logging
+   * handler{@link LoggingHandler}.
    */
   void flush();
 
   /**
    * Sends a request to log entries to Stackdriver Logging. Use {@link WriteOption#logName(String)}
-   * to provide a log name for those entries that do not specify one. Use
-   * {@link WriteOption#resource(MonitoredResource)} to provide a monitored resource for those
-   * entries that do not specify one. Use {@link WriteOption#labels(Map)} to provide some labels
-   * to be added to every entry in {@code logEntries}.
+   * to provide a log name for those entries that do not specify one. Use {@link
+   * WriteOption#resource(MonitoredResource)} to provide a monitored resource for those entries that
+   * do not specify one. Use {@link WriteOption#labels(Map)} to provide some labels to be added to
+   * every entry in {@code logEntries}.
    *
-   * <p>Example of writing log entries and providing a default log name and monitored
-   * resource.
-   * <pre> {@code
+   * <p>Example of writing log entries and providing a default log name and monitored resource.
+   *
+   * <pre>{@code
    * String logName = "my_log_name";
    * List<LogEntry> entries = new ArrayList<>();
    * entries.add(LogEntry.of(StringPayload.of("Entry payload")));
@@ -691,7 +698,6 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    *     WriteOption.logName(logName),
    *     WriteOption.resource(MonitoredResource.newBuilder("global").build()));
    * }</pre>
-   *
    */
   void write(Iterable<LogEntry> logEntries, WriteOption... options);
 
@@ -700,11 +706,12 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * paginated results. Use {@link EntryListOption#pageSize(int)} to specify the page size. Use
    * {@link EntryListOption#pageToken(String)} to specify the page token from which to start listing
    * entries. Use {@link EntryListOption#sortOrder(SortingField, SortingOrder)} to sort log entries
-   * according to your preferred order (default is most-recent last). Use
-   * {@link EntryListOption#filter(String)} to filter listed log entries.
+   * according to your preferred order (default is most-recent last). Use {@link
+   * EntryListOption#filter(String)} to filter listed log entries.
    *
    * <p>Example of listing log entries for a specific log.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String filter = "logName=projects/my_project_id/logs/my_log_name";
    * Page<LogEntry> entries = logging.listLogEntries(EntryListOption.filter(filter));
    * Iterator<LogEntry> entryIterator = entries.iterateAll();
@@ -719,17 +726,17 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
   Page<LogEntry> listLogEntries(EntryListOption... options);
 
   /**
-   * Sends a request for listing log entries. This method returns a {@code ApiFuture} object to consume
-   * the result. {@link ApiFuture#get()} returns an {@link AsyncPage} object that can be used to
-   * asynchronously handle paginated results. Use {@link EntryListOption#pageSize(int)} to specify
-   * the page size. Use {@link EntryListOption#pageToken(String)} to specify the page token from
-   * which to start listing entries. Use
-   * {@link EntryListOption#sortOrder(SortingField, SortingOrder)} to sort log entries according to
-   * your preferred order (default is most-recent last). Use {@link EntryListOption#filter(String)}
-   * to filter listed log entries.
+   * Sends a request for listing log entries. This method returns a {@code ApiFuture} object to
+   * consume the result. {@link ApiFuture#get()} returns an {@link AsyncPage} object that can be
+   * used to asynchronously handle paginated results. Use {@link EntryListOption#pageSize(int)} to
+   * specify the page size. Use {@link EntryListOption#pageToken(String)} to specify the page token
+   * from which to start listing entries. Use {@link EntryListOption#sortOrder(SortingField,
+   * SortingOrder)} to sort log entries according to your preferred order (default is most-recent
+   * last). Use {@link EntryListOption#filter(String)} to filter listed log entries.
    *
    * <p>Example of asynchronously listing log entries for a specific log.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String filter = "logName=projects/my_project_id/logs/my_log_name";
    * ApiFuture<AsyncPage<LogEntry>> future =
    *     logging.listLogEntriesAsync(EntryListOption.filter(filter));

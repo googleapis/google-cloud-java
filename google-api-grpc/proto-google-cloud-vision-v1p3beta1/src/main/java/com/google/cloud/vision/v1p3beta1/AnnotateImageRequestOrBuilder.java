@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p3beta1;
 
-public interface AnnotateImageRequestOrBuilder extends
+public interface AnnotateImageRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p3beta1.AnnotateImageRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The image to be processed.
    * </pre>
@@ -16,6 +19,8 @@ public interface AnnotateImageRequestOrBuilder extends
    */
   boolean hasImage();
   /**
+   *
+   *
    * <pre>
    * The image to be processed.
    * </pre>
@@ -24,6 +29,8 @@ public interface AnnotateImageRequestOrBuilder extends
    */
   com.google.cloud.vision.v1p3beta1.Image getImage();
   /**
+   *
+   *
    * <pre>
    * The image to be processed.
    * </pre>
@@ -33,15 +40,18 @@ public interface AnnotateImageRequestOrBuilder extends
   com.google.cloud.vision.v1p3beta1.ImageOrBuilder getImageOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Requested features.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.Feature features = 2;</code>
    */
-  java.util.List<com.google.cloud.vision.v1p3beta1.Feature> 
-      getFeaturesList();
+  java.util.List<com.google.cloud.vision.v1p3beta1.Feature> getFeaturesList();
   /**
+   *
+   *
    * <pre>
    * Requested features.
    * </pre>
@@ -50,6 +60,8 @@ public interface AnnotateImageRequestOrBuilder extends
    */
   com.google.cloud.vision.v1p3beta1.Feature getFeatures(int index);
   /**
+   *
+   *
    * <pre>
    * Requested features.
    * </pre>
@@ -58,25 +70,30 @@ public interface AnnotateImageRequestOrBuilder extends
    */
   int getFeaturesCount();
   /**
+   *
+   *
    * <pre>
    * Requested features.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.Feature features = 2;</code>
    */
-  java.util.List<? extends com.google.cloud.vision.v1p3beta1.FeatureOrBuilder> 
+  java.util.List<? extends com.google.cloud.vision.v1p3beta1.FeatureOrBuilder>
       getFeaturesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Requested features.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.Feature features = 2;</code>
    */
-  com.google.cloud.vision.v1p3beta1.FeatureOrBuilder getFeaturesOrBuilder(
-      int index);
+  com.google.cloud.vision.v1p3beta1.FeatureOrBuilder getFeaturesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Additional context that may accompany the image.
    * </pre>
@@ -85,6 +102,8 @@ public interface AnnotateImageRequestOrBuilder extends
    */
   boolean hasImageContext();
   /**
+   *
+   *
    * <pre>
    * Additional context that may accompany the image.
    * </pre>
@@ -93,6 +112,8 @@ public interface AnnotateImageRequestOrBuilder extends
    */
   com.google.cloud.vision.v1p3beta1.ImageContext getImageContext();
   /**
+   *
+   *
    * <pre>
    * Additional context that may accompany the image.
    * </pre>

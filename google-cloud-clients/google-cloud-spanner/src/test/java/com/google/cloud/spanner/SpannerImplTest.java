@@ -60,11 +60,11 @@ public class SpannerImplTest {
 
     com.google.spanner.v1.Session sessionProto =
         com.google.spanner.v1.Session.newBuilder()
-          .setName(sessionName)
-          .putAllLabels(labels)
-          .build();
+            .setName(sessionName)
+            .putAllLabels(labels)
+            .build();
     Mockito.when(rpc.createSession(Mockito.eq(dbName), Mockito.eq(labels), options.capture()))
-      .thenReturn(sessionProto);
+        .thenReturn(sessionProto);
     Session session = impl.createSession(db);
     assertThat(session.getName()).isEqualTo(sessionName);
 

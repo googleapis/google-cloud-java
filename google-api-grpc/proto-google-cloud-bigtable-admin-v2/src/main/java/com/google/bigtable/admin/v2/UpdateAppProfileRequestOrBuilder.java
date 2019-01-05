@@ -3,11 +3,14 @@
 
 package com.google.bigtable.admin.v2;
 
-public interface UpdateAppProfileRequestOrBuilder extends
+public interface UpdateAppProfileRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.UpdateAppProfileRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The app profile which will (partially) replace the current value.
    * </pre>
@@ -16,6 +19,8 @@ public interface UpdateAppProfileRequestOrBuilder extends
    */
   boolean hasAppProfile();
   /**
+   *
+   *
    * <pre>
    * The app profile which will (partially) replace the current value.
    * </pre>
@@ -24,6 +29,8 @@ public interface UpdateAppProfileRequestOrBuilder extends
    */
   com.google.bigtable.admin.v2.AppProfile getAppProfile();
   /**
+   *
+   *
    * <pre>
    * The app profile which will (partially) replace the current value.
    * </pre>
@@ -33,6 +40,8 @@ public interface UpdateAppProfileRequestOrBuilder extends
   com.google.bigtable.admin.v2.AppProfileOrBuilder getAppProfileOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The subset of app profile fields which should be replaced.
    * If unset, all fields will be replaced.
@@ -42,6 +51,8 @@ public interface UpdateAppProfileRequestOrBuilder extends
    */
   boolean hasUpdateMask();
   /**
+   *
+   *
    * <pre>
    * The subset of app profile fields which should be replaced.
    * If unset, all fields will be replaced.
@@ -51,6 +62,8 @@ public interface UpdateAppProfileRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
+   *
+   *
    * <pre>
    * The subset of app profile fields which should be replaced.
    * If unset, all fields will be replaced.
@@ -61,6 +74,8 @@ public interface UpdateAppProfileRequestOrBuilder extends
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * If true, ignore safety checks when updating the app profile.
    * </pre>

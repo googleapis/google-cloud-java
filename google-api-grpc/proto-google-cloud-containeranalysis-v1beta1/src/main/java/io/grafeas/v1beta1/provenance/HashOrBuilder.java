@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1.provenance;
 
-public interface HashOrBuilder extends
+public interface HashOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.provenance.Hash)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The type of hash that was performed.
    * </pre>
@@ -16,6 +19,8 @@ public interface HashOrBuilder extends
    */
   int getTypeValue();
   /**
+   *
+   *
    * <pre>
    * The type of hash that was performed.
    * </pre>
@@ -25,6 +30,8 @@ public interface HashOrBuilder extends
   io.grafeas.v1beta1.provenance.Hash.HashType getType();
 
   /**
+   *
+   *
    * <pre>
    * The hash value.
    * </pre>

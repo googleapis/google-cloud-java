@@ -19,9 +19,12 @@ import static com.google.cloud.compute.v1.NodeTemplateClient.AggregatedListNodeT
 import static com.google.cloud.compute.v1.NodeTemplateClient.ListNodeTemplatesPagedResponse;
 import static com.google.cloud.compute.v1.stub.HttpJsonNodeTemplateStub.aggregatedListNodeTemplatesMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonNodeTemplateStub.deleteNodeTemplateMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonNodeTemplateStub.getIamPolicyNodeTemplateMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonNodeTemplateStub.getNodeTemplateMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonNodeTemplateStub.insertNodeTemplateMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonNodeTemplateStub.listNodeTemplatesMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonNodeTemplateStub.setIamPolicyNodeTemplateMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonNodeTemplateStub.testIamPermissionsNodeTemplateMethodDescriptor;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
@@ -56,8 +59,11 @@ public class NodeTemplateClientTest {
               aggregatedListNodeTemplatesMethodDescriptor,
               deleteNodeTemplateMethodDescriptor,
               getNodeTemplateMethodDescriptor,
+              getIamPolicyNodeTemplateMethodDescriptor,
               insertNodeTemplateMethodDescriptor,
-              listNodeTemplatesMethodDescriptor));
+              listNodeTemplatesMethodDescriptor,
+              setIamPolicyNodeTemplateMethodDescriptor,
+              testIamPermissionsNodeTemplateMethodDescriptor));
   private static final MockHttpService mockService =
       new MockHttpService(METHOD_DESCRIPTORS, NodeTemplateStubSettings.getDefaultEndpoint());
 
@@ -90,18 +96,18 @@ public class NodeTemplateClientTest {
   @Test
   @SuppressWarnings("all")
   public void aggregatedListNodeTemplatesTest() {
+    String id = "id3355";
     String kind = "kind3292052";
     String nextPageToken = "";
-    String id = "id3355";
     String selfLink = "selfLink-1691268851";
     NodeTemplatesScopedList itemsItem = NodeTemplatesScopedList.newBuilder().build();
     Map<String, NodeTemplatesScopedList> items = new HashMap<>();
     items.put("items", itemsItem);
     NodeTemplateAggregatedList expectedResponse =
         NodeTemplateAggregatedList.newBuilder()
+            .setId(id)
             .setKind(kind)
             .setNextPageToken(nextPageToken)
-            .setId(id)
             .setSelfLink(selfLink)
             .putAllItems(items)
             .build();
@@ -153,50 +159,50 @@ public class NodeTemplateClientTest {
   @Test
   @SuppressWarnings("all")
   public void deleteNodeTemplateTest() {
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    String targetId = "targetId-815576439";
-    String kind = "kind3292052";
-    String description = "description-1724546052";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String insertTime = "insertTime-103148397";
-    Integer httpErrorStatusCode = 1386087020;
-    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-    String targetLink = "targetLink-2084812312";
-    String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
-    Integer progress = 1001078227;
-    String operationType = "operationType-1432962286";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
-    String id = "id3355";
-    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
-    String user = "user3599307";
+    String creationTimestamp = "creationTimestamp567396278";
+    String description = "description-1724546052";
+    String endTime = "endTime1725551537";
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    Integer httpErrorStatusCode = 1386087020;
+    String id = "id3355";
+    String insertTime = "insertTime-103148397";
+    String kind = "kind3292052";
+    String name = "name3373707";
+    String operationType = "operationType-1432962286";
+    Integer progress = 1001078227;
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String selfLink = "selfLink-1691268851";
+    String startTime = "startTime-1573145462";
     String status = "status-892481550";
+    String statusMessage = "statusMessage-239442758";
+    String targetId = "targetId-815576439";
+    String targetLink = "targetLink-2084812312";
+    String user = "user3599307";
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     Operation expectedResponse =
         Operation.newBuilder()
-            .setHttpErrorMessage(httpErrorMessage)
-            .setTargetId(targetId)
-            .setKind(kind)
-            .setDescription(description)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setInsertTime(insertTime)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setZone(zone.toString())
-            .setTargetLink(targetLink)
-            .setCreationTimestamp(creationTimestamp)
-            .setName(name)
-            .setProgress(progress)
-            .setOperationType(operationType)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
-            .setId(id)
-            .setRegion(region.toString())
             .setClientOperationId(clientOperationId)
-            .setUser(user)
+            .setCreationTimestamp(creationTimestamp)
+            .setDescription(description)
+            .setEndTime(endTime)
+            .setHttpErrorMessage(httpErrorMessage)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setId(id)
+            .setInsertTime(insertTime)
+            .setKind(kind)
+            .setName(name)
+            .setOperationType(operationType)
+            .setProgress(progress)
+            .setRegion(region.toString())
+            .setSelfLink(selfLink)
+            .setStartTime(startTime)
             .setStatus(status)
+            .setStatusMessage(statusMessage)
+            .setTargetId(targetId)
+            .setTargetLink(targetLink)
+            .setUser(user)
+            .setZone(zone.toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -243,29 +249,29 @@ public class NodeTemplateClientTest {
   @Test
   @SuppressWarnings("all")
   public void getNodeTemplateTest() {
-    String kind = "kind3292052";
     String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
     String description = "description-1724546052";
     String id = "id3355";
+    String kind = "kind3292052";
+    String name = "name3373707";
     ProjectZoneNodeTypeName nodeType =
         ProjectZoneNodeTypeName.of("[PROJECT]", "[ZONE]", "[NODE_TYPE]");
     ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
-    String statusMessage = "statusMessage-239442758";
     String selfLink = "selfLink-1691268851";
     String status = "status-892481550";
+    String statusMessage = "statusMessage-239442758";
     NodeTemplate expectedResponse =
         NodeTemplate.newBuilder()
-            .setKind(kind)
             .setCreationTimestamp(creationTimestamp)
-            .setName(name)
             .setDescription(description)
             .setId(id)
+            .setKind(kind)
+            .setName(name)
             .setNodeType(nodeType.toString())
             .setRegion(region.toString())
-            .setStatusMessage(statusMessage)
             .setSelfLink(selfLink)
             .setStatus(status)
+            .setStatusMessage(statusMessage)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -311,51 +317,101 @@ public class NodeTemplateClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void getIamPolicyNodeTemplateTest() {
+    String etag = "etag3123477";
+    Boolean iamOwned = false;
+    Integer version = 351608024;
+    Policy expectedResponse =
+        Policy.newBuilder().setEtag(etag).setIamOwned(iamOwned).setVersion(version).build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectRegionNodeTemplateResourceName resource =
+        ProjectRegionNodeTemplateResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+
+    Policy actualResponse = client.getIamPolicyNodeTemplate(resource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getIamPolicyNodeTemplateExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectRegionNodeTemplateResourceName resource =
+          ProjectRegionNodeTemplateResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+
+      client.getIamPolicyNodeTemplate(resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void insertNodeTemplateTest() {
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    String targetId = "targetId-815576439";
-    String kind = "kind3292052";
-    String description = "description-1724546052";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String insertTime = "insertTime-103148397";
-    Integer httpErrorStatusCode = 1386087020;
-    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-    String targetLink = "targetLink-2084812312";
-    String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
-    Integer progress = 1001078227;
-    String operationType = "operationType-1432962286";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
-    String id = "id3355";
-    ProjectRegionName region2 = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
-    String user = "user3599307";
+    String creationTimestamp = "creationTimestamp567396278";
+    String description = "description-1724546052";
+    String endTime = "endTime1725551537";
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    Integer httpErrorStatusCode = 1386087020;
+    String id = "id3355";
+    String insertTime = "insertTime-103148397";
+    String kind = "kind3292052";
+    String name = "name3373707";
+    String operationType = "operationType-1432962286";
+    Integer progress = 1001078227;
+    ProjectRegionName region2 = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String selfLink = "selfLink-1691268851";
+    String startTime = "startTime-1573145462";
     String status = "status-892481550";
+    String statusMessage = "statusMessage-239442758";
+    String targetId = "targetId-815576439";
+    String targetLink = "targetLink-2084812312";
+    String user = "user3599307";
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     Operation expectedResponse =
         Operation.newBuilder()
-            .setHttpErrorMessage(httpErrorMessage)
-            .setTargetId(targetId)
-            .setKind(kind)
-            .setDescription(description)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setInsertTime(insertTime)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setZone(zone.toString())
-            .setTargetLink(targetLink)
-            .setCreationTimestamp(creationTimestamp)
-            .setName(name)
-            .setProgress(progress)
-            .setOperationType(operationType)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
-            .setId(id)
-            .setRegion(region2.toString())
             .setClientOperationId(clientOperationId)
-            .setUser(user)
+            .setCreationTimestamp(creationTimestamp)
+            .setDescription(description)
+            .setEndTime(endTime)
+            .setHttpErrorMessage(httpErrorMessage)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setId(id)
+            .setInsertTime(insertTime)
+            .setKind(kind)
+            .setName(name)
+            .setOperationType(operationType)
+            .setProgress(progress)
+            .setRegion(region2.toString())
+            .setSelfLink(selfLink)
+            .setStartTime(startTime)
             .setStatus(status)
+            .setStatusMessage(statusMessage)
+            .setTargetId(targetId)
+            .setTargetLink(targetLink)
+            .setUser(user)
+            .setZone(zone.toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -402,17 +458,17 @@ public class NodeTemplateClientTest {
   @Test
   @SuppressWarnings("all")
   public void listNodeTemplatesTest() {
+    String id = "id3355";
     String kind = "kind3292052";
     String nextPageToken = "";
-    String id = "id3355";
     String selfLink = "selfLink-1691268851";
     NodeTemplate itemsElement = NodeTemplate.newBuilder().build();
     List<NodeTemplate> items = Arrays.asList(itemsElement);
     NodeTemplateList expectedResponse =
         NodeTemplateList.newBuilder()
+            .setId(id)
             .setKind(kind)
             .setNextPageToken(nextPageToken)
-            .setId(id)
             .setSelfLink(selfLink)
             .addAllItems(items)
             .build();
@@ -453,6 +509,112 @@ public class NodeTemplateClientTest {
       ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
 
       client.listNodeTemplates(region);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setIamPolicyNodeTemplateTest() {
+    String etag = "etag3123477";
+    Boolean iamOwned = false;
+    Integer version = 351608024;
+    Policy expectedResponse =
+        Policy.newBuilder().setEtag(etag).setIamOwned(iamOwned).setVersion(version).build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectRegionNodeTemplateResourceName resource =
+        ProjectRegionNodeTemplateResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+    RegionSetPolicyRequest regionSetPolicyRequestResource =
+        RegionSetPolicyRequest.newBuilder().build();
+
+    Policy actualResponse =
+        client.setIamPolicyNodeTemplate(resource, regionSetPolicyRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setIamPolicyNodeTemplateExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectRegionNodeTemplateResourceName resource =
+          ProjectRegionNodeTemplateResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+      RegionSetPolicyRequest regionSetPolicyRequestResource =
+          RegionSetPolicyRequest.newBuilder().build();
+
+      client.setIamPolicyNodeTemplate(resource, regionSetPolicyRequestResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void testIamPermissionsNodeTemplateTest() {
+    TestPermissionsResponse expectedResponse = TestPermissionsResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectRegionNodeTemplateResourceName resource =
+        ProjectRegionNodeTemplateResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+    TestPermissionsRequest testPermissionsRequestResource =
+        TestPermissionsRequest.newBuilder().build();
+
+    TestPermissionsResponse actualResponse =
+        client.testIamPermissionsNodeTemplate(resource, testPermissionsRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void testIamPermissionsNodeTemplateExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectRegionNodeTemplateResourceName resource =
+          ProjectRegionNodeTemplateResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+      TestPermissionsRequest testPermissionsRequestResource =
+          TestPermissionsRequest.newBuilder().build();
+
+      client.testIamPermissionsNodeTemplate(resource, testPermissionsRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

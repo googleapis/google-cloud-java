@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface InspectContentResponseOrBuilder extends
+public interface InspectContentResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.InspectContentResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The findings.
    * </pre>
@@ -16,6 +19,8 @@ public interface InspectContentResponseOrBuilder extends
    */
   boolean hasResult();
   /**
+   *
+   *
    * <pre>
    * The findings.
    * </pre>
@@ -24,6 +29,8 @@ public interface InspectContentResponseOrBuilder extends
    */
   com.google.privacy.dlp.v2.InspectResult getResult();
   /**
+   *
+   *
    * <pre>
    * The findings.
    * </pre>

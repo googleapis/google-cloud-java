@@ -55,13 +55,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -1673,8 +1673,11 @@ public class ProjectClient implements BackgroundResource {
 
   public static class GetXpnResourcesProjectsPagedResponse
       extends AbstractPagedListResponse<
-          GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources, XpnResourceId,
-          GetXpnResourcesProjectsPage, GetXpnResourcesProjectsFixedSizeCollection> {
+          GetXpnResourcesProjectsHttpRequest,
+          ProjectsGetXpnResources,
+          XpnResourceId,
+          GetXpnResourcesProjectsPage,
+          GetXpnResourcesProjectsFixedSizeCollection> {
 
     public static ApiFuture<GetXpnResourcesProjectsPagedResponse> createAsync(
         PageContext<GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources, XpnResourceId>
@@ -1699,7 +1702,9 @@ public class ProjectClient implements BackgroundResource {
 
   public static class GetXpnResourcesProjectsPage
       extends AbstractPage<
-          GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources, XpnResourceId,
+          GetXpnResourcesProjectsHttpRequest,
+          ProjectsGetXpnResources,
+          XpnResourceId,
           GetXpnResourcesProjectsPage> {
 
     private GetXpnResourcesProjectsPage(
@@ -1732,8 +1737,11 @@ public class ProjectClient implements BackgroundResource {
 
   public static class GetXpnResourcesProjectsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources, XpnResourceId,
-          GetXpnResourcesProjectsPage, GetXpnResourcesProjectsFixedSizeCollection> {
+          GetXpnResourcesProjectsHttpRequest,
+          ProjectsGetXpnResources,
+          XpnResourceId,
+          GetXpnResourcesProjectsPage,
+          GetXpnResourcesProjectsFixedSizeCollection> {
 
     private GetXpnResourcesProjectsFixedSizeCollection(
         List<GetXpnResourcesProjectsPage> pages, int collectionSize) {
@@ -1753,7 +1761,10 @@ public class ProjectClient implements BackgroundResource {
 
   public static class ListXpnHostsProjectsPagedResponse
       extends AbstractPagedListResponse<
-          ListXpnHostsProjectsHttpRequest, XpnHostList, Project, ListXpnHostsProjectsPage,
+          ListXpnHostsProjectsHttpRequest,
+          XpnHostList,
+          Project,
+          ListXpnHostsProjectsPage,
           ListXpnHostsProjectsFixedSizeCollection> {
 
     public static ApiFuture<ListXpnHostsProjectsPagedResponse> createAsync(
@@ -1807,7 +1818,10 @@ public class ProjectClient implements BackgroundResource {
 
   public static class ListXpnHostsProjectsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListXpnHostsProjectsHttpRequest, XpnHostList, Project, ListXpnHostsProjectsPage,
+          ListXpnHostsProjectsHttpRequest,
+          XpnHostList,
+          Project,
+          ListXpnHostsProjectsPage,
           ListXpnHostsProjectsFixedSizeCollection> {
 
     private ListXpnHostsProjectsFixedSizeCollection(

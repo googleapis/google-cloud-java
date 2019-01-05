@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface CreateTimeSeriesRequestOrBuilder extends
+public interface CreateTimeSeriesRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.CreateTimeSeriesRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The project on which to execute the request. The format is
    * `"projects/{project_id_or_number}"`.
@@ -17,6 +20,8 @@ public interface CreateTimeSeriesRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The project on which to execute the request. The format is
    * `"projects/{project_id_or_number}"`.
@@ -24,10 +29,11 @@ public interface CreateTimeSeriesRequestOrBuilder extends
    *
    * <code>string name = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The new data to be added to a list of time series.
    * Adds at most one data point to each of several time series.  The new data
@@ -38,9 +44,10 @@ public interface CreateTimeSeriesRequestOrBuilder extends
    *
    * <code>repeated .google.monitoring.v3.TimeSeries time_series = 2;</code>
    */
-  java.util.List<com.google.monitoring.v3.TimeSeries> 
-      getTimeSeriesList();
+  java.util.List<com.google.monitoring.v3.TimeSeries> getTimeSeriesList();
   /**
+   *
+   *
    * <pre>
    * The new data to be added to a list of time series.
    * Adds at most one data point to each of several time series.  The new data
@@ -53,6 +60,8 @@ public interface CreateTimeSeriesRequestOrBuilder extends
    */
   com.google.monitoring.v3.TimeSeries getTimeSeries(int index);
   /**
+   *
+   *
    * <pre>
    * The new data to be added to a list of time series.
    * Adds at most one data point to each of several time series.  The new data
@@ -65,6 +74,8 @@ public interface CreateTimeSeriesRequestOrBuilder extends
    */
   int getTimeSeriesCount();
   /**
+   *
+   *
    * <pre>
    * The new data to be added to a list of time series.
    * Adds at most one data point to each of several time series.  The new data
@@ -75,9 +86,11 @@ public interface CreateTimeSeriesRequestOrBuilder extends
    *
    * <code>repeated .google.monitoring.v3.TimeSeries time_series = 2;</code>
    */
-  java.util.List<? extends com.google.monitoring.v3.TimeSeriesOrBuilder> 
+  java.util.List<? extends com.google.monitoring.v3.TimeSeriesOrBuilder>
       getTimeSeriesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The new data to be added to a list of time series.
    * Adds at most one data point to each of several time series.  The new data
@@ -88,6 +101,5 @@ public interface CreateTimeSeriesRequestOrBuilder extends
    *
    * <code>repeated .google.monitoring.v3.TimeSeries time_series = 2;</code>
    */
-  com.google.monitoring.v3.TimeSeriesOrBuilder getTimeSeriesOrBuilder(
-      int index);
+  com.google.monitoring.v3.TimeSeriesOrBuilder getTimeSeriesOrBuilder(int index);
 }

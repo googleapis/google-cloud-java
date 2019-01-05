@@ -33,6 +33,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AggregatedListNodeTemplatesHttpRequest;
 import com.google.cloud.compute.v1.DeleteNodeTemplateHttpRequest;
+import com.google.cloud.compute.v1.GetIamPolicyNodeTemplateHttpRequest;
 import com.google.cloud.compute.v1.GetNodeTemplateHttpRequest;
 import com.google.cloud.compute.v1.InsertNodeTemplateHttpRequest;
 import com.google.cloud.compute.v1.ListNodeTemplatesHttpRequest;
@@ -40,9 +41,14 @@ import com.google.cloud.compute.v1.NodeTemplate;
 import com.google.cloud.compute.v1.NodeTemplateAggregatedList;
 import com.google.cloud.compute.v1.NodeTemplateList;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.ProjectRegionName;
 import com.google.cloud.compute.v1.ProjectRegionNodeTemplateName;
+import com.google.cloud.compute.v1.ProjectRegionNodeTemplateResourceName;
+import com.google.cloud.compute.v1.SetIamPolicyNodeTemplateHttpRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsNodeTemplateHttpRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.common.collect.Sets;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -123,6 +129,27 @@ public class HttpJsonNodeTemplateStub extends NodeTemplateStub {
               .build();
 
   @InternalApi
+  public static final ApiMethodDescriptor<GetIamPolicyNodeTemplateHttpRequest, Policy>
+      getIamPolicyNodeTemplateMethodDescriptor =
+          ApiMethodDescriptor.<GetIamPolicyNodeTemplateHttpRequest, Policy>newBuilder()
+              .setFullMethodName("compute.nodeTemplates.getIamPolicy")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<GetIamPolicyNodeTemplateHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/regions/{region}/nodeTemplates/{resource}/getIamPolicy"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(ProjectRegionNodeTemplateResourceName.newFactory())
+                      .setResourceNameField("resource")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Policy>newBuilder()
+                      .setResponseInstance(Policy.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
   public static final ApiMethodDescriptor<InsertNodeTemplateHttpRequest, Operation>
       insertNodeTemplateMethodDescriptor =
           ApiMethodDescriptor.<InsertNodeTemplateHttpRequest, Operation>newBuilder()
@@ -163,6 +190,51 @@ public class HttpJsonNodeTemplateStub extends NodeTemplateStub {
                       .build())
               .build();
 
+  @InternalApi
+  public static final ApiMethodDescriptor<SetIamPolicyNodeTemplateHttpRequest, Policy>
+      setIamPolicyNodeTemplateMethodDescriptor =
+          ApiMethodDescriptor.<SetIamPolicyNodeTemplateHttpRequest, Policy>newBuilder()
+              .setFullMethodName("compute.nodeTemplates.setIamPolicy")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<SetIamPolicyNodeTemplateHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/regions/{region}/nodeTemplates/{resource}/setIamPolicy"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(ProjectRegionNodeTemplateResourceName.newFactory())
+                      .setResourceNameField("resource")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Policy>newBuilder()
+                      .setResponseInstance(Policy.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
+  public static final ApiMethodDescriptor<
+          TestIamPermissionsNodeTemplateHttpRequest, TestPermissionsResponse>
+      testIamPermissionsNodeTemplateMethodDescriptor =
+          ApiMethodDescriptor
+              .<TestIamPermissionsNodeTemplateHttpRequest, TestPermissionsResponse>newBuilder()
+              .setFullMethodName("compute.nodeTemplates.testIamPermissions")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter
+                      .<TestIamPermissionsNodeTemplateHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/regions/{region}/nodeTemplates/{resource}/testIamPermissions"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(ProjectRegionNodeTemplateResourceName.newFactory())
+                      .setResourceNameField("resource")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<TestPermissionsResponse>newBuilder()
+                      .setResponseInstance(TestPermissionsResponse.getDefaultInstance())
+                      .build())
+              .build();
+
   private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<AggregatedListNodeTemplatesHttpRequest, NodeTemplateAggregatedList>
@@ -172,11 +244,17 @@ public class HttpJsonNodeTemplateStub extends NodeTemplateStub {
       aggregatedListNodeTemplatesPagedCallable;
   private final UnaryCallable<DeleteNodeTemplateHttpRequest, Operation> deleteNodeTemplateCallable;
   private final UnaryCallable<GetNodeTemplateHttpRequest, NodeTemplate> getNodeTemplateCallable;
+  private final UnaryCallable<GetIamPolicyNodeTemplateHttpRequest, Policy>
+      getIamPolicyNodeTemplateCallable;
   private final UnaryCallable<InsertNodeTemplateHttpRequest, Operation> insertNodeTemplateCallable;
   private final UnaryCallable<ListNodeTemplatesHttpRequest, NodeTemplateList>
       listNodeTemplatesCallable;
   private final UnaryCallable<ListNodeTemplatesHttpRequest, ListNodeTemplatesPagedResponse>
       listNodeTemplatesPagedCallable;
+  private final UnaryCallable<SetIamPolicyNodeTemplateHttpRequest, Policy>
+      setIamPolicyNodeTemplateCallable;
+  private final UnaryCallable<TestIamPermissionsNodeTemplateHttpRequest, TestPermissionsResponse>
+      testIamPermissionsNodeTemplateCallable;
 
   private final HttpJsonStubCallableFactory callableFactory;
 
@@ -235,6 +313,11 @@ public class HttpJsonNodeTemplateStub extends NodeTemplateStub {
             HttpJsonCallSettings.<GetNodeTemplateHttpRequest, NodeTemplate>newBuilder()
                 .setMethodDescriptor(getNodeTemplateMethodDescriptor)
                 .build();
+    HttpJsonCallSettings<GetIamPolicyNodeTemplateHttpRequest, Policy>
+        getIamPolicyNodeTemplateTransportSettings =
+            HttpJsonCallSettings.<GetIamPolicyNodeTemplateHttpRequest, Policy>newBuilder()
+                .setMethodDescriptor(getIamPolicyNodeTemplateMethodDescriptor)
+                .build();
     HttpJsonCallSettings<InsertNodeTemplateHttpRequest, Operation>
         insertNodeTemplateTransportSettings =
             HttpJsonCallSettings.<InsertNodeTemplateHttpRequest, Operation>newBuilder()
@@ -244,6 +327,17 @@ public class HttpJsonNodeTemplateStub extends NodeTemplateStub {
         listNodeTemplatesTransportSettings =
             HttpJsonCallSettings.<ListNodeTemplatesHttpRequest, NodeTemplateList>newBuilder()
                 .setMethodDescriptor(listNodeTemplatesMethodDescriptor)
+                .build();
+    HttpJsonCallSettings<SetIamPolicyNodeTemplateHttpRequest, Policy>
+        setIamPolicyNodeTemplateTransportSettings =
+            HttpJsonCallSettings.<SetIamPolicyNodeTemplateHttpRequest, Policy>newBuilder()
+                .setMethodDescriptor(setIamPolicyNodeTemplateMethodDescriptor)
+                .build();
+    HttpJsonCallSettings<TestIamPermissionsNodeTemplateHttpRequest, TestPermissionsResponse>
+        testIamPermissionsNodeTemplateTransportSettings =
+            HttpJsonCallSettings
+                .<TestIamPermissionsNodeTemplateHttpRequest, TestPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsNodeTemplateMethodDescriptor)
                 .build();
 
     this.aggregatedListNodeTemplatesCallable =
@@ -264,6 +358,11 @@ public class HttpJsonNodeTemplateStub extends NodeTemplateStub {
     this.getNodeTemplateCallable =
         callableFactory.createUnaryCallable(
             getNodeTemplateTransportSettings, settings.getNodeTemplateSettings(), clientContext);
+    this.getIamPolicyNodeTemplateCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyNodeTemplateTransportSettings,
+            settings.getIamPolicyNodeTemplateSettings(),
+            clientContext);
     this.insertNodeTemplateCallable =
         callableFactory.createUnaryCallable(
             insertNodeTemplateTransportSettings,
@@ -278,6 +377,16 @@ public class HttpJsonNodeTemplateStub extends NodeTemplateStub {
         callableFactory.createPagedCallable(
             listNodeTemplatesTransportSettings,
             settings.listNodeTemplatesSettings(),
+            clientContext);
+    this.setIamPolicyNodeTemplateCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyNodeTemplateTransportSettings,
+            settings.setIamPolicyNodeTemplateSettings(),
+            clientContext);
+    this.testIamPermissionsNodeTemplateCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsNodeTemplateTransportSettings,
+            settings.testIamPermissionsNodeTemplateSettings(),
             clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -307,6 +416,12 @@ public class HttpJsonNodeTemplateStub extends NodeTemplateStub {
   }
 
   @BetaApi
+  public UnaryCallable<GetIamPolicyNodeTemplateHttpRequest, Policy>
+      getIamPolicyNodeTemplateCallable() {
+    return getIamPolicyNodeTemplateCallable;
+  }
+
+  @BetaApi
   public UnaryCallable<InsertNodeTemplateHttpRequest, Operation> insertNodeTemplateCallable() {
     return insertNodeTemplateCallable;
   }
@@ -320,6 +435,18 @@ public class HttpJsonNodeTemplateStub extends NodeTemplateStub {
   @BetaApi
   public UnaryCallable<ListNodeTemplatesHttpRequest, NodeTemplateList> listNodeTemplatesCallable() {
     return listNodeTemplatesCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<SetIamPolicyNodeTemplateHttpRequest, Policy>
+      setIamPolicyNodeTemplateCallable() {
+    return setIamPolicyNodeTemplateCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<TestIamPermissionsNodeTemplateHttpRequest, TestPermissionsResponse>
+      testIamPermissionsNodeTemplateCallable() {
+    return testIamPermissionsNodeTemplateCallable;
   }
 
   @Override

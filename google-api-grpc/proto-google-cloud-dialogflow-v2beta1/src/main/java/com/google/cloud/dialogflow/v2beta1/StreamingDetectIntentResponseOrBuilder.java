@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-public interface StreamingDetectIntentResponseOrBuilder extends
+public interface StreamingDetectIntentResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.StreamingDetectIntentResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The unique identifier of the response. It can be used to
    * locate a response in the training example set or for reporting issues.
@@ -17,6 +20,8 @@ public interface StreamingDetectIntentResponseOrBuilder extends
    */
   java.lang.String getResponseId();
   /**
+   *
+   *
    * <pre>
    * The unique identifier of the response. It can be used to
    * locate a response in the training example set or for reporting issues.
@@ -24,35 +29,46 @@ public interface StreamingDetectIntentResponseOrBuilder extends
    *
    * <code>string response_id = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getResponseIdBytes();
+  com.google.protobuf.ByteString getResponseIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The result of speech recognition.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult recognition_result = 2;</code>
+   * <code>.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult recognition_result = 2;
+   * </code>
    */
   boolean hasRecognitionResult();
   /**
+   *
+   *
    * <pre>
    * The result of speech recognition.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult recognition_result = 2;</code>
+   * <code>.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult recognition_result = 2;
+   * </code>
    */
   com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult getRecognitionResult();
   /**
+   *
+   *
    * <pre>
    * The result of speech recognition.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult recognition_result = 2;</code>
+   * <code>.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult recognition_result = 2;
+   * </code>
    */
-  com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResultOrBuilder getRecognitionResultOrBuilder();
+  com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResultOrBuilder
+      getRecognitionResultOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The selected results of the conversational query or event processing.
    * See `alternative_query_results` for additional potential results.
@@ -62,6 +78,8 @@ public interface StreamingDetectIntentResponseOrBuilder extends
    */
   boolean hasQueryResult();
   /**
+   *
+   *
    * <pre>
    * The selected results of the conversational query or event processing.
    * See `alternative_query_results` for additional potential results.
@@ -71,6 +89,8 @@ public interface StreamingDetectIntentResponseOrBuilder extends
    */
   com.google.cloud.dialogflow.v2beta1.QueryResult getQueryResult();
   /**
+   *
+   *
    * <pre>
    * The selected results of the conversational query or event processing.
    * See `alternative_query_results` for additional potential results.
@@ -81,6 +101,8 @@ public interface StreamingDetectIntentResponseOrBuilder extends
   com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder getQueryResultOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * If Knowledge Connectors are enabled, there could be more than one result
    * returned for a given query or event, and this field will contain all
@@ -92,11 +114,13 @@ public interface StreamingDetectIntentResponseOrBuilder extends
    * surfaced here.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 7;</code>
+   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 7;
+   * </code>
    */
-  java.util.List<com.google.cloud.dialogflow.v2beta1.QueryResult> 
-      getAlternativeQueryResultsList();
+  java.util.List<com.google.cloud.dialogflow.v2beta1.QueryResult> getAlternativeQueryResultsList();
   /**
+   *
+   *
    * <pre>
    * If Knowledge Connectors are enabled, there could be more than one result
    * returned for a given query or event, and this field will contain all
@@ -108,10 +132,13 @@ public interface StreamingDetectIntentResponseOrBuilder extends
    * surfaced here.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 7;</code>
+   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 7;
+   * </code>
    */
   com.google.cloud.dialogflow.v2beta1.QueryResult getAlternativeQueryResults(int index);
   /**
+   *
+   *
    * <pre>
    * If Knowledge Connectors are enabled, there could be more than one result
    * returned for a given query or event, and this field will contain all
@@ -123,10 +150,13 @@ public interface StreamingDetectIntentResponseOrBuilder extends
    * surfaced here.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 7;</code>
+   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 7;
+   * </code>
    */
   int getAlternativeQueryResultsCount();
   /**
+   *
+   *
    * <pre>
    * If Knowledge Connectors are enabled, there could be more than one result
    * returned for a given query or event, and this field will contain all
@@ -138,11 +168,14 @@ public interface StreamingDetectIntentResponseOrBuilder extends
    * surfaced here.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 7;</code>
+   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 7;
+   * </code>
    */
-  java.util.List<? extends com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder> 
+  java.util.List<? extends com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder>
       getAlternativeQueryResultsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * If Knowledge Connectors are enabled, there could be more than one result
    * returned for a given query or event, and this field will contain all
@@ -154,12 +187,15 @@ public interface StreamingDetectIntentResponseOrBuilder extends
    * surfaced here.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 7;</code>
+   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 7;
+   * </code>
    */
   com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder getAlternativeQueryResultsOrBuilder(
       int index);
 
   /**
+   *
+   *
    * <pre>
    * Specifies the status of the webhook request.
    * </pre>
@@ -168,6 +204,8 @@ public interface StreamingDetectIntentResponseOrBuilder extends
    */
   boolean hasWebhookStatus();
   /**
+   *
+   *
    * <pre>
    * Specifies the status of the webhook request.
    * </pre>
@@ -176,6 +214,8 @@ public interface StreamingDetectIntentResponseOrBuilder extends
    */
   com.google.rpc.Status getWebhookStatus();
   /**
+   *
+   *
    * <pre>
    * Specifies the status of the webhook request.
    * </pre>
@@ -185,6 +225,8 @@ public interface StreamingDetectIntentResponseOrBuilder extends
   com.google.rpc.StatusOrBuilder getWebhookStatusOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The audio data bytes encoded as specified in the request.
    * </pre>
@@ -194,6 +236,8 @@ public interface StreamingDetectIntentResponseOrBuilder extends
   com.google.protobuf.ByteString getOutputAudio();
 
   /**
+   *
+   *
    * <pre>
    * Instructs the speech synthesizer how to generate the output audio. This
    * field is populated from the agent-level speech synthesizer configuration,
@@ -204,6 +248,8 @@ public interface StreamingDetectIntentResponseOrBuilder extends
    */
   boolean hasOutputAudioConfig();
   /**
+   *
+   *
    * <pre>
    * Instructs the speech synthesizer how to generate the output audio. This
    * field is populated from the agent-level speech synthesizer configuration,
@@ -214,6 +260,8 @@ public interface StreamingDetectIntentResponseOrBuilder extends
    */
   com.google.cloud.dialogflow.v2beta1.OutputAudioConfig getOutputAudioConfig();
   /**
+   *
+   *
    * <pre>
    * Instructs the speech synthesizer how to generate the output audio. This
    * field is populated from the agent-level speech synthesizer configuration,

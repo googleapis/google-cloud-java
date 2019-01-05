@@ -3,11 +3,14 @@
 
 package com.google.spanner.v1;
 
-public interface PartialResultSetOrBuilder extends
+public interface PartialResultSetOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.v1.PartialResultSet)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Metadata about the result set, such as row type information.
    * Only present in the first response.
@@ -17,6 +20,8 @@ public interface PartialResultSetOrBuilder extends
    */
   boolean hasMetadata();
   /**
+   *
+   *
    * <pre>
    * Metadata about the result set, such as row type information.
    * Only present in the first response.
@@ -26,6 +31,8 @@ public interface PartialResultSetOrBuilder extends
    */
   com.google.spanner.v1.ResultSetMetadata getMetadata();
   /**
+   *
+   *
    * <pre>
    * Metadata about the result set, such as row type information.
    * Only present in the first response.
@@ -36,6 +43,8 @@ public interface PartialResultSetOrBuilder extends
   com.google.spanner.v1.ResultSetMetadataOrBuilder getMetadataOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A streamed result set consists of a stream of values, which might
    * be split into many `PartialResultSet` messages to accommodate
@@ -100,9 +109,10 @@ public interface PartialResultSetOrBuilder extends
    *
    * <code>repeated .google.protobuf.Value values = 2;</code>
    */
-  java.util.List<com.google.protobuf.Value> 
-      getValuesList();
+  java.util.List<com.google.protobuf.Value> getValuesList();
   /**
+   *
+   *
    * <pre>
    * A streamed result set consists of a stream of values, which might
    * be split into many `PartialResultSet` messages to accommodate
@@ -169,6 +179,8 @@ public interface PartialResultSetOrBuilder extends
    */
   com.google.protobuf.Value getValues(int index);
   /**
+   *
+   *
    * <pre>
    * A streamed result set consists of a stream of values, which might
    * be split into many `PartialResultSet` messages to accommodate
@@ -235,6 +247,8 @@ public interface PartialResultSetOrBuilder extends
    */
   int getValuesCount();
   /**
+   *
+   *
    * <pre>
    * A streamed result set consists of a stream of values, which might
    * be split into many `PartialResultSet` messages to accommodate
@@ -299,9 +313,10 @@ public interface PartialResultSetOrBuilder extends
    *
    * <code>repeated .google.protobuf.Value values = 2;</code>
    */
-  java.util.List<? extends com.google.protobuf.ValueOrBuilder> 
-      getValuesOrBuilderList();
+  java.util.List<? extends com.google.protobuf.ValueOrBuilder> getValuesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * A streamed result set consists of a stream of values, which might
    * be split into many `PartialResultSet` messages to accommodate
@@ -366,10 +381,11 @@ public interface PartialResultSetOrBuilder extends
    *
    * <code>repeated .google.protobuf.Value values = 2;</code>
    */
-  com.google.protobuf.ValueOrBuilder getValuesOrBuilder(
-      int index);
+  com.google.protobuf.ValueOrBuilder getValuesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * If true, then the final value in [values][google.spanner.v1.PartialResultSet.values] is chunked, and must
    * be combined with more values from subsequent `PartialResultSet`s
@@ -381,6 +397,8 @@ public interface PartialResultSetOrBuilder extends
   boolean getChunkedValue();
 
   /**
+   *
+   *
    * <pre>
    * Streaming calls might be interrupted for a variety of reasons, such
    * as TCP connection loss. If this occurs, the stream of results can
@@ -394,6 +412,8 @@ public interface PartialResultSetOrBuilder extends
   com.google.protobuf.ByteString getResumeToken();
 
   /**
+   *
+   *
    * <pre>
    * Query plan and execution statistics for the statement that produced this
    * streaming result set. These can be requested by setting
@@ -407,6 +427,8 @@ public interface PartialResultSetOrBuilder extends
    */
   boolean hasStats();
   /**
+   *
+   *
    * <pre>
    * Query plan and execution statistics for the statement that produced this
    * streaming result set. These can be requested by setting
@@ -420,6 +442,8 @@ public interface PartialResultSetOrBuilder extends
    */
   com.google.spanner.v1.ResultSetStats getStats();
   /**
+   *
+   *
    * <pre>
    * Query plan and execution statistics for the statement that produced this
    * streaming result set. These can be requested by setting

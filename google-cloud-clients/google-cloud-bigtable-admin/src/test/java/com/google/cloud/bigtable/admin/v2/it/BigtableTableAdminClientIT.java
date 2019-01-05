@@ -21,7 +21,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import com.google.bigtable.admin.v2.InstanceName;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
 import com.google.cloud.bigtable.admin.v2.models.ColumnFamily;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
@@ -31,12 +30,15 @@ import com.google.cloud.bigtable.admin.v2.models.GCRules.UnionRule;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.VersionRule;
 import com.google.cloud.bigtable.admin.v2.models.ModifyColumnFamiliesRequest;
 import com.google.cloud.bigtable.admin.v2.models.Table;
+import com.google.common.base.Joiner;
+import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.protobuf.ByteString;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Logger;
 import org.junit.AfterClass;
 import org.junit.AssumptionViolatedException;
 import org.junit.Before;
@@ -45,29 +47,43 @@ import org.junit.Test;
 import org.threeten.bp.Duration;
 
 public class BigtableTableAdminClientIT {
+  private static final Logger LOGGER = Logger.getLogger(BigtableTableAdminClientIT.class.getName());
+
+  private static final String PROJECT_PROPERTY_NAME = "bigtable.project";
   private static final String INSTANCE_PROPERTY_NAME = "bigtable.instance";
+  private static List<String> missingProperties;
 
   private static BigtableTableAdminClient tableAdmin;
   private static String prefix;
 
   @BeforeClass
   public static void createClient() throws IOException {
-    String targetInstance = System.getProperty(INSTANCE_PROPERTY_NAME);
+    missingProperties = Lists.newArrayList();
 
+    String targetProject = System.getProperty(PROJECT_PROPERTY_NAME);
+    if (targetProject == null) {
+      missingProperties.add(PROJECT_PROPERTY_NAME);
+    }
+
+    String targetInstance = System.getProperty(INSTANCE_PROPERTY_NAME);
     if (targetInstance == null) {
-      tableAdmin = null;
+      missingProperties.add(INSTANCE_PROPERTY_NAME);
+    }
+
+    if (!missingProperties.isEmpty()) {
+      LOGGER.warning("Missing properties: " + Joiner.on(",").join(missingProperties));
       return;
     }
 
-    InstanceName instanceName = InstanceName.parse(targetInstance);
-    tableAdmin = BigtableTableAdminClient.create(instanceName);
+    tableAdmin = BigtableTableAdminClient.create(targetProject, targetInstance);
 
     // Setup a prefix to avoid collisions between concurrent test runs
     prefix = String.format("020%d", System.currentTimeMillis());
 
     // Cleanup old tables, under normal circumstances this will do nothing
-    String stalePrefix = String.format("020%d", System.currentTimeMillis() - TimeUnit.DAYS.toMillis(1));
-    for (String tableId: tableAdmin.listTables()) {
+    String stalePrefix =
+        String.format("020%d", System.currentTimeMillis() - TimeUnit.DAYS.toMillis(1));
+    for (String tableId : tableAdmin.listTables()) {
       if (stalePrefix.compareTo(tableId) > 0) {
         tableAdmin.deleteTable(tableId);
       }
@@ -85,7 +101,7 @@ public class BigtableTableAdminClientIT {
   public void setup() {
     if (tableAdmin == null) {
       throw new AssumptionViolatedException(
-          INSTANCE_PROPERTY_NAME + " property is not set, skipping integration tests.");
+          "Required properties are not set, skipping integration tests.");
     }
   }
 
@@ -111,10 +127,7 @@ public class BigtableTableAdminClientIT {
       assertEquals(2, tableResponse.getColumnFamilies().size());
       assertFalse(columnFamilyById.get("cf1").hasGCRule());
       assertTrue(columnFamilyById.get("cf2").hasGCRule());
-      assertEquals(
-          10,
-          ((VersionRule) columnFamilyById.get("cf2").getGCRule())
-              .getMaxVersions());
+      assertEquals(10, ((VersionRule) columnFamilyById.get("cf2").getGCRule()).getMaxVersions());
     } finally {
       tableAdmin.deleteTable(tableId);
     }
@@ -158,31 +171,15 @@ public class BigtableTableAdminClientIT {
       assertEquals(5, columnFamilyById.size());
       assertNotNull(columnFamilyById.get("mf1"));
       assertNotNull(columnFamilyById.get("mf2"));
+      assertEquals(2, ((UnionRule) columnFamilyById.get("mf1").getGCRule()).getRulesList().size());
       assertEquals(
-          2,
-          ((UnionRule) columnFamilyById.get("mf1").getGCRule())
-              .getRulesList()
-              .size());
+          1000, ((DurationRule) columnFamilyById.get("mf2").getGCRule()).getMaxAge().getSeconds());
       assertEquals(
-          1000,
-          ((DurationRule) columnFamilyById.get("mf2").getGCRule())
-              .getMaxAge()
-              .getSeconds());
+          20000, ((DurationRule) columnFamilyById.get("mf2").getGCRule()).getMaxAge().getNano());
       assertEquals(
-          20000,
-          ((DurationRule) columnFamilyById.get("mf2").getGCRule())
-              .getMaxAge()
-              .getNano());
+          2, ((IntersectionRule) columnFamilyById.get("mf3").getGCRule()).getRulesList().size());
       assertEquals(
-          2,
-          ((IntersectionRule) columnFamilyById.get("mf3").getGCRule())
-              .getRulesList()
-              .size());
-      assertEquals(
-          360,
-          ((DurationRule) columnFamilyById.get("mf4").getGCRule())
-              .getMaxAge()
-              .getSeconds());
+          360, ((DurationRule) columnFamilyById.get("mf4").getGCRule()).getMaxAge().getSeconds());
       assertNotNull(columnFamilyById.get("mf7"));
     } finally {
       tableAdmin.deleteTable(tableId);

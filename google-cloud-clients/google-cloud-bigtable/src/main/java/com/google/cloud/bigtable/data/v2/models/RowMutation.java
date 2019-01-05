@@ -19,7 +19,7 @@ import com.google.api.core.InternalApi;
 import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.MutateRowsRequest.Entry;
-import com.google.bigtable.v2.TableName;
+import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.Range.TimestampRange;
 import com.google.protobuf.ByteString;
@@ -54,9 +54,9 @@ public final class RowMutation implements MutationApi<RowMutation>, Serializable
   }
 
   /**
-   * Creates new instance of mutation builder by wrapping existing set of row mutations.
-   * The builder will be owned by this RowMutation and should not be used by the caller after this call.
-   * This functionality is intended for advanced usage.
+   * Creates new instance of mutation builder by wrapping existing set of row mutations. The builder
+   * will be owned by this RowMutation and should not be used by the caller after this call. This
+   * functionality is intended for advanced usage.
    *
    * <p>Sample code:
    *
@@ -66,14 +66,15 @@ public final class RowMutation implements MutationApi<RowMutation>, Serializable
    * RowMutation rowMutation = RowMutation.create("[TABLE]", "[ROW_KEY]", mutation);
    * </code></pre>
    */
-  public static RowMutation create(@Nonnull String tableId, @Nonnull String key, @Nonnull Mutation mutation) {
+  public static RowMutation create(
+      @Nonnull String tableId, @Nonnull String key, @Nonnull Mutation mutation) {
     return create(tableId, ByteString.copyFromUtf8(key), mutation);
   }
 
   /**
-   * Creates new instance of mutation builder by wrapping existing set of row mutations.
-   * The builder will be owned by this RowMutation and should not be used by the caller after this call.
-   * This functionality is intended for advanced usage.
+   * Creates new instance of mutation builder by wrapping existing set of row mutations. The builder
+   * will be owned by this RowMutation and should not be used by the caller after this call. This
+   * functionality is intended for advanced usage.
    *
    * <p>Sample code:
    *
@@ -83,7 +84,8 @@ public final class RowMutation implements MutationApi<RowMutation>, Serializable
    * RowMutation rowMutation = RowMutation.create("[TABLE]", [BYTE_STRING_ROW_KEY], mutation);
    * </code></pre>
    */
-  public static RowMutation create(@Nonnull String tableId, @Nonnull ByteString key, @Nonnull Mutation mutation) {
+  public static RowMutation create(
+      @Nonnull String tableId, @Nonnull ByteString key, @Nonnull Mutation mutation) {
     return new RowMutation(tableId, key, mutation);
   }
 
@@ -156,15 +158,13 @@ public final class RowMutation implements MutationApi<RowMutation>, Serializable
 
   @InternalApi
   public MutateRowRequest toProto(RequestContext requestContext) {
-    TableName tableName =
-        TableName.of(
-            requestContext.getInstanceName().getProject(),
-            requestContext.getInstanceName().getInstance(),
-            tableId);
+    String tableName =
+        NameUtil.formatTableName(
+            requestContext.getProjectId(), requestContext.getInstanceId(), tableId);
 
     return MutateRowRequest.newBuilder()
         .setAppProfileId(requestContext.getAppProfileId())
-        .setTableName(tableName.toString())
+        .setTableName(tableName)
         .setRowKey(key)
         .addAllMutations(mutation.getMutations())
         .build();
@@ -176,15 +176,13 @@ public final class RowMutation implements MutationApi<RowMutation>, Serializable
    */
   @InternalApi
   public MutateRowsRequest toBulkProto(RequestContext requestContext) {
-    TableName tableName =
-        TableName.of(
-            requestContext.getInstanceName().getProject(),
-            requestContext.getInstanceName().getInstance(),
-            tableId);
+    String tableName =
+        NameUtil.formatTableName(
+            requestContext.getProjectId(), requestContext.getInstanceId(), tableId);
 
     return MutateRowsRequest.newBuilder()
         .setAppProfileId(requestContext.getAppProfileId())
-        .setTableName(tableName.toString())
+        .setTableName(tableName)
         .addEntries(
             Entry.newBuilder().setRowKey(key).addAllMutations(mutation.getMutations()).build())
         .build();

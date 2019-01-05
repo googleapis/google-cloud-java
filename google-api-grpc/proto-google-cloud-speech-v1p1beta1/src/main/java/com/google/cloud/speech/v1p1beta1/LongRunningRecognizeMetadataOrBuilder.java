@@ -3,11 +3,14 @@
 
 package com.google.cloud.speech.v1p1beta1;
 
-public interface LongRunningRecognizeMetadataOrBuilder extends
+public interface LongRunningRecognizeMetadataOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.speech.v1p1beta1.LongRunningRecognizeMetadata)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Approximate percentage of audio processed thus far. Guaranteed to be 100
    * when the audio is fully processed and the results are available.
@@ -18,6 +21,8 @@ public interface LongRunningRecognizeMetadataOrBuilder extends
   int getProgressPercent();
 
   /**
+   *
+   *
    * <pre>
    * Time when the request was received.
    * </pre>
@@ -26,6 +31,8 @@ public interface LongRunningRecognizeMetadataOrBuilder extends
    */
   boolean hasStartTime();
   /**
+   *
+   *
    * <pre>
    * Time when the request was received.
    * </pre>
@@ -34,6 +41,8 @@ public interface LongRunningRecognizeMetadataOrBuilder extends
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
+   *
+   *
    * <pre>
    * Time when the request was received.
    * </pre>
@@ -43,6 +52,8 @@ public interface LongRunningRecognizeMetadataOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Time of the most recent processing update.
    * </pre>
@@ -51,6 +62,8 @@ public interface LongRunningRecognizeMetadataOrBuilder extends
    */
   boolean hasLastUpdateTime();
   /**
+   *
+   *
    * <pre>
    * Time of the most recent processing update.
    * </pre>
@@ -59,6 +72,8 @@ public interface LongRunningRecognizeMetadataOrBuilder extends
    */
   com.google.protobuf.Timestamp getLastUpdateTime();
   /**
+   *
+   *
    * <pre>
    * Time of the most recent processing update.
    * </pre>

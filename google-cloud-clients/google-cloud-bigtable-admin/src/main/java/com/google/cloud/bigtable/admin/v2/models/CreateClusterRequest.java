@@ -18,17 +18,15 @@ package com.google.cloud.bigtable.admin.v2.models;
 import static com.google.cloud.bigtable.admin.v2.models.StorageType.SSD;
 
 import com.google.api.core.InternalApi;
-import com.google.bigtable.admin.v2.InstanceName;
-import com.google.bigtable.admin.v2.LocationName;
-import com.google.bigtable.admin.v2.ProjectName;
+import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import com.google.common.base.Preconditions;
 import javax.annotation.Nonnull;
 
 /**
  * Parameters for creating a new Bigtable cluster.
  *
- * <p>A cluster represents the actual Cloud Bigtable service. Each cluster belongs to a single
- * Cloud Bigtable instance. When your application sends requests to a Cloud Bigtable instance, those
+ * <p>A cluster represents the actual Cloud Bigtable service. Each cluster belongs to a single Cloud
+ * Bigtable instance. When your application sends requests to a Cloud Bigtable instance, those
  * requests are actually handled by one of the clusters in the instance.
  *
  * <p>Each cluster is located in a single zone. An instance's clusters must be in unique zones that
@@ -37,8 +35,7 @@ import javax.annotation.Nonnull;
  * available, see <a href="https://cloud.google.com/bigtable/docs/locations">Cloud Bigtable
  * Locations</a>.
  *
- *
- * Examples:
+ * <p>Examples:
  *
  * <pre>{@code
  * // Small production instance:
@@ -49,16 +46,15 @@ import javax.annotation.Nonnull;
  * }</pre>
  *
  * @see <a href="https://cloud.google.com/bigtable/docs/instances-clusters-nodes#clusters">For more
- * details</a>
+ *     details</a>
  */
 public final class CreateClusterRequest {
-  private final com.google.bigtable.admin.v2.CreateClusterRequest.Builder proto = com.google.bigtable.admin.v2.CreateClusterRequest
-      .newBuilder();
+  private final com.google.bigtable.admin.v2.CreateClusterRequest.Builder proto =
+      com.google.bigtable.admin.v2.CreateClusterRequest.newBuilder();
   // instanceId and zone are short ids, which will be expanded to full names when the project name
   // is passed to toProto
   private final String instanceId;
   private String zone;
-
 
   /**
    * Builds a new request to create a new cluster to the specified instance with the specified
@@ -101,8 +97,8 @@ public final class CreateClusterRequest {
   @SuppressWarnings("WeakerAccess")
   public CreateClusterRequest setStorageType(@Nonnull StorageType storageType) {
     Preconditions.checkNotNull(storageType);
-    Preconditions.checkArgument(storageType != StorageType.UNRECOGNIZED,
-        "StorageType can't be UNRECOGNIZED");
+    Preconditions.checkArgument(
+        storageType != StorageType.UNRECOGNIZED, "StorageType can't be UNRECOGNIZED");
 
     proto.getClusterBuilder().setDefaultStorageType(storageType.toProto());
     return this;
@@ -113,10 +109,9 @@ public final class CreateClusterRequest {
    * not meant to be used by applications.
    */
   @InternalApi
-  public com.google.bigtable.admin.v2.CreateClusterRequest toProto(ProjectName projectName) {
-    proto.setParent(InstanceName.of(projectName.getProject(), instanceId).toString());
-    proto.getClusterBuilder()
-        .setLocation(LocationName.of(projectName.getProject(), zone).toString());
+  public com.google.bigtable.admin.v2.CreateClusterRequest toProto(String projectId) {
+    proto.setParent(NameUtil.formatInstanceName(projectId, instanceId));
+    proto.getClusterBuilder().setLocation(NameUtil.formatLocationName(projectId, zone));
 
     return proto.build();
   }
@@ -141,9 +136,8 @@ public final class CreateClusterRequest {
    * applications.
    */
   @InternalApi
-  com.google.bigtable.admin.v2.Cluster toEmbeddedProto(ProjectName projectName) {
-    proto.getClusterBuilder()
-        .setLocation(LocationName.of(projectName.getProject(), zone).toString());
+  com.google.bigtable.admin.v2.Cluster toEmbeddedProto(String projectId) {
+    proto.getClusterBuilder().setLocation(NameUtil.formatLocationName(projectId, zone));
 
     return proto.getClusterBuilder().build();
   }

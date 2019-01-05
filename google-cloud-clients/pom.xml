@@ -1,12 +1,10 @@
-<?xml version="1.0"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-clients</artifactId>
   <packaging>pom</packaging>
-  <version>0.72.0-alpha</version><!-- {x-version-update:google-cloud-clients:current} -->
+  <version>0.75.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-clients:current} -->
   <name>Google Cloud</name>
   <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients</url>
   <description>
@@ -154,9 +152,10 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-clients</site.installationModule>
-    <bom.version>0.72.0-alpha</bom.version><!-- {x-version-update:google-cloud-bom:current} -->
+    <bom.version>0.75.1-alpha-SNAPSHOT</bom.version><!-- {x-version-update:google-cloud-bom:current} -->
     <api-client.version>1.27.0</api-client.version>
-    <gax.version>1.35.0</gax.version>
+    <gax.version>1.35.1</gax.version>
+    <api.common.java.version>1.7.0</api.common.java.version>
     <google.auth.version>0.12.0</google.auth.version>
     <grpc.version>1.16.1</grpc.version>
     <nettyssl.version>2.0.7.Final</nettyssl.version>
@@ -170,6 +169,14 @@
     <objenesis.version>2.6</objenesis.version>
   </properties>
   <!-- All non-test dependency versions should be added to google-cloud-bom/pom.xml -->
+  <dependencies>
+    <dependency>
+      <groupId>javax.annotation</groupId>
+      <artifactId>javax.annotation-api</artifactId>
+      <version>1.2</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -227,6 +234,12 @@
         <groupId>com.google.apis</groupId>
         <artifactId>google-api-services-translate</artifactId>
         <version>v2-rev20170525-1.27.0</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-core</artifactId>
+        <version>1.57.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-core:current} -->
+        <type>test-jar</type>
       </dependency>
       <dependency>
         <groupId>org.json</groupId>
@@ -344,11 +357,6 @@
         <version>${google.auth.version}</version>
       </dependency>
       <dependency>
-        <groupId>io.netty</groupId>
-        <artifactId>netty-tcnative-boringssl-static</artifactId>
-        <version>${nettyssl.version}</version>
-      </dependency>
-      <dependency>
         <groupId>io.opencensus</groupId>
         <artifactId>opencensus-api</artifactId>
         <version>${opencensus.version}</version>
@@ -436,6 +444,7 @@
     <module>google-cloud-dns</module>
     <module>google-cloud-errorreporting</module>
     <module>google-cloud-firestore</module>
+    <module>google-cloud-iamcredentials</module>
     <module>google-cloud-iot</module>
     <module>google-cloud-kms</module>
     <module>google-cloud-language</module>
@@ -574,13 +583,13 @@
           </execution>
         </executions>
         <configuration>
-          <forkedProcessTimeoutInSeconds>600</forkedProcessTimeoutInSeconds>
+          <forkedProcessTimeoutInSeconds>1200</forkedProcessTimeoutInSeconds>
           <reportNameSuffix>sponge_log</reportNameSuffix>
         </configuration>
       </plugin>
       <plugin>
         <artifactId>maven-jar-plugin</artifactId>
-        <version>2.6</version>
+        <version>3.1.0</version>
         <configuration>
           <archive>
             <addMavenDescriptor>true</addMavenDescriptor>
@@ -606,7 +615,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.5.1</version>
+        <version>3.7.0</version>
         <configuration>
           <source>1.7</source>
           <target>1.7</target>
@@ -691,89 +700,6 @@
         <version>3.4</version>
         <configuration>
           <skipDeploy>true</skipDeploy>
-          <reportPlugins>
-            <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-project-info-reports-plugin</artifactId>
-              <version>2.8.1</version>
-              <reportSets>
-                <reportSet>
-                  <reports>
-                    <report>index</report>
-                    <report>dependency-info</report>
-                    <report>project-team</report>
-                    <report>cim</report>
-                    <report>issue-tracking</report>
-                    <report>license</report>
-                    <report>scm</report>
-                    <report>dependency-management</report>
-                    <report>distribution-management</report>
-                    <report>summary</report>
-                    <report>modules</report>
-                  </reports>
-                </reportSet>
-              </reportSets>
-              <configuration>
-                <aggregate>true</aggregate>
-                <quiet>true</quiet>
-                <dependencyDetailsEnabled>true</dependencyDetailsEnabled>
-                <dependencyLocationsEnabled>true</dependencyLocationsEnabled>
-                <artifactId>${site.installationModule}</artifactId>
-                <packaging>jar</packaging>
-              </configuration>
-            </plugin>
-            <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-javadoc-plugin</artifactId>
-              <version>2.10.3</version>
-              <reportSets>
-                <reportSet>
-                  <id>html</id>
-                  <reports>
-                    <report>javadoc</report>
-                  </reports>
-                </reportSet>
-              </reportSets>
-              <configuration>
-                <aggregate>true</aggregate>
-                <show>protected</show>
-                <nohelp>true</nohelp>
-                <outputDirectory>${project.build.directory}/javadoc</outputDirectory>
-                <groups>
-                  <group>
-                    <title>API packages</title>
-                    <packages>com.google.cloud*</packages>
-                  </group>
-                  <group>
-                    <title>Test helpers packages</title>
-                    <packages>com.google.cloud.bigquery.testing:com.google.cloud.testing:com.google.cloud.datastore.testing:com.google.cloud.dns.testing:com.google.cloud.logging.testing:com.google.cloud.pubsub.testing:com.google.cloud.resourcemanager.testing:com.google.cloud.storage.testing:com.google.cloud.translate.testing:com.google.cloud.spanner.testing:com.google.cloud.storage.contrib.nio.testing</packages>
-                  </group>
-                  <group>
-                    <title>Example packages</title>
-                    <packages>com.google.cloud.examples.*:com.google.cloud.nio.examples</packages>
-                  </group>
-                  <group>
-                    <title>SPI packages</title>
-                    <packages>com.google.cloud.spi*:com.google.cloud.bigquery.spi*:com.google.cloud.datastore.spi*:com.google.cloud.dns.spi*:com.google.cloud.firestore.spi*:com.google.cloud.logging.spi*:com.google.cloud.resourcemanager.spi*:com.google.cloud.spanner.spi*:com.google.cloud.storage.spi*:com.google.cloud.translate.spi*</packages>
-                  </group>
-                  <group>
-                    <title>Stub packages</title>
-                    <packages>com.google.cloud.asset.v1beta1.stub:com.google.cloud.automl.v1beta1.stub:com.google.cloud.bigquery.datatransfer.v1.stub:com.google.cloud.bigquery.storage.v1beta1.stub:com.google.cloud.bigtable.admin.v2.stub:com.google.cloud.bigtable.data.v2.stub*:com.google.cloud.compute.v1.stub:com.google.cloud.container.v1.stub:com.google.cloud.devtools.containeranalysis.v1beta1.stub:com.google.cloud.dataproc.v1.stub:com.google.cloud.dataproc.v1beta2.stub:com.google.cloud.dlp.v2beta1.stub:com.google.cloud.dlp.v2.stub:com.google.cloud.dialogflow.v2beta1.stub:com.google.cloud.dialogflow.v2.stub:com.google.cloud.errorreporting.v1beta1.stub:com.google.cloud.firestore.v1beta1.stub:com.google.cloud.iot.v1.stub:com.google.cloud.kms.v1.stub:com.google.cloud.language.v1beta2.stub:com.google.cloud.language.v1.stub:com.google.cloud.logging.v2.stub:com.google.cloud.monitoring.v3.stub:com.google.cloud.oslogin.v1.stub:com.google.cloud.pubsub.v1.stub:com.google.cloud.redis.v1beta1.stub:com.google.cloud.redis.v1.stub:com.google.cloud.scheduler.v1beta1.stub:com.google.cloud.securitycenter.v1beta1.stub:com.google.cloud.spanner.admin.database.v1.stub:com.google.cloud.spanner.admin.instance.v1.stub:com.google.cloud.spanner.v1.stub:com.google.cloud.speech.v1beta1.stub:com.google.cloud.speech.v1p1beta1.stub:com.google.cloud.speech.v1.stub:com.google.cloud.tasks.v2beta2.stub:com.google.cloud.texttospeech.v1beta1.stub:com.google.cloud.texttospeech.v1.stub:com.google.cloud.trace.v1.stub:com.google.cloud.trace.v2.stub:com.google.cloud.videointelligence.v1beta1.stub:com.google.cloud.videointelligence.v1beta2.stub:com.google.cloud.videointelligence.v1.stub:com.google.cloud.videointelligence.v1p1beta1.stub:com.google.cloud.videointelligence.v1p2beta1.stub:com.google.cloud.vision.v1.stub:com.google.cloud.vision.v1p1beta1.stub:com.google.cloud.vision.v1p2beta1.stub:com.google.cloud.vision.v1p3beta1.stub:com.google.cloud.websecurityscanner.v1alpha.stub</packages>
-                  </group>
-                  <group>
-                    <title>Deprecated packages</title>
-                    <packages>com.google.cloud.compute.deprecated*</packages>
-                  </group>
-                </groups>
-                <links>
-                  <link>https://developers.google.com/protocol-buffers/docs/reference/java/</link>
-                  <link>http://google.github.io/google-auth-library-java/releases/latest/apidocs/</link>
-                  <link>http://googleapis.github.io/gax-java/${gax.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/all/latest/apidocs/</link>
-                </links>
-              </configuration>
-            </plugin>
-          </reportPlugins>
         </configuration>
       </plugin>
       <plugin>
@@ -803,7 +729,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>3.0.0</version>
+        <version>2.8.1</version>
         <reportSets>
           <reportSet>
             <reports>
@@ -822,8 +748,6 @@
           </reportSet>
         </reportSets>
         <configuration>
-          <aggregate>true</aggregate>
-          <quiet>true</quiet>
           <dependencyDetailsEnabled>true</dependencyDetailsEnabled>
           <dependencyLocationsEnabled>true</dependencyLocationsEnabled>
           <artifactId>${site.installationModule}</artifactId>
@@ -838,11 +762,13 @@
           <reportSet>
             <id>html</id>
             <reports>
+              <report>aggregate</report>
               <report>javadoc</report>
             </reports>
           </reportSet>
         </reportSets>
         <configuration>
+          <doclint>none</doclint>
           <show>protected</show>
           <nohelp>true</nohelp>
           <outputDirectory>${project.build.directory}/javadoc</outputDirectory>
@@ -865,7 +791,7 @@
             </group>
             <group>
               <title>Stub packages</title>
-              <packages>com.google.cloud.automl.v1beta1.stub:com.google.cloud.bigquery.datatransfer.v1.stub:com.google.cloud.bigquery.storage.v1beta1.stub:com.google.cloud.bigtable.admin.v2.stub:com.google.cloud.bigtable.data.v2.stub*:com.google.cloud.compute.v1.stub:com.google.cloud.container.v1.stub:com.google.cloud.dataproc.v1.stub:com.google.cloud.dataproc.v1beta2.stub:com.google.cloud.dlp.v2beta1.stub:com.google.cloud.dlp.v2.stub:com.google.cloud.dialogflow.v2beta1.stub:com.google.cloud.dialogflow.v2.stub:com.google.cloud.errorreporting.v1beta1.stub:com.google.cloud.firestore.v1beta1.stub:com.google.cloud.iot.v1.stub:com.google.cloud.kms.v1.stub:com.google.cloud.language.v1beta2.stub:com.google.cloud.language.v1.stub:com.google.cloud.logging.v2.stub:com.google.cloud.monitoring.v3.stub:com.google.cloud.oslogin.v1.stub:com.google.cloud.pubsub.v1.stub:com.google.cloud.redis.v1beta1.stub:com.google.cloud.scheduler.v1beta1.stub:com.google.cloud.securitycenter.v1beta1.stub:com.google.cloud.spanner.admin.database.v1.stub:com.google.cloud.spanner.admin.instance.v1.stub:com.google.cloud.spanner.v1.stub:com.google.cloud.speech.v1beta1.stub:com.google.cloud.speech.v1p1beta1.stub:com.google.cloud.speech.v1.stub:com.google.cloud.tasks.v2beta2.stub:com.google.cloud.texttospeech.v1beta1.stub:com.google.cloud.texttospeech.v1.stub:com.google.cloud.trace.v1.stub:com.google.cloud.trace.v2.stub:com.google.cloud.videointelligence.v1beta1.stub:com.google.cloud.videointelligence.v1beta2.stub:com.google.cloud.videointelligence.v1.stub:com.google.cloud.videointelligence.v1p1beta1.stub:com.google.cloud.vision.v1.stub:com.google.cloud.vision.v1p1beta1.stub:com.google.cloud.vision.v1p2beta1.stub:com.google.cloud.vision.v1p3beta1.stub:com.google.cloud.websecurityscanner.v1alpha.stub</packages>
+              <packages>com.google.cloud.asset.v1beta1.stub:com.google.cloud.automl.v1beta1.stub:com.google.cloud.bigquerydatatransfer.v1.stub:com.google.cloud.bigquerystorage.v1beta1.stub:com.google.cloud.bigtable-admin.v2.stub:com.google.cloud.bigtable.v2.stub:com.google.cloud.container.v1.stub:com.google.cloud.containeranalysis.v1beta1.stub:com.google.cloud.dataproc.v1.stub:com.google.cloud.dataproc.v1beta2.stub:com.google.cloud.dialogflow.v2.stub:com.google.cloud.dialogflow.v2beta1.stub:com.google.cloud.dlp.v2.stub:com.google.cloud.error-reporting.v1beta1.stub:com.google.cloud.firestore.v1beta1.stub:com.google.cloud.iamcredentials.v1.stub:com.google.cloud.iot.v1.stub:com.google.cloud.kms.v1.stub:com.google.cloud.language.v1.stub:com.google.cloud.language.v1beta2.stub:com.google.cloud.logging.v2.stub:com.google.cloud.monitoring.v3.stub:com.google.cloud.os-login.v1.stub:com.google.cloud.pubsub.v1.stub:com.google.cloud.redis.v1.stub:com.google.cloud.redis.v1beta1.stub:com.google.cloud.scheduler.v1beta1.stub:com.google.cloud.securitycenter.v1beta1.stub:com.google.cloud.spanner-admin-database.v1.stub:com.google.cloud.spanner-admin-instance.v1.stub:com.google.cloud.spanner.v1.stub:com.google.cloud.speech.v1.stub:com.google.cloud.speech.v1beta1.stub:com.google.cloud.speech.v1p1beta1.stub:com.google.cloud.tasks.v2beta2.stub:com.google.cloud.tasks.v2beta3.stub:com.google.cloud.texttospeech.v1.stub:com.google.cloud.texttospeech.v1beta1.stub:com.google.cloud.trace.v1.stub:com.google.cloud.trace.v2.stub:com.google.cloud.video-intelligence.v1.stub:com.google.cloud.video-intelligence.v1beta1.stub:com.google.cloud.video-intelligence.v1beta2.stub:com.google.cloud.video-intelligence.v1p1beta1.stub:com.google.cloud.video-intelligence.v1p2beta1.stub:com.google.cloud.vision.v1.stub:com.google.cloud.vision.v1p1beta1.stub:com.google.cloud.vision.v1p2beta1.stub:com.google.cloud.vision.v1p3beta1.stub:com.google.cloud.websecurityscanner.v1alpha.stub</packages>
             </group>
             <group>
               <title>Deprecated packages</title>
@@ -876,7 +802,7 @@
             <link>https://developers.google.com/protocol-buffers/docs/reference/java/</link>
             <link>http://googleapis.github.io/google-auth-library-java/releases/latest/apidocs/</link>
             <link>http://googleapis.github.io/gax-java/${gax.version}/apidocs/</link>
-            <link>http://googleapis.github.io/googleapis/java/all/latest/apidocs/</link>
+            <link>https://googleapis.github.io/api-common-java/${api.common.java.version}/apidocs/</link>
           </links>
         </configuration>
       </plugin>
@@ -904,7 +830,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
-            <version>2.10.3</version>
+            <version>3.0.1</version>
             <executions>
               <execution>
                 <id>attach-javadocs</id>
@@ -917,6 +843,7 @@
               <links>
                 <link>http://google.github.io/google-auth-library-java/releases/latest/apidocs/</link>
               </links>
+              <doclint>none</doclint>
             </configuration>
           </plugin>
           <plugin>
@@ -930,6 +857,12 @@
                 <goals>
                   <goal>sign</goal>
                 </goals>
+                <configuration>
+                  <gpgArguments>
+                    <arg>--pinentry-mode</arg>
+                    <arg>loopback</arg>
+                  </gpgArguments>
+                </configuration>
               </execution>
             </executions>
           </plugin>

@@ -30,7 +30,6 @@ import com.google.pubsub.v1.ListTopicsRequest;
 import com.google.pubsub.v1.ProjectName;
 import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.Topic;
-
 import java.util.LinkedList;
 import java.util.List;
 
@@ -60,14 +59,12 @@ public class TopicAdminClientSnippets {
     // [END pubsub_create_topic]
   }
 
-  /** Example of listing topics.  */
+  /** Example of listing topics. */
   public ListTopicsPagedResponse listTopics() throws Exception {
     // [START pubsub_list_topics]
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       ListTopicsRequest listTopicsRequest =
-          ListTopicsRequest.newBuilder()
-              .setProject(ProjectName.format(projectId))
-              .build();
+          ListTopicsRequest.newBuilder().setProject(ProjectName.format(projectId)).build();
       ListTopicsPagedResponse response = topicAdminClient.listTopics(listTopicsRequest);
       Iterable<Topic> topics = response.iterateAll();
       for (Topic topic : topics) {
@@ -85,9 +82,7 @@ public class TopicAdminClientSnippets {
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {
       ProjectTopicName topicName = ProjectTopicName.of(projectId, topicId);
       ListTopicSubscriptionsRequest request =
-          ListTopicSubscriptionsRequest.newBuilder()
-              .setTopic(topicName.toString())
-              .build();
+          ListTopicSubscriptionsRequest.newBuilder().setTopic(topicName.toString()).build();
       ListTopicSubscriptionsPagedResponse response =
           topicAdminClient.listTopicSubscriptions(request);
       Iterable<String> subscriptionNames = response.iterateAll();
@@ -144,8 +139,10 @@ public class TopicAdminClientSnippets {
     // [END pubsub_set_topic_policy]
   }
 
-  /** Example of testing whether the caller has the provided permissions on a topic.
-   * Only viewer, editor or admin/owner can view results of pubsub.topics.get  */
+  /**
+   * Example of testing whether the caller has the provided permissions on a topic. Only viewer,
+   * editor or admin/owner can view results of pubsub.topics.get
+   */
   public TestIamPermissionsResponse testTopicPermissions(String topicId) throws Exception {
     // [START pubsub_test_topic_permissions]
     try (TopicAdminClient topicAdminClient = TopicAdminClient.create()) {

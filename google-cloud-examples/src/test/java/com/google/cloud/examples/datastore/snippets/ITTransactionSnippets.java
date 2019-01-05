@@ -29,14 +29,12 @@ import com.google.cloud.datastore.PathElement;
 import com.google.cloud.datastore.Transaction;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
-
-import org.junit.After;
-import org.junit.BeforeClass;
-import org.junit.Test;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import org.junit.After;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 public class ITTransactionSnippets {
 
@@ -105,8 +103,9 @@ public class ITTransactionSnippets {
     List<Entity> entities =
         transactionSnippets.getMultiple("add_get_multiple_key_1", "add_get_multiple_key_2");
     assertEquals(2, entities.size());
-    Set<String> values = ImmutableSet.of(entities.get(0).getString("propertyName"),
-        entities.get(1).getString("propertyName"));
+    Set<String> values =
+        ImmutableSet.of(
+            entities.get(0).getString("propertyName"), entities.get(1).getString("propertyName"));
     assertTrue(values.contains("value1"));
     assertTrue(values.contains("value2"));
 
@@ -119,8 +118,9 @@ public class ITTransactionSnippets {
     transactionSnippets = new TransactionSnippets(transaction);
     entities = transactionSnippets.getMultiple("add_get_multiple_key_1", "add_get_multiple_key_2");
     assertEquals(2, entities.size());
-    values = ImmutableSet.of(entities.get(0).getString("propertyName"),
-        entities.get(1).getString("propertyName"));
+    values =
+        ImmutableSet.of(
+            entities.get(0).getString("propertyName"), entities.get(1).getString("propertyName"));
     assertTrue(values.contains("value3"));
     assertTrue(values.contains("value4"));
   }
@@ -153,8 +153,9 @@ public class ITTransactionSnippets {
     List<Entity> entities =
         transactionSnippets.getMultiple("add_get_multiple_key_1", "put_get_multiple_key_2");
     assertEquals(2, entities.size());
-    Set<String> values = ImmutableSet.of(entities.get(0).getString("propertyName"),
-        entities.get(1).getString("propertyName"));
+    Set<String> values =
+        ImmutableSet.of(
+            entities.get(0).getString("propertyName"), entities.get(1).getString("propertyName"));
     assertTrue(values.contains("value1"));
     assertTrue(values.contains("value2"));
   }
@@ -210,11 +211,12 @@ public class ITTransactionSnippets {
     Key key1 = datastore.newKeyFactory().setKind("ParentKind").newKey("run_key_1");
     Entity entity1 = Entity.newBuilder(key1).set("description", "run1").build();
     datastore.put(entity1);
-    Key key2 = datastore
-        .newKeyFactory()
-        .setKind("MyKind")
-        .addAncestor(PathElement.of("ParentKind", "run_key_1"))
-        .newKey("run_key_2");
+    Key key2 =
+        datastore
+            .newKeyFactory()
+            .setKind("MyKind")
+            .addAncestor(PathElement.of("ParentKind", "run_key_1"))
+            .newKey("run_key_2");
     registerKey(key1);
     registerKey(key2);
     Entity entity2 = Entity.newBuilder(key2).set("description", "run2").build();

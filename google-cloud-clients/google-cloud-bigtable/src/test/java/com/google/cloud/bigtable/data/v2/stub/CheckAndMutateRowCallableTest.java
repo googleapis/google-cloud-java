@@ -23,10 +23,10 @@ import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.bigtable.v2.CheckAndMutateRowRequest;
 import com.google.bigtable.v2.CheckAndMutateRowResponse;
 import com.google.bigtable.v2.Mutation.DeleteFromRow;
+import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.Mutation;
@@ -41,8 +41,9 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class CheckAndMutateRowCallableTest {
+
   private final RequestContext requestContext =
-      RequestContext.create(InstanceName.of("my-project", "my-instance"), "my-app-profile");
+      RequestContext.create("my-project", "my-instance", "my-app-profile");
   private FakeCallable inner;
   private CheckAndMutateRowCallable callable;
 
@@ -60,7 +61,9 @@ public class CheckAndMutateRowCallableTest {
     assertThat(inner.request)
         .isEqualTo(
             CheckAndMutateRowRequest.newBuilder()
-                .setTableName(requestContext.getInstanceName() + "/tables/my-table")
+                .setTableName(
+                    NameUtil.formatTableName(
+                        requestContext.getProjectId(), requestContext.getInstanceId(), "my-table"))
                 .setRowKey(ByteString.copyFromUtf8("row-key"))
                 .setAppProfileId(requestContext.getAppProfileId())
                 .addTrueMutations(

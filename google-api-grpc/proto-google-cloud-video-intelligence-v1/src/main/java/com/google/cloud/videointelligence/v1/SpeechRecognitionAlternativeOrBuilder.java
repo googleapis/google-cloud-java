@@ -3,11 +3,14 @@
 
 package com.google.cloud.videointelligence.v1;
 
-public interface SpeechRecognitionAlternativeOrBuilder extends
+public interface SpeechRecognitionAlternativeOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.videointelligence.v1.SpeechRecognitionAlternative)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Transcript text representing the words that the user spoke.
    * </pre>
@@ -16,16 +19,19 @@ public interface SpeechRecognitionAlternativeOrBuilder extends
    */
   java.lang.String getTranscript();
   /**
+   *
+   *
    * <pre>
    * Transcript text representing the words that the user spoke.
    * </pre>
    *
    * <code>string transcript = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getTranscriptBytes();
+  com.google.protobuf.ByteString getTranscriptBytes();
 
   /**
+   *
+   *
    * <pre>
    * The confidence estimate between 0.0 and 1.0. A higher number
    * indicates an estimated greater likelihood that the recognized words are
@@ -40,15 +46,18 @@ public interface SpeechRecognitionAlternativeOrBuilder extends
   float getConfidence();
 
   /**
+   *
+   *
    * <pre>
    * A list of word-specific information for each recognized word.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1.WordInfo words = 3;</code>
    */
-  java.util.List<com.google.cloud.videointelligence.v1.WordInfo> 
-      getWordsList();
+  java.util.List<com.google.cloud.videointelligence.v1.WordInfo> getWordsList();
   /**
+   *
+   *
    * <pre>
    * A list of word-specific information for each recognized word.
    * </pre>
@@ -57,6 +66,8 @@ public interface SpeechRecognitionAlternativeOrBuilder extends
    */
   com.google.cloud.videointelligence.v1.WordInfo getWords(int index);
   /**
+   *
+   *
    * <pre>
    * A list of word-specific information for each recognized word.
    * </pre>
@@ -65,21 +76,24 @@ public interface SpeechRecognitionAlternativeOrBuilder extends
    */
   int getWordsCount();
   /**
+   *
+   *
    * <pre>
    * A list of word-specific information for each recognized word.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1.WordInfo words = 3;</code>
    */
-  java.util.List<? extends com.google.cloud.videointelligence.v1.WordInfoOrBuilder> 
+  java.util.List<? extends com.google.cloud.videointelligence.v1.WordInfoOrBuilder>
       getWordsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * A list of word-specific information for each recognized word.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1.WordInfo words = 3;</code>
    */
-  com.google.cloud.videointelligence.v1.WordInfoOrBuilder getWordsOrBuilder(
-      int index);
+  com.google.cloud.videointelligence.v1.WordInfoOrBuilder getWordsOrBuilder(int index);
 }

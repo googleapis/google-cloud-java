@@ -3,20 +3,24 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-public interface ListDocumentsResponseOrBuilder extends
+public interface ListDocumentsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.ListDocumentsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The list of documents.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Document documents = 1;</code>
    */
-  java.util.List<com.google.cloud.dialogflow.v2beta1.Document> 
-      getDocumentsList();
+  java.util.List<com.google.cloud.dialogflow.v2beta1.Document> getDocumentsList();
   /**
+   *
+   *
    * <pre>
    * The list of documents.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListDocumentsResponseOrBuilder extends
    */
   com.google.cloud.dialogflow.v2beta1.Document getDocuments(int index);
   /**
+   *
+   *
    * <pre>
    * The list of documents.
    * </pre>
@@ -33,25 +39,30 @@ public interface ListDocumentsResponseOrBuilder extends
    */
   int getDocumentsCount();
   /**
+   *
+   *
    * <pre>
    * The list of documents.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Document documents = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.dialogflow.v2beta1.DocumentOrBuilder> 
+  java.util.List<? extends com.google.cloud.dialogflow.v2beta1.DocumentOrBuilder>
       getDocumentsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The list of documents.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Document documents = 1;</code>
    */
-  com.google.cloud.dialogflow.v2beta1.DocumentOrBuilder getDocumentsOrBuilder(
-      int index);
+  com.google.cloud.dialogflow.v2beta1.DocumentOrBuilder getDocumentsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Token to retrieve the next page of results, or empty if there are no
    * more results in the list.
@@ -61,6 +72,8 @@ public interface ListDocumentsResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * Token to retrieve the next page of results, or empty if there are no
    * more results in the list.
@@ -68,6 +81,5 @@ public interface ListDocumentsResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

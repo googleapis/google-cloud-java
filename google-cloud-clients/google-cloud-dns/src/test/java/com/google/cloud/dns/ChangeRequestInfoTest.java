@@ -25,10 +25,8 @@ import static org.junit.Assert.fail;
 
 import com.google.api.services.dns.model.Change;
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
 import java.util.List;
+import org.junit.Test;
 
 public class ChangeRequestInfoTest {
 
@@ -46,14 +44,15 @@ public class ChangeRequestInfoTest {
   private static final RecordSet RECORD3 = RecordSet.newBuilder(NAME3, TYPE3).build();
   private static final List<RecordSet> ADDITIONS = ImmutableList.of(RECORD1, RECORD2);
   private static final List<RecordSet> DELETIONS = ImmutableList.of(RECORD3);
-  private static final ChangeRequestInfo CHANGE = ChangeRequest.newBuilder()
-      .add(RECORD1)
-      .add(RECORD2)
-      .delete(RECORD3)
-      .setStartTime(START_TIME_MILLIS)
-      .setStatus(STATUS)
-      .setGeneratedId(GENERATED_ID)
-      .build();
+  private static final ChangeRequestInfo CHANGE =
+      ChangeRequest.newBuilder()
+          .add(RECORD1)
+          .add(RECORD2)
+          .delete(RECORD3)
+          .setStartTime(START_TIME_MILLIS)
+          .setStatus(STATUS)
+          .setGeneratedId(GENERATED_ID)
+          .build();
 
   @Test
   public void testEmptyBuilder() {
@@ -63,7 +62,6 @@ public class ChangeRequestInfoTest {
     assertNotNull(cr.getAdditions());
     assertTrue(cr.getAdditions().isEmpty());
   }
-
 
   @Test
   public void testBuilder() {
@@ -80,7 +78,6 @@ public class ChangeRequestInfoTest {
     assertEquals(recordList, another.getDeletions());
     assertEquals(CHANGE.getAdditions(), another.getAdditions());
   }
-
 
   @Test
   public void testEqualsAndNotEquals() {

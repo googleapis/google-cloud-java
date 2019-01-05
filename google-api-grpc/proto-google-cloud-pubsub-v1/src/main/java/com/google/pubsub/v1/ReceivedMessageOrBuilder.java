@@ -3,11 +3,14 @@
 
 package com.google.pubsub.v1;
 
-public interface ReceivedMessageOrBuilder extends
+public interface ReceivedMessageOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.pubsub.v1.ReceivedMessage)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * This ID can be used to acknowledge the received message.
    * </pre>
@@ -16,16 +19,19 @@ public interface ReceivedMessageOrBuilder extends
    */
   java.lang.String getAckId();
   /**
+   *
+   *
    * <pre>
    * This ID can be used to acknowledge the received message.
    * </pre>
    *
    * <code>string ack_id = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getAckIdBytes();
+  com.google.protobuf.ByteString getAckIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The message.
    * </pre>
@@ -34,6 +40,8 @@ public interface ReceivedMessageOrBuilder extends
    */
   boolean hasMessage();
   /**
+   *
+   *
    * <pre>
    * The message.
    * </pre>
@@ -42,6 +50,8 @@ public interface ReceivedMessageOrBuilder extends
    */
   com.google.pubsub.v1.PubsubMessage getMessage();
   /**
+   *
+   *
    * <pre>
    * The message.
    * </pre>

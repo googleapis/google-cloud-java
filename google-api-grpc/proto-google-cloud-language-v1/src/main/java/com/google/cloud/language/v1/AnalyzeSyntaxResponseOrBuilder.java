@@ -3,20 +3,24 @@
 
 package com.google.cloud.language.v1;
 
-public interface AnalyzeSyntaxResponseOrBuilder extends
+public interface AnalyzeSyntaxResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.language.v1.AnalyzeSyntaxResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Sentences in the input document.
    * </pre>
    *
    * <code>repeated .google.cloud.language.v1.Sentence sentences = 1;</code>
    */
-  java.util.List<com.google.cloud.language.v1.Sentence> 
-      getSentencesList();
+  java.util.List<com.google.cloud.language.v1.Sentence> getSentencesList();
   /**
+   *
+   *
    * <pre>
    * Sentences in the input document.
    * </pre>
@@ -25,6 +29,8 @@ public interface AnalyzeSyntaxResponseOrBuilder extends
    */
   com.google.cloud.language.v1.Sentence getSentences(int index);
   /**
+   *
+   *
    * <pre>
    * Sentences in the input document.
    * </pre>
@@ -33,34 +39,40 @@ public interface AnalyzeSyntaxResponseOrBuilder extends
    */
   int getSentencesCount();
   /**
+   *
+   *
    * <pre>
    * Sentences in the input document.
    * </pre>
    *
    * <code>repeated .google.cloud.language.v1.Sentence sentences = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.language.v1.SentenceOrBuilder> 
+  java.util.List<? extends com.google.cloud.language.v1.SentenceOrBuilder>
       getSentencesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Sentences in the input document.
    * </pre>
    *
    * <code>repeated .google.cloud.language.v1.Sentence sentences = 1;</code>
    */
-  com.google.cloud.language.v1.SentenceOrBuilder getSentencesOrBuilder(
-      int index);
+  com.google.cloud.language.v1.SentenceOrBuilder getSentencesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Tokens, along with their syntactic information, in the input document.
    * </pre>
    *
    * <code>repeated .google.cloud.language.v1.Token tokens = 2;</code>
    */
-  java.util.List<com.google.cloud.language.v1.Token> 
-      getTokensList();
+  java.util.List<com.google.cloud.language.v1.Token> getTokensList();
   /**
+   *
+   *
    * <pre>
    * Tokens, along with their syntactic information, in the input document.
    * </pre>
@@ -69,6 +81,8 @@ public interface AnalyzeSyntaxResponseOrBuilder extends
    */
   com.google.cloud.language.v1.Token getTokens(int index);
   /**
+   *
+   *
    * <pre>
    * Tokens, along with their syntactic information, in the input document.
    * </pre>
@@ -77,25 +91,29 @@ public interface AnalyzeSyntaxResponseOrBuilder extends
    */
   int getTokensCount();
   /**
+   *
+   *
    * <pre>
    * Tokens, along with their syntactic information, in the input document.
    * </pre>
    *
    * <code>repeated .google.cloud.language.v1.Token tokens = 2;</code>
    */
-  java.util.List<? extends com.google.cloud.language.v1.TokenOrBuilder> 
-      getTokensOrBuilderList();
+  java.util.List<? extends com.google.cloud.language.v1.TokenOrBuilder> getTokensOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Tokens, along with their syntactic information, in the input document.
    * </pre>
    *
    * <code>repeated .google.cloud.language.v1.Token tokens = 2;</code>
    */
-  com.google.cloud.language.v1.TokenOrBuilder getTokensOrBuilder(
-      int index);
+  com.google.cloud.language.v1.TokenOrBuilder getTokensOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * The language of the text, which will be the same as the language specified
    * in the request or, if not specified, the automatically-detected language.
@@ -106,6 +124,8 @@ public interface AnalyzeSyntaxResponseOrBuilder extends
    */
   java.lang.String getLanguage();
   /**
+   *
+   *
    * <pre>
    * The language of the text, which will be the same as the language specified
    * in the request or, if not specified, the automatically-detected language.
@@ -114,6 +134,5 @@ public interface AnalyzeSyntaxResponseOrBuilder extends
    *
    * <code>string language = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getLanguageBytes();
+  com.google.protobuf.ByteString getLanguageBytes();
 }

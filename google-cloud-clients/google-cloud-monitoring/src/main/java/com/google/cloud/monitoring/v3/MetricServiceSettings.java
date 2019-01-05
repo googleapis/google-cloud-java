@@ -79,7 +79,8 @@ import javax.annotation.Generated;
 public class MetricServiceSettings extends ClientSettings<MetricServiceSettings> {
   /** Returns the object with the settings used for calls to listMonitoredResourceDescriptors. */
   public PagedCallSettings<
-          ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+          ListMonitoredResourceDescriptorsRequest,
+          ListMonitoredResourceDescriptorsResponse,
           ListMonitoredResourceDescriptorsPagedResponse>
       listMonitoredResourceDescriptorsSettings() {
     return ((MetricServiceStubSettings) getStubSettings())
@@ -94,7 +95,8 @@ public class MetricServiceSettings extends ClientSettings<MetricServiceSettings>
 
   /** Returns the object with the settings used for calls to listMetricDescriptors. */
   public PagedCallSettings<
-          ListMetricDescriptorsRequest, ListMetricDescriptorsResponse,
+          ListMetricDescriptorsRequest,
+          ListMetricDescriptorsResponse,
           ListMetricDescriptorsPagedResponse>
       listMetricDescriptorsSettings() {
     return ((MetricServiceStubSettings) getStubSettings()).listMetricDescriptorsSettings();
@@ -228,7 +230,8 @@ public class MetricServiceSettings extends ClientSettings<MetricServiceSettings>
 
     /** Returns the builder for the settings used for calls to listMonitoredResourceDescriptors. */
     public PagedCallSettings.Builder<
-            ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+            ListMonitoredResourceDescriptorsRequest,
+            ListMonitoredResourceDescriptorsResponse,
             ListMonitoredResourceDescriptorsPagedResponse>
         listMonitoredResourceDescriptorsSettings() {
       return getStubSettingsBuilder().listMonitoredResourceDescriptorsSettings();
@@ -243,7 +246,8 @@ public class MetricServiceSettings extends ClientSettings<MetricServiceSettings>
 
     /** Returns the builder for the settings used for calls to listMetricDescriptors. */
     public PagedCallSettings.Builder<
-            ListMetricDescriptorsRequest, ListMetricDescriptorsResponse,
+            ListMetricDescriptorsRequest,
+            ListMetricDescriptorsResponse,
             ListMetricDescriptorsPagedResponse>
         listMetricDescriptorsSettings() {
       return getStubSettingsBuilder().listMetricDescriptorsSettings();

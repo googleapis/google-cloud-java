@@ -22,12 +22,10 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.google.cloud.BatchResult;
-
+import java.io.IOException;
 import org.easymock.EasyMock;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.io.IOException;
 
 public class DnsBatchResultTest {
 

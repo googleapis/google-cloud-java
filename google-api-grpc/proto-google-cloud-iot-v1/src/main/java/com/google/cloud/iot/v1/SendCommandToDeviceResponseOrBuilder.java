@@ -3,7 +3,7 @@
 
 package com.google.cloud.iot.v1;
 
-public interface SendCommandToDeviceResponseOrBuilder extends
+public interface SendCommandToDeviceResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.iot.v1.SendCommandToDeviceResponse)
-    com.google.protobuf.MessageOrBuilder {
-}
+    com.google.protobuf.MessageOrBuilder {}

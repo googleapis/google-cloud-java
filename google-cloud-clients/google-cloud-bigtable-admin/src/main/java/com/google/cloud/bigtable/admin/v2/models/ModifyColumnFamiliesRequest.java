@@ -16,11 +16,11 @@
 package com.google.cloud.bigtable.admin.v2.models;
 
 import com.google.api.core.InternalApi;
-import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification;
-import com.google.bigtable.admin.v2.TableName;
+import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.GCRule;
 import com.google.common.base.Preconditions;
+import javax.annotation.Nonnull;
 
 /**
  * Fluent wrapper for {@link com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest}
@@ -37,7 +37,6 @@ public final class ModifyColumnFamiliesRequest {
   private final com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Builder modFamilyRequest =
       com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.newBuilder();
   private final String tableId;
-
 
   public static ModifyColumnFamiliesRequest of(String tableId) {
     return new ModifyColumnFamiliesRequest(tableId);
@@ -100,18 +99,18 @@ public final class ModifyColumnFamiliesRequest {
    * @return
    */
   public ModifyColumnFamiliesRequest dropFamily(String familyId) {
-    Modification.Builder modification = Modification.newBuilder()
-        .setId(familyId)
-        .setDrop(true);
+    Modification.Builder modification = Modification.newBuilder().setId(familyId).setDrop(true);
     modFamilyRequest.addModifications(modification.build());
     return this;
   }
 
   @InternalApi
-  public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest toProto(InstanceName instanceName) {
-    Preconditions.checkNotNull(instanceName);
-    String tableName =
-        TableName.of(instanceName.getProject(), instanceName.getInstance(), tableId).toString();
+  public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest toProto(
+      @Nonnull String projectId, @Nonnull String instanceId) {
+    Preconditions.checkNotNull(projectId, "Project id can't be null");
+    Preconditions.checkNotNull(instanceId, "Instance id can't be null");
+
+    String tableName = NameUtil.formatTableName(projectId, instanceId, tableId);
     return modFamilyRequest.setName(tableName).build();
   }
 }

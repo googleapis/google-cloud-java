@@ -33,17 +33,22 @@ import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.DeleteImageHttpRequest;
 import com.google.cloud.compute.v1.DeprecateImageHttpRequest;
 import com.google.cloud.compute.v1.GetFromFamilyImageHttpRequest;
+import com.google.cloud.compute.v1.GetIamPolicyImageHttpRequest;
 import com.google.cloud.compute.v1.GetImageHttpRequest;
 import com.google.cloud.compute.v1.Image;
 import com.google.cloud.compute.v1.ImageList;
 import com.google.cloud.compute.v1.InsertImageHttpRequest;
 import com.google.cloud.compute.v1.ListImagesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.ProjectGlobalImageFamilyName;
 import com.google.cloud.compute.v1.ProjectGlobalImageName;
 import com.google.cloud.compute.v1.ProjectGlobalImageResourceName;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.SetIamPolicyImageHttpRequest;
 import com.google.cloud.compute.v1.SetLabelsImageHttpRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsImageHttpRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.common.collect.Sets;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -136,6 +141,26 @@ public class HttpJsonImageStub extends ImageStub {
               .build();
 
   @InternalApi
+  public static final ApiMethodDescriptor<GetIamPolicyImageHttpRequest, Policy>
+      getIamPolicyImageMethodDescriptor =
+          ApiMethodDescriptor.<GetIamPolicyImageHttpRequest, Policy>newBuilder()
+              .setFullMethodName("compute.images.getIamPolicy")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<GetIamPolicyImageHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create("{project}/global/images/{resource}/getIamPolicy"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(ProjectGlobalImageResourceName.newFactory())
+                      .setResourceNameField("resource")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Policy>newBuilder()
+                      .setResponseInstance(Policy.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
   public static final ApiMethodDescriptor<InsertImageHttpRequest, Operation>
       insertImageMethodDescriptor =
           ApiMethodDescriptor.<InsertImageHttpRequest, Operation>newBuilder()
@@ -175,6 +200,26 @@ public class HttpJsonImageStub extends ImageStub {
               .build();
 
   @InternalApi
+  public static final ApiMethodDescriptor<SetIamPolicyImageHttpRequest, Policy>
+      setIamPolicyImageMethodDescriptor =
+          ApiMethodDescriptor.<SetIamPolicyImageHttpRequest, Policy>newBuilder()
+              .setFullMethodName("compute.images.setIamPolicy")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<SetIamPolicyImageHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create("{project}/global/images/{resource}/setIamPolicy"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(ProjectGlobalImageResourceName.newFactory())
+                      .setResourceNameField("resource")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Policy>newBuilder()
+                      .setResponseInstance(Policy.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
   public static final ApiMethodDescriptor<SetLabelsImageHttpRequest, Operation>
       setLabelsImageMethodDescriptor =
           ApiMethodDescriptor.<SetLabelsImageHttpRequest, Operation>newBuilder()
@@ -194,17 +239,44 @@ public class HttpJsonImageStub extends ImageStub {
                       .build())
               .build();
 
+  @InternalApi
+  public static final ApiMethodDescriptor<
+          TestIamPermissionsImageHttpRequest, TestPermissionsResponse>
+      testIamPermissionsImageMethodDescriptor =
+          ApiMethodDescriptor
+              .<TestIamPermissionsImageHttpRequest, TestPermissionsResponse>newBuilder()
+              .setFullMethodName("compute.images.testIamPermissions")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<TestIamPermissionsImageHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/global/images/{resource}/testIamPermissions"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(ProjectGlobalImageResourceName.newFactory())
+                      .setResourceNameField("resource")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<TestPermissionsResponse>newBuilder()
+                      .setResponseInstance(TestPermissionsResponse.getDefaultInstance())
+                      .build())
+              .build();
+
   private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<DeleteImageHttpRequest, Operation> deleteImageCallable;
   private final UnaryCallable<DeprecateImageHttpRequest, Operation> deprecateImageCallable;
   private final UnaryCallable<GetImageHttpRequest, Image> getImageCallable;
   private final UnaryCallable<GetFromFamilyImageHttpRequest, Image> getFromFamilyImageCallable;
+  private final UnaryCallable<GetIamPolicyImageHttpRequest, Policy> getIamPolicyImageCallable;
   private final UnaryCallable<InsertImageHttpRequest, Operation> insertImageCallable;
   private final UnaryCallable<ListImagesHttpRequest, ImageList> listImagesCallable;
   private final UnaryCallable<ListImagesHttpRequest, ListImagesPagedResponse>
       listImagesPagedCallable;
+  private final UnaryCallable<SetIamPolicyImageHttpRequest, Policy> setIamPolicyImageCallable;
   private final UnaryCallable<SetLabelsImageHttpRequest, Operation> setLabelsImageCallable;
+  private final UnaryCallable<TestIamPermissionsImageHttpRequest, TestPermissionsResponse>
+      testIamPermissionsImageCallable;
 
   private final HttpJsonStubCallableFactory callableFactory;
 
@@ -260,6 +332,10 @@ public class HttpJsonImageStub extends ImageStub {
         HttpJsonCallSettings.<GetFromFamilyImageHttpRequest, Image>newBuilder()
             .setMethodDescriptor(getFromFamilyImageMethodDescriptor)
             .build();
+    HttpJsonCallSettings<GetIamPolicyImageHttpRequest, Policy> getIamPolicyImageTransportSettings =
+        HttpJsonCallSettings.<GetIamPolicyImageHttpRequest, Policy>newBuilder()
+            .setMethodDescriptor(getIamPolicyImageMethodDescriptor)
+            .build();
     HttpJsonCallSettings<InsertImageHttpRequest, Operation> insertImageTransportSettings =
         HttpJsonCallSettings.<InsertImageHttpRequest, Operation>newBuilder()
             .setMethodDescriptor(insertImageMethodDescriptor)
@@ -268,10 +344,20 @@ public class HttpJsonImageStub extends ImageStub {
         HttpJsonCallSettings.<ListImagesHttpRequest, ImageList>newBuilder()
             .setMethodDescriptor(listImagesMethodDescriptor)
             .build();
+    HttpJsonCallSettings<SetIamPolicyImageHttpRequest, Policy> setIamPolicyImageTransportSettings =
+        HttpJsonCallSettings.<SetIamPolicyImageHttpRequest, Policy>newBuilder()
+            .setMethodDescriptor(setIamPolicyImageMethodDescriptor)
+            .build();
     HttpJsonCallSettings<SetLabelsImageHttpRequest, Operation> setLabelsImageTransportSettings =
         HttpJsonCallSettings.<SetLabelsImageHttpRequest, Operation>newBuilder()
             .setMethodDescriptor(setLabelsImageMethodDescriptor)
             .build();
+    HttpJsonCallSettings<TestIamPermissionsImageHttpRequest, TestPermissionsResponse>
+        testIamPermissionsImageTransportSettings =
+            HttpJsonCallSettings
+                .<TestIamPermissionsImageHttpRequest, TestPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsImageMethodDescriptor)
+                .build();
 
     this.deleteImageCallable =
         callableFactory.createUnaryCallable(
@@ -287,6 +373,11 @@ public class HttpJsonImageStub extends ImageStub {
             getFromFamilyImageTransportSettings,
             settings.getFromFamilyImageSettings(),
             clientContext);
+    this.getIamPolicyImageCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyImageTransportSettings,
+            settings.getIamPolicyImageSettings(),
+            clientContext);
     this.insertImageCallable =
         callableFactory.createUnaryCallable(
             insertImageTransportSettings, settings.insertImageSettings(), clientContext);
@@ -296,9 +387,19 @@ public class HttpJsonImageStub extends ImageStub {
     this.listImagesPagedCallable =
         callableFactory.createPagedCallable(
             listImagesTransportSettings, settings.listImagesSettings(), clientContext);
+    this.setIamPolicyImageCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyImageTransportSettings,
+            settings.setIamPolicyImageSettings(),
+            clientContext);
     this.setLabelsImageCallable =
         callableFactory.createUnaryCallable(
             setLabelsImageTransportSettings, settings.setLabelsImageSettings(), clientContext);
+    this.testIamPermissionsImageCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsImageTransportSettings,
+            settings.testIamPermissionsImageSettings(),
+            clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -324,6 +425,11 @@ public class HttpJsonImageStub extends ImageStub {
   }
 
   @BetaApi
+  public UnaryCallable<GetIamPolicyImageHttpRequest, Policy> getIamPolicyImageCallable() {
+    return getIamPolicyImageCallable;
+  }
+
+  @BetaApi
   public UnaryCallable<InsertImageHttpRequest, Operation> insertImageCallable() {
     return insertImageCallable;
   }
@@ -339,8 +445,19 @@ public class HttpJsonImageStub extends ImageStub {
   }
 
   @BetaApi
+  public UnaryCallable<SetIamPolicyImageHttpRequest, Policy> setIamPolicyImageCallable() {
+    return setIamPolicyImageCallable;
+  }
+
+  @BetaApi
   public UnaryCallable<SetLabelsImageHttpRequest, Operation> setLabelsImageCallable() {
     return setLabelsImageCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<TestIamPermissionsImageHttpRequest, TestPermissionsResponse>
+      testIamPermissionsImageCallable() {
+    return testIamPermissionsImageCallable;
   }
 
   @Override

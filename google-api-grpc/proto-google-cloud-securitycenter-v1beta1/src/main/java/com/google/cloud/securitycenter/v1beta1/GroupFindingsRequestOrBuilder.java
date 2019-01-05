@@ -3,11 +3,14 @@
 
 package com.google.cloud.securitycenter.v1beta1;
 
-public interface GroupFindingsRequestOrBuilder extends
+public interface GroupFindingsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.securitycenter.v1beta1.GroupFindingsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Name of the source to groupBy. Its format is
    * "organizations/[organization_id]/sources/[source_id]". To groupBy across
@@ -19,6 +22,8 @@ public interface GroupFindingsRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Name of the source to groupBy. Its format is
    * "organizations/[organization_id]/sources/[source_id]". To groupBy across
@@ -28,10 +33,11 @@ public interface GroupFindingsRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Expression that defines the filter to apply across findings.
    * The expression is a list of one or more restrictions combined via logical
@@ -57,6 +63,8 @@ public interface GroupFindingsRequestOrBuilder extends
    */
   java.lang.String getFilter();
   /**
+   *
+   *
    * <pre>
    * Expression that defines the filter to apply across findings.
    * The expression is a list of one or more restrictions combined via logical
@@ -80,10 +88,11 @@ public interface GroupFindingsRequestOrBuilder extends
    *
    * <code>string filter = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getFilterBytes();
+  com.google.protobuf.ByteString getFilterBytes();
 
   /**
+   *
+   *
    * <pre>
    * Expression that defines what assets fields to use for grouping (including
    * `state`). The string value should follow SQL syntax: comma separated list
@@ -100,6 +109,8 @@ public interface GroupFindingsRequestOrBuilder extends
    */
   java.lang.String getGroupBy();
   /**
+   *
+   *
    * <pre>
    * Expression that defines what assets fields to use for grouping (including
    * `state`). The string value should follow SQL syntax: comma separated list
@@ -114,10 +125,11 @@ public interface GroupFindingsRequestOrBuilder extends
    *
    * <code>string group_by = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getGroupByBytes();
+  com.google.protobuf.ByteString getGroupByBytes();
 
   /**
+   *
+   *
    * <pre>
    * Time used as a reference point when filtering findings. The filter is
    * limited to findings existing at the supplied time and their values are
@@ -129,6 +141,8 @@ public interface GroupFindingsRequestOrBuilder extends
    */
   boolean hasReadTime();
   /**
+   *
+   *
    * <pre>
    * Time used as a reference point when filtering findings. The filter is
    * limited to findings existing at the supplied time and their values are
@@ -140,6 +154,8 @@ public interface GroupFindingsRequestOrBuilder extends
    */
   com.google.protobuf.Timestamp getReadTime();
   /**
+   *
+   *
    * <pre>
    * Time used as a reference point when filtering findings. The filter is
    * limited to findings existing at the supplied time and their values are
@@ -152,6 +168,8 @@ public interface GroupFindingsRequestOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The value returned by the last `GroupFindingsResponse`; indicates
    * that this is a continuation of a prior `GroupFindings` call, and
@@ -162,6 +180,8 @@ public interface GroupFindingsRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * The value returned by the last `GroupFindingsResponse`; indicates
    * that this is a continuation of a prior `GroupFindings` call, and
@@ -170,10 +190,11 @@ public interface GroupFindingsRequestOrBuilder extends
    *
    * <code>string page_token = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 
   /**
+   *
+   *
    * <pre>
    * The maximum number of results to return in a single response. Default is
    * 10, minimum is 1, maximum is 1000.

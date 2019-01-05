@@ -4,6 +4,8 @@
 package com.google.privacy.dlp.v2;
 
 /**
+ *
+ *
  * <pre>
  * Custom information type provided by the user. Used to find domain-specific
  * sensitive information configurable to the data in question.
@@ -11,15 +13,16 @@ package com.google.privacy.dlp.v2;
  *
  * Protobuf type {@code google.privacy.dlp.v2.CustomInfoType}
  */
-public  final class CustomInfoType extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.CustomInfoType)
     CustomInfoTypeOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use CustomInfoType.newBuilder() to construct.
   private CustomInfoType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private CustomInfoType() {
     likelihood_ = 0;
     detectionRules_ = java.util.Collections.emptyList();
@@ -27,10 +30,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private CustomInfoType(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -50,110 +53,131 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.privacy.dlp.v2.InfoType.Builder subBuilder = null;
-            if (infoType_ != null) {
-              subBuilder = infoType_.toBuilder();
-            }
-            infoType_ = input.readMessage(com.google.privacy.dlp.v2.InfoType.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(infoType_);
-              infoType_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.privacy.dlp.v2.InfoType.Builder subBuilder = null;
+              if (infoType_ != null) {
+                subBuilder = infoType_.toBuilder();
+              }
+              infoType_ =
+                  input.readMessage(com.google.privacy.dlp.v2.InfoType.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(infoType_);
+                infoType_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 18: {
-            com.google.privacy.dlp.v2.CustomInfoType.Dictionary.Builder subBuilder = null;
-            if (typeCase_ == 2) {
-              subBuilder = ((com.google.privacy.dlp.v2.CustomInfoType.Dictionary) type_).toBuilder();
+              break;
             }
-            type_ =
-                input.readMessage(com.google.privacy.dlp.v2.CustomInfoType.Dictionary.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.privacy.dlp.v2.CustomInfoType.Dictionary) type_);
-              type_ = subBuilder.buildPartial();
+          case 18:
+            {
+              com.google.privacy.dlp.v2.CustomInfoType.Dictionary.Builder subBuilder = null;
+              if (typeCase_ == 2) {
+                subBuilder =
+                    ((com.google.privacy.dlp.v2.CustomInfoType.Dictionary) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.CustomInfoType.Dictionary.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.privacy.dlp.v2.CustomInfoType.Dictionary) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 2;
+              break;
             }
-            typeCase_ = 2;
-            break;
-          }
-          case 26: {
-            com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder subBuilder = null;
-            if (typeCase_ == 3) {
-              subBuilder = ((com.google.privacy.dlp.v2.CustomInfoType.Regex) type_).toBuilder();
+          case 26:
+            {
+              com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder subBuilder = null;
+              if (typeCase_ == 3) {
+                subBuilder = ((com.google.privacy.dlp.v2.CustomInfoType.Regex) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.CustomInfoType.Regex.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.privacy.dlp.v2.CustomInfoType.Regex) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 3;
+              break;
             }
-            type_ =
-                input.readMessage(com.google.privacy.dlp.v2.CustomInfoType.Regex.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.privacy.dlp.v2.CustomInfoType.Regex) type_);
-              type_ = subBuilder.buildPartial();
+          case 34:
+            {
+              com.google.privacy.dlp.v2.CustomInfoType.SurrogateType.Builder subBuilder = null;
+              if (typeCase_ == 4) {
+                subBuilder =
+                    ((com.google.privacy.dlp.v2.CustomInfoType.SurrogateType) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.CustomInfoType.SurrogateType.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.privacy.dlp.v2.CustomInfoType.SurrogateType) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 4;
+              break;
             }
-            typeCase_ = 3;
-            break;
-          }
-          case 34: {
-            com.google.privacy.dlp.v2.CustomInfoType.SurrogateType.Builder subBuilder = null;
-            if (typeCase_ == 4) {
-              subBuilder = ((com.google.privacy.dlp.v2.CustomInfoType.SurrogateType) type_).toBuilder();
+          case 42:
+            {
+              com.google.privacy.dlp.v2.StoredType.Builder subBuilder = null;
+              if (typeCase_ == 5) {
+                subBuilder = ((com.google.privacy.dlp.v2.StoredType) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.StoredType.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.privacy.dlp.v2.StoredType) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 5;
+              break;
             }
-            type_ =
-                input.readMessage(com.google.privacy.dlp.v2.CustomInfoType.SurrogateType.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.privacy.dlp.v2.CustomInfoType.SurrogateType) type_);
-              type_ = subBuilder.buildPartial();
-            }
-            typeCase_ = 4;
-            break;
-          }
-          case 42: {
-            com.google.privacy.dlp.v2.StoredType.Builder subBuilder = null;
-            if (typeCase_ == 5) {
-              subBuilder = ((com.google.privacy.dlp.v2.StoredType) type_).toBuilder();
-            }
-            type_ =
-                input.readMessage(com.google.privacy.dlp.v2.StoredType.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.privacy.dlp.v2.StoredType) type_);
-              type_ = subBuilder.buildPartial();
-            }
-            typeCase_ = 5;
-            break;
-          }
-          case 48: {
-            int rawValue = input.readEnum();
+          case 48:
+            {
+              int rawValue = input.readEnum();
 
-            likelihood_ = rawValue;
-            break;
-          }
-          case 58: {
-            if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
-              detectionRules_ = new java.util.ArrayList<com.google.privacy.dlp.v2.CustomInfoType.DetectionRule>();
-              mutable_bitField0_ |= 0x00000040;
+              likelihood_ = rawValue;
+              break;
             }
-            detectionRules_.add(
-                input.readMessage(com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.parser(), extensionRegistry));
-            break;
-          }
-          case 64: {
-            int rawValue = input.readEnum();
+          case 58:
+            {
+              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+                detectionRules_ =
+                    new java.util.ArrayList<
+                        com.google.privacy.dlp.v2.CustomInfoType.DetectionRule>();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              detectionRules_.add(
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.parser(),
+                      extensionRegistry));
+              break;
+            }
+          case 64:
+            {
+              int rawValue = input.readEnum();
 
-            exclusionType_ = rawValue;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              exclusionType_ = rawValue;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
         detectionRules_ = java.util.Collections.unmodifiableList(detectionRules_);
@@ -162,25 +186,27 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.privacy.dlp.v2.DlpStorage
+        .internal_static_google_privacy_dlp_v2_CustomInfoType_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_fieldAccessorTable
+    return com.google.privacy.dlp.v2.DlpStorage
+        .internal_static_google_privacy_dlp_v2_CustomInfoType_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.privacy.dlp.v2.CustomInfoType.class, com.google.privacy.dlp.v2.CustomInfoType.Builder.class);
+            com.google.privacy.dlp.v2.CustomInfoType.class,
+            com.google.privacy.dlp.v2.CustomInfoType.Builder.class);
   }
 
-  /**
-   * Protobuf enum {@code google.privacy.dlp.v2.CustomInfoType.ExclusionType}
-   */
-  public enum ExclusionType
-      implements com.google.protobuf.ProtocolMessageEnum {
+  /** Protobuf enum {@code google.privacy.dlp.v2.CustomInfoType.ExclusionType} */
+  public enum ExclusionType implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * A finding of this custom info type will not be excluded from results.
      * </pre>
@@ -189,6 +215,8 @@ private static final long serialVersionUID = 0L;
      */
     EXCLUSION_TYPE_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * A finding of this custom info type will be excluded from final results,
      * but can still affect rule execution.
@@ -201,6 +229,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * A finding of this custom info type will not be excluded from results.
      * </pre>
@@ -209,6 +239,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int EXCLUSION_TYPE_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * A finding of this custom info type will be excluded from final results,
      * but can still affect rule execution.
@@ -218,7 +250,6 @@ private static final long serialVersionUID = 0L;
      */
     public static final int EXCLUSION_TYPE_EXCLUDE_VALUE = 1;
 
-
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -227,9 +258,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static ExclusionType valueOf(int value) {
       return forNumber(value);
@@ -237,44 +266,43 @@ private static final long serialVersionUID = 0L;
 
     public static ExclusionType forNumber(int value) {
       switch (value) {
-        case 0: return EXCLUSION_TYPE_UNSPECIFIED;
-        case 1: return EXCLUSION_TYPE_EXCLUDE;
-        default: return null;
+        case 0:
+          return EXCLUSION_TYPE_UNSPECIFIED;
+        case 1:
+          return EXCLUSION_TYPE_EXCLUDE;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<ExclusionType>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<ExclusionType> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        ExclusionType> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<ExclusionType>() {
-            public ExclusionType findValueByNumber(int number) {
-              return ExclusionType.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<ExclusionType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<ExclusionType>() {
+          public ExclusionType findValueByNumber(int number) {
+            return ExclusionType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.privacy.dlp.v2.CustomInfoType.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final ExclusionType[] VALUES = values();
 
-    public static ExclusionType valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static ExclusionType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -291,11 +319,14 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:google.privacy.dlp.v2.CustomInfoType.ExclusionType)
   }
 
-  public interface DictionaryOrBuilder extends
+  public interface DictionaryOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.CustomInfoType.Dictionary)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * List of words or phrases to search for.
      * </pre>
@@ -304,6 +335,8 @@ private static final long serialVersionUID = 0L;
      */
     boolean hasWordList();
     /**
+     *
+     *
      * <pre>
      * List of words or phrases to search for.
      * </pre>
@@ -312,6 +345,8 @@ private static final long serialVersionUID = 0L;
      */
     com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList getWordList();
     /**
+     *
+     *
      * <pre>
      * List of words or phrases to search for.
      * </pre>
@@ -321,6 +356,8 @@ private static final long serialVersionUID = 0L;
     com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordListOrBuilder getWordListOrBuilder();
 
     /**
+     *
+     *
      * <pre>
      * Newline-delimited file of words in Cloud Storage. Only a single file
      * is accepted.
@@ -330,6 +367,8 @@ private static final long serialVersionUID = 0L;
      */
     boolean hasCloudStoragePath();
     /**
+     *
+     *
      * <pre>
      * Newline-delimited file of words in Cloud Storage. Only a single file
      * is accepted.
@@ -339,6 +378,8 @@ private static final long serialVersionUID = 0L;
      */
     com.google.privacy.dlp.v2.CloudStoragePath getCloudStoragePath();
     /**
+     *
+     *
      * <pre>
      * Newline-delimited file of words in Cloud Storage. Only a single file
      * is accepted.
@@ -351,6 +392,8 @@ private static final long serialVersionUID = 0L;
     public com.google.privacy.dlp.v2.CustomInfoType.Dictionary.SourceCase getSourceCase();
   }
   /**
+   *
+   *
    * <pre>
    * Custom information type based on a dictionary of words or phrases. This can
    * be used to match sensitive information specific to the data, such as a list
@@ -377,23 +420,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.privacy.dlp.v2.CustomInfoType.Dictionary}
    */
-  public  static final class Dictionary extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class Dictionary extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.CustomInfoType.Dictionary)
       DictionaryOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use Dictionary.newBuilder() to construct.
     private Dictionary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private Dictionary() {
-    }
+
+    private Dictionary() {}
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private Dictionary(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -413,71 +456,85 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList.Builder subBuilder = null;
-              if (sourceCase_ == 1) {
-                subBuilder = ((com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList) source_).toBuilder();
+            case 10:
+              {
+                com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList.Builder subBuilder =
+                    null;
+                if (sourceCase_ == 1) {
+                  subBuilder =
+                      ((com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList) source_)
+                          .toBuilder();
+                }
+                source_ =
+                    input.readMessage(
+                        com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(
+                      (com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList) source_);
+                  source_ = subBuilder.buildPartial();
+                }
+                sourceCase_ = 1;
+                break;
               }
-              source_ =
-                  input.readMessage(com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList) source_);
-                source_ = subBuilder.buildPartial();
+            case 26:
+              {
+                com.google.privacy.dlp.v2.CloudStoragePath.Builder subBuilder = null;
+                if (sourceCase_ == 3) {
+                  subBuilder = ((com.google.privacy.dlp.v2.CloudStoragePath) source_).toBuilder();
+                }
+                source_ =
+                    input.readMessage(
+                        com.google.privacy.dlp.v2.CloudStoragePath.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom((com.google.privacy.dlp.v2.CloudStoragePath) source_);
+                  source_ = subBuilder.buildPartial();
+                }
+                sourceCase_ = 3;
+                break;
               }
-              sourceCase_ = 1;
-              break;
-            }
-            case 26: {
-              com.google.privacy.dlp.v2.CloudStoragePath.Builder subBuilder = null;
-              if (sourceCase_ == 3) {
-                subBuilder = ((com.google.privacy.dlp.v2.CloudStoragePath) source_).toBuilder();
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
               }
-              source_ =
-                  input.readMessage(com.google.privacy.dlp.v2.CloudStoragePath.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.privacy.dlp.v2.CloudStoragePath) source_);
-                source_ = subBuilder.buildPartial();
-              }
-              sourceCase_ = 3;
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_Dictionary_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpStorage
+          .internal_static_google_privacy_dlp_v2_CustomInfoType_Dictionary_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_Dictionary_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpStorage
+          .internal_static_google_privacy_dlp_v2_CustomInfoType_Dictionary_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.CustomInfoType.Dictionary.class, com.google.privacy.dlp.v2.CustomInfoType.Dictionary.Builder.class);
+              com.google.privacy.dlp.v2.CustomInfoType.Dictionary.class,
+              com.google.privacy.dlp.v2.CustomInfoType.Dictionary.Builder.class);
     }
 
-    public interface WordListOrBuilder extends
+    public interface WordListOrBuilder
+        extends
         // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList)
         com.google.protobuf.MessageOrBuilder {
 
       /**
+       *
+       *
        * <pre>
        * Words or phrases defining the dictionary. The dictionary must contain
        * at least one phrase and every phrase must contain at least 2 characters
@@ -486,9 +543,10 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated string words = 1;</code>
        */
-      java.util.List<java.lang.String>
-          getWordsList();
+      java.util.List<java.lang.String> getWordsList();
       /**
+       *
+       *
        * <pre>
        * Words or phrases defining the dictionary. The dictionary must contain
        * at least one phrase and every phrase must contain at least 2 characters
@@ -499,6 +557,8 @@ private static final long serialVersionUID = 0L;
        */
       int getWordsCount();
       /**
+       *
+       *
        * <pre>
        * Words or phrases defining the dictionary. The dictionary must contain
        * at least one phrase and every phrase must contain at least 2 characters
@@ -509,6 +569,8 @@ private static final long serialVersionUID = 0L;
        */
       java.lang.String getWords(int index);
       /**
+       *
+       *
        * <pre>
        * Words or phrases defining the dictionary. The dictionary must contain
        * at least one phrase and every phrase must contain at least 2 characters
@@ -517,34 +579,36 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated string words = 1;</code>
        */
-      com.google.protobuf.ByteString
-          getWordsBytes(int index);
+      com.google.protobuf.ByteString getWordsBytes(int index);
     }
     /**
+     *
+     *
      * <pre>
      * Message defining a list of words or phrases to search for in the data.
      * </pre>
      *
      * Protobuf type {@code google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList}
      */
-    public  static final class WordList extends
-        com.google.protobuf.GeneratedMessageV3 implements
+    public static final class WordList extends com.google.protobuf.GeneratedMessageV3
+        implements
         // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList)
         WordListOrBuilder {
-    private static final long serialVersionUID = 0L;
+      private static final long serialVersionUID = 0L;
       // Use WordList.newBuilder() to construct.
       private WordList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
       }
+
       private WordList() {
         words_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       }
 
       @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
+
       private WordList(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -564,29 +628,30 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              case 10: {
-                java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                  words_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000001;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                    words_ = new com.google.protobuf.LazyStringArrayList();
+                    mutable_bitField0_ |= 0x00000001;
+                  }
+                  words_.add(s);
+                  break;
                 }
-                words_.add(s);
-                break;
-              }
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
+              default:
+                {
+                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
                 }
-                break;
-              }
             }
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(this);
         } finally {
           if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
             words_ = words_.getUnmodifiableView();
@@ -595,22 +660,27 @@ private static final long serialVersionUID = 0L;
           makeExtensionsImmutable();
         }
       }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_Dictionary_WordList_descriptor;
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpStorage
+            .internal_static_google_privacy_dlp_v2_CustomInfoType_Dictionary_WordList_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_Dictionary_WordList_fieldAccessorTable
+        return com.google.privacy.dlp.v2.DlpStorage
+            .internal_static_google_privacy_dlp_v2_CustomInfoType_Dictionary_WordList_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList.class, com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList.Builder.class);
+                com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList.class,
+                com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList.Builder.class);
       }
 
       public static final int WORDS_FIELD_NUMBER = 1;
       private com.google.protobuf.LazyStringList words_;
       /**
+       *
+       *
        * <pre>
        * Words or phrases defining the dictionary. The dictionary must contain
        * at least one phrase and every phrase must contain at least 2 characters
@@ -619,11 +689,12 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated string words = 1;</code>
        */
-      public com.google.protobuf.ProtocolStringList
-          getWordsList() {
+      public com.google.protobuf.ProtocolStringList getWordsList() {
         return words_;
       }
       /**
+       *
+       *
        * <pre>
        * Words or phrases defining the dictionary. The dictionary must contain
        * at least one phrase and every phrase must contain at least 2 characters
@@ -636,6 +707,8 @@ private static final long serialVersionUID = 0L;
         return words_.size();
       }
       /**
+       *
+       *
        * <pre>
        * Words or phrases defining the dictionary. The dictionary must contain
        * at least one phrase and every phrase must contain at least 2 characters
@@ -648,6 +721,8 @@ private static final long serialVersionUID = 0L;
         return words_.get(index);
       }
       /**
+       *
+       *
        * <pre>
        * Words or phrases defining the dictionary. The dictionary must contain
        * at least one phrase and every phrase must contain at least 2 characters
@@ -656,12 +731,12 @@ private static final long serialVersionUID = 0L;
        *
        * <code>repeated string words = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getWordsBytes(int index) {
+      public com.google.protobuf.ByteString getWordsBytes(int index) {
         return words_.getByteString(index);
       }
 
       private byte memoizedIsInitialized = -1;
+
       @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
@@ -673,8 +748,7 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
         for (int i = 0; i < words_.size(); i++) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, words_.getRaw(i));
         }
@@ -703,16 +777,16 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public boolean equals(final java.lang.Object obj) {
         if (obj == this) {
-         return true;
+          return true;
         }
         if (!(obj instanceof com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList)) {
           return super.equals(obj);
         }
-        com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList other = (com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList) obj;
+        com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList other =
+            (com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList) obj;
 
         boolean result = true;
-        result = result && getWordsList()
-            .equals(other.getWordsList());
+        result = result && getWordsList().equals(other.getWordsList());
         result = result && unknownFields.equals(other.unknownFields);
         return result;
       }
@@ -734,87 +808,94 @@ private static final long serialVersionUID = 0L;
       }
 
       public static com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
+
       public static com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
+
       public static com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
+
       public static com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
+
       public static com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
+
       public static com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
       }
-      public static com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList parseDelimitedFrom(java.io.InputStream input)
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
       }
+
       public static com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
       }
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
       public static com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
       }
+
       public static com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
       }
 
       @java.lang.Override
-      public Builder newBuilderForType() { return newBuilder(); }
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
-      public static Builder newBuilder(com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList prototype) {
+
+      public static Builder newBuilder(
+          com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+
       @java.lang.Override
       public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
       }
 
       @java.lang.Override
@@ -824,27 +905,32 @@ private static final long serialVersionUID = 0L;
         return builder;
       }
       /**
+       *
+       *
        * <pre>
        * Message defining a list of words or phrases to search for in the data.
        * </pre>
        *
        * Protobuf type {@code google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList}
        */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
           // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList)
           com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordListOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_Dictionary_WordList_descriptor;
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.privacy.dlp.v2.DlpStorage
+              .internal_static_google_privacy_dlp_v2_CustomInfoType_Dictionary_WordList_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_Dictionary_WordList_fieldAccessorTable
+          return com.google.privacy.dlp.v2.DlpStorage
+              .internal_static_google_privacy_dlp_v2_CustomInfoType_Dictionary_WordList_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
-                  com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList.class, com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList.Builder.class);
+                  com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList.class,
+                  com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList.Builder.class);
         }
 
         // Construct using com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList.newBuilder()
@@ -852,16 +938,15 @@ private static final long serialVersionUID = 0L;
           maybeForceBuilderInitialization();
         }
 
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
           maybeForceBuilderInitialization();
         }
+
         private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
+
         @java.lang.Override
         public Builder clear() {
           super.clear();
@@ -871,13 +956,14 @@ private static final long serialVersionUID = 0L;
         }
 
         @java.lang.Override
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_Dictionary_WordList_descriptor;
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.privacy.dlp.v2.DlpStorage
+              .internal_static_google_privacy_dlp_v2_CustomInfoType_Dictionary_WordList_descriptor;
         }
 
         @java.lang.Override
-        public com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList getDefaultInstanceForType() {
+        public com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList
+            getDefaultInstanceForType() {
           return com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList.getDefaultInstance();
         }
 
@@ -892,7 +978,8 @@ private static final long serialVersionUID = 0L;
 
         @java.lang.Override
         public com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList buildPartial() {
-          com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList result = new com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList(this);
+          com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList result =
+              new com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList(this);
           int from_bitField0_ = bitField0_;
           if (((bitField0_ & 0x00000001) == 0x00000001)) {
             words_ = words_.getUnmodifiableView();
@@ -907,46 +994,52 @@ private static final long serialVersionUID = 0L;
         public Builder clone() {
           return (Builder) super.clone();
         }
+
         @java.lang.Override
         public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
+
         @java.lang.Override
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
+
         @java.lang.Override
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+
         @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, java.lang.Object value) {
+            int index,
+            java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+
         @java.lang.Override
         public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+
         @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList) {
-            return mergeFrom((com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList)other);
+            return mergeFrom((com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList) other);
           } else {
             super.mergeFrom(other);
             return this;
           }
         }
 
-        public Builder mergeFrom(com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList other) {
-          if (other == com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList.getDefaultInstance()) return this;
+        public Builder mergeFrom(
+            com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList other) {
+          if (other
+              == com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList.getDefaultInstance())
+            return this;
           if (!other.words_.isEmpty()) {
             if (words_.isEmpty()) {
               words_ = other.words_;
@@ -976,7 +1069,9 @@ private static final long serialVersionUID = 0L;
           try {
             parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList) e.getUnfinishedMessage();
+            parsedMessage =
+                (com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList)
+                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
             if (parsedMessage != null) {
@@ -985,16 +1080,21 @@ private static final long serialVersionUID = 0L;
           }
           return this;
         }
+
         private int bitField0_;
 
-        private com.google.protobuf.LazyStringList words_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        private com.google.protobuf.LazyStringList words_ =
+            com.google.protobuf.LazyStringArrayList.EMPTY;
+
         private void ensureWordsIsMutable() {
           if (!((bitField0_ & 0x00000001) == 0x00000001)) {
             words_ = new com.google.protobuf.LazyStringArrayList(words_);
             bitField0_ |= 0x00000001;
-           }
+          }
         }
         /**
+         *
+         *
          * <pre>
          * Words or phrases defining the dictionary. The dictionary must contain
          * at least one phrase and every phrase must contain at least 2 characters
@@ -1003,11 +1103,12 @@ private static final long serialVersionUID = 0L;
          *
          * <code>repeated string words = 1;</code>
          */
-        public com.google.protobuf.ProtocolStringList
-            getWordsList() {
+        public com.google.protobuf.ProtocolStringList getWordsList() {
           return words_.getUnmodifiableView();
         }
         /**
+         *
+         *
          * <pre>
          * Words or phrases defining the dictionary. The dictionary must contain
          * at least one phrase and every phrase must contain at least 2 characters
@@ -1020,6 +1121,8 @@ private static final long serialVersionUID = 0L;
           return words_.size();
         }
         /**
+         *
+         *
          * <pre>
          * Words or phrases defining the dictionary. The dictionary must contain
          * at least one phrase and every phrase must contain at least 2 characters
@@ -1032,6 +1135,8 @@ private static final long serialVersionUID = 0L;
           return words_.get(index);
         }
         /**
+         *
+         *
          * <pre>
          * Words or phrases defining the dictionary. The dictionary must contain
          * at least one phrase and every phrase must contain at least 2 characters
@@ -1040,11 +1145,12 @@ private static final long serialVersionUID = 0L;
          *
          * <code>repeated string words = 1;</code>
          */
-        public com.google.protobuf.ByteString
-            getWordsBytes(int index) {
+        public com.google.protobuf.ByteString getWordsBytes(int index) {
           return words_.getByteString(index);
         }
         /**
+         *
+         *
          * <pre>
          * Words or phrases defining the dictionary. The dictionary must contain
          * at least one phrase and every phrase must contain at least 2 characters
@@ -1053,17 +1159,18 @@ private static final long serialVersionUID = 0L;
          *
          * <code>repeated string words = 1;</code>
          */
-        public Builder setWords(
-            int index, java.lang.String value) {
+        public Builder setWords(int index, java.lang.String value) {
           if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureWordsIsMutable();
+            throw new NullPointerException();
+          }
+          ensureWordsIsMutable();
           words_.set(index, value);
           onChanged();
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Words or phrases defining the dictionary. The dictionary must contain
          * at least one phrase and every phrase must contain at least 2 characters
@@ -1072,17 +1179,18 @@ private static final long serialVersionUID = 0L;
          *
          * <code>repeated string words = 1;</code>
          */
-        public Builder addWords(
-            java.lang.String value) {
+        public Builder addWords(java.lang.String value) {
           if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureWordsIsMutable();
+            throw new NullPointerException();
+          }
+          ensureWordsIsMutable();
           words_.add(value);
           onChanged();
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Words or phrases defining the dictionary. The dictionary must contain
          * at least one phrase and every phrase must contain at least 2 characters
@@ -1091,15 +1199,15 @@ private static final long serialVersionUID = 0L;
          *
          * <code>repeated string words = 1;</code>
          */
-        public Builder addAllWords(
-            java.lang.Iterable<java.lang.String> values) {
+        public Builder addAllWords(java.lang.Iterable<java.lang.String> values) {
           ensureWordsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, words_);
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, words_);
           onChanged();
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Words or phrases defining the dictionary. The dictionary must contain
          * at least one phrase and every phrase must contain at least 2 characters
@@ -1115,6 +1223,8 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Words or phrases defining the dictionary. The dictionary must contain
          * at least one phrase and every phrase must contain at least 2 characters
@@ -1123,17 +1233,17 @@ private static final long serialVersionUID = 0L;
          *
          * <code>repeated string words = 1;</code>
          */
-        public Builder addWordsBytes(
-            com.google.protobuf.ByteString value) {
+        public Builder addWordsBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
           ensureWordsIsMutable();
           words_.add(value);
           onChanged();
           return this;
         }
+
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1146,30 +1256,32 @@ private static final long serialVersionUID = 0L;
           return super.mergeUnknownFields(unknownFields);
         }
 
-
         // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList)
       }
 
       // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList)
-      private static final com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList DEFAULT_INSTANCE;
+      private static final com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList
+          DEFAULT_INSTANCE;
+
       static {
         DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList();
       }
 
-      public static com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList getDefaultInstance() {
+      public static com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList
+          getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static final com.google.protobuf.Parser<WordList>
-          PARSER = new com.google.protobuf.AbstractParser<WordList>() {
-        @java.lang.Override
-        public WordList parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new WordList(input, extensionRegistry);
-        }
-      };
+      private static final com.google.protobuf.Parser<WordList> PARSER =
+          new com.google.protobuf.AbstractParser<WordList>() {
+            @java.lang.Override
+            public WordList parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              return new WordList(input, extensionRegistry);
+            }
+          };
 
       public static com.google.protobuf.Parser<WordList> parser() {
         return PARSER;
@@ -1181,26 +1293,25 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList getDefaultInstanceForType() {
+      public com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList
+          getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
-
     }
 
     private int sourceCase_ = 0;
     private java.lang.Object source_;
-    public enum SourceCase
-        implements com.google.protobuf.Internal.EnumLite {
+
+    public enum SourceCase implements com.google.protobuf.Internal.EnumLite {
       WORD_LIST(1),
       CLOUD_STORAGE_PATH(3),
       SOURCE_NOT_SET(0);
       private final int value;
+
       private SourceCase(int value) {
         this.value = value;
       }
-      /**
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
+      /** @deprecated Use {@link #forNumber(int)} instead. */
       @java.lang.Deprecated
       public static SourceCase valueOf(int value) {
         return forNumber(value);
@@ -1208,25 +1319,30 @@ private static final long serialVersionUID = 0L;
 
       public static SourceCase forNumber(int value) {
         switch (value) {
-          case 1: return WORD_LIST;
-          case 3: return CLOUD_STORAGE_PATH;
-          case 0: return SOURCE_NOT_SET;
-          default: return null;
+          case 1:
+            return WORD_LIST;
+          case 3:
+            return CLOUD_STORAGE_PATH;
+          case 0:
+            return SOURCE_NOT_SET;
+          default:
+            return null;
         }
       }
+
       public int getNumber() {
         return this.value;
       }
     };
 
-    public SourceCase
-    getSourceCase() {
-      return SourceCase.forNumber(
-          sourceCase_);
+    public SourceCase getSourceCase() {
+      return SourceCase.forNumber(sourceCase_);
     }
 
     public static final int WORD_LIST_FIELD_NUMBER = 1;
     /**
+     *
+     *
      * <pre>
      * List of words or phrases to search for.
      * </pre>
@@ -1237,6 +1353,8 @@ private static final long serialVersionUID = 0L;
       return sourceCase_ == 1;
     }
     /**
+     *
+     *
      * <pre>
      * List of words or phrases to search for.
      * </pre>
@@ -1245,26 +1363,31 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList getWordList() {
       if (sourceCase_ == 1) {
-         return (com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList) source_;
+        return (com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList) source_;
       }
       return com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList.getDefaultInstance();
     }
     /**
+     *
+     *
      * <pre>
      * List of words or phrases to search for.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList word_list = 1;</code>
      */
-    public com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordListOrBuilder getWordListOrBuilder() {
+    public com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordListOrBuilder
+        getWordListOrBuilder() {
       if (sourceCase_ == 1) {
-         return (com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList) source_;
+        return (com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList) source_;
       }
       return com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList.getDefaultInstance();
     }
 
     public static final int CLOUD_STORAGE_PATH_FIELD_NUMBER = 3;
     /**
+     *
+     *
      * <pre>
      * Newline-delimited file of words in Cloud Storage. Only a single file
      * is accepted.
@@ -1276,6 +1399,8 @@ private static final long serialVersionUID = 0L;
       return sourceCase_ == 3;
     }
     /**
+     *
+     *
      * <pre>
      * Newline-delimited file of words in Cloud Storage. Only a single file
      * is accepted.
@@ -1285,11 +1410,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.privacy.dlp.v2.CloudStoragePath getCloudStoragePath() {
       if (sourceCase_ == 3) {
-         return (com.google.privacy.dlp.v2.CloudStoragePath) source_;
+        return (com.google.privacy.dlp.v2.CloudStoragePath) source_;
       }
       return com.google.privacy.dlp.v2.CloudStoragePath.getDefaultInstance();
     }
     /**
+     *
+     *
      * <pre>
      * Newline-delimited file of words in Cloud Storage. Only a single file
      * is accepted.
@@ -1299,12 +1426,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.privacy.dlp.v2.CloudStoragePathOrBuilder getCloudStoragePathOrBuilder() {
       if (sourceCase_ == 3) {
-         return (com.google.privacy.dlp.v2.CloudStoragePath) source_;
+        return (com.google.privacy.dlp.v2.CloudStoragePath) source_;
       }
       return com.google.privacy.dlp.v2.CloudStoragePath.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -1316,10 +1444,10 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (sourceCase_ == 1) {
-        output.writeMessage(1, (com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList) source_);
+        output.writeMessage(
+            1, (com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList) source_);
       }
       if (sourceCase_ == 3) {
         output.writeMessage(3, (com.google.privacy.dlp.v2.CloudStoragePath) source_);
@@ -1334,12 +1462,14 @@ private static final long serialVersionUID = 0L;
 
       size = 0;
       if (sourceCase_ == 1) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, (com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList) source_);
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                1, (com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList) source_);
       }
       if (sourceCase_ == 3) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, (com.google.privacy.dlp.v2.CloudStoragePath) source_);
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                3, (com.google.privacy.dlp.v2.CloudStoragePath) source_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1349,25 +1479,23 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.privacy.dlp.v2.CustomInfoType.Dictionary)) {
         return super.equals(obj);
       }
-      com.google.privacy.dlp.v2.CustomInfoType.Dictionary other = (com.google.privacy.dlp.v2.CustomInfoType.Dictionary) obj;
+      com.google.privacy.dlp.v2.CustomInfoType.Dictionary other =
+          (com.google.privacy.dlp.v2.CustomInfoType.Dictionary) obj;
 
       boolean result = true;
-      result = result && getSourceCase().equals(
-          other.getSourceCase());
+      result = result && getSourceCase().equals(other.getSourceCase());
       if (!result) return false;
       switch (sourceCase_) {
         case 1:
-          result = result && getWordList()
-              .equals(other.getWordList());
+          result = result && getWordList().equals(other.getWordList());
           break;
         case 3:
-          result = result && getCloudStoragePath()
-              .equals(other.getCloudStoragePath());
+          result = result && getCloudStoragePath().equals(other.getCloudStoragePath());
           break;
         case 0:
         default:
@@ -1401,87 +1529,94 @@ private static final long serialVersionUID = 0L;
     }
 
     public static com.google.privacy.dlp.v2.CustomInfoType.Dictionary parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.CustomInfoType.Dictionary parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.CustomInfoType.Dictionary parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.CustomInfoType.Dictionary parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.CustomInfoType.Dictionary parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.CustomInfoType.Dictionary parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.privacy.dlp.v2.CustomInfoType.Dictionary parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.privacy.dlp.v2.CustomInfoType.Dictionary parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.privacy.dlp.v2.CustomInfoType.Dictionary parseDelimitedFrom(java.io.InputStream input)
+
+    public static com.google.privacy.dlp.v2.CustomInfoType.Dictionary parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.CustomInfoType.Dictionary parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static com.google.privacy.dlp.v2.CustomInfoType.Dictionary parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static com.google.privacy.dlp.v2.CustomInfoType.Dictionary parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.privacy.dlp.v2.CustomInfoType.Dictionary parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.google.privacy.dlp.v2.CustomInfoType.Dictionary prototype) {
+
+    public static Builder newBuilder(
+        com.google.privacy.dlp.v2.CustomInfoType.Dictionary prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -1491,6 +1626,8 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * Custom information type based on a dictionary of words or phrases. This can
      * be used to match sensitive information specific to the data, such as a list
@@ -1517,21 +1654,24 @@ private static final long serialVersionUID = 0L;
      *
      * Protobuf type {@code google.privacy.dlp.v2.CustomInfoType.Dictionary}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.CustomInfoType.Dictionary)
         com.google.privacy.dlp.v2.CustomInfoType.DictionaryOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_Dictionary_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpStorage
+            .internal_static_google_privacy_dlp_v2_CustomInfoType_Dictionary_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_Dictionary_fieldAccessorTable
+        return com.google.privacy.dlp.v2.DlpStorage
+            .internal_static_google_privacy_dlp_v2_CustomInfoType_Dictionary_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.privacy.dlp.v2.CustomInfoType.Dictionary.class, com.google.privacy.dlp.v2.CustomInfoType.Dictionary.Builder.class);
+                com.google.privacy.dlp.v2.CustomInfoType.Dictionary.class,
+                com.google.privacy.dlp.v2.CustomInfoType.Dictionary.Builder.class);
       }
 
       // Construct using com.google.privacy.dlp.v2.CustomInfoType.Dictionary.newBuilder()
@@ -1539,16 +1679,15 @@ private static final long serialVersionUID = 0L;
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -1558,9 +1697,9 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_Dictionary_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.privacy.dlp.v2.DlpStorage
+            .internal_static_google_privacy_dlp_v2_CustomInfoType_Dictionary_descriptor;
       }
 
       @java.lang.Override
@@ -1579,7 +1718,8 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public com.google.privacy.dlp.v2.CustomInfoType.Dictionary buildPartial() {
-        com.google.privacy.dlp.v2.CustomInfoType.Dictionary result = new com.google.privacy.dlp.v2.CustomInfoType.Dictionary(this);
+        com.google.privacy.dlp.v2.CustomInfoType.Dictionary result =
+            new com.google.privacy.dlp.v2.CustomInfoType.Dictionary(this);
         if (sourceCase_ == 1) {
           if (wordListBuilder_ == null) {
             result.source_ = source_;
@@ -1603,38 +1743,41 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.privacy.dlp.v2.CustomInfoType.Dictionary) {
-          return mergeFrom((com.google.privacy.dlp.v2.CustomInfoType.Dictionary)other);
+          return mergeFrom((com.google.privacy.dlp.v2.CustomInfoType.Dictionary) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -1642,19 +1785,23 @@ private static final long serialVersionUID = 0L;
       }
 
       public Builder mergeFrom(com.google.privacy.dlp.v2.CustomInfoType.Dictionary other) {
-        if (other == com.google.privacy.dlp.v2.CustomInfoType.Dictionary.getDefaultInstance()) return this;
+        if (other == com.google.privacy.dlp.v2.CustomInfoType.Dictionary.getDefaultInstance())
+          return this;
         switch (other.getSourceCase()) {
-          case WORD_LIST: {
-            mergeWordList(other.getWordList());
-            break;
-          }
-          case CLOUD_STORAGE_PATH: {
-            mergeCloudStoragePath(other.getCloudStoragePath());
-            break;
-          }
-          case SOURCE_NOT_SET: {
-            break;
-          }
+          case WORD_LIST:
+            {
+              mergeWordList(other.getWordList());
+              break;
+            }
+          case CLOUD_STORAGE_PATH:
+            {
+              mergeCloudStoragePath(other.getCloudStoragePath());
+              break;
+            }
+          case SOURCE_NOT_SET:
+            {
+              break;
+            }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1675,7 +1822,8 @@ private static final long serialVersionUID = 0L;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.privacy.dlp.v2.CustomInfoType.Dictionary) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.privacy.dlp.v2.CustomInfoType.Dictionary) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1684,12 +1832,12 @@ private static final long serialVersionUID = 0L;
         }
         return this;
       }
+
       private int sourceCase_ = 0;
       private java.lang.Object source_;
-      public SourceCase
-          getSourceCase() {
-        return SourceCase.forNumber(
-            sourceCase_);
+
+      public SourceCase getSourceCase() {
+        return SourceCase.forNumber(sourceCase_);
       }
 
       public Builder clearSource() {
@@ -1699,10 +1847,14 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList, com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList.Builder, com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordListOrBuilder> wordListBuilder_;
+              com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList,
+              com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList.Builder,
+              com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordListOrBuilder>
+          wordListBuilder_;
       /**
+       *
+       *
        * <pre>
        * List of words or phrases to search for.
        * </pre>
@@ -1713,6 +1865,8 @@ private static final long serialVersionUID = 0L;
         return sourceCase_ == 1;
       }
       /**
+       *
+       *
        * <pre>
        * List of words or phrases to search for.
        * </pre>
@@ -1733,13 +1887,16 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * List of words or phrases to search for.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList word_list = 1;</code>
        */
-      public Builder setWordList(com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList value) {
+      public Builder setWordList(
+          com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList value) {
         if (wordListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1753,6 +1910,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * List of words or phrases to search for.
        * </pre>
@@ -1771,18 +1930,26 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * List of words or phrases to search for.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList word_list = 1;</code>
        */
-      public Builder mergeWordList(com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList value) {
+      public Builder mergeWordList(
+          com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList value) {
         if (wordListBuilder_ == null) {
-          if (sourceCase_ == 1 &&
-              source_ != com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList.getDefaultInstance()) {
-            source_ = com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList.newBuilder((com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList) source_)
-                .mergeFrom(value).buildPartial();
+          if (sourceCase_ == 1
+              && source_
+                  != com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList
+                      .getDefaultInstance()) {
+            source_ =
+                com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList.newBuilder(
+                        (com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList) source_)
+                    .mergeFrom(value)
+                    .buildPartial();
           } else {
             source_ = value;
           }
@@ -1797,6 +1964,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * List of words or phrases to search for.
        * </pre>
@@ -1820,23 +1989,29 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * List of words or phrases to search for.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList word_list = 1;</code>
        */
-      public com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList.Builder getWordListBuilder() {
+      public com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList.Builder
+          getWordListBuilder() {
         return getWordListFieldBuilder().getBuilder();
       }
       /**
+       *
+       *
        * <pre>
        * List of words or phrases to search for.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList word_list = 1;</code>
        */
-      public com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordListOrBuilder getWordListOrBuilder() {
+      public com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordListOrBuilder
+          getWordListOrBuilder() {
         if ((sourceCase_ == 1) && (wordListBuilder_ != null)) {
           return wordListBuilder_.getMessageOrBuilder();
         } else {
@@ -1847,6 +2022,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * List of words or phrases to search for.
        * </pre>
@@ -1854,27 +2031,39 @@ private static final long serialVersionUID = 0L;
        * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList word_list = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList, com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList.Builder, com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordListOrBuilder> 
+              com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList,
+              com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList.Builder,
+              com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordListOrBuilder>
           getWordListFieldBuilder() {
         if (wordListBuilder_ == null) {
           if (!(sourceCase_ == 1)) {
-            source_ = com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList.getDefaultInstance();
+            source_ =
+                com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList.getDefaultInstance();
           }
-          wordListBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList, com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList.Builder, com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordListOrBuilder>(
+          wordListBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList,
+                  com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList.Builder,
+                  com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordListOrBuilder>(
                   (com.google.privacy.dlp.v2.CustomInfoType.Dictionary.WordList) source_,
                   getParentForChildren(),
                   isClean());
           source_ = null;
         }
         sourceCase_ = 1;
-        onChanged();;
+        onChanged();
+        ;
         return wordListBuilder_;
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.privacy.dlp.v2.CloudStoragePath, com.google.privacy.dlp.v2.CloudStoragePath.Builder, com.google.privacy.dlp.v2.CloudStoragePathOrBuilder> cloudStoragePathBuilder_;
+              com.google.privacy.dlp.v2.CloudStoragePath,
+              com.google.privacy.dlp.v2.CloudStoragePath.Builder,
+              com.google.privacy.dlp.v2.CloudStoragePathOrBuilder>
+          cloudStoragePathBuilder_;
       /**
+       *
+       *
        * <pre>
        * Newline-delimited file of words in Cloud Storage. Only a single file
        * is accepted.
@@ -1886,6 +2075,8 @@ private static final long serialVersionUID = 0L;
         return sourceCase_ == 3;
       }
       /**
+       *
+       *
        * <pre>
        * Newline-delimited file of words in Cloud Storage. Only a single file
        * is accepted.
@@ -1907,6 +2098,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Newline-delimited file of words in Cloud Storage. Only a single file
        * is accepted.
@@ -1928,6 +2121,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Newline-delimited file of words in Cloud Storage. Only a single file
        * is accepted.
@@ -1947,6 +2142,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Newline-delimited file of words in Cloud Storage. Only a single file
        * is accepted.
@@ -1956,10 +2153,13 @@ private static final long serialVersionUID = 0L;
        */
       public Builder mergeCloudStoragePath(com.google.privacy.dlp.v2.CloudStoragePath value) {
         if (cloudStoragePathBuilder_ == null) {
-          if (sourceCase_ == 3 &&
-              source_ != com.google.privacy.dlp.v2.CloudStoragePath.getDefaultInstance()) {
-            source_ = com.google.privacy.dlp.v2.CloudStoragePath.newBuilder((com.google.privacy.dlp.v2.CloudStoragePath) source_)
-                .mergeFrom(value).buildPartial();
+          if (sourceCase_ == 3
+              && source_ != com.google.privacy.dlp.v2.CloudStoragePath.getDefaultInstance()) {
+            source_ =
+                com.google.privacy.dlp.v2.CloudStoragePath.newBuilder(
+                        (com.google.privacy.dlp.v2.CloudStoragePath) source_)
+                    .mergeFrom(value)
+                    .buildPartial();
           } else {
             source_ = value;
           }
@@ -1974,6 +2174,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Newline-delimited file of words in Cloud Storage. Only a single file
        * is accepted.
@@ -1998,6 +2200,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Newline-delimited file of words in Cloud Storage. Only a single file
        * is accepted.
@@ -2009,6 +2213,8 @@ private static final long serialVersionUID = 0L;
         return getCloudStoragePathFieldBuilder().getBuilder();
       }
       /**
+       *
+       *
        * <pre>
        * Newline-delimited file of words in Cloud Storage. Only a single file
        * is accepted.
@@ -2027,6 +2233,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Newline-delimited file of words in Cloud Storage. Only a single file
        * is accepted.
@@ -2035,23 +2243,30 @@ private static final long serialVersionUID = 0L;
        * <code>.google.privacy.dlp.v2.CloudStoragePath cloud_storage_path = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.privacy.dlp.v2.CloudStoragePath, com.google.privacy.dlp.v2.CloudStoragePath.Builder, com.google.privacy.dlp.v2.CloudStoragePathOrBuilder> 
+              com.google.privacy.dlp.v2.CloudStoragePath,
+              com.google.privacy.dlp.v2.CloudStoragePath.Builder,
+              com.google.privacy.dlp.v2.CloudStoragePathOrBuilder>
           getCloudStoragePathFieldBuilder() {
         if (cloudStoragePathBuilder_ == null) {
           if (!(sourceCase_ == 3)) {
             source_ = com.google.privacy.dlp.v2.CloudStoragePath.getDefaultInstance();
           }
-          cloudStoragePathBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.privacy.dlp.v2.CloudStoragePath, com.google.privacy.dlp.v2.CloudStoragePath.Builder, com.google.privacy.dlp.v2.CloudStoragePathOrBuilder>(
+          cloudStoragePathBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.privacy.dlp.v2.CloudStoragePath,
+                  com.google.privacy.dlp.v2.CloudStoragePath.Builder,
+                  com.google.privacy.dlp.v2.CloudStoragePathOrBuilder>(
                   (com.google.privacy.dlp.v2.CloudStoragePath) source_,
                   getParentForChildren(),
                   isClean());
           source_ = null;
         }
         sourceCase_ = 3;
-        onChanged();;
+        onChanged();
+        ;
         return cloudStoragePathBuilder_;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2064,12 +2279,12 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.CustomInfoType.Dictionary)
     }
 
     // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.CustomInfoType.Dictionary)
     private static final com.google.privacy.dlp.v2.CustomInfoType.Dictionary DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.CustomInfoType.Dictionary();
     }
@@ -2078,16 +2293,16 @@ private static final long serialVersionUID = 0L;
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Dictionary>
-        PARSER = new com.google.protobuf.AbstractParser<Dictionary>() {
-      @java.lang.Override
-      public Dictionary parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Dictionary(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<Dictionary> PARSER =
+        new com.google.protobuf.AbstractParser<Dictionary>() {
+          @java.lang.Override
+          public Dictionary parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new Dictionary(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<Dictionary> parser() {
       return PARSER;
@@ -2102,14 +2317,16 @@ private static final long serialVersionUID = 0L;
     public com.google.privacy.dlp.v2.CustomInfoType.Dictionary getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
-  public interface RegexOrBuilder extends
+  public interface RegexOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.CustomInfoType.Regex)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * Pattern defining the regular expression. Its syntax
      * (https://github.com/google/re2/wiki/Syntax) can be found under the
@@ -2120,6 +2337,8 @@ private static final long serialVersionUID = 0L;
      */
     java.lang.String getPattern();
     /**
+     *
+     *
      * <pre>
      * Pattern defining the regular expression. Its syntax
      * (https://github.com/google/re2/wiki/Syntax) can be found under the
@@ -2128,34 +2347,36 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string pattern = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getPatternBytes();
+    com.google.protobuf.ByteString getPatternBytes();
   }
   /**
+   *
+   *
    * <pre>
    * Message defining a custom regular expression.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.CustomInfoType.Regex}
    */
-  public  static final class Regex extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class Regex extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.CustomInfoType.Regex)
       RegexOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use Regex.newBuilder() to construct.
     private Regex(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private Regex() {
       pattern_ = "";
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private Regex(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2175,47 +2396,52 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
 
-              pattern_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+                pattern_ = s;
+                break;
               }
-              break;
-            }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_Regex_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpStorage
+          .internal_static_google_privacy_dlp_v2_CustomInfoType_Regex_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_Regex_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpStorage
+          .internal_static_google_privacy_dlp_v2_CustomInfoType_Regex_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.CustomInfoType.Regex.class, com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder.class);
+              com.google.privacy.dlp.v2.CustomInfoType.Regex.class,
+              com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder.class);
     }
 
     public static final int PATTERN_FIELD_NUMBER = 1;
     private volatile java.lang.Object pattern_;
     /**
+     *
+     *
      * <pre>
      * Pattern defining the regular expression. Its syntax
      * (https://github.com/google/re2/wiki/Syntax) can be found under the
@@ -2229,14 +2455,15 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         pattern_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Pattern defining the regular expression. Its syntax
      * (https://github.com/google/re2/wiki/Syntax) can be found under the
@@ -2245,13 +2472,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string pattern = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getPatternBytes() {
+    public com.google.protobuf.ByteString getPatternBytes() {
       java.lang.Object ref = pattern_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         pattern_ = b;
         return b;
       } else {
@@ -2260,6 +2485,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -2271,8 +2497,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (!getPatternBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, pattern_);
       }
@@ -2296,16 +2521,16 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.privacy.dlp.v2.CustomInfoType.Regex)) {
         return super.equals(obj);
       }
-      com.google.privacy.dlp.v2.CustomInfoType.Regex other = (com.google.privacy.dlp.v2.CustomInfoType.Regex) obj;
+      com.google.privacy.dlp.v2.CustomInfoType.Regex other =
+          (com.google.privacy.dlp.v2.CustomInfoType.Regex) obj;
 
       boolean result = true;
-      result = result && getPattern()
-          .equals(other.getPattern());
+      result = result && getPattern().equals(other.getPattern());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -2324,88 +2549,94 @@ private static final long serialVersionUID = 0L;
       return hash;
     }
 
-    public static com.google.privacy.dlp.v2.CustomInfoType.Regex parseFrom(
-        java.nio.ByteBuffer data)
+    public static com.google.privacy.dlp.v2.CustomInfoType.Regex parseFrom(java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.CustomInfoType.Regex parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.CustomInfoType.Regex parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.CustomInfoType.Regex parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.CustomInfoType.Regex parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.CustomInfoType.Regex parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.privacy.dlp.v2.CustomInfoType.Regex parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.privacy.dlp.v2.CustomInfoType.Regex parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.privacy.dlp.v2.CustomInfoType.Regex parseDelimitedFrom(java.io.InputStream input)
+
+    public static com.google.privacy.dlp.v2.CustomInfoType.Regex parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.CustomInfoType.Regex parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static com.google.privacy.dlp.v2.CustomInfoType.Regex parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static com.google.privacy.dlp.v2.CustomInfoType.Regex parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.privacy.dlp.v2.CustomInfoType.Regex parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
+
     public static Builder newBuilder(com.google.privacy.dlp.v2.CustomInfoType.Regex prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -2415,27 +2646,32 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * Message defining a custom regular expression.
      * </pre>
      *
      * Protobuf type {@code google.privacy.dlp.v2.CustomInfoType.Regex}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.CustomInfoType.Regex)
         com.google.privacy.dlp.v2.CustomInfoType.RegexOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_Regex_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpStorage
+            .internal_static_google_privacy_dlp_v2_CustomInfoType_Regex_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_Regex_fieldAccessorTable
+        return com.google.privacy.dlp.v2.DlpStorage
+            .internal_static_google_privacy_dlp_v2_CustomInfoType_Regex_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.privacy.dlp.v2.CustomInfoType.Regex.class, com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder.class);
+                com.google.privacy.dlp.v2.CustomInfoType.Regex.class,
+                com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder.class);
       }
 
       // Construct using com.google.privacy.dlp.v2.CustomInfoType.Regex.newBuilder()
@@ -2443,16 +2679,15 @@ private static final long serialVersionUID = 0L;
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -2462,9 +2697,9 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_Regex_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.privacy.dlp.v2.DlpStorage
+            .internal_static_google_privacy_dlp_v2_CustomInfoType_Regex_descriptor;
       }
 
       @java.lang.Override
@@ -2483,7 +2718,8 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public com.google.privacy.dlp.v2.CustomInfoType.Regex buildPartial() {
-        com.google.privacy.dlp.v2.CustomInfoType.Regex result = new com.google.privacy.dlp.v2.CustomInfoType.Regex(this);
+        com.google.privacy.dlp.v2.CustomInfoType.Regex result =
+            new com.google.privacy.dlp.v2.CustomInfoType.Regex(this);
         result.pattern_ = pattern_;
         onBuilt();
         return result;
@@ -2493,38 +2729,41 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.privacy.dlp.v2.CustomInfoType.Regex) {
-          return mergeFrom((com.google.privacy.dlp.v2.CustomInfoType.Regex)other);
+          return mergeFrom((com.google.privacy.dlp.v2.CustomInfoType.Regex) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -2532,7 +2771,8 @@ private static final long serialVersionUID = 0L;
       }
 
       public Builder mergeFrom(com.google.privacy.dlp.v2.CustomInfoType.Regex other) {
-        if (other == com.google.privacy.dlp.v2.CustomInfoType.Regex.getDefaultInstance()) return this;
+        if (other == com.google.privacy.dlp.v2.CustomInfoType.Regex.getDefaultInstance())
+          return this;
         if (!other.getPattern().isEmpty()) {
           pattern_ = other.pattern_;
           onChanged();
@@ -2568,6 +2808,8 @@ private static final long serialVersionUID = 0L;
 
       private java.lang.Object pattern_ = "";
       /**
+       *
+       *
        * <pre>
        * Pattern defining the regular expression. Its syntax
        * (https://github.com/google/re2/wiki/Syntax) can be found under the
@@ -2579,8 +2821,7 @@ private static final long serialVersionUID = 0L;
       public java.lang.String getPattern() {
         java.lang.Object ref = pattern_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           pattern_ = s;
           return s;
@@ -2589,6 +2830,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Pattern defining the regular expression. Its syntax
        * (https://github.com/google/re2/wiki/Syntax) can be found under the
@@ -2597,13 +2840,11 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string pattern = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getPatternBytes() {
+      public com.google.protobuf.ByteString getPatternBytes() {
         java.lang.Object ref = pattern_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           pattern_ = b;
           return b;
         } else {
@@ -2611,6 +2852,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Pattern defining the regular expression. Its syntax
        * (https://github.com/google/re2/wiki/Syntax) can be found under the
@@ -2619,17 +2862,18 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string pattern = 1;</code>
        */
-      public Builder setPattern(
-          java.lang.String value) {
+      public Builder setPattern(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         pattern_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Pattern defining the regular expression. Its syntax
        * (https://github.com/google/re2/wiki/Syntax) can be found under the
@@ -2639,12 +2883,14 @@ private static final long serialVersionUID = 0L;
        * <code>string pattern = 1;</code>
        */
       public Builder clearPattern() {
-        
+
         pattern_ = getDefaultInstance().getPattern();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Pattern defining the regular expression. Its syntax
        * (https://github.com/google/re2/wiki/Syntax) can be found under the
@@ -2653,17 +2899,17 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string pattern = 1;</code>
        */
-      public Builder setPatternBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setPatternBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         pattern_ = value;
         onChanged();
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2676,12 +2922,12 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.CustomInfoType.Regex)
     }
 
     // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.CustomInfoType.Regex)
     private static final com.google.privacy.dlp.v2.CustomInfoType.Regex DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.CustomInfoType.Regex();
     }
@@ -2690,16 +2936,16 @@ private static final long serialVersionUID = 0L;
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Regex>
-        PARSER = new com.google.protobuf.AbstractParser<Regex>() {
-      @java.lang.Override
-      public Regex parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Regex(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<Regex> PARSER =
+        new com.google.protobuf.AbstractParser<Regex>() {
+          @java.lang.Override
+          public Regex parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new Regex(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<Regex> parser() {
       return PARSER;
@@ -2714,14 +2960,15 @@ private static final long serialVersionUID = 0L;
     public com.google.privacy.dlp.v2.CustomInfoType.Regex getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
-  public interface SurrogateTypeOrBuilder extends
+  public interface SurrogateTypeOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.CustomInfoType.SurrogateType)
-      com.google.protobuf.MessageOrBuilder {
-  }
+      com.google.protobuf.MessageOrBuilder {}
   /**
+   *
+   *
    * <pre>
    * Message for detecting output from deidentification transformations
    * such as
@@ -2735,23 +2982,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.privacy.dlp.v2.CustomInfoType.SurrogateType}
    */
-  public  static final class SurrogateType extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class SurrogateType extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.CustomInfoType.SurrogateType)
       SurrogateTypeOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use SurrogateType.newBuilder() to construct.
     private SurrogateType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private SurrogateType() {
-    }
+
+    private SurrogateType() {}
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private SurrogateType(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2770,39 +3017,42 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
               }
-              break;
-            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_SurrogateType_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpStorage
+          .internal_static_google_privacy_dlp_v2_CustomInfoType_SurrogateType_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_SurrogateType_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpStorage
+          .internal_static_google_privacy_dlp_v2_CustomInfoType_SurrogateType_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.CustomInfoType.SurrogateType.class, com.google.privacy.dlp.v2.CustomInfoType.SurrogateType.Builder.class);
+              com.google.privacy.dlp.v2.CustomInfoType.SurrogateType.class,
+              com.google.privacy.dlp.v2.CustomInfoType.SurrogateType.Builder.class);
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -2814,8 +3064,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       unknownFields.writeTo(output);
     }
 
@@ -2833,12 +3082,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.privacy.dlp.v2.CustomInfoType.SurrogateType)) {
         return super.equals(obj);
       }
-      com.google.privacy.dlp.v2.CustomInfoType.SurrogateType other = (com.google.privacy.dlp.v2.CustomInfoType.SurrogateType) obj;
+      com.google.privacy.dlp.v2.CustomInfoType.SurrogateType other =
+          (com.google.privacy.dlp.v2.CustomInfoType.SurrogateType) obj;
 
       boolean result = true;
       result = result && unknownFields.equals(other.unknownFields);
@@ -2858,87 +3108,94 @@ private static final long serialVersionUID = 0L;
     }
 
     public static com.google.privacy.dlp.v2.CustomInfoType.SurrogateType parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.CustomInfoType.SurrogateType parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.CustomInfoType.SurrogateType parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.CustomInfoType.SurrogateType parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.CustomInfoType.SurrogateType parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.CustomInfoType.SurrogateType parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.privacy.dlp.v2.CustomInfoType.SurrogateType parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.privacy.dlp.v2.CustomInfoType.SurrogateType parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.privacy.dlp.v2.CustomInfoType.SurrogateType parseDelimitedFrom(java.io.InputStream input)
+
+    public static com.google.privacy.dlp.v2.CustomInfoType.SurrogateType parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.CustomInfoType.SurrogateType parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static com.google.privacy.dlp.v2.CustomInfoType.SurrogateType parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static com.google.privacy.dlp.v2.CustomInfoType.SurrogateType parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.privacy.dlp.v2.CustomInfoType.SurrogateType parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.google.privacy.dlp.v2.CustomInfoType.SurrogateType prototype) {
+
+    public static Builder newBuilder(
+        com.google.privacy.dlp.v2.CustomInfoType.SurrogateType prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -2948,6 +3205,8 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * Message for detecting output from deidentification transformations
      * such as
@@ -2961,21 +3220,24 @@ private static final long serialVersionUID = 0L;
      *
      * Protobuf type {@code google.privacy.dlp.v2.CustomInfoType.SurrogateType}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.CustomInfoType.SurrogateType)
         com.google.privacy.dlp.v2.CustomInfoType.SurrogateTypeOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_SurrogateType_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpStorage
+            .internal_static_google_privacy_dlp_v2_CustomInfoType_SurrogateType_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_SurrogateType_fieldAccessorTable
+        return com.google.privacy.dlp.v2.DlpStorage
+            .internal_static_google_privacy_dlp_v2_CustomInfoType_SurrogateType_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.privacy.dlp.v2.CustomInfoType.SurrogateType.class, com.google.privacy.dlp.v2.CustomInfoType.SurrogateType.Builder.class);
+                com.google.privacy.dlp.v2.CustomInfoType.SurrogateType.class,
+                com.google.privacy.dlp.v2.CustomInfoType.SurrogateType.Builder.class);
       }
 
       // Construct using com.google.privacy.dlp.v2.CustomInfoType.SurrogateType.newBuilder()
@@ -2983,16 +3245,15 @@ private static final long serialVersionUID = 0L;
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -3000,9 +3261,9 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_SurrogateType_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.privacy.dlp.v2.DlpStorage
+            .internal_static_google_privacy_dlp_v2_CustomInfoType_SurrogateType_descriptor;
       }
 
       @java.lang.Override
@@ -3021,7 +3282,8 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public com.google.privacy.dlp.v2.CustomInfoType.SurrogateType buildPartial() {
-        com.google.privacy.dlp.v2.CustomInfoType.SurrogateType result = new com.google.privacy.dlp.v2.CustomInfoType.SurrogateType(this);
+        com.google.privacy.dlp.v2.CustomInfoType.SurrogateType result =
+            new com.google.privacy.dlp.v2.CustomInfoType.SurrogateType(this);
         onBuilt();
         return result;
       }
@@ -3030,38 +3292,41 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.privacy.dlp.v2.CustomInfoType.SurrogateType) {
-          return mergeFrom((com.google.privacy.dlp.v2.CustomInfoType.SurrogateType)other);
+          return mergeFrom((com.google.privacy.dlp.v2.CustomInfoType.SurrogateType) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -3069,7 +3334,8 @@ private static final long serialVersionUID = 0L;
       }
 
       public Builder mergeFrom(com.google.privacy.dlp.v2.CustomInfoType.SurrogateType other) {
-        if (other == com.google.privacy.dlp.v2.CustomInfoType.SurrogateType.getDefaultInstance()) return this;
+        if (other == com.google.privacy.dlp.v2.CustomInfoType.SurrogateType.getDefaultInstance())
+          return this;
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -3089,7 +3355,8 @@ private static final long serialVersionUID = 0L;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.privacy.dlp.v2.CustomInfoType.SurrogateType) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.privacy.dlp.v2.CustomInfoType.SurrogateType) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3098,6 +3365,7 @@ private static final long serialVersionUID = 0L;
         }
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3110,12 +3378,12 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.CustomInfoType.SurrogateType)
     }
 
     // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.CustomInfoType.SurrogateType)
     private static final com.google.privacy.dlp.v2.CustomInfoType.SurrogateType DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.CustomInfoType.SurrogateType();
     }
@@ -3124,16 +3392,16 @@ private static final long serialVersionUID = 0L;
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<SurrogateType>
-        PARSER = new com.google.protobuf.AbstractParser<SurrogateType>() {
-      @java.lang.Override
-      public SurrogateType parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SurrogateType(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<SurrogateType> PARSER =
+        new com.google.protobuf.AbstractParser<SurrogateType>() {
+          @java.lang.Override
+          public SurrogateType parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new SurrogateType(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<SurrogateType> parser() {
       return PARSER;
@@ -3148,41 +3416,53 @@ private static final long serialVersionUID = 0L;
     public com.google.privacy.dlp.v2.CustomInfoType.SurrogateType getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
-  public interface DetectionRuleOrBuilder extends
+  public interface DetectionRuleOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.CustomInfoType.DetectionRule)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * Hotword-based detection rule.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;</code>
+     * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;
+     * </code>
      */
     boolean hasHotwordRule();
     /**
+     *
+     *
      * <pre>
      * Hotword-based detection rule.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;</code>
+     * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;
+     * </code>
      */
     com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule getHotwordRule();
     /**
+     *
+     *
      * <pre>
      * Hotword-based detection rule.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;</code>
+     * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;
+     * </code>
      */
-    com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRuleOrBuilder getHotwordRuleOrBuilder();
+    com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRuleOrBuilder
+        getHotwordRuleOrBuilder();
 
     public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.TypeCase getTypeCase();
   }
   /**
+   *
+   *
    * <pre>
    * Rule for modifying a CustomInfoType to alter behavior under certain
    * circumstances, depending on the specific details of the rule. Not supported
@@ -3191,23 +3471,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.privacy.dlp.v2.CustomInfoType.DetectionRule}
    */
-  public  static final class DetectionRule extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class DetectionRule extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.CustomInfoType.DetectionRule)
       DetectionRuleOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use DetectionRule.newBuilder() to construct.
     private DetectionRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private DetectionRule() {
-    }
+
+    private DetectionRule() {}
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private DetectionRule(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3227,57 +3507,69 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.Builder subBuilder = null;
-              if (typeCase_ == 1) {
-                subBuilder = ((com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule) type_).toBuilder();
+            case 10:
+              {
+                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.Builder
+                    subBuilder = null;
+                if (typeCase_ == 1) {
+                  subBuilder =
+                      ((com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule) type_)
+                          .toBuilder();
+                }
+                type_ =
+                    input.readMessage(
+                        com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(
+                      (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule) type_);
+                  type_ = subBuilder.buildPartial();
+                }
+                typeCase_ = 1;
+                break;
               }
-              type_ =
-                  input.readMessage(com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule) type_);
-                type_ = subBuilder.buildPartial();
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
               }
-              typeCase_ = 1;
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpStorage
+          .internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpStorage
+          .internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.class, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Builder.class);
+              com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.class,
+              com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Builder.class);
     }
 
-    public interface ProximityOrBuilder extends
+    public interface ProximityOrBuilder
+        extends
         // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity)
         com.google.protobuf.MessageOrBuilder {
 
       /**
+       *
+       *
        * <pre>
        * Number of characters before the finding to consider.
        * </pre>
@@ -3287,6 +3579,8 @@ private static final long serialVersionUID = 0L;
       int getWindowBefore();
 
       /**
+       *
+       *
        * <pre>
        * Number of characters after the finding to consider.
        * </pre>
@@ -3296,6 +3590,8 @@ private static final long serialVersionUID = 0L;
       int getWindowAfter();
     }
     /**
+     *
+     *
      * <pre>
      * Message for specifying a window around a finding to apply a detection
      * rule.
@@ -3303,25 +3599,26 @@ private static final long serialVersionUID = 0L;
      *
      * Protobuf type {@code google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity}
      */
-    public  static final class Proximity extends
-        com.google.protobuf.GeneratedMessageV3 implements
+    public static final class Proximity extends com.google.protobuf.GeneratedMessageV3
+        implements
         // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity)
         ProximityOrBuilder {
-    private static final long serialVersionUID = 0L;
+      private static final long serialVersionUID = 0L;
       // Use Proximity.newBuilder() to construct.
       private Proximity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
       }
+
       private Proximity() {
         windowBefore_ = 0;
         windowAfter_ = 0;
       }
 
       @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
+
       private Proximity(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3341,51 +3638,56 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              case 8: {
-
-                windowBefore_ = input.readInt32();
-                break;
-              }
-              case 16: {
-
-                windowAfter_ = input.readInt32();
-                break;
-              }
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
+              case 8:
+                {
+                  windowBefore_ = input.readInt32();
+                  break;
                 }
-                break;
-              }
+              case 16:
+                {
+                  windowAfter_ = input.readInt32();
+                  break;
+                }
+              default:
+                {
+                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
+                }
             }
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(this);
         } finally {
           this.unknownFields = unknownFields.build();
           makeExtensionsImmutable();
         }
       }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_Proximity_descriptor;
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpStorage
+            .internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_Proximity_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_Proximity_fieldAccessorTable
+        return com.google.privacy.dlp.v2.DlpStorage
+            .internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_Proximity_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.class, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.Builder.class);
+                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.class,
+                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.Builder.class);
       }
 
       public static final int WINDOW_BEFORE_FIELD_NUMBER = 1;
       private int windowBefore_;
       /**
+       *
+       *
        * <pre>
        * Number of characters before the finding to consider.
        * </pre>
@@ -3399,6 +3701,8 @@ private static final long serialVersionUID = 0L;
       public static final int WINDOW_AFTER_FIELD_NUMBER = 2;
       private int windowAfter_;
       /**
+       *
+       *
        * <pre>
        * Number of characters after the finding to consider.
        * </pre>
@@ -3410,6 +3714,7 @@ private static final long serialVersionUID = 0L;
       }
 
       private byte memoizedIsInitialized = -1;
+
       @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
@@ -3421,8 +3726,7 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
         if (windowBefore_ != 0) {
           output.writeInt32(1, windowBefore_);
         }
@@ -3439,12 +3743,10 @@ private static final long serialVersionUID = 0L;
 
         size = 0;
         if (windowBefore_ != 0) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeInt32Size(1, windowBefore_);
+          size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, windowBefore_);
         }
         if (windowAfter_ != 0) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeInt32Size(2, windowAfter_);
+          size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, windowAfter_);
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -3454,18 +3756,17 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public boolean equals(final java.lang.Object obj) {
         if (obj == this) {
-         return true;
+          return true;
         }
         if (!(obj instanceof com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity)) {
           return super.equals(obj);
         }
-        com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity other = (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity) obj;
+        com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity other =
+            (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity) obj;
 
         boolean result = true;
-        result = result && (getWindowBefore()
-            == other.getWindowBefore());
-        result = result && (getWindowAfter()
-            == other.getWindowAfter());
+        result = result && (getWindowBefore() == other.getWindowBefore());
+        result = result && (getWindowAfter() == other.getWindowAfter());
         result = result && unknownFields.equals(other.unknownFields);
         return result;
       }
@@ -3487,87 +3788,96 @@ private static final long serialVersionUID = 0L;
       }
 
       public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
+
       public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
+
       public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
+
       public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
+
       public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
+
       public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
       }
-      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
-      }
-      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-      }
+
       public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity parseFrom(
-          com.google.protobuf.CodedInputStream input)
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
       }
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
       public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
       }
 
       @java.lang.Override
-      public Builder newBuilderForType() { return newBuilder(); }
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
-      public static Builder newBuilder(com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity prototype) {
+
+      public static Builder newBuilder(
+          com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+
       @java.lang.Override
       public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
       }
 
       @java.lang.Override
@@ -3577,6 +3887,8 @@ private static final long serialVersionUID = 0L;
         return builder;
       }
       /**
+       *
+       *
        * <pre>
        * Message for specifying a window around a finding to apply a detection
        * rule.
@@ -3584,38 +3896,41 @@ private static final long serialVersionUID = 0L;
        *
        * Protobuf type {@code google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity}
        */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
           // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity)
           com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.ProximityOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_Proximity_descriptor;
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.privacy.dlp.v2.DlpStorage
+              .internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_Proximity_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_Proximity_fieldAccessorTable
+          return com.google.privacy.dlp.v2.DlpStorage
+              .internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_Proximity_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
-                  com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.class, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.Builder.class);
+                  com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.class,
+                  com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.Builder.class);
         }
 
-        // Construct using com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.newBuilder()
+        // Construct using
+        // com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.newBuilder()
         private Builder() {
           maybeForceBuilderInitialization();
         }
 
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
           maybeForceBuilderInitialization();
         }
+
         private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
+
         @java.lang.Override
         public Builder clear() {
           super.clear();
@@ -3627,14 +3942,16 @@ private static final long serialVersionUID = 0L;
         }
 
         @java.lang.Override
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_Proximity_descriptor;
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.privacy.dlp.v2.DlpStorage
+              .internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_Proximity_descriptor;
         }
 
         @java.lang.Override
-        public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity getDefaultInstanceForType() {
-          return com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.getDefaultInstance();
+        public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity
+            getDefaultInstanceForType() {
+          return com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity
+              .getDefaultInstance();
         }
 
         @java.lang.Override
@@ -3648,7 +3965,8 @@ private static final long serialVersionUID = 0L;
 
         @java.lang.Override
         public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity buildPartial() {
-          com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity result = new com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity(this);
+          com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity result =
+              new com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity(this);
           result.windowBefore_ = windowBefore_;
           result.windowAfter_ = windowAfter_;
           onBuilt();
@@ -3659,46 +3977,53 @@ private static final long serialVersionUID = 0L;
         public Builder clone() {
           return (Builder) super.clone();
         }
+
         @java.lang.Override
         public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
+
         @java.lang.Override
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
+
         @java.lang.Override
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+
         @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, java.lang.Object value) {
+            int index,
+            java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+
         @java.lang.Override
         public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+
         @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity) {
-            return mergeFrom((com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity)other);
+            return mergeFrom(
+                (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity) other);
           } else {
             super.mergeFrom(other);
             return this;
           }
         }
 
-        public Builder mergeFrom(com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity other) {
-          if (other == com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.getDefaultInstance()) return this;
+        public Builder mergeFrom(
+            com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity other) {
+          if (other
+              == com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity
+                  .getDefaultInstance()) return this;
           if (other.getWindowBefore() != 0) {
             setWindowBefore(other.getWindowBefore());
           }
@@ -3724,7 +4049,9 @@ private static final long serialVersionUID = 0L;
           try {
             parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity) e.getUnfinishedMessage();
+            parsedMessage =
+                (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity)
+                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
             if (parsedMessage != null) {
@@ -3734,8 +4061,10 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
-        private int windowBefore_ ;
+        private int windowBefore_;
         /**
+         *
+         *
          * <pre>
          * Number of characters before the finding to consider.
          * </pre>
@@ -3746,6 +4075,8 @@ private static final long serialVersionUID = 0L;
           return windowBefore_;
         }
         /**
+         *
+         *
          * <pre>
          * Number of characters before the finding to consider.
          * </pre>
@@ -3753,12 +4084,14 @@ private static final long serialVersionUID = 0L;
          * <code>int32 window_before = 1;</code>
          */
         public Builder setWindowBefore(int value) {
-          
+
           windowBefore_ = value;
           onChanged();
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Number of characters before the finding to consider.
          * </pre>
@@ -3766,14 +4099,16 @@ private static final long serialVersionUID = 0L;
          * <code>int32 window_before = 1;</code>
          */
         public Builder clearWindowBefore() {
-          
+
           windowBefore_ = 0;
           onChanged();
           return this;
         }
 
-        private int windowAfter_ ;
+        private int windowAfter_;
         /**
+         *
+         *
          * <pre>
          * Number of characters after the finding to consider.
          * </pre>
@@ -3784,6 +4119,8 @@ private static final long serialVersionUID = 0L;
           return windowAfter_;
         }
         /**
+         *
+         *
          * <pre>
          * Number of characters after the finding to consider.
          * </pre>
@@ -3791,12 +4128,14 @@ private static final long serialVersionUID = 0L;
          * <code>int32 window_after = 2;</code>
          */
         public Builder setWindowAfter(int value) {
-          
+
           windowAfter_ = value;
           onChanged();
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Number of characters after the finding to consider.
          * </pre>
@@ -3804,11 +4143,12 @@ private static final long serialVersionUID = 0L;
          * <code>int32 window_after = 2;</code>
          */
         public Builder clearWindowAfter() {
-          
+
           windowAfter_ = 0;
           onChanged();
           return this;
         }
+
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3821,30 +4161,32 @@ private static final long serialVersionUID = 0L;
           return super.mergeUnknownFields(unknownFields);
         }
 
-
         // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity)
       }
 
       // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity)
-      private static final com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity DEFAULT_INSTANCE;
+      private static final com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity
+          DEFAULT_INSTANCE;
+
       static {
         DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity();
       }
 
-      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity getDefaultInstance() {
+      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity
+          getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static final com.google.protobuf.Parser<Proximity>
-          PARSER = new com.google.protobuf.AbstractParser<Proximity>() {
-        @java.lang.Override
-        public Proximity parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Proximity(input, extensionRegistry);
-        }
-      };
+      private static final com.google.protobuf.Parser<Proximity> PARSER =
+          new com.google.protobuf.AbstractParser<Proximity>() {
+            @java.lang.Override
+            public Proximity parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              return new Proximity(input, extensionRegistry);
+            }
+          };
 
       public static com.google.protobuf.Parser<Proximity> parser() {
         return PARSER;
@@ -3856,17 +4198,20 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity getDefaultInstanceForType() {
+      public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity
+          getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
-
     }
 
-    public interface LikelihoodAdjustmentOrBuilder extends
+    public interface LikelihoodAdjustmentOrBuilder
+        extends
         // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment)
         com.google.protobuf.MessageOrBuilder {
 
       /**
+       *
+       *
        * <pre>
        * Set the likelihood of a finding to a fixed value.
        * </pre>
@@ -3875,6 +4220,8 @@ private static final long serialVersionUID = 0L;
        */
       int getFixedLikelihoodValue();
       /**
+       *
+       *
        * <pre>
        * Set the likelihood of a finding to a fixed value.
        * </pre>
@@ -3884,6 +4231,8 @@ private static final long serialVersionUID = 0L;
       com.google.privacy.dlp.v2.Likelihood getFixedLikelihood();
 
       /**
+       *
+       *
        * <pre>
        * Increase or decrease the likelihood by the specified number of
        * levels. For example, if a finding would be `POSSIBLE` without the
@@ -3899,9 +4248,13 @@ private static final long serialVersionUID = 0L;
        */
       int getRelativeLikelihood();
 
-      public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment.AdjustmentCase getAdjustmentCase();
+      public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
+              .AdjustmentCase
+          getAdjustmentCase();
     }
     /**
+     *
+     *
      * <pre>
      * Message for specifying an adjustment to the likelihood of a finding as
      * part of a detection rule.
@@ -3909,23 +4262,23 @@ private static final long serialVersionUID = 0L;
      *
      * Protobuf type {@code google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment}
      */
-    public  static final class LikelihoodAdjustment extends
-        com.google.protobuf.GeneratedMessageV3 implements
+    public static final class LikelihoodAdjustment extends com.google.protobuf.GeneratedMessageV3
+        implements
         // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment)
         LikelihoodAdjustmentOrBuilder {
-    private static final long serialVersionUID = 0L;
+      private static final long serialVersionUID = 0L;
       // Use LikelihoodAdjustment.newBuilder() to construct.
       private LikelihoodAdjustment(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
       }
-      private LikelihoodAdjustment() {
-      }
+
+      private LikelihoodAdjustment() {}
 
       @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
+
       private LikelihoodAdjustment(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3945,63 +4298,68 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              case 8: {
-                int rawValue = input.readEnum();
-                adjustmentCase_ = 1;
-                adjustment_ = rawValue;
-                break;
-              }
-              case 16: {
-                adjustmentCase_ = 2;
-                adjustment_ = input.readInt32();
-                break;
-              }
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
+              case 8:
+                {
+                  int rawValue = input.readEnum();
+                  adjustmentCase_ = 1;
+                  adjustment_ = rawValue;
+                  break;
                 }
-                break;
-              }
+              case 16:
+                {
+                  adjustmentCase_ = 2;
+                  adjustment_ = input.readInt32();
+                  break;
+                }
+              default:
+                {
+                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
+                }
             }
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(this);
         } finally {
           this.unknownFields = unknownFields.build();
           makeExtensionsImmutable();
         }
       }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_LikelihoodAdjustment_descriptor;
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpStorage
+            .internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_LikelihoodAdjustment_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_LikelihoodAdjustment_fieldAccessorTable
+        return com.google.privacy.dlp.v2.DlpStorage
+            .internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_LikelihoodAdjustment_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment.class, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment.Builder.class);
+                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment.class,
+                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment.Builder
+                    .class);
       }
 
       private int adjustmentCase_ = 0;
       private java.lang.Object adjustment_;
-      public enum AdjustmentCase
-          implements com.google.protobuf.Internal.EnumLite {
+
+      public enum AdjustmentCase implements com.google.protobuf.Internal.EnumLite {
         FIXED_LIKELIHOOD(1),
         RELATIVE_LIKELIHOOD(2),
         ADJUSTMENT_NOT_SET(0);
         private final int value;
+
         private AdjustmentCase(int value) {
           this.value = value;
         }
-        /**
-         * @deprecated Use {@link #forNumber(int)} instead.
-         */
+        /** @deprecated Use {@link #forNumber(int)} instead. */
         @java.lang.Deprecated
         public static AdjustmentCase valueOf(int value) {
           return forNumber(value);
@@ -4009,25 +4367,30 @@ private static final long serialVersionUID = 0L;
 
         public static AdjustmentCase forNumber(int value) {
           switch (value) {
-            case 1: return FIXED_LIKELIHOOD;
-            case 2: return RELATIVE_LIKELIHOOD;
-            case 0: return ADJUSTMENT_NOT_SET;
-            default: return null;
+            case 1:
+              return FIXED_LIKELIHOOD;
+            case 2:
+              return RELATIVE_LIKELIHOOD;
+            case 0:
+              return ADJUSTMENT_NOT_SET;
+            default:
+              return null;
           }
         }
+
         public int getNumber() {
           return this.value;
         }
       };
 
-      public AdjustmentCase
-      getAdjustmentCase() {
-        return AdjustmentCase.forNumber(
-            adjustmentCase_);
+      public AdjustmentCase getAdjustmentCase() {
+        return AdjustmentCase.forNumber(adjustmentCase_);
       }
 
       public static final int FIXED_LIKELIHOOD_FIELD_NUMBER = 1;
       /**
+       *
+       *
        * <pre>
        * Set the likelihood of a finding to a fixed value.
        * </pre>
@@ -4041,6 +4404,8 @@ private static final long serialVersionUID = 0L;
         return 0;
       }
       /**
+       *
+       *
        * <pre>
        * Set the likelihood of a finding to a fixed value.
        * </pre>
@@ -4050,8 +4415,8 @@ private static final long serialVersionUID = 0L;
       public com.google.privacy.dlp.v2.Likelihood getFixedLikelihood() {
         if (adjustmentCase_ == 1) {
           @SuppressWarnings("deprecation")
-          com.google.privacy.dlp.v2.Likelihood result = com.google.privacy.dlp.v2.Likelihood.valueOf(
-              (java.lang.Integer) adjustment_);
+          com.google.privacy.dlp.v2.Likelihood result =
+              com.google.privacy.dlp.v2.Likelihood.valueOf((java.lang.Integer) adjustment_);
           return result == null ? com.google.privacy.dlp.v2.Likelihood.UNRECOGNIZED : result;
         }
         return com.google.privacy.dlp.v2.Likelihood.LIKELIHOOD_UNSPECIFIED;
@@ -4059,6 +4424,8 @@ private static final long serialVersionUID = 0L;
 
       public static final int RELATIVE_LIKELIHOOD_FIELD_NUMBER = 2;
       /**
+       *
+       *
        * <pre>
        * Increase or decrease the likelihood by the specified number of
        * levels. For example, if a finding would be `POSSIBLE` without the
@@ -4080,6 +4447,7 @@ private static final long serialVersionUID = 0L;
       }
 
       private byte memoizedIsInitialized = -1;
+
       @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
@@ -4091,14 +4459,12 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
         if (adjustmentCase_ == 1) {
           output.writeEnum(1, ((java.lang.Integer) adjustment_));
         }
         if (adjustmentCase_ == 2) {
-          output.writeInt32(
-              2, (int)((java.lang.Integer) adjustment_));
+          output.writeInt32(2, (int) ((java.lang.Integer) adjustment_));
         }
         unknownFields.writeTo(output);
       }
@@ -4110,13 +4476,14 @@ private static final long serialVersionUID = 0L;
 
         size = 0;
         if (adjustmentCase_ == 1) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeEnumSize(1, ((java.lang.Integer) adjustment_));
+          size +=
+              com.google.protobuf.CodedOutputStream.computeEnumSize(
+                  1, ((java.lang.Integer) adjustment_));
         }
         if (adjustmentCase_ == 2) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeInt32Size(
-                2, (int)((java.lang.Integer) adjustment_));
+          size +=
+              com.google.protobuf.CodedOutputStream.computeInt32Size(
+                  2, (int) ((java.lang.Integer) adjustment_));
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -4126,25 +4493,25 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public boolean equals(final java.lang.Object obj) {
         if (obj == this) {
-         return true;
+          return true;
         }
-        if (!(obj instanceof com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment)) {
+        if (!(obj
+            instanceof
+            com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment)) {
           return super.equals(obj);
         }
-        com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment other = (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment) obj;
+        com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment other =
+            (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment) obj;
 
         boolean result = true;
-        result = result && getAdjustmentCase().equals(
-            other.getAdjustmentCase());
+        result = result && getAdjustmentCase().equals(other.getAdjustmentCase());
         if (!result) return false;
         switch (adjustmentCase_) {
           case 1:
-            result = result && getFixedLikelihoodValue()
-                == other.getFixedLikelihoodValue();
+            result = result && getFixedLikelihoodValue() == other.getFixedLikelihoodValue();
             break;
           case 2:
-            result = result && (getRelativeLikelihood()
-                == other.getRelativeLikelihood());
+            result = result && (getRelativeLikelihood() == other.getRelativeLikelihood());
             break;
           case 0:
           default:
@@ -4177,88 +4544,103 @@ private static final long serialVersionUID = 0L;
         return hash;
       }
 
-      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
       }
-      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
       }
-      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
       }
-      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
       }
-      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
       }
-      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
       }
 
       @java.lang.Override
-      public Builder newBuilderForType() { return newBuilder(); }
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
-      public static Builder newBuilder(com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment prototype) {
+
+      public static Builder newBuilder(
+          com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+
       @java.lang.Override
       public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
       }
 
       @java.lang.Override
@@ -4268,45 +4650,52 @@ private static final long serialVersionUID = 0L;
         return builder;
       }
       /**
+       *
+       *
        * <pre>
        * Message for specifying an adjustment to the likelihood of a finding as
        * part of a detection rule.
        * </pre>
        *
-       * Protobuf type {@code google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment}
+       * Protobuf type {@code
+       * google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment}
        */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
           // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment)
           com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustmentOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_LikelihoodAdjustment_descriptor;
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.privacy.dlp.v2.DlpStorage
+              .internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_LikelihoodAdjustment_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_LikelihoodAdjustment_fieldAccessorTable
+          return com.google.privacy.dlp.v2.DlpStorage
+              .internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_LikelihoodAdjustment_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
-                  com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment.class, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment.Builder.class);
+                  com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment.class,
+                  com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
+                      .Builder.class);
         }
 
-        // Construct using com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment.newBuilder()
+        // Construct using
+        // com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment.newBuilder()
         private Builder() {
           maybeForceBuilderInitialization();
         }
 
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
           maybeForceBuilderInitialization();
         }
+
         private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
+
         @java.lang.Override
         public Builder clear() {
           super.clear();
@@ -4316,19 +4705,22 @@ private static final long serialVersionUID = 0L;
         }
 
         @java.lang.Override
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_LikelihoodAdjustment_descriptor;
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.privacy.dlp.v2.DlpStorage
+              .internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_LikelihoodAdjustment_descriptor;
         }
 
         @java.lang.Override
-        public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment getDefaultInstanceForType() {
-          return com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment.getDefaultInstance();
+        public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
+            getDefaultInstanceForType() {
+          return com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
+              .getDefaultInstance();
         }
 
         @java.lang.Override
         public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment build() {
-          com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment result = buildPartial();
+          com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment result =
+              buildPartial();
           if (!result.isInitialized()) {
             throw newUninitializedMessageException(result);
           }
@@ -4336,8 +4728,10 @@ private static final long serialVersionUID = 0L;
         }
 
         @java.lang.Override
-        public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment buildPartial() {
-          com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment result = new com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment(this);
+        public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
+            buildPartial() {
+          com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment result =
+              new com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment(this);
           if (adjustmentCase_ == 1) {
             result.adjustment_ = adjustment_;
           }
@@ -4353,58 +4747,71 @@ private static final long serialVersionUID = 0L;
         public Builder clone() {
           return (Builder) super.clone();
         }
+
         @java.lang.Override
         public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
+
         @java.lang.Override
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
+
         @java.lang.Override
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+
         @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, java.lang.Object value) {
+            int index,
+            java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+
         @java.lang.Override
         public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+
         @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment) {
-            return mergeFrom((com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment)other);
+          if (other
+              instanceof
+              com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment) {
+            return mergeFrom(
+                (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment)
+                    other);
           } else {
             super.mergeFrom(other);
             return this;
           }
         }
 
-        public Builder mergeFrom(com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment other) {
-          if (other == com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment.getDefaultInstance()) return this;
+        public Builder mergeFrom(
+            com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment other) {
+          if (other
+              == com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
+                  .getDefaultInstance()) return this;
           switch (other.getAdjustmentCase()) {
-            case FIXED_LIKELIHOOD: {
-              setFixedLikelihoodValue(other.getFixedLikelihoodValue());
-              break;
-            }
-            case RELATIVE_LIKELIHOOD: {
-              setRelativeLikelihood(other.getRelativeLikelihood());
-              break;
-            }
-            case ADJUSTMENT_NOT_SET: {
-              break;
-            }
+            case FIXED_LIKELIHOOD:
+              {
+                setFixedLikelihoodValue(other.getFixedLikelihoodValue());
+                break;
+              }
+            case RELATIVE_LIKELIHOOD:
+              {
+                setRelativeLikelihood(other.getRelativeLikelihood());
+                break;
+              }
+            case ADJUSTMENT_NOT_SET:
+              {
+                break;
+              }
           }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
@@ -4421,11 +4828,14 @@ private static final long serialVersionUID = 0L;
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment parsedMessage = null;
+          com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
+              parsedMessage = null;
           try {
             parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment) e.getUnfinishedMessage();
+            parsedMessage =
+                (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment)
+                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
             if (parsedMessage != null) {
@@ -4434,12 +4844,12 @@ private static final long serialVersionUID = 0L;
           }
           return this;
         }
+
         private int adjustmentCase_ = 0;
         private java.lang.Object adjustment_;
-        public AdjustmentCase
-            getAdjustmentCase() {
-          return AdjustmentCase.forNumber(
-              adjustmentCase_);
+
+        public AdjustmentCase getAdjustmentCase() {
+          return AdjustmentCase.forNumber(adjustmentCase_);
         }
 
         public Builder clearAdjustment() {
@@ -4449,8 +4859,9 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
-
         /**
+         *
+         *
          * <pre>
          * Set the likelihood of a finding to a fixed value.
          * </pre>
@@ -4464,6 +4875,8 @@ private static final long serialVersionUID = 0L;
           return 0;
         }
         /**
+         *
+         *
          * <pre>
          * Set the likelihood of a finding to a fixed value.
          * </pre>
@@ -4477,6 +4890,8 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Set the likelihood of a finding to a fixed value.
          * </pre>
@@ -4486,13 +4901,15 @@ private static final long serialVersionUID = 0L;
         public com.google.privacy.dlp.v2.Likelihood getFixedLikelihood() {
           if (adjustmentCase_ == 1) {
             @SuppressWarnings("deprecation")
-            com.google.privacy.dlp.v2.Likelihood result = com.google.privacy.dlp.v2.Likelihood.valueOf(
-                (java.lang.Integer) adjustment_);
+            com.google.privacy.dlp.v2.Likelihood result =
+                com.google.privacy.dlp.v2.Likelihood.valueOf((java.lang.Integer) adjustment_);
             return result == null ? com.google.privacy.dlp.v2.Likelihood.UNRECOGNIZED : result;
           }
           return com.google.privacy.dlp.v2.Likelihood.LIKELIHOOD_UNSPECIFIED;
         }
         /**
+         *
+         *
          * <pre>
          * Set the likelihood of a finding to a fixed value.
          * </pre>
@@ -4509,6 +4926,8 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Set the likelihood of a finding to a fixed value.
          * </pre>
@@ -4525,6 +4944,8 @@ private static final long serialVersionUID = 0L;
         }
 
         /**
+         *
+         *
          * <pre>
          * Increase or decrease the likelihood by the specified number of
          * levels. For example, if a finding would be `POSSIBLE` without the
@@ -4545,6 +4966,8 @@ private static final long serialVersionUID = 0L;
           return 0;
         }
         /**
+         *
+         *
          * <pre>
          * Increase or decrease the likelihood by the specified number of
          * levels. For example, if a finding would be `POSSIBLE` without the
@@ -4565,6 +4988,8 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Increase or decrease the likelihood by the specified number of
          * levels. For example, if a finding would be `POSSIBLE` without the
@@ -4586,6 +5011,7 @@ private static final long serialVersionUID = 0L;
           }
           return this;
         }
+
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4598,30 +5024,34 @@ private static final long serialVersionUID = 0L;
           return super.mergeUnknownFields(unknownFields);
         }
 
-
         // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment)
       }
 
       // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment)
-      private static final com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment DEFAULT_INSTANCE;
+      private static final com.google.privacy.dlp.v2.CustomInfoType.DetectionRule
+              .LikelihoodAdjustment
+          DEFAULT_INSTANCE;
+
       static {
-        DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment();
+        DEFAULT_INSTANCE =
+            new com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment();
       }
 
-      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment getDefaultInstance() {
+      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
+          getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static final com.google.protobuf.Parser<LikelihoodAdjustment>
-          PARSER = new com.google.protobuf.AbstractParser<LikelihoodAdjustment>() {
-        @java.lang.Override
-        public LikelihoodAdjustment parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new LikelihoodAdjustment(input, extensionRegistry);
-        }
-      };
+      private static final com.google.protobuf.Parser<LikelihoodAdjustment> PARSER =
+          new com.google.protobuf.AbstractParser<LikelihoodAdjustment>() {
+            @java.lang.Override
+            public LikelihoodAdjustment parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              return new LikelihoodAdjustment(input, extensionRegistry);
+            }
+          };
 
       public static com.google.protobuf.Parser<LikelihoodAdjustment> parser() {
         return PARSER;
@@ -4633,17 +5063,20 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment getDefaultInstanceForType() {
+      public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
+          getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
-
     }
 
-    public interface HotwordRuleOrBuilder extends
+    public interface HotwordRuleOrBuilder
+        extends
         // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule)
         com.google.protobuf.MessageOrBuilder {
 
       /**
+       *
+       *
        * <pre>
        * Regular expression pattern defining what qualifies as a hotword.
        * </pre>
@@ -4652,6 +5085,8 @@ private static final long serialVersionUID = 0L;
        */
       boolean hasHotwordRegex();
       /**
+       *
+       *
        * <pre>
        * Regular expression pattern defining what qualifies as a hotword.
        * </pre>
@@ -4660,6 +5095,8 @@ private static final long serialVersionUID = 0L;
        */
       com.google.privacy.dlp.v2.CustomInfoType.Regex getHotwordRegex();
       /**
+       *
+       *
        * <pre>
        * Regular expression pattern defining what qualifies as a hotword.
        * </pre>
@@ -4669,6 +5106,8 @@ private static final long serialVersionUID = 0L;
       com.google.privacy.dlp.v2.CustomInfoType.RegexOrBuilder getHotwordRegexOrBuilder();
 
       /**
+       *
+       *
        * <pre>
        * Proximity of the finding within which the entire hotword must reside.
        * The total length of the window cannot exceed 1000 characters. Note that
@@ -4684,6 +5123,8 @@ private static final long serialVersionUID = 0L;
        */
       boolean hasProximity();
       /**
+       *
+       *
        * <pre>
        * Proximity of the finding within which the entire hotword must reside.
        * The total length of the window cannot exceed 1000 characters. Note that
@@ -4699,6 +5140,8 @@ private static final long serialVersionUID = 0L;
        */
       com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity getProximity();
       /**
+       *
+       *
        * <pre>
        * Proximity of the finding within which the entire hotword must reside.
        * The total length of the window cannot exceed 1000 characters. Note that
@@ -4712,34 +5155,51 @@ private static final long serialVersionUID = 0L;
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
        */
-      com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.ProximityOrBuilder getProximityOrBuilder();
+      com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.ProximityOrBuilder
+          getProximityOrBuilder();
 
       /**
+       *
+       *
        * <pre>
        * Likelihood adjustment to apply to all matching findings.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;</code>
+       * <code>
+       * .google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;
+       * </code>
        */
       boolean hasLikelihoodAdjustment();
       /**
+       *
+       *
        * <pre>
        * Likelihood adjustment to apply to all matching findings.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;</code>
+       * <code>
+       * .google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;
+       * </code>
        */
-      com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment getLikelihoodAdjustment();
+      com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
+          getLikelihoodAdjustment();
       /**
+       *
+       *
        * <pre>
        * Likelihood adjustment to apply to all matching findings.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;</code>
+       * <code>
+       * .google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;
+       * </code>
        */
-      com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustmentOrBuilder getLikelihoodAdjustmentOrBuilder();
+      com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustmentOrBuilder
+          getLikelihoodAdjustmentOrBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The rule that adjusts the likelihood of findings within a certain
      * proximity of hotwords.
@@ -4747,23 +5207,23 @@ private static final long serialVersionUID = 0L;
      *
      * Protobuf type {@code google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule}
      */
-    public  static final class HotwordRule extends
-        com.google.protobuf.GeneratedMessageV3 implements
+    public static final class HotwordRule extends com.google.protobuf.GeneratedMessageV3
+        implements
         // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule)
         HotwordRuleOrBuilder {
-    private static final long serialVersionUID = 0L;
+      private static final long serialVersionUID = 0L;
       // Use HotwordRule.newBuilder() to construct.
       private HotwordRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
       }
-      private HotwordRule() {
-      }
+
+      private HotwordRule() {}
 
       @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
+
       private HotwordRule(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4783,80 +5243,101 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              case 10: {
-                com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder subBuilder = null;
-                if (hotwordRegex_ != null) {
-                  subBuilder = hotwordRegex_.toBuilder();
-                }
-                hotwordRegex_ = input.readMessage(com.google.privacy.dlp.v2.CustomInfoType.Regex.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(hotwordRegex_);
-                  hotwordRegex_ = subBuilder.buildPartial();
-                }
+              case 10:
+                {
+                  com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder subBuilder = null;
+                  if (hotwordRegex_ != null) {
+                    subBuilder = hotwordRegex_.toBuilder();
+                  }
+                  hotwordRegex_ =
+                      input.readMessage(
+                          com.google.privacy.dlp.v2.CustomInfoType.Regex.parser(),
+                          extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(hotwordRegex_);
+                    hotwordRegex_ = subBuilder.buildPartial();
+                  }
 
-                break;
-              }
-              case 18: {
-                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.Builder subBuilder = null;
-                if (proximity_ != null) {
-                  subBuilder = proximity_.toBuilder();
+                  break;
                 }
-                proximity_ = input.readMessage(com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(proximity_);
-                  proximity_ = subBuilder.buildPartial();
-                }
+              case 18:
+                {
+                  com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.Builder
+                      subBuilder = null;
+                  if (proximity_ != null) {
+                    subBuilder = proximity_.toBuilder();
+                  }
+                  proximity_ =
+                      input.readMessage(
+                          com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.parser(),
+                          extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(proximity_);
+                    proximity_ = subBuilder.buildPartial();
+                  }
 
-                break;
-              }
-              case 26: {
-                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment.Builder subBuilder = null;
-                if (likelihoodAdjustment_ != null) {
-                  subBuilder = likelihoodAdjustment_.toBuilder();
+                  break;
                 }
-                likelihoodAdjustment_ = input.readMessage(com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment.parser(), extensionRegistry);
-                if (subBuilder != null) {
-                  subBuilder.mergeFrom(likelihoodAdjustment_);
-                  likelihoodAdjustment_ = subBuilder.buildPartial();
-                }
+              case 26:
+                {
+                  com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
+                          .Builder
+                      subBuilder = null;
+                  if (likelihoodAdjustment_ != null) {
+                    subBuilder = likelihoodAdjustment_.toBuilder();
+                  }
+                  likelihoodAdjustment_ =
+                      input.readMessage(
+                          com.google.privacy.dlp.v2.CustomInfoType.DetectionRule
+                              .LikelihoodAdjustment.parser(),
+                          extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(likelihoodAdjustment_);
+                    likelihoodAdjustment_ = subBuilder.buildPartial();
+                  }
 
-                break;
-              }
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
+                  break;
                 }
-                break;
-              }
+              default:
+                {
+                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
+                }
             }
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(this);
         } finally {
           this.unknownFields = unknownFields.build();
           makeExtensionsImmutable();
         }
       }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_HotwordRule_descriptor;
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpStorage
+            .internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_HotwordRule_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_HotwordRule_fieldAccessorTable
+        return com.google.privacy.dlp.v2.DlpStorage
+            .internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_HotwordRule_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.class, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.Builder.class);
+                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.class,
+                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.Builder.class);
       }
 
       public static final int HOTWORD_REGEX_FIELD_NUMBER = 1;
       private com.google.privacy.dlp.v2.CustomInfoType.Regex hotwordRegex_;
       /**
+       *
+       *
        * <pre>
        * Regular expression pattern defining what qualifies as a hotword.
        * </pre>
@@ -4867,6 +5348,8 @@ private static final long serialVersionUID = 0L;
         return hotwordRegex_ != null;
       }
       /**
+       *
+       *
        * <pre>
        * Regular expression pattern defining what qualifies as a hotword.
        * </pre>
@@ -4874,9 +5357,13 @@ private static final long serialVersionUID = 0L;
        * <code>.google.privacy.dlp.v2.CustomInfoType.Regex hotword_regex = 1;</code>
        */
       public com.google.privacy.dlp.v2.CustomInfoType.Regex getHotwordRegex() {
-        return hotwordRegex_ == null ? com.google.privacy.dlp.v2.CustomInfoType.Regex.getDefaultInstance() : hotwordRegex_;
+        return hotwordRegex_ == null
+            ? com.google.privacy.dlp.v2.CustomInfoType.Regex.getDefaultInstance()
+            : hotwordRegex_;
       }
       /**
+       *
+       *
        * <pre>
        * Regular expression pattern defining what qualifies as a hotword.
        * </pre>
@@ -4890,6 +5377,8 @@ private static final long serialVersionUID = 0L;
       public static final int PROXIMITY_FIELD_NUMBER = 2;
       private com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity_;
       /**
+       *
+       *
        * <pre>
        * Proximity of the finding within which the entire hotword must reside.
        * The total length of the window cannot exceed 1000 characters. Note that
@@ -4907,6 +5396,8 @@ private static final long serialVersionUID = 0L;
         return proximity_ != null;
       }
       /**
+       *
+       *
        * <pre>
        * Proximity of the finding within which the entire hotword must reside.
        * The total length of the window cannot exceed 1000 characters. Note that
@@ -4921,9 +5412,13 @@ private static final long serialVersionUID = 0L;
        * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
        */
       public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity getProximity() {
-        return proximity_ == null ? com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.getDefaultInstance() : proximity_;
+        return proximity_ == null
+            ? com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.getDefaultInstance()
+            : proximity_;
       }
       /**
+       *
+       *
        * <pre>
        * Proximity of the finding within which the entire hotword must reside.
        * The total length of the window cannot exceed 1000 characters. Note that
@@ -4937,44 +5432,64 @@ private static final long serialVersionUID = 0L;
        *
        * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
        */
-      public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.ProximityOrBuilder getProximityOrBuilder() {
+      public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.ProximityOrBuilder
+          getProximityOrBuilder() {
         return getProximity();
       }
 
       public static final int LIKELIHOOD_ADJUSTMENT_FIELD_NUMBER = 3;
-      private com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihoodAdjustment_;
+      private com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
+          likelihoodAdjustment_;
       /**
+       *
+       *
        * <pre>
        * Likelihood adjustment to apply to all matching findings.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;</code>
+       * <code>
+       * .google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;
+       * </code>
        */
       public boolean hasLikelihoodAdjustment() {
         return likelihoodAdjustment_ != null;
       }
       /**
+       *
+       *
        * <pre>
        * Likelihood adjustment to apply to all matching findings.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;</code>
+       * <code>
+       * .google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;
+       * </code>
        */
-      public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment getLikelihoodAdjustment() {
-        return likelihoodAdjustment_ == null ? com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment.getDefaultInstance() : likelihoodAdjustment_;
+      public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
+          getLikelihoodAdjustment() {
+        return likelihoodAdjustment_ == null
+            ? com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
+                .getDefaultInstance()
+            : likelihoodAdjustment_;
       }
       /**
+       *
+       *
        * <pre>
        * Likelihood adjustment to apply to all matching findings.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;</code>
+       * <code>
+       * .google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;
+       * </code>
        */
-      public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustmentOrBuilder getLikelihoodAdjustmentOrBuilder() {
+      public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustmentOrBuilder
+          getLikelihoodAdjustmentOrBuilder() {
         return getLikelihoodAdjustment();
       }
 
       private byte memoizedIsInitialized = -1;
+
       @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
@@ -4986,8 +5501,7 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
         if (hotwordRegex_ != null) {
           output.writeMessage(1, getHotwordRegex());
         }
@@ -5007,16 +5521,15 @@ private static final long serialVersionUID = 0L;
 
         size = 0;
         if (hotwordRegex_ != null) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1, getHotwordRegex());
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getHotwordRegex());
         }
         if (proximity_ != null) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(2, getProximity());
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getProximity());
         }
         if (likelihoodAdjustment_ != null) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(3, getLikelihoodAdjustment());
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  3, getLikelihoodAdjustment());
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -5026,28 +5539,26 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public boolean equals(final java.lang.Object obj) {
         if (obj == this) {
-         return true;
+          return true;
         }
         if (!(obj instanceof com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule)) {
           return super.equals(obj);
         }
-        com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule other = (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule) obj;
+        com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule other =
+            (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule) obj;
 
         boolean result = true;
         result = result && (hasHotwordRegex() == other.hasHotwordRegex());
         if (hasHotwordRegex()) {
-          result = result && getHotwordRegex()
-              .equals(other.getHotwordRegex());
+          result = result && getHotwordRegex().equals(other.getHotwordRegex());
         }
         result = result && (hasProximity() == other.hasProximity());
         if (hasProximity()) {
-          result = result && getProximity()
-              .equals(other.getProximity());
+          result = result && getProximity().equals(other.getProximity());
         }
         result = result && (hasLikelihoodAdjustment() == other.hasLikelihoodAdjustment());
         if (hasLikelihoodAdjustment()) {
-          result = result && getLikelihoodAdjustment()
-              .equals(other.getLikelihoodAdjustment());
+          result = result && getLikelihoodAdjustment().equals(other.getLikelihoodAdjustment());
         }
         result = result && unknownFields.equals(other.unknownFields);
         return result;
@@ -5078,87 +5589,96 @@ private static final long serialVersionUID = 0L;
       }
 
       public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
+
       public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
+
       public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
+
       public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
+
       public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
+
       public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
       }
-      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
-      }
-      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-      }
+
       public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule parseFrom(
-          com.google.protobuf.CodedInputStream input)
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
       }
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
       public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
       }
 
       @java.lang.Override
-      public Builder newBuilderForType() { return newBuilder(); }
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
-      public static Builder newBuilder(com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule prototype) {
+
+      public static Builder newBuilder(
+          com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+
       @java.lang.Override
       public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
       }
 
       @java.lang.Override
@@ -5168,6 +5688,8 @@ private static final long serialVersionUID = 0L;
         return builder;
       }
       /**
+       *
+       *
        * <pre>
        * The rule that adjusts the likelihood of findings within a certain
        * proximity of hotwords.
@@ -5175,38 +5697,41 @@ private static final long serialVersionUID = 0L;
        *
        * Protobuf type {@code google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule}
        */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
           // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule)
           com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRuleOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_HotwordRule_descriptor;
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.privacy.dlp.v2.DlpStorage
+              .internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_HotwordRule_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_HotwordRule_fieldAccessorTable
+          return com.google.privacy.dlp.v2.DlpStorage
+              .internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_HotwordRule_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
-                  com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.class, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.Builder.class);
+                  com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.class,
+                  com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.Builder.class);
         }
 
-        // Construct using com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.newBuilder()
+        // Construct using
+        // com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.newBuilder()
         private Builder() {
           maybeForceBuilderInitialization();
         }
 
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
           maybeForceBuilderInitialization();
         }
+
         private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
+
         @java.lang.Override
         public Builder clear() {
           super.clear();
@@ -5232,19 +5757,22 @@ private static final long serialVersionUID = 0L;
         }
 
         @java.lang.Override
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_HotwordRule_descriptor;
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.privacy.dlp.v2.DlpStorage
+              .internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_HotwordRule_descriptor;
         }
 
         @java.lang.Override
-        public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule getDefaultInstanceForType() {
-          return com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.getDefaultInstance();
+        public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule
+            getDefaultInstanceForType() {
+          return com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule
+              .getDefaultInstance();
         }
 
         @java.lang.Override
         public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule build() {
-          com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule result = buildPartial();
+          com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule result =
+              buildPartial();
           if (!result.isInitialized()) {
             throw newUninitializedMessageException(result);
           }
@@ -5253,7 +5781,8 @@ private static final long serialVersionUID = 0L;
 
         @java.lang.Override
         public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule buildPartial() {
-          com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule result = new com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule(this);
+          com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule result =
+              new com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule(this);
           if (hotwordRegexBuilder_ == null) {
             result.hotwordRegex_ = hotwordRegex_;
           } else {
@@ -5277,46 +5806,53 @@ private static final long serialVersionUID = 0L;
         public Builder clone() {
           return (Builder) super.clone();
         }
+
         @java.lang.Override
         public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
+
         @java.lang.Override
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
+
         @java.lang.Override
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+
         @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, java.lang.Object value) {
+            int index,
+            java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+
         @java.lang.Override
         public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+
         @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule) {
-            return mergeFrom((com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule)other);
+            return mergeFrom(
+                (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule) other);
           } else {
             super.mergeFrom(other);
             return this;
           }
         }
 
-        public Builder mergeFrom(com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule other) {
-          if (other == com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.getDefaultInstance()) return this;
+        public Builder mergeFrom(
+            com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule other) {
+          if (other
+              == com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule
+                  .getDefaultInstance()) return this;
           if (other.hasHotwordRegex()) {
             mergeHotwordRegex(other.getHotwordRegex());
           }
@@ -5345,7 +5881,9 @@ private static final long serialVersionUID = 0L;
           try {
             parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule) e.getUnfinishedMessage();
+            parsedMessage =
+                (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule)
+                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
             if (parsedMessage != null) {
@@ -5357,8 +5895,13 @@ private static final long serialVersionUID = 0L;
 
         private com.google.privacy.dlp.v2.CustomInfoType.Regex hotwordRegex_ = null;
         private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.CustomInfoType.Regex, com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder, com.google.privacy.dlp.v2.CustomInfoType.RegexOrBuilder> hotwordRegexBuilder_;
+                com.google.privacy.dlp.v2.CustomInfoType.Regex,
+                com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder,
+                com.google.privacy.dlp.v2.CustomInfoType.RegexOrBuilder>
+            hotwordRegexBuilder_;
         /**
+         *
+         *
          * <pre>
          * Regular expression pattern defining what qualifies as a hotword.
          * </pre>
@@ -5369,6 +5912,8 @@ private static final long serialVersionUID = 0L;
           return hotwordRegexBuilder_ != null || hotwordRegex_ != null;
         }
         /**
+         *
+         *
          * <pre>
          * Regular expression pattern defining what qualifies as a hotword.
          * </pre>
@@ -5377,12 +5922,16 @@ private static final long serialVersionUID = 0L;
          */
         public com.google.privacy.dlp.v2.CustomInfoType.Regex getHotwordRegex() {
           if (hotwordRegexBuilder_ == null) {
-            return hotwordRegex_ == null ? com.google.privacy.dlp.v2.CustomInfoType.Regex.getDefaultInstance() : hotwordRegex_;
+            return hotwordRegex_ == null
+                ? com.google.privacy.dlp.v2.CustomInfoType.Regex.getDefaultInstance()
+                : hotwordRegex_;
           } else {
             return hotwordRegexBuilder_.getMessage();
           }
         }
         /**
+         *
+         *
          * <pre>
          * Regular expression pattern defining what qualifies as a hotword.
          * </pre>
@@ -5403,6 +5952,8 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Regular expression pattern defining what qualifies as a hotword.
          * </pre>
@@ -5421,6 +5972,8 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Regular expression pattern defining what qualifies as a hotword.
          * </pre>
@@ -5431,7 +5984,9 @@ private static final long serialVersionUID = 0L;
           if (hotwordRegexBuilder_ == null) {
             if (hotwordRegex_ != null) {
               hotwordRegex_ =
-                com.google.privacy.dlp.v2.CustomInfoType.Regex.newBuilder(hotwordRegex_).mergeFrom(value).buildPartial();
+                  com.google.privacy.dlp.v2.CustomInfoType.Regex.newBuilder(hotwordRegex_)
+                      .mergeFrom(value)
+                      .buildPartial();
             } else {
               hotwordRegex_ = value;
             }
@@ -5443,6 +5998,8 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Regular expression pattern defining what qualifies as a hotword.
          * </pre>
@@ -5461,6 +6018,8 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Regular expression pattern defining what qualifies as a hotword.
          * </pre>
@@ -5468,11 +6027,13 @@ private static final long serialVersionUID = 0L;
          * <code>.google.privacy.dlp.v2.CustomInfoType.Regex hotword_regex = 1;</code>
          */
         public com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder getHotwordRegexBuilder() {
-          
+
           onChanged();
           return getHotwordRegexFieldBuilder().getBuilder();
         }
         /**
+         *
+         *
          * <pre>
          * Regular expression pattern defining what qualifies as a hotword.
          * </pre>
@@ -5483,11 +6044,14 @@ private static final long serialVersionUID = 0L;
           if (hotwordRegexBuilder_ != null) {
             return hotwordRegexBuilder_.getMessageOrBuilder();
           } else {
-            return hotwordRegex_ == null ?
-                com.google.privacy.dlp.v2.CustomInfoType.Regex.getDefaultInstance() : hotwordRegex_;
+            return hotwordRegex_ == null
+                ? com.google.privacy.dlp.v2.CustomInfoType.Regex.getDefaultInstance()
+                : hotwordRegex_;
           }
         }
         /**
+         *
+         *
          * <pre>
          * Regular expression pattern defining what qualifies as a hotword.
          * </pre>
@@ -5495,14 +6059,17 @@ private static final long serialVersionUID = 0L;
          * <code>.google.privacy.dlp.v2.CustomInfoType.Regex hotword_regex = 1;</code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.CustomInfoType.Regex, com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder, com.google.privacy.dlp.v2.CustomInfoType.RegexOrBuilder> 
+                com.google.privacy.dlp.v2.CustomInfoType.Regex,
+                com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder,
+                com.google.privacy.dlp.v2.CustomInfoType.RegexOrBuilder>
             getHotwordRegexFieldBuilder() {
           if (hotwordRegexBuilder_ == null) {
-            hotwordRegexBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.privacy.dlp.v2.CustomInfoType.Regex, com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder, com.google.privacy.dlp.v2.CustomInfoType.RegexOrBuilder>(
-                    getHotwordRegex(),
-                    getParentForChildren(),
-                    isClean());
+            hotwordRegexBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.privacy.dlp.v2.CustomInfoType.Regex,
+                    com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder,
+                    com.google.privacy.dlp.v2.CustomInfoType.RegexOrBuilder>(
+                    getHotwordRegex(), getParentForChildren(), isClean());
             hotwordRegex_ = null;
           }
           return hotwordRegexBuilder_;
@@ -5510,8 +6077,13 @@ private static final long serialVersionUID = 0L;
 
         private com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity_ = null;
         private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.Builder, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.ProximityOrBuilder> proximityBuilder_;
+                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity,
+                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.Builder,
+                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.ProximityOrBuilder>
+            proximityBuilder_;
         /**
+         *
+         *
          * <pre>
          * Proximity of the finding within which the entire hotword must reside.
          * The total length of the window cannot exceed 1000 characters. Note that
@@ -5529,6 +6101,8 @@ private static final long serialVersionUID = 0L;
           return proximityBuilder_ != null || proximity_ != null;
         }
         /**
+         *
+         *
          * <pre>
          * Proximity of the finding within which the entire hotword must reside.
          * The total length of the window cannot exceed 1000 characters. Note that
@@ -5544,39 +6118,17 @@ private static final long serialVersionUID = 0L;
          */
         public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity getProximity() {
           if (proximityBuilder_ == null) {
-            return proximity_ == null ? com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.getDefaultInstance() : proximity_;
+            return proximity_ == null
+                ? com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity
+                    .getDefaultInstance()
+                : proximity_;
           } else {
             return proximityBuilder_.getMessage();
           }
         }
         /**
-         * <pre>
-         * Proximity of the finding within which the entire hotword must reside.
-         * The total length of the window cannot exceed 1000 characters. Note that
-         * the finding itself will be included in the window, so that hotwords may
-         * be used to match substrings of the finding itself. For example, the
-         * certainty of a phone number regex "&#92;(&#92;d{3}&#92;) &#92;d{3}-&#92;d{4}" could be
-         * adjusted upwards if the area code is known to be the local area code of
-         * a company office using the hotword regex "&#92;(xxx&#92;)", where "xxx"
-         * is the area code in question.
-         * </pre>
          *
-         * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
-         */
-        public Builder setProximity(com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity value) {
-          if (proximityBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
-            proximity_ = value;
-            onChanged();
-          } else {
-            proximityBuilder_.setMessage(value);
-          }
-
-          return this;
-        }
-        /**
+         *
          * <pre>
          * Proximity of the finding within which the entire hotword must reside.
          * The total length of the window cannot exceed 1000 characters. Note that
@@ -5591,17 +6143,22 @@ private static final long serialVersionUID = 0L;
          * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
          */
         public Builder setProximity(
-            com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.Builder builderForValue) {
+            com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity value) {
           if (proximityBuilder_ == null) {
-            proximity_ = builderForValue.build();
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            proximity_ = value;
             onChanged();
           } else {
-            proximityBuilder_.setMessage(builderForValue.build());
+            proximityBuilder_.setMessage(value);
           }
 
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Proximity of the finding within which the entire hotword must reside.
          * The total length of the window cannot exceed 1000 characters. Note that
@@ -5615,11 +6172,43 @@ private static final long serialVersionUID = 0L;
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
          */
-        public Builder mergeProximity(com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity value) {
+        public Builder setProximity(
+            com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.Builder
+                builderForValue) {
+          if (proximityBuilder_ == null) {
+            proximity_ = builderForValue.build();
+            onChanged();
+          } else {
+            proximityBuilder_.setMessage(builderForValue.build());
+          }
+
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Proximity of the finding within which the entire hotword must reside.
+         * The total length of the window cannot exceed 1000 characters. Note that
+         * the finding itself will be included in the window, so that hotwords may
+         * be used to match substrings of the finding itself. For example, the
+         * certainty of a phone number regex "&#92;(&#92;d{3}&#92;) &#92;d{3}-&#92;d{4}" could be
+         * adjusted upwards if the area code is known to be the local area code of
+         * a company office using the hotword regex "&#92;(xxx&#92;)", where "xxx"
+         * is the area code in question.
+         * </pre>
+         *
+         * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
+         */
+        public Builder mergeProximity(
+            com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity value) {
           if (proximityBuilder_ == null) {
             if (proximity_ != null) {
               proximity_ =
-                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.newBuilder(proximity_).mergeFrom(value).buildPartial();
+                  com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.newBuilder(
+                          proximity_)
+                      .mergeFrom(value)
+                      .buildPartial();
             } else {
               proximity_ = value;
             }
@@ -5631,6 +6220,8 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Proximity of the finding within which the entire hotword must reside.
          * The total length of the window cannot exceed 1000 characters. Note that
@@ -5656,6 +6247,8 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Proximity of the finding within which the entire hotword must reside.
          * The total length of the window cannot exceed 1000 characters. Note that
@@ -5669,12 +6262,15 @@ private static final long serialVersionUID = 0L;
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
          */
-        public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.Builder getProximityBuilder() {
-          
+        public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.Builder
+            getProximityBuilder() {
+
           onChanged();
           return getProximityFieldBuilder().getBuilder();
         }
         /**
+         *
+         *
          * <pre>
          * Proximity of the finding within which the entire hotword must reside.
          * The total length of the window cannot exceed 1000 characters. Note that
@@ -5688,15 +6284,20 @@ private static final long serialVersionUID = 0L;
          *
          * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
          */
-        public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.ProximityOrBuilder getProximityOrBuilder() {
+        public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.ProximityOrBuilder
+            getProximityOrBuilder() {
           if (proximityBuilder_ != null) {
             return proximityBuilder_.getMessageOrBuilder();
           } else {
-            return proximity_ == null ?
-                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.getDefaultInstance() : proximity_;
+            return proximity_ == null
+                ? com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity
+                    .getDefaultInstance()
+                : proximity_;
           }
         }
         /**
+         *
+         *
          * <pre>
          * Proximity of the finding within which the entire hotword must reside.
          * The total length of the window cannot exceed 1000 characters. Note that
@@ -5711,54 +6312,79 @@ private static final long serialVersionUID = 0L;
          * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity proximity = 2;</code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.Builder, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.ProximityOrBuilder> 
+                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity,
+                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.Builder,
+                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.ProximityOrBuilder>
             getProximityFieldBuilder() {
           if (proximityBuilder_ == null) {
-            proximityBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.Builder, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.ProximityOrBuilder>(
-                    getProximity(),
-                    getParentForChildren(),
-                    isClean());
+            proximityBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity,
+                    com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Proximity.Builder,
+                    com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.ProximityOrBuilder>(
+                    getProximity(), getParentForChildren(), isClean());
             proximity_ = null;
           }
           return proximityBuilder_;
         }
 
-        private com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihoodAdjustment_ = null;
+        private com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
+            likelihoodAdjustment_ = null;
         private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment.Builder, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustmentOrBuilder> likelihoodAdjustmentBuilder_;
+                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment,
+                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment.Builder,
+                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule
+                    .LikelihoodAdjustmentOrBuilder>
+            likelihoodAdjustmentBuilder_;
         /**
+         *
+         *
          * <pre>
          * Likelihood adjustment to apply to all matching findings.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;</code>
+         * <code>
+         * .google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;
+         * </code>
          */
         public boolean hasLikelihoodAdjustment() {
           return likelihoodAdjustmentBuilder_ != null || likelihoodAdjustment_ != null;
         }
         /**
+         *
+         *
          * <pre>
          * Likelihood adjustment to apply to all matching findings.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;</code>
+         * <code>
+         * .google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;
+         * </code>
          */
-        public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment getLikelihoodAdjustment() {
+        public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
+            getLikelihoodAdjustment() {
           if (likelihoodAdjustmentBuilder_ == null) {
-            return likelihoodAdjustment_ == null ? com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment.getDefaultInstance() : likelihoodAdjustment_;
+            return likelihoodAdjustment_ == null
+                ? com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
+                    .getDefaultInstance()
+                : likelihoodAdjustment_;
           } else {
             return likelihoodAdjustmentBuilder_.getMessage();
           }
         }
         /**
+         *
+         *
          * <pre>
          * Likelihood adjustment to apply to all matching findings.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;</code>
+         * <code>
+         * .google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;
+         * </code>
          */
-        public Builder setLikelihoodAdjustment(com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment value) {
+        public Builder setLikelihoodAdjustment(
+            com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment value) {
           if (likelihoodAdjustmentBuilder_ == null) {
             if (value == null) {
               throw new NullPointerException();
@@ -5772,14 +6398,19 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Likelihood adjustment to apply to all matching findings.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;</code>
+         * <code>
+         * .google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;
+         * </code>
          */
         public Builder setLikelihoodAdjustment(
-            com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment.Builder builderForValue) {
+            com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment.Builder
+                builderForValue) {
           if (likelihoodAdjustmentBuilder_ == null) {
             likelihoodAdjustment_ = builderForValue.build();
             onChanged();
@@ -5790,17 +6421,25 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Likelihood adjustment to apply to all matching findings.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;</code>
+         * <code>
+         * .google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;
+         * </code>
          */
-        public Builder mergeLikelihoodAdjustment(com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment value) {
+        public Builder mergeLikelihoodAdjustment(
+            com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment value) {
           if (likelihoodAdjustmentBuilder_ == null) {
             if (likelihoodAdjustment_ != null) {
               likelihoodAdjustment_ =
-                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment.newBuilder(likelihoodAdjustment_).mergeFrom(value).buildPartial();
+                  com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
+                      .newBuilder(likelihoodAdjustment_)
+                      .mergeFrom(value)
+                      .buildPartial();
             } else {
               likelihoodAdjustment_ = value;
             }
@@ -5812,11 +6451,15 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Likelihood adjustment to apply to all matching findings.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;</code>
+         * <code>
+         * .google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;
+         * </code>
          */
         public Builder clearLikelihoodAdjustment() {
           if (likelihoodAdjustmentBuilder_ == null) {
@@ -5830,52 +6473,75 @@ private static final long serialVersionUID = 0L;
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Likelihood adjustment to apply to all matching findings.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;</code>
+         * <code>
+         * .google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;
+         * </code>
          */
-        public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment.Builder getLikelihoodAdjustmentBuilder() {
-          
+        public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment.Builder
+            getLikelihoodAdjustmentBuilder() {
+
           onChanged();
           return getLikelihoodAdjustmentFieldBuilder().getBuilder();
         }
         /**
+         *
+         *
          * <pre>
          * Likelihood adjustment to apply to all matching findings.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;</code>
+         * <code>
+         * .google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;
+         * </code>
          */
-        public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustmentOrBuilder getLikelihoodAdjustmentOrBuilder() {
+        public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustmentOrBuilder
+            getLikelihoodAdjustmentOrBuilder() {
           if (likelihoodAdjustmentBuilder_ != null) {
             return likelihoodAdjustmentBuilder_.getMessageOrBuilder();
           } else {
-            return likelihoodAdjustment_ == null ?
-                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment.getDefaultInstance() : likelihoodAdjustment_;
+            return likelihoodAdjustment_ == null
+                ? com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
+                    .getDefaultInstance()
+                : likelihoodAdjustment_;
           }
         }
         /**
+         *
+         *
          * <pre>
          * Likelihood adjustment to apply to all matching findings.
          * </pre>
          *
-         * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;</code>
+         * <code>
+         * .google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment likelihood_adjustment = 3;
+         * </code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment.Builder, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustmentOrBuilder> 
+                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment,
+                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment.Builder,
+                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule
+                    .LikelihoodAdjustmentOrBuilder>
             getLikelihoodAdjustmentFieldBuilder() {
           if (likelihoodAdjustmentBuilder_ == null) {
-            likelihoodAdjustmentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment.Builder, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustmentOrBuilder>(
-                    getLikelihoodAdjustment(),
-                    getParentForChildren(),
-                    isClean());
+            likelihoodAdjustmentBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment,
+                    com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.LikelihoodAdjustment
+                        .Builder,
+                    com.google.privacy.dlp.v2.CustomInfoType.DetectionRule
+                        .LikelihoodAdjustmentOrBuilder>(
+                    getLikelihoodAdjustment(), getParentForChildren(), isClean());
             likelihoodAdjustment_ = null;
           }
           return likelihoodAdjustmentBuilder_;
         }
+
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -5888,30 +6554,32 @@ private static final long serialVersionUID = 0L;
           return super.mergeUnknownFields(unknownFields);
         }
 
-
         // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule)
       }
 
       // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule)
-      private static final com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule DEFAULT_INSTANCE;
+      private static final com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule
+          DEFAULT_INSTANCE;
+
       static {
         DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule();
       }
 
-      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule getDefaultInstance() {
+      public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule
+          getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static final com.google.protobuf.Parser<HotwordRule>
-          PARSER = new com.google.protobuf.AbstractParser<HotwordRule>() {
-        @java.lang.Override
-        public HotwordRule parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new HotwordRule(input, extensionRegistry);
-        }
-      };
+      private static final com.google.protobuf.Parser<HotwordRule> PARSER =
+          new com.google.protobuf.AbstractParser<HotwordRule>() {
+            @java.lang.Override
+            public HotwordRule parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              return new HotwordRule(input, extensionRegistry);
+            }
+          };
 
       public static com.google.protobuf.Parser<HotwordRule> parser() {
         return PARSER;
@@ -5923,25 +6591,24 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule getDefaultInstanceForType() {
+      public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule
+          getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
-
     }
 
     private int typeCase_ = 0;
     private java.lang.Object type_;
-    public enum TypeCase
-        implements com.google.protobuf.Internal.EnumLite {
+
+    public enum TypeCase implements com.google.protobuf.Internal.EnumLite {
       HOTWORD_RULE(1),
       TYPE_NOT_SET(0);
       private final int value;
+
       private TypeCase(int value) {
         this.value = value;
       }
-      /**
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
+      /** @deprecated Use {@link #forNumber(int)} instead. */
       @java.lang.Deprecated
       public static TypeCase valueOf(int value) {
         return forNumber(value);
@@ -5949,61 +6616,76 @@ private static final long serialVersionUID = 0L;
 
       public static TypeCase forNumber(int value) {
         switch (value) {
-          case 1: return HOTWORD_RULE;
-          case 0: return TYPE_NOT_SET;
-          default: return null;
+          case 1:
+            return HOTWORD_RULE;
+          case 0:
+            return TYPE_NOT_SET;
+          default:
+            return null;
         }
       }
+
       public int getNumber() {
         return this.value;
       }
     };
 
-    public TypeCase
-    getTypeCase() {
-      return TypeCase.forNumber(
-          typeCase_);
+    public TypeCase getTypeCase() {
+      return TypeCase.forNumber(typeCase_);
     }
 
     public static final int HOTWORD_RULE_FIELD_NUMBER = 1;
     /**
+     *
+     *
      * <pre>
      * Hotword-based detection rule.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;</code>
+     * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;
+     * </code>
      */
     public boolean hasHotwordRule() {
       return typeCase_ == 1;
     }
     /**
+     *
+     *
      * <pre>
      * Hotword-based detection rule.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;</code>
+     * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;
+     * </code>
      */
     public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule getHotwordRule() {
       if (typeCase_ == 1) {
-         return (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule) type_;
+        return (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule) type_;
       }
-      return com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.getDefaultInstance();
+      return com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule
+          .getDefaultInstance();
     }
     /**
+     *
+     *
      * <pre>
      * Hotword-based detection rule.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;</code>
+     * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;
+     * </code>
      */
-    public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRuleOrBuilder getHotwordRuleOrBuilder() {
+    public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRuleOrBuilder
+        getHotwordRuleOrBuilder() {
       if (typeCase_ == 1) {
-         return (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule) type_;
+        return (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule) type_;
       }
-      return com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.getDefaultInstance();
+      return com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule
+          .getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -6015,10 +6697,10 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (typeCase_ == 1) {
-        output.writeMessage(1, (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule) type_);
+        output.writeMessage(
+            1, (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule) type_);
       }
       unknownFields.writeTo(output);
     }
@@ -6030,8 +6712,9 @@ private static final long serialVersionUID = 0L;
 
       size = 0;
       if (typeCase_ == 1) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule) type_);
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                1, (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule) type_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6041,21 +6724,20 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.privacy.dlp.v2.CustomInfoType.DetectionRule)) {
         return super.equals(obj);
       }
-      com.google.privacy.dlp.v2.CustomInfoType.DetectionRule other = (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule) obj;
+      com.google.privacy.dlp.v2.CustomInfoType.DetectionRule other =
+          (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule) obj;
 
       boolean result = true;
-      result = result && getTypeCase().equals(
-          other.getTypeCase());
+      result = result && getTypeCase().equals(other.getTypeCase());
       if (!result) return false;
       switch (typeCase_) {
         case 1:
-          result = result && getHotwordRule()
-              .equals(other.getHotwordRule());
+          result = result && getHotwordRule().equals(other.getHotwordRule());
           break;
         case 0:
         default:
@@ -6085,87 +6767,94 @@ private static final long serialVersionUID = 0L;
     }
 
     public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule parseDelimitedFrom(java.io.InputStream input)
+
+    public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.privacy.dlp.v2.CustomInfoType.DetectionRule parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.google.privacy.dlp.v2.CustomInfoType.DetectionRule prototype) {
+
+    public static Builder newBuilder(
+        com.google.privacy.dlp.v2.CustomInfoType.DetectionRule prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -6175,6 +6864,8 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * Rule for modifying a CustomInfoType to alter behavior under certain
      * circumstances, depending on the specific details of the rule. Not supported
@@ -6183,21 +6874,24 @@ private static final long serialVersionUID = 0L;
      *
      * Protobuf type {@code google.privacy.dlp.v2.CustomInfoType.DetectionRule}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.CustomInfoType.DetectionRule)
         com.google.privacy.dlp.v2.CustomInfoType.DetectionRuleOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpStorage
+            .internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_fieldAccessorTable
+        return com.google.privacy.dlp.v2.DlpStorage
+            .internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.class, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Builder.class);
+                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.class,
+                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Builder.class);
       }
 
       // Construct using com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.newBuilder()
@@ -6205,16 +6899,15 @@ private static final long serialVersionUID = 0L;
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -6224,9 +6917,9 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.privacy.dlp.v2.DlpStorage
+            .internal_static_google_privacy_dlp_v2_CustomInfoType_DetectionRule_descriptor;
       }
 
       @java.lang.Override
@@ -6245,7 +6938,8 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule buildPartial() {
-        com.google.privacy.dlp.v2.CustomInfoType.DetectionRule result = new com.google.privacy.dlp.v2.CustomInfoType.DetectionRule(this);
+        com.google.privacy.dlp.v2.CustomInfoType.DetectionRule result =
+            new com.google.privacy.dlp.v2.CustomInfoType.DetectionRule(this);
         if (typeCase_ == 1) {
           if (hotwordRuleBuilder_ == null) {
             result.type_ = type_;
@@ -6262,38 +6956,41 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.privacy.dlp.v2.CustomInfoType.DetectionRule) {
-          return mergeFrom((com.google.privacy.dlp.v2.CustomInfoType.DetectionRule)other);
+          return mergeFrom((com.google.privacy.dlp.v2.CustomInfoType.DetectionRule) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -6301,15 +6998,18 @@ private static final long serialVersionUID = 0L;
       }
 
       public Builder mergeFrom(com.google.privacy.dlp.v2.CustomInfoType.DetectionRule other) {
-        if (other == com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.getDefaultInstance()) return this;
+        if (other == com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.getDefaultInstance())
+          return this;
         switch (other.getTypeCase()) {
-          case HOTWORD_RULE: {
-            mergeHotwordRule(other.getHotwordRule());
-            break;
-          }
-          case TYPE_NOT_SET: {
-            break;
-          }
+          case HOTWORD_RULE:
+            {
+              mergeHotwordRule(other.getHotwordRule());
+              break;
+            }
+          case TYPE_NOT_SET:
+            {
+              break;
+            }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -6330,7 +7030,8 @@ private static final long serialVersionUID = 0L;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -6339,12 +7040,12 @@ private static final long serialVersionUID = 0L;
         }
         return this;
       }
+
       private int typeCase_ = 0;
       private java.lang.Object type_;
-      public TypeCase
-          getTypeCase() {
-        return TypeCase.forNumber(
-            typeCase_);
+
+      public TypeCase getTypeCase() {
+        return TypeCase.forNumber(typeCase_);
       }
 
       public Builder clearType() {
@@ -6354,47 +7055,61 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.Builder, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRuleOrBuilder> hotwordRuleBuilder_;
+              com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule,
+              com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.Builder,
+              com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRuleOrBuilder>
+          hotwordRuleBuilder_;
       /**
+       *
+       *
        * <pre>
        * Hotword-based detection rule.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;</code>
+       * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;
+       * </code>
        */
       public boolean hasHotwordRule() {
         return typeCase_ == 1;
       }
       /**
+       *
+       *
        * <pre>
        * Hotword-based detection rule.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;</code>
+       * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;
+       * </code>
        */
       public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule getHotwordRule() {
         if (hotwordRuleBuilder_ == null) {
           if (typeCase_ == 1) {
             return (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule) type_;
           }
-          return com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.getDefaultInstance();
+          return com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule
+              .getDefaultInstance();
         } else {
           if (typeCase_ == 1) {
             return hotwordRuleBuilder_.getMessage();
           }
-          return com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.getDefaultInstance();
+          return com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule
+              .getDefaultInstance();
         }
       }
       /**
+       *
+       *
        * <pre>
        * Hotword-based detection rule.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;</code>
+       * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;
+       * </code>
        */
-      public Builder setHotwordRule(com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule value) {
+      public Builder setHotwordRule(
+          com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule value) {
         if (hotwordRuleBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -6408,14 +7123,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Hotword-based detection rule.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;</code>
+       * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;
+       * </code>
        */
       public Builder setHotwordRule(
-          com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.Builder builderForValue) {
+          com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.Builder
+              builderForValue) {
         if (hotwordRuleBuilder_ == null) {
           type_ = builderForValue.build();
           onChanged();
@@ -6426,18 +7145,27 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Hotword-based detection rule.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;</code>
+       * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;
+       * </code>
        */
-      public Builder mergeHotwordRule(com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule value) {
+      public Builder mergeHotwordRule(
+          com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule value) {
         if (hotwordRuleBuilder_ == null) {
-          if (typeCase_ == 1 &&
-              type_ != com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.getDefaultInstance()) {
-            type_ = com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.newBuilder((com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule) type_)
-                .mergeFrom(value).buildPartial();
+          if (typeCase_ == 1
+              && type_
+                  != com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule
+                      .getDefaultInstance()) {
+            type_ =
+                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.newBuilder(
+                        (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule) type_)
+                    .mergeFrom(value)
+                    .buildPartial();
           } else {
             type_ = value;
           }
@@ -6452,11 +7180,14 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Hotword-based detection rule.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;</code>
+       * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;
+       * </code>
        */
       public Builder clearHotwordRule() {
         if (hotwordRuleBuilder_ == null) {
@@ -6475,57 +7206,78 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Hotword-based detection rule.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;</code>
+       * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;
+       * </code>
        */
-      public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.Builder getHotwordRuleBuilder() {
+      public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.Builder
+          getHotwordRuleBuilder() {
         return getHotwordRuleFieldBuilder().getBuilder();
       }
       /**
+       *
+       *
        * <pre>
        * Hotword-based detection rule.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;</code>
+       * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;
+       * </code>
        */
-      public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRuleOrBuilder getHotwordRuleOrBuilder() {
+      public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRuleOrBuilder
+          getHotwordRuleOrBuilder() {
         if ((typeCase_ == 1) && (hotwordRuleBuilder_ != null)) {
           return hotwordRuleBuilder_.getMessageOrBuilder();
         } else {
           if (typeCase_ == 1) {
             return (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule) type_;
           }
-          return com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.getDefaultInstance();
+          return com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule
+              .getDefaultInstance();
         }
       }
       /**
+       *
+       *
        * <pre>
        * Hotword-based detection rule.
        * </pre>
        *
-       * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;</code>
+       * <code>.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule hotword_rule = 1;
+       * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.Builder, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRuleOrBuilder> 
+              com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule,
+              com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.Builder,
+              com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRuleOrBuilder>
           getHotwordRuleFieldBuilder() {
         if (hotwordRuleBuilder_ == null) {
           if (!(typeCase_ == 1)) {
-            type_ = com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.getDefaultInstance();
+            type_ =
+                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule
+                    .getDefaultInstance();
           }
-          hotwordRuleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.Builder, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRuleOrBuilder>(
+          hotwordRuleBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule,
+                  com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule.Builder,
+                  com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRuleOrBuilder>(
                   (com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.HotwordRule) type_,
                   getParentForChildren(),
                   isClean());
           type_ = null;
         }
         typeCase_ = 1;
-        onChanged();;
+        onChanged();
+        ;
         return hotwordRuleBuilder_;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -6538,12 +7290,12 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.CustomInfoType.DetectionRule)
     }
 
     // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.CustomInfoType.DetectionRule)
     private static final com.google.privacy.dlp.v2.CustomInfoType.DetectionRule DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.CustomInfoType.DetectionRule();
     }
@@ -6552,16 +7304,16 @@ private static final long serialVersionUID = 0L;
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<DetectionRule>
-        PARSER = new com.google.protobuf.AbstractParser<DetectionRule>() {
-      @java.lang.Override
-      public DetectionRule parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DetectionRule(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<DetectionRule> PARSER =
+        new com.google.protobuf.AbstractParser<DetectionRule>() {
+          @java.lang.Override
+          public DetectionRule parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new DetectionRule(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<DetectionRule> parser() {
       return PARSER;
@@ -6576,26 +7328,24 @@ private static final long serialVersionUID = 0L;
     public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
   private int bitField0_;
   private int typeCase_ = 0;
   private java.lang.Object type_;
-  public enum TypeCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum TypeCase implements com.google.protobuf.Internal.EnumLite {
     DICTIONARY(2),
     REGEX(3),
     SURROGATE_TYPE(4),
     STORED_TYPE(5),
     TYPE_NOT_SET(0);
     private final int value;
+
     private TypeCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static TypeCase valueOf(int value) {
       return forNumber(value);
@@ -6603,28 +7353,35 @@ private static final long serialVersionUID = 0L;
 
     public static TypeCase forNumber(int value) {
       switch (value) {
-        case 2: return DICTIONARY;
-        case 3: return REGEX;
-        case 4: return SURROGATE_TYPE;
-        case 5: return STORED_TYPE;
-        case 0: return TYPE_NOT_SET;
-        default: return null;
+        case 2:
+          return DICTIONARY;
+        case 3:
+          return REGEX;
+        case 4:
+          return SURROGATE_TYPE;
+        case 5:
+          return STORED_TYPE;
+        case 0:
+          return TYPE_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public TypeCase
-  getTypeCase() {
-    return TypeCase.forNumber(
-        typeCase_);
+  public TypeCase getTypeCase() {
+    return TypeCase.forNumber(typeCase_);
   }
 
   public static final int INFO_TYPE_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.InfoType infoType_;
   /**
+   *
+   *
    * <pre>
    * CustomInfoType can either be a new infoType, or an extension of built-in
    * infoType, when the name matches one of existing infoTypes and that infoType
@@ -6640,6 +7397,8 @@ private static final long serialVersionUID = 0L;
     return infoType_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * CustomInfoType can either be a new infoType, or an extension of built-in
    * infoType, when the name matches one of existing infoTypes and that infoType
@@ -6655,6 +7414,8 @@ private static final long serialVersionUID = 0L;
     return infoType_ == null ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance() : infoType_;
   }
   /**
+   *
+   *
    * <pre>
    * CustomInfoType can either be a new infoType, or an extension of built-in
    * infoType, when the name matches one of existing infoTypes and that infoType
@@ -6673,6 +7434,8 @@ private static final long serialVersionUID = 0L;
   public static final int LIKELIHOOD_FIELD_NUMBER = 6;
   private int likelihood_;
   /**
+   *
+   *
    * <pre>
    * Likelihood to return for this CustomInfoType. This base value can be
    * altered by a detection rule if the finding meets the criteria specified by
@@ -6685,6 +7448,8 @@ private static final long serialVersionUID = 0L;
     return likelihood_;
   }
   /**
+   *
+   *
    * <pre>
    * Likelihood to return for this CustomInfoType. This base value can be
    * altered by a detection rule if the finding meets the criteria specified by
@@ -6695,12 +7460,15 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.privacy.dlp.v2.Likelihood getLikelihood() {
     @SuppressWarnings("deprecation")
-    com.google.privacy.dlp.v2.Likelihood result = com.google.privacy.dlp.v2.Likelihood.valueOf(likelihood_);
+    com.google.privacy.dlp.v2.Likelihood result =
+        com.google.privacy.dlp.v2.Likelihood.valueOf(likelihood_);
     return result == null ? com.google.privacy.dlp.v2.Likelihood.UNRECOGNIZED : result;
   }
 
   public static final int DICTIONARY_FIELD_NUMBER = 2;
   /**
+   *
+   *
    * <pre>
    * A list of phrases to detect as a CustomInfoType.
    * </pre>
@@ -6711,6 +7479,8 @@ private static final long serialVersionUID = 0L;
     return typeCase_ == 2;
   }
   /**
+   *
+   *
    * <pre>
    * A list of phrases to detect as a CustomInfoType.
    * </pre>
@@ -6719,11 +7489,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.privacy.dlp.v2.CustomInfoType.Dictionary getDictionary() {
     if (typeCase_ == 2) {
-       return (com.google.privacy.dlp.v2.CustomInfoType.Dictionary) type_;
+      return (com.google.privacy.dlp.v2.CustomInfoType.Dictionary) type_;
     }
     return com.google.privacy.dlp.v2.CustomInfoType.Dictionary.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * A list of phrases to detect as a CustomInfoType.
    * </pre>
@@ -6732,13 +7504,15 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.privacy.dlp.v2.CustomInfoType.DictionaryOrBuilder getDictionaryOrBuilder() {
     if (typeCase_ == 2) {
-       return (com.google.privacy.dlp.v2.CustomInfoType.Dictionary) type_;
+      return (com.google.privacy.dlp.v2.CustomInfoType.Dictionary) type_;
     }
     return com.google.privacy.dlp.v2.CustomInfoType.Dictionary.getDefaultInstance();
   }
 
   public static final int REGEX_FIELD_NUMBER = 3;
   /**
+   *
+   *
    * <pre>
    * Regular expression based CustomInfoType.
    * </pre>
@@ -6749,6 +7523,8 @@ private static final long serialVersionUID = 0L;
     return typeCase_ == 3;
   }
   /**
+   *
+   *
    * <pre>
    * Regular expression based CustomInfoType.
    * </pre>
@@ -6757,11 +7533,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.privacy.dlp.v2.CustomInfoType.Regex getRegex() {
     if (typeCase_ == 3) {
-       return (com.google.privacy.dlp.v2.CustomInfoType.Regex) type_;
+      return (com.google.privacy.dlp.v2.CustomInfoType.Regex) type_;
     }
     return com.google.privacy.dlp.v2.CustomInfoType.Regex.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Regular expression based CustomInfoType.
    * </pre>
@@ -6770,13 +7548,15 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.privacy.dlp.v2.CustomInfoType.RegexOrBuilder getRegexOrBuilder() {
     if (typeCase_ == 3) {
-       return (com.google.privacy.dlp.v2.CustomInfoType.Regex) type_;
+      return (com.google.privacy.dlp.v2.CustomInfoType.Regex) type_;
     }
     return com.google.privacy.dlp.v2.CustomInfoType.Regex.getDefaultInstance();
   }
 
   public static final int SURROGATE_TYPE_FIELD_NUMBER = 4;
   /**
+   *
+   *
    * <pre>
    * Message for detecting output from deidentification transformations that
    * support reversing.
@@ -6788,6 +7568,8 @@ private static final long serialVersionUID = 0L;
     return typeCase_ == 4;
   }
   /**
+   *
+   *
    * <pre>
    * Message for detecting output from deidentification transformations that
    * support reversing.
@@ -6797,11 +7579,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.privacy.dlp.v2.CustomInfoType.SurrogateType getSurrogateType() {
     if (typeCase_ == 4) {
-       return (com.google.privacy.dlp.v2.CustomInfoType.SurrogateType) type_;
+      return (com.google.privacy.dlp.v2.CustomInfoType.SurrogateType) type_;
     }
     return com.google.privacy.dlp.v2.CustomInfoType.SurrogateType.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Message for detecting output from deidentification transformations that
    * support reversing.
@@ -6809,15 +7593,18 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.privacy.dlp.v2.CustomInfoType.SurrogateType surrogate_type = 4;</code>
    */
-  public com.google.privacy.dlp.v2.CustomInfoType.SurrogateTypeOrBuilder getSurrogateTypeOrBuilder() {
+  public com.google.privacy.dlp.v2.CustomInfoType.SurrogateTypeOrBuilder
+      getSurrogateTypeOrBuilder() {
     if (typeCase_ == 4) {
-       return (com.google.privacy.dlp.v2.CustomInfoType.SurrogateType) type_;
+      return (com.google.privacy.dlp.v2.CustomInfoType.SurrogateType) type_;
     }
     return com.google.privacy.dlp.v2.CustomInfoType.SurrogateType.getDefaultInstance();
   }
 
   public static final int STORED_TYPE_FIELD_NUMBER = 5;
   /**
+   *
+   *
    * <pre>
    * Load an existing `StoredInfoType` resource for use in
    * `InspectDataSource`. Not currently supported in `InspectContent`.
@@ -6829,6 +7616,8 @@ private static final long serialVersionUID = 0L;
     return typeCase_ == 5;
   }
   /**
+   *
+   *
    * <pre>
    * Load an existing `StoredInfoType` resource for use in
    * `InspectDataSource`. Not currently supported in `InspectContent`.
@@ -6838,11 +7627,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.privacy.dlp.v2.StoredType getStoredType() {
     if (typeCase_ == 5) {
-       return (com.google.privacy.dlp.v2.StoredType) type_;
+      return (com.google.privacy.dlp.v2.StoredType) type_;
     }
     return com.google.privacy.dlp.v2.StoredType.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Load an existing `StoredInfoType` resource for use in
    * `InspectDataSource`. Not currently supported in `InspectContent`.
@@ -6852,7 +7643,7 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.privacy.dlp.v2.StoredTypeOrBuilder getStoredTypeOrBuilder() {
     if (typeCase_ == 5) {
-       return (com.google.privacy.dlp.v2.StoredType) type_;
+      return (com.google.privacy.dlp.v2.StoredType) type_;
     }
     return com.google.privacy.dlp.v2.StoredType.getDefaultInstance();
   }
@@ -6860,6 +7651,8 @@ private static final long serialVersionUID = 0L;
   public static final int DETECTION_RULES_FIELD_NUMBER = 7;
   private java.util.List<com.google.privacy.dlp.v2.CustomInfoType.DetectionRule> detectionRules_;
   /**
+   *
+   *
    * <pre>
    * Set of detection rules to apply to all findings of this CustomInfoType.
    * Rules are applied in order that they are specified. Not supported for the
@@ -6868,10 +7661,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
    */
-  public java.util.List<com.google.privacy.dlp.v2.CustomInfoType.DetectionRule> getDetectionRulesList() {
+  public java.util.List<com.google.privacy.dlp.v2.CustomInfoType.DetectionRule>
+      getDetectionRulesList() {
     return detectionRules_;
   }
   /**
+   *
+   *
    * <pre>
    * Set of detection rules to apply to all findings of this CustomInfoType.
    * Rules are applied in order that they are specified. Not supported for the
@@ -6880,11 +7676,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
    */
-  public java.util.List<? extends com.google.privacy.dlp.v2.CustomInfoType.DetectionRuleOrBuilder> 
+  public java.util.List<? extends com.google.privacy.dlp.v2.CustomInfoType.DetectionRuleOrBuilder>
       getDetectionRulesOrBuilderList() {
     return detectionRules_;
   }
   /**
+   *
+   *
    * <pre>
    * Set of detection rules to apply to all findings of this CustomInfoType.
    * Rules are applied in order that they are specified. Not supported for the
@@ -6897,6 +7695,8 @@ private static final long serialVersionUID = 0L;
     return detectionRules_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Set of detection rules to apply to all findings of this CustomInfoType.
    * Rules are applied in order that they are specified. Not supported for the
@@ -6909,6 +7709,8 @@ private static final long serialVersionUID = 0L;
     return detectionRules_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Set of detection rules to apply to all findings of this CustomInfoType.
    * Rules are applied in order that they are specified. Not supported for the
@@ -6925,6 +7727,8 @@ private static final long serialVersionUID = 0L;
   public static final int EXCLUSION_TYPE_FIELD_NUMBER = 8;
   private int exclusionType_;
   /**
+   *
+   *
    * <pre>
    * If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding
    * to be returned. It still can be used for rules matching.
@@ -6936,6 +7740,8 @@ private static final long serialVersionUID = 0L;
     return exclusionType_;
   }
   /**
+   *
+   *
    * <pre>
    * If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding
    * to be returned. It still can be used for rules matching.
@@ -6945,11 +7751,15 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.privacy.dlp.v2.CustomInfoType.ExclusionType getExclusionType() {
     @SuppressWarnings("deprecation")
-    com.google.privacy.dlp.v2.CustomInfoType.ExclusionType result = com.google.privacy.dlp.v2.CustomInfoType.ExclusionType.valueOf(exclusionType_);
-    return result == null ? com.google.privacy.dlp.v2.CustomInfoType.ExclusionType.UNRECOGNIZED : result;
+    com.google.privacy.dlp.v2.CustomInfoType.ExclusionType result =
+        com.google.privacy.dlp.v2.CustomInfoType.ExclusionType.valueOf(exclusionType_);
+    return result == null
+        ? com.google.privacy.dlp.v2.CustomInfoType.ExclusionType.UNRECOGNIZED
+        : result;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -6961,8 +7771,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (infoType_ != null) {
       output.writeMessage(1, getInfoType());
     }
@@ -6984,7 +7793,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < detectionRules_.size(); i++) {
       output.writeMessage(7, detectionRules_.get(i));
     }
-    if (exclusionType_ != com.google.privacy.dlp.v2.CustomInfoType.ExclusionType.EXCLUSION_TYPE_UNSPECIFIED.getNumber()) {
+    if (exclusionType_
+        != com.google.privacy.dlp.v2.CustomInfoType.ExclusionType.EXCLUSION_TYPE_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(8, exclusionType_);
     }
     unknownFields.writeTo(output);
@@ -6997,36 +7808,38 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (infoType_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getInfoType());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getInfoType());
     }
     if (typeCase_ == 2) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, (com.google.privacy.dlp.v2.CustomInfoType.Dictionary) type_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, (com.google.privacy.dlp.v2.CustomInfoType.Dictionary) type_);
     }
     if (typeCase_ == 3) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, (com.google.privacy.dlp.v2.CustomInfoType.Regex) type_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.privacy.dlp.v2.CustomInfoType.Regex) type_);
     }
     if (typeCase_ == 4) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, (com.google.privacy.dlp.v2.CustomInfoType.SurrogateType) type_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.privacy.dlp.v2.CustomInfoType.SurrogateType) type_);
     }
     if (typeCase_ == 5) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, (com.google.privacy.dlp.v2.StoredType) type_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.privacy.dlp.v2.StoredType) type_);
     }
     if (likelihood_ != com.google.privacy.dlp.v2.Likelihood.LIKELIHOOD_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(6, likelihood_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, likelihood_);
     }
     for (int i = 0; i < detectionRules_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, detectionRules_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, detectionRules_.get(i));
     }
-    if (exclusionType_ != com.google.privacy.dlp.v2.CustomInfoType.ExclusionType.EXCLUSION_TYPE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(8, exclusionType_);
+    if (exclusionType_
+        != com.google.privacy.dlp.v2.CustomInfoType.ExclusionType.EXCLUSION_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, exclusionType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -7036,7 +7849,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.privacy.dlp.v2.CustomInfoType)) {
       return super.equals(obj);
@@ -7046,32 +7859,25 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && (hasInfoType() == other.hasInfoType());
     if (hasInfoType()) {
-      result = result && getInfoType()
-          .equals(other.getInfoType());
+      result = result && getInfoType().equals(other.getInfoType());
     }
     result = result && likelihood_ == other.likelihood_;
-    result = result && getDetectionRulesList()
-        .equals(other.getDetectionRulesList());
+    result = result && getDetectionRulesList().equals(other.getDetectionRulesList());
     result = result && exclusionType_ == other.exclusionType_;
-    result = result && getTypeCase().equals(
-        other.getTypeCase());
+    result = result && getTypeCase().equals(other.getTypeCase());
     if (!result) return false;
     switch (typeCase_) {
       case 2:
-        result = result && getDictionary()
-            .equals(other.getDictionary());
+        result = result && getDictionary().equals(other.getDictionary());
         break;
       case 3:
-        result = result && getRegex()
-            .equals(other.getRegex());
+        result = result && getRegex().equals(other.getRegex());
         break;
       case 4:
-        result = result && getSurrogateType()
-            .equals(other.getSurrogateType());
+        result = result && getSurrogateType().equals(other.getSurrogateType());
         break;
       case 5:
-        result = result && getStoredType()
-            .equals(other.getStoredType());
+        result = result && getStoredType().equals(other.getStoredType());
         break;
       case 0:
       default:
@@ -7124,97 +7930,104 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.privacy.dlp.v2.CustomInfoType parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.privacy.dlp.v2.CustomInfoType parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.CustomInfoType parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.CustomInfoType parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.CustomInfoType parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.CustomInfoType parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.CustomInfoType parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.CustomInfoType parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.CustomInfoType parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.privacy.dlp.v2.CustomInfoType parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.privacy.dlp.v2.CustomInfoType parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.privacy.dlp.v2.CustomInfoType parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.privacy.dlp.v2.CustomInfoType parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.CustomInfoType parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.privacy.dlp.v2.CustomInfoType prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Custom information type provided by the user. Used to find domain-specific
    * sensitive information configurable to the data in question.
@@ -7222,21 +8035,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.privacy.dlp.v2.CustomInfoType}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.CustomInfoType)
       com.google.privacy.dlp.v2.CustomInfoTypeOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpStorage
+          .internal_static_google_privacy_dlp_v2_CustomInfoType_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpStorage
+          .internal_static_google_privacy_dlp_v2_CustomInfoType_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.CustomInfoType.class, com.google.privacy.dlp.v2.CustomInfoType.Builder.class);
+              com.google.privacy.dlp.v2.CustomInfoType.class,
+              com.google.privacy.dlp.v2.CustomInfoType.Builder.class);
     }
 
     // Construct using com.google.privacy.dlp.v2.CustomInfoType.newBuilder()
@@ -7244,17 +8059,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getDetectionRulesFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -7280,9 +8095,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CustomInfoType_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.privacy.dlp.v2.DlpStorage
+          .internal_static_google_privacy_dlp_v2_CustomInfoType_descriptor;
     }
 
     @java.lang.Override
@@ -7301,7 +8116,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.privacy.dlp.v2.CustomInfoType buildPartial() {
-      com.google.privacy.dlp.v2.CustomInfoType result = new com.google.privacy.dlp.v2.CustomInfoType(this);
+      com.google.privacy.dlp.v2.CustomInfoType result =
+          new com.google.privacy.dlp.v2.CustomInfoType(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (infoTypeBuilder_ == null) {
@@ -7358,38 +8174,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.privacy.dlp.v2.CustomInfoType) {
-        return mergeFrom((com.google.privacy.dlp.v2.CustomInfoType)other);
+        return mergeFrom((com.google.privacy.dlp.v2.CustomInfoType) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -7422,9 +8239,10 @@ private static final long serialVersionUID = 0L;
             detectionRulesBuilder_ = null;
             detectionRules_ = other.detectionRules_;
             bitField0_ = (bitField0_ & ~0x00000040);
-            detectionRulesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getDetectionRulesFieldBuilder() : null;
+            detectionRulesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getDetectionRulesFieldBuilder()
+                    : null;
           } else {
             detectionRulesBuilder_.addAllMessages(other.detectionRules_);
           }
@@ -7434,25 +8252,30 @@ private static final long serialVersionUID = 0L;
         setExclusionTypeValue(other.getExclusionTypeValue());
       }
       switch (other.getTypeCase()) {
-        case DICTIONARY: {
-          mergeDictionary(other.getDictionary());
-          break;
-        }
-        case REGEX: {
-          mergeRegex(other.getRegex());
-          break;
-        }
-        case SURROGATE_TYPE: {
-          mergeSurrogateType(other.getSurrogateType());
-          break;
-        }
-        case STORED_TYPE: {
-          mergeStoredType(other.getStoredType());
-          break;
-        }
-        case TYPE_NOT_SET: {
-          break;
-        }
+        case DICTIONARY:
+          {
+            mergeDictionary(other.getDictionary());
+            break;
+          }
+        case REGEX:
+          {
+            mergeRegex(other.getRegex());
+            break;
+          }
+        case SURROGATE_TYPE:
+          {
+            mergeSurrogateType(other.getSurrogateType());
+            break;
+          }
+        case STORED_TYPE:
+          {
+            mergeStoredType(other.getStoredType());
+            break;
+          }
+        case TYPE_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -7482,12 +8305,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int typeCase_ = 0;
     private java.lang.Object type_;
-    public TypeCase
-        getTypeCase() {
-      return TypeCase.forNumber(
-          typeCase_);
+
+    public TypeCase getTypeCase() {
+      return TypeCase.forNumber(typeCase_);
     }
 
     public Builder clearType() {
@@ -7501,8 +8324,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.privacy.dlp.v2.InfoType infoType_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.InfoType, com.google.privacy.dlp.v2.InfoType.Builder, com.google.privacy.dlp.v2.InfoTypeOrBuilder> infoTypeBuilder_;
+            com.google.privacy.dlp.v2.InfoType,
+            com.google.privacy.dlp.v2.InfoType.Builder,
+            com.google.privacy.dlp.v2.InfoTypeOrBuilder>
+        infoTypeBuilder_;
     /**
+     *
+     *
      * <pre>
      * CustomInfoType can either be a new infoType, or an extension of built-in
      * infoType, when the name matches one of existing infoTypes and that infoType
@@ -7518,6 +8346,8 @@ private static final long serialVersionUID = 0L;
       return infoTypeBuilder_ != null || infoType_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * CustomInfoType can either be a new infoType, or an extension of built-in
      * infoType, when the name matches one of existing infoTypes and that infoType
@@ -7531,12 +8361,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.privacy.dlp.v2.InfoType getInfoType() {
       if (infoTypeBuilder_ == null) {
-        return infoType_ == null ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance() : infoType_;
+        return infoType_ == null
+            ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance()
+            : infoType_;
       } else {
         return infoTypeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * CustomInfoType can either be a new infoType, or an extension of built-in
      * infoType, when the name matches one of existing infoTypes and that infoType
@@ -7562,6 +8396,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * CustomInfoType can either be a new infoType, or an extension of built-in
      * infoType, when the name matches one of existing infoTypes and that infoType
@@ -7573,8 +8409,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
      */
-    public Builder setInfoType(
-        com.google.privacy.dlp.v2.InfoType.Builder builderForValue) {
+    public Builder setInfoType(com.google.privacy.dlp.v2.InfoType.Builder builderForValue) {
       if (infoTypeBuilder_ == null) {
         infoType_ = builderForValue.build();
         onChanged();
@@ -7585,6 +8420,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * CustomInfoType can either be a new infoType, or an extension of built-in
      * infoType, when the name matches one of existing infoTypes and that infoType
@@ -7600,7 +8437,9 @@ private static final long serialVersionUID = 0L;
       if (infoTypeBuilder_ == null) {
         if (infoType_ != null) {
           infoType_ =
-            com.google.privacy.dlp.v2.InfoType.newBuilder(infoType_).mergeFrom(value).buildPartial();
+              com.google.privacy.dlp.v2.InfoType.newBuilder(infoType_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           infoType_ = value;
         }
@@ -7612,6 +8451,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * CustomInfoType can either be a new infoType, or an extension of built-in
      * infoType, when the name matches one of existing infoTypes and that infoType
@@ -7635,6 +8476,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * CustomInfoType can either be a new infoType, or an extension of built-in
      * infoType, when the name matches one of existing infoTypes and that infoType
@@ -7647,11 +8490,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
      */
     public com.google.privacy.dlp.v2.InfoType.Builder getInfoTypeBuilder() {
-      
+
       onChanged();
       return getInfoTypeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * CustomInfoType can either be a new infoType, or an extension of built-in
      * infoType, when the name matches one of existing infoTypes and that infoType
@@ -7667,11 +8512,14 @@ private static final long serialVersionUID = 0L;
       if (infoTypeBuilder_ != null) {
         return infoTypeBuilder_.getMessageOrBuilder();
       } else {
-        return infoType_ == null ?
-            com.google.privacy.dlp.v2.InfoType.getDefaultInstance() : infoType_;
+        return infoType_ == null
+            ? com.google.privacy.dlp.v2.InfoType.getDefaultInstance()
+            : infoType_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * CustomInfoType can either be a new infoType, or an extension of built-in
      * infoType, when the name matches one of existing infoTypes and that infoType
@@ -7684,14 +8532,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.InfoType, com.google.privacy.dlp.v2.InfoType.Builder, com.google.privacy.dlp.v2.InfoTypeOrBuilder> 
+            com.google.privacy.dlp.v2.InfoType,
+            com.google.privacy.dlp.v2.InfoType.Builder,
+            com.google.privacy.dlp.v2.InfoTypeOrBuilder>
         getInfoTypeFieldBuilder() {
       if (infoTypeBuilder_ == null) {
-        infoTypeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.InfoType, com.google.privacy.dlp.v2.InfoType.Builder, com.google.privacy.dlp.v2.InfoTypeOrBuilder>(
-                getInfoType(),
-                getParentForChildren(),
-                isClean());
+        infoTypeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.InfoType,
+                com.google.privacy.dlp.v2.InfoType.Builder,
+                com.google.privacy.dlp.v2.InfoTypeOrBuilder>(
+                getInfoType(), getParentForChildren(), isClean());
         infoType_ = null;
       }
       return infoTypeBuilder_;
@@ -7699,6 +8550,8 @@ private static final long serialVersionUID = 0L;
 
     private int likelihood_ = 0;
     /**
+     *
+     *
      * <pre>
      * Likelihood to return for this CustomInfoType. This base value can be
      * altered by a detection rule if the finding meets the criteria specified by
@@ -7711,6 +8564,8 @@ private static final long serialVersionUID = 0L;
       return likelihood_;
     }
     /**
+     *
+     *
      * <pre>
      * Likelihood to return for this CustomInfoType. This base value can be
      * altered by a detection rule if the finding meets the criteria specified by
@@ -7725,6 +8580,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Likelihood to return for this CustomInfoType. This base value can be
      * altered by a detection rule if the finding meets the criteria specified by
@@ -7735,10 +8592,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.privacy.dlp.v2.Likelihood getLikelihood() {
       @SuppressWarnings("deprecation")
-      com.google.privacy.dlp.v2.Likelihood result = com.google.privacy.dlp.v2.Likelihood.valueOf(likelihood_);
+      com.google.privacy.dlp.v2.Likelihood result =
+          com.google.privacy.dlp.v2.Likelihood.valueOf(likelihood_);
       return result == null ? com.google.privacy.dlp.v2.Likelihood.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * Likelihood to return for this CustomInfoType. This base value can be
      * altered by a detection rule if the finding meets the criteria specified by
@@ -7751,12 +8611,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       likelihood_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Likelihood to return for this CustomInfoType. This base value can be
      * altered by a detection rule if the finding meets the criteria specified by
@@ -7766,15 +8628,20 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.Likelihood likelihood = 6;</code>
      */
     public Builder clearLikelihood() {
-      
+
       likelihood_ = 0;
       onChanged();
       return this;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.CustomInfoType.Dictionary, com.google.privacy.dlp.v2.CustomInfoType.Dictionary.Builder, com.google.privacy.dlp.v2.CustomInfoType.DictionaryOrBuilder> dictionaryBuilder_;
+            com.google.privacy.dlp.v2.CustomInfoType.Dictionary,
+            com.google.privacy.dlp.v2.CustomInfoType.Dictionary.Builder,
+            com.google.privacy.dlp.v2.CustomInfoType.DictionaryOrBuilder>
+        dictionaryBuilder_;
     /**
+     *
+     *
      * <pre>
      * A list of phrases to detect as a CustomInfoType.
      * </pre>
@@ -7785,6 +8652,8 @@ private static final long serialVersionUID = 0L;
       return typeCase_ == 2;
     }
     /**
+     *
+     *
      * <pre>
      * A list of phrases to detect as a CustomInfoType.
      * </pre>
@@ -7805,6 +8674,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of phrases to detect as a CustomInfoType.
      * </pre>
@@ -7825,6 +8696,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of phrases to detect as a CustomInfoType.
      * </pre>
@@ -7843,6 +8716,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of phrases to detect as a CustomInfoType.
      * </pre>
@@ -7851,10 +8726,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeDictionary(com.google.privacy.dlp.v2.CustomInfoType.Dictionary value) {
       if (dictionaryBuilder_ == null) {
-        if (typeCase_ == 2 &&
-            type_ != com.google.privacy.dlp.v2.CustomInfoType.Dictionary.getDefaultInstance()) {
-          type_ = com.google.privacy.dlp.v2.CustomInfoType.Dictionary.newBuilder((com.google.privacy.dlp.v2.CustomInfoType.Dictionary) type_)
-              .mergeFrom(value).buildPartial();
+        if (typeCase_ == 2
+            && type_ != com.google.privacy.dlp.v2.CustomInfoType.Dictionary.getDefaultInstance()) {
+          type_ =
+              com.google.privacy.dlp.v2.CustomInfoType.Dictionary.newBuilder(
+                      (com.google.privacy.dlp.v2.CustomInfoType.Dictionary) type_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           type_ = value;
         }
@@ -7869,6 +8747,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of phrases to detect as a CustomInfoType.
      * </pre>
@@ -7892,6 +8772,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of phrases to detect as a CustomInfoType.
      * </pre>
@@ -7902,6 +8784,8 @@ private static final long serialVersionUID = 0L;
       return getDictionaryFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * A list of phrases to detect as a CustomInfoType.
      * </pre>
@@ -7919,6 +8803,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of phrases to detect as a CustomInfoType.
      * </pre>
@@ -7926,27 +8812,38 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.CustomInfoType.Dictionary dictionary = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.CustomInfoType.Dictionary, com.google.privacy.dlp.v2.CustomInfoType.Dictionary.Builder, com.google.privacy.dlp.v2.CustomInfoType.DictionaryOrBuilder> 
+            com.google.privacy.dlp.v2.CustomInfoType.Dictionary,
+            com.google.privacy.dlp.v2.CustomInfoType.Dictionary.Builder,
+            com.google.privacy.dlp.v2.CustomInfoType.DictionaryOrBuilder>
         getDictionaryFieldBuilder() {
       if (dictionaryBuilder_ == null) {
         if (!(typeCase_ == 2)) {
           type_ = com.google.privacy.dlp.v2.CustomInfoType.Dictionary.getDefaultInstance();
         }
-        dictionaryBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.CustomInfoType.Dictionary, com.google.privacy.dlp.v2.CustomInfoType.Dictionary.Builder, com.google.privacy.dlp.v2.CustomInfoType.DictionaryOrBuilder>(
+        dictionaryBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.CustomInfoType.Dictionary,
+                com.google.privacy.dlp.v2.CustomInfoType.Dictionary.Builder,
+                com.google.privacy.dlp.v2.CustomInfoType.DictionaryOrBuilder>(
                 (com.google.privacy.dlp.v2.CustomInfoType.Dictionary) type_,
                 getParentForChildren(),
                 isClean());
         type_ = null;
       }
       typeCase_ = 2;
-      onChanged();;
+      onChanged();
+      ;
       return dictionaryBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.CustomInfoType.Regex, com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder, com.google.privacy.dlp.v2.CustomInfoType.RegexOrBuilder> regexBuilder_;
+            com.google.privacy.dlp.v2.CustomInfoType.Regex,
+            com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder,
+            com.google.privacy.dlp.v2.CustomInfoType.RegexOrBuilder>
+        regexBuilder_;
     /**
+     *
+     *
      * <pre>
      * Regular expression based CustomInfoType.
      * </pre>
@@ -7957,6 +8854,8 @@ private static final long serialVersionUID = 0L;
       return typeCase_ == 3;
     }
     /**
+     *
+     *
      * <pre>
      * Regular expression based CustomInfoType.
      * </pre>
@@ -7977,6 +8876,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Regular expression based CustomInfoType.
      * </pre>
@@ -7997,6 +8898,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Regular expression based CustomInfoType.
      * </pre>
@@ -8015,6 +8918,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Regular expression based CustomInfoType.
      * </pre>
@@ -8023,10 +8928,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeRegex(com.google.privacy.dlp.v2.CustomInfoType.Regex value) {
       if (regexBuilder_ == null) {
-        if (typeCase_ == 3 &&
-            type_ != com.google.privacy.dlp.v2.CustomInfoType.Regex.getDefaultInstance()) {
-          type_ = com.google.privacy.dlp.v2.CustomInfoType.Regex.newBuilder((com.google.privacy.dlp.v2.CustomInfoType.Regex) type_)
-              .mergeFrom(value).buildPartial();
+        if (typeCase_ == 3
+            && type_ != com.google.privacy.dlp.v2.CustomInfoType.Regex.getDefaultInstance()) {
+          type_ =
+              com.google.privacy.dlp.v2.CustomInfoType.Regex.newBuilder(
+                      (com.google.privacy.dlp.v2.CustomInfoType.Regex) type_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           type_ = value;
         }
@@ -8041,6 +8949,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Regular expression based CustomInfoType.
      * </pre>
@@ -8064,6 +8974,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Regular expression based CustomInfoType.
      * </pre>
@@ -8074,6 +8986,8 @@ private static final long serialVersionUID = 0L;
       return getRegexFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Regular expression based CustomInfoType.
      * </pre>
@@ -8091,6 +9005,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Regular expression based CustomInfoType.
      * </pre>
@@ -8098,27 +9014,38 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.CustomInfoType.Regex regex = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.CustomInfoType.Regex, com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder, com.google.privacy.dlp.v2.CustomInfoType.RegexOrBuilder> 
+            com.google.privacy.dlp.v2.CustomInfoType.Regex,
+            com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder,
+            com.google.privacy.dlp.v2.CustomInfoType.RegexOrBuilder>
         getRegexFieldBuilder() {
       if (regexBuilder_ == null) {
         if (!(typeCase_ == 3)) {
           type_ = com.google.privacy.dlp.v2.CustomInfoType.Regex.getDefaultInstance();
         }
-        regexBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.CustomInfoType.Regex, com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder, com.google.privacy.dlp.v2.CustomInfoType.RegexOrBuilder>(
+        regexBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.CustomInfoType.Regex,
+                com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder,
+                com.google.privacy.dlp.v2.CustomInfoType.RegexOrBuilder>(
                 (com.google.privacy.dlp.v2.CustomInfoType.Regex) type_,
                 getParentForChildren(),
                 isClean());
         type_ = null;
       }
       typeCase_ = 3;
-      onChanged();;
+      onChanged();
+      ;
       return regexBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.CustomInfoType.SurrogateType, com.google.privacy.dlp.v2.CustomInfoType.SurrogateType.Builder, com.google.privacy.dlp.v2.CustomInfoType.SurrogateTypeOrBuilder> surrogateTypeBuilder_;
+            com.google.privacy.dlp.v2.CustomInfoType.SurrogateType,
+            com.google.privacy.dlp.v2.CustomInfoType.SurrogateType.Builder,
+            com.google.privacy.dlp.v2.CustomInfoType.SurrogateTypeOrBuilder>
+        surrogateTypeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Message for detecting output from deidentification transformations that
      * support reversing.
@@ -8130,6 +9057,8 @@ private static final long serialVersionUID = 0L;
       return typeCase_ == 4;
     }
     /**
+     *
+     *
      * <pre>
      * Message for detecting output from deidentification transformations that
      * support reversing.
@@ -8151,6 +9080,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Message for detecting output from deidentification transformations that
      * support reversing.
@@ -8172,6 +9103,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Message for detecting output from deidentification transformations that
      * support reversing.
@@ -8191,6 +9124,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Message for detecting output from deidentification transformations that
      * support reversing.
@@ -8198,12 +9133,17 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.SurrogateType surrogate_type = 4;</code>
      */
-    public Builder mergeSurrogateType(com.google.privacy.dlp.v2.CustomInfoType.SurrogateType value) {
+    public Builder mergeSurrogateType(
+        com.google.privacy.dlp.v2.CustomInfoType.SurrogateType value) {
       if (surrogateTypeBuilder_ == null) {
-        if (typeCase_ == 4 &&
-            type_ != com.google.privacy.dlp.v2.CustomInfoType.SurrogateType.getDefaultInstance()) {
-          type_ = com.google.privacy.dlp.v2.CustomInfoType.SurrogateType.newBuilder((com.google.privacy.dlp.v2.CustomInfoType.SurrogateType) type_)
-              .mergeFrom(value).buildPartial();
+        if (typeCase_ == 4
+            && type_
+                != com.google.privacy.dlp.v2.CustomInfoType.SurrogateType.getDefaultInstance()) {
+          type_ =
+              com.google.privacy.dlp.v2.CustomInfoType.SurrogateType.newBuilder(
+                      (com.google.privacy.dlp.v2.CustomInfoType.SurrogateType) type_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           type_ = value;
         }
@@ -8218,6 +9158,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Message for detecting output from deidentification transformations that
      * support reversing.
@@ -8242,6 +9184,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Message for detecting output from deidentification transformations that
      * support reversing.
@@ -8249,10 +9193,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.SurrogateType surrogate_type = 4;</code>
      */
-    public com.google.privacy.dlp.v2.CustomInfoType.SurrogateType.Builder getSurrogateTypeBuilder() {
+    public com.google.privacy.dlp.v2.CustomInfoType.SurrogateType.Builder
+        getSurrogateTypeBuilder() {
       return getSurrogateTypeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Message for detecting output from deidentification transformations that
      * support reversing.
@@ -8260,7 +9207,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.privacy.dlp.v2.CustomInfoType.SurrogateType surrogate_type = 4;</code>
      */
-    public com.google.privacy.dlp.v2.CustomInfoType.SurrogateTypeOrBuilder getSurrogateTypeOrBuilder() {
+    public com.google.privacy.dlp.v2.CustomInfoType.SurrogateTypeOrBuilder
+        getSurrogateTypeOrBuilder() {
       if ((typeCase_ == 4) && (surrogateTypeBuilder_ != null)) {
         return surrogateTypeBuilder_.getMessageOrBuilder();
       } else {
@@ -8271,6 +9219,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Message for detecting output from deidentification transformations that
      * support reversing.
@@ -8279,27 +9229,38 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.CustomInfoType.SurrogateType surrogate_type = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.CustomInfoType.SurrogateType, com.google.privacy.dlp.v2.CustomInfoType.SurrogateType.Builder, com.google.privacy.dlp.v2.CustomInfoType.SurrogateTypeOrBuilder> 
+            com.google.privacy.dlp.v2.CustomInfoType.SurrogateType,
+            com.google.privacy.dlp.v2.CustomInfoType.SurrogateType.Builder,
+            com.google.privacy.dlp.v2.CustomInfoType.SurrogateTypeOrBuilder>
         getSurrogateTypeFieldBuilder() {
       if (surrogateTypeBuilder_ == null) {
         if (!(typeCase_ == 4)) {
           type_ = com.google.privacy.dlp.v2.CustomInfoType.SurrogateType.getDefaultInstance();
         }
-        surrogateTypeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.CustomInfoType.SurrogateType, com.google.privacy.dlp.v2.CustomInfoType.SurrogateType.Builder, com.google.privacy.dlp.v2.CustomInfoType.SurrogateTypeOrBuilder>(
+        surrogateTypeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.CustomInfoType.SurrogateType,
+                com.google.privacy.dlp.v2.CustomInfoType.SurrogateType.Builder,
+                com.google.privacy.dlp.v2.CustomInfoType.SurrogateTypeOrBuilder>(
                 (com.google.privacy.dlp.v2.CustomInfoType.SurrogateType) type_,
                 getParentForChildren(),
                 isClean());
         type_ = null;
       }
       typeCase_ = 4;
-      onChanged();;
+      onChanged();
+      ;
       return surrogateTypeBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.StoredType, com.google.privacy.dlp.v2.StoredType.Builder, com.google.privacy.dlp.v2.StoredTypeOrBuilder> storedTypeBuilder_;
+            com.google.privacy.dlp.v2.StoredType,
+            com.google.privacy.dlp.v2.StoredType.Builder,
+            com.google.privacy.dlp.v2.StoredTypeOrBuilder>
+        storedTypeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Load an existing `StoredInfoType` resource for use in
      * `InspectDataSource`. Not currently supported in `InspectContent`.
@@ -8311,6 +9272,8 @@ private static final long serialVersionUID = 0L;
       return typeCase_ == 5;
     }
     /**
+     *
+     *
      * <pre>
      * Load an existing `StoredInfoType` resource for use in
      * `InspectDataSource`. Not currently supported in `InspectContent`.
@@ -8332,6 +9295,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Load an existing `StoredInfoType` resource for use in
      * `InspectDataSource`. Not currently supported in `InspectContent`.
@@ -8353,6 +9318,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Load an existing `StoredInfoType` resource for use in
      * `InspectDataSource`. Not currently supported in `InspectContent`.
@@ -8360,8 +9327,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
      */
-    public Builder setStoredType(
-        com.google.privacy.dlp.v2.StoredType.Builder builderForValue) {
+    public Builder setStoredType(com.google.privacy.dlp.v2.StoredType.Builder builderForValue) {
       if (storedTypeBuilder_ == null) {
         type_ = builderForValue.build();
         onChanged();
@@ -8372,6 +9338,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Load an existing `StoredInfoType` resource for use in
      * `InspectDataSource`. Not currently supported in `InspectContent`.
@@ -8381,10 +9349,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeStoredType(com.google.privacy.dlp.v2.StoredType value) {
       if (storedTypeBuilder_ == null) {
-        if (typeCase_ == 5 &&
-            type_ != com.google.privacy.dlp.v2.StoredType.getDefaultInstance()) {
-          type_ = com.google.privacy.dlp.v2.StoredType.newBuilder((com.google.privacy.dlp.v2.StoredType) type_)
-              .mergeFrom(value).buildPartial();
+        if (typeCase_ == 5 && type_ != com.google.privacy.dlp.v2.StoredType.getDefaultInstance()) {
+          type_ =
+              com.google.privacy.dlp.v2.StoredType.newBuilder(
+                      (com.google.privacy.dlp.v2.StoredType) type_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           type_ = value;
         }
@@ -8399,6 +9369,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Load an existing `StoredInfoType` resource for use in
      * `InspectDataSource`. Not currently supported in `InspectContent`.
@@ -8423,6 +9395,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Load an existing `StoredInfoType` resource for use in
      * `InspectDataSource`. Not currently supported in `InspectContent`.
@@ -8434,6 +9408,8 @@ private static final long serialVersionUID = 0L;
       return getStoredTypeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Load an existing `StoredInfoType` resource for use in
      * `InspectDataSource`. Not currently supported in `InspectContent`.
@@ -8452,6 +9428,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Load an existing `StoredInfoType` resource for use in
      * `InspectDataSource`. Not currently supported in `InspectContent`.
@@ -8460,46 +9438,60 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.StoredType stored_type = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.StoredType, com.google.privacy.dlp.v2.StoredType.Builder, com.google.privacy.dlp.v2.StoredTypeOrBuilder> 
+            com.google.privacy.dlp.v2.StoredType,
+            com.google.privacy.dlp.v2.StoredType.Builder,
+            com.google.privacy.dlp.v2.StoredTypeOrBuilder>
         getStoredTypeFieldBuilder() {
       if (storedTypeBuilder_ == null) {
         if (!(typeCase_ == 5)) {
           type_ = com.google.privacy.dlp.v2.StoredType.getDefaultInstance();
         }
-        storedTypeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.StoredType, com.google.privacy.dlp.v2.StoredType.Builder, com.google.privacy.dlp.v2.StoredTypeOrBuilder>(
-                (com.google.privacy.dlp.v2.StoredType) type_,
-                getParentForChildren(),
-                isClean());
+        storedTypeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.StoredType,
+                com.google.privacy.dlp.v2.StoredType.Builder,
+                com.google.privacy.dlp.v2.StoredTypeOrBuilder>(
+                (com.google.privacy.dlp.v2.StoredType) type_, getParentForChildren(), isClean());
         type_ = null;
       }
       typeCase_ = 5;
-      onChanged();;
+      onChanged();
+      ;
       return storedTypeBuilder_;
     }
 
     private java.util.List<com.google.privacy.dlp.v2.CustomInfoType.DetectionRule> detectionRules_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureDetectionRulesIsMutable() {
       if (!((bitField0_ & 0x00000040) == 0x00000040)) {
-        detectionRules_ = new java.util.ArrayList<com.google.privacy.dlp.v2.CustomInfoType.DetectionRule>(detectionRules_);
+        detectionRules_ =
+            new java.util.ArrayList<com.google.privacy.dlp.v2.CustomInfoType.DetectionRule>(
+                detectionRules_);
         bitField0_ |= 0x00000040;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.privacy.dlp.v2.CustomInfoType.DetectionRule, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Builder, com.google.privacy.dlp.v2.CustomInfoType.DetectionRuleOrBuilder> detectionRulesBuilder_;
+            com.google.privacy.dlp.v2.CustomInfoType.DetectionRule,
+            com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Builder,
+            com.google.privacy.dlp.v2.CustomInfoType.DetectionRuleOrBuilder>
+        detectionRulesBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Set of detection rules to apply to all findings of this CustomInfoType.
      * Rules are applied in order that they are specified. Not supported for the
      * `surrogate_type` CustomInfoType.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
+     * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;
+     * </code>
      */
-    public java.util.List<com.google.privacy.dlp.v2.CustomInfoType.DetectionRule> getDetectionRulesList() {
+    public java.util.List<com.google.privacy.dlp.v2.CustomInfoType.DetectionRule>
+        getDetectionRulesList() {
       if (detectionRulesBuilder_ == null) {
         return java.util.Collections.unmodifiableList(detectionRules_);
       } else {
@@ -8507,13 +9499,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Set of detection rules to apply to all findings of this CustomInfoType.
      * Rules are applied in order that they are specified. Not supported for the
      * `surrogate_type` CustomInfoType.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
+     * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;
+     * </code>
      */
     public int getDetectionRulesCount() {
       if (detectionRulesBuilder_ == null) {
@@ -8523,13 +9518,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Set of detection rules to apply to all findings of this CustomInfoType.
      * Rules are applied in order that they are specified. Not supported for the
      * `surrogate_type` CustomInfoType.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
+     * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;
+     * </code>
      */
     public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule getDetectionRules(int index) {
       if (detectionRulesBuilder_ == null) {
@@ -8539,13 +9537,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Set of detection rules to apply to all findings of this CustomInfoType.
      * Rules are applied in order that they are specified. Not supported for the
      * `surrogate_type` CustomInfoType.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
+     * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;
+     * </code>
      */
     public Builder setDetectionRules(
         int index, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule value) {
@@ -8562,13 +9563,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of detection rules to apply to all findings of this CustomInfoType.
      * Rules are applied in order that they are specified. Not supported for the
      * `surrogate_type` CustomInfoType.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
+     * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;
+     * </code>
      */
     public Builder setDetectionRules(
         int index, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Builder builderForValue) {
@@ -8582,13 +9586,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of detection rules to apply to all findings of this CustomInfoType.
      * Rules are applied in order that they are specified. Not supported for the
      * `surrogate_type` CustomInfoType.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
+     * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;
+     * </code>
      */
     public Builder addDetectionRules(com.google.privacy.dlp.v2.CustomInfoType.DetectionRule value) {
       if (detectionRulesBuilder_ == null) {
@@ -8604,13 +9611,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of detection rules to apply to all findings of this CustomInfoType.
      * Rules are applied in order that they are specified. Not supported for the
      * `surrogate_type` CustomInfoType.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
+     * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;
+     * </code>
      */
     public Builder addDetectionRules(
         int index, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule value) {
@@ -8627,13 +9637,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of detection rules to apply to all findings of this CustomInfoType.
      * Rules are applied in order that they are specified. Not supported for the
      * `surrogate_type` CustomInfoType.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
+     * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;
+     * </code>
      */
     public Builder addDetectionRules(
         com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Builder builderForValue) {
@@ -8647,13 +9660,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of detection rules to apply to all findings of this CustomInfoType.
      * Rules are applied in order that they are specified. Not supported for the
      * `surrogate_type` CustomInfoType.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
+     * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;
+     * </code>
      */
     public Builder addDetectionRules(
         int index, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Builder builderForValue) {
@@ -8667,20 +9683,23 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of detection rules to apply to all findings of this CustomInfoType.
      * Rules are applied in order that they are specified. Not supported for the
      * `surrogate_type` CustomInfoType.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
+     * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;
+     * </code>
      */
     public Builder addAllDetectionRules(
-        java.lang.Iterable<? extends com.google.privacy.dlp.v2.CustomInfoType.DetectionRule> values) {
+        java.lang.Iterable<? extends com.google.privacy.dlp.v2.CustomInfoType.DetectionRule>
+            values) {
       if (detectionRulesBuilder_ == null) {
         ensureDetectionRulesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, detectionRules_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, detectionRules_);
         onChanged();
       } else {
         detectionRulesBuilder_.addAllMessages(values);
@@ -8688,13 +9707,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of detection rules to apply to all findings of this CustomInfoType.
      * Rules are applied in order that they are specified. Not supported for the
      * `surrogate_type` CustomInfoType.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
+     * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;
+     * </code>
      */
     public Builder clearDetectionRules() {
       if (detectionRulesBuilder_ == null) {
@@ -8707,13 +9729,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of detection rules to apply to all findings of this CustomInfoType.
      * Rules are applied in order that they are specified. Not supported for the
      * `surrogate_type` CustomInfoType.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
+     * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;
+     * </code>
      */
     public Builder removeDetectionRules(int index) {
       if (detectionRulesBuilder_ == null) {
@@ -8726,45 +9751,55 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of detection rules to apply to all findings of this CustomInfoType.
      * Rules are applied in order that they are specified. Not supported for the
      * `surrogate_type` CustomInfoType.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
+     * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;
+     * </code>
      */
     public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Builder getDetectionRulesBuilder(
         int index) {
       return getDetectionRulesFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Set of detection rules to apply to all findings of this CustomInfoType.
      * Rules are applied in order that they are specified. Not supported for the
      * `surrogate_type` CustomInfoType.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
+     * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;
+     * </code>
      */
-    public com.google.privacy.dlp.v2.CustomInfoType.DetectionRuleOrBuilder getDetectionRulesOrBuilder(
-        int index) {
+    public com.google.privacy.dlp.v2.CustomInfoType.DetectionRuleOrBuilder
+        getDetectionRulesOrBuilder(int index) {
       if (detectionRulesBuilder_ == null) {
-        return detectionRules_.get(index);  } else {
+        return detectionRules_.get(index);
+      } else {
         return detectionRulesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Set of detection rules to apply to all findings of this CustomInfoType.
      * Rules are applied in order that they are specified. Not supported for the
      * `surrogate_type` CustomInfoType.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
+     * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;
+     * </code>
      */
-    public java.util.List<? extends com.google.privacy.dlp.v2.CustomInfoType.DetectionRuleOrBuilder> 
-         getDetectionRulesOrBuilderList() {
+    public java.util.List<? extends com.google.privacy.dlp.v2.CustomInfoType.DetectionRuleOrBuilder>
+        getDetectionRulesOrBuilderList() {
       if (detectionRulesBuilder_ != null) {
         return detectionRulesBuilder_.getMessageOrBuilderList();
       } else {
@@ -8772,51 +9807,68 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Set of detection rules to apply to all findings of this CustomInfoType.
      * Rules are applied in order that they are specified. Not supported for the
      * `surrogate_type` CustomInfoType.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
+     * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;
+     * </code>
      */
-    public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Builder addDetectionRulesBuilder() {
-      return getDetectionRulesFieldBuilder().addBuilder(
-          com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.getDefaultInstance());
+    public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Builder
+        addDetectionRulesBuilder() {
+      return getDetectionRulesFieldBuilder()
+          .addBuilder(com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Set of detection rules to apply to all findings of this CustomInfoType.
      * Rules are applied in order that they are specified. Not supported for the
      * `surrogate_type` CustomInfoType.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
+     * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;
+     * </code>
      */
     public com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Builder addDetectionRulesBuilder(
         int index) {
-      return getDetectionRulesFieldBuilder().addBuilder(
-          index, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.getDefaultInstance());
+      return getDetectionRulesFieldBuilder()
+          .addBuilder(
+              index, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Set of detection rules to apply to all findings of this CustomInfoType.
      * Rules are applied in order that they are specified. Not supported for the
      * `surrogate_type` CustomInfoType.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
+     * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;
+     * </code>
      */
-    public java.util.List<com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Builder> 
-         getDetectionRulesBuilderList() {
+    public java.util.List<com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Builder>
+        getDetectionRulesBuilderList() {
       return getDetectionRulesFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.privacy.dlp.v2.CustomInfoType.DetectionRule, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Builder, com.google.privacy.dlp.v2.CustomInfoType.DetectionRuleOrBuilder> 
+            com.google.privacy.dlp.v2.CustomInfoType.DetectionRule,
+            com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Builder,
+            com.google.privacy.dlp.v2.CustomInfoType.DetectionRuleOrBuilder>
         getDetectionRulesFieldBuilder() {
       if (detectionRulesBuilder_ == null) {
-        detectionRulesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.privacy.dlp.v2.CustomInfoType.DetectionRule, com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Builder, com.google.privacy.dlp.v2.CustomInfoType.DetectionRuleOrBuilder>(
+        detectionRulesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule,
+                com.google.privacy.dlp.v2.CustomInfoType.DetectionRule.Builder,
+                com.google.privacy.dlp.v2.CustomInfoType.DetectionRuleOrBuilder>(
                 detectionRules_,
                 ((bitField0_ & 0x00000040) == 0x00000040),
                 getParentForChildren(),
@@ -8828,6 +9880,8 @@ private static final long serialVersionUID = 0L;
 
     private int exclusionType_ = 0;
     /**
+     *
+     *
      * <pre>
      * If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding
      * to be returned. It still can be used for rules matching.
@@ -8839,6 +9893,8 @@ private static final long serialVersionUID = 0L;
       return exclusionType_;
     }
     /**
+     *
+     *
      * <pre>
      * If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding
      * to be returned. It still can be used for rules matching.
@@ -8852,6 +9908,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding
      * to be returned. It still can be used for rules matching.
@@ -8861,10 +9919,15 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.privacy.dlp.v2.CustomInfoType.ExclusionType getExclusionType() {
       @SuppressWarnings("deprecation")
-      com.google.privacy.dlp.v2.CustomInfoType.ExclusionType result = com.google.privacy.dlp.v2.CustomInfoType.ExclusionType.valueOf(exclusionType_);
-      return result == null ? com.google.privacy.dlp.v2.CustomInfoType.ExclusionType.UNRECOGNIZED : result;
+      com.google.privacy.dlp.v2.CustomInfoType.ExclusionType result =
+          com.google.privacy.dlp.v2.CustomInfoType.ExclusionType.valueOf(exclusionType_);
+      return result == null
+          ? com.google.privacy.dlp.v2.CustomInfoType.ExclusionType.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding
      * to be returned. It still can be used for rules matching.
@@ -8876,12 +9939,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       exclusionType_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding
      * to be returned. It still can be used for rules matching.
@@ -8890,14 +9955,14 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.CustomInfoType.ExclusionType exclusion_type = 8;</code>
      */
     public Builder clearExclusionType() {
-      
+
       exclusionType_ = 0;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -8907,12 +9972,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.CustomInfoType)
   }
 
   // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.CustomInfoType)
   private static final com.google.privacy.dlp.v2.CustomInfoType DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.CustomInfoType();
   }
@@ -8921,16 +9986,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CustomInfoType>
-      PARSER = new com.google.protobuf.AbstractParser<CustomInfoType>() {
-    @java.lang.Override
-    public CustomInfoType parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new CustomInfoType(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<CustomInfoType> PARSER =
+      new com.google.protobuf.AbstractParser<CustomInfoType>() {
+        @java.lang.Override
+        public CustomInfoType parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new CustomInfoType(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<CustomInfoType> parser() {
     return PARSER;
@@ -8945,6 +10010,4 @@ private static final long serialVersionUID = 0L;
   public com.google.privacy.dlp.v2.CustomInfoType getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

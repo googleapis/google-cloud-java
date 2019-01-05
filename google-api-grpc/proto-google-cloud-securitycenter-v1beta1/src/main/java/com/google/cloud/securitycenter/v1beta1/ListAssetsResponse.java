@@ -4,21 +4,24 @@
 package com.google.cloud.securitycenter.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * Response message for listing assets.
  * </pre>
  *
  * Protobuf type {@code google.cloud.securitycenter.v1beta1.ListAssetsResponse}
  */
-public  final class ListAssetsResponse extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1beta1.ListAssetsResponse)
     ListAssetsResponseOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ListAssetsResponse.newBuilder() to construct.
   private ListAssetsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ListAssetsResponse() {
     listAssetsResults_ = java.util.Collections.emptyList();
     nextPageToken_ = "";
@@ -26,10 +29,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ListAssetsResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -49,53 +52,62 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              listAssetsResults_ = new java.util.ArrayList<com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult>();
-              mutable_bitField0_ |= 0x00000001;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                listAssetsResults_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.securitycenter.v1beta1.ListAssetsResponse
+                            .ListAssetsResult>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              listAssetsResults_.add(
+                  input.readMessage(
+                      com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult
+                          .parser(),
+                      extensionRegistry));
+              break;
             }
-            listAssetsResults_.add(
-                input.readMessage(com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.parser(), extensionRegistry));
-            break;
-          }
-          case 18: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (readTime_ != null) {
-              subBuilder = readTime_.toBuilder();
-            }
-            readTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(readTime_);
-              readTime_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (readTime_ != null) {
+                subBuilder = readTime_.toBuilder();
+              }
+              readTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(readTime_);
+                readTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            nextPageToken_ = s;
-            break;
-          }
-          case 32: {
-
-            totalSize_ = input.readInt32();
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nextPageToken_ = s;
+              break;
+            }
+          case 32:
+            {
+              totalSize_ = input.readInt32();
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         listAssetsResults_ = java.util.Collections.unmodifiableList(listAssetsResults_);
@@ -104,24 +116,30 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.securitycenter.v1beta1.SecuritycenterService.internal_static_google_cloud_securitycenter_v1beta1_ListAssetsResponse_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.securitycenter.v1beta1.SecuritycenterService
+        .internal_static_google_cloud_securitycenter_v1beta1_ListAssetsResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.securitycenter.v1beta1.SecuritycenterService.internal_static_google_cloud_securitycenter_v1beta1_ListAssetsResponse_fieldAccessorTable
+    return com.google.cloud.securitycenter.v1beta1.SecuritycenterService
+        .internal_static_google_cloud_securitycenter_v1beta1_ListAssetsResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.class, com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.Builder.class);
+            com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.class,
+            com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.Builder.class);
   }
 
-  public interface ListAssetsResultOrBuilder extends
+  public interface ListAssetsResultOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * Asset matching the search request.
      * </pre>
@@ -130,6 +148,8 @@ private static final long serialVersionUID = 0L;
      */
     boolean hasAsset();
     /**
+     *
+     *
      * <pre>
      * Asset matching the search request.
      * </pre>
@@ -138,6 +158,8 @@ private static final long serialVersionUID = 0L;
      */
     com.google.cloud.securitycenter.v1beta1.Asset getAsset();
     /**
+     *
+     *
      * <pre>
      * Asset matching the search request.
      * </pre>
@@ -147,47 +169,58 @@ private static final long serialVersionUID = 0L;
     com.google.cloud.securitycenter.v1beta1.AssetOrBuilder getAssetOrBuilder();
 
     /**
+     *
+     *
      * <pre>
      * State of the asset.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State state = 2;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State state = 2;
+     * </code>
      */
     int getStateValue();
     /**
+     *
+     *
      * <pre>
      * State of the asset.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State state = 2;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State state = 2;
+     * </code>
      */
     com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State getState();
   }
   /**
+   *
+   *
    * <pre>
    * Result containing the Asset and its State.
    * </pre>
    *
    * Protobuf type {@code google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult}
    */
-  public  static final class ListAssetsResult extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class ListAssetsResult extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult)
       ListAssetsResultOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use ListAssetsResult.newBuilder() to construct.
     private ListAssetsResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private ListAssetsResult() {
       state_ = 0;
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private ListAssetsResult(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -207,58 +240,67 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              com.google.cloud.securitycenter.v1beta1.Asset.Builder subBuilder = null;
-              if (asset_ != null) {
-                subBuilder = asset_.toBuilder();
-              }
-              asset_ = input.readMessage(com.google.cloud.securitycenter.v1beta1.Asset.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(asset_);
-                asset_ = subBuilder.buildPartial();
-              }
+            case 10:
+              {
+                com.google.cloud.securitycenter.v1beta1.Asset.Builder subBuilder = null;
+                if (asset_ != null) {
+                  subBuilder = asset_.toBuilder();
+                }
+                asset_ =
+                    input.readMessage(
+                        com.google.cloud.securitycenter.v1beta1.Asset.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(asset_);
+                  asset_ = subBuilder.buildPartial();
+                }
 
-              break;
-            }
-            case 16: {
-              int rawValue = input.readEnum();
-
-              state_ = rawValue;
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+                break;
               }
-              break;
-            }
+            case 16:
+              {
+                int rawValue = input.readEnum();
+
+                state_ = rawValue;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.securitycenter.v1beta1.SecuritycenterService.internal_static_google_cloud_securitycenter_v1beta1_ListAssetsResponse_ListAssetsResult_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.securitycenter.v1beta1.SecuritycenterService
+          .internal_static_google_cloud_securitycenter_v1beta1_ListAssetsResponse_ListAssetsResult_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.securitycenter.v1beta1.SecuritycenterService.internal_static_google_cloud_securitycenter_v1beta1_ListAssetsResponse_ListAssetsResult_fieldAccessorTable
+      return com.google.cloud.securitycenter.v1beta1.SecuritycenterService
+          .internal_static_google_cloud_securitycenter_v1beta1_ListAssetsResponse_ListAssetsResult_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.class, com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.Builder.class);
+              com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.class,
+              com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.Builder
+                  .class);
     }
 
     /**
+     *
+     *
      * <pre>
      * State of the asset.
      * When querying across two points in time this describes
@@ -267,11 +309,13 @@ private static final long serialVersionUID = 0L;
      * be: UNUSED
      * </pre>
      *
-     * Protobuf enum {@code google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State}
+     * Protobuf enum {@code
+     * google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State}
      */
-    public enum State
-        implements com.google.protobuf.ProtocolMessageEnum {
+    public enum State implements com.google.protobuf.ProtocolMessageEnum {
       /**
+       *
+       *
        * <pre>
        * Unspecified state.
        * </pre>
@@ -280,6 +324,8 @@ private static final long serialVersionUID = 0L;
        */
       STATE_UNSPECIFIED(0),
       /**
+       *
+       *
        * <pre>
        * Request did not specify use of this field in the result.
        * </pre>
@@ -288,6 +334,8 @@ private static final long serialVersionUID = 0L;
        */
       UNUSED(1),
       /**
+       *
+       *
        * <pre>
        * Asset was added between the points in time.
        * </pre>
@@ -296,6 +344,8 @@ private static final long serialVersionUID = 0L;
        */
       ADDED(2),
       /**
+       *
+       *
        * <pre>
        * Asset was removed between the points in time.
        * </pre>
@@ -304,6 +354,8 @@ private static final long serialVersionUID = 0L;
        */
       REMOVED(3),
       /**
+       *
+       *
        * <pre>
        * Asset was active at both point(s) in time.
        * </pre>
@@ -315,6 +367,8 @@ private static final long serialVersionUID = 0L;
       ;
 
       /**
+       *
+       *
        * <pre>
        * Unspecified state.
        * </pre>
@@ -323,6 +377,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int STATE_UNSPECIFIED_VALUE = 0;
       /**
+       *
+       *
        * <pre>
        * Request did not specify use of this field in the result.
        * </pre>
@@ -331,6 +387,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int UNUSED_VALUE = 1;
       /**
+       *
+       *
        * <pre>
        * Asset was added between the points in time.
        * </pre>
@@ -339,6 +397,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int ADDED_VALUE = 2;
       /**
+       *
+       *
        * <pre>
        * Asset was removed between the points in time.
        * </pre>
@@ -347,6 +407,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int REMOVED_VALUE = 3;
       /**
+       *
+       *
        * <pre>
        * Asset was active at both point(s) in time.
        * </pre>
@@ -354,7 +416,6 @@ private static final long serialVersionUID = 0L;
        * <code>ACTIVE = 4;</code>
        */
       public static final int ACTIVE_VALUE = 4;
-
 
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
@@ -364,9 +425,7 @@ private static final long serialVersionUID = 0L;
         return value;
       }
 
-      /**
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
+      /** @deprecated Use {@link #forNumber(int)} instead. */
       @java.lang.Deprecated
       public static State valueOf(int value) {
         return forNumber(value);
@@ -374,47 +433,52 @@ private static final long serialVersionUID = 0L;
 
       public static State forNumber(int value) {
         switch (value) {
-          case 0: return STATE_UNSPECIFIED;
-          case 1: return UNUSED;
-          case 2: return ADDED;
-          case 3: return REMOVED;
-          case 4: return ACTIVE;
-          default: return null;
+          case 0:
+            return STATE_UNSPECIFIED;
+          case 1:
+            return UNUSED;
+          case 2:
+            return ADDED;
+          case 3:
+            return REMOVED;
+          case 4:
+            return ACTIVE;
+          default:
+            return null;
         }
       }
 
-      public static com.google.protobuf.Internal.EnumLiteMap<State>
-          internalGetValueMap() {
+      public static com.google.protobuf.Internal.EnumLiteMap<State> internalGetValueMap() {
         return internalValueMap;
       }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          State> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<State>() {
-              public State findValueByNumber(int number) {
-                return State.forNumber(number);
-              }
-            };
 
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
+      private static final com.google.protobuf.Internal.EnumLiteMap<State> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<State>() {
+            public State findValueByNumber(int number) {
+              return State.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
         return getDescriptor().getValues().get(ordinal());
       }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
         return getDescriptor();
       }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.getDescriptor().getEnumTypes().get(0);
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult
+            .getDescriptor()
+            .getEnumTypes()
+            .get(0);
       }
 
       private static final State[] VALUES = values();
 
-      public static State valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      public static State valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
         if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
         }
         if (desc.getIndex() == -1) {
           return UNRECOGNIZED;
@@ -434,6 +498,8 @@ private static final long serialVersionUID = 0L;
     public static final int ASSET_FIELD_NUMBER = 1;
     private com.google.cloud.securitycenter.v1beta1.Asset asset_;
     /**
+     *
+     *
      * <pre>
      * Asset matching the search request.
      * </pre>
@@ -444,6 +510,8 @@ private static final long serialVersionUID = 0L;
       return asset_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Asset matching the search request.
      * </pre>
@@ -451,9 +519,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.securitycenter.v1beta1.Asset asset = 1;</code>
      */
     public com.google.cloud.securitycenter.v1beta1.Asset getAsset() {
-      return asset_ == null ? com.google.cloud.securitycenter.v1beta1.Asset.getDefaultInstance() : asset_;
+      return asset_ == null
+          ? com.google.cloud.securitycenter.v1beta1.Asset.getDefaultInstance()
+          : asset_;
     }
     /**
+     *
+     *
      * <pre>
      * Asset matching the search request.
      * </pre>
@@ -467,29 +539,44 @@ private static final long serialVersionUID = 0L;
     public static final int STATE_FIELD_NUMBER = 2;
     private int state_;
     /**
+     *
+     *
      * <pre>
      * State of the asset.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State state = 2;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State state = 2;
+     * </code>
      */
     public int getStateValue() {
       return state_;
     }
     /**
+     *
+     *
      * <pre>
      * State of the asset.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State state = 2;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State state = 2;
+     * </code>
      */
-    public com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State getState() {
+    public com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State
+        getState() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State result = com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State.valueOf(state_);
-      return result == null ? com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State.UNRECOGNIZED : result;
+      com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State result =
+          com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State.valueOf(
+              state_);
+      return result == null
+          ? com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State
+              .UNRECOGNIZED
+          : result;
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -501,12 +588,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (asset_ != null) {
         output.writeMessage(1, getAsset());
       }
-      if (state_ != com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State.STATE_UNSPECIFIED.getNumber()) {
+      if (state_
+          != com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State
+              .STATE_UNSPECIFIED.getNumber()) {
         output.writeEnum(2, state_);
       }
       unknownFields.writeTo(output);
@@ -519,12 +607,12 @@ private static final long serialVersionUID = 0L;
 
       size = 0;
       if (asset_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getAsset());
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getAsset());
       }
-      if (state_ != com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State.STATE_UNSPECIFIED.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(2, state_);
+      if (state_
+          != com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State
+              .STATE_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, state_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -534,18 +622,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
-      if (!(obj instanceof com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult)) {
+      if (!(obj
+          instanceof com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult)) {
         return super.equals(obj);
       }
-      com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult other = (com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult) obj;
+      com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult other =
+          (com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult) obj;
 
       boolean result = true;
       result = result && (hasAsset() == other.hasAsset());
       if (hasAsset()) {
-        result = result && getAsset()
-            .equals(other.getAsset());
+        result = result && getAsset().equals(other.getAsset());
       }
       result = result && state_ == other.state_;
       result = result && unknownFields.equals(other.unknownFields);
@@ -570,88 +659,101 @@ private static final long serialVersionUID = 0L;
       return hash;
     }
 
-    public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+
+    public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+
+    public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
-    public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+
+    public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+
+    public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
     }
-    public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+
+    public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+
+    public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult prototype) {
+
+    public static Builder newBuilder(
+        com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -661,44 +763,50 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * Result containing the Asset and its State.
      * </pre>
      *
      * Protobuf type {@code google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult)
         com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResultOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.cloud.securitycenter.v1beta1.SecuritycenterService.internal_static_google_cloud_securitycenter_v1beta1_ListAssetsResponse_ListAssetsResult_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.securitycenter.v1beta1.SecuritycenterService
+            .internal_static_google_cloud_securitycenter_v1beta1_ListAssetsResponse_ListAssetsResult_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.securitycenter.v1beta1.SecuritycenterService.internal_static_google_cloud_securitycenter_v1beta1_ListAssetsResponse_ListAssetsResult_fieldAccessorTable
+        return com.google.cloud.securitycenter.v1beta1.SecuritycenterService
+            .internal_static_google_cloud_securitycenter_v1beta1_ListAssetsResponse_ListAssetsResult_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.class, com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.Builder.class);
+                com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.class,
+                com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.Builder
+                    .class);
       }
 
-      // Construct using com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.newBuilder()
+      // Construct using
+      // com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -714,19 +822,22 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.cloud.securitycenter.v1beta1.SecuritycenterService.internal_static_google_cloud_securitycenter_v1beta1_ListAssetsResponse_ListAssetsResult_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.securitycenter.v1beta1.SecuritycenterService
+            .internal_static_google_cloud_securitycenter_v1beta1_ListAssetsResponse_ListAssetsResult_descriptor;
       }
 
       @java.lang.Override
-      public com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult getDefaultInstanceForType() {
-        return com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.getDefaultInstance();
+      public com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult
+          getDefaultInstanceForType() {
+        return com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult
+            .getDefaultInstance();
       }
 
       @java.lang.Override
       public com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult build() {
-        com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult result = buildPartial();
+        com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult result =
+            buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -734,8 +845,10 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult buildPartial() {
-        com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult result = new com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult(this);
+      public com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult
+          buildPartial() {
+        com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult result =
+            new com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult(this);
         if (assetBuilder_ == null) {
           result.asset_ = asset_;
         } else {
@@ -750,46 +863,55 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult) {
-          return mergeFrom((com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult)other);
+        if (other
+            instanceof
+            com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult) {
+          return mergeFrom(
+              (com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult) other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult other) {
-        if (other == com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.getDefaultInstance()) return this;
+      public Builder mergeFrom(
+          com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult other) {
+        if (other
+            == com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult
+                .getDefaultInstance()) return this;
         if (other.hasAsset()) {
           mergeAsset(other.getAsset());
         }
@@ -811,11 +933,14 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult parsedMessage = null;
+        com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult parsedMessage =
+            null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult)
+                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -827,8 +952,13 @@ private static final long serialVersionUID = 0L;
 
       private com.google.cloud.securitycenter.v1beta1.Asset asset_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.cloud.securitycenter.v1beta1.Asset, com.google.cloud.securitycenter.v1beta1.Asset.Builder, com.google.cloud.securitycenter.v1beta1.AssetOrBuilder> assetBuilder_;
+              com.google.cloud.securitycenter.v1beta1.Asset,
+              com.google.cloud.securitycenter.v1beta1.Asset.Builder,
+              com.google.cloud.securitycenter.v1beta1.AssetOrBuilder>
+          assetBuilder_;
       /**
+       *
+       *
        * <pre>
        * Asset matching the search request.
        * </pre>
@@ -839,6 +969,8 @@ private static final long serialVersionUID = 0L;
         return assetBuilder_ != null || asset_ != null;
       }
       /**
+       *
+       *
        * <pre>
        * Asset matching the search request.
        * </pre>
@@ -847,12 +979,16 @@ private static final long serialVersionUID = 0L;
        */
       public com.google.cloud.securitycenter.v1beta1.Asset getAsset() {
         if (assetBuilder_ == null) {
-          return asset_ == null ? com.google.cloud.securitycenter.v1beta1.Asset.getDefaultInstance() : asset_;
+          return asset_ == null
+              ? com.google.cloud.securitycenter.v1beta1.Asset.getDefaultInstance()
+              : asset_;
         } else {
           return assetBuilder_.getMessage();
         }
       }
       /**
+       *
+       *
        * <pre>
        * Asset matching the search request.
        * </pre>
@@ -873,6 +1009,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Asset matching the search request.
        * </pre>
@@ -891,6 +1029,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Asset matching the search request.
        * </pre>
@@ -901,7 +1041,9 @@ private static final long serialVersionUID = 0L;
         if (assetBuilder_ == null) {
           if (asset_ != null) {
             asset_ =
-              com.google.cloud.securitycenter.v1beta1.Asset.newBuilder(asset_).mergeFrom(value).buildPartial();
+                com.google.cloud.securitycenter.v1beta1.Asset.newBuilder(asset_)
+                    .mergeFrom(value)
+                    .buildPartial();
           } else {
             asset_ = value;
           }
@@ -913,6 +1055,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Asset matching the search request.
        * </pre>
@@ -931,6 +1075,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Asset matching the search request.
        * </pre>
@@ -938,11 +1084,13 @@ private static final long serialVersionUID = 0L;
        * <code>.google.cloud.securitycenter.v1beta1.Asset asset = 1;</code>
        */
       public com.google.cloud.securitycenter.v1beta1.Asset.Builder getAssetBuilder() {
-        
+
         onChanged();
         return getAssetFieldBuilder().getBuilder();
       }
       /**
+       *
+       *
        * <pre>
        * Asset matching the search request.
        * </pre>
@@ -953,11 +1101,14 @@ private static final long serialVersionUID = 0L;
         if (assetBuilder_ != null) {
           return assetBuilder_.getMessageOrBuilder();
         } else {
-          return asset_ == null ?
-              com.google.cloud.securitycenter.v1beta1.Asset.getDefaultInstance() : asset_;
+          return asset_ == null
+              ? com.google.cloud.securitycenter.v1beta1.Asset.getDefaultInstance()
+              : asset_;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Asset matching the search request.
        * </pre>
@@ -965,14 +1116,17 @@ private static final long serialVersionUID = 0L;
        * <code>.google.cloud.securitycenter.v1beta1.Asset asset = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.cloud.securitycenter.v1beta1.Asset, com.google.cloud.securitycenter.v1beta1.Asset.Builder, com.google.cloud.securitycenter.v1beta1.AssetOrBuilder> 
+              com.google.cloud.securitycenter.v1beta1.Asset,
+              com.google.cloud.securitycenter.v1beta1.Asset.Builder,
+              com.google.cloud.securitycenter.v1beta1.AssetOrBuilder>
           getAssetFieldBuilder() {
         if (assetBuilder_ == null) {
-          assetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.cloud.securitycenter.v1beta1.Asset, com.google.cloud.securitycenter.v1beta1.Asset.Builder, com.google.cloud.securitycenter.v1beta1.AssetOrBuilder>(
-                  getAsset(),
-                  getParentForChildren(),
-                  isClean());
+          assetBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.securitycenter.v1beta1.Asset,
+                  com.google.cloud.securitycenter.v1beta1.Asset.Builder,
+                  com.google.cloud.securitycenter.v1beta1.AssetOrBuilder>(
+                  getAsset(), getParentForChildren(), isClean());
           asset_ = null;
         }
         return assetBuilder_;
@@ -980,21 +1134,29 @@ private static final long serialVersionUID = 0L;
 
       private int state_ = 0;
       /**
+       *
+       *
        * <pre>
        * State of the asset.
        * </pre>
        *
-       * <code>.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State state = 2;</code>
+       * <code>
+       * .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State state = 2;
+       * </code>
        */
       public int getStateValue() {
         return state_;
       }
       /**
+       *
+       *
        * <pre>
        * State of the asset.
        * </pre>
        *
-       * <code>.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State state = 2;</code>
+       * <code>
+       * .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State state = 2;
+       * </code>
        */
       public Builder setStateValue(int value) {
         state_ = value;
@@ -1002,46 +1164,66 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * State of the asset.
        * </pre>
        *
-       * <code>.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State state = 2;</code>
+       * <code>
+       * .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State state = 2;
+       * </code>
        */
-      public com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State getState() {
+      public com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State
+          getState() {
         @SuppressWarnings("deprecation")
-        com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State result = com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State.valueOf(state_);
-        return result == null ? com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State.UNRECOGNIZED : result;
+        com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State result =
+            com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State
+                .valueOf(state_);
+        return result == null
+            ? com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State
+                .UNRECOGNIZED
+            : result;
       }
       /**
+       *
+       *
        * <pre>
        * State of the asset.
        * </pre>
        *
-       * <code>.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State state = 2;</code>
+       * <code>
+       * .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State state = 2;
+       * </code>
        */
-      public Builder setState(com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State value) {
+      public Builder setState(
+          com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+
         state_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * State of the asset.
        * </pre>
        *
-       * <code>.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State state = 2;</code>
+       * <code>
+       * .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State state = 2;
+       * </code>
        */
       public Builder clearState() {
-        
+
         state_ = 0;
         onChanged();
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1054,30 +1236,33 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult)
     }
 
     // @@protoc_insertion_point(class_scope:google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult)
-    private static final com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult DEFAULT_INSTANCE;
+    private static final com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult
+        DEFAULT_INSTANCE;
+
     static {
-      DEFAULT_INSTANCE = new com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult();
+      DEFAULT_INSTANCE =
+          new com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult();
     }
 
-    public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult getDefaultInstance() {
+    public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult
+        getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ListAssetsResult>
-        PARSER = new com.google.protobuf.AbstractParser<ListAssetsResult>() {
-      @java.lang.Override
-      public ListAssetsResult parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ListAssetsResult(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<ListAssetsResult> PARSER =
+        new com.google.protobuf.AbstractParser<ListAssetsResult>() {
+          @java.lang.Override
+          public ListAssetsResult parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new ListAssetsResult(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<ListAssetsResult> parser() {
       return PARSER;
@@ -1089,71 +1274,99 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult getDefaultInstanceForType() {
+    public com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult
+        getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
   private int bitField0_;
   public static final int LIST_ASSETS_RESULTS_FIELD_NUMBER = 1;
-  private java.util.List<com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult> listAssetsResults_;
+  private java.util.List<
+          com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult>
+      listAssetsResults_;
   /**
+   *
+   *
    * <pre>
    * Assets matching the list request.
    * </pre>
    *
-   * <code>repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;</code>
+   * <code>
+   * repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;
+   * </code>
    */
-  public java.util.List<com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult> getListAssetsResultsList() {
+  public java.util.List<com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult>
+      getListAssetsResultsList() {
     return listAssetsResults_;
   }
   /**
+   *
+   *
    * <pre>
    * Assets matching the list request.
    * </pre>
    *
-   * <code>repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;</code>
+   * <code>
+   * repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;
+   * </code>
    */
-  public java.util.List<? extends com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResultOrBuilder> 
+  public java.util.List<
+          ? extends
+              com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResultOrBuilder>
       getListAssetsResultsOrBuilderList() {
     return listAssetsResults_;
   }
   /**
+   *
+   *
    * <pre>
    * Assets matching the list request.
    * </pre>
    *
-   * <code>repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;</code>
+   * <code>
+   * repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;
+   * </code>
    */
   public int getListAssetsResultsCount() {
     return listAssetsResults_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Assets matching the list request.
    * </pre>
    *
-   * <code>repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;</code>
+   * <code>
+   * repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;
+   * </code>
    */
-  public com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult getListAssetsResults(int index) {
+  public com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult
+      getListAssetsResults(int index) {
     return listAssetsResults_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Assets matching the list request.
    * </pre>
    *
-   * <code>repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;</code>
+   * <code>
+   * repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;
+   * </code>
    */
-  public com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResultOrBuilder getListAssetsResultsOrBuilder(
-      int index) {
+  public com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResultOrBuilder
+      getListAssetsResultsOrBuilder(int index) {
     return listAssetsResults_.get(index);
   }
 
   public static final int READ_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp readTime_;
   /**
+   *
+   *
    * <pre>
    * Time used for executing the list request.
    * </pre>
@@ -1164,6 +1377,8 @@ private static final long serialVersionUID = 0L;
     return readTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Time used for executing the list request.
    * </pre>
@@ -1174,6 +1389,8 @@ private static final long serialVersionUID = 0L;
     return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Time used for executing the list request.
    * </pre>
@@ -1187,6 +1404,8 @@ private static final long serialVersionUID = 0L;
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 3;
   private volatile java.lang.Object nextPageToken_;
   /**
+   *
+   *
    * <pre>
    * Token to retrieve the next page of results, or empty if there are no more
    * results.
@@ -1199,14 +1418,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       nextPageToken_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Token to retrieve the next page of results, or empty if there are no more
    * results.
@@ -1214,13 +1434,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string next_page_token = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getNextPageTokenBytes() {
+  public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       nextPageToken_ = b;
       return b;
     } else {
@@ -1231,6 +1449,8 @@ private static final long serialVersionUID = 0L;
   public static final int TOTAL_SIZE_FIELD_NUMBER = 4;
   private int totalSize_;
   /**
+   *
+   *
    * <pre>
    * The total number of assets matching the query.
    * </pre>
@@ -1242,6 +1462,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -1253,8 +1474,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < listAssetsResults_.size(); i++) {
       output.writeMessage(1, listAssetsResults_.get(i));
     }
@@ -1277,19 +1497,17 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     for (int i = 0; i < listAssetsResults_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, listAssetsResults_.get(i));
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(1, listAssetsResults_.get(i));
     }
     if (readTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getReadTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getReadTime());
     }
     if (!getNextPageTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, nextPageToken_);
     }
     if (totalSize_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(4, totalSize_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, totalSize_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1299,25 +1517,22 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.securitycenter.v1beta1.ListAssetsResponse)) {
       return super.equals(obj);
     }
-    com.google.cloud.securitycenter.v1beta1.ListAssetsResponse other = (com.google.cloud.securitycenter.v1beta1.ListAssetsResponse) obj;
+    com.google.cloud.securitycenter.v1beta1.ListAssetsResponse other =
+        (com.google.cloud.securitycenter.v1beta1.ListAssetsResponse) obj;
 
     boolean result = true;
-    result = result && getListAssetsResultsList()
-        .equals(other.getListAssetsResultsList());
+    result = result && getListAssetsResultsList().equals(other.getListAssetsResultsList());
     result = result && (hasReadTime() == other.hasReadTime());
     if (hasReadTime()) {
-      result = result && getReadTime()
-          .equals(other.getReadTime());
+      result = result && getReadTime().equals(other.getReadTime());
     }
-    result = result && getNextPageToken()
-        .equals(other.getNextPageToken());
-    result = result && (getTotalSize()
-        == other.getTotalSize());
+    result = result && getNextPageToken().equals(other.getNextPageToken());
+    result = result && (getTotalSize() == other.getTotalSize());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -1347,117 +1562,127 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.ListAssetsResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.securitycenter.v1beta1.ListAssetsResponse prototype) {
+
+  public static Builder newBuilder(
+      com.google.cloud.securitycenter.v1beta1.ListAssetsResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Response message for listing assets.
    * </pre>
    *
    * Protobuf type {@code google.cloud.securitycenter.v1beta1.ListAssetsResponse}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.securitycenter.v1beta1.ListAssetsResponse)
       com.google.cloud.securitycenter.v1beta1.ListAssetsResponseOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.securitycenter.v1beta1.SecuritycenterService.internal_static_google_cloud_securitycenter_v1beta1_ListAssetsResponse_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.securitycenter.v1beta1.SecuritycenterService
+          .internal_static_google_cloud_securitycenter_v1beta1_ListAssetsResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.securitycenter.v1beta1.SecuritycenterService.internal_static_google_cloud_securitycenter_v1beta1_ListAssetsResponse_fieldAccessorTable
+      return com.google.cloud.securitycenter.v1beta1.SecuritycenterService
+          .internal_static_google_cloud_securitycenter_v1beta1_ListAssetsResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.class, com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.Builder.class);
+              com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.class,
+              com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.Builder.class);
     }
 
     // Construct using com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.newBuilder()
@@ -1465,17 +1690,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getListAssetsResultsFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -1499,9 +1724,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.securitycenter.v1beta1.SecuritycenterService.internal_static_google_cloud_securitycenter_v1beta1_ListAssetsResponse_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.securitycenter.v1beta1.SecuritycenterService
+          .internal_static_google_cloud_securitycenter_v1beta1_ListAssetsResponse_descriptor;
     }
 
     @java.lang.Override
@@ -1520,7 +1745,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.securitycenter.v1beta1.ListAssetsResponse buildPartial() {
-      com.google.cloud.securitycenter.v1beta1.ListAssetsResponse result = new com.google.cloud.securitycenter.v1beta1.ListAssetsResponse(this);
+      com.google.cloud.securitycenter.v1beta1.ListAssetsResponse result =
+          new com.google.cloud.securitycenter.v1beta1.ListAssetsResponse(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (listAssetsResultsBuilder_ == null) {
@@ -1548,38 +1774,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.securitycenter.v1beta1.ListAssetsResponse) {
-        return mergeFrom((com.google.cloud.securitycenter.v1beta1.ListAssetsResponse)other);
+        return mergeFrom((com.google.cloud.securitycenter.v1beta1.ListAssetsResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1587,7 +1814,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.securitycenter.v1beta1.ListAssetsResponse other) {
-      if (other == com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.getDefaultInstance()) return this;
+      if (other == com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.getDefaultInstance())
+        return this;
       if (listAssetsResultsBuilder_ == null) {
         if (!other.listAssetsResults_.isEmpty()) {
           if (listAssetsResults_.isEmpty()) {
@@ -1606,9 +1834,10 @@ private static final long serialVersionUID = 0L;
             listAssetsResultsBuilder_ = null;
             listAssetsResults_ = other.listAssetsResults_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            listAssetsResultsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getListAssetsResultsFieldBuilder() : null;
+            listAssetsResultsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getListAssetsResultsFieldBuilder()
+                    : null;
           } else {
             listAssetsResultsBuilder_.addAllMessages(other.listAssetsResults_);
           }
@@ -1643,7 +1872,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.securitycenter.v1beta1.ListAssetsResponse) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.securitycenter.v1beta1.ListAssetsResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -1652,28 +1882,43 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
-    private java.util.List<com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult> listAssetsResults_ =
-      java.util.Collections.emptyList();
+    private java.util.List<
+            com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult>
+        listAssetsResults_ = java.util.Collections.emptyList();
+
     private void ensureListAssetsResultsIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        listAssetsResults_ = new java.util.ArrayList<com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult>(listAssetsResults_);
+        listAssetsResults_ =
+            new java.util.ArrayList<
+                com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult>(
+                listAssetsResults_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult, com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.Builder, com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResultOrBuilder> listAssetsResultsBuilder_;
+            com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult,
+            com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.Builder,
+            com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResultOrBuilder>
+        listAssetsResultsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Assets matching the list request.
      * </pre>
      *
-     * <code>repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;</code>
+     * <code>
+     * repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;
+     * </code>
      */
-    public java.util.List<com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult> getListAssetsResultsList() {
+    public java.util.List<
+            com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult>
+        getListAssetsResultsList() {
       if (listAssetsResultsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(listAssetsResults_);
       } else {
@@ -1681,11 +1926,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Assets matching the list request.
      * </pre>
      *
-     * <code>repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;</code>
+     * <code>
+     * repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;
+     * </code>
      */
     public int getListAssetsResultsCount() {
       if (listAssetsResultsBuilder_ == null) {
@@ -1695,13 +1944,18 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Assets matching the list request.
      * </pre>
      *
-     * <code>repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;</code>
+     * <code>
+     * repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;
+     * </code>
      */
-    public com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult getListAssetsResults(int index) {
+    public com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult
+        getListAssetsResults(int index) {
       if (listAssetsResultsBuilder_ == null) {
         return listAssetsResults_.get(index);
       } else {
@@ -1709,14 +1963,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Assets matching the list request.
      * </pre>
      *
-     * <code>repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;</code>
+     * <code>
+     * repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;
+     * </code>
      */
     public Builder setListAssetsResults(
-        int index, com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult value) {
+        int index,
+        com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult value) {
       if (listAssetsResultsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1730,14 +1989,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Assets matching the list request.
      * </pre>
      *
-     * <code>repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;</code>
+     * <code>
+     * repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;
+     * </code>
      */
     public Builder setListAssetsResults(
-        int index, com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.Builder builderForValue) {
+        int index,
+        com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.Builder
+            builderForValue) {
       if (listAssetsResultsBuilder_ == null) {
         ensureListAssetsResultsIsMutable();
         listAssetsResults_.set(index, builderForValue.build());
@@ -1748,13 +2013,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Assets matching the list request.
      * </pre>
      *
-     * <code>repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;</code>
+     * <code>
+     * repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;
+     * </code>
      */
-    public Builder addListAssetsResults(com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult value) {
+    public Builder addListAssetsResults(
+        com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult value) {
       if (listAssetsResultsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1768,14 +2038,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Assets matching the list request.
      * </pre>
      *
-     * <code>repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;</code>
+     * <code>
+     * repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;
+     * </code>
      */
     public Builder addListAssetsResults(
-        int index, com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult value) {
+        int index,
+        com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult value) {
       if (listAssetsResultsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1789,14 +2064,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Assets matching the list request.
      * </pre>
      *
-     * <code>repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;</code>
+     * <code>
+     * repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;
+     * </code>
      */
     public Builder addListAssetsResults(
-        com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.Builder builderForValue) {
+        com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.Builder
+            builderForValue) {
       if (listAssetsResultsBuilder_ == null) {
         ensureListAssetsResultsIsMutable();
         listAssetsResults_.add(builderForValue.build());
@@ -1807,14 +2087,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Assets matching the list request.
      * </pre>
      *
-     * <code>repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;</code>
+     * <code>
+     * repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;
+     * </code>
      */
     public Builder addListAssetsResults(
-        int index, com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.Builder builderForValue) {
+        int index,
+        com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.Builder
+            builderForValue) {
       if (listAssetsResultsBuilder_ == null) {
         ensureListAssetsResultsIsMutable();
         listAssetsResults_.add(index, builderForValue.build());
@@ -1825,18 +2111,24 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Assets matching the list request.
      * </pre>
      *
-     * <code>repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;</code>
+     * <code>
+     * repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;
+     * </code>
      */
     public Builder addAllListAssetsResults(
-        java.lang.Iterable<? extends com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult> values) {
+        java.lang.Iterable<
+                ? extends
+                    com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult>
+            values) {
       if (listAssetsResultsBuilder_ == null) {
         ensureListAssetsResultsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, listAssetsResults_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, listAssetsResults_);
         onChanged();
       } else {
         listAssetsResultsBuilder_.addAllMessages(values);
@@ -1844,11 +2136,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Assets matching the list request.
      * </pre>
      *
-     * <code>repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;</code>
+     * <code>
+     * repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;
+     * </code>
      */
     public Builder clearListAssetsResults() {
       if (listAssetsResultsBuilder_ == null) {
@@ -1861,11 +2157,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Assets matching the list request.
      * </pre>
      *
-     * <code>repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;</code>
+     * <code>
+     * repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;
+     * </code>
      */
     public Builder removeListAssetsResults(int index) {
       if (listAssetsResultsBuilder_ == null) {
@@ -1878,39 +2178,55 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Assets matching the list request.
      * </pre>
      *
-     * <code>repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;</code>
+     * <code>
+     * repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;
+     * </code>
      */
-    public com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.Builder getListAssetsResultsBuilder(
-        int index) {
+    public com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.Builder
+        getListAssetsResultsBuilder(int index) {
       return getListAssetsResultsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Assets matching the list request.
      * </pre>
      *
-     * <code>repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;</code>
+     * <code>
+     * repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;
+     * </code>
      */
-    public com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResultOrBuilder getListAssetsResultsOrBuilder(
-        int index) {
+    public com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResultOrBuilder
+        getListAssetsResultsOrBuilder(int index) {
       if (listAssetsResultsBuilder_ == null) {
-        return listAssetsResults_.get(index);  } else {
+        return listAssetsResults_.get(index);
+      } else {
         return listAssetsResultsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Assets matching the list request.
      * </pre>
      *
-     * <code>repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;</code>
+     * <code>
+     * repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;
+     * </code>
      */
-    public java.util.List<? extends com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResultOrBuilder> 
-         getListAssetsResultsOrBuilderList() {
+    public java.util.List<
+            ? extends
+                com.google.cloud.securitycenter.v1beta1.ListAssetsResponse
+                    .ListAssetsResultOrBuilder>
+        getListAssetsResultsOrBuilderList() {
       if (listAssetsResultsBuilder_ != null) {
         return listAssetsResultsBuilder_.getMessageOrBuilderList();
       } else {
@@ -1918,45 +2234,71 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Assets matching the list request.
      * </pre>
      *
-     * <code>repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;</code>
+     * <code>
+     * repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;
+     * </code>
      */
-    public com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.Builder addListAssetsResultsBuilder() {
-      return getListAssetsResultsFieldBuilder().addBuilder(
-          com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.getDefaultInstance());
+    public com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.Builder
+        addListAssetsResultsBuilder() {
+      return getListAssetsResultsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult
+                  .getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Assets matching the list request.
      * </pre>
      *
-     * <code>repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;</code>
+     * <code>
+     * repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;
+     * </code>
      */
-    public com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.Builder addListAssetsResultsBuilder(
-        int index) {
-      return getListAssetsResultsFieldBuilder().addBuilder(
-          index, com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.getDefaultInstance());
+    public com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.Builder
+        addListAssetsResultsBuilder(int index) {
+      return getListAssetsResultsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult
+                  .getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Assets matching the list request.
      * </pre>
      *
-     * <code>repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;</code>
+     * <code>
+     * repeated .google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult list_assets_results = 1;
+     * </code>
      */
-    public java.util.List<com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.Builder> 
-         getListAssetsResultsBuilderList() {
+    public java.util.List<
+            com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.Builder>
+        getListAssetsResultsBuilderList() {
       return getListAssetsResultsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult, com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.Builder, com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResultOrBuilder> 
+            com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult,
+            com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.Builder,
+            com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResultOrBuilder>
         getListAssetsResultsFieldBuilder() {
       if (listAssetsResultsBuilder_ == null) {
-        listAssetsResultsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult, com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.Builder, com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResultOrBuilder>(
+        listAssetsResultsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult,
+                com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.Builder,
+                com.google.cloud.securitycenter.v1beta1.ListAssetsResponse
+                    .ListAssetsResultOrBuilder>(
                 listAssetsResults_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -1968,8 +2310,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp readTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> readTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        readTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Time used for executing the list request.
      * </pre>
@@ -1980,6 +2327,8 @@ private static final long serialVersionUID = 0L;
       return readTimeBuilder_ != null || readTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Time used for executing the list request.
      * </pre>
@@ -1994,6 +2343,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Time used for executing the list request.
      * </pre>
@@ -2014,14 +2365,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Time used for executing the list request.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp read_time = 2;</code>
      */
-    public Builder setReadTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setReadTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (readTimeBuilder_ == null) {
         readTime_ = builderForValue.build();
         onChanged();
@@ -2032,6 +2384,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Time used for executing the list request.
      * </pre>
@@ -2042,7 +2396,7 @@ private static final long serialVersionUID = 0L;
       if (readTimeBuilder_ == null) {
         if (readTime_ != null) {
           readTime_ =
-            com.google.protobuf.Timestamp.newBuilder(readTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(readTime_).mergeFrom(value).buildPartial();
         } else {
           readTime_ = value;
         }
@@ -2054,6 +2408,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Time used for executing the list request.
      * </pre>
@@ -2072,6 +2428,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Time used for executing the list request.
      * </pre>
@@ -2079,11 +2437,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp read_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getReadTimeBuilder() {
-      
+
       onChanged();
       return getReadTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Time used for executing the list request.
      * </pre>
@@ -2094,11 +2454,12 @@ private static final long serialVersionUID = 0L;
       if (readTimeBuilder_ != null) {
         return readTimeBuilder_.getMessageOrBuilder();
       } else {
-        return readTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
+        return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Time used for executing the list request.
      * </pre>
@@ -2106,14 +2467,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp read_time = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getReadTimeFieldBuilder() {
       if (readTimeBuilder_ == null) {
-        readTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getReadTime(),
-                getParentForChildren(),
-                isClean());
+        readTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getReadTime(), getParentForChildren(), isClean());
         readTime_ = null;
       }
       return readTimeBuilder_;
@@ -2121,6 +2485,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object nextPageToken_ = "";
     /**
+     *
+     *
      * <pre>
      * Token to retrieve the next page of results, or empty if there are no more
      * results.
@@ -2131,8 +2497,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         nextPageToken_ = s;
         return s;
@@ -2141,6 +2506,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Token to retrieve the next page of results, or empty if there are no more
      * results.
@@ -2148,13 +2515,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string next_page_token = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getNextPageTokenBytes() {
+    public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         nextPageToken_ = b;
         return b;
       } else {
@@ -2162,6 +2527,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Token to retrieve the next page of results, or empty if there are no more
      * results.
@@ -2169,17 +2536,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string next_page_token = 3;</code>
      */
-    public Builder setNextPageToken(
-        java.lang.String value) {
+    public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       nextPageToken_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Token to retrieve the next page of results, or empty if there are no more
      * results.
@@ -2188,12 +2556,14 @@ private static final long serialVersionUID = 0L;
      * <code>string next_page_token = 3;</code>
      */
     public Builder clearNextPageToken() {
-      
+
       nextPageToken_ = getDefaultInstance().getNextPageToken();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Token to retrieve the next page of results, or empty if there are no more
      * results.
@@ -2201,20 +2571,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string next_page_token = 3;</code>
      */
-    public Builder setNextPageTokenBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       nextPageToken_ = value;
       onChanged();
       return this;
     }
 
-    private int totalSize_ ;
+    private int totalSize_;
     /**
+     *
+     *
      * <pre>
      * The total number of assets matching the query.
      * </pre>
@@ -2225,6 +2596,8 @@ private static final long serialVersionUID = 0L;
       return totalSize_;
     }
     /**
+     *
+     *
      * <pre>
      * The total number of assets matching the query.
      * </pre>
@@ -2232,12 +2605,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 total_size = 4;</code>
      */
     public Builder setTotalSize(int value) {
-      
+
       totalSize_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The total number of assets matching the query.
      * </pre>
@@ -2245,14 +2620,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 total_size = 4;</code>
      */
     public Builder clearTotalSize() {
-      
+
       totalSize_ = 0;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -2262,12 +2637,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.securitycenter.v1beta1.ListAssetsResponse)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.securitycenter.v1beta1.ListAssetsResponse)
   private static final com.google.cloud.securitycenter.v1beta1.ListAssetsResponse DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.securitycenter.v1beta1.ListAssetsResponse();
   }
@@ -2276,16 +2651,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListAssetsResponse>
-      PARSER = new com.google.protobuf.AbstractParser<ListAssetsResponse>() {
-    @java.lang.Override
-    public ListAssetsResponse parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ListAssetsResponse(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ListAssetsResponse> PARSER =
+      new com.google.protobuf.AbstractParser<ListAssetsResponse>() {
+        @java.lang.Override
+        public ListAssetsResponse parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ListAssetsResponse(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ListAssetsResponse> parser() {
     return PARSER;
@@ -2300,6 +2675,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.securitycenter.v1beta1.ListAssetsResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

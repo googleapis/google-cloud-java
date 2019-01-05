@@ -3,11 +3,14 @@
 
 package com.google.pubsub.v1;
 
-public interface ListTopicSnapshotsRequestOrBuilder extends
+public interface ListTopicSnapshotsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.pubsub.v1.ListTopicSnapshotsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The name of the topic that snapshots are attached to.
    * Format is `projects/{project}/topics/{topic}`.
@@ -17,6 +20,8 @@ public interface ListTopicSnapshotsRequestOrBuilder extends
    */
   java.lang.String getTopic();
   /**
+   *
+   *
    * <pre>
    * The name of the topic that snapshots are attached to.
    * Format is `projects/{project}/topics/{topic}`.
@@ -24,10 +29,11 @@ public interface ListTopicSnapshotsRequestOrBuilder extends
    *
    * <code>string topic = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getTopicBytes();
+  com.google.protobuf.ByteString getTopicBytes();
 
   /**
+   *
+   *
    * <pre>
    * Maximum number of snapshot names to return.
    * </pre>
@@ -37,6 +43,8 @@ public interface ListTopicSnapshotsRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * The value returned by the last `ListTopicSnapshotsResponse`; indicates
    * that this is a continuation of a prior `ListTopicSnapshots` call, and
@@ -47,6 +55,8 @@ public interface ListTopicSnapshotsRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * The value returned by the last `ListTopicSnapshotsResponse`; indicates
    * that this is a continuation of a prior `ListTopicSnapshots` call, and
@@ -55,6 +65,5 @@ public interface ListTopicSnapshotsRequestOrBuilder extends
    *
    * <code>string page_token = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 }

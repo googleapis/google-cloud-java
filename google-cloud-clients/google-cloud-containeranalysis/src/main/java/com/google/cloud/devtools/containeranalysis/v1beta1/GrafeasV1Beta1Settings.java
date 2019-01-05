@@ -345,7 +345,8 @@ public class GrafeasV1Beta1Settings extends ClientSettings<GrafeasV1Beta1Setting
 
     /** Returns the builder for the settings used for calls to listNoteOccurrences. */
     public PagedCallSettings.Builder<
-            ListNoteOccurrencesRequest, ListNoteOccurrencesResponse,
+            ListNoteOccurrencesRequest,
+            ListNoteOccurrencesResponse,
             ListNoteOccurrencesPagedResponse>
         listNoteOccurrencesSettings() {
       return getStubSettingsBuilder().listNoteOccurrencesSettings();

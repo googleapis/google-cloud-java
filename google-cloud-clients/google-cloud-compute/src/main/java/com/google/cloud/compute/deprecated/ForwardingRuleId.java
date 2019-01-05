@@ -19,12 +19,9 @@ package com.google.cloud.compute.deprecated;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.MoreObjects;
-
 import java.util.Objects;
 
-/**
- * Base class for Google Compute Engine forwarding rule identities.
- */
+/** Base class for Google Compute Engine forwarding rule identities. */
 public abstract class ForwardingRuleId extends ResourceId {
 
   private static final long serialVersionUID = -4352410760458355391L;
@@ -36,9 +33,7 @@ public abstract class ForwardingRuleId extends ResourceId {
     this.rule = checkNotNull(rule);
   }
 
-  /**
-   * Possible types for a Google Compute Engine forwarding rule identity.
-   */
+  /** Possible types for a Google Compute Engine forwarding rule identity. */
   enum Type {
     /**
      * Global forwarding rules are used to forward traffic to the correct load balancer for HTTP(S)
@@ -53,17 +48,15 @@ public abstract class ForwardingRuleId extends ResourceId {
     REGION
   }
 
-  /**
-   * Returns the type of this forwarding rule identity.
-   */
+  /** Returns the type of this forwarding rule identity. */
   public abstract Type getType();
 
   /**
    * Returns the name of the forwarding rule. The forwarding rule name must be 1-63 characters long
-   * and comply with RFC1035. Specifically, the name must match the regular expression
-   * {@code [a-z]([-a-z0-9]*[a-z0-9])?} which means the first character must be a lowercase letter,
-   * and all following characters must be a dash, lowercase letter, or digit, except the last
-   * character, which cannot be a dash.
+   * and comply with RFC1035. Specifically, the name must match the regular expression {@code
+   * [a-z]([-a-z0-9]*[a-z0-9])?} which means the first character must be a lowercase letter, and all
+   * following characters must be a dash, lowercase letter, or digit, except the last character,
+   * which cannot be a dash.
    *
    * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
    */

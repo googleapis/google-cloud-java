@@ -4,6 +4,8 @@
 package com.google.cloud.securitycenter.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * Cloud Security Command Center's (Cloud SCC) representation of a Google Cloud
  * Platform (GCP) resource.
@@ -14,24 +16,25 @@ package com.google.cloud.securitycenter.v1beta1;
  *
  * Protobuf type {@code google.cloud.securitycenter.v1beta1.Asset}
  */
-public  final class Asset extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Asset extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1beta1.Asset)
     AssetOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Asset.newBuilder() to construct.
   private Asset(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Asset() {
     name_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Asset(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -51,126 +54,150 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 18: {
-            com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties.Builder subBuilder = null;
-            if (securityCenterProperties_ != null) {
-              subBuilder = securityCenterProperties_.toBuilder();
+              name_ = s;
+              break;
             }
-            securityCenterProperties_ = input.readMessage(com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(securityCenterProperties_);
-              securityCenterProperties_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties.Builder
+                  subBuilder = null;
+              if (securityCenterProperties_ != null) {
+                subBuilder = securityCenterProperties_.toBuilder();
+              }
+              securityCenterProperties_ =
+                  input.readMessage(
+                      com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties
+                          .parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(securityCenterProperties_);
+                securityCenterProperties_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 58: {
-            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-              resourceProperties_ = com.google.protobuf.MapField.newMapField(
-                  ResourcePropertiesDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000004;
+              break;
             }
-            com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.Value>
-            resourceProperties__ = input.readMessage(
-                ResourcePropertiesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            resourceProperties_.getMutableMap().put(
-                resourceProperties__.getKey(), resourceProperties__.getValue());
-            break;
-          }
-          case 66: {
-            com.google.cloud.securitycenter.v1beta1.SecurityMarks.Builder subBuilder = null;
-            if (securityMarks_ != null) {
-              subBuilder = securityMarks_.toBuilder();
+          case 58:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                resourceProperties_ =
+                    com.google.protobuf.MapField.newMapField(
+                        ResourcePropertiesDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000004;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.Value>
+                  resourceProperties__ =
+                      input.readMessage(
+                          ResourcePropertiesDefaultEntryHolder.defaultEntry.getParserForType(),
+                          extensionRegistry);
+              resourceProperties_
+                  .getMutableMap()
+                  .put(resourceProperties__.getKey(), resourceProperties__.getValue());
+              break;
             }
-            securityMarks_ = input.readMessage(com.google.cloud.securitycenter.v1beta1.SecurityMarks.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(securityMarks_);
-              securityMarks_ = subBuilder.buildPartial();
-            }
+          case 66:
+            {
+              com.google.cloud.securitycenter.v1beta1.SecurityMarks.Builder subBuilder = null;
+              if (securityMarks_ != null) {
+                subBuilder = securityMarks_.toBuilder();
+              }
+              securityMarks_ =
+                  input.readMessage(
+                      com.google.cloud.securitycenter.v1beta1.SecurityMarks.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(securityMarks_);
+                securityMarks_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 74: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (createTime_ != null) {
-              subBuilder = createTime_.toBuilder();
+              break;
             }
-            createTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(createTime_);
-              createTime_ = subBuilder.buildPartial();
-            }
+          case 74:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (createTime_ != null) {
+                subBuilder = createTime_.toBuilder();
+              }
+              createTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(createTime_);
+                createTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 82: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (updateTime_ != null) {
-              subBuilder = updateTime_.toBuilder();
+              break;
             }
-            updateTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(updateTime_);
-              updateTime_ = subBuilder.buildPartial();
-            }
+          case 82:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (updateTime_ != null) {
+                subBuilder = updateTime_.toBuilder();
+              }
+              updateTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(updateTime_);
+                updateTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.securitycenter.v1beta1.AssetOuterClass.internal_static_google_cloud_securitycenter_v1beta1_Asset_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.securitycenter.v1beta1.AssetOuterClass
+        .internal_static_google_cloud_securitycenter_v1beta1_Asset_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
   @java.lang.Override
-  protected com.google.protobuf.MapField internalGetMapField(
-      int number) {
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
       case 7:
         return internalGetResourceProperties();
       default:
-        throw new RuntimeException(
-            "Invalid map field number: " + number);
+        throw new RuntimeException("Invalid map field number: " + number);
     }
   }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.securitycenter.v1beta1.AssetOuterClass.internal_static_google_cloud_securitycenter_v1beta1_Asset_fieldAccessorTable
+    return com.google.cloud.securitycenter.v1beta1.AssetOuterClass
+        .internal_static_google_cloud_securitycenter_v1beta1_Asset_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.securitycenter.v1beta1.Asset.class, com.google.cloud.securitycenter.v1beta1.Asset.Builder.class);
+            com.google.cloud.securitycenter.v1beta1.Asset.class,
+            com.google.cloud.securitycenter.v1beta1.Asset.Builder.class);
   }
 
-  public interface SecurityCenterPropertiesOrBuilder extends
+  public interface SecurityCenterPropertiesOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * The full resource name of the GCP resource this asset
      * represents. This field is immutable after create time. See:
@@ -181,6 +208,8 @@ private static final long serialVersionUID = 0L;
      */
     java.lang.String getResourceName();
     /**
+     *
+     *
      * <pre>
      * The full resource name of the GCP resource this asset
      * represents. This field is immutable after create time. See:
@@ -189,10 +218,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string resource_name = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getResourceNameBytes();
+    com.google.protobuf.ByteString getResourceNameBytes();
 
     /**
+     *
+     *
      * <pre>
      * The type of the GCP resource. Examples include: APPLICATION,
      * PROJECT, and ORGANIZATION. This is a case insensitive field defined by
@@ -204,6 +234,8 @@ private static final long serialVersionUID = 0L;
      */
     java.lang.String getResourceType();
     /**
+     *
+     *
      * <pre>
      * The type of the GCP resource. Examples include: APPLICATION,
      * PROJECT, and ORGANIZATION. This is a case insensitive field defined by
@@ -213,10 +245,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string resource_type = 2;</code>
      */
-    com.google.protobuf.ByteString
-        getResourceTypeBytes();
+    com.google.protobuf.ByteString getResourceTypeBytes();
 
     /**
+     *
+     *
      * <pre>
      * The full resource name of the immediate parent of the resource. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
@@ -226,6 +259,8 @@ private static final long serialVersionUID = 0L;
      */
     java.lang.String getResourceParent();
     /**
+     *
+     *
      * <pre>
      * The full resource name of the immediate parent of the resource. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
@@ -233,10 +268,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string resource_parent = 3;</code>
      */
-    com.google.protobuf.ByteString
-        getResourceParentBytes();
+    com.google.protobuf.ByteString getResourceParentBytes();
 
     /**
+     *
+     *
      * <pre>
      * The full resource name of the project the resource belongs to. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
@@ -246,6 +282,8 @@ private static final long serialVersionUID = 0L;
      */
     java.lang.String getResourceProject();
     /**
+     *
+     *
      * <pre>
      * The full resource name of the project the resource belongs to. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
@@ -253,19 +291,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string resource_project = 4;</code>
      */
-    com.google.protobuf.ByteString
-        getResourceProjectBytes();
+    com.google.protobuf.ByteString getResourceProjectBytes();
 
     /**
+     *
+     *
      * <pre>
      * Owners of the Google Cloud resource.
      * </pre>
      *
      * <code>repeated string resource_owners = 5;</code>
      */
-    java.util.List<java.lang.String>
-        getResourceOwnersList();
+    java.util.List<java.lang.String> getResourceOwnersList();
     /**
+     *
+     *
      * <pre>
      * Owners of the Google Cloud resource.
      * </pre>
@@ -274,6 +314,8 @@ private static final long serialVersionUID = 0L;
      */
     int getResourceOwnersCount();
     /**
+     *
+     *
      * <pre>
      * Owners of the Google Cloud resource.
      * </pre>
@@ -282,16 +324,19 @@ private static final long serialVersionUID = 0L;
      */
     java.lang.String getResourceOwners(int index);
     /**
+     *
+     *
      * <pre>
      * Owners of the Google Cloud resource.
      * </pre>
      *
      * <code>repeated string resource_owners = 5;</code>
      */
-    com.google.protobuf.ByteString
-        getResourceOwnersBytes(int index);
+    com.google.protobuf.ByteString getResourceOwnersBytes(int index);
   }
   /**
+   *
+   *
    * <pre>
    * Cloud SCC managed properties. These properties are managed by Cloud SCC and
    * cannot be modified by the user.
@@ -299,15 +344,16 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties}
    */
-  public  static final class SecurityCenterProperties extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class SecurityCenterProperties extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties)
       SecurityCenterPropertiesOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use SecurityCenterProperties.newBuilder() to construct.
     private SecurityCenterProperties(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private SecurityCenterProperties() {
       resourceName_ = "";
       resourceType_ = "";
@@ -317,10 +363,10 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private SecurityCenterProperties(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -340,53 +386,57 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
 
-              resourceName_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              resourceType_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              resourceParent_ = s;
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              resourceProject_ = s;
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-                resourceOwners_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000010;
+                resourceName_ = s;
+                break;
               }
-              resourceOwners_.add(s);
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                resourceType_ = s;
+                break;
               }
-              break;
-            }
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                resourceParent_ = s;
+                break;
+              }
+            case 34:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                resourceProject_ = s;
+                break;
+              }
+            case 42:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                  resourceOwners_ = new com.google.protobuf.LazyStringArrayList();
+                  mutable_bitField0_ |= 0x00000010;
+                }
+                resourceOwners_.add(s);
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
           resourceOwners_ = resourceOwners_.getUnmodifiableView();
@@ -395,23 +445,28 @@ private static final long serialVersionUID = 0L;
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.securitycenter.v1beta1.AssetOuterClass.internal_static_google_cloud_securitycenter_v1beta1_Asset_SecurityCenterProperties_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.securitycenter.v1beta1.AssetOuterClass
+          .internal_static_google_cloud_securitycenter_v1beta1_Asset_SecurityCenterProperties_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.securitycenter.v1beta1.AssetOuterClass.internal_static_google_cloud_securitycenter_v1beta1_Asset_SecurityCenterProperties_fieldAccessorTable
+      return com.google.cloud.securitycenter.v1beta1.AssetOuterClass
+          .internal_static_google_cloud_securitycenter_v1beta1_Asset_SecurityCenterProperties_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties.class, com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties.Builder.class);
+              com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties.class,
+              com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties.Builder.class);
     }
 
     private int bitField0_;
     public static final int RESOURCE_NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object resourceName_;
     /**
+     *
+     *
      * <pre>
      * The full resource name of the GCP resource this asset
      * represents. This field is immutable after create time. See:
@@ -425,14 +480,15 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         resourceName_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The full resource name of the GCP resource this asset
      * represents. This field is immutable after create time. See:
@@ -441,13 +497,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string resource_name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getResourceNameBytes() {
+    public com.google.protobuf.ByteString getResourceNameBytes() {
       java.lang.Object ref = resourceName_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         resourceName_ = b;
         return b;
       } else {
@@ -458,6 +512,8 @@ private static final long serialVersionUID = 0L;
     public static final int RESOURCE_TYPE_FIELD_NUMBER = 2;
     private volatile java.lang.Object resourceType_;
     /**
+     *
+     *
      * <pre>
      * The type of the GCP resource. Examples include: APPLICATION,
      * PROJECT, and ORGANIZATION. This is a case insensitive field defined by
@@ -472,14 +528,15 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         resourceType_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The type of the GCP resource. Examples include: APPLICATION,
      * PROJECT, and ORGANIZATION. This is a case insensitive field defined by
@@ -489,13 +546,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string resource_type = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getResourceTypeBytes() {
+    public com.google.protobuf.ByteString getResourceTypeBytes() {
       java.lang.Object ref = resourceType_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         resourceType_ = b;
         return b;
       } else {
@@ -506,6 +561,8 @@ private static final long serialVersionUID = 0L;
     public static final int RESOURCE_PARENT_FIELD_NUMBER = 3;
     private volatile java.lang.Object resourceParent_;
     /**
+     *
+     *
      * <pre>
      * The full resource name of the immediate parent of the resource. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
@@ -518,14 +575,15 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         resourceParent_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The full resource name of the immediate parent of the resource. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
@@ -533,13 +591,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string resource_parent = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getResourceParentBytes() {
+    public com.google.protobuf.ByteString getResourceParentBytes() {
       java.lang.Object ref = resourceParent_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         resourceParent_ = b;
         return b;
       } else {
@@ -550,6 +606,8 @@ private static final long serialVersionUID = 0L;
     public static final int RESOURCE_PROJECT_FIELD_NUMBER = 4;
     private volatile java.lang.Object resourceProject_;
     /**
+     *
+     *
      * <pre>
      * The full resource name of the project the resource belongs to. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
@@ -562,14 +620,15 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         resourceProject_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The full resource name of the project the resource belongs to. See:
      * https://cloud.google.com/apis/design/resource_names#full_resource_name
@@ -577,13 +636,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string resource_project = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getResourceProjectBytes() {
+    public com.google.protobuf.ByteString getResourceProjectBytes() {
       java.lang.Object ref = resourceProject_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         resourceProject_ = b;
         return b;
       } else {
@@ -594,17 +651,20 @@ private static final long serialVersionUID = 0L;
     public static final int RESOURCE_OWNERS_FIELD_NUMBER = 5;
     private com.google.protobuf.LazyStringList resourceOwners_;
     /**
+     *
+     *
      * <pre>
      * Owners of the Google Cloud resource.
      * </pre>
      *
      * <code>repeated string resource_owners = 5;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getResourceOwnersList() {
+    public com.google.protobuf.ProtocolStringList getResourceOwnersList() {
       return resourceOwners_;
     }
     /**
+     *
+     *
      * <pre>
      * Owners of the Google Cloud resource.
      * </pre>
@@ -615,6 +675,8 @@ private static final long serialVersionUID = 0L;
       return resourceOwners_.size();
     }
     /**
+     *
+     *
      * <pre>
      * Owners of the Google Cloud resource.
      * </pre>
@@ -625,18 +687,20 @@ private static final long serialVersionUID = 0L;
       return resourceOwners_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * Owners of the Google Cloud resource.
      * </pre>
      *
      * <code>repeated string resource_owners = 5;</code>
      */
-    public com.google.protobuf.ByteString
-        getResourceOwnersBytes(int index) {
+    public com.google.protobuf.ByteString getResourceOwnersBytes(int index) {
       return resourceOwners_.getByteString(index);
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -648,8 +712,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (!getResourceNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, resourceName_);
       }
@@ -702,24 +765,21 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
-      if (!(obj instanceof com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties)) {
+      if (!(obj
+          instanceof com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties)) {
         return super.equals(obj);
       }
-      com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties other = (com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties) obj;
+      com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties other =
+          (com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties) obj;
 
       boolean result = true;
-      result = result && getResourceName()
-          .equals(other.getResourceName());
-      result = result && getResourceType()
-          .equals(other.getResourceType());
-      result = result && getResourceParent()
-          .equals(other.getResourceParent());
-      result = result && getResourceProject()
-          .equals(other.getResourceProject());
-      result = result && getResourceOwnersList()
-          .equals(other.getResourceOwnersList());
+      result = result && getResourceName().equals(other.getResourceName());
+      result = result && getResourceType().equals(other.getResourceType());
+      result = result && getResourceParent().equals(other.getResourceParent());
+      result = result && getResourceProject().equals(other.getResourceProject());
+      result = result && getResourceOwnersList().equals(other.getResourceOwnersList());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -749,87 +809,95 @@ private static final long serialVersionUID = 0L;
     }
 
     public static com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
+
     public static com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties parseFrom(
-        com.google.protobuf.CodedInputStream input)
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
+    public static com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
     public static com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties prototype) {
+
+    public static Builder newBuilder(
+        com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -839,6 +907,8 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * Cloud SCC managed properties. These properties are managed by Cloud SCC and
      * cannot be modified by the user.
@@ -846,38 +916,42 @@ private static final long serialVersionUID = 0L;
      *
      * Protobuf type {@code google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties)
         com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterPropertiesOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.cloud.securitycenter.v1beta1.AssetOuterClass.internal_static_google_cloud_securitycenter_v1beta1_Asset_SecurityCenterProperties_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.securitycenter.v1beta1.AssetOuterClass
+            .internal_static_google_cloud_securitycenter_v1beta1_Asset_SecurityCenterProperties_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.securitycenter.v1beta1.AssetOuterClass.internal_static_google_cloud_securitycenter_v1beta1_Asset_SecurityCenterProperties_fieldAccessorTable
+        return com.google.cloud.securitycenter.v1beta1.AssetOuterClass
+            .internal_static_google_cloud_securitycenter_v1beta1_Asset_SecurityCenterProperties_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties.class, com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties.Builder.class);
+                com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties.class,
+                com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties.Builder
+                    .class);
       }
 
-      // Construct using com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties.newBuilder()
+      // Construct using
+      // com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -895,19 +969,22 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.cloud.securitycenter.v1beta1.AssetOuterClass.internal_static_google_cloud_securitycenter_v1beta1_Asset_SecurityCenterProperties_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.securitycenter.v1beta1.AssetOuterClass
+            .internal_static_google_cloud_securitycenter_v1beta1_Asset_SecurityCenterProperties_descriptor;
       }
 
       @java.lang.Override
-      public com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties getDefaultInstanceForType() {
-        return com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties.getDefaultInstance();
+      public com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties
+          getDefaultInstanceForType() {
+        return com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties
+            .getDefaultInstance();
       }
 
       @java.lang.Override
       public com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties build() {
-        com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties result = buildPartial();
+        com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties result =
+            buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -916,7 +993,8 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties buildPartial() {
-        com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties result = new com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties(this);
+        com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties result =
+            new com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.resourceName_ = resourceName_;
@@ -937,46 +1015,54 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties) {
-          return mergeFrom((com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties)other);
+        if (other
+            instanceof com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties) {
+          return mergeFrom(
+              (com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties) other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties other) {
-        if (other == com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties.getDefaultInstance()) return this;
+      public Builder mergeFrom(
+          com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties other) {
+        if (other
+            == com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties
+                .getDefaultInstance()) return this;
         if (!other.getResourceName().isEmpty()) {
           resourceName_ = other.resourceName_;
           onChanged();
@@ -1022,7 +1108,9 @@ private static final long serialVersionUID = 0L;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties)
+                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1031,10 +1119,13 @@ private static final long serialVersionUID = 0L;
         }
         return this;
       }
+
       private int bitField0_;
 
       private java.lang.Object resourceName_ = "";
       /**
+       *
+       *
        * <pre>
        * The full resource name of the GCP resource this asset
        * represents. This field is immutable after create time. See:
@@ -1046,8 +1137,7 @@ private static final long serialVersionUID = 0L;
       public java.lang.String getResourceName() {
         java.lang.Object ref = resourceName_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           resourceName_ = s;
           return s;
@@ -1056,6 +1146,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The full resource name of the GCP resource this asset
        * represents. This field is immutable after create time. See:
@@ -1064,13 +1156,11 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string resource_name = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getResourceNameBytes() {
+      public com.google.protobuf.ByteString getResourceNameBytes() {
         java.lang.Object ref = resourceName_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           resourceName_ = b;
           return b;
         } else {
@@ -1078,6 +1168,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The full resource name of the GCP resource this asset
        * represents. This field is immutable after create time. See:
@@ -1086,17 +1178,18 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string resource_name = 1;</code>
        */
-      public Builder setResourceName(
-          java.lang.String value) {
+      public Builder setResourceName(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         resourceName_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The full resource name of the GCP resource this asset
        * represents. This field is immutable after create time. See:
@@ -1106,12 +1199,14 @@ private static final long serialVersionUID = 0L;
        * <code>string resource_name = 1;</code>
        */
       public Builder clearResourceName() {
-        
+
         resourceName_ = getDefaultInstance().getResourceName();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The full resource name of the GCP resource this asset
        * represents. This field is immutable after create time. See:
@@ -1120,13 +1215,12 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string resource_name = 1;</code>
        */
-      public Builder setResourceNameBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setResourceNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         resourceName_ = value;
         onChanged();
         return this;
@@ -1134,6 +1228,8 @@ private static final long serialVersionUID = 0L;
 
       private java.lang.Object resourceType_ = "";
       /**
+       *
+       *
        * <pre>
        * The type of the GCP resource. Examples include: APPLICATION,
        * PROJECT, and ORGANIZATION. This is a case insensitive field defined by
@@ -1146,8 +1242,7 @@ private static final long serialVersionUID = 0L;
       public java.lang.String getResourceType() {
         java.lang.Object ref = resourceType_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           resourceType_ = s;
           return s;
@@ -1156,6 +1251,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The type of the GCP resource. Examples include: APPLICATION,
        * PROJECT, and ORGANIZATION. This is a case insensitive field defined by
@@ -1165,13 +1262,11 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string resource_type = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getResourceTypeBytes() {
+      public com.google.protobuf.ByteString getResourceTypeBytes() {
         java.lang.Object ref = resourceType_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           resourceType_ = b;
           return b;
         } else {
@@ -1179,6 +1274,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The type of the GCP resource. Examples include: APPLICATION,
        * PROJECT, and ORGANIZATION. This is a case insensitive field defined by
@@ -1188,17 +1285,18 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string resource_type = 2;</code>
        */
-      public Builder setResourceType(
-          java.lang.String value) {
+      public Builder setResourceType(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         resourceType_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The type of the GCP resource. Examples include: APPLICATION,
        * PROJECT, and ORGANIZATION. This is a case insensitive field defined by
@@ -1209,12 +1307,14 @@ private static final long serialVersionUID = 0L;
        * <code>string resource_type = 2;</code>
        */
       public Builder clearResourceType() {
-        
+
         resourceType_ = getDefaultInstance().getResourceType();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The type of the GCP resource. Examples include: APPLICATION,
        * PROJECT, and ORGANIZATION. This is a case insensitive field defined by
@@ -1224,13 +1324,12 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string resource_type = 2;</code>
        */
-      public Builder setResourceTypeBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setResourceTypeBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         resourceType_ = value;
         onChanged();
         return this;
@@ -1238,6 +1337,8 @@ private static final long serialVersionUID = 0L;
 
       private java.lang.Object resourceParent_ = "";
       /**
+       *
+       *
        * <pre>
        * The full resource name of the immediate parent of the resource. See:
        * https://cloud.google.com/apis/design/resource_names#full_resource_name
@@ -1248,8 +1349,7 @@ private static final long serialVersionUID = 0L;
       public java.lang.String getResourceParent() {
         java.lang.Object ref = resourceParent_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           resourceParent_ = s;
           return s;
@@ -1258,6 +1358,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The full resource name of the immediate parent of the resource. See:
        * https://cloud.google.com/apis/design/resource_names#full_resource_name
@@ -1265,13 +1367,11 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string resource_parent = 3;</code>
        */
-      public com.google.protobuf.ByteString
-          getResourceParentBytes() {
+      public com.google.protobuf.ByteString getResourceParentBytes() {
         java.lang.Object ref = resourceParent_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           resourceParent_ = b;
           return b;
         } else {
@@ -1279,6 +1379,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The full resource name of the immediate parent of the resource. See:
        * https://cloud.google.com/apis/design/resource_names#full_resource_name
@@ -1286,17 +1388,18 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string resource_parent = 3;</code>
        */
-      public Builder setResourceParent(
-          java.lang.String value) {
+      public Builder setResourceParent(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         resourceParent_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The full resource name of the immediate parent of the resource. See:
        * https://cloud.google.com/apis/design/resource_names#full_resource_name
@@ -1305,12 +1408,14 @@ private static final long serialVersionUID = 0L;
        * <code>string resource_parent = 3;</code>
        */
       public Builder clearResourceParent() {
-        
+
         resourceParent_ = getDefaultInstance().getResourceParent();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The full resource name of the immediate parent of the resource. See:
        * https://cloud.google.com/apis/design/resource_names#full_resource_name
@@ -1318,13 +1423,12 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string resource_parent = 3;</code>
        */
-      public Builder setResourceParentBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setResourceParentBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         resourceParent_ = value;
         onChanged();
         return this;
@@ -1332,6 +1436,8 @@ private static final long serialVersionUID = 0L;
 
       private java.lang.Object resourceProject_ = "";
       /**
+       *
+       *
        * <pre>
        * The full resource name of the project the resource belongs to. See:
        * https://cloud.google.com/apis/design/resource_names#full_resource_name
@@ -1342,8 +1448,7 @@ private static final long serialVersionUID = 0L;
       public java.lang.String getResourceProject() {
         java.lang.Object ref = resourceProject_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           resourceProject_ = s;
           return s;
@@ -1352,6 +1457,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The full resource name of the project the resource belongs to. See:
        * https://cloud.google.com/apis/design/resource_names#full_resource_name
@@ -1359,13 +1466,11 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string resource_project = 4;</code>
        */
-      public com.google.protobuf.ByteString
-          getResourceProjectBytes() {
+      public com.google.protobuf.ByteString getResourceProjectBytes() {
         java.lang.Object ref = resourceProject_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           resourceProject_ = b;
           return b;
         } else {
@@ -1373,6 +1478,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The full resource name of the project the resource belongs to. See:
        * https://cloud.google.com/apis/design/resource_names#full_resource_name
@@ -1380,17 +1487,18 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string resource_project = 4;</code>
        */
-      public Builder setResourceProject(
-          java.lang.String value) {
+      public Builder setResourceProject(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         resourceProject_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The full resource name of the project the resource belongs to. See:
        * https://cloud.google.com/apis/design/resource_names#full_resource_name
@@ -1399,12 +1507,14 @@ private static final long serialVersionUID = 0L;
        * <code>string resource_project = 4;</code>
        */
       public Builder clearResourceProject() {
-        
+
         resourceProject_ = getDefaultInstance().getResourceProject();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The full resource name of the project the resource belongs to. See:
        * https://cloud.google.com/apis/design/resource_names#full_resource_name
@@ -1412,37 +1522,41 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string resource_project = 4;</code>
        */
-      public Builder setResourceProjectBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setResourceProjectBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         resourceProject_ = value;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.LazyStringList resourceOwners_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringList resourceOwners_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
       private void ensureResourceOwnersIsMutable() {
         if (!((bitField0_ & 0x00000010) == 0x00000010)) {
           resourceOwners_ = new com.google.protobuf.LazyStringArrayList(resourceOwners_);
           bitField0_ |= 0x00000010;
-         }
+        }
       }
       /**
+       *
+       *
        * <pre>
        * Owners of the Google Cloud resource.
        * </pre>
        *
        * <code>repeated string resource_owners = 5;</code>
        */
-      public com.google.protobuf.ProtocolStringList
-          getResourceOwnersList() {
+      public com.google.protobuf.ProtocolStringList getResourceOwnersList() {
         return resourceOwners_.getUnmodifiableView();
       }
       /**
+       *
+       *
        * <pre>
        * Owners of the Google Cloud resource.
        * </pre>
@@ -1453,6 +1567,8 @@ private static final long serialVersionUID = 0L;
         return resourceOwners_.size();
       }
       /**
+       *
+       *
        * <pre>
        * Owners of the Google Cloud resource.
        * </pre>
@@ -1463,66 +1579,71 @@ private static final long serialVersionUID = 0L;
         return resourceOwners_.get(index);
       }
       /**
+       *
+       *
        * <pre>
        * Owners of the Google Cloud resource.
        * </pre>
        *
        * <code>repeated string resource_owners = 5;</code>
        */
-      public com.google.protobuf.ByteString
-          getResourceOwnersBytes(int index) {
+      public com.google.protobuf.ByteString getResourceOwnersBytes(int index) {
         return resourceOwners_.getByteString(index);
       }
       /**
+       *
+       *
        * <pre>
        * Owners of the Google Cloud resource.
        * </pre>
        *
        * <code>repeated string resource_owners = 5;</code>
        */
-      public Builder setResourceOwners(
-          int index, java.lang.String value) {
+      public Builder setResourceOwners(int index, java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureResourceOwnersIsMutable();
+          throw new NullPointerException();
+        }
+        ensureResourceOwnersIsMutable();
         resourceOwners_.set(index, value);
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Owners of the Google Cloud resource.
        * </pre>
        *
        * <code>repeated string resource_owners = 5;</code>
        */
-      public Builder addResourceOwners(
-          java.lang.String value) {
+      public Builder addResourceOwners(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureResourceOwnersIsMutable();
+          throw new NullPointerException();
+        }
+        ensureResourceOwnersIsMutable();
         resourceOwners_.add(value);
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Owners of the Google Cloud resource.
        * </pre>
        *
        * <code>repeated string resource_owners = 5;</code>
        */
-      public Builder addAllResourceOwners(
-          java.lang.Iterable<java.lang.String> values) {
+      public Builder addAllResourceOwners(java.lang.Iterable<java.lang.String> values) {
         ensureResourceOwnersIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, resourceOwners_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, resourceOwners_);
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Owners of the Google Cloud resource.
        * </pre>
@@ -1536,23 +1657,25 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Owners of the Google Cloud resource.
        * </pre>
        *
        * <code>repeated string resource_owners = 5;</code>
        */
-      public Builder addResourceOwnersBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder addResourceOwnersBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
         ensureResourceOwnersIsMutable();
         resourceOwners_.add(value);
         onChanged();
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1565,30 +1688,33 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties)
     }
 
     // @@protoc_insertion_point(class_scope:google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties)
-    private static final com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties DEFAULT_INSTANCE;
+    private static final com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties
+        DEFAULT_INSTANCE;
+
     static {
-      DEFAULT_INSTANCE = new com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties();
+      DEFAULT_INSTANCE =
+          new com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties();
     }
 
-    public static com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties getDefaultInstance() {
+    public static com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties
+        getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<SecurityCenterProperties>
-        PARSER = new com.google.protobuf.AbstractParser<SecurityCenterProperties>() {
-      @java.lang.Override
-      public SecurityCenterProperties parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SecurityCenterProperties(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<SecurityCenterProperties> PARSER =
+        new com.google.protobuf.AbstractParser<SecurityCenterProperties>() {
+          @java.lang.Override
+          public SecurityCenterProperties parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new SecurityCenterProperties(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<SecurityCenterProperties> parser() {
       return PARSER;
@@ -1600,16 +1726,18 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties getDefaultInstanceForType() {
+    public com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties
+        getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * The relative resource name of this asset. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
@@ -1624,14 +1752,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The relative resource name of this asset. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
@@ -1641,13 +1770,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -1656,57 +1783,79 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int SECURITY_CENTER_PROPERTIES_FIELD_NUMBER = 2;
-  private com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties securityCenterProperties_;
+  private com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties
+      securityCenterProperties_;
   /**
+   *
+   *
    * <pre>
    * Cloud SCC managed properties. These properties are managed by
    * Cloud SCC and cannot be modified by the user.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;
+   * </code>
    */
   public boolean hasSecurityCenterProperties() {
     return securityCenterProperties_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Cloud SCC managed properties. These properties are managed by
    * Cloud SCC and cannot be modified by the user.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;
+   * </code>
    */
-  public com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties getSecurityCenterProperties() {
-    return securityCenterProperties_ == null ? com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties.getDefaultInstance() : securityCenterProperties_;
+  public com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties
+      getSecurityCenterProperties() {
+    return securityCenterProperties_ == null
+        ? com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties
+            .getDefaultInstance()
+        : securityCenterProperties_;
   }
   /**
+   *
+   *
    * <pre>
    * Cloud SCC managed properties. These properties are managed by
    * Cloud SCC and cannot be modified by the user.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;
+   * </code>
    */
-  public com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterPropertiesOrBuilder getSecurityCenterPropertiesOrBuilder() {
+  public com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterPropertiesOrBuilder
+      getSecurityCenterPropertiesOrBuilder() {
     return getSecurityCenterProperties();
   }
 
   public static final int RESOURCE_PROPERTIES_FIELD_NUMBER = 7;
+
   private static final class ResourcePropertiesDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        java.lang.String, com.google.protobuf.Value> defaultEntry =
+    static final com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.Value>
+        defaultEntry =
             com.google.protobuf.MapEntry
-            .<java.lang.String, com.google.protobuf.Value>newDefaultInstance(
-                com.google.cloud.securitycenter.v1beta1.AssetOuterClass.internal_static_google_cloud_securitycenter_v1beta1_Asset_ResourcePropertiesEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                com.google.protobuf.Value.getDefaultInstance());
+                .<java.lang.String, com.google.protobuf.Value>newDefaultInstance(
+                    com.google.cloud.securitycenter.v1beta1.AssetOuterClass
+                        .internal_static_google_cloud_securitycenter_v1beta1_Asset_ResourcePropertiesEntry_descriptor,
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "",
+                    com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                    com.google.protobuf.Value.getDefaultInstance());
   }
-  private com.google.protobuf.MapField<
-      java.lang.String, com.google.protobuf.Value> resourceProperties_;
+
   private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
-  internalGetResourceProperties() {
+      resourceProperties_;
+
+  private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
+      internalGetResourceProperties() {
     if (resourceProperties_ == null) {
       return com.google.protobuf.MapField.emptyMapField(
           ResourcePropertiesDefaultEntryHolder.defaultEntry);
@@ -1718,6 +1867,8 @@ private static final long serialVersionUID = 0L;
     return internalGetResourceProperties().getMap().size();
   }
   /**
+   *
+   *
    * <pre>
    * Resource managed properties. These properties are managed and defined by
    * the GCP resource and cannot be modified by the user.
@@ -1725,20 +1876,20 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
    */
-
-  public boolean containsResourceProperties(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public boolean containsResourceProperties(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     return internalGetResourceProperties().getMap().containsKey(key);
   }
-  /**
-   * Use {@link #getResourcePropertiesMap()} instead.
-   */
+  /** Use {@link #getResourcePropertiesMap()} instead. */
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.protobuf.Value> getResourceProperties() {
     return getResourcePropertiesMap();
   }
   /**
+   *
+   *
    * <pre>
    * Resource managed properties. These properties are managed and defined by
    * the GCP resource and cannot be modified by the user.
@@ -1746,11 +1897,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
    */
-
   public java.util.Map<java.lang.String, com.google.protobuf.Value> getResourcePropertiesMap() {
     return internalGetResourceProperties().getMap();
   }
   /**
+   *
+   *
    * <pre>
    * Resource managed properties. These properties are managed and defined by
    * the GCP resource and cannot be modified by the user.
@@ -1758,16 +1910,18 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
    */
-
   public com.google.protobuf.Value getResourcePropertiesOrDefault(
-      java.lang.String key,
-      com.google.protobuf.Value defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+      java.lang.String key, com.google.protobuf.Value defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     java.util.Map<java.lang.String, com.google.protobuf.Value> map =
         internalGetResourceProperties().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   *
+   *
    * <pre>
    * Resource managed properties. These properties are managed and defined by
    * the GCP resource and cannot be modified by the user.
@@ -1775,10 +1929,10 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
    */
-
-  public com.google.protobuf.Value getResourcePropertiesOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public com.google.protobuf.Value getResourcePropertiesOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     java.util.Map<java.lang.String, com.google.protobuf.Value> map =
         internalGetResourceProperties().getMap();
     if (!map.containsKey(key)) {
@@ -1790,6 +1944,8 @@ private static final long serialVersionUID = 0L;
   public static final int SECURITY_MARKS_FIELD_NUMBER = 8;
   private com.google.cloud.securitycenter.v1beta1.SecurityMarks securityMarks_;
   /**
+   *
+   *
    * <pre>
    * User specified security marks. These marks are entirely managed by the user
    * and come from the SecurityMarks resource that belongs to the asset.
@@ -1801,6 +1957,8 @@ private static final long serialVersionUID = 0L;
     return securityMarks_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * User specified security marks. These marks are entirely managed by the user
    * and come from the SecurityMarks resource that belongs to the asset.
@@ -1809,9 +1967,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.securitycenter.v1beta1.SecurityMarks security_marks = 8;</code>
    */
   public com.google.cloud.securitycenter.v1beta1.SecurityMarks getSecurityMarks() {
-    return securityMarks_ == null ? com.google.cloud.securitycenter.v1beta1.SecurityMarks.getDefaultInstance() : securityMarks_;
+    return securityMarks_ == null
+        ? com.google.cloud.securitycenter.v1beta1.SecurityMarks.getDefaultInstance()
+        : securityMarks_;
   }
   /**
+   *
+   *
    * <pre>
    * User specified security marks. These marks are entirely managed by the user
    * and come from the SecurityMarks resource that belongs to the asset.
@@ -1819,13 +1981,16 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.cloud.securitycenter.v1beta1.SecurityMarks security_marks = 8;</code>
    */
-  public com.google.cloud.securitycenter.v1beta1.SecurityMarksOrBuilder getSecurityMarksOrBuilder() {
+  public com.google.cloud.securitycenter.v1beta1.SecurityMarksOrBuilder
+      getSecurityMarksOrBuilder() {
     return getSecurityMarks();
   }
 
   public static final int CREATE_TIME_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp createTime_;
   /**
+   *
+   *
    * <pre>
    * The time at which the asset was created in Cloud SCC.
    * </pre>
@@ -1836,6 +2001,8 @@ private static final long serialVersionUID = 0L;
     return createTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The time at which the asset was created in Cloud SCC.
    * </pre>
@@ -1846,6 +2013,8 @@ private static final long serialVersionUID = 0L;
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
   /**
+   *
+   *
    * <pre>
    * The time at which the asset was created in Cloud SCC.
    * </pre>
@@ -1859,6 +2028,8 @@ private static final long serialVersionUID = 0L;
   public static final int UPDATE_TIME_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp updateTime_;
   /**
+   *
+   *
    * <pre>
    * The time at which the asset was last updated, added, or deleted in Cloud
    * SCC.
@@ -1870,6 +2041,8 @@ private static final long serialVersionUID = 0L;
     return updateTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The time at which the asset was last updated, added, or deleted in Cloud
    * SCC.
@@ -1881,6 +2054,8 @@ private static final long serialVersionUID = 0L;
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
   /**
+   *
+   *
    * <pre>
    * The time at which the asset was last updated, added, or deleted in Cloud
    * SCC.
@@ -1893,6 +2068,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -1904,16 +2080,14 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     if (securityCenterProperties_ != null) {
       output.writeMessage(2, getSecurityCenterProperties());
     }
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output,
         internalGetResourceProperties(),
         ResourcePropertiesDefaultEntryHolder.defaultEntry,
@@ -1940,30 +2114,29 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (securityCenterProperties_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getSecurityCenterProperties());
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, getSecurityCenterProperties());
     }
-    for (java.util.Map.Entry<java.lang.String, com.google.protobuf.Value> entry
-         : internalGetResourceProperties().getMap().entrySet()) {
+    for (java.util.Map.Entry<java.lang.String, com.google.protobuf.Value> entry :
+        internalGetResourceProperties().getMap().entrySet()) {
       com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.Value>
-      resourceProperties__ = ResourcePropertiesDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, resourceProperties__);
+          resourceProperties__ =
+              ResourcePropertiesDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, resourceProperties__);
     }
     if (securityMarks_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, getSecurityMarks());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getSecurityMarks());
     }
     if (createTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, getCreateTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getCreateTime());
     }
     if (updateTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, getUpdateTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getUpdateTime());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1973,37 +2146,33 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.securitycenter.v1beta1.Asset)) {
       return super.equals(obj);
     }
-    com.google.cloud.securitycenter.v1beta1.Asset other = (com.google.cloud.securitycenter.v1beta1.Asset) obj;
+    com.google.cloud.securitycenter.v1beta1.Asset other =
+        (com.google.cloud.securitycenter.v1beta1.Asset) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
+    result = result && getName().equals(other.getName());
     result = result && (hasSecurityCenterProperties() == other.hasSecurityCenterProperties());
     if (hasSecurityCenterProperties()) {
-      result = result && getSecurityCenterProperties()
-          .equals(other.getSecurityCenterProperties());
+      result = result && getSecurityCenterProperties().equals(other.getSecurityCenterProperties());
     }
-    result = result && internalGetResourceProperties().equals(
-        other.internalGetResourceProperties());
+    result =
+        result && internalGetResourceProperties().equals(other.internalGetResourceProperties());
     result = result && (hasSecurityMarks() == other.hasSecurityMarks());
     if (hasSecurityMarks()) {
-      result = result && getSecurityMarks()
-          .equals(other.getSecurityMarks());
+      result = result && getSecurityMarks().equals(other.getSecurityMarks());
     }
     result = result && (hasCreateTime() == other.hasCreateTime());
     if (hasCreateTime()) {
-      result = result && getCreateTime()
-          .equals(other.getCreateTime());
+      result = result && getCreateTime().equals(other.getCreateTime());
     }
     result = result && (hasUpdateTime() == other.hasUpdateTime());
     if (hasUpdateTime()) {
-      result = result && getUpdateTime()
-          .equals(other.getUpdateTime());
+      result = result && getUpdateTime().equals(other.getUpdateTime());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -2043,97 +2212,104 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.securitycenter.v1beta1.Asset parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.securitycenter.v1beta1.Asset parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.Asset parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.Asset parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.Asset parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.Asset parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.Asset parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.Asset parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.Asset parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.securitycenter.v1beta1.Asset parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.securitycenter.v1beta1.Asset parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.securitycenter.v1beta1.Asset parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.securitycenter.v1beta1.Asset parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.Asset parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.securitycenter.v1beta1.Asset prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Cloud Security Command Center's (Cloud SCC) representation of a Google Cloud
    * Platform (GCP) resource.
@@ -2144,43 +2320,43 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.securitycenter.v1beta1.Asset}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.securitycenter.v1beta1.Asset)
       com.google.cloud.securitycenter.v1beta1.AssetOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.securitycenter.v1beta1.AssetOuterClass.internal_static_google_cloud_securitycenter_v1beta1_Asset_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.securitycenter.v1beta1.AssetOuterClass
+          .internal_static_google_cloud_securitycenter_v1beta1_Asset_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 7:
           return internalGetResourceProperties();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
         case 7:
           return internalGetMutableResourceProperties();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.securitycenter.v1beta1.AssetOuterClass.internal_static_google_cloud_securitycenter_v1beta1_Asset_fieldAccessorTable
+      return com.google.cloud.securitycenter.v1beta1.AssetOuterClass
+          .internal_static_google_cloud_securitycenter_v1beta1_Asset_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.securitycenter.v1beta1.Asset.class, com.google.cloud.securitycenter.v1beta1.Asset.Builder.class);
+              com.google.cloud.securitycenter.v1beta1.Asset.class,
+              com.google.cloud.securitycenter.v1beta1.Asset.Builder.class);
     }
 
     // Construct using com.google.cloud.securitycenter.v1beta1.Asset.newBuilder()
@@ -2188,16 +2364,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -2232,9 +2407,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.securitycenter.v1beta1.AssetOuterClass.internal_static_google_cloud_securitycenter_v1beta1_Asset_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.securitycenter.v1beta1.AssetOuterClass
+          .internal_static_google_cloud_securitycenter_v1beta1_Asset_descriptor;
     }
 
     @java.lang.Override
@@ -2253,7 +2428,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.securitycenter.v1beta1.Asset buildPartial() {
-      com.google.cloud.securitycenter.v1beta1.Asset result = new com.google.cloud.securitycenter.v1beta1.Asset(this);
+      com.google.cloud.securitycenter.v1beta1.Asset result =
+          new com.google.cloud.securitycenter.v1beta1.Asset(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.name_ = name_;
@@ -2288,38 +2464,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.securitycenter.v1beta1.Asset) {
-        return mergeFrom((com.google.cloud.securitycenter.v1beta1.Asset)other);
+        return mergeFrom((com.google.cloud.securitycenter.v1beta1.Asset) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -2335,8 +2512,7 @@ private static final long serialVersionUID = 0L;
       if (other.hasSecurityCenterProperties()) {
         mergeSecurityCenterProperties(other.getSecurityCenterProperties());
       }
-      internalGetMutableResourceProperties().mergeFrom(
-          other.internalGetResourceProperties());
+      internalGetMutableResourceProperties().mergeFrom(other.internalGetResourceProperties());
       if (other.hasSecurityMarks()) {
         mergeSecurityMarks(other.getSecurityMarks());
       }
@@ -2374,10 +2550,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * The relative resource name of this asset. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
@@ -2390,8 +2569,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -2400,6 +2578,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The relative resource name of this asset. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
@@ -2409,13 +2589,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -2423,6 +2601,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The relative resource name of this asset. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
@@ -2432,17 +2612,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The relative resource name of this asset. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
@@ -2453,12 +2634,14 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The relative resource name of this asset. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
@@ -2468,56 +2651,76 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
     }
 
-    private com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties securityCenterProperties_ = null;
+    private com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties
+        securityCenterProperties_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties, com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties.Builder, com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterPropertiesOrBuilder> securityCenterPropertiesBuilder_;
+            com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties,
+            com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties.Builder,
+            com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterPropertiesOrBuilder>
+        securityCenterPropertiesBuilder_;
     /**
+     *
+     *
      * <pre>
      * Cloud SCC managed properties. These properties are managed by
      * Cloud SCC and cannot be modified by the user.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;
+     * </code>
      */
     public boolean hasSecurityCenterProperties() {
       return securityCenterPropertiesBuilder_ != null || securityCenterProperties_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Cloud SCC managed properties. These properties are managed by
      * Cloud SCC and cannot be modified by the user.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;
+     * </code>
      */
-    public com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties getSecurityCenterProperties() {
+    public com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties
+        getSecurityCenterProperties() {
       if (securityCenterPropertiesBuilder_ == null) {
-        return securityCenterProperties_ == null ? com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties.getDefaultInstance() : securityCenterProperties_;
+        return securityCenterProperties_ == null
+            ? com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties
+                .getDefaultInstance()
+            : securityCenterProperties_;
       } else {
         return securityCenterPropertiesBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Cloud SCC managed properties. These properties are managed by
      * Cloud SCC and cannot be modified by the user.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;
+     * </code>
      */
-    public Builder setSecurityCenterProperties(com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties value) {
+    public Builder setSecurityCenterProperties(
+        com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties value) {
       if (securityCenterPropertiesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2531,15 +2734,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Cloud SCC managed properties. These properties are managed by
      * Cloud SCC and cannot be modified by the user.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;
+     * </code>
      */
     public Builder setSecurityCenterProperties(
-        com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties.Builder builderForValue) {
+        com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties.Builder
+            builderForValue) {
       if (securityCenterPropertiesBuilder_ == null) {
         securityCenterProperties_ = builderForValue.build();
         onChanged();
@@ -2550,18 +2758,26 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Cloud SCC managed properties. These properties are managed by
      * Cloud SCC and cannot be modified by the user.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;
+     * </code>
      */
-    public Builder mergeSecurityCenterProperties(com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties value) {
+    public Builder mergeSecurityCenterProperties(
+        com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties value) {
       if (securityCenterPropertiesBuilder_ == null) {
         if (securityCenterProperties_ != null) {
           securityCenterProperties_ =
-            com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties.newBuilder(securityCenterProperties_).mergeFrom(value).buildPartial();
+              com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties.newBuilder(
+                      securityCenterProperties_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           securityCenterProperties_ = value;
         }
@@ -2573,12 +2789,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Cloud SCC managed properties. These properties are managed by
      * Cloud SCC and cannot be modified by the user.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;
+     * </code>
      */
     public Builder clearSecurityCenterProperties() {
       if (securityCenterPropertiesBuilder_ == null) {
@@ -2592,72 +2812,95 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Cloud SCC managed properties. These properties are managed by
      * Cloud SCC and cannot be modified by the user.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;
+     * </code>
      */
-    public com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties.Builder getSecurityCenterPropertiesBuilder() {
-      
+    public com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties.Builder
+        getSecurityCenterPropertiesBuilder() {
+
       onChanged();
       return getSecurityCenterPropertiesFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Cloud SCC managed properties. These properties are managed by
      * Cloud SCC and cannot be modified by the user.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;
+     * </code>
      */
-    public com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterPropertiesOrBuilder getSecurityCenterPropertiesOrBuilder() {
+    public com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterPropertiesOrBuilder
+        getSecurityCenterPropertiesOrBuilder() {
       if (securityCenterPropertiesBuilder_ != null) {
         return securityCenterPropertiesBuilder_.getMessageOrBuilder();
       } else {
-        return securityCenterProperties_ == null ?
-            com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties.getDefaultInstance() : securityCenterProperties_;
+        return securityCenterProperties_ == null
+            ? com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties
+                .getDefaultInstance()
+            : securityCenterProperties_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Cloud SCC managed properties. These properties are managed by
      * Cloud SCC and cannot be modified by the user.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties, com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties.Builder, com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterPropertiesOrBuilder> 
+            com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties,
+            com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties.Builder,
+            com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterPropertiesOrBuilder>
         getSecurityCenterPropertiesFieldBuilder() {
       if (securityCenterPropertiesBuilder_ == null) {
-        securityCenterPropertiesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties, com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties.Builder, com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterPropertiesOrBuilder>(
-                getSecurityCenterProperties(),
-                getParentForChildren(),
-                isClean());
+        securityCenterPropertiesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties,
+                com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties.Builder,
+                com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterPropertiesOrBuilder>(
+                getSecurityCenterProperties(), getParentForChildren(), isClean());
         securityCenterProperties_ = null;
       }
       return securityCenterPropertiesBuilder_;
     }
 
-    private com.google.protobuf.MapField<
-        java.lang.String, com.google.protobuf.Value> resourceProperties_;
     private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
-    internalGetResourceProperties() {
+        resourceProperties_;
+
+    private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
+        internalGetResourceProperties() {
       if (resourceProperties_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
             ResourcePropertiesDefaultEntryHolder.defaultEntry);
       }
       return resourceProperties_;
     }
+
     private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
-    internalGetMutableResourceProperties() {
-      onChanged();;
+        internalGetMutableResourceProperties() {
+      onChanged();
+      ;
       if (resourceProperties_ == null) {
-        resourceProperties_ = com.google.protobuf.MapField.newMapField(
-            ResourcePropertiesDefaultEntryHolder.defaultEntry);
+        resourceProperties_ =
+            com.google.protobuf.MapField.newMapField(
+                ResourcePropertiesDefaultEntryHolder.defaultEntry);
       }
       if (!resourceProperties_.isMutable()) {
         resourceProperties_ = resourceProperties_.copy();
@@ -2669,6 +2912,8 @@ private static final long serialVersionUID = 0L;
       return internalGetResourceProperties().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * Resource managed properties. These properties are managed and defined by
      * the GCP resource and cannot be modified by the user.
@@ -2676,20 +2921,20 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
      */
-
-    public boolean containsResourceProperties(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsResourceProperties(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetResourceProperties().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getResourcePropertiesMap()} instead.
-     */
+    /** Use {@link #getResourcePropertiesMap()} instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getResourceProperties() {
       return getResourcePropertiesMap();
     }
     /**
+     *
+     *
      * <pre>
      * Resource managed properties. These properties are managed and defined by
      * the GCP resource and cannot be modified by the user.
@@ -2697,11 +2942,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
      */
-
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getResourcePropertiesMap() {
       return internalGetResourceProperties().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * Resource managed properties. These properties are managed and defined by
      * the GCP resource and cannot be modified by the user.
@@ -2709,16 +2955,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
      */
-
     public com.google.protobuf.Value getResourcePropertiesOrDefault(
-        java.lang.String key,
-        com.google.protobuf.Value defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+        java.lang.String key, com.google.protobuf.Value defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       java.util.Map<java.lang.String, com.google.protobuf.Value> map =
           internalGetResourceProperties().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * Resource managed properties. These properties are managed and defined by
      * the GCP resource and cannot be modified by the user.
@@ -2726,10 +2974,10 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
      */
-
-    public com.google.protobuf.Value getResourcePropertiesOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public com.google.protobuf.Value getResourcePropertiesOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       java.util.Map<java.lang.String, com.google.protobuf.Value> map =
           internalGetResourceProperties().getMap();
       if (!map.containsKey(key)) {
@@ -2739,11 +2987,12 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder clearResourceProperties() {
-      internalGetMutableResourceProperties().getMutableMap()
-          .clear();
+      internalGetMutableResourceProperties().getMutableMap().clear();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Resource managed properties. These properties are managed and defined by
      * the GCP resource and cannot be modified by the user.
@@ -2751,23 +3000,22 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
      */
-
-    public Builder removeResourceProperties(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableResourceProperties().getMutableMap()
-          .remove(key);
+    public Builder removeResourceProperties(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableResourceProperties().getMutableMap().remove(key);
       return this;
     }
-    /**
-     * Use alternate mutation accessors instead.
-     */
+    /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.protobuf.Value>
-    getMutableResourceProperties() {
+        getMutableResourceProperties() {
       return internalGetMutableResourceProperties().getMutableMap();
     }
     /**
+     *
+     *
      * <pre>
      * Resource managed properties. These properties are managed and defined by
      * the GCP resource and cannot be modified by the user.
@@ -2775,16 +3023,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
      */
-    public Builder putResourceProperties(
-        java.lang.String key,
-        com.google.protobuf.Value value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableResourceProperties().getMutableMap()
-          .put(key, value);
+    public Builder putResourceProperties(java.lang.String key, com.google.protobuf.Value value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableResourceProperties().getMutableMap().put(key, value);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Resource managed properties. These properties are managed and defined by
      * the GCP resource and cannot be modified by the user.
@@ -2792,18 +3043,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
      */
-
     public Builder putAllResourceProperties(
         java.util.Map<java.lang.String, com.google.protobuf.Value> values) {
-      internalGetMutableResourceProperties().getMutableMap()
-          .putAll(values);
+      internalGetMutableResourceProperties().getMutableMap().putAll(values);
       return this;
     }
 
     private com.google.cloud.securitycenter.v1beta1.SecurityMarks securityMarks_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.securitycenter.v1beta1.SecurityMarks, com.google.cloud.securitycenter.v1beta1.SecurityMarks.Builder, com.google.cloud.securitycenter.v1beta1.SecurityMarksOrBuilder> securityMarksBuilder_;
+            com.google.cloud.securitycenter.v1beta1.SecurityMarks,
+            com.google.cloud.securitycenter.v1beta1.SecurityMarks.Builder,
+            com.google.cloud.securitycenter.v1beta1.SecurityMarksOrBuilder>
+        securityMarksBuilder_;
     /**
+     *
+     *
      * <pre>
      * User specified security marks. These marks are entirely managed by the user
      * and come from the SecurityMarks resource that belongs to the asset.
@@ -2815,6 +3069,8 @@ private static final long serialVersionUID = 0L;
       return securityMarksBuilder_ != null || securityMarks_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * User specified security marks. These marks are entirely managed by the user
      * and come from the SecurityMarks resource that belongs to the asset.
@@ -2824,12 +3080,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.securitycenter.v1beta1.SecurityMarks getSecurityMarks() {
       if (securityMarksBuilder_ == null) {
-        return securityMarks_ == null ? com.google.cloud.securitycenter.v1beta1.SecurityMarks.getDefaultInstance() : securityMarks_;
+        return securityMarks_ == null
+            ? com.google.cloud.securitycenter.v1beta1.SecurityMarks.getDefaultInstance()
+            : securityMarks_;
       } else {
         return securityMarksBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * User specified security marks. These marks are entirely managed by the user
      * and come from the SecurityMarks resource that belongs to the asset.
@@ -2851,6 +3111,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * User specified security marks. These marks are entirely managed by the user
      * and come from the SecurityMarks resource that belongs to the asset.
@@ -2870,6 +3132,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * User specified security marks. These marks are entirely managed by the user
      * and come from the SecurityMarks resource that belongs to the asset.
@@ -2881,7 +3145,9 @@ private static final long serialVersionUID = 0L;
       if (securityMarksBuilder_ == null) {
         if (securityMarks_ != null) {
           securityMarks_ =
-            com.google.cloud.securitycenter.v1beta1.SecurityMarks.newBuilder(securityMarks_).mergeFrom(value).buildPartial();
+              com.google.cloud.securitycenter.v1beta1.SecurityMarks.newBuilder(securityMarks_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           securityMarks_ = value;
         }
@@ -2893,6 +3159,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * User specified security marks. These marks are entirely managed by the user
      * and come from the SecurityMarks resource that belongs to the asset.
@@ -2912,6 +3180,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * User specified security marks. These marks are entirely managed by the user
      * and come from the SecurityMarks resource that belongs to the asset.
@@ -2920,11 +3190,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.securitycenter.v1beta1.SecurityMarks security_marks = 8;</code>
      */
     public com.google.cloud.securitycenter.v1beta1.SecurityMarks.Builder getSecurityMarksBuilder() {
-      
+
       onChanged();
       return getSecurityMarksFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * User specified security marks. These marks are entirely managed by the user
      * and come from the SecurityMarks resource that belongs to the asset.
@@ -2932,15 +3204,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.securitycenter.v1beta1.SecurityMarks security_marks = 8;</code>
      */
-    public com.google.cloud.securitycenter.v1beta1.SecurityMarksOrBuilder getSecurityMarksOrBuilder() {
+    public com.google.cloud.securitycenter.v1beta1.SecurityMarksOrBuilder
+        getSecurityMarksOrBuilder() {
       if (securityMarksBuilder_ != null) {
         return securityMarksBuilder_.getMessageOrBuilder();
       } else {
-        return securityMarks_ == null ?
-            com.google.cloud.securitycenter.v1beta1.SecurityMarks.getDefaultInstance() : securityMarks_;
+        return securityMarks_ == null
+            ? com.google.cloud.securitycenter.v1beta1.SecurityMarks.getDefaultInstance()
+            : securityMarks_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * User specified security marks. These marks are entirely managed by the user
      * and come from the SecurityMarks resource that belongs to the asset.
@@ -2949,14 +3225,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.securitycenter.v1beta1.SecurityMarks security_marks = 8;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.securitycenter.v1beta1.SecurityMarks, com.google.cloud.securitycenter.v1beta1.SecurityMarks.Builder, com.google.cloud.securitycenter.v1beta1.SecurityMarksOrBuilder> 
+            com.google.cloud.securitycenter.v1beta1.SecurityMarks,
+            com.google.cloud.securitycenter.v1beta1.SecurityMarks.Builder,
+            com.google.cloud.securitycenter.v1beta1.SecurityMarksOrBuilder>
         getSecurityMarksFieldBuilder() {
       if (securityMarksBuilder_ == null) {
-        securityMarksBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.securitycenter.v1beta1.SecurityMarks, com.google.cloud.securitycenter.v1beta1.SecurityMarks.Builder, com.google.cloud.securitycenter.v1beta1.SecurityMarksOrBuilder>(
-                getSecurityMarks(),
-                getParentForChildren(),
-                isClean());
+        securityMarksBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.securitycenter.v1beta1.SecurityMarks,
+                com.google.cloud.securitycenter.v1beta1.SecurityMarks.Builder,
+                com.google.cloud.securitycenter.v1beta1.SecurityMarksOrBuilder>(
+                getSecurityMarks(), getParentForChildren(), isClean());
         securityMarks_ = null;
       }
       return securityMarksBuilder_;
@@ -2964,8 +3243,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp createTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        createTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * The time at which the asset was created in Cloud SCC.
      * </pre>
@@ -2976,6 +3260,8 @@ private static final long serialVersionUID = 0L;
       return createTimeBuilder_ != null || createTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the asset was created in Cloud SCC.
      * </pre>
@@ -2984,12 +3270,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
-        return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
       } else {
         return createTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the asset was created in Cloud SCC.
      * </pre>
@@ -3010,14 +3300,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the asset was created in Cloud SCC.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 9;</code>
      */
-    public Builder setCreateTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
         onChanged();
@@ -3028,6 +3319,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the asset was created in Cloud SCC.
      * </pre>
@@ -3038,7 +3331,7 @@ private static final long serialVersionUID = 0L;
       if (createTimeBuilder_ == null) {
         if (createTime_ != null) {
           createTime_ =
-            com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
         } else {
           createTime_ = value;
         }
@@ -3050,6 +3343,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the asset was created in Cloud SCC.
      * </pre>
@@ -3068,6 +3363,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the asset was created in Cloud SCC.
      * </pre>
@@ -3075,11 +3372,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp create_time = 9;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      
+
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the asset was created in Cloud SCC.
      * </pre>
@@ -3090,11 +3389,14 @@ private static final long serialVersionUID = 0L;
       if (createTimeBuilder_ != null) {
         return createTimeBuilder_.getMessageOrBuilder();
       } else {
-        return createTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the asset was created in Cloud SCC.
      * </pre>
@@ -3102,14 +3404,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp create_time = 9;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getCreateTimeFieldBuilder() {
       if (createTimeBuilder_ == null) {
-        createTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getCreateTime(),
-                getParentForChildren(),
-                isClean());
+        createTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(), getParentForChildren(), isClean());
         createTime_ = null;
       }
       return createTimeBuilder_;
@@ -3117,8 +3422,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp updateTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updateTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        updateTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * The time at which the asset was last updated, added, or deleted in Cloud
      * SCC.
@@ -3130,6 +3440,8 @@ private static final long serialVersionUID = 0L;
       return updateTimeBuilder_ != null || updateTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the asset was last updated, added, or deleted in Cloud
      * SCC.
@@ -3139,12 +3451,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
       if (updateTimeBuilder_ == null) {
-        return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
       } else {
         return updateTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the asset was last updated, added, or deleted in Cloud
      * SCC.
@@ -3166,6 +3482,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the asset was last updated, added, or deleted in Cloud
      * SCC.
@@ -3173,8 +3491,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp update_time = 10;</code>
      */
-    public Builder setUpdateTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
         onChanged();
@@ -3185,6 +3502,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the asset was last updated, added, or deleted in Cloud
      * SCC.
@@ -3196,7 +3515,7 @@ private static final long serialVersionUID = 0L;
       if (updateTimeBuilder_ == null) {
         if (updateTime_ != null) {
           updateTime_ =
-            com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
         } else {
           updateTime_ = value;
         }
@@ -3208,6 +3527,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the asset was last updated, added, or deleted in Cloud
      * SCC.
@@ -3227,6 +3548,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the asset was last updated, added, or deleted in Cloud
      * SCC.
@@ -3235,11 +3558,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp update_time = 10;</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      
+
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the asset was last updated, added, or deleted in Cloud
      * SCC.
@@ -3251,11 +3576,14 @@ private static final long serialVersionUID = 0L;
       if (updateTimeBuilder_ != null) {
         return updateTimeBuilder_.getMessageOrBuilder();
       } else {
-        return updateTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the asset was last updated, added, or deleted in Cloud
      * SCC.
@@ -3264,21 +3592,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp update_time = 10;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getUpdateTimeFieldBuilder() {
       if (updateTimeBuilder_ == null) {
-        updateTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getUpdateTime(),
-                getParentForChildren(),
-                isClean());
+        updateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getUpdateTime(), getParentForChildren(), isClean());
         updateTime_ = null;
       }
       return updateTimeBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -3288,12 +3619,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.securitycenter.v1beta1.Asset)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.securitycenter.v1beta1.Asset)
   private static final com.google.cloud.securitycenter.v1beta1.Asset DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.securitycenter.v1beta1.Asset();
   }
@@ -3302,16 +3633,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Asset>
-      PARSER = new com.google.protobuf.AbstractParser<Asset>() {
-    @java.lang.Override
-    public Asset parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Asset(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Asset> PARSER =
+      new com.google.protobuf.AbstractParser<Asset>() {
+        @java.lang.Override
+        public Asset parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Asset(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Asset> parser() {
     return PARSER;
@@ -3326,6 +3657,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.securitycenter.v1beta1.Asset getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

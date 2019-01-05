@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p3beta1;
 
-public interface WebDetectionParamsOrBuilder extends
+public interface WebDetectionParamsOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p3beta1.WebDetectionParams)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Whether to include results derived from the geo information in the image.
    * </pre>

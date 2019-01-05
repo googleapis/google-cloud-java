@@ -48,6 +48,7 @@ import com.google.cloud.compute.v1.InstanceGroupManager;
 import com.google.cloud.compute.v1.ListManagedInstancesRegionInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.ListRegionInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PatchRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.RecreateInstancesRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.RegionInstanceGroupManagerList;
 import com.google.cloud.compute.v1.RegionInstanceGroupManagersListInstancesResponse;
@@ -116,13 +117,16 @@ public class RegionInstanceGroupManagerStubSettings
   private final UnaryCallSettings<InsertRegionInstanceGroupManagerHttpRequest, Operation>
       insertRegionInstanceGroupManagerSettings;
   private final PagedCallSettings<
-          ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList,
+          ListRegionInstanceGroupManagersHttpRequest,
+          RegionInstanceGroupManagerList,
           ListRegionInstanceGroupManagersPagedResponse>
       listRegionInstanceGroupManagersSettings;
   private final UnaryCallSettings<
           ListManagedInstancesRegionInstanceGroupManagersHttpRequest,
           RegionInstanceGroupManagersListInstancesResponse>
       listManagedInstancesRegionInstanceGroupManagersSettings;
+  private final UnaryCallSettings<PatchRegionInstanceGroupManagerHttpRequest, Operation>
+      patchRegionInstanceGroupManagerSettings;
   private final UnaryCallSettings<RecreateInstancesRegionInstanceGroupManagerHttpRequest, Operation>
       recreateInstancesRegionInstanceGroupManagerSettings;
   private final UnaryCallSettings<ResizeRegionInstanceGroupManagerHttpRequest, Operation>
@@ -171,7 +175,8 @@ public class RegionInstanceGroupManagerStubSettings
 
   /** Returns the object with the settings used for calls to listRegionInstanceGroupManagers. */
   public PagedCallSettings<
-          ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList,
+          ListRegionInstanceGroupManagersHttpRequest,
+          RegionInstanceGroupManagerList,
           ListRegionInstanceGroupManagersPagedResponse>
       listRegionInstanceGroupManagersSettings() {
     return listRegionInstanceGroupManagersSettings;
@@ -186,6 +191,12 @@ public class RegionInstanceGroupManagerStubSettings
           RegionInstanceGroupManagersListInstancesResponse>
       listManagedInstancesRegionInstanceGroupManagersSettings() {
     return listManagedInstancesRegionInstanceGroupManagersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to patchRegionInstanceGroupManager. */
+  public UnaryCallSettings<PatchRegionInstanceGroupManagerHttpRequest, Operation>
+      patchRegionInstanceGroupManagerSettings() {
+    return patchRegionInstanceGroupManagerSettings;
   }
 
   /**
@@ -310,6 +321,8 @@ public class RegionInstanceGroupManagerStubSettings
         settingsBuilder.listRegionInstanceGroupManagersSettings().build();
     listManagedInstancesRegionInstanceGroupManagersSettings =
         settingsBuilder.listManagedInstancesRegionInstanceGroupManagersSettings().build();
+    patchRegionInstanceGroupManagerSettings =
+        settingsBuilder.patchRegionInstanceGroupManagerSettings().build();
     recreateInstancesRegionInstanceGroupManagerSettings =
         settingsBuilder.recreateInstancesRegionInstanceGroupManagerSettings().build();
     resizeRegionInstanceGroupManagerSettings =
@@ -321,11 +334,13 @@ public class RegionInstanceGroupManagerStubSettings
   }
 
   private static final PagedListDescriptor<
-          ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList,
+          ListRegionInstanceGroupManagersHttpRequest,
+          RegionInstanceGroupManagerList,
           InstanceGroupManager>
       LIST_REGION_INSTANCE_GROUP_MANAGERS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList,
+              ListRegionInstanceGroupManagersHttpRequest,
+              RegionInstanceGroupManagerList,
               InstanceGroupManager>() {
             @Override
             public String emptyToken() {
@@ -368,11 +383,13 @@ public class RegionInstanceGroupManagerStubSettings
           };
 
   private static final PagedListResponseFactory<
-          ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList,
+          ListRegionInstanceGroupManagersHttpRequest,
+          RegionInstanceGroupManagerList,
           ListRegionInstanceGroupManagersPagedResponse>
       LIST_REGION_INSTANCE_GROUP_MANAGERS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList,
+              ListRegionInstanceGroupManagersHttpRequest,
+              RegionInstanceGroupManagerList,
               ListRegionInstanceGroupManagersPagedResponse>() {
             @Override
             public ApiFuture<ListRegionInstanceGroupManagersPagedResponse> getFuturePagedResponse(
@@ -383,7 +400,8 @@ public class RegionInstanceGroupManagerStubSettings
                 ApiCallContext context,
                 ApiFuture<RegionInstanceGroupManagerList> futureResponse) {
               PageContext<
-                      ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList,
+                      ListRegionInstanceGroupManagersHttpRequest,
+                      RegionInstanceGroupManagerList,
                       InstanceGroupManager>
                   pageContext =
                       PageContext.create(
@@ -415,13 +433,16 @@ public class RegionInstanceGroupManagerStubSettings
     private final UnaryCallSettings.Builder<InsertRegionInstanceGroupManagerHttpRequest, Operation>
         insertRegionInstanceGroupManagerSettings;
     private final PagedCallSettings.Builder<
-            ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList,
+            ListRegionInstanceGroupManagersHttpRequest,
+            RegionInstanceGroupManagerList,
             ListRegionInstanceGroupManagersPagedResponse>
         listRegionInstanceGroupManagersSettings;
     private final UnaryCallSettings.Builder<
             ListManagedInstancesRegionInstanceGroupManagersHttpRequest,
             RegionInstanceGroupManagersListInstancesResponse>
         listManagedInstancesRegionInstanceGroupManagersSettings;
+    private final UnaryCallSettings.Builder<PatchRegionInstanceGroupManagerHttpRequest, Operation>
+        patchRegionInstanceGroupManagerSettings;
     private final UnaryCallSettings.Builder<
             RecreateInstancesRegionInstanceGroupManagerHttpRequest, Operation>
         recreateInstancesRegionInstanceGroupManagerSettings;
@@ -493,6 +514,8 @@ public class RegionInstanceGroupManagerStubSettings
       listManagedInstancesRegionInstanceGroupManagersSettings =
           UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      patchRegionInstanceGroupManagerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       recreateInstancesRegionInstanceGroupManagerSettings =
           UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -513,6 +536,7 @@ public class RegionInstanceGroupManagerStubSettings
               insertRegionInstanceGroupManagerSettings,
               listRegionInstanceGroupManagersSettings,
               listManagedInstancesRegionInstanceGroupManagersSettings,
+              patchRegionInstanceGroupManagerSettings,
               recreateInstancesRegionInstanceGroupManagerSettings,
               resizeRegionInstanceGroupManagerSettings,
               setInstanceTemplateRegionInstanceGroupManagerSettings,
@@ -568,6 +592,11 @@ public class RegionInstanceGroupManagerStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .patchRegionInstanceGroupManagerSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .recreateInstancesRegionInstanceGroupManagerSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -607,6 +636,8 @@ public class RegionInstanceGroupManagerStubSettings
           settings.listRegionInstanceGroupManagersSettings.toBuilder();
       listManagedInstancesRegionInstanceGroupManagersSettings =
           settings.listManagedInstancesRegionInstanceGroupManagersSettings.toBuilder();
+      patchRegionInstanceGroupManagerSettings =
+          settings.patchRegionInstanceGroupManagerSettings.toBuilder();
       recreateInstancesRegionInstanceGroupManagerSettings =
           settings.recreateInstancesRegionInstanceGroupManagerSettings.toBuilder();
       resizeRegionInstanceGroupManagerSettings =
@@ -625,6 +656,7 @@ public class RegionInstanceGroupManagerStubSettings
               insertRegionInstanceGroupManagerSettings,
               listRegionInstanceGroupManagersSettings,
               listManagedInstancesRegionInstanceGroupManagersSettings,
+              patchRegionInstanceGroupManagerSettings,
               recreateInstancesRegionInstanceGroupManagerSettings,
               resizeRegionInstanceGroupManagerSettings,
               setInstanceTemplateRegionInstanceGroupManagerSettings,
@@ -687,7 +719,8 @@ public class RegionInstanceGroupManagerStubSettings
 
     /** Returns the builder for the settings used for calls to listRegionInstanceGroupManagers. */
     public PagedCallSettings.Builder<
-            ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList,
+            ListRegionInstanceGroupManagersHttpRequest,
+            RegionInstanceGroupManagerList,
             ListRegionInstanceGroupManagersPagedResponse>
         listRegionInstanceGroupManagersSettings() {
       return listRegionInstanceGroupManagersSettings;
@@ -702,6 +735,12 @@ public class RegionInstanceGroupManagerStubSettings
             RegionInstanceGroupManagersListInstancesResponse>
         listManagedInstancesRegionInstanceGroupManagersSettings() {
       return listManagedInstancesRegionInstanceGroupManagersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to patchRegionInstanceGroupManager. */
+    public UnaryCallSettings.Builder<PatchRegionInstanceGroupManagerHttpRequest, Operation>
+        patchRegionInstanceGroupManagerSettings() {
+      return patchRegionInstanceGroupManagerSettings;
     }
 
     /**

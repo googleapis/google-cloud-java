@@ -23,13 +23,18 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteImageHttpRequest;
 import com.google.cloud.compute.v1.DeprecateImageHttpRequest;
 import com.google.cloud.compute.v1.GetFromFamilyImageHttpRequest;
+import com.google.cloud.compute.v1.GetIamPolicyImageHttpRequest;
 import com.google.cloud.compute.v1.GetImageHttpRequest;
 import com.google.cloud.compute.v1.Image;
 import com.google.cloud.compute.v1.ImageList;
 import com.google.cloud.compute.v1.InsertImageHttpRequest;
 import com.google.cloud.compute.v1.ListImagesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Policy;
+import com.google.cloud.compute.v1.SetIamPolicyImageHttpRequest;
 import com.google.cloud.compute.v1.SetLabelsImageHttpRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsImageHttpRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -63,6 +68,11 @@ public abstract class ImageStub implements BackgroundResource {
   }
 
   @BetaApi
+  public UnaryCallable<GetIamPolicyImageHttpRequest, Policy> getIamPolicyImageCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyImageCallable()");
+  }
+
+  @BetaApi
   public UnaryCallable<InsertImageHttpRequest, Operation> insertImageCallable() {
     throw new UnsupportedOperationException("Not implemented: insertImageCallable()");
   }
@@ -78,8 +88,19 @@ public abstract class ImageStub implements BackgroundResource {
   }
 
   @BetaApi
+  public UnaryCallable<SetIamPolicyImageHttpRequest, Policy> setIamPolicyImageCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyImageCallable()");
+  }
+
+  @BetaApi
   public UnaryCallable<SetLabelsImageHttpRequest, Operation> setLabelsImageCallable() {
     throw new UnsupportedOperationException("Not implemented: setLabelsImageCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<TestIamPermissionsImageHttpRequest, TestPermissionsResponse>
+      testIamPermissionsImageCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsImageCallable()");
   }
 
   @Override

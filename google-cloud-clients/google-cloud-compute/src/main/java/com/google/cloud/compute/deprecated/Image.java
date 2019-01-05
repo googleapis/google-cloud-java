@@ -20,7 +20,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.cloud.compute.deprecated.Compute.ImageOption;
 import com.google.cloud.compute.deprecated.Compute.OperationOption;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.List;
@@ -32,8 +31,8 @@ import java.util.Objects;
  * images of certain operating systems that you can use, or you can create a custom image. A custom
  * image is an image created from one of your virtual machine instances that contains your specific
  * instance configurations. To get an {@code Image} object with the most recent information use
- * {@link #reload}. {@code Image} adds a layer of service-related functionality
- * over {@link ImageInfo}.
+ * {@link #reload}. {@code Image} adds a layer of service-related functionality over {@link
+ * ImageInfo}.
  *
  * @see <a href="https://cloud.google.com/compute/docs/images">Images</a>
  */
@@ -44,9 +43,7 @@ public class Image extends ImageInfo {
   private final ComputeOptions options;
   private transient Compute compute;
 
-  /**
-   * A builder for {@code Image} objects.
-   */
+  /** A builder for {@code Image} objects. */
   public static class Builder extends ImageInfo.Builder {
 
     private final Compute compute;
@@ -169,14 +166,12 @@ public class Image extends ImageInfo {
    *     the image was not found
    * @throws ComputeException upon failure or if this image is a publicly-available image
    */
-  public Operation deprecate(DeprecationStatus<ImageId> deprecationStatus,
-      OperationOption... options) {
+  public Operation deprecate(
+      DeprecationStatus<ImageId> deprecationStatus, OperationOption... options) {
     return compute.deprecate(getImageId(), deprecationStatus, options);
   }
 
-  /**
-   * Returns the image's {@code Compute} object used to issue requests.
-   */
+  /** Returns the image's {@code Compute} object used to issue requests. */
   public Compute getCompute() {
     return compute;
   }

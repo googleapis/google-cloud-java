@@ -21,13 +21,11 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.api.services.compute.model.Network;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
-
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.ISODateTimeFormat;
-
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.Objects;
+import org.joda.time.format.DateTimeFormatter;
+import org.joda.time.format.ISODateTimeFormat;
 
 /**
  * A Google Compute Engine Network. Every virtual machine instance is created as a member of a
@@ -66,23 +64,17 @@ public class NetworkInfo implements Serializable {
   private final String description;
   private final NetworkConfiguration configuration;
 
-  /**
-   * A builder for {@code NetworkInfo} objects.
-   */
+  /** A builder for {@code NetworkInfo} objects. */
   public abstract static class Builder {
 
     abstract Builder setGeneratedId(String generatedId);
 
     abstract Builder setCreationTimestamp(Long creationTimestamp);
 
-    /**
-     * Sets the identity of the network.
-     */
+    /** Sets the identity of the network. */
     public abstract Builder setNetworkId(NetworkId networkId);
 
-    /**
-     * Sets an optional textual description of the network.
-     */
+    /** Sets an optional textual description of the network. */
     public abstract Builder setDescription(String description);
 
     /**
@@ -93,9 +85,7 @@ public class NetworkInfo implements Serializable {
      */
     public abstract Builder setConfiguration(NetworkConfiguration configuration);
 
-    /**
-     * Creates a {@code NetworkInfo} object.
-     */
+    /** Creates a {@code NetworkInfo} object. */
     public abstract NetworkInfo build();
   }
 
@@ -176,30 +166,22 @@ public class NetworkInfo implements Serializable {
     this.configuration = builder.configuration;
   }
 
-  /**
-   * Returns the service-generated unique identifier for the network.
-   */
+  /** Returns the service-generated unique identifier for the network. */
   public String getGeneratedId() {
     return generatedId;
   }
 
-  /**
-   * Returns the creation timestamp in milliseconds since epoch.
-   */
+  /** Returns the creation timestamp in milliseconds since epoch. */
   public Long getCreationTimestamp() {
     return creationTimestamp;
   }
 
-  /**
-   * Returns the network identity.
-   */
+  /** Returns the network identity. */
   public NetworkId getNetworkId() {
     return networkId;
   }
 
-  /**
-   * Returns a textual description of the network.
-   */
+  /** Returns a textual description of the network. */
   public String getDescription() {
     return description;
   }
@@ -214,9 +196,7 @@ public class NetworkInfo implements Serializable {
     return (T) configuration;
   }
 
-  /**
-   * Returns a builder for the current network.
-   */
+  /** Returns a builder for the current network. */
   public Builder toBuilder() {
     return new BuilderImpl(this);
   }
@@ -241,14 +221,12 @@ public class NetworkInfo implements Serializable {
   public boolean equals(Object obj) {
     return obj == this
         || obj != null
-        && obj.getClass().equals(NetworkInfo.class)
-        && Objects.equals(toPb(), ((NetworkInfo) obj).toPb());
+            && obj.getClass().equals(NetworkInfo.class)
+            && Objects.equals(toPb(), ((NetworkInfo) obj).toPb());
   }
 
   NetworkInfo setProjectId(String projectId) {
-    return toBuilder()
-        .setNetworkId(networkId.setProjectId(projectId))
-        .build();
+    return toBuilder().setNetworkId(networkId.setProjectId(projectId)).build();
   }
 
   Network toPb() {
@@ -276,10 +254,10 @@ public class NetworkInfo implements Serializable {
   }
 
   /**
-   * Returns a {@code NetworkInfo} object given the network identity. Use
-   * {@link StandardNetworkConfiguration} to create a standard network with associated address
-   * range. Use {@link SubnetNetworkConfiguration} to create a network that supports subnetworks, up
-   * to one per region, each with its own address range.
+   * Returns a {@code NetworkInfo} object given the network identity. Use {@link
+   * StandardNetworkConfiguration} to create a standard network with associated address range. Use
+   * {@link SubnetNetworkConfiguration} to create a network that supports subnetworks, up to one per
+   * region, each with its own address range.
    */
   public static NetworkInfo of(NetworkId networkId, NetworkConfiguration configuration) {
     return newBuilder(networkId, configuration).build();

@@ -26,7 +26,7 @@ import com.google.auto.value.AutoValue;
 abstract class SubscriberStats {
 
   @AutoValue
-  //TODO: Finish implementation.
+  // TODO: Finish implementation.
   public abstract static class Stats {}
 
   /** Number of successfully published messages. */
@@ -58,7 +58,7 @@ abstract class SubscriberStats {
   }
 
   @AutoValue.Builder
-  public static abstract class Builder {
+  public abstract static class Builder {
     public abstract Builder setReceivedMessages(long value);
 
     public abstract Builder setAckedMessages(long value);

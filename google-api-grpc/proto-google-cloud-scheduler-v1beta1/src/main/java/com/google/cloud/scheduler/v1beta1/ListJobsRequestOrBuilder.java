@@ -3,11 +3,14 @@
 
 package com.google.cloud.scheduler.v1beta1;
 
-public interface ListJobsRequestOrBuilder extends
+public interface ListJobsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.scheduler.v1beta1.ListJobsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * The location name. For example:
@@ -18,6 +21,8 @@ public interface ListJobsRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The location name. For example:
@@ -26,10 +31,11 @@ public interface ListJobsRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Requested page size.
    * The maximum page size is 500. If unspecified, the page size will
@@ -43,6 +49,8 @@ public interface ListJobsRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * A token identifying a page of results the server will return. To
    * request the first page results, page_token must be empty. To
@@ -57,6 +65,8 @@ public interface ListJobsRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * A token identifying a page of results the server will return. To
    * request the first page results, page_token must be empty. To
@@ -69,6 +79,5 @@ public interface ListJobsRequestOrBuilder extends
    *
    * <code>string page_token = 6;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 }

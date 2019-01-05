@@ -73,7 +73,8 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
 
   /** Returns the object with the settings used for calls to aggregatedListInstances. */
   public PagedCallSettings<
-          AggregatedListInstancesHttpRequest, InstanceAggregatedList,
+          AggregatedListInstancesHttpRequest,
+          InstanceAggregatedList,
           AggregatedListInstancesPagedResponse>
       aggregatedListInstancesSettings() {
     return ((InstanceStubSettings) getStubSettings()).aggregatedListInstancesSettings();
@@ -105,6 +106,11 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
     return ((InstanceStubSettings) getStubSettings()).getInstanceSettings();
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicyInstance. */
+  public UnaryCallSettings<GetIamPolicyInstanceHttpRequest, Policy> getIamPolicyInstanceSettings() {
+    return ((InstanceStubSettings) getStubSettings()).getIamPolicyInstanceSettings();
+  }
+
   /** Returns the object with the settings used for calls to getSerialPortOutputInstance. */
   public UnaryCallSettings<GetSerialPortOutputInstanceHttpRequest, SerialPortOutput>
       getSerialPortOutputInstanceSettings() {
@@ -124,7 +130,8 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
 
   /** Returns the object with the settings used for calls to listReferrersInstances. */
   public PagedCallSettings<
-          ListReferrersInstancesHttpRequest, InstanceListReferrers,
+          ListReferrersInstancesHttpRequest,
+          InstanceListReferrers,
           ListReferrersInstancesPagedResponse>
       listReferrersInstancesSettings() {
     return ((InstanceStubSettings) getStubSettings()).listReferrersInstancesSettings();
@@ -145,6 +152,11 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
   public UnaryCallSettings<SetDiskAutoDeleteInstanceHttpRequest, Operation>
       setDiskAutoDeleteInstanceSettings() {
     return ((InstanceStubSettings) getStubSettings()).setDiskAutoDeleteInstanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicyInstance. */
+  public UnaryCallSettings<SetIamPolicyInstanceHttpRequest, Policy> setIamPolicyInstanceSettings() {
+    return ((InstanceStubSettings) getStubSettings()).setIamPolicyInstanceSettings();
   }
 
   /** Returns the object with the settings used for calls to setLabelsInstance. */
@@ -213,6 +225,12 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
   /** Returns the object with the settings used for calls to stopInstance. */
   public UnaryCallSettings<StopInstanceHttpRequest, Operation> stopInstanceSettings() {
     return ((InstanceStubSettings) getStubSettings()).stopInstanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissionsInstance. */
+  public UnaryCallSettings<TestIamPermissionsInstanceHttpRequest, TestPermissionsResponse>
+      testIamPermissionsInstanceSettings() {
+    return ((InstanceStubSettings) getStubSettings()).testIamPermissionsInstanceSettings();
   }
 
   /** Returns the object with the settings used for calls to updateAccessConfigInstance. */
@@ -336,7 +354,8 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
 
     /** Returns the builder for the settings used for calls to aggregatedListInstances. */
     public PagedCallSettings.Builder<
-            AggregatedListInstancesHttpRequest, InstanceAggregatedList,
+            AggregatedListInstancesHttpRequest,
+            InstanceAggregatedList,
             AggregatedListInstancesPagedResponse>
         aggregatedListInstancesSettings() {
       return getStubSettingsBuilder().aggregatedListInstancesSettings();
@@ -371,6 +390,12 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
       return getStubSettingsBuilder().getInstanceSettings();
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicyInstance. */
+    public UnaryCallSettings.Builder<GetIamPolicyInstanceHttpRequest, Policy>
+        getIamPolicyInstanceSettings() {
+      return getStubSettingsBuilder().getIamPolicyInstanceSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getSerialPortOutputInstance. */
     public UnaryCallSettings.Builder<GetSerialPortOutputInstanceHttpRequest, SerialPortOutput>
         getSerialPortOutputInstanceSettings() {
@@ -392,7 +417,8 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
 
     /** Returns the builder for the settings used for calls to listReferrersInstances. */
     public PagedCallSettings.Builder<
-            ListReferrersInstancesHttpRequest, InstanceListReferrers,
+            ListReferrersInstancesHttpRequest,
+            InstanceListReferrers,
             ListReferrersInstancesPagedResponse>
         listReferrersInstancesSettings() {
       return getStubSettingsBuilder().listReferrersInstancesSettings();
@@ -413,6 +439,12 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
     public UnaryCallSettings.Builder<SetDiskAutoDeleteInstanceHttpRequest, Operation>
         setDiskAutoDeleteInstanceSettings() {
       return getStubSettingsBuilder().setDiskAutoDeleteInstanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicyInstance. */
+    public UnaryCallSettings.Builder<SetIamPolicyInstanceHttpRequest, Policy>
+        setIamPolicyInstanceSettings() {
+      return getStubSettingsBuilder().setIamPolicyInstanceSettings();
     }
 
     /** Returns the builder for the settings used for calls to setLabelsInstance. */
@@ -483,6 +515,12 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
     /** Returns the builder for the settings used for calls to stopInstance. */
     public UnaryCallSettings.Builder<StopInstanceHttpRequest, Operation> stopInstanceSettings() {
       return getStubSettingsBuilder().stopInstanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissionsInstance. */
+    public UnaryCallSettings.Builder<TestIamPermissionsInstanceHttpRequest, TestPermissionsResponse>
+        testIamPermissionsInstanceSettings() {
+      return getStubSettingsBuilder().testIamPermissionsInstanceSettings();
     }
 
     /** Returns the builder for the settings used for calls to updateAccessConfigInstance. */

@@ -19,7 +19,7 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.bigtable.v2.ReadModifyWriteRowRequest;
 import com.google.bigtable.v2.ReadModifyWriteRule;
-import com.google.bigtable.v2.TableName;
+import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.protobuf.ByteString;
 import java.io.ByteArrayInputStream;
@@ -30,18 +30,17 @@ import java.io.ObjectOutputStream;
 import org.junit.Test;
 
 public class ReadModifyWriteRowTest {
-  private static final InstanceName INSTANCE_NAME =
-      InstanceName.of("fake-project", "fake-instance");
+  private static final String PROJECT_ID = "fake-project";
+  private static final String INSTANCE_ID = "fake-instance";
+  private static final String TABLE_ID = "fake-table";
   private static final String APP_PROFILE_ID = "fake-profile";
   private static final RequestContext REQUEST_CONTEXT =
-      RequestContext.create(INSTANCE_NAME, APP_PROFILE_ID);
-  private static final TableName TABLE_NAME =
-      TableName.of(INSTANCE_NAME.getProject(), INSTANCE_NAME.getInstance(), "fake-table");
+      RequestContext.create(PROJECT_ID, INSTANCE_ID, APP_PROFILE_ID);
 
   @Test
   public void testAppend() {
     ReadModifyWriteRow mutation =
-        ReadModifyWriteRow.create(TABLE_NAME.getTable(), "fake-key")
+        ReadModifyWriteRow.create(TABLE_ID, "fake-key")
             .append(
                 "fake-family",
                 ByteString.copyFromUtf8("fake-qualifier"),
@@ -52,7 +51,7 @@ public class ReadModifyWriteRowTest {
 
     ReadModifyWriteRowRequest expected =
         ReadModifyWriteRowRequest.newBuilder()
-            .setTableName(TABLE_NAME.toString())
+            .setTableName(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
             .setAppProfileId(APP_PROFILE_ID)
             .setRowKey(ByteString.copyFromUtf8("fake-key"))
             .addRules(
@@ -72,7 +71,7 @@ public class ReadModifyWriteRowTest {
   @Test
   public void testIncrement() {
     ReadModifyWriteRow mutation =
-        ReadModifyWriteRow.create(TABLE_NAME.getTable(), "fake-key")
+        ReadModifyWriteRow.create(TABLE_ID, "fake-key")
             .increment("fake-family", ByteString.copyFromUtf8("fake-qualifier"), 1)
             .increment("fake-family", "fake-qualifier-str", 2);
 
@@ -81,7 +80,7 @@ public class ReadModifyWriteRowTest {
     assertThat(actualProto)
         .isEqualTo(
             ReadModifyWriteRowRequest.newBuilder()
-                .setTableName(TABLE_NAME.toString())
+                .setTableName(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
                 .setAppProfileId(APP_PROFILE_ID)
                 .setRowKey(ByteString.copyFromUtf8("fake-key"))
                 .addRules(
@@ -100,7 +99,7 @@ public class ReadModifyWriteRowTest {
   @Test
   public void serializationTest() throws IOException, ClassNotFoundException {
     ReadModifyWriteRow expected =
-        ReadModifyWriteRow.create(TABLE_NAME.getTable(), "fake-key")
+        ReadModifyWriteRow.create(TABLE_ID, "fake-key")
             .increment("fake-family", ByteString.copyFromUtf8("fake-qualifier"), 1)
             .append("fake-family", "a", "b");
 

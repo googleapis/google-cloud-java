@@ -34,7 +34,6 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Deque;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -134,6 +133,7 @@ class MessageDispatcher {
     private final int outstandingBytes;
     private final long receivedTimeMillis;
     private final Instant totalExpiration;
+    private boolean extending = true;
 
     AckHandler(String ackId, int outstandingBytes, Instant totalExpiration) {
       this.ackId = ackId;
@@ -152,6 +152,7 @@ class MessageDispatcher {
          */
         return;
       }
+      extending = false;
       flowController.release(1, outstandingBytes);
       messagesWaiter.incrementPendingMessages(-1);
       processOutstandingBatches();
@@ -345,11 +346,14 @@ class MessageDispatcher {
       AckHandler ackHandler =
           new AckHandler(
               message.getAckId(), message.getMessage().getSerializedSize(), totalExpiration);
-      if (pendingMessages.putIfAbsent(message.getAckId(), ackHandler) != null){
-        // putIfAbsent puts ackHandler if ackID isn't previously mapped, then return the previously-mapped element.
-        // If the previous element is not null, we already have the message and the new one is definitely a duplicate.
+      if (pendingMessages.putIfAbsent(message.getAckId(), ackHandler) != null) {
+        // putIfAbsent puts ackHandler if ackID isn't previously mapped, then return the
+        // previously-mapped element.
+        // If the previous element is not null, we already have the message and the new one is
+        // definitely a duplicate.
         // Don't nack this, because that'd also nack the one we already have in queue.
-        // Don't update the existing one's total expiration either. If the user "loses" the message, we want to eventually
+        // Don't update the existing one's total expiration either. If the user "loses" the message,
+        // we want to eventually
         // totally expire so that pubsub service sends us the message again.
         continue;
       }
@@ -415,6 +419,11 @@ class MessageDispatcher {
             public void nack() {
               response.set(AckReply.NACK);
             }
+
+            @Override
+            public void abandon() {
+              ackHandler.forget();
+            }
           };
       ApiFutures.addCallback(response, ackHandler, MoreExecutors.directExecutor());
       executor.execute(
@@ -422,7 +431,10 @@ class MessageDispatcher {
             @Override
             public void run() {
               try {
-                if (ackHandler.totalExpiration.plusSeconds(messageDeadlineSeconds.get()).isBefore(now())) {
+                if (ackHandler
+                    .totalExpiration
+                    .plusSeconds(messageDeadlineSeconds.get())
+                    .isBefore(now())) {
                   // Message expired while waiting. We don't extend these messages anymore,
                   // so it was probably sent to someone else. Don't work on it.
                   // Don't nack it either, because we'd be nacking someone else's message.
@@ -466,6 +478,9 @@ class MessageDispatcher {
     Instant extendTo = now.plusSeconds(extendSeconds);
 
     for (Map.Entry<String, AckHandler> entry : pendingMessages.entrySet()) {
+      if (!entry.getValue().extending) {
+        continue;
+      }
       String ackId = entry.getKey();
       Instant totalExpiration = entry.getValue().totalExpiration;
       if (totalExpiration.isAfter(extendTo)) {

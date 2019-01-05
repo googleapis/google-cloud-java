@@ -61,7 +61,9 @@ To use the `prod` environment:
     ```shell
     mvn verify -am -pl google-cloud-bigtable \
       -Dbigtable.env=prod \
-      -Dbigtable.table=projects/my-project/instances/my-instance/tables/my-table
+      -Dbigtable.project=my-project
+      -Dbigtable.instance=my-instance
+      -Dbigtable.table=my-table
     ```
 
 ### Testing code that uses Bigtable Admin
@@ -77,7 +79,8 @@ To run the tests:
     created earlier. Example:
     ```shell
     mvn verify -am -pl google-cloud-bigtable-admin \
-      -Dbigtable.instance=projects/my-project/instances/my-instance
+      -Dbigtable.project=my-project
+      -Dbigtable.instance=my-instance
     ```
 
 ### Testing code that uses Compute

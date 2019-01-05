@@ -4,6 +4,8 @@
 package com.google.devtools.cloudtrace.v1;
 
 /**
+ *
+ *
  * <pre>
  * A span represents a single timed event within a trace. Spans can be nested
  * and form a trace tree. Often, a trace contains a root span that describes the
@@ -14,15 +16,16 @@ package com.google.devtools.cloudtrace.v1;
  *
  * Protobuf type {@code google.devtools.cloudtrace.v1.TraceSpan}
  */
-public  final class TraceSpan extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class TraceSpan extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.devtools.cloudtrace.v1.TraceSpan)
     TraceSpanOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use TraceSpan.newBuilder() to construct.
   private TraceSpan(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private TraceSpan() {
     spanId_ = 0L;
     kind_ = 0;
@@ -31,10 +34,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private TraceSpan(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -54,112 +57,121 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 9: {
-
-            spanId_ = input.readFixed64();
-            break;
-          }
-          case 16: {
-            int rawValue = input.readEnum();
-
-            kind_ = rawValue;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            name_ = s;
-            break;
-          }
-          case 34: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (startTime_ != null) {
-              subBuilder = startTime_.toBuilder();
+          case 9:
+            {
+              spanId_ = input.readFixed64();
+              break;
             }
-            startTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(startTime_);
-              startTime_ = subBuilder.buildPartial();
-            }
+          case 16:
+            {
+              int rawValue = input.readEnum();
 
-            break;
-          }
-          case 42: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (endTime_ != null) {
-              subBuilder = endTime_.toBuilder();
+              kind_ = rawValue;
+              break;
             }
-            endTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(endTime_);
-              endTime_ = subBuilder.buildPartial();
-            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            break;
-          }
-          case 49: {
+              name_ = s;
+              break;
+            }
+          case 34:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (startTime_ != null) {
+                subBuilder = startTime_.toBuilder();
+              }
+              startTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(startTime_);
+                startTime_ = subBuilder.buildPartial();
+              }
 
-            parentSpanId_ = input.readFixed64();
-            break;
-          }
-          case 58: {
-            if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
-              labels_ = com.google.protobuf.MapField.newMapField(
-                  LabelsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000040;
+              break;
             }
-            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-            labels__ = input.readMessage(
-                LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            labels_.getMutableMap().put(
-                labels__.getKey(), labels__.getValue());
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 42:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (endTime_ != null) {
+                subBuilder = endTime_.toBuilder();
+              }
+              endTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(endTime_);
+                endTime_ = subBuilder.buildPartial();
+              }
+
+              break;
             }
-            break;
-          }
+          case 49:
+            {
+              parentSpanId_ = input.readFixed64();
+              break;
+            }
+          case 58:
+            {
+              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+                labels_ =
+                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000040;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                  input.readMessage(
+                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.devtools.cloudtrace.v1.TraceProto.internal_static_google_devtools_cloudtrace_v1_TraceSpan_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.devtools.cloudtrace.v1.TraceProto
+        .internal_static_google_devtools_cloudtrace_v1_TraceSpan_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
   @java.lang.Override
-  protected com.google.protobuf.MapField internalGetMapField(
-      int number) {
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
       case 7:
         return internalGetLabels();
       default:
-        throw new RuntimeException(
-            "Invalid map field number: " + number);
+        throw new RuntimeException("Invalid map field number: " + number);
     }
   }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.devtools.cloudtrace.v1.TraceProto.internal_static_google_devtools_cloudtrace_v1_TraceSpan_fieldAccessorTable
+    return com.google.devtools.cloudtrace.v1.TraceProto
+        .internal_static_google_devtools_cloudtrace_v1_TraceSpan_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.devtools.cloudtrace.v1.TraceSpan.class, com.google.devtools.cloudtrace.v1.TraceSpan.Builder.class);
+            com.google.devtools.cloudtrace.v1.TraceSpan.class,
+            com.google.devtools.cloudtrace.v1.TraceSpan.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * Type of span. Can be used to specify additional relationships between spans
    * in addition to a parent/child relationship.
@@ -167,9 +179,10 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf enum {@code google.devtools.cloudtrace.v1.TraceSpan.SpanKind}
    */
-  public enum SpanKind
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum SpanKind implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Unspecified.
      * </pre>
@@ -178,6 +191,8 @@ private static final long serialVersionUID = 0L;
      */
     SPAN_KIND_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * Indicates that the span covers server-side handling of an RPC or other
      * remote network request.
@@ -187,6 +202,8 @@ private static final long serialVersionUID = 0L;
      */
     RPC_SERVER(1),
     /**
+     *
+     *
      * <pre>
      * Indicates that the span covers the client-side wrapper around an RPC or
      * other remote request.
@@ -199,6 +216,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Unspecified.
      * </pre>
@@ -207,6 +226,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int SPAN_KIND_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Indicates that the span covers server-side handling of an RPC or other
      * remote network request.
@@ -216,6 +237,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int RPC_SERVER_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Indicates that the span covers the client-side wrapper around an RPC or
      * other remote request.
@@ -225,7 +248,6 @@ private static final long serialVersionUID = 0L;
      */
     public static final int RPC_CLIENT_VALUE = 2;
 
-
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -234,9 +256,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static SpanKind valueOf(int value) {
       return forNumber(value);
@@ -244,45 +264,45 @@ private static final long serialVersionUID = 0L;
 
     public static SpanKind forNumber(int value) {
       switch (value) {
-        case 0: return SPAN_KIND_UNSPECIFIED;
-        case 1: return RPC_SERVER;
-        case 2: return RPC_CLIENT;
-        default: return null;
+        case 0:
+          return SPAN_KIND_UNSPECIFIED;
+        case 1:
+          return RPC_SERVER;
+        case 2:
+          return RPC_CLIENT;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<SpanKind>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<SpanKind> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        SpanKind> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<SpanKind>() {
-            public SpanKind findValueByNumber(int number) {
-              return SpanKind.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<SpanKind> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<SpanKind>() {
+          public SpanKind findValueByNumber(int number) {
+            return SpanKind.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.devtools.cloudtrace.v1.TraceSpan.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final SpanKind[] VALUES = values();
 
-    public static SpanKind valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static SpanKind valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -303,6 +323,8 @@ private static final long serialVersionUID = 0L;
   public static final int SPAN_ID_FIELD_NUMBER = 1;
   private long spanId_;
   /**
+   *
+   *
    * <pre>
    * Identifier for the span. Must be a 64-bit integer other than 0 and
    * unique within a trace.
@@ -317,6 +339,8 @@ private static final long serialVersionUID = 0L;
   public static final int KIND_FIELD_NUMBER = 2;
   private int kind_;
   /**
+   *
+   *
    * <pre>
    * Distinguishes between spans generated in a particular context. For example,
    * two spans with the same name may be distinguished using `RPC_CLIENT`
@@ -329,6 +353,8 @@ private static final long serialVersionUID = 0L;
     return kind_;
   }
   /**
+   *
+   *
    * <pre>
    * Distinguishes between spans generated in a particular context. For example,
    * two spans with the same name may be distinguished using `RPC_CLIENT`
@@ -339,13 +365,18 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.devtools.cloudtrace.v1.TraceSpan.SpanKind getKind() {
     @SuppressWarnings("deprecation")
-    com.google.devtools.cloudtrace.v1.TraceSpan.SpanKind result = com.google.devtools.cloudtrace.v1.TraceSpan.SpanKind.valueOf(kind_);
-    return result == null ? com.google.devtools.cloudtrace.v1.TraceSpan.SpanKind.UNRECOGNIZED : result;
+    com.google.devtools.cloudtrace.v1.TraceSpan.SpanKind result =
+        com.google.devtools.cloudtrace.v1.TraceSpan.SpanKind.valueOf(kind_);
+    return result == null
+        ? com.google.devtools.cloudtrace.v1.TraceSpan.SpanKind.UNRECOGNIZED
+        : result;
   }
 
   public static final int NAME_FIELD_NUMBER = 3;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * Name of the span. Must be less than 128 bytes. The span name is sanitized
    * and displayed in the Stackdriver Trace tool in the
@@ -363,14 +394,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Name of the span. Must be less than 128 bytes. The span name is sanitized
    * and displayed in the Stackdriver Trace tool in the
@@ -383,13 +415,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -400,6 +430,8 @@ private static final long serialVersionUID = 0L;
   public static final int START_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp startTime_;
   /**
+   *
+   *
    * <pre>
    * Start time of the span in nanoseconds from the UNIX epoch.
    * </pre>
@@ -410,6 +442,8 @@ private static final long serialVersionUID = 0L;
     return startTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Start time of the span in nanoseconds from the UNIX epoch.
    * </pre>
@@ -420,6 +454,8 @@ private static final long serialVersionUID = 0L;
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Start time of the span in nanoseconds from the UNIX epoch.
    * </pre>
@@ -433,6 +469,8 @@ private static final long serialVersionUID = 0L;
   public static final int END_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp endTime_;
   /**
+   *
+   *
    * <pre>
    * End time of the span in nanoseconds from the UNIX epoch.
    * </pre>
@@ -443,6 +481,8 @@ private static final long serialVersionUID = 0L;
     return endTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * End time of the span in nanoseconds from the UNIX epoch.
    * </pre>
@@ -453,6 +493,8 @@ private static final long serialVersionUID = 0L;
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
   /**
+   *
+   *
    * <pre>
    * End time of the span in nanoseconds from the UNIX epoch.
    * </pre>
@@ -466,6 +508,8 @@ private static final long serialVersionUID = 0L;
   public static final int PARENT_SPAN_ID_FIELD_NUMBER = 6;
   private long parentSpanId_;
   /**
+   *
+   *
    * <pre>
    * ID of the parent span, if any. Optional.
    * </pre>
@@ -477,24 +521,23 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int LABELS_FIELD_NUMBER = 7;
+
   private static final class LabelsDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        java.lang.String, java.lang.String> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<java.lang.String, java.lang.String>newDefaultInstance(
-                com.google.devtools.cloudtrace.v1.TraceProto.internal_static_google_devtools_cloudtrace_v1_TraceSpan_LabelsEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "");
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.devtools.cloudtrace.v1.TraceProto
+                .internal_static_google_devtools_cloudtrace_v1_TraceSpan_LabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
   }
-  private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> labels_;
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetLabels() {
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
     if (labels_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(
-          LabelsDefaultEntryHolder.defaultEntry);
+      return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
     }
     return labels_;
   }
@@ -503,6 +546,8 @@ private static final long serialVersionUID = 0L;
     return internalGetLabels().getMap().size();
   }
   /**
+   *
+   *
    * <pre>
    * Collection of labels associated with the span. Label keys must be less than
    * 128 bytes. Label values must be less than 16 kilobytes (10MB for
@@ -539,20 +584,20 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
-
-  public boolean containsLabels(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public boolean containsLabels(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     return internalGetLabels().getMap().containsKey(key);
   }
-  /**
-   * Use {@link #getLabelsMap()} instead.
-   */
+  /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
   /**
+   *
+   *
    * <pre>
    * Collection of labels associated with the span. Label keys must be less than
    * 128 bytes. Label values must be less than 16 kilobytes (10MB for
@@ -589,11 +634,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
-
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
   /**
+   *
+   *
    * <pre>
    * Collection of labels associated with the span. Label keys must be less than
    * 128 bytes. Label values must be less than 16 kilobytes (10MB for
@@ -630,16 +676,16 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
-
-  public java.lang.String getLabelsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetLabels().getMap();
+  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   *
+   *
    * <pre>
    * Collection of labels associated with the span. Label keys must be less than
    * 128 bytes. Label values must be less than 16 kilobytes (10MB for
@@ -676,12 +722,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
-
-  public java.lang.String getLabelsOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetLabels().getMap();
+  public java.lang.String getLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
@@ -689,6 +734,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -700,12 +746,12 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (spanId_ != 0L) {
       output.writeFixed64(1, spanId_);
     }
-    if (kind_ != com.google.devtools.cloudtrace.v1.TraceSpan.SpanKind.SPAN_KIND_UNSPECIFIED.getNumber()) {
+    if (kind_
+        != com.google.devtools.cloudtrace.v1.TraceSpan.SpanKind.SPAN_KIND_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, kind_);
     }
     if (!getNameBytes().isEmpty()) {
@@ -720,12 +766,8 @@ private static final long serialVersionUID = 0L;
     if (parentSpanId_ != 0L) {
       output.writeFixed64(6, parentSpanId_);
     }
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetLabels(),
-        LabelsDefaultEntryHolder.defaultEntry,
-        7);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 7);
     unknownFields.writeTo(output);
   }
 
@@ -736,37 +778,33 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (spanId_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeFixed64Size(1, spanId_);
+      size += com.google.protobuf.CodedOutputStream.computeFixed64Size(1, spanId_);
     }
-    if (kind_ != com.google.devtools.cloudtrace.v1.TraceSpan.SpanKind.SPAN_KIND_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(2, kind_);
+    if (kind_
+        != com.google.devtools.cloudtrace.v1.TraceSpan.SpanKind.SPAN_KIND_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, kind_);
     }
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
     }
     if (startTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getStartTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getStartTime());
     }
     if (endTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getEndTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getEndTime());
     }
     if (parentSpanId_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeFixed64Size(6, parentSpanId_);
+      size += com.google.protobuf.CodedOutputStream.computeFixed64Size(6, parentSpanId_);
     }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-         : internalGetLabels().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-      labels__ = LabelsDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, labels__);
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+          LabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, labels__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -776,33 +814,28 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.devtools.cloudtrace.v1.TraceSpan)) {
       return super.equals(obj);
     }
-    com.google.devtools.cloudtrace.v1.TraceSpan other = (com.google.devtools.cloudtrace.v1.TraceSpan) obj;
+    com.google.devtools.cloudtrace.v1.TraceSpan other =
+        (com.google.devtools.cloudtrace.v1.TraceSpan) obj;
 
     boolean result = true;
-    result = result && (getSpanId()
-        == other.getSpanId());
+    result = result && (getSpanId() == other.getSpanId());
     result = result && kind_ == other.kind_;
-    result = result && getName()
-        .equals(other.getName());
+    result = result && getName().equals(other.getName());
     result = result && (hasStartTime() == other.hasStartTime());
     if (hasStartTime()) {
-      result = result && getStartTime()
-          .equals(other.getStartTime());
+      result = result && getStartTime().equals(other.getStartTime());
     }
     result = result && (hasEndTime() == other.hasEndTime());
     if (hasEndTime()) {
-      result = result && getEndTime()
-          .equals(other.getEndTime());
+      result = result && getEndTime().equals(other.getEndTime());
     }
-    result = result && (getParentSpanId()
-        == other.getParentSpanId());
-    result = result && internalGetLabels().equals(
-        other.internalGetLabels());
+    result = result && (getParentSpanId() == other.getParentSpanId());
+    result = result && internalGetLabels().equals(other.internalGetLabels());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -815,8 +848,7 @@ private static final long serialVersionUID = 0L;
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + SPAN_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getSpanId());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getSpanId());
     hash = (37 * hash) + KIND_FIELD_NUMBER;
     hash = (53 * hash) + kind_;
     hash = (37 * hash) + NAME_FIELD_NUMBER;
@@ -830,8 +862,7 @@ private static final long serialVersionUID = 0L;
       hash = (53 * hash) + getEndTime().hashCode();
     }
     hash = (37 * hash) + PARENT_SPAN_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getParentSpanId());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getParentSpanId());
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
@@ -841,97 +872,104 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.devtools.cloudtrace.v1.TraceSpan parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.devtools.cloudtrace.v1.TraceSpan parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.devtools.cloudtrace.v1.TraceSpan parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.devtools.cloudtrace.v1.TraceSpan parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.devtools.cloudtrace.v1.TraceSpan parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.devtools.cloudtrace.v1.TraceSpan parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.devtools.cloudtrace.v1.TraceSpan parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.devtools.cloudtrace.v1.TraceSpan parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.devtools.cloudtrace.v1.TraceSpan parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.devtools.cloudtrace.v1.TraceSpan parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.devtools.cloudtrace.v1.TraceSpan parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.devtools.cloudtrace.v1.TraceSpan parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.devtools.cloudtrace.v1.TraceSpan parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.devtools.cloudtrace.v1.TraceSpan parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.devtools.cloudtrace.v1.TraceSpan prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A span represents a single timed event within a trace. Spans can be nested
    * and form a trace tree. Often, a trace contains a root span that describes the
@@ -942,43 +980,43 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.devtools.cloudtrace.v1.TraceSpan}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.devtools.cloudtrace.v1.TraceSpan)
       com.google.devtools.cloudtrace.v1.TraceSpanOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.devtools.cloudtrace.v1.TraceProto.internal_static_google_devtools_cloudtrace_v1_TraceSpan_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.devtools.cloudtrace.v1.TraceProto
+          .internal_static_google_devtools_cloudtrace_v1_TraceSpan_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 7:
           return internalGetLabels();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
         case 7:
           return internalGetMutableLabels();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.devtools.cloudtrace.v1.TraceProto.internal_static_google_devtools_cloudtrace_v1_TraceSpan_fieldAccessorTable
+      return com.google.devtools.cloudtrace.v1.TraceProto
+          .internal_static_google_devtools_cloudtrace_v1_TraceSpan_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.devtools.cloudtrace.v1.TraceSpan.class, com.google.devtools.cloudtrace.v1.TraceSpan.Builder.class);
+              com.google.devtools.cloudtrace.v1.TraceSpan.class,
+              com.google.devtools.cloudtrace.v1.TraceSpan.Builder.class);
     }
 
     // Construct using com.google.devtools.cloudtrace.v1.TraceSpan.newBuilder()
@@ -986,16 +1024,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -1024,9 +1061,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.devtools.cloudtrace.v1.TraceProto.internal_static_google_devtools_cloudtrace_v1_TraceSpan_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.devtools.cloudtrace.v1.TraceProto
+          .internal_static_google_devtools_cloudtrace_v1_TraceSpan_descriptor;
     }
 
     @java.lang.Override
@@ -1045,7 +1082,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.devtools.cloudtrace.v1.TraceSpan buildPartial() {
-      com.google.devtools.cloudtrace.v1.TraceSpan result = new com.google.devtools.cloudtrace.v1.TraceSpan(this);
+      com.google.devtools.cloudtrace.v1.TraceSpan result =
+          new com.google.devtools.cloudtrace.v1.TraceSpan(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.spanId_ = spanId_;
@@ -1073,38 +1111,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.devtools.cloudtrace.v1.TraceSpan) {
-        return mergeFrom((com.google.devtools.cloudtrace.v1.TraceSpan)other);
+        return mergeFrom((com.google.devtools.cloudtrace.v1.TraceSpan) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1132,8 +1171,7 @@ private static final long serialVersionUID = 0L;
       if (other.getParentSpanId() != 0L) {
         setParentSpanId(other.getParentSpanId());
       }
-      internalGetMutableLabels().mergeFrom(
-          other.internalGetLabels());
+      internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1162,10 +1200,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
-    private long spanId_ ;
+    private long spanId_;
     /**
+     *
+     *
      * <pre>
      * Identifier for the span. Must be a 64-bit integer other than 0 and
      * unique within a trace.
@@ -1177,6 +1218,8 @@ private static final long serialVersionUID = 0L;
       return spanId_;
     }
     /**
+     *
+     *
      * <pre>
      * Identifier for the span. Must be a 64-bit integer other than 0 and
      * unique within a trace.
@@ -1185,12 +1228,14 @@ private static final long serialVersionUID = 0L;
      * <code>fixed64 span_id = 1;</code>
      */
     public Builder setSpanId(long value) {
-      
+
       spanId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Identifier for the span. Must be a 64-bit integer other than 0 and
      * unique within a trace.
@@ -1199,7 +1244,7 @@ private static final long serialVersionUID = 0L;
      * <code>fixed64 span_id = 1;</code>
      */
     public Builder clearSpanId() {
-      
+
       spanId_ = 0L;
       onChanged();
       return this;
@@ -1207,6 +1252,8 @@ private static final long serialVersionUID = 0L;
 
     private int kind_ = 0;
     /**
+     *
+     *
      * <pre>
      * Distinguishes between spans generated in a particular context. For example,
      * two spans with the same name may be distinguished using `RPC_CLIENT`
@@ -1219,6 +1266,8 @@ private static final long serialVersionUID = 0L;
       return kind_;
     }
     /**
+     *
+     *
      * <pre>
      * Distinguishes between spans generated in a particular context. For example,
      * two spans with the same name may be distinguished using `RPC_CLIENT`
@@ -1233,6 +1282,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Distinguishes between spans generated in a particular context. For example,
      * two spans with the same name may be distinguished using `RPC_CLIENT`
@@ -1243,10 +1294,15 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.devtools.cloudtrace.v1.TraceSpan.SpanKind getKind() {
       @SuppressWarnings("deprecation")
-      com.google.devtools.cloudtrace.v1.TraceSpan.SpanKind result = com.google.devtools.cloudtrace.v1.TraceSpan.SpanKind.valueOf(kind_);
-      return result == null ? com.google.devtools.cloudtrace.v1.TraceSpan.SpanKind.UNRECOGNIZED : result;
+      com.google.devtools.cloudtrace.v1.TraceSpan.SpanKind result =
+          com.google.devtools.cloudtrace.v1.TraceSpan.SpanKind.valueOf(kind_);
+      return result == null
+          ? com.google.devtools.cloudtrace.v1.TraceSpan.SpanKind.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * Distinguishes between spans generated in a particular context. For example,
      * two spans with the same name may be distinguished using `RPC_CLIENT`
@@ -1259,12 +1315,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       kind_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Distinguishes between spans generated in a particular context. For example,
      * two spans with the same name may be distinguished using `RPC_CLIENT`
@@ -1274,7 +1332,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.devtools.cloudtrace.v1.TraceSpan.SpanKind kind = 2;</code>
      */
     public Builder clearKind() {
-      
+
       kind_ = 0;
       onChanged();
       return this;
@@ -1282,6 +1340,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * Name of the span. Must be less than 128 bytes. The span name is sanitized
      * and displayed in the Stackdriver Trace tool in the
@@ -1297,8 +1357,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -1307,6 +1366,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Name of the span. Must be less than 128 bytes. The span name is sanitized
      * and displayed in the Stackdriver Trace tool in the
@@ -1319,13 +1380,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -1333,6 +1392,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Name of the span. Must be less than 128 bytes. The span name is sanitized
      * and displayed in the Stackdriver Trace tool in the
@@ -1345,17 +1406,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 3;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Name of the span. Must be less than 128 bytes. The span name is sanitized
      * and displayed in the Stackdriver Trace tool in the
@@ -1369,12 +1431,14 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 3;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Name of the span. Must be less than 128 bytes. The span name is sanitized
      * and displayed in the Stackdriver Trace tool in the
@@ -1387,13 +1451,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 3;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
@@ -1401,8 +1464,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp startTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> startTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        startTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Start time of the span in nanoseconds from the UNIX epoch.
      * </pre>
@@ -1413,6 +1481,8 @@ private static final long serialVersionUID = 0L;
       return startTimeBuilder_ != null || startTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Start time of the span in nanoseconds from the UNIX epoch.
      * </pre>
@@ -1427,6 +1497,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Start time of the span in nanoseconds from the UNIX epoch.
      * </pre>
@@ -1447,14 +1519,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Start time of the span in nanoseconds from the UNIX epoch.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 4;</code>
      */
-    public Builder setStartTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
         startTime_ = builderForValue.build();
         onChanged();
@@ -1465,6 +1538,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Start time of the span in nanoseconds from the UNIX epoch.
      * </pre>
@@ -1475,7 +1550,7 @@ private static final long serialVersionUID = 0L;
       if (startTimeBuilder_ == null) {
         if (startTime_ != null) {
           startTime_ =
-            com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
         } else {
           startTime_ = value;
         }
@@ -1487,6 +1562,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Start time of the span in nanoseconds from the UNIX epoch.
      * </pre>
@@ -1505,6 +1582,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Start time of the span in nanoseconds from the UNIX epoch.
      * </pre>
@@ -1512,11 +1591,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp start_time = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-      
+
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Start time of the span in nanoseconds from the UNIX epoch.
      * </pre>
@@ -1527,11 +1608,12 @@ private static final long serialVersionUID = 0L;
       if (startTimeBuilder_ != null) {
         return startTimeBuilder_.getMessageOrBuilder();
       } else {
-        return startTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+        return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Start time of the span in nanoseconds from the UNIX epoch.
      * </pre>
@@ -1539,14 +1621,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp start_time = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getStartTimeFieldBuilder() {
       if (startTimeBuilder_ == null) {
-        startTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getStartTime(),
-                getParentForChildren(),
-                isClean());
+        startTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getStartTime(), getParentForChildren(), isClean());
         startTime_ = null;
       }
       return startTimeBuilder_;
@@ -1554,8 +1639,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp endTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> endTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        endTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * End time of the span in nanoseconds from the UNIX epoch.
      * </pre>
@@ -1566,6 +1656,8 @@ private static final long serialVersionUID = 0L;
       return endTimeBuilder_ != null || endTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * End time of the span in nanoseconds from the UNIX epoch.
      * </pre>
@@ -1580,6 +1672,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * End time of the span in nanoseconds from the UNIX epoch.
      * </pre>
@@ -1600,14 +1694,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * End time of the span in nanoseconds from the UNIX epoch.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 5;</code>
      */
-    public Builder setEndTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
         onChanged();
@@ -1618,6 +1713,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * End time of the span in nanoseconds from the UNIX epoch.
      * </pre>
@@ -1628,7 +1725,7 @@ private static final long serialVersionUID = 0L;
       if (endTimeBuilder_ == null) {
         if (endTime_ != null) {
           endTime_ =
-            com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
         } else {
           endTime_ = value;
         }
@@ -1640,6 +1737,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * End time of the span in nanoseconds from the UNIX epoch.
      * </pre>
@@ -1658,6 +1757,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * End time of the span in nanoseconds from the UNIX epoch.
      * </pre>
@@ -1665,11 +1766,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp end_time = 5;</code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-      
+
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * End time of the span in nanoseconds from the UNIX epoch.
      * </pre>
@@ -1680,11 +1783,12 @@ private static final long serialVersionUID = 0L;
       if (endTimeBuilder_ != null) {
         return endTimeBuilder_.getMessageOrBuilder();
       } else {
-        return endTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+        return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * End time of the span in nanoseconds from the UNIX epoch.
      * </pre>
@@ -1692,21 +1796,26 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp end_time = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getEndTimeFieldBuilder() {
       if (endTimeBuilder_ == null) {
-        endTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getEndTime(),
-                getParentForChildren(),
-                isClean());
+        endTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getEndTime(), getParentForChildren(), isClean());
         endTime_ = null;
       }
       return endTimeBuilder_;
     }
 
-    private long parentSpanId_ ;
+    private long parentSpanId_;
     /**
+     *
+     *
      * <pre>
      * ID of the parent span, if any. Optional.
      * </pre>
@@ -1717,6 +1826,8 @@ private static final long serialVersionUID = 0L;
       return parentSpanId_;
     }
     /**
+     *
+     *
      * <pre>
      * ID of the parent span, if any. Optional.
      * </pre>
@@ -1724,12 +1835,14 @@ private static final long serialVersionUID = 0L;
      * <code>fixed64 parent_span_id = 6;</code>
      */
     public Builder setParentSpanId(long value) {
-      
+
       parentSpanId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * ID of the parent span, if any. Optional.
      * </pre>
@@ -1737,28 +1850,27 @@ private static final long serialVersionUID = 0L;
      * <code>fixed64 parent_span_id = 6;</code>
      */
     public Builder clearParentSpanId() {
-      
+
       parentSpanId_ = 0L;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> labels_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetLabels() {
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
       if (labels_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            LabelsDefaultEntryHolder.defaultEntry);
+        return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       return labels_;
     }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableLabels() {
-      onChanged();;
+        internalGetMutableLabels() {
+      onChanged();
+      ;
       if (labels_ == null) {
-        labels_ = com.google.protobuf.MapField.newMapField(
-            LabelsDefaultEntryHolder.defaultEntry);
+        labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
@@ -1770,6 +1882,8 @@ private static final long serialVersionUID = 0L;
       return internalGetLabels().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * Collection of labels associated with the span. Label keys must be less than
      * 128 bytes. Label values must be less than 16 kilobytes (10MB for
@@ -1806,20 +1920,20 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 7;</code>
      */
-
-    public boolean containsLabels(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetLabels().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getLabelsMap()} instead.
-     */
+    /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
     /**
+     *
+     *
      * <pre>
      * Collection of labels associated with the span. Label keys must be less than
      * 128 bytes. Label values must be less than 16 kilobytes (10MB for
@@ -1856,11 +1970,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 7;</code>
      */
-
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * Collection of labels associated with the span. Label keys must be less than
      * 128 bytes. Label values must be less than 16 kilobytes (10MB for
@@ -1897,16 +2012,17 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 7;</code>
      */
-
     public java.lang.String getLabelsOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetLabels().getMap();
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * Collection of labels associated with the span. Label keys must be less than
      * 128 bytes. Label values must be less than 16 kilobytes (10MB for
@@ -1943,12 +2059,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 7;</code>
      */
-
-    public java.lang.String getLabelsOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetLabels().getMap();
+    public java.lang.String getLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -1956,11 +2071,12 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder clearLabels() {
-      internalGetMutableLabels().getMutableMap()
-          .clear();
+      internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Collection of labels associated with the span. Label keys must be less than
      * 128 bytes. Label values must be less than 16 kilobytes (10MB for
@@ -1997,23 +2113,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 7;</code>
      */
-
-    public Builder removeLabels(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableLabels().getMutableMap()
-          .remove(key);
+    public Builder removeLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-    /**
-     * Use alternate mutation accessors instead.
-     */
+    /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String>
-    getMutableLabels() {
+    public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       return internalGetMutableLabels().getMutableMap();
     }
     /**
+     *
+     *
      * <pre>
      * Collection of labels associated with the span. Label keys must be less than
      * 128 bytes. Label values must be less than 16 kilobytes (10MB for
@@ -2050,16 +2164,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 7;</code>
      */
-    public Builder putLabels(
-        java.lang.String key,
-        java.lang.String value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableLabels().getMutableMap()
-          .put(key, value);
+    public Builder putLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableLabels().getMutableMap().put(key, value);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Collection of labels associated with the span. Label keys must be less than
      * 128 bytes. Label values must be less than 16 kilobytes (10MB for
@@ -2096,16 +2213,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 7;</code>
      */
-
-    public Builder putAllLabels(
-        java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableLabels().getMutableMap()
-          .putAll(values);
+    public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableLabels().getMutableMap().putAll(values);
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -2115,12 +2229,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.devtools.cloudtrace.v1.TraceSpan)
   }
 
   // @@protoc_insertion_point(class_scope:google.devtools.cloudtrace.v1.TraceSpan)
   private static final com.google.devtools.cloudtrace.v1.TraceSpan DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.devtools.cloudtrace.v1.TraceSpan();
   }
@@ -2129,16 +2243,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<TraceSpan>
-      PARSER = new com.google.protobuf.AbstractParser<TraceSpan>() {
-    @java.lang.Override
-    public TraceSpan parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new TraceSpan(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<TraceSpan> PARSER =
+      new com.google.protobuf.AbstractParser<TraceSpan>() {
+        @java.lang.Override
+        public TraceSpan parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new TraceSpan(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<TraceSpan> parser() {
     return PARSER;
@@ -2153,6 +2267,4 @@ private static final long serialVersionUID = 0L;
   public com.google.devtools.cloudtrace.v1.TraceSpan getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

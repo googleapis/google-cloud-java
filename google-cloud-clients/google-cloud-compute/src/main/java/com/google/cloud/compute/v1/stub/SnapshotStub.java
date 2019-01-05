@@ -21,12 +21,17 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteSnapshotHttpRequest;
+import com.google.cloud.compute.v1.GetIamPolicySnapshotHttpRequest;
 import com.google.cloud.compute.v1.GetSnapshotHttpRequest;
 import com.google.cloud.compute.v1.ListSnapshotsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Policy;
+import com.google.cloud.compute.v1.SetIamPolicySnapshotHttpRequest;
 import com.google.cloud.compute.v1.SetLabelsSnapshotHttpRequest;
 import com.google.cloud.compute.v1.Snapshot;
 import com.google.cloud.compute.v1.SnapshotList;
+import com.google.cloud.compute.v1.TestIamPermissionsSnapshotHttpRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -50,6 +55,11 @@ public abstract class SnapshotStub implements BackgroundResource {
   }
 
   @BetaApi
+  public UnaryCallable<GetIamPolicySnapshotHttpRequest, Policy> getIamPolicySnapshotCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicySnapshotCallable()");
+  }
+
+  @BetaApi
   public UnaryCallable<ListSnapshotsHttpRequest, ListSnapshotsPagedResponse>
       listSnapshotsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listSnapshotsPagedCallable()");
@@ -61,8 +71,20 @@ public abstract class SnapshotStub implements BackgroundResource {
   }
 
   @BetaApi
+  public UnaryCallable<SetIamPolicySnapshotHttpRequest, Policy> setIamPolicySnapshotCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicySnapshotCallable()");
+  }
+
+  @BetaApi
   public UnaryCallable<SetLabelsSnapshotHttpRequest, Operation> setLabelsSnapshotCallable() {
     throw new UnsupportedOperationException("Not implemented: setLabelsSnapshotCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<TestIamPermissionsSnapshotHttpRequest, TestPermissionsResponse>
+      testIamPermissionsSnapshotCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: testIamPermissionsSnapshotCallable()");
   }
 
   @Override

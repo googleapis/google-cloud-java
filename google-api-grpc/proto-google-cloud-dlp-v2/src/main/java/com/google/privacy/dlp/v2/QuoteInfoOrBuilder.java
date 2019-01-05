@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface QuoteInfoOrBuilder extends
+public interface QuoteInfoOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.QuoteInfo)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The date time indicated by the quote.
    * </pre>
@@ -16,6 +19,8 @@ public interface QuoteInfoOrBuilder extends
    */
   boolean hasDateTime();
   /**
+   *
+   *
    * <pre>
    * The date time indicated by the quote.
    * </pre>
@@ -24,6 +29,8 @@ public interface QuoteInfoOrBuilder extends
    */
   com.google.privacy.dlp.v2.DateTime getDateTime();
   /**
+   *
+   *
    * <pre>
    * The date time indicated by the quote.
    * </pre>

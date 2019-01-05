@@ -4,6 +4,8 @@
 package com.google.cloud.speech.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * Contains audio data in the encoding specified in the `RecognitionConfig`.
  * Either `content` or `uri` must be supplied. Supplying both or neither
@@ -13,23 +15,23 @@ package com.google.cloud.speech.v1beta1;
  *
  * Protobuf type {@code google.cloud.speech.v1beta1.RecognitionAudio}
  */
-public  final class RecognitionAudio extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class RecognitionAudio extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v1beta1.RecognitionAudio)
     RecognitionAudioOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use RecognitionAudio.newBuilder() to construct.
   private RecognitionAudio(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private RecognitionAudio() {
-  }
+
+  private RecognitionAudio() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private RecognitionAudio(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -49,62 +51,65 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            break;
-          }
-          case 10: {
-            audioSourceCase_ = 1;
-            audioSource_ = input.readBytes();
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-            audioSourceCase_ = 2;
-            audioSource_ = s;
-            break;
-          }
+          case 10:
+            {
+              audioSourceCase_ = 1;
+              audioSource_ = input.readBytes();
+              break;
+            }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              audioSourceCase_ = 2;
+              audioSource_ = s;
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.speech.v1beta1.SpeechProto.internal_static_google_cloud_speech_v1beta1_RecognitionAudio_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.speech.v1beta1.SpeechProto
+        .internal_static_google_cloud_speech_v1beta1_RecognitionAudio_descriptor;
   }
 
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.speech.v1beta1.SpeechProto.internal_static_google_cloud_speech_v1beta1_RecognitionAudio_fieldAccessorTable
+    return com.google.cloud.speech.v1beta1.SpeechProto
+        .internal_static_google_cloud_speech_v1beta1_RecognitionAudio_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.speech.v1beta1.RecognitionAudio.class, com.google.cloud.speech.v1beta1.RecognitionAudio.Builder.class);
+            com.google.cloud.speech.v1beta1.RecognitionAudio.class,
+            com.google.cloud.speech.v1beta1.RecognitionAudio.Builder.class);
   }
 
   private int audioSourceCase_ = 0;
   private java.lang.Object audioSource_;
-  public enum AudioSourceCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum AudioSourceCase implements com.google.protobuf.Internal.EnumLite {
     CONTENT(1),
     URI(2),
     AUDIOSOURCE_NOT_SET(0);
     private final int value;
+
     private AudioSourceCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static AudioSourceCase valueOf(int value) {
       return forNumber(value);
@@ -112,25 +117,30 @@ private static final long serialVersionUID = 0L;
 
     public static AudioSourceCase forNumber(int value) {
       switch (value) {
-        case 1: return CONTENT;
-        case 2: return URI;
-        case 0: return AUDIOSOURCE_NOT_SET;
-        default: return null;
+        case 1:
+          return CONTENT;
+        case 2:
+          return URI;
+        case 0:
+          return AUDIOSOURCE_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public AudioSourceCase
-  getAudioSourceCase() {
-    return AudioSourceCase.forNumber(
-        audioSourceCase_);
+  public AudioSourceCase getAudioSourceCase() {
+    return AudioSourceCase.forNumber(audioSourceCase_);
   }
 
   public static final int CONTENT_FIELD_NUMBER = 1;
   /**
+   *
+   *
    * <pre>
    * The audio data bytes encoded as specified in
    * `RecognitionConfig`. Note: as with all bytes fields, protobuffers use a
@@ -148,6 +158,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int URI_FIELD_NUMBER = 2;
   /**
+   *
+   *
    * <pre>
    * URI that points to a file that contains audio data bytes as specified in
    * `RecognitionConfig`. Currently, only Google Cloud Storage URIs are
@@ -167,8 +179,7 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       if (audioSourceCase_ == 2) {
         audioSource_ = s;
@@ -177,6 +188,8 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   *
+   *
    * <pre>
    * URI that points to a file that contains audio data bytes as specified in
    * `RecognitionConfig`. Currently, only Google Cloud Storage URIs are
@@ -188,16 +201,14 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string uri = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getUriBytes() {
+  public com.google.protobuf.ByteString getUriBytes() {
     java.lang.Object ref = "";
     if (audioSourceCase_ == 2) {
       ref = audioSource_;
     }
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       if (audioSourceCase_ == 2) {
         audioSource_ = b;
       }
@@ -208,6 +219,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -217,11 +229,9 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (audioSourceCase_ == 1) {
-      output.writeBytes(
-          1, (com.google.protobuf.ByteString) audioSource_);
+      output.writeBytes(1, (com.google.protobuf.ByteString) audioSource_);
     }
     if (audioSourceCase_ == 2) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, audioSource_);
@@ -235,9 +245,9 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (audioSourceCase_ == 1) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(
-            1, (com.google.protobuf.ByteString) audioSource_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBytesSize(
+              1, (com.google.protobuf.ByteString) audioSource_);
     }
     if (audioSourceCase_ == 2) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, audioSource_);
@@ -250,25 +260,23 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.speech.v1beta1.RecognitionAudio)) {
       return super.equals(obj);
     }
-    com.google.cloud.speech.v1beta1.RecognitionAudio other = (com.google.cloud.speech.v1beta1.RecognitionAudio) obj;
+    com.google.cloud.speech.v1beta1.RecognitionAudio other =
+        (com.google.cloud.speech.v1beta1.RecognitionAudio) obj;
 
     boolean result = true;
-    result = result && getAudioSourceCase().equals(
-        other.getAudioSourceCase());
+    result = result && getAudioSourceCase().equals(other.getAudioSourceCase());
     if (!result) return false;
     switch (audioSourceCase_) {
       case 1:
-        result = result && getContent()
-            .equals(other.getContent());
+        result = result && getContent().equals(other.getContent());
         break;
       case 2:
-        result = result && getUri()
-            .equals(other.getUri());
+        result = result && getUri().equals(other.getUri());
         break;
       case 0:
       default:
@@ -301,95 +309,102 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.speech.v1beta1.RecognitionAudio parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.speech.v1beta1.RecognitionAudio parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.speech.v1beta1.RecognitionAudio parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.speech.v1beta1.RecognitionAudio parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.speech.v1beta1.RecognitionAudio parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.speech.v1beta1.RecognitionAudio parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.speech.v1beta1.RecognitionAudio parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.speech.v1beta1.RecognitionAudio parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.speech.v1beta1.RecognitionAudio parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.speech.v1beta1.RecognitionAudio parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.speech.v1beta1.RecognitionAudio parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.speech.v1beta1.RecognitionAudio parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.speech.v1beta1.RecognitionAudio parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.speech.v1beta1.RecognitionAudio parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.speech.v1beta1.RecognitionAudio parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.speech.v1beta1.RecognitionAudio prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Contains audio data in the encoding specified in the `RecognitionConfig`.
    * Either `content` or `uri` must be supplied. Supplying both or neither
@@ -399,20 +414,22 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.speech.v1beta1.RecognitionAudio}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.speech.v1beta1.RecognitionAudio)
       com.google.cloud.speech.v1beta1.RecognitionAudioOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.speech.v1beta1.SpeechProto.internal_static_google_cloud_speech_v1beta1_RecognitionAudio_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.speech.v1beta1.SpeechProto
+          .internal_static_google_cloud_speech_v1beta1_RecognitionAudio_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.speech.v1beta1.SpeechProto.internal_static_google_cloud_speech_v1beta1_RecognitionAudio_fieldAccessorTable
+      return com.google.cloud.speech.v1beta1.SpeechProto
+          .internal_static_google_cloud_speech_v1beta1_RecognitionAudio_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.speech.v1beta1.RecognitionAudio.class, com.google.cloud.speech.v1beta1.RecognitionAudio.Builder.class);
+              com.google.cloud.speech.v1beta1.RecognitionAudio.class,
+              com.google.cloud.speech.v1beta1.RecognitionAudio.Builder.class);
     }
 
     // Construct using com.google.cloud.speech.v1beta1.RecognitionAudio.newBuilder()
@@ -420,16 +437,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     public Builder clear() {
       super.clear();
       audioSourceCase_ = 0;
@@ -437,9 +453,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.speech.v1beta1.SpeechProto.internal_static_google_cloud_speech_v1beta1_RecognitionAudio_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.speech.v1beta1.SpeechProto
+          .internal_static_google_cloud_speech_v1beta1_RecognitionAudio_descriptor;
     }
 
     public com.google.cloud.speech.v1beta1.RecognitionAudio getDefaultInstanceForType() {
@@ -455,7 +471,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public com.google.cloud.speech.v1beta1.RecognitionAudio buildPartial() {
-      com.google.cloud.speech.v1beta1.RecognitionAudio result = new com.google.cloud.speech.v1beta1.RecognitionAudio(this);
+      com.google.cloud.speech.v1beta1.RecognitionAudio result =
+          new com.google.cloud.speech.v1beta1.RecognitionAudio(this);
       if (audioSourceCase_ == 1) {
         result.audioSource_ = audioSource_;
       }
@@ -470,32 +487,33 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.speech.v1beta1.RecognitionAudio) {
-        return mergeFrom((com.google.cloud.speech.v1beta1.RecognitionAudio)other);
+        return mergeFrom((com.google.cloud.speech.v1beta1.RecognitionAudio) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -503,21 +521,25 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.speech.v1beta1.RecognitionAudio other) {
-      if (other == com.google.cloud.speech.v1beta1.RecognitionAudio.getDefaultInstance()) return this;
+      if (other == com.google.cloud.speech.v1beta1.RecognitionAudio.getDefaultInstance())
+        return this;
       switch (other.getAudioSourceCase()) {
-        case CONTENT: {
-          setContent(other.getContent());
-          break;
-        }
-        case URI: {
-          audioSourceCase_ = 2;
-          audioSource_ = other.audioSource_;
-          onChanged();
-          break;
-        }
-        case AUDIOSOURCE_NOT_SET: {
-          break;
-        }
+        case CONTENT:
+          {
+            setContent(other.getContent());
+            break;
+          }
+        case URI:
+          {
+            audioSourceCase_ = 2;
+            audioSource_ = other.audioSource_;
+            onChanged();
+            break;
+          }
+        case AUDIOSOURCE_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -545,12 +567,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int audioSourceCase_ = 0;
     private java.lang.Object audioSource_;
-    public AudioSourceCase
-        getAudioSourceCase() {
-      return AudioSourceCase.forNumber(
-          audioSourceCase_);
+
+    public AudioSourceCase getAudioSourceCase() {
+      return AudioSourceCase.forNumber(audioSourceCase_);
     }
 
     public Builder clearAudioSource() {
@@ -560,8 +582,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     /**
+     *
+     *
      * <pre>
      * The audio data bytes encoded as specified in
      * `RecognitionConfig`. Note: as with all bytes fields, protobuffers use a
@@ -577,6 +600,8 @@ private static final long serialVersionUID = 0L;
       return com.google.protobuf.ByteString.EMPTY;
     }
     /**
+     *
+     *
      * <pre>
      * The audio data bytes encoded as specified in
      * `RecognitionConfig`. Note: as with all bytes fields, protobuffers use a
@@ -587,14 +612,16 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setContent(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  audioSourceCase_ = 1;
+        throw new NullPointerException();
+      }
+      audioSourceCase_ = 1;
       audioSource_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The audio data bytes encoded as specified in
      * `RecognitionConfig`. Note: as with all bytes fields, protobuffers use a
@@ -613,6 +640,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     *
+     *
      * <pre>
      * URI that points to a file that contains audio data bytes as specified in
      * `RecognitionConfig`. Currently, only Google Cloud Storage URIs are
@@ -630,8 +659,7 @@ private static final long serialVersionUID = 0L;
         ref = audioSource_;
       }
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (audioSourceCase_ == 2) {
           audioSource_ = s;
@@ -642,6 +670,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * URI that points to a file that contains audio data bytes as specified in
      * `RecognitionConfig`. Currently, only Google Cloud Storage URIs are
@@ -653,16 +683,14 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string uri = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getUriBytes() {
+    public com.google.protobuf.ByteString getUriBytes() {
       java.lang.Object ref = "";
       if (audioSourceCase_ == 2) {
         ref = audioSource_;
       }
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         if (audioSourceCase_ == 2) {
           audioSource_ = b;
         }
@@ -672,6 +700,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * URI that points to a file that contains audio data bytes as specified in
      * `RecognitionConfig`. Currently, only Google Cloud Storage URIs are
@@ -683,17 +713,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string uri = 2;</code>
      */
-    public Builder setUri(
-        java.lang.String value) {
+    public Builder setUri(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  audioSourceCase_ = 2;
+        throw new NullPointerException();
+      }
+      audioSourceCase_ = 2;
       audioSource_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * URI that points to a file that contains audio data bytes as specified in
      * `RecognitionConfig`. Currently, only Google Cloud Storage URIs are
@@ -714,6 +745,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * URI that points to a file that contains audio data bytes as specified in
      * `RecognitionConfig`. Currently, only Google Cloud Storage URIs are
@@ -725,19 +758,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string uri = 2;</code>
      */
-    public Builder setUriBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       audioSourceCase_ = 2;
       audioSource_ = value;
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -746,12 +778,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.speech.v1beta1.RecognitionAudio)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.speech.v1beta1.RecognitionAudio)
   private static final com.google.cloud.speech.v1beta1.RecognitionAudio DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.speech.v1beta1.RecognitionAudio();
   }
@@ -760,15 +792,15 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<RecognitionAudio>
-      PARSER = new com.google.protobuf.AbstractParser<RecognitionAudio>() {
-    public RecognitionAudio parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new RecognitionAudio(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<RecognitionAudio> PARSER =
+      new com.google.protobuf.AbstractParser<RecognitionAudio>() {
+        public RecognitionAudio parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new RecognitionAudio(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<RecognitionAudio> parser() {
     return PARSER;
@@ -782,6 +814,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.speech.v1beta1.RecognitionAudio getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

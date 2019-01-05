@@ -17,12 +17,13 @@ package com.google.cloud.bigtable.admin.v2.models;
 
 import com.google.api.core.InternalApi;
 import com.google.bigtable.admin.v2.ColumnFamily;
-import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.admin.v2.Table;
+import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import com.google.cloud.bigtable.admin.v2.models.GCRules.GCRule;
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
+import javax.annotation.Nonnull;
 
 /**
  * Fluent wrapper for {@link com.google.bigtable.admin.v2.CreateTableRequest}
@@ -37,8 +38,8 @@ import com.google.protobuf.ByteString;
  */
 public final class CreateTableRequest {
   // TODO(igorbernstein): rename to requestBuilder
-  private final com.google.bigtable.admin.v2.CreateTableRequest.Builder createTableRequest = com.google.bigtable.admin.v2.CreateTableRequest
-      .newBuilder();
+  private final com.google.bigtable.admin.v2.CreateTableRequest.Builder createTableRequest =
+      com.google.bigtable.admin.v2.CreateTableRequest.newBuilder();
   // TODO(igorbernstein): use the embedded TableBuilder in createTableRequest
   private final Table.Builder tableRequest = Table.newBuilder();
 
@@ -100,8 +101,8 @@ public final class CreateTableRequest {
       return false;
     }
     CreateTableRequest that = (CreateTableRequest) o;
-    return Objects.equal(createTableRequest, that.createTableRequest) &&
-        Objects.equal(tableRequest, that.tableRequest);
+    return Objects.equal(createTableRequest, that.createTableRequest)
+        && Objects.equal(tableRequest, that.tableRequest);
   }
 
   @Override
@@ -110,10 +111,13 @@ public final class CreateTableRequest {
   }
 
   @InternalApi
-  public com.google.bigtable.admin.v2.CreateTableRequest toProto(InstanceName instanceName) {
-    Preconditions.checkNotNull(instanceName);
+  public com.google.bigtable.admin.v2.CreateTableRequest toProto(
+      @Nonnull String projectId, @Nonnull String instanceId) {
+    Preconditions.checkNotNull(projectId);
+    Preconditions.checkNotNull(instanceId);
+
     return createTableRequest
-        .setParent(instanceName.toString())
+        .setParent(NameUtil.formatInstanceName(projectId, instanceId))
         .setTable(tableRequest.build())
         .build();
   }

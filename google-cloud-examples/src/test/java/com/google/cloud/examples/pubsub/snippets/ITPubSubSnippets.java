@@ -59,7 +59,8 @@ public class ITPubSubSnippets {
 
   @Before
   public void setUp() throws Exception {
-    topicName = ProjectTopicName.of(ServiceOptions.getDefaultProjectId(), formatForTest("test-topic"));
+    topicName =
+        ProjectTopicName.of(ServiceOptions.getDefaultProjectId(), formatForTest("test-topic"));
     subscriptionName =
         ProjectSubscriptionName.of(
             ServiceOptions.getDefaultProjectId(), formatForTest("test-subscription"));
@@ -105,9 +106,7 @@ public class ITPubSubSnippets {
     final SettableApiFuture<PubsubMessage> received = SettableApiFuture.create();
     SubscriberSnippets snippets =
         new SubscriberSnippets(
-            subscriptionName,
-            new MessageReceiverSnippets(queue).messageReceiver(),
-            done);
+            subscriptionName, new MessageReceiverSnippets(queue).messageReceiver(), done);
     new Thread(
             new Runnable() {
               @Override
