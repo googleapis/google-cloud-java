@@ -166,10 +166,7 @@ public final class GcpManagedChannelTest {
   public void testParseGoodJsonFile() throws Exception {
     ApiConfig apiconfig = GcpManagedChannel.parseJson(API_FILE);
     ChannelPoolConfig expectedChannel =
-        ChannelPoolConfig.newBuilder()
-            .setMaxSize(5)
-            .setMaxConcurrentStreamsLowWatermark(2)
-            .build();
+        ChannelPoolConfig.newBuilder().setMaxSize(5).setMaxConcurrentStreamsLowWatermark(2).build();
     assertEquals(expectedChannel, apiconfig.getChannelPool());
 
     assertEquals(3, apiconfig.getMethodCount());

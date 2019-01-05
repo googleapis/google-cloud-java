@@ -36,7 +36,10 @@ import com.google.spanner.v1.SpannerGrpc;
 import com.google.spanner.v1.SpannerGrpc.SpannerBlockingStub;
 import com.google.spanner.v1.SpannerGrpc.SpannerFutureStub;
 import com.google.spanner.v1.SpannerGrpc.SpannerStub;
+import io.grpc.ConnectivityState;
+import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import io.grpc.StatusRuntimeException;
 import io.grpc.auth.MoreCallCredentials;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
@@ -48,8 +51,11 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
@@ -70,7 +76,7 @@ public final class SpannerIntegrationTest {
       ManagedChannelBuilder.forAddress(SPANNER_TARGET, 443);
   private GcpManagedChannel gcpChannel;
 
-  private GoogleCredentials getCreds() {
+  private static GoogleCredentials getCreds() {
     GoogleCredentials creds;
     try {
       creds = GoogleCredentials.getApplicationDefault();
@@ -108,6 +114,8 @@ public final class SpannerIntegrationTest {
   private List<String> createAsyncSessions(SpannerStub stub) throws Exception {
     List<AsyncResponseObserver<Session>> resps = new ArrayList<>();
     List<String> respNames = new ArrayList<>();
+    //Check the state of the channel first.
+    assertEquals(ConnectivityState.IDLE, gcpChannel.getState(false));
 
     // Check CreateSession with multiple channels and streams,
     CreateSessionRequest req = CreateSessionRequest.newBuilder().setDatabase(DATABASE).build();
@@ -116,17 +124,20 @@ public final class SpannerIntegrationTest {
       stub.createSession(req, resp);
       resps.add(resp);
     }
+    assertEquals(ConnectivityState.CONNECTING, gcpChannel.getState(false));
     checkChannelRefs(MAX_CHANNEL, MAX_STREAM, 0);
     for (AsyncResponseObserver<Session> resp : resps) {
       respNames.add(resp.get().getName());
     }
     // Since createSession will bind the key, check the number of keys bound with channels.
+    assertEquals(ConnectivityState.READY, gcpChannel.getState(false));
     assertEquals(MAX_CHANNEL * MAX_STREAM, gcpChannel.affinityKeyToChannelRef.size());
     checkChannelRefs(MAX_CHANNEL, 0, MAX_STREAM);
     return respNames;
   }
 
   private void deleteAsyncSessions(SpannerStub stub, List<String> respNames) throws Exception {
+    assertEquals(ConnectivityState.READY, gcpChannel.getState(false));
     for (String respName : respNames) {
       AsyncResponseObserver<Empty> resp = new AsyncResponseObserver<>();
       stub.deleteSession(DeleteSessionRequest.newBuilder().setName(respName).build(), resp);
@@ -147,6 +158,7 @@ public final class SpannerIntegrationTest {
   private List<String> createFutureSessions(SpannerFutureStub stub) throws Exception {
     List<ListenableFuture<Session>> futures = new ArrayList<>();
     List<String> futureNames = new ArrayList<>();
+    assertEquals(ConnectivityState.IDLE, gcpChannel.getState(false));
 
     // Check CreateSession with multiple channels and streams,
     CreateSessionRequest req = CreateSessionRequest.newBuilder().setDatabase(DATABASE).build();
@@ -154,11 +166,13 @@ public final class SpannerIntegrationTest {
       ListenableFuture<Session> future = stub.createSession(req);
       futures.add(future);
     }
+    assertEquals(ConnectivityState.CONNECTING, gcpChannel.getState(false));
     checkChannelRefs(MAX_CHANNEL, MAX_STREAM, 0);
     for (ListenableFuture<Session> future : futures) {
       futureNames.add(future.get().getName());
     }
     // Since createSession will bind the key, check the number of keys bound with channels.
+    assertEquals(ConnectivityState.READY, gcpChannel.getState(false));
     assertEquals(MAX_CHANNEL * MAX_STREAM, gcpChannel.affinityKeyToChannelRef.size());
     checkChannelRefs(MAX_CHANNEL, 0, MAX_STREAM);
     return futureNames;
@@ -166,6 +180,7 @@ public final class SpannerIntegrationTest {
 
   private void deleteFutureSessions(SpannerFutureStub stub, List<String> futureNames)
       throws Exception {
+    assertEquals(ConnectivityState.READY, gcpChannel.getState(false));
     for (String futureName : futureNames) {
       ListenableFuture<Empty> future =
           stub.deleteSession(DeleteSessionRequest.newBuilder().setName(futureName).build());
@@ -175,7 +190,7 @@ public final class SpannerIntegrationTest {
     assertEquals(0, gcpChannel.affinityKeyToChannelRef.size());
   }
 
-  /** A wrapper checking the status of each channelRef in the gcpChannel. */
+  /** A wrapper of checking the status of each channelRef in the gcpChannel. */
   private void checkChannelRefs(int channels, int streams, int affinities) {
     assertEquals(channels, gcpChannel.channelRefs.size());
     for (int i = 0; i < channels; i++) {
@@ -183,6 +198,8 @@ public final class SpannerIntegrationTest {
       assertEquals(affinities, gcpChannel.channelRefs.get(i).getAffinityCount());
     }
   }
+
+  @Rule public ExpectedException expectedEx = ExpectedException.none();
 
   @Before
   public void setup() throws InterruptedException {
@@ -194,9 +211,25 @@ public final class SpannerIntegrationTest {
     gcpChannel.shutdownNow();
   }
 
+  /**
+   * Delete all the sessions in the database in case that sessions are not cleared in previous tests
+   * because of assertion errors.
+   */
+  @AfterClass
+  public static void clearSessions() throws Exception {
+    ManagedChannel channel = builder.build();
+    GoogleCredentials creds = getCreds();
+    SpannerBlockingStub stub =
+        SpannerGrpc.newBlockingStub(channel).withCallCredentials(MoreCallCredentials.from(creds));
+    ListSessionsResponse responseList =
+        stub.listSessions(ListSessionsRequest.newBuilder().setDatabase(DATABASE).build());
+    for (Session s : responseList.getSessionsList()) {
+      deleteSession(stub, s);
+    }
+  }
+
   @Test
   public void testCreateAndGetSessionBlocking() throws Exception {
-    // System.out.println("blocking");
     SpannerBlockingStub stub = getSpannerBlockingStub();
     CreateSessionRequest req = CreateSessionRequest.newBuilder().setDatabase(DATABASE).build();
     for (int i = 0; i < MAX_CHANNEL * 2; i++) {
@@ -212,20 +245,6 @@ public final class SpannerIntegrationTest {
       deleteSession(stub, session);
       checkChannelRefs(1, 0, 0);
     }
-  }
-
-  @Test
-  public void testListAndDeleteSessionsBlocking() throws Exception {
-    SpannerBlockingStub stub = getSpannerBlockingStub();
-    // Delete all the sessions and check all sessions are deleted.
-    ListSessionsResponse responseList =
-        stub.listSessions(ListSessionsRequest.newBuilder().setDatabase(DATABASE).build());
-    for (Session s : responseList.getSessionsList()) {
-      deleteSession(stub, s);
-    }
-    responseList =
-        stub.listSessions(ListSessionsRequest.newBuilder().setDatabase(DATABASE).build());
-    assertEquals(0, responseList.getSessionsList().size());
   }
 
   @Test
@@ -245,7 +264,7 @@ public final class SpannerIntegrationTest {
   }
 
   @Test
-  public void testCreateAndListSessionsAsync() throws Exception {
+  public void testListSessionsAsync() throws Exception {
     SpannerStub stub = getSpannerStub();
     List<String> respNames = createAsyncSessions(stub);
     AsyncResponseObserver<ListSessionsResponse> respList = new AsyncResponseObserver<>();
@@ -261,7 +280,6 @@ public final class SpannerIntegrationTest {
     deleteAsyncSessions(stub, respNames);
   }
 
-  /** Since Future and Blocking share the same mechanism, test Future only. */
   @Test
   public void testExecuteSqlFuture() throws Exception {
     SpannerFutureStub stub = getSpannerFutureStub();
@@ -292,6 +310,39 @@ public final class SpannerIntegrationTest {
       assertEquals(USERNAME, resp.get().getValues(0).getStringValue());
     }
     deleteAsyncSessions(stub, respNames);
+  }
+
+  @Test
+  public void testBoundWithInvalidAffinityKey() throws Exception {
+    SpannerBlockingStub stub = getSpannerBlockingStub();
+    CreateSessionRequest req = CreateSessionRequest.newBuilder().setDatabase(DATABASE).build();
+    Session session = stub.createSession(req);
+    expectedEx.expect(StatusRuntimeException.class);
+    expectedEx.expectMessage("INVALID_ARGUMENT: Invalid GetSession request.");
+    stub.getSession(GetSessionRequest.newBuilder().setName("jennnny").build());
+    deleteSession(stub, session);
+  }
+
+  @Test
+  public void testUnbindWithInvalidAffinityKey() throws Exception {
+    SpannerBlockingStub stub = getSpannerBlockingStub();
+    CreateSessionRequest req = CreateSessionRequest.newBuilder().setDatabase(DATABASE).build();
+    Session session = stub.createSession(req);
+    expectedEx.expect(StatusRuntimeException.class);
+    expectedEx.expectMessage("INVALID_ARGUMENT: Invalid DeleteSession request.");
+    stub.deleteSession(DeleteSessionRequest.newBuilder().setName("jennnny").build());
+    deleteSession(stub, session);
+  }
+
+  @Test
+  public void testBoundAfterUnbind() throws Exception {
+    SpannerBlockingStub stub = getSpannerBlockingStub();
+    CreateSessionRequest req = CreateSessionRequest.newBuilder().setDatabase(DATABASE).build();
+    Session session = stub.createSession(req);
+    stub.deleteSession(DeleteSessionRequest.newBuilder().setName(session.getName()).build());
+    expectedEx.expect(StatusRuntimeException.class);
+    expectedEx.expectMessage("NOT_FOUND: Session not found: " + session.getName());
+    stub.getSession(GetSessionRequest.newBuilder().setName(session.getName()).build());
   }
 
   private static class AsyncResponseObserver<RespT> implements StreamObserver<RespT> {
