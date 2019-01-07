@@ -39,6 +39,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+/** Integration tests for {@link com.google.cloud.examples.bigtable.InstanceAdmin} */
 public class ITInstanceAdmin {
 
   private static final String INSTANCE_PROPERTY_NAME = "bigtable.instance";
@@ -94,7 +95,7 @@ public class ITInstanceAdmin {
 
   @Test
   public void testCreateAndDeleteInstance() throws IOException {
-    // Create instance
+    // Creates an instance.
     String fakeInstance = generateId();
     String fakeCluster = generateId();
     InstanceAdmin testInstanceAdmin =
@@ -102,26 +103,26 @@ public class ITInstanceAdmin {
     testInstanceAdmin.createProdInstance();
     assertTrue(adminClient.exists(fakeInstance));
 
-    // Delete instance
+    // Deletes an instance.
     testInstanceAdmin.deleteInstance();
     assertTrue(!adminClient.exists(fakeInstance));
   }
 
   @Test
   public void testGetInstance() {
-    // Get instance
+    // Gets an instance.
     Instance instance = instanceAdmin.getInstance();
     assertNotNull(instance);
   }
 
   @Test(expected = NotFoundException.class)
   public void testAddAndDeleteCluster() {
-    // Add cluster
+    // Adds a cluster.
     instanceAdmin.addCluster();
     Cluster cluster = adminClient.getCluster(instanceId, CLUSTER);
     assertNotNull(cluster);
 
-    // Delete cluster
+    // Deletes a cluster.
     instanceAdmin.deleteCluster();
     adminClient.getCluster(instanceId, CLUSTER);
   }

@@ -31,6 +31,22 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * An example of using Google Cloud Bigtable.
+ *
+ * <p>This example demonstrates the usage of BigtableInstanceAdminClient to create, configure, and
+ * delete Cloud Bigtable Instances and Clusters.
+ *
+ * <pre>
+ *   creates production instance
+ *   lists instances
+ *   gets instance
+ *   lists clusters
+ *   adds cluster
+ *   deletes cluster
+ *   deletes instance
+ * </pre>
+ */
 public class InstanceAdmin {
 
   private static final String CLUSTER = "cluster" + System.currentTimeMillis();
@@ -55,13 +71,13 @@ public class InstanceAdmin {
     this.clusterId = clusterId;
 
     // [START connecting_to_bigtable]
-    // Create the settings to configure a bigtable instance admin client
+    // Creates the settings to configure a bigtable instance admin client.
     BigtableInstanceAdminSettings instanceAdminSettings =
         BigtableInstanceAdminSettings.newBuilder()
             .setProjectName(ProjectName.of(projectId))
             .build();
 
-    // Create bigtable instance admin client
+    // Creates a bigtable instance admin client.
     adminClient = BigtableInstanceAdminClient.create(instanceAdminSettings);
     // [END connecting_to_bigtable]
   }
@@ -77,19 +93,20 @@ public class InstanceAdmin {
     adminClient.close();
   }
 
+  /** Demonstrates how to create a Production instance within a provided project. */
   public void createProdInstance() {
-    // Check if instance exists, create instance if does not exists
+    // Checks if instance exists, creates instance if does not exists.
     if (!adminClient.exists(instanceId)) {
       System.out.println("Instance does not exist, creating a PRODUCTION instance");
       // [START bigtable_create_prod_instance]
-      // Creates a Production Instance with the ID "ssd-instance"
-      // cluster id "ssd-cluster", 3 nodes and location us-central1-f
+      // Creates a Production Instance with the ID "ssd-instance",
+      // cluster id "ssd-cluster", 3 nodes and location "us-central1-f".
       CreateInstanceRequest createInstanceRequest =
           CreateInstanceRequest.of(instanceId)
               .addCluster(clusterId, "us-central1-f", 3, StorageType.SSD)
               .setType(Type.PRODUCTION)
               .addLabel("example", "instance_admin");
-      // Creates production instance with given request
+      // Creates a production instance with the given request.
       try {
         Instance instance = adminClient.createInstance(createInstanceRequest);
         System.out.printf("PRODUCTION type instance %s created successfully%n", instance.getId());
@@ -101,6 +118,7 @@ public class InstanceAdmin {
     }
   }
 
+  /** Demonstrates how to list all instances within a project. */
   public void listInstances() {
     System.out.println("\nListing Instances");
     // [START bigtable_list_instances]
@@ -117,6 +135,11 @@ public class InstanceAdmin {
     // [END bigtable_list_instances]
   }
 
+  /**
+   * Demonstrates how to get an instance.
+   *
+   * @return instance
+   */
   public Instance getInstance() {
     System.out.println("\nGet Instance");
     // [START bigtable_get_instance]
@@ -139,6 +162,7 @@ public class InstanceAdmin {
     return instance;
   }
 
+  /** Demonstrates how to list clusters within an instance. */
   public void listClusters() {
     System.out.println("\nListing Clusters");
     // [START bigtable_get_clusters]
@@ -153,6 +177,7 @@ public class InstanceAdmin {
     // [END bigtable_get_clusters]
   }
 
+  /** Demonstrates how to delete an instance. */
   public void deleteInstance() {
     System.out.println("\nDeleting Instance");
     // [START bigtable_delete_instance]
@@ -165,6 +190,7 @@ public class InstanceAdmin {
     // [END bigtable_delete_instance]
   }
 
+  /** Demonstrates how to add a cluster to an instance. */
   public void addCluster() {
     System.out.printf("%nAdding cluster %s to instance: %s%n", CLUSTER, instanceId);
     // [START bigtable_create_cluster]
@@ -181,6 +207,7 @@ public class InstanceAdmin {
     // [END bigtable_create_cluster]
   }
 
+  /** Demonstrates how to delete a cluster from an instance. */
   public void deleteCluster() {
     System.out.printf("%nDeleting cluster %s from instance: %s%n", CLUSTER, instanceId);
     // [START bigtable_delete_cluster]
