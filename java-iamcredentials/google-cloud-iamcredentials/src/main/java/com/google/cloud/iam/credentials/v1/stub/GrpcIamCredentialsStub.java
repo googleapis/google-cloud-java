@@ -26,6 +26,8 @@ import com.google.cloud.iam.credentials.v1.GenerateAccessTokenRequest;
 import com.google.cloud.iam.credentials.v1.GenerateAccessTokenResponse;
 import com.google.cloud.iam.credentials.v1.GenerateIdTokenRequest;
 import com.google.cloud.iam.credentials.v1.GenerateIdTokenResponse;
+import com.google.cloud.iam.credentials.v1.GenerateIdentityBindingAccessTokenRequest;
+import com.google.cloud.iam.credentials.v1.GenerateIdentityBindingAccessTokenResponse;
 import com.google.cloud.iam.credentials.v1.SignBlobRequest;
 import com.google.cloud.iam.credentials.v1.SignBlobResponse;
 import com.google.cloud.iam.credentials.v1.SignJwtRequest;
@@ -81,6 +83,23 @@ public class GrpcIamCredentialsStub extends IamCredentialsStub {
           .setRequestMarshaller(ProtoUtils.marshaller(SignJwtRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(SignJwtResponse.getDefaultInstance()))
           .build();
+  private static final MethodDescriptor<
+          GenerateIdentityBindingAccessTokenRequest, GenerateIdentityBindingAccessTokenResponse>
+      generateIdentityBindingAccessTokenMethodDescriptor =
+          MethodDescriptor
+              .<GenerateIdentityBindingAccessTokenRequest,
+                  GenerateIdentityBindingAccessTokenResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.iam.credentials.v1.IAMCredentials/GenerateIdentityBindingAccessToken")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      GenerateIdentityBindingAccessTokenRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      GenerateIdentityBindingAccessTokenResponse.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
@@ -90,6 +109,9 @@ public class GrpcIamCredentialsStub extends IamCredentialsStub {
       generateIdTokenCallable;
   private final UnaryCallable<SignBlobRequest, SignBlobResponse> signBlobCallable;
   private final UnaryCallable<SignJwtRequest, SignJwtResponse> signJwtCallable;
+  private final UnaryCallable<
+          GenerateIdentityBindingAccessTokenRequest, GenerateIdentityBindingAccessTokenResponse>
+      generateIdentityBindingAccessTokenCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -150,6 +172,15 @@ public class GrpcIamCredentialsStub extends IamCredentialsStub {
         GrpcCallSettings.<SignJwtRequest, SignJwtResponse>newBuilder()
             .setMethodDescriptor(signJwtMethodDescriptor)
             .build();
+    GrpcCallSettings<
+            GenerateIdentityBindingAccessTokenRequest, GenerateIdentityBindingAccessTokenResponse>
+        generateIdentityBindingAccessTokenTransportSettings =
+            GrpcCallSettings
+                .<GenerateIdentityBindingAccessTokenRequest,
+                    GenerateIdentityBindingAccessTokenResponse>
+                    newBuilder()
+                .setMethodDescriptor(generateIdentityBindingAccessTokenMethodDescriptor)
+                .build();
 
     this.generateAccessTokenCallable =
         callableFactory.createUnaryCallable(
@@ -165,6 +196,11 @@ public class GrpcIamCredentialsStub extends IamCredentialsStub {
     this.signJwtCallable =
         callableFactory.createUnaryCallable(
             signJwtTransportSettings, settings.signJwtSettings(), clientContext);
+    this.generateIdentityBindingAccessTokenCallable =
+        callableFactory.createUnaryCallable(
+            generateIdentityBindingAccessTokenTransportSettings,
+            settings.generateIdentityBindingAccessTokenSettings(),
+            clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -184,6 +220,12 @@ public class GrpcIamCredentialsStub extends IamCredentialsStub {
 
   public UnaryCallable<SignJwtRequest, SignJwtResponse> signJwtCallable() {
     return signJwtCallable;
+  }
+
+  public UnaryCallable<
+          GenerateIdentityBindingAccessTokenRequest, GenerateIdentityBindingAccessTokenResponse>
+      generateIdentityBindingAccessTokenCallable() {
+    return generateIdentityBindingAccessTokenCallable;
   }
 
   @Override
