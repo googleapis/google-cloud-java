@@ -36,6 +36,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+/** Integration tests for {@link TableAdmin} */
 public class ITTableAdmin {
 
   private static final String INSTANCE_PROPERTY_NAME = "bigtable.instance";
@@ -84,14 +85,14 @@ public class ITTableAdmin {
 
   @Test
   public void testCreateAndDeleteTable() throws IOException {
-    // Create table
+    // Creates a table.
     String fakeTable = generateTableId();
     TableAdmin testTableAdmin =
         new TableAdmin(instanceName.getProject(), instanceName.getInstance(), fakeTable);
     testTableAdmin.createTable();
     assertTrue(adminClient.exists(fakeTable));
 
-    // Delete table
+    // Deletes a table.
     testTableAdmin.deleteTable();
     assertTrue(!adminClient.exists(fakeTable));
   }
@@ -104,7 +105,7 @@ public class ITTableAdmin {
     boolean maxAgeRule = ruleCheck(maxAgeCondition);
     assertTrue(maxAgeRule);
 
-    // Modify cf1
+    // Modifies cf1.
     tableAdmin.modifyColumnFamilyRule();
     Object modifiedRule = GCRules.GCRULES.maxVersions(1);
     boolean maxVersionRule = ruleCheck(modifiedRule);
@@ -119,7 +120,7 @@ public class ITTableAdmin {
     boolean maxVersionRule = ruleCheck(maxVersionCondition);
     assertTrue(maxVersionRule);
 
-    // Delete cf2
+    // Deletes cf2.
     tableAdmin.deleteColumnFamily();
     boolean found = true;
     List<ColumnFamily> columnFamilies = adminClient.getTable(tableId).getColumnFamilies();
