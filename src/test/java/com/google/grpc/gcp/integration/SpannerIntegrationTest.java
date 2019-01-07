@@ -114,7 +114,7 @@ public final class SpannerIntegrationTest {
   private List<String> createAsyncSessions(SpannerStub stub) throws Exception {
     List<AsyncResponseObserver<Session>> resps = new ArrayList<>();
     List<String> respNames = new ArrayList<>();
-    //Check the state of the channel first.
+    // Check the state of the channel first.
     assertEquals(ConnectivityState.IDLE, gcpChannel.getState(false));
 
     // Check CreateSession with multiple channels and streams,

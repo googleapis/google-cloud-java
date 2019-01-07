@@ -45,13 +45,11 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Logger;
-
-// -------------------TODO: Take care of multithreads-------------------------
-// -------------------TODO: LOG ----------------------------------------------
 
 /** A channel management factory that implements grpc.Channel APIs. */
 public class GcpManagedChannel extends ManagedChannel {
@@ -68,6 +66,8 @@ public class GcpManagedChannel extends ManagedChannel {
   @VisibleForTesting final Map<String, AffinityConfig> methodToAffinity;
   @VisibleForTesting final Map<String, ChannelRef> affinityKeyToChannelRef;
   @VisibleForTesting List<ChannelRef> channelRefs;
+
+  private final Object bindLock = new Object();
 
   // --------------------------------TODO------------------------------------
   // -  How to initialize a new managed channel? currently we use           -
@@ -109,7 +109,7 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   /** Picks the channelRef with the least busy managedchannel from the pool. */
-  protected synchronized ChannelRef getChannelRef() {
+  synchronized ChannelRef getChannelRef() {
     Collections.sort(
         channelRefs,
         new Comparator<ChannelRef>() {
@@ -135,7 +135,7 @@ public class GcpManagedChannel extends ManagedChannel {
     return channelRefs.get(0);
   }
 
-  protected ChannelRef getChannelRef(String key) {
+  ChannelRef getChannelRef(String key) {
     return affinityKeyToChannelRef.get(key);
   }
 
@@ -145,13 +145,10 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   // --------------------------------TODO-----------------------------------
-  // -   There are some non-abstract methods, do we need to override it .  -
+  // -   There are some non-abstract methods, do we need to override them
   // -----------------------------------------------------------------------
 
-  /*
-   * Manage the channelpool inside the GcpClientCall(). We start with the channelRef with the least
-   * busy channel.
-   */
+  /** Manage the channelpool inside the GcpClientCall(). */
   @Override
   public <ReqT, RespT> ClientCall<ReqT, RespT> newCall(
       MethodDescriptor<ReqT, RespT> methodDescriptor, CallOptions callOptions) {
@@ -255,35 +252,39 @@ public class GcpManagedChannel extends ManagedChannel {
    * <p>One channel can be mapped to more than one keys. But one key can only be mapped to one
    * channel.
    */
-  public synchronized void bind(ChannelRef channelRef, String affinityKey) {
-    if (affinityKey != null && !affinityKey.equals("") && channelRef != null) {
-      if (!affinityKeyToChannelRef.containsKey(affinityKey)) {
-        affinityKeyToChannelRef.put(affinityKey, channelRef);
+  public void bind(ChannelRef channelRef, String affinityKey) {
+    synchronized (bindLock) {
+      if (affinityKey != null && !affinityKey.equals("") && channelRef != null) {
+        if (!affinityKeyToChannelRef.containsKey(affinityKey)) {
+          affinityKeyToChannelRef.put(affinityKey, channelRef);
+        }
+        affinityKeyToChannelRef.get(affinityKey).affinityCountIncr();
       }
-      affinityKeyToChannelRef.get(affinityKey).affinityCountIncr();
     }
   }
 
   /** Unbind channel with affinity key, and delete the affinitykey if necassary */
-  public synchronized void unbind(String affinityKey) {
-    if (affinityKey != null
-        && !affinityKey.equals("")
-        && affinityKeyToChannelRef.containsKey(affinityKey)) {
-      ChannelRef removedChannelRef = affinityKeyToChannelRef.get(affinityKey);
-      if (removedChannelRef.getAffinityCount() > 0) {
-        removedChannelRef.affinityCountDecr();
-      }
-
-      // Current channel has no affinity key bound with it.
-      if (removedChannelRef.getAffinityCount() == 0) {
-        Set<String> removedKeys = new HashSet<String>();
-        for (String key : affinityKeyToChannelRef.keySet()) {
-          if (affinityKeyToChannelRef.get(key) == removedChannelRef) {
-            removedKeys.add(key);
-          }
+  public void unbind(String affinityKey) {
+    synchronized (bindLock) {
+      if (affinityKey != null
+          && !affinityKey.equals("")
+          && affinityKeyToChannelRef.containsKey(affinityKey)) {
+        ChannelRef removedChannelRef = affinityKeyToChannelRef.get(affinityKey);
+        if (removedChannelRef.getAffinityCount() > 0) {
+          removedChannelRef.affinityCountDecr();
         }
-        for (String key : removedKeys) {
-          affinityKeyToChannelRef.remove(key);
+
+        // Current channel has no affinity key bound with it.
+        if (removedChannelRef.getAffinityCount() == 0) {
+          Set<String> removedKeys = new HashSet<String>();
+          for (String key : affinityKeyToChannelRef.keySet()) {
+            if (affinityKeyToChannelRef.get(key) == removedChannelRef) {
+              removedKeys.add(key);
+            }
+          }
+          for (String key : removedKeys) {
+            affinityKeyToChannelRef.remove(key);
+          }
         }
       }
     }
@@ -360,7 +361,6 @@ public class GcpManagedChannel extends ManagedChannel {
    * A wrapper of real grpc channel, it provides helper functions to calculate affinity counts and
    * active streams count.
    */
-  @VisibleForTesting
   class ChannelRef {
 
     private final ManagedChannel delegate;
@@ -382,35 +382,35 @@ public class GcpManagedChannel extends ManagedChannel {
       this.activeStreamsCount = new AtomicInteger(activeStreamsCount);
     }
 
-    protected ManagedChannel getChannel() {
+    ManagedChannel getChannel() {
       return delegate;
     }
 
-    protected int getId() {
+    int getId() {
       return channelId;
     }
 
-    protected void affinityCountIncr() {
+    void affinityCountIncr() {
       affinityCount.incrementAndGet();
     }
 
-    protected void affinityCountDecr() {
+    void affinityCountDecr() {
       affinityCount.decrementAndGet();
     }
 
-    protected void activeStreamsCountIncr() {
+    void activeStreamsCountIncr() {
       activeStreamsCount.incrementAndGet();
     }
 
-    protected void activeStreamsCountDecr() {
+    void activeStreamsCountDecr() {
       activeStreamsCount.decrementAndGet();
     }
 
-    protected int getAffinityCount() {
+    int getAffinityCount() {
       return affinityCount.get();
     }
 
-    protected int getActiveStreamsCount() {
+    int getActiveStreamsCount() {
       return activeStreamsCount.get();
     }
   }
@@ -424,55 +424,95 @@ public class GcpManagedChannel extends ManagedChannel {
    */
   public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
 
-    private ChannelRef delegateChannelRef;
-    private ClientCall<ReqT, RespT> delegateCall;
     private Metadata cachedHeaders;
     private Listener<RespT> cachedListener;
     private MethodDescriptor<ReqT, RespT> methodDescriptor;
     private CallOptions callOptions;
-    private boolean streamingResponse;
-    private Boolean enableCompression;
-    private final AtomicBoolean received = new AtomicBoolean(false);
+
+    private ChannelRef delegateChannelRef = null;
+    private ClientCall<ReqT, RespT> delegateCall = null;
+    private boolean received = false;
+    private final ConcurrentLinkedQueue<Integer> previousOperations = new ConcurrentLinkedQueue<>();
     private final AtomicBoolean started = new AtomicBoolean(false);
     private final AtomicBoolean decremented = new AtomicBoolean(false);
 
     GcpClientCall(MethodDescriptor<ReqT, RespT> methodDescriptor, CallOptions callOptions) {
-      this.delegateChannelRef = null;
-      this.delegateCall = null;
       this.methodDescriptor = methodDescriptor;
       this.callOptions = callOptions;
-      this.streamingResponse = false;
-      this.enableCompression = null;
     }
 
-    @Override
-    public void request(int numMessages) {
-      if (delegateCall == null) {
-        // Response message is requested before request is sent.
-        // See io.grpc.stub.ClientCalls.startcall().
-        if (numMessages == 1) {
-          streamingResponse = true;
+    /**
+     * Since the delecateCall is null before sendMessage() is callled, abort and store all the
+     * operations before sendMessage() and do them again after sendMessage(). Each number in
+     * List<Integer> previousOperations represents one kind of operation.
+     */
+    private void doPreviousOperations() {
+      // This is basically ok but will still have some issues.
+      while (!previousOperations.isEmpty()) {
+        int op = previousOperations.poll();
+        if (op == 1) {
+          delegateCall.start(getListener(cachedListener), cachedHeaders);
+        } else if (op == Integer.MAX_VALUE) {
+          delegateCall.setMessageCompression(true);
+        } else if (op == Integer.MIN_VALUE) {
+          delegateCall.setMessageCompression(false);
+        } else if (op < 0) {
+          delegateCall.request(-op);
         }
-        return;
       }
-      delegateCall.request(numMessages);
+      previousOperations.clear();
     }
 
     @Override
     public void start(Listener<RespT> responseListener, Metadata headers) {
       cachedHeaders = headers;
       cachedListener = responseListener;
+      previousOperations.add(1);
     }
 
-    /** Decrement the stream number by one when the call is cancelled. */
+    @Override
+    public void request(int numMessages) {
+      if (!started.get()) {
+        previousOperations.add(-1 * numMessages);
+      } else {
+        delegateCall.request(numMessages);
+      }
+    }
+
+    @Override
+    public void setMessageCompression(boolean enabled) {
+      if (started.get()) {
+        delegateCall.setMessageCompression(enabled);
+      } else if (enabled) {
+        previousOperations.add(Integer.MAX_VALUE);
+      } else {
+        previousOperations.add(Integer.MIN_VALUE);
+      }
+    }
+
+    /**
+     * <1> If the call has started, decrement the stream number by one. <2> Otherwise start a new
+     * call and do the previous operations. <3> Cancel the call.
+     */
     @Override
     public void cancel(String message, Throwable cause) {
-      if (delegateCall != null) {
-        if (!decremented.getAndSet(true)) {
-          delegateChannelRef.activeStreamsCountDecr();
-        }
-        delegateCall.cancel(message, cause);
+      if (started.get() && !decremented.getAndSet(true)) {
+        delegateChannelRef.activeStreamsCountDecr();
+      } else if (!started.get()) {
+        delegateCall = delegateChannelRef.getChannel().newCall(methodDescriptor, callOptions);
+        doPreviousOperations();
       }
+      delegateCall.cancel(message, cause);
+    }
+
+    /** If the call hasn't started, start a new call, do the previous operations. */
+    @Override
+    public void halfClose() {
+      if (!started.get()) {
+        delegateCall = delegateChannelRef.getChannel().newCall(methodDescriptor, callOptions);
+        doPreviousOperations();
+      }
+      delegateCall.halfClose();
     }
 
     /**
@@ -481,9 +521,13 @@ public class GcpManagedChannel extends ManagedChannel {
      */
     @Override
     public void sendMessage(ReqT message) {
+      // --------------------------------------TODO-------------------------------------------------
+      // we can't promise the right order of execution when other methods are called in the
+      //    middle of this block, though it can pass all the tests.
+      // -------------------------------------------------------------------------------------------
       synchronized (this) {
-        if (!started.getAndSet(true)) {
-          // Check if the current channelRef is in bound with the key and change it if necessary.
+        if (!started.get()) {
+          // Check if the current channelRef is bound with the key and change it if necessary.
           // If no channel is bound with the key, keep on using the least busy one.
           String key = checkKey(message, true);
           if (key != null && key != "" && getChannelRef(key) != null) {
@@ -492,36 +536,19 @@ public class GcpManagedChannel extends ManagedChannel {
             delegateChannelRef = getChannelRef();
           }
 
-          delegateChannelRef.activeStreamsCountIncr();
-          if (enableCompression != null) {
-            delegateCall.setMessageCompression(enableCompression);
-          }
-          delegateCall = delegateChannelRef.getChannel().newCall(methodDescriptor, callOptions);
-          delegateCall.start(getListener(cachedListener), cachedHeaders);
-
           if (key != null
               && methodToAffinity.get(methodDescriptor.getFullMethodName()).getCommand()
                   == AffinityConfig.Command.UNBIND) {
             unbind(key);
           }
+          delegateChannelRef.activeStreamsCountIncr();
+          delegateCall = delegateChannelRef.getChannel().newCall(methodDescriptor, callOptions);
 
-          // Initially ask for two responses from flow-control so that if a misbehaving server sends
-          // more than one responses, we can catch it and fail it in the listener.
-          if (streamingResponse) {
-            delegateCall.request(1);
-          } else {
-            delegateCall.request(2);
-          }
+          doPreviousOperations();
+          started.set(true);
         }
       }
       delegateCall.sendMessage(message);
-    }
-
-    @Override
-    public void halfClose() {
-      if (delegateCall != null) {
-        delegateCall.halfClose();
-      }
     }
 
     @Override
@@ -530,16 +557,6 @@ public class GcpManagedChannel extends ManagedChannel {
         return delegateCall.isReady();
       }
       return false;
-    }
-
-    // By default it is enabled.
-    @Override
-    public void setMessageCompression(boolean enabled) {
-      if (delegateCall != null) {
-        delegateCall.setMessageCompression(enabled);
-      } else {
-        enableCompression = enabled;
-      }
     }
 
     @Override
@@ -559,7 +576,6 @@ public class GcpManagedChannel extends ManagedChannel {
         // Decrement the stream number by one when the call is closed.
         @Override
         public void onClose(Status status, Metadata trailers) {
-          // System.out.println("close" + delegateChannelRef.getId());
           if (!decremented.getAndSet(true)) {
             delegateChannelRef.activeStreamsCountDecr();
           }
@@ -571,7 +587,8 @@ public class GcpManagedChannel extends ManagedChannel {
         @Override
         public void onMessage(RespT message) {
           synchronized (this) {
-            if (!received.getAndSet(true)) {
+            if (!received) {
+              received = true;
               String key = checkKey(message, false);
               if (key != null) {
                 bind(delegateChannelRef, key);
@@ -586,7 +603,7 @@ public class GcpManagedChannel extends ManagedChannel {
     /**
      * Fetch the affinity key from the meaasge.
      *
-     * @param message the <reqT> or <respT> message, of prototype.
+     * @param message the <reqT> or <respT> prototype message.
      * @param isReq indicates if the message is a request message.
      */
     private String checkKey(Object message, boolean isReq) {
