@@ -149,14 +149,6 @@ public class MessageDispatcherTest {
   }
 
   @Test
-  public void testAbandon() throws Exception {
-    dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE), NOOP_RUNNABLE);
-    consumers.take().abandon();
-    dispatcher.extendDeadlines();
-    assertThat(sentModAcks).doesNotContain(TEST_MESSAGE.getAckId());
-  }
-
-  @Test
   public void testExtension() throws Exception {
     dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE), NOOP_RUNNABLE);
     dispatcher.extendDeadlines();
