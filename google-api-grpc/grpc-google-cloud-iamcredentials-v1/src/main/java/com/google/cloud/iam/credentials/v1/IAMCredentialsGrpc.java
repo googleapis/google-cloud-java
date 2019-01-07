@@ -266,6 +266,74 @@ public final class IAMCredentialsGrpc {
     return getSignJwtMethod;
   }
 
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGenerateIdentityBindingAccessTokenMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.iam.credentials.v1.GenerateIdentityBindingAccessTokenRequest,
+          com.google.cloud.iam.credentials.v1.GenerateIdentityBindingAccessTokenResponse>
+      METHOD_GENERATE_IDENTITY_BINDING_ACCESS_TOKEN =
+          getGenerateIdentityBindingAccessTokenMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.iam.credentials.v1.GenerateIdentityBindingAccessTokenRequest,
+          com.google.cloud.iam.credentials.v1.GenerateIdentityBindingAccessTokenResponse>
+      getGenerateIdentityBindingAccessTokenMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.iam.credentials.v1.GenerateIdentityBindingAccessTokenRequest,
+          com.google.cloud.iam.credentials.v1.GenerateIdentityBindingAccessTokenResponse>
+      getGenerateIdentityBindingAccessTokenMethod() {
+    return getGenerateIdentityBindingAccessTokenMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.iam.credentials.v1.GenerateIdentityBindingAccessTokenRequest,
+          com.google.cloud.iam.credentials.v1.GenerateIdentityBindingAccessTokenResponse>
+      getGenerateIdentityBindingAccessTokenMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.iam.credentials.v1.GenerateIdentityBindingAccessTokenRequest,
+            com.google.cloud.iam.credentials.v1.GenerateIdentityBindingAccessTokenResponse>
+        getGenerateIdentityBindingAccessTokenMethod;
+    if ((getGenerateIdentityBindingAccessTokenMethod =
+            IAMCredentialsGrpc.getGenerateIdentityBindingAccessTokenMethod)
+        == null) {
+      synchronized (IAMCredentialsGrpc.class) {
+        if ((getGenerateIdentityBindingAccessTokenMethod =
+                IAMCredentialsGrpc.getGenerateIdentityBindingAccessTokenMethod)
+            == null) {
+          IAMCredentialsGrpc.getGenerateIdentityBindingAccessTokenMethod =
+              getGenerateIdentityBindingAccessTokenMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.iam.credentials.v1
+                              .GenerateIdentityBindingAccessTokenRequest,
+                          com.google.cloud.iam.credentials.v1
+                              .GenerateIdentityBindingAccessTokenResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.iam.credentials.v1.IAMCredentials",
+                              "GenerateIdentityBindingAccessToken"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.iam.credentials.v1
+                                  .GenerateIdentityBindingAccessTokenRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.iam.credentials.v1
+                                  .GenerateIdentityBindingAccessTokenResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new IAMCredentialsMethodDescriptorSupplier(
+                              "GenerateIdentityBindingAccessToken"))
+                      .build();
+        }
+      }
+    }
+    return getGenerateIdentityBindingAccessTokenMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static IAMCredentialsStub newStub(io.grpc.Channel channel) {
     return new IAMCredentialsStub(channel);
@@ -355,6 +423,23 @@ public final class IAMCredentialsGrpc {
       asyncUnimplementedUnaryCall(getSignJwtMethodHelper(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Exchange a JWT signed by third party identity provider to an OAuth 2.0
+     * access token
+     * </pre>
+     */
+    public void generateIdentityBindingAccessToken(
+        com.google.cloud.iam.credentials.v1.GenerateIdentityBindingAccessTokenRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.iam.credentials.v1.GenerateIdentityBindingAccessTokenResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(
+          getGenerateIdentityBindingAccessTokenMethodHelper(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -386,6 +471,14 @@ public final class IAMCredentialsGrpc {
                       com.google.cloud.iam.credentials.v1.SignJwtRequest,
                       com.google.cloud.iam.credentials.v1.SignJwtResponse>(
                       this, METHODID_SIGN_JWT)))
+          .addMethod(
+              getGenerateIdentityBindingAccessTokenMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.iam.credentials.v1.GenerateIdentityBindingAccessTokenRequest,
+                      com.google.cloud.iam.credentials.v1
+                          .GenerateIdentityBindingAccessTokenResponse>(
+                      this, METHODID_GENERATE_IDENTITY_BINDING_ACCESS_TOKEN)))
           .build();
     }
   }
@@ -486,6 +579,26 @@ public final class IAMCredentialsGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exchange a JWT signed by third party identity provider to an OAuth 2.0
+     * access token
+     * </pre>
+     */
+    public void generateIdentityBindingAccessToken(
+        com.google.cloud.iam.credentials.v1.GenerateIdentityBindingAccessTokenRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.iam.credentials.v1.GenerateIdentityBindingAccessTokenResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel()
+              .newCall(getGenerateIdentityBindingAccessTokenMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -566,6 +679,24 @@ public final class IAMCredentialsGrpc {
     public com.google.cloud.iam.credentials.v1.SignJwtResponse signJwt(
         com.google.cloud.iam.credentials.v1.SignJwtRequest request) {
       return blockingUnaryCall(getChannel(), getSignJwtMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exchange a JWT signed by third party identity provider to an OAuth 2.0
+     * access token
+     * </pre>
+     */
+    public com.google.cloud.iam.credentials.v1.GenerateIdentityBindingAccessTokenResponse
+        generateIdentityBindingAccessToken(
+            com.google.cloud.iam.credentials.v1.GenerateIdentityBindingAccessTokenRequest request) {
+      return blockingUnaryCall(
+          getChannel(),
+          getGenerateIdentityBindingAccessTokenMethodHelper(),
+          getCallOptions(),
+          request);
     }
   }
 
@@ -655,12 +786,31 @@ public final class IAMCredentialsGrpc {
       return futureUnaryCall(
           getChannel().newCall(getSignJwtMethodHelper(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exchange a JWT signed by third party identity provider to an OAuth 2.0
+     * access token
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.iam.credentials.v1.GenerateIdentityBindingAccessTokenResponse>
+        generateIdentityBindingAccessToken(
+            com.google.cloud.iam.credentials.v1.GenerateIdentityBindingAccessTokenRequest request) {
+      return futureUnaryCall(
+          getChannel()
+              .newCall(getGenerateIdentityBindingAccessTokenMethodHelper(), getCallOptions()),
+          request);
+    }
   }
 
   private static final int METHODID_GENERATE_ACCESS_TOKEN = 0;
   private static final int METHODID_GENERATE_ID_TOKEN = 1;
   private static final int METHODID_SIGN_BLOB = 2;
   private static final int METHODID_SIGN_JWT = 3;
+  private static final int METHODID_GENERATE_IDENTITY_BINDING_ACCESS_TOKEN = 4;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -703,6 +853,15 @@ public final class IAMCredentialsGrpc {
           serviceImpl.signJwt(
               (com.google.cloud.iam.credentials.v1.SignJwtRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.iam.credentials.v1.SignJwtResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GENERATE_IDENTITY_BINDING_ACCESS_TOKEN:
+          serviceImpl.generateIdentityBindingAccessToken(
+              (com.google.cloud.iam.credentials.v1.GenerateIdentityBindingAccessTokenRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.iam.credentials.v1
+                          .GenerateIdentityBindingAccessTokenResponse>)
                   responseObserver);
           break;
         default:
@@ -773,6 +932,7 @@ public final class IAMCredentialsGrpc {
                       .addMethod(getGenerateIdTokenMethodHelper())
                       .addMethod(getSignBlobMethodHelper())
                       .addMethod(getSignJwtMethodHelper())
+                      .addMethod(getGenerateIdentityBindingAccessTokenMethodHelper())
                       .build();
         }
       }

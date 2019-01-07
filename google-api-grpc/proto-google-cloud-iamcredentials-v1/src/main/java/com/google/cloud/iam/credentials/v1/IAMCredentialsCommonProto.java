@@ -44,6 +44,14 @@ public final class IAMCredentialsCommonProto {
       internal_static_google_iam_credentials_v1_GenerateIdTokenResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_iam_credentials_v1_GenerateIdTokenResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_iam_credentials_v1_GenerateIdentityBindingAccessTokenRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_iam_credentials_v1_GenerateIdentityBindingAccessTokenRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_iam_credentials_v1_GenerateIdentityBindingAccessTokenResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_iam_credentials_v1_GenerateIdentityBindingAccessTokenResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -71,11 +79,16 @@ public final class IAMCredentialsCommonProto {
           + "\030\002 \001(\t\"b\n\026GenerateIdTokenRequest\022\014\n\004name"
           + "\030\001 \001(\t\022\021\n\tdelegates\030\002 \003(\t\022\020\n\010audience\030\003 "
           + "\001(\t\022\025\n\rinclude_email\030\004 \001(\010\"(\n\027GenerateId"
-          + "TokenResponse\022\r\n\005token\030\001 \001(\tB\213\001\n#com.goo"
-          + "gle.cloud.iam.credentials.v1B\031IAMCredent"
-          + "ialsCommonProtoP\001ZDgoogle.golang.org/gen"
-          + "proto/googleapis/iam/credentials/v1;cred"
-          + "entials\370\001\001b\006proto3"
+          + "TokenResponse\022\r\n\005token\030\001 \001(\t\"U\n)Generate"
+          + "IdentityBindingAccessTokenRequest\022\014\n\004nam"
+          + "e\030\001 \001(\t\022\r\n\005scope\030\002 \003(\t\022\013\n\003jwt\030\003 \001(\t\"s\n*G"
+          + "enerateIdentityBindingAccessTokenRespons"
+          + "e\022\024\n\014access_token\030\001 \001(\t\022/\n\013expire_time\030\002"
+          + " \001(\0132\032.google.protobuf.TimestampB\213\001\n#com"
+          + ".google.cloud.iam.credentials.v1B\031IAMCre"
+          + "dentialsCommonProtoP\001ZDgoogle.golang.org"
+          + "/genproto/googleapis/iam/credentials/v1;"
+          + "credentials\370\001\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -155,6 +168,22 @@ public final class IAMCredentialsCommonProto {
             internal_static_google_iam_credentials_v1_GenerateIdTokenResponse_descriptor,
             new java.lang.String[] {
               "Token",
+            });
+    internal_static_google_iam_credentials_v1_GenerateIdentityBindingAccessTokenRequest_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_iam_credentials_v1_GenerateIdentityBindingAccessTokenRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_iam_credentials_v1_GenerateIdentityBindingAccessTokenRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "Scope", "Jwt",
+            });
+    internal_static_google_iam_credentials_v1_GenerateIdentityBindingAccessTokenResponse_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_iam_credentials_v1_GenerateIdentityBindingAccessTokenResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_iam_credentials_v1_GenerateIdentityBindingAccessTokenResponse_descriptor,
+            new java.lang.String[] {
+              "AccessToken", "ExpireTime",
             });
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
