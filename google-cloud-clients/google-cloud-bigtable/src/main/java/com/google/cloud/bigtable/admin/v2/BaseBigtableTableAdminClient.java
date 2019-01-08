@@ -52,6 +52,7 @@ import com.google.bigtable.admin.v2.SnapshotTableMetadata;
 import com.google.bigtable.admin.v2.SnapshotTableRequest;
 import com.google.bigtable.admin.v2.Table;
 import com.google.bigtable.admin.v2.TableName;
+import com.google.cloud.bigtable.admin.v2.internal.ArtifactDeprecationChecker;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStub;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStubSettings;
 import com.google.longrunning.Operation;
@@ -139,6 +140,10 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
   private final BaseBigtableTableAdminSettings settings;
   private final BigtableTableAdminStub stub;
   private final OperationsClient operationsClient;
+
+  static {
+    ArtifactDeprecationChecker.checkDeprecatedArtifactUse();
+  }
 
   /** Constructs an instance of BaseBigtableTableAdminClient with default settings. */
   public static final BaseBigtableTableAdminClient create() throws IOException {
