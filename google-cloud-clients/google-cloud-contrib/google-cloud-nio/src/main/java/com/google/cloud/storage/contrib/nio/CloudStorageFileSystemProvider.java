@@ -768,6 +768,12 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
         }
         CloudStorageObjectAttributes ret;
         ret = new CloudStorageObjectAttributes(blobInfo);
+        // if size is 0 it could be a folder
+        if (ret.size() == 0 && cloudPath.seemsLikeADirectoryAndUsePseudoDirectories(storage)) {
+          @SuppressWarnings("unchecked")
+          A result = (A) new CloudStoragePseudoDirectoryAttributes(cloudPath);
+          return result;
+        }
         @SuppressWarnings("unchecked")
         A result = (A) ret;
         return result;
