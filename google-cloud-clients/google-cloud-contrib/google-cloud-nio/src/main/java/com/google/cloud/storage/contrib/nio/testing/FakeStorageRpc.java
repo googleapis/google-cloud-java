@@ -123,9 +123,13 @@ class FakeStorageRpc implements StorageRpc {
       throws StorageException {
     String delimiter = null;
     String preprefix = "";
+    String pageToken = null;
     long maxResults = Long.MAX_VALUE;
     for (Map.Entry<Option, ?> e : options.entrySet()) {
       switch (e.getKey()) {
+        case PAGE_TOKEN:
+          pageToken = (String) e.getValue();
+          break;
         case PREFIX:
           preprefix = (String) e.getValue();
           if (preprefix.startsWith("/")) {
@@ -173,7 +177,7 @@ class FakeStorageRpc implements StorageRpc {
     // again).
     // The type cast seems to be necessary to help Java's typesystem remember that collections are
     // iterable.
-    return Tuple.of(null, (Iterable<StorageObject>) values);
+    return Tuple.of(pageToken, (Iterable<StorageObject>) values);
   }
 
   /** Returns the requested bucket or {@code null} if not found. */
