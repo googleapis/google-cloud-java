@@ -21,7 +21,6 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.api.gax.rpc.NotFoundException;
 import com.google.bigtable.admin.v2.InstanceName;
-import com.google.bigtable.admin.v2.ProjectName;
 import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings;
 import com.google.cloud.bigtable.admin.v2.models.Cluster;
@@ -44,9 +43,9 @@ import org.junit.Test;
 public class ITInstanceAdminExample {
 
   private static final String INSTANCE_PROPERTY_NAME = "bigtable.instance";
-  private static final String INSTANCE_PREFIX = "instanceadmin";
+  private static final String ID_PREFIX = "instanceadmin";
   private static final String CLUSTER = "cluster";
-  private static ProjectName projectName;
+  private static String projectName;
   private static BigtableInstanceAdminClient adminClient;
   private String clusterId;
   private String instanceId;
@@ -59,9 +58,9 @@ public class ITInstanceAdminExample {
       adminClient = null;
       return;
     }
-    projectName = ProjectName.of(InstanceName.parse(targetProject).getProject());
+    projectName = InstanceName.parse(targetProject).getProject();
     BigtableInstanceAdminSettings instanceAdminSettings =
-        BigtableInstanceAdminSettings.newBuilder().setProjectId(projectName.getProject()).build();
+        BigtableInstanceAdminSettings.newBuilder().setProjectId(projectName).build();
     adminClient = BigtableInstanceAdminClient.create(instanceAdminSettings);
   }
 
@@ -79,7 +78,7 @@ public class ITInstanceAdminExample {
     }
     instanceId = generateId();
     clusterId = generateId();
-    instanceAdmin = new InstanceAdminExample(projectName.getProject(), instanceId, clusterId);
+    instanceAdmin = new InstanceAdminExample(projectName, instanceId, clusterId);
     adminClient.createInstance(
         CreateInstanceRequest.of(instanceId)
             .addCluster(clusterId, "us-central1-f", 3, StorageType.SSD)
@@ -97,16 +96,16 @@ public class ITInstanceAdminExample {
   @Test
   public void testCreateAndDeleteInstance() throws IOException {
     // Creates an instance.
-    String fakeInstance = generateId();
-    String fakeCluster = generateId();
+    String testInstance = generateId();
+    String testCluster = generateId();
     InstanceAdminExample testInstanceAdmin =
-        new InstanceAdminExample(projectName.getProject(), fakeInstance, fakeCluster);
+        new InstanceAdminExample(projectName, testInstance, testCluster);
     testInstanceAdmin.createProdInstance();
-    assertTrue(adminClient.exists(fakeInstance));
+    assertTrue(adminClient.exists(testInstance));
 
     // Deletes an instance.
     testInstanceAdmin.deleteInstance();
-    assertFalse(adminClient.exists(fakeInstance));
+    assertFalse(adminClient.exists(testInstance));
   }
 
   @Test
@@ -137,11 +136,11 @@ public class ITInstanceAdminExample {
   }
 
   private static String generateId() {
-    return String.format("%s-%x", INSTANCE_PREFIX, new Random().nextInt());
+    return String.format("%s-%x", ID_PREFIX, new Random().nextInt());
   }
 
   private static void garbageCollect() {
-    Pattern timestampPattern = Pattern.compile(INSTANCE_PREFIX + "-([0-9a-f]+)");
+    Pattern timestampPattern = Pattern.compile(ID_PREFIX + "-([0-9a-f]+)");
     System.out.println();
     for (Instance instance : adminClient.listInstances()) {
       Matcher matcher = timestampPattern.matcher(instance.getId());
