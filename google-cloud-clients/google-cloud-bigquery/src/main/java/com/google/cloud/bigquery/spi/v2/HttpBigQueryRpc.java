@@ -276,7 +276,9 @@ public class HttpBigQueryRpc implements BigQueryRpc {
                       .setId(tablePb.getId())
                       .setKind(tablePb.getKind())
                       .setTableReference(tablePb.getTableReference())
-                      .setType(tablePb.getType());
+                      .setType(tablePb.getType())
+                      .setCreationTime(tablePb.getCreationTime())
+                      .setTimePartitioning(tablePb.getTimePartitioning());
                 }
               }));
     } catch (IOException ex) {
