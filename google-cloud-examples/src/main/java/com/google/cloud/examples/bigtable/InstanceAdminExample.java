@@ -17,7 +17,6 @@ package com.google.cloud.examples.bigtable;
 
 import com.google.api.gax.rpc.AlreadyExistsException;
 import com.google.api.gax.rpc.NotFoundException;
-import com.google.bigtable.admin.v2.ProjectName;
 import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings;
 import com.google.cloud.bigtable.admin.v2.models.Cluster;
@@ -37,19 +36,19 @@ import java.util.Map;
  * <p>This example demonstrates the usage of BigtableInstanceAdminClient to create, configure, and
  * delete Cloud Bigtable Instances and Clusters.
  *
- * <pre>
- *   creates production instance
- *   lists instances
- *   gets instance
- *   lists clusters
- *   adds cluster
- *   deletes cluster
- *   deletes instance
- * </pre>
+ * <ul>
+ *   <li>creates production instance
+ *   <li>lists instances
+ *   <li>gets instance
+ *   <li>lists clusters
+ *   <li>adds cluster
+ *   <li>deletes cluster
+ *   <li>deletes instance
+ * </ul>
  */
-public class InstanceAdmin {
+public class InstanceAdminExample {
 
-  private static final String CLUSTER = "cluster" + System.currentTimeMillis();
+  private static final String CLUSTER = "cluster";
   private final String clusterId;
   private final String instanceId;
   private final BigtableInstanceAdminClient adminClient;
@@ -62,20 +61,20 @@ public class InstanceAdmin {
     }
     String projectId = args[0];
 
-    InstanceAdmin instanceAdmin = new InstanceAdmin(projectId, "ssd-instance", "ssd-cluster");
+    InstanceAdminExample instanceAdmin =
+        new InstanceAdminExample(projectId, "ssd-instance", "ssd-cluster");
     instanceAdmin.run();
   }
 
-  public InstanceAdmin(String projectId, String instanceId, String clusterId) throws IOException {
+  public InstanceAdminExample(String projectId, String instanceId, String clusterId)
+      throws IOException {
     this.instanceId = instanceId;
     this.clusterId = clusterId;
 
     // [START connecting_to_bigtable]
     // Creates the settings to configure a bigtable instance admin client.
     BigtableInstanceAdminSettings instanceAdminSettings =
-        BigtableInstanceAdminSettings.newBuilder()
-            .setProjectName(ProjectName.of(projectId))
-            .build();
+        BigtableInstanceAdminSettings.newBuilder().setProjectId(projectId).build();
 
     // Creates a bigtable instance admin client.
     adminClient = BigtableInstanceAdminClient.create(instanceAdminSettings);
@@ -110,9 +109,9 @@ public class InstanceAdmin {
       try {
         Instance instance = adminClient.createInstance(createInstanceRequest);
         System.out.printf("PRODUCTION type instance %s created successfully%n", instance.getId());
-      } catch (AlreadyExistsException e) {
-        System.err.println("Failed to create instance, already exists: " + e.getMessage());
-        System.exit(0);
+      } catch (Exception e) {
+        System.err.println("Failed to create instance: " + e.getMessage());
+        throw e;
       }
       // [END bigtable_create_prod_instance]
     }
@@ -135,11 +134,7 @@ public class InstanceAdmin {
     // [END bigtable_list_instances]
   }
 
-  /**
-   * Demonstrates how to get an instance.
-   *
-   * @return instance
-   */
+  /** Demonstrates how to get an instance. */
   public Instance getInstance() {
     System.out.println("\nGet Instance");
     // [START bigtable_get_instance]
@@ -192,7 +187,7 @@ public class InstanceAdmin {
 
   /** Demonstrates how to add a cluster to an instance. */
   public void addCluster() {
-    System.out.printf("%nAdding cluster %s to instance: %s%n", CLUSTER, instanceId);
+    System.out.printf("%nAdding cluster: %s to instance: %s%n", CLUSTER, instanceId);
     // [START bigtable_create_cluster]
     try {
       adminClient.createCluster(
@@ -209,11 +204,10 @@ public class InstanceAdmin {
 
   /** Demonstrates how to delete a cluster from an instance. */
   public void deleteCluster() {
-    System.out.printf("%nDeleting cluster %s from instance: %s%n", CLUSTER, instanceId);
+    System.out.printf("%nDeleting cluster: %s from instance: %s%n", CLUSTER, instanceId);
     // [START bigtable_delete_cluster]
     try {
       adminClient.deleteCluster(instanceId, CLUSTER);
-      adminClient.listClusters(instanceId);
       System.out.printf("Cluster: %s deleted successfully%n", CLUSTER);
     } catch (NotFoundException e) {
       System.err.println("Failed to delete a non-existent cluster: " + e.getMessage());

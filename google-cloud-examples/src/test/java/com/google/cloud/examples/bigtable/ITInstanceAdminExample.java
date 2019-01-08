@@ -15,6 +15,7 @@
  */
 package com.google.cloud.examples.bigtable;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -39,17 +40,17 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-/** Integration tests for {@link com.google.cloud.examples.bigtable.InstanceAdmin} */
-public class ITInstanceAdmin {
+/** Integration tests for {@link InstanceAdminExample} */
+public class ITInstanceAdminExample {
 
   private static final String INSTANCE_PROPERTY_NAME = "bigtable.instance";
   private static final String INSTANCE_PREFIX = "instanceadmin";
-  private static final String CLUSTER = "cluster" + System.currentTimeMillis();
-  private static String clusterId;
-  private static String instanceId;
-  private static BigtableInstanceAdminClient adminClient;
-  private static InstanceAdmin instanceAdmin;
+  private static final String CLUSTER = "cluster";
   private static ProjectName projectName;
+  private static BigtableInstanceAdminClient adminClient;
+  private String clusterId;
+  private String instanceId;
+  private InstanceAdminExample instanceAdmin;
 
   @BeforeClass
   public static void beforeClass() throws IOException {
@@ -60,7 +61,7 @@ public class ITInstanceAdmin {
     }
     projectName = ProjectName.of(InstanceName.parse(targetProject).getProject());
     BigtableInstanceAdminSettings instanceAdminSettings =
-        BigtableInstanceAdminSettings.newBuilder().setProjectName(projectName).build();
+        BigtableInstanceAdminSettings.newBuilder().setProjectId(projectName.getProject()).build();
     adminClient = BigtableInstanceAdminClient.create(instanceAdminSettings);
   }
 
@@ -78,7 +79,7 @@ public class ITInstanceAdmin {
     }
     instanceId = generateId();
     clusterId = generateId();
-    instanceAdmin = new InstanceAdmin(projectName.getProject(), instanceId, clusterId);
+    instanceAdmin = new InstanceAdminExample(projectName.getProject(), instanceId, clusterId);
     adminClient.createInstance(
         CreateInstanceRequest.of(instanceId)
             .addCluster(clusterId, "us-central1-f", 3, StorageType.SSD)
@@ -98,14 +99,14 @@ public class ITInstanceAdmin {
     // Creates an instance.
     String fakeInstance = generateId();
     String fakeCluster = generateId();
-    InstanceAdmin testInstanceAdmin =
-        new InstanceAdmin(projectName.getProject(), fakeInstance, fakeCluster);
+    InstanceAdminExample testInstanceAdmin =
+        new InstanceAdminExample(projectName.getProject(), fakeInstance, fakeCluster);
     testInstanceAdmin.createProdInstance();
     assertTrue(adminClient.exists(fakeInstance));
 
     // Deletes an instance.
     testInstanceAdmin.deleteInstance();
-    assertTrue(!adminClient.exists(fakeInstance));
+    assertFalse(adminClient.exists(fakeInstance));
   }
 
   @Test
