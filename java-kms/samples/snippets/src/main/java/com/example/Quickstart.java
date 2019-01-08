@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,71 +19,37 @@ package com.example;
 // [START kms_quickstart]
 // Imports the Google Cloud client library
 
-import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
-import com.google.api.client.http.HttpTransport;
-import com.google.api.client.http.javanet.NetHttpTransport;
-import com.google.api.client.json.JsonFactory;
-import com.google.api.client.json.jackson2.JacksonFactory;
-import com.google.api.services.cloudkms.v1.CloudKMS;
-import com.google.api.services.cloudkms.v1.CloudKMSScopes;
-import com.google.api.services.cloudkms.v1.model.KeyRing;
-import com.google.api.services.cloudkms.v1.model.ListKeyRingsResponse;
+import com.google.api.gax.core.CredentialsProvider;
+import com.google.api.gax.core.GoogleCredentialsProvider;
+import com.google.auth.Credentials;
+import com.google.cloud.kms.v1.KeyManagementServiceClient;
+import com.google.cloud.kms.v1.KeyManagementServiceClient.ListKeyRingsPagedResponse;
+import com.google.cloud.kms.v1.KeyManagementServiceSettings;
+import com.google.cloud.kms.v1.KeyRing;
+import com.google.cloud.kms.v1.LocationName;
+
 import java.io.IOException;
 
 public class Quickstart {
-  /**
-   * Creates an authorized CloudKMS client service using Application Default Credentials.
-   *
-   * @return an authorized CloudKMS client
-   * @throws IOException if there's an error getting the default credentials.
-   */
-  public static CloudKMS createAuthorizedClient() throws IOException {
-    // Create the credential
-    HttpTransport transport = new NetHttpTransport();
-    JsonFactory jsonFactory = new JacksonFactory();
-    // Authorize the client using Application Default Credentials
-    // @see https://g.co/dv/identity/protocols/application-default-credentials
-    GoogleCredential credential = GoogleCredential.getApplicationDefault(transport, jsonFactory);
-
-    // Depending on the environment that provides the default credentials (e.g. Compute Engine, App
-    // Engine), the credentials may require us to specify the scopes we need explicitly.
-    // Check for this case, and inject the scope if required.
-    if (credential.createScopedRequired()) {
-      credential = credential.createScoped(CloudKMSScopes.all());
-    }
-
-    return new CloudKMS.Builder(transport, jsonFactory, credential)
-        .setApplicationName("CloudKMS snippets")
-        .build();
-  }
 
   public static void main(String... args) throws Exception {
     String projectId = args[0];
     // The location of the Key Rings
     String location = args[1];
 
-    // Create the Cloud KMS client.
-    CloudKMS kms = createAuthorizedClient();
+    // Create the KeyManagementServiceClient using try-with-resources to manage client cleanup.
+    try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
 
-    // The resource name of the cryptoKey
-    String keyRingPath = String.format(
-        "projects/%s/locations/%s",
-        projectId, location);
+      // The resource name of the location to search
+      String locationPath = LocationName.format(projectId, location);
 
-    // Make the RPC call
-    ListKeyRingsResponse response = kms.projects().locations()
-        .keyRings()
-        .list(keyRingPath)
-        .execute();
+      // Make the RPC call
+      ListKeyRingsPagedResponse response = client.listKeyRings(locationPath);
 
-    // Print the returned key rings
-    if (null != response.getKeyRings()) {
-      System.out.println("Key Rings: ");
-      for (KeyRing keyRing : response.getKeyRings()) {
-        System.out.println(keyRing.getName());
+      // Iterate over all KeyRings (which may cause more result pages to be loaded automatically)
+      for (KeyRing keyRing : response.iterateAll()) {
+        System.out.println("Found KeyRing: " + keyRing.getName());
       }
-    } else {
-      System.out.println("No key rings defined.");
     }
   }
 }

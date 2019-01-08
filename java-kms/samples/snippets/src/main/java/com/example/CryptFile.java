@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc.
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,48 +16,17 @@
 
 package com.example;
 
-import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
-import com.google.api.client.http.HttpTransport;
-import com.google.api.client.http.javanet.NetHttpTransport;
-import com.google.api.client.json.JsonFactory;
-import com.google.api.client.json.jackson2.JacksonFactory;
-import com.google.api.services.cloudkms.v1.CloudKMS;
-import com.google.api.services.cloudkms.v1.CloudKMSScopes;
-import com.google.api.services.cloudkms.v1.model.DecryptRequest;
-import com.google.api.services.cloudkms.v1.model.DecryptResponse;
-import com.google.api.services.cloudkms.v1.model.EncryptRequest;
-import com.google.api.services.cloudkms.v1.model.EncryptResponse;
+import com.google.cloud.kms.v1.CryptoKeyName;
+import com.google.cloud.kms.v1.DecryptResponse;
+import com.google.cloud.kms.v1.EncryptResponse;
+import com.google.cloud.kms.v1.KeyManagementServiceClient;
+import com.google.protobuf.ByteString;
+
 import java.io.IOException;
 import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.CmdLineParser;
 
 public class CryptFile {
-
-  /**
-   * Creates an authorized CloudKMS client service using Application Default Credentials.
-   *
-   * @return an authorized CloudKMS client
-   * @throws IOException if there's an error getting the default credentials.
-   */
-  public static CloudKMS createAuthorizedClient() throws IOException {
-    // Create the credential
-    HttpTransport transport = new NetHttpTransport();
-    JsonFactory jsonFactory = new JacksonFactory();
-    // Authorize the client using Application Default Credentials
-    // @see https://g.co/dv/identity/protocols/application-default-credentials
-    GoogleCredential credential = GoogleCredential.getApplicationDefault(transport, jsonFactory);
-
-    // Depending on the environment that provides the default credentials (e.g. Compute Engine, App
-    // Engine), the credentials may require us to specify the scopes we need explicitly.
-    // Check for this case, and inject the scope if required.
-    if (credential.createScopedRequired()) {
-      credential = credential.createScoped(CloudKMSScopes.all());
-    }
-
-    return new CloudKMS.Builder(transport, jsonFactory, credential)
-        .setApplicationName("CloudKMS CryptFile")
-        .build();
-  }
 
   // [START kms_encrypt]
 
@@ -67,20 +36,19 @@ public class CryptFile {
   public static byte[] encrypt(
       String projectId, String locationId, String keyRingId, String cryptoKeyId, byte[] plaintext)
       throws IOException {
-    // The resource name of the cryptoKey
-    String resourceName = String.format(
-        "projects/%s/locations/%s/keyRings/%s/cryptoKeys/%s",
-        projectId, locationId, keyRingId, cryptoKeyId);
 
-    // Create the Cloud KMS client.
-    CloudKMS kms = createAuthorizedClient();
+    // Create the KeyManagementServiceClient using try-with-resources to manage client cleanup.
+    try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
 
-    EncryptRequest request = new EncryptRequest().encodePlaintext(plaintext);
-    EncryptResponse response = kms.projects().locations().keyRings().cryptoKeys()
-        .encrypt(resourceName, request)
-        .execute();
+      // The resource name of the cryptoKey
+      String resourceName = CryptoKeyName.format(projectId, locationId, keyRingId, cryptoKeyId);
 
-    return response.decodeCiphertext();
+      // Encrypt the plaintext with Cloud KMS.
+      EncryptResponse response = client.encrypt(resourceName, ByteString.copyFrom(plaintext));
+
+      // Extract the ciphertext from the response.
+      return response.getCiphertext().toByteArray();
+    }
   }
   // [END kms_encrypt]
 
@@ -89,23 +57,22 @@ public class CryptFile {
   /**
    * Decrypts the provided ciphertext with the specified crypto key.
    */
-  public static byte[] decrypt(String projectId, String locationId, String keyRingId,
-      String cryptoKeyId, byte[] ciphertext)
+  public static byte[] decrypt(
+      String projectId, String locationId, String keyRingId, String cryptoKeyId, byte[] ciphertext)
       throws IOException {
-    // Create the Cloud KMS client.
-    CloudKMS kms = createAuthorizedClient();
 
-    // The resource name of the cryptoKey
-    String cryptoKeyName = String.format(
-        "projects/%s/locations/%s/keyRings/%s/cryptoKeys/%s",
-        projectId, locationId, keyRingId, cryptoKeyId);
+    // Create the KeyManagementServiceClient using try-with-resources to manage client cleanup.
+    try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
 
-    DecryptRequest request = new DecryptRequest().encodeCiphertext(ciphertext);
-    DecryptResponse response = kms.projects().locations().keyRings().cryptoKeys()
-        .decrypt(cryptoKeyName, request)
-        .execute();
+      // The resource name of the cryptoKey
+      String resourceName = CryptoKeyName.format(projectId, locationId, keyRingId, cryptoKeyId);
 
-    return response.decodePlaintext();
+      // Decrypt the ciphertext with Cloud KMS.
+      DecryptResponse response = client.decrypt(resourceName, ByteString.copyFrom(ciphertext));
+
+      // Extract the plaintext from the response.
+      return response.getPlaintext().toByteArray();
+    }
   }
   // [END kms_decrypt]
 

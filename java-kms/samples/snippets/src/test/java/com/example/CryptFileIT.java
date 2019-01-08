@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google LLC
+ * Copyright 2018 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +22,6 @@ import com.google.cloud.kms.v1.CryptoKey;
 import com.google.cloud.kms.v1.CryptoKeyVersion;
 import com.google.cloud.kms.v1.KeyRing;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 import java.util.List;
 import java.util.UUID;
 
@@ -38,12 +36,14 @@ import org.junit.runners.JUnit4;
  */
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
-public class QuickstartIT {
+public class CryptFileIT {
 
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String LOCATION_ID = "global";
   private static final String KEY_RING_ID = "test-key-ring-" + UUID.randomUUID().toString();
   private static final String CRYPTO_KEY_ID = UUID.randomUUID().toString();
+  private static final String ENCRYPT_STRING = 
+      "Everyone shall sit under their own vine and fig tree";
 
   /**
    * Creates a CryptoKey for use during this test run.
@@ -67,27 +67,26 @@ public class QuickstartIT {
     List<CryptoKeyVersion> versions = 
         Snippets.listCryptoKeyVersions(PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID);
 
-    for (CryptoKeyVersion v : versions) {
-      if (!v.getState().equals(CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED)) {
+    for (CryptoKeyVersion version : versions) {
+      if (!version.getState().equals(CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED)) {
         Snippets.destroyCryptoKeyVersion(
             PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID,
-            SnippetsIT.parseVersionId(v.getName()));
+            SnippetsIT.parseVersionId(version.getName()));
       }
     }
   }
 
   @Test
-  public void listKeyRings_printsKeyRing() throws Exception {
-    PrintStream originalOut = System.out;
-    ByteArrayOutputStream redirected = new ByteArrayOutputStream();
+  public void encryptDecrypt_encryptsAndDecrypts() throws Exception {
+    // Encrypt ENCRYPT_STRING with the current primary version.
+    byte[] ciphertext = CryptFile.encrypt(
+        PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID, ENCRYPT_STRING.getBytes());
 
-    System.setOut(new PrintStream(redirected));
+    assertThat(new String(ciphertext)).isNotEqualTo(ENCRYPT_STRING);
 
-    try {
-      Quickstart.main(PROJECT_ID, LOCATION_ID);
-      assertThat(redirected.toString()).contains(String.format("keyRings/%s", KEY_RING_ID));
-    } finally {
-      System.setOut(originalOut);
-    }
+    byte[] plaintext = CryptFile.decrypt(
+        PROJECT_ID, LOCATION_ID, KEY_RING_ID, CRYPTO_KEY_ID, ciphertext);
+
+    assertThat(new String(plaintext)).isEqualTo(ENCRYPT_STRING);
   }
 }

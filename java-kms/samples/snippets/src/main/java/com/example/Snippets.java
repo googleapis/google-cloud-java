@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc.
+ * Copyright 2017 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,58 +16,32 @@
 
 package com.example;
 
-import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
-import com.google.api.client.http.HttpTransport;
-import com.google.api.client.http.javanet.NetHttpTransport;
-import com.google.api.client.json.JsonFactory;
-import com.google.api.client.json.jackson2.JacksonFactory;
-import com.google.api.services.cloudkms.v1.CloudKMS;
-import com.google.api.services.cloudkms.v1.CloudKMSScopes;
-import com.google.api.services.cloudkms.v1.model.Binding;
-import com.google.api.services.cloudkms.v1.model.CryptoKey;
-import com.google.api.services.cloudkms.v1.model.CryptoKeyVersion;
-import com.google.api.services.cloudkms.v1.model.DestroyCryptoKeyVersionRequest;
-import com.google.api.services.cloudkms.v1.model.KeyRing;
-import com.google.api.services.cloudkms.v1.model.ListCryptoKeyVersionsResponse;
-import com.google.api.services.cloudkms.v1.model.ListCryptoKeysResponse;
-import com.google.api.services.cloudkms.v1.model.ListKeyRingsResponse;
-import com.google.api.services.cloudkms.v1.model.Policy;
-import com.google.api.services.cloudkms.v1.model.RestoreCryptoKeyVersionRequest;
-import com.google.api.services.cloudkms.v1.model.SetIamPolicyRequest;
-import com.google.api.services.cloudkms.v1.model.UpdateCryptoKeyPrimaryVersionRequest;
+import com.google.cloud.kms.v1.CryptoKey;
+import com.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose;
+import com.google.cloud.kms.v1.CryptoKeyName;
+import com.google.cloud.kms.v1.CryptoKeyVersion;
+import com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState;
+import com.google.cloud.kms.v1.CryptoKeyVersionName;
+import com.google.cloud.kms.v1.KeyManagementServiceClient;
+import com.google.cloud.kms.v1.KeyManagementServiceClient.ListCryptoKeyVersionsPagedResponse;
+import com.google.cloud.kms.v1.KeyManagementServiceClient.ListCryptoKeysPagedResponse;
+import com.google.cloud.kms.v1.KeyManagementServiceClient.ListKeyRingsPagedResponse;
+import com.google.cloud.kms.v1.KeyRing;
+import com.google.cloud.kms.v1.KeyRingName;
+import com.google.cloud.kms.v1.LocationName;
+import com.google.iam.v1.Binding;
+import com.google.iam.v1.Policy;
+import com.google.protobuf.FieldMask;
+import com.google.protobuf.util.FieldMaskUtil;
+
 import java.io.IOException;
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
+
 import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.CmdLineParser;
 
 public class Snippets {
-
-  /**
-   * Creates an authorized CloudKMS client service using Application Default Credentials.
-   *
-   * @return an authorized CloudKMS client
-   * @throws IOException if there's an error getting the default credentials.
-   */
-  public static CloudKMS createAuthorizedClient() throws IOException {
-    // Create the credential
-    HttpTransport transport = new NetHttpTransport();
-    JsonFactory jsonFactory = new JacksonFactory();
-    // Authorize the client using Application Default Credentials
-    // @see https://g.co/dv/identity/protocols/application-default-credentials
-    GoogleCredential credential = GoogleCredential.getApplicationDefault(transport, jsonFactory);
-
-    // Depending on the environment that provides the default credentials (e.g. Compute Engine, App
-    // Engine), the credentials may require us to specify the scopes we need explicitly.
-    // Check for this case, and inject the scope if required.
-    if (credential.createScopedRequired()) {
-      credential = credential.createScoped(CloudKMSScopes.all());
-    }
-
-    return new CloudKMS.Builder(transport, jsonFactory, credential)
-        .setApplicationName("CloudKMS snippets")
-        .build();
-  }
 
   // [START kms_create_keyring]
 
@@ -77,18 +51,16 @@ public class Snippets {
   public static KeyRing createKeyRing(String projectId, String locationId, String keyRingId)
       throws IOException {
     // Create the Cloud KMS client.
-    CloudKMS kms = createAuthorizedClient();
+    try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
 
-    // The resource name of the location associated with the KeyRing.
-    String parent = String.format("projects/%s/locations/%s", projectId, locationId);
-    // Create the KeyRing for your project.
-    KeyRing keyring = kms.projects().locations().keyRings()
-        .create(parent, new KeyRing())
-        .setKeyRingId(keyRingId)
-        .execute();
+      // The resource name of the location associated with the KeyRing.
+      String parent = LocationName.format(projectId, locationId);
 
-    System.out.println(keyring);
-    return keyring;
+      // Create the KeyRing for your project.
+      KeyRing keyRing = client.createKeyRing(parent, keyRingId, KeyRing.newBuilder().build());
+
+      return keyRing;
+    }
   }
   // [END kms_create_keyring]
 
@@ -100,26 +72,22 @@ public class Snippets {
   public static CryptoKey createCryptoKey(String projectId, String locationId, String keyRingId,
       String cryptoKeyId)
       throws IOException {
+
     // Create the Cloud KMS client.
-    CloudKMS kms = createAuthorizedClient();
+    try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
+      // The resource name of the location associated with the KeyRing.
+      String parent = KeyRingName.format(projectId, locationId, keyRingId);
 
-    // The resource name of the location associated with the KeyRing.
-    String parent = String.format(
-        "projects/%s/locations/%s/keyRings/%s", projectId, locationId, keyRingId);
+      // This will allow the API access to the key for encryption and decryption.
+      CryptoKey cryptoKey = CryptoKey.newBuilder()
+          .setPurpose(CryptoKeyPurpose.ENCRYPT_DECRYPT)
+          .build();
 
-    // This will allow the API access to the key for encryption and decryption.
-    String purpose = "ENCRYPT_DECRYPT";
-    CryptoKey cryptoKey = new CryptoKey();
-    cryptoKey.setPurpose(purpose);
+      // Create the CryptoKey for your project.
+      CryptoKey createdKey = client.createCryptoKey(parent, cryptoKeyId, cryptoKey);
 
-    // Create the CryptoKey for your project.
-    CryptoKey createdKey = kms.projects().locations().keyRings().cryptoKeys()
-        .create(parent, cryptoKey)
-        .setCryptoKeyId(cryptoKeyId)
-        .execute();
-
-    System.out.println(createdKey);
-    return createdKey;
+      return createdKey;
+    }
   }
   // [END kms_create_cryptokey]
 
@@ -128,25 +96,20 @@ public class Snippets {
   /**
    * Creates a new crypto key version for the given id.
    */
-  public static void createCryptoKeyVersion(
+  public static CryptoKeyVersion createCryptoKeyVersion(
       String projectId, String locationId, String keyRingId, String cryptoKeyId)
       throws IOException {
     // Create the Cloud KMS client.
-    CloudKMS kms = createAuthorizedClient();
+    try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
 
-    // The resource name of the cryptoKey
-    String cryptoKeys = String.format(
-        "projects/%s/locations/%s/keyRings/%s/cryptoKeys/%s",
-        projectId, locationId, keyRingId, cryptoKeyId);
+      // The resource name of the cryptoKey
+      String cryptoKey = CryptoKeyName.format(projectId, locationId, keyRingId, cryptoKeyId);
 
-    CryptoKeyVersion version = new CryptoKeyVersion();
+      CryptoKeyVersion version = CryptoKeyVersion.newBuilder().build();
 
-    CryptoKeyVersion newVersion = kms.projects().locations().keyRings().cryptoKeys()
-        .cryptoKeyVersions()
-        .create(cryptoKeys, version)
-        .execute();
-
-    System.out.println(newVersion);
+      CryptoKeyVersion newVersion = client.createCryptoKeyVersion(cryptoKey, version);
+      return newVersion;
+    }
   }
   // [END kms_create_cryptokey_version]
 
@@ -159,24 +122,29 @@ public class Snippets {
       String projectId, String locationId, String keyRingId, String cryptoKeyId, String version)
       throws IOException {
     // Create the Cloud KMS client.
-    CloudKMS kms = createAuthorizedClient();
+    try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
 
-    // The resource name of the cryptoKey version
-    String cryptoKeyVersion = String.format(
-        "projects/%s/locations/%s/keyRings/%s/cryptoKeys/%s/cryptoKeyVersions/%s",
-        projectId, locationId, keyRingId, cryptoKeyId, version);
+      // The resource name of the cryptoKey version
+      String versionName = CryptoKeyVersionName.format(
+          projectId, locationId, keyRingId, cryptoKeyId, version);
 
-    CryptoKeyVersion newVersionState = new CryptoKeyVersion()
-        .setState("DISABLED");
+      // Retrieve the current state
+      CryptoKeyVersion current = client.getCryptoKeyVersion(versionName);
 
-    CryptoKeyVersion response = kms.projects().locations().keyRings().cryptoKeys()
-        .cryptoKeyVersions()
-        .patch(cryptoKeyVersion, newVersionState)
-        .setUpdateMask("state")
-        .execute();
+      // Build a copy that updates the state to disabled
+      CryptoKeyVersion updated = CryptoKeyVersion.newBuilder()
+          .setName(current.getName())
+          .setState(CryptoKeyVersionState.DISABLED)
+          .build();
 
-    System.out.println(response);
-    return response;
+      // Create a FieldMask that only allows 'state' to be updated
+      FieldMask fieldMask = FieldMaskUtil.fromString(CryptoKeyVersion.class, "state");
+
+      // Update the version state
+      CryptoKeyVersion response = client.updateCryptoKeyVersion(updated, fieldMask);
+
+      return response;
+    }
   }
   // [END kms_disable_cryptokey_version]
 
@@ -187,25 +155,31 @@ public class Snippets {
   public static CryptoKeyVersion enableCryptoKeyVersion(
       String projectId, String locationId, String keyRingId, String cryptoKeyId, String version)
       throws IOException {
+
     // Create the Cloud KMS client.
-    CloudKMS kms = createAuthorizedClient();
+    try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
 
-    // The resource name of the cryptoKey version
-    String cryptoKeyVersion = String.format(
-        "projects/%s/locations/%s/keyRings/%s/cryptoKeys/%s/cryptoKeyVersions/%s",
-        projectId, locationId, keyRingId, cryptoKeyId, version);
+      // The resource name of the cryptoKey version
+      String versionName = CryptoKeyVersionName.format(
+          projectId, locationId, keyRingId, cryptoKeyId, version);
 
-    CryptoKeyVersion newVersionState = new CryptoKeyVersion()
-        .setState("ENABLED");
+      // Retrieve the current state
+      CryptoKeyVersion current = client.getCryptoKeyVersion(versionName);
 
-    CryptoKeyVersion response = kms.projects().locations().keyRings().cryptoKeys()
-        .cryptoKeyVersions()
-        .patch(cryptoKeyVersion, newVersionState)
-        .setUpdateMask("state")
-        .execute();
+      // Build a copy that updates the state to enabled
+      CryptoKeyVersion updated = CryptoKeyVersion.newBuilder()
+          .setName(current.getName())
+          .setState(CryptoKeyVersionState.ENABLED)
+          .build();
 
-    System.out.println(response);
-    return response;
+      // Create a FieldMask that only allows 'state' to be updated
+      FieldMask fieldMask = FieldMaskUtil.fromString(CryptoKeyVersion.class, "state");
+
+      // Update the version state
+      CryptoKeyVersion response = client.updateCryptoKeyVersion(updated, fieldMask);
+
+      return response;
+    }
   }
   // [END kms_enable_cryptokey_version]
 
@@ -217,23 +191,19 @@ public class Snippets {
   public static CryptoKeyVersion destroyCryptoKeyVersion(
       String projectId, String locationId, String keyRingId, String cryptoKeyId, String version)
       throws IOException {
+
     // Create the Cloud KMS client.
-    CloudKMS kms = createAuthorizedClient();
+    try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
 
-    // The resource name of the cryptoKey version
-    String cryptoKeyVersion = String.format(
-        "projects/%s/locations/%s/keyRings/%s/cryptoKeys/%s/cryptoKeyVersions/%s",
-        projectId, locationId, keyRingId, cryptoKeyId, version);
+      // The resource name of the cryptoKey version
+      String versionName = CryptoKeyVersionName.format(
+          projectId, locationId, keyRingId, cryptoKeyId, version);
 
-    DestroyCryptoKeyVersionRequest destroyRequest = new DestroyCryptoKeyVersionRequest();
+      // Destroy the cryptoKey version
+      CryptoKeyVersion destroyed = client.destroyCryptoKeyVersion(versionName);
 
-    CryptoKeyVersion destroyed = kms.projects().locations().keyRings().cryptoKeys()
-        .cryptoKeyVersions()
-        .destroy(cryptoKeyVersion, destroyRequest)
-        .execute();
-
-    System.out.println(destroyed);
-    return destroyed;
+      return destroyed;
+    }
   }
   // [END kms_destroy_cryptokey_version]
 
@@ -245,23 +215,18 @@ public class Snippets {
   public static CryptoKeyVersion restoreCryptoKeyVersion(
       String projectId, String locationId, String keyRingId, String cryptoKeyId, String version)
       throws IOException {
+
     // Create the Cloud KMS client.
-    CloudKMS kms = createAuthorizedClient();
+    try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
 
-    // The resource name of the cryptoKey version
-    String cryptoKeyVersion = String.format(
-        "projects/%s/locations/%s/keyRings/%s/cryptoKeys/%s/cryptoKeyVersions/%s",
-        projectId, locationId, keyRingId, cryptoKeyId, version);
+      // The resource name of the cryptoKey version
+      String versionName = CryptoKeyVersionName.format(
+          projectId, locationId, keyRingId, cryptoKeyId, version);
 
-    RestoreCryptoKeyVersionRequest restoreRequest = new RestoreCryptoKeyVersionRequest();
+      CryptoKeyVersion restored = client.restoreCryptoKeyVersion(versionName);
 
-    CryptoKeyVersion restored = kms.projects().locations().keyRings().cryptoKeys()
-        .cryptoKeyVersions()
-        .restore(cryptoKeyVersion, restoreRequest)
-        .execute();
-
-    System.out.println(restored);
-    return restored;
+      return restored;
+    }
   }
   // [END kms_restore_cryptokey_version]
 
@@ -270,24 +235,21 @@ public class Snippets {
   /**
    * Retrieves the IAM policy for the given crypto key.
    */
-  public static Policy getCryptoKeyPolicy(String projectId, String locationId, String keyRingId,
-      String cryptoKeyId)
+  public static Policy getCryptoKeyPolicy(
+      String projectId, String locationId, String keyRingId, String cryptoKeyId)
       throws IOException {
+
     // Create the Cloud KMS client.
-    CloudKMS kms = createAuthorizedClient();
+    try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
 
-    // The resource name of the cryptoKey
-    String cryptoKey = String.format(
-        "projects/%s/locations/%s/keyRings/%s/cryptoKeys/%s",
-        projectId, locationId, keyRingId, cryptoKeyId);
+      // The resource name of the cryptoKey version
+      String keyName = CryptoKeyName.format(projectId, locationId, keyRingId, cryptoKeyId);
 
-    // Get the current IAM policy and add the new account to it.
-    Policy iamPolicy = kms.projects().locations().keyRings().cryptoKeys()
-        .getIamPolicy(cryptoKey)
-        .execute();
+      // Get the current IAM policy and add the new account to it.
+      Policy iamPolicy = client.getIamPolicy(keyName);
 
-    System.out.println(iamPolicy.getBindings());
-    return iamPolicy;
+      return iamPolicy;
+    }
   }
   // [END kms_get_cryptokey_policy]
 
@@ -299,20 +261,16 @@ public class Snippets {
   public static Policy getKeyRingPolicy(String projectId, String locationId, String keyRingId)
       throws IOException {
     // Create the Cloud KMS client.
-    CloudKMS kms = createAuthorizedClient();
+    try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
 
-    // The resource name of the keyring
-    String keyring = String.format(
-        "projects/%s/locations/%s/keyRings/%s",
-        projectId, locationId, keyRingId);
+      // The resource name of the cryptoKey version
+      String keyRingName = KeyRingName.format(projectId, locationId, keyRingId);
 
-    // Get the current IAM policy and add the new account to it.
-    Policy iamPolicy = kms.projects().locations().keyRings()
-        .getIamPolicy(keyring)
-        .execute();
+      // Get the current IAM policy and add the new account to it.
+      Policy iamPolicy = client.getIamPolicy(keyRingName);
 
-    System.out.println(iamPolicy.getBindings());
-    return iamPolicy;
+      return iamPolicy;
+    }
   }
   // [END kms_get_keyring_policy]
 
@@ -339,37 +297,33 @@ public class Snippets {
       String projectId, String locationId, String keyRingId, String cryptoKeyId, String member,
       String role)
       throws IOException {
+
     // Create the Cloud KMS client.
-    CloudKMS kms = createAuthorizedClient();
+    try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
 
-    // The resource name of the cryptoKey version
-    String cryptoKey = String.format(
-        "projects/%s/locations/%s/keyRings/%s/cryptoKeys/%s",
-        projectId, locationId, keyRingId, cryptoKeyId);
+      // The resource name of the cryptoKey version
+      String keyName = CryptoKeyName.format(projectId, locationId, keyRingId, cryptoKeyId);
 
-    // Get the current IAM policy
-    Policy iamPolicy = getCryptoKeyPolicy(projectId, locationId, keyRingId, cryptoKeyId);
+      // Get the current IAM policy
+      Policy iamPolicy = client.getIamPolicy(keyName);
 
-    // Add the new account to it.
-    Binding newBinding = new Binding()
-        .setRole(role)
-        .setMembers(Collections.singletonList(member));
-    List<Binding> bindings = iamPolicy.getBindings();
-    if (null == bindings) {
-      bindings = Collections.singletonList(newBinding);
-    } else {
-      bindings.add(newBinding);
+      // Create a new binding with the selected role and member
+      Binding newBinding = Binding.newBuilder()
+          .setRole(role)
+          .addMembers(member)
+          .build();
+
+      // Create a new IAM policy containing the existing settings plus the new binding.
+      Policy newPolicy = Policy.newBuilder()
+          .mergeFrom(iamPolicy)
+          .addBindings(newBinding)
+          .build();
+
+      // Set the new IAM Policy.
+      Policy policyResult = client.setIamPolicy(keyName, newPolicy);
+
+      return policyResult;
     }
-    iamPolicy.setBindings(bindings);
-
-    // Set the new IAM Policy.
-    Policy newIamPolicy = kms.projects().locations().keyRings()
-        .cryptoKeys()
-        .setIamPolicy(cryptoKey, new SetIamPolicyRequest().setPolicy(iamPolicy))
-        .execute();
-
-    System.out.println("Response: " + newIamPolicy);
-    return newIamPolicy;
   }
   // [END kms_add_member_to_cryptokey_policy]
 
@@ -394,37 +348,33 @@ public class Snippets {
   public static Policy addMemberToKeyRingPolicy(
       String projectId, String locationId, String keyRingId, String member, String role)
       throws IOException {
+
     // Create the Cloud KMS client.
-    CloudKMS kms = createAuthorizedClient();
+    try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
 
-    // The resource name of the keyring version
-    String keyring = String.format(
-        "projects/%s/locations/%s/keyRings/%s",
-        projectId, locationId, keyRingId);
+      // The resource name of the cryptoKey version
+      String keyRingName = KeyRingName.format(projectId, locationId, keyRingId);
 
-    // Get the current IAM policy
-    Policy iamPolicy = getKeyRingPolicy(projectId, locationId, keyRingId);
+      // Get the current IAM policy
+      Policy iamPolicy = client.getIamPolicy(keyRingName);
 
-    // Add the new account to it.
-    Binding newBinding = new Binding()
-        .setRole(role)
-        .setMembers(Collections.singletonList(member));
-    List<Binding> bindings = iamPolicy.getBindings();
-    if (null == bindings) {
-      bindings = Collections.singletonList(newBinding);
-    } else {
-      bindings.add(newBinding);
+      // Create a new binding with the selected role and member
+      Binding newBinding = Binding.newBuilder()
+          .setRole(role)
+          .addMembers(member)
+          .build();
+
+      // Create a new IAM policy containing the existing settings plus the new binding.
+      Policy newPolicy = Policy.newBuilder()
+          .mergeFrom(iamPolicy)
+          .addBindings(newBinding)
+          .build();
+
+      // Set the new IAM Policy.
+      Policy policyResult = client.setIamPolicy(keyRingName, newPolicy);
+
+      return policyResult;
     }
-    iamPolicy.setBindings(bindings);
-
-    // Set the new IAM Policy.
-    Policy newIamPolicy = kms.projects().locations()
-        .keyRings()
-        .setIamPolicy(keyring, new SetIamPolicyRequest().setPolicy(iamPolicy))
-        .execute();
-
-    System.out.println("Response: " + newIamPolicy);
-    return newIamPolicy;
   }
   // [END kms_add_member_to_keyring_policy]
 
@@ -437,38 +387,42 @@ public class Snippets {
       String projectId, String locationId, String keyRingId, String cryptoKeyId, String member,
       String role)
       throws IOException {
+
     // Create the Cloud KMS client.
-    CloudKMS kms = createAuthorizedClient();
+    try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
 
-    // The resource name of the cryptoKey
-    String cryptoKey = String.format(
-        "projects/%s/locations/%s/keyRings/%s/cryptoKeys/%s",
-        projectId, locationId, keyRingId, cryptoKeyId);
+      // The resource name of the cryptoKey version
+      String keyName = CryptoKeyName.format(projectId, locationId, keyRingId, cryptoKeyId);
 
-    // Get the current IAM policy and add the new account to it.
-    Policy iamPolicy = getCryptoKeyPolicy(projectId, locationId, keyRingId, cryptoKeyId);
+      // Get the current IAM policy
+      Policy iamPolicy = client.getIamPolicy(keyName);
 
-    if (null == iamPolicy.getBindings()) {
-      // Nothing to remove
-      return null;
-    }
+      // Create a bindings list that filters out the provided member
+      List<Binding> newBindings = new ArrayList<>();
+      for (Binding binding : iamPolicy.getBindingsList()) {
+        if (!binding.getRole().equals(role)) {
+          newBindings.add(binding);
+          continue;
+        }
 
-    // Filter out the given member
-    for (Binding b : iamPolicy.getBindings()) {
-      if (role.equals(b.getRole()) && b.getMembers().contains(member)) {
-        b.getMembers().removeAll(Collections.singletonList(member));
-        break;
+        Binding.Builder builder = Binding.newBuilder().setRole(binding.getRole());
+        for (String bindingMember : binding.getMembersList()) {
+          if (!member.equals(bindingMember)) {
+            builder.addMembers(bindingMember);
+          }
+        }
+        newBindings.add(builder.build());
       }
+
+      Policy newIamPolicy = Policy.newBuilder()
+          .addAllBindings(newBindings)
+          .build();
+
+      // Set the new IAM Policy.
+      Policy result = client.setIamPolicy(keyName, newIamPolicy);
+
+      return result;
     }
-
-    // Set the new IAM Policy.
-    Policy newIamPolicy = kms.projects().locations().keyRings()
-        .cryptoKeys()
-        .setIamPolicy(cryptoKey, new SetIamPolicyRequest().setPolicy(iamPolicy))
-        .execute();
-
-    System.out.println("Response: " + newIamPolicy);
-    return newIamPolicy;
   }
   // [END kms_remove_member_from_cryptokey_policy]
 
@@ -480,136 +434,135 @@ public class Snippets {
   public static Policy removeMemberFromKeyRingPolicy(
       String projectId, String locationId, String keyRingId, String member, String role)
       throws IOException {
+
     // Create the Cloud KMS client.
-    CloudKMS kms = createAuthorizedClient();
+    try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
 
-    // The resource name of the cryptoKey
-    String cryptoKey = String.format(
-        "projects/%s/locations/%s/keyRings/%s",
-        projectId, locationId, keyRingId);
+      // The resource name of the cryptoKey version
+      String keyRingName = KeyRingName.format(projectId, locationId, keyRingId);
 
-    // Get the current IAM policy and add the new account to it.
-    Policy iamPolicy = getKeyRingPolicy(projectId, locationId, keyRingId);
+      // Get the current IAM policy
+      Policy iamPolicy = client.getIamPolicy(keyRingName);
 
-    // Filter out the given member
-    for (Binding b : iamPolicy.getBindings()) {
-      if (role.equals(b.getRole()) && b.getMembers().contains(member)) {
-        b.getMembers().remove(member);
-        break;
+      // Create a bindings list that filters out the provided member
+      List<Binding> newBindings = new ArrayList<>();
+      for (Binding binding : iamPolicy.getBindingsList()) {
+        if (!binding.getRole().equals(role)) {
+          newBindings.add(binding);
+        } else {
+          Binding.Builder builder = Binding.newBuilder().setRole(binding.getRole());
+          for (String bindingMember : binding.getMembersList()) {
+            if (!member.equals(bindingMember)) {
+              builder.addMembers(bindingMember);
+            }
+          }
+          newBindings.add(builder.build());
+        }
       }
+
+      Policy newIamPolicy = Policy.newBuilder()
+          .addAllBindings(newBindings)
+          .build();
+
+      // Set the new IAM Policy.
+      Policy result = client.setIamPolicy(keyRingName, newIamPolicy);
+
+      return result;
     }
-
-    // Set the new IAM Policy.
-    Policy newIamPolicy = kms.projects().locations()
-        .keyRings()
-        .setIamPolicy(cryptoKey, new SetIamPolicyRequest().setPolicy(iamPolicy))
-        .execute();
-
-    System.out.println("Response: " + newIamPolicy);
-    return newIamPolicy;
   }
   // [END kms_remove_member_from_keyring_policy]
 
   /**
-   * Prints all the key rings in the given project.
+   * Lists all the key rings in the given project.
    */
-  public static void listKeyRings(String projectId, String locationId) throws IOException {
+  public static List<KeyRing> listKeyRings(String projectId, String locationId) throws IOException {
+
     // Create the Cloud KMS client.
-    CloudKMS kms = createAuthorizedClient();
+    try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
 
-    // The resource name of the cryptoKey
-    String keyRingPath = String.format(
-        "projects/%s/locations/%s",
-        projectId, locationId);
+      // The resource name of the location to search.
+      String parent = LocationName.format(projectId, locationId);
 
-    // Make the RPC call
-    ListKeyRingsResponse response = kms.projects().locations()
-        .keyRings()
-        .list(keyRingPath)
-        .execute();
+      // Retrieve a paginated list of KeyRings
+      ListKeyRingsPagedResponse response = client.listKeyRings(parent);
 
-    // Print the returned key rings
-    if (null != response.getKeyRings()) {
-      System.out.println("Key Rings: ");
-      for (KeyRing keyRing : response.getKeyRings()) {
-        System.out.println(keyRing.getName());
+      ArrayList<KeyRing> results = new ArrayList<>();
+      // Iterate over all KeyRings (subsequent pages are retrieved automatically)
+      for (KeyRing keyRing : response.iterateAll()) {
+        results.add(keyRing);
       }
-    } else {
-      System.out.println("No keyrings defined.");
+      return results;
     }
   }
 
   /**
-   * Prints all crypto keys in the given key ring.
+   * Lists all crypto keys in the given key ring.
    */
-  public static void listCryptoKeys(String projectId, String locationId, String keyRingId)
+  public static List<CryptoKey> listCryptoKeys(
+      String projectId, String locationId, String keyRingId)
       throws IOException {
+
     // Create the Cloud KMS client.
-    CloudKMS kms = createAuthorizedClient();
+    try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
 
-    // The resource name of the cryptoKey
-    String keyRingPath = String.format(
-        "projects/%s/locations/%s/keyRings/%s",
-        projectId, locationId, keyRingId);
+      // The resource name of the KeyRing to search.
+      String parent = KeyRingName.format(projectId, locationId, keyRingId);
 
-    ListCryptoKeysResponse cryptoKeys = null;
-    do { // Print every page of keys
-      cryptoKeys = kms.projects().locations().keyRings()
-          .cryptoKeys()
-          .list(keyRingPath)
-          .setPageToken(cryptoKeys != null ? cryptoKeys.getNextPageToken() : null)
-          .execute();
+      // Retrieve a paginated list of CryptoKeys
+      ListCryptoKeysPagedResponse response = client.listCryptoKeys(parent);
 
-      for (CryptoKey key : cryptoKeys.getCryptoKeys()) {
-        System.out.println(key);
+      ArrayList<CryptoKey> keys = new ArrayList<>();
+      // Iterate over all CryptoKeys (subsequent pages are retrieved automatically)
+      for (CryptoKey cryptoKey : response.iterateAll()) {
+        keys.add(cryptoKey);
       }
-    } while (cryptoKeys.getNextPageToken() != null);
+      return keys;
+    }
   }
 
   /**
-   * Prints all the versions for the given crypto key.
+   * Lists all the versions for the given crypto key.
    */
-  public static void listCryptoKeyVersions(
+  public static List<CryptoKeyVersion> listCryptoKeyVersions(
       String projectId, String locationId, String keyRingId, String cryptoKeyId)
       throws IOException {
+
     // Create the Cloud KMS client.
-    CloudKMS kms = createAuthorizedClient();
+    try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
 
-    // The resource name of the cryptoKey
-    String cryptoKeys = String.format(
-        "projects/%s/locations/%s/keyRings/%s/cryptoKeys/%s",
-        projectId, locationId, keyRingId, cryptoKeyId);
+      // The resource name of the CryptoKey to search.
+      String parent = CryptoKeyName.format(projectId, locationId, keyRingId, cryptoKeyId);
 
+      // Retrieve a paginated list of CryptoKeyVersions
+      ListCryptoKeyVersionsPagedResponse response = client.listCryptoKeyVersions(parent);
 
-    ListCryptoKeyVersionsResponse versions = kms.projects().locations().keyRings().cryptoKeys()
-        .cryptoKeyVersions()
-        .list(cryptoKeys)
-        .execute();
+      ArrayList<CryptoKeyVersion> results = new ArrayList<>();
 
-    for (CryptoKeyVersion version : versions.getCryptoKeyVersions()) {
-      System.out.println(version);
+      // Iterate over all CryptoKeyVersions (subsequent pages are retrieved automatically)
+      for (CryptoKeyVersion version : response.iterateAll()) {
+        results.add(version);
+      }
+
+      return results;
     }
   }
 
   /**
    * Sets a version as the primary version for a crypto key.
    */
-  public static void setPrimaryVersion(String projectId, String locationId, String keyRingId,
+  public static CryptoKey setPrimaryVersion(String projectId, String locationId, String keyRingId,
       String cryptoKeyId, String versionId) throws IOException {
+
     // Create the Cloud KMS client.
-    CloudKMS kms = createAuthorizedClient();
+    try (KeyManagementServiceClient client = KeyManagementServiceClient.create()) {
 
-    // Resource name of the key version.
-    String resourceName = String
-        .format("projects/%s/locations/%s/keyRings/%s/cryptoKeys/%s",
-            projectId, locationId, keyRingId, cryptoKeyId);
+      // The resource name of the CryptoKey to update.
+      String resourceName = CryptoKeyName.format(projectId, locationId, keyRingId, cryptoKeyId);
 
-    CryptoKey key = kms.projects().locations().keyRings().cryptoKeys()
-        .updatePrimaryVersion(resourceName,
-            new UpdateCryptoKeyPrimaryVersionRequest().setCryptoKeyVersionId(versionId)).execute();
-
-    System.out.println(key);
-
+      // Update the primary CryptoKey version
+      CryptoKey key = client.updateCryptoKeyPrimaryVersion(resourceName, versionId);
+      return key;
+    }
   }
 
 
