@@ -36,6 +36,7 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.List;
 import java.util.SortedSet;
+import javax.annotation.Nonnull;
 
 /** A simple wrapper to construct a query for the ReadRows RPC. */
 public final class Query implements Serializable {
@@ -261,19 +262,17 @@ public final class Query implements Serializable {
   /**
    * Wraps the protobuf {@link ReadRowsRequest}. This method is considered an internal implementation detail
    * and not meant to be used by applications.
+   *
+   * <p>WARNING: ProjectId & InstanceId of {@link ReadRowsRequest} would be ignored.
    */
-  @InternalApi
-  public static Query fromProto(ReadRowsRequest request) {
+  public static Query fromProto(@Nonnull ReadRowsRequest request) {
     Preconditions.checkArgument(request != null, "ReadRowsRequest must not be null");
 
-    TableName tableName = TableName.parse(request.getTableName());
-    String tableId = "";
-    if (tableName != null) {
-      tableId = tableName.getTable();
-    }
+    Query query = new Query(
+        NameUtil.extractTableIdFromTableName(
+            request.getTableName()));
+    query.builder = request.toBuilder();
 
-    Query query = new Query(tableId);
-    query.builder = ReadRowsRequest.newBuilder(request);
     return query;
   }
 

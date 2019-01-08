@@ -38,7 +38,9 @@ import java.io.ObjectOutputStream;
 import java.util.List;
 import java.util.SortedSet;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
@@ -49,6 +51,9 @@ public class QueryTest {
   private static final String TABLE_ID = "fake-table";
   private static final String APP_PROFILE_ID = "fake-profile-id";
   private RequestContext requestContext;
+
+  @Rule
+  public ExpectedException expect = ExpectedException.none();
 
   @Before
   public void setUp() {
@@ -230,7 +235,7 @@ public class QueryTest {
   @Test
   public void testFromProto() {
     ReadRowsRequest request = ReadRowsRequest.newBuilder()
-        .setTableName(TABLE_NAME.toString())
+        .setTableName(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
         .setAppProfileId(APP_PROFILE_ID)
         .setFilter(
             RowFilter.newBuilder()
@@ -248,26 +253,11 @@ public class QueryTest {
         .isEqualTo(request);
   }
 
-  @Test
+  @Test(expected=IllegalArgumentException.class)
   public void testFromProtoWithEmptyTableId() {
-	TableName EMPTY_TABLE_NAME = TableName.of("", "", "");
-	ReadRowsRequest request = ReadRowsRequest.newBuilder()
-      .setTableName(EMPTY_TABLE_NAME.toString())
-      .setFilter(
-          RowFilter.newBuilder()
-              .setRowKeyRegexFilter(
-                  ByteString.copyFromUtf8(".*")))
-      .setRows(
-          RowSet.newBuilder()
-              .addRowKeys(ByteString.copyFromUtf8("row-key"))
-              .addRowRanges(
-                  RowRange.newBuilder()
-                      .setStartKeyClosed(ByteString.copyFromUtf8("j"))
-                      .setEndKeyClosed(ByteString.copyFromUtf8("z"))))
-		  .build();
-	
-	RequestContext reqContext = RequestContext.create(InstanceName.of("", ""), "");
-	assertThat(Query.fromProto(request).toProto(reqContext))
-		    .isEqualTo(request);
+   Query.fromProto(ReadRowsRequest.getDefaultInstance());
+
+   expect.expect(IllegalArgumentException.class);
+   expect.expectMessage("Invalid table name:");
   }
 }
