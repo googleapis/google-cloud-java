@@ -54,7 +54,6 @@ import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
-import java.util.logging.Logger;
 import javax.annotation.Nonnull;
 
 /**
@@ -101,12 +100,12 @@ import javax.annotation.Nonnull;
  * }</pre>
  */
 public final class BigtableInstanceAdminClient implements AutoCloseable {
-  private final String projectId;
-  private final BigtableInstanceAdminStub stub;
-
   static {
     ArtifactDeprecationChecker.checkDeprecatedArtifactUse();
   }
+
+  private final String projectId;
+  private final BigtableInstanceAdminStub stub;
 
   /** Constructs an instance of BigtableInstanceAdminClient with the given project id. */
   public static BigtableInstanceAdminClient create(@Nonnull String projectId) throws IOException {
