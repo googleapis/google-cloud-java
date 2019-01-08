@@ -414,7 +414,7 @@ public class ITGcsNio {
   public void testWrite() throws IOException {
     CloudStorageFileSystem testBucket = getTestBucket();
     Path path = testBucket.getPath(PREFIX + randomSuffix());
-    // The file shouldn't exist initially. If it does, it's either because it's a leftover
+    // file shouldn't exist initially. If it does it's either because it's a leftover
     // from a previous run (so we should delete the file)
     // or because we're misconfigured and pointing to an actually important file
     // (so we should absolutely not delete it).
@@ -703,7 +703,7 @@ public class ITGcsNio {
   }
 
   /**
-   * Deletes the given directory and all of its contents if non-empty.
+   * Delete the given directory and all of its contents if non-empty.
    * @param directory the directory to delete
    * @throws IOException
    */
