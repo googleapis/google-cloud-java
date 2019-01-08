@@ -37,9 +37,9 @@ java.format_code('../../google-api-grpc/proto-google-cloud-bigtable-v2/src')
 
 
 admin_library = gapic.java_library(
-    service='bigtable',
+    service='bigtable-admin',
     version='v2',
-    config_path='/google/bigtable/artman_bigtable.yaml',
+    config_path='/google/bigtable/admin/artman_bigtableadmin.yaml',
     artman_output_name='')
 
 
