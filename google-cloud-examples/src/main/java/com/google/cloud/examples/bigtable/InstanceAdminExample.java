@@ -23,7 +23,6 @@ import com.google.cloud.bigtable.admin.v2.models.Cluster;
 import com.google.cloud.bigtable.admin.v2.models.CreateClusterRequest;
 import com.google.cloud.bigtable.admin.v2.models.CreateInstanceRequest;
 import com.google.cloud.bigtable.admin.v2.models.Instance;
-import com.google.cloud.bigtable.admin.v2.models.Instance.Type;
 import com.google.cloud.bigtable.admin.v2.models.PartialListInstancesException;
 import com.google.cloud.bigtable.admin.v2.models.StorageType;
 import java.io.IOException;
@@ -103,8 +102,8 @@ public class InstanceAdminExample {
       CreateInstanceRequest createInstanceRequest =
           CreateInstanceRequest.of(instanceId)
               .addCluster(clusterId, "us-central1-f", 3, StorageType.SSD)
-              .setType(Type.PRODUCTION)
-              .addLabel("example", "instance_admin");
+              .setType(Instance.Type.PRODUCTION)
+              .addLabel("department", "accounting");
       // Creates a production instance with the given request.
       try {
         Instance instance = adminClient.createInstance(createInstanceRequest);
@@ -127,9 +126,9 @@ public class InstanceAdminExample {
         System.out.println(instance.getId());
       }
     } catch (PartialListInstancesException e) {
-      System.out.println("Failed to list instances: " + e.getMessage());
-      System.out.println("The following zones are unavailable: " + e.getUnavailableZones());
-      System.out.println("But the following instances are reachable: " + e.getInstances());
+      System.err.println("Failed to list instances: " + e.getMessage());
+      System.err.println("The following zones are unavailable: " + e.getUnavailableZones());
+      System.err.println("But the following instances are reachable: " + e.getInstances());
     }
     // [END bigtable_list_instances]
   }
