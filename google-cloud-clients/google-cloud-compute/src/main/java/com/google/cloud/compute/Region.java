@@ -75,7 +75,7 @@ public enum Region {
   public String getName() {
     return name;
   }
-  /** zones for this region. */
+  /** The zones of this region. */
   public String[] getZones() {
     return zones;
   }
