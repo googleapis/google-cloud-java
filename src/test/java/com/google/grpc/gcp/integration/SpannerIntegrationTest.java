@@ -305,10 +305,17 @@ public final class SpannerIntegrationTest {
     for (String respName : respNames) {
       AsyncResponseObserver<PartialResultSet> resp = new AsyncResponseObserver<>();
       stub.executeStreamingSql(
-          ExecuteSqlRequest.newBuilder().setSession(respName).setSql("select * FROM jenny").build(),
+          ExecuteSqlRequest.newBuilder()
+              .setSession(respName)
+              .setSql("select * FROM test_java")
+              .build(),
           resp);
-      assertEquals(USERNAME, resp.get().getValues(0).getStringValue());
+      PartialResultSet resPartial = resp.get();
+      for (int i = 1; i < 4; i++) {
+        assertEquals("line" + i, resPartial.getValues(i - 1).getStringValue());
+      }
     }
+    checkChannelRefs(MAX_CHANNEL, 0, 2);
     deleteAsyncSessions(stub, respNames);
   }
 
