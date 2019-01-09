@@ -260,10 +260,10 @@ public final class Query implements Serializable {
   }
 
   /**
-   * Wraps the protobuf {@link ReadRowsRequest}. This method is considered an internal implementation detail
-   * and not meant to be used by applications.
+   * Wraps the protobuf {@link ReadRowsRequest}.
    *
-   * <p>WARNING: ProjectId & InstanceId of {@link ReadRowsRequest} would be ignored.
+   * <p>WARNING: Please note that the project id & instance id in the table name will be
+   * overwritten by the configuration in the BigtableDataClient.
    */
   public static Query fromProto(@Nonnull ReadRowsRequest request) {
     Preconditions.checkArgument(request != null, "ReadRowsRequest must not be null");
