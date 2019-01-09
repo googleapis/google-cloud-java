@@ -32,7 +32,6 @@ import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.bigtable.v2.RowSet;
 import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.ListenableFuture;
-import com.google.common.util.concurrent.SettableFuture;
 import com.google.protobuf.ByteString;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.auth.MoreCallCredentials;
@@ -40,6 +39,7 @@ import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
@@ -54,6 +54,7 @@ import org.junit.runners.JUnit4;
 public class BigtableIntegrationTest {
 
   private static final int DEFAULT_MAX_CHANNEL = 10;
+  private static final int DEFAULT_MAX_STREAM = 100;
   private static final int NEW_MAX_CHANNEL = 5;
   private static final int NEW_MAX_STREAM = 5;
 
@@ -235,25 +236,37 @@ public class BigtableIntegrationTest {
   }
 
   private static class AsyncResponseObserver<RespT> implements StreamObserver<RespT> {
-    private final SettableFuture<Void> future = SettableFuture.create();
 
-    AsyncResponseObserver() {}
+    private final CountDownLatch finishLatch = new CountDownLatch(1);
+    private RespT response;
 
-    void awaitCompletion() throws InterruptedException, ExecutionException, TimeoutException {
-      future.get(1, TimeUnit.HOURS);
+    private void awaitCompletion()
+        throws InterruptedException, ExecutionException, TimeoutException {
+      finishLatch.await(1, TimeUnit.MINUTES);
+    }
+
+    private AsyncResponseObserver() {
+      response = null;
+    }
+
+    public RespT get() throws InterruptedException, ExecutionException, TimeoutException {
+      finishLatch.await(1, TimeUnit.MINUTES);
+      return response;
     }
 
     @Override
-    public void onNext(RespT response) {}
+    public void onNext(RespT response) {
+      this.response = response;
+    }
 
     @Override
     public void onError(Throwable t) {
-      future.setException(t);
+      finishLatch.countDown();
     }
 
     @Override
     public void onCompleted() {
-      future.set(null);
+      finishLatch.countDown();
     }
   }
 }

@@ -124,7 +124,6 @@ public final class SpannerIntegrationTest {
       stub.createSession(req, resp);
       resps.add(resp);
     }
-    assertEquals(ConnectivityState.CONNECTING, gcpChannel.getState(false));
     checkChannelRefs(MAX_CHANNEL, MAX_STREAM, 0);
     for (AsyncResponseObserver<Session> resp : resps) {
       respNames.add(resp.get().getName());
@@ -166,7 +165,6 @@ public final class SpannerIntegrationTest {
       ListenableFuture<Session> future = stub.createSession(req);
       futures.add(future);
     }
-    assertEquals(ConnectivityState.CONNECTING, gcpChannel.getState(false));
     checkChannelRefs(MAX_CHANNEL, MAX_STREAM, 0);
     for (ListenableFuture<Session> future : futures) {
       futureNames.add(future.get().getName());
@@ -226,6 +224,7 @@ public final class SpannerIntegrationTest {
     for (Session s : responseList.getSessionsList()) {
       deleteSession(stub, s);
     }
+    channel.shutdownNow();
   }
 
   @Test
