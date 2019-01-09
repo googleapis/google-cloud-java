@@ -36,6 +36,7 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.List;
 import java.util.SortedSet;
+import javax.annotation.Nonnull;
 
 /** A simple wrapper to construct a query for the ReadRows RPC. */
 public final class Query implements Serializable {
@@ -256,6 +257,21 @@ public final class Query implements Serializable {
         .setTableName(tableName)
         .setAppProfileId(requestContext.getAppProfileId())
         .build();
+  }
+
+  /**
+   * Wraps the protobuf {@link ReadRowsRequest}.
+   *
+   * <p>WARNING: Please note that the project id & instance id in the table name will be overwritten
+   * by the configuration in the BigtableDataClient.
+   */
+  public static Query fromProto(@Nonnull ReadRowsRequest request) {
+    Preconditions.checkArgument(request != null, "ReadRowsRequest must not be null");
+
+    Query query = new Query(NameUtil.extractTableIdFromTableName(request.getTableName()));
+    query.builder = request.toBuilder();
+
+    return query;
   }
 
   private static ByteString wrapKey(String key) {
