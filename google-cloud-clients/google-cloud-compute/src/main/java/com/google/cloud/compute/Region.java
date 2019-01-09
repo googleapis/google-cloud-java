@@ -17,6 +17,7 @@ package com.google.cloud.compute;
 
 import java.util.HashMap;
 import java.util.Map;
+
 /**
  * Enumeration of Regions.
  *
