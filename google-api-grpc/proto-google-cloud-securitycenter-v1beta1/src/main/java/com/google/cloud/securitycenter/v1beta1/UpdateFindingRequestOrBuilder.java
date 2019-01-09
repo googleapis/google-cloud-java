@@ -55,8 +55,8 @@ public interface UpdateFindingRequestOrBuilder
    *
    *
    * <pre>
-   * The FieldMask to use when updating the finding resource. This field is
-   * ignored if the finding does not already exist and the finding is created.
+   * The FieldMask to use when updating the finding resource. This field should
+   * not be specified when creating a finding.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -66,8 +66,8 @@ public interface UpdateFindingRequestOrBuilder
    *
    *
    * <pre>
-   * The FieldMask to use when updating the finding resource. This field is
-   * ignored if the finding does not already exist and the finding is created.
+   * The FieldMask to use when updating the finding resource. This field should
+   * not be specified when creating a finding.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -77,8 +77,8 @@ public interface UpdateFindingRequestOrBuilder
    *
    *
    * <pre>
-   * The FieldMask to use when updating the finding resource. This field is
-   * ignored if the finding does not already exist and the finding is created.
+   * The FieldMask to use when updating the finding resource. This field should
+   * not be specified when creating a finding.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
