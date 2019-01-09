@@ -38,6 +38,7 @@ import org.junit.runners.JUnit4;
 public class CloudStorageFileAttributesTest {
 
   private static final byte[] HAPPY = "(✿◕ ‿◕ )ノ".getBytes(UTF_8);
+  private static final byte[] EMPTY = "".getBytes(UTF_8);
 
   private Path path;
   private Path dir;
@@ -99,6 +100,14 @@ public class CloudStorageFileAttributesTest {
   @Test
   public void testIsDirectory() throws IOException {
     Files.write(path, HAPPY);
+    assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).isDirectory())
+        .isFalse();
+    assertThat(Files.readAttributes(dir, CloudStorageFileAttributes.class).isDirectory()).isTrue();
+  }
+
+  @Test
+  public void testIsPseudoDirectory() throws IOException {
+    Files.write(path, EMPTY);
     assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).isDirectory())
         .isFalse();
     assertThat(Files.readAttributes(dir, CloudStorageFileAttributes.class).isDirectory()).isTrue();
