@@ -16,6 +16,8 @@
 package com.google.cloud.bigtable.data.v2.internal;
 
 import com.google.api.core.InternalApi;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.annotation.Nonnull;
 
 /**
@@ -26,6 +28,9 @@ import javax.annotation.Nonnull;
  */
 @InternalApi
 public class NameUtil {
+  private static final Pattern TABLE_PATTERN =
+      Pattern.compile("projects/([^/]+)/instances/([^/]+)/tables/([^/]+)");
+
   public static String formatInstanceName(@Nonnull String projectId, @Nonnull String instanceId) {
     return "projects/" + projectId + "/instances/" + instanceId;
   }
@@ -33,5 +38,13 @@ public class NameUtil {
   public static String formatTableName(
       @Nonnull String projectId, @Nonnull String instanceId, @Nonnull String tableId) {
     return formatInstanceName(projectId, instanceId) + "/tables/" + tableId;
+  }
+
+  public static String extractTableIdFromTableName(@Nonnull String fullTableName) {
+    Matcher matcher = TABLE_PATTERN.matcher(fullTableName);
+    if (!matcher.matches()) {
+      throw new IllegalArgumentException("Invalid table name: " + fullTableName);
+    }
+    return matcher.group(3);
   }
 }
