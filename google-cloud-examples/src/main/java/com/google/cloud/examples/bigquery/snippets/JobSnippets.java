@@ -113,7 +113,7 @@ public class JobSnippets {
   // [TARGET reload(JobOption...)]
   public JobStatus.State reload() throws InterruptedException {
     // [START ]
-    while (job.getStatus().getState() != JobStatus.State.DONE) {
+    while (!JobStatus.State.DONE.equals(job.getStatus().getState())) {
       Thread.sleep(1000L);
       job = job.reload();
     }
@@ -125,7 +125,7 @@ public class JobSnippets {
   // [TARGET reload(JobOption...)]
   public JobStatus.State reloadStatus() throws InterruptedException {
     // [START ]
-    while (job.getStatus().getState() != JobStatus.State.DONE) {
+    while (!JobStatus.State.DONE.equals(job.getStatus().getState())) {
       Thread.sleep(1000L);
       job = job.reload(BigQuery.JobOption.fields(BigQuery.JobField.STATUS));
     }
