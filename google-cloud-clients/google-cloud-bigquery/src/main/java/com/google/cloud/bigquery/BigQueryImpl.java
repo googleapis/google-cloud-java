@@ -679,7 +679,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   @Override
   public Job getJob(JobId jobId, JobOption... options) {
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
-    final JobId completeJobId = jobId.setProjectId(getOptions().getProjectId());
+    final JobId completeJobId =
+        jobId.setProjectId(getOptions().getProjectId()).setLocation(getOptions().getLocation());
     try {
       com.google.api.services.bigquery.model.Job answer =
           runWithRetries(
@@ -742,7 +743,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
   @Override
   public boolean cancel(JobId jobId) {
-    final JobId completeJobId = jobId.setProjectId(getOptions().getProjectId());
+    final JobId completeJobId =
+        jobId.setProjectId(getOptions().getProjectId()).setLocation(getOptions().getLocation());
     try {
       return runWithRetries(
           new Callable<Boolean>() {
@@ -784,7 +786,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       JobId jobId,
       final BigQueryOptions serviceOptions,
       final Map<BigQueryRpc.Option, ?> optionsMap) {
-    final JobId completeJobId = jobId.setProjectId(serviceOptions.getProjectId());
+    final JobId completeJobId =
+        jobId.setProjectId(serviceOptions.getProjectId()).setLocation(serviceOptions.getLocation());
     try {
       GetQueryResultsResponse results =
           runWithRetries(
@@ -833,7 +836,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       JobId jobId, WriteChannelConfiguration writeChannelConfiguration) {
     return new TableDataWriteChannel(
         getOptions(),
-        jobId.setProjectId(getOptions().getProjectId()),
+        jobId.setProjectId(getOptions().getProjectId()).setLocation(getOptions().getLocation()),
         writeChannelConfiguration.setProjectId(getOptions().getProjectId()));
   }
 

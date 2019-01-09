@@ -66,6 +66,7 @@ import org.junit.rules.ExpectedException;
 public class BigQueryImplTest {
 
   private static final String PROJECT = "project";
+  private static final String LOCATION = "US";
   private static final String OTHER_PROJECT = "otherProject";
   private static final String DATASET = "dataset";
   private static final String TABLE = "table";
@@ -288,6 +289,7 @@ public class BigQueryImplTest {
       String project, BigQueryRpcFactory rpcFactory) {
     return BigQueryOptions.newBuilder()
         .setProjectId(project)
+        .setLocation(LOCATION)
         .setServiceRpcFactory(rpcFactory)
         .setRetrySettings(ServiceOptions.getNoRetrySettings())
         .build();
@@ -1137,7 +1139,7 @@ public class BigQueryImplTest {
             bigqueryRpcMock.getJob(
                 anyString(),
                 EasyMock.eq(id),
-                EasyMock.eq((String) null),
+                EasyMock.eq((String) LOCATION),
                 EasyMock.eq(EMPTY_RPC_OPTIONS)))
         .andReturn(newJobPb());
     EasyMock.replay(bigqueryRpcMock);
@@ -1171,7 +1173,7 @@ public class BigQueryImplTest {
 
   @Test
   public void testGetJob() {
-    EasyMock.expect(bigqueryRpcMock.getJob(PROJECT, JOB, null, EMPTY_RPC_OPTIONS))
+    EasyMock.expect(bigqueryRpcMock.getJob(PROJECT, JOB, LOCATION, EMPTY_RPC_OPTIONS))
         .andReturn(COMPLETE_COPY_JOB.toPb());
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
@@ -1181,7 +1183,7 @@ public class BigQueryImplTest {
 
   @Test
   public void testGetJobFromJobId() {
-    EasyMock.expect(bigqueryRpcMock.getJob(PROJECT, JOB, null, EMPTY_RPC_OPTIONS))
+    EasyMock.expect(bigqueryRpcMock.getJob(PROJECT, JOB, LOCATION, EMPTY_RPC_OPTIONS))
         .andReturn(COMPLETE_COPY_JOB.toPb());
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
@@ -1193,7 +1195,7 @@ public class BigQueryImplTest {
   public void testGetJobFromJobIdWithProject() {
     JobId jobId = JobId.of(OTHER_PROJECT, JOB);
     JobInfo jobInfo = COPY_JOB.setProjectId(OTHER_PROJECT);
-    EasyMock.expect(bigqueryRpcMock.getJob(OTHER_PROJECT, JOB, null, EMPTY_RPC_OPTIONS))
+    EasyMock.expect(bigqueryRpcMock.getJob(OTHER_PROJECT, JOB, LOCATION, EMPTY_RPC_OPTIONS))
         .andReturn(jobInfo.toPb());
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
@@ -1291,7 +1293,7 @@ public class BigQueryImplTest {
 
   @Test
   public void testCancelJob() {
-    EasyMock.expect(bigqueryRpcMock.cancel(PROJECT, JOB, null)).andReturn(true);
+    EasyMock.expect(bigqueryRpcMock.cancel(PROJECT, JOB, LOCATION)).andReturn(true);
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
     assertTrue(bigquery.cancel(JOB));
@@ -1299,7 +1301,7 @@ public class BigQueryImplTest {
 
   @Test
   public void testCancelJobFromJobId() {
-    EasyMock.expect(bigqueryRpcMock.cancel(PROJECT, JOB, null)).andReturn(true);
+    EasyMock.expect(bigqueryRpcMock.cancel(PROJECT, JOB, LOCATION)).andReturn(true);
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
     assertTrue(bigquery.cancel(JobId.of(PROJECT, JOB)));
@@ -1308,7 +1310,7 @@ public class BigQueryImplTest {
   @Test
   public void testCancelJobFromJobIdWithProject() {
     JobId jobId = JobId.of(OTHER_PROJECT, JOB);
-    EasyMock.expect(bigqueryRpcMock.cancel(OTHER_PROJECT, JOB, null)).andReturn(true);
+    EasyMock.expect(bigqueryRpcMock.cancel(OTHER_PROJECT, JOB, LOCATION)).andReturn(true);
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
     assertTrue(bigquery.cancel(jobId));
@@ -1341,7 +1343,7 @@ public class BigQueryImplTest {
         .andReturn(jobResponsePb);
     EasyMock.expect(
             bigqueryRpcMock.getQueryResults(
-                PROJECT, JOB, null, BigQueryImpl.optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS)))
+                PROJECT, JOB, LOCATION, BigQueryImpl.optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS)))
         .andReturn(responsePb);
     EasyMock.expect(
             bigqueryRpcMock.listTableData(
@@ -1395,7 +1397,7 @@ public class BigQueryImplTest {
 
     EasyMock.expect(
             bigqueryRpcMock.getQueryResults(
-                PROJECT, JOB, null, BigQueryImpl.optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS)))
+                PROJECT, JOB, LOCATION, BigQueryImpl.optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS)))
         .andReturn(responsePb);
     EasyMock.expect(bigqueryRpcMock.listTableData(PROJECT, DATASET, TABLE, optionMap))
         .andReturn(
@@ -1449,11 +1451,11 @@ public class BigQueryImplTest {
 
     EasyMock.expect(
             bigqueryRpcMock.getQueryResults(
-                PROJECT, JOB, null, BigQueryImpl.optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS)))
+                PROJECT, JOB, LOCATION, BigQueryImpl.optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS)))
         .andReturn(responsePb1);
     EasyMock.expect(
             bigqueryRpcMock.getQueryResults(
-                PROJECT, JOB, null, BigQueryImpl.optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS)))
+                PROJECT, JOB, LOCATION, BigQueryImpl.optionMap(Job.DEFAULT_QUERY_WAIT_OPTIONS)))
         .andReturn(responsePb2);
     EasyMock.expect(
             bigqueryRpcMock.listTableData(
@@ -1488,7 +1490,7 @@ public class BigQueryImplTest {
             .setPageToken(CURSOR)
             .setTotalBytesProcessed(42L)
             .setTotalRows(BigInteger.valueOf(1L));
-    EasyMock.expect(bigqueryRpcMock.getQueryResults(PROJECT, JOB, null, EMPTY_RPC_OPTIONS))
+    EasyMock.expect(bigqueryRpcMock.getQueryResults(PROJECT, JOB, LOCATION, EMPTY_RPC_OPTIONS))
         .andReturn(responsePb);
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
@@ -1510,7 +1512,8 @@ public class BigQueryImplTest {
             .setPageToken(CURSOR)
             .setTotalBytesProcessed(42L)
             .setTotalRows(BigInteger.valueOf(1L));
-    EasyMock.expect(bigqueryRpcMock.getQueryResults(OTHER_PROJECT, JOB, null, EMPTY_RPC_OPTIONS))
+    EasyMock.expect(
+            bigqueryRpcMock.getQueryResults(OTHER_PROJECT, JOB, LOCATION, EMPTY_RPC_OPTIONS))
         .andReturn(responsePb);
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
@@ -1531,7 +1534,7 @@ public class BigQueryImplTest {
             .setPageToken(CURSOR)
             .setTotalBytesProcessed(42L)
             .setTotalRows(BigInteger.valueOf(1L));
-    EasyMock.expect(bigqueryRpcMock.getQueryResults(PROJECT, JOB, null, QUERY_RESULTS_OPTIONS))
+    EasyMock.expect(bigqueryRpcMock.getQueryResults(PROJECT, JOB, LOCATION, QUERY_RESULTS_OPTIONS))
         .andReturn(responsePb);
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.getService();
