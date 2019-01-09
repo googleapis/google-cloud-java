@@ -31,7 +31,6 @@ s.copy(data_library / 'gapic-google-cloud-bigtable-v2/src', 'src')
 s.copy(data_library / 'grpc-google-cloud-bigtable-v2/src', '../../google-api-grpc/grpc-google-cloud-bigtable-v2/src')
 s.copy(data_library / 'proto-google-cloud-bigtable-v2/src', '../../google-api-grpc/proto-google-cloud-bigtable-v2/src')
 
-java.format_code('./src')
 java.format_code('../../google-api-grpc/grpc-google-cloud-bigtable-v2/src')
 java.format_code('../../google-api-grpc/proto-google-cloud-bigtable-v2/src')
 
@@ -47,6 +46,7 @@ s.copy(admin_library / 'gapic-google-cloud-bigtable-admin-v2/src', 'src')
 s.copy(admin_library / 'grpc-google-cloud-bigtable-admin-v2/src', '../../google-api-grpc/grpc-google-cloud-bigtable-admin-v2/src')
 s.copy(admin_library / 'proto-google-cloud-bigtable-admin-v2/src', '../../google-api-grpc/proto-google-cloud-bigtable-admin-v2/src')
 
-java.format_code('./src')
 java.format_code('../../google-api-grpc/grpc-google-cloud-bigtable-admin-v2/src')
 java.format_code('../../google-api-grpc/proto-google-cloud-bigtable-admin-v2/src')
+
+java.format_code('./src')
