@@ -26,23 +26,23 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 public final class Allowed implements ApiMessage {
-  private final String iPProtocol;
+  private final String IPProtocol;
   private final List<String> ports;
 
   private Allowed() {
-    this.iPProtocol = null;
+    this.IPProtocol = null;
     this.ports = null;
   }
 
   private Allowed(String iPProtocol, List<String> ports) {
-    this.iPProtocol = iPProtocol;
+    this.IPProtocol = iPProtocol;
     this.ports = ports;
   }
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("iPProtocol")) {
-      return iPProtocol;
+    if (fieldName.equals("IPProtocol")) {
+      return IPProtocol;
     }
     if (fieldName.equals("ports")) {
       return ports;
@@ -63,7 +63,7 @@ public final class Allowed implements ApiMessage {
   }
 
   public String getIPProtocol() {
-    return iPProtocol;
+    return IPProtocol;
   }
 
   public List<String> getPortsList() {
@@ -101,7 +101,7 @@ public final class Allowed implements ApiMessage {
     public Builder mergeFrom(Allowed other) {
       if (other == Allowed.getDefaultInstance()) return this;
       if (other.getIPProtocol() != null) {
-        this.iPProtocol = other.iPProtocol;
+        this.iPProtocol = other.IPProtocol;
       }
       if (other.getPortsList() != null) {
         this.ports = other.ports;
@@ -110,7 +110,7 @@ public final class Allowed implements ApiMessage {
     }
 
     Builder(Allowed source) {
-      this.iPProtocol = source.iPProtocol;
+      this.iPProtocol = source.IPProtocol;
       this.ports = source.ports;
     }
 
@@ -158,7 +158,7 @@ public final class Allowed implements ApiMessage {
 
   @Override
   public String toString() {
-    return "Allowed{" + "iPProtocol=" + iPProtocol + ", " + "ports=" + ports + "}";
+    return "Allowed{" + "IPProtocol=" + IPProtocol + ", " + "ports=" + ports + "}";
   }
 
   @Override
@@ -168,7 +168,7 @@ public final class Allowed implements ApiMessage {
     }
     if (o instanceof Allowed) {
       Allowed that = (Allowed) o;
-      return Objects.equals(this.iPProtocol, that.getIPProtocol())
+      return Objects.equals(this.IPProtocol, that.getIPProtocol())
           && Objects.equals(this.ports, that.getPortsList());
     }
     return false;
@@ -176,6 +176,6 @@ public final class Allowed implements ApiMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(iPProtocol, ports);
+    return Objects.hash(IPProtocol, ports);
   }
 }
