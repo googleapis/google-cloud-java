@@ -9,9 +9,9 @@ package com.google.cloud.securitycenter.v1beta1;
  * <pre>
  * Cloud Security Command Center's (Cloud SCC) representation of a Google Cloud
  * Platform (GCP) resource.
- * The Asset is a Cloud SCC resource that captures information about a single GCP
- * resource. All modifications to an Asset are only within the context of Cloud
- * SCC and don't affect the referenced GCP resource.
+ * The Asset is a Cloud SCC resource that captures information about a single
+ * GCP resource. All modifications to an Asset are only within the context of
+ * Cloud SCC and don't affect the referenced GCP resource.
  * </pre>
  *
  * Protobuf type {@code google.cloud.securitycenter.v1beta1.Asset}
@@ -2313,9 +2313,9 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Cloud Security Command Center's (Cloud SCC) representation of a Google Cloud
    * Platform (GCP) resource.
-   * The Asset is a Cloud SCC resource that captures information about a single GCP
-   * resource. All modifications to an Asset are only within the context of Cloud
-   * SCC and don't affect the referenced GCP resource.
+   * The Asset is a Cloud SCC resource that captures information about a single
+   * GCP resource. All modifications to an Asset are only within the context of
+   * Cloud SCC and don't affect the referenced GCP resource.
    * </pre>
    *
    * Protobuf type {@code google.cloud.securitycenter.v1beta1.Asset}

@@ -44,8 +44,8 @@ public interface SourceOrBuilder
    * two sources with the same parent can't share the same display name.
    * The display name must start and end with a letter or digit, may contain
    * letters, digits, spaces, hyphens, and underscores, and can be no longer
-   * than 30 characters. This is captured by the regular expression:
-   * [&#92;p{L}&#92;p{N}]({&#92;p{L}&#92;p{N}_- ]{0,28}[&#92;p{L}&#92;p{N}])?.
+   * than 32 characters. This is captured by the regular expression:
+   * [&#92;p{L}&#92;p{N}]({&#92;p{L}&#92;p{N}_- ]{0,30}[&#92;p{L}&#92;p{N}])?.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -60,8 +60,8 @@ public interface SourceOrBuilder
    * two sources with the same parent can't share the same display name.
    * The display name must start and end with a letter or digit, may contain
    * letters, digits, spaces, hyphens, and underscores, and can be no longer
-   * than 30 characters. This is captured by the regular expression:
-   * [&#92;p{L}&#92;p{N}]({&#92;p{L}&#92;p{N}_- ]{0,28}[&#92;p{L}&#92;p{N}])?.
+   * than 32 characters. This is captured by the regular expression:
+   * [&#92;p{L}&#92;p{N}]({&#92;p{L}&#92;p{N}_- ]{0,30}[&#92;p{L}&#92;p{N}])?.
    * </pre>
    *
    * <code>string display_name = 2;</code>
