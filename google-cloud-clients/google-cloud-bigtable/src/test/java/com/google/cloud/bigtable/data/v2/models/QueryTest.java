@@ -52,8 +52,7 @@ public class QueryTest {
   private static final String APP_PROFILE_ID = "fake-profile-id";
   private RequestContext requestContext;
 
-  @Rule
-  public ExpectedException expect = ExpectedException.none();
+  @Rule public ExpectedException expect = ExpectedException.none();
 
   @Before
   public void setUp() {
@@ -234,30 +233,29 @@ public class QueryTest {
 
   @Test
   public void testFromProto() {
-    ReadRowsRequest request = ReadRowsRequest.newBuilder()
-        .setTableName(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
-        .setAppProfileId(APP_PROFILE_ID)
-        .setFilter(
-            RowFilter.newBuilder()
-                .setRowKeyRegexFilter(ByteString.copyFromUtf8(".*")))
-        .setRows(RowSet.newBuilder()
-                .addRowKeys(ByteString.copyFromUtf8("row-key"))
-                .addRowRanges(
-                    RowRange.newBuilder()
-                        .setStartKeyClosed(ByteString.copyFromUtf8("j"))
-                        .setEndKeyClosed(ByteString.copyFromUtf8("z"))))
-        .build();
+    ReadRowsRequest request =
+        ReadRowsRequest.newBuilder()
+            .setTableName(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
+            .setAppProfileId(APP_PROFILE_ID)
+            .setFilter(RowFilter.newBuilder().setRowKeyRegexFilter(ByteString.copyFromUtf8(".*")))
+            .setRows(
+                RowSet.newBuilder()
+                    .addRowKeys(ByteString.copyFromUtf8("row-key"))
+                    .addRowRanges(
+                        RowRange.newBuilder()
+                            .setStartKeyClosed(ByteString.copyFromUtf8("j"))
+                            .setEndKeyClosed(ByteString.copyFromUtf8("z"))))
+            .build();
     Query query = Query.fromProto(request);
 
-    assertThat(query.toProto(requestContext))
-        .isEqualTo(request);
+    assertThat(query.toProto(requestContext)).isEqualTo(request);
   }
 
-  @Test(expected=IllegalArgumentException.class)
+  @Test(expected = IllegalArgumentException.class)
   public void testFromProtoWithEmptyTableId() {
-   Query.fromProto(ReadRowsRequest.getDefaultInstance());
+    Query.fromProto(ReadRowsRequest.getDefaultInstance());
 
-   expect.expect(IllegalArgumentException.class);
-   expect.expectMessage("Invalid table name:");
+    expect.expect(IllegalArgumentException.class);
+    expect.expectMessage("Invalid table name:");
   }
 }

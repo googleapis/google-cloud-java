@@ -262,15 +262,13 @@ public final class Query implements Serializable {
   /**
    * Wraps the protobuf {@link ReadRowsRequest}.
    *
-   * <p>WARNING: Please note that the project id & instance id in the table name will be
-   * overwritten by the configuration in the BigtableDataClient.
+   * <p>WARNING: Please note that the project id & instance id in the table name will be overwritten
+   * by the configuration in the BigtableDataClient.
    */
   public static Query fromProto(@Nonnull ReadRowsRequest request) {
     Preconditions.checkArgument(request != null, "ReadRowsRequest must not be null");
 
-    Query query = new Query(
-        NameUtil.extractTableIdFromTableName(
-            request.getTableName()));
+    Query query = new Query(NameUtil.extractTableIdFromTableName(request.getTableName()));
     query.builder = request.toBuilder();
 
     return query;
