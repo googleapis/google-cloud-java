@@ -15,6 +15,7 @@
  */
 package com.google.cloud.examples.bigtable;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import com.google.bigtable.admin.v2.InstanceName;
@@ -36,15 +37,16 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-/** Integration tests for {@link TableAdmin} */
-public class ITTableAdmin {
+/** Integration tests for {@link TableAdminExample} */
+public class ITTableAdminExample {
 
   private static final String INSTANCE_PROPERTY_NAME = "bigtable.instance";
   private static final String TABLE_PREFIX = "table";
-  private static String tableId;
   private static BigtableTableAdminClient adminClient;
-  private static InstanceName instanceName;
-  private TableAdmin tableAdmin;
+  private static String instanceName;
+  private static String projectName;
+  private String tableId;
+  private TableAdminExample tableAdmin;
 
   @BeforeClass
   public static void beforeClass() throws IOException {
@@ -53,9 +55,13 @@ public class ITTableAdmin {
       adminClient = null;
       return;
     }
-    instanceName = InstanceName.parse(targetInstance);
+    instanceName = InstanceName.parse(targetInstance).getInstance();
+    projectName = InstanceName.parse(targetInstance).getProject();
     BigtableTableAdminSettings adminSettings =
-        BigtableTableAdminSettings.newBuilder().setInstanceName(instanceName).build();
+        BigtableTableAdminSettings.newBuilder()
+            .setInstanceId(instanceName)
+            .setProjectId(projectName)
+            .build();
     adminClient = BigtableTableAdminClient.create(adminSettings);
   }
 
@@ -72,7 +78,7 @@ public class ITTableAdmin {
           INSTANCE_PROPERTY_NAME + " property is not set, skipping integration tests.");
     }
     tableId = generateTableId();
-    tableAdmin = new TableAdmin(instanceName.getProject(), instanceName.getInstance(), tableId);
+    tableAdmin = new TableAdminExample(projectName, instanceName, tableId);
     adminClient.createTable(CreateTableRequest.of(tableId).addFamily("cf"));
   }
 
@@ -86,15 +92,14 @@ public class ITTableAdmin {
   @Test
   public void testCreateAndDeleteTable() throws IOException {
     // Creates a table.
-    String fakeTable = generateTableId();
-    TableAdmin testTableAdmin =
-        new TableAdmin(instanceName.getProject(), instanceName.getInstance(), fakeTable);
+    String testTable = generateTableId();
+    TableAdminExample testTableAdmin = new TableAdminExample(projectName, instanceName, testTable);
     testTableAdmin.createTable();
-    assertTrue(adminClient.exists(fakeTable));
+    assertTrue(adminClient.exists(testTable));
 
     // Deletes a table.
     testTableAdmin.deleteTable();
-    assertTrue(!adminClient.exists(fakeTable));
+    assertFalse(adminClient.exists(testTable));
   }
 
   @Test
@@ -178,7 +183,7 @@ public class ITTableAdmin {
 
   // TODO: add test for tableAdmin.listAllTables()
   // TODO: add test for tableAdmin.getTableMeta()
-  // TODO: add test for tableAdmin.listColumnFamilies
+  // TODO: add test for tableAdmin.listColumnFamilies()
 
   private boolean ruleCheck(Object condition) {
     boolean found = false;

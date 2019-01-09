@@ -35,23 +35,23 @@ import java.util.concurrent.TimeUnit;
  * <p>This example demonstrates the usage of BigtableTableAdminClient to create, configure and
  * delete a Cloud Bigtable table.
  *
- * <pre>
- *   creates table
- *   lists all tables
- *   gets table metadata
- *   creates DurationRule
- *   creates VersionRule
- *   creates UnionRule
- *   creates IntersectionRule
- *   creates nested rule
- *   lists column families
- *   modifies column family rule
- *   prints modified column family
- *   deletes column family
- *   deletes table
- * </pre>
+ * <ul>
+ *   <li>creates table
+ *   <li>lists all tables
+ *   <li>gets table metadata
+ *   <li>creates DurationRule
+ *   <li>creates VersionRule
+ *   <li>creates UnionRule
+ *   <li>creates IntersectionRule
+ *   <li>creates nested rule
+ *   <li>lists column families
+ *   <li>modifies column family rule
+ *   <li>prints modified column family
+ *   <li>deletes column family
+ *   <li>deletes table
+ * </ul>
  */
-public class TableAdmin {
+public class TableAdminExample {
 
   private static final String COLUMN_FAMILY_1 = "cf1";
   private static final String COLUMN_FAMILY_2 = "cf2";
@@ -70,18 +70,19 @@ public class TableAdmin {
     String projectId = args[0];
     String instanceId = args[1];
 
-    TableAdmin tableAdmin = new TableAdmin(projectId, instanceId, "test-table");
+    TableAdminExample tableAdmin = new TableAdminExample(projectId, instanceId, "test-table");
     tableAdmin.run();
   }
 
-  public TableAdmin(String projectId, String instanceId, String tableId) throws IOException {
+  public TableAdminExample(String projectId, String instanceId, String tableId) throws IOException {
     this.tableId = tableId;
 
     // [START connecting_to_bigtable]
     // Creates the settings to configure a bigtable table admin client.
     BigtableTableAdminSettings adminSettings =
         BigtableTableAdminSettings.newBuilder()
-            .setInstanceName(com.google.bigtable.admin.v2.InstanceName.of(projectId, instanceId))
+            .setProjectId(projectId)
+            .setInstanceId(instanceId)
             .build();
 
     // Creates a bigtable table admin client.
@@ -358,7 +359,6 @@ public class TableAdmin {
     try {
       adminClient.deleteTable(tableId);
       System.out.printf("Table: %s deleted successfully%n", tableId);
-
     } catch (NotFoundException e) {
       System.err.println("Failed to delete a non-existent table: " + e.getMessage());
     }
@@ -367,7 +367,7 @@ public class TableAdmin {
 
   private static void printColumnFamily(ColumnFamily columnFamily) {
     System.out.printf(
-        "Column family: %s%nMetadata: %s%n",
+        "Column family: %s%nGC Rule: %s%n",
         columnFamily.getId(), columnFamily.getGCRule().toString());
   }
 }
