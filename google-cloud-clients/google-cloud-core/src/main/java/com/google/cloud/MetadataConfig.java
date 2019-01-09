@@ -33,7 +33,7 @@ import java.net.URL;
  */
 public class MetadataConfig {
 
-  private static final String METADATA_URL = "http://metadata/computeMetadata/v1/";
+  private static final String METADATA_URL = "http://metadata.google.internal/computeMetadata/v1/";
 
   private MetadataConfig() {}
 
