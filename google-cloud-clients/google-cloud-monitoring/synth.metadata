@@ -1,0 +1,32 @@
+{
+  "updateTime": "2019-01-10T00:28:17.515488Z",
+  "sources": [
+    {
+      "generator": {
+        "name": "artman",
+        "version": "0.16.5",
+        "dockerImage": "googleapis/artman@sha256:5a96c2c5c6f9570cc9556b63dc9ce1838777fd9166b5b64e43ad8e0ecee2fe2c"
+      }
+    },
+    {
+      "git": {
+        "name": "googleapis",
+        "remote": "https://github.com/googleapis/googleapis.git",
+        "sha": "5125f9790658c36519a23d4c2106bcfb1de7b070",
+        "internalRef": "228534685"
+      }
+    }
+  ],
+  "destinations": [
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "monitoring",
+        "apiVersion": "v3",
+        "language": "java",
+        "generator": "gapic",
+        "config": "google/monitoring/artman_monitoring.yaml"
+      }
+    }
+  ]
+}

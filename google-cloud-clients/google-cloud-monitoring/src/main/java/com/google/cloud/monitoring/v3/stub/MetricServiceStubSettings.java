@@ -302,7 +302,9 @@ public class MetricServiceStubSettings extends StubSettings<MetricServiceStubSet
             @Override
             public Iterable<MonitoredResourceDescriptor> extractResources(
                 ListMonitoredResourceDescriptorsResponse payload) {
-              return payload.getResourceDescriptorsList();
+              return payload.getResourceDescriptorsList() != null
+                  ? payload.getResourceDescriptorsList()
+                  : ImmutableList.<MonitoredResourceDescriptor>of();
             }
           };
 
@@ -341,7 +343,9 @@ public class MetricServiceStubSettings extends StubSettings<MetricServiceStubSet
             @Override
             public Iterable<MetricDescriptor> extractResources(
                 ListMetricDescriptorsResponse payload) {
-              return payload.getMetricDescriptorsList();
+              return payload.getMetricDescriptorsList() != null
+                  ? payload.getMetricDescriptorsList()
+                  : ImmutableList.<MetricDescriptor>of();
             }
           };
 
@@ -377,7 +381,9 @@ public class MetricServiceStubSettings extends StubSettings<MetricServiceStubSet
 
             @Override
             public Iterable<TimeSeries> extractResources(ListTimeSeriesResponse payload) {
-              return payload.getTimeSeriesList();
+              return payload.getTimeSeriesList() != null
+                  ? payload.getTimeSeriesList()
+                  : ImmutableList.<TimeSeries>of();
             }
           };
 

@@ -4243,7 +4243,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * String content to match (max 1024 bytes)
+     * String or regex content to match (max 1024 bytes)
      * </pre>
      *
      * <code>string content = 1;</code>
@@ -4253,7 +4253,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * String content to match (max 1024 bytes)
+     * String or regex content to match (max 1024 bytes)
      * </pre>
      *
      * <code>string content = 1;</code>
@@ -4264,9 +4264,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Used to perform string matching. Currently, this matches on the exact
-   * content. In the future, it can be expanded to allow for regular expressions
-   * and more complex matching.
+   * Used to perform string matching. It allows substring and regular
+   * expressions, together with their negations.
    * </pre>
    *
    * Protobuf type {@code google.monitoring.v3.UptimeCheckConfig.ContentMatcher}
@@ -4356,7 +4355,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * String content to match (max 1024 bytes)
+     * String or regex content to match (max 1024 bytes)
      * </pre>
      *
      * <code>string content = 1;</code>
@@ -4376,7 +4375,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * String content to match (max 1024 bytes)
+     * String or regex content to match (max 1024 bytes)
      * </pre>
      *
      * <code>string content = 1;</code>
@@ -4559,9 +4558,8 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Used to perform string matching. Currently, this matches on the exact
-     * content. In the future, it can be expanded to allow for regular expressions
-     * and more complex matching.
+     * Used to perform string matching. It allows substring and regular
+     * expressions, together with their negations.
      * </pre>
      *
      * Protobuf type {@code google.monitoring.v3.UptimeCheckConfig.ContentMatcher}
@@ -4724,7 +4722,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * String content to match (max 1024 bytes)
+       * String or regex content to match (max 1024 bytes)
        * </pre>
        *
        * <code>string content = 1;</code>
@@ -4744,7 +4742,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * String content to match (max 1024 bytes)
+       * String or regex content to match (max 1024 bytes)
        * </pre>
        *
        * <code>string content = 1;</code>
@@ -4764,7 +4762,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * String content to match (max 1024 bytes)
+       * String or regex content to match (max 1024 bytes)
        * </pre>
        *
        * <code>string content = 1;</code>
@@ -4782,7 +4780,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * String content to match (max 1024 bytes)
+       * String or regex content to match (max 1024 bytes)
        * </pre>
        *
        * <code>string content = 1;</code>
@@ -4797,7 +4795,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * String content to match (max 1024 bytes)
+       * String or regex content to match (max 1024 bytes)
        * </pre>
        *
        * <code>string content = 1;</code>
@@ -5004,7 +5002,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * A human-friendly name for the uptime check configuration. The display name
-   * should be unique within a Stackdriver Account in order to make it easier
+   * should be unique within a Stackdriver Workspace in order to make it easier
    * to identify; however, uniqueness is not enforced. Required.
    * </pre>
    *
@@ -5026,7 +5024,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * A human-friendly name for the uptime check configuration. The display name
-   * should be unique within a Stackdriver Account in order to make it easier
+   * should be unique within a Stackdriver Workspace in order to make it easier
    * to identify; however, uniqueness is not enforced. Required.
    * </pre>
    *
@@ -5449,6 +5447,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The list of regions from which the check will be run.
+   * Some regions contain one location, and others contain more than one.
    * If this field is specified, enough regions to include a minimum of
    * 3 locations must be provided, or an error message is returned.
    * Not specifying this field will result in uptime checks running from all
@@ -5467,6 +5466,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The list of regions from which the check will be run.
+   * Some regions contain one location, and others contain more than one.
    * If this field is specified, enough regions to include a minimum of
    * 3 locations must be provided, or an error message is returned.
    * Not specifying this field will result in uptime checks running from all
@@ -5483,6 +5483,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The list of regions from which the check will be run.
+   * Some regions contain one location, and others contain more than one.
    * If this field is specified, enough regions to include a minimum of
    * 3 locations must be provided, or an error message is returned.
    * Not specifying this field will result in uptime checks running from all
@@ -5499,6 +5500,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The list of regions from which the check will be run.
+   * Some regions contain one location, and others contain more than one.
    * If this field is specified, enough regions to include a minimum of
    * 3 locations must be provided, or an error message is returned.
    * Not specifying this field will result in uptime checks running from all
@@ -5515,6 +5517,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The list of regions from which the check will be run.
+   * Some regions contain one location, and others contain more than one.
    * If this field is specified, enough regions to include a minimum of
    * 3 locations must be provided, or an error message is returned.
    * Not specifying this field will result in uptime checks running from all
@@ -5535,7 +5538,10 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Denotes whether this is a check that egresses from InternalCheckers.
+   * If this is true, then checks are made only from the 'internal_checkers'.
+   * If it is false, then checks are made only from the 'selected_regions'.
+   * It is an error to provide 'selected_regions' when is_internal is true,
+   * or to provide 'internal_checkers' when is_internal is false.
    * </pre>
    *
    * <code>bool is_internal = 15;</code>
@@ -5551,7 +5557,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The internal checkers that this check will egress from. If `is_internal` is
-   * true and this list is empty, the check will egress from all
+   * true and this list is empty, the check will egress from all the
    * InternalCheckers configured for the project that owns this CheckConfig.
    * </pre>
    *
@@ -5565,7 +5571,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The internal checkers that this check will egress from. If `is_internal` is
-   * true and this list is empty, the check will egress from all
+   * true and this list is empty, the check will egress from all the
    * InternalCheckers configured for the project that owns this CheckConfig.
    * </pre>
    *
@@ -5580,7 +5586,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The internal checkers that this check will egress from. If `is_internal` is
-   * true and this list is empty, the check will egress from all
+   * true and this list is empty, the check will egress from all the
    * InternalCheckers configured for the project that owns this CheckConfig.
    * </pre>
    *
@@ -5594,7 +5600,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The internal checkers that this check will egress from. If `is_internal` is
-   * true and this list is empty, the check will egress from all
+   * true and this list is empty, the check will egress from all the
    * InternalCheckers configured for the project that owns this CheckConfig.
    * </pre>
    *
@@ -5608,7 +5614,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The internal checkers that this check will egress from. If `is_internal` is
-   * true and this list is empty, the check will egress from all
+   * true and this list is empty, the check will egress from all the
    * InternalCheckers configured for the project that owns this CheckConfig.
    * </pre>
    *
@@ -6477,7 +6483,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A human-friendly name for the uptime check configuration. The display name
-     * should be unique within a Stackdriver Account in order to make it easier
+     * should be unique within a Stackdriver Workspace in order to make it easier
      * to identify; however, uniqueness is not enforced. Required.
      * </pre>
      *
@@ -6499,7 +6505,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A human-friendly name for the uptime check configuration. The display name
-     * should be unique within a Stackdriver Account in order to make it easier
+     * should be unique within a Stackdriver Workspace in order to make it easier
      * to identify; however, uniqueness is not enforced. Required.
      * </pre>
      *
@@ -6521,7 +6527,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A human-friendly name for the uptime check configuration. The display name
-     * should be unique within a Stackdriver Account in order to make it easier
+     * should be unique within a Stackdriver Workspace in order to make it easier
      * to identify; however, uniqueness is not enforced. Required.
      * </pre>
      *
@@ -6541,7 +6547,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A human-friendly name for the uptime check configuration. The display name
-     * should be unique within a Stackdriver Account in order to make it easier
+     * should be unique within a Stackdriver Workspace in order to make it easier
      * to identify; however, uniqueness is not enforced. Required.
      * </pre>
      *
@@ -6558,7 +6564,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A human-friendly name for the uptime check configuration. The display name
-     * should be unique within a Stackdriver Account in order to make it easier
+     * should be unique within a Stackdriver Workspace in order to make it easier
      * to identify; however, uniqueness is not enforced. Required.
      * </pre>
      *
@@ -8320,6 +8326,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The list of regions from which the check will be run.
+     * Some regions contain one location, and others contain more than one.
      * If this field is specified, enough regions to include a minimum of
      * 3 locations must be provided, or an error message is returned.
      * Not specifying this field will result in uptime checks running from all
@@ -8338,6 +8345,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The list of regions from which the check will be run.
+     * Some regions contain one location, and others contain more than one.
      * If this field is specified, enough regions to include a minimum of
      * 3 locations must be provided, or an error message is returned.
      * Not specifying this field will result in uptime checks running from all
@@ -8354,6 +8362,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The list of regions from which the check will be run.
+     * Some regions contain one location, and others contain more than one.
      * If this field is specified, enough regions to include a minimum of
      * 3 locations must be provided, or an error message is returned.
      * Not specifying this field will result in uptime checks running from all
@@ -8370,6 +8379,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The list of regions from which the check will be run.
+     * Some regions contain one location, and others contain more than one.
      * If this field is specified, enough regions to include a minimum of
      * 3 locations must be provided, or an error message is returned.
      * Not specifying this field will result in uptime checks running from all
@@ -8392,6 +8402,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The list of regions from which the check will be run.
+     * Some regions contain one location, and others contain more than one.
      * If this field is specified, enough regions to include a minimum of
      * 3 locations must be provided, or an error message is returned.
      * Not specifying this field will result in uptime checks running from all
@@ -8414,6 +8425,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The list of regions from which the check will be run.
+     * Some regions contain one location, and others contain more than one.
      * If this field is specified, enough regions to include a minimum of
      * 3 locations must be provided, or an error message is returned.
      * Not specifying this field will result in uptime checks running from all
@@ -8436,6 +8448,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The list of regions from which the check will be run.
+     * Some regions contain one location, and others contain more than one.
      * If this field is specified, enough regions to include a minimum of
      * 3 locations must be provided, or an error message is returned.
      * Not specifying this field will result in uptime checks running from all
@@ -8455,6 +8468,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The list of regions from which the check will be run.
+     * Some regions contain one location, and others contain more than one.
      * If this field is specified, enough regions to include a minimum of
      * 3 locations must be provided, or an error message is returned.
      * Not specifying this field will result in uptime checks running from all
@@ -8471,6 +8485,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The list of regions from which the check will be run.
+     * Some regions contain one location, and others contain more than one.
      * If this field is specified, enough regions to include a minimum of
      * 3 locations must be provided, or an error message is returned.
      * Not specifying this field will result in uptime checks running from all
@@ -8487,6 +8502,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The list of regions from which the check will be run.
+     * Some regions contain one location, and others contain more than one.
      * If this field is specified, enough regions to include a minimum of
      * 3 locations must be provided, or an error message is returned.
      * Not specifying this field will result in uptime checks running from all
@@ -8506,6 +8522,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The list of regions from which the check will be run.
+     * Some regions contain one location, and others contain more than one.
      * If this field is specified, enough regions to include a minimum of
      * 3 locations must be provided, or an error message is returned.
      * Not specifying this field will result in uptime checks running from all
@@ -8525,6 +8542,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The list of regions from which the check will be run.
+     * Some regions contain one location, and others contain more than one.
      * If this field is specified, enough regions to include a minimum of
      * 3 locations must be provided, or an error message is returned.
      * Not specifying this field will result in uptime checks running from all
@@ -8547,7 +8565,10 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Denotes whether this is a check that egresses from InternalCheckers.
+     * If this is true, then checks are made only from the 'internal_checkers'.
+     * If it is false, then checks are made only from the 'selected_regions'.
+     * It is an error to provide 'selected_regions' when is_internal is true,
+     * or to provide 'internal_checkers' when is_internal is false.
      * </pre>
      *
      * <code>bool is_internal = 15;</code>
@@ -8559,7 +8580,10 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Denotes whether this is a check that egresses from InternalCheckers.
+     * If this is true, then checks are made only from the 'internal_checkers'.
+     * If it is false, then checks are made only from the 'selected_regions'.
+     * It is an error to provide 'selected_regions' when is_internal is true,
+     * or to provide 'internal_checkers' when is_internal is false.
      * </pre>
      *
      * <code>bool is_internal = 15;</code>
@@ -8574,7 +8598,10 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Denotes whether this is a check that egresses from InternalCheckers.
+     * If this is true, then checks are made only from the 'internal_checkers'.
+     * If it is false, then checks are made only from the 'selected_regions'.
+     * It is an error to provide 'selected_regions' when is_internal is true,
+     * or to provide 'internal_checkers' when is_internal is false.
      * </pre>
      *
      * <code>bool is_internal = 15;</code>
@@ -8608,7 +8635,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The internal checkers that this check will egress from. If `is_internal` is
-     * true and this list is empty, the check will egress from all
+     * true and this list is empty, the check will egress from all the
      * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
@@ -8626,7 +8653,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The internal checkers that this check will egress from. If `is_internal` is
-     * true and this list is empty, the check will egress from all
+     * true and this list is empty, the check will egress from all the
      * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
@@ -8644,7 +8671,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The internal checkers that this check will egress from. If `is_internal` is
-     * true and this list is empty, the check will egress from all
+     * true and this list is empty, the check will egress from all the
      * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
@@ -8662,7 +8689,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The internal checkers that this check will egress from. If `is_internal` is
-     * true and this list is empty, the check will egress from all
+     * true and this list is empty, the check will egress from all the
      * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
@@ -8686,7 +8713,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The internal checkers that this check will egress from. If `is_internal` is
-     * true and this list is empty, the check will egress from all
+     * true and this list is empty, the check will egress from all the
      * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
@@ -8708,7 +8735,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The internal checkers that this check will egress from. If `is_internal` is
-     * true and this list is empty, the check will egress from all
+     * true and this list is empty, the check will egress from all the
      * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
@@ -8732,7 +8759,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The internal checkers that this check will egress from. If `is_internal` is
-     * true and this list is empty, the check will egress from all
+     * true and this list is empty, the check will egress from all the
      * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
@@ -8756,7 +8783,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The internal checkers that this check will egress from. If `is_internal` is
-     * true and this list is empty, the check will egress from all
+     * true and this list is empty, the check will egress from all the
      * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
@@ -8778,7 +8805,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The internal checkers that this check will egress from. If `is_internal` is
-     * true and this list is empty, the check will egress from all
+     * true and this list is empty, the check will egress from all the
      * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
@@ -8800,7 +8827,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The internal checkers that this check will egress from. If `is_internal` is
-     * true and this list is empty, the check will egress from all
+     * true and this list is empty, the check will egress from all the
      * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
@@ -8822,7 +8849,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The internal checkers that this check will egress from. If `is_internal` is
-     * true and this list is empty, the check will egress from all
+     * true and this list is empty, the check will egress from all the
      * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
@@ -8843,7 +8870,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The internal checkers that this check will egress from. If `is_internal` is
-     * true and this list is empty, the check will egress from all
+     * true and this list is empty, the check will egress from all the
      * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
@@ -8864,7 +8891,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The internal checkers that this check will egress from. If `is_internal` is
-     * true and this list is empty, the check will egress from all
+     * true and this list is empty, the check will egress from all the
      * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
@@ -8878,7 +8905,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The internal checkers that this check will egress from. If `is_internal` is
-     * true and this list is empty, the check will egress from all
+     * true and this list is empty, the check will egress from all the
      * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
@@ -8897,7 +8924,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The internal checkers that this check will egress from. If `is_internal` is
-     * true and this list is empty, the check will egress from all
+     * true and this list is empty, the check will egress from all the
      * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
@@ -8916,7 +8943,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The internal checkers that this check will egress from. If `is_internal` is
-     * true and this list is empty, the check will egress from all
+     * true and this list is empty, the check will egress from all the
      * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
@@ -8931,7 +8958,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The internal checkers that this check will egress from. If `is_internal` is
-     * true and this list is empty, the check will egress from all
+     * true and this list is empty, the check will egress from all the
      * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
@@ -8946,7 +8973,7 @@ public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The internal checkers that this check will egress from. If `is_internal` is
-     * true and this list is empty, the check will egress from all
+     * true and this list is empty, the check will egress from all the
      * InternalCheckers configured for the project that owns this CheckConfig.
      * </pre>
      *
