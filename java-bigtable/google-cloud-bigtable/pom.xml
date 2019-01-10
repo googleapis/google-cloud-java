@@ -79,6 +79,12 @@
       <artifactId>truth</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax</artifactId>
+      <classifier>testlib</classifier>
+      <scope>test</scope>
+    </dependency>
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>

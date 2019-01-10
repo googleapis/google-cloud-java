@@ -27,6 +27,7 @@ import com.google.bigtable.admin.v2.GetTableRequest;
 import com.google.bigtable.admin.v2.ListTablesRequest;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPage;
 import com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminClient.ListTablesPagedResponse;
+import com.google.cloud.bigtable.admin.v2.internal.ArtifactDeprecationChecker;
 import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.admin.v2.models.ModifyColumnFamiliesRequest;
@@ -93,6 +94,10 @@ import javax.annotation.Nonnull;
  * }</pre>
  */
 public final class BigtableTableAdminClient implements AutoCloseable {
+
+  static {
+    ArtifactDeprecationChecker.checkDeprecatedArtifactUse();
+  }
 
   private final EnhancedBigtableTableAdminStub stub;
   private final String projectId;
