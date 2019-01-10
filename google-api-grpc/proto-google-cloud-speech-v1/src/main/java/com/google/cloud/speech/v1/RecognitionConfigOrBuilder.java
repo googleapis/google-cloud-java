@@ -54,6 +54,22 @@ public interface RecognitionConfigOrBuilder
    *
    *
    * <pre>
+   * This needs to be set to ‘true’ explicitly and `audio_channel_count` &gt; 1
+   * to get each channel recognized separately. The recognition result will
+   * contain a `channel_tag` field to state which channel that result belongs
+   * to. If this is not true, we will only recognize the first channel. The
+   * request is billed cumulatively for all channels recognized:
+   * `audio_channel_count` multiplied by the length of the audio.
+   * </pre>
+   *
+   * <code>bool enable_separate_recognition_per_channel = 12;</code>
+   */
+  boolean getEnableSeparateRecognitionPerChannel();
+
+  /**
+   *
+   *
+   * <pre>
    * *Required* The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
    * Example: "en-US".
@@ -290,15 +306,18 @@ public interface RecognitionConfigOrBuilder
    *
    * <pre>
    * *Optional* Set to true to use an enhanced model for speech recognition.
-   * You must also set the `model` field to a valid, enhanced model. If
-   * `use_enhanced` is set to true and the `model` field is not set, then
-   * `use_enhanced` is ignored. If `use_enhanced` is true and an enhanced
-   * version of the specified model does not exist, then the speech is
-   * recognized using the standard version of the specified model.
+   * If `use_enhanced` is set to true and the `model` field is not set, then
+   * an appropriate enhanced model is chosen if:
+   * 1. project is eligible for requesting enhanced models
+   * 2. an enhanced model exists for the audio
+   * If `use_enhanced` is true and an enhanced version of the specified model
+   * does not exist, then the speech is recognized using the standard version
+   * of the specified model.
    * Enhanced speech models require that you opt-in to data logging using
-   * instructions in the [documentation](/speech-to-text/enable-data-logging).
-   * If you set `use_enhanced` to true and you have not enabled audio logging,
-   * then you will receive an error.
+   * instructions in the
+   * [documentation](/speech-to-text/docs/enable-data-logging). If you set
+   * `use_enhanced` to true and you have not enabled audio logging, then you
+   * will receive an error.
    * </pre>
    *
    * <code>bool use_enhanced = 14;</code>

@@ -27,6 +27,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     alternatives_ = java.util.Collections.emptyList();
     isFinal_ = false;
     stability_ = 0F;
+    channelTag_ = 0;
   }
 
   @java.lang.Override
@@ -75,6 +76,11 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
           case 29:
             {
               stability_ = input.readFloat();
+              break;
+            }
+          case 40:
+            {
+              channelTag_ = input.readInt32();
               break;
             }
           default:
@@ -234,6 +240,23 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     return stability_;
   }
 
+  public static final int CHANNEL_TAG_FIELD_NUMBER = 5;
+  private int channelTag_;
+  /**
+   *
+   *
+   * <pre>
+   * For multi-channel audio, this is the channel number corresponding to the
+   * recognized result for the audio from that channel.
+   * For audio_channel_count = N, its output values can range from '1' to 'N'.
+   * </pre>
+   *
+   * <code>int32 channel_tag = 5;</code>
+   */
+  public int getChannelTag() {
+    return channelTag_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -257,6 +280,9 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     if (stability_ != 0F) {
       output.writeFloat(3, stability_);
     }
+    if (channelTag_ != 0) {
+      output.writeInt32(5, channelTag_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -274,6 +300,9 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     }
     if (stability_ != 0F) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, stability_);
+    }
+    if (channelTag_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, channelTag_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -298,6 +327,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
         result
             && (java.lang.Float.floatToIntBits(getStability())
                 == java.lang.Float.floatToIntBits(other.getStability()));
+    result = result && (getChannelTag() == other.getChannelTag());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -317,6 +347,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsFinal());
     hash = (37 * hash) + STABILITY_FIELD_NUMBER;
     hash = (53 * hash) + java.lang.Float.floatToIntBits(getStability());
+    hash = (37 * hash) + CHANNEL_TAG_FIELD_NUMBER;
+    hash = (53 * hash) + getChannelTag();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -476,6 +508,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
 
       stability_ = 0F;
 
+      channelTag_ = 0;
+
       return this;
     }
 
@@ -516,6 +550,7 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       }
       result.isFinal_ = isFinal_;
       result.stability_ = stability_;
+      result.channelTag_ = channelTag_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -599,6 +634,9 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
       }
       if (other.getStability() != 0F) {
         setStability(other.getStability());
+      }
+      if (other.getChannelTag() != 0) {
+        setChannelTag(other.getChannelTag());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1161,6 +1199,56 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     public Builder clearStability() {
 
       stability_ = 0F;
+      onChanged();
+      return this;
+    }
+
+    private int channelTag_;
+    /**
+     *
+     *
+     * <pre>
+     * For multi-channel audio, this is the channel number corresponding to the
+     * recognized result for the audio from that channel.
+     * For audio_channel_count = N, its output values can range from '1' to 'N'.
+     * </pre>
+     *
+     * <code>int32 channel_tag = 5;</code>
+     */
+    public int getChannelTag() {
+      return channelTag_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For multi-channel audio, this is the channel number corresponding to the
+     * recognized result for the audio from that channel.
+     * For audio_channel_count = N, its output values can range from '1' to 'N'.
+     * </pre>
+     *
+     * <code>int32 channel_tag = 5;</code>
+     */
+    public Builder setChannelTag(int value) {
+
+      channelTag_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For multi-channel audio, this is the channel number corresponding to the
+     * recognized result for the audio from that channel.
+     * For audio_channel_count = N, its output values can range from '1' to 'N'.
+     * </pre>
+     *
+     * <code>int32 channel_tag = 5;</code>
+     */
+    public Builder clearChannelTag() {
+
+      channelTag_ = 0;
       onChanged();
       return this;
     }
