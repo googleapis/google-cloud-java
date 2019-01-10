@@ -58,6 +58,18 @@ public class DeIdentificationIT {
   }
 
   @Test
+  public void testDeidReplaceWithInfoType() throws Exception {
+    String text = "\"My SSN is 372819127\"";
+    DeIdentification.main(
+        new String[] {
+          "-it", text,
+          "-infoTypes", "US_SOCIAL_SECURITY_NUMBER"
+        });
+    String output = bout.toString();
+    assertThat(output, containsString("My SSN is [US_SOCIAL_SECURITY_NUMBER]"));
+  }
+
+  @Test
   public void testDeidStringMasksCharacters() throws Exception {
     String text = "\"My SSN is 372819127\"";
     DeIdentification.main(

@@ -42,6 +42,7 @@ import com.google.privacy.dlp.v2.ProjectName;
 import com.google.privacy.dlp.v2.RecordTransformations;
 import com.google.privacy.dlp.v2.ReidentifyContentRequest;
 import com.google.privacy.dlp.v2.ReidentifyContentResponse;
+import com.google.privacy.dlp.v2.ReplaceWithInfoTypeConfig;
 import com.google.privacy.dlp.v2.Table;
 import com.google.privacy.dlp.v2.Value;
 import com.google.protobuf.ByteString;
@@ -70,6 +71,71 @@ import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 
 public class DeIdentification {
+
+  // [START dlp_deidentify_replace_with_info_type]
+  /**
+   * Deidentify a string by replacing sensitive information with its info type using the DLP API.
+   *
+   * @param string The string to deidentify.
+   * @param projectId ID of Google Cloud project to run the API under.
+   */
+  private static void deIdentifyReplaceWithInfoType(
+      String string,
+      List<InfoType> infoTypes,
+      String projectId) {
+
+    // instantiate a client
+    try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+
+      ContentItem contentItem = ContentItem.newBuilder().setValue(string).build();
+
+      // Create the deidentification transformation configuration
+      PrimitiveTransformation primitiveTransformation =
+          PrimitiveTransformation.newBuilder()
+              .setReplaceWithInfoTypeConfig(ReplaceWithInfoTypeConfig.getDefaultInstance())
+              .build();
+
+      InfoTypeTransformation infoTypeTransformationObject =
+          InfoTypeTransformation.newBuilder()
+              .setPrimitiveTransformation(primitiveTransformation)
+              .build();
+
+      InfoTypeTransformations infoTypeTransformationArray =
+          InfoTypeTransformations.newBuilder()
+              .addTransformations(infoTypeTransformationObject)
+              .build();
+
+      InspectConfig inspectConfig =
+          InspectConfig.newBuilder()
+              .addAllInfoTypes(infoTypes)
+              .build();
+
+      DeidentifyConfig deidentifyConfig =
+          DeidentifyConfig.newBuilder()
+              .setInfoTypeTransformations(infoTypeTransformationArray)
+              .build();
+
+      // Create the deidentification request object
+      DeidentifyContentRequest request =
+          DeidentifyContentRequest.newBuilder()
+              .setParent(ProjectName.of(projectId).toString())
+              .setInspectConfig(inspectConfig)
+              .setDeidentifyConfig(deidentifyConfig)
+              .setItem(contentItem)
+              .build();
+
+      // Execute the deidentification request
+      DeidentifyContentResponse response = dlpServiceClient.deidentifyContent(request);
+
+      // Print the redacted input value
+      // e.g. "My SSN is 123456789" --> "My SSN is [US_SOCIAL_SECURITY_NUMBER]"
+      String result = response.getItem().getValue();
+      System.out.println(result);
+    } catch (Exception e) {
+      System.out.println("Error in deIdentifyReplaceWithInfoType: " + e.getMessage());
+    }
+  }
+  // [END dlp_deidentify_replace_with_info_type]
 
   // [START dlp_deidentify_masking]
   /**
@@ -512,6 +578,10 @@ public class DeIdentification {
     OptionGroup optionsGroup = new OptionGroup();
     optionsGroup.setRequired(true);
 
+    Option deidentifyReplaceWithInfoTypeOption =
+        new Option("it", "info_type_replace", true, "Deidentify by replacing with info type.");
+    optionsGroup.addOption(deidentifyReplaceWithInfoTypeOption);
+
     Option deidentifyMaskingOption =
         new Option("m", "mask", true, "Deidentify with character masking.");
     optionsGroup.addOption(deidentifyMaskingOption);
@@ -606,7 +676,11 @@ public class DeIdentification {
       }
     }
 
-    if (cmd.hasOption("m")) {
+    if (cmd.hasOption("it")) {
+      // replace with info type
+      String val = cmd.getOptionValue(deidentifyReplaceWithInfoTypeOption.getOpt());
+      deIdentifyReplaceWithInfoType(val, infoTypesList, projectId);
+    } else if (cmd.hasOption("m")) {
       // deidentification with character masking
       int numberToMask = Integer.parseInt(cmd.getOptionValue(numberToMaskOption.getOpt(), "0"));
       char maskingCharacter = cmd.getOptionValue(maskingCharacterOption.getOpt(), "*").charAt(0);
