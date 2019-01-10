@@ -246,7 +246,9 @@ public class GroupServiceStubSettings extends StubSettings<GroupServiceStubSetti
 
             @Override
             public Iterable<Group> extractResources(ListGroupsResponse payload) {
-              return payload.getGroupList();
+              return payload.getGroupList() != null
+                  ? payload.getGroupList()
+                  : ImmutableList.<Group>of();
             }
           };
 
@@ -284,7 +286,9 @@ public class GroupServiceStubSettings extends StubSettings<GroupServiceStubSetti
 
             @Override
             public Iterable<MonitoredResource> extractResources(ListGroupMembersResponse payload) {
-              return payload.getMembersList();
+              return payload.getMembersList() != null
+                  ? payload.getMembersList()
+                  : ImmutableList.<MonitoredResource>of();
             }
           };
 

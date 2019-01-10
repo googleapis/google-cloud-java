@@ -768,7 +768,7 @@ public final class NotificationChannelServiceGrpc {
      *
      * <pre>
      * Creates a new notification channel, representing a single notification
-     * endpoint such as an email address, SMS number, or pagerduty service.
+     * endpoint such as an email address, SMS number, or PagerDuty service.
      * </pre>
      */
     public void createNotificationChannel(
@@ -1054,7 +1054,7 @@ public final class NotificationChannelServiceGrpc {
      *
      * <pre>
      * Creates a new notification channel, representing a single notification
-     * endpoint such as an email address, SMS number, or pagerduty service.
+     * endpoint such as an email address, SMS number, or PagerDuty service.
      * </pre>
      */
     public void createNotificationChannel(
@@ -1272,7 +1272,7 @@ public final class NotificationChannelServiceGrpc {
      *
      * <pre>
      * Creates a new notification channel, representing a single notification
-     * endpoint such as an email address, SMS number, or pagerduty service.
+     * endpoint such as an email address, SMS number, or PagerDuty service.
      * </pre>
      */
     public com.google.monitoring.v3.NotificationChannel createNotificationChannel(
@@ -1475,7 +1475,7 @@ public final class NotificationChannelServiceGrpc {
      *
      * <pre>
      * Creates a new notification channel, representing a single notification
-     * endpoint such as an email address, SMS number, or pagerduty service.
+     * endpoint such as an email address, SMS number, or PagerDuty service.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
