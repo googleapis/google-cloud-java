@@ -15,6 +15,7 @@
  */
 package com.google.cloud.examples.bigtable;
 
+import static com.google.cloud.bigtable.admin.v2.models.GCRules.GCRULES;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -23,7 +24,11 @@ import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
 import com.google.cloud.bigtable.admin.v2.models.ColumnFamily;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
-import com.google.cloud.bigtable.admin.v2.models.GCRules;
+import com.google.cloud.bigtable.admin.v2.models.GCRules.DurationRule;
+import com.google.cloud.bigtable.admin.v2.models.GCRules.GCRule;
+import com.google.cloud.bigtable.admin.v2.models.GCRules.IntersectionRule;
+import com.google.cloud.bigtable.admin.v2.models.GCRules.UnionRule;
+import com.google.cloud.bigtable.admin.v2.models.GCRules.VersionRule;
 import java.io.IOException;
 import java.util.List;
 import java.util.Random;
@@ -105,14 +110,14 @@ public class ITTableAdminExample {
   @Test
   public void testCreateMaxAgeRuleAndModifyAndPrintColumnFamily() {
     // Max age rule
-    tableAdmin.maxAgeRule();
-    GCRules.DurationRule maxAgeCondition = GCRules.GCRULES.maxAge(5, TimeUnit.DAYS);
+    tableAdmin.addFamilyWithMaxAgeRule();
+    DurationRule maxAgeCondition = GCRULES.maxAge(5, TimeUnit.DAYS);
     boolean maxAgeRule = ruleCheck(maxAgeCondition);
     assertTrue(maxAgeRule);
 
     // Modifies cf1.
     tableAdmin.modifyColumnFamilyRule();
-    Object modifiedRule = GCRules.GCRULES.maxVersions(1);
+    GCRule modifiedRule = GCRULES.maxVersions(1);
     boolean maxVersionRule = ruleCheck(modifiedRule);
     assertTrue(maxVersionRule);
   }
@@ -120,8 +125,8 @@ public class ITTableAdminExample {
   @Test
   public void testCreateMaxVersionsRuleAndDeleteColumnFamily() {
     // Max versions rule
-    tableAdmin.maxVersionsRule();
-    GCRules.VersionRule maxVersionCondition = GCRules.GCRULES.maxVersions(2);
+    tableAdmin.addFamilyWithMaxVersionsRule();
+    VersionRule maxVersionCondition = GCRULES.maxVersions(2);
     boolean maxVersionRule = ruleCheck(maxVersionCondition);
     assertTrue(maxVersionRule);
 
@@ -141,10 +146,10 @@ public class ITTableAdminExample {
   @Test
   public void testCreateUnionRule() {
     // Union rule
-    tableAdmin.unionRule();
-    GCRules.DurationRule maxAgeRule = GCRules.GCRULES.maxAge(5, TimeUnit.DAYS);
-    GCRules.VersionRule versionRule = GCRules.GCRULES.maxVersions(1);
-    GCRules.UnionRule unionCondition = GCRules.GCRULES.union().rule(maxAgeRule).rule(versionRule);
+    tableAdmin.addFamilyWithUnionRule();
+    DurationRule maxAgeRule = GCRULES.maxAge(5, TimeUnit.DAYS);
+    VersionRule versionRule = GCRULES.maxVersions(1);
+    UnionRule unionCondition = GCRULES.union().rule(maxAgeRule).rule(versionRule);
     boolean unionRule = ruleCheck(unionCondition);
     assertTrue(unionRule);
   }
@@ -152,11 +157,11 @@ public class ITTableAdminExample {
   @Test
   public void testCreateIntersectionRule() {
     // Intersection rule
-    tableAdmin.intersectionRule();
-    GCRules.DurationRule maxAgeRule = GCRules.GCRULES.maxAge(5, TimeUnit.DAYS);
-    GCRules.VersionRule versionRule = GCRules.GCRULES.maxVersions(2);
-    GCRules.IntersectionRule intersectionCondition =
-        GCRules.GCRULES.intersection().rule(maxAgeRule).rule(versionRule);
+    tableAdmin.addFamilyWithIntersectionRule();
+    DurationRule maxAgeRule = GCRULES.maxAge(5, TimeUnit.DAYS);
+    VersionRule versionRule = GCRULES.maxVersions(2);
+    IntersectionRule intersectionCondition =
+        GCRULES.intersection().rule(maxAgeRule).rule(versionRule);
     boolean intersectionRule = ruleCheck(intersectionCondition);
     assertTrue(intersectionRule);
   }
@@ -164,14 +169,12 @@ public class ITTableAdminExample {
   @Test
   public void testCreateNestedRule() {
     // Nested rule
-    tableAdmin.nestedRule();
-    GCRules.VersionRule versionRule = GCRules.GCRULES.maxVersions(10);
-    GCRules.DurationRule maxAgeRule = GCRules.GCRULES.maxAge(30, TimeUnit.DAYS);
-    GCRules.VersionRule versionRule2 = GCRules.GCRULES.maxVersions(2);
-    GCRules.IntersectionRule intersectionRule =
-        GCRules.GCRULES.intersection().rule(maxAgeRule).rule(versionRule2);
-    GCRules.UnionRule nestedCondition =
-        GCRules.GCRULES.union().rule(intersectionRule).rule(versionRule);
+    tableAdmin.addFamilyWithNestedRule();
+    VersionRule versionRule = GCRULES.maxVersions(10);
+    DurationRule maxAgeRule = GCRULES.maxAge(30, TimeUnit.DAYS);
+    VersionRule versionRule2 = GCRULES.maxVersions(2);
+    IntersectionRule intersectionRule = GCRULES.intersection().rule(maxAgeRule).rule(versionRule2);
+    UnionRule nestedCondition = GCRULES.union().rule(intersectionRule).rule(versionRule);
     boolean nestedRule = ruleCheck(nestedCondition);
     assertTrue(nestedRule);
   }
@@ -185,7 +188,7 @@ public class ITTableAdminExample {
   // TODO: add test for tableAdmin.getTableMeta()
   // TODO: add test for tableAdmin.listColumnFamilies()
 
-  private boolean ruleCheck(Object condition) {
+  private boolean ruleCheck(GCRule condition) {
     boolean found = false;
     List<ColumnFamily> columnFamilies = adminClient.getTable(tableId).getColumnFamilies();
     for (ColumnFamily columnFamily : columnFamilies) {
@@ -207,6 +210,11 @@ public class ITTableAdminExample {
     for (String tableId : adminClient.listTables()) {
       Matcher matcher = timestampPattern.matcher(tableId);
       if (!matcher.matches()) {
+        continue;
+      }
+      String timestampStr = matcher.group(1);
+      long timestamp = Long.parseLong(timestampStr);
+      if (System.currentTimeMillis() - timestamp < TimeUnit.MINUTES.toMillis(10)) {
         continue;
       }
       System.out.println("\nGarbage collecting orphaned table: " + tableId);
