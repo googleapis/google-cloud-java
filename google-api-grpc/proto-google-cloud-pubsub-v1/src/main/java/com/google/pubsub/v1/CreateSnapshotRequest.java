@@ -8,7 +8,7 @@ package com.google.pubsub.v1;
  *
  * <pre>
  * Request for the `CreateSnapshot` method.&lt;br&gt;&lt;br&gt;
- * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be changed in
+ * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be changed in
  * backward-incompatible ways and is not recommended for production use.
  * It is not subject to any SLA or deprecation policy.
  * </pre>
@@ -137,7 +137,8 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
    * If the name is not provided in the request, the server will assign a random
    * name for this snapshot on the same project as the subscription.
    * Note that for REST API requests, you must specify a name.  See the
-   * &lt;a href="/pubsub/docs/admin#resource_names"&gt;resource name rules&lt;/a&gt;.
+   * &lt;a href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt;
+   * resource name rules&lt;/a&gt;.
    * Format is `projects/{project}/snapshots/{snap}`.
    * </pre>
    *
@@ -162,7 +163,8 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
    * If the name is not provided in the request, the server will assign a random
    * name for this snapshot on the same project as the subscription.
    * Note that for REST API requests, you must specify a name.  See the
-   * &lt;a href="/pubsub/docs/admin#resource_names"&gt;resource name rules&lt;/a&gt;.
+   * &lt;a href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt;
+   * resource name rules&lt;/a&gt;.
    * Format is `projects/{project}/snapshots/{snap}`.
    * </pre>
    *
@@ -268,7 +270,8 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+   * managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
@@ -288,7 +291,8 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+   * managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
@@ -300,7 +304,8 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+   * managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
@@ -316,7 +321,8 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+   * managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
@@ -523,7 +529,7 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Request for the `CreateSnapshot` method.&lt;br&gt;&lt;br&gt;
-   * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be changed in
+   * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be changed in
    * backward-incompatible ways and is not recommended for production use.
    * It is not subject to any SLA or deprecation policy.
    * </pre>
@@ -723,7 +729,8 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
      * If the name is not provided in the request, the server will assign a random
      * name for this snapshot on the same project as the subscription.
      * Note that for REST API requests, you must specify a name.  See the
-     * &lt;a href="/pubsub/docs/admin#resource_names"&gt;resource name rules&lt;/a&gt;.
+     * &lt;a href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt;
+     * resource name rules&lt;/a&gt;.
      * Format is `projects/{project}/snapshots/{snap}`.
      * </pre>
      *
@@ -748,7 +755,8 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
      * If the name is not provided in the request, the server will assign a random
      * name for this snapshot on the same project as the subscription.
      * Note that for REST API requests, you must specify a name.  See the
-     * &lt;a href="/pubsub/docs/admin#resource_names"&gt;resource name rules&lt;/a&gt;.
+     * &lt;a href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt;
+     * resource name rules&lt;/a&gt;.
      * Format is `projects/{project}/snapshots/{snap}`.
      * </pre>
      *
@@ -773,7 +781,8 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
      * If the name is not provided in the request, the server will assign a random
      * name for this snapshot on the same project as the subscription.
      * Note that for REST API requests, you must specify a name.  See the
-     * &lt;a href="/pubsub/docs/admin#resource_names"&gt;resource name rules&lt;/a&gt;.
+     * &lt;a href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt;
+     * resource name rules&lt;/a&gt;.
      * Format is `projects/{project}/snapshots/{snap}`.
      * </pre>
      *
@@ -796,7 +805,8 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
      * If the name is not provided in the request, the server will assign a random
      * name for this snapshot on the same project as the subscription.
      * Note that for REST API requests, you must specify a name.  See the
-     * &lt;a href="/pubsub/docs/admin#resource_names"&gt;resource name rules&lt;/a&gt;.
+     * &lt;a href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt;
+     * resource name rules&lt;/a&gt;.
      * Format is `projects/{project}/snapshots/{snap}`.
      * </pre>
      *
@@ -816,7 +826,8 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
      * If the name is not provided in the request, the server will assign a random
      * name for this snapshot on the same project as the subscription.
      * Note that for REST API requests, you must specify a name.  See the
-     * &lt;a href="/pubsub/docs/admin#resource_names"&gt;resource name rules&lt;/a&gt;.
+     * &lt;a href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt;
+     * resource name rules&lt;/a&gt;.
      * Format is `projects/{project}/snapshots/{snap}`.
      * </pre>
      *
@@ -996,7 +1007,8 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+     * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+     * managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>
@@ -1016,7 +1028,8 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+     * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+     * managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>
@@ -1028,7 +1041,8 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+     * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+     * managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>
@@ -1045,7 +1059,8 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+     * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+     * managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>
@@ -1069,7 +1084,8 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+     * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+     * managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>
@@ -1090,7 +1106,8 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+     * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+     * managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>
@@ -1109,7 +1126,8 @@ public final class CreateSnapshotRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+     * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+     * managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>

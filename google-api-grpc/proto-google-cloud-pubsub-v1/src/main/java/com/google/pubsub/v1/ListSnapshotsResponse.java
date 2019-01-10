@@ -8,7 +8,7 @@ package com.google.pubsub.v1;
  *
  * <pre>
  * Response for the `ListSnapshots` method.&lt;br&gt;&lt;br&gt;
- * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+ * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
  * changed in backward-incompatible ways and is not recommended for production
  * use. It is not subject to any SLA or deprecation policy.
  * </pre>
@@ -394,7 +394,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Response for the `ListSnapshots` method.&lt;br&gt;&lt;br&gt;
-   * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+   * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
    * changed in backward-incompatible ways and is not recommended for production
    * use. It is not subject to any SLA or deprecation policy.
    * </pre>

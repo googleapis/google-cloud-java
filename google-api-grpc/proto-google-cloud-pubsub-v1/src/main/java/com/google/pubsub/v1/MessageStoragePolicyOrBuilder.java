@@ -12,8 +12,8 @@ public interface MessageStoragePolicyOrBuilder
    *
    *
    * <pre>
-   * The list of GCP regions where messages that are published to the topic may
-   * be persisted in storage. Messages published by publishers running in
+   * The list of GCP region IDs where messages that are published to the topic
+   * may be persisted in storage. Messages published by publishers running in
    * non-allowed GCP regions (or running outside of GCP altogether) will be
    * routed for storage in one of the allowed regions. An empty list indicates a
    * misconfiguration at the project or organization level, which will result in
@@ -27,8 +27,8 @@ public interface MessageStoragePolicyOrBuilder
    *
    *
    * <pre>
-   * The list of GCP regions where messages that are published to the topic may
-   * be persisted in storage. Messages published by publishers running in
+   * The list of GCP region IDs where messages that are published to the topic
+   * may be persisted in storage. Messages published by publishers running in
    * non-allowed GCP regions (or running outside of GCP altogether) will be
    * routed for storage in one of the allowed regions. An empty list indicates a
    * misconfiguration at the project or organization level, which will result in
@@ -42,8 +42,8 @@ public interface MessageStoragePolicyOrBuilder
    *
    *
    * <pre>
-   * The list of GCP regions where messages that are published to the topic may
-   * be persisted in storage. Messages published by publishers running in
+   * The list of GCP region IDs where messages that are published to the topic
+   * may be persisted in storage. Messages published by publishers running in
    * non-allowed GCP regions (or running outside of GCP altogether) will be
    * routed for storage in one of the allowed regions. An empty list indicates a
    * misconfiguration at the project or organization level, which will result in
@@ -57,8 +57,8 @@ public interface MessageStoragePolicyOrBuilder
    *
    *
    * <pre>
-   * The list of GCP regions where messages that are published to the topic may
-   * be persisted in storage. Messages published by publishers running in
+   * The list of GCP region IDs where messages that are published to the topic
+   * may be persisted in storage. Messages published by publishers running in
    * non-allowed GCP regions (or running outside of GCP altogether) will be
    * routed for storage in one of the allowed regions. An empty list indicates a
    * misconfiguration at the project or organization level, which will result in
