@@ -9,8 +9,12 @@ package com.google.pubsub.v1;
  * <pre>
  * A message that is published by publishers and consumed by subscribers. The
  * message must contain either a non-empty data field or at least one attribute.
- * See &lt;a href="/pubsub/quotas"&gt;Quotas and limits&lt;/a&gt; for more information about
- * message limits.
+ * Note that client libraries represent this object differently
+ * depending on the language. See the corresponding
+ * &lt;a href="https://cloud.google.com/pubsub/docs/reference/libraries"&gt;client
+ * library documentation&lt;/a&gt; for more information. See
+ * &lt;a href="https://cloud.google.com/pubsub/quotas"&gt;Quotas and limits&lt;/a&gt;
+ * for more information about message limits.
  * </pre>
  *
  * Protobuf type {@code google.pubsub.v1.PubsubMessage}
@@ -550,8 +554,12 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A message that is published by publishers and consumed by subscribers. The
    * message must contain either a non-empty data field or at least one attribute.
-   * See &lt;a href="/pubsub/quotas"&gt;Quotas and limits&lt;/a&gt; for more information about
-   * message limits.
+   * Note that client libraries represent this object differently
+   * depending on the language. See the corresponding
+   * &lt;a href="https://cloud.google.com/pubsub/docs/reference/libraries"&gt;client
+   * library documentation&lt;/a&gt; for more information. See
+   * &lt;a href="https://cloud.google.com/pubsub/quotas"&gt;Quotas and limits&lt;/a&gt;
+   * for more information about message limits.
    * </pre>
    *
    * Protobuf type {@code google.pubsub.v1.PubsubMessage}

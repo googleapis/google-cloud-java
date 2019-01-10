@@ -389,11 +389,12 @@ public final class PubsubProto {
           + "apshots/*}\022\204\001\n\004Seek\022\035.google.pubsub.v1.S"
           + "eekRequest\032\036.google.pubsub.v1.SeekRespon"
           + "se\"=\202\323\344\223\0027\"2/v1/{subscription=projects/*"
-          + "/subscriptions/*}:seek:\001*B\222\001\n\024com.google"
+          + "/subscriptions/*}:seek:\001*B\256\001\n\024com.google"
           + ".pubsub.v1B\013PubsubProtoP\001Z6google.golang"
           + ".org/genproto/googleapis/pubsub/v1;pubsu"
           + "b\370\001\001\252\002\026Google.Cloud.PubSub.V1\312\002\026Google\\C"
-          + "loud\\PubSub\\V1b\006proto3"
+          + "loud\\PubSub\\V1\352\002\031Google::Cloud::PubSub::"
+          + "V1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

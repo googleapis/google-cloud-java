@@ -7,8 +7,13 @@ package com.google.pubsub.v1;
  *
  *
  * <pre>
- * A snapshot resource.&lt;br&gt;&lt;br&gt;
- * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+ * A snapshot resource. Snapshots are used in
+ * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt;
+ * operations, which allow
+ * you to manage message acknowledgments in bulk. That is, you can set the
+ * acknowledgment state of messages in an existing subscription to the state
+ * captured by a snapshot.&lt;br&gt;&lt;br&gt;
+ * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
  * changed in backward-incompatible ways and is not recommended for production
  * use. It is not subject to any SLA or deprecation policy.
  * </pre>
@@ -321,7 +326,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+   * managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -341,7 +347,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+   * managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -353,7 +360,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+   * managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -369,7 +377,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+   * managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -587,8 +596,13 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A snapshot resource.&lt;br&gt;&lt;br&gt;
-   * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+   * A snapshot resource. Snapshots are used in
+   * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt;
+   * operations, which allow
+   * you to manage message acknowledgments in bulk. That is, you can set the
+   * acknowledgment state of messages in an existing subscription to the state
+   * captured by a snapshot.&lt;br&gt;&lt;br&gt;
+   * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
    * changed in backward-incompatible ways and is not recommended for production
    * use. It is not subject to any SLA or deprecation policy.
    * </pre>
@@ -1266,7 +1280,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+     * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+     * managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -1286,7 +1301,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+     * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+     * managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -1298,7 +1314,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+     * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+     * managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -1315,7 +1332,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+     * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+     * managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -1339,7 +1357,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+     * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+     * managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -1360,7 +1379,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+     * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+     * managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>
@@ -1379,7 +1399,8 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+     * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+     * managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 4;</code>

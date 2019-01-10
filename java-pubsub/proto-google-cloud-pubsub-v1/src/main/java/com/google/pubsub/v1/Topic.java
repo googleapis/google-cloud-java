@@ -211,7 +211,8 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+   * managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -231,7 +232,8 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+   * managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -243,7 +245,8 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+   * managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -259,7 +262,8 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+   * managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -865,7 +869,8 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+     * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+     * managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -885,7 +890,8 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+     * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+     * managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -897,7 +903,8 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+     * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+     * managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -914,7 +921,8 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+     * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+     * managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -938,7 +946,8 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+     * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+     * managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -959,7 +968,8 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+     * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+     * managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 2;</code>
@@ -978,7 +988,8 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+     * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+     * managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 2;</code>
