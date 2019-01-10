@@ -120,6 +120,8 @@ import org.threeten.bp.Instant;
 class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   private static final int MIN_BACKOFF_MS = 1000;
   private static final int MAX_BACKOFF_MS = 32000;
+  private static final int DEFAULT_MAX_ATTEMPT = 6;
+  private static final Duration DEFAULT_TOTAL_TIMEOUT = Duration.ofSeconds(50);
   private static final PathTemplate OP_NAME_TEMPLATE =
       PathTemplate.create(
           "projects/{project}/instances/{instance}/databases/{database}/operations/{operation}");
@@ -252,9 +254,9 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     ExponentialBackOff backOff = newBackOff();
     Context context = Context.current();
     int attempt = 0;
-    int maxAttempt = 6;
+    int maxAttempt = DEFAULT_MAX_ATTEMPT;
     Duration retryDuration;
-    Duration totalTimeout = Duration.ofSeconds(50);
+    Duration totalTimeout = DEFAULT_TOTAL_TIMEOUT;
     if (retrySettings != null) {
       maxAttempt = retrySettings.getMaxAttempts();
       totalTimeout = retrySettings.getTotalTimeout();
