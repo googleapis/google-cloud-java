@@ -267,7 +267,9 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
             @Override
             public Iterable<UptimeCheckConfig> extractResources(
                 ListUptimeCheckConfigsResponse payload) {
-              return payload.getUptimeCheckConfigsList();
+              return payload.getUptimeCheckConfigsList() != null
+                  ? payload.getUptimeCheckConfigsList()
+                  : ImmutableList.<UptimeCheckConfig>of();
             }
           };
 
@@ -305,7 +307,9 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
 
             @Override
             public Iterable<UptimeCheckIp> extractResources(ListUptimeCheckIpsResponse payload) {
-              return payload.getUptimeCheckIpsList();
+              return payload.getUptimeCheckIpsList() != null
+                  ? payload.getUptimeCheckIpsList()
+                  : ImmutableList.<UptimeCheckIp>of();
             }
           };
 

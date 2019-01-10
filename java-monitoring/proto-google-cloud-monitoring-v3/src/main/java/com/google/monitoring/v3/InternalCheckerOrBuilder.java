@@ -12,43 +12,74 @@ public interface InternalCheckerOrBuilder
    *
    *
    * <pre>
-   * The GCP project ID. Not necessarily the same as the project_id for the
-   * config.
+   * A unique resource name for this InternalChecker. The format is:
+   *   `projects/[PROJECT_ID]/internalCheckers/[INTERNAL_CHECKER_ID]`.
+   * PROJECT_ID is the stackdriver workspace project for the
+   * uptime check config associated with the internal checker.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string name = 1;</code>
    */
-  java.lang.String getProjectId();
+  java.lang.String getName();
   /**
    *
    *
    * <pre>
-   * The GCP project ID. Not necessarily the same as the project_id for the
-   * config.
+   * A unique resource name for this InternalChecker. The format is:
+   *   `projects/[PROJECT_ID]/internalCheckers/[INTERNAL_CHECKER_ID]`.
+   * PROJECT_ID is the stackdriver workspace project for the
+   * uptime check config associated with the internal checker.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString getProjectIdBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
    *
    *
    * <pre>
-   * The internal network to perform this uptime check on.
+   * The checker's human-readable name. The display name
+   * should be unique within a Stackdriver Workspace in order to make it easier
+   * to identify; however, uniqueness is not enforced.
    * </pre>
    *
-   * <code>string network = 2;</code>
+   * <code>string display_name = 2;</code>
+   */
+  java.lang.String getDisplayName();
+  /**
+   *
+   *
+   * <pre>
+   * The checker's human-readable name. The display name
+   * should be unique within a Stackdriver Workspace in order to make it easier
+   * to identify; however, uniqueness is not enforced.
+   * </pre>
+   *
+   * <code>string display_name = 2;</code>
+   */
+  com.google.protobuf.ByteString getDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [GCP VPC network](https://cloud.google.com/vpc/docs/vpc) where the
+   * internal resource lives (ex: "default").
+   * </pre>
+   *
+   * <code>string network = 3;</code>
    */
   java.lang.String getNetwork();
   /**
    *
    *
    * <pre>
-   * The internal network to perform this uptime check on.
+   * The [GCP VPC network](https://cloud.google.com/vpc/docs/vpc) where the
+   * internal resource lives (ex: "default").
    * </pre>
    *
-   * <code>string network = 2;</code>
+   * <code>string network = 3;</code>
    */
   com.google.protobuf.ByteString getNetworkBytes();
 
@@ -60,7 +91,7 @@ public interface InternalCheckerOrBuilder
    * internal uptime checks, where internal_network is specified.
    * </pre>
    *
-   * <code>string gcp_zone = 3;</code>
+   * <code>string gcp_zone = 4;</code>
    */
   java.lang.String getGcpZone();
   /**
@@ -71,7 +102,7 @@ public interface InternalCheckerOrBuilder
    * internal uptime checks, where internal_network is specified.
    * </pre>
    *
-   * <code>string gcp_zone = 3;</code>
+   * <code>string gcp_zone = 4;</code>
    */
   com.google.protobuf.ByteString getGcpZoneBytes();
 
@@ -79,41 +110,22 @@ public interface InternalCheckerOrBuilder
    *
    *
    * <pre>
-   * The checker ID.
+   * The GCP project_id where the internal checker lives. Not necessary
+   * the same as the workspace project.
    * </pre>
    *
-   * <code>string checker_id = 4;</code>
+   * <code>string peer_project_id = 6;</code>
    */
-  java.lang.String getCheckerId();
+  java.lang.String getPeerProjectId();
   /**
    *
    *
    * <pre>
-   * The checker ID.
+   * The GCP project_id where the internal checker lives. Not necessary
+   * the same as the workspace project.
    * </pre>
    *
-   * <code>string checker_id = 4;</code>
+   * <code>string peer_project_id = 6;</code>
    */
-  com.google.protobuf.ByteString getCheckerIdBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * The checker's human-readable name.
-   * </pre>
-   *
-   * <code>string display_name = 5;</code>
-   */
-  java.lang.String getDisplayName();
-  /**
-   *
-   *
-   * <pre>
-   * The checker's human-readable name.
-   * </pre>
-   *
-   * <code>string display_name = 5;</code>
-   */
-  com.google.protobuf.ByteString getDisplayNameBytes();
+  com.google.protobuf.ByteString getPeerProjectIdBytes();
 }
