@@ -58,8 +58,6 @@ public enum Region {
   US_WEST1("us-west1", new String[] {"us-west1-a", "us-west1-b", "us-west1-c"}),
   US_WEST2("us-west2", new String[] {"us-west2-a", "us-west2-b", "us-west2-c"});
 
-  private final String name;
-  private final String[] zones;
   private static final Map<String, Region> REGIONS = new HashMap<>();
 
   static {
@@ -68,14 +66,19 @@ public enum Region {
     }
   }
 
+  private final String name;
+  private final String[] zones;
+
   private Region(String name, String[] zones) {
     this.name = name;
     this.zones = zones;
   }
+
   /** The name of this region. */
   public String getName() {
     return name;
   }
+
   /** The zones of this region. */
   public String[] getZones() {
     return zones;
