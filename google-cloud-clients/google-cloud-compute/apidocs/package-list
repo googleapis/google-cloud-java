@@ -1,3 +1,4 @@
+com.google.cloud.compute
 com.google.cloud.compute.deprecated
 com.google.cloud.compute.deprecated.spi
 com.google.cloud.compute.deprecated.spi.v1

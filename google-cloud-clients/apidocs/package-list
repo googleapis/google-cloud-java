@@ -27,6 +27,7 @@ com.google.cloud.bigtable.data.v2.stub.readrows
 com.google.cloud.bigtable.gaxx
 com.google.cloud.bigtable.gaxx.reframing
 com.google.cloud.bigtable.gaxx.retrying
+com.google.cloud.compute
 com.google.cloud.compute.deprecated
 com.google.cloud.compute.deprecated.spi
 com.google.cloud.compute.deprecated.spi.v1

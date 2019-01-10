@@ -1,4 +1,8 @@
 com.google.cloud.bigtable
+com.google.cloud.bigtable.admin.v2
+com.google.cloud.bigtable.admin.v2.internal
+com.google.cloud.bigtable.admin.v2.models
+com.google.cloud.bigtable.admin.v2.stub
 com.google.cloud.bigtable.data.v2
 com.google.cloud.bigtable.data.v2.internal
 com.google.cloud.bigtable.data.v2.models
