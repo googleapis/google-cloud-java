@@ -97,7 +97,7 @@ public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
     return getTypedStubSettings().readRowsSettings();
   }
 
-  /** Returns the object with the settings used for point reads via ReadRows. */
+  /** Returns the object with the settings used for point reads via ReadRow. */
   public UnaryCallSettings<Query, Row> readRowSettings() {
     return getTypedStubSettings().readRowSettings();
   }
