@@ -107,10 +107,10 @@ The Admin APIs are similar. Here is a code snippet showing how to create a table
 imports at the top of your file:
 
 ```java
-import com.google.bigtable.admin.v2.ColumnFamily;
-import com.google.bigtable.admin.v2.InstanceName;
-import com.google.bigtable.admin.v2.Table;
+import static com.google.cloud.bigtable.admin.v2.models.GCRules.GCRULES;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
+import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
+import com.google.cloud.bigtable.admin.v2.models.Table;
 ```
 
 Then, to create a table, use the following code:
@@ -118,15 +118,13 @@ Then, to create a table, use the following code:
 String projectId = "my-instance";
 String instanceId = "my-database";
 
-BigtableTableAdminClient tableAdminClient = BigtableTableAdminClient.create();
+BigtableTableAdminClient tableAdminClient = BigtableTableAdminClient
+  .create(projectId, instanceId);
 
 try {
   tableAdminClient.createTable(
-      InstanceName.of(projectId, instanceId),
-      "new-table-id",
-      Table.newBuilder()
-          .putColumnFamilies("my-family", ColumnFamily.getDefaultInstance())
-          .build()
+      CreateTableRequest.of("my-table")
+        .addFamily("my-family")
   );
 } finally {
   tableAdminClient.close();

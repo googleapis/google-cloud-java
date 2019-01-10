@@ -42,7 +42,6 @@ This library supports the following Google Cloud Platform services with clients 
 This library supports the following Google Cloud Platform services with clients at an [Alpha](#versioning) quality level:
 
 -  [Cloud Bigtable](google-cloud-clients/google-cloud-bigtable) (Alpha)
--  [Cloud Bigtable Admin](google-cloud-clients/google-cloud-bigtable-admin) (Alpha)
 -  [Cloud Compute](google-cloud-clients/google-cloud-compute) (Alpha)
 -  [Cloud Dataproc](google-cloud-clients/google-cloud-dataproc) (Alpha)
 -  [Cloud DNS](google-cloud-clients/google-cloud-dns) (Alpha)
