@@ -105,4 +105,17 @@ public interface StreamingRecognitionResultOrBuilder
    * <code>float stability = 3;</code>
    */
   float getStability();
+
+  /**
+   *
+   *
+   * <pre>
+   * For multi-channel audio, this is the channel number corresponding to the
+   * recognized result for the audio from that channel.
+   * For audio_channel_count = N, its output values can range from '1' to 'N'.
+   * </pre>
+   *
+   * <code>int32 channel_tag = 5;</code>
+   */
+  int getChannelTag();
 }

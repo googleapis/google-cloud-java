@@ -102,65 +102,67 @@ public final class SpeechProto {
           + "t\"\212\001\n\032StreamingRecognitionConfig\0229\n\006conf"
           + "ig\030\001 \001(\0132).google.cloud.speech.v1.Recogn"
           + "itionConfig\022\030\n\020single_utterance\030\002 \001(\010\022\027\n"
-          + "\017interim_results\030\003 \001(\010\"\377\003\n\021RecognitionCo"
+          + "\017interim_results\030\003 \001(\010\"\260\004\n\021RecognitionCo"
           + "nfig\022I\n\010encoding\030\001 \001(\01627.google.cloud.sp"
           + "eech.v1.RecognitionConfig.AudioEncoding\022"
-          + "\031\n\021sample_rate_hertz\030\002 \001(\005\022\025\n\rlanguage_c"
-          + "ode\030\003 \001(\t\022\030\n\020max_alternatives\030\004 \001(\005\022\030\n\020p"
-          + "rofanity_filter\030\005 \001(\010\022>\n\017speech_contexts"
-          + "\030\006 \003(\0132%.google.cloud.speech.v1.SpeechCo"
-          + "ntext\022 \n\030enable_word_time_offsets\030\010 \001(\010\022"
-          + "$\n\034enable_automatic_punctuation\030\013 \001(\010\022\r\n"
-          + "\005model\030\r \001(\t\022\024\n\014use_enhanced\030\016 \001(\010\"\213\001\n\rA"
-          + "udioEncoding\022\030\n\024ENCODING_UNSPECIFIED\020\000\022\014"
-          + "\n\010LINEAR16\020\001\022\010\n\004FLAC\020\002\022\t\n\005MULAW\020\003\022\007\n\003AMR"
-          + "\020\004\022\n\n\006AMR_WB\020\005\022\014\n\010OGG_OPUS\020\006\022\032\n\026SPEEX_WI"
-          + "TH_HEADER_BYTE\020\007\" \n\rSpeechContext\022\017\n\007phr"
-          + "ases\030\001 \003(\t\"D\n\020RecognitionAudio\022\021\n\007conten"
-          + "t\030\001 \001(\014H\000\022\r\n\003uri\030\002 \001(\tH\000B\016\n\014audio_source"
-          + "\"U\n\021RecognizeResponse\022@\n\007results\030\002 \003(\0132/"
-          + ".google.cloud.speech.v1.SpeechRecognitio"
-          + "nResult\"`\n\034LongRunningRecognizeResponse\022"
-          + "@\n\007results\030\002 \003(\0132/.google.cloud.speech.v"
-          + "1.SpeechRecognitionResult\"\236\001\n\034LongRunnin"
-          + "gRecognizeMetadata\022\030\n\020progress_percent\030\001"
-          + " \001(\005\022.\n\nstart_time\030\002 \001(\0132\032.google.protob"
-          + "uf.Timestamp\0224\n\020last_update_time\030\003 \001(\0132\032"
-          + ".google.protobuf.Timestamp\"\261\002\n\032Streaming"
-          + "RecognizeResponse\022!\n\005error\030\001 \001(\0132\022.googl"
-          + "e.rpc.Status\022C\n\007results\030\002 \003(\01322.google.c"
-          + "loud.speech.v1.StreamingRecognitionResul"
-          + "t\022]\n\021speech_event_type\030\004 \001(\0162B.google.cl"
-          + "oud.speech.v1.StreamingRecognizeResponse"
-          + ".SpeechEventType\"L\n\017SpeechEventType\022\034\n\030S"
-          + "PEECH_EVENT_UNSPECIFIED\020\000\022\033\n\027END_OF_SING"
-          + "LE_UTTERANCE\020\001\"\215\001\n\032StreamingRecognitionR"
-          + "esult\022J\n\014alternatives\030\001 \003(\01324.google.clo"
-          + "ud.speech.v1.SpeechRecognitionAlternativ"
-          + "e\022\020\n\010is_final\030\002 \001(\010\022\021\n\tstability\030\003 \001(\002\"e"
-          + "\n\027SpeechRecognitionResult\022J\n\014alternative"
-          + "s\030\001 \003(\01324.google.cloud.speech.v1.SpeechR"
-          + "ecognitionAlternative\"w\n\034SpeechRecogniti"
-          + "onAlternative\022\022\n\ntranscript\030\001 \001(\t\022\022\n\ncon"
-          + "fidence\030\002 \001(\002\022/\n\005words\030\003 \003(\0132 .google.cl"
-          + "oud.speech.v1.WordInfo\"t\n\010WordInfo\022-\n\nst"
-          + "art_time\030\001 \001(\0132\031.google.protobuf.Duratio"
-          + "n\022+\n\010end_time\030\002 \001(\0132\031.google.protobuf.Du"
-          + "ration\022\014\n\004word\030\003 \001(\t2\251\003\n\006Speech\022\201\001\n\tReco"
-          + "gnize\022(.google.cloud.speech.v1.Recognize"
-          + "Request\032).google.cloud.speech.v1.Recogni"
-          + "zeResponse\"\037\202\323\344\223\002\031\"\024/v1/speech:recognize"
-          + ":\001*\022\226\001\n\024LongRunningRecognize\0223.google.cl"
-          + "oud.speech.v1.LongRunningRecognizeReques"
-          + "t\032\035.google.longrunning.Operation\"*\202\323\344\223\002$"
-          + "\"\037/v1/speech:longrunningrecognize:\001*\022\201\001\n"
-          + "\022StreamingRecognize\0221.google.cloud.speec"
-          + "h.v1.StreamingRecognizeRequest\0322.google."
-          + "cloud.speech.v1.StreamingRecognizeRespon"
-          + "se\"\000(\0010\001Bl\n\032com.google.cloud.speech.v1B\013"
-          + "SpeechProtoP\001Z<google.golang.org/genprot"
-          + "o/googleapis/cloud/speech/v1;speech\370\001\001b\006"
-          + "proto3"
+          + "\031\n\021sample_rate_hertz\030\002 \001(\005\022/\n\'enable_sep"
+          + "arate_recognition_per_channel\030\014 \001(\010\022\025\n\rl"
+          + "anguage_code\030\003 \001(\t\022\030\n\020max_alternatives\030\004"
+          + " \001(\005\022\030\n\020profanity_filter\030\005 \001(\010\022>\n\017speech"
+          + "_contexts\030\006 \003(\0132%.google.cloud.speech.v1"
+          + ".SpeechContext\022 \n\030enable_word_time_offse"
+          + "ts\030\010 \001(\010\022$\n\034enable_automatic_punctuation"
+          + "\030\013 \001(\010\022\r\n\005model\030\r \001(\t\022\024\n\014use_enhanced\030\016 "
+          + "\001(\010\"\213\001\n\rAudioEncoding\022\030\n\024ENCODING_UNSPEC"
+          + "IFIED\020\000\022\014\n\010LINEAR16\020\001\022\010\n\004FLAC\020\002\022\t\n\005MULAW"
+          + "\020\003\022\007\n\003AMR\020\004\022\n\n\006AMR_WB\020\005\022\014\n\010OGG_OPUS\020\006\022\032\n"
+          + "\026SPEEX_WITH_HEADER_BYTE\020\007\" \n\rSpeechConte"
+          + "xt\022\017\n\007phrases\030\001 \003(\t\"D\n\020RecognitionAudio\022"
+          + "\021\n\007content\030\001 \001(\014H\000\022\r\n\003uri\030\002 \001(\tH\000B\016\n\014aud"
+          + "io_source\"U\n\021RecognizeResponse\022@\n\007result"
+          + "s\030\002 \003(\0132/.google.cloud.speech.v1.SpeechR"
+          + "ecognitionResult\"`\n\034LongRunningRecognize"
+          + "Response\022@\n\007results\030\002 \003(\0132/.google.cloud"
+          + ".speech.v1.SpeechRecognitionResult\"\236\001\n\034L"
+          + "ongRunningRecognizeMetadata\022\030\n\020progress_"
+          + "percent\030\001 \001(\005\022.\n\nstart_time\030\002 \001(\0132\032.goog"
+          + "le.protobuf.Timestamp\0224\n\020last_update_tim"
+          + "e\030\003 \001(\0132\032.google.protobuf.Timestamp\"\261\002\n\032"
+          + "StreamingRecognizeResponse\022!\n\005error\030\001 \001("
+          + "\0132\022.google.rpc.Status\022C\n\007results\030\002 \003(\01322"
+          + ".google.cloud.speech.v1.StreamingRecogni"
+          + "tionResult\022]\n\021speech_event_type\030\004 \001(\0162B."
+          + "google.cloud.speech.v1.StreamingRecogniz"
+          + "eResponse.SpeechEventType\"L\n\017SpeechEvent"
+          + "Type\022\034\n\030SPEECH_EVENT_UNSPECIFIED\020\000\022\033\n\027EN"
+          + "D_OF_SINGLE_UTTERANCE\020\001\"\242\001\n\032StreamingRec"
+          + "ognitionResult\022J\n\014alternatives\030\001 \003(\01324.g"
+          + "oogle.cloud.speech.v1.SpeechRecognitionA"
+          + "lternative\022\020\n\010is_final\030\002 \001(\010\022\021\n\tstabilit"
+          + "y\030\003 \001(\002\022\023\n\013channel_tag\030\005 \001(\005\"z\n\027SpeechRe"
+          + "cognitionResult\022J\n\014alternatives\030\001 \003(\01324."
+          + "google.cloud.speech.v1.SpeechRecognition"
+          + "Alternative\022\023\n\013channel_tag\030\002 \001(\005\"w\n\034Spee"
+          + "chRecognitionAlternative\022\022\n\ntranscript\030\001"
+          + " \001(\t\022\022\n\nconfidence\030\002 \001(\002\022/\n\005words\030\003 \003(\0132"
+          + " .google.cloud.speech.v1.WordInfo\"t\n\010Wor"
+          + "dInfo\022-\n\nstart_time\030\001 \001(\0132\031.google.proto"
+          + "buf.Duration\022+\n\010end_time\030\002 \001(\0132\031.google."
+          + "protobuf.Duration\022\014\n\004word\030\003 \001(\t2\251\003\n\006Spee"
+          + "ch\022\201\001\n\tRecognize\022(.google.cloud.speech.v"
+          + "1.RecognizeRequest\032).google.cloud.speech"
+          + ".v1.RecognizeResponse\"\037\202\323\344\223\002\031\"\024/v1/speec"
+          + "h:recognize:\001*\022\226\001\n\024LongRunningRecognize\022"
+          + "3.google.cloud.speech.v1.LongRunningReco"
+          + "gnizeRequest\032\035.google.longrunning.Operat"
+          + "ion\"*\202\323\344\223\002$\"\037/v1/speech:longrunningrecog"
+          + "nize:\001*\022\201\001\n\022StreamingRecognize\0221.google."
+          + "cloud.speech.v1.StreamingRecognizeReques"
+          + "t\0322.google.cloud.speech.v1.StreamingReco"
+          + "gnizeResponse\"\000(\0010\001Bl\n\032com.google.cloud."
+          + "speech.v1B\013SpeechProtoP\001Z<google.golang."
+          + "org/genproto/googleapis/cloud/speech/v1;"
+          + "speech\370\001\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -222,6 +224,7 @@ public final class SpeechProto {
             new java.lang.String[] {
               "Encoding",
               "SampleRateHertz",
+              "EnableSeparateRecognitionPerChannel",
               "LanguageCode",
               "MaxAlternatives",
               "ProfanityFilter",
@@ -285,7 +288,7 @@ public final class SpeechProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_speech_v1_StreamingRecognitionResult_descriptor,
             new java.lang.String[] {
-              "Alternatives", "IsFinal", "Stability",
+              "Alternatives", "IsFinal", "Stability", "ChannelTag",
             });
     internal_static_google_cloud_speech_v1_SpeechRecognitionResult_descriptor =
         getDescriptor().getMessageTypes().get(12);
@@ -293,7 +296,7 @@ public final class SpeechProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_speech_v1_SpeechRecognitionResult_descriptor,
             new java.lang.String[] {
-              "Alternatives",
+              "Alternatives", "ChannelTag",
             });
     internal_static_google_cloud_speech_v1_SpeechRecognitionAlternative_descriptor =
         getDescriptor().getMessageTypes().get(13);
