@@ -23,7 +23,7 @@ import java.util.Map;
  *
  * @see <a href="https://cloud.google.com/compute/docs/regions-zones/">Regions and Zones</a>
  */
-public enum Region {
+public enum Regions {
   ASIA_EAST1("asia-east1", new String[] {"asia-east1-a", "asia-east1-b", "asia-east1-c"}),
   ASIA_EAST2("asia-east2", new String[] {"asia-east2-a", "asia-east2-b", "asia-east2-c"}),
   ASIA_NORTHEAST1(
@@ -58,10 +58,10 @@ public enum Region {
   US_WEST1("us-west1", new String[] {"us-west1-a", "us-west1-b", "us-west1-c"}),
   US_WEST2("us-west2", new String[] {"us-west2-a", "us-west2-b", "us-west2-c"});
 
-  private static final Map<String, Region> REGIONS = new HashMap<>();
+  private static final Map<String, Regions> REGIONS = new HashMap<>();
 
   static {
-    for (Region region : Region.values()) {
+    for (Regions region : Regions.values()) {
       REGIONS.put(region.name, region);
     }
   }
@@ -69,7 +69,7 @@ public enum Region {
   private final String name;
   private final String[] zones;
 
-  private Region(String name, String[] zones) {
+  private Regions(String name, String[] zones) {
     this.name = name;
     this.zones = zones;
   }
@@ -85,13 +85,13 @@ public enum Region {
   }
 
   /**
-   * Returns a region enum corresponding to the given region name.
+   * Returns a Regions enum corresponding to the given region name.
    *
    * @param regionName The name of the region.
-   * @return Region enum representing the given region name, or a null if there is no Region enum
+   * @return Regions enum representing the given region name, or a null if there is no Regions enum
    *     that is representing the given region name.
    */
-  public static Region fromName(String regionName) {
+  public static Regions fromName(String regionName) {
     return REGIONS.get(regionName);
   }
 }

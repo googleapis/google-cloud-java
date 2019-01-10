@@ -18,24 +18,24 @@ package com.google.cloud.compute;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class RegionTest {
+public class RegionsTest {
   @Test
   public void fromNameWhenNullReturnNull() {
-    Assert.assertNull(Region.fromName(null));
+    Assert.assertNull(Regions.fromName(null));
   }
 
   @Test
   public void fromNameWhenEmptyReturnNull() {
-    Assert.assertNull(Region.fromName(""));
+    Assert.assertNull(Regions.fromName(""));
   }
 
   @Test
   public void fromNameWhenInvalidReturnNull() {
-    Assert.assertNull(Region.fromName("mars"));
+    Assert.assertNull(Regions.fromName("mars"));
   }
 
   @Test
   public void fromNameWhenValidReturnRegion() {
-    Assert.assertEquals(Region.ASIA_EAST1, Region.fromName("asia-east1"));
+    Assert.assertEquals(Regions.ASIA_EAST1, Regions.fromName("asia-east1"));
   }
 }
