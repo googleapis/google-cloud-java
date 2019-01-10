@@ -20,22 +20,22 @@ import org.junit.Test;
 
 public class RegionTest {
   @Test
-  public void fromName_null_returnNull() {
+  public void fromNameWhenNullReturnNull() {
     Assert.assertNull(Region.fromName(null));
   }
 
   @Test
-  public void fromName_empty_returnNull() {
+  public void fromNameWhenEmptyReturnNull() {
     Assert.assertNull(Region.fromName(""));
   }
 
   @Test
-  public void fromName_invalid_returnNull() {
+  public void fromNameWhenInvalidReturnNull() {
     Assert.assertNull(Region.fromName("mars"));
   }
 
   @Test
-  public void fromName_valid_returnRegion() {
+  public void fromNameWhenValidReturnRegion() {
     Assert.assertEquals(Region.ASIA_EAST1, Region.fromName("asia-east1"));
   }
 }
