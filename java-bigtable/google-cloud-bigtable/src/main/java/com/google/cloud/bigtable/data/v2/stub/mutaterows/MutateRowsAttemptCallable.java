@@ -101,14 +101,14 @@ class MutateRowsAttemptCallable implements Callable<Void> {
       };
 
   // Everything needed to issue an RPC
-  private final UnaryCallable<MutateRowsRequest, List<MutateRowsResponse>> innerCallable;
-  private final ApiCallContext callContext;
-  private MutateRowsRequest currentRequest;
+  @Nonnull private final UnaryCallable<MutateRowsRequest, List<MutateRowsResponse>> innerCallable;
+  @Nonnull private final ApiCallContext callContext;
+  @Nonnull private MutateRowsRequest currentRequest;
 
   // Everything needed to build a retry request
-  private List<Integer> originalIndexes;
-  private final Set<StatusCode.Code> retryableCodes;
-  private final List<FailedMutation> permanentFailures;
+  @Nullable private List<Integer> originalIndexes;
+  @Nonnull private final Set<StatusCode.Code> retryableCodes;
+  @Nullable private final List<FailedMutation> permanentFailures;
 
   // Parent controller
   private RetryingFuture<Void> externalFuture;
@@ -135,12 +135,12 @@ class MutateRowsAttemptCallable implements Callable<Void> {
   MutateRowsAttemptCallable(
       @Nonnull UnaryCallable<MutateRowsRequest, List<MutateRowsResponse>> innerCallable,
       @Nonnull MutateRowsRequest originalRequest,
-      @Nullable ApiCallContext callContext,
+      @Nonnull ApiCallContext callContext,
       @Nonnull Set<StatusCode.Code> retryableCodes) {
-    this.innerCallable = Preconditions.checkNotNull(innerCallable);
-    this.currentRequest = Preconditions.checkNotNull(originalRequest);
-    this.callContext = callContext;
-    this.retryableCodes = Preconditions.checkNotNull(retryableCodes);
+    this.innerCallable = Preconditions.checkNotNull(innerCallable, "innerCallable");
+    this.currentRequest = Preconditions.checkNotNull(originalRequest, "currentRequest");
+    this.callContext = Preconditions.checkNotNull(callContext, "callContext");
+    this.retryableCodes = Preconditions.checkNotNull(retryableCodes, "retryableCodes");
 
     permanentFailures = Lists.newArrayList();
   }
@@ -167,10 +167,10 @@ class MutateRowsAttemptCallable implements Callable<Void> {
           currentRequest.getEntriesCount() > 0, "Request doesn't have any mutations to send");
 
       // Configure the deadline
-      ApiCallContext currentCallContext = null;
-      if (callContext != null) {
+      ApiCallContext currentCallContext = callContext;
+      if (!externalFuture.getAttemptSettings().getRpcTimeout().isZero()) {
         currentCallContext =
-            callContext.withTimeout(externalFuture.getAttemptSettings().getRpcTimeout());
+            currentCallContext.withTimeout(externalFuture.getAttemptSettings().getRpcTimeout());
       }
 
       // Handle concurrent cancellation
