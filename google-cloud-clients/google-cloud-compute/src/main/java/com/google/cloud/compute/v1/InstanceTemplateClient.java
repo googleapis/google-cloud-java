@@ -156,7 +156,8 @@ public class InstanceTemplateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Deletes the specified instance template. Deleting an instance template is permanent and cannot
-   * be undone. It's not possible to delete templates which are in use by an instance group.
+   * be undone. It is not possible to delete templates that are already in use by a managed instance
+   * group.
    *
    * <p>Sample code:
    *
@@ -184,7 +185,8 @@ public class InstanceTemplateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Deletes the specified instance template. Deleting an instance template is permanent and cannot
-   * be undone. It's not possible to delete templates which are in use by an instance group.
+   * be undone. It is not possible to delete templates that are already in use by a managed instance
+   * group.
    *
    * <p>Sample code:
    *
@@ -211,7 +213,8 @@ public class InstanceTemplateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Deletes the specified instance template. Deleting an instance template is permanent and cannot
-   * be undone. It's not possible to delete templates which are in use by an instance group.
+   * be undone. It is not possible to delete templates that are already in use by a managed instance
+   * group.
    *
    * <p>Sample code:
    *
@@ -236,7 +239,8 @@ public class InstanceTemplateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Deletes the specified instance template. Deleting an instance template is permanent and cannot
-   * be undone. It's not possible to delete templates which are in use by an instance group.
+   * be undone. It is not possible to delete templates that are already in use by a managed instance
+   * group.
    *
    * <p>Sample code:
    *
@@ -593,8 +597,7 @@ public class InstanceTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of instance templates that are contained within the specified project and
-   * zone.
+   * Retrieves a list of instance templates that are contained within the specified project.
    *
    * <p>Sample code:
    *
@@ -621,8 +624,7 @@ public class InstanceTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of instance templates that are contained within the specified project and
-   * zone.
+   * Retrieves a list of instance templates that are contained within the specified project.
    *
    * <p>Sample code:
    *
@@ -647,8 +649,7 @@ public class InstanceTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of instance templates that are contained within the specified project and
-   * zone.
+   * Retrieves a list of instance templates that are contained within the specified project.
    *
    * <p>Sample code:
    *
@@ -675,8 +676,7 @@ public class InstanceTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of instance templates that are contained within the specified project and
-   * zone.
+   * Retrieves a list of instance templates that are contained within the specified project.
    *
    * <p>Sample code:
    *
@@ -702,8 +702,7 @@ public class InstanceTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of instance templates that are contained within the specified project and
-   * zone.
+   * Retrieves a list of instance templates that are contained within the specified project.
    *
    * <p>Sample code:
    *
