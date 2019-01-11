@@ -680,10 +680,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   public Job getJob(JobId jobId, JobOption... options) {
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     final JobId completeJobId =
-        jobId.setProjectId(getOptions().getProjectId());
-    if (jobId.getLocation() == null && getOptions().getLocation() != null) {
-      completeJobId.setLocation(getOptions().getLocation());
-    }
+        jobId
+            .setProjectId(getOptions().getProjectId())
+            .setLocation(
+                jobId.getLocation() == null && getOptions().getLocation() != null
+                    ? getOptions().getLocation()
+                    : jobId.getLocation());
     try {
       com.google.api.services.bigquery.model.Job answer =
           runWithRetries(
@@ -747,10 +749,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   @Override
   public boolean cancel(JobId jobId) {
     final JobId completeJobId =
-        jobId.setProjectId(getOptions().getProjectId());
-    if (jobId.getLocation() == null && getOptions().getLocation() != null) {
-      completeJobId.setLocation(getOptions().getLocation());
-    }
+        jobId
+            .setProjectId(getOptions().getProjectId())
+            .setLocation(
+                jobId.getLocation() == null && getOptions().getLocation() != null
+                    ? getOptions().getLocation()
+                    : jobId.getLocation());
     try {
       return runWithRetries(
           new Callable<Boolean>() {
@@ -793,10 +797,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       final BigQueryOptions serviceOptions,
       final Map<BigQueryRpc.Option, ?> optionsMap) {
     final JobId completeJobId =
-        jobId.setProjectId(serviceOptions.getProjectId());
-    if (jobId.getLocation() == null && serviceOptions.getLocation() != null) {
-      completeJobId.setLocation(serviceOptions.getLocation());
-    }
+        jobId
+            .setProjectId(serviceOptions.getProjectId())
+            .setLocation(
+                jobId.getLocation() == null && serviceOptions.getLocation() != null
+                    ? serviceOptions.getLocation()
+                    : jobId.getLocation());
     try {
       GetQueryResultsResponse results =
           runWithRetries(

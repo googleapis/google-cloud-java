@@ -33,7 +33,7 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
   private static final String BIGQUERY_SCOPE = "https://www.googleapis.com/auth/bigquery";
   private static final Set<String> SCOPES = ImmutableSet.of(BIGQUERY_SCOPE);
   private static final long serialVersionUID = -2437598817433266049L;
-  private String location;
+  private final String location;
 
   public static class DefaultBigQueryFactory implements BigQueryFactory {
 
@@ -87,6 +87,7 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
 
   private BigQueryOptions(Builder builder) {
     super(BigQueryFactory.class, BigQueryRpcFactory.class, builder, new BigQueryDefaults());
+    this.location = builder.location;
   }
 
   private static class BigQueryDefaults implements ServiceDefaults<BigQuery, BigQueryOptions> {
@@ -120,12 +121,8 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
     return (BigQueryRpc) getRpc();
   }
 
-  public void setLocation(String location) {
-	  this.location = location;
-  }
-  
   public String getLocation() {
-    return location; 
+    return location;
   }
 
   @SuppressWarnings("unchecked")
