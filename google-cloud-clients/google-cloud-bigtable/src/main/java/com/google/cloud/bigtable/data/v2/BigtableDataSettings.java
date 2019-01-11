@@ -97,6 +97,11 @@ public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
     return getTypedStubSettings().readRowsSettings();
   }
 
+  /** Returns the object with the settings used for point reads via ReadRow. */
+  public UnaryCallSettings<Query, Row> readRowSettings() {
+    return getTypedStubSettings().readRowSettings();
+  }
+
   /** Returns the object with the settings used for calls to sampleRowKeys. */
   public UnaryCallSettings<String, List<KeyOffset>> sampleRowKeysSettings() {
     return getTypedStubSettings().sampleRowKeysSettings();
@@ -225,6 +230,11 @@ public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
     /** Returns the builder for the settings used for calls to readRows. */
     public ServerStreamingCallSettings.Builder<Query, Row> readRowsSettings() {
       return getTypedStubSettings().readRowsSettings();
+    }
+
+    /** Returns the builder for the settings used for point reads using readRow. */
+    public UnaryCallSettings.Builder<Query, Row> readRowSettings() {
+      return getTypedStubSettings().readRowSettings();
     }
 
     /** Returns the builder for the settings used for calls to SampleRowKeysSettings. */
