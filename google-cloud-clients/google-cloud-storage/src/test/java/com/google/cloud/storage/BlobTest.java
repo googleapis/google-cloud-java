@@ -76,6 +76,7 @@ public class BlobTest {
   private static final Long GENERATION = 1L;
   private static final String GENERATED_ID = "B/N:1";
   private static final String MD5 = "0xFF00";
+  private static final String MD5_STRING = "d31145d3";
   private static final String MEDIA_LINK = "http://media/b/n";
   private static final Map<String, String> METADATA = ImmutableMap.of("n1", "v1", "n2", "v2");
   private static final Long META_GENERATION = 10L;
@@ -516,6 +517,7 @@ public class BlobTest {
     assertEquals(ETAG, blob.getEtag());
     assertEquals(GENERATED_ID, blob.getGeneratedId());
     assertEquals(MD5, blob.getMd5());
+    assertEquals(MD5_STRING, blob.getMd5String());
     assertEquals(MEDIA_LINK, blob.getMediaLink());
     assertEquals(METADATA, blob.getMetadata());
     assertEquals(META_GENERATION, blob.getMetageneration());
@@ -547,6 +549,7 @@ public class BlobTest {
     assertNull(blob.getEtag());
     assertNull(blob.getGeneratedId());
     assertNull(blob.getMd5());
+    assertNull(blob.getMd5String());
     assertNull(blob.getMediaLink());
     assertNull(blob.getMetadata());
     assertNull(blob.getMetageneration());

@@ -1141,6 +1141,7 @@ public class StorageSnippets {
     System.out.println("Id: " + blob.getBlobId());
     System.out.println("KmsKeyName: " + blob.getKmsKeyName());
     System.out.println("Md5Hash: " + blob.getMd5());
+    System.out.println("Md5HashString: " + blob.getMd5String());
     System.out.println("MediaLink: " + blob.getMediaLink());
     System.out.println("Metageneration: " + blob.getMetageneration());
     System.out.println("Name: " + blob.getName());

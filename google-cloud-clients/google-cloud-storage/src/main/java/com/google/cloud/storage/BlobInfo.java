@@ -35,6 +35,7 @@ import com.google.common.collect.Maps;
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.AbstractMap;
+import java.util.Base64;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -672,6 +673,24 @@ public class BlobInfo implements Serializable {
    */
   public String getMd5() {
     return Data.isNull(md5) ? null : md5;
+  }
+
+  /**
+   * Returns the MD5 hash of blob's data decoded to String.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/hashes-etags#_JSONAPI">Hashes and ETags:
+   *     Best Practices</a>
+   */
+  public String getMd5String() {
+    if (md5 == null) {
+      return null;
+    }
+    byte[] decodedMd5 = Base64.getDecoder().decode(md5);
+    StringBuilder stringBuilder = new StringBuilder();
+    for (byte b : decodedMd5) {
+      stringBuilder.append(String.format("%02x", b & 0xff));
+    }
+    return stringBuilder.toString();
   }
 
   /**
