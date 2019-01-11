@@ -355,29 +355,22 @@ public final class SpannerIntegrationTest {
 
     // The normal ManagedChannel.
     ManagedChannel channel = builder.build();
-    SpannerStub stubNormal =
-        SpannerGrpc.newStub(channel).withCallCredentials(MoreCallCredentials.from(creds));
-    resp = new AsyncResponseObserver<Session>();
-    stubNormal.createSession(reqCreate, resp);
+    SpannerBlockingStub stubNormal =
+        SpannerGrpc.newBlockingStub(channel).withCallCredentials(MoreCallCredentials.from(creds));
+    // resp = new AsyncResponseObserver<Session>();
+    Session session = stubNormal.createSession(reqCreate);
     req =
         ExecuteSqlRequest.newBuilder()
-            .setSession(resp.get().getName())
+            .setSession(session.getName())
             .setSql("select * FROM test_java")
             .build();
     // There are 101 streams blocked, and we are NOT able to read from the 101st stream.
-    for (int i = 0; i <= DEFAULT_MAX_STREAM; i++) {
-      AsyncHoldResponseObserver<PartialResultSet> obs =
-          new AsyncHoldResponseObserver<PartialResultSet>();
-      stubNormal.executeStreamingSql(req, obs);
-      obss.add(obs);
+    for (int i = 0; i <= DEFAULT_MAX_STREAM * 2; i++) {
+      stubNormal.executeStreamingSql(req);
     }
-    for (int i = 0; i <= DEFAULT_MAX_STREAM; i++) {
-      assertThat(obss.get(i).get()).isNotEqualTo(null);
-    }
-    for (int i = 0; i <= DEFAULT_MAX_STREAM; i++) {
-      obss.get(i).finish();
-    }
-    obss.clear();
+    System.out.println("I'm here!");
+    ListSessionsResponse res =
+        stubNormal.listSessions(ListSessionsRequest.newBuilder().setDatabase(DATABASE).build());
     channel.shutdownNow();
   }
 
