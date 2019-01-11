@@ -676,7 +676,7 @@ public class BlobInfo implements Serializable {
   }
 
   /**
-   * Returns the MD5 hash of blob's data decoded to String.
+   * Returns the MD5 hash of blob's data decoded to string.
    *
    * @see <a href="https://cloud.google.com/storage/docs/hashes-etags#_JSONAPI">Hashes and ETags:
    *     Best Practices</a>
