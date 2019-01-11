@@ -82,7 +82,6 @@ public abstract class ServiceOptions<
   private static final String DEFAULT_HOST = "https://www.googleapis.com";
   private static final String LEGACY_PROJECT_ENV_NAME = "GCLOUD_PROJECT";
   private static final String PROJECT_ENV_NAME = "GOOGLE_CLOUD_PROJECT";
-  private static final String DEFAULT_LOCATION = "US";
 
   private static final RetrySettings DEFAULT_RETRY_SETTINGS =
       getDefaultRetrySettingsBuilder().build();
@@ -92,7 +91,6 @@ public abstract class ServiceOptions<
   private static final long serialVersionUID = 9198896031667942014L;
 
   private final String projectId;
-  private final String location;
   private final String host;
   private final RetrySettings retrySettings;
   private final String serviceRpcFactoryClassName;
@@ -136,7 +134,6 @@ public abstract class ServiceOptions<
     @InternalApi("This class should only be extended within google-cloud-java")
     protected Builder(ServiceOptions<ServiceT, OptionsT> options) {
       projectId = options.projectId;
-      location = options.location;
       host = options.host;
       credentials = options.credentials;
       retrySettings = options.retrySettings;
@@ -179,16 +176,6 @@ public abstract class ServiceOptions<
      */
     public B setProjectId(String projectId) {
       this.projectId = projectId;
-      return self();
-    }
-
-    /**
-     * Sets service location
-     *
-     * @return the builder
-     */
-    public B setLocation(String location) {
-      this.location = location;
       return self();
     }
 
@@ -276,7 +263,6 @@ public abstract class ServiceOptions<
       Builder<ServiceT, OptionsT, ?> builder,
       ServiceDefaults<ServiceT, OptionsT> serviceDefaults) {
     projectId = builder.projectId != null ? builder.projectId : getDefaultProject();
-    location = builder.location != null ? builder.location : getDefaultLocation();
     if (projectIdRequired()) {
       checkArgument(
           projectId != null,
@@ -326,10 +312,6 @@ public abstract class ServiceOptions<
 
   protected String getDefaultProject() {
     return getDefaultProjectId();
-  }
-
-  protected String getDefaultLocation() {
-    return DEFAULT_LOCATION;
   }
 
   /**
@@ -538,11 +520,6 @@ public abstract class ServiceOptions<
     return projectId;
   }
 
-  /** Returns the service location */
-  public String getLocation() {
-    return location;
-  }
-
   /** Returns the service host. */
   public String getHost() {
     return host;
@@ -646,7 +623,6 @@ public abstract class ServiceOptions<
   protected int baseHashCode() {
     return Objects.hash(
         projectId,
-        location,
         host,
         credentials,
         retrySettings,
@@ -657,7 +633,6 @@ public abstract class ServiceOptions<
 
   protected boolean baseEquals(ServiceOptions<?, ?> other) {
     return Objects.equals(projectId, other.projectId)
-        && Objects.equals(location, other.location)
         && Objects.equals(host, other.host)
         && Objects.equals(credentials, other.credentials)
         && Objects.equals(retrySettings, other.retrySettings)

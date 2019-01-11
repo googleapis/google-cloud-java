@@ -33,6 +33,7 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
   private static final String BIGQUERY_SCOPE = "https://www.googleapis.com/auth/bigquery";
   private static final Set<String> SCOPES = ImmutableSet.of(BIGQUERY_SCOPE);
   private static final long serialVersionUID = -2437598817433266049L;
+  private String location;
 
   public static class DefaultBigQueryFactory implements BigQueryFactory {
 
@@ -56,6 +57,8 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
 
   public static class Builder extends ServiceOptions.Builder<BigQuery, BigQueryOptions, Builder> {
 
+    private String location;
+
     private Builder() {}
 
     private Builder(BigQueryOptions options) {
@@ -69,6 +72,11 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
             "Only http transport is allowed for " + API_SHORT_NAME + ".");
       }
       return super.setTransportOptions(transportOptions);
+    }
+
+    public Builder setLocation(String location) {
+      this.location = location;
+      return this;
     }
 
     @Override
@@ -110,6 +118,14 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
 
   protected BigQueryRpc getBigQueryRpcV2() {
     return (BigQueryRpc) getRpc();
+  }
+
+  public void setLocation(String location) {
+	  this.location = location;
+  }
+  
+  public String getLocation() {
+    return location; 
   }
 
   @SuppressWarnings("unchecked")
