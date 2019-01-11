@@ -679,6 +679,7 @@ public class InstanceClientTest {
     String creationTimestamp = "creationTimestamp567396278";
     Boolean deletionProtection = true;
     String description = "description-1724546052";
+    String hostname = "hostname-299803597";
     String id = "id3355";
     String kind = "kind3292052";
     String labelFingerprint = "labelFingerprint714995737";
@@ -698,6 +699,7 @@ public class InstanceClientTest {
             .setCreationTimestamp(creationTimestamp)
             .setDeletionProtection(deletionProtection)
             .setDescription(description)
+            .setHostname(hostname)
             .setId(id)
             .setKind(kind)
             .setLabelFingerprint(labelFingerprint)

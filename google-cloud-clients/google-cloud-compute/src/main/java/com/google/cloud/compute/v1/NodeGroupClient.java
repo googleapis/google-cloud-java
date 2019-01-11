@@ -1348,7 +1348,7 @@ public class NodeGroupClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param nodeGroup Name of the NodeGroup resource to delete.
+   * @param nodeGroup Name of the NodeGroup resource to update.
    * @param nodeGroupsSetNodeTemplateRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1379,7 +1379,7 @@ public class NodeGroupClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param nodeGroup Name of the NodeGroup resource to delete.
+   * @param nodeGroup Name of the NodeGroup resource to update.
    * @param nodeGroupsSetNodeTemplateRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
