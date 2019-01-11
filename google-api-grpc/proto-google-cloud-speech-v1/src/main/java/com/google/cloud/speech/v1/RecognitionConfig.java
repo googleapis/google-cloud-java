@@ -539,7 +539,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * This needs to be set to ‘true’ explicitly and `audio_channel_count` &gt; 1
+   * This needs to be set to `true` explicitly and `audio_channel_count` &gt; 1
    * to get each channel recognized separately. The recognition result will
    * contain a `channel_tag` field to state which channel that result belongs
    * to. If this is not true, we will only recognize the first channel. The
@@ -1568,7 +1568,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * This needs to be set to ‘true’ explicitly and `audio_channel_count` &gt; 1
+     * This needs to be set to `true` explicitly and `audio_channel_count` &gt; 1
      * to get each channel recognized separately. The recognition result will
      * contain a `channel_tag` field to state which channel that result belongs
      * to. If this is not true, we will only recognize the first channel. The
@@ -1585,7 +1585,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * This needs to be set to ‘true’ explicitly and `audio_channel_count` &gt; 1
+     * This needs to be set to `true` explicitly and `audio_channel_count` &gt; 1
      * to get each channel recognized separately. The recognition result will
      * contain a `channel_tag` field to state which channel that result belongs
      * to. If this is not true, we will only recognize the first channel. The
@@ -1605,7 +1605,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * This needs to be set to ‘true’ explicitly and `audio_channel_count` &gt; 1
+     * This needs to be set to `true` explicitly and `audio_channel_count` &gt; 1
      * to get each channel recognized separately. The recognition result will
      * contain a `channel_tag` field to state which channel that result belongs
      * to. If this is not true, we will only recognize the first channel. The
