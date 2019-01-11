@@ -213,7 +213,7 @@ public class ITTableAdminExample {
         continue;
       }
       String timestampStr = matcher.group(1);
-      long timestamp = Long.parseLong(timestampStr);
+      long timestamp = Long.parseLong(timestampStr, 16);
       if (System.currentTimeMillis() - timestamp < TimeUnit.MINUTES.toMillis(10)) {
         continue;
       }
