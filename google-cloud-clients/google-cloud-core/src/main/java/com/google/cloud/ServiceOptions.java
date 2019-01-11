@@ -118,7 +118,6 @@ public abstract class ServiceOptions<
       B extends Builder<ServiceT, OptionsT, B>> {
 
     private String projectId;
-    private String location;
     private String host;
     protected Credentials credentials;
     private RetrySettings retrySettings;
