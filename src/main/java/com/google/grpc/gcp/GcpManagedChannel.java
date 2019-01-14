@@ -42,6 +42,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
+import javax.annotation.concurrent.GuardedBy;
 
 /** A channel management factory that implements grpc.Channel APIs. */
 public class GcpManagedChannel extends ManagedChannel {
@@ -60,6 +61,7 @@ public class GcpManagedChannel extends ManagedChannel {
   final Map<String, AffinityConfig> methodToAffinity = new HashMap<String, AffinityConfig>();
 
   @VisibleForTesting
+  @GuardedBy("bindLock")
   final Map<String, ChannelRef> affinityKeyToChannelRef = new HashMap<String, ChannelRef>();
 
   @VisibleForTesting List<ChannelRef> channelRefs = new ArrayList<ChannelRef>();
@@ -95,32 +97,36 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   /** Pick the channelRef with the least busy managedchannel from the pool. */
-  protected synchronized ChannelRef getChannelRef(String... keys) {
-    if (keys.length != 0 && keys[0] != null) {
-      return affinityKeyToChannelRef.get(keys[0]);
-    }
-    Collections.sort(
-        channelRefs,
-        new Comparator<ChannelRef>() {
-          @Override
-          public int compare(ChannelRef o1, ChannelRef o2) {
-            return o1.getActiveStreamsCount() - o2.getActiveStreamsCount();
-          }
-        });
+  protected ChannelRef getChannelRef(String... keys) {
+    synchronized (bindLock) {
+      if (keys.length != 0 && keys[0] != null) {
+        return affinityKeyToChannelRef.get(keys[0]);
+      }
+      Collections.sort(
+          channelRefs,
+          new Comparator<ChannelRef>() {
+            @Override
+            public int compare(ChannelRef o1, ChannelRef o2) {
+              return o1.getActiveStreamsCount() - o2.getActiveStreamsCount();
+            }
+          });
 
-    int size = channelRefs.size();
-    // Choose the channelRef that has the least busy channel.
-    if (size > 0 && channelRefs.get(0).getActiveStreamsCount() < maxConcurrentStreamsLowWatermark) {
+      int size = channelRefs.size();
+      // Choose the channelRef that has the least busy channel.
+      if (size > 0
+          && channelRefs.get(0).getActiveStreamsCount() < maxConcurrentStreamsLowWatermark) {
+        return channelRefs.get(0);
+      }
+      // If all existing channels are busy, and channel pool still has capacity, create a new
+      // channel.
+      if (size < maxSize) {
+        ChannelRef channelRef = new ChannelRef(builder.build(), size);
+        channelRefs.add(channelRef);
+        return channelRef;
+      }
+      // Otherwise return first ChannelRef.
       return channelRefs.get(0);
     }
-    // If all existing channels are busy, and channel pool still has capacity, create a new channel.
-    if (size < maxSize) {
-      ChannelRef channelRef = new ChannelRef(builder.build(), size);
-      channelRefs.add(channelRef);
-      return channelRef;
-    }
-    // Otherwise return first ChannelRef.
-    return channelRefs.get(0);
   }
 
   @Override

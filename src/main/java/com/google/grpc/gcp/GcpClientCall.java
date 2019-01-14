@@ -41,9 +41,6 @@ import javax.annotation.concurrent.GuardedBy;
  * facilitate creating new calls. It gets the affinitykey from the request/response message, and
  * defines the callback functions to manage the number of active streams and bind/unbind the
  * affinity key with the channel.
- *
- * <p>Methods are guaranteed to be non-blocking. Not thread-safe except for GcpClientCall.request(),
- * which may be called from any thread.
  */
 public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
 
@@ -93,7 +90,7 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
 
   @Override
   public void cancel(@Nullable String message, @Nullable Throwable cause) {
-    checkSendMessage(() -> delegateCall.cancel(message, cause));
+    checkSendMessage(() -> checkedCancel(message, cause));
   }
 
   @Override
@@ -154,6 +151,18 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
     }
   }
 
+  @Override
+  public String toString() {
+    return MoreObjects.toStringHelper(this).add("delegate", delegateCall).toString();
+  }
+
+  private void checkedCancel(@Nullable String message, @Nullable Throwable cause) {
+    if (!decremented.getAndSet(true)) {
+      delegateChannelRef.activeStreamsCountDecr();
+    }
+    delegateCall.cancel(message, cause);
+  }
+
   private void checkSendMessage(Runnable call) {
     synchronized (this) {
       if (started) {
@@ -162,11 +171,6 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
         calls.add(call);
       }
     }
-  }
-
-  @Override
-  public String toString() {
-    return MoreObjects.toStringHelper(this).add("delegate", delegateCall).toString();
   }
 
   private Listener<RespT> getListener(final Listener<RespT> responseListener) {
