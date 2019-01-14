@@ -18,7 +18,10 @@ package com.google.cloud.bigquery;
 
 import static org.junit.Assert.assertEquals;
 
+import com.google.api.services.bigquery.model.TableFieldSchema;
+import com.google.api.services.bigquery.model.TableSchema;
 import com.google.common.collect.ImmutableList;
+import java.util.ArrayList;
 import java.util.List;
 import org.junit.Test;
 
@@ -56,5 +59,12 @@ public class SchemaTest {
   private void compareTableSchema(Schema expected, Schema value) {
     assertEquals(expected, value);
     assertEquals(expected.getFields(), value.getFields());
+  }
+
+  @Test
+  public void testEmptySchema() {
+    TableSchema tableSchema = new TableSchema();
+    Schema schema = Schema.fromPb(tableSchema);
+    assertEquals(0, schema.getFields().size());
   }
 }
