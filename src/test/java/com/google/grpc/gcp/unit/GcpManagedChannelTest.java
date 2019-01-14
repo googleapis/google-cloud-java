@@ -156,9 +156,9 @@ public final class GcpManagedChannelTest {
             .setTransaction(selector)
             .addColumns("users")
             .build();
-    String result = gcpChannel.getKeyFromMessage(req.toString(), "session");
+    String result = gcpChannel.getKeyFromMessage(req, "session");
     assertEquals(expected, result);
-    result = gcpChannel.getKeyFromMessage(req.toString(), "fakesession");
+    result = gcpChannel.getKeyFromMessage(req, "fakesession");
     assertEquals(null, result);
   }
 

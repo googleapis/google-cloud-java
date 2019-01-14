@@ -17,24 +17,18 @@
 package com.google.grpc.gcp;
 
 import com.google.common.annotations.VisibleForTesting;
-import com.google.common.base.MoreObjects;
-import com.google.common.base.Splitter;
 import com.google.grpc.gcp.proto.AffinityConfig;
 import com.google.grpc.gcp.proto.ApiConfig;
 import com.google.grpc.gcp.proto.MethodConfig;
+import com.google.protobuf.Descriptors.FieldDescriptor;
+import com.google.protobuf.MessageOrBuilder;
 import com.google.protobuf.util.JsonFormat;
-import io.grpc.Attributes;
 import io.grpc.CallOptions;
 import io.grpc.ClientCall;
-import io.grpc.ClientCall.Listener;
 import io.grpc.ConnectivityState;
-import io.grpc.ForwardingClientCall;
-import io.grpc.ForwardingClientCallListener;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
-import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
-import io.grpc.Status;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -46,9 +40,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.logging.Logger;
 
 /** A channel management factory that implements grpc.Channel APIs. */
@@ -59,28 +51,28 @@ public class GcpManagedChannel extends ManagedChannel {
   private static final int DEFAULT_MAX_CHANNEL = 10;
   private static final int DEFAULT_MAX_STREAM = 100;
 
-  private ApiConfig apiConfig;
-  private int maxSize;
-  private int maxConcurrentStreamsLowWatermark;
   private final ManagedChannelBuilder builder;
-  @VisibleForTesting final Map<String, AffinityConfig> methodToAffinity;
-  @VisibleForTesting final Map<String, ChannelRef> affinityKeyToChannelRef;
-  @VisibleForTesting List<ChannelRef> channelRefs;
+  private ApiConfig apiConfig;
+  private int maxSize = DEFAULT_MAX_CHANNEL;
+  private int maxConcurrentStreamsLowWatermark = DEFAULT_MAX_STREAM;
+
+  @VisibleForTesting
+  final Map<String, AffinityConfig> methodToAffinity = new HashMap<String, AffinityConfig>();
+
+  @VisibleForTesting
+  final Map<String, ChannelRef> affinityKeyToChannelRef = new HashMap<String, ChannelRef>();
+
+  @VisibleForTesting List<ChannelRef> channelRefs = new ArrayList<ChannelRef>();
 
   private final Object bindLock = new Object();
 
   /**
-   * Constructor.
+   * Constructor for GcpManagedChannel.
    *
-   * @param builder the normal managedChannelBuilder
-   * @param jsonPath optional, the path of the .json file defining the ApiConfig.
+   * @param builder the normal ManagedChannelBuilder
+   * @param jsonPath optional, the path of the .json file that defines the ApiConfig.
    */
   public GcpManagedChannel(ManagedChannelBuilder builder, String... jsonPath) {
-    methodToAffinity = new HashMap<String, AffinityConfig>();
-    affinityKeyToChannelRef = new HashMap<String, ChannelRef>();
-    channelRefs = new ArrayList<ChannelRef>();
-    maxSize = DEFAULT_MAX_CHANNEL;
-    maxConcurrentStreamsLowWatermark = DEFAULT_MAX_STREAM;
     if (jsonPath.length == 0) {
       apiConfig = null;
     } else {
@@ -102,8 +94,11 @@ public class GcpManagedChannel extends ManagedChannel {
     return maxConcurrentStreamsLowWatermark;
   }
 
-  /** Picks the channelRef with the least busy managedchannel from the pool. */
-  protected synchronized ChannelRef getChannelRef() {
+  /** Pick the channelRef with the least busy managedchannel from the pool. */
+  protected synchronized ChannelRef getChannelRef(String... keys) {
+    if (keys.length != 0 && keys[0] != null) {
+      return affinityKeyToChannelRef.get(keys[0]);
+    }
     Collections.sort(
         channelRefs,
         new Comparator<ChannelRef>() {
@@ -114,23 +109,18 @@ public class GcpManagedChannel extends ManagedChannel {
         });
 
     int size = channelRefs.size();
-    // Chose the channelRef that has the least busy channel.
+    // Choose the channelRef that has the least busy channel.
     if (size > 0 && channelRefs.get(0).getActiveStreamsCount() < maxConcurrentStreamsLowWatermark) {
       return channelRefs.get(0);
     }
     // If all existing channels are busy, and channel pool still has capacity, create a new channel.
     if (size < maxSize) {
-      ManagedChannel grpcChannel = builder.build();
-      ChannelRef channelRef = new ChannelRef(grpcChannel, size);
+      ChannelRef channelRef = new ChannelRef(builder.build(), size);
       channelRefs.add(channelRef);
       return channelRef;
     }
-    // Otherwise return first channelref.
+    // Otherwise return first ChannelRef.
     return channelRefs.get(0);
-  }
-
-  ChannelRef getChannelRef(String key) {
-    return affinityKeyToChannelRef.get(key);
   }
 
   @Override
@@ -139,17 +129,21 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   /**
-   * Manage the channelpool inside the GcpClientCall(). If method-affinity is specified, we will use
-   * the GcpClientCall to fetch the affinitykey and bind/unbind the channel, otherwise we just need
-   * the SimpleGcpClientCall to keep track of the number of streams in each channel.
+   * Manage the channelpool using GcpClientCall().
+   *
+   * <p>If method-affinity is specified, we will use the GcpClientCall to fetch the affinitykey and
+   * bind/unbind the channel, otherwise we just need the SimpleGcpClientCall to keep track of the
+   * number of streams in each channel.
    */
   @Override
   public <ReqT, RespT> ClientCall<ReqT, RespT> newCall(
       MethodDescriptor<ReqT, RespT> methodDescriptor, CallOptions callOptions) {
-    if (methodToAffinity.isEmpty()) {
-      return new SimpleGcpClientCall<ReqT, RespT>(getChannelRef(), methodDescriptor, callOptions);
+    AffinityConfig affinity = methodToAffinity.get(methodDescriptor.getFullMethodName());
+    if (affinity == null) {
+      return new GcpClientCall.SimpleGcpClientCall<ReqT, RespT>(
+          getChannelRef(), methodDescriptor, callOptions);
     }
-    return new GcpClientCall<ReqT, RespT>(methodDescriptor, callOptions);
+    return new GcpClientCall<ReqT, RespT>(this, methodDescriptor, callOptions, affinity);
   }
 
   @Override
@@ -249,7 +243,7 @@ public class GcpManagedChannel extends ManagedChannel {
    * <p>One channel can be mapped to more than one keys. But one key can only be mapped to one
    * channel.
    */
-  public void bind(ChannelRef channelRef, String affinityKey) {
+  protected void bind(ChannelRef channelRef, String affinityKey) {
     synchronized (bindLock) {
       if (affinityKey != null && !affinityKey.equals("") && channelRef != null) {
         if (!affinityKeyToChannelRef.containsKey(affinityKey)) {
@@ -261,7 +255,7 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   /** Unbind channel with affinity key, and delete the affinitykey if necassary */
-  public void unbind(String affinityKey) {
+  protected void unbind(String affinityKey) {
     synchronized (bindLock) {
       if (affinityKey != null
           && !affinityKey.equals("")
@@ -334,41 +328,56 @@ public class GcpManagedChannel extends ManagedChannel {
   /**
    * Get the affinity key from the request message.
    *
-   * <p>Since the request is of the proto-buffer type, it can be decoded as string in the format of:
+   * <p>The message can be written in the format of:
    *
-   * <p>session: "the-key-we-want" \n transaction_id: "not-useful" \n transaction { \n begin: "not
+   * <p>session: "the-key-we-want" \n transaction_id: "not-useful" \n transaction { \n session: "not
    * accessible"} \n}
    *
-   * <p>If the affinity name is "session", it will return "the-key-we-want".
+   * <p>If the (affinity) name is "session", it will return "the-key-we-want".
    *
-   * <p>Note that to get the key, we split the original string by '\n'. So this method is not able
-   * to get key from nested messages like "begin: not accessible" as above.
+   * <p>Note that this method will check the outer message frist, and then the nested message. So it
+   * is not able to get key from "session: not accessible" as above.
    */
   @VisibleForTesting
-  static String getKeyFromMessage(String msg, String name) {
-    for (String line : Splitter.on('\n').split(msg)) {
-      if (line.startsWith(name) && line.length() > name.length() + 3) {
-        int begin = name.length() + 3;
-        int end = line.length() - 1;
-        return line.substring(begin, end);
+  static String getKeyFromMessage(MessageOrBuilder msg, String name) {
+    Map<FieldDescriptor, Object> obs = msg.getAllFields();
+    List<MessageOrBuilder> nestedMsgs = new ArrayList<>();
+
+    // Check the fields in the current message and save the nested messages in a list.
+    for (Map.Entry<FieldDescriptor, Object> entry : obs.entrySet()) {
+      if (entry.getKey().getName().equals(name) && (entry.getValue() instanceof String)) {
+        return entry.getValue().toString();
+      } else if (entry.getValue() instanceof MessageOrBuilder) {
+        nestedMsgs.add((MessageOrBuilder) entry.getValue());
+      }
+    }
+    // Check nested messages.
+    for (MessageOrBuilder nestedMsg : nestedMsgs) {
+      String nestedResult = getKeyFromMessage(nestedMsg, name);
+      if (nestedResult != null) {
+        return nestedResult;
       }
     }
     return null;
   }
 
   /**
-   * Fetch the affinity key from the meaasge.
+   * Fetch the affinity key from the message.
    *
    * @param message the <reqT> or <respT> prototype message.
    * @param isReq indicates if the message is a request message.
    */
-  private <ReqT, RespT> String checkKey(
+  protected <ReqT, RespT> String checkKey(
       Object message, boolean isReq, MethodDescriptor<ReqT, RespT> methodDescriptor) {
+    if (!(message instanceof MessageOrBuilder)) {
+      return null;
+    }
+
     AffinityConfig affinity = methodToAffinity.get(methodDescriptor.getFullMethodName());
     if (affinity != null) {
       AffinityConfig.Command cmd = affinity.getCommand();
       String keyName = affinity.getAffinityKey();
-      String key = getKeyFromMessage(message.toString(), keyName);
+      String key = getKeyFromMessage((MessageOrBuilder) message, keyName);
       if (key != null && key != "") {
         if ((isReq && (cmd == AffinityConfig.Command.UNBIND || cmd == AffinityConfig.Command.BOUND))
             || (!isReq && cmd == AffinityConfig.Command.BIND)) {
@@ -392,283 +401,51 @@ public class GcpManagedChannel extends ManagedChannel {
     private int affinityCount;
     private int activeStreamsCount;
 
-    ChannelRef(ManagedChannel channel, int channelId) {
+    protected ChannelRef(ManagedChannel channel, int channelId) {
       this.delegate = channel;
       this.channelId = channelId;
       this.affinityCount = 0;
       this.activeStreamsCount = 0;
     }
 
-    ChannelRef(ManagedChannel channel, int channelId, int affinityCount, int activeStreamsCount) {
+    protected ChannelRef(
+        ManagedChannel channel, int channelId, int affinityCount, int activeStreamsCount) {
       this.delegate = channel;
       this.channelId = channelId;
       this.affinityCount = affinityCount;
       this.activeStreamsCount = activeStreamsCount;
     }
 
-    ManagedChannel getChannel() {
+    protected ManagedChannel getChannel() {
       return delegate;
     }
 
-    int getId() {
+    protected int getId() {
       return channelId;
     }
 
-    void affinityCountIncr() {
+    protected void affinityCountIncr() {
       affinityCount++;
     }
 
-    void affinityCountDecr() {
+    protected void affinityCountDecr() {
       affinityCount--;
     }
 
-    void activeStreamsCountIncr() {
+    protected void activeStreamsCountIncr() {
       activeStreamsCount++;
     }
 
-    void activeStreamsCountDecr() {
+    protected void activeStreamsCountDecr() {
       activeStreamsCount--;
     }
 
-    int getAffinityCount() {
+    protected int getAffinityCount() {
       return affinityCount;
     }
 
-    int getActiveStreamsCount() {
+    protected int getActiveStreamsCount() {
       return activeStreamsCount;
-    }
-  }
-
-  /**
-   * A simple wrapper of ClientCall.
-   *
-   * <p>It defines the callback function to manage the number of active streams of a ChannelRef
-   * everytime a call is started/closed.
-   */
-  protected class SimpleGcpClientCall<ReqT, RespT> extends ForwardingClientCall<ReqT, RespT> {
-    private final AtomicBoolean decremented = new AtomicBoolean(false);
-
-    private final ChannelRef channelRef;
-    private final ClientCall<ReqT, RespT> delegateCall;
-
-    protected SimpleGcpClientCall(
-        ChannelRef channelRef,
-        MethodDescriptor<ReqT, RespT> methodDescriptor,
-        CallOptions callOptions) {
-      this.channelRef = channelRef;
-      this.delegateCall = channelRef.getChannel().newCall(methodDescriptor, callOptions);
-    }
-
-    @Override
-    protected ClientCall<ReqT, RespT> delegate() {
-      return delegateCall;
-    }
-
-    @Override
-    public void start(Listener<RespT> responseListener, Metadata headers) {
-
-      Listener<RespT> listener =
-          new ForwardingClientCallListener.SimpleForwardingClientCallListener<RespT>(
-              responseListener) {
-            @Override
-            public void onClose(Status status, Metadata trailers) {
-              if (!decremented.getAndSet(true)) {
-                channelRef.activeStreamsCountDecr();
-              }
-              super.onClose(status, trailers);
-            }
-          };
-
-      channelRef.activeStreamsCountIncr();
-      delegateCall.start(listener, headers);
-    }
-
-    @Override
-    public void cancel(String message, Throwable cause) {
-      if (!decremented.getAndSet(true)) {
-        channelRef.activeStreamsCountDecr();
-      }
-      delegateCall.cancel(message, cause);
-    }
-  }
-
-  /**
-   * A wrapper of ClientCall that can fetch the affinitykey from the request/response message.
-   *
-   * <p>It stores the information such as method, calloptions, the ChannelRef which created it, etc
-   * to facilitate creating new calls. Get the affinitykey from the request/response message. In
-   * addition, define the callback function to manage the number of active streams and bind/unbind
-   * the affinity key.
-   */
-  protected class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
-
-    private Metadata cachedHeaders;
-    private Listener<RespT> cachedListener;
-    private MethodDescriptor<ReqT, RespT> methodDescriptor;
-    private CallOptions callOptions;
-
-    private ChannelRef delegateChannelRef = null;
-    private ClientCall<ReqT, RespT> delegateCall = null;
-    private final ConcurrentLinkedQueue<Integer> previousOperations = new ConcurrentLinkedQueue<>();
-    private final AtomicBoolean started = new AtomicBoolean(false);
-    private final AtomicBoolean received = new AtomicBoolean(false);
-    private final AtomicBoolean msgSent = new AtomicBoolean(false);
-    private final AtomicBoolean decremented = new AtomicBoolean(false);
-
-    protected GcpClientCall(
-        MethodDescriptor<ReqT, RespT> methodDescriptor, CallOptions callOptions) {
-      this.methodDescriptor = methodDescriptor;
-      this.callOptions = callOptions;
-    }
-
-    /**
-     * Since the delecateCall is null before sendMessage() is callled, abort and store all the
-     * operations before sendMessage() and do them again after sendMessage(). Each number in
-     * Queue<Integer> previousOperations represents one kind of operation.
-     */
-    private void doPreviousOperations() {
-      while (!previousOperations.isEmpty()) {
-        int op = previousOperations.poll();
-        if (op == 1) {
-          delegateCall.start(getListener(cachedListener), cachedHeaders);
-        } else if (op == 2) {
-          delegateCall.setMessageCompression(true);
-        } else if (op == 3) {
-          delegateCall.setMessageCompression(false);
-        } else if (op < 0) {
-          delegateCall.request(-op);
-        }
-      }
-    }
-
-    @Override
-    public void start(Listener<RespT> responseListener, Metadata headers) {
-      cachedHeaders = headers;
-      cachedListener = responseListener;
-      previousOperations.add(1);
-    }
-
-    @Override
-    public void request(int numMessages) {
-      if (!started.get()) {
-        previousOperations.add(-1 * numMessages);
-      } else {
-        while (!msgSent.get()) {}
-        delegateCall.request(numMessages);
-      }
-    }
-
-    @Override
-    public void setMessageCompression(boolean enabled) {
-      if (started.get()) {
-        while (!msgSent.get()) {}
-        delegateCall.setMessageCompression(enabled);
-      } else if (enabled) {
-        previousOperations.add(2);
-      } else {
-        previousOperations.add(3);
-      }
-    }
-
-    /**
-     * <1> If the call has started, decrement the stream number by one. <2> Otherwise start a new
-     * call and do the previous operations. <3> Cancel the call.
-     */
-    @Override
-    public void cancel(String message, Throwable cause) {
-      if (started.get()) {
-        if (!decremented.getAndSet(true)) {
-          delegateChannelRef.activeStreamsCountDecr();
-        }
-        while (!msgSent.get()) {}
-        delegateCall.cancel(message, cause);
-      }
-    }
-
-    /** If the call hasn't started, start a new call, do the previous operations. */
-    @Override
-    public void halfClose() {
-      if (started.get()) {
-        while (!msgSent.get()) {}
-        delegateCall.halfClose();
-      }
-    }
-
-    /**
-     * Delay executing call.start() until call.sendMessage() is called, switch the channel, start
-     * the call, and finally do sendMessage().
-     */
-    @Override
-    public void sendMessage(ReqT message) {
-      synchronized (this) {
-        if (!started.getAndSet(true)) {
-          // Check if the current channelRef is bound with the key and change it if necessary.
-          // If no channel is bound with the key, keep on using the least busy one.
-          String key = checkKey(message, true, methodDescriptor);
-          if (key != null && key != "" && getChannelRef(key) != null) {
-            delegateChannelRef = getChannelRef(key);
-          } else {
-            delegateChannelRef = getChannelRef();
-          }
-
-          if (key != null
-              && methodToAffinity.get(methodDescriptor.getFullMethodName()).getCommand()
-                  == AffinityConfig.Command.UNBIND) {
-            unbind(key);
-          }
-          delegateChannelRef.activeStreamsCountIncr();
-          delegateCall = delegateChannelRef.getChannel().newCall(methodDescriptor, callOptions);
-          doPreviousOperations();
-        }
-      }
-      delegateCall.sendMessage(message);
-      msgSent.set(true);
-    }
-
-    @Override
-    public boolean isReady() {
-      if (delegateCall != null) {
-        return delegateCall.isReady();
-      }
-      return false;
-    }
-
-    @Override
-    public Attributes getAttributes() {
-      return delegateCall.getAttributes();
-    }
-
-    @Override
-    public String toString() {
-      return MoreObjects.toStringHelper(this).add("delegate", delegateCall).toString();
-    }
-
-    private Listener<RespT> getListener(final Listener<RespT> responseListener) {
-
-      return new ForwardingClientCallListener.SimpleForwardingClientCallListener<RespT>(
-          responseListener) {
-        // Decrement the stream number by one when the call is closed.
-        @Override
-        public void onClose(Status status, Metadata trailers) {
-          if (!decremented.getAndSet(true)) {
-            delegateChannelRef.activeStreamsCountDecr();
-          }
-          responseListener.onClose(status, trailers);
-        }
-
-        // If the command is "BIND", fetch the affinitykey from the response message and bind it
-        // with the channelRef.
-        @Override
-        public void onMessage(RespT message) {
-          if (!received.getAndSet(true)) {
-            String key = checkKey(message, false, methodDescriptor);
-            if (key != null) {
-              bind(delegateChannelRef, key);
-            }
-          }
-          responseListener.onMessage(message);
-        }
-      };
     }
   }
 }

@@ -50,6 +50,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import java.util.concurrent.atomic.AtomicBoolean;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -68,9 +69,11 @@ public final class SpannerIntegrationTest {
   private static final String DATABASE =
       "projects/cloudprober-test/instances/test-instance/databases/test-db";
   private static final String API_FILE = "src/test/resources/apiconfigtests/apiconfig.json";
+  private static final String API_FILE2 = "src/test/resources/apiconfigtests/spannertest.json";
 
   private static final int MAX_CHANNEL = 5;
   private static final int MAX_STREAM = 2;
+  private static final int DEFAULT_MAX_STREAM = 100;
 
   private static final ManagedChannelBuilder builder =
       ManagedChannelBuilder.forAddress(SPANNER_TARGET, 443);
@@ -124,7 +127,6 @@ public final class SpannerIntegrationTest {
       stub.createSession(req, resp);
       resps.add(resp);
     }
-    assertEquals(ConnectivityState.CONNECTING, gcpChannel.getState(false));
     checkChannelRefs(MAX_CHANNEL, MAX_STREAM, 0);
     for (AsyncResponseObserver<Session> resp : resps) {
       respNames.add(resp.get().getName());
@@ -166,7 +168,6 @@ public final class SpannerIntegrationTest {
       ListenableFuture<Session> future = stub.createSession(req);
       futures.add(future);
     }
-    assertEquals(ConnectivityState.CONNECTING, gcpChannel.getState(false));
     checkChannelRefs(MAX_CHANNEL, MAX_STREAM, 0);
     for (ListenableFuture<Session> future : futures) {
       futureNames.add(future.get().getName());
@@ -226,6 +227,7 @@ public final class SpannerIntegrationTest {
     for (Session s : responseList.getSessionsList()) {
       deleteSession(stub, s);
     }
+    channel.shutdownNow();
   }
 
   @Test
@@ -305,18 +307,71 @@ public final class SpannerIntegrationTest {
     for (String respName : respNames) {
       AsyncResponseObserver<PartialResultSet> resp = new AsyncResponseObserver<>();
       stub.executeStreamingSql(
-          ExecuteSqlRequest.newBuilder()
-              .setSession(respName)
-              .setSql("select * FROM test_java")
-              .build(),
+          ExecuteSqlRequest.newBuilder().setSession(respName).setSql("select * FROM jenny").build(),
           resp);
-      PartialResultSet resPartial = resp.get();
-      for (int i = 1; i < 4; i++) {
-        assertEquals("line" + i, resPartial.getValues(i - 1).getStringValue());
-      }
+      assertEquals(USERNAME, resp.get().getValues(0).getStringValue());
     }
-    checkChannelRefs(MAX_CHANNEL, 0, 2);
     deleteAsyncSessions(stub, respNames);
+  }
+
+  /**
+   * For default ManagedChannel, its capacity is 100 streams. But our GcpManagedChannel is able to
+   * accommodate more than 100 streams.
+   */
+  @Test
+  public void testManyManyManyStreams() throws Exception {
+    List<AsyncHoldResponseObserver<PartialResultSet>> obss = new ArrayList<>();
+    GoogleCredentials creds = getCreds();
+    CreateSessionRequest reqCreate =
+        CreateSessionRequest.newBuilder().setDatabase(DATABASE).build();
+
+    // Our GcpManagedChannel.
+    gcpChannel.shutdownNow();
+    gcpChannel = new GcpManagedChannel(builder, API_FILE2);
+    SpannerStub stub =
+        SpannerGrpc.newStub(gcpChannel).withCallCredentials(MoreCallCredentials.from(creds));
+    AsyncResponseObserver<Session> resp = new AsyncResponseObserver<Session>();
+    stub.createSession(reqCreate, resp);
+    ExecuteSqlRequest req =
+        ExecuteSqlRequest.newBuilder()
+            .setSession(resp.get().getName())
+            .setSql("select * FROM test_java")
+            .build();
+
+    // There are 101 streams blocked but we are still able to read from the 101st stream.
+    for (int i = 0; i <= DEFAULT_MAX_STREAM; i++) {
+      AsyncHoldResponseObserver<PartialResultSet> obs =
+          new AsyncHoldResponseObserver<PartialResultSet>();
+      stub.executeStreamingSql(req, obs);
+      obss.add(obs);
+      assertThat(obs.get()).isNotEqualTo(null);
+    }
+    TimeUnit.SECONDS.sleep(5);
+    assertEquals(100, gcpChannel.channelRefs.get(0).getActiveStreamsCount());
+    for (int i = 0; i <= DEFAULT_MAX_STREAM; i++) {
+      obss.get(i).finish();
+    }
+    obss.clear();
+
+    // The normal ManagedChannel.
+    ManagedChannel channel = builder.build();
+    SpannerBlockingStub stubNormal =
+        SpannerGrpc.newBlockingStub(channel).withCallCredentials(MoreCallCredentials.from(creds));
+    // resp = new AsyncResponseObserver<Session>();
+    Session session = stubNormal.createSession(reqCreate);
+    req =
+        ExecuteSqlRequest.newBuilder()
+            .setSession(session.getName())
+            .setSql("select * FROM test_java")
+            .build();
+    // There are 101 streams blocked, and we are NOT able to read from the 101st stream.
+    for (int i = 0; i <= DEFAULT_MAX_STREAM * 2; i++) {
+      stubNormal.executeStreamingSql(req);
+    }
+    // System.out.println("I'm here!");
+    ListSessionsResponse res =
+        stubNormal.listSessions(ListSessionsRequest.newBuilder().setDatabase(DATABASE).build());
+    channel.shutdownNow();
   }
 
   @Test
@@ -354,11 +409,9 @@ public final class SpannerIntegrationTest {
 
   private static class AsyncResponseObserver<RespT> implements StreamObserver<RespT> {
     private final CountDownLatch finishLatch = new CountDownLatch(1);
-    private RespT response;
+    private RespT response = null;
 
-    private AsyncResponseObserver() {
-      response = null;
-    }
+    private AsyncResponseObserver() {}
 
     public RespT get() throws InterruptedException, ExecutionException, TimeoutException {
       finishLatch.await(1, TimeUnit.MINUTES);
@@ -379,5 +432,36 @@ public final class SpannerIntegrationTest {
     public void onCompleted() {
       finishLatch.countDown();
     }
+  }
+
+  private static class AsyncHoldResponseObserver<RespT> implements StreamObserver<RespT> {
+    private final CountDownLatch finishLatch = new CountDownLatch(1);
+    private final AtomicBoolean got = new AtomicBoolean(false);
+    private RespT response = null;
+
+    private AsyncHoldResponseObserver() {}
+
+    public RespT get() throws InterruptedException, ExecutionException, TimeoutException {
+      finishLatch.await(5, TimeUnit.SECONDS);
+      return response;
+    }
+
+    public void finish() {
+      got.set(true);
+    }
+
+    // Only a single thread will access the listener at a time.
+    @Override
+    public void onNext(RespT response) {
+      this.response = response;
+      finishLatch.countDown();
+      while (!got.get()) {}
+    }
+
+    @Override
+    public void onError(Throwable t) {}
+
+    @Override
+    public void onCompleted() {}
   }
 }
