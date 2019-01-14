@@ -235,7 +235,7 @@ public class Blob extends BlobInfo {
   }
 
   /**
-   * Builds com.google.api.services.storage.Storage using storage options
+   * Builds com.google.api.services.storage.Storage using storage options.
    *
    * @param options storage options
    * @return Storage
