@@ -28,9 +28,6 @@ import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
 import io.grpc.Status;
 import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Logger;
 
 /**
@@ -40,6 +37,9 @@ import java.util.logging.Logger;
  * facilitate creating new calls. It gets the affinitykey from the request/response message, and
  * defines the callback functions to manage the number of active streams and bind/unbind the
  * affinity key with the channel.
+ *
+ * <p>Methods are guaranteed to be non-blocking. Not thread-safe except for GcpClientCall.request(),
+ * which may be called from any thread.
  */
 public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
 
@@ -54,15 +54,11 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
 
   private GcpManagedChannel.ChannelRef delegateChannelRef = null;
   private ClientCall<ReqT, RespT> delegateCall = null;
+  private int msgRequestedBeforeSend = 0;
   private boolean isCompressed = true;
-  private int msgRequested = 0;
-  private boolean msgSent = false;
+  private boolean received = false;
   private final AtomicBoolean started = new AtomicBoolean(false);
-  private final AtomicBoolean received = new AtomicBoolean(false);
   private final AtomicBoolean decremented = new AtomicBoolean(false);
-
-  private final Lock lock = new ReentrantLock();
-  private final Condition msgCon = lock.newCondition();
 
   protected GcpClientCall(
       GcpManagedChannel delegateChannel,
@@ -73,36 +69,6 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
     this.callOptions = callOptions;
     this.delegateChannel = delegateChannel;
     this.affinity = affinity;
-  }
-
-  /** Wait until the first sendMessage() is finished once it has started. */
-  private void waitingForMessageSent() {
-    if (!msgSent) {
-      lock.lock();
-      try {
-        while (!msgSent) {
-          msgCon.await();
-        }
-      } catch (InterruptedException e) {
-        logger.warning(e.getMessage());
-      } finally {
-        lock.unlock();
-      }
-    }
-  }
-
-  private void setMessageSent() {
-    if (!msgSent) {
-      lock.lock();
-      try {
-        if (!msgSent) {
-          msgSent = true;
-          msgCon.signalAll();
-        }
-      } finally {
-        lock.unlock();
-      }
-    }
   }
 
   @Override
@@ -116,9 +82,9 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
     if (!started.get()) {
       // Messages might be requested before sendMessage()
       // See io.grpc.ClientCalls()
-      msgRequested = numMessages;
-    } else {
-      waitingForMessageSent();
+      msgRequestedBeforeSend += numMessages;
+    }
+    if (started.get()) {
       delegateCall.request(numMessages);
     }
   }
@@ -126,7 +92,6 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
   @Override
   public void setMessageCompression(boolean enabled) {
     if (started.get()) {
-      waitingForMessageSent();
       delegateCall.setMessageCompression(enabled);
     } else if (enabled) {
       isCompressed = true;
@@ -142,7 +107,6 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
       if (!decremented.getAndSet(true)) {
         delegateChannelRef.activeStreamsCountDecr();
       }
-      waitingForMessageSent();
       delegateCall.cancel(message, cause);
     } else {
       throw new IllegalStateException("Calling cancel() before sendMessage() is not permitted.");
@@ -153,7 +117,6 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
   @Override
   public void halfClose() {
     if (started.get()) {
-      waitingForMessageSent();
       delegateCall.halfClose();
     } else {
       throw new IllegalStateException("Calling halfclose() before sendMessage() is not permitted.");
@@ -164,14 +127,17 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
    * Delay executing operations until call.sendMessage() is called, switch the channel, start the
    * call, and finally do sendMessage().
    *
-   * <p>call.start(), call.request() and setMessageCompression() are permitted to be called multiple
-   * times prior to sendMessage(), but only the last one will be valid. Do not call cancel(),
-   * halfclose() before sendMessage().
+   * <p>call.start() and setMessageCompression() are permitted to be called multiple times prior to
+   * sendMessage() but only the last one will be valid. Calling call.request() before sendMessage()
+   * multiple times, the number of messages able to delivered will be the sum of the calls.
+   *
+   * <p>DO NOT call halfClose() and cancel() before sendMessage(), then the call will never start
+   * and will throw IllegalStateException.
    */
   @Override
   public void sendMessage(ReqT message) {
     synchronized (this) {
-      if (!started.getAndSet(true)) {
+      if (!started.get()) {
         // Check if the current channelRef is bound with the key and change it if necessary.
         // If no channel is bound with the key, use the least busy one.
         String key = delegateChannel.checkKey(message, true, methodDescriptor);
@@ -188,16 +154,15 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
         // Create the client call and do the previous operations.
         delegateCall = delegateChannelRef.getChannel().newCall(methodDescriptor, callOptions);
         delegateCall.start(getListener(cachedListener), cachedHeaders);
+        started.set(true);
         delegateCall.setMessageCompression(isCompressed);
-        if (msgRequested != 0) {
-          delegateCall.request(msgRequested);
-        }
+        delegateCall.request(msgRequestedBeforeSend);
       }
     }
     delegateCall.sendMessage(message);
-    setMessageSent();
   }
 
+  /** Calls that send exactly one message should not check this method. */
   @Override
   public boolean isReady() {
     if (delegateCall != null) {
@@ -238,7 +203,8 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
       // with the channelRef.
       @Override
       public void onMessage(RespT message) {
-        if (!received.getAndSet(true)) {
+        if (!received) {
+          received = true;
           String key = delegateChannel.checkKey(message, false, methodDescriptor);
           if (key != null) {
             delegateChannel.bind(delegateChannelRef, key);
@@ -256,10 +222,11 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
    * everytime a call is started/closed.
    */
   public static class SimpleGcpClientCall<ReqT, RespT> extends ForwardingClientCall<ReqT, RespT> {
-    private final AtomicBoolean decremented = new AtomicBoolean(false);
 
     private final GcpManagedChannel.ChannelRef channelRef;
     private final ClientCall<ReqT, RespT> delegateCall;
+
+    private final AtomicBoolean decremented = new AtomicBoolean(false);
 
     protected SimpleGcpClientCall(
         GcpManagedChannel.ChannelRef channelRef,

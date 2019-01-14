@@ -368,7 +368,7 @@ public final class SpannerIntegrationTest {
     for (int i = 0; i <= DEFAULT_MAX_STREAM * 2; i++) {
       stubNormal.executeStreamingSql(req);
     }
-    System.out.println("I'm here!");
+    // System.out.println("I'm here!");
     ListSessionsResponse res =
         stubNormal.listSessions(ListSessionsRequest.newBuilder().setDatabase(DATABASE).build());
     channel.shutdownNow();

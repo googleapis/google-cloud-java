@@ -67,7 +67,7 @@ public class GcpManagedChannel extends ManagedChannel {
   private final Object bindLock = new Object();
 
   /**
-   * Constructor.
+   * Constructor for GcpManagedChannel.
    *
    * @param builder the normal ManagedChannelBuilder
    * @param jsonPath optional, the path of the .json file that defines the ApiConfig.
@@ -129,9 +129,11 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   /**
-   * Manage the channelpool using GcpClientCall(). If method-affinity is specified, we will use the
-   * GcpClientCall to fetch the affinitykey and bind/unbind the channel, otherwise we just need the
-   * SimpleGcpClientCall to keep track of the number of streams in each channel.
+   * Manage the channelpool using GcpClientCall().
+   *
+   * <p>If method-affinity is specified, we will use the GcpClientCall to fetch the affinitykey and
+   * bind/unbind the channel, otherwise we just need the SimpleGcpClientCall to keep track of the
+   * number of streams in each channel.
    */
   @Override
   public <ReqT, RespT> ClientCall<ReqT, RespT> newCall(
@@ -241,7 +243,7 @@ public class GcpManagedChannel extends ManagedChannel {
    * <p>One channel can be mapped to more than one keys. But one key can only be mapped to one
    * channel.
    */
-  public void bind(ChannelRef channelRef, String affinityKey) {
+  protected void bind(ChannelRef channelRef, String affinityKey) {
     synchronized (bindLock) {
       if (affinityKey != null && !affinityKey.equals("") && channelRef != null) {
         if (!affinityKeyToChannelRef.containsKey(affinityKey)) {
@@ -253,7 +255,7 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   /** Unbind channel with affinity key, and delete the affinitykey if necassary */
-  public void unbind(String affinityKey) {
+  protected void unbind(String affinityKey) {
     synchronized (bindLock) {
       if (affinityKey != null
           && !affinityKey.equals("")
@@ -326,21 +328,35 @@ public class GcpManagedChannel extends ManagedChannel {
   /**
    * Get the affinity key from the request message.
    *
-   * <p>Since the request is of the proto-buffer type, it can be decoded as string in the format of:
+   * <p>The message can be written in the format of:
    *
-   * <p>session: "the-key-we-want" \n transaction_id: "not-useful" \n transaction { \n begin: "not
+   * <p>session: "the-key-we-want" \n transaction_id: "not-useful" \n transaction { \n session: "not
    * accessible"} \n}
    *
-   * <p>If the affinity name is "session", it will return "the-key-we-want".
+   * <p>If the (affinity) name is "session", it will return "the-key-we-want".
    *
-   * <p>Note that to get the key, we split the original string by '\n'. So this method is not able
-   * to get key from nested messages like "begin: not accessible" as above.
+   * <p>Note that this method will check the outer message frist, and then the nested message. So it
+   * is not able to get key from "session: not accessible" as above.
    */
   @VisibleForTesting
   static String getKeyFromMessage(MessageOrBuilder msg, String name) {
-    FieldDescriptor fieldDescriptor = msg.getDescriptorForType().findFieldByName(name);
-    if (fieldDescriptor != null && msg.getField(fieldDescriptor) != null) {
-      return msg.getField(fieldDescriptor).toString();
+    Map<FieldDescriptor, Object> obs = msg.getAllFields();
+    List<MessageOrBuilder> nestedMsgs = new ArrayList<>();
+
+    // Check the fields in the current message and save the nested messages in a list.
+    for (Map.Entry<FieldDescriptor, Object> entry : obs.entrySet()) {
+      if (entry.getKey().getName().equals(name) && (entry.getValue() instanceof String)) {
+        return entry.getValue().toString();
+      } else if (entry.getValue() instanceof MessageOrBuilder) {
+        nestedMsgs.add((MessageOrBuilder) entry.getValue());
+      }
+    }
+    // Check nested messages.
+    for (MessageOrBuilder nestedMsg : nestedMsgs) {
+      String nestedResult = getKeyFromMessage(nestedMsg, name);
+      if (nestedResult != null) {
+        return nestedResult;
+      }
     }
     return null;
   }
@@ -353,7 +369,7 @@ public class GcpManagedChannel extends ManagedChannel {
    */
   protected <ReqT, RespT> String checkKey(
       Object message, boolean isReq, MethodDescriptor<ReqT, RespT> methodDescriptor) {
-    if (message == null || !(message instanceof MessageOrBuilder)) {
+    if (!(message instanceof MessageOrBuilder)) {
       return null;
     }
 
