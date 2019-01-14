@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC.  All Rights Reserved.
+ * Copyright 2019 Google LLC.  All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,19 @@ import com.google.cloud.bigtable.data.v2.models.RowCell;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import java.io.IOException;
 
+/**
+ * An example of using Google Cloud Bigtable.
+ *
+ * <p>This example is a very simple "hello world" application, that illustrates how to create a new
+ * table, write to the table, read the data back, and delete the table.
+ *
+ * <ul>
+ *   <li>create table
+ *   <li>read single row
+ *   <li>read table
+ *   <li>delete table
+ * </ul>
+ */
 public class HelloWorld {
 
   private static final String COLUMN_FAMILY = "cf1";
@@ -55,22 +68,22 @@ public class HelloWorld {
     this.tableId = tableId;
 
     // [START connecting_to_bigtable]
-    // Create the settings to configure a bigtable data client
+    // Creates the settings to configure a bigtable data client.
     BigtableDataSettings settings =
         BigtableDataSettings.newBuilder()
             .setInstanceName(InstanceName.of(projectId, instanceId))
             .build();
 
-    // Create bigtable data client
+    // Creates a bigtable data client.
     dataClient = BigtableDataClient.create(settings);
 
-    // Create the settings to configure a bigtable table admin client
+    // Creates the settings to configure a bigtable table admin client.
     BigtableTableAdminSettings adminSettings =
         BigtableTableAdminSettings.newBuilder()
             .setInstanceName(com.google.bigtable.admin.v2.InstanceName.of(projectId, instanceId))
             .build();
 
-    // Create bigtable table admin client
+    // Creates a bigtable table admin client.
     adminClient = BigtableTableAdminClient.create(adminSettings);
     // [END connecting_to_bigtable]
   }
@@ -85,9 +98,10 @@ public class HelloWorld {
     adminClient.close();
   }
 
+  /** Demonstrates how to create a table. */
   public void createTable() {
     // [START creating_a_table]
-    // Check if table exists, create table if does not exist
+    // Checks if table exists, creates table if does not exist.
     if (!adminClient.exists(tableId)) {
       System.out.println("Creating table: " + tableId);
       CreateTableRequest createTableRequest =
@@ -98,6 +112,7 @@ public class HelloWorld {
     // [END creating_a_table]
   }
 
+  /** Demonstrates how to write some rows to a table. */
   public void writeToTable() {
     // [START writing_rows]
     try {
@@ -116,6 +131,7 @@ public class HelloWorld {
     // [END writing_rows]
   }
 
+  /** Demonstrates how to read a single row from a table. */
   public void readSingleRow() {
     // [START reading_a_row]
     try {
@@ -133,6 +149,7 @@ public class HelloWorld {
     // [END reading_a_row]
   }
 
+  /** Demonstrates how to read an entire table. */
   public void readTable() {
     // [START scanning_all_rows]
     try {
@@ -153,6 +170,7 @@ public class HelloWorld {
     // [END scanning_all_rows]
   }
 
+  /** Demonstrates how to delete a table. */
   public void deleteTable() {
     // [START deleting_a_table]
     System.out.println("\nDeleting table: " + tableId);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC.  All Rights Reserved.
+ * Copyright 2019 Google LLC.  All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,6 +37,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+/** Integration tests for {@link HelloWorld} */
 public class ITHelloWorld {
 
   private static final String INSTANCE_PROPERTY_NAME = "bigtable.instance";
@@ -93,21 +94,21 @@ public class ITHelloWorld {
 
   @Test
   public void testCreateAndDeleteTable() throws IOException {
-    // Create table
-    String fakeTable = generateTableId();
+    // Creates a table.
+    String testTable = generateTableId();
     HelloWorld testHelloWorld =
-        new HelloWorld(instanceName.getProject(), instanceName.getInstance(), fakeTable);
+        new HelloWorld(instanceName.getProject(), instanceName.getInstance(), testTable);
     testHelloWorld.createTable();
-    assertTrue(adminClient.exists(fakeTable));
+    assertTrue(adminClient.exists(testTable));
 
-    // Delete table
+    // Deletes a table.
     testHelloWorld.deleteTable();
-    assertTrue(!adminClient.exists(fakeTable));
+    assertTrue(!adminClient.exists(testTable));
   }
 
   @Test
   public void testWriteToTable() {
-    // Write to table
+    // Writes to a table.
     helloWorld.writeToTable();
     Row row = dataClient.readRow(tableId, "rowKey0");
     assertNotNull(row);
