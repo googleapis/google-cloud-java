@@ -18,10 +18,13 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.services.bigquery.model.TableFieldSchema;
 import com.google.api.services.bigquery.model.TableSchema;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import java.io.Serializable;
+import java.util.Collections;
+import java.util.List;
 import java.util.Objects;
 
 /** This class represents the schema for a Google BigQuery Table or data source. */
@@ -90,6 +93,10 @@ public final class Schema implements Serializable {
   }
 
   static Schema fromPb(com.google.api.services.bigquery.model.TableSchema tableSchemaPb) {
-    return Schema.of(FieldList.fromPb(tableSchemaPb.getFields()));
+    List<TableFieldSchema> fields = tableSchemaPb.getFields();
+    if (fields == null) {
+      fields = Collections.emptyList();
+    }
+    return Schema.of(FieldList.fromPb(fields));
   }
 }
