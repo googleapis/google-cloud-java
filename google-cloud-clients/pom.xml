@@ -573,7 +573,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-failsafe-plugin</artifactId>
-        <version>2.19.1</version>
+        <version>3.0.0-M3</version>
         <executions>
           <execution>
             <goals>
@@ -905,7 +905,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-failsafe-plugin</artifactId>
-            <version>2.19.1</version>
+            <version>3.0.0-M3</version>
             <executions>
               <execution>
                 <goals>
