@@ -19,7 +19,6 @@ import static com.google.cloud.bigtable.admin.v2.models.GCRules.GCRULES;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-import com.google.bigtable.admin.v2.InstanceName;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
 import com.google.cloud.bigtable.admin.v2.models.ColumnFamily;
@@ -45,27 +44,27 @@ import org.junit.Test;
 /** Integration tests for {@link TableAdminExample} */
 public class ITTableAdminExample {
 
+  private static final String PROJECT_PROPERTY_NAME = "bigtable.project";
   private static final String INSTANCE_PROPERTY_NAME = "bigtable.instance";
   private static final String TABLE_PREFIX = "table";
   private static BigtableTableAdminClient adminClient;
-  private static String instanceName;
-  private static String projectName;
+  private static String instanceId;
+  private static String projectId;
   private String tableId;
   private TableAdminExample tableAdmin;
 
   @BeforeClass
   public static void beforeClass() throws IOException {
-    String targetInstance = System.getProperty(INSTANCE_PROPERTY_NAME);
-    if (targetInstance == null) {
+    projectId = System.getProperty(PROJECT_PROPERTY_NAME);
+    instanceId = System.getProperty(INSTANCE_PROPERTY_NAME);
+    if (projectId == null || instanceId == null) {
       adminClient = null;
       return;
     }
-    instanceName = InstanceName.parse(targetInstance).getInstance();
-    projectName = InstanceName.parse(targetInstance).getProject();
     BigtableTableAdminSettings adminSettings =
         BigtableTableAdminSettings.newBuilder()
-            .setInstanceId(instanceName)
-            .setProjectId(projectName)
+            .setInstanceId(instanceId)
+            .setProjectId(projectId)
             .build();
     adminClient = BigtableTableAdminClient.create(adminSettings);
   }
@@ -80,10 +79,13 @@ public class ITTableAdminExample {
   public void setup() throws IOException {
     if (adminClient == null) {
       throw new AssumptionViolatedException(
-          INSTANCE_PROPERTY_NAME + " property is not set, skipping integration tests.");
+          INSTANCE_PROPERTY_NAME
+              + " or "
+              + PROJECT_PROPERTY_NAME
+              + " property is not set, skipping integration tests.");
     }
     tableId = generateTableId();
-    tableAdmin = new TableAdminExample(projectName, instanceName, tableId);
+    tableAdmin = new TableAdminExample(projectId, instanceId, tableId);
     adminClient.createTable(CreateTableRequest.of(tableId).addFamily("cf"));
   }
 
@@ -98,7 +100,7 @@ public class ITTableAdminExample {
   public void testCreateAndDeleteTable() throws IOException {
     // Creates a table.
     String testTable = generateTableId();
-    TableAdminExample testTableAdmin = new TableAdminExample(projectName, instanceName, testTable);
+    TableAdminExample testTableAdmin = new TableAdminExample(projectId, instanceId, testTable);
     testTableAdmin.createTable();
     assertTrue(adminClient.exists(testTable));
 
