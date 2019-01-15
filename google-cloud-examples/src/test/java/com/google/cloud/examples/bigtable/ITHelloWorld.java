@@ -18,7 +18,6 @@ package com.google.cloud.examples.bigtable;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import com.google.bigtable.admin.v2.InstanceName;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
@@ -40,35 +39,32 @@ import org.junit.Test;
 /** Integration tests for {@link HelloWorld} */
 public class ITHelloWorld {
 
+  private static final String PROJECT_PROPERTY_NAME = "bigtable.project";
   private static final String INSTANCE_PROPERTY_NAME = "bigtable.instance";
   private static final String TABLE_PREFIX = "table";
   private static String tableId;
   private static BigtableDataClient dataClient;
   private static BigtableTableAdminClient adminClient;
-  private static String projectName;
-  private static String instanceName;
+  private static String projectId;
+  private static String instanceId;
   private HelloWorld helloWorld;
 
   @BeforeClass
   public static void beforeClass() throws IOException {
-    String targetInstance = System.getProperty(INSTANCE_PROPERTY_NAME);
-    if (targetInstance == null) {
+    projectId = System.getProperty(PROJECT_PROPERTY_NAME);
+    instanceId = System.getProperty(INSTANCE_PROPERTY_NAME);
+    if (projectId == null || instanceId == null) {
       dataClient = null;
       adminClient = null;
       return;
     }
-    projectName = InstanceName.parse(targetInstance).getProject();
-    instanceName = InstanceName.parse(targetInstance).getInstance();
     BigtableDataSettings settings =
-        BigtableDataSettings.newBuilder()
-            .setProjectId(projectName)
-            .setInstanceId(instanceName)
-            .build();
+        BigtableDataSettings.newBuilder().setProjectId(projectId).setInstanceId(instanceId).build();
     dataClient = BigtableDataClient.create(settings);
     BigtableTableAdminSettings adminSettings =
         BigtableTableAdminSettings.newBuilder()
-            .setProjectId(projectName)
-            .setInstanceId(instanceName)
+            .setProjectId(projectId)
+            .setInstanceId(instanceId)
             .build();
     adminClient = BigtableTableAdminClient.create(adminSettings);
   }
@@ -84,10 +80,13 @@ public class ITHelloWorld {
   public void setup() throws IOException {
     if (adminClient == null || dataClient == null) {
       throw new AssumptionViolatedException(
-          INSTANCE_PROPERTY_NAME + " property is not set, skipping integration tests.");
+          PROJECT_PROPERTY_NAME
+              + " or "
+              + INSTANCE_PROPERTY_NAME
+              + " property is not set, skipping integration tests.");
     }
     tableId = generateTableId();
-    helloWorld = new HelloWorld(instanceName, instanceName, tableId);
+    helloWorld = new HelloWorld(projectId, instanceId, tableId);
     adminClient.createTable(CreateTableRequest.of(tableId).addFamily("cf1"));
   }
 
@@ -102,7 +101,7 @@ public class ITHelloWorld {
   public void testCreateAndDeleteTable() throws IOException {
     // Creates a table.
     String testTable = generateTableId();
-    HelloWorld testHelloWorld = new HelloWorld(instanceName, instanceName, testTable);
+    HelloWorld testHelloWorld = new HelloWorld(projectId, instanceId, testTable);
     testHelloWorld.createTable();
     assertTrue(adminClient.exists(testTable));
 

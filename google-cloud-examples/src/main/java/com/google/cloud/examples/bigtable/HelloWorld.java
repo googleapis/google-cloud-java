@@ -22,7 +22,6 @@ import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
-import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowCell;
@@ -70,9 +69,7 @@ public class HelloWorld {
     // [START connecting_to_bigtable]
     // Creates the settings to configure a bigtable data client.
     BigtableDataSettings settings =
-        BigtableDataSettings.newBuilder()
-            .setInstanceName(InstanceName.of(projectId, instanceId))
-            .build();
+        BigtableDataSettings.newBuilder().setProjectId(projectId).setInstanceId(instanceId).build();
 
     // Creates a bigtable data client.
     dataClient = BigtableDataClient.create(settings);
@@ -80,7 +77,8 @@ public class HelloWorld {
     // Creates the settings to configure a bigtable table admin client.
     BigtableTableAdminSettings adminSettings =
         BigtableTableAdminSettings.newBuilder()
-            .setInstanceName(com.google.bigtable.admin.v2.InstanceName.of(projectId, instanceId))
+            .setProjectId(projectId)
+            .setInstanceId(instanceId)
             .build();
 
     // Creates a bigtable table admin client.
