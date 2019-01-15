@@ -116,6 +116,7 @@
           <parallel>classes</parallel>
           <perCoreThreadCount>true</perCoreThreadCount>
           <threadCount>2</threadCount>
+          <useSystemClassLoader>false</useSystemClassLoader>
         </configuration>
         <dependencies>
           <dependency>
@@ -135,6 +136,9 @@
             <version>2.19.1</version>
           </dependency>
         </dependencies>
+        <configuration>
+          <useSystemClassLoader>false</useSystemClassLoader>
+        </configuration>
       </plugin>
     </plugins>
   </build>
