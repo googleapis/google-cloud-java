@@ -22,12 +22,17 @@ import com.google.api.services.dns.model.ManagedZone;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
+import org.threeten.bp.Instant;
+import org.threeten.bp.LocalDateTime;
+import org.threeten.bp.ZoneOffset;
+import org.threeten.bp.format.DateTimeFormatter;
+import org.threeten.bp.temporal.TemporalAccessor;
+import org.threeten.bp.temporal.TemporalField;
+
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.List;
 import java.util.Objects;
-import org.joda.time.DateTime;
-import org.joda.time.format.ISODateTimeFormat;
 
 /**
  * A {@code Zone} represents a DNS zone hosted by the Google Cloud DNS service. A zone is a subtree
@@ -38,6 +43,9 @@ import org.joda.time.format.ISODateTimeFormat;
 public class ZoneInfo implements Serializable {
 
   private static final long serialVersionUID = -5313169712036079818L;
+  private static final DateTimeFormatter DATE_TIME_FORMATTER =
+      DateTimeFormatter.ISO_DATE_TIME.withZone(ZoneOffset.UTC);
+
   private final String name;
   private final String generatedId;
   private final Long creationTimeMillis;
@@ -233,8 +241,8 @@ public class ZoneInfo implements Serializable {
     pb.setNameServers(this.nameServers); // do use real attribute value which may be null
     pb.setNameServerSet(this.getNameServerSet());
     if (this.getCreationTimeMillis() != null) {
-      pb.setCreationTime(
-          ISODateTimeFormat.dateTime().withZoneUTC().print(this.getCreationTimeMillis()));
+      pb.setCreationTime(DATE_TIME_FORMATTER
+          .format(Instant.ofEpochMilli(this.getCreationTimeMillis())));
     }
     return pb;
   }
@@ -257,7 +265,8 @@ public class ZoneInfo implements Serializable {
       builder.setNameServerSet(pb.getNameServerSet());
     }
     if (pb.getCreationTime() != null) {
-      builder.setCreationTimeMillis(DateTime.parse(pb.getCreationTime()).getMillis());
+      builder.setCreationTimeMillis(
+          DATE_TIME_FORMATTER.parse(pb.getCreationTime(), Instant.FROM).toEpochMilli());
     }
     return builder.build();
   }

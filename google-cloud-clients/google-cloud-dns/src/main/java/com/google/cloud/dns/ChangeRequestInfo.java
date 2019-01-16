@@ -26,12 +26,14 @@ import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
+import org.threeten.bp.Instant;
+import org.threeten.bp.ZoneOffset;
+import org.threeten.bp.format.DateTimeFormatter;
+
 import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
-import org.joda.time.DateTime;
-import org.joda.time.format.ISODateTimeFormat;
 
 /**
  * A class representing an atomic update to a collection of {@link RecordSet}s within a {@code
@@ -328,7 +330,8 @@ public class ChangeRequestInfo implements Serializable {
     }
     // set timestamp
     if (getStartTimeMillis() != null) {
-      pb.setStartTime(ISODateTimeFormat.dateTime().withZoneUTC().print(getStartTimeMillis()));
+      pb.setStartTime(DateTimeFormatter.ISO_DATE_TIME.withZone(ZoneOffset.UTC)
+          .format(Instant.ofEpochMilli(getStartTimeMillis())));
     }
     // set status
     if (status() != null) {
@@ -347,7 +350,8 @@ public class ChangeRequestInfo implements Serializable {
       builder.setGeneratedId(pb.getId());
     }
     if (pb.getStartTime() != null) {
-      builder.setStartTime(DateTime.parse(pb.getStartTime()).getMillis());
+      builder.setStartTime(
+          DateTimeFormatter.ISO_DATE_TIME.parse(pb.getStartTime(), Instant.FROM).toEpochMilli());
     }
     if (pb.getStatus() != null) {
       // we are assuming that status indicated in pb is a lower case version of the enum name

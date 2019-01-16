@@ -112,7 +112,6 @@
               <pattern>org</pattern>
               <shadedPattern>shaded.cloud_nio.org</shadedPattern>
               <includes>
-                <include>org.joda.**</include>
                 <include>org.apache.**</include>
                 <include>org.threeten.**</include>
                 <include>org.codehaus.**</include>
