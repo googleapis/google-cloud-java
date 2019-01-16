@@ -20,7 +20,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.gax.rpc.NotFoundException;
-import com.google.bigtable.admin.v2.InstanceName;
 import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings;
 import com.google.cloud.bigtable.admin.v2.models.Cluster;
@@ -42,10 +41,10 @@ import org.junit.Test;
 /** Integration tests for {@link InstanceAdminExample} */
 public class ITInstanceAdminExample {
 
-  private static final String INSTANCE_PROPERTY_NAME = "bigtable.instance";
+  private static final String PROJECT_PROPERTY_NAME = "bigtable.project";
   private static final String ID_PREFIX = "instanceadmin";
   private static final String CLUSTER = "cluster";
-  private static String projectName;
+  private static String projectId;
   private static BigtableInstanceAdminClient adminClient;
   private String clusterId;
   private String instanceId;
@@ -53,14 +52,13 @@ public class ITInstanceAdminExample {
 
   @BeforeClass
   public static void beforeClass() throws IOException {
-    String targetProject = System.getProperty(INSTANCE_PROPERTY_NAME);
-    if (targetProject == null) {
+    projectId = System.getProperty(PROJECT_PROPERTY_NAME);
+    if (projectId == null) {
       adminClient = null;
       return;
     }
-    projectName = InstanceName.parse(targetProject).getProject();
     BigtableInstanceAdminSettings instanceAdminSettings =
-        BigtableInstanceAdminSettings.newBuilder().setProjectId(projectName).build();
+        BigtableInstanceAdminSettings.newBuilder().setProjectId(projectId).build();
     adminClient = BigtableInstanceAdminClient.create(instanceAdminSettings);
   }
 
@@ -74,11 +72,11 @@ public class ITInstanceAdminExample {
   public void setup() throws IOException {
     if (adminClient == null) {
       throw new AssumptionViolatedException(
-          INSTANCE_PROPERTY_NAME + " property is not set, skipping integration tests.");
+          PROJECT_PROPERTY_NAME + " property is not set, skipping integration tests.");
     }
     instanceId = generateId();
     clusterId = generateId();
-    instanceAdmin = new InstanceAdminExample(projectName, instanceId, clusterId);
+    instanceAdmin = new InstanceAdminExample(projectId, instanceId, clusterId);
     adminClient.createInstance(
         CreateInstanceRequest.of(instanceId)
             .addCluster(clusterId, "us-central1-f", 3, StorageType.SSD)
@@ -99,7 +97,7 @@ public class ITInstanceAdminExample {
     String testInstance = generateId();
     String testCluster = generateId();
     InstanceAdminExample testInstanceAdmin =
-        new InstanceAdminExample(projectName, testInstance, testCluster);
+        new InstanceAdminExample(projectId, testInstance, testCluster);
     testInstanceAdmin.createProdInstance();
     assertTrue(adminClient.exists(testInstance));
 
