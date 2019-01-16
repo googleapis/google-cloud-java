@@ -25,14 +25,13 @@ import com.google.cloud.StringEnumType;
 import com.google.cloud.StringEnumValue;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
-import org.threeten.bp.Instant;
-import org.threeten.bp.ZoneOffset;
-import org.threeten.bp.format.DateTimeFormatter;
-
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import org.threeten.bp.Instant;
+import org.threeten.bp.ZoneOffset;
+import org.threeten.bp.format.DateTimeFormatter;
 
 /**
  * A Google Cloud Resource Manager project metadata object. A Project is a high-level Google Cloud
@@ -394,8 +393,10 @@ public class ProjectInfo implements Serializable {
       projectPb.setLifecycleState(state.toString());
     }
     if (createTimeMillis != null) {
-      projectPb.setCreateTime(DateTimeFormatter.ISO_DATE_TIME.withZone(ZoneOffset.UTC)
-          .format(Instant.ofEpochMilli(createTimeMillis)));
+      projectPb.setCreateTime(
+          DateTimeFormatter.ISO_DATE_TIME
+              .withZone(ZoneOffset.UTC)
+              .format(Instant.ofEpochMilli(createTimeMillis)));
     }
     if (parent != null) {
       projectPb.setParent(parent.toPb());

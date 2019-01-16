@@ -45,8 +45,7 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
   public static final Timestamp MAX_VALUE =
       new Timestamp(253402300799L, (int) TimeUnit.SECONDS.toNanos(1) - 1);
 
-  private static final DateTimeFormatter format =
-      DateTimeFormatter.ISO_LOCAL_DATE_TIME;
+  private static final DateTimeFormatter format = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
 
   private final long seconds;
   private final int nanos;

@@ -22,17 +22,13 @@ import com.google.api.services.dns.model.ManagedZone;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
-import org.threeten.bp.Instant;
-import org.threeten.bp.LocalDateTime;
-import org.threeten.bp.ZoneOffset;
-import org.threeten.bp.format.DateTimeFormatter;
-import org.threeten.bp.temporal.TemporalAccessor;
-import org.threeten.bp.temporal.TemporalField;
-
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.List;
 import java.util.Objects;
+import org.threeten.bp.Instant;
+import org.threeten.bp.ZoneOffset;
+import org.threeten.bp.format.DateTimeFormatter;
 
 /**
  * A {@code Zone} represents a DNS zone hosted by the Google Cloud DNS service. A zone is a subtree
@@ -241,8 +237,8 @@ public class ZoneInfo implements Serializable {
     pb.setNameServers(this.nameServers); // do use real attribute value which may be null
     pb.setNameServerSet(this.getNameServerSet());
     if (this.getCreationTimeMillis() != null) {
-      pb.setCreationTime(DATE_TIME_FORMATTER
-          .format(Instant.ofEpochMilli(this.getCreationTimeMillis())));
+      pb.setCreationTime(
+          DATE_TIME_FORMATTER.format(Instant.ofEpochMilli(this.getCreationTimeMillis())));
     }
     return pb;
   }
