@@ -90,8 +90,8 @@ public class PublisherSnippets {
       throws Exception {
     // [START pubsub_publisher_batch_settings]
     // Batch settings control how the publisher batches messages
-    long requestBytesThreshold = 5000L; // default : 1b
-    long messageCountBatchSize = 10L; // default : 1
+    long requestBytesThreshold = 5000L; // default : 1 byte
+    long messageCountBatchSize = 10L; // default : 1 message
 
     Duration publishDelayThreshold = Duration.ofMillis(100); // default : 1 ms
 
