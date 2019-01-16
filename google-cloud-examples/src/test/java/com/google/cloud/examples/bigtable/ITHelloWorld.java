@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC.  All Rights Reserved.
+ * Copyright 2019 Google LLC.  All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,6 @@ import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
-import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import java.io.IOException;
 import java.util.Random;
@@ -37,31 +36,35 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+/** Integration tests for {@link HelloWorld} */
 public class ITHelloWorld {
 
+  private static final String PROJECT_PROPERTY_NAME = "bigtable.project";
   private static final String INSTANCE_PROPERTY_NAME = "bigtable.instance";
   private static final String TABLE_PREFIX = "table";
   private static String tableId;
   private static BigtableDataClient dataClient;
   private static BigtableTableAdminClient adminClient;
-  private static InstanceName instanceName;
+  private static String projectId;
+  private static String instanceId;
   private HelloWorld helloWorld;
 
   @BeforeClass
   public static void beforeClass() throws IOException {
-    String targetInstance = System.getProperty(INSTANCE_PROPERTY_NAME);
-    if (targetInstance == null) {
+    projectId = System.getProperty(PROJECT_PROPERTY_NAME);
+    instanceId = System.getProperty(INSTANCE_PROPERTY_NAME);
+    if (projectId == null || instanceId == null) {
       dataClient = null;
       adminClient = null;
       return;
     }
-    instanceName = InstanceName.parse(targetInstance);
     BigtableDataSettings settings =
-        BigtableDataSettings.newBuilder().setInstanceName(instanceName).build();
+        BigtableDataSettings.newBuilder().setProjectId(projectId).setInstanceId(instanceId).build();
     dataClient = BigtableDataClient.create(settings);
     BigtableTableAdminSettings adminSettings =
         BigtableTableAdminSettings.newBuilder()
-            .setInstanceName(com.google.bigtable.admin.v2.InstanceName.parse(targetInstance))
+            .setProjectId(projectId)
+            .setInstanceId(instanceId)
             .build();
     adminClient = BigtableTableAdminClient.create(adminSettings);
   }
@@ -77,10 +80,13 @@ public class ITHelloWorld {
   public void setup() throws IOException {
     if (adminClient == null || dataClient == null) {
       throw new AssumptionViolatedException(
-          INSTANCE_PROPERTY_NAME + " property is not set, skipping integration tests.");
+          PROJECT_PROPERTY_NAME
+              + " or "
+              + INSTANCE_PROPERTY_NAME
+              + " property is not set, skipping integration tests.");
     }
     tableId = generateTableId();
-    helloWorld = new HelloWorld(instanceName.getProject(), instanceName.getInstance(), tableId);
+    helloWorld = new HelloWorld(projectId, instanceId, tableId);
     adminClient.createTable(CreateTableRequest.of(tableId).addFamily("cf1"));
   }
 
@@ -93,21 +99,20 @@ public class ITHelloWorld {
 
   @Test
   public void testCreateAndDeleteTable() throws IOException {
-    // Create table
-    String fakeTable = generateTableId();
-    HelloWorld testHelloWorld =
-        new HelloWorld(instanceName.getProject(), instanceName.getInstance(), fakeTable);
+    // Creates a table.
+    String testTable = generateTableId();
+    HelloWorld testHelloWorld = new HelloWorld(projectId, instanceId, testTable);
     testHelloWorld.createTable();
-    assertTrue(adminClient.exists(fakeTable));
+    assertTrue(adminClient.exists(testTable));
 
-    // Delete table
+    // Deletes a table.
     testHelloWorld.deleteTable();
-    assertTrue(!adminClient.exists(fakeTable));
+    assertTrue(!adminClient.exists(testTable));
   }
 
   @Test
   public void testWriteToTable() {
-    // Write to table
+    // Writes to a table.
     helloWorld.writeToTable();
     Row row = dataClient.readRow(tableId, "rowKey0");
     assertNotNull(row);
