@@ -77,11 +77,7 @@ public class TransactionTest {
   @Spy
   private FirestoreImpl firestoreMock =
       new FirestoreImpl(
-          FirestoreOptions.newBuilder()
-              .setProjectId("test-project")
-              .setTimestampsInSnapshotsEnabled(true)
-              .build(),
-          firestoreRpc);
+          FirestoreOptions.newBuilder().setProjectId("test-project").build(), firestoreRpc);
 
   @Captor private ArgumentCaptor<Message> requestCapture;
   @Captor private ArgumentCaptor<ApiStreamObserver<Message>> streamObserverCapture;
