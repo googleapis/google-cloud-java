@@ -426,7 +426,7 @@ class FirestoreImpl implements Firestore {
 
   /** Returns the name of the Firestore project associated with this client. */
   String getDatabaseName() {
-    return databasePath.toString();
+    return databasePath.getDatabaseName().toString();
   }
 
   /** Returns the underlying RPC client. */
