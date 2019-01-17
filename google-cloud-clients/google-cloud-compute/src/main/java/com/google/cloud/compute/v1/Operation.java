@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -127,73 +127,73 @@ public final class Operation implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("clientOperationId")) {
+    if ("clientOperationId".equals(fieldName)) {
       return clientOperationId;
     }
-    if (fieldName.equals("creationTimestamp")) {
+    if ("creationTimestamp".equals(fieldName)) {
       return creationTimestamp;
     }
-    if (fieldName.equals("description")) {
+    if ("description".equals(fieldName)) {
       return description;
     }
-    if (fieldName.equals("endTime")) {
+    if ("endTime".equals(fieldName)) {
       return endTime;
     }
-    if (fieldName.equals("error")) {
+    if ("error".equals(fieldName)) {
       return error;
     }
-    if (fieldName.equals("httpErrorMessage")) {
+    if ("httpErrorMessage".equals(fieldName)) {
       return httpErrorMessage;
     }
-    if (fieldName.equals("httpErrorStatusCode")) {
+    if ("httpErrorStatusCode".equals(fieldName)) {
       return httpErrorStatusCode;
     }
-    if (fieldName.equals("id")) {
+    if ("id".equals(fieldName)) {
       return id;
     }
-    if (fieldName.equals("insertTime")) {
+    if ("insertTime".equals(fieldName)) {
       return insertTime;
     }
-    if (fieldName.equals("kind")) {
+    if ("kind".equals(fieldName)) {
       return kind;
     }
-    if (fieldName.equals("name")) {
+    if ("name".equals(fieldName)) {
       return name;
     }
-    if (fieldName.equals("operationType")) {
+    if ("operationType".equals(fieldName)) {
       return operationType;
     }
-    if (fieldName.equals("progress")) {
+    if ("progress".equals(fieldName)) {
       return progress;
     }
-    if (fieldName.equals("region")) {
+    if ("region".equals(fieldName)) {
       return region;
     }
-    if (fieldName.equals("selfLink")) {
+    if ("selfLink".equals(fieldName)) {
       return selfLink;
     }
-    if (fieldName.equals("startTime")) {
+    if ("startTime".equals(fieldName)) {
       return startTime;
     }
-    if (fieldName.equals("status")) {
+    if ("status".equals(fieldName)) {
       return status;
     }
-    if (fieldName.equals("statusMessage")) {
+    if ("statusMessage".equals(fieldName)) {
       return statusMessage;
     }
-    if (fieldName.equals("targetId")) {
+    if ("targetId".equals(fieldName)) {
       return targetId;
     }
-    if (fieldName.equals("targetLink")) {
+    if ("targetLink".equals(fieldName)) {
       return targetLink;
     }
-    if (fieldName.equals("user")) {
+    if ("user".equals(fieldName)) {
       return user;
     }
-    if (fieldName.equals("warnings")) {
+    if ("warnings".equals(fieldName)) {
       return warnings;
     }
-    if (fieldName.equals("zone")) {
+    if ("zone".equals(fieldName)) {
       return zone;
     }
     return null;

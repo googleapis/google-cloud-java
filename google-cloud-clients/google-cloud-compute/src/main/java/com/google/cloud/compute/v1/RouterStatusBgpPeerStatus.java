@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,34 +75,34 @@ public final class RouterStatusBgpPeerStatus implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("advertisedRoutes")) {
+    if ("advertisedRoutes".equals(fieldName)) {
       return advertisedRoutes;
     }
-    if (fieldName.equals("ipAddress")) {
+    if ("ipAddress".equals(fieldName)) {
       return ipAddress;
     }
-    if (fieldName.equals("linkedVpnTunnel")) {
+    if ("linkedVpnTunnel".equals(fieldName)) {
       return linkedVpnTunnel;
     }
-    if (fieldName.equals("name")) {
+    if ("name".equals(fieldName)) {
       return name;
     }
-    if (fieldName.equals("numLearnedRoutes")) {
+    if ("numLearnedRoutes".equals(fieldName)) {
       return numLearnedRoutes;
     }
-    if (fieldName.equals("peerIpAddress")) {
+    if ("peerIpAddress".equals(fieldName)) {
       return peerIpAddress;
     }
-    if (fieldName.equals("state")) {
+    if ("state".equals(fieldName)) {
       return state;
     }
-    if (fieldName.equals("status")) {
+    if ("status".equals(fieldName)) {
       return status;
     }
-    if (fieldName.equals("uptime")) {
+    if ("uptime".equals(fieldName)) {
       return uptime;
     }
-    if (fieldName.equals("uptimeSeconds")) {
+    if ("uptimeSeconds".equals(fieldName)) {
       return uptimeSeconds;
     }
     return null;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,13 +44,13 @@ public final class InterconnectLocationRegionInfo implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("expectedRttMs")) {
+    if ("expectedRttMs".equals(fieldName)) {
       return expectedRttMs;
     }
-    if (fieldName.equals("locationPresence")) {
+    if ("locationPresence".equals(fieldName)) {
       return locationPresence;
     }
-    if (fieldName.equals("region")) {
+    if ("region".equals(fieldName)) {
       return region;
     }
     return null;

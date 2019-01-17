@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -82,40 +82,40 @@ public final class ListUsableSubnetworksHttpRequest implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("access_token")) {
+    if ("access_token".equals(fieldName)) {
       return access_token;
     }
-    if (fieldName.equals("callback")) {
+    if ("callback".equals(fieldName)) {
       return callback;
     }
-    if (fieldName.equals("fields")) {
+    if ("fields".equals(fieldName)) {
       return fields;
     }
-    if (fieldName.equals("filter")) {
+    if ("filter".equals(fieldName)) {
       return filter;
     }
-    if (fieldName.equals("key")) {
+    if ("key".equals(fieldName)) {
       return key;
     }
-    if (fieldName.equals("maxResults")) {
+    if ("maxResults".equals(fieldName)) {
       return maxResults;
     }
-    if (fieldName.equals("orderBy")) {
+    if ("orderBy".equals(fieldName)) {
       return orderBy;
     }
-    if (fieldName.equals("pageToken")) {
+    if ("pageToken".equals(fieldName)) {
       return pageToken;
     }
-    if (fieldName.equals("prettyPrint")) {
+    if ("prettyPrint".equals(fieldName)) {
       return prettyPrint;
     }
-    if (fieldName.equals("project")) {
+    if ("project".equals(fieldName)) {
       return project;
     }
-    if (fieldName.equals("quotaUser")) {
+    if ("quotaUser".equals(fieldName)) {
       return quotaUser;
     }
-    if (fieldName.equals("userIp")) {
+    if ("userIp".equals(fieldName)) {
       return userIp;
     }
     return null;

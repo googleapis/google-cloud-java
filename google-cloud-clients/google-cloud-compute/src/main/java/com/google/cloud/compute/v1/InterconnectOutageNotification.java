@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,28 +67,28 @@ public final class InterconnectOutageNotification implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("affectedCircuits")) {
+    if ("affectedCircuits".equals(fieldName)) {
       return affectedCircuits;
     }
-    if (fieldName.equals("description")) {
+    if ("description".equals(fieldName)) {
       return description;
     }
-    if (fieldName.equals("endTime")) {
+    if ("endTime".equals(fieldName)) {
       return endTime;
     }
-    if (fieldName.equals("issueType")) {
+    if ("issueType".equals(fieldName)) {
       return issueType;
     }
-    if (fieldName.equals("name")) {
+    if ("name".equals(fieldName)) {
       return name;
     }
-    if (fieldName.equals("source")) {
+    if ("source".equals(fieldName)) {
       return source;
     }
-    if (fieldName.equals("startTime")) {
+    if ("startTime".equals(fieldName)) {
       return startTime;
     }
-    if (fieldName.equals("state")) {
+    if ("state".equals(fieldName)) {
       return state;
     }
     return null;

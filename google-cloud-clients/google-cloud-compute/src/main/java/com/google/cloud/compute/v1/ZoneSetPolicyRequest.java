@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,13 +44,13 @@ public final class ZoneSetPolicyRequest implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("bindings")) {
+    if ("bindings".equals(fieldName)) {
       return bindings;
     }
-    if (fieldName.equals("etag")) {
+    if ("etag".equals(fieldName)) {
       return etag;
     }
-    if (fieldName.equals("policy")) {
+    if ("policy".equals(fieldName)) {
       return policy;
     }
     return null;

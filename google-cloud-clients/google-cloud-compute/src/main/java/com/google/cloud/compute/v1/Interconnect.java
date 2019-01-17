@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -123,70 +123,70 @@ public final class Interconnect implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("adminEnabled")) {
+    if ("adminEnabled".equals(fieldName)) {
       return adminEnabled;
     }
-    if (fieldName.equals("circuitInfos")) {
+    if ("circuitInfos".equals(fieldName)) {
       return circuitInfos;
     }
-    if (fieldName.equals("creationTimestamp")) {
+    if ("creationTimestamp".equals(fieldName)) {
       return creationTimestamp;
     }
-    if (fieldName.equals("customerName")) {
+    if ("customerName".equals(fieldName)) {
       return customerName;
     }
-    if (fieldName.equals("description")) {
+    if ("description".equals(fieldName)) {
       return description;
     }
-    if (fieldName.equals("expectedOutages")) {
+    if ("expectedOutages".equals(fieldName)) {
       return expectedOutages;
     }
-    if (fieldName.equals("googleIpAddress")) {
+    if ("googleIpAddress".equals(fieldName)) {
       return googleIpAddress;
     }
-    if (fieldName.equals("googleReferenceId")) {
+    if ("googleReferenceId".equals(fieldName)) {
       return googleReferenceId;
     }
-    if (fieldName.equals("id")) {
+    if ("id".equals(fieldName)) {
       return id;
     }
-    if (fieldName.equals("interconnectAttachments")) {
+    if ("interconnectAttachments".equals(fieldName)) {
       return interconnectAttachments;
     }
-    if (fieldName.equals("interconnectType")) {
+    if ("interconnectType".equals(fieldName)) {
       return interconnectType;
     }
-    if (fieldName.equals("kind")) {
+    if ("kind".equals(fieldName)) {
       return kind;
     }
-    if (fieldName.equals("linkType")) {
+    if ("linkType".equals(fieldName)) {
       return linkType;
     }
-    if (fieldName.equals("location")) {
+    if ("location".equals(fieldName)) {
       return location;
     }
-    if (fieldName.equals("name")) {
+    if ("name".equals(fieldName)) {
       return name;
     }
-    if (fieldName.equals("nocContactEmail")) {
+    if ("nocContactEmail".equals(fieldName)) {
       return nocContactEmail;
     }
-    if (fieldName.equals("operationalStatus")) {
+    if ("operationalStatus".equals(fieldName)) {
       return operationalStatus;
     }
-    if (fieldName.equals("peerIpAddress")) {
+    if ("peerIpAddress".equals(fieldName)) {
       return peerIpAddress;
     }
-    if (fieldName.equals("provisionedLinkCount")) {
+    if ("provisionedLinkCount".equals(fieldName)) {
       return provisionedLinkCount;
     }
-    if (fieldName.equals("requestedLinkCount")) {
+    if ("requestedLinkCount".equals(fieldName)) {
       return requestedLinkCount;
     }
-    if (fieldName.equals("selfLink")) {
+    if ("selfLink".equals(fieldName)) {
       return selfLink;
     }
-    if (fieldName.equals("state")) {
+    if ("state".equals(fieldName)) {
       return state;
     }
     return null;
