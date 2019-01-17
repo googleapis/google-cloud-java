@@ -198,8 +198,8 @@ public final class Query implements Serializable {
         ImmutableSortedSet.orderedBy(ByteStringComparator.INSTANCE);
 
     for (KeyOffset keyOffset : sampledRowKeys) {
-      if (!keyOffset.geyKey().isEmpty()) {
-        splitPoints.add(keyOffset.geyKey());
+      if (!keyOffset.getKey().isEmpty()) {
+        splitPoints.add(keyOffset.getKey());
       }
     }
 
