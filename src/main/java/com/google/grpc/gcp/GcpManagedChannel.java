@@ -57,6 +57,7 @@ public class GcpManagedChannel extends ManagedChannel {
   private int maxSize = DEFAULT_MAX_CHANNEL;
   private int maxConcurrentStreamsLowWatermark = DEFAULT_MAX_STREAM;
 
+
   @VisibleForTesting
   final Map<String, AffinityConfig> methodToAffinity = new HashMap<String, AffinityConfig>();
 
@@ -65,8 +66,6 @@ public class GcpManagedChannel extends ManagedChannel {
   final Map<String, ChannelRef> affinityKeyToChannelRef = new HashMap<String, ChannelRef>();
 
   @VisibleForTesting final List<ChannelRef> channelRefs = new ArrayList<ChannelRef>();
-
-  private final Object bindLock = new Object();
 
   /**
    * Constructor for GcpManagedChannel.
