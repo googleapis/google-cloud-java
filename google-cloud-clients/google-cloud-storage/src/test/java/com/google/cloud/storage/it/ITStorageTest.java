@@ -2442,4 +2442,45 @@ public class ITStorageTest {
     assertNotNull(serviceAccount);
     assertTrue(serviceAccount.getEmail().endsWith(SERVICE_ACCOUNT_EMAIL_SUFFIX));
   }
+
+  @Test
+  public void testCreateBucketWithBucketPolicyOnly() {
+    String bpoBucket = RemoteStorageHelper.generateBucketName();
+    try {
+    storage.create(
+            Bucket.newBuilder(bpoBucket)
+                    .setIamConfiguration(
+                            BucketInfo.IamConfiguration.newBuilder().setBucketPolicyOnly(
+                                    BucketInfo.BucketPolicyOnly.newBuilder()
+                                            .setEnabled(true)
+                                            .build())
+                                    .build())
+                    .build());
+
+    Bucket remoteBucket = storage.get(bpoBucket, Storage.BucketGetOption.fields(BucketField.IAMCONFIGURATION));
+
+    assertTrue(remoteBucket.getIamConfiguration().getBucketPolicyOnly().getEnabled());
+    assertNotNull(remoteBucket.getIamConfiguration().getBucketPolicyOnly().getLockedTime());
+
+    } finally {
+      storage.delete(bpoBucket);
+    }
+  }
+
+  @Test
+  public void testAddBucketPolicyOnlyToExistingBucket() {
+    String bpoBucket = RemoteStorageHelper.generateBucketName();
+    try {
+      Bucket remoteBucket = storage.create(Bucket.newBuilder(bpoBucket).build());
+      remoteBucket.toBuilder().setIamConfiguration(
+              BucketInfo.IamConfiguration.newBuilder().setBucketPolicyOnly(
+                      BucketInfo.BucketPolicyOnly.newBuilder()
+                              .setEnabled(true)
+                              .build())
+                      .build())
+              .build().update();
+    } finally {
+      storage.delete(bpoBucket);
+    }
+  }
 }

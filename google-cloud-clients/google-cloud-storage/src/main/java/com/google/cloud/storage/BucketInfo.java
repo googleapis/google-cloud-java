@@ -95,6 +95,147 @@ public class BucketInfo implements Serializable {
   private final Long retentionEffectiveTime;
   private final Boolean retentionPolicyIsLocked;
   private final Long retentionPeriod;
+  private final IamConfiguration iamConfiguration;
+
+  public static class IamConfiguration implements Serializable {
+    private static final long serialVersionUID = -8671736104909424616L;
+
+    private final BucketPolicyOnly bucketPolicyOnly;
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) return true;
+      if (o == null || getClass() != o.getClass()) {
+        return false;
+      }
+      IamConfiguration other = (IamConfiguration) o;
+      return Objects.equals(bucketPolicyOnly.toPb(), other.getBucketPolicyOnly().toPb());
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(bucketPolicyOnly);
+    }
+
+    private IamConfiguration(Builder builder) {
+      this.bucketPolicyOnly = builder.bucketPolicyOnly;
+    }
+
+    public static Builder newBuilder() {
+      return new Builder();
+    }
+
+    public Builder toBuilder() {
+      Builder builder = new Builder();
+      builder.bucketPolicyOnly = this.bucketPolicyOnly;
+      return builder;
+    }
+
+    public BucketPolicyOnly getBucketPolicyOnly() {
+      return bucketPolicyOnly;
+    }
+
+    Bucket.IamConfiguration toPb() {
+      Bucket.IamConfiguration iamConfiguration = new Bucket.IamConfiguration();
+      iamConfiguration.setBucketPolicyOnly(this.bucketPolicyOnly.toPb());
+
+      return iamConfiguration;
+    }
+
+    static IamConfiguration fromPb(Bucket.IamConfiguration iamConfiguration) {
+      return newBuilder()
+              .setBucketPolicyOnly(BucketPolicyOnly.fromPb(iamConfiguration.getBucketPolicyOnly()))
+              .build();
+    }
+
+    public static class Builder {
+      private BucketPolicyOnly bucketPolicyOnly;
+
+      public Builder setBucketPolicyOnly(BucketPolicyOnly bucketPolicyOnly) {
+        this.bucketPolicyOnly = bucketPolicyOnly;
+        return this;
+      }
+
+      public IamConfiguration build() {
+        return new IamConfiguration(this);
+      }
+    }
+  }
+
+  public static class BucketPolicyOnly implements Serializable {
+    private static final long serialVersionUID = 2260445211318576550L;
+    private final Boolean enabled;
+    private final DateTime lockedTime;
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) return true;
+      if (o == null || getClass() != o.getClass()) {
+        return false;
+      }
+      BucketPolicyOnly other = (BucketPolicyOnly) o;
+      return Objects.equals(toPb(), other.toPb());
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(enabled, lockedTime);
+    }
+
+    public Boolean getEnabled() {
+      return enabled;
+    }
+
+    public DateTime getLockedTime() {
+      return lockedTime;
+    }
+
+    public static Builder newBuilder() {
+      return new Builder();
+    }
+
+    Bucket.IamConfiguration.BucketPolicyOnly toPb() {
+      Bucket.IamConfiguration.BucketPolicyOnly bucketPolicyOnly = new Bucket.IamConfiguration.BucketPolicyOnly();
+
+      bucketPolicyOnly.setEnabled(enabled);
+      bucketPolicyOnly.setLockedTime(lockedTime);
+
+      return bucketPolicyOnly;
+    }
+
+    static BucketPolicyOnly fromPb(Bucket.IamConfiguration.BucketPolicyOnly bucketPolicyOnly) {
+      return newBuilder()
+              .setEnabled(bucketPolicyOnly.getEnabled())
+              .setLockedTime(bucketPolicyOnly.getLockedTime())
+              .build();
+    }
+
+    private BucketPolicyOnly(Builder builder) {
+      this.enabled = builder.enabled;
+      this.lockedTime = builder.lockedTime;
+    }
+
+    public static class Builder {
+      private Boolean enabled;
+      private DateTime lockedTime;
+
+      private Builder() {}
+
+      public Builder setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+        return this;
+      }
+
+      Builder setLockedTime(DateTime lockedTime) {
+        this.lockedTime = lockedTime;
+        return this;
+      }
+
+      public BucketPolicyOnly build() {
+        return new BucketPolicyOnly(this);
+      }
+    }
+  }
 
   /**
    * Lifecycle rule for a bucket. Allows supported Actions, such as deleting and changing storage
@@ -786,6 +927,9 @@ public class BucketInfo implements Serializable {
     @BetaApi
     public abstract Builder setRetentionPeriod(Long retentionPeriod);
 
+    @BetaApi
+    public abstract Builder setIamConfiguration(IamConfiguration iamConfiguration);
+
     /** Creates a {@code BucketInfo} object. */
     public abstract BucketInfo build();
   }
@@ -816,6 +960,7 @@ public class BucketInfo implements Serializable {
     private Long retentionEffectiveTime;
     private Boolean retentionPolicyIsLocked;
     private Long retentionPeriod;
+    private IamConfiguration iamConfiguration;
 
     BuilderImpl(String name) {
       this.name = name;
@@ -846,6 +991,7 @@ public class BucketInfo implements Serializable {
       retentionEffectiveTime = bucketInfo.retentionEffectiveTime;
       retentionPolicyIsLocked = bucketInfo.retentionPolicyIsLocked;
       retentionPeriod = bucketInfo.retentionPeriod;
+      iamConfiguration = bucketInfo.iamConfiguration;
     }
 
     @Override
@@ -999,6 +1145,12 @@ public class BucketInfo implements Serializable {
     }
 
     @Override
+    public Builder setIamConfiguration(IamConfiguration iamConfiguration) {
+      this.iamConfiguration = iamConfiguration;
+      return this;
+    }
+
+    @Override
     public BucketInfo build() {
       checkNotNull(name);
       return new BucketInfo(this);
@@ -1030,6 +1182,7 @@ public class BucketInfo implements Serializable {
     retentionEffectiveTime = builder.retentionEffectiveTime;
     retentionPolicyIsLocked = builder.retentionPolicyIsLocked;
     retentionPeriod = builder.retentionPeriod;
+    iamConfiguration = builder.iamConfiguration;
   }
 
   /** Returns the service-generated id for the bucket. */
@@ -1268,6 +1421,11 @@ public class BucketInfo implements Serializable {
     return retentionPeriod;
   }
 
+  @BetaApi
+  public IamConfiguration getIamConfiguration() {
+    return iamConfiguration;
+  }
+
   /** Returns a builder for the current bucket. */
   public Builder toBuilder() {
     return new BuilderImpl(this);
@@ -1405,6 +1563,9 @@ public class BucketInfo implements Serializable {
         bucketPb.setRetentionPolicy(retentionPolicy);
       }
     }
+    if (iamConfiguration != null) {
+      bucketPb.setIamConfiguration(iamConfiguration.toPb());
+    }
 
     return bucketPb;
   }
@@ -1525,6 +1686,10 @@ public class BucketInfo implements Serializable {
       if (retentionPolicy.getRetentionPeriod() != null) {
         builder.setRetentionPeriod(retentionPolicy.getRetentionPeriod());
       }
+    }
+    Bucket.IamConfiguration iamConfiguration = bucketPb.getIamConfiguration();
+    if (iamConfiguration != null) {
+      builder.setIamConfiguration(IamConfiguration.fromPb(iamConfiguration));
     }
     return builder.build();
   }

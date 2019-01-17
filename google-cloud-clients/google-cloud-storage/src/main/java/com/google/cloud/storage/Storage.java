@@ -96,7 +96,8 @@ public interface Storage extends Service<StorageOptions> {
     ENCRYPTION("encryption"),
     BILLING("billing"),
     DEFAULT_EVENT_BASED_HOLD("defaultEventBasedHold"),
-    RETENTION_POLICY("retentionPolicy");
+    RETENTION_POLICY("retentionPolicy"),
+    IAMCONFIGURATION("iamConfiguration");
 
     static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(NAME);
 

@@ -656,6 +656,12 @@ public class Bucket extends BucketInfo {
     }
 
     @Override
+    public Builder setIamConfiguration(IamConfiguration iamConfiguration) {
+      infoBuilder.setIamConfiguration(iamConfiguration);
+      return this;
+    }
+
+    @Override
     public Bucket build() {
       return new Bucket(storage, infoBuilder);
     }
