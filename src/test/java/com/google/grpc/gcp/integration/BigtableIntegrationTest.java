@@ -33,19 +33,26 @@ import com.google.bigtable.v2.RowSet;
 import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.protobuf.ByteString;
+import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.auth.MoreCallCredentials;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.Callable;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
@@ -57,6 +64,7 @@ public class BigtableIntegrationTest {
   private static final int DEFAULT_MAX_STREAM = 100;
   private static final int NEW_MAX_CHANNEL = 5;
   private static final int NEW_MAX_STREAM = 5;
+  private static final int MAX_MSG_SIZE = 8 * 1024 * 1024;
 
   private static final String TEST_APICONFIG_FILE =
       "src/test/resources/apiconfigtests/empty_method.json";
@@ -64,13 +72,15 @@ public class BigtableIntegrationTest {
   private static final String FAMILY_NAME = "test-family";
   private static final String TABLE_NAME =
       "projects/cloudprober-test/instances/test-instance/tables/test-table";
+  private static final String LARGE_TABLE_NAME =
+      "projects/cloudprober-test/instances/test-instance/tables/test-large-table";
   private static final String COLUMN_NAME = "col-";
   private static final String OAUTH_SCOPE = "https://www.googleapis.com/auth/cloud-platform";
 
   private GcpManagedChannel gcpChannel;
   private ManagedChannelBuilder builder;
 
-  private GoogleCredentials getCreds() {
+  private static GoogleCredentials getCreds() {
     GoogleCredentials creds;
     try {
       creds = GoogleCredentials.getApplicationDefault();
@@ -82,7 +92,7 @@ public class BigtableIntegrationTest {
     return creds;
   }
 
-  private BigtableBlockingStub getBigtableBlockingStub() throws InterruptedException {
+  private BigtableBlockingStub getBigtableBlockingStub() {
     GoogleCredentials creds = getCreds();
     BigtableBlockingStub stub =
         BigtableGrpc.newBlockingStub(gcpChannel)
@@ -90,23 +100,50 @@ public class BigtableIntegrationTest {
     return stub;
   }
 
-  private BigtableStub getBigtableStub() throws InterruptedException {
+  private BigtableStub getBigtableStub() {
     GoogleCredentials creds = getCreds();
     BigtableStub stub =
         BigtableGrpc.newStub(gcpChannel).withCallCredentials(MoreCallCredentials.from(creds));
     return stub;
   }
 
-  private BigtableFutureStub getBigtableFutureStub() throws InterruptedException {
+  private BigtableFutureStub getBigtableFutureStub() {
     GoogleCredentials creds = getCreds();
     BigtableFutureStub stub =
         BigtableGrpc.newFutureStub(gcpChannel).withCallCredentials(MoreCallCredentials.from(creds));
     return stub;
   }
 
+  private boolean runManyManyStreamsNormalChannel() {
+    ManagedChannel channel = builder.build();
+    GoogleCredentials creds = getCreds();
+    BigtableBlockingStub stubNormal =
+        BigtableGrpc.newBlockingStub(channel).withCallCredentials(MoreCallCredentials.from(creds));
+
+    ReadRowsRequest request = ReadRowsRequest.newBuilder().setTableName(LARGE_TABLE_NAME).build();
+    for (int i = 0; i < DEFAULT_MAX_STREAM + 5; i++) {
+      Iterator<ReadRowsResponse> iterNormal = stubNormal.readRows(request);
+      iterNormal.next();
+    }
+    return true;
+  }
+
+  private boolean runManyManyStreamsGcpChannel() {
+    BigtableBlockingStub stub = getBigtableBlockingStub();
+    ReadRowsRequest request = ReadRowsRequest.newBuilder().setTableName(LARGE_TABLE_NAME).build();
+
+    for (int i = 0; i < DEFAULT_MAX_STREAM + 5; i++) {
+      Iterator<ReadRowsResponse> iterNormal = stub.readRows(request);
+      iterNormal.next();
+    }
+    return true;
+  }
+
   @Before
-  public void setupBuilder() throws InterruptedException {
-    builder = ManagedChannelBuilder.forAddress(BIGTABLE_TARGET, 443);
+  public void setupChannel() throws InterruptedException {
+    builder =
+        ManagedChannelBuilder.forAddress(BIGTABLE_TARGET, 443).maxInboundMessageSize(MAX_MSG_SIZE);
+    gcpChannel = new GcpManagedChannel(builder);
   }
 
   @After
@@ -114,9 +151,10 @@ public class BigtableIntegrationTest {
     gcpChannel.shutdownNow();
   }
 
+  @Rule public ExpectedException expectedEx = ExpectedException.none();
+
   @Test
   public void testMutateRowReuse() throws Exception {
-    gcpChannel = new GcpManagedChannel(builder);
     BigtableBlockingStub stub = getBigtableBlockingStub();
     MutateRowRequest request = getMutateRequest("test-mutation", 100, "test-row");
 
@@ -129,7 +167,6 @@ public class BigtableIntegrationTest {
 
   @Test
   public void testMutateRowAsyncReuse() throws Exception {
-    gcpChannel = new GcpManagedChannel(builder);
     BigtableStub stub = getBigtableStub();
 
     for (int i = 0; i < DEFAULT_MAX_CHANNEL * 2; i++) {
@@ -146,7 +183,6 @@ public class BigtableIntegrationTest {
 
   @Test
   public void testMutateRowFutureReuse() throws Exception {
-    gcpChannel = new GcpManagedChannel(builder);
     BigtableFutureStub stub = getBigtableFutureStub();
     for (int i = 0; i < DEFAULT_MAX_CHANNEL; i++) {
       MutateRowRequest request = getMutateRequest("test-mutation-future", i, "test-row-future");
@@ -161,6 +197,7 @@ public class BigtableIntegrationTest {
   @Test
   public void testConcurrentStreamsAndChannels() throws Exception {
     // For our current channel pool, the max_stream is 5 and the max_size is 5.
+    gcpChannel.shutdownNow();
     gcpChannel = new GcpManagedChannel(builder, TEST_APICONFIG_FILE);
     BigtableStub stub = getBigtableStub();
     List<AsyncResponseObserver<MutateRowResponse>> clearObservers = new ArrayList<>();
@@ -214,6 +251,46 @@ public class BigtableIntegrationTest {
     Iterator<ReadRowsResponse> response = stub.readRows(request);
     assertEquals(21, response.next().getChunksCount());
     assertEquals(1, gcpChannel.channelRefs.size());
+  }
+
+  /** There are 105 streams and our GcpManagedChannel is able to handle them. */
+  @Test
+  public void readGiganticDataGcpChannel() throws Exception {
+    ExecutorService executor = Executors.newCachedThreadPool();
+    Callable<Object> task =
+        new Callable<Object>() {
+          public Object call() {
+            return runManyManyStreamsGcpChannel();
+          }
+        };
+    Future<Object> future = executor.submit(task);
+    try {
+      Object result = future.get(120, TimeUnit.SECONDS);
+    } finally {
+      future.cancel(true);
+    }
+  }
+
+  /**
+   * The original ManagedChannel is not able to hold 105 streams concurrently. The 101st stream will
+   * be blocked and throws a TimeoutException.
+   */
+  @Test
+  public void readGiganticDataNormalChannel() throws Exception {
+    ExecutorService executor = Executors.newCachedThreadPool();
+    Callable<Object> task =
+        new Callable<Object>() {
+          public Object call() {
+            return runManyManyStreamsNormalChannel();
+          }
+        };
+    expectedEx.expect(TimeoutException.class);
+    Future<Object> future = executor.submit(task);
+    try {
+      Object result = future.get(120, TimeUnit.SECONDS);
+    } finally {
+      future.cancel(true);
+    }
   }
 
   private static MutateRowRequest getMutateRequest(String val, int col, String rowKey) {

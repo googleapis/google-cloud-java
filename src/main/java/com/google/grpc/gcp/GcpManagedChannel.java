@@ -64,7 +64,7 @@ public class GcpManagedChannel extends ManagedChannel {
   @GuardedBy("bindLock")
   final Map<String, ChannelRef> affinityKeyToChannelRef = new HashMap<String, ChannelRef>();
 
-  @VisibleForTesting List<ChannelRef> channelRefs = new ArrayList<ChannelRef>();
+  @VisibleForTesting final List<ChannelRef> channelRefs = new ArrayList<ChannelRef>();
 
   private final Object bindLock = new Object();
 
@@ -72,14 +72,21 @@ public class GcpManagedChannel extends ManagedChannel {
    * Constructor for GcpManagedChannel.
    *
    * @param builder the normal ManagedChannelBuilder
+   */
+  public GcpManagedChannel(ManagedChannelBuilder builder) {
+    apiConfig = null;
+    this.builder = builder;
+    getChannelRef();
+  }
+
+  /**
+   * Constructor for GcpManagedChannel.
+   *
+   * @param builder the normal ManagedChannelBuilder
    * @param jsonPath optional, the path of the .json file that defines the ApiConfig.
    */
-  public GcpManagedChannel(ManagedChannelBuilder builder, String... jsonPath) {
-    if (jsonPath.length == 0) {
-      apiConfig = null;
-    } else {
-      loadApiConfig(jsonPath[0]);
-    }
+  public GcpManagedChannel(ManagedChannelBuilder builder, String jsonPath) {
+    loadApiConfig(jsonPath);
     this.builder = builder;
     getChannelRef();
   }
@@ -96,11 +103,16 @@ public class GcpManagedChannel extends ManagedChannel {
     return maxConcurrentStreamsLowWatermark;
   }
 
-  /** Pick the channelRef with the least busy managedchannel from the pool. */
-  protected ChannelRef getChannelRef(String... keys) {
+  /**
+   * Pick a channelRef (and create a new one if necessary).
+   *
+   * <p>If affinity key is specified, pick the one bound the the affinity key. Otherwise pick the
+   * one with the smallest number of streams.
+   */
+  protected ChannelRef getChannelRef(String... key) {
     synchronized (bindLock) {
-      if (keys.length != 0 && keys[0] != null) {
-        return affinityKeyToChannelRef.get(keys[0]);
+      if (key.length != 0 && key[0] != null) {
+        return affinityKeyToChannelRef.get(key[0]);
       }
       Collections.sort(
           channelRefs,
@@ -328,7 +340,6 @@ public class GcpManagedChannel extends ManagedChannel {
         methodToAffinity.put(methodName, method.getAffinity());
       }
     }
-    return;
   }
 
   /**
