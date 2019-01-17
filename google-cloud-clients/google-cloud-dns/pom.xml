@@ -33,10 +33,6 @@
       <artifactId>google-api-services-dns</artifactId>
       <scope>compile</scope>
     </dependency>
-    <dependency>
-      <groupId>commons-fileupload</groupId>
-      <artifactId>commons-fileupload</artifactId>
-    </dependency>
 
     <!-- Test dependencies -->
     <dependency>
