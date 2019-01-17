@@ -18,7 +18,6 @@ package com.google.cloud.bigquery;
 
 import com.google.api.core.InternalApi;
 import com.google.cloud.PageImpl;
-
 import javax.annotation.Nullable;
 
 public class EmptyTableResult extends TableResult {
