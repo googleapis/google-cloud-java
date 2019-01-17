@@ -312,50 +312,6 @@ public class BigtableIntegrationTest {
     return request;
   }
 
-  /** There are 105 streams and our GcpManagedChannel is able to handle them. */
-  @Test
-  public void readGiganticDataGcpChannel() throws Exception {
-    ExecutorService executor = Executors.newCachedThreadPool();
-    Callable<Object> task =
-        new Callable<Object>() {
-          public Object call() {
-            try {
-              return runManyManyStreamsGcpChannel();
-            } catch (InterruptedException e) {
-              return null;
-            }
-          }
-        };
-    Future<Object> future = executor.submit(task);
-    try {
-      Object result = future.get(120, TimeUnit.SECONDS);
-    } finally {
-      future.cancel(true);
-    }
-  }
-
-  /**
-   * The original ManagedChannel is not able to hold 105 streams concurrently. The 101st stream will
-   * be blocked and throws a TimeoutException.
-   */
-  @Test
-  public void readGiganticDataNormalChannel() throws Exception {
-    ExecutorService executor = Executors.newCachedThreadPool();
-    Callable<Object> task =
-        new Callable<Object>() {
-          public Object call() {
-            return runManyManyStreamsNormalChannel();
-          }
-        };
-    expectedEx.expect(TimeoutException.class);
-    Future<Object> future = executor.submit(task);
-    try {
-      Object result = future.get(120, TimeUnit.SECONDS);
-    } finally {
-      future.cancel(true);
-    }
-  }
-
   private static class AsyncResponseObserver<RespT> implements StreamObserver<RespT> {
 
     private final CountDownLatch finishLatch = new CountDownLatch(1);

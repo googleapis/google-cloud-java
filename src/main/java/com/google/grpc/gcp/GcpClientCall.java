@@ -172,6 +172,7 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
       }
     }
   }
+
   private Listener<RespT> getListener(final Listener<RespT> responseListener) {
 
     return new ForwardingClientCallListener.SimpleForwardingClientCallListener<RespT>(
