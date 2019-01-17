@@ -293,6 +293,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getRetrySettings(),
               EXCEPTION_HANDLER,
               getOptions().getClock());
+      if (getOptions().getThrowNotFound() && answer == null) {
+        throw new BigQueryException(404, "Dataset not found");
+      }
       return answer == null ? null : Dataset.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
@@ -482,6 +485,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getRetrySettings(),
               EXCEPTION_HANDLER,
               getOptions().getClock());
+      if (getOptions().getThrowNotFound() && answer == null) {
+        throw new BigQueryException(404, "Table not found");
+      }
       return answer == null ? null : Table.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
@@ -702,6 +708,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               getOptions().getRetrySettings(),
               EXCEPTION_HANDLER,
               getOptions().getClock());
+      if (getOptions().getThrowNotFound() && answer == null) {
+        throw new BigQueryException(404, "Job not found");
+      }
       return answer == null ? null : Job.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);

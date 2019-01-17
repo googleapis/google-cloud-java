@@ -367,6 +367,17 @@ public class BigQueryImplTest {
   }
 
   @Test
+  public void testGetDatasetNotFound() {
+    EasyMock.expect(bigqueryRpcMock.getDataset(PROJECT, "dataset-not-found", EMPTY_RPC_OPTIONS))
+        .andThrow(new BigQueryException(404, "Dataset not found"));
+    EasyMock.replay(bigqueryRpcMock);
+    options.setThrowNotFound(true);
+    bigquery = options.getService();
+    thrown.expect(BigQueryException.class);
+    bigquery.getDataset("dataset-not-found");
+  }
+
+  @Test
   public void testGetDatasetFromDatasetId() {
     EasyMock.expect(bigqueryRpcMock.getDataset(PROJECT, DATASET, EMPTY_RPC_OPTIONS))
         .andReturn(DATASET_INFO_WITH_PROJECT.toPb());
@@ -601,6 +612,18 @@ public class BigQueryImplTest {
     bigquery = options.getService();
     Table table = bigquery.getTable(DATASET, TABLE);
     assertEquals(new Table(bigquery, new TableInfo.BuilderImpl(TABLE_INFO_WITH_PROJECT)), table);
+  }
+
+  @Test
+  public void testGetTableNotFound() {
+    EasyMock.expect(
+            bigqueryRpcMock.getTable(PROJECT, DATASET, "table-not-found", EMPTY_RPC_OPTIONS))
+        .andThrow(new BigQueryException(404, "Table not found"));
+    EasyMock.replay(bigqueryRpcMock);
+    options.setThrowNotFound(true);
+    bigquery = options.getService();
+    thrown.expect(BigQueryException.class);
+    bigquery.getTable(DATASET, "table-not-found");
   }
 
   @Test
@@ -1199,6 +1222,17 @@ public class BigQueryImplTest {
     bigquery = options.getService();
     Job job = bigquery.getJob(JOB);
     assertEquals(new Job(bigquery, new JobInfo.BuilderImpl(COMPLETE_COPY_JOB)), job);
+  }
+
+  @Test
+  public void testGetJobNotFound() {
+    EasyMock.expect(bigqueryRpcMock.getJob(PROJECT, "job-not-found", null, EMPTY_RPC_OPTIONS))
+        .andThrow(new BigQueryException(404, "Job not found"));
+    EasyMock.replay(bigqueryRpcMock);
+    options.setThrowNotFound(true);
+    bigquery = options.getService();
+    thrown.expect(BigQueryException.class);
+    bigquery.getJob("job-not-found");
   }
 
   @Test
