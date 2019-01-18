@@ -145,6 +145,7 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator")
 @BetaApi
 public class BaseBigtableInstanceAdminClient implements BackgroundResource {
+  // trivial comment added to check bigtable integration tests are triggered
   private final BaseBigtableInstanceAdminSettings settings;
   private final BigtableInstanceAdminStub stub;
   private final OperationsClient operationsClient;
