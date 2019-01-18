@@ -112,7 +112,7 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
         if (key != null && key != "" && delegateChannel.getChannelRef(key) != null) {
           delegateChannelRef = delegateChannel.getChannelRef(key);
         } else {
-          delegateChannelRef = delegateChannel.getChannelRef();
+          delegateChannelRef = delegateChannel.getChannelRef(null);
         }
         if (key != null && affinity.getCommand() == AffinityConfig.Command.UNBIND) {
           delegateChannel.unbind(key);

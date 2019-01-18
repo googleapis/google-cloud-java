@@ -42,6 +42,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
+import javax.annotation.Nullable;
 import javax.annotation.concurrent.GuardedBy;
 
 /** A channel management factory that implements grpc.Channel APIs. */
@@ -76,7 +77,7 @@ public class GcpManagedChannel extends ManagedChannel {
   public GcpManagedChannel(ManagedChannelBuilder builder) {
     apiConfig = null;
     this.builder = builder;
-    getChannelRef();
+    getChannelRef(null);
   }
 
   /**
@@ -88,7 +89,7 @@ public class GcpManagedChannel extends ManagedChannel {
   public GcpManagedChannel(ManagedChannelBuilder builder, String jsonPath) {
     loadApiConfig(jsonPath);
     this.builder = builder;
-    getChannelRef();
+    getChannelRef(null);
   }
 
   public AffinityConfig getAffinity(String method) {
@@ -106,13 +107,13 @@ public class GcpManagedChannel extends ManagedChannel {
   /**
    * Pick a channelRef (and create a new one if necessary).
    *
-   * <p>If affinity key is specified, pick the one bound the the affinity key. Otherwise pick the
-   * one with the smallest number of streams.
+   * @param key affinity key. If it is specified, pick the ChannelRef bound the the affinity key.
+   *     Otherwise pick the one with the smallest number of streams.
    */
-  protected ChannelRef getChannelRef(String... key) {
+  protected ChannelRef getChannelRef(@Nullable String key) {
     synchronized (bindLock) {
-      if (key.length != 0 && key[0] != null) {
-        return affinityKeyToChannelRef.get(key[0]);
+      if (key != null && key != "") {
+        return affinityKeyToChannelRef.get(key);
       }
       Collections.sort(
           channelRefs,
@@ -159,7 +160,7 @@ public class GcpManagedChannel extends ManagedChannel {
     AffinityConfig affinity = methodToAffinity.get(methodDescriptor.getFullMethodName());
     if (affinity == null) {
       return new GcpClientCall.SimpleGcpClientCall<ReqT, RespT>(
-          getChannelRef(), methodDescriptor, callOptions);
+          getChannelRef(null), methodDescriptor, callOptions);
     }
     return new GcpClientCall<ReqT, RespT>(this, methodDescriptor, callOptions, affinity);
   }

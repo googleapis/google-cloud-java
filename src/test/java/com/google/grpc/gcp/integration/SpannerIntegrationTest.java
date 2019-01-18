@@ -202,7 +202,7 @@ public final class SpannerIntegrationTest {
   @Rule public ExpectedException expectedEx = ExpectedException.none();
 
   @Before
-  public void setup() throws InterruptedException {
+  public void setupChannel() throws InterruptedException {
     gcpChannel = new GcpManagedChannel(builder, API_FILE);
   }
 

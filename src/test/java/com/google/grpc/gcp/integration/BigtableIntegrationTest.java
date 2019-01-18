@@ -114,8 +114,7 @@ public class BigtableIntegrationTest {
     return stub;
   }
 
-  private boolean runManyManyStreamsNormalChannel() {
-    ManagedChannel channel = builder.build();
+  private boolean runManyManyStreamsNormalChannel(ManagedChannel channel) {
     GoogleCredentials creds = getCreds();
     BigtableBlockingStub stubNormal =
         BigtableGrpc.newBlockingStub(channel).withCallCredentials(MoreCallCredentials.from(creds));
@@ -168,7 +167,6 @@ public class BigtableIntegrationTest {
   @Test
   public void testMutateRowAsyncReuse() throws Exception {
     BigtableStub stub = getBigtableStub();
-
     for (int i = 0; i < DEFAULT_MAX_CHANNEL * 2; i++) {
       MutateRowRequest request = getMutateRequest("test-mutation-async", i, "test-row");
       AsyncResponseObserver<MutateRowResponse> responseObserver =
@@ -241,7 +239,6 @@ public class BigtableIntegrationTest {
 
   @Test
   public void testReadRows() throws Exception {
-    gcpChannel = new GcpManagedChannel(builder);
     BigtableBlockingStub stub = getBigtableBlockingStub();
     ReadRowsRequest request =
         ReadRowsRequest.newBuilder()
@@ -264,11 +261,7 @@ public class BigtableIntegrationTest {
           }
         };
     Future<Object> future = executor.submit(task);
-    try {
-      Object result = future.get(120, TimeUnit.SECONDS);
-    } finally {
-      future.cancel(true);
-    }
+    Object result = future.get(120, TimeUnit.SECONDS);
   }
 
   /**
@@ -277,19 +270,21 @@ public class BigtableIntegrationTest {
    */
   @Test
   public void testReadGiganticDataNormalChannel() throws Exception {
+    ManagedChannel channel = builder.build();
     ExecutorService executor = Executors.newCachedThreadPool();
     Callable<Object> task =
         new Callable<Object>() {
           public Object call() {
-            return runManyManyStreamsNormalChannel();
+            return runManyManyStreamsNormalChannel(channel);
           }
         };
+    // Expect a TimeoutException.
     expectedEx.expect(TimeoutException.class);
     Future<Object> future = executor.submit(task);
     try {
       Object result = future.get(120, TimeUnit.SECONDS);
     } finally {
-      future.cancel(true);
+      channel.shutdownNow();
     }
   }
 

@@ -81,7 +81,7 @@ public final class GcpManagedChannelTest {
   public void testGetChannelRefInitialization() throws Exception {
     // Should have a managedchannel by default.
     assertEquals(1, gcpChannel.channelRefs.size());
-    assertEquals(0, gcpChannel.getChannelRef().getAffinityCount());
+    assertEquals(0, gcpChannel.getChannelRef(null).getAffinityCount());
     // The state of this channel is idle.
     assertEquals(ConnectivityState.IDLE, gcpChannel.getState(false));
     assertEquals(1, gcpChannel.channelRefs.size());
@@ -96,7 +96,7 @@ public final class GcpManagedChannelTest {
       gcpChannel.channelRefs.add(gcpChannel.new ChannelRef(channel, i, i, MAX_STREAM));
     }
     assertEquals(5, gcpChannel.channelRefs.size());
-    assertEquals(0, gcpChannel.getChannelRef().getAffinityCount());
+    assertEquals(0, gcpChannel.getChannelRef(null).getAffinityCount());
     assertEquals(6, gcpChannel.channelRefs.size());
 
     // Add more channels, the smallest stream value is -1 with idx 6.
@@ -106,7 +106,7 @@ public final class GcpManagedChannelTest {
       gcpChannel.channelRefs.add(gcpChannel.new ChannelRef(channel, i, i, streams[i - 6]));
     }
     assertEquals(10, gcpChannel.channelRefs.size());
-    assertEquals(6, gcpChannel.getChannelRef().getAffinityCount());
+    assertEquals(6, gcpChannel.getChannelRef(null).getAffinityCount());
   }
 
   @Test
@@ -117,7 +117,7 @@ public final class GcpManagedChannelTest {
       gcpChannel.channelRefs.add(gcpChannel.new ChannelRef(channel, i, i, MAX_STREAM));
     }
     assertEquals(MAX_CHANNEL, gcpChannel.channelRefs.size());
-    assertEquals(MAX_STREAM, gcpChannel.getChannelRef().getActiveStreamsCount());
+    assertEquals(MAX_STREAM, gcpChannel.getChannelRef(null).getActiveStreamsCount());
     assertEquals(MAX_CHANNEL, gcpChannel.channelRefs.size());
   }
 
