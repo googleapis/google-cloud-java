@@ -16,9 +16,9 @@
 
 package com.google.cloud.bigquery;
 
-import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 import static com.google.cloud.RetryHelper.runWithRetries;
 import static com.google.common.base.Preconditions.checkArgument;
+import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.paging.Page;
