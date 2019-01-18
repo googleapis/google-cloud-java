@@ -160,7 +160,7 @@ public class TableInfoTest {
     assertEquals(SELF_LINK, TABLE_INFO.getSelfLink());
     assertEquals(NUM_BYTES, TABLE_INFO.getNumBytes());
     assertEquals(NUM_LONG_TERM_BYTES, TABLE_INFO.getNumLongTermBytes());
-    assertEquals(NUM_ROWS, TABLE_INFO.getNumLongTermBytes());
+    assertEquals(NUM_ROWS, TABLE_INFO.getNumRows());
 
     assertEquals(TABLE_ID, VIEW_INFO.getTableId());
     assertEquals(VIEW_DEFINITION, VIEW_INFO.getDefinition());
