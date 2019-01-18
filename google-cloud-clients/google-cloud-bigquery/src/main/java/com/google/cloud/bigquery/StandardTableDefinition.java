@@ -130,6 +130,8 @@ public abstract class StandardTableDefinition extends TableDefinition {
 
     public abstract Builder setNumBytes(Long numBytes);
 
+    public abstract Builder setNumLongTermBytes(Long numLongTermBytes);
+
     public abstract Builder setNumRows(Long numRows);
 
     public abstract Builder setLocation(String location);
@@ -160,6 +162,16 @@ public abstract class StandardTableDefinition extends TableDefinition {
   /** Returns the size of this table in bytes, excluding any data in the streaming buffer. */
   @Nullable
   public abstract Long getNumBytes();
+
+  /** Returns the number of bytes considered "long-term storage" for reduced
+	 * billing purposes.
+   *
+   * @see <a
+   *     href="https://cloud.google.com/bigquery/pricing#long-term-storage">
+   *     Long Term Storage Pricing</a>
+   */
+  @Nullable
+  public abstract Long getNumLongTermBytes();
 
   /** Returns the number of rows in this table, excluding any data in the streaming buffer. */
   @Nullable
@@ -221,6 +233,7 @@ public abstract class StandardTableDefinition extends TableDefinition {
       tablePb.setNumRows(BigInteger.valueOf(getNumRows()));
     }
     tablePb.setNumBytes(getNumBytes());
+    tablePb.setNumLongTermBytes(getNumLongTermBytes());
     tablePb.setLocation(getLocation());
     if (getStreamingBuffer() != null) {
       tablePb.setStreamingBuffer(getStreamingBuffer().toPb());
@@ -248,6 +261,9 @@ public abstract class StandardTableDefinition extends TableDefinition {
     }
     if (tablePb.getClustering() != null) {
       builder.setClustering(Clustering.fromPb(tablePb.getClustering()));
+    }
+    if (tablePb.getNumLongTermBytes() != null) {
+      builder.setNumLongTermBytes(tablePb.getNumLongTermBytes());
     }
     return builder.setNumBytes(tablePb.getNumBytes()).setLocation(tablePb.getLocation()).build();
   }

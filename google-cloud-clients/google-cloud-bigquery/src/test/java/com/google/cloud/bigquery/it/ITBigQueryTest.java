@@ -428,6 +428,7 @@ public class ITBigQueryTest {
     assertNotNull(remoteTable.getCreationTime());
     assertNotNull(remoteTable.getLastModifiedTime());
     assertNotNull(remoteTable.<StandardTableDefinition>getDefinition().getNumBytes());
+    assertNotNull(remoteTable.<StandardTableDefinition>getDefinition().getNumLongTermBytes());
     assertNotNull(remoteTable.<StandardTableDefinition>getDefinition().getNumRows());
     assertEquals(
         partitioning, remoteTable.<StandardTableDefinition>getDefinition().getTimePartitioning());
@@ -460,6 +461,7 @@ public class ITBigQueryTest {
     assertNull(remoteTable.getDefinition().getSchema());
     assertNull(remoteTable.getLastModifiedTime());
     assertNull(remoteTable.<StandardTableDefinition>getDefinition().getNumBytes());
+    assertNull(remoteTable.<StandardTableDefinition>getDefinition().getNumLongTermBytes());
     assertNull(remoteTable.<StandardTableDefinition>getDefinition().getNumRows());
     assertNull(remoteTable.<StandardTableDefinition>getDefinition().getTimePartitioning());
     assertNull(remoteTable.<StandardTableDefinition>getDefinition().getClustering());
@@ -699,6 +701,7 @@ public class ITBigQueryTest {
     assertNull(updatedTable.getDefinition().getSchema());
     assertNull(updatedTable.getLastModifiedTime());
     assertNull(updatedTable.<StandardTableDefinition>getDefinition().getNumBytes());
+    assertNull(updatedTable.<StandardTableDefinition>getDefinition().getNumLongTermBytes());
     assertNull(updatedTable.<StandardTableDefinition>getDefinition().getNumRows());
     assertTrue(createdTable.delete());
   }
