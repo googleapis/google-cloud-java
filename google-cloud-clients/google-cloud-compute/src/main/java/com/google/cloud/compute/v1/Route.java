@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -103,55 +103,55 @@ public final class Route implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("creationTimestamp")) {
+    if ("creationTimestamp".equals(fieldName)) {
       return creationTimestamp;
     }
-    if (fieldName.equals("description")) {
+    if ("description".equals(fieldName)) {
       return description;
     }
-    if (fieldName.equals("destRange")) {
+    if ("destRange".equals(fieldName)) {
       return destRange;
     }
-    if (fieldName.equals("id")) {
+    if ("id".equals(fieldName)) {
       return id;
     }
-    if (fieldName.equals("kind")) {
+    if ("kind".equals(fieldName)) {
       return kind;
     }
-    if (fieldName.equals("name")) {
+    if ("name".equals(fieldName)) {
       return name;
     }
-    if (fieldName.equals("network")) {
+    if ("network".equals(fieldName)) {
       return network;
     }
-    if (fieldName.equals("nextHopGateway")) {
+    if ("nextHopGateway".equals(fieldName)) {
       return nextHopGateway;
     }
-    if (fieldName.equals("nextHopInstance")) {
+    if ("nextHopInstance".equals(fieldName)) {
       return nextHopInstance;
     }
-    if (fieldName.equals("nextHopIp")) {
+    if ("nextHopIp".equals(fieldName)) {
       return nextHopIp;
     }
-    if (fieldName.equals("nextHopNetwork")) {
+    if ("nextHopNetwork".equals(fieldName)) {
       return nextHopNetwork;
     }
-    if (fieldName.equals("nextHopPeering")) {
+    if ("nextHopPeering".equals(fieldName)) {
       return nextHopPeering;
     }
-    if (fieldName.equals("nextHopVpnTunnel")) {
+    if ("nextHopVpnTunnel".equals(fieldName)) {
       return nextHopVpnTunnel;
     }
-    if (fieldName.equals("priority")) {
+    if ("priority".equals(fieldName)) {
       return priority;
     }
-    if (fieldName.equals("selfLink")) {
+    if ("selfLink".equals(fieldName)) {
       return selfLink;
     }
-    if (fieldName.equals("tags")) {
+    if ("tags".equals(fieldName)) {
       return tags;
     }
-    if (fieldName.equals("warnings")) {
+    if ("warnings".equals(fieldName)) {
       return warnings;
     }
     return null;

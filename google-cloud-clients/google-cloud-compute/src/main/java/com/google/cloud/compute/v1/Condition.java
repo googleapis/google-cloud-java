@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,22 +54,22 @@ public final class Condition implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("iam")) {
+    if ("iam".equals(fieldName)) {
       return iam;
     }
-    if (fieldName.equals("op")) {
+    if ("op".equals(fieldName)) {
       return op;
     }
-    if (fieldName.equals("svc")) {
+    if ("svc".equals(fieldName)) {
       return svc;
     }
-    if (fieldName.equals("sys")) {
+    if ("sys".equals(fieldName)) {
       return sys;
     }
-    if (fieldName.equals("value")) {
+    if ("value".equals(fieldName)) {
       return value;
     }
-    if (fieldName.equals("values")) {
+    if ("values".equals(fieldName)) {
       return values;
     }
     return null;

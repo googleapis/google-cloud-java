@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,34 +75,34 @@ public final class RouterBgpPeer implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("advertiseMode")) {
+    if ("advertiseMode".equals(fieldName)) {
       return advertiseMode;
     }
-    if (fieldName.equals("advertisedGroups")) {
+    if ("advertisedGroups".equals(fieldName)) {
       return advertisedGroups;
     }
-    if (fieldName.equals("advertisedIpRanges")) {
+    if ("advertisedIpRanges".equals(fieldName)) {
       return advertisedIpRanges;
     }
-    if (fieldName.equals("advertisedRoutePriority")) {
+    if ("advertisedRoutePriority".equals(fieldName)) {
       return advertisedRoutePriority;
     }
-    if (fieldName.equals("interfaceName")) {
+    if ("interfaceName".equals(fieldName)) {
       return interfaceName;
     }
-    if (fieldName.equals("ipAddress")) {
+    if ("ipAddress".equals(fieldName)) {
       return ipAddress;
     }
-    if (fieldName.equals("managementType")) {
+    if ("managementType".equals(fieldName)) {
       return managementType;
     }
-    if (fieldName.equals("name")) {
+    if ("name".equals(fieldName)) {
       return name;
     }
-    if (fieldName.equals("peerAsn")) {
+    if ("peerAsn".equals(fieldName)) {
       return peerAsn;
     }
-    if (fieldName.equals("peerIpAddress")) {
+    if ("peerIpAddress".equals(fieldName)) {
       return peerIpAddress;
     }
     return null;

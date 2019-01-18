@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -95,49 +95,49 @@ public final class MachineType implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("creationTimestamp")) {
+    if ("creationTimestamp".equals(fieldName)) {
       return creationTimestamp;
     }
-    if (fieldName.equals("deprecated")) {
+    if ("deprecated".equals(fieldName)) {
       return deprecated;
     }
-    if (fieldName.equals("description")) {
+    if ("description".equals(fieldName)) {
       return description;
     }
-    if (fieldName.equals("guestCpus")) {
+    if ("guestCpus".equals(fieldName)) {
       return guestCpus;
     }
-    if (fieldName.equals("id")) {
+    if ("id".equals(fieldName)) {
       return id;
     }
-    if (fieldName.equals("imageSpaceGb")) {
+    if ("imageSpaceGb".equals(fieldName)) {
       return imageSpaceGb;
     }
-    if (fieldName.equals("isSharedCpu")) {
+    if ("isSharedCpu".equals(fieldName)) {
       return isSharedCpu;
     }
-    if (fieldName.equals("kind")) {
+    if ("kind".equals(fieldName)) {
       return kind;
     }
-    if (fieldName.equals("maximumPersistentDisks")) {
+    if ("maximumPersistentDisks".equals(fieldName)) {
       return maximumPersistentDisks;
     }
-    if (fieldName.equals("maximumPersistentDisksSizeGb")) {
+    if ("maximumPersistentDisksSizeGb".equals(fieldName)) {
       return maximumPersistentDisksSizeGb;
     }
-    if (fieldName.equals("memoryMb")) {
+    if ("memoryMb".equals(fieldName)) {
       return memoryMb;
     }
-    if (fieldName.equals("name")) {
+    if ("name".equals(fieldName)) {
       return name;
     }
-    if (fieldName.equals("scratchDisks")) {
+    if ("scratchDisks".equals(fieldName)) {
       return scratchDisks;
     }
-    if (fieldName.equals("selfLink")) {
+    if ("selfLink".equals(fieldName)) {
       return selfLink;
     }
-    if (fieldName.equals("zone")) {
+    if ("zone".equals(fieldName)) {
       return zone;
     }
     return null;

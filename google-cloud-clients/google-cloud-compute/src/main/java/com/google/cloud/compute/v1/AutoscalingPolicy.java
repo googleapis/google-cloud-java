@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,22 +59,22 @@ public final class AutoscalingPolicy implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("coolDownPeriodSec")) {
+    if ("coolDownPeriodSec".equals(fieldName)) {
       return coolDownPeriodSec;
     }
-    if (fieldName.equals("cpuUtilization")) {
+    if ("cpuUtilization".equals(fieldName)) {
       return cpuUtilization;
     }
-    if (fieldName.equals("customMetricUtilizations")) {
+    if ("customMetricUtilizations".equals(fieldName)) {
       return customMetricUtilizations;
     }
-    if (fieldName.equals("loadBalancingUtilization")) {
+    if ("loadBalancingUtilization".equals(fieldName)) {
       return loadBalancingUtilization;
     }
-    if (fieldName.equals("maxNumReplicas")) {
+    if ("maxNumReplicas".equals(fieldName)) {
       return maxNumReplicas;
     }
-    if (fieldName.equals("minNumReplicas")) {
+    if ("minNumReplicas".equals(fieldName)) {
       return minNumReplicas;
     }
     return null;

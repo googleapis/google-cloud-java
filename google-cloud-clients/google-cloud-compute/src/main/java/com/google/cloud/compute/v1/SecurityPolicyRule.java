@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,22 +58,22 @@ public final class SecurityPolicyRule implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("action")) {
+    if ("action".equals(fieldName)) {
       return action;
     }
-    if (fieldName.equals("description")) {
+    if ("description".equals(fieldName)) {
       return description;
     }
-    if (fieldName.equals("kind")) {
+    if ("kind".equals(fieldName)) {
       return kind;
     }
-    if (fieldName.equals("match")) {
+    if ("match".equals(fieldName)) {
       return match;
     }
-    if (fieldName.equals("preview")) {
+    if ("preview".equals(fieldName)) {
       return preview;
     }
-    if (fieldName.equals("priority")) {
+    if ("priority".equals(fieldName)) {
       return priority;
     }
     return null;

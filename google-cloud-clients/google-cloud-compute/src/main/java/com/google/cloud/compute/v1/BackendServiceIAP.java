@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,16 +50,16 @@ public final class BackendServiceIAP implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("enabled")) {
+    if ("enabled".equals(fieldName)) {
       return enabled;
     }
-    if (fieldName.equals("oauth2ClientId")) {
+    if ("oauth2ClientId".equals(fieldName)) {
       return oauth2ClientId;
     }
-    if (fieldName.equals("oauth2ClientSecret")) {
+    if ("oauth2ClientSecret".equals(fieldName)) {
       return oauth2ClientSecret;
     }
-    if (fieldName.equals("oauth2ClientSecretSha256")) {
+    if ("oauth2ClientSecretSha256".equals(fieldName)) {
       return oauth2ClientSecretSha256;
     }
     return null;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,13 +43,13 @@ public final class Errors implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("code")) {
+    if ("code".equals(fieldName)) {
       return code;
     }
-    if (fieldName.equals("location")) {
+    if ("location".equals(fieldName)) {
       return location;
     }
-    if (fieldName.equals("message")) {
+    if ("message".equals(fieldName)) {
       return message;
     }
     return null;

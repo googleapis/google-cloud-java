@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,13 +44,13 @@ public final class Binding implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("condition")) {
+    if ("condition".equals(fieldName)) {
       return condition;
     }
-    if (fieldName.equals("members")) {
+    if ("members".equals(fieldName)) {
       return members;
     }
-    if (fieldName.equals("role")) {
+    if ("role".equals(fieldName)) {
       return role;
     }
     return null;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,10 +40,10 @@ public final class DiskMoveRequest implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("destinationZone")) {
+    if ("destinationZone".equals(fieldName)) {
       return destinationZone;
     }
-    if (fieldName.equals("targetDisk")) {
+    if ("targetDisk".equals(fieldName)) {
       return targetDisk;
     }
     return null;

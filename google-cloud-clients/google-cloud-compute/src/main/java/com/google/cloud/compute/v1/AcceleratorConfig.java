@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,10 +40,10 @@ public final class AcceleratorConfig implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("acceleratorCount")) {
+    if ("acceleratorCount".equals(fieldName)) {
       return acceleratorCount;
     }
-    if (fieldName.equals("acceleratorType")) {
+    if ("acceleratorType".equals(fieldName)) {
       return acceleratorType;
     }
     return null;
