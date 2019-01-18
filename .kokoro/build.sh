@@ -24,7 +24,7 @@ echo $JOB_TYPE
 mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V
 
 # prepend Kokoro root directory onto GOOGLE_APPLICATION_CREDENTIALS path
-if [ ! -z "$GOOGLE_APPLICATION_CREDENTIALS" ]; then
+if [[ ! -z "$GOOGLE_APPLICATION_CREDENTIALS" ]]; then
     export GOOGLE_APPLICATION_CREDENTIALS=$(realpath ${KOKORO_ROOT}/src/${GOOGLE_APPLICATION_CREDENTIALS})
 fi
 
@@ -40,6 +40,14 @@ javadoc)
     mvn javadoc:javadoc javadoc:test-javadoc
     ;;
 integration)
+    if [[ "${SKIP_INTEGRATION_TESTS_IF_NO_CHANGES}" == "true" ]]; then
+      DIRECTORY=$(echo ${INTEGRATION_TEST_ARGS} | cut -d' ' -f1)
+      MASTER_DIFF=$(git diff master ${DIRECTORY})
+      if [[ -z "${MASTER_DIFF}" ]]; then
+        echo "No difference form master, skipping tests."
+        exit 0
+      fi
+    fi
     mvn -B -pl ${INTEGRATION_TEST_ARGS} -DtrimStackTrace=false -fae verify
     ;;
 *)
