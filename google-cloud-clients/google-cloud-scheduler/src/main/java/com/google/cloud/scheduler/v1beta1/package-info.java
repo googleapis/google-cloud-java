@@ -29,8 +29,8 @@
  * <pre>
  * <code>
  * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
- *   String formattedName = CloudSchedulerClient.formatJobName("[PROJECT]", "[LOCATION]", "[JOB]");
- *   Job response = cloudSchedulerClient.getJob(formattedName);
+ *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+ *   Job response = cloudSchedulerClient.getJob(name);
  * }
  * </code>
  * </pre>
