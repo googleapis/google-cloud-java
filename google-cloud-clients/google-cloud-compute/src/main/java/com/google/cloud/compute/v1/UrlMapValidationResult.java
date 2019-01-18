@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,16 +51,16 @@ public final class UrlMapValidationResult implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("loadErrors")) {
+    if ("loadErrors".equals(fieldName)) {
       return loadErrors;
     }
-    if (fieldName.equals("loadSucceeded")) {
+    if ("loadSucceeded".equals(fieldName)) {
       return loadSucceeded;
     }
-    if (fieldName.equals("testFailures")) {
+    if ("testFailures".equals(fieldName)) {
       return testFailures;
     }
-    if (fieldName.equals("testPassed")) {
+    if ("testPassed".equals(fieldName)) {
       return testPassed;
     }
     return null;

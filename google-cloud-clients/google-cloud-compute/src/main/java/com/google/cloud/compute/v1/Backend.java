@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,31 +70,31 @@ public final class Backend implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("balancingMode")) {
+    if ("balancingMode".equals(fieldName)) {
       return balancingMode;
     }
-    if (fieldName.equals("capacityScaler")) {
+    if ("capacityScaler".equals(fieldName)) {
       return capacityScaler;
     }
-    if (fieldName.equals("description")) {
+    if ("description".equals(fieldName)) {
       return description;
     }
-    if (fieldName.equals("group")) {
+    if ("group".equals(fieldName)) {
       return group;
     }
-    if (fieldName.equals("maxConnections")) {
+    if ("maxConnections".equals(fieldName)) {
       return maxConnections;
     }
-    if (fieldName.equals("maxConnectionsPerInstance")) {
+    if ("maxConnectionsPerInstance".equals(fieldName)) {
       return maxConnectionsPerInstance;
     }
-    if (fieldName.equals("maxRate")) {
+    if ("maxRate".equals(fieldName)) {
       return maxRate;
     }
-    if (fieldName.equals("maxRatePerInstance")) {
+    if ("maxRatePerInstance".equals(fieldName)) {
       return maxRatePerInstance;
     }
-    if (fieldName.equals("maxUtilization")) {
+    if ("maxUtilization".equals(fieldName)) {
       return maxUtilization;
     }
     return null;

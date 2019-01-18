@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import com.google.gson.annotations.SerializedName;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
@@ -26,7 +27,9 @@ import javax.annotation.Nullable;
 @Generated("by GAPIC")
 @BetaApi
 public final class Allowed implements ApiMessage {
+  @SerializedName("IPProtocol")
   private final String iPProtocol;
+
   private final List<String> ports;
 
   private Allowed() {
@@ -41,10 +44,10 @@ public final class Allowed implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("iPProtocol")) {
+    if ("iPProtocol".equals(fieldName)) {
       return iPProtocol;
     }
-    if (fieldName.equals("ports")) {
+    if ("ports".equals(fieldName)) {
       return ports;
     }
     return null;

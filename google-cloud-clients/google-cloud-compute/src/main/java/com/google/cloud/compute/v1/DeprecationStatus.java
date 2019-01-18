@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,19 +50,19 @@ public final class DeprecationStatus implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("deleted")) {
+    if ("deleted".equals(fieldName)) {
       return deleted;
     }
-    if (fieldName.equals("deprecated")) {
+    if ("deprecated".equals(fieldName)) {
       return deprecated;
     }
-    if (fieldName.equals("obsolete")) {
+    if ("obsolete".equals(fieldName)) {
       return obsolete;
     }
-    if (fieldName.equals("replacement")) {
+    if ("replacement".equals(fieldName)) {
       return replacement;
     }
-    if (fieldName.equals("state")) {
+    if ("state".equals(fieldName)) {
       return state;
     }
     return null;

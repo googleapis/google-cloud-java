@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,16 +46,16 @@ public final class TestFailure implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("actualService")) {
+    if ("actualService".equals(fieldName)) {
       return actualService;
     }
-    if (fieldName.equals("expectedService")) {
+    if ("expectedService".equals(fieldName)) {
       return expectedService;
     }
-    if (fieldName.equals("host")) {
+    if ("host".equals(fieldName)) {
       return host;
     }
-    if (fieldName.equals("path")) {
+    if ("path".equals(fieldName)) {
       return path;
     }
     return null;

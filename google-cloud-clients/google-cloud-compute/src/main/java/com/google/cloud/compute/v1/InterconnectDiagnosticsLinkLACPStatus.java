@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,13 +44,13 @@ public final class InterconnectDiagnosticsLinkLACPStatus implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("googleSystemId")) {
+    if ("googleSystemId".equals(fieldName)) {
       return googleSystemId;
     }
-    if (fieldName.equals("neighborSystemId")) {
+    if ("neighborSystemId".equals(fieldName)) {
       return neighborSystemId;
     }
-    if (fieldName.equals("state")) {
+    if ("state".equals(fieldName)) {
       return state;
     }
     return null;

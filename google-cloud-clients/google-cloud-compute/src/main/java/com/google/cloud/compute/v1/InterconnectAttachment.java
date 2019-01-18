@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -131,76 +131,76 @@ public final class InterconnectAttachment implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("adminEnabled")) {
+    if ("adminEnabled".equals(fieldName)) {
       return adminEnabled;
     }
-    if (fieldName.equals("bandwidth")) {
+    if ("bandwidth".equals(fieldName)) {
       return bandwidth;
     }
-    if (fieldName.equals("candidateSubnets")) {
+    if ("candidateSubnets".equals(fieldName)) {
       return candidateSubnets;
     }
-    if (fieldName.equals("cloudRouterIpAddress")) {
+    if ("cloudRouterIpAddress".equals(fieldName)) {
       return cloudRouterIpAddress;
     }
-    if (fieldName.equals("creationTimestamp")) {
+    if ("creationTimestamp".equals(fieldName)) {
       return creationTimestamp;
     }
-    if (fieldName.equals("customerRouterIpAddress")) {
+    if ("customerRouterIpAddress".equals(fieldName)) {
       return customerRouterIpAddress;
     }
-    if (fieldName.equals("description")) {
+    if ("description".equals(fieldName)) {
       return description;
     }
-    if (fieldName.equals("edgeAvailabilityDomain")) {
+    if ("edgeAvailabilityDomain".equals(fieldName)) {
       return edgeAvailabilityDomain;
     }
-    if (fieldName.equals("googleReferenceId")) {
+    if ("googleReferenceId".equals(fieldName)) {
       return googleReferenceId;
     }
-    if (fieldName.equals("id")) {
+    if ("id".equals(fieldName)) {
       return id;
     }
-    if (fieldName.equals("interconnect")) {
+    if ("interconnect".equals(fieldName)) {
       return interconnect;
     }
-    if (fieldName.equals("kind")) {
+    if ("kind".equals(fieldName)) {
       return kind;
     }
-    if (fieldName.equals("name")) {
+    if ("name".equals(fieldName)) {
       return name;
     }
-    if (fieldName.equals("operationalStatus")) {
+    if ("operationalStatus".equals(fieldName)) {
       return operationalStatus;
     }
-    if (fieldName.equals("pairingKey")) {
+    if ("pairingKey".equals(fieldName)) {
       return pairingKey;
     }
-    if (fieldName.equals("partnerAsn")) {
+    if ("partnerAsn".equals(fieldName)) {
       return partnerAsn;
     }
-    if (fieldName.equals("partnerMetadata")) {
+    if ("partnerMetadata".equals(fieldName)) {
       return partnerMetadata;
     }
-    if (fieldName.equals("privateInterconnectInfo")) {
+    if ("privateInterconnectInfo".equals(fieldName)) {
       return privateInterconnectInfo;
     }
-    if (fieldName.equals("region")) {
+    if ("region".equals(fieldName)) {
       return region;
     }
-    if (fieldName.equals("router")) {
+    if ("router".equals(fieldName)) {
       return router;
     }
-    if (fieldName.equals("selfLink")) {
+    if ("selfLink".equals(fieldName)) {
       return selfLink;
     }
-    if (fieldName.equals("state")) {
+    if ("state".equals(fieldName)) {
       return state;
     }
-    if (fieldName.equals("type")) {
+    if ("type".equals(fieldName)) {
       return type;
     }
-    if (fieldName.equals("vlanTag8021q")) {
+    if ("vlanTag8021q".equals(fieldName)) {
       return vlanTag8021q;
     }
     return null;
