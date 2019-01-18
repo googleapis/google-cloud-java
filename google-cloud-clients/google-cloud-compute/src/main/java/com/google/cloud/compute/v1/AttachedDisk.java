@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import com.google.gson.annotations.SerializedName;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
@@ -33,7 +34,10 @@ public final class AttachedDisk implements ApiMessage {
   private final List<GuestOsFeature> guestOsFeatures;
   private final Integer index;
   private final AttachedDiskInitializeParams initializeParams;
+
+  @SerializedName("interface")
   private final String interface2;
+
   private final String kind;
   private final List<String> licenses;
   private final String mode;
@@ -87,43 +91,43 @@ public final class AttachedDisk implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("autoDelete")) {
+    if ("autoDelete".equals(fieldName)) {
       return autoDelete;
     }
-    if (fieldName.equals("boot")) {
+    if ("boot".equals(fieldName)) {
       return boot;
     }
-    if (fieldName.equals("deviceName")) {
+    if ("deviceName".equals(fieldName)) {
       return deviceName;
     }
-    if (fieldName.equals("diskEncryptionKey")) {
+    if ("diskEncryptionKey".equals(fieldName)) {
       return diskEncryptionKey;
     }
-    if (fieldName.equals("guestOsFeatures")) {
+    if ("guestOsFeatures".equals(fieldName)) {
       return guestOsFeatures;
     }
-    if (fieldName.equals("index")) {
+    if ("index".equals(fieldName)) {
       return index;
     }
-    if (fieldName.equals("initializeParams")) {
+    if ("initializeParams".equals(fieldName)) {
       return initializeParams;
     }
-    if (fieldName.equals("interface2")) {
+    if ("interface2".equals(fieldName)) {
       return interface2;
     }
-    if (fieldName.equals("kind")) {
+    if ("kind".equals(fieldName)) {
       return kind;
     }
-    if (fieldName.equals("licenses")) {
+    if ("licenses".equals(fieldName)) {
       return licenses;
     }
-    if (fieldName.equals("mode")) {
+    if ("mode".equals(fieldName)) {
       return mode;
     }
-    if (fieldName.equals("source")) {
+    if ("source".equals(fieldName)) {
       return source;
     }
-    if (fieldName.equals("type")) {
+    if ("type".equals(fieldName)) {
       return type;
     }
     return null;

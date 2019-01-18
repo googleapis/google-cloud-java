@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,22 +59,22 @@ public final class Policy implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("auditConfigs")) {
+    if ("auditConfigs".equals(fieldName)) {
       return auditConfigs;
     }
-    if (fieldName.equals("bindings")) {
+    if ("bindings".equals(fieldName)) {
       return bindings;
     }
-    if (fieldName.equals("etag")) {
+    if ("etag".equals(fieldName)) {
       return etag;
     }
-    if (fieldName.equals("iamOwned")) {
+    if ("iamOwned".equals(fieldName)) {
       return iamOwned;
     }
-    if (fieldName.equals("rules")) {
+    if ("rules".equals(fieldName)) {
       return rules;
     }
-    if (fieldName.equals("version")) {
+    if ("version".equals(fieldName)) {
       return version;
     }
     return null;

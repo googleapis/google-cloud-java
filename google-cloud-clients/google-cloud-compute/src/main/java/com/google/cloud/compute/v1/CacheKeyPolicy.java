@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,19 +55,19 @@ public final class CacheKeyPolicy implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("includeHost")) {
+    if ("includeHost".equals(fieldName)) {
       return includeHost;
     }
-    if (fieldName.equals("includeProtocol")) {
+    if ("includeProtocol".equals(fieldName)) {
       return includeProtocol;
     }
-    if (fieldName.equals("includeQueryString")) {
+    if ("includeQueryString".equals(fieldName)) {
       return includeQueryString;
     }
-    if (fieldName.equals("queryStringBlacklist")) {
+    if ("queryStringBlacklist".equals(fieldName)) {
       return queryStringBlacklist;
     }
-    if (fieldName.equals("queryStringWhitelist")) {
+    if ("queryStringWhitelist".equals(fieldName)) {
       return queryStringWhitelist;
     }
     return null;

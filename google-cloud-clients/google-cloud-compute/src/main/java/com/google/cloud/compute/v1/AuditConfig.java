@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,13 +45,13 @@ public final class AuditConfig implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("auditLogConfigs")) {
+    if ("auditLogConfigs".equals(fieldName)) {
       return auditLogConfigs;
     }
-    if (fieldName.equals("exemptedMembers")) {
+    if ("exemptedMembers".equals(fieldName)) {
       return exemptedMembers;
     }
-    if (fieldName.equals("service")) {
+    if ("service".equals(fieldName)) {
       return service;
     }
     return null;
