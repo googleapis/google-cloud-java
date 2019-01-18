@@ -163,7 +163,8 @@ public abstract class StandardTableDefinition extends TableDefinition {
   @Nullable
   public abstract Long getNumBytes();
 
-  /** Returns the number of bytes considered "long-term storage" for reduced
+  /** 
+   * Returns the number of bytes considered "long-term storage" for reduced
 	 * billing purposes.
    *
    * @see <a
