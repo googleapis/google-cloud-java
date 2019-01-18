@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery;
 
+import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 import static com.google.cloud.RetryHelper.runWithRetries;
 import static com.google.common.base.Preconditions.checkArgument;
 
@@ -294,7 +295,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               EXCEPTION_HANDLER,
               getOptions().getClock());
       if (getOptions().getThrowNotFound() && answer == null) {
-        throw new BigQueryException(404, "Dataset not found");
+        throw new BigQueryException(HTTP_NOT_FOUND, "Dataset not found");
       }
       return answer == null ? null : Dataset.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
@@ -486,7 +487,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               EXCEPTION_HANDLER,
               getOptions().getClock());
       if (getOptions().getThrowNotFound() && answer == null) {
-        throw new BigQueryException(404, "Table not found");
+        throw new BigQueryException(HTTP_NOT_FOUND, "Table not found");
       }
       return answer == null ? null : Table.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
@@ -709,7 +710,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               EXCEPTION_HANDLER,
               getOptions().getClock());
       if (getOptions().getThrowNotFound() && answer == null) {
-        throw new BigQueryException(404, "Job not found");
+        throw new BigQueryException(HTTP_NOT_FOUND, "Job not found");
       }
       return answer == null ? null : Job.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {

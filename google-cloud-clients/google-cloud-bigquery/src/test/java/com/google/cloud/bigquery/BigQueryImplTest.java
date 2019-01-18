@@ -367,7 +367,7 @@ public class BigQueryImplTest {
   }
 
   @Test
-  public void testGetDatasetNotFound() {
+  public void testGetDatasetNotFoundWhenThrowIsEnabled() {
     EasyMock.expect(bigqueryRpcMock.getDataset(PROJECT, "dataset-not-found", EMPTY_RPC_OPTIONS))
         .andThrow(new BigQueryException(404, "Dataset not found"));
     EasyMock.replay(bigqueryRpcMock);
@@ -615,7 +615,7 @@ public class BigQueryImplTest {
   }
 
   @Test
-  public void testGetTableNotFound() {
+  public void testGetTableNotFoundWhenThrowIsEnabled() {
     EasyMock.expect(
             bigqueryRpcMock.getTable(PROJECT, DATASET, "table-not-found", EMPTY_RPC_OPTIONS))
         .andThrow(new BigQueryException(404, "Table not found"));
@@ -1225,7 +1225,7 @@ public class BigQueryImplTest {
   }
 
   @Test
-  public void testGetJobNotFound() {
+  public void testGetJobNotFoundWhenThrowIsEnabled() {
     EasyMock.expect(bigqueryRpcMock.getJob(PROJECT, "job-not-found", null, EMPTY_RPC_OPTIONS))
         .andThrow(new BigQueryException(404, "Job not found"));
     EasyMock.replay(bigqueryRpcMock);
