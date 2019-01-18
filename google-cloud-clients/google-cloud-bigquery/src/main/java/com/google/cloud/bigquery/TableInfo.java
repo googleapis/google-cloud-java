@@ -244,6 +244,7 @@ public class TableInfo implements Serializable {
     @Override
     Builder setNumLongTermBytes(Long numLongTermBytes) {
       this.numLongTermBytes = numLongTermBytes;
+      return this;
     }
 
     @Override
