@@ -17,9 +17,39 @@ set -eo pipefail
 
 cd github/google-cloud-java/
 
+function client_has_changes() {
+  CLIENT_NAME=$1
+  if [[ ! -z $(git diff master google-cloud-clients/google-cloud-core*) ]]; then
+    echo "true"
+    return
+  fi
+
+  if [[ ! -z $(git diff master google-cloud-clients/${CLIENT_NAME}) ]]; then
+    echo "true"
+    return
+  fi
+
+  if [[ ! -z $(git diff master google-api-grpc/*${CLIENT_NAME}*) ]]; then
+    echo "true"
+    return
+  fi
+
+  echo "false"
+}
+
 # Print out Java version
 java -version
 echo $JOB_TYPE
+
+if [[ "${SKIP_INTEGRATION_TESTS_IF_NO_CHANGES}" == "true" ]] &&
+   [[ "${JOB_TYPE}" == "integration" ]]; then
+  CLIENT=$(echo ${INTEGRATION_TEST_ARGS} | cut -d' ' -f1 | cut -d'/' -f2)
+  CLIENT_HAS_CHANGES=$(client_has_changes ${CLIENT})
+  if [[ "${CLIENT_HAS_CHANGES}" == "false" ]]; then
+    echo "No difference from master, skipping tests."
+    exit 0
+  fi
+fi
 
 mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V
 
@@ -40,14 +70,6 @@ javadoc)
     mvn javadoc:javadoc javadoc:test-javadoc
     ;;
 integration)
-    if [[ "${SKIP_INTEGRATION_TESTS_IF_NO_CHANGES}" == "true" ]]; then
-      DIRECTORY=$(echo ${INTEGRATION_TEST_ARGS} | cut -d' ' -f1)
-      MASTER_DIFF=$(git diff master ${DIRECTORY})
-      if [[ -z "${MASTER_DIFF}" ]]; then
-        echo "No difference form master, skipping tests."
-        exit 0
-      fi
-    fi
     mvn -B -pl ${INTEGRATION_TEST_ARGS} -DtrimStackTrace=false -fae verify
     ;;
 *)
