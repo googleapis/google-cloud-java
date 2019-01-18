@@ -52,10 +52,7 @@ public class WriteBatchTest {
   @Spy
   private FirestoreImpl firestoreMock =
       new FirestoreImpl(
-          FirestoreOptions.newBuilder()
-              .setProjectId("test-project")
-              .setTimestampsInSnapshotsEnabled(true)
-              .build(),
+          FirestoreOptions.newBuilder().setProjectId("test-project").build(),
           Mockito.mock(FirestoreRpc.class));
 
   @Captor private ArgumentCaptor<CommitRequest> commitCapture;

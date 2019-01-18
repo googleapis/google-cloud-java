@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,19 +55,19 @@ public final class RouterStatus implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("bestRoutes")) {
+    if ("bestRoutes".equals(fieldName)) {
       return bestRoutes;
     }
-    if (fieldName.equals("bestRoutesForRouter")) {
+    if ("bestRoutesForRouter".equals(fieldName)) {
       return bestRoutesForRouter;
     }
-    if (fieldName.equals("bgpPeerStatus")) {
+    if ("bgpPeerStatus".equals(fieldName)) {
       return bgpPeerStatus;
     }
-    if (fieldName.equals("natStatus")) {
+    if ("natStatus".equals(fieldName)) {
       return natStatus;
     }
-    if (fieldName.equals("network")) {
+    if ("network".equals(fieldName)) {
       return network;
     }
     return null;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,22 +58,22 @@ public final class HttpHealthCheck implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("host")) {
+    if ("host".equals(fieldName)) {
       return host;
     }
-    if (fieldName.equals("port")) {
+    if ("port".equals(fieldName)) {
       return port;
     }
-    if (fieldName.equals("portName")) {
+    if ("portName".equals(fieldName)) {
       return portName;
     }
-    if (fieldName.equals("proxyHeader")) {
+    if ("proxyHeader".equals(fieldName)) {
       return proxyHeader;
     }
-    if (fieldName.equals("requestPath")) {
+    if ("requestPath".equals(fieldName)) {
       return requestPath;
     }
-    if (fieldName.equals("response")) {
+    if ("response".equals(fieldName)) {
       return response;
     }
     return null;

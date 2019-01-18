@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -103,55 +103,55 @@ public final class Address implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("address")) {
+    if ("address".equals(fieldName)) {
       return address;
     }
-    if (fieldName.equals("addressType")) {
+    if ("addressType".equals(fieldName)) {
       return addressType;
     }
-    if (fieldName.equals("creationTimestamp")) {
+    if ("creationTimestamp".equals(fieldName)) {
       return creationTimestamp;
     }
-    if (fieldName.equals("description")) {
+    if ("description".equals(fieldName)) {
       return description;
     }
-    if (fieldName.equals("id")) {
+    if ("id".equals(fieldName)) {
       return id;
     }
-    if (fieldName.equals("ipVersion")) {
+    if ("ipVersion".equals(fieldName)) {
       return ipVersion;
     }
-    if (fieldName.equals("kind")) {
+    if ("kind".equals(fieldName)) {
       return kind;
     }
-    if (fieldName.equals("name")) {
+    if ("name".equals(fieldName)) {
       return name;
     }
-    if (fieldName.equals("network")) {
+    if ("network".equals(fieldName)) {
       return network;
     }
-    if (fieldName.equals("networkTier")) {
+    if ("networkTier".equals(fieldName)) {
       return networkTier;
     }
-    if (fieldName.equals("prefixLength")) {
+    if ("prefixLength".equals(fieldName)) {
       return prefixLength;
     }
-    if (fieldName.equals("purpose")) {
+    if ("purpose".equals(fieldName)) {
       return purpose;
     }
-    if (fieldName.equals("region")) {
+    if ("region".equals(fieldName)) {
       return region;
     }
-    if (fieldName.equals("selfLink")) {
+    if ("selfLink".equals(fieldName)) {
       return selfLink;
     }
-    if (fieldName.equals("status")) {
+    if ("status".equals(fieldName)) {
       return status;
     }
-    if (fieldName.equals("subnetwork")) {
+    if ("subnetwork".equals(fieldName)) {
       return subnetwork;
     }
-    if (fieldName.equals("users")) {
+    if ("users".equals(fieldName)) {
       return users;
     }
     return null;

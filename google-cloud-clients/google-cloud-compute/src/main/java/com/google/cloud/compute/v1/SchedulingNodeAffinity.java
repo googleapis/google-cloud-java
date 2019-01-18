@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,13 +44,13 @@ public final class SchedulingNodeAffinity implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("key")) {
+    if ("key".equals(fieldName)) {
       return key;
     }
-    if (fieldName.equals("operator")) {
+    if ("operator".equals(fieldName)) {
       return operator;
     }
-    if (fieldName.equals("values")) {
+    if ("values".equals(fieldName)) {
       return values;
     }
     return null;

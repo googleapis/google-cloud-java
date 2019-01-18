@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,13 +43,13 @@ public final class CustomerEncryptionKey implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("kmsKeyName")) {
+    if ("kmsKeyName".equals(fieldName)) {
       return kmsKeyName;
     }
-    if (fieldName.equals("rawKey")) {
+    if ("rawKey".equals(fieldName)) {
       return rawKey;
     }
-    if (fieldName.equals("sha256")) {
+    if ("sha256".equals(fieldName)) {
       return sha256;
     }
     return null;

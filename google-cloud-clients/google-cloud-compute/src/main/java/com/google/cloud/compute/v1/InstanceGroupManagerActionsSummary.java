@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -70,31 +70,31 @@ public final class InstanceGroupManagerActionsSummary implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("abandoning")) {
+    if ("abandoning".equals(fieldName)) {
       return abandoning;
     }
-    if (fieldName.equals("creating")) {
+    if ("creating".equals(fieldName)) {
       return creating;
     }
-    if (fieldName.equals("creatingWithoutRetries")) {
+    if ("creatingWithoutRetries".equals(fieldName)) {
       return creatingWithoutRetries;
     }
-    if (fieldName.equals("deleting")) {
+    if ("deleting".equals(fieldName)) {
       return deleting;
     }
-    if (fieldName.equals("none")) {
+    if ("none".equals(fieldName)) {
       return none;
     }
-    if (fieldName.equals("recreating")) {
+    if ("recreating".equals(fieldName)) {
       return recreating;
     }
-    if (fieldName.equals("refreshing")) {
+    if ("refreshing".equals(fieldName)) {
       return refreshing;
     }
-    if (fieldName.equals("restarting")) {
+    if ("restarting".equals(fieldName)) {
       return restarting;
     }
-    if (fieldName.equals("verifying")) {
+    if ("verifying".equals(fieldName)) {
       return verifying;
     }
     return null;
