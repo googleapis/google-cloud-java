@@ -36,6 +36,7 @@ public class AsyncPageImpl<T> extends PageImpl<T> implements AsyncPage<T> {
 
   private static final long serialVersionUID = -6009473188630364906L;
 
+  // trivial comment to trigger rebuild of all integration tests
   private final NextPageFetcher<T> asyncPageFetcher;
 
   /**
