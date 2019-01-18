@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -123,70 +123,70 @@ public final class BackendService implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("affinityCookieTtlSec")) {
+    if ("affinityCookieTtlSec".equals(fieldName)) {
       return affinityCookieTtlSec;
     }
-    if (fieldName.equals("backends")) {
+    if ("backends".equals(fieldName)) {
       return backends;
     }
-    if (fieldName.equals("cdnPolicy")) {
+    if ("cdnPolicy".equals(fieldName)) {
       return cdnPolicy;
     }
-    if (fieldName.equals("connectionDraining")) {
+    if ("connectionDraining".equals(fieldName)) {
       return connectionDraining;
     }
-    if (fieldName.equals("creationTimestamp")) {
+    if ("creationTimestamp".equals(fieldName)) {
       return creationTimestamp;
     }
-    if (fieldName.equals("description")) {
+    if ("description".equals(fieldName)) {
       return description;
     }
-    if (fieldName.equals("enableCDN")) {
+    if ("enableCDN".equals(fieldName)) {
       return enableCDN;
     }
-    if (fieldName.equals("fingerprint")) {
+    if ("fingerprint".equals(fieldName)) {
       return fingerprint;
     }
-    if (fieldName.equals("healthChecks")) {
+    if ("healthChecks".equals(fieldName)) {
       return healthChecks;
     }
-    if (fieldName.equals("iap")) {
+    if ("iap".equals(fieldName)) {
       return iap;
     }
-    if (fieldName.equals("id")) {
+    if ("id".equals(fieldName)) {
       return id;
     }
-    if (fieldName.equals("kind")) {
+    if ("kind".equals(fieldName)) {
       return kind;
     }
-    if (fieldName.equals("loadBalancingScheme")) {
+    if ("loadBalancingScheme".equals(fieldName)) {
       return loadBalancingScheme;
     }
-    if (fieldName.equals("name")) {
+    if ("name".equals(fieldName)) {
       return name;
     }
-    if (fieldName.equals("port")) {
+    if ("port".equals(fieldName)) {
       return port;
     }
-    if (fieldName.equals("portName")) {
+    if ("portName".equals(fieldName)) {
       return portName;
     }
-    if (fieldName.equals("protocol")) {
+    if ("protocol".equals(fieldName)) {
       return protocol;
     }
-    if (fieldName.equals("region")) {
+    if ("region".equals(fieldName)) {
       return region;
     }
-    if (fieldName.equals("securityPolicy")) {
+    if ("securityPolicy".equals(fieldName)) {
       return securityPolicy;
     }
-    if (fieldName.equals("selfLink")) {
+    if ("selfLink".equals(fieldName)) {
       return selfLink;
     }
-    if (fieldName.equals("sessionAffinity")) {
+    if ("sessionAffinity".equals(fieldName)) {
       return sessionAffinity;
     }
-    if (fieldName.equals("timeoutSec")) {
+    if ("timeoutSec".equals(fieldName)) {
       return timeoutSec;
     }
     return null;

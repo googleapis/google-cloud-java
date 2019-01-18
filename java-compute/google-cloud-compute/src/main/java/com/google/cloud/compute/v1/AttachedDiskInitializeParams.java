@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,25 +63,25 @@ public final class AttachedDiskInitializeParams implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("description")) {
+    if ("description".equals(fieldName)) {
       return description;
     }
-    if (fieldName.equals("diskName")) {
+    if ("diskName".equals(fieldName)) {
       return diskName;
     }
-    if (fieldName.equals("diskSizeGb")) {
+    if ("diskSizeGb".equals(fieldName)) {
       return diskSizeGb;
     }
-    if (fieldName.equals("diskType")) {
+    if ("diskType".equals(fieldName)) {
       return diskType;
     }
-    if (fieldName.equals("labels")) {
+    if ("labels".equals(fieldName)) {
       return labels;
     }
-    if (fieldName.equals("sourceImage")) {
+    if ("sourceImage".equals(fieldName)) {
       return sourceImage;
     }
-    if (fieldName.equals("sourceImageEncryptionKey")) {
+    if ("sourceImageEncryptionKey".equals(fieldName)) {
       return sourceImageEncryptionKey;
     }
     return null;

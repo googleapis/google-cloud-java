@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,10 +41,10 @@ public final class LogConfigCloudAuditOptions implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("authorizationLoggingOptions")) {
+    if ("authorizationLoggingOptions".equals(fieldName)) {
       return authorizationLoggingOptions;
     }
-    if (fieldName.equals("logName")) {
+    if ("logName".equals(fieldName)) {
       return logName;
     }
     return null;

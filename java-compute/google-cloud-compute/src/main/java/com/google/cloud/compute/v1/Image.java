@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -148,88 +148,88 @@ public final class Image implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("archiveSizeBytes")) {
+    if ("archiveSizeBytes".equals(fieldName)) {
       return archiveSizeBytes;
     }
-    if (fieldName.equals("creationTimestamp")) {
+    if ("creationTimestamp".equals(fieldName)) {
       return creationTimestamp;
     }
-    if (fieldName.equals("deprecated")) {
+    if ("deprecated".equals(fieldName)) {
       return deprecated;
     }
-    if (fieldName.equals("description")) {
+    if ("description".equals(fieldName)) {
       return description;
     }
-    if (fieldName.equals("diskSizeGb")) {
+    if ("diskSizeGb".equals(fieldName)) {
       return diskSizeGb;
     }
-    if (fieldName.equals("family")) {
+    if ("family".equals(fieldName)) {
       return family;
     }
-    if (fieldName.equals("guestOsFeatures")) {
+    if ("guestOsFeatures".equals(fieldName)) {
       return guestOsFeatures;
     }
-    if (fieldName.equals("id")) {
+    if ("id".equals(fieldName)) {
       return id;
     }
-    if (fieldName.equals("imageEncryptionKey")) {
+    if ("imageEncryptionKey".equals(fieldName)) {
       return imageEncryptionKey;
     }
-    if (fieldName.equals("kind")) {
+    if ("kind".equals(fieldName)) {
       return kind;
     }
-    if (fieldName.equals("labelFingerprint")) {
+    if ("labelFingerprint".equals(fieldName)) {
       return labelFingerprint;
     }
-    if (fieldName.equals("labels")) {
+    if ("labels".equals(fieldName)) {
       return labels;
     }
-    if (fieldName.equals("licenseCodes")) {
+    if ("licenseCodes".equals(fieldName)) {
       return licenseCodes;
     }
-    if (fieldName.equals("licenses")) {
+    if ("licenses".equals(fieldName)) {
       return licenses;
     }
-    if (fieldName.equals("name")) {
+    if ("name".equals(fieldName)) {
       return name;
     }
-    if (fieldName.equals("rawDisk")) {
+    if ("rawDisk".equals(fieldName)) {
       return rawDisk;
     }
-    if (fieldName.equals("selfLink")) {
+    if ("selfLink".equals(fieldName)) {
       return selfLink;
     }
-    if (fieldName.equals("sourceDisk")) {
+    if ("sourceDisk".equals(fieldName)) {
       return sourceDisk;
     }
-    if (fieldName.equals("sourceDiskEncryptionKey")) {
+    if ("sourceDiskEncryptionKey".equals(fieldName)) {
       return sourceDiskEncryptionKey;
     }
-    if (fieldName.equals("sourceDiskId")) {
+    if ("sourceDiskId".equals(fieldName)) {
       return sourceDiskId;
     }
-    if (fieldName.equals("sourceImage")) {
+    if ("sourceImage".equals(fieldName)) {
       return sourceImage;
     }
-    if (fieldName.equals("sourceImageEncryptionKey")) {
+    if ("sourceImageEncryptionKey".equals(fieldName)) {
       return sourceImageEncryptionKey;
     }
-    if (fieldName.equals("sourceImageId")) {
+    if ("sourceImageId".equals(fieldName)) {
       return sourceImageId;
     }
-    if (fieldName.equals("sourceSnapshot")) {
+    if ("sourceSnapshot".equals(fieldName)) {
       return sourceSnapshot;
     }
-    if (fieldName.equals("sourceSnapshotEncryptionKey")) {
+    if ("sourceSnapshotEncryptionKey".equals(fieldName)) {
       return sourceSnapshotEncryptionKey;
     }
-    if (fieldName.equals("sourceSnapshotId")) {
+    if ("sourceSnapshotId".equals(fieldName)) {
       return sourceSnapshotId;
     }
-    if (fieldName.equals("sourceType")) {
+    if ("sourceType".equals(fieldName)) {
       return sourceType;
     }
-    if (fieldName.equals("status")) {
+    if ("status".equals(fieldName)) {
       return status;
     }
     return null;

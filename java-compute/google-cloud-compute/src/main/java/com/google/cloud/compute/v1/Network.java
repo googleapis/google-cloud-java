@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import com.google.gson.annotations.SerializedName;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
@@ -30,7 +31,10 @@ public final class Network implements ApiMessage {
   private final String creationTimestamp;
   private final String description;
   private final String gatewayIPv4;
+
+  @SerializedName("IPv4Range")
   private final String iPv4Range;
+
   private final String id;
   private final String kind;
   private final String name;
@@ -83,40 +87,40 @@ public final class Network implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("autoCreateSubnetworks")) {
+    if ("autoCreateSubnetworks".equals(fieldName)) {
       return autoCreateSubnetworks;
     }
-    if (fieldName.equals("creationTimestamp")) {
+    if ("creationTimestamp".equals(fieldName)) {
       return creationTimestamp;
     }
-    if (fieldName.equals("description")) {
+    if ("description".equals(fieldName)) {
       return description;
     }
-    if (fieldName.equals("gatewayIPv4")) {
+    if ("gatewayIPv4".equals(fieldName)) {
       return gatewayIPv4;
     }
-    if (fieldName.equals("iPv4Range")) {
+    if ("iPv4Range".equals(fieldName)) {
       return iPv4Range;
     }
-    if (fieldName.equals("id")) {
+    if ("id".equals(fieldName)) {
       return id;
     }
-    if (fieldName.equals("kind")) {
+    if ("kind".equals(fieldName)) {
       return kind;
     }
-    if (fieldName.equals("name")) {
+    if ("name".equals(fieldName)) {
       return name;
     }
-    if (fieldName.equals("peerings")) {
+    if ("peerings".equals(fieldName)) {
       return peerings;
     }
-    if (fieldName.equals("routingConfig")) {
+    if ("routingConfig".equals(fieldName)) {
       return routingConfig;
     }
-    if (fieldName.equals("selfLink")) {
+    if ("selfLink".equals(fieldName)) {
       return selfLink;
     }
-    if (fieldName.equals("subnetworks")) {
+    if ("subnetworks".equals(fieldName)) {
       return subnetworks;
     }
     return null;

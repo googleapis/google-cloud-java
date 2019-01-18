@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,28 +67,28 @@ public final class NetworkInterface implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("accessConfigs")) {
+    if ("accessConfigs".equals(fieldName)) {
       return accessConfigs;
     }
-    if (fieldName.equals("aliasIpRanges")) {
+    if ("aliasIpRanges".equals(fieldName)) {
       return aliasIpRanges;
     }
-    if (fieldName.equals("fingerprint")) {
+    if ("fingerprint".equals(fieldName)) {
       return fingerprint;
     }
-    if (fieldName.equals("kind")) {
+    if ("kind".equals(fieldName)) {
       return kind;
     }
-    if (fieldName.equals("name")) {
+    if ("name".equals(fieldName)) {
       return name;
     }
-    if (fieldName.equals("network")) {
+    if ("network".equals(fieldName)) {
       return network;
     }
-    if (fieldName.equals("networkIP")) {
+    if ("networkIP".equals(fieldName)) {
       return networkIP;
     }
-    if (fieldName.equals("subnetwork")) {
+    if ("subnetwork".equals(fieldName)) {
       return subnetwork;
     }
     return null;

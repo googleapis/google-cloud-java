@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,61 +111,61 @@ public final class Firewall implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("allowed")) {
+    if ("allowed".equals(fieldName)) {
       return allowed;
     }
-    if (fieldName.equals("creationTimestamp")) {
+    if ("creationTimestamp".equals(fieldName)) {
       return creationTimestamp;
     }
-    if (fieldName.equals("denied")) {
+    if ("denied".equals(fieldName)) {
       return denied;
     }
-    if (fieldName.equals("description")) {
+    if ("description".equals(fieldName)) {
       return description;
     }
-    if (fieldName.equals("destinationRanges")) {
+    if ("destinationRanges".equals(fieldName)) {
       return destinationRanges;
     }
-    if (fieldName.equals("direction")) {
+    if ("direction".equals(fieldName)) {
       return direction;
     }
-    if (fieldName.equals("disabled")) {
+    if ("disabled".equals(fieldName)) {
       return disabled;
     }
-    if (fieldName.equals("id")) {
+    if ("id".equals(fieldName)) {
       return id;
     }
-    if (fieldName.equals("kind")) {
+    if ("kind".equals(fieldName)) {
       return kind;
     }
-    if (fieldName.equals("logConfig")) {
+    if ("logConfig".equals(fieldName)) {
       return logConfig;
     }
-    if (fieldName.equals("name")) {
+    if ("name".equals(fieldName)) {
       return name;
     }
-    if (fieldName.equals("network")) {
+    if ("network".equals(fieldName)) {
       return network;
     }
-    if (fieldName.equals("priority")) {
+    if ("priority".equals(fieldName)) {
       return priority;
     }
-    if (fieldName.equals("selfLink")) {
+    if ("selfLink".equals(fieldName)) {
       return selfLink;
     }
-    if (fieldName.equals("sourceRanges")) {
+    if ("sourceRanges".equals(fieldName)) {
       return sourceRanges;
     }
-    if (fieldName.equals("sourceServiceAccounts")) {
+    if ("sourceServiceAccounts".equals(fieldName)) {
       return sourceServiceAccounts;
     }
-    if (fieldName.equals("sourceTags")) {
+    if ("sourceTags".equals(fieldName)) {
       return sourceTags;
     }
-    if (fieldName.equals("targetServiceAccounts")) {
+    if ("targetServiceAccounts".equals(fieldName)) {
       return targetServiceAccounts;
     }
-    if (fieldName.equals("targetTags")) {
+    if ("targetTags".equals(fieldName)) {
       return targetTags;
     }
     return null;

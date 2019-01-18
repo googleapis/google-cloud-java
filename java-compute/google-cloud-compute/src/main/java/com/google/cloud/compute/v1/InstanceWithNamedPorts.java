@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,13 +44,13 @@ public final class InstanceWithNamedPorts implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("instance")) {
+    if ("instance".equals(fieldName)) {
       return instance;
     }
-    if (fieldName.equals("namedPorts")) {
+    if ("namedPorts".equals(fieldName)) {
       return namedPorts;
     }
-    if (fieldName.equals("status")) {
+    if ("status".equals(fieldName)) {
       return status;
     }
     return null;

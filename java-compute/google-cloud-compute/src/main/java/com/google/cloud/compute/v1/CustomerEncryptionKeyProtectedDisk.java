@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,10 +41,10 @@ public final class CustomerEncryptionKeyProtectedDisk implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("diskEncryptionKey")) {
+    if ("diskEncryptionKey".equals(fieldName)) {
       return diskEncryptionKey;
     }
-    if (fieldName.equals("source")) {
+    if ("source".equals(fieldName)) {
       return source;
     }
     return null;

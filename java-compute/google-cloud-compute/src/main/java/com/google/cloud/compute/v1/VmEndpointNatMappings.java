@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,10 +42,10 @@ public final class VmEndpointNatMappings implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("instanceName")) {
+    if ("instanceName".equals(fieldName)) {
       return instanceName;
     }
-    if (fieldName.equals("interfaceNatMappings")) {
+    if ("interfaceNatMappings".equals(fieldName)) {
       return interfaceNatMappings;
     }
     return null;
