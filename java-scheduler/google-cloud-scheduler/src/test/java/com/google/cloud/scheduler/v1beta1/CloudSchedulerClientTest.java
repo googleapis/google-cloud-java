@@ -87,9 +87,9 @@ public class CloudSchedulerClientTest {
         ListJobsResponse.newBuilder().setNextPageToken(nextPageToken).addAllJobs(jobs).build();
     mockCloudScheduler.addResponse(expectedResponse);
 
-    String formattedParent = CloudSchedulerClient.formatLocationName("[PROJECT]", "[LOCATION]");
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
 
-    ListJobsPagedResponse pagedListResponse = client.listJobs(formattedParent);
+    ListJobsPagedResponse pagedListResponse = client.listJobs(parent);
 
     List<Job> resources = Lists.newArrayList(pagedListResponse.iterateAll());
     Assert.assertEquals(1, resources.size());
@@ -99,7 +99,7 @@ public class CloudSchedulerClientTest {
     Assert.assertEquals(1, actualRequests.size());
     ListJobsRequest actualRequest = (ListJobsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -113,9 +113,9 @@ public class CloudSchedulerClientTest {
     mockCloudScheduler.addException(exception);
 
     try {
-      String formattedParent = CloudSchedulerClient.formatLocationName("[PROJECT]", "[LOCATION]");
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
 
-      client.listJobs(formattedParent);
+      client.listJobs(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -125,29 +125,29 @@ public class CloudSchedulerClientTest {
   @Test
   @SuppressWarnings("all")
   public void getJobTest() {
-    String name2 = "name2-1052831874";
+    JobName name2 = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
     String description = "description-1724546052";
     String schedule = "schedule-697920873";
     String timeZone = "timeZone36848094";
     Job expectedResponse =
         Job.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setDescription(description)
             .setSchedule(schedule)
             .setTimeZone(timeZone)
             .build();
     mockCloudScheduler.addResponse(expectedResponse);
 
-    String formattedName = CloudSchedulerClient.formatJobName("[PROJECT]", "[LOCATION]", "[JOB]");
+    JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
 
-    Job actualResponse = client.getJob(formattedName);
+    Job actualResponse = client.getJob(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockCloudScheduler.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetJobRequest actualRequest = (GetJobRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, JobName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -161,9 +161,9 @@ public class CloudSchedulerClientTest {
     mockCloudScheduler.addException(exception);
 
     try {
-      String formattedName = CloudSchedulerClient.formatJobName("[PROJECT]", "[LOCATION]", "[JOB]");
+      JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
 
-      client.getJob(formattedName);
+      client.getJob(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -173,30 +173,30 @@ public class CloudSchedulerClientTest {
   @Test
   @SuppressWarnings("all")
   public void createJobTest() {
-    String name = "name3373707";
+    JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
     String description = "description-1724546052";
     String schedule = "schedule-697920873";
     String timeZone = "timeZone36848094";
     Job expectedResponse =
         Job.newBuilder()
-            .setName(name)
+            .setName(name.toString())
             .setDescription(description)
             .setSchedule(schedule)
             .setTimeZone(timeZone)
             .build();
     mockCloudScheduler.addResponse(expectedResponse);
 
-    String formattedParent = CloudSchedulerClient.formatLocationName("[PROJECT]", "[LOCATION]");
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
     Job job = Job.newBuilder().build();
 
-    Job actualResponse = client.createJob(formattedParent, job);
+    Job actualResponse = client.createJob(parent, job);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockCloudScheduler.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateJobRequest actualRequest = (CreateJobRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, LocationName.parse(actualRequest.getParent()));
     Assert.assertEquals(job, actualRequest.getJob());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -211,10 +211,10 @@ public class CloudSchedulerClientTest {
     mockCloudScheduler.addException(exception);
 
     try {
-      String formattedParent = CloudSchedulerClient.formatLocationName("[PROJECT]", "[LOCATION]");
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       Job job = Job.newBuilder().build();
 
-      client.createJob(formattedParent, job);
+      client.createJob(parent, job);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -224,13 +224,13 @@ public class CloudSchedulerClientTest {
   @Test
   @SuppressWarnings("all")
   public void updateJobTest() {
-    String name = "name3373707";
+    JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
     String description = "description-1724546052";
     String schedule = "schedule-697920873";
     String timeZone = "timeZone36848094";
     Job expectedResponse =
         Job.newBuilder()
-            .setName(name)
+            .setName(name.toString())
             .setDescription(description)
             .setSchedule(schedule)
             .setTimeZone(timeZone)
@@ -278,15 +278,15 @@ public class CloudSchedulerClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockCloudScheduler.addResponse(expectedResponse);
 
-    String formattedName = CloudSchedulerClient.formatJobName("[PROJECT]", "[LOCATION]", "[JOB]");
+    JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
 
-    client.deleteJob(formattedName);
+    client.deleteJob(name);
 
     List<GeneratedMessageV3> actualRequests = mockCloudScheduler.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteJobRequest actualRequest = (DeleteJobRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, JobName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -300,9 +300,9 @@ public class CloudSchedulerClientTest {
     mockCloudScheduler.addException(exception);
 
     try {
-      String formattedName = CloudSchedulerClient.formatJobName("[PROJECT]", "[LOCATION]", "[JOB]");
+      JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
 
-      client.deleteJob(formattedName);
+      client.deleteJob(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -312,29 +312,29 @@ public class CloudSchedulerClientTest {
   @Test
   @SuppressWarnings("all")
   public void pauseJobTest() {
-    String name2 = "name2-1052831874";
+    JobName name2 = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
     String description = "description-1724546052";
     String schedule = "schedule-697920873";
     String timeZone = "timeZone36848094";
     Job expectedResponse =
         Job.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setDescription(description)
             .setSchedule(schedule)
             .setTimeZone(timeZone)
             .build();
     mockCloudScheduler.addResponse(expectedResponse);
 
-    String formattedName = CloudSchedulerClient.formatJobName("[PROJECT]", "[LOCATION]", "[JOB]");
+    JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
 
-    Job actualResponse = client.pauseJob(formattedName);
+    Job actualResponse = client.pauseJob(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockCloudScheduler.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     PauseJobRequest actualRequest = (PauseJobRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, JobName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -348,9 +348,9 @@ public class CloudSchedulerClientTest {
     mockCloudScheduler.addException(exception);
 
     try {
-      String formattedName = CloudSchedulerClient.formatJobName("[PROJECT]", "[LOCATION]", "[JOB]");
+      JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
 
-      client.pauseJob(formattedName);
+      client.pauseJob(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -360,29 +360,29 @@ public class CloudSchedulerClientTest {
   @Test
   @SuppressWarnings("all")
   public void resumeJobTest() {
-    String name2 = "name2-1052831874";
+    JobName name2 = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
     String description = "description-1724546052";
     String schedule = "schedule-697920873";
     String timeZone = "timeZone36848094";
     Job expectedResponse =
         Job.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setDescription(description)
             .setSchedule(schedule)
             .setTimeZone(timeZone)
             .build();
     mockCloudScheduler.addResponse(expectedResponse);
 
-    String formattedName = CloudSchedulerClient.formatJobName("[PROJECT]", "[LOCATION]", "[JOB]");
+    JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
 
-    Job actualResponse = client.resumeJob(formattedName);
+    Job actualResponse = client.resumeJob(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockCloudScheduler.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ResumeJobRequest actualRequest = (ResumeJobRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, JobName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -396,9 +396,9 @@ public class CloudSchedulerClientTest {
     mockCloudScheduler.addException(exception);
 
     try {
-      String formattedName = CloudSchedulerClient.formatJobName("[PROJECT]", "[LOCATION]", "[JOB]");
+      JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
 
-      client.resumeJob(formattedName);
+      client.resumeJob(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -408,29 +408,29 @@ public class CloudSchedulerClientTest {
   @Test
   @SuppressWarnings("all")
   public void runJobTest() {
-    String name2 = "name2-1052831874";
+    JobName name2 = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
     String description = "description-1724546052";
     String schedule = "schedule-697920873";
     String timeZone = "timeZone36848094";
     Job expectedResponse =
         Job.newBuilder()
-            .setName(name2)
+            .setName(name2.toString())
             .setDescription(description)
             .setSchedule(schedule)
             .setTimeZone(timeZone)
             .build();
     mockCloudScheduler.addResponse(expectedResponse);
 
-    String formattedName = CloudSchedulerClient.formatJobName("[PROJECT]", "[LOCATION]", "[JOB]");
+    JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
 
-    Job actualResponse = client.runJob(formattedName);
+    Job actualResponse = client.runJob(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockCloudScheduler.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     RunJobRequest actualRequest = (RunJobRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, JobName.parse(actualRequest.getName()));
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -444,9 +444,9 @@ public class CloudSchedulerClientTest {
     mockCloudScheduler.addException(exception);
 
     try {
-      String formattedName = CloudSchedulerClient.formatJobName("[PROJECT]", "[LOCATION]", "[JOB]");
+      JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
 
-      client.runJob(formattedName);
+      client.runJob(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
