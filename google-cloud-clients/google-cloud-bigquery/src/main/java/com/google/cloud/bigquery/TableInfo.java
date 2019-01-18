@@ -66,6 +66,7 @@ public class TableInfo implements Serializable {
   private final Long expirationTime;
   private final Long lastModifiedTime;
   private final Long numBytes;
+  private final Long numLongTermBytes;
   private final BigInteger numRows;
   private final TableDefinition definition;
   private final EncryptionConfiguration encryptionConfiguration;
@@ -95,6 +96,8 @@ public class TableInfo implements Serializable {
     abstract Builder setLastModifiedTime(Long lastModifiedTime);
 
     abstract Builder setNumBytes(Long numBytes);
+
+    abstract Builder setNumLongTermBytes(Long numLongTermBytes);
 
     abstract Builder setNumRows(BigInteger numRows);
 
@@ -141,6 +144,7 @@ public class TableInfo implements Serializable {
     private Long expirationTime;
     private Long lastModifiedTime;
     private Long numBytes;
+    private Long numLongTermBytes;
     private BigInteger numRows;
     private TableDefinition definition;
     private EncryptionConfiguration encryptionConfiguration;
@@ -159,6 +163,7 @@ public class TableInfo implements Serializable {
       this.expirationTime = tableInfo.expirationTime;
       this.lastModifiedTime = tableInfo.lastModifiedTime;
       this.numBytes = tableInfo.numBytes;
+      this.numLongTermBytes = tableInfo.numLongTermBytes;
       this.numRows = tableInfo.numRows;
       this.definition = tableInfo.definition;
       this.encryptionConfiguration = tableInfo.encryptionConfiguration;
@@ -178,6 +183,7 @@ public class TableInfo implements Serializable {
       this.generatedId = tablePb.getId();
       this.selfLink = tablePb.getSelfLink();
       this.numBytes = tablePb.getNumBytes();
+      this.numLongTermBytes = tablePb.getNumLongTermBytes();
       this.numRows = tablePb.getNumRows();
       this.definition = TableDefinition.fromPb(tablePb);
       if (tablePb.getEncryptionConfiguration() != null) {
@@ -236,6 +242,11 @@ public class TableInfo implements Serializable {
     }
 
     @Override
+    Builder setNumLongTermBytes(Long numLongTermBytes) {
+      this.numLongTermBytes = numLongTermBytes;
+    }
+
+    @Override
     Builder setNumRows(BigInteger numRows) {
       this.numRows = numRows;
       return this;
@@ -288,6 +299,7 @@ public class TableInfo implements Serializable {
     this.expirationTime = builder.expirationTime;
     this.lastModifiedTime = builder.lastModifiedTime;
     this.numBytes = builder.numBytes;
+    this.numLongTermBytes = builder.numLongTermBytes;
     this.numRows = builder.numRows;
     this.definition = builder.definition;
     this.encryptionConfiguration = builder.encryptionConfiguration;
@@ -360,6 +372,16 @@ public class TableInfo implements Serializable {
     return numBytes;
   }
 
+  /**
+   * Returns the number of bytes considered "long-term storage" for reduced billing purposes.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/pricing#long-term-storage">Long Term Storage
+   *     Pricing</a>
+   */
+  public Long getNumLongTermBytes() {
+    return numLongTermBytes;
+  }
+
   /** Returns the number of rows of data in this table */
   public BigInteger getNumRows() {
     return numRows;
@@ -394,6 +416,7 @@ public class TableInfo implements Serializable {
         .add("creationTime", creationTime)
         .add("lastModifiedTime", lastModifiedTime)
         .add("numBytes", numBytes)
+        .add("numLongTermBytes", numLongTermBytes)
         .add("numRows", numRows)
         .add("definition", definition)
         .add("encryptionConfiguration", encryptionConfiguration)

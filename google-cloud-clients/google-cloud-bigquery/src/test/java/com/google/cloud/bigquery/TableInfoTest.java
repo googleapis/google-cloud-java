@@ -54,6 +54,7 @@ public class TableInfoTest {
           .build();
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA1, FIELD_SCHEMA2, FIELD_SCHEMA3);
   private static final Long NUM_BYTES = 42L;
+  private static final Long NUM_LONG_TERM_BYTES = 21L;
   private static final Long NUM_ROWS = 43L;
   private static final String LOCATION = "US";
   private static final StandardTableDefinition.StreamingBuffer STREAMING_BUFFER =
@@ -62,6 +63,7 @@ public class TableInfoTest {
       StandardTableDefinition.newBuilder()
           .setLocation(LOCATION)
           .setNumBytes(NUM_BYTES)
+          .setNumLongTermBytes(NUM_LONG_TERM_BYTES)
           .setNumRows(NUM_ROWS)
           .setStreamingBuffer(STREAMING_BUFFER)
           .setSchema(TABLE_SCHEMA)
@@ -95,6 +97,7 @@ public class TableInfoTest {
           .setGeneratedId(GENERATED_ID)
           .setLastModifiedTime(LAST_MODIFIED_TIME)
           .setNumBytes(NUM_BYTES)
+          .setNumLongTermBytes(NUM_LONG_TERM_BYTES)
           .setNumRows(BigInteger.valueOf(NUM_ROWS))
           .setSelfLink(SELF_LINK)
           .setLabels(Collections.singletonMap("a", "b"))
@@ -155,6 +158,10 @@ public class TableInfoTest {
     assertEquals(LAST_MODIFIED_TIME, TABLE_INFO.getLastModifiedTime());
     assertEquals(TABLE_DEFINITION, TABLE_INFO.getDefinition());
     assertEquals(SELF_LINK, TABLE_INFO.getSelfLink());
+    assertEquals(NUM_BYTES, TABLE_INFO.getNumBytes());
+    assertEquals(NUM_LONG_TERM_BYTES, TABLE_INFO.getNumLongTermBytes());
+    assertEquals(NUM_ROWS, TABLE_INFO.getNumLongTermBytes());
+
     assertEquals(TABLE_ID, VIEW_INFO.getTableId());
     assertEquals(VIEW_DEFINITION, VIEW_INFO.getDefinition());
     assertEquals(CREATION_TIME, VIEW_INFO.getCreationTime());
@@ -166,6 +173,7 @@ public class TableInfoTest {
     assertEquals(LAST_MODIFIED_TIME, VIEW_INFO.getLastModifiedTime());
     assertEquals(VIEW_DEFINITION, VIEW_INFO.getDefinition());
     assertEquals(SELF_LINK, VIEW_INFO.getSelfLink());
+
     assertEquals(TABLE_ID, EXTERNAL_TABLE_INFO.getTableId());
     assertEquals(CREATION_TIME, EXTERNAL_TABLE_INFO.getCreationTime());
     assertEquals(DESCRIPTION, EXTERNAL_TABLE_INFO.getDescription());
@@ -248,6 +256,7 @@ public class TableInfoTest {
     assertEquals(expected.getGeneratedId(), value.getGeneratedId());
     assertEquals(expected.getLastModifiedTime(), value.getLastModifiedTime());
     assertEquals(expected.getNumBytes(), value.getNumBytes());
+    assertEquals(expected.getNumLongTermBytes(), value.getNumLongTermBytes());
     assertEquals(expected.getNumRows(), value.getNumRows());
     assertEquals(expected.getSelfLink(), value.getSelfLink());
     assertEquals(expected.getLabels(), value.getLabels());

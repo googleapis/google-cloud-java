@@ -109,6 +109,12 @@ public class Table extends TableInfo {
     }
 
     @Override
+    Builder setNumLongTermBytes(Long numLongTermBytes) {
+      infoBuilder.setNumLongTermBytes(numLongTermBytes);
+      return this;
+    }
+
+    @Override
     Builder setNumRows(BigInteger numRows) {
       infoBuilder.setNumRows(numRows);
       return this;
