@@ -55,8 +55,7 @@ public final class BigtableLargeTests {
 
   private static final String BIGTABLE_TARGET = "bigtable.googleapis.com";
   private static final String FAMILY_NAME = "test-family";
-  private static final String TABLE_NAME =
-      "projects/cloudprober-test/instances/test-instance/tables/test-table";
+  // The test-table must be big enough so that the rpc will be blocked.
   private static final String LARGE_TABLE_NAME =
       "projects/cloudprober-test/instances/test-instance/tables/test-large-table";
   private static final String OAUTH_SCOPE = "https://www.googleapis.com/auth/cloud-platform";
@@ -92,15 +91,6 @@ public final class BigtableLargeTests {
       iter.next();
     }
     return true;
-  }
-
-  // Clear all the pending streams in the iterators.
-  private static void finishReadRowsResponses(List<Iterator<ReadRowsResponse>> res) {
-    for (Iterator<ReadRowsResponse> iter : res) {
-      while (iter.hasNext()) {
-        iter.next();
-      }
-    }
   }
 
   private static boolean runManyManyStreams(ManagedChannel channel)
