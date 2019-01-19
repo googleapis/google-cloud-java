@@ -68,11 +68,9 @@ public final class SpannerIntegrationTest {
   private static final String DATABASE =
       "projects/cloudprober-test/instances/test-instance/databases/test-db";
   private static final String API_FILE = "src/test/resources/apiconfigtests/apiconfig.json";
-  private static final String API_FILE2 = "src/test/resources/apiconfigtests/spannertest.json";
 
-  private static final int MAX_CHANNEL = 5;
+  private static final int MAX_CHANNEL = 3;
   private static final int MAX_STREAM = 2;
-  private static final int DEFAULT_MAX_STREAM = 100;
 
   private static final ManagedChannelBuilder builder =
       ManagedChannelBuilder.forAddress(SPANNER_TARGET, 443);

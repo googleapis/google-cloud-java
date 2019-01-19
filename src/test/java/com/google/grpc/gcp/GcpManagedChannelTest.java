@@ -72,7 +72,7 @@ public final class GcpManagedChannelTest {
     resetGcpChannel();
     gcpChannel = new GcpManagedChannel(builder, API_FILE);
     assertEquals(1, gcpChannel.channelRefs.size());
-    assertEquals(5, gcpChannel.getMaxSize());
+    assertEquals(3, gcpChannel.getMaxSize());
     assertEquals(2, gcpChannel.getStreamsLowWatermark());
     assertEquals(3, gcpChannel.methodToAffinity.size());
   }
@@ -166,7 +166,7 @@ public final class GcpManagedChannelTest {
   public void testParseGoodJsonFile() throws Exception {
     ApiConfig apiconfig = GcpManagedChannel.parseJson(API_FILE);
     ChannelPoolConfig expectedChannel =
-        ChannelPoolConfig.newBuilder().setMaxSize(5).setMaxConcurrentStreamsLowWatermark(2).build();
+        ChannelPoolConfig.newBuilder().setMaxSize(3).setMaxConcurrentStreamsLowWatermark(2).build();
     assertEquals(expectedChannel, apiconfig.getChannelPool());
 
     assertEquals(3, apiconfig.getMethodCount());

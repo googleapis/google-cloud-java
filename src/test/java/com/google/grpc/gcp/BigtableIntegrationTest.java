@@ -33,19 +33,14 @@ import com.google.bigtable.v2.RowSet;
 import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.protobuf.ByteString;
-import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.auth.MoreCallCredentials;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.Callable;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import org.junit.After;
@@ -61,7 +56,6 @@ import org.junit.runners.JUnit4;
 public class BigtableIntegrationTest {
 
   private static final int DEFAULT_MAX_CHANNEL = 10;
-  private static final int DEFAULT_MAX_STREAM = 100;
   private static final int NEW_MAX_CHANNEL = 5;
   private static final int NEW_MAX_STREAM = 5;
   private static final int MAX_MSG_SIZE = 8 * 1024 * 1024;
@@ -114,30 +108,6 @@ public class BigtableIntegrationTest {
     return stub;
   }
 
-  private boolean runManyManyStreamsNormalChannel(ManagedChannel channel) {
-    GoogleCredentials creds = getCreds();
-    BigtableBlockingStub stubNormal =
-        BigtableGrpc.newBlockingStub(channel).withCallCredentials(MoreCallCredentials.from(creds));
-
-    ReadRowsRequest request = ReadRowsRequest.newBuilder().setTableName(LARGE_TABLE_NAME).build();
-    for (int i = 0; i < DEFAULT_MAX_STREAM + 5; i++) {
-      Iterator<ReadRowsResponse> iterNormal = stubNormal.readRows(request);
-      iterNormal.next();
-    }
-    return true;
-  }
-
-  private boolean runManyManyStreamsGcpChannel() {
-    BigtableBlockingStub stub = getBigtableBlockingStub();
-    ReadRowsRequest request = ReadRowsRequest.newBuilder().setTableName(LARGE_TABLE_NAME).build();
-
-    for (int i = 0; i < DEFAULT_MAX_STREAM + 5; i++) {
-      Iterator<ReadRowsResponse> iterNormal = stub.readRows(request);
-      iterNormal.next();
-    }
-    return true;
-  }
-
   @Before
   public void setupChannel() throws InterruptedException {
     builder =
@@ -157,7 +127,7 @@ public class BigtableIntegrationTest {
     BigtableBlockingStub stub = getBigtableBlockingStub();
     MutateRowRequest request = getMutateRequest("test-mutation", 100, "test-row");
 
-    for (int i = 0; i < DEFAULT_MAX_CHANNEL * 2; i++) {
+    for (int i = 0; i < DEFAULT_MAX_CHANNEL + 1; i++) {
       MutateRowResponse response = stub.mutateRow(request);
       assertThat(response).isNotEqualTo(null);
       assertEquals(1, gcpChannel.channelRefs.size());
@@ -167,7 +137,7 @@ public class BigtableIntegrationTest {
   @Test
   public void testMutateRowAsyncReuse() throws Exception {
     BigtableStub stub = getBigtableStub();
-    for (int i = 0; i < DEFAULT_MAX_CHANNEL * 2; i++) {
+    for (int i = 0; i < DEFAULT_MAX_CHANNEL + 1; i++) {
       MutateRowRequest request = getMutateRequest("test-mutation-async", i, "test-row");
       AsyncResponseObserver<MutateRowResponse> responseObserver =
           new AsyncResponseObserver<MutateRowResponse>();
@@ -248,44 +218,6 @@ public class BigtableIntegrationTest {
     Iterator<ReadRowsResponse> response = stub.readRows(request);
     assertEquals(21, response.next().getChunksCount());
     assertEquals(1, gcpChannel.channelRefs.size());
-  }
-
-  /** There are 105 streams and our GcpManagedChannel is able to handle them. */
-  @Test
-  public void testReadGiganticDataGcpChannel() throws Exception {
-    ExecutorService executor = Executors.newCachedThreadPool();
-    Callable<Object> task =
-        new Callable<Object>() {
-          public Object call() {
-            return runManyManyStreamsGcpChannel();
-          }
-        };
-    Future<Object> future = executor.submit(task);
-    Object result = future.get(120, TimeUnit.SECONDS);
-  }
-
-  /**
-   * The original ManagedChannel is not able to hold 105 streams concurrently. The 101st stream will
-   * be blocked and throws a TimeoutException.
-   */
-  @Test
-  public void testReadGiganticDataNormalChannel() throws Exception {
-    ManagedChannel channel = builder.build();
-    ExecutorService executor = Executors.newCachedThreadPool();
-    Callable<Object> task =
-        new Callable<Object>() {
-          public Object call() {
-            return runManyManyStreamsNormalChannel(channel);
-          }
-        };
-    // Expect a TimeoutException.
-    expectedEx.expect(TimeoutException.class);
-    Future<Object> future = executor.submit(task);
-    try {
-      Object result = future.get(120, TimeUnit.SECONDS);
-    } finally {
-      channel.shutdownNow();
-    }
   }
 
   private static MutateRowRequest getMutateRequest(String val, int col, String rowKey) {

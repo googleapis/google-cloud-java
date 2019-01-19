@@ -11,6 +11,12 @@ repositories {
     mavenLocal()
 }
 
+task btTest(type: JavaExec) {
+  classpath = sourceSets.main.runtimeClasspath
+  main = 'com.google.grpc.gcp.testing.BigtableLargeTests'
+}
+
+
 def grpcVersion = '1.16.1' 
 def protobufVersion = '3.5.1'
 def protocVersion = '3.5.1-1'
@@ -26,10 +32,10 @@ dependencies {
     compile "io.grpc:grpc-protobuf:${grpcVersion}"
     compile "io.grpc:grpc-stub:${grpcVersion}"
     compile "io.grpc:grpc-auth:${grpcVersion}"
+    compile 'com.google.api.grpc:grpc-google-cloud-bigtable-v2:0.39.0'
     testCompile "io.grpc:grpc-testing:${grpcVersion}"
     testCompile 'com.google.truth:truth:0.42'
     testCompile 'org.mockito:mockito-all:1.9.5'
-    testCompile 'com.google.api.grpc:grpc-google-cloud-bigtable-v2:0.39.0'
     testCompile 'com.google.cloud:google-cloud-spanner:0.71.0-beta'
     testCompile group: 'org.hamcrest', name: 'hamcrest-core', version: '1.3'
     testCompile group: 'junit', name: 'junit-dep', version: '4.10'

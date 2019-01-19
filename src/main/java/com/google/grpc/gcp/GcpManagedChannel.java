@@ -65,7 +65,9 @@ public class GcpManagedChannel extends ManagedChannel {
   @GuardedBy("bindLock")
   final Map<String, ChannelRef> affinityKeyToChannelRef = new HashMap<String, ChannelRef>();
 
-  @VisibleForTesting final List<ChannelRef> channelRefs = new ArrayList<ChannelRef>();
+  @VisibleForTesting
+  @GuardedBy("this")
+  final List<ChannelRef> channelRefs = new ArrayList<ChannelRef>();
 
   private final Object bindLock = new Object();
 
@@ -107,14 +109,17 @@ public class GcpManagedChannel extends ManagedChannel {
   /**
    * Pick a channelRef (and create a new one if necessary).
    *
-   * @param key affinity key. If it is specified, pick the ChannelRef bound the the affinity key.
-   *     Otherwise pick the one with the smallest number of streams.
+   * @param key affinity key. If it is specified, pick the ChannelRef bound with the the affinity
+   *     key. Otherwise pick the one with the smallest number of streams.
    */
   protected ChannelRef getChannelRef(@Nullable String key) {
-    synchronized (bindLock) {
-      if (key != null && key != "") {
+
+    if (key != null && key != "") {
+      synchronized (bindLock) {
         return affinityKeyToChannelRef.get(key);
       }
+    }
+    synchronized (this) {
       Collections.sort(
           channelRefs,
           new Comparator<ChannelRef>() {
@@ -143,7 +148,7 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   @Override
-  public String authority() {
+  public synchronized String authority() {
     return channelRefs.get(0).getChannel().authority();
   }
 
@@ -166,7 +171,7 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   @Override
-  public ManagedChannel shutdownNow() {
+  public synchronized ManagedChannel shutdownNow() {
     for (ChannelRef channelRef : channelRefs) {
       if (!channelRef.getChannel().isTerminated()) {
         channelRef.getChannel().shutdownNow();
@@ -176,7 +181,7 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   @Override
-  public ManagedChannel shutdown() {
+  public synchronized ManagedChannel shutdown() {
     for (ChannelRef channelRef : channelRefs) {
       channelRef.getChannel().shutdown();
     }
@@ -184,7 +189,8 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   @Override
-  public boolean awaitTermination(long timeout, TimeUnit unit) throws InterruptedException {
+  public synchronized boolean awaitTermination(long timeout, TimeUnit unit)
+      throws InterruptedException {
     long endTimeNanos = System.nanoTime() + unit.toNanos(timeout);
     for (ChannelRef channelRef : channelRefs) {
       if (channelRef.getChannel().isTerminated()) {
@@ -200,7 +206,7 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   @Override
-  public boolean isShutdown() {
+  public synchronized boolean isShutdown() {
     for (ChannelRef channelRef : channelRefs) {
       if (!channelRef.getChannel().isShutdown()) {
         return false;
@@ -210,7 +216,7 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   @Override
-  public boolean isTerminated() {
+  public synchronized boolean isTerminated() {
     for (ChannelRef channelRef : channelRefs) {
       if (!channelRef.getChannel().isTerminated()) {
         return false;
@@ -221,7 +227,7 @@ public class GcpManagedChannel extends ManagedChannel {
 
   /** Get the current connectivity state of the channel pool. */
   @Override
-  public ConnectivityState getState(boolean requestConnection) {
+  public synchronized ConnectivityState getState(boolean requestConnection) {
     int ready = 0;
     int idle = 0;
     int connecting = 0;

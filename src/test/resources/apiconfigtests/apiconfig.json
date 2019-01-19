@@ -1,6 +1,6 @@
 {
   "channelPool": {
-    "maxSize": 5,
+    "maxSize": 3,
     "maxConcurrentStreamsLowWatermark": 2
   },
   "method": [
