@@ -12,7 +12,7 @@ public interface TimeWindowOrBuilder
    *
    *
    * <pre>
-   * Start time of the time window (inclusive).
+   * Start time of the time window (exclusive).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -22,7 +22,7 @@ public interface TimeWindowOrBuilder
    *
    *
    * <pre>
-   * Start time of the time window (inclusive).
+   * Start time of the time window (exclusive).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -32,7 +32,7 @@ public interface TimeWindowOrBuilder
    *
    *
    * <pre>
-   * Start time of the time window (inclusive).
+   * Start time of the time window (exclusive).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -43,7 +43,7 @@ public interface TimeWindowOrBuilder
    *
    *
    * <pre>
-   * End time of the time window (exclusive).
+   * End time of the time window (inclusive).
    * Current timestamp if not specified.
    * </pre>
    *
@@ -54,7 +54,7 @@ public interface TimeWindowOrBuilder
    *
    *
    * <pre>
-   * End time of the time window (exclusive).
+   * End time of the time window (inclusive).
    * Current timestamp if not specified.
    * </pre>
    *
@@ -65,7 +65,7 @@ public interface TimeWindowOrBuilder
    *
    *
    * <pre>
-   * End time of the time window (exclusive).
+   * End time of the time window (inclusive).
    * Current timestamp if not specified.
    * </pre>
    *

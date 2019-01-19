@@ -284,9 +284,12 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. The time window for the asset history. The start time is
-   * required. The returned results contain all temporal assets whose time
-   * window overlap with read_time_window.
+   * Optional. The time window for the asset history. Both start_time and
+   * end_time are optional and if set, it must be after 2018-10-02 UTC. If
+   * end_time is not set, it is default to current timestamp. If start_time is
+   * not set, the snapshot of the assets at end_time will be returned. The
+   * returned results contain all temporal assets whose time window overlap with
+   * read_time_window.
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
@@ -298,9 +301,12 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. The time window for the asset history. The start time is
-   * required. The returned results contain all temporal assets whose time
-   * window overlap with read_time_window.
+   * Optional. The time window for the asset history. Both start_time and
+   * end_time are optional and if set, it must be after 2018-10-02 UTC. If
+   * end_time is not set, it is default to current timestamp. If start_time is
+   * not set, the snapshot of the assets at end_time will be returned. The
+   * returned results contain all temporal assets whose time window overlap with
+   * read_time_window.
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
@@ -314,9 +320,12 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Required. The time window for the asset history. The start time is
-   * required. The returned results contain all temporal assets whose time
-   * window overlap with read_time_window.
+   * Optional. The time window for the asset history. Both start_time and
+   * end_time are optional and if set, it must be after 2018-10-02 UTC. If
+   * end_time is not set, it is default to current timestamp. If start_time is
+   * not set, the snapshot of the assets at end_time will be returned. The
+   * returned results contain all temporal assets whose time window overlap with
+   * read_time_window.
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
@@ -1106,9 +1115,12 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The time window for the asset history. The start time is
-     * required. The returned results contain all temporal assets whose time
-     * window overlap with read_time_window.
+     * Optional. The time window for the asset history. Both start_time and
+     * end_time are optional and if set, it must be after 2018-10-02 UTC. If
+     * end_time is not set, it is default to current timestamp. If start_time is
+     * not set, the snapshot of the assets at end_time will be returned. The
+     * returned results contain all temporal assets whose time window overlap with
+     * read_time_window.
      * </pre>
      *
      * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
@@ -1120,9 +1132,12 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The time window for the asset history. The start time is
-     * required. The returned results contain all temporal assets whose time
-     * window overlap with read_time_window.
+     * Optional. The time window for the asset history. Both start_time and
+     * end_time are optional and if set, it must be after 2018-10-02 UTC. If
+     * end_time is not set, it is default to current timestamp. If start_time is
+     * not set, the snapshot of the assets at end_time will be returned. The
+     * returned results contain all temporal assets whose time window overlap with
+     * read_time_window.
      * </pre>
      *
      * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
@@ -1140,9 +1155,12 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The time window for the asset history. The start time is
-     * required. The returned results contain all temporal assets whose time
-     * window overlap with read_time_window.
+     * Optional. The time window for the asset history. Both start_time and
+     * end_time are optional and if set, it must be after 2018-10-02 UTC. If
+     * end_time is not set, it is default to current timestamp. If start_time is
+     * not set, the snapshot of the assets at end_time will be returned. The
+     * returned results contain all temporal assets whose time window overlap with
+     * read_time_window.
      * </pre>
      *
      * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
@@ -1164,9 +1182,12 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The time window for the asset history. The start time is
-     * required. The returned results contain all temporal assets whose time
-     * window overlap with read_time_window.
+     * Optional. The time window for the asset history. Both start_time and
+     * end_time are optional and if set, it must be after 2018-10-02 UTC. If
+     * end_time is not set, it is default to current timestamp. If start_time is
+     * not set, the snapshot of the assets at end_time will be returned. The
+     * returned results contain all temporal assets whose time window overlap with
+     * read_time_window.
      * </pre>
      *
      * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
@@ -1186,9 +1207,12 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The time window for the asset history. The start time is
-     * required. The returned results contain all temporal assets whose time
-     * window overlap with read_time_window.
+     * Optional. The time window for the asset history. Both start_time and
+     * end_time are optional and if set, it must be after 2018-10-02 UTC. If
+     * end_time is not set, it is default to current timestamp. If start_time is
+     * not set, the snapshot of the assets at end_time will be returned. The
+     * returned results contain all temporal assets whose time window overlap with
+     * read_time_window.
      * </pre>
      *
      * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
@@ -1214,9 +1238,12 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The time window for the asset history. The start time is
-     * required. The returned results contain all temporal assets whose time
-     * window overlap with read_time_window.
+     * Optional. The time window for the asset history. Both start_time and
+     * end_time are optional and if set, it must be after 2018-10-02 UTC. If
+     * end_time is not set, it is default to current timestamp. If start_time is
+     * not set, the snapshot of the assets at end_time will be returned. The
+     * returned results contain all temporal assets whose time window overlap with
+     * read_time_window.
      * </pre>
      *
      * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
@@ -1236,9 +1263,12 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The time window for the asset history. The start time is
-     * required. The returned results contain all temporal assets whose time
-     * window overlap with read_time_window.
+     * Optional. The time window for the asset history. Both start_time and
+     * end_time are optional and if set, it must be after 2018-10-02 UTC. If
+     * end_time is not set, it is default to current timestamp. If start_time is
+     * not set, the snapshot of the assets at end_time will be returned. The
+     * returned results contain all temporal assets whose time window overlap with
+     * read_time_window.
      * </pre>
      *
      * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
@@ -1252,9 +1282,12 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The time window for the asset history. The start time is
-     * required. The returned results contain all temporal assets whose time
-     * window overlap with read_time_window.
+     * Optional. The time window for the asset history. Both start_time and
+     * end_time are optional and if set, it must be after 2018-10-02 UTC. If
+     * end_time is not set, it is default to current timestamp. If start_time is
+     * not set, the snapshot of the assets at end_time will be returned. The
+     * returned results contain all temporal assets whose time window overlap with
+     * read_time_window.
      * </pre>
      *
      * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
@@ -1272,9 +1305,12 @@ public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Required. The time window for the asset history. The start time is
-     * required. The returned results contain all temporal assets whose time
-     * window overlap with read_time_window.
+     * Optional. The time window for the asset history. Both start_time and
+     * end_time are optional and if set, it must be after 2018-10-02 UTC. If
+     * end_time is not set, it is default to current timestamp. If start_time is
+     * not set, the snapshot of the assets at end_time will be returned. The
+     * returned results contain all temporal assets whose time window overlap with
+     * read_time_window.
      * </pre>
      *
      * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
