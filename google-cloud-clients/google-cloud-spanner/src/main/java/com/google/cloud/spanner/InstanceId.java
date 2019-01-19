@@ -78,7 +78,7 @@ public final class InstanceId {
    * @throws IllegalArgumentException if {@code instanceName} does not conform to the expected
    *     pattern.
    */
-  static InstanceId of(String name) {
+  public static InstanceId of(String name) {
     Map<String, String> parts = NAME_TEMPLATE.match(name);
     Preconditions.checkArgument(
         parts != null, "Name should conform to pattern %s: %s", NAME_TEMPLATE, name);
