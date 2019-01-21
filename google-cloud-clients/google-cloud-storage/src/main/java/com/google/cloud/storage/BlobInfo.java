@@ -25,13 +25,13 @@ import com.google.api.core.BetaApi;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.api.services.storage.model.StorageObject.Owner;
-import com.google.cloud.storage.Blob.Builder;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.google.common.io.BaseEncoding;
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.AbstractMap;
@@ -672,6 +672,24 @@ public class BlobInfo implements Serializable {
    */
   public String getMd5() {
     return Data.isNull(md5) ? null : md5;
+  }
+
+  /**
+   * Returns the MD5 hash of blob's data decoded to string.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/hashes-etags#_JSONAPI">Hashes and ETags:
+   *     Best Practices</a>
+   */
+  public String getMd5String() {
+    if (md5 == null) {
+      return null;
+    }
+    byte[] decodedMd5 = BaseEncoding.base64().decode(md5);
+    StringBuilder stringBuilder = new StringBuilder();
+    for (byte b : decodedMd5) {
+      stringBuilder.append(String.format("%02x", b & 0xff));
+    }
+    return stringBuilder.toString();
   }
 
   /**
