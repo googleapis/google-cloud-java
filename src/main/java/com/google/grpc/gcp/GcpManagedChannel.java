@@ -33,8 +33,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -94,10 +92,6 @@ public class GcpManagedChannel extends ManagedChannel {
     getChannelRef(null);
   }
 
-  public AffinityConfig getAffinity(String method) {
-    return methodToAffinity.get(method);
-  }
-
   public int getMaxSize() {
     return maxSize;
   }
@@ -120,14 +114,7 @@ public class GcpManagedChannel extends ManagedChannel {
       }
     }
     synchronized (this) {
-      Collections.sort(
-          channelRefs,
-          new Comparator<ChannelRef>() {
-            @Override
-            public int compare(ChannelRef o1, ChannelRef o2) {
-              return o1.getActiveStreamsCount() - o2.getActiveStreamsCount();
-            }
-          });
+      channelRefs.sort((r1, r2) -> r1.getActiveStreamsCount() - r2.getActiveStreamsCount());
 
       int size = channelRefs.size();
       // Choose the channelRef that has the least busy channel.
@@ -354,32 +341,33 @@ public class GcpManagedChannel extends ManagedChannel {
    *
    * <p>The message can be written in the format of:
    *
-   * <p>session: "the-key-we-want" \n transaction_id: "not-useful" \n transaction { \n session: "not
-   * accessible"} \n}
+   * <p>session1: "the-key-we-want" \n transaction_id: "not-useful" \n transaction { \n session2:
+   * "another session"} \n}
    *
-   * <p>If the (affinity) name is "session", it will return "the-key-we-want".
+   * <p>If the (affinity) name is "session1", it will return "the-key-we-want".
    *
-   * <p>Note that this method will check the outer message frist, and then the nested message. So it
-   * is not able to get key from "session: not accessible" as above.
+   * <p>If you want to get the key "another session" in the nested message, the name should be
+   * "session1.session2".
    */
   @VisibleForTesting
   static String getKeyFromMessage(MessageOrBuilder msg, String name) {
     Map<FieldDescriptor, Object> obs = msg.getAllFields();
     List<MessageOrBuilder> nestedMsgs = new ArrayList<>();
 
-    // Check the fields in the current message and save the nested messages in a list.
-    for (Map.Entry<FieldDescriptor, Object> entry : obs.entrySet()) {
-      if (entry.getKey().getName().equals(name) && (entry.getValue() instanceof String)) {
-        return entry.getValue().toString();
-      } else if (entry.getValue() instanceof MessageOrBuilder) {
-        nestedMsgs.add((MessageOrBuilder) entry.getValue());
-      }
+    // The field names in a nested message name are splitted by '.'.
+    int currentLength = name.indexOf('.');
+    String currentName = name;
+    if (currentLength != -1) {
+      currentName = name.substring(0, currentLength);
     }
-    // Check nested messages.
-    for (MessageOrBuilder nestedMsg : nestedMsgs) {
-      String nestedResult = getKeyFromMessage(nestedMsg, name);
-      if (nestedResult != null) {
-        return nestedResult;
+    for (Map.Entry<FieldDescriptor, Object> entry : obs.entrySet()) {
+      if (entry.getKey().getName().equals(currentName)) {
+        if (currentLength == -1 && entry.getValue() instanceof String) {
+          return entry.getValue().toString();
+        } else if (currentLength != -1 && entry.getValue() instanceof MessageOrBuilder) {
+          return getKeyFromMessage(
+              (MessageOrBuilder) entry.getValue(), name.substring(currentLength + 1));
+        }
       }
     }
     return null;
