@@ -98,14 +98,15 @@ public class BucketInfo implements Serializable {
   private final IamConfiguration iamConfiguration;
 
   /**
-   * A Bucket's IAM Configuration. Allows specification of authorization policies via IAM instead of legacy ACL.
+   * The Bucket's IAM Configuration.
    *
    * @see <a href="https://cloud.google.com/storage/docs/bucket-policy-only">Bucket Policy Only</a>
    */
   public static class IamConfiguration implements Serializable {
     private static final long serialVersionUID = -8671736104909424616L;
 
-    private final BucketPolicyOnly bucketPolicyOnly;
+    private Boolean isBucketPolicyOnlyEnabled;
+    private Long bucketPolicyOnlyLockedTime;
 
     @Override
     public boolean equals(Object o) {
@@ -114,16 +115,17 @@ public class BucketInfo implements Serializable {
         return false;
       }
       IamConfiguration other = (IamConfiguration) o;
-      return Objects.equals(bucketPolicyOnly.toPb(), other.getBucketPolicyOnly().toPb());
+      return Objects.equals(toPb(), other.toPb());
     }
 
     @Override
     public int hashCode() {
-      return Objects.hash(bucketPolicyOnly);
+      return Objects.hash(isBucketPolicyOnlyEnabled, bucketPolicyOnlyLockedTime);
     }
 
     private IamConfiguration(Builder builder) {
-      this.bucketPolicyOnly = builder.bucketPolicyOnly;
+      this.isBucketPolicyOnlyEnabled = builder.isBucketPolicyOnlyEnabled;
+      this.bucketPolicyOnlyLockedTime = builder.bucketPolicyOnlyLockedTime;
     }
 
     public static Builder newBuilder() {
@@ -132,146 +134,76 @@ public class BucketInfo implements Serializable {
 
     public Builder toBuilder() {
       Builder builder = new Builder();
-      builder.bucketPolicyOnly = this.bucketPolicyOnly;
+      builder.isBucketPolicyOnlyEnabled = isBucketPolicyOnlyEnabled;
+      builder.bucketPolicyOnlyLockedTime = bucketPolicyOnlyLockedTime;
       return builder;
     }
 
-    public BucketPolicyOnly getBucketPolicyOnly() {
-      return bucketPolicyOnly;
+    public Boolean isBucketPolicyOnlyEnabled() {
+      return isBucketPolicyOnlyEnabled;
+    }
+
+    public Long getBucketPolicyOnlyLockedTime() {
+      return bucketPolicyOnlyLockedTime;
     }
 
     Bucket.IamConfiguration toPb() {
       Bucket.IamConfiguration iamConfiguration = new Bucket.IamConfiguration();
-      iamConfiguration.setBucketPolicyOnly(this.bucketPolicyOnly.toPb());
+
+      Bucket.IamConfiguration.BucketPolicyOnly bucketPolicyOnly =
+          new Bucket.IamConfiguration.BucketPolicyOnly();
+      bucketPolicyOnly.setEnabled(isBucketPolicyOnlyEnabled);
+      bucketPolicyOnly.setLockedTime(
+          bucketPolicyOnlyLockedTime == null ? null : new DateTime(bucketPolicyOnlyLockedTime));
+
+      iamConfiguration.setBucketPolicyOnly(bucketPolicyOnly);
 
       return iamConfiguration;
     }
 
     static IamConfiguration fromPb(Bucket.IamConfiguration iamConfiguration) {
+      Bucket.IamConfiguration.BucketPolicyOnly bucketPolicyOnly =
+          iamConfiguration.getBucketPolicyOnly();
+      DateTime lockedTime = bucketPolicyOnly.getLockedTime();
+
       return newBuilder()
-              .setBucketPolicyOnly(BucketPolicyOnly.fromPb(iamConfiguration.getBucketPolicyOnly()))
-              .build();
+          .setIsBucketPolicyOnlyEnabled(bucketPolicyOnly.getEnabled())
+          .setLockedTime(lockedTime == null ? null : lockedTime.getValue())
+          .build();
     }
 
     /** Builder for {@code IamConfiguration} */
     public static class Builder {
-      private BucketPolicyOnly bucketPolicyOnly;
+      private Boolean isBucketPolicyOnlyEnabled;
+      private Long bucketPolicyOnlyLockedTime;
 
       /**
-       * Sets the BucketPolicyOnly object for this configuration. This object will determine whether IAM is enforced
-       * or not.
+       * Sets whether BucketPolicyOnly is enabled for this bucket. When this is enabled, access to
+       * the bucket will be configured through IAM, and legacy ACL policies will not work. When this
+       * is first enabled, {@code lockedTime} will be set by the API automatically. This field can
+       * then be disabled until the time specified, after which it will become immutable and calls
+       * to change it will fail. If this is enabled, calls to access legacy ACL information will
+       * fail.
        */
-      public Builder setBucketPolicyOnly(BucketPolicyOnly bucketPolicyOnly) {
-        this.bucketPolicyOnly = bucketPolicyOnly;
+      public Builder setIsBucketPolicyOnlyEnabled(boolean isBucketPolicyOnlyEnabled) {
+        this.isBucketPolicyOnlyEnabled = isBucketPolicyOnlyEnabled;
+        return this;
+      }
+
+      /**
+       * Sets the deadline for switching {@code enabled} back to false. After this time passes,
+       * calls to do so will fail. This is package-private, since in general this field should never
+       * be set by a user--it's automatically set by the backend when {@code enabled} is set to
+       * true.
+       */
+      Builder setLockedTime(Long bucketPolicyOnlyLockedTime) {
+        this.bucketPolicyOnlyLockedTime = bucketPolicyOnlyLockedTime;
         return this;
       }
 
       /** Builds an {@code IamConfiguration} object */
       public IamConfiguration build() {
         return new IamConfiguration(this);
-      }
-    }
-  }
-
-  /**
-   * Configuration of BucketPolicyOnly for a bucket. When this is configured to enable BucketPolicyOnly and included
-   * in an {@code IamConfiguration}, legacy ACL access to the bucket will be disabled, and all authorization policies
-   * will be configured through IAM.
-   *
-   * @see <a href="https://cloud.google.com/storage/docs/bucket-policy-only">Bucket Policy Only</a>
-   */
-  public static class BucketPolicyOnly implements Serializable {
-    private static final long serialVersionUID = 2260445211318576550L;
-    private final Boolean enabled;
-    private final DateTime lockedTime;
-
-    @Override
-    public boolean equals(Object o) {
-      if (this == o) return true;
-      if (o == null || getClass() != o.getClass()) {
-        return false;
-      }
-      BucketPolicyOnly other = (BucketPolicyOnly) o;
-      return Objects.equals(toPb(), other.toPb());
-    }
-
-    @Override
-    public int hashCode() {
-      return Objects.hash(enabled, lockedTime);
-    }
-
-    public Boolean getEnabled() {
-      return enabled;
-    }
-
-    public DateTime getLockedTime() {
-      return lockedTime;
-    }
-
-    public static Builder newBuilder() {
-      return new Builder();
-    }
-
-    Bucket.IamConfiguration.BucketPolicyOnly toPb() {
-      Bucket.IamConfiguration.BucketPolicyOnly bucketPolicyOnly = new Bucket.IamConfiguration.BucketPolicyOnly();
-
-      bucketPolicyOnly.setEnabled(enabled);
-      bucketPolicyOnly.setLockedTime(lockedTime);
-
-      return bucketPolicyOnly;
-    }
-
-    static BucketPolicyOnly fromPb(Bucket.IamConfiguration.BucketPolicyOnly bucketPolicyOnly) {
-      return newBuilder()
-              .setEnabled(bucketPolicyOnly.getEnabled())
-              .setLockedTime(bucketPolicyOnly.getLockedTime())
-              .build();
-    }
-
-    private BucketPolicyOnly(Builder builder) {
-      this.enabled = builder.enabled;
-      this.lockedTime = builder.lockedTime;
-    }
-
-    public Builder toBuilder() {
-      Builder builder = new Builder();
-      builder.setLockedTime(lockedTime);
-      builder.setEnabled(enabled);
-      return builder;
-    }
-
-    /** Builder for {@code BucketPolicyOnly} */
-    public static class Builder {
-      private Boolean enabled;
-      private DateTime lockedTime;
-
-      private Builder() {}
-
-      /** Sets whether BucketPolicyOnly is enabled for this bucket. When this is enabled, access to the bucket will be
-       * configured through IAM, and legacy ACL policies will not work. All legacy ACL policies must be removed from
-       * the bucket's info before this can be enabled. When this is first enabled, {@code lockedTime} will be set by
-       * the API automatically. This field can then be disabled until the time specified, after which it will
-       * become immutable and calls to change it will fail. If this is enabled, calls to access legacy ACL information
-       * will fail.
-       */
-      public Builder setEnabled(Boolean enabled) {
-        this.enabled = enabled;
-        return this;
-      }
-
-      /**
-       * Sets the deadline for switching {@code enabled} back to false. After this time passes, calls to do so will
-       * fail. This is package-private, since in general this field should never be set by a user--it's automatically
-       * set by the backend when {@code enabled} is set to true.
-       */
-      Builder setLockedTime(DateTime lockedTime) {
-        this.lockedTime = lockedTime;
-        return this;
-      }
-
-      /** Builds a new {@code BucketPolicyOnly} object */
-      public BucketPolicyOnly build() {
-        return new BucketPolicyOnly(this);
       }
     }
   }
@@ -969,7 +901,8 @@ public class BucketInfo implements Serializable {
     /**
      * Sets the IamConfiguration to specify whether IAM access should be enabled.
      *
-     * @see <a href="https://cloud.google.com/storage/docs/bucket-policy-only">Bucket Policy Only</a>
+     * @see <a href="https://cloud.google.com/storage/docs/bucket-policy-only">Bucket Policy
+     *     Only</a>
      */
     @BetaApi
     public abstract Builder setIamConfiguration(IamConfiguration iamConfiguration);

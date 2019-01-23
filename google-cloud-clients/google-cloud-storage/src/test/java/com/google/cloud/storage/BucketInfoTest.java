@@ -18,8 +18,10 @@ package com.google.cloud.storage;
 
 import static com.google.cloud.storage.Acl.Project.ProjectRole.VIEWERS;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.services.storage.model.Bucket;
 import com.google.api.services.storage.model.Bucket.Lifecycle.Rule;
 import com.google.cloud.storage.Acl.Project;
 import com.google.cloud.storage.Acl.Role;
@@ -64,6 +66,11 @@ public class BucketInfoTest {
               LifecycleAction.newDeleteAction(),
               LifecycleCondition.newBuilder().setAge(5).build()));
   private static final String INDEX_PAGE = "index.html";
+  private static final BucketInfo.IamConfiguration IAM_CONFIGURATION =
+          BucketInfo.IamConfiguration.newBuilder()
+                  .setIsBucketPolicyOnlyEnabled(true)
+                  .setLockedTime(System.currentTimeMillis())
+                  .build();
   private static final String NOT_FOUND_PAGE = "error.html";
   private static final String LOCATION = "ASIA";
   private static final StorageClass STORAGE_CLASS = StorageClass.STANDARD;
@@ -90,6 +97,7 @@ public class BucketInfoTest {
           .setDeleteRules(DELETE_RULES)
           .setLifecycleRules(LIFECYCLE_RULES)
           .setIndexPage(INDEX_PAGE)
+          .setIamConfiguration(IAM_CONFIGURATION)
           .setNotFoundPage(NOT_FOUND_PAGE)
           .setLocation(LOCATION)
           .setStorageClass(STORAGE_CLASS)
@@ -139,6 +147,7 @@ public class BucketInfoTest {
     assertEquals(DEFAULT_ACL, BUCKET_INFO.getDefaultAcl());
     assertEquals(DELETE_RULES, BUCKET_INFO.getDeleteRules());
     assertEquals(INDEX_PAGE, BUCKET_INFO.getIndexPage());
+    assertEquals(IAM_CONFIGURATION, BUCKET_INFO.getIamConfiguration());
     assertEquals(NOT_FOUND_PAGE, BUCKET_INFO.getNotFoundPage());
     assertEquals(LOCATION, BUCKET_INFO.getLocation());
     assertEquals(STORAGE_CLASS, BUCKET_INFO.getStorageClass());
@@ -174,6 +183,7 @@ public class BucketInfoTest {
     assertEquals(expected.getDeleteRules(), value.getDeleteRules());
     assertEquals(expected.getLifecycleRules(), value.getLifecycleRules());
     assertEquals(expected.getIndexPage(), value.getIndexPage());
+    assertEquals(expected.getIamConfiguration(), value.getIamConfiguration());
     assertEquals(expected.getNotFoundPage(), value.getNotFoundPage());
     assertEquals(expected.getLocation(), value.getLocation());
     assertEquals(expected.getStorageClass(), value.getStorageClass());
@@ -243,5 +253,17 @@ public class BucketInfoTest {
         setStorageClassLifecycleRule.getAction().getStorageClass());
     assertTrue(setStorageClassLifecycleRule.getCondition().getIsLive());
     assertEquals(10, setStorageClassLifecycleRule.getCondition().getNumNewerVersions().intValue());
+  }
+
+  @Test
+  public void testIamConfiguration() {
+    Bucket.IamConfiguration iamConfiguration = BucketInfo.IamConfiguration.newBuilder()
+            .setIsBucketPolicyOnlyEnabled(true)
+            .setLockedTime(System.currentTimeMillis())
+            .build()
+            .toPb();
+
+    assertEquals(Boolean.TRUE, iamConfiguration.getBucketPolicyOnly().getEnabled());
+    assertNotNull(iamConfiguration.getBucketPolicyOnly().getLockedTime());
   }
 }
