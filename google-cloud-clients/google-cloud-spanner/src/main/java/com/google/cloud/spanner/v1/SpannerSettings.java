@@ -36,6 +36,8 @@ import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
 import com.google.spanner.v1.CreateSessionRequest;
 import com.google.spanner.v1.DeleteSessionRequest;
+import com.google.spanner.v1.ExecuteBatchDmlRequest;
+import com.google.spanner.v1.ExecuteBatchDmlResponse;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.GetSessionRequest;
 import com.google.spanner.v1.ListSessionsRequest;
@@ -80,6 +82,7 @@ import javax.annotation.Generated;
  * </pre>
  */
 @Generated("by gapic-generator")
+@BetaApi
 public class SpannerSettings extends ClientSettings<SpannerSettings> {
   /** Returns the object with the settings used for calls to createSession. */
   public UnaryCallSettings<CreateSessionRequest, Session> createSessionSettings() {
@@ -105,6 +108,12 @@ public class SpannerSettings extends ClientSettings<SpannerSettings> {
   /** Returns the object with the settings used for calls to executeSql. */
   public UnaryCallSettings<ExecuteSqlRequest, ResultSet> executeSqlSettings() {
     return ((SpannerStubSettings) getStubSettings()).executeSqlSettings();
+  }
+
+  /** Returns the object with the settings used for calls to executeBatchDml. */
+  public UnaryCallSettings<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse>
+      executeBatchDmlSettings() {
+    return ((SpannerStubSettings) getStubSettings()).executeBatchDmlSettings();
   }
 
   /** Returns the object with the settings used for calls to executeStreamingSql. */
@@ -269,6 +278,12 @@ public class SpannerSettings extends ClientSettings<SpannerSettings> {
     /** Returns the builder for the settings used for calls to executeSql. */
     public UnaryCallSettings.Builder<ExecuteSqlRequest, ResultSet> executeSqlSettings() {
       return getStubSettingsBuilder().executeSqlSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to executeBatchDml. */
+    public UnaryCallSettings.Builder<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse>
+        executeBatchDmlSettings() {
+      return getStubSettingsBuilder().executeBatchDmlSettings();
     }
 
     /** Returns the builder for the settings used for calls to executeStreamingSql. */

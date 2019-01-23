@@ -326,6 +326,61 @@ public final class SpannerGrpc {
   }
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getExecuteBatchDmlMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.spanner.v1.ExecuteBatchDmlRequest,
+          com.google.spanner.v1.ExecuteBatchDmlResponse>
+      METHOD_EXECUTE_BATCH_DML = getExecuteBatchDmlMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.spanner.v1.ExecuteBatchDmlRequest,
+          com.google.spanner.v1.ExecuteBatchDmlResponse>
+      getExecuteBatchDmlMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.spanner.v1.ExecuteBatchDmlRequest,
+          com.google.spanner.v1.ExecuteBatchDmlResponse>
+      getExecuteBatchDmlMethod() {
+    return getExecuteBatchDmlMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.spanner.v1.ExecuteBatchDmlRequest,
+          com.google.spanner.v1.ExecuteBatchDmlResponse>
+      getExecuteBatchDmlMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.spanner.v1.ExecuteBatchDmlRequest,
+            com.google.spanner.v1.ExecuteBatchDmlResponse>
+        getExecuteBatchDmlMethod;
+    if ((getExecuteBatchDmlMethod = SpannerGrpc.getExecuteBatchDmlMethod) == null) {
+      synchronized (SpannerGrpc.class) {
+        if ((getExecuteBatchDmlMethod = SpannerGrpc.getExecuteBatchDmlMethod) == null) {
+          SpannerGrpc.getExecuteBatchDmlMethod =
+              getExecuteBatchDmlMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.spanner.v1.ExecuteBatchDmlRequest,
+                          com.google.spanner.v1.ExecuteBatchDmlResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName("google.spanner.v1.Spanner", "ExecuteBatchDml"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.spanner.v1.ExecuteBatchDmlRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.spanner.v1.ExecuteBatchDmlResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(new SpannerMethodDescriptorSupplier("ExecuteBatchDml"))
+                      .build();
+        }
+      }
+    }
+    return getExecuteBatchDmlMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   @java.lang.Deprecated // Use {@link #getReadMethod()} instead.
   public static final io.grpc.MethodDescriptor<
           com.google.spanner.v1.ReadRequest, com.google.spanner.v1.ResultSet>
@@ -808,6 +863,35 @@ public final class SpannerGrpc {
      *
      *
      * <pre>
+     * Executes a batch of SQL DML statements. This method allows many statements
+     * to be run with lower latency than submitting them sequentially with
+     * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql].
+     * Statements are executed in order, sequentially.
+     * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse] will contain a
+     * [ResultSet][google.spanner.v1.ResultSet] for each DML statement that has successfully executed. If a
+     * statement fails, its error status will be returned as part of the
+     * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse]. Execution will
+     * stop at the first failed statement; the remaining statements will not run.
+     * ExecuteBatchDml is expected to return an OK status with a response even if
+     * there was an error while processing one of the DML statements. Clients must
+     * inspect response.status to determine if there were any errors while
+     * processing the request.
+     * See more details in
+     * [ExecuteBatchDmlRequest][Spanner.ExecuteBatchDmlRequest] and
+     * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse].
+     * </pre>
+     */
+    public void executeBatchDml(
+        com.google.spanner.v1.ExecuteBatchDmlRequest request,
+        io.grpc.stub.StreamObserver<com.google.spanner.v1.ExecuteBatchDmlResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getExecuteBatchDmlMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Reads rows from the database using key lookups and scans, as a
      * simple key/value style alternative to
      * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql].  This method cannot be used to
@@ -984,6 +1068,13 @@ public final class SpannerGrpc {
                       com.google.spanner.v1.ExecuteSqlRequest,
                       com.google.spanner.v1.PartialResultSet>(
                       this, METHODID_EXECUTE_STREAMING_SQL)))
+          .addMethod(
+              getExecuteBatchDmlMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.spanner.v1.ExecuteBatchDmlRequest,
+                      com.google.spanner.v1.ExecuteBatchDmlResponse>(
+                      this, METHODID_EXECUTE_BATCH_DML)))
           .addMethod(
               getReadMethodHelper(),
               asyncUnaryCall(
@@ -1174,6 +1265,38 @@ public final class SpannerGrpc {
         io.grpc.stub.StreamObserver<com.google.spanner.v1.PartialResultSet> responseObserver) {
       asyncServerStreamingCall(
           getChannel().newCall(getExecuteStreamingSqlMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Executes a batch of SQL DML statements. This method allows many statements
+     * to be run with lower latency than submitting them sequentially with
+     * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql].
+     * Statements are executed in order, sequentially.
+     * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse] will contain a
+     * [ResultSet][google.spanner.v1.ResultSet] for each DML statement that has successfully executed. If a
+     * statement fails, its error status will be returned as part of the
+     * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse]. Execution will
+     * stop at the first failed statement; the remaining statements will not run.
+     * ExecuteBatchDml is expected to return an OK status with a response even if
+     * there was an error while processing one of the DML statements. Clients must
+     * inspect response.status to determine if there were any errors while
+     * processing the request.
+     * See more details in
+     * [ExecuteBatchDmlRequest][Spanner.ExecuteBatchDmlRequest] and
+     * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse].
+     * </pre>
+     */
+    public void executeBatchDml(
+        com.google.spanner.v1.ExecuteBatchDmlRequest request,
+        io.grpc.stub.StreamObserver<com.google.spanner.v1.ExecuteBatchDmlResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getExecuteBatchDmlMethodHelper(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1473,6 +1596,34 @@ public final class SpannerGrpc {
      *
      *
      * <pre>
+     * Executes a batch of SQL DML statements. This method allows many statements
+     * to be run with lower latency than submitting them sequentially with
+     * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql].
+     * Statements are executed in order, sequentially.
+     * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse] will contain a
+     * [ResultSet][google.spanner.v1.ResultSet] for each DML statement that has successfully executed. If a
+     * statement fails, its error status will be returned as part of the
+     * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse]. Execution will
+     * stop at the first failed statement; the remaining statements will not run.
+     * ExecuteBatchDml is expected to return an OK status with a response even if
+     * there was an error while processing one of the DML statements. Clients must
+     * inspect response.status to determine if there were any errors while
+     * processing the request.
+     * See more details in
+     * [ExecuteBatchDmlRequest][Spanner.ExecuteBatchDmlRequest] and
+     * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse].
+     * </pre>
+     */
+    public com.google.spanner.v1.ExecuteBatchDmlResponse executeBatchDml(
+        com.google.spanner.v1.ExecuteBatchDmlRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getExecuteBatchDmlMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Reads rows from the database using key lookups and scans, as a
      * simple key/value style alternative to
      * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql].  This method cannot be used to
@@ -1723,6 +1874,35 @@ public final class SpannerGrpc {
      *
      *
      * <pre>
+     * Executes a batch of SQL DML statements. This method allows many statements
+     * to be run with lower latency than submitting them sequentially with
+     * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql].
+     * Statements are executed in order, sequentially.
+     * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse] will contain a
+     * [ResultSet][google.spanner.v1.ResultSet] for each DML statement that has successfully executed. If a
+     * statement fails, its error status will be returned as part of the
+     * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse]. Execution will
+     * stop at the first failed statement; the remaining statements will not run.
+     * ExecuteBatchDml is expected to return an OK status with a response even if
+     * there was an error while processing one of the DML statements. Clients must
+     * inspect response.status to determine if there were any errors while
+     * processing the request.
+     * See more details in
+     * [ExecuteBatchDmlRequest][Spanner.ExecuteBatchDmlRequest] and
+     * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.spanner.v1.ExecuteBatchDmlResponse>
+        executeBatchDml(com.google.spanner.v1.ExecuteBatchDmlRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getExecuteBatchDmlMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Reads rows from the database using key lookups and scans, as a
      * simple key/value style alternative to
      * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql].  This method cannot be used to
@@ -1851,13 +2031,14 @@ public final class SpannerGrpc {
   private static final int METHODID_DELETE_SESSION = 3;
   private static final int METHODID_EXECUTE_SQL = 4;
   private static final int METHODID_EXECUTE_STREAMING_SQL = 5;
-  private static final int METHODID_READ = 6;
-  private static final int METHODID_STREAMING_READ = 7;
-  private static final int METHODID_BEGIN_TRANSACTION = 8;
-  private static final int METHODID_COMMIT = 9;
-  private static final int METHODID_ROLLBACK = 10;
-  private static final int METHODID_PARTITION_QUERY = 11;
-  private static final int METHODID_PARTITION_READ = 12;
+  private static final int METHODID_EXECUTE_BATCH_DML = 6;
+  private static final int METHODID_READ = 7;
+  private static final int METHODID_STREAMING_READ = 8;
+  private static final int METHODID_BEGIN_TRANSACTION = 9;
+  private static final int METHODID_COMMIT = 10;
+  private static final int METHODID_ROLLBACK = 11;
+  private static final int METHODID_PARTITION_QUERY = 12;
+  private static final int METHODID_PARTITION_READ = 13;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1906,6 +2087,12 @@ public final class SpannerGrpc {
           serviceImpl.executeStreamingSql(
               (com.google.spanner.v1.ExecuteSqlRequest) request,
               (io.grpc.stub.StreamObserver<com.google.spanner.v1.PartialResultSet>)
+                  responseObserver);
+          break;
+        case METHODID_EXECUTE_BATCH_DML:
+          serviceImpl.executeBatchDml(
+              (com.google.spanner.v1.ExecuteBatchDmlRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.spanner.v1.ExecuteBatchDmlResponse>)
                   responseObserver);
           break;
         case METHODID_READ:
@@ -2014,6 +2201,7 @@ public final class SpannerGrpc {
                       .addMethod(getDeleteSessionMethodHelper())
                       .addMethod(getExecuteSqlMethodHelper())
                       .addMethod(getExecuteStreamingSqlMethodHelper())
+                      .addMethod(getExecuteBatchDmlMethodHelper())
                       .addMethod(getReadMethodHelper())
                       .addMethod(getStreamingReadMethodHelper())
                       .addMethod(getBeginTransactionMethodHelper())

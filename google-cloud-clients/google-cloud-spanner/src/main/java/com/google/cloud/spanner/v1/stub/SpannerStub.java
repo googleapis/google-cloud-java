@@ -27,6 +27,8 @@ import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
 import com.google.spanner.v1.CreateSessionRequest;
 import com.google.spanner.v1.DeleteSessionRequest;
+import com.google.spanner.v1.ExecuteBatchDmlRequest;
+import com.google.spanner.v1.ExecuteBatchDmlResponse;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.GetSessionRequest;
 import com.google.spanner.v1.ListSessionsRequest;
@@ -74,6 +76,10 @@ public abstract class SpannerStub implements BackgroundResource {
 
   public UnaryCallable<ExecuteSqlRequest, ResultSet> executeSqlCallable() {
     throw new UnsupportedOperationException("Not implemented: executeSqlCallable()");
+  }
+
+  public UnaryCallable<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse> executeBatchDmlCallable() {
+    throw new UnsupportedOperationException("Not implemented: executeBatchDmlCallable()");
   }
 
   public ServerStreamingCallable<ExecuteSqlRequest, PartialResultSet>

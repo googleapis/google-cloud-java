@@ -50,6 +50,8 @@ import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
 import com.google.spanner.v1.CreateSessionRequest;
 import com.google.spanner.v1.DeleteSessionRequest;
+import com.google.spanner.v1.ExecuteBatchDmlRequest;
+import com.google.spanner.v1.ExecuteBatchDmlResponse;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.GetSessionRequest;
 import com.google.spanner.v1.ListSessionsRequest;
@@ -95,11 +97,13 @@ import org.threeten.bp.Duration;
  * </pre>
  */
 @Generated("by gapic-generator")
+@BetaApi
 public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
           .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/spanner.admin")
           .add("https://www.googleapis.com/auth/spanner.data")
           .build();
 
@@ -110,6 +114,8 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
       listSessionsSettings;
   private final UnaryCallSettings<DeleteSessionRequest, Empty> deleteSessionSettings;
   private final UnaryCallSettings<ExecuteSqlRequest, ResultSet> executeSqlSettings;
+  private final UnaryCallSettings<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse>
+      executeBatchDmlSettings;
   private final ServerStreamingCallSettings<ExecuteSqlRequest, PartialResultSet>
       executeStreamingSqlSettings;
   private final UnaryCallSettings<ReadRequest, ResultSet> readSettings;
@@ -144,6 +150,12 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
   /** Returns the object with the settings used for calls to executeSql. */
   public UnaryCallSettings<ExecuteSqlRequest, ResultSet> executeSqlSettings() {
     return executeSqlSettings;
+  }
+
+  /** Returns the object with the settings used for calls to executeBatchDml. */
+  public UnaryCallSettings<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse>
+      executeBatchDmlSettings() {
+    return executeBatchDmlSettings;
   }
 
   /** Returns the object with the settings used for calls to executeStreamingSql. */
@@ -259,6 +271,7 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
     listSessionsSettings = settingsBuilder.listSessionsSettings().build();
     deleteSessionSettings = settingsBuilder.deleteSessionSettings().build();
     executeSqlSettings = settingsBuilder.executeSqlSettings().build();
+    executeBatchDmlSettings = settingsBuilder.executeBatchDmlSettings().build();
     executeStreamingSqlSettings = settingsBuilder.executeStreamingSqlSettings().build();
     readSettings = settingsBuilder.readSettings().build();
     streamingReadSettings = settingsBuilder.streamingReadSettings().build();
@@ -333,6 +346,8 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
         listSessionsSettings;
     private final UnaryCallSettings.Builder<DeleteSessionRequest, Empty> deleteSessionSettings;
     private final UnaryCallSettings.Builder<ExecuteSqlRequest, ResultSet> executeSqlSettings;
+    private final UnaryCallSettings.Builder<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse>
+        executeBatchDmlSettings;
     private final ServerStreamingCallSettings.Builder<ExecuteSqlRequest, PartialResultSet>
         executeStreamingSqlSettings;
     private final UnaryCallSettings.Builder<ReadRequest, ResultSet> readSettings;
@@ -423,6 +438,8 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
 
       executeSqlSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      executeBatchDmlSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       executeStreamingSqlSettings = ServerStreamingCallSettings.newBuilder();
 
       readSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -446,6 +463,7 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
               listSessionsSettings,
               deleteSessionSettings,
               executeSqlSettings,
+              executeBatchDmlSettings,
               readSettings,
               beginTransactionSettings,
               commitSettings,
@@ -489,6 +507,11 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
 
       builder
           .executeSqlSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .executeBatchDmlSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -543,6 +566,7 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
       listSessionsSettings = settings.listSessionsSettings.toBuilder();
       deleteSessionSettings = settings.deleteSessionSettings.toBuilder();
       executeSqlSettings = settings.executeSqlSettings.toBuilder();
+      executeBatchDmlSettings = settings.executeBatchDmlSettings.toBuilder();
       executeStreamingSqlSettings = settings.executeStreamingSqlSettings.toBuilder();
       readSettings = settings.readSettings.toBuilder();
       streamingReadSettings = settings.streamingReadSettings.toBuilder();
@@ -559,6 +583,7 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
               listSessionsSettings,
               deleteSessionSettings,
               executeSqlSettings,
+              executeBatchDmlSettings,
               readSettings,
               beginTransactionSettings,
               commitSettings,
@@ -608,6 +633,12 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
     /** Returns the builder for the settings used for calls to executeSql. */
     public UnaryCallSettings.Builder<ExecuteSqlRequest, ResultSet> executeSqlSettings() {
       return executeSqlSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to executeBatchDml. */
+    public UnaryCallSettings.Builder<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse>
+        executeBatchDmlSettings() {
+      return executeBatchDmlSettings;
     }
 
     /** Returns the builder for the settings used for calls to executeStreamingSql. */

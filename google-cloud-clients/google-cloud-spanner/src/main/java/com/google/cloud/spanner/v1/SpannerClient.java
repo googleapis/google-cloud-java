@@ -36,6 +36,8 @@ import com.google.spanner.v1.CommitResponse;
 import com.google.spanner.v1.CreateSessionRequest;
 import com.google.spanner.v1.DatabaseName;
 import com.google.spanner.v1.DeleteSessionRequest;
+import com.google.spanner.v1.ExecuteBatchDmlRequest;
+import com.google.spanner.v1.ExecuteBatchDmlResponse;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.GetSessionRequest;
 import com.google.spanner.v1.ListSessionsRequest;
@@ -127,6 +129,7 @@ import javax.annotation.Generated;
  * </pre>
  */
 @Generated("by gapic-generator")
+@BetaApi
 public class SpannerClient implements BackgroundResource {
   private final SpannerSettings settings;
   private final SpannerStub stub;
@@ -678,6 +681,88 @@ public class SpannerClient implements BackgroundResource {
    */
   public final UnaryCallable<ExecuteSqlRequest, ResultSet> executeSqlCallable() {
     return stub.executeSqlCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Executes a batch of SQL DML statements. This method allows many statements to be run with lower
+   * latency than submitting them sequentially with
+   * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql].
+   *
+   * <p>Statements are executed in order, sequentially.
+   * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse] will contain a
+   * [ResultSet][google.spanner.v1.ResultSet] for each DML statement that has successfully executed.
+   * If a statement fails, its error status will be returned as part of the
+   * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse]. Execution will stop at the first
+   * failed statement; the remaining statements will not run.
+   *
+   * <p>ExecuteBatchDml is expected to return an OK status with a response even if there was an
+   * error while processing one of the DML statements. Clients must inspect response.status to
+   * determine if there were any errors while processing the request.
+   *
+   * <p>See more details in [ExecuteBatchDmlRequest][Spanner.ExecuteBatchDmlRequest] and
+   * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SpannerClient spannerClient = SpannerClient.create()) {
+   *   SessionName session = SessionName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]", "[SESSION]");
+   *   List&lt;ExecuteBatchDmlRequest.Statement&gt; statements = new ArrayList&lt;&gt;();
+   *   ExecuteBatchDmlRequest request = ExecuteBatchDmlRequest.newBuilder()
+   *     .setSession(session.toString())
+   *     .addAllStatements(statements)
+   *     .build();
+   *   ExecuteBatchDmlResponse response = spannerClient.executeBatchDml(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExecuteBatchDmlResponse executeBatchDml(ExecuteBatchDmlRequest request) {
+    return executeBatchDmlCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Executes a batch of SQL DML statements. This method allows many statements to be run with lower
+   * latency than submitting them sequentially with
+   * [ExecuteSql][google.spanner.v1.Spanner.ExecuteSql].
+   *
+   * <p>Statements are executed in order, sequentially.
+   * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse] will contain a
+   * [ResultSet][google.spanner.v1.ResultSet] for each DML statement that has successfully executed.
+   * If a statement fails, its error status will be returned as part of the
+   * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse]. Execution will stop at the first
+   * failed statement; the remaining statements will not run.
+   *
+   * <p>ExecuteBatchDml is expected to return an OK status with a response even if there was an
+   * error while processing one of the DML statements. Clients must inspect response.status to
+   * determine if there were any errors while processing the request.
+   *
+   * <p>See more details in [ExecuteBatchDmlRequest][Spanner.ExecuteBatchDmlRequest] and
+   * [ExecuteBatchDmlResponse][Spanner.ExecuteBatchDmlResponse].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SpannerClient spannerClient = SpannerClient.create()) {
+   *   SessionName session = SessionName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]", "[SESSION]");
+   *   List&lt;ExecuteBatchDmlRequest.Statement&gt; statements = new ArrayList&lt;&gt;();
+   *   ExecuteBatchDmlRequest request = ExecuteBatchDmlRequest.newBuilder()
+   *     .setSession(session.toString())
+   *     .addAllStatements(statements)
+   *     .build();
+   *   ApiFuture&lt;ExecuteBatchDmlResponse&gt; future = spannerClient.executeBatchDmlCallable().futureCall(request);
+   *   // Do something
+   *   ExecuteBatchDmlResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse>
+      executeBatchDmlCallable() {
+    return stub.executeBatchDmlCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

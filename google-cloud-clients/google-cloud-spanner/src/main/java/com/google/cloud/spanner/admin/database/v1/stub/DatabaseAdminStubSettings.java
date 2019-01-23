@@ -15,6 +15,9 @@
  */
 package com.google.cloud.spanner.admin.database.v1.stub;
 
+import static com.google.cloud.spanner.admin.database.v1.DatabaseAdminClient.ListBackupOperationsPagedResponse;
+import static com.google.cloud.spanner.admin.database.v1.DatabaseAdminClient.ListBackupsPagedResponse;
+import static com.google.cloud.spanner.admin.database.v1.DatabaseAdminClient.ListDatabaseOperationsPagedResponse;
 import static com.google.cloud.spanner.admin.database.v1.DatabaseAdminClient.ListDatabasesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -54,15 +57,29 @@ import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
+import com.google.spanner.admin.database.v1.Backup;
+import com.google.spanner.admin.database.v1.CreateBackupMetadata;
+import com.google.spanner.admin.database.v1.CreateBackupRequest;
 import com.google.spanner.admin.database.v1.CreateDatabaseMetadata;
 import com.google.spanner.admin.database.v1.CreateDatabaseRequest;
 import com.google.spanner.admin.database.v1.Database;
+import com.google.spanner.admin.database.v1.DeleteBackupRequest;
 import com.google.spanner.admin.database.v1.DropDatabaseRequest;
+import com.google.spanner.admin.database.v1.GetBackupRequest;
 import com.google.spanner.admin.database.v1.GetDatabaseDdlRequest;
 import com.google.spanner.admin.database.v1.GetDatabaseDdlResponse;
 import com.google.spanner.admin.database.v1.GetDatabaseRequest;
+import com.google.spanner.admin.database.v1.ListBackupOperationsRequest;
+import com.google.spanner.admin.database.v1.ListBackupOperationsResponse;
+import com.google.spanner.admin.database.v1.ListBackupsRequest;
+import com.google.spanner.admin.database.v1.ListBackupsResponse;
+import com.google.spanner.admin.database.v1.ListDatabaseOperationsRequest;
+import com.google.spanner.admin.database.v1.ListDatabaseOperationsResponse;
 import com.google.spanner.admin.database.v1.ListDatabasesRequest;
 import com.google.spanner.admin.database.v1.ListDatabasesResponse;
+import com.google.spanner.admin.database.v1.RestoreDatabaseMetadata;
+import com.google.spanner.admin.database.v1.RestoreDatabaseRequest;
+import com.google.spanner.admin.database.v1.UpdateBackupRequest;
 import com.google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata;
 import com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest;
 import java.io.IOException;
@@ -123,6 +140,27 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings;
+  private final UnaryCallSettings<CreateBackupRequest, Operation> createBackupSettings;
+  private final OperationCallSettings<CreateBackupRequest, Empty, CreateBackupMetadata>
+      createBackupOperationSettings;
+  private final UnaryCallSettings<GetBackupRequest, Backup> getBackupSettings;
+  private final UnaryCallSettings<UpdateBackupRequest, Backup> updateBackupSettings;
+  private final UnaryCallSettings<DeleteBackupRequest, Empty> deleteBackupSettings;
+  private final PagedCallSettings<ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+      listBackupsSettings;
+  private final UnaryCallSettings<RestoreDatabaseRequest, Operation> restoreDatabaseSettings;
+  private final OperationCallSettings<RestoreDatabaseRequest, Empty, RestoreDatabaseMetadata>
+      restoreDatabaseOperationSettings;
+  private final PagedCallSettings<
+          ListDatabaseOperationsRequest,
+          ListDatabaseOperationsResponse,
+          ListDatabaseOperationsPagedResponse>
+      listDatabaseOperationsSettings;
+  private final PagedCallSettings<
+          ListBackupOperationsRequest,
+          ListBackupOperationsResponse,
+          ListBackupOperationsPagedResponse>
+      listBackupOperationsSettings;
 
   /** Returns the object with the settings used for calls to listDatabases. */
   public PagedCallSettings<ListDatabasesRequest, ListDatabasesResponse, ListDatabasesPagedResponse>
@@ -183,6 +221,69 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
   public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings() {
     return testIamPermissionsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createBackup. */
+  public UnaryCallSettings<CreateBackupRequest, Operation> createBackupSettings() {
+    return createBackupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createBackup. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallSettings<CreateBackupRequest, Empty, CreateBackupMetadata>
+      createBackupOperationSettings() {
+    return createBackupOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getBackup. */
+  public UnaryCallSettings<GetBackupRequest, Backup> getBackupSettings() {
+    return getBackupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateBackup. */
+  public UnaryCallSettings<UpdateBackupRequest, Backup> updateBackupSettings() {
+    return updateBackupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackup. */
+  public UnaryCallSettings<DeleteBackupRequest, Empty> deleteBackupSettings() {
+    return deleteBackupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listBackups. */
+  public PagedCallSettings<ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+      listBackupsSettings() {
+    return listBackupsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to restoreDatabase. */
+  public UnaryCallSettings<RestoreDatabaseRequest, Operation> restoreDatabaseSettings() {
+    return restoreDatabaseSettings;
+  }
+
+  /** Returns the object with the settings used for calls to restoreDatabase. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallSettings<RestoreDatabaseRequest, Empty, RestoreDatabaseMetadata>
+      restoreDatabaseOperationSettings() {
+    return restoreDatabaseOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listDatabaseOperations. */
+  public PagedCallSettings<
+          ListDatabaseOperationsRequest,
+          ListDatabaseOperationsResponse,
+          ListDatabaseOperationsPagedResponse>
+      listDatabaseOperationsSettings() {
+    return listDatabaseOperationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listBackupOperations. */
+  public PagedCallSettings<
+          ListBackupOperationsRequest,
+          ListBackupOperationsResponse,
+          ListBackupOperationsPagedResponse>
+      listBackupOperationsSettings() {
+    return listBackupOperationsSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -265,6 +366,16 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+    createBackupSettings = settingsBuilder.createBackupSettings().build();
+    createBackupOperationSettings = settingsBuilder.createBackupOperationSettings().build();
+    getBackupSettings = settingsBuilder.getBackupSettings().build();
+    updateBackupSettings = settingsBuilder.updateBackupSettings().build();
+    deleteBackupSettings = settingsBuilder.deleteBackupSettings().build();
+    listBackupsSettings = settingsBuilder.listBackupsSettings().build();
+    restoreDatabaseSettings = settingsBuilder.restoreDatabaseSettings().build();
+    restoreDatabaseOperationSettings = settingsBuilder.restoreDatabaseOperationSettings().build();
+    listDatabaseOperationsSettings = settingsBuilder.listDatabaseOperationsSettings().build();
+    listBackupOperationsSettings = settingsBuilder.listBackupOperationsSettings().build();
   }
 
   private static final PagedListDescriptor<ListDatabasesRequest, ListDatabasesResponse, Database>
@@ -303,6 +414,124 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
             }
           };
 
+  private static final PagedListDescriptor<ListBackupsRequest, ListBackupsResponse, Backup>
+      LIST_BACKUPS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListBackupsRequest, ListBackupsResponse, Backup>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListBackupsRequest injectToken(ListBackupsRequest payload, String token) {
+              return ListBackupsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListBackupsRequest injectPageSize(ListBackupsRequest payload, int pageSize) {
+              return ListBackupsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListBackupsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListBackupsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Backup> extractResources(ListBackupsResponse payload) {
+              return payload.getBackupsList() != null
+                  ? payload.getBackupsList()
+                  : ImmutableList.<Backup>of();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListDatabaseOperationsRequest, ListDatabaseOperationsResponse, Operation>
+      LIST_DATABASE_OPERATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListDatabaseOperationsRequest, ListDatabaseOperationsResponse, Operation>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDatabaseOperationsRequest injectToken(
+                ListDatabaseOperationsRequest payload, String token) {
+              return ListDatabaseOperationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListDatabaseOperationsRequest injectPageSize(
+                ListDatabaseOperationsRequest payload, int pageSize) {
+              return ListDatabaseOperationsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListDatabaseOperationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListDatabaseOperationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Operation> extractResources(ListDatabaseOperationsResponse payload) {
+              return payload.getOperationsList() != null
+                  ? payload.getOperationsList()
+                  : ImmutableList.<Operation>of();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListBackupOperationsRequest, ListBackupOperationsResponse, Operation>
+      LIST_BACKUP_OPERATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListBackupOperationsRequest, ListBackupOperationsResponse, Operation>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListBackupOperationsRequest injectToken(
+                ListBackupOperationsRequest payload, String token) {
+              return ListBackupOperationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListBackupOperationsRequest injectPageSize(
+                ListBackupOperationsRequest payload, int pageSize) {
+              return ListBackupOperationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListBackupOperationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListBackupOperationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Operation> extractResources(ListBackupOperationsResponse payload) {
+              return payload.getOperationsList() != null
+                  ? payload.getOperationsList()
+                  : ImmutableList.<Operation>of();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListDatabasesRequest, ListDatabasesResponse, ListDatabasesPagedResponse>
       LIST_DATABASES_PAGE_STR_FACT =
@@ -317,6 +546,70 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
               PageContext<ListDatabasesRequest, ListDatabasesResponse, Database> pageContext =
                   PageContext.create(callable, LIST_DATABASES_PAGE_STR_DESC, request, context);
               return ListDatabasesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+      LIST_BACKUPS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>() {
+            @Override
+            public ApiFuture<ListBackupsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListBackupsRequest, ListBackupsResponse> callable,
+                ListBackupsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListBackupsResponse> futureResponse) {
+              PageContext<ListBackupsRequest, ListBackupsResponse, Backup> pageContext =
+                  PageContext.create(callable, LIST_BACKUPS_PAGE_STR_DESC, request, context);
+              return ListBackupsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListDatabaseOperationsRequest,
+          ListDatabaseOperationsResponse,
+          ListDatabaseOperationsPagedResponse>
+      LIST_DATABASE_OPERATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListDatabaseOperationsRequest,
+              ListDatabaseOperationsResponse,
+              ListDatabaseOperationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListDatabaseOperationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListDatabaseOperationsRequest, ListDatabaseOperationsResponse>
+                    callable,
+                ListDatabaseOperationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListDatabaseOperationsResponse> futureResponse) {
+              PageContext<ListDatabaseOperationsRequest, ListDatabaseOperationsResponse, Operation>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_DATABASE_OPERATIONS_PAGE_STR_DESC, request, context);
+              return ListDatabaseOperationsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListBackupOperationsRequest,
+          ListBackupOperationsResponse,
+          ListBackupOperationsPagedResponse>
+      LIST_BACKUP_OPERATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListBackupOperationsRequest,
+              ListBackupOperationsResponse,
+              ListBackupOperationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListBackupOperationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListBackupOperationsRequest, ListBackupOperationsResponse> callable,
+                ListBackupOperationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListBackupOperationsResponse> futureResponse) {
+              PageContext<ListBackupOperationsRequest, ListBackupOperationsResponse, Operation>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_BACKUP_OPERATIONS_PAGE_STR_DESC, request, context);
+              return ListBackupOperationsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -345,6 +638,30 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings;
+    private final UnaryCallSettings.Builder<CreateBackupRequest, Operation> createBackupSettings;
+    private final OperationCallSettings.Builder<CreateBackupRequest, Empty, CreateBackupMetadata>
+        createBackupOperationSettings;
+    private final UnaryCallSettings.Builder<GetBackupRequest, Backup> getBackupSettings;
+    private final UnaryCallSettings.Builder<UpdateBackupRequest, Backup> updateBackupSettings;
+    private final UnaryCallSettings.Builder<DeleteBackupRequest, Empty> deleteBackupSettings;
+    private final PagedCallSettings.Builder<
+            ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+        listBackupsSettings;
+    private final UnaryCallSettings.Builder<RestoreDatabaseRequest, Operation>
+        restoreDatabaseSettings;
+    private final OperationCallSettings.Builder<
+            RestoreDatabaseRequest, Empty, RestoreDatabaseMetadata>
+        restoreDatabaseOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListDatabaseOperationsRequest,
+            ListDatabaseOperationsResponse,
+            ListDatabaseOperationsPagedResponse>
+        listDatabaseOperationsSettings;
+    private final PagedCallSettings.Builder<
+            ListBackupOperationsRequest,
+            ListBackupOperationsResponse,
+            ListBackupOperationsPagedResponse>
+        listBackupOperationsSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -409,6 +726,28 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
 
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      createBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      createBackupOperationSettings = OperationCallSettings.newBuilder();
+
+      getBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      updateBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      deleteBackupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      listBackupsSettings = PagedCallSettings.newBuilder(LIST_BACKUPS_PAGE_STR_FACT);
+
+      restoreDatabaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      restoreDatabaseOperationSettings = OperationCallSettings.newBuilder();
+
+      listDatabaseOperationsSettings =
+          PagedCallSettings.newBuilder(LIST_DATABASE_OPERATIONS_PAGE_STR_FACT);
+
+      listBackupOperationsSettings =
+          PagedCallSettings.newBuilder(LIST_BACKUP_OPERATIONS_PAGE_STR_FACT);
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listDatabasesSettings,
@@ -419,7 +758,15 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
               getDatabaseDdlSettings,
               setIamPolicySettings,
               getIamPolicySettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              createBackupSettings,
+              getBackupSettings,
+              updateBackupSettings,
+              deleteBackupSettings,
+              listBackupsSettings,
+              restoreDatabaseSettings,
+              listDatabaseOperationsSettings,
+              listBackupOperationsSettings);
 
       initDefaults(this);
     }
@@ -479,6 +826,46 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
           .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .createBackupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getBackupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .updateBackupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .deleteBackupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .listBackupsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .restoreDatabaseSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .listDatabaseOperationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .listBackupOperationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
       builder
           .createDatabaseOperationSettings()
           .setInitialCallSettings(
@@ -526,6 +913,52 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
                       .setMaxRpcTimeout(Duration.ZERO) // ignored
                       .setTotalTimeout(Duration.ofMillis(86400000L))
                       .build()));
+      builder
+          .createBackupOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateBackupRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(CreateBackupMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(20000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(86400000L))
+                      .build()));
+      builder
+          .restoreDatabaseOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RestoreDatabaseRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(RestoreDatabaseMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(20000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(86400000L))
+                      .build()));
 
       return builder;
     }
@@ -544,6 +977,16 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
+      createBackupSettings = settings.createBackupSettings.toBuilder();
+      createBackupOperationSettings = settings.createBackupOperationSettings.toBuilder();
+      getBackupSettings = settings.getBackupSettings.toBuilder();
+      updateBackupSettings = settings.updateBackupSettings.toBuilder();
+      deleteBackupSettings = settings.deleteBackupSettings.toBuilder();
+      listBackupsSettings = settings.listBackupsSettings.toBuilder();
+      restoreDatabaseSettings = settings.restoreDatabaseSettings.toBuilder();
+      restoreDatabaseOperationSettings = settings.restoreDatabaseOperationSettings.toBuilder();
+      listDatabaseOperationsSettings = settings.listDatabaseOperationsSettings.toBuilder();
+      listBackupOperationsSettings = settings.listBackupOperationsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -555,7 +998,15 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
               getDatabaseDdlSettings,
               setIamPolicySettings,
               getIamPolicySettings,
-              testIamPermissionsSettings);
+              testIamPermissionsSettings,
+              createBackupSettings,
+              getBackupSettings,
+              updateBackupSettings,
+              deleteBackupSettings,
+              listBackupsSettings,
+              restoreDatabaseSettings,
+              listDatabaseOperationsSettings,
+              listBackupOperationsSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -638,6 +1089,72 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createBackup. */
+    public UnaryCallSettings.Builder<CreateBackupRequest, Operation> createBackupSettings() {
+      return createBackupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createBackup. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<CreateBackupRequest, Empty, CreateBackupMetadata>
+        createBackupOperationSettings() {
+      return createBackupOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getBackup. */
+    public UnaryCallSettings.Builder<GetBackupRequest, Backup> getBackupSettings() {
+      return getBackupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackup. */
+    public UnaryCallSettings.Builder<UpdateBackupRequest, Backup> updateBackupSettings() {
+      return updateBackupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackup. */
+    public UnaryCallSettings.Builder<DeleteBackupRequest, Empty> deleteBackupSettings() {
+      return deleteBackupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listBackups. */
+    public PagedCallSettings.Builder<
+            ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+        listBackupsSettings() {
+      return listBackupsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to restoreDatabase. */
+    public UnaryCallSettings.Builder<RestoreDatabaseRequest, Operation> restoreDatabaseSettings() {
+      return restoreDatabaseSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to restoreDatabase. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<RestoreDatabaseRequest, Empty, RestoreDatabaseMetadata>
+        restoreDatabaseOperationSettings() {
+      return restoreDatabaseOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listDatabaseOperations. */
+    public PagedCallSettings.Builder<
+            ListDatabaseOperationsRequest,
+            ListDatabaseOperationsResponse,
+            ListDatabaseOperationsPagedResponse>
+        listDatabaseOperationsSettings() {
+      return listDatabaseOperationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listBackupOperations. */
+    public PagedCallSettings.Builder<
+            ListBackupOperationsRequest,
+            ListBackupOperationsResponse,
+            ListBackupOperationsPagedResponse>
+        listBackupOperationsSettings() {
+      return listBackupOperationsSettings;
     }
 
     @Override

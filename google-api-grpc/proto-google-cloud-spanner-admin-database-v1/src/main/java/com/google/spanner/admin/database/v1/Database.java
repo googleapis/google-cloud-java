@@ -65,6 +65,37 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
               state_ = rawValue;
               break;
             }
+          case 26:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (createTime_ != null) {
+                subBuilder = createTime_.toBuilder();
+              }
+              createTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(createTime_);
+                createTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 34:
+            {
+              com.google.spanner.admin.database.v1.RestoreInfo.Builder subBuilder = null;
+              if (restoreInfo_ != null) {
+                subBuilder = restoreInfo_.toBuilder();
+              }
+              restoreInfo_ =
+                  input.readMessage(
+                      com.google.spanner.admin.database.v1.RestoreInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(restoreInfo_);
+                restoreInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
@@ -140,6 +171,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      * <code>READY = 2;</code>
      */
     READY(2),
+    /** <code>READY_OPTIMIZING = 3;</code> */
+    READY_OPTIMIZING(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -174,6 +207,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      * <code>READY = 2;</code>
      */
     public static final int READY_VALUE = 2;
+    /** <code>READY_OPTIMIZING = 3;</code> */
+    public static final int READY_OPTIMIZING_VALUE = 3;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -197,6 +232,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
           return CREATING;
         case 2:
           return READY;
+        case 3:
+          return READY_OPTIMIZING;
         default:
           return null;
       }
@@ -329,6 +366,38 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int CREATE_TIME_FIELD_NUMBER = 3;
+  private com.google.protobuf.Timestamp createTime_;
+  /** <code>.google.protobuf.Timestamp create_time = 3;</code> */
+  public boolean hasCreateTime() {
+    return createTime_ != null;
+  }
+  /** <code>.google.protobuf.Timestamp create_time = 3;</code> */
+  public com.google.protobuf.Timestamp getCreateTime() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  }
+  /** <code>.google.protobuf.Timestamp create_time = 3;</code> */
+  public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+    return getCreateTime();
+  }
+
+  public static final int RESTORE_INFO_FIELD_NUMBER = 4;
+  private com.google.spanner.admin.database.v1.RestoreInfo restoreInfo_;
+  /** <code>.google.spanner.admin.database.v1.RestoreInfo restore_info = 4;</code> */
+  public boolean hasRestoreInfo() {
+    return restoreInfo_ != null;
+  }
+  /** <code>.google.spanner.admin.database.v1.RestoreInfo restore_info = 4;</code> */
+  public com.google.spanner.admin.database.v1.RestoreInfo getRestoreInfo() {
+    return restoreInfo_ == null
+        ? com.google.spanner.admin.database.v1.RestoreInfo.getDefaultInstance()
+        : restoreInfo_;
+  }
+  /** <code>.google.spanner.admin.database.v1.RestoreInfo restore_info = 4;</code> */
+  public com.google.spanner.admin.database.v1.RestoreInfoOrBuilder getRestoreInfoOrBuilder() {
+    return getRestoreInfo();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -350,6 +419,12 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         != com.google.spanner.admin.database.v1.Database.State.STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, state_);
     }
+    if (createTime_ != null) {
+      output.writeMessage(3, getCreateTime());
+    }
+    if (restoreInfo_ != null) {
+      output.writeMessage(4, getRestoreInfo());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -365,6 +440,12 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     if (state_
         != com.google.spanner.admin.database.v1.Database.State.STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, state_);
+    }
+    if (createTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getCreateTime());
+    }
+    if (restoreInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getRestoreInfo());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -385,6 +466,14 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     boolean result = true;
     result = result && getName().equals(other.getName());
     result = result && state_ == other.state_;
+    result = result && (hasCreateTime() == other.hasCreateTime());
+    if (hasCreateTime()) {
+      result = result && getCreateTime().equals(other.getCreateTime());
+    }
+    result = result && (hasRestoreInfo() == other.hasRestoreInfo());
+    if (hasRestoreInfo()) {
+      result = result && getRestoreInfo().equals(other.getRestoreInfo());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -400,6 +489,14 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
+    if (hasCreateTime()) {
+      hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCreateTime().hashCode();
+    }
+    if (hasRestoreInfo()) {
+      hash = (37 * hash) + RESTORE_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getRestoreInfo().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -549,6 +646,18 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
 
       state_ = 0;
 
+      if (createTimeBuilder_ == null) {
+        createTime_ = null;
+      } else {
+        createTime_ = null;
+        createTimeBuilder_ = null;
+      }
+      if (restoreInfoBuilder_ == null) {
+        restoreInfo_ = null;
+      } else {
+        restoreInfo_ = null;
+        restoreInfoBuilder_ = null;
+      }
       return this;
     }
 
@@ -578,6 +687,16 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
           new com.google.spanner.admin.database.v1.Database(this);
       result.name_ = name_;
       result.state_ = state_;
+      if (createTimeBuilder_ == null) {
+        result.createTime_ = createTime_;
+      } else {
+        result.createTime_ = createTimeBuilder_.build();
+      }
+      if (restoreInfoBuilder_ == null) {
+        result.restoreInfo_ = restoreInfo_;
+      } else {
+        result.restoreInfo_ = restoreInfoBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -633,6 +752,12 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
+      }
+      if (other.hasCreateTime()) {
+        mergeCreateTime(other.getCreateTime());
+      }
+      if (other.hasRestoreInfo()) {
+        mergeRestoreInfo(other.getRestoreInfo());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -853,6 +978,223 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       state_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Timestamp createTime_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        createTimeBuilder_;
+    /** <code>.google.protobuf.Timestamp create_time = 3;</code> */
+    public boolean hasCreateTime() {
+      return createTimeBuilder_ != null || createTime_ != null;
+    }
+    /** <code>.google.protobuf.Timestamp create_time = 3;</code> */
+    public com.google.protobuf.Timestamp getCreateTime() {
+      if (createTimeBuilder_ == null) {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      } else {
+        return createTimeBuilder_.getMessage();
+      }
+    }
+    /** <code>.google.protobuf.Timestamp create_time = 3;</code> */
+    public Builder setCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        createTime_ = value;
+        onChanged();
+      } else {
+        createTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /** <code>.google.protobuf.Timestamp create_time = 3;</code> */
+    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (createTimeBuilder_ == null) {
+        createTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        createTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /** <code>.google.protobuf.Timestamp create_time = 3;</code> */
+    public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (createTime_ != null) {
+          createTime_ =
+              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+        } else {
+          createTime_ = value;
+        }
+        onChanged();
+      } else {
+        createTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /** <code>.google.protobuf.Timestamp create_time = 3;</code> */
+    public Builder clearCreateTime() {
+      if (createTimeBuilder_ == null) {
+        createTime_ = null;
+        onChanged();
+      } else {
+        createTime_ = null;
+        createTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /** <code>.google.protobuf.Timestamp create_time = 3;</code> */
+    public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
+
+      onChanged();
+      return getCreateTimeFieldBuilder().getBuilder();
+    }
+    /** <code>.google.protobuf.Timestamp create_time = 3;</code> */
+    public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+      if (createTimeBuilder_ != null) {
+        return createTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      }
+    }
+    /** <code>.google.protobuf.Timestamp create_time = 3;</code> */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getCreateTimeFieldBuilder() {
+      if (createTimeBuilder_ == null) {
+        createTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(), getParentForChildren(), isClean());
+        createTime_ = null;
+      }
+      return createTimeBuilder_;
+    }
+
+    private com.google.spanner.admin.database.v1.RestoreInfo restoreInfo_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.spanner.admin.database.v1.RestoreInfo,
+            com.google.spanner.admin.database.v1.RestoreInfo.Builder,
+            com.google.spanner.admin.database.v1.RestoreInfoOrBuilder>
+        restoreInfoBuilder_;
+    /** <code>.google.spanner.admin.database.v1.RestoreInfo restore_info = 4;</code> */
+    public boolean hasRestoreInfo() {
+      return restoreInfoBuilder_ != null || restoreInfo_ != null;
+    }
+    /** <code>.google.spanner.admin.database.v1.RestoreInfo restore_info = 4;</code> */
+    public com.google.spanner.admin.database.v1.RestoreInfo getRestoreInfo() {
+      if (restoreInfoBuilder_ == null) {
+        return restoreInfo_ == null
+            ? com.google.spanner.admin.database.v1.RestoreInfo.getDefaultInstance()
+            : restoreInfo_;
+      } else {
+        return restoreInfoBuilder_.getMessage();
+      }
+    }
+    /** <code>.google.spanner.admin.database.v1.RestoreInfo restore_info = 4;</code> */
+    public Builder setRestoreInfo(com.google.spanner.admin.database.v1.RestoreInfo value) {
+      if (restoreInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        restoreInfo_ = value;
+        onChanged();
+      } else {
+        restoreInfoBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /** <code>.google.spanner.admin.database.v1.RestoreInfo restore_info = 4;</code> */
+    public Builder setRestoreInfo(
+        com.google.spanner.admin.database.v1.RestoreInfo.Builder builderForValue) {
+      if (restoreInfoBuilder_ == null) {
+        restoreInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        restoreInfoBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /** <code>.google.spanner.admin.database.v1.RestoreInfo restore_info = 4;</code> */
+    public Builder mergeRestoreInfo(com.google.spanner.admin.database.v1.RestoreInfo value) {
+      if (restoreInfoBuilder_ == null) {
+        if (restoreInfo_ != null) {
+          restoreInfo_ =
+              com.google.spanner.admin.database.v1.RestoreInfo.newBuilder(restoreInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          restoreInfo_ = value;
+        }
+        onChanged();
+      } else {
+        restoreInfoBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /** <code>.google.spanner.admin.database.v1.RestoreInfo restore_info = 4;</code> */
+    public Builder clearRestoreInfo() {
+      if (restoreInfoBuilder_ == null) {
+        restoreInfo_ = null;
+        onChanged();
+      } else {
+        restoreInfo_ = null;
+        restoreInfoBuilder_ = null;
+      }
+
+      return this;
+    }
+    /** <code>.google.spanner.admin.database.v1.RestoreInfo restore_info = 4;</code> */
+    public com.google.spanner.admin.database.v1.RestoreInfo.Builder getRestoreInfoBuilder() {
+
+      onChanged();
+      return getRestoreInfoFieldBuilder().getBuilder();
+    }
+    /** <code>.google.spanner.admin.database.v1.RestoreInfo restore_info = 4;</code> */
+    public com.google.spanner.admin.database.v1.RestoreInfoOrBuilder getRestoreInfoOrBuilder() {
+      if (restoreInfoBuilder_ != null) {
+        return restoreInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return restoreInfo_ == null
+            ? com.google.spanner.admin.database.v1.RestoreInfo.getDefaultInstance()
+            : restoreInfo_;
+      }
+    }
+    /** <code>.google.spanner.admin.database.v1.RestoreInfo restore_info = 4;</code> */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.spanner.admin.database.v1.RestoreInfo,
+            com.google.spanner.admin.database.v1.RestoreInfo.Builder,
+            com.google.spanner.admin.database.v1.RestoreInfoOrBuilder>
+        getRestoreInfoFieldBuilder() {
+      if (restoreInfoBuilder_ == null) {
+        restoreInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.spanner.admin.database.v1.RestoreInfo,
+                com.google.spanner.admin.database.v1.RestoreInfo.Builder,
+                com.google.spanner.admin.database.v1.RestoreInfoOrBuilder>(
+                getRestoreInfo(), getParentForChildren(), isClean());
+        restoreInfo_ = null;
+      }
+      return restoreInfoBuilder_;
     }
 
     @java.lang.Override

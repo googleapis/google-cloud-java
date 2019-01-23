@@ -15,6 +15,9 @@
  */
 package com.google.cloud.spanner.admin.database.v1;
 
+import static com.google.cloud.spanner.admin.database.v1.DatabaseAdminClient.ListBackupOperationsPagedResponse;
+import static com.google.cloud.spanner.admin.database.v1.DatabaseAdminClient.ListBackupsPagedResponse;
+import static com.google.cloud.spanner.admin.database.v1.DatabaseAdminClient.ListDatabaseOperationsPagedResponse;
 import static com.google.cloud.spanner.admin.database.v1.DatabaseAdminClient.ListDatabasesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -37,15 +40,29 @@ import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
+import com.google.spanner.admin.database.v1.Backup;
+import com.google.spanner.admin.database.v1.CreateBackupMetadata;
+import com.google.spanner.admin.database.v1.CreateBackupRequest;
 import com.google.spanner.admin.database.v1.CreateDatabaseMetadata;
 import com.google.spanner.admin.database.v1.CreateDatabaseRequest;
 import com.google.spanner.admin.database.v1.Database;
+import com.google.spanner.admin.database.v1.DeleteBackupRequest;
 import com.google.spanner.admin.database.v1.DropDatabaseRequest;
+import com.google.spanner.admin.database.v1.GetBackupRequest;
 import com.google.spanner.admin.database.v1.GetDatabaseDdlRequest;
 import com.google.spanner.admin.database.v1.GetDatabaseDdlResponse;
 import com.google.spanner.admin.database.v1.GetDatabaseRequest;
+import com.google.spanner.admin.database.v1.ListBackupOperationsRequest;
+import com.google.spanner.admin.database.v1.ListBackupOperationsResponse;
+import com.google.spanner.admin.database.v1.ListBackupsRequest;
+import com.google.spanner.admin.database.v1.ListBackupsResponse;
+import com.google.spanner.admin.database.v1.ListDatabaseOperationsRequest;
+import com.google.spanner.admin.database.v1.ListDatabaseOperationsResponse;
 import com.google.spanner.admin.database.v1.ListDatabasesRequest;
 import com.google.spanner.admin.database.v1.ListDatabasesResponse;
+import com.google.spanner.admin.database.v1.RestoreDatabaseMetadata;
+import com.google.spanner.admin.database.v1.RestoreDatabaseRequest;
+import com.google.spanner.admin.database.v1.UpdateBackupRequest;
 import com.google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata;
 import com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest;
 import java.io.IOException;
@@ -142,6 +159,71 @@ public class DatabaseAdminSettings extends ClientSettings<DatabaseAdminSettings>
   public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings() {
     return ((DatabaseAdminStubSettings) getStubSettings()).testIamPermissionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createBackup. */
+  public UnaryCallSettings<CreateBackupRequest, Operation> createBackupSettings() {
+    return ((DatabaseAdminStubSettings) getStubSettings()).createBackupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createBackup. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public OperationCallSettings<CreateBackupRequest, Empty, CreateBackupMetadata>
+      createBackupOperationSettings() {
+    return ((DatabaseAdminStubSettings) getStubSettings()).createBackupOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getBackup. */
+  public UnaryCallSettings<GetBackupRequest, Backup> getBackupSettings() {
+    return ((DatabaseAdminStubSettings) getStubSettings()).getBackupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateBackup. */
+  public UnaryCallSettings<UpdateBackupRequest, Backup> updateBackupSettings() {
+    return ((DatabaseAdminStubSettings) getStubSettings()).updateBackupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteBackup. */
+  public UnaryCallSettings<DeleteBackupRequest, Empty> deleteBackupSettings() {
+    return ((DatabaseAdminStubSettings) getStubSettings()).deleteBackupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listBackups. */
+  public PagedCallSettings<ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+      listBackupsSettings() {
+    return ((DatabaseAdminStubSettings) getStubSettings()).listBackupsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to restoreDatabase. */
+  public UnaryCallSettings<RestoreDatabaseRequest, Operation> restoreDatabaseSettings() {
+    return ((DatabaseAdminStubSettings) getStubSettings()).restoreDatabaseSettings();
+  }
+
+  /** Returns the object with the settings used for calls to restoreDatabase. */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public OperationCallSettings<RestoreDatabaseRequest, Empty, RestoreDatabaseMetadata>
+      restoreDatabaseOperationSettings() {
+    return ((DatabaseAdminStubSettings) getStubSettings()).restoreDatabaseOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listDatabaseOperations. */
+  public PagedCallSettings<
+          ListDatabaseOperationsRequest,
+          ListDatabaseOperationsResponse,
+          ListDatabaseOperationsPagedResponse>
+      listDatabaseOperationsSettings() {
+    return ((DatabaseAdminStubSettings) getStubSettings()).listDatabaseOperationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listBackupOperations. */
+  public PagedCallSettings<
+          ListBackupOperationsRequest,
+          ListBackupOperationsResponse,
+          ListBackupOperationsPagedResponse>
+      listBackupOperationsSettings() {
+    return ((DatabaseAdminStubSettings) getStubSettings()).listBackupOperationsSettings();
   }
 
   public static final DatabaseAdminSettings create(DatabaseAdminStubSettings stub)
@@ -305,6 +387,72 @@ public class DatabaseAdminSettings extends ClientSettings<DatabaseAdminSettings>
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return getStubSettingsBuilder().testIamPermissionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createBackup. */
+    public UnaryCallSettings.Builder<CreateBackupRequest, Operation> createBackupSettings() {
+      return getStubSettingsBuilder().createBackupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createBackup. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<CreateBackupRequest, Empty, CreateBackupMetadata>
+        createBackupOperationSettings() {
+      return getStubSettingsBuilder().createBackupOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getBackup. */
+    public UnaryCallSettings.Builder<GetBackupRequest, Backup> getBackupSettings() {
+      return getStubSettingsBuilder().getBackupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateBackup. */
+    public UnaryCallSettings.Builder<UpdateBackupRequest, Backup> updateBackupSettings() {
+      return getStubSettingsBuilder().updateBackupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBackup. */
+    public UnaryCallSettings.Builder<DeleteBackupRequest, Empty> deleteBackupSettings() {
+      return getStubSettingsBuilder().deleteBackupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listBackups. */
+    public PagedCallSettings.Builder<
+            ListBackupsRequest, ListBackupsResponse, ListBackupsPagedResponse>
+        listBackupsSettings() {
+      return getStubSettingsBuilder().listBackupsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to restoreDatabase. */
+    public UnaryCallSettings.Builder<RestoreDatabaseRequest, Operation> restoreDatabaseSettings() {
+      return getStubSettingsBuilder().restoreDatabaseSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to restoreDatabase. */
+    @BetaApi(
+        "The surface for long-running operations is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<RestoreDatabaseRequest, Empty, RestoreDatabaseMetadata>
+        restoreDatabaseOperationSettings() {
+      return getStubSettingsBuilder().restoreDatabaseOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listDatabaseOperations. */
+    public PagedCallSettings.Builder<
+            ListDatabaseOperationsRequest,
+            ListDatabaseOperationsResponse,
+            ListDatabaseOperationsPagedResponse>
+        listDatabaseOperationsSettings() {
+      return getStubSettingsBuilder().listDatabaseOperationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listBackupOperations. */
+    public PagedCallSettings.Builder<
+            ListBackupOperationsRequest,
+            ListBackupOperationsResponse,
+            ListBackupOperationsPagedResponse>
+        listBackupOperationsSettings() {
+      return getStubSettingsBuilder().listBackupOperationsSettings();
     }
 
     @Override

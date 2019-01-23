@@ -15,6 +15,9 @@
  */
 package com.google.cloud.spanner.admin.database.v1.stub;
 
+import static com.google.cloud.spanner.admin.database.v1.DatabaseAdminClient.ListBackupOperationsPagedResponse;
+import static com.google.cloud.spanner.admin.database.v1.DatabaseAdminClient.ListBackupsPagedResponse;
+import static com.google.cloud.spanner.admin.database.v1.DatabaseAdminClient.ListDatabaseOperationsPagedResponse;
 import static com.google.cloud.spanner.admin.database.v1.DatabaseAdminClient.ListDatabasesPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -29,15 +32,29 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
+import com.google.spanner.admin.database.v1.Backup;
+import com.google.spanner.admin.database.v1.CreateBackupMetadata;
+import com.google.spanner.admin.database.v1.CreateBackupRequest;
 import com.google.spanner.admin.database.v1.CreateDatabaseMetadata;
 import com.google.spanner.admin.database.v1.CreateDatabaseRequest;
 import com.google.spanner.admin.database.v1.Database;
+import com.google.spanner.admin.database.v1.DeleteBackupRequest;
 import com.google.spanner.admin.database.v1.DropDatabaseRequest;
+import com.google.spanner.admin.database.v1.GetBackupRequest;
 import com.google.spanner.admin.database.v1.GetDatabaseDdlRequest;
 import com.google.spanner.admin.database.v1.GetDatabaseDdlResponse;
 import com.google.spanner.admin.database.v1.GetDatabaseRequest;
+import com.google.spanner.admin.database.v1.ListBackupOperationsRequest;
+import com.google.spanner.admin.database.v1.ListBackupOperationsResponse;
+import com.google.spanner.admin.database.v1.ListBackupsRequest;
+import com.google.spanner.admin.database.v1.ListBackupsResponse;
+import com.google.spanner.admin.database.v1.ListDatabaseOperationsRequest;
+import com.google.spanner.admin.database.v1.ListDatabaseOperationsResponse;
 import com.google.spanner.admin.database.v1.ListDatabasesRequest;
 import com.google.spanner.admin.database.v1.ListDatabasesResponse;
+import com.google.spanner.admin.database.v1.RestoreDatabaseMetadata;
+import com.google.spanner.admin.database.v1.RestoreDatabaseRequest;
+import com.google.spanner.admin.database.v1.UpdateBackupRequest;
 import com.google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata;
 import com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest;
 import javax.annotation.Generated;
@@ -110,6 +127,67 @@ public abstract class DatabaseAdminStub implements BackgroundResource {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<CreateBackupRequest, Empty, CreateBackupMetadata>
+      createBackupOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createBackupOperationCallable()");
+  }
+
+  public UnaryCallable<CreateBackupRequest, Operation> createBackupCallable() {
+    throw new UnsupportedOperationException("Not implemented: createBackupCallable()");
+  }
+
+  public UnaryCallable<GetBackupRequest, Backup> getBackupCallable() {
+    throw new UnsupportedOperationException("Not implemented: getBackupCallable()");
+  }
+
+  public UnaryCallable<UpdateBackupRequest, Backup> updateBackupCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateBackupCallable()");
+  }
+
+  public UnaryCallable<DeleteBackupRequest, Empty> deleteBackupCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteBackupCallable()");
+  }
+
+  public UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse> listBackupsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listBackupsPagedCallable()");
+  }
+
+  public UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listBackupsCallable()");
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<RestoreDatabaseRequest, Empty, RestoreDatabaseMetadata>
+      restoreDatabaseOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: restoreDatabaseOperationCallable()");
+  }
+
+  public UnaryCallable<RestoreDatabaseRequest, Operation> restoreDatabaseCallable() {
+    throw new UnsupportedOperationException("Not implemented: restoreDatabaseCallable()");
+  }
+
+  public UnaryCallable<ListDatabaseOperationsRequest, ListDatabaseOperationsPagedResponse>
+      listDatabaseOperationsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listDatabaseOperationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListDatabaseOperationsRequest, ListDatabaseOperationsResponse>
+      listDatabaseOperationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listDatabaseOperationsCallable()");
+  }
+
+  public UnaryCallable<ListBackupOperationsRequest, ListBackupOperationsPagedResponse>
+      listBackupOperationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listBackupOperationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListBackupOperationsRequest, ListBackupOperationsResponse>
+      listBackupOperationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listBackupOperationsCallable()");
   }
 
   @Override
