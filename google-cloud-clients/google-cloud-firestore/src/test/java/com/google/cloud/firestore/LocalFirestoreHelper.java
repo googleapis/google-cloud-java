@@ -435,7 +435,7 @@ public final class LocalFirestoreHelper {
   public static RunQueryRequest query(
       @Nullable ByteString transactionId, StructuredQuery... query) {
     RunQueryRequest.Builder request = RunQueryRequest.newBuilder();
-    request.setParent(LocalFirestoreHelper.DATABASE_NAME);
+    request.setParent(LocalFirestoreHelper.DATABASE_NAME + "/documents");
     StructuredQuery.Builder structuredQuery = request.getStructuredQueryBuilder();
     structuredQuery.addFrom(
         StructuredQuery.CollectionSelector.newBuilder().setCollectionId("coll"));

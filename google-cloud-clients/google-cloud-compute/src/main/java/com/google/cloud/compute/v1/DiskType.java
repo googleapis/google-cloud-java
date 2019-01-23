@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -78,37 +78,37 @@ public final class DiskType implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("creationTimestamp")) {
+    if ("creationTimestamp".equals(fieldName)) {
       return creationTimestamp;
     }
-    if (fieldName.equals("defaultDiskSizeGb")) {
+    if ("defaultDiskSizeGb".equals(fieldName)) {
       return defaultDiskSizeGb;
     }
-    if (fieldName.equals("deprecated")) {
+    if ("deprecated".equals(fieldName)) {
       return deprecated;
     }
-    if (fieldName.equals("description")) {
+    if ("description".equals(fieldName)) {
       return description;
     }
-    if (fieldName.equals("id")) {
+    if ("id".equals(fieldName)) {
       return id;
     }
-    if (fieldName.equals("kind")) {
+    if ("kind".equals(fieldName)) {
       return kind;
     }
-    if (fieldName.equals("name")) {
+    if ("name".equals(fieldName)) {
       return name;
     }
-    if (fieldName.equals("region")) {
+    if ("region".equals(fieldName)) {
       return region;
     }
-    if (fieldName.equals("selfLink")) {
+    if ("selfLink".equals(fieldName)) {
       return selfLink;
     }
-    if (fieldName.equals("validDiskSize")) {
+    if ("validDiskSize".equals(fieldName)) {
       return validDiskSize;
     }
-    if (fieldName.equals("zone")) {
+    if ("zone".equals(fieldName)) {
       return zone;
     }
     return null;

@@ -75,6 +75,7 @@ import com.google.cloud.storage.StorageClass;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
 import com.google.cloud.storage.StorageRoles;
+import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -2444,43 +2445,67 @@ public class ITStorageTest {
   }
 
   @Test
-  public void testCreateBucketWithBucketPolicyOnly() {
+  public void testBucketWithBucketPolicyOnlyEnabled() throws Exception{
     String bpoBucket = RemoteStorageHelper.generateBucketName();
     try {
-    storage.create(
-            Bucket.newBuilder(bpoBucket)
-                    .setIamConfiguration(
-                            BucketInfo.IamConfiguration.newBuilder().setBucketPolicyOnly(
-                                    BucketInfo.BucketPolicyOnly.newBuilder()
-                                            .setEnabled(true)
-                                            .build())
-                                    .build())
-                    .build());
+      storage.create(
+              Bucket.newBuilder(bpoBucket)
+                      .setIamConfiguration(
+                              BucketInfo.IamConfiguration.newBuilder().setBucketPolicyOnly(
+                                      BucketInfo.BucketPolicyOnly.newBuilder()
+                                              .setEnabled(true)
+                                              .build())
+                                      .build())
+                      .build());
 
-    Bucket remoteBucket = storage.get(bpoBucket, Storage.BucketGetOption.fields(BucketField.IAMCONFIGURATION));
 
-    assertTrue(remoteBucket.getIamConfiguration().getBucketPolicyOnly().getEnabled());
-    assertNotNull(remoteBucket.getIamConfiguration().getBucketPolicyOnly().getLockedTime());
+      Bucket remoteBucket = storage.get(bpoBucket, Storage.BucketGetOption.fields(BucketField.IAMCONFIGURATION));
+
+      assertTrue(remoteBucket.getIamConfiguration().getBucketPolicyOnly().getEnabled());
+      assertNotNull(remoteBucket.getIamConfiguration().getBucketPolicyOnly().getLockedTime());
+      try {
+        remoteBucket.listAcls();
+      } catch (StorageException e) {
+        //Expected: Listing legacy ACLs should fail on a BPO enabled bucket
+      }
+      try {
+        remoteBucket.listDefaultAcls();
+      } catch (StorageException e) {
+        //Expected: Listing legacy ACLs should fail on a BPO enabled bucket
+      }
 
     } finally {
-      storage.delete(bpoBucket);
+      RemoteStorageHelper.forceDelete(storage, bpoBucket, 1, TimeUnit.MINUTES);
     }
   }
 
   @Test
-  public void testAddBucketPolicyOnlyToExistingBucket() {
+  public void testEnableBucketPolicyOnlyOnExistingBucket() throws Exception{
     String bpoBucket = RemoteStorageHelper.generateBucketName();
     try {
-      Bucket remoteBucket = storage.create(Bucket.newBuilder(bpoBucket).build());
-      remoteBucket.toBuilder().setIamConfiguration(
-              BucketInfo.IamConfiguration.newBuilder().setBucketPolicyOnly(
-                      BucketInfo.BucketPolicyOnly.newBuilder()
-                              .setEnabled(true)
-                              .build())
-                      .build())
-              .build().update();
+
+      BucketInfo.BucketPolicyOnly bucketPolicyOnly = BucketInfo.BucketPolicyOnly.newBuilder()
+              .setEnabled(false)
+              .build();
+      BucketInfo.IamConfiguration iamConfiguration = BucketInfo.IamConfiguration.newBuilder().setBucketPolicyOnly(
+              bucketPolicyOnly).build();
+      Bucket bucket = storage.create(
+              Bucket.newBuilder(bpoBucket)
+                      .setIamConfiguration(iamConfiguration).build());
+
+      bucket.toBuilder()
+              .setIamConfiguration(
+                      iamConfiguration.toBuilder().setBucketPolicyOnly(
+                              bucketPolicyOnly.toBuilder().setEnabled(true).build()
+                      ).build()
+              ).build().update();
+
+      Bucket remoteBucket = storage.get(bpoBucket, Storage.BucketGetOption.fields(BucketField.IAMCONFIGURATION));
+
+      assertTrue(remoteBucket.getIamConfiguration().getBucketPolicyOnly().getEnabled());
+      assertNotNull(remoteBucket.getIamConfiguration().getBucketPolicyOnly().getLockedTime());
     } finally {
-      storage.delete(bpoBucket);
+      RemoteStorageHelper.forceDelete(storage, bpoBucket, 1, TimeUnit.MINUTES);
     }
   }
 }

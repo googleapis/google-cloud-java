@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -103,55 +103,55 @@ public final class VpnTunnel implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("creationTimestamp")) {
+    if ("creationTimestamp".equals(fieldName)) {
       return creationTimestamp;
     }
-    if (fieldName.equals("description")) {
+    if ("description".equals(fieldName)) {
       return description;
     }
-    if (fieldName.equals("detailedStatus")) {
+    if ("detailedStatus".equals(fieldName)) {
       return detailedStatus;
     }
-    if (fieldName.equals("id")) {
+    if ("id".equals(fieldName)) {
       return id;
     }
-    if (fieldName.equals("ikeVersion")) {
+    if ("ikeVersion".equals(fieldName)) {
       return ikeVersion;
     }
-    if (fieldName.equals("kind")) {
+    if ("kind".equals(fieldName)) {
       return kind;
     }
-    if (fieldName.equals("localTrafficSelector")) {
+    if ("localTrafficSelector".equals(fieldName)) {
       return localTrafficSelector;
     }
-    if (fieldName.equals("name")) {
+    if ("name".equals(fieldName)) {
       return name;
     }
-    if (fieldName.equals("peerIp")) {
+    if ("peerIp".equals(fieldName)) {
       return peerIp;
     }
-    if (fieldName.equals("region")) {
+    if ("region".equals(fieldName)) {
       return region;
     }
-    if (fieldName.equals("remoteTrafficSelector")) {
+    if ("remoteTrafficSelector".equals(fieldName)) {
       return remoteTrafficSelector;
     }
-    if (fieldName.equals("router")) {
+    if ("router".equals(fieldName)) {
       return router;
     }
-    if (fieldName.equals("selfLink")) {
+    if ("selfLink".equals(fieldName)) {
       return selfLink;
     }
-    if (fieldName.equals("sharedSecret")) {
+    if ("sharedSecret".equals(fieldName)) {
       return sharedSecret;
     }
-    if (fieldName.equals("sharedSecretHash")) {
+    if ("sharedSecretHash".equals(fieldName)) {
       return sharedSecretHash;
     }
-    if (fieldName.equals("status")) {
+    if ("status".equals(fieldName)) {
       return status;
     }
-    if (fieldName.equals("targetVpnGateway")) {
+    if ("targetVpnGateway".equals(fieldName)) {
       return targetVpnGateway;
     }
     return null;

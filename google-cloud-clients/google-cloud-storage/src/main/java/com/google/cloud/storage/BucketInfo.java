@@ -97,6 +97,11 @@ public class BucketInfo implements Serializable {
   private final Long retentionPeriod;
   private final IamConfiguration iamConfiguration;
 
+  /**
+   * A Bucket's IAM Configuration. Allows specification of authorization policies via IAM instead of legacy ACL.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/bucket-policy-only">Bucket Policy Only</a>
+   */
   public static class IamConfiguration implements Serializable {
     private static final long serialVersionUID = -8671736104909424616L;
 
@@ -148,20 +153,33 @@ public class BucketInfo implements Serializable {
               .build();
     }
 
+    /** Builder for {@code IamConfiguration} */
     public static class Builder {
       private BucketPolicyOnly bucketPolicyOnly;
 
+      /**
+       * Sets the BucketPolicyOnly object for this configuration. This object will determine whether IAM is enforced
+       * or not.
+       */
       public Builder setBucketPolicyOnly(BucketPolicyOnly bucketPolicyOnly) {
         this.bucketPolicyOnly = bucketPolicyOnly;
         return this;
       }
 
+      /** Builds an {@code IamConfiguration} object */
       public IamConfiguration build() {
         return new IamConfiguration(this);
       }
     }
   }
 
+  /**
+   * Configuration of BucketPolicyOnly for a bucket. When this is configured to enable BucketPolicyOnly and included
+   * in an {@code IamConfiguration}, legacy ACL access to the bucket will be disabled, and all authorization policies
+   * will be configured through IAM.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/bucket-policy-only">Bucket Policy Only</a>
+   */
   public static class BucketPolicyOnly implements Serializable {
     private static final long serialVersionUID = 2260445211318576550L;
     private final Boolean enabled;
@@ -215,22 +233,43 @@ public class BucketInfo implements Serializable {
       this.lockedTime = builder.lockedTime;
     }
 
+    public Builder toBuilder() {
+      Builder builder = new Builder();
+      builder.setLockedTime(lockedTime);
+      builder.setEnabled(enabled);
+      return builder;
+    }
+
+    /** Builder for {@code BucketPolicyOnly} */
     public static class Builder {
       private Boolean enabled;
       private DateTime lockedTime;
 
       private Builder() {}
 
+      /** Sets whether BucketPolicyOnly is enabled for this bucket. When this is enabled, access to the bucket will be
+       * configured through IAM, and legacy ACL policies will not work. All legacy ACL policies must be removed from
+       * the bucket's info before this can be enabled. When this is first enabled, {@code lockedTime} will be set by
+       * the API automatically. This field can then be disabled until the time specified, after which it will
+       * become immutable and calls to change it will fail. If this is enabled, calls to access legacy ACL information
+       * will fail.
+       */
       public Builder setEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
       }
 
+      /**
+       * Sets the deadline for switching {@code enabled} back to false. After this time passes, calls to do so will
+       * fail. This is package-private, since in general this field should never be set by a user--it's automatically
+       * set by the backend when {@code enabled} is set to true.
+       */
       Builder setLockedTime(DateTime lockedTime) {
         this.lockedTime = lockedTime;
         return this;
       }
 
+      /** Builds a new {@code BucketPolicyOnly} object */
       public BucketPolicyOnly build() {
         return new BucketPolicyOnly(this);
       }
@@ -927,6 +966,11 @@ public class BucketInfo implements Serializable {
     @BetaApi
     public abstract Builder setRetentionPeriod(Long retentionPeriod);
 
+    /**
+     * Sets the IamConfiguration to specify whether IAM access should be enabled.
+     *
+     * @see <a href="https://cloud.google.com/storage/docs/bucket-policy-only">Bucket Policy Only</a>
+     */
     @BetaApi
     public abstract Builder setIamConfiguration(IamConfiguration iamConfiguration);
 
@@ -1421,6 +1465,7 @@ public class BucketInfo implements Serializable {
     return retentionPeriod;
   }
 
+  /** Returns the IAM configuration */
   @BetaApi
   public IamConfiguration getIamConfiguration() {
     return iamConfiguration;

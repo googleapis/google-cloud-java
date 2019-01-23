@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,34 +75,34 @@ public final class TargetSslProxy implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("creationTimestamp")) {
+    if ("creationTimestamp".equals(fieldName)) {
       return creationTimestamp;
     }
-    if (fieldName.equals("description")) {
+    if ("description".equals(fieldName)) {
       return description;
     }
-    if (fieldName.equals("id")) {
+    if ("id".equals(fieldName)) {
       return id;
     }
-    if (fieldName.equals("kind")) {
+    if ("kind".equals(fieldName)) {
       return kind;
     }
-    if (fieldName.equals("name")) {
+    if ("name".equals(fieldName)) {
       return name;
     }
-    if (fieldName.equals("proxyHeader")) {
+    if ("proxyHeader".equals(fieldName)) {
       return proxyHeader;
     }
-    if (fieldName.equals("selfLink")) {
+    if ("selfLink".equals(fieldName)) {
       return selfLink;
     }
-    if (fieldName.equals("service")) {
+    if ("service".equals(fieldName)) {
       return service;
     }
-    if (fieldName.equals("sslCertificates")) {
+    if ("sslCertificates".equals(fieldName)) {
       return sslCertificates;
     }
-    if (fieldName.equals("sslPolicy")) {
+    if ("sslPolicy".equals(fieldName)) {
       return sslPolicy;
     }
     return null;

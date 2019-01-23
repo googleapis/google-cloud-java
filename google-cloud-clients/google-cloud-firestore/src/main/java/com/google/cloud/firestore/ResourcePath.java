@@ -127,9 +127,8 @@ abstract class ResourcePath extends BasePath<ResourcePath> {
    */
   String getName() {
     String path = getPath();
-
     if (path.isEmpty()) {
-      return getDatabaseName().toString();
+      return getDatabaseName() + "/documents";
     } else {
       return getDatabaseName() + "/documents/" + getPath();
     }

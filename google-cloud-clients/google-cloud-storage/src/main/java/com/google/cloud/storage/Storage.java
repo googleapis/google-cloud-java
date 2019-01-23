@@ -205,6 +205,14 @@ public interface Storage extends Service<StorageOptions> {
     public static BucketTargetOption userProject(String userProject) {
       return new BucketTargetOption(StorageRpc.Option.USER_PROJECT, userProject);
     }
+
+    /**
+     * Returns an option to define the projection in the API request. In some cases this option may be needed to be
+     * set to `noAcl` to omit ACL data from the response.
+     */
+    public static BucketTargetOption projection(String projection) {
+      return new BucketTargetOption(StorageRpc.Option.PROJECTION, projection);
+    }
   }
 
   /** Class for specifying bucket source options. */

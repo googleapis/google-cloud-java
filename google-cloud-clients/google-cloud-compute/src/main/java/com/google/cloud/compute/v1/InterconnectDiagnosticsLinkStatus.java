@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,22 +59,22 @@ public final class InterconnectDiagnosticsLinkStatus implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("arpCaches")) {
+    if ("arpCaches".equals(fieldName)) {
       return arpCaches;
     }
-    if (fieldName.equals("circuitId")) {
+    if ("circuitId".equals(fieldName)) {
       return circuitId;
     }
-    if (fieldName.equals("googleDemarc")) {
+    if ("googleDemarc".equals(fieldName)) {
       return googleDemarc;
     }
-    if (fieldName.equals("lacpStatus")) {
+    if ("lacpStatus".equals(fieldName)) {
       return lacpStatus;
     }
-    if (fieldName.equals("receivingOpticalPower")) {
+    if ("receivingOpticalPower".equals(fieldName)) {
       return receivingOpticalPower;
     }
-    if (fieldName.equals("transmittingOpticalPower")) {
+    if ("transmittingOpticalPower".equals(fieldName)) {
       return transmittingOpticalPower;
     }
     return null;

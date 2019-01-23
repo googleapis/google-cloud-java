@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import com.google.gson.annotations.SerializedName;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
@@ -29,8 +30,13 @@ public final class ForwardingRule implements ApiMessage {
   private final String backendService;
   private final String creationTimestamp;
   private final String description;
+
+  @SerializedName("IPAddress")
   private final String iPAddress;
+
+  @SerializedName("IPProtocol")
   private final String iPProtocol;
+
   private final String id;
   private final String ipVersion;
   private final String kind;
@@ -107,58 +113,58 @@ public final class ForwardingRule implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("backendService")) {
+    if ("backendService".equals(fieldName)) {
       return backendService;
     }
-    if (fieldName.equals("creationTimestamp")) {
+    if ("creationTimestamp".equals(fieldName)) {
       return creationTimestamp;
     }
-    if (fieldName.equals("description")) {
+    if ("description".equals(fieldName)) {
       return description;
     }
-    if (fieldName.equals("iPAddress")) {
+    if ("iPAddress".equals(fieldName)) {
       return iPAddress;
     }
-    if (fieldName.equals("iPProtocol")) {
+    if ("iPProtocol".equals(fieldName)) {
       return iPProtocol;
     }
-    if (fieldName.equals("id")) {
+    if ("id".equals(fieldName)) {
       return id;
     }
-    if (fieldName.equals("ipVersion")) {
+    if ("ipVersion".equals(fieldName)) {
       return ipVersion;
     }
-    if (fieldName.equals("kind")) {
+    if ("kind".equals(fieldName)) {
       return kind;
     }
-    if (fieldName.equals("loadBalancingScheme")) {
+    if ("loadBalancingScheme".equals(fieldName)) {
       return loadBalancingScheme;
     }
-    if (fieldName.equals("name")) {
+    if ("name".equals(fieldName)) {
       return name;
     }
-    if (fieldName.equals("network")) {
+    if ("network".equals(fieldName)) {
       return network;
     }
-    if (fieldName.equals("networkTier")) {
+    if ("networkTier".equals(fieldName)) {
       return networkTier;
     }
-    if (fieldName.equals("portRange")) {
+    if ("portRange".equals(fieldName)) {
       return portRange;
     }
-    if (fieldName.equals("ports")) {
+    if ("ports".equals(fieldName)) {
       return ports;
     }
-    if (fieldName.equals("region")) {
+    if ("region".equals(fieldName)) {
       return region;
     }
-    if (fieldName.equals("selfLink")) {
+    if ("selfLink".equals(fieldName)) {
       return selfLink;
     }
-    if (fieldName.equals("subnetwork")) {
+    if ("subnetwork".equals(fieldName)) {
       return subnetwork;
     }
-    if (fieldName.equals("target")) {
+    if ("target".equals(fieldName)) {
       return target;
     }
     return null;

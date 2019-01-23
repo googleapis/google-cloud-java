@@ -183,7 +183,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Type of the asset. Example: "google.compute.disk".
+   * Type of the asset. Example: "google.compute.Disk".
    * </pre>
    *
    * <code>string asset_type = 2;</code>
@@ -203,7 +203,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Type of the asset. Example: "google.compute.disk".
+   * Type of the asset. Example: "google.compute.Disk".
    * </pre>
    *
    * <code>string asset_type = 2;</code>
@@ -799,7 +799,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of the asset. Example: "google.compute.disk".
+     * Type of the asset. Example: "google.compute.Disk".
      * </pre>
      *
      * <code>string asset_type = 2;</code>
@@ -819,7 +819,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of the asset. Example: "google.compute.disk".
+     * Type of the asset. Example: "google.compute.Disk".
      * </pre>
      *
      * <code>string asset_type = 2;</code>
@@ -839,7 +839,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of the asset. Example: "google.compute.disk".
+     * Type of the asset. Example: "google.compute.Disk".
      * </pre>
      *
      * <code>string asset_type = 2;</code>
@@ -857,7 +857,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of the asset. Example: "google.compute.disk".
+     * Type of the asset. Example: "google.compute.Disk".
      * </pre>
      *
      * <code>string asset_type = 2;</code>
@@ -872,7 +872,7 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Type of the asset. Example: "google.compute.disk".
+     * Type of the asset. Example: "google.compute.Disk".
      * </pre>
      *
      * <code>string asset_type = 2;</code>

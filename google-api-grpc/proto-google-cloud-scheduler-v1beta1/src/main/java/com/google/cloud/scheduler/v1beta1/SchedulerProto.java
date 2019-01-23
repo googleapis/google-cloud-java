@@ -108,10 +108,10 @@ public final class SchedulerProto {
           + "cheduler.v1beta1.RunJobRequest\032#.google."
           + "cloud.scheduler.v1beta1.Job\"<\202\323\344\223\0026\"1/v1"
           + "beta1/{name=projects/*/locations/*/jobs/"
-          + "*}:run:\001*B\177\n\"com.google.cloud.scheduler."
-          + "v1beta1B\016SchedulerProtoP\001ZGgoogle.golang"
-          + ".org/genproto/googleapis/cloud/scheduler"
-          + "/v1beta1;schedulerb\006proto3"
+          + "*}:run:\001*B\213\001\n\"com.google.cloud.scheduler"
+          + ".v1beta1B\016SchedulerProtoP\001ZGgoogle.golan"
+          + "g.org/genproto/googleapis/cloud/schedule"
+          + "r/v1beta1;scheduler\242\002\tSCHEDULERb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

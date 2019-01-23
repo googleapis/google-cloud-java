@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,6 @@ import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.scheduler.v1beta1.stub.CloudSchedulerStub;
 import com.google.cloud.scheduler.v1beta1.stub.CloudSchedulerStubSettings;
 import com.google.protobuf.Empty;
@@ -46,8 +45,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
- *   String formattedName = CloudSchedulerClient.formatJobName("[PROJECT]", "[LOCATION]", "[JOB]");
- *   Job response = cloudSchedulerClient.getJob(formattedName);
+ *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+ *   Job response = cloudSchedulerClient.getJob(name);
  * }
  * </code>
  * </pre>
@@ -108,69 +107,6 @@ public class CloudSchedulerClient implements BackgroundResource {
   private final CloudSchedulerSettings settings;
   private final CloudSchedulerStub stub;
 
-  private static final PathTemplate PROJECT_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}");
-
-  private static final PathTemplate LOCATION_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/locations/{location}");
-
-  private static final PathTemplate JOB_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/locations/{location}/jobs/{job}");
-
-  /** Formats a string containing the fully-qualified path to represent a project resource. */
-  public static final String formatProjectName(String project) {
-    return PROJECT_PATH_TEMPLATE.instantiate("project", project);
-  }
-
-  /** Formats a string containing the fully-qualified path to represent a location resource. */
-  public static final String formatLocationName(String project, String location) {
-    return LOCATION_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "location", location);
-  }
-
-  /** Formats a string containing the fully-qualified path to represent a job resource. */
-  public static final String formatJobName(String project, String location, String job) {
-    return JOB_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "location", location,
-        "job", job);
-  }
-
-  /** Parses the project from the given fully-qualified path which represents a project resource. */
-  public static final String parseProjectFromProjectName(String projectName) {
-    return PROJECT_PATH_TEMPLATE.parse(projectName).get("project");
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a location resource.
-   */
-  public static final String parseProjectFromLocationName(String locationName) {
-    return LOCATION_PATH_TEMPLATE.parse(locationName).get("project");
-  }
-
-  /**
-   * Parses the location from the given fully-qualified path which represents a location resource.
-   */
-  public static final String parseLocationFromLocationName(String locationName) {
-    return LOCATION_PATH_TEMPLATE.parse(locationName).get("location");
-  }
-
-  /** Parses the project from the given fully-qualified path which represents a job resource. */
-  public static final String parseProjectFromJobName(String jobName) {
-    return JOB_PATH_TEMPLATE.parse(jobName).get("project");
-  }
-
-  /** Parses the location from the given fully-qualified path which represents a job resource. */
-  public static final String parseLocationFromJobName(String jobName) {
-    return JOB_PATH_TEMPLATE.parse(jobName).get("location");
-  }
-
-  /** Parses the job from the given fully-qualified path which represents a job resource. */
-  public static final String parseJobFromJobName(String jobName) {
-    return JOB_PATH_TEMPLATE.parse(jobName).get("job");
-  }
-
   /** Constructs an instance of CloudSchedulerClient with default settings. */
   public static final CloudSchedulerClient create() throws IOException {
     return create(CloudSchedulerSettings.newBuilder().build());
@@ -227,8 +163,33 @@ public class CloudSchedulerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   String formattedParent = CloudSchedulerClient.formatLocationName("[PROJECT]", "[LOCATION]");
-   *   for (Job element : cloudSchedulerClient.listJobs(formattedParent).iterateAll()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (Job element : cloudSchedulerClient.listJobs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required.
+   *     <p>The location name. For example: `projects/PROJECT_ID/locations/LOCATION_ID`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListJobsPagedResponse listJobs(LocationName parent) {
+    ListJobsRequest request =
+        ListJobsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return listJobs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists jobs.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (Job element : cloudSchedulerClient.listJobs(parent.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -239,7 +200,6 @@ public class CloudSchedulerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListJobsPagedResponse listJobs(String parent) {
-    LOCATION_PATH_TEMPLATE.validate(parent, "listJobs");
     ListJobsRequest request = ListJobsRequest.newBuilder().setParent(parent).build();
     return listJobs(request);
   }
@@ -252,9 +212,9 @@ public class CloudSchedulerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   String formattedParent = CloudSchedulerClient.formatLocationName("[PROJECT]", "[LOCATION]");
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   ListJobsRequest request = ListJobsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   for (Job element : cloudSchedulerClient.listJobs(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -277,9 +237,9 @@ public class CloudSchedulerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   String formattedParent = CloudSchedulerClient.formatLocationName("[PROJECT]", "[LOCATION]");
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   ListJobsRequest request = ListJobsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   ApiFuture&lt;ListJobsPagedResponse&gt; future = cloudSchedulerClient.listJobsPagedCallable().futureCall(request);
    *   // Do something
@@ -301,9 +261,9 @@ public class CloudSchedulerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   String formattedParent = CloudSchedulerClient.formatLocationName("[PROJECT]", "[LOCATION]");
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   ListJobsRequest request = ListJobsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   while (true) {
    *     ListJobsResponse response = cloudSchedulerClient.listJobsCallable().call(request);
@@ -332,8 +292,32 @@ public class CloudSchedulerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   String formattedName = CloudSchedulerClient.formatJobName("[PROJECT]", "[LOCATION]", "[JOB]");
-   *   Job response = cloudSchedulerClient.getJob(formattedName);
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   Job response = cloudSchedulerClient.getJob(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required.
+   *     <p>The job name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Job getJob(JobName name) {
+
+    GetJobRequest request =
+        GetJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a job.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   Job response = cloudSchedulerClient.getJob(name.toString());
    * }
    * </code></pre>
    *
@@ -342,7 +326,7 @@ public class CloudSchedulerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job getJob(String name) {
-    JOB_PATH_TEMPLATE.validate(name, "getJob");
+
     GetJobRequest request = GetJobRequest.newBuilder().setName(name).build();
     return getJob(request);
   }
@@ -355,9 +339,9 @@ public class CloudSchedulerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   String formattedName = CloudSchedulerClient.formatJobName("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
    *   GetJobRequest request = GetJobRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   Job response = cloudSchedulerClient.getJob(request);
    * }
@@ -378,9 +362,9 @@ public class CloudSchedulerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   String formattedName = CloudSchedulerClient.formatJobName("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
    *   GetJobRequest request = GetJobRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Job&gt; future = cloudSchedulerClient.getJobCallable().futureCall(request);
    *   // Do something
@@ -400,9 +384,43 @@ public class CloudSchedulerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   String formattedParent = CloudSchedulerClient.formatLocationName("[PROJECT]", "[LOCATION]");
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Job job = Job.newBuilder().build();
-   *   Job response = cloudSchedulerClient.createJob(formattedParent, job);
+   *   Job response = cloudSchedulerClient.createJob(parent, job);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required.
+   *     <p>The location name. For example: `projects/PROJECT_ID/locations/LOCATION_ID`.
+   * @param job Required.
+   *     <p>The job to add. The user can optionally specify a name for the job in
+   *     [name][google.cloud.scheduler.v1beta1.Job.name].
+   *     [name][google.cloud.scheduler.v1beta1.Job.name] cannot be the same as an existing job. If a
+   *     name is not specified then the system will generate a random unique name that will be
+   *     returned ([name][google.cloud.scheduler.v1beta1.Job.name]) in the response.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Job createJob(LocationName parent, Job job) {
+
+    CreateJobRequest request =
+        CreateJobRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setJob(job)
+            .build();
+    return createJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a job.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   Job job = Job.newBuilder().build();
+   *   Job response = cloudSchedulerClient.createJob(parent.toString(), job);
    * }
    * </code></pre>
    *
@@ -417,7 +435,7 @@ public class CloudSchedulerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job createJob(String parent, Job job) {
-    LOCATION_PATH_TEMPLATE.validate(parent, "createJob");
+
     CreateJobRequest request = CreateJobRequest.newBuilder().setParent(parent).setJob(job).build();
     return createJob(request);
   }
@@ -430,10 +448,10 @@ public class CloudSchedulerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   String formattedParent = CloudSchedulerClient.formatLocationName("[PROJECT]", "[LOCATION]");
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Job job = Job.newBuilder().build();
    *   CreateJobRequest request = CreateJobRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setJob(job)
    *     .build();
    *   Job response = cloudSchedulerClient.createJob(request);
@@ -455,10 +473,10 @@ public class CloudSchedulerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   String formattedParent = CloudSchedulerClient.formatLocationName("[PROJECT]", "[LOCATION]");
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   Job job = Job.newBuilder().build();
    *   CreateJobRequest request = CreateJobRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setJob(job)
    *     .build();
    *   ApiFuture&lt;Job&gt; future = cloudSchedulerClient.createJobCallable().futureCall(request);
@@ -577,8 +595,32 @@ public class CloudSchedulerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   String formattedName = CloudSchedulerClient.formatJobName("[PROJECT]", "[LOCATION]", "[JOB]");
-   *   cloudSchedulerClient.deleteJob(formattedName);
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   cloudSchedulerClient.deleteJob(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required.
+   *     <p>The job name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteJob(JobName name) {
+
+    DeleteJobRequest request =
+        DeleteJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a job.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   cloudSchedulerClient.deleteJob(name.toString());
    * }
    * </code></pre>
    *
@@ -587,7 +629,7 @@ public class CloudSchedulerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteJob(String name) {
-    JOB_PATH_TEMPLATE.validate(name, "deleteJob");
+
     DeleteJobRequest request = DeleteJobRequest.newBuilder().setName(name).build();
     deleteJob(request);
   }
@@ -600,9 +642,9 @@ public class CloudSchedulerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   String formattedName = CloudSchedulerClient.formatJobName("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
    *   DeleteJobRequest request = DeleteJobRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   cloudSchedulerClient.deleteJob(request);
    * }
@@ -623,9 +665,9 @@ public class CloudSchedulerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   String formattedName = CloudSchedulerClient.formatJobName("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
    *   DeleteJobRequest request = DeleteJobRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Void&gt; future = cloudSchedulerClient.deleteJobCallable().futureCall(request);
    *   // Do something
@@ -651,8 +693,38 @@ public class CloudSchedulerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   String formattedName = CloudSchedulerClient.formatJobName("[PROJECT]", "[LOCATION]", "[JOB]");
-   *   Job response = cloudSchedulerClient.pauseJob(formattedName);
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   Job response = cloudSchedulerClient.pauseJob(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required.
+   *     <p>The job name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Job pauseJob(JobName name) {
+
+    PauseJobRequest request =
+        PauseJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return pauseJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Pauses a job.
+   *
+   * <p>If a job is paused then the system will stop executing the job until it is re-enabled via
+   * [ResumeJob][google.cloud.scheduler.v1beta1.CloudScheduler.ResumeJob]. The state of the job is
+   * stored in [state][google.cloud.scheduler.v1beta1.Job.state]; if paused it will be set to
+   * [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. A job must be in
+   * [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED] to be paused.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   Job response = cloudSchedulerClient.pauseJob(name.toString());
    * }
    * </code></pre>
    *
@@ -661,7 +733,7 @@ public class CloudSchedulerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job pauseJob(String name) {
-    JOB_PATH_TEMPLATE.validate(name, "pauseJob");
+
     PauseJobRequest request = PauseJobRequest.newBuilder().setName(name).build();
     return pauseJob(request);
   }
@@ -680,9 +752,9 @@ public class CloudSchedulerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   String formattedName = CloudSchedulerClient.formatJobName("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
    *   PauseJobRequest request = PauseJobRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   Job response = cloudSchedulerClient.pauseJob(request);
    * }
@@ -709,9 +781,9 @@ public class CloudSchedulerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   String formattedName = CloudSchedulerClient.formatJobName("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
    *   PauseJobRequest request = PauseJobRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Job&gt; future = cloudSchedulerClient.pauseJobCallable().futureCall(request);
    *   // Do something
@@ -737,8 +809,38 @@ public class CloudSchedulerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   String formattedName = CloudSchedulerClient.formatJobName("[PROJECT]", "[LOCATION]", "[JOB]");
-   *   Job response = cloudSchedulerClient.resumeJob(formattedName);
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   Job response = cloudSchedulerClient.resumeJob(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required.
+   *     <p>The job name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Job resumeJob(JobName name) {
+
+    ResumeJobRequest request =
+        ResumeJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return resumeJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Resume a job.
+   *
+   * <p>This method reenables a job after it has been
+   * [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED]. The state of a job is
+   * stored in [Job.state][google.cloud.scheduler.v1beta1.Job.state]; after calling this method it
+   * will be set to [Job.State.ENABLED][google.cloud.scheduler.v1beta1.Job.State.ENABLED]. A job
+   * must be in [Job.State.PAUSED][google.cloud.scheduler.v1beta1.Job.State.PAUSED] to be resumed.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   Job response = cloudSchedulerClient.resumeJob(name.toString());
    * }
    * </code></pre>
    *
@@ -747,7 +849,7 @@ public class CloudSchedulerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job resumeJob(String name) {
-    JOB_PATH_TEMPLATE.validate(name, "resumeJob");
+
     ResumeJobRequest request = ResumeJobRequest.newBuilder().setName(name).build();
     return resumeJob(request);
   }
@@ -766,9 +868,9 @@ public class CloudSchedulerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   String formattedName = CloudSchedulerClient.formatJobName("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
    *   ResumeJobRequest request = ResumeJobRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   Job response = cloudSchedulerClient.resumeJob(request);
    * }
@@ -795,9 +897,9 @@ public class CloudSchedulerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   String formattedName = CloudSchedulerClient.formatJobName("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
    *   ResumeJobRequest request = ResumeJobRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Job&gt; future = cloudSchedulerClient.resumeJobCallable().futureCall(request);
    *   // Do something
@@ -820,8 +922,35 @@ public class CloudSchedulerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   String formattedName = CloudSchedulerClient.formatJobName("[PROJECT]", "[LOCATION]", "[JOB]");
-   *   Job response = cloudSchedulerClient.runJob(formattedName);
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   Job response = cloudSchedulerClient.runJob(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required.
+   *     <p>The job name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Job runJob(JobName name) {
+
+    RunJobRequest request =
+        RunJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return runJob(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Forces a job to run now.
+   *
+   * <p>When this method is called, Cloud Scheduler will dispatch the job, even if the job is
+   * already running.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   Job response = cloudSchedulerClient.runJob(name.toString());
    * }
    * </code></pre>
    *
@@ -830,7 +959,7 @@ public class CloudSchedulerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Job runJob(String name) {
-    JOB_PATH_TEMPLATE.validate(name, "runJob");
+
     RunJobRequest request = RunJobRequest.newBuilder().setName(name).build();
     return runJob(request);
   }
@@ -846,9 +975,9 @@ public class CloudSchedulerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   String formattedName = CloudSchedulerClient.formatJobName("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
    *   RunJobRequest request = RunJobRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   Job response = cloudSchedulerClient.runJob(request);
    * }
@@ -872,9 +1001,9 @@ public class CloudSchedulerClient implements BackgroundResource {
    *
    * <pre><code>
    * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
-   *   String formattedName = CloudSchedulerClient.formatJobName("[PROJECT]", "[LOCATION]", "[JOB]");
+   *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
    *   RunJobRequest request = RunJobRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Job&gt; future = cloudSchedulerClient.runJobCallable().futureCall(request);
    *   // Do something

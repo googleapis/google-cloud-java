@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,34 +75,34 @@ public final class RouterNat implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("icmpIdleTimeoutSec")) {
+    if ("icmpIdleTimeoutSec".equals(fieldName)) {
       return icmpIdleTimeoutSec;
     }
-    if (fieldName.equals("minPortsPerVm")) {
+    if ("minPortsPerVm".equals(fieldName)) {
       return minPortsPerVm;
     }
-    if (fieldName.equals("name")) {
+    if ("name".equals(fieldName)) {
       return name;
     }
-    if (fieldName.equals("natIpAllocateOption")) {
+    if ("natIpAllocateOption".equals(fieldName)) {
       return natIpAllocateOption;
     }
-    if (fieldName.equals("natIps")) {
+    if ("natIps".equals(fieldName)) {
       return natIps;
     }
-    if (fieldName.equals("sourceSubnetworkIpRangesToNat")) {
+    if ("sourceSubnetworkIpRangesToNat".equals(fieldName)) {
       return sourceSubnetworkIpRangesToNat;
     }
-    if (fieldName.equals("subnetworks")) {
+    if ("subnetworks".equals(fieldName)) {
       return subnetworks;
     }
-    if (fieldName.equals("tcpEstablishedIdleTimeoutSec")) {
+    if ("tcpEstablishedIdleTimeoutSec".equals(fieldName)) {
       return tcpEstablishedIdleTimeoutSec;
     }
-    if (fieldName.equals("tcpTransitoryIdleTimeoutSec")) {
+    if ("tcpTransitoryIdleTimeoutSec".equals(fieldName)) {
       return tcpTransitoryIdleTimeoutSec;
     }
-    if (fieldName.equals("udpIdleTimeoutSec")) {
+    if ("udpIdleTimeoutSec".equals(fieldName)) {
       return udpIdleTimeoutSec;
     }
     return null;

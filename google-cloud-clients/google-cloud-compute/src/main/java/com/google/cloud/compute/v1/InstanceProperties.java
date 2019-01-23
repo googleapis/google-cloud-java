@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,40 +84,40 @@ public final class InstanceProperties implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("canIpForward")) {
+    if ("canIpForward".equals(fieldName)) {
       return canIpForward;
     }
-    if (fieldName.equals("description")) {
+    if ("description".equals(fieldName)) {
       return description;
     }
-    if (fieldName.equals("disks")) {
+    if ("disks".equals(fieldName)) {
       return disks;
     }
-    if (fieldName.equals("guestAccelerators")) {
+    if ("guestAccelerators".equals(fieldName)) {
       return guestAccelerators;
     }
-    if (fieldName.equals("labels")) {
+    if ("labels".equals(fieldName)) {
       return labels;
     }
-    if (fieldName.equals("machineType")) {
+    if ("machineType".equals(fieldName)) {
       return machineType;
     }
-    if (fieldName.equals("metadata")) {
+    if ("metadata".equals(fieldName)) {
       return metadata;
     }
-    if (fieldName.equals("minCpuPlatform")) {
+    if ("minCpuPlatform".equals(fieldName)) {
       return minCpuPlatform;
     }
-    if (fieldName.equals("networkInterfaces")) {
+    if ("networkInterfaces".equals(fieldName)) {
       return networkInterfaces;
     }
-    if (fieldName.equals("scheduling")) {
+    if ("scheduling".equals(fieldName)) {
       return scheduling;
     }
-    if (fieldName.equals("serviceAccounts")) {
+    if ("serviceAccounts".equals(fieldName)) {
       return serviceAccounts;
     }
-    if (fieldName.equals("tags")) {
+    if ("tags".equals(fieldName)) {
       return tags;
     }
     return null;
