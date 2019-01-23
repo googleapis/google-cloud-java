@@ -37,17 +37,32 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
+import com.google.spanner.admin.database.v1.Backup;
+import com.google.spanner.admin.database.v1.CreateBackupMetadata;
+import com.google.spanner.admin.database.v1.CreateBackupRequest;
 import com.google.spanner.admin.database.v1.CreateDatabaseMetadata;
 import com.google.spanner.admin.database.v1.CreateDatabaseRequest;
 import com.google.spanner.admin.database.v1.Database;
 import com.google.spanner.admin.database.v1.DatabaseName;
+import com.google.spanner.admin.database.v1.DeleteBackupRequest;
 import com.google.spanner.admin.database.v1.DropDatabaseRequest;
+import com.google.spanner.admin.database.v1.GetBackupRequest;
 import com.google.spanner.admin.database.v1.GetDatabaseDdlRequest;
 import com.google.spanner.admin.database.v1.GetDatabaseDdlResponse;
 import com.google.spanner.admin.database.v1.GetDatabaseRequest;
 import com.google.spanner.admin.database.v1.InstanceName;
+import com.google.spanner.admin.database.v1.ListBackupOperationsRequest;
+import com.google.spanner.admin.database.v1.ListBackupOperationsResponse;
+import com.google.spanner.admin.database.v1.ListBackupsRequest;
+import com.google.spanner.admin.database.v1.ListBackupsResponse;
+import com.google.spanner.admin.database.v1.ListDatabaseOperationsRequest;
+import com.google.spanner.admin.database.v1.ListDatabaseOperationsResponse;
 import com.google.spanner.admin.database.v1.ListDatabasesRequest;
 import com.google.spanner.admin.database.v1.ListDatabasesResponse;
+import com.google.spanner.admin.database.v1.RestoreDatabaseMetadata;
+import com.google.spanner.admin.database.v1.RestoreDatabaseRequest;
+import com.google.spanner.admin.database.v1.UpdateBackupRequest;
 import com.google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata;
 import com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest;
 import java.io.IOException;
@@ -461,7 +476,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    *     .setParent(parent.toString())
    *     .setCreateStatement(createStatement)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = databaseAdminClient.createDatabaseOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Database, CreateDatabaseMetadata&gt; future = databaseAdminClient.createDatabaseOperationCallable().futureCall(request);
    *   // Do something
    *   Database response = future.get();
    * }
@@ -611,7 +626,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
    *   DatabaseName database = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
    *   List&lt;String&gt; statements = new ArrayList&lt;&gt;();
-   *   Empty response = databaseAdminClient.updateDatabaseDdlAsync(database, statements).get();
+   *   databaseAdminClient.updateDatabaseDdlAsync(database, statements).get();
    * }
    * </code></pre>
    *
@@ -648,7 +663,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
    *   DatabaseName database = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
    *   List&lt;String&gt; statements = new ArrayList&lt;&gt;();
-   *   Empty response = databaseAdminClient.updateDatabaseDdlAsync(database.toString(), statements).get();
+   *   databaseAdminClient.updateDatabaseDdlAsync(database.toString(), statements).get();
    * }
    * </code></pre>
    *
@@ -689,7 +704,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    *     .setDatabase(database.toString())
    *     .addAllStatements(statements)
    *     .build();
-   *   Empty response = databaseAdminClient.updateDatabaseDdlAsync(request).get();
+   *   databaseAdminClient.updateDatabaseDdlAsync(request).get();
    * }
    * </code></pre>
    *
@@ -723,9 +738,9 @@ public class DatabaseAdminClient implements BackgroundResource {
    *     .setDatabase(database.toString())
    *     .addAllStatements(statements)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = databaseAdminClient.updateDatabaseDdlOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Empty, UpdateDatabaseDdlMetadata&gt; future = databaseAdminClient.updateDatabaseDdlOperationCallable().futureCall(request);
    *   // Do something
-   *   Empty response = future.get();
+   *   future.get();
    * }
    * </code></pre>
    */
@@ -1048,6 +1063,79 @@ public class DatabaseAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   String formattedResource = BackupName.format("[PROJECT]", "[INSTANCE]", "[BACKUP]");
+   *   Policy policy = Policy.newBuilder().build();
+   *   Policy response = databaseAdminClient.setIamPolicyOnBackupInternalOnly(formattedResource, policy);
+   * }
+   * </code></pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy is being specified. `resource` is
+   *     usually specified as a path. For example, a Project resource is specified as
+   *     `projects/{project}`.
+   * @param policy REQUIRED: The complete policy to be applied to the `resource`. The size of the
+   *     policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud
+   *     Platform services (such as Projects) might reject them.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicyOnBackupInternalOnly(String resource, Policy policy) {
+
+    SetIamPolicyRequest request =
+        SetIamPolicyRequest.newBuilder().setResource(resource).setPolicy(policy).build();
+    return setIamPolicyOnBackupInternalOnly(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   String formattedResource = BackupName.format("[PROJECT]", "[INSTANCE]", "[BACKUP]");
+   *   Policy policy = Policy.newBuilder().build();
+   *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
+   *     .setResource(formattedResource)
+   *     .setPolicy(policy)
+   *     .build();
+   *   Policy response = databaseAdminClient.setIamPolicyOnBackupInternalOnly(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicyOnBackupInternalOnly(SetIamPolicyRequest request) {
+    return setIamPolicyOnBackupInternalOnlyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   String formattedResource = BackupName.format("[PROJECT]", "[INSTANCE]", "[BACKUP]");
+   *   Policy policy = Policy.newBuilder().build();
+   *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
+   *     .setResource(formattedResource)
+   *     .setPolicy(policy)
+   *     .build();
+   *   ApiFuture&lt;Policy&gt; future = databaseAdminClient.setIamPolicyOnBackupInternalOnlyCallable().futureCall(request);
+   *   // Do something
+   *   Policy response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<SetIamPolicyRequest, Policy>
+      setIamPolicyOnBackupInternalOnlyCallable() {
+    return stub.setIamPolicyOnBackupInternalOnlyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Gets the access control policy for a database resource. Returns an empty policy if a database
    * exists but does not have a policy set.
    *
@@ -1125,6 +1213,70 @@ public class DatabaseAdminClient implements BackgroundResource {
    */
   public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return stub.getIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   String formattedResource = BackupName.format("[PROJECT]", "[INSTANCE]", "[BACKUP]");
+   *   Policy response = databaseAdminClient.getIamPolicyOnBackupInternalOnly(formattedResource);
+   * }
+   * </code></pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy is being requested. `resource` is
+   *     usually specified as a path. For example, a Project resource is specified as
+   *     `projects/{project}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicyOnBackupInternalOnly(String resource) {
+
+    GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();
+    return getIamPolicyOnBackupInternalOnly(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   String formattedResource = BackupName.format("[PROJECT]", "[INSTANCE]", "[BACKUP]");
+   *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
+   *     .setResource(formattedResource)
+   *     .build();
+   *   Policy response = databaseAdminClient.getIamPolicyOnBackupInternalOnly(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicyOnBackupInternalOnly(GetIamPolicyRequest request) {
+    return getIamPolicyOnBackupInternalOnlyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   String formattedResource = BackupName.format("[PROJECT]", "[INSTANCE]", "[BACKUP]");
+   *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
+   *     .setResource(formattedResource)
+   *     .build();
+   *   ApiFuture&lt;Policy&gt; future = databaseAdminClient.getIamPolicyOnBackupInternalOnlyCallable().futureCall(request);
+   *   // Do something
+   *   Policy response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetIamPolicyRequest, Policy>
+      getIamPolicyOnBackupInternalOnlyCallable() {
+    return stub.getIamPolicyOnBackupInternalOnlyCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -1220,6 +1372,916 @@ public class DatabaseAdminClient implements BackgroundResource {
   public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return stub.testIamPermissionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   String formattedResource = BackupName.format("[PROJECT]", "[INSTANCE]", "[BACKUP]");
+   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
+   *   TestIamPermissionsResponse response = databaseAdminClient.testIamPermissionsOnBackupInternalOnly(formattedResource, permissions);
+   * }
+   * </code></pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy detail is being requested.
+   *     `resource` is usually specified as a path. For example, a Project resource is specified as
+   *     `projects/{project}`.
+   * @param permissions The set of permissions to check for the `resource`. Permissions with
+   *     wildcards (such as '&#42;' or 'storage.&#42;') are not allowed. For more information see
+   *     [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestIamPermissionsResponse testIamPermissionsOnBackupInternalOnly(
+      String resource, List<String> permissions) {
+
+    TestIamPermissionsRequest request =
+        TestIamPermissionsRequest.newBuilder()
+            .setResource(resource)
+            .addAllPermissions(permissions)
+            .build();
+    return testIamPermissionsOnBackupInternalOnly(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   String formattedResource = BackupName.format("[PROJECT]", "[INSTANCE]", "[BACKUP]");
+   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
+   *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
+   *     .setResource(formattedResource)
+   *     .addAllPermissions(permissions)
+   *     .build();
+   *   TestIamPermissionsResponse response = databaseAdminClient.testIamPermissionsOnBackupInternalOnly(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestIamPermissionsResponse testIamPermissionsOnBackupInternalOnly(
+      TestIamPermissionsRequest request) {
+    return testIamPermissionsOnBackupInternalOnlyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   String formattedResource = BackupName.format("[PROJECT]", "[INSTANCE]", "[BACKUP]");
+   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
+   *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
+   *     .setResource(formattedResource)
+   *     .addAllPermissions(permissions)
+   *     .build();
+   *   ApiFuture&lt;TestIamPermissionsResponse&gt; future = databaseAdminClient.testIamPermissionsOnBackupInternalOnlyCallable().futureCall(request);
+   *   // Do something
+   *   TestIamPermissionsResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsOnBackupInternalOnlyCallable() {
+    return stub.testIamPermissionsOnBackupInternalOnlyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   String formattedParent = InstanceName.format("[PROJECT]", "[INSTANCE]");
+   *   String backupId = "";
+   *   Backup backup = Backup.newBuilder().build();
+   *   databaseAdminClient.createBackupAsync(formattedParent, backupId, backup).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The name of the instance in which the backup will be created. This must
+   *     be the same instance that contains the database the backup will be created from. The backup
+   *     will be stored in the location(s) specified in the instance configuration of this instance.
+   *     Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * @param backupId Required. The id of the backup to be created. The `backup_id` appended to
+   *     `parent` forms the full backup name of the form
+   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/backups/&lt;backup_id&gt;`.
+   * @param backup Required. The backup to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, CreateBackupMetadata> createBackupAsync(
+      String parent, String backupId, Backup backup) {
+
+    CreateBackupRequest request =
+        CreateBackupRequest.newBuilder()
+            .setParent(parent)
+            .setBackupId(backupId)
+            .setBackup(backup)
+            .build();
+    return createBackupAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   String formattedParent = InstanceName.format("[PROJECT]", "[INSTANCE]");
+   *   String backupId = "";
+   *   Backup backup = Backup.newBuilder().build();
+   *   CreateBackupRequest request = CreateBackupRequest.newBuilder()
+   *     .setParent(formattedParent)
+   *     .setBackupId(backupId)
+   *     .setBackup(backup)
+   *     .build();
+   *   databaseAdminClient.createBackupAsync(request).get();
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, CreateBackupMetadata> createBackupAsync(
+      CreateBackupRequest request) {
+    return createBackupOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   String formattedParent = InstanceName.format("[PROJECT]", "[INSTANCE]");
+   *   String backupId = "";
+   *   Backup backup = Backup.newBuilder().build();
+   *   CreateBackupRequest request = CreateBackupRequest.newBuilder()
+   *     .setParent(formattedParent)
+   *     .setBackupId(backupId)
+   *     .setBackup(backup)
+   *     .build();
+   *   OperationFuture&lt;Empty, CreateBackupMetadata&gt; future = databaseAdminClient.createBackupOperationCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<CreateBackupRequest, Empty, CreateBackupMetadata>
+      createBackupOperationCallable() {
+    return stub.createBackupOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   String formattedParent = InstanceName.format("[PROJECT]", "[INSTANCE]");
+   *   String backupId = "";
+   *   Backup backup = Backup.newBuilder().build();
+   *   CreateBackupRequest request = CreateBackupRequest.newBuilder()
+   *     .setParent(formattedParent)
+   *     .setBackupId(backupId)
+   *     .setBackup(backup)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = databaseAdminClient.createBackupCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<CreateBackupRequest, Operation> createBackupCallable() {
+    return stub.createBackupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   String formattedName = BackupName.format("[PROJECT]", "[INSTANCE]", "[BACKUP]");
+   *   Backup response = databaseAdminClient.getBackup(formattedName);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Name of the backup. Values are of the form
+   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/backups/&lt;backup&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Backup getBackup(String name) {
+
+    GetBackupRequest request = GetBackupRequest.newBuilder().setName(name).build();
+    return getBackup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   String formattedName = BackupName.format("[PROJECT]", "[INSTANCE]", "[BACKUP]");
+   *   GetBackupRequest request = GetBackupRequest.newBuilder()
+   *     .setName(formattedName)
+   *     .build();
+   *   Backup response = databaseAdminClient.getBackup(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Backup getBackup(GetBackupRequest request) {
+    return getBackupCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   String formattedName = BackupName.format("[PROJECT]", "[INSTANCE]", "[BACKUP]");
+   *   GetBackupRequest request = GetBackupRequest.newBuilder()
+   *     .setName(formattedName)
+   *     .build();
+   *   ApiFuture&lt;Backup&gt; future = databaseAdminClient.getBackupCallable().futureCall(request);
+   *   // Do something
+   *   Backup response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetBackupRequest, Backup> getBackupCallable() {
+    return stub.getBackupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   Backup backup = Backup.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Backup response = databaseAdminClient.updateBackup(backup, updateMask);
+   * }
+   * </code></pre>
+   *
+   * @param backup Required. The backup to update. `backup.name`, and the fields to be updated as
+   *     specified by `update_mask` are required. Other fields are ignored. Update is only supported
+   *     for the following fields: &#42; `backup.expire_time`.
+   * @param updateMask Required. A mask specifying which fields (e.g. `backup.expire_time`) in the
+   *     Backup resource should be updated. This mask is relative to the Backup resource, not to the
+   *     request message. The field mask must always be specified; this prevents any future fields
+   *     from being erased accidentally by clients that do not know about them.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Backup updateBackup(Backup backup, FieldMask updateMask) {
+
+    UpdateBackupRequest request =
+        UpdateBackupRequest.newBuilder().setBackup(backup).setUpdateMask(updateMask).build();
+    return updateBackup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   Backup backup = Backup.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   UpdateBackupRequest request = UpdateBackupRequest.newBuilder()
+   *     .setBackup(backup)
+   *     .setUpdateMask(updateMask)
+   *     .build();
+   *   Backup response = databaseAdminClient.updateBackup(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Backup updateBackup(UpdateBackupRequest request) {
+    return updateBackupCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   Backup backup = Backup.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   UpdateBackupRequest request = UpdateBackupRequest.newBuilder()
+   *     .setBackup(backup)
+   *     .setUpdateMask(updateMask)
+   *     .build();
+   *   ApiFuture&lt;Backup&gt; future = databaseAdminClient.updateBackupCallable().futureCall(request);
+   *   // Do something
+   *   Backup response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<UpdateBackupRequest, Backup> updateBackupCallable() {
+    return stub.updateBackupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   String formattedName = BackupName.format("[PROJECT]", "[INSTANCE]", "[BACKUP]");
+   *   databaseAdminClient.deleteBackup(formattedName);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. Name of the backup to delete. Values are of the form
+   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/backups/&lt;backup&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteBackup(String name) {
+
+    DeleteBackupRequest request = DeleteBackupRequest.newBuilder().setName(name).build();
+    deleteBackup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   String formattedName = BackupName.format("[PROJECT]", "[INSTANCE]", "[BACKUP]");
+   *   DeleteBackupRequest request = DeleteBackupRequest.newBuilder()
+   *     .setName(formattedName)
+   *     .build();
+   *   databaseAdminClient.deleteBackup(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteBackup(DeleteBackupRequest request) {
+    deleteBackupCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   String formattedName = BackupName.format("[PROJECT]", "[INSTANCE]", "[BACKUP]");
+   *   DeleteBackupRequest request = DeleteBackupRequest.newBuilder()
+   *     .setName(formattedName)
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = databaseAdminClient.deleteBackupCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteBackupRequest, Empty> deleteBackupCallable() {
+    return stub.deleteBackupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   String formattedParent = InstanceName.format("[PROJECT]", "[INSTANCE]");
+   *   String filter = "";
+   *   String orderBy = "";
+   *   for (Backup element : databaseAdminClient.listBackups(formattedParent, filter, orderBy).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The instance to list backups from. Values are of the form
+   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * @param filter A filter expression that filters backups listed in the response. The expression
+   *     must specify the field name, a comparison operator, and the value that you want to use for
+   *     filtering. The value must be a string, a number, or a boolean. The comparison operator must
+   *     be &lt;, &gt;, &lt;=, &gt;=, !=, =, or :. Colon ‘:’ represents a HAS operator which is
+   *     roughly synonymous with equality. Filter rules are case insensitive.
+   *     <p>The fields eligible for filtering are: &#42; `name` &#42; `database` &#42; `state` &#42;
+   *     `create_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ) &#42; `expire_time` (and
+   *     values are of the format YYYY-MM-DDTHH:MM:SSZ) &#42; `size_bytes`
+   *     <p>To filter on multiple expressions, provide each separate expression within parentheses.
+   *     By default, each expression is an AND expression. However, you can include AND, OR, and NOT
+   *     expressions explicitly.
+   *     <p>Some examples of using filters are:
+   *     <p>&#42; `name:Howl` --&gt; The backup's name contains the string "howl". &#42;
+   *     `database:prod` --&gt; The database's name contains the string "prod". &#42;
+   *     `state:CREATING` --&gt; The backup is pending creation. &#42; `state:READY` --&gt; The
+   *     backup is fully created and ready for use. &#42; `(name:howl) AND (create_time &lt;
+   *     \"2018-03-28T14:50:00Z\")` --&gt; The backup name contains the string "howl" and
+   *     `create_time` of the backup is before 2018-03-28T14:50:00Z. &#42; `expire_time &lt;
+   *     \"2018-03-28T14:50:00Z\"` --&gt; The backup `expire_time` is before 2018-03-28T14:50:00Z.
+   *     &#42; `size_bytes &gt; 10000000000` --&gt; The backup's size is greater than 10GB
+   * @param orderBy An expression for specifying the sort order of the results of the request. The
+   *     string value should specify only one field in
+   *     [Backup][google.spanner.admin.database.v1.Backup]. Fields supported are: &#42; name &#42;
+   *     database &#42; expire_time &#42; create_time &#42; size_bytes &#42; state
+   *     <p>For example, "create_time". The default sorting order is ascending. To specify
+   *     descending order for the field, a suffix " desc" should be appended to the field name. For
+   *     example, "create_time desc". Redundant space characters in the syntax are insigificant.
+   *     <p>If order_by is empty, results will be sorted by `create_time` in descending order
+   *     starting from the most recently created backup.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBackupsPagedResponse listBackups(String parent, String filter, String orderBy) {
+    ListBackupsRequest request =
+        ListBackupsRequest.newBuilder()
+            .setParent(parent)
+            .setFilter(filter)
+            .setOrderBy(orderBy)
+            .build();
+    return listBackups(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   String formattedParent = InstanceName.format("[PROJECT]", "[INSTANCE]");
+   *   String filter = "";
+   *   String orderBy = "";
+   *   ListBackupsRequest request = ListBackupsRequest.newBuilder()
+   *     .setParent(formattedParent)
+   *     .setFilter(filter)
+   *     .setOrderBy(orderBy)
+   *     .build();
+   *   for (Backup element : databaseAdminClient.listBackups(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBackupsPagedResponse listBackups(ListBackupsRequest request) {
+    return listBackupsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   String formattedParent = InstanceName.format("[PROJECT]", "[INSTANCE]");
+   *   String filter = "";
+   *   String orderBy = "";
+   *   ListBackupsRequest request = ListBackupsRequest.newBuilder()
+   *     .setParent(formattedParent)
+   *     .setFilter(filter)
+   *     .setOrderBy(orderBy)
+   *     .build();
+   *   ApiFuture&lt;ListBackupsPagedResponse&gt; future = databaseAdminClient.listBackupsPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (Backup element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse>
+      listBackupsPagedCallable() {
+    return stub.listBackupsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   String formattedParent = InstanceName.format("[PROJECT]", "[INSTANCE]");
+   *   String filter = "";
+   *   String orderBy = "";
+   *   ListBackupsRequest request = ListBackupsRequest.newBuilder()
+   *     .setParent(formattedParent)
+   *     .setFilter(filter)
+   *     .setOrderBy(orderBy)
+   *     .build();
+   *   while (true) {
+   *     ListBackupsResponse response = databaseAdminClient.listBackupsCallable().call(request);
+   *     for (Backup element : response.getBackupsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable() {
+    return stub.listBackupsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   String formattedParent = InstanceName.format("[PROJECT]", "[INSTANCE]");
+   *   String databaseId = "";
+   *   databaseAdminClient.restoreDatabaseAsync(formattedParent, databaseId).get();
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The name of the instance in which to create the restored database. This
+   *     instance must be in the same project and have the same instance configuration as the
+   *     instance containing the source backup. Values are of the form
+   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;.
+   * @param databaseId Required. The id of the database to create and restore to. This database must
+   *     not already exist. The `database_id` appended to `parent` forms the full database name of
+   *     the form
+   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/databases/&lt;database_id&gt;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, RestoreDatabaseMetadata> restoreDatabaseAsync(
+      String parent, String databaseId) {
+
+    RestoreDatabaseRequest request =
+        RestoreDatabaseRequest.newBuilder().setParent(parent).setDatabaseId(databaseId).build();
+    return restoreDatabaseAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   String formattedParent = InstanceName.format("[PROJECT]", "[INSTANCE]");
+   *   String databaseId = "";
+   *   RestoreDatabaseRequest request = RestoreDatabaseRequest.newBuilder()
+   *     .setParent(formattedParent)
+   *     .setDatabaseId(databaseId)
+   *     .build();
+   *   databaseAdminClient.restoreDatabaseAsync(request).get();
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, RestoreDatabaseMetadata> restoreDatabaseAsync(
+      RestoreDatabaseRequest request) {
+    return restoreDatabaseOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   String formattedParent = InstanceName.format("[PROJECT]", "[INSTANCE]");
+   *   String databaseId = "";
+   *   RestoreDatabaseRequest request = RestoreDatabaseRequest.newBuilder()
+   *     .setParent(formattedParent)
+   *     .setDatabaseId(databaseId)
+   *     .build();
+   *   OperationFuture&lt;Empty, RestoreDatabaseMetadata&gt; future = databaseAdminClient.restoreDatabaseOperationCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public final OperationCallable<RestoreDatabaseRequest, Empty, RestoreDatabaseMetadata>
+      restoreDatabaseOperationCallable() {
+    return stub.restoreDatabaseOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   String formattedParent = InstanceName.format("[PROJECT]", "[INSTANCE]");
+   *   String databaseId = "";
+   *   RestoreDatabaseRequest request = RestoreDatabaseRequest.newBuilder()
+   *     .setParent(formattedParent)
+   *     .setDatabaseId(databaseId)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = databaseAdminClient.restoreDatabaseCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<RestoreDatabaseRequest, Operation> restoreDatabaseCallable() {
+    return stub.restoreDatabaseCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   String formattedParent = InstanceName.format("[PROJECT]", "[INSTANCE]");
+   *   String filter = "";
+   *   for (Operation element : databaseAdminClient.listDatabaseOperations(formattedParent, filter).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The instance of the database operations. Values are of the form
+   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * @param filter A filter expression that filters what operations are returned in the response.
+   *     <p>The response returns a list of [long-running operations][google.longrunning.Operation]
+   *     whose names are prefixed by a database name within the specified instance. The long-running
+   *     operation [metadata][google.longrunning.Operation.metadata] field type `metadata.type_url`
+   *     describes the type of the metadata.
+   *     <p>The filter expression must specify the field name, a comparison operator, and the value
+   *     that you want to use for filtering. The value must be a string, a number, or a boolean. The
+   *     comparison operator must be &lt;, &gt;, &lt;=, &gt;=, !=, =, or :. Colon ‘:’ represents a
+   *     HAS operator which is roughly synonymous with equality. Filter rules are case insensitive.
+   *     <p>The long-running operation fields eligible for filtering are: &#42; `name` --&gt; The
+   *     name of the long-running operation &#42; `done` --&gt; False if the operation is in
+   *     progress, else true. &#42; `metadata.type_url` (using filter string
+   *     `metadata.{@literal @}type`) and fields in `metadata.value` (using filter string
+   *     `metadata.&lt;field_name&gt;`, where &lt;field_name&gt; is a field in metadata.value) are
+   *     eligible for filtering.
+   *     <p>To filter on multiple expressions, provide each separate expression within parentheses.
+   *     By default, each expression is an AND expression. However, you can include AND, OR, and NOT
+   *     expressions explicitly.
+   *     <p>Some examples of using filters are:
+   *     <p>&#42; `done:true` --&gt; The operation is complete. &#42;
+   *     `(metadata.{@literal @}type:type.googleapis.com/google.spanner.admin.database.v1.RestoreDatabaseMetadata)
+   *     AND (metadata.source_type:BACKUP) AND (metadata.backup_info.backup:backup_howl) AND
+   *     (metadata.name:restored_howl) AND (metadata.progress.start_time &lt;
+   *     \"2018-03-28T14:50:00Z\") AND (error:&#42;)` --&gt; Return RestoreDatabase operations from
+   *     backups whose name contains "backup_howl", where the created database name contains the
+   *     string "restored_howl", the start_time of the restore operation is before
+   *     2018-03-28T14:50:00Z, and the operation returned an error.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDatabaseOperationsPagedResponse listDatabaseOperations(
+      String parent, String filter) {
+    ListDatabaseOperationsRequest request =
+        ListDatabaseOperationsRequest.newBuilder().setParent(parent).setFilter(filter).build();
+    return listDatabaseOperations(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   String formattedParent = InstanceName.format("[PROJECT]", "[INSTANCE]");
+   *   String filter = "";
+   *   ListDatabaseOperationsRequest request = ListDatabaseOperationsRequest.newBuilder()
+   *     .setParent(formattedParent)
+   *     .setFilter(filter)
+   *     .build();
+   *   for (Operation element : databaseAdminClient.listDatabaseOperations(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDatabaseOperationsPagedResponse listDatabaseOperations(
+      ListDatabaseOperationsRequest request) {
+    return listDatabaseOperationsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   String formattedParent = InstanceName.format("[PROJECT]", "[INSTANCE]");
+   *   String filter = "";
+   *   ListDatabaseOperationsRequest request = ListDatabaseOperationsRequest.newBuilder()
+   *     .setParent(formattedParent)
+   *     .setFilter(filter)
+   *     .build();
+   *   ApiFuture&lt;ListDatabaseOperationsPagedResponse&gt; future = databaseAdminClient.listDatabaseOperationsPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (Operation element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListDatabaseOperationsRequest, ListDatabaseOperationsPagedResponse>
+      listDatabaseOperationsPagedCallable() {
+    return stub.listDatabaseOperationsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   String formattedParent = InstanceName.format("[PROJECT]", "[INSTANCE]");
+   *   String filter = "";
+   *   ListDatabaseOperationsRequest request = ListDatabaseOperationsRequest.newBuilder()
+   *     .setParent(formattedParent)
+   *     .setFilter(filter)
+   *     .build();
+   *   while (true) {
+   *     ListDatabaseOperationsResponse response = databaseAdminClient.listDatabaseOperationsCallable().call(request);
+   *     for (Operation element : response.getOperationsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListDatabaseOperationsRequest, ListDatabaseOperationsResponse>
+      listDatabaseOperationsCallable() {
+    return stub.listDatabaseOperationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   String formattedParent = InstanceName.format("[PROJECT]", "[INSTANCE]");
+   *   String filter = "";
+   *   for (Operation element : databaseAdminClient.listBackupOperations(formattedParent, filter).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The instance of the backup operations. Values are of the form
+   *     `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
+   * @param filter A filter expression that filters what operations are returned in the response.
+   *     <p>The response returns a list of [long-running operations][google.longrunning.Operation]
+   *     whose names are prefixed by a backup name within the specified instance. The long-running
+   *     operation [metadata][google.longrunning.Operation.metadata] field type `metadata.type_url`
+   *     describes the type of the metadata.
+   *     <p>The filter expression must specify the field name of an operation, a comparison
+   *     operator, and the value that you want to use for filtering. The value must be a string, a
+   *     number, or a boolean. The comparison operator must be &lt;, &gt;, &lt;=, &gt;=, !=, =, or
+   *     :. Colon ‘:’ represents a HAS operator which is roughly synonymous with equality. Filter
+   *     rules are case insensitive.
+   *     <p>The long-running operation fields eligible for filtering are: &#42; `name` --&gt; The
+   *     name of the long-running operation &#42; `done` --&gt; False if the operation is in
+   *     progress, else true. &#42; `metadata.type_url` (using filter string
+   *     `metadata.{@literal @}type`) and fields in `metadata.value` (using filter string
+   *     `metadata.&lt;field_name&gt;`, where &lt;field_name&gt; is a field in metadata.value) are
+   *     eligible for filtering.
+   *     <p>To filter on multiple expressions, provide each separate expression within parentheses.
+   *     By default, each expression is an AND expression. However, you can include AND, OR, and NOT
+   *     expressions explicitly.
+   *     <p>Some examples of using filters are:
+   *     <p>&#42; `done:true` --&gt; The operation is complete. &#42; `metadata.database:prod`
+   *     --&gt; The database the backup was taken from has a name containing the string "prod".
+   *     &#42;
+   *     `(metadata.{@literal @}type:type.googleapis.com/google.spanner.admin.database.v1.CreateBackupMetadata)
+   *     AND (metadata.name:howl) AND (metadata.progress.start_time &lt; \"2018-03-28T14:50:00Z\")
+   *     AND (error:&#42;)` --&gt; Return CreateBackup operations where the created backup name
+   *     contains the string "howl", the progress.start_time of the backup operation is before
+   *     2018-03-28T14:50:00Z, and the operation returned an error.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBackupOperationsPagedResponse listBackupOperations(
+      String parent, String filter) {
+    ListBackupOperationsRequest request =
+        ListBackupOperationsRequest.newBuilder().setParent(parent).setFilter(filter).build();
+    return listBackupOperations(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   String formattedParent = InstanceName.format("[PROJECT]", "[INSTANCE]");
+   *   String filter = "";
+   *   ListBackupOperationsRequest request = ListBackupOperationsRequest.newBuilder()
+   *     .setParent(formattedParent)
+   *     .setFilter(filter)
+   *     .build();
+   *   for (Operation element : databaseAdminClient.listBackupOperations(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBackupOperationsPagedResponse listBackupOperations(
+      ListBackupOperationsRequest request) {
+    return listBackupOperationsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   String formattedParent = InstanceName.format("[PROJECT]", "[INSTANCE]");
+   *   String filter = "";
+   *   ListBackupOperationsRequest request = ListBackupOperationsRequest.newBuilder()
+   *     .setParent(formattedParent)
+   *     .setFilter(filter)
+   *     .build();
+   *   ApiFuture&lt;ListBackupOperationsPagedResponse&gt; future = databaseAdminClient.listBackupOperationsPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (Operation element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListBackupOperationsRequest, ListBackupOperationsPagedResponse>
+      listBackupOperationsPagedCallable() {
+    return stub.listBackupOperationsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sample code:
+   *
+   * <pre><code>
+   * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
+   *   String formattedParent = InstanceName.format("[PROJECT]", "[INSTANCE]");
+   *   String filter = "";
+   *   ListBackupOperationsRequest request = ListBackupOperationsRequest.newBuilder()
+   *     .setParent(formattedParent)
+   *     .setFilter(filter)
+   *     .build();
+   *   while (true) {
+   *     ListBackupOperationsResponse response = databaseAdminClient.listBackupOperationsCallable().call(request);
+   *     for (Operation element : response.getOperationsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListBackupOperationsRequest, ListBackupOperationsResponse>
+      listBackupOperationsCallable() {
+    return stub.listBackupOperationsCallable();
   }
 
   @Override
@@ -1329,6 +2391,257 @@ public class DatabaseAdminClient implements BackgroundResource {
     protected ListDatabasesFixedSizeCollection createCollection(
         List<ListDatabasesPage> pages, int collectionSize) {
       return new ListDatabasesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListBackupsPagedResponse
+      extends AbstractPagedListResponse<
+          ListBackupsRequest,
+          ListBackupsResponse,
+          Backup,
+          ListBackupsPage,
+          ListBackupsFixedSizeCollection> {
+
+    public static ApiFuture<ListBackupsPagedResponse> createAsync(
+        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        ApiFuture<ListBackupsResponse> futureResponse) {
+      ApiFuture<ListBackupsPage> futurePage =
+          ListBackupsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListBackupsPage, ListBackupsPagedResponse>() {
+            @Override
+            public ListBackupsPagedResponse apply(ListBackupsPage input) {
+              return new ListBackupsPagedResponse(input);
+            }
+          });
+    }
+
+    private ListBackupsPagedResponse(ListBackupsPage page) {
+      super(page, ListBackupsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListBackupsPage
+      extends AbstractPage<ListBackupsRequest, ListBackupsResponse, Backup, ListBackupsPage> {
+
+    private ListBackupsPage(
+        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        ListBackupsResponse response) {
+      super(context, response);
+    }
+
+    private static ListBackupsPage createEmptyPage() {
+      return new ListBackupsPage(null, null);
+    }
+
+    @Override
+    protected ListBackupsPage createPage(
+        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        ListBackupsResponse response) {
+      return new ListBackupsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListBackupsPage> createPageAsync(
+        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        ApiFuture<ListBackupsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListBackupsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListBackupsRequest,
+          ListBackupsResponse,
+          Backup,
+          ListBackupsPage,
+          ListBackupsFixedSizeCollection> {
+
+    private ListBackupsFixedSizeCollection(List<ListBackupsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListBackupsFixedSizeCollection createEmptyCollection() {
+      return new ListBackupsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListBackupsFixedSizeCollection createCollection(
+        List<ListBackupsPage> pages, int collectionSize) {
+      return new ListBackupsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListDatabaseOperationsPagedResponse
+      extends AbstractPagedListResponse<
+          ListDatabaseOperationsRequest,
+          ListDatabaseOperationsResponse,
+          Operation,
+          ListDatabaseOperationsPage,
+          ListDatabaseOperationsFixedSizeCollection> {
+
+    public static ApiFuture<ListDatabaseOperationsPagedResponse> createAsync(
+        PageContext<ListDatabaseOperationsRequest, ListDatabaseOperationsResponse, Operation>
+            context,
+        ApiFuture<ListDatabaseOperationsResponse> futureResponse) {
+      ApiFuture<ListDatabaseOperationsPage> futurePage =
+          ListDatabaseOperationsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListDatabaseOperationsPage, ListDatabaseOperationsPagedResponse>() {
+            @Override
+            public ListDatabaseOperationsPagedResponse apply(ListDatabaseOperationsPage input) {
+              return new ListDatabaseOperationsPagedResponse(input);
+            }
+          });
+    }
+
+    private ListDatabaseOperationsPagedResponse(ListDatabaseOperationsPage page) {
+      super(page, ListDatabaseOperationsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListDatabaseOperationsPage
+      extends AbstractPage<
+          ListDatabaseOperationsRequest,
+          ListDatabaseOperationsResponse,
+          Operation,
+          ListDatabaseOperationsPage> {
+
+    private ListDatabaseOperationsPage(
+        PageContext<ListDatabaseOperationsRequest, ListDatabaseOperationsResponse, Operation>
+            context,
+        ListDatabaseOperationsResponse response) {
+      super(context, response);
+    }
+
+    private static ListDatabaseOperationsPage createEmptyPage() {
+      return new ListDatabaseOperationsPage(null, null);
+    }
+
+    @Override
+    protected ListDatabaseOperationsPage createPage(
+        PageContext<ListDatabaseOperationsRequest, ListDatabaseOperationsResponse, Operation>
+            context,
+        ListDatabaseOperationsResponse response) {
+      return new ListDatabaseOperationsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListDatabaseOperationsPage> createPageAsync(
+        PageContext<ListDatabaseOperationsRequest, ListDatabaseOperationsResponse, Operation>
+            context,
+        ApiFuture<ListDatabaseOperationsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListDatabaseOperationsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListDatabaseOperationsRequest,
+          ListDatabaseOperationsResponse,
+          Operation,
+          ListDatabaseOperationsPage,
+          ListDatabaseOperationsFixedSizeCollection> {
+
+    private ListDatabaseOperationsFixedSizeCollection(
+        List<ListDatabaseOperationsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListDatabaseOperationsFixedSizeCollection createEmptyCollection() {
+      return new ListDatabaseOperationsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListDatabaseOperationsFixedSizeCollection createCollection(
+        List<ListDatabaseOperationsPage> pages, int collectionSize) {
+      return new ListDatabaseOperationsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListBackupOperationsPagedResponse
+      extends AbstractPagedListResponse<
+          ListBackupOperationsRequest,
+          ListBackupOperationsResponse,
+          Operation,
+          ListBackupOperationsPage,
+          ListBackupOperationsFixedSizeCollection> {
+
+    public static ApiFuture<ListBackupOperationsPagedResponse> createAsync(
+        PageContext<ListBackupOperationsRequest, ListBackupOperationsResponse, Operation> context,
+        ApiFuture<ListBackupOperationsResponse> futureResponse) {
+      ApiFuture<ListBackupOperationsPage> futurePage =
+          ListBackupOperationsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListBackupOperationsPage, ListBackupOperationsPagedResponse>() {
+            @Override
+            public ListBackupOperationsPagedResponse apply(ListBackupOperationsPage input) {
+              return new ListBackupOperationsPagedResponse(input);
+            }
+          });
+    }
+
+    private ListBackupOperationsPagedResponse(ListBackupOperationsPage page) {
+      super(page, ListBackupOperationsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListBackupOperationsPage
+      extends AbstractPage<
+          ListBackupOperationsRequest,
+          ListBackupOperationsResponse,
+          Operation,
+          ListBackupOperationsPage> {
+
+    private ListBackupOperationsPage(
+        PageContext<ListBackupOperationsRequest, ListBackupOperationsResponse, Operation> context,
+        ListBackupOperationsResponse response) {
+      super(context, response);
+    }
+
+    private static ListBackupOperationsPage createEmptyPage() {
+      return new ListBackupOperationsPage(null, null);
+    }
+
+    @Override
+    protected ListBackupOperationsPage createPage(
+        PageContext<ListBackupOperationsRequest, ListBackupOperationsResponse, Operation> context,
+        ListBackupOperationsResponse response) {
+      return new ListBackupOperationsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListBackupOperationsPage> createPageAsync(
+        PageContext<ListBackupOperationsRequest, ListBackupOperationsResponse, Operation> context,
+        ApiFuture<ListBackupOperationsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListBackupOperationsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListBackupOperationsRequest,
+          ListBackupOperationsResponse,
+          Operation,
+          ListBackupOperationsPage,
+          ListBackupOperationsFixedSizeCollection> {
+
+    private ListBackupOperationsFixedSizeCollection(
+        List<ListBackupOperationsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListBackupOperationsFixedSizeCollection createEmptyCollection() {
+      return new ListBackupOperationsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListBackupOperationsFixedSizeCollection createCollection(
+        List<ListBackupOperationsPage> pages, int collectionSize) {
+      return new ListBackupOperationsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

@@ -1,0 +1,326 @@
+// Copyright 2018 Google LLC.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+
+syntax = "proto3";
+
+package google.spanner.admin.database.v1;
+
+import "google/api/annotations.proto";
+import "google/longrunning/operations.proto";
+import "google/protobuf/field_mask.proto";
+import "google/protobuf/timestamp.proto";
+import "google/spanner/admin/database/v1/common.proto";
+
+option csharp_namespace = "Google.Cloud.Spanner.Admin.Database.V1";
+option go_package = "google.golang.org/genproto/googleapis/spanner/admin/database/v1;database";
+option java_package = "com.google.spanner.admin.database.v1";
+option java_multiple_files = true;
+
+
+message Backup {
+  // Indicates the current state of the backup.
+  enum State {
+    // Not specified.
+    STATE_UNSPECIFIED = 0;
+
+    // The pending backup is still being created. Operations on the
+    // backup may fail with `FAILED_PRECONDITION` in this state.
+    CREATING = 1;
+
+    // The backup is complete and ready for use.
+    READY = 2;
+  }
+
+  // Output only. A globally unique identifier for the backup which cannot be
+  // changed. Values are of the form
+  // `projects/<project>/instances/<instance>/backups/[a-z][a-z0-9_\-]*[a-z0-9]`
+  // The final segment of the name must be between 2 and 60 characters
+  // in length.
+  //
+  // The backup is stored in the location(s) specified in the instance
+  // configuration of the instance containing the backup, identified
+  // by the prefix of the backup name of the form
+  // `projects/<project>/instances/<instance>`.
+  string name = 1;
+
+  // Required for the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] operation.
+  // Name of the database from which this backup was
+  // created. This needs to be in the same instance as the backup.
+  // Values are of the form
+  // `projects/<project>/instances/<instance>/databases/<database>`.
+  string database = 2;
+
+  // Required for the [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup]
+  // operation. The expiration time of the backup, with microseconds
+  // granularity that must be at least 6 hours and at most 366 days
+  // from the time the request is received. Once the `expire_time`
+  // has passed, Cloud Spanner will delete the backup and free the
+  // resources used by the backup.
+  google.protobuf.Timestamp expire_time = 3;
+
+  // Output only. The backup will contain an externally consistent
+  // copy of the database at the timestamp specified by
+  // `create_time`. `create_time` is approximately the time the
+  // [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] request is received.
+  google.protobuf.Timestamp create_time = 4;
+
+  // Output only. Size of the backup in bytes.
+  int64 size_bytes = 5;
+
+  // Output only. The current state of the backup.
+  State state = 6;
+
+  // Output only. The names of the restored databases that reference the backup.
+  // The database names are of
+  // the form `projects/<project>/instances/<instance>/databases/<database>`.
+  // Referencing databases may exist in different instances. The existence of
+  // any referencing database prevents the backup from being deleted. When a
+  // restored database from the backup enters the `READY` state, the reference
+  // to the backup is removed.
+  repeated string referencing_databases = 7;
+}
+
+message CreateBackupRequest {
+  // Required. The name of the instance in which the backup will be
+  // created. This must be the same instance that contains the database the
+  // backup will be created from. The backup will be stored in the
+  // location(s) specified in the instance configuration of this
+  // instance. Values are of the form
+  // `projects/<project>/instances/<instance>`.
+  string parent = 1;
+
+  // Required. The id of the backup to be created. The `backup_id` appended to
+  // `parent` forms the full backup name of the form
+  // `projects/<project>/instances/<instance>/backups/<backup_id>`.
+  string backup_id = 2;
+
+  // Required. The backup to create.
+  Backup backup = 3;
+}
+
+message CreateBackupMetadata {
+  // The name of the backup being created.
+  string name = 1;
+
+  // The name of the database the backup is created from.
+  string database = 2;
+
+  // The progress of the
+  // [CreateBackup][google.spanner.admin.database.v1.DatabaseAdmin.CreateBackup] operation.
+  OperationProgress progress = 3;
+
+  // The time at which this operation was cancelled. If set, this operation is
+  // in the process of undoing itself (which is guaranteed to succeed) and
+  // cannot be cancelled again.
+  google.protobuf.Timestamp cancel_time = 4;
+}
+
+message UpdateBackupRequest {
+  // Required. The backup to update. `backup.name`, and the fields to be updated
+  // as specified by `update_mask` are required. Other fields are ignored.
+  // Update is only supported for the following fields:
+  //  * `backup.expire_time`.
+  Backup backup = 1;
+
+  // Required. A mask specifying which fields (e.g. `backup.expire_time`) in the
+  // Backup resource should be updated. This mask is relative to the Backup
+  // resource, not to the request message. The field mask must always be
+  // specified; this prevents any future fields from being erased accidentally
+  // by clients that do not know about them.
+  google.protobuf.FieldMask update_mask = 2;
+}
+
+message GetBackupRequest {
+  // Required. Name of the backup.
+  // Values are of the form
+  // `projects/<project>/instances/<instance>/backups/<backup>`.
+  string name = 1;
+}
+
+message DeleteBackupRequest {
+  // Required. Name of the backup to delete.
+  // Values are of the form
+  // `projects/<project>/instances/<instance>/backups/<backup>`.
+  string name = 1;
+}
+
+message ListBackupsRequest {
+  // Required. The instance to list backups from.  Values are of the
+  // form `projects/<project>/instances/<instance>`.
+  string parent = 1;
+
+  // A filter expression that filters backups listed in the response.
+  // The expression must specify the field name, a comparison operator,
+  // and the value that you want to use for filtering. The value must be a
+  // string, a number, or a boolean. The comparison operator must be
+  // <, >, <=, >=, !=, =, or :. Colon ‘:’ represents a HAS operator which is
+  // roughly synonymous with equality. Filter rules are case insensitive.
+  //
+  // The fields eligible for filtering are:
+  //   * `name`
+  //   * `database`
+  //   * `state`
+  //   * `create_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
+  //   * `expire_time` (and values are of the format YYYY-MM-DDTHH:MM:SSZ)
+  //   * `size_bytes`
+  //
+  // To filter on multiple expressions, provide each separate expression within
+  // parentheses. By default, each expression is an AND expression. However,
+  // you can include AND, OR, and NOT expressions explicitly.
+  //
+  // Some examples of using filters are:
+  //
+  //   * `name:Howl` --> The backup's name contains the string "howl".
+  //   * `database:prod`
+  //          --> The database's name contains the string "prod".
+  //   * `state:CREATING` --> The backup is pending creation.
+  //   * `state:READY` --> The backup is fully created and ready for use.
+  //   * `(name:howl) AND (create_time < \"2018-03-28T14:50:00Z\")`
+  //          --> The backup name contains the string "howl" and `create_time`
+  //              of the backup is before 2018-03-28T14:50:00Z.
+  //   * `expire_time < \"2018-03-28T14:50:00Z\"`
+  //          --> The backup `expire_time` is before 2018-03-28T14:50:00Z.
+  //   * `size_bytes > 10000000000` --> The backup's size is greater than 10GB
+  string filter = 2;
+
+  // An expression for specifying the sort order of the results of the request.
+  // The string value should specify only one field in [Backup][google.spanner.admin.database.v1.Backup]. Fields
+  // supported are:
+  //    * name
+  //    * database
+  //    * expire_time
+  //    * create_time
+  //    * size_bytes
+  //    * state
+  //
+  // For example, "create_time". The default sorting order is ascending.
+  // To specify descending order for the field, a suffix " desc" should
+  // be appended to the field name. For example, "create_time desc".
+  // Redundant space characters in the syntax are insigificant.
+  //
+  // If order_by is empty, results will be sorted by `create_time` in descending
+  // order starting from the most recently created backup.
+  string order_by = 3;
+
+  // Number of backups to be returned in the response. If 0 or
+  // less, defaults to the server's maximum allowed page size.
+  int32 page_size = 4;
+
+  // If non-empty, `page_token` should contain a
+  // [next_page_token][google.spanner.admin.database.v1.ListBackupsResponse.next_page_token] from a
+  // previous [ListBackupsResponse][google.spanner.admin.database.v1.ListBackupsResponse] to the same `parent` and with the same
+  // `filter`.
+  string page_token = 5;
+}
+
+message ListBackupsResponse {
+  // The list of matching backups.
+  repeated Backup backups = 1;
+
+  // `next_page_token` can be sent in a subsequent
+  // [ListBackups][google.spanner.admin.database.v1.DatabaseAdmin.ListBackups] call to fetch more
+  // of the matching backups.
+  string next_page_token = 2;
+}
+
+message ListBackupOperationsRequest {
+  // Required. The instance of the backup operations. Values are of
+  // the form `projects/<project>/instances/<instance>`.
+  string parent = 1;
+
+  // A filter expression that filters what operations are returned in the
+  // response.
+  //
+  // The response returns a list of
+  // [long-running operations][google.longrunning.Operation] whose names are
+  // prefixed by a backup name within the specified instance. The long-running
+  // operation [metadata][google.longrunning.Operation.metadata] field type
+  // `metadata.type_url` describes the type of the metadata.
+  //
+  // The filter expression must specify the field name of an operation, a
+  // comparison operator, and the value that you want to use for filtering.
+  // The value must be a string, a number, or a boolean. The comparison operator
+  // must be
+  // <, >, <=, >=, !=, =, or :. Colon ‘:’ represents a HAS operator which is
+  // roughly synonymous with equality. Filter rules are case insensitive.
+  //
+  // The long-running operation fields eligible for filtering are:
+  //   * `name` --> The name of the long-running operation
+  //   * `done` --> False if the operation is in progress, else true.
+  //   * `metadata.type_url` (using filter string `metadata.@type`) and fields
+  //      in `metadata.value` (using filter string `metadata.<field_name>`,
+  //      where <field_name> is a field in metadata.value) are  eligible for
+  //      filtering.
+  //
+  // To filter on multiple expressions, provide each separate expression within
+  // parentheses. By default, each expression is an AND expression. However,
+  // you can include AND, OR, and NOT expressions explicitly.
+  //
+  // Some examples of using filters are:
+  //
+  //   * `done:true` --> The operation is complete.
+  //   * `metadata.database:prod`
+  //          --> The database the backup was taken from has a name containing
+  //              the string "prod".
+  //   * `(metadata.@type:type.googleapis.com/google.spanner.admin.database.v1.CreateBackupMetadata)
+  //      AND (metadata.name:howl)
+  //      AND (metadata.progress.start_time < \"2018-03-28T14:50:00Z\")
+  //      AND (error:*)`
+  //          --> Return CreateBackup operations where the created backup name
+  //              contains the string "howl", the progress.start_time of the
+  //              backup operation is before 2018-03-28T14:50:00Z, and the
+  //              operation returned an error.
+  string filter = 2;
+
+  // Number of operations to be returned in the response. If 0 or
+  // less, defaults to the server's maximum allowed page size.
+  int32 page_size = 3;
+
+  // If non-empty, `page_token` should contain a
+  // [next_page_token][google.spanner.admin.database.v1.ListBackupOperationsResponse.next_page_token]
+  // from a previous [ListBackupOperationsResponse][google.spanner.admin.database.v1.ListBackupOperationsResponse] to the
+  // same `parent` and with the same `filter`.
+  string page_token = 4;
+}
+
+message ListBackupOperationsResponse {
+  // The list of matching
+  // [long-running operations][google.longrunning.Operation]
+  // whose names are prefixed by a backup name. The long-running operation
+  // [metadata][google.longrunning.Operation.metadata] field type
+  // `metadata.type_url` describes the type of the metadata. Operations returned
+  // include those that have completed/failed/canceled within the last 7 days,
+  // and pending operations. Operations returned are ordered by
+  // `operation.metadata.value.progress.start_time` in descending order starting
+  // from the most recently started operation.
+  repeated google.longrunning.Operation operations = 1;
+
+  // `next_page_token` can be sent in a subsequent
+  // [ListBackupOperations][google.spanner.admin.database.v1.DatabaseAdmin.ListBackupOperations]
+  // call to fetch more of the matching metadata.
+  string next_page_token = 2;
+}
+
+message BackupInfo {
+  // Name of the backup.
+  string backup = 1;
+
+  // The backup contains an externally consistent copy of `source_database` at
+  // the timestamp specified by `create_time`.
+  google.protobuf.Timestamp create_time = 2;
+
+  // Name of the database the backup was created from.
+  string source_database = 3;
+}

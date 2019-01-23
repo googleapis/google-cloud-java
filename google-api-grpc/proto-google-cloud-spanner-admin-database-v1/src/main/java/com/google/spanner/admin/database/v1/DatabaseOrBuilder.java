@@ -57,4 +57,18 @@ public interface DatabaseOrBuilder
    * <code>.google.spanner.admin.database.v1.Database.State state = 2;</code>
    */
   com.google.spanner.admin.database.v1.Database.State getState();
+
+  /** <code>.google.protobuf.Timestamp create_time = 3;</code> */
+  boolean hasCreateTime();
+  /** <code>.google.protobuf.Timestamp create_time = 3;</code> */
+  com.google.protobuf.Timestamp getCreateTime();
+  /** <code>.google.protobuf.Timestamp create_time = 3;</code> */
+  com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+
+  /** <code>.google.spanner.admin.database.v1.RestoreInfo restore_info = 4;</code> */
+  boolean hasRestoreInfo();
+  /** <code>.google.spanner.admin.database.v1.RestoreInfo restore_info = 4;</code> */
+  com.google.spanner.admin.database.v1.RestoreInfo getRestoreInfo();
+  /** <code>.google.spanner.admin.database.v1.RestoreInfo restore_info = 4;</code> */
+  com.google.spanner.admin.database.v1.RestoreInfoOrBuilder getRestoreInfoOrBuilder();
 }

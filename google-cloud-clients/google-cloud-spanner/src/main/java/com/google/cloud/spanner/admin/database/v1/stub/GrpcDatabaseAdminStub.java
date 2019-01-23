@@ -15,6 +15,9 @@
  */
 package com.google.cloud.spanner.admin.database.v1.stub;
 
+import static com.google.cloud.spanner.admin.database.v1.DatabaseAdminClient.ListBackupOperationsPagedResponse;
+import static com.google.cloud.spanner.admin.database.v1.DatabaseAdminClient.ListBackupsPagedResponse;
+import static com.google.cloud.spanner.admin.database.v1.DatabaseAdminClient.ListDatabaseOperationsPagedResponse;
 import static com.google.cloud.spanner.admin.database.v1.DatabaseAdminClient.ListDatabasesPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -33,15 +36,29 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
+import com.google.spanner.admin.database.v1.Backup;
+import com.google.spanner.admin.database.v1.CreateBackupMetadata;
+import com.google.spanner.admin.database.v1.CreateBackupRequest;
 import com.google.spanner.admin.database.v1.CreateDatabaseMetadata;
 import com.google.spanner.admin.database.v1.CreateDatabaseRequest;
 import com.google.spanner.admin.database.v1.Database;
+import com.google.spanner.admin.database.v1.DeleteBackupRequest;
 import com.google.spanner.admin.database.v1.DropDatabaseRequest;
+import com.google.spanner.admin.database.v1.GetBackupRequest;
 import com.google.spanner.admin.database.v1.GetDatabaseDdlRequest;
 import com.google.spanner.admin.database.v1.GetDatabaseDdlResponse;
 import com.google.spanner.admin.database.v1.GetDatabaseRequest;
+import com.google.spanner.admin.database.v1.ListBackupOperationsRequest;
+import com.google.spanner.admin.database.v1.ListBackupOperationsResponse;
+import com.google.spanner.admin.database.v1.ListBackupsRequest;
+import com.google.spanner.admin.database.v1.ListBackupsResponse;
+import com.google.spanner.admin.database.v1.ListDatabaseOperationsRequest;
+import com.google.spanner.admin.database.v1.ListDatabaseOperationsResponse;
 import com.google.spanner.admin.database.v1.ListDatabasesRequest;
 import com.google.spanner.admin.database.v1.ListDatabasesResponse;
+import com.google.spanner.admin.database.v1.RestoreDatabaseMetadata;
+import com.google.spanner.admin.database.v1.RestoreDatabaseRequest;
+import com.google.spanner.admin.database.v1.UpdateBackupRequest;
 import com.google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata;
 import com.google.spanner.admin.database.v1.UpdateDatabaseDdlRequest;
 import io.grpc.MethodDescriptor;
@@ -119,6 +136,15 @@ public class GrpcDatabaseAdminStub extends DatabaseAdminStub {
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
           .build();
+  private static final MethodDescriptor<SetIamPolicyRequest, Policy>
+      setIamPolicyOnBackupInternalOnlyMethodDescriptor =
+          MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.spanner.admin.database.v1.DatabaseAdmin/SetIamPolicyOnBackupInternalOnly")
+              .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
       MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -126,6 +152,15 @@ public class GrpcDatabaseAdminStub extends DatabaseAdminStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
           .build();
+  private static final MethodDescriptor<GetIamPolicyRequest, Policy>
+      getIamPolicyOnBackupInternalOnlyMethodDescriptor =
+          MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.spanner.admin.database.v1.DatabaseAdmin/GetIamPolicyOnBackupInternalOnly")
+              .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsMethodDescriptor =
           MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
@@ -136,6 +171,88 @@ public class GrpcDatabaseAdminStub extends DatabaseAdminStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsOnBackupInternalOnlyMethodDescriptor =
+          MethodDescriptor.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.spanner.admin.database.v1.DatabaseAdmin/TestIamPermissionsOnBackupInternalOnly")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<CreateBackupRequest, Operation>
+      createBackupMethodDescriptor =
+          MethodDescriptor.<CreateBackupRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.spanner.admin.database.v1.DatabaseAdmin/CreateBackup")
+              .setRequestMarshaller(ProtoUtils.marshaller(CreateBackupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<GetBackupRequest, Backup> getBackupMethodDescriptor =
+      MethodDescriptor.<GetBackupRequest, Backup>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.spanner.admin.database.v1.DatabaseAdmin/GetBackup")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetBackupRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Backup.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<UpdateBackupRequest, Backup> updateBackupMethodDescriptor =
+      MethodDescriptor.<UpdateBackupRequest, Backup>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.spanner.admin.database.v1.DatabaseAdmin/UpdateBackup")
+          .setRequestMarshaller(ProtoUtils.marshaller(UpdateBackupRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Backup.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<DeleteBackupRequest, Empty> deleteBackupMethodDescriptor =
+      MethodDescriptor.<DeleteBackupRequest, Empty>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.spanner.admin.database.v1.DatabaseAdmin/DeleteBackup")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteBackupRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .build();
+  private static final MethodDescriptor<ListBackupsRequest, ListBackupsResponse>
+      listBackupsMethodDescriptor =
+          MethodDescriptor.<ListBackupsRequest, ListBackupsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.spanner.admin.database.v1.DatabaseAdmin/ListBackups")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListBackupsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListBackupsResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<RestoreDatabaseRequest, Operation>
+      restoreDatabaseMethodDescriptor =
+          MethodDescriptor.<RestoreDatabaseRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.spanner.admin.database.v1.DatabaseAdmin/RestoreDatabase")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RestoreDatabaseRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<
+          ListDatabaseOperationsRequest, ListDatabaseOperationsResponse>
+      listDatabaseOperationsMethodDescriptor =
+          MethodDescriptor
+              .<ListDatabaseOperationsRequest, ListDatabaseOperationsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.spanner.admin.database.v1.DatabaseAdmin/ListDatabaseOperations")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListDatabaseOperationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListDatabaseOperationsResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<ListBackupOperationsRequest, ListBackupOperationsResponse>
+      listBackupOperationsMethodDescriptor =
+          MethodDescriptor.<ListBackupOperationsRequest, ListBackupOperationsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.spanner.admin.database.v1.DatabaseAdmin/ListBackupOperations")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListBackupOperationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListBackupOperationsResponse.getDefaultInstance()))
               .build();
 
   private final BackgroundResource backgroundResources;
@@ -154,9 +271,33 @@ public class GrpcDatabaseAdminStub extends DatabaseAdminStub {
   private final UnaryCallable<DropDatabaseRequest, Empty> dropDatabaseCallable;
   private final UnaryCallable<GetDatabaseDdlRequest, GetDatabaseDdlResponse> getDatabaseDdlCallable;
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
+  private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyOnBackupInternalOnlyCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
+  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyOnBackupInternalOnlyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
+  private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsOnBackupInternalOnlyCallable;
+  private final UnaryCallable<CreateBackupRequest, Operation> createBackupCallable;
+  private final OperationCallable<CreateBackupRequest, Empty, CreateBackupMetadata>
+      createBackupOperationCallable;
+  private final UnaryCallable<GetBackupRequest, Backup> getBackupCallable;
+  private final UnaryCallable<UpdateBackupRequest, Backup> updateBackupCallable;
+  private final UnaryCallable<DeleteBackupRequest, Empty> deleteBackupCallable;
+  private final UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable;
+  private final UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse>
+      listBackupsPagedCallable;
+  private final UnaryCallable<RestoreDatabaseRequest, Operation> restoreDatabaseCallable;
+  private final OperationCallable<RestoreDatabaseRequest, Empty, RestoreDatabaseMetadata>
+      restoreDatabaseOperationCallable;
+  private final UnaryCallable<ListDatabaseOperationsRequest, ListDatabaseOperationsResponse>
+      listDatabaseOperationsCallable;
+  private final UnaryCallable<ListDatabaseOperationsRequest, ListDatabaseOperationsPagedResponse>
+      listDatabaseOperationsPagedCallable;
+  private final UnaryCallable<ListBackupOperationsRequest, ListBackupOperationsResponse>
+      listBackupOperationsCallable;
+  private final UnaryCallable<ListBackupOperationsRequest, ListBackupOperationsPagedResponse>
+      listBackupOperationsPagedCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -227,14 +368,64 @@ public class GrpcDatabaseAdminStub extends DatabaseAdminStub {
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .build();
+    GrpcCallSettings<SetIamPolicyRequest, Policy>
+        setIamPolicyOnBackupInternalOnlyTransportSettings =
+            GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
+                .setMethodDescriptor(setIamPolicyOnBackupInternalOnlyMethodDescriptor)
+                .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .build();
+    GrpcCallSettings<GetIamPolicyRequest, Policy>
+        getIamPolicyOnBackupInternalOnlyTransportSettings =
+            GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
+                .setMethodDescriptor(getIamPolicyOnBackupInternalOnlyMethodDescriptor)
+                .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
             GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .build();
+    GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsOnBackupInternalOnlyTransportSettings =
+            GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsOnBackupInternalOnlyMethodDescriptor)
+                .build();
+    GrpcCallSettings<CreateBackupRequest, Operation> createBackupTransportSettings =
+        GrpcCallSettings.<CreateBackupRequest, Operation>newBuilder()
+            .setMethodDescriptor(createBackupMethodDescriptor)
+            .build();
+    GrpcCallSettings<GetBackupRequest, Backup> getBackupTransportSettings =
+        GrpcCallSettings.<GetBackupRequest, Backup>newBuilder()
+            .setMethodDescriptor(getBackupMethodDescriptor)
+            .build();
+    GrpcCallSettings<UpdateBackupRequest, Backup> updateBackupTransportSettings =
+        GrpcCallSettings.<UpdateBackupRequest, Backup>newBuilder()
+            .setMethodDescriptor(updateBackupMethodDescriptor)
+            .build();
+    GrpcCallSettings<DeleteBackupRequest, Empty> deleteBackupTransportSettings =
+        GrpcCallSettings.<DeleteBackupRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteBackupMethodDescriptor)
+            .build();
+    GrpcCallSettings<ListBackupsRequest, ListBackupsResponse> listBackupsTransportSettings =
+        GrpcCallSettings.<ListBackupsRequest, ListBackupsResponse>newBuilder()
+            .setMethodDescriptor(listBackupsMethodDescriptor)
+            .build();
+    GrpcCallSettings<RestoreDatabaseRequest, Operation> restoreDatabaseTransportSettings =
+        GrpcCallSettings.<RestoreDatabaseRequest, Operation>newBuilder()
+            .setMethodDescriptor(restoreDatabaseMethodDescriptor)
+            .build();
+    GrpcCallSettings<ListDatabaseOperationsRequest, ListDatabaseOperationsResponse>
+        listDatabaseOperationsTransportSettings =
+            GrpcCallSettings
+                .<ListDatabaseOperationsRequest, ListDatabaseOperationsResponse>newBuilder()
+                .setMethodDescriptor(listDatabaseOperationsMethodDescriptor)
+                .build();
+    GrpcCallSettings<ListBackupOperationsRequest, ListBackupOperationsResponse>
+        listBackupOperationsTransportSettings =
+            GrpcCallSettings.<ListBackupOperationsRequest, ListBackupOperationsResponse>newBuilder()
+                .setMethodDescriptor(listBackupOperationsMethodDescriptor)
                 .build();
 
     this.listDatabasesCallable =
@@ -275,13 +466,81 @@ public class GrpcDatabaseAdminStub extends DatabaseAdminStub {
     this.setIamPolicyCallable =
         callableFactory.createUnaryCallable(
             setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
+    this.setIamPolicyOnBackupInternalOnlyCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyOnBackupInternalOnlyTransportSettings,
+            settings.setIamPolicyOnBackupInternalOnlySettings(),
+            clientContext);
     this.getIamPolicyCallable =
         callableFactory.createUnaryCallable(
             getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
+    this.getIamPolicyOnBackupInternalOnlyCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyOnBackupInternalOnlyTransportSettings,
+            settings.getIamPolicyOnBackupInternalOnlySettings(),
+            clientContext);
     this.testIamPermissionsCallable =
         callableFactory.createUnaryCallable(
             testIamPermissionsTransportSettings,
             settings.testIamPermissionsSettings(),
+            clientContext);
+    this.testIamPermissionsOnBackupInternalOnlyCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsOnBackupInternalOnlyTransportSettings,
+            settings.testIamPermissionsOnBackupInternalOnlySettings(),
+            clientContext);
+    this.createBackupCallable =
+        callableFactory.createUnaryCallable(
+            createBackupTransportSettings, settings.createBackupSettings(), clientContext);
+    this.createBackupOperationCallable =
+        callableFactory.createOperationCallable(
+            createBackupTransportSettings,
+            settings.createBackupOperationSettings(),
+            clientContext,
+            this.operationsStub);
+    this.getBackupCallable =
+        callableFactory.createUnaryCallable(
+            getBackupTransportSettings, settings.getBackupSettings(), clientContext);
+    this.updateBackupCallable =
+        callableFactory.createUnaryCallable(
+            updateBackupTransportSettings, settings.updateBackupSettings(), clientContext);
+    this.deleteBackupCallable =
+        callableFactory.createUnaryCallable(
+            deleteBackupTransportSettings, settings.deleteBackupSettings(), clientContext);
+    this.listBackupsCallable =
+        callableFactory.createUnaryCallable(
+            listBackupsTransportSettings, settings.listBackupsSettings(), clientContext);
+    this.listBackupsPagedCallable =
+        callableFactory.createPagedCallable(
+            listBackupsTransportSettings, settings.listBackupsSettings(), clientContext);
+    this.restoreDatabaseCallable =
+        callableFactory.createUnaryCallable(
+            restoreDatabaseTransportSettings, settings.restoreDatabaseSettings(), clientContext);
+    this.restoreDatabaseOperationCallable =
+        callableFactory.createOperationCallable(
+            restoreDatabaseTransportSettings,
+            settings.restoreDatabaseOperationSettings(),
+            clientContext,
+            this.operationsStub);
+    this.listDatabaseOperationsCallable =
+        callableFactory.createUnaryCallable(
+            listDatabaseOperationsTransportSettings,
+            settings.listDatabaseOperationsSettings(),
+            clientContext);
+    this.listDatabaseOperationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listDatabaseOperationsTransportSettings,
+            settings.listDatabaseOperationsSettings(),
+            clientContext);
+    this.listBackupOperationsCallable =
+        callableFactory.createUnaryCallable(
+            listBackupOperationsTransportSettings,
+            settings.listBackupOperationsSettings(),
+            clientContext);
+    this.listBackupOperationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listBackupOperationsTransportSettings,
+            settings.listBackupOperationsSettings(),
             clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -337,13 +596,86 @@ public class GrpcDatabaseAdminStub extends DatabaseAdminStub {
     return setIamPolicyCallable;
   }
 
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyOnBackupInternalOnlyCallable() {
+    return setIamPolicyOnBackupInternalOnlyCallable;
+  }
+
   public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
+  }
+
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyOnBackupInternalOnlyCallable() {
+    return getIamPolicyOnBackupInternalOnlyCallable;
   }
 
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
+  }
+
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsOnBackupInternalOnlyCallable() {
+    return testIamPermissionsOnBackupInternalOnlyCallable;
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<CreateBackupRequest, Empty, CreateBackupMetadata>
+      createBackupOperationCallable() {
+    return createBackupOperationCallable;
+  }
+
+  public UnaryCallable<CreateBackupRequest, Operation> createBackupCallable() {
+    return createBackupCallable;
+  }
+
+  public UnaryCallable<GetBackupRequest, Backup> getBackupCallable() {
+    return getBackupCallable;
+  }
+
+  public UnaryCallable<UpdateBackupRequest, Backup> updateBackupCallable() {
+    return updateBackupCallable;
+  }
+
+  public UnaryCallable<DeleteBackupRequest, Empty> deleteBackupCallable() {
+    return deleteBackupCallable;
+  }
+
+  public UnaryCallable<ListBackupsRequest, ListBackupsPagedResponse> listBackupsPagedCallable() {
+    return listBackupsPagedCallable;
+  }
+
+  public UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable() {
+    return listBackupsCallable;
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<RestoreDatabaseRequest, Empty, RestoreDatabaseMetadata>
+      restoreDatabaseOperationCallable() {
+    return restoreDatabaseOperationCallable;
+  }
+
+  public UnaryCallable<RestoreDatabaseRequest, Operation> restoreDatabaseCallable() {
+    return restoreDatabaseCallable;
+  }
+
+  public UnaryCallable<ListDatabaseOperationsRequest, ListDatabaseOperationsPagedResponse>
+      listDatabaseOperationsPagedCallable() {
+    return listDatabaseOperationsPagedCallable;
+  }
+
+  public UnaryCallable<ListDatabaseOperationsRequest, ListDatabaseOperationsResponse>
+      listDatabaseOperationsCallable() {
+    return listDatabaseOperationsCallable;
+  }
+
+  public UnaryCallable<ListBackupOperationsRequest, ListBackupOperationsPagedResponse>
+      listBackupOperationsPagedCallable() {
+    return listBackupOperationsPagedCallable;
+  }
+
+  public UnaryCallable<ListBackupOperationsRequest, ListBackupOperationsResponse>
+      listBackupOperationsCallable() {
+    return listBackupOperationsCallable;
   }
 
   @Override

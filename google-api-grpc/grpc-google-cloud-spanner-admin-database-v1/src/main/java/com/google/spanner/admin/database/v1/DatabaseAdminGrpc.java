@@ -422,6 +422,62 @@ public final class DatabaseAdminGrpc {
   }
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getSetIamPolicyOnBackupInternalOnlyMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
+      METHOD_SET_IAM_POLICY_ON_BACKUP_INTERNAL_ONLY =
+          getSetIamPolicyOnBackupInternalOnlyMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
+      getSetIamPolicyOnBackupInternalOnlyMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
+      getSetIamPolicyOnBackupInternalOnlyMethod() {
+    return getSetIamPolicyOnBackupInternalOnlyMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
+      getSetIamPolicyOnBackupInternalOnlyMethodHelper() {
+    io.grpc.MethodDescriptor<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
+        getSetIamPolicyOnBackupInternalOnlyMethod;
+    if ((getSetIamPolicyOnBackupInternalOnlyMethod =
+            DatabaseAdminGrpc.getSetIamPolicyOnBackupInternalOnlyMethod)
+        == null) {
+      synchronized (DatabaseAdminGrpc.class) {
+        if ((getSetIamPolicyOnBackupInternalOnlyMethod =
+                DatabaseAdminGrpc.getSetIamPolicyOnBackupInternalOnlyMethod)
+            == null) {
+          DatabaseAdminGrpc.getSetIamPolicyOnBackupInternalOnlyMethod =
+              getSetIamPolicyOnBackupInternalOnlyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.spanner.admin.database.v1.DatabaseAdmin",
+                              "SetIamPolicyOnBackupInternalOnly"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.SetIamPolicyRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.Policy.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DatabaseAdminMethodDescriptorSupplier(
+                              "SetIamPolicyOnBackupInternalOnly"))
+                      .build();
+        }
+      }
+    }
+    return getSetIamPolicyOnBackupInternalOnlyMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   @java.lang.Deprecated // Use {@link #getGetIamPolicyMethod()} instead.
   public static final io.grpc.MethodDescriptor<
           com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
@@ -468,6 +524,62 @@ public final class DatabaseAdminGrpc {
       }
     }
     return getGetIamPolicyMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetIamPolicyOnBackupInternalOnlyMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
+      METHOD_GET_IAM_POLICY_ON_BACKUP_INTERNAL_ONLY =
+          getGetIamPolicyOnBackupInternalOnlyMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
+      getGetIamPolicyOnBackupInternalOnlyMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
+      getGetIamPolicyOnBackupInternalOnlyMethod() {
+    return getGetIamPolicyOnBackupInternalOnlyMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
+      getGetIamPolicyOnBackupInternalOnlyMethodHelper() {
+    io.grpc.MethodDescriptor<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
+        getGetIamPolicyOnBackupInternalOnlyMethod;
+    if ((getGetIamPolicyOnBackupInternalOnlyMethod =
+            DatabaseAdminGrpc.getGetIamPolicyOnBackupInternalOnlyMethod)
+        == null) {
+      synchronized (DatabaseAdminGrpc.class) {
+        if ((getGetIamPolicyOnBackupInternalOnlyMethod =
+                DatabaseAdminGrpc.getGetIamPolicyOnBackupInternalOnlyMethod)
+            == null) {
+          DatabaseAdminGrpc.getGetIamPolicyOnBackupInternalOnlyMethod =
+              getGetIamPolicyOnBackupInternalOnlyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.spanner.admin.database.v1.DatabaseAdmin",
+                              "GetIamPolicyOnBackupInternalOnly"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.GetIamPolicyRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.Policy.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DatabaseAdminMethodDescriptorSupplier(
+                              "GetIamPolicyOnBackupInternalOnly"))
+                      .build();
+        }
+      }
+    }
+    return getGetIamPolicyOnBackupInternalOnlyMethod;
   }
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
@@ -522,6 +634,531 @@ public final class DatabaseAdminGrpc {
       }
     }
     return getTestIamPermissionsMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getTestIamPermissionsOnBackupInternalOnlyMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>
+      METHOD_TEST_IAM_PERMISSIONS_ON_BACKUP_INTERNAL_ONLY =
+          getTestIamPermissionsOnBackupInternalOnlyMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>
+      getTestIamPermissionsOnBackupInternalOnlyMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>
+      getTestIamPermissionsOnBackupInternalOnlyMethod() {
+    return getTestIamPermissionsOnBackupInternalOnlyMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.iam.v1.TestIamPermissionsRequest, com.google.iam.v1.TestIamPermissionsResponse>
+      getTestIamPermissionsOnBackupInternalOnlyMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.iam.v1.TestIamPermissionsRequest,
+            com.google.iam.v1.TestIamPermissionsResponse>
+        getTestIamPermissionsOnBackupInternalOnlyMethod;
+    if ((getTestIamPermissionsOnBackupInternalOnlyMethod =
+            DatabaseAdminGrpc.getTestIamPermissionsOnBackupInternalOnlyMethod)
+        == null) {
+      synchronized (DatabaseAdminGrpc.class) {
+        if ((getTestIamPermissionsOnBackupInternalOnlyMethod =
+                DatabaseAdminGrpc.getTestIamPermissionsOnBackupInternalOnlyMethod)
+            == null) {
+          DatabaseAdminGrpc.getTestIamPermissionsOnBackupInternalOnlyMethod =
+              getTestIamPermissionsOnBackupInternalOnlyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.iam.v1.TestIamPermissionsRequest,
+                          com.google.iam.v1.TestIamPermissionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.spanner.admin.database.v1.DatabaseAdmin",
+                              "TestIamPermissionsOnBackupInternalOnly"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.TestIamPermissionsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.TestIamPermissionsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DatabaseAdminMethodDescriptorSupplier(
+                              "TestIamPermissionsOnBackupInternalOnly"))
+                      .build();
+        }
+      }
+    }
+    return getTestIamPermissionsOnBackupInternalOnlyMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getCreateBackupMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.spanner.admin.database.v1.CreateBackupRequest,
+          com.google.longrunning.Operation>
+      METHOD_CREATE_BACKUP = getCreateBackupMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.spanner.admin.database.v1.CreateBackupRequest,
+          com.google.longrunning.Operation>
+      getCreateBackupMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.spanner.admin.database.v1.CreateBackupRequest,
+          com.google.longrunning.Operation>
+      getCreateBackupMethod() {
+    return getCreateBackupMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.spanner.admin.database.v1.CreateBackupRequest,
+          com.google.longrunning.Operation>
+      getCreateBackupMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.spanner.admin.database.v1.CreateBackupRequest,
+            com.google.longrunning.Operation>
+        getCreateBackupMethod;
+    if ((getCreateBackupMethod = DatabaseAdminGrpc.getCreateBackupMethod) == null) {
+      synchronized (DatabaseAdminGrpc.class) {
+        if ((getCreateBackupMethod = DatabaseAdminGrpc.getCreateBackupMethod) == null) {
+          DatabaseAdminGrpc.getCreateBackupMethod =
+              getCreateBackupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.spanner.admin.database.v1.CreateBackupRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.spanner.admin.database.v1.DatabaseAdmin", "CreateBackup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.spanner.admin.database.v1.CreateBackupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DatabaseAdminMethodDescriptorSupplier("CreateBackup"))
+                      .build();
+        }
+      }
+    }
+    return getCreateBackupMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetBackupMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.spanner.admin.database.v1.GetBackupRequest,
+          com.google.spanner.admin.database.v1.Backup>
+      METHOD_GET_BACKUP = getGetBackupMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.spanner.admin.database.v1.GetBackupRequest,
+          com.google.spanner.admin.database.v1.Backup>
+      getGetBackupMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.spanner.admin.database.v1.GetBackupRequest,
+          com.google.spanner.admin.database.v1.Backup>
+      getGetBackupMethod() {
+    return getGetBackupMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.spanner.admin.database.v1.GetBackupRequest,
+          com.google.spanner.admin.database.v1.Backup>
+      getGetBackupMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.spanner.admin.database.v1.GetBackupRequest,
+            com.google.spanner.admin.database.v1.Backup>
+        getGetBackupMethod;
+    if ((getGetBackupMethod = DatabaseAdminGrpc.getGetBackupMethod) == null) {
+      synchronized (DatabaseAdminGrpc.class) {
+        if ((getGetBackupMethod = DatabaseAdminGrpc.getGetBackupMethod) == null) {
+          DatabaseAdminGrpc.getGetBackupMethod =
+              getGetBackupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.spanner.admin.database.v1.GetBackupRequest,
+                          com.google.spanner.admin.database.v1.Backup>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.spanner.admin.database.v1.DatabaseAdmin", "GetBackup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.spanner.admin.database.v1.GetBackupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.spanner.admin.database.v1.Backup.getDefaultInstance()))
+                      .setSchemaDescriptor(new DatabaseAdminMethodDescriptorSupplier("GetBackup"))
+                      .build();
+        }
+      }
+    }
+    return getGetBackupMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getUpdateBackupMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.spanner.admin.database.v1.UpdateBackupRequest,
+          com.google.spanner.admin.database.v1.Backup>
+      METHOD_UPDATE_BACKUP = getUpdateBackupMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.spanner.admin.database.v1.UpdateBackupRequest,
+          com.google.spanner.admin.database.v1.Backup>
+      getUpdateBackupMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.spanner.admin.database.v1.UpdateBackupRequest,
+          com.google.spanner.admin.database.v1.Backup>
+      getUpdateBackupMethod() {
+    return getUpdateBackupMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.spanner.admin.database.v1.UpdateBackupRequest,
+          com.google.spanner.admin.database.v1.Backup>
+      getUpdateBackupMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.spanner.admin.database.v1.UpdateBackupRequest,
+            com.google.spanner.admin.database.v1.Backup>
+        getUpdateBackupMethod;
+    if ((getUpdateBackupMethod = DatabaseAdminGrpc.getUpdateBackupMethod) == null) {
+      synchronized (DatabaseAdminGrpc.class) {
+        if ((getUpdateBackupMethod = DatabaseAdminGrpc.getUpdateBackupMethod) == null) {
+          DatabaseAdminGrpc.getUpdateBackupMethod =
+              getUpdateBackupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.spanner.admin.database.v1.UpdateBackupRequest,
+                          com.google.spanner.admin.database.v1.Backup>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.spanner.admin.database.v1.DatabaseAdmin", "UpdateBackup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.spanner.admin.database.v1.UpdateBackupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.spanner.admin.database.v1.Backup.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DatabaseAdminMethodDescriptorSupplier("UpdateBackup"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateBackupMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getDeleteBackupMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.spanner.admin.database.v1.DeleteBackupRequest, com.google.protobuf.Empty>
+      METHOD_DELETE_BACKUP = getDeleteBackupMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.spanner.admin.database.v1.DeleteBackupRequest, com.google.protobuf.Empty>
+      getDeleteBackupMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.spanner.admin.database.v1.DeleteBackupRequest, com.google.protobuf.Empty>
+      getDeleteBackupMethod() {
+    return getDeleteBackupMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.spanner.admin.database.v1.DeleteBackupRequest, com.google.protobuf.Empty>
+      getDeleteBackupMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.spanner.admin.database.v1.DeleteBackupRequest, com.google.protobuf.Empty>
+        getDeleteBackupMethod;
+    if ((getDeleteBackupMethod = DatabaseAdminGrpc.getDeleteBackupMethod) == null) {
+      synchronized (DatabaseAdminGrpc.class) {
+        if ((getDeleteBackupMethod = DatabaseAdminGrpc.getDeleteBackupMethod) == null) {
+          DatabaseAdminGrpc.getDeleteBackupMethod =
+              getDeleteBackupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.spanner.admin.database.v1.DeleteBackupRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.spanner.admin.database.v1.DatabaseAdmin", "DeleteBackup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.spanner.admin.database.v1.DeleteBackupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DatabaseAdminMethodDescriptorSupplier("DeleteBackup"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteBackupMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getListBackupsMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.spanner.admin.database.v1.ListBackupsRequest,
+          com.google.spanner.admin.database.v1.ListBackupsResponse>
+      METHOD_LIST_BACKUPS = getListBackupsMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.spanner.admin.database.v1.ListBackupsRequest,
+          com.google.spanner.admin.database.v1.ListBackupsResponse>
+      getListBackupsMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.spanner.admin.database.v1.ListBackupsRequest,
+          com.google.spanner.admin.database.v1.ListBackupsResponse>
+      getListBackupsMethod() {
+    return getListBackupsMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.spanner.admin.database.v1.ListBackupsRequest,
+          com.google.spanner.admin.database.v1.ListBackupsResponse>
+      getListBackupsMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.spanner.admin.database.v1.ListBackupsRequest,
+            com.google.spanner.admin.database.v1.ListBackupsResponse>
+        getListBackupsMethod;
+    if ((getListBackupsMethod = DatabaseAdminGrpc.getListBackupsMethod) == null) {
+      synchronized (DatabaseAdminGrpc.class) {
+        if ((getListBackupsMethod = DatabaseAdminGrpc.getListBackupsMethod) == null) {
+          DatabaseAdminGrpc.getListBackupsMethod =
+              getListBackupsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.spanner.admin.database.v1.ListBackupsRequest,
+                          com.google.spanner.admin.database.v1.ListBackupsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.spanner.admin.database.v1.DatabaseAdmin", "ListBackups"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.spanner.admin.database.v1.ListBackupsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.spanner.admin.database.v1.ListBackupsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new DatabaseAdminMethodDescriptorSupplier("ListBackups"))
+                      .build();
+        }
+      }
+    }
+    return getListBackupsMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getRestoreDatabaseMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.spanner.admin.database.v1.RestoreDatabaseRequest,
+          com.google.longrunning.Operation>
+      METHOD_RESTORE_DATABASE = getRestoreDatabaseMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.spanner.admin.database.v1.RestoreDatabaseRequest,
+          com.google.longrunning.Operation>
+      getRestoreDatabaseMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.spanner.admin.database.v1.RestoreDatabaseRequest,
+          com.google.longrunning.Operation>
+      getRestoreDatabaseMethod() {
+    return getRestoreDatabaseMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.spanner.admin.database.v1.RestoreDatabaseRequest,
+          com.google.longrunning.Operation>
+      getRestoreDatabaseMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.spanner.admin.database.v1.RestoreDatabaseRequest,
+            com.google.longrunning.Operation>
+        getRestoreDatabaseMethod;
+    if ((getRestoreDatabaseMethod = DatabaseAdminGrpc.getRestoreDatabaseMethod) == null) {
+      synchronized (DatabaseAdminGrpc.class) {
+        if ((getRestoreDatabaseMethod = DatabaseAdminGrpc.getRestoreDatabaseMethod) == null) {
+          DatabaseAdminGrpc.getRestoreDatabaseMethod =
+              getRestoreDatabaseMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.spanner.admin.database.v1.RestoreDatabaseRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.spanner.admin.database.v1.DatabaseAdmin", "RestoreDatabase"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.spanner.admin.database.v1.RestoreDatabaseRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DatabaseAdminMethodDescriptorSupplier("RestoreDatabase"))
+                      .build();
+        }
+      }
+    }
+    return getRestoreDatabaseMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getListDatabaseOperationsMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.spanner.admin.database.v1.ListDatabaseOperationsRequest,
+          com.google.spanner.admin.database.v1.ListDatabaseOperationsResponse>
+      METHOD_LIST_DATABASE_OPERATIONS = getListDatabaseOperationsMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.spanner.admin.database.v1.ListDatabaseOperationsRequest,
+          com.google.spanner.admin.database.v1.ListDatabaseOperationsResponse>
+      getListDatabaseOperationsMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.spanner.admin.database.v1.ListDatabaseOperationsRequest,
+          com.google.spanner.admin.database.v1.ListDatabaseOperationsResponse>
+      getListDatabaseOperationsMethod() {
+    return getListDatabaseOperationsMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.spanner.admin.database.v1.ListDatabaseOperationsRequest,
+          com.google.spanner.admin.database.v1.ListDatabaseOperationsResponse>
+      getListDatabaseOperationsMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.spanner.admin.database.v1.ListDatabaseOperationsRequest,
+            com.google.spanner.admin.database.v1.ListDatabaseOperationsResponse>
+        getListDatabaseOperationsMethod;
+    if ((getListDatabaseOperationsMethod = DatabaseAdminGrpc.getListDatabaseOperationsMethod)
+        == null) {
+      synchronized (DatabaseAdminGrpc.class) {
+        if ((getListDatabaseOperationsMethod = DatabaseAdminGrpc.getListDatabaseOperationsMethod)
+            == null) {
+          DatabaseAdminGrpc.getListDatabaseOperationsMethod =
+              getListDatabaseOperationsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.spanner.admin.database.v1.ListDatabaseOperationsRequest,
+                          com.google.spanner.admin.database.v1.ListDatabaseOperationsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.spanner.admin.database.v1.DatabaseAdmin",
+                              "ListDatabaseOperations"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.spanner.admin.database.v1.ListDatabaseOperationsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.spanner.admin.database.v1.ListDatabaseOperationsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DatabaseAdminMethodDescriptorSupplier("ListDatabaseOperations"))
+                      .build();
+        }
+      }
+    }
+    return getListDatabaseOperationsMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getListBackupOperationsMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.spanner.admin.database.v1.ListBackupOperationsRequest,
+          com.google.spanner.admin.database.v1.ListBackupOperationsResponse>
+      METHOD_LIST_BACKUP_OPERATIONS = getListBackupOperationsMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.spanner.admin.database.v1.ListBackupOperationsRequest,
+          com.google.spanner.admin.database.v1.ListBackupOperationsResponse>
+      getListBackupOperationsMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.spanner.admin.database.v1.ListBackupOperationsRequest,
+          com.google.spanner.admin.database.v1.ListBackupOperationsResponse>
+      getListBackupOperationsMethod() {
+    return getListBackupOperationsMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.spanner.admin.database.v1.ListBackupOperationsRequest,
+          com.google.spanner.admin.database.v1.ListBackupOperationsResponse>
+      getListBackupOperationsMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.spanner.admin.database.v1.ListBackupOperationsRequest,
+            com.google.spanner.admin.database.v1.ListBackupOperationsResponse>
+        getListBackupOperationsMethod;
+    if ((getListBackupOperationsMethod = DatabaseAdminGrpc.getListBackupOperationsMethod) == null) {
+      synchronized (DatabaseAdminGrpc.class) {
+        if ((getListBackupOperationsMethod = DatabaseAdminGrpc.getListBackupOperationsMethod)
+            == null) {
+          DatabaseAdminGrpc.getListBackupOperationsMethod =
+              getListBackupOperationsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.spanner.admin.database.v1.ListBackupOperationsRequest,
+                          com.google.spanner.admin.database.v1.ListBackupOperationsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.spanner.admin.database.v1.DatabaseAdmin",
+                              "ListBackupOperations"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.spanner.admin.database.v1.ListBackupOperationsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.spanner.admin.database.v1.ListBackupOperationsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DatabaseAdminMethodDescriptorSupplier("ListBackupOperations"))
+                      .build();
+        }
+      }
+    }
+    return getListBackupOperationsMethod;
   }
 
   /** Creates a new async stub that supports all call types for the service */
@@ -653,10 +1290,10 @@ public final class DatabaseAdminGrpc {
      *
      *
      * <pre>
-     * Sets the access control policy on a database resource. Replaces any
-     * existing policy.
-     * Authorization requires `spanner.databases.setIamPolicy` permission on
-     * [resource][google.iam.v1.SetIamPolicyRequest.resource].
+     * Sets the access control policy on a database resource.
+     * Replaces any existing policy.
+     * Authorization requires `spanner.databases.setIamPolicy`
+     * permission on [resource][google.iam.v1.SetIamPolicyRequest.resource].
      * </pre>
      */
     public void setIamPolicy(
@@ -665,12 +1302,21 @@ public final class DatabaseAdminGrpc {
       asyncUnimplementedUnaryCall(getSetIamPolicyMethodHelper(), responseObserver);
     }
 
+    /** */
+    public void setIamPolicyOnBackupInternalOnly(
+        com.google.iam.v1.SetIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
+      asyncUnimplementedUnaryCall(
+          getSetIamPolicyOnBackupInternalOnlyMethodHelper(), responseObserver);
+    }
+
     /**
      *
      *
      * <pre>
-     * Gets the access control policy for a database resource. Returns an empty
-     * policy if a database exists but does not have a policy set.
+     * Gets the access control policy for a database resource.
+     * Returns an empty policy if a database exists but does
+     * not have a policy set.
      * Authorization requires `spanner.databases.getIamPolicy` permission on
      * [resource][google.iam.v1.GetIamPolicyRequest.resource].
      * </pre>
@@ -681,15 +1327,23 @@ public final class DatabaseAdminGrpc {
       asyncUnimplementedUnaryCall(getGetIamPolicyMethodHelper(), responseObserver);
     }
 
+    /** */
+    public void getIamPolicyOnBackupInternalOnly(
+        com.google.iam.v1.GetIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
+      asyncUnimplementedUnaryCall(
+          getGetIamPolicyOnBackupInternalOnlyMethodHelper(), responseObserver);
+    }
+
     /**
      *
      *
      * <pre>
      * Returns permissions that the caller has on the specified database resource.
-     * Attempting this RPC on a non-existent Cloud Spanner database will result in
-     * a NOT_FOUND error if the user has `spanner.databases.list` permission on
-     * the containing Cloud Spanner instance. Otherwise returns an empty set of
-     * permissions.
+     * Attempting this RPC on a non-existent Cloud Spanner database will
+     * result in a NOT_FOUND error if the user has
+     * `spanner.databases.list` permission on the containing Cloud
+     * Spanner instance. Otherwise returns an empty set of permissions.
      * </pre>
      */
     public void testIamPermissions(
@@ -697,6 +1351,76 @@ public final class DatabaseAdminGrpc {
         io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
             responseObserver) {
       asyncUnimplementedUnaryCall(getTestIamPermissionsMethodHelper(), responseObserver);
+    }
+
+    /** */
+    public void testIamPermissionsOnBackupInternalOnly(
+        com.google.iam.v1.TestIamPermissionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(
+          getTestIamPermissionsOnBackupInternalOnlyMethodHelper(), responseObserver);
+    }
+
+    /** */
+    public void createBackup(
+        com.google.spanner.admin.database.v1.CreateBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnimplementedUnaryCall(getCreateBackupMethodHelper(), responseObserver);
+    }
+
+    /** */
+    public void getBackup(
+        com.google.spanner.admin.database.v1.GetBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.spanner.admin.database.v1.Backup> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetBackupMethodHelper(), responseObserver);
+    }
+
+    /** */
+    public void updateBackup(
+        com.google.spanner.admin.database.v1.UpdateBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.spanner.admin.database.v1.Backup> responseObserver) {
+      asyncUnimplementedUnaryCall(getUpdateBackupMethodHelper(), responseObserver);
+    }
+
+    /** */
+    public void deleteBackup(
+        com.google.spanner.admin.database.v1.DeleteBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      asyncUnimplementedUnaryCall(getDeleteBackupMethodHelper(), responseObserver);
+    }
+
+    /** */
+    public void listBackups(
+        com.google.spanner.admin.database.v1.ListBackupsRequest request,
+        io.grpc.stub.StreamObserver<com.google.spanner.admin.database.v1.ListBackupsResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getListBackupsMethodHelper(), responseObserver);
+    }
+
+    /** */
+    public void restoreDatabase(
+        com.google.spanner.admin.database.v1.RestoreDatabaseRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnimplementedUnaryCall(getRestoreDatabaseMethodHelper(), responseObserver);
+    }
+
+    /** */
+    public void listDatabaseOperations(
+        com.google.spanner.admin.database.v1.ListDatabaseOperationsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.spanner.admin.database.v1.ListDatabaseOperationsResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getListDatabaseOperationsMethodHelper(), responseObserver);
+    }
+
+    /** */
+    public void listBackupOperations(
+        com.google.spanner.admin.database.v1.ListBackupOperationsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.spanner.admin.database.v1.ListBackupOperationsResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getListBackupOperationsMethodHelper(), responseObserver);
     }
 
     @java.lang.Override
@@ -747,11 +1471,23 @@ public final class DatabaseAdminGrpc {
                       com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
                       this, METHODID_SET_IAM_POLICY)))
           .addMethod(
+              getSetIamPolicyOnBackupInternalOnlyMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
+                      this, METHODID_SET_IAM_POLICY_ON_BACKUP_INTERNAL_ONLY)))
+          .addMethod(
               getGetIamPolicyMethodHelper(),
               asyncUnaryCall(
                   new MethodHandlers<
                       com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
                       this, METHODID_GET_IAM_POLICY)))
+          .addMethod(
+              getGetIamPolicyOnBackupInternalOnlyMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
+                      this, METHODID_GET_IAM_POLICY_ON_BACKUP_INTERNAL_ONLY)))
           .addMethod(
               getTestIamPermissionsMethodHelper(),
               asyncUnaryCall(
@@ -759,6 +1495,64 @@ public final class DatabaseAdminGrpc {
                       com.google.iam.v1.TestIamPermissionsRequest,
                       com.google.iam.v1.TestIamPermissionsResponse>(
                       this, METHODID_TEST_IAM_PERMISSIONS)))
+          .addMethod(
+              getTestIamPermissionsOnBackupInternalOnlyMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.iam.v1.TestIamPermissionsRequest,
+                      com.google.iam.v1.TestIamPermissionsResponse>(
+                      this, METHODID_TEST_IAM_PERMISSIONS_ON_BACKUP_INTERNAL_ONLY)))
+          .addMethod(
+              getCreateBackupMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.spanner.admin.database.v1.CreateBackupRequest,
+                      com.google.longrunning.Operation>(this, METHODID_CREATE_BACKUP)))
+          .addMethod(
+              getGetBackupMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.spanner.admin.database.v1.GetBackupRequest,
+                      com.google.spanner.admin.database.v1.Backup>(this, METHODID_GET_BACKUP)))
+          .addMethod(
+              getUpdateBackupMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.spanner.admin.database.v1.UpdateBackupRequest,
+                      com.google.spanner.admin.database.v1.Backup>(this, METHODID_UPDATE_BACKUP)))
+          .addMethod(
+              getDeleteBackupMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.spanner.admin.database.v1.DeleteBackupRequest,
+                      com.google.protobuf.Empty>(this, METHODID_DELETE_BACKUP)))
+          .addMethod(
+              getListBackupsMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.spanner.admin.database.v1.ListBackupsRequest,
+                      com.google.spanner.admin.database.v1.ListBackupsResponse>(
+                      this, METHODID_LIST_BACKUPS)))
+          .addMethod(
+              getRestoreDatabaseMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.spanner.admin.database.v1.RestoreDatabaseRequest,
+                      com.google.longrunning.Operation>(this, METHODID_RESTORE_DATABASE)))
+          .addMethod(
+              getListDatabaseOperationsMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.spanner.admin.database.v1.ListDatabaseOperationsRequest,
+                      com.google.spanner.admin.database.v1.ListDatabaseOperationsResponse>(
+                      this, METHODID_LIST_DATABASE_OPERATIONS)))
+          .addMethod(
+              getListBackupOperationsMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.spanner.admin.database.v1.ListBackupOperationsRequest,
+                      com.google.spanner.admin.database.v1.ListBackupOperationsResponse>(
+                      this, METHODID_LIST_BACKUP_OPERATIONS)))
           .build();
     }
   }
@@ -905,10 +1699,10 @@ public final class DatabaseAdminGrpc {
      *
      *
      * <pre>
-     * Sets the access control policy on a database resource. Replaces any
-     * existing policy.
-     * Authorization requires `spanner.databases.setIamPolicy` permission on
-     * [resource][google.iam.v1.SetIamPolicyRequest.resource].
+     * Sets the access control policy on a database resource.
+     * Replaces any existing policy.
+     * Authorization requires `spanner.databases.setIamPolicy`
+     * permission on [resource][google.iam.v1.SetIamPolicyRequest.resource].
      * </pre>
      */
     public void setIamPolicy(
@@ -920,12 +1714,23 @@ public final class DatabaseAdminGrpc {
           responseObserver);
     }
 
+    /** */
+    public void setIamPolicyOnBackupInternalOnly(
+        com.google.iam.v1.SetIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getSetIamPolicyOnBackupInternalOnlyMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
     /**
      *
      *
      * <pre>
-     * Gets the access control policy for a database resource. Returns an empty
-     * policy if a database exists but does not have a policy set.
+     * Gets the access control policy for a database resource.
+     * Returns an empty policy if a database exists but does
+     * not have a policy set.
      * Authorization requires `spanner.databases.getIamPolicy` permission on
      * [resource][google.iam.v1.GetIamPolicyRequest.resource].
      * </pre>
@@ -939,15 +1744,25 @@ public final class DatabaseAdminGrpc {
           responseObserver);
     }
 
+    /** */
+    public void getIamPolicyOnBackupInternalOnly(
+        com.google.iam.v1.GetIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetIamPolicyOnBackupInternalOnlyMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
     /**
      *
      *
      * <pre>
      * Returns permissions that the caller has on the specified database resource.
-     * Attempting this RPC on a non-existent Cloud Spanner database will result in
-     * a NOT_FOUND error if the user has `spanner.databases.list` permission on
-     * the containing Cloud Spanner instance. Otherwise returns an empty set of
-     * permissions.
+     * Attempting this RPC on a non-existent Cloud Spanner database will
+     * result in a NOT_FOUND error if the user has
+     * `spanner.databases.list` permission on the containing Cloud
+     * Spanner instance. Otherwise returns an empty set of permissions.
      * </pre>
      */
     public void testIamPermissions(
@@ -956,6 +1771,103 @@ public final class DatabaseAdminGrpc {
             responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getTestIamPermissionsMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /** */
+    public void testIamPermissionsOnBackupInternalOnly(
+        com.google.iam.v1.TestIamPermissionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel()
+              .newCall(getTestIamPermissionsOnBackupInternalOnlyMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /** */
+    public void createBackup(
+        com.google.spanner.admin.database.v1.CreateBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getCreateBackupMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /** */
+    public void getBackup(
+        com.google.spanner.admin.database.v1.GetBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.spanner.admin.database.v1.Backup> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetBackupMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /** */
+    public void updateBackup(
+        com.google.spanner.admin.database.v1.UpdateBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.spanner.admin.database.v1.Backup> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getUpdateBackupMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /** */
+    public void deleteBackup(
+        com.google.spanner.admin.database.v1.DeleteBackupRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDeleteBackupMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /** */
+    public void listBackups(
+        com.google.spanner.admin.database.v1.ListBackupsRequest request,
+        io.grpc.stub.StreamObserver<com.google.spanner.admin.database.v1.ListBackupsResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListBackupsMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /** */
+    public void restoreDatabase(
+        com.google.spanner.admin.database.v1.RestoreDatabaseRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getRestoreDatabaseMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /** */
+    public void listDatabaseOperations(
+        com.google.spanner.admin.database.v1.ListDatabaseOperationsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.spanner.admin.database.v1.ListDatabaseOperationsResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListDatabaseOperationsMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /** */
+    public void listBackupOperations(
+        com.google.spanner.admin.database.v1.ListBackupOperationsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.spanner.admin.database.v1.ListBackupOperationsResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListBackupOperationsMethodHelper(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1084,10 +1996,10 @@ public final class DatabaseAdminGrpc {
      *
      *
      * <pre>
-     * Sets the access control policy on a database resource. Replaces any
-     * existing policy.
-     * Authorization requires `spanner.databases.setIamPolicy` permission on
-     * [resource][google.iam.v1.SetIamPolicyRequest.resource].
+     * Sets the access control policy on a database resource.
+     * Replaces any existing policy.
+     * Authorization requires `spanner.databases.setIamPolicy`
+     * permission on [resource][google.iam.v1.SetIamPolicyRequest.resource].
      * </pre>
      */
     public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
@@ -1095,12 +2007,23 @@ public final class DatabaseAdminGrpc {
           getChannel(), getSetIamPolicyMethodHelper(), getCallOptions(), request);
     }
 
+    /** */
+    public com.google.iam.v1.Policy setIamPolicyOnBackupInternalOnly(
+        com.google.iam.v1.SetIamPolicyRequest request) {
+      return blockingUnaryCall(
+          getChannel(),
+          getSetIamPolicyOnBackupInternalOnlyMethodHelper(),
+          getCallOptions(),
+          request);
+    }
+
     /**
      *
      *
      * <pre>
-     * Gets the access control policy for a database resource. Returns an empty
-     * policy if a database exists but does not have a policy set.
+     * Gets the access control policy for a database resource.
+     * Returns an empty policy if a database exists but does
+     * not have a policy set.
      * Authorization requires `spanner.databases.getIamPolicy` permission on
      * [resource][google.iam.v1.GetIamPolicyRequest.resource].
      * </pre>
@@ -1110,21 +2033,97 @@ public final class DatabaseAdminGrpc {
           getChannel(), getGetIamPolicyMethodHelper(), getCallOptions(), request);
     }
 
+    /** */
+    public com.google.iam.v1.Policy getIamPolicyOnBackupInternalOnly(
+        com.google.iam.v1.GetIamPolicyRequest request) {
+      return blockingUnaryCall(
+          getChannel(),
+          getGetIamPolicyOnBackupInternalOnlyMethodHelper(),
+          getCallOptions(),
+          request);
+    }
+
     /**
      *
      *
      * <pre>
      * Returns permissions that the caller has on the specified database resource.
-     * Attempting this RPC on a non-existent Cloud Spanner database will result in
-     * a NOT_FOUND error if the user has `spanner.databases.list` permission on
-     * the containing Cloud Spanner instance. Otherwise returns an empty set of
-     * permissions.
+     * Attempting this RPC on a non-existent Cloud Spanner database will
+     * result in a NOT_FOUND error if the user has
+     * `spanner.databases.list` permission on the containing Cloud
+     * Spanner instance. Otherwise returns an empty set of permissions.
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
         com.google.iam.v1.TestIamPermissionsRequest request) {
       return blockingUnaryCall(
           getChannel(), getTestIamPermissionsMethodHelper(), getCallOptions(), request);
+    }
+
+    /** */
+    public com.google.iam.v1.TestIamPermissionsResponse testIamPermissionsOnBackupInternalOnly(
+        com.google.iam.v1.TestIamPermissionsRequest request) {
+      return blockingUnaryCall(
+          getChannel(),
+          getTestIamPermissionsOnBackupInternalOnlyMethodHelper(),
+          getCallOptions(),
+          request);
+    }
+
+    /** */
+    public com.google.longrunning.Operation createBackup(
+        com.google.spanner.admin.database.v1.CreateBackupRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getCreateBackupMethodHelper(), getCallOptions(), request);
+    }
+
+    /** */
+    public com.google.spanner.admin.database.v1.Backup getBackup(
+        com.google.spanner.admin.database.v1.GetBackupRequest request) {
+      return blockingUnaryCall(getChannel(), getGetBackupMethodHelper(), getCallOptions(), request);
+    }
+
+    /** */
+    public com.google.spanner.admin.database.v1.Backup updateBackup(
+        com.google.spanner.admin.database.v1.UpdateBackupRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getUpdateBackupMethodHelper(), getCallOptions(), request);
+    }
+
+    /** */
+    public com.google.protobuf.Empty deleteBackup(
+        com.google.spanner.admin.database.v1.DeleteBackupRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getDeleteBackupMethodHelper(), getCallOptions(), request);
+    }
+
+    /** */
+    public com.google.spanner.admin.database.v1.ListBackupsResponse listBackups(
+        com.google.spanner.admin.database.v1.ListBackupsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getListBackupsMethodHelper(), getCallOptions(), request);
+    }
+
+    /** */
+    public com.google.longrunning.Operation restoreDatabase(
+        com.google.spanner.admin.database.v1.RestoreDatabaseRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getRestoreDatabaseMethodHelper(), getCallOptions(), request);
+    }
+
+    /** */
+    public com.google.spanner.admin.database.v1.ListDatabaseOperationsResponse
+        listDatabaseOperations(
+            com.google.spanner.admin.database.v1.ListDatabaseOperationsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getListDatabaseOperationsMethodHelper(), getCallOptions(), request);
+    }
+
+    /** */
+    public com.google.spanner.admin.database.v1.ListBackupOperationsResponse listBackupOperations(
+        com.google.spanner.admin.database.v1.ListBackupOperationsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getListBackupOperationsMethodHelper(), getCallOptions(), request);
     }
   }
 
@@ -1254,10 +2253,10 @@ public final class DatabaseAdminGrpc {
      *
      *
      * <pre>
-     * Sets the access control policy on a database resource. Replaces any
-     * existing policy.
-     * Authorization requires `spanner.databases.setIamPolicy` permission on
-     * [resource][google.iam.v1.SetIamPolicyRequest.resource].
+     * Sets the access control policy on a database resource.
+     * Replaces any existing policy.
+     * Authorization requires `spanner.databases.setIamPolicy`
+     * permission on [resource][google.iam.v1.SetIamPolicyRequest.resource].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
@@ -1266,12 +2265,21 @@ public final class DatabaseAdminGrpc {
           getChannel().newCall(getSetIamPolicyMethodHelper(), getCallOptions()), request);
     }
 
+    /** */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
+        setIamPolicyOnBackupInternalOnly(com.google.iam.v1.SetIamPolicyRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getSetIamPolicyOnBackupInternalOnlyMethodHelper(), getCallOptions()),
+          request);
+    }
+
     /**
      *
      *
      * <pre>
-     * Gets the access control policy for a database resource. Returns an empty
-     * policy if a database exists but does not have a policy set.
+     * Gets the access control policy for a database resource.
+     * Returns an empty policy if a database exists but does
+     * not have a policy set.
      * Authorization requires `spanner.databases.getIamPolicy` permission on
      * [resource][google.iam.v1.GetIamPolicyRequest.resource].
      * </pre>
@@ -1282,15 +2290,23 @@ public final class DatabaseAdminGrpc {
           getChannel().newCall(getGetIamPolicyMethodHelper(), getCallOptions()), request);
     }
 
+    /** */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
+        getIamPolicyOnBackupInternalOnly(com.google.iam.v1.GetIamPolicyRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetIamPolicyOnBackupInternalOnlyMethodHelper(), getCallOptions()),
+          request);
+    }
+
     /**
      *
      *
      * <pre>
      * Returns permissions that the caller has on the specified database resource.
-     * Attempting this RPC on a non-existent Cloud Spanner database will result in
-     * a NOT_FOUND error if the user has `spanner.databases.list` permission on
-     * the containing Cloud Spanner instance. Otherwise returns an empty set of
-     * permissions.
+     * Attempting this RPC on a non-existent Cloud Spanner database will
+     * result in a NOT_FOUND error if the user has
+     * `spanner.databases.list` permission on the containing Cloud
+     * Spanner instance. Otherwise returns an empty set of permissions.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1298,6 +2314,80 @@ public final class DatabaseAdminGrpc {
         testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getTestIamPermissionsMethodHelper(), getCallOptions()), request);
+    }
+
+    /** */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.iam.v1.TestIamPermissionsResponse>
+        testIamPermissionsOnBackupInternalOnly(
+            com.google.iam.v1.TestIamPermissionsRequest request) {
+      return futureUnaryCall(
+          getChannel()
+              .newCall(getTestIamPermissionsOnBackupInternalOnlyMethodHelper(), getCallOptions()),
+          request);
+    }
+
+    /** */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createBackup(com.google.spanner.admin.database.v1.CreateBackupRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getCreateBackupMethodHelper(), getCallOptions()), request);
+    }
+
+    /** */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.spanner.admin.database.v1.Backup>
+        getBackup(com.google.spanner.admin.database.v1.GetBackupRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetBackupMethodHelper(), getCallOptions()), request);
+    }
+
+    /** */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.spanner.admin.database.v1.Backup>
+        updateBackup(com.google.spanner.admin.database.v1.UpdateBackupRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getUpdateBackupMethodHelper(), getCallOptions()), request);
+    }
+
+    /** */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteBackup(com.google.spanner.admin.database.v1.DeleteBackupRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDeleteBackupMethodHelper(), getCallOptions()), request);
+    }
+
+    /** */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.spanner.admin.database.v1.ListBackupsResponse>
+        listBackups(com.google.spanner.admin.database.v1.ListBackupsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListBackupsMethodHelper(), getCallOptions()), request);
+    }
+
+    /** */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        restoreDatabase(com.google.spanner.admin.database.v1.RestoreDatabaseRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getRestoreDatabaseMethodHelper(), getCallOptions()), request);
+    }
+
+    /** */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.spanner.admin.database.v1.ListDatabaseOperationsResponse>
+        listDatabaseOperations(
+            com.google.spanner.admin.database.v1.ListDatabaseOperationsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListDatabaseOperationsMethodHelper(), getCallOptions()), request);
+    }
+
+    /** */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.spanner.admin.database.v1.ListBackupOperationsResponse>
+        listBackupOperations(
+            com.google.spanner.admin.database.v1.ListBackupOperationsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListBackupOperationsMethodHelper(), getCallOptions()), request);
     }
   }
 
@@ -1308,8 +2398,19 @@ public final class DatabaseAdminGrpc {
   private static final int METHODID_DROP_DATABASE = 4;
   private static final int METHODID_GET_DATABASE_DDL = 5;
   private static final int METHODID_SET_IAM_POLICY = 6;
-  private static final int METHODID_GET_IAM_POLICY = 7;
-  private static final int METHODID_TEST_IAM_PERMISSIONS = 8;
+  private static final int METHODID_SET_IAM_POLICY_ON_BACKUP_INTERNAL_ONLY = 7;
+  private static final int METHODID_GET_IAM_POLICY = 8;
+  private static final int METHODID_GET_IAM_POLICY_ON_BACKUP_INTERNAL_ONLY = 9;
+  private static final int METHODID_TEST_IAM_PERMISSIONS = 10;
+  private static final int METHODID_TEST_IAM_PERMISSIONS_ON_BACKUP_INTERNAL_ONLY = 11;
+  private static final int METHODID_CREATE_BACKUP = 12;
+  private static final int METHODID_GET_BACKUP = 13;
+  private static final int METHODID_UPDATE_BACKUP = 14;
+  private static final int METHODID_DELETE_BACKUP = 15;
+  private static final int METHODID_LIST_BACKUPS = 16;
+  private static final int METHODID_RESTORE_DATABASE = 17;
+  private static final int METHODID_LIST_DATABASE_OPERATIONS = 18;
+  private static final int METHODID_LIST_BACKUP_OPERATIONS = 19;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1368,8 +2469,18 @@ public final class DatabaseAdminGrpc {
               (com.google.iam.v1.SetIamPolicyRequest) request,
               (io.grpc.stub.StreamObserver<com.google.iam.v1.Policy>) responseObserver);
           break;
+        case METHODID_SET_IAM_POLICY_ON_BACKUP_INTERNAL_ONLY:
+          serviceImpl.setIamPolicyOnBackupInternalOnly(
+              (com.google.iam.v1.SetIamPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.iam.v1.Policy>) responseObserver);
+          break;
         case METHODID_GET_IAM_POLICY:
           serviceImpl.getIamPolicy(
+              (com.google.iam.v1.GetIamPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.iam.v1.Policy>) responseObserver);
+          break;
+        case METHODID_GET_IAM_POLICY_ON_BACKUP_INTERNAL_ONLY:
+          serviceImpl.getIamPolicyOnBackupInternalOnly(
               (com.google.iam.v1.GetIamPolicyRequest) request,
               (io.grpc.stub.StreamObserver<com.google.iam.v1.Policy>) responseObserver);
           break;
@@ -1377,6 +2488,60 @@ public final class DatabaseAdminGrpc {
           serviceImpl.testIamPermissions(
               (com.google.iam.v1.TestIamPermissionsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_TEST_IAM_PERMISSIONS_ON_BACKUP_INTERNAL_ONLY:
+          serviceImpl.testIamPermissionsOnBackupInternalOnly(
+              (com.google.iam.v1.TestIamPermissionsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_BACKUP:
+          serviceImpl.createBackup(
+              (com.google.spanner.admin.database.v1.CreateBackupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_BACKUP:
+          serviceImpl.getBackup(
+              (com.google.spanner.admin.database.v1.GetBackupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.spanner.admin.database.v1.Backup>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_BACKUP:
+          serviceImpl.updateBackup(
+              (com.google.spanner.admin.database.v1.UpdateBackupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.spanner.admin.database.v1.Backup>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_BACKUP:
+          serviceImpl.deleteBackup(
+              (com.google.spanner.admin.database.v1.DeleteBackupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_LIST_BACKUPS:
+          serviceImpl.listBackups(
+              (com.google.spanner.admin.database.v1.ListBackupsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.spanner.admin.database.v1.ListBackupsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_RESTORE_DATABASE:
+          serviceImpl.restoreDatabase(
+              (com.google.spanner.admin.database.v1.RestoreDatabaseRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_DATABASE_OPERATIONS:
+          serviceImpl.listDatabaseOperations(
+              (com.google.spanner.admin.database.v1.ListDatabaseOperationsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.spanner.admin.database.v1.ListDatabaseOperationsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_BACKUP_OPERATIONS:
+          serviceImpl.listBackupOperations(
+              (com.google.spanner.admin.database.v1.ListBackupOperationsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.spanner.admin.database.v1.ListBackupOperationsResponse>)
                   responseObserver);
           break;
         default:
@@ -1450,8 +2615,19 @@ public final class DatabaseAdminGrpc {
                       .addMethod(getDropDatabaseMethodHelper())
                       .addMethod(getGetDatabaseDdlMethodHelper())
                       .addMethod(getSetIamPolicyMethodHelper())
+                      .addMethod(getSetIamPolicyOnBackupInternalOnlyMethodHelper())
                       .addMethod(getGetIamPolicyMethodHelper())
+                      .addMethod(getGetIamPolicyOnBackupInternalOnlyMethodHelper())
                       .addMethod(getTestIamPermissionsMethodHelper())
+                      .addMethod(getTestIamPermissionsOnBackupInternalOnlyMethodHelper())
+                      .addMethod(getCreateBackupMethodHelper())
+                      .addMethod(getGetBackupMethodHelper())
+                      .addMethod(getUpdateBackupMethodHelper())
+                      .addMethod(getDeleteBackupMethodHelper())
+                      .addMethod(getListBackupsMethodHelper())
+                      .addMethod(getRestoreDatabaseMethodHelper())
+                      .addMethod(getListDatabaseOperationsMethodHelper())
+                      .addMethod(getListBackupOperationsMethodHelper())
                       .build();
         }
       }
