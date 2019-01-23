@@ -704,6 +704,26 @@ public class BlobInfo implements Serializable {
     return Data.isNull(crc32c) ? null : crc32c;
   }
 
+  /**
+   * Returns the CRC32C checksum of blob's data as described in <a
+   * href="http://tools.ietf.org/html/rfc4960#appendix-B">RFC 4960, Appendix B;</a> decoded to
+   * string.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/hashes-etags#_JSONAPI">Hashes and ETags:
+   *     Best Practices</a>
+   */
+  public String getCrc32cString() {
+    if (crc32c == null) {
+      return null;
+    }
+    byte[] decodeCrc32c = BaseEncoding.base64().decode(crc32c);
+    StringBuilder stringBuilder = new StringBuilder();
+    for (byte b : decodeCrc32c) {
+      stringBuilder.append(String.format("%02x", b & 0xff));
+    }
+    return stringBuilder.toString();
+  }
+
   /** Returns the blob's media download link. */
   public String getMediaLink() {
     return mediaLink;

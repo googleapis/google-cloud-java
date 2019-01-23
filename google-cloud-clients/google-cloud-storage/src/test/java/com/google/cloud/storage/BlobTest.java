@@ -71,6 +71,7 @@ public class BlobTest {
   private static final String CONTENT_ENCODING = "UTF-8";
   private static final String CONTENT_LANGUAGE = "En";
   private static final String CRC32 = "0xFF00";
+  private static final String CRC32_STRING = "d31145d3";
   private static final Long DELETE_TIME = System.currentTimeMillis();
   private static final String ETAG = "0xFF00";
   private static final Long GENERATION = 1L;
@@ -507,6 +508,7 @@ public class BlobTest {
     assertEquals(CONTENT_ENCODING, blob.getContentEncoding());
     assertEquals(CONTENT_LANGUAGE, blob.getContentLanguage());
     assertEquals(CRC32, blob.getCrc32c());
+    assertEquals(CRC32_STRING, blob.getCrc32cString());
     assertEquals(CREATE_TIME, blob.getCreateTime());
     assertEquals(CUSTOMER_ENCRYPTION, blob.getCustomerEncryption());
     assertEquals(KMS_KEY_NAME, blob.getKmsKeyName());
@@ -539,6 +541,7 @@ public class BlobTest {
     assertNull(blob.getContentEncoding());
     assertNull(blob.getContentLanguage());
     assertNull(blob.getCrc32c());
+    assertNull(blob.getCrc32cString());
     assertNull(blob.getCreateTime());
     assertNull(blob.getCustomerEncryption());
     assertNull(blob.getKmsKeyName());

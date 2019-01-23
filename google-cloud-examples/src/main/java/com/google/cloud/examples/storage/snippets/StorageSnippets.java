@@ -1136,6 +1136,7 @@ public class StorageSnippets {
     System.out.println("ContentLanguage: " + blob.getContentLanguage());
     System.out.println("ContentType: " + blob.getContentType());
     System.out.println("Crc32c: " + blob.getCrc32c());
+    System.out.println("Crc32cString: " + blob.getCrc32cString());
     System.out.println("ETag: " + blob.getEtag());
     System.out.println("Generation: " + blob.getGeneration());
     System.out.println("Id: " + blob.getBlobId());
