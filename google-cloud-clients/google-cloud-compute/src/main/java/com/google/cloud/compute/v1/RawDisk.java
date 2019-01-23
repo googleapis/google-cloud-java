@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,13 +43,13 @@ public final class RawDisk implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("containerType")) {
+    if ("containerType".equals(fieldName)) {
       return containerType;
     }
-    if (fieldName.equals("sha1Checksum")) {
+    if ("sha1Checksum".equals(fieldName)) {
       return sha1Checksum;
     }
-    if (fieldName.equals("source")) {
+    if ("source".equals(fieldName)) {
       return source;
     }
     return null;

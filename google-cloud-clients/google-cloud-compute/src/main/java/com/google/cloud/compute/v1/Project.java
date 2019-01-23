@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -87,43 +87,43 @@ public final class Project implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("commonInstanceMetadata")) {
+    if ("commonInstanceMetadata".equals(fieldName)) {
       return commonInstanceMetadata;
     }
-    if (fieldName.equals("creationTimestamp")) {
+    if ("creationTimestamp".equals(fieldName)) {
       return creationTimestamp;
     }
-    if (fieldName.equals("defaultNetworkTier")) {
+    if ("defaultNetworkTier".equals(fieldName)) {
       return defaultNetworkTier;
     }
-    if (fieldName.equals("defaultServiceAccount")) {
+    if ("defaultServiceAccount".equals(fieldName)) {
       return defaultServiceAccount;
     }
-    if (fieldName.equals("description")) {
+    if ("description".equals(fieldName)) {
       return description;
     }
-    if (fieldName.equals("enabledFeatures")) {
+    if ("enabledFeatures".equals(fieldName)) {
       return enabledFeatures;
     }
-    if (fieldName.equals("id")) {
+    if ("id".equals(fieldName)) {
       return id;
     }
-    if (fieldName.equals("kind")) {
+    if ("kind".equals(fieldName)) {
       return kind;
     }
-    if (fieldName.equals("name")) {
+    if ("name".equals(fieldName)) {
       return name;
     }
-    if (fieldName.equals("quotas")) {
+    if ("quotas".equals(fieldName)) {
       return quotas;
     }
-    if (fieldName.equals("selfLink")) {
+    if ("selfLink".equals(fieldName)) {
       return selfLink;
     }
-    if (fieldName.equals("usageExportLocation")) {
+    if ("usageExportLocation".equals(fieldName)) {
       return usageExportLocation;
     }
-    if (fieldName.equals("xpnProjectStatus")) {
+    if ("xpnProjectStatus".equals(fieldName)) {
       return xpnProjectStatus;
     }
     return null;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,25 +63,25 @@ public final class Rule implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("action")) {
+    if ("action".equals(fieldName)) {
       return action;
     }
-    if (fieldName.equals("conditions")) {
+    if ("conditions".equals(fieldName)) {
       return conditions;
     }
-    if (fieldName.equals("description")) {
+    if ("description".equals(fieldName)) {
       return description;
     }
-    if (fieldName.equals("ins")) {
+    if ("ins".equals(fieldName)) {
       return ins;
     }
-    if (fieldName.equals("logConfigs")) {
+    if ("logConfigs".equals(fieldName)) {
       return logConfigs;
     }
-    if (fieldName.equals("notIns")) {
+    if ("notIns".equals(fieldName)) {
       return notIns;
     }
-    if (fieldName.equals("permissions")) {
+    if ("permissions".equals(fieldName)) {
       return permissions;
     }
     return null;

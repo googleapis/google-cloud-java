@@ -119,7 +119,7 @@ public interface AppEngineHttpTargetOrBuilder
    *   [Reading request headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
    * In addition, some App Engine headers, which contain
    * job-specific information, are also be sent to the job handler; see
-   * [request headers](https://cloud.google.comappengine/docs/standard/python/config/cron#securing_urls_for_cron).
+   * [request headers](https://cloud.google.com/appengine/docs/standard/python/config/cron#securing_urls_for_cron).
    * </pre>
    *
    * <code>map&lt;string, string&gt; headers = 4;</code>
@@ -153,7 +153,7 @@ public interface AppEngineHttpTargetOrBuilder
    *   [Reading request headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
    * In addition, some App Engine headers, which contain
    * job-specific information, are also be sent to the job handler; see
-   * [request headers](https://cloud.google.comappengine/docs/standard/python/config/cron#securing_urls_for_cron).
+   * [request headers](https://cloud.google.com/appengine/docs/standard/python/config/cron#securing_urls_for_cron).
    * </pre>
    *
    * <code>map&lt;string, string&gt; headers = 4;</code>
@@ -190,7 +190,7 @@ public interface AppEngineHttpTargetOrBuilder
    *   [Reading request headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
    * In addition, some App Engine headers, which contain
    * job-specific information, are also be sent to the job handler; see
-   * [request headers](https://cloud.google.comappengine/docs/standard/python/config/cron#securing_urls_for_cron).
+   * [request headers](https://cloud.google.com/appengine/docs/standard/python/config/cron#securing_urls_for_cron).
    * </pre>
    *
    * <code>map&lt;string, string&gt; headers = 4;</code>
@@ -224,7 +224,7 @@ public interface AppEngineHttpTargetOrBuilder
    *   [Reading request headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
    * In addition, some App Engine headers, which contain
    * job-specific information, are also be sent to the job handler; see
-   * [request headers](https://cloud.google.comappengine/docs/standard/python/config/cron#securing_urls_for_cron).
+   * [request headers](https://cloud.google.com/appengine/docs/standard/python/config/cron#securing_urls_for_cron).
    * </pre>
    *
    * <code>map&lt;string, string&gt; headers = 4;</code>
@@ -258,7 +258,7 @@ public interface AppEngineHttpTargetOrBuilder
    *   [Reading request headers](https://cloud.google.com/appengine/docs/python/taskqueue/push/creating-handlers#reading_request_headers).
    * In addition, some App Engine headers, which contain
    * job-specific information, are also be sent to the job handler; see
-   * [request headers](https://cloud.google.comappengine/docs/standard/python/config/cron#securing_urls_for_cron).
+   * [request headers](https://cloud.google.com/appengine/docs/standard/python/config/cron#securing_urls_for_cron).
    * </pre>
    *
    * <code>map&lt;string, string&gt; headers = 4;</code>

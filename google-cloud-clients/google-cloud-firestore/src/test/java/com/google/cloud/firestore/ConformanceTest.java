@@ -133,11 +133,7 @@ public class ConformanceTest {
     firestoreMock =
         Mockito.spy(
             new FirestoreImpl(
-                FirestoreOptions.newBuilder()
-                    .setProjectId("projectID")
-                    .setTimestampsInSnapshotsEnabled(true)
-                    .build(),
-                firestoreRpc));
+                FirestoreOptions.newBuilder().setProjectId("projectID").build(), firestoreRpc));
     watchQuery = collection("projects/projectID/databases/(default)/documents/C").orderBy("a");
   }
 

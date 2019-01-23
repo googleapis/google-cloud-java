@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,16 +51,16 @@ public final class Scheduling implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("automaticRestart")) {
+    if ("automaticRestart".equals(fieldName)) {
       return automaticRestart;
     }
-    if (fieldName.equals("nodeAffinities")) {
+    if ("nodeAffinities".equals(fieldName)) {
       return nodeAffinities;
     }
-    if (fieldName.equals("onHostMaintenance")) {
+    if ("onHostMaintenance".equals(fieldName)) {
       return onHostMaintenance;
     }
-    if (fieldName.equals("preemptible")) {
+    if ("preemptible".equals(fieldName)) {
       return preemptible;
     }
     return null;

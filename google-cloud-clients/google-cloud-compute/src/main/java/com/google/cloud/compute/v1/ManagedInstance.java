@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,19 +54,19 @@ public final class ManagedInstance implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("currentAction")) {
+    if ("currentAction".equals(fieldName)) {
       return currentAction;
     }
-    if (fieldName.equals("id")) {
+    if ("id".equals(fieldName)) {
       return id;
     }
-    if (fieldName.equals("instance")) {
+    if ("instance".equals(fieldName)) {
       return instance;
     }
-    if (fieldName.equals("instanceStatus")) {
+    if ("instanceStatus".equals(fieldName)) {
       return instanceStatus;
     }
-    if (fieldName.equals("lastAttempt")) {
+    if ("lastAttempt".equals(fieldName)) {
       return lastAttempt;
     }
     return null;

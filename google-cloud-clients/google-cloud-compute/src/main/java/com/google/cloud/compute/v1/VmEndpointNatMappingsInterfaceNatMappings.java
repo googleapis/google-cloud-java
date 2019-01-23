@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,16 +51,16 @@ public final class VmEndpointNatMappingsInterfaceNatMappings implements ApiMessa
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("natIpPortRanges")) {
+    if ("natIpPortRanges".equals(fieldName)) {
       return natIpPortRanges;
     }
-    if (fieldName.equals("numTotalNatPorts")) {
+    if ("numTotalNatPorts".equals(fieldName)) {
       return numTotalNatPorts;
     }
-    if (fieldName.equals("sourceAliasIpRange")) {
+    if ("sourceAliasIpRange".equals(fieldName)) {
       return sourceAliasIpRange;
     }
-    if (fieldName.equals("sourceVirtualIp")) {
+    if ("sourceVirtualIp".equals(fieldName)) {
       return sourceVirtualIp;
     }
     return null;

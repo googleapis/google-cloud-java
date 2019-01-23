@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,19 +54,19 @@ public final class RouterInterface implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("ipRange")) {
+    if ("ipRange".equals(fieldName)) {
       return ipRange;
     }
-    if (fieldName.equals("linkedInterconnectAttachment")) {
+    if ("linkedInterconnectAttachment".equals(fieldName)) {
       return linkedInterconnectAttachment;
     }
-    if (fieldName.equals("linkedVpnTunnel")) {
+    if ("linkedVpnTunnel".equals(fieldName)) {
       return linkedVpnTunnel;
     }
-    if (fieldName.equals("managementType")) {
+    if ("managementType".equals(fieldName)) {
       return managementType;
     }
-    if (fieldName.equals("name")) {
+    if ("name".equals(fieldName)) {
       return name;
     }
     return null;
