@@ -1450,7 +1450,8 @@ public interface Storage extends Service<StorageOptions> {
    * @throws StorageException upon failure
    * @see <a href="https://cloud.google.com/storage/docs/hashes-etags">Hashes and ETags</a>
    */
-  Blob create(BlobInfo blobInfo, byte[] content, int offset, int length, BlobTargetOption... options);
+  Blob create(
+      BlobInfo blobInfo, byte[] content, int offset, int length, BlobTargetOption... options);
 
   /**
    * Creates a new blob. Direct upload is used to upload {@code content}. For large content, {@link
