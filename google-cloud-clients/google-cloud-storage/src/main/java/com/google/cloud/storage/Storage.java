@@ -1433,8 +1433,8 @@ public interface Storage extends Service<StorageOptions> {
    * Creates a new blob with the sub array of the given byte array. Direct upload is used to upload
    * {@code content}. For large content, {@link #writer} is recommended as it uses resumable upload.
    * MD5 and CRC32C hashes of {@code content} are computed and used for validating transferred data.
-   * Accepts an optional userProject {@link BlobGetOption} option which defines the project id to
-   * assign operational costs.
+   * Accepts a userProject {@link BlobGetOption} option, which defines the project id to assign
+   * operational costs.
    *
    * <p>Example of creating a blob from a byte array.
    *
