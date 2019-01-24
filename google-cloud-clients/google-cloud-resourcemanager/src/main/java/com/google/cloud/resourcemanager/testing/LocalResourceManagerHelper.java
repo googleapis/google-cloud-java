@@ -61,7 +61,9 @@ import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.GZIPInputStream;
-import org.joda.time.format.ISODateTimeFormat;
+import org.threeten.bp.Instant;
+import org.threeten.bp.ZoneOffset;
+import org.threeten.bp.format.DateTimeFormatter;
 
 /**
  * Utility to create a local Resource Manager mock for testing.
@@ -443,7 +445,10 @@ public class LocalResourceManagerHelper {
     } else {
       project.setLifecycleState("ACTIVE");
       project.setProjectNumber(Math.abs(PROJECT_NUMBER_GENERATOR.nextLong() % Long.MAX_VALUE));
-      project.setCreateTime(ISODateTimeFormat.dateTime().print(System.currentTimeMillis()));
+      project.setCreateTime(
+          DateTimeFormatter.ISO_DATE_TIME
+              .withZone(ZoneOffset.UTC)
+              .format(Instant.ofEpochMilli(System.currentTimeMillis())));
       if (projects.putIfAbsent(project.getProjectId(), project) != null) {
         return Error.ALREADY_EXISTS.response(
             "A project with the same project ID (" + project.getProjectId() + ") already exists.");
