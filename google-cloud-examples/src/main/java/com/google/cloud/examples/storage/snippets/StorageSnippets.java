@@ -132,6 +132,19 @@ public class StorageSnippets {
     return blob;
   }
 
+  /** Example of creating a blob with sub array from a byte array. */
+  // [TARGET create(BlobInfo, byte[], offset, length, BlobTargetOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
+  public Blob createBlobWithSubArrayFromByteArray(String bucketName, String blobName) {
+    // [START createBlobWithSubArrayFromByteArray]
+    BlobId blobId = BlobId.of(bucketName, blobName);
+    BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
+    Blob blob = storage.create(blobInfo, "Hello, World!".getBytes(UTF_8), 7, 5);
+    // [END createBlobWithSubArrayFromByteArray]
+    return blob;
+  }
+
   /** Example of creating a blob from an input stream. */
   // [TARGET create(BlobInfo, InputStream, BlobWriteOption...)]
   // [VARIABLE "my_unique_bucket"]
