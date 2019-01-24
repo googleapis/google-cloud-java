@@ -178,7 +178,10 @@ public class Blob extends BlobInfo {
     }
 
     /**
-     * Returns an option to download blobs directly when you use the MediaHttpDownloader
+     * Returns the option to enable or disable direct download. If the value is set to {@code true},
+     * then a direct download will be performed when all the blob content is loaded in one request.
+     * If {@code false} is specified, the download uses a resumed download protocol to load data
+     * into chunks.
      */
     public static BlobSourceOption useDirectDownload(boolean useDirectDownload) {
       return new BlobSourceOption(StorageRpc.Option.USE_DIRECT_DOWNLOAD, useDirectDownload);

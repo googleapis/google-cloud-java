@@ -123,8 +123,6 @@ public class BlobTest {
           .build();
   private static final BlobInfo BLOB_INFO =
       BlobInfo.newBuilder("b", "n").setMetageneration(42L).build();
-  private static final BlobInfo BLOB_INFO_USE_DIRECT_DOWNLOAD =
-      BlobInfo.newBuilder("b", "n").setMetageneration(42L).setUseDirectDownload(true).build();
   private static final BlobInfo DIRECTORY_INFO =
       BlobInfo.newBuilder("b", "n/").setSize(0L).setIsDirectory(true).build();
   private static final String BASE64_KEY = "JVzfVl8NLD9FjedFuStegjRfES5ll5zc59CIXw572OA=";
@@ -599,7 +597,7 @@ public class BlobTest {
     expect(storage.getOptions()).andReturn(mockOptions);
     expect(
             storage.reader(
-                BLOB_INFO_USE_DIRECT_DOWNLOAD.getBlobId(),
+                BLOB_INFO.getBlobId(),
                 Storage.BlobSourceOption.useDirectDownload(true)))
         .andReturn(channel);
     replay(storage);
