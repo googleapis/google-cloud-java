@@ -28,11 +28,6 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>joda-time</groupId>
-      <artifactId>joda-time</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
       <groupId>com.google.http-client</groupId>
       <artifactId>google-http-client</artifactId>
       <exclusions>
