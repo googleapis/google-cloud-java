@@ -16,23 +16,16 @@
 
 package com.google.cloud.storage;
 
-import static com.google.cloud.RetryHelper.runWithRetries;
 import static com.google.cloud.storage.Blob.BlobSourceOption.toGetOptions;
 import static com.google.cloud.storage.Blob.BlobSourceOption.toSourceOptions;
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.api.client.http.HttpRequestInitializer;
-import com.google.api.client.http.HttpTransport;
-import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.ServiceAccountSigner.SigningException;
-import com.google.cloud.BaseService;
 import com.google.cloud.ReadChannel;
-import com.google.cloud.RetryHelper;
 import com.google.cloud.Tuple;
 import com.google.cloud.WriteChannel;
-import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.storage.Acl.Entity;
 import com.google.cloud.storage.Storage.BlobTargetOption;
 import com.google.cloud.storage.Storage.BlobWriteOption;
@@ -41,7 +34,6 @@ import com.google.cloud.storage.Storage.SignUrlOption;
 import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.common.base.Function;
 import com.google.common.io.BaseEncoding;
-import com.google.common.io.CountingOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.OutputStream;
@@ -56,7 +48,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -109,6 +100,8 @@ public class Blob extends BlobInfo {
           return Storage.BlobSourceOption.metagenerationNotMatch(blobInfo.getMetageneration());
         case CUSTOMER_SUPPLIED_KEY:
           return Storage.BlobSourceOption.decryptionKey((String) getValue());
+        case USE_DIRECT_DOWNLOAD:
+          return Storage.BlobSourceOption.useDirectDownload((Boolean) getValue());
         case USER_PROJECT:
           return Storage.BlobSourceOption.userProject((String) getValue());
         default:
@@ -185,6 +178,13 @@ public class Blob extends BlobInfo {
     }
 
     /**
+     * Returns an option to download blobs directly when you use the MediaHttpDownloader
+     */
+    public static BlobSourceOption useDirectDownload(boolean useDirectDownload) {
+      return new BlobSourceOption(StorageRpc.Option.USE_DIRECT_DOWNLOAD, useDirectDownload);
+    }
+
+    /**
      * Returns an option for blob's billing user project. This option is used only if the blob's
      * bucket has requester_pays flag enabled.
      */
@@ -229,62 +229,6 @@ public class Blob extends BlobInfo {
         channel.write(bytes);
         bytes.clear();
       }
-    } catch (IOException e) {
-      throw new StorageException(e);
-    }
-  }
-
-  /**
-   * Builds com.google.api.services.storage.Storage using storage options.
-   *
-   * @param options storage options
-   * @return Storage
-   */
-  private com.google.api.services.storage.Storage buildStorage(StorageOptions options) {
-    HttpTransportOptions transportOptions = (HttpTransportOptions) options.getTransportOptions();
-    HttpTransport transport = transportOptions.getHttpTransportFactory().create();
-    HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);
-
-    return new com.google.api.services.storage.Storage.Builder(
-            transport, JacksonFactory.getDefaultInstance(), initializer)
-        .setRootUrl(options.getHost())
-        .setApplicationName(options.getApplicationName())
-        .build();
-  }
-
-  /**
-   * Downloads this blob to the given file path using specified storage options.
-   *
-   * @param path destination
-   * @param options storage options
-   * @throws RetryHelper.RetryHelperException upon failure
-   * @throws StorageException upon failure
-   */
-  public void downloadToPathWithMediaHttpDownloader(Path path, StorageOptions options) {
-    com.google.api.services.storage.Storage storage = buildStorage(options);
-    try {
-      final com.google.api.services.storage.Storage.Objects.Get getOperation =
-          storage.objects().get(this.getBucket(), this.getName());
-      getOperation.getMediaHttpDownloader().setDirectDownloadEnabled(true);
-      final CountingOutputStream out = new CountingOutputStream(Files.newOutputStream(path));
-      runWithRetries(
-          new Callable<Void>() {
-            @Override
-            public Void call() throws Exception {
-              try {
-                getOperation.getMediaHttpDownloader().setBytesDownloaded(out.getCount());
-                getOperation.executeMediaAndDownloadTo(out);
-                return null;
-              } catch (IOException e) {
-                throw new StorageException(e);
-              }
-            };
-          },
-          options.getRetrySettings(),
-          BaseService.EXCEPTION_HANDLER,
-          options.getClock());
-    } catch (RetryHelper.RetryHelperException e) {
-      throw StorageException.translateAndThrow(e);
     } catch (IOException e) {
       throw new StorageException(e);
     }
@@ -467,6 +411,12 @@ public class Blob extends BlobInfo {
     @Override
     public Builder setEventBasedHold(Boolean eventBasedHold) {
       infoBuilder.setEventBasedHold(eventBasedHold);
+      return this;
+    }
+
+    @Override
+    public Builder setUseDirectDownload(Boolean useDirectDownload) {
+      infoBuilder.setUseDirectDownload(useDirectDownload);
       return this;
     }
 

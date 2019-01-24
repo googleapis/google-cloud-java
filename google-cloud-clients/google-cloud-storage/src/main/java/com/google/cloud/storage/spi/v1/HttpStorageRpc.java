@@ -643,6 +643,8 @@ public class HttpStorageRpc implements StorageRpc {
               .setIfGenerationMatch(Option.IF_GENERATION_MATCH.getLong(options))
               .setIfGenerationNotMatch(Option.IF_GENERATION_NOT_MATCH.getLong(options))
               .setUserProject(Option.USER_PROJECT.getString(options));
+      req.getMediaHttpDownloader()
+          .setDirectDownloadEnabled(Option.USE_DIRECT_DOWNLOAD.getBoolean(options));
       checkArgument(position >= 0, "Position should be non-negative, is %d", position);
       StringBuilder range = new StringBuilder();
       range.append("bytes=").append(position).append("-").append(position + bytes - 1);

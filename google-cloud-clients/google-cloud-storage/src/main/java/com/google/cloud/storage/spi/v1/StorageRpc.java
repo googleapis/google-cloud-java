@@ -56,6 +56,7 @@ public interface StorageRpc extends ServiceRpc {
     VERSIONS("versions"),
     FIELDS("fields"),
     CUSTOMER_SUPPLIED_KEY("customerSuppliedKey"),
+    USE_DIRECT_DOWNLOAD("useDirectDownload"),
     USER_PROJECT("userProject"),
     KMS_KEY_NAME("kmsKeyName");
 

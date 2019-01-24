@@ -123,6 +123,8 @@ public class BlobTest {
           .build();
   private static final BlobInfo BLOB_INFO =
       BlobInfo.newBuilder("b", "n").setMetageneration(42L).build();
+  private static final BlobInfo BLOB_INFO_USE_DIRECT_DOWNLOAD =
+      BlobInfo.newBuilder("b", "n").setMetageneration(42L).setUseDirectDownload(true).build();
   private static final BlobInfo DIRECTORY_INFO =
       BlobInfo.newBuilder("b", "n/").setSize(0L).setIsDirectory(true).build();
   private static final String BASE64_KEY = "JVzfVl8NLD9FjedFuStegjRfES5ll5zc59CIXw572OA=";
@@ -584,6 +586,41 @@ public class BlobTest {
 
     File file = File.createTempFile("blob", ".tmp");
     blob.downloadTo(file.toPath());
+    byte actual[] = Files.readAllBytes(file.toPath());
+    assertArrayEquals(expected, actual);
+  }
+
+  @Test
+  public void testDownloadWithUseDirectDownload() throws Exception {
+    final byte[] expected = {1, 2};
+
+    initializeExpectedBlob(2);
+    ReadChannel channel = createNiceMock(ReadChannel.class);
+    expect(storage.getOptions()).andReturn(mockOptions);
+    expect(
+            storage.reader(
+                BLOB_INFO_USE_DIRECT_DOWNLOAD.getBlobId(),
+                Storage.BlobSourceOption.useDirectDownload(true)))
+        .andReturn(channel);
+    replay(storage);
+    // First read should return 2 bytes.
+    expect(channel.read(anyObject(ByteBuffer.class)))
+        .andAnswer(
+            new IAnswer<Integer>() {
+              @Override
+              public Integer answer() throws Throwable {
+                // Modify the argument to match the expected behavior of `read`.
+                ((ByteBuffer) getCurrentArguments()[0]).put(expected);
+                return 2;
+              }
+            });
+    // Second read should return 0 bytes.
+    expect(channel.read(anyObject(ByteBuffer.class))).andReturn(0);
+    replay(channel);
+    initializeBlob();
+
+    File file = File.createTempFile("blob", ".tmp");
+    blob.downloadTo(file.toPath(), BlobSourceOption.useDirectDownload(true));
     byte actual[] = Files.readAllBytes(file.toPath());
     assertArrayEquals(expected, actual);
   }

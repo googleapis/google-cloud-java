@@ -599,6 +599,14 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
+     * Returns an option for blob's downloading. If this option is used the request will use
+     * directDownload option for MediaMediaDownloader.
+     */
+    public static BlobSourceOption useDirectDownload(boolean useDirectDownload) {
+      return new BlobSourceOption(StorageRpc.Option.USE_DIRECT_DOWNLOAD, useDirectDownload);
+    }
+
+    /**
      * Returns an option for blob's data generation mismatch. If this option is used the request
      * will fail if blob's generation matches the provided value.
      */
