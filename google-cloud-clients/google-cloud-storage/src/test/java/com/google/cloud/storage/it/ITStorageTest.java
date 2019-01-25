@@ -2454,7 +2454,6 @@ public class ITStorageTest {
                       .setIsBucketPolicyOnlyEnabled(true)
                       .build())
               .build());
-      System.out.println("2)");
 
       Bucket remoteBucket =
           storage.get(bpoBucket, Storage.BucketGetOption.fields(BucketField.IAMCONFIGURATION));
@@ -2463,13 +2462,13 @@ public class ITStorageTest {
       assertNotNull(remoteBucket.getIamConfiguration().getBucketPolicyOnlyLockedTime());
       try {
         remoteBucket.listAcls();
-        fail();
+        fail("StorageException was expected.");
       } catch (StorageException e) {
         // Expected: Listing legacy ACLs should fail on a BPO enabled bucket
       }
       try {
         remoteBucket.listDefaultAcls();
-        fail();
+        fail("StorageException was expected");
       } catch (StorageException e) {
         // Expected: Listing legacy ACLs should fail on a BPO enabled bucket
       }
@@ -2515,8 +2514,10 @@ public class ITStorageTest {
                   BucketField.IAMCONFIGURATION, BucketField.ACL, BucketField.DEFAULT_OBJECT_ACL));
 
       assertFalse(remoteBucket.getIamConfiguration().isBucketPolicyOnlyEnabled());
-      assertEquals(1, remoteBucket.getDefaultAcl().size());
-      assertEquals(1, remoteBucket.getDefaultAcl().size());
+      assertEquals(User.ofAllAuthenticatedUsers(), remoteBucket.getDefaultAcl().get(0).getEntity());
+      assertEquals(Role.READER, remoteBucket.getDefaultAcl().get(0).getRole());
+      assertEquals(User.ofAllAuthenticatedUsers(), remoteBucket.getAcl().get(0).getEntity());
+      assertEquals(Role.READER, remoteBucket.getAcl().get(0).getRole());
     } finally {
       RemoteStorageHelper.forceDelete(storage, bpoBucket, 1, TimeUnit.MINUTES);
     }

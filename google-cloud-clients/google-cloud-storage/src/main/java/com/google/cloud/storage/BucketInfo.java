@@ -168,7 +168,7 @@ public class BucketInfo implements Serializable {
 
       return newBuilder()
           .setIsBucketPolicyOnlyEnabled(bucketPolicyOnly.getEnabled())
-          .setLockedTime(lockedTime == null ? null : lockedTime.getValue())
+          .setBucketPolicyOnlyLockedTime(lockedTime == null ? null : lockedTime.getValue())
           .build();
     }
 
@@ -185,7 +185,7 @@ public class BucketInfo implements Serializable {
        * to change it will fail. If this is enabled, calls to access legacy ACL information will
        * fail.
        */
-      public Builder setIsBucketPolicyOnlyEnabled(boolean isBucketPolicyOnlyEnabled) {
+      public Builder setIsBucketPolicyOnlyEnabled(Boolean isBucketPolicyOnlyEnabled) {
         this.isBucketPolicyOnlyEnabled = isBucketPolicyOnlyEnabled;
         return this;
       }
@@ -196,7 +196,7 @@ public class BucketInfo implements Serializable {
        * be set by a user--it's automatically set by the backend when {@code enabled} is set to
        * true.
        */
-      Builder setLockedTime(Long bucketPolicyOnlyLockedTime) {
+      Builder setBucketPolicyOnlyLockedTime(Long bucketPolicyOnlyLockedTime) {
         this.bucketPolicyOnlyLockedTime = bucketPolicyOnlyLockedTime;
         return this;
       }

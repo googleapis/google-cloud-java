@@ -207,8 +207,12 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
-     * Returns an option to define the projection in the API request. In some cases this option may be needed to be
-     * set to `noAcl` to omit ACL data from the response.
+     * Returns an option to define the projection in the API request. In some cases this option may
+     * be needed to be set to `noAcl` to omit ACL data from the response. The default value is
+     * `full`
+     *
+     * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/buckets/patch">Buckets:
+     *     patch</a>
      */
     public static BucketTargetOption projection(String projection) {
       return new BucketTargetOption(StorageRpc.Option.PROJECTION, projection);

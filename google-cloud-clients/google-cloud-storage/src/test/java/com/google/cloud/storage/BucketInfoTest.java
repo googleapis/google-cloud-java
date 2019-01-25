@@ -67,10 +67,10 @@ public class BucketInfoTest {
               LifecycleCondition.newBuilder().setAge(5).build()));
   private static final String INDEX_PAGE = "index.html";
   private static final BucketInfo.IamConfiguration IAM_CONFIGURATION =
-          BucketInfo.IamConfiguration.newBuilder()
-                  .setIsBucketPolicyOnlyEnabled(true)
-                  .setLockedTime(System.currentTimeMillis())
-                  .build();
+      BucketInfo.IamConfiguration.newBuilder()
+          .setIsBucketPolicyOnlyEnabled(true)
+          .setBucketPolicyOnlyLockedTime(System.currentTimeMillis())
+          .build();
   private static final String NOT_FOUND_PAGE = "error.html";
   private static final String LOCATION = "ASIA";
   private static final StorageClass STORAGE_CLASS = StorageClass.STANDARD;
@@ -257,9 +257,10 @@ public class BucketInfoTest {
 
   @Test
   public void testIamConfiguration() {
-    Bucket.IamConfiguration iamConfiguration = BucketInfo.IamConfiguration.newBuilder()
+    Bucket.IamConfiguration iamConfiguration =
+        BucketInfo.IamConfiguration.newBuilder()
             .setIsBucketPolicyOnlyEnabled(true)
-            .setLockedTime(System.currentTimeMillis())
+            .setBucketPolicyOnlyLockedTime(System.currentTimeMillis())
             .build()
             .toPb();
 
