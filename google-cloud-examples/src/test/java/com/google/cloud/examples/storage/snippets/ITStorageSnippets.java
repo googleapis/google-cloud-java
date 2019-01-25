@@ -553,12 +553,12 @@ public class ITStorageSnippets {
     Bucket bucket = storageSnippets.createBucket(tempBucket);
     assertNotNull(bucket);
     bucket = storageSnippets.enableBucketPolicyOnly(tempBucket);
-    assertTrue(bucket.getIamConfiguration().getBucketPolicyOnly().getEnabled());
-    assertNotNull(bucket.getIamConfiguration().getBucketPolicyOnly().getLockedTime());
+    assertTrue(bucket.getIamConfiguration().isBucketPolicyOnlyEnabled());
+    assertNotNull(bucket.getIamConfiguration().getBucketPolicyOnlyLockedTime());
     bucket = storageSnippets.getBucketPolicyOnly(tempBucket);
-    assertTrue(bucket.getIamConfiguration().getBucketPolicyOnly().getEnabled());
-    assertNotNull(bucket.getIamConfiguration().getBucketPolicyOnly().getLockedTime());
+    assertTrue(bucket.getIamConfiguration().isBucketPolicyOnlyEnabled());
+    assertNotNull(bucket.getIamConfiguration().getBucketPolicyOnlyLockedTime());
     bucket = storageSnippets.disableBucketPolicyOnly(tempBucket);
-    assertFalse(bucket.getIamConfiguration().getBucketPolicyOnly().getEnabled());
+    assertFalse(bucket.getIamConfiguration().isBucketPolicyOnlyEnabled());
   }
 }

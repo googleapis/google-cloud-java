@@ -1538,9 +1538,8 @@ public class StorageSnippets {
     // The name of a bucket, e.g. "my-bucket"
     // String bucketName = "my-bucket";
 
-    BucketInfo.BucketPolicyOnly bucketPolicyOnly = BucketInfo.BucketPolicyOnly.newBuilder().setEnabled(true).build();
-    BucketInfo.IamConfiguration iamConfiguration = BucketInfo.IamConfiguration.newBuilder().setBucketPolicyOnly(
-        bucketPolicyOnly).build();
+    BucketInfo.IamConfiguration iamConfiguration = BucketInfo.IamConfiguration.newBuilder().setIsBucketPolicyOnlyEnabled(
+        true).build();
     Bucket bucket =
         storage.update(BucketInfo.newBuilder(bucketName).setIamConfiguration(iamConfiguration).build());
 
@@ -1560,9 +1559,8 @@ public class StorageSnippets {
     // The name of a bucket, e.g. "my-bucket"
     // String bucketName = "my-bucket";
 
-    BucketInfo.BucketPolicyOnly bucketPolicyOnly = BucketInfo.BucketPolicyOnly.newBuilder().setEnabled(false).build();
-    BucketInfo.IamConfiguration iamConfiguration = BucketInfo.IamConfiguration.newBuilder().setBucketPolicyOnly(
-        bucketPolicyOnly).build();
+    BucketInfo.IamConfiguration iamConfiguration = BucketInfo.IamConfiguration.newBuilder().setIsBucketPolicyOnlyEnabled(
+        false).build();
     Bucket bucket =
         storage.update(BucketInfo.newBuilder(bucketName).setIamConfiguration(iamConfiguration).build());
 
@@ -1585,8 +1583,8 @@ public class StorageSnippets {
     Bucket bucket = storage.get(bucketName, BucketGetOption.fields(BucketField.IAMCONFIGURATION));
     BucketInfo.IamConfiguration iamConfiguration = bucket.getIamConfiguration();
 
-    Boolean enabled = iamConfiguration.getBucketPolicyOnly().getEnabled();
-    Date lockedTime = new Date(iamConfiguration.getBucketPolicyOnly().getLockedTime().getValue());
+    Boolean enabled = iamConfiguration.isBucketPolicyOnlyEnabled();
+    Date lockedTime = new Date(iamConfiguration.getBucketPolicyOnlyLockedTime());
 
     if (enabled != null && enabled) {
       System.out.println("Bucket Policy Only is enabled for " + bucketName);
