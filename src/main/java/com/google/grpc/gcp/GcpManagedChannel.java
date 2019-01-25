@@ -96,6 +96,10 @@ public class GcpManagedChannel extends ManagedChannel {
     return maxSize;
   }
 
+  public int getNumberOfChannels() {
+    return channelRefs.size();
+  }
+
   public int getStreamsLowWatermark() {
     return maxConcurrentStreamsLowWatermark;
   }

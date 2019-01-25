@@ -121,7 +121,7 @@ public final class BigtableLargeTests {
     ManagedChannelBuilder builder =
         ManagedChannelBuilder.forAddress(BIGTABLE_TARGET, 443).maxInboundMessageSize(MAX_MSG_SIZE);
 
-    // Running 105 streaming using GcpManagedChannel.
+    // Running 105 streams using GcpManagedChannel.
     GcpManagedChannel gcpChannel = new GcpManagedChannel(builder);
     logger.info("Start running 105 concurrent streams using GcpManagedChannel.");
     if (runManyManyStreams(gcpChannel)) {
@@ -131,7 +131,7 @@ public final class BigtableLargeTests {
     }
     gcpChannel.shutdownNow();
 
-    // Running 105 streaming using ManagedChannel.
+    // Running 105 streams using ManagedChannel.
     ManagedChannel channel = builder.build();
     logger.info("Start running 105 concurrent streams using ManagedChannel.");
     if (runManyManyStreams(channel)) {

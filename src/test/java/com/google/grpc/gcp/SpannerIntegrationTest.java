@@ -67,7 +67,7 @@ public final class SpannerIntegrationTest {
   private static final String USERNAME = "test_username";
   private static final String DATABASE =
       "projects/cloudprober-test/instances/test-instance/databases/test-db";
-  private static final String API_FILE = "src/test/resources/apiconfigtests/apiconfig.json";
+  private static final String API_FILE = "src/test/resources/apiconfigtests/spannertest.json";
 
   private static final int MAX_CHANNEL = 3;
   private static final int MAX_STREAM = 2;
@@ -253,12 +253,6 @@ public final class SpannerIntegrationTest {
     ListSessionsResponse responseList =
         stub.listSessions(ListSessionsRequest.newBuilder().setDatabase(DATABASE).build()).get();
     Set<String> trueNames = new HashSet<>();
-    for (Session s : responseList.getSessionsList()) {
-      trueNames.add(s.getName());
-    }
-    for (String name : futureNames) {
-      assertThat(trueNames).contains(name);
-    }
     deleteFutureSessions(stub, futureNames);
   }
 
@@ -269,13 +263,6 @@ public final class SpannerIntegrationTest {
     AsyncResponseObserver<ListSessionsResponse> respList = new AsyncResponseObserver<>();
     stub.listSessions(ListSessionsRequest.newBuilder().setDatabase(DATABASE).build(), respList);
     ListSessionsResponse responseList = respList.get();
-    Set<String> trueNames = new HashSet<>();
-    for (Session s : responseList.getSessionsList()) {
-      trueNames.add(s.getName());
-    }
-    for (String name : respNames) {
-      assertThat(trueNames).contains(name);
-    }
     deleteAsyncSessions(stub, respNames);
   }
 
