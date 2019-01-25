@@ -180,10 +180,10 @@ public class BucketInfo implements Serializable {
       /**
        * Sets whether BucketPolicyOnly is enabled for this bucket. When this is enabled, access to
        * the bucket will be configured through IAM, and legacy ACL policies will not work. When this
-       * is first enabled, {@code lockedTime} will be set by the API automatically. This field can
-       * then be disabled until the time specified, after which it will become immutable and calls
-       * to change it will fail. If this is enabled, calls to access legacy ACL information will
-       * fail.
+       * is first enabled, {@code bucketPolicyOnly.lockedTime} will be set by the API automatically.
+       * This field can then be disabled until the time specified, after which it will become
+       * immutable and calls to change it will fail. If this is enabled, calls to access legacy ACL
+       * information will fail.
        */
       public Builder setIsBucketPolicyOnlyEnabled(Boolean isBucketPolicyOnlyEnabled) {
         this.isBucketPolicyOnlyEnabled = isBucketPolicyOnlyEnabled;
@@ -191,10 +191,10 @@ public class BucketInfo implements Serializable {
       }
 
       /**
-       * Sets the deadline for switching {@code enabled} back to false. After this time passes,
-       * calls to do so will fail. This is package-private, since in general this field should never
-       * be set by a user--it's automatically set by the backend when {@code enabled} is set to
-       * true.
+       * Sets the deadline for switching {@code bucketPolicyOnly.enabled} back to false. After this
+       * time passes, calls to do so will fail. This is package-private, since in general this field
+       * should never be set by a user--it's automatically set by the backend when {@code enabled}
+       * is set to true.
        */
       Builder setBucketPolicyOnlyLockedTime(Long bucketPolicyOnlyLockedTime) {
         this.bucketPolicyOnlyLockedTime = bucketPolicyOnlyLockedTime;
