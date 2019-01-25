@@ -351,15 +351,14 @@ public class GcpManagedChannel extends ManagedChannel {
    */
   @VisibleForTesting
   static String getKeyFromMessage(MessageOrBuilder msg, String name) {
-    Map<FieldDescriptor, Object> obs = msg.getAllFields();
-    List<MessageOrBuilder> nestedMsgs = new ArrayList<>();
-
     // The field names in a nested message name are splitted by '.'.
     int currentLength = name.indexOf('.');
     String currentName = name;
     if (currentLength != -1) {
       currentName = name.substring(0, currentLength);
     }
+
+    Map<FieldDescriptor, Object> obs = msg.getAllFields();
     for (Map.Entry<FieldDescriptor, Object> entry : obs.entrySet()) {
       if (entry.getKey().getName().equals(currentName)) {
         if (currentLength == -1 && entry.getValue() instanceof String) {
