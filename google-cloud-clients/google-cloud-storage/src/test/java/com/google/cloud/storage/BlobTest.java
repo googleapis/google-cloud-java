@@ -508,7 +508,7 @@ public class BlobTest {
     assertEquals(CONTENT_ENCODING, blob.getContentEncoding());
     assertEquals(CONTENT_LANGUAGE, blob.getContentLanguage());
     assertEquals(CRC32, blob.getCrc32c());
-    assertEquals(CRC32_STRING, blob.getCrc32cString());
+    assertEquals(CRC32_STRING, blob.getCrc32cToHexString());
     assertEquals(CREATE_TIME, blob.getCreateTime());
     assertEquals(CUSTOMER_ENCRYPTION, blob.getCustomerEncryption());
     assertEquals(KMS_KEY_NAME, blob.getKmsKeyName());
@@ -519,7 +519,7 @@ public class BlobTest {
     assertEquals(ETAG, blob.getEtag());
     assertEquals(GENERATED_ID, blob.getGeneratedId());
     assertEquals(MD5, blob.getMd5());
-    assertEquals(MD5_STRING, blob.getMd5String());
+    assertEquals(MD5_STRING, blob.getMd5ToHexString());
     assertEquals(MEDIA_LINK, blob.getMediaLink());
     assertEquals(METADATA, blob.getMetadata());
     assertEquals(META_GENERATION, blob.getMetageneration());
@@ -541,7 +541,7 @@ public class BlobTest {
     assertNull(blob.getContentEncoding());
     assertNull(blob.getContentLanguage());
     assertNull(blob.getCrc32c());
-    assertNull(blob.getCrc32cString());
+    assertNull(blob.getCrc32cToHexString());
     assertNull(blob.getCreateTime());
     assertNull(blob.getCustomerEncryption());
     assertNull(blob.getKmsKeyName());
@@ -552,7 +552,7 @@ public class BlobTest {
     assertNull(blob.getEtag());
     assertNull(blob.getGeneratedId());
     assertNull(blob.getMd5());
-    assertNull(blob.getMd5String());
+    assertNull(blob.getMd5ToHexString());
     assertNull(blob.getMediaLink());
     assertNull(blob.getMetadata());
     assertNull(blob.getMetageneration());

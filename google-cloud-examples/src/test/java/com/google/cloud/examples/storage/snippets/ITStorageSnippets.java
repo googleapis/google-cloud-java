@@ -458,13 +458,13 @@ public class ITStorageSnippets {
     assertTrue(snippetOutput.contains("ContentLanguage: " + remoteBlob.getContentLanguage()));
     assertTrue(snippetOutput.contains("ContentType: " + remoteBlob.getContentType()));
     assertTrue(snippetOutput.contains("Crc32c: " + remoteBlob.getCrc32c()));
-    assertTrue(snippetOutput.contains("Crc32cString: " + remoteBlob.getCrc32cString()));
+    assertTrue(snippetOutput.contains("Crc32cString: " + remoteBlob.getCrc32cToHexString()));
     assertTrue(snippetOutput.contains("ETag: " + remoteBlob.getEtag()));
     assertTrue(snippetOutput.contains("Generation: " + remoteBlob.getGeneration()));
     assertTrue(snippetOutput.contains("Id: " + remoteBlob.getBlobId()));
     assertTrue(snippetOutput.contains("KmsKeyName: " + remoteBlob.getKmsKeyName()));
     assertTrue(snippetOutput.contains("Md5Hash: " + remoteBlob.getMd5()));
-    assertTrue(snippetOutput.contains("Md5HashString: " + remoteBlob.getMd5String()));
+    assertTrue(snippetOutput.contains("Md5HashString: " + remoteBlob.getMd5ToHexString()));
     assertTrue(snippetOutput.contains("MediaLink: " + remoteBlob.getMediaLink()));
     assertTrue(snippetOutput.contains("Metageneration: " + remoteBlob.getMetageneration()));
     assertTrue(snippetOutput.contains("Name: " + remoteBlob.getName()));

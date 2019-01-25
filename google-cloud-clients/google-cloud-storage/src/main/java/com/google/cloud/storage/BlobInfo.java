@@ -680,7 +680,7 @@ public class BlobInfo implements Serializable {
    * @see <a href="https://cloud.google.com/storage/docs/hashes-etags#_JSONAPI">Hashes and ETags:
    *     Best Practices</a>
    */
-  public String getMd5String() {
+  public String getMd5ToHexString() {
     if (md5 == null) {
       return null;
     }
@@ -712,7 +712,7 @@ public class BlobInfo implements Serializable {
    * @see <a href="https://cloud.google.com/storage/docs/hashes-etags#_JSONAPI">Hashes and ETags:
    *     Best Practices</a>
    */
-  public String getCrc32cString() {
+  public String getCrc32cToHexString() {
     if (crc32c == null) {
       return null;
     }
