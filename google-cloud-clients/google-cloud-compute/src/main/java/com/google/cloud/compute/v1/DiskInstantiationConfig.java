@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,16 +47,16 @@ public final class DiskInstantiationConfig implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("autoDelete")) {
+    if ("autoDelete".equals(fieldName)) {
       return autoDelete;
     }
-    if (fieldName.equals("customImage")) {
+    if ("customImage".equals(fieldName)) {
       return customImage;
     }
-    if (fieldName.equals("deviceName")) {
+    if ("deviceName".equals(fieldName)) {
       return deviceName;
     }
-    if (fieldName.equals("instantiateFrom")) {
+    if ("instantiateFrom".equals(fieldName)) {
       return instantiateFrom;
     }
     return null;

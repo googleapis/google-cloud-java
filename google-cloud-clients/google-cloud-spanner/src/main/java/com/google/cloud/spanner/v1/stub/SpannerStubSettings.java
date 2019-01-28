@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -95,7 +95,6 @@ import org.threeten.bp.Duration;
  * </pre>
  */
 @Generated("by gapic-generator")
-@BetaApi
 public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =

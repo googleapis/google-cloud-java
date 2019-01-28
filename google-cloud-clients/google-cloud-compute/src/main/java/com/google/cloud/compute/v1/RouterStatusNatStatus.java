@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,22 +59,22 @@ public final class RouterStatusNatStatus implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("autoAllocatedNatIps")) {
+    if ("autoAllocatedNatIps".equals(fieldName)) {
       return autoAllocatedNatIps;
     }
-    if (fieldName.equals("minExtraNatIpsNeeded")) {
+    if ("minExtraNatIpsNeeded".equals(fieldName)) {
       return minExtraNatIpsNeeded;
     }
-    if (fieldName.equals("name")) {
+    if ("name".equals(fieldName)) {
       return name;
     }
-    if (fieldName.equals("numVmEndpointsWithNatMappings")) {
+    if ("numVmEndpointsWithNatMappings".equals(fieldName)) {
       return numVmEndpointsWithNatMappings;
     }
-    if (fieldName.equals("userAllocatedNatIpResources")) {
+    if ("userAllocatedNatIpResources".equals(fieldName)) {
       return userAllocatedNatIpResources;
     }
-    if (fieldName.equals("userAllocatedNatIps")) {
+    if ("userAllocatedNatIps".equals(fieldName)) {
       return userAllocatedNatIps;
     }
     return null;

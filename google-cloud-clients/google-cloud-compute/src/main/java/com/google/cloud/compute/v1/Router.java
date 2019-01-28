@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -83,40 +83,40 @@ public final class Router implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("bgp")) {
+    if ("bgp".equals(fieldName)) {
       return bgp;
     }
-    if (fieldName.equals("bgpPeers")) {
+    if ("bgpPeers".equals(fieldName)) {
       return bgpPeers;
     }
-    if (fieldName.equals("creationTimestamp")) {
+    if ("creationTimestamp".equals(fieldName)) {
       return creationTimestamp;
     }
-    if (fieldName.equals("description")) {
+    if ("description".equals(fieldName)) {
       return description;
     }
-    if (fieldName.equals("id")) {
+    if ("id".equals(fieldName)) {
       return id;
     }
-    if (fieldName.equals("interfaces")) {
+    if ("interfaces".equals(fieldName)) {
       return interfaces;
     }
-    if (fieldName.equals("kind")) {
+    if ("kind".equals(fieldName)) {
       return kind;
     }
-    if (fieldName.equals("name")) {
+    if ("name".equals(fieldName)) {
       return name;
     }
-    if (fieldName.equals("nats")) {
+    if ("nats".equals(fieldName)) {
       return nats;
     }
-    if (fieldName.equals("network")) {
+    if ("network".equals(fieldName)) {
       return network;
     }
-    if (fieldName.equals("region")) {
+    if ("region".equals(fieldName)) {
       return region;
     }
-    if (fieldName.equals("selfLink")) {
+    if ("selfLink".equals(fieldName)) {
       return selfLink;
     }
     return null;

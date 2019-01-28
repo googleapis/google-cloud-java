@@ -26,8 +26,9 @@ import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.List;
 import java.util.Objects;
-import org.joda.time.DateTime;
-import org.joda.time.format.ISODateTimeFormat;
+import org.threeten.bp.Instant;
+import org.threeten.bp.ZoneOffset;
+import org.threeten.bp.format.DateTimeFormatter;
 
 /**
  * A {@code Zone} represents a DNS zone hosted by the Google Cloud DNS service. A zone is a subtree
@@ -38,6 +39,9 @@ import org.joda.time.format.ISODateTimeFormat;
 public class ZoneInfo implements Serializable {
 
   private static final long serialVersionUID = -5313169712036079818L;
+  private static final DateTimeFormatter DATE_TIME_FORMATTER =
+      DateTimeFormatter.ISO_DATE_TIME.withZone(ZoneOffset.UTC);
+
   private final String name;
   private final String generatedId;
   private final Long creationTimeMillis;
@@ -234,7 +238,7 @@ public class ZoneInfo implements Serializable {
     pb.setNameServerSet(this.getNameServerSet());
     if (this.getCreationTimeMillis() != null) {
       pb.setCreationTime(
-          ISODateTimeFormat.dateTime().withZoneUTC().print(this.getCreationTimeMillis()));
+          DATE_TIME_FORMATTER.format(Instant.ofEpochMilli(this.getCreationTimeMillis())));
     }
     return pb;
   }
@@ -257,7 +261,8 @@ public class ZoneInfo implements Serializable {
       builder.setNameServerSet(pb.getNameServerSet());
     }
     if (pb.getCreationTime() != null) {
-      builder.setCreationTimeMillis(DateTime.parse(pb.getCreationTime()).getMillis());
+      builder.setCreationTimeMillis(
+          DATE_TIME_FORMATTER.parse(pb.getCreationTime(), Instant.FROM).toEpochMilli());
     }
     return builder.build();
   }

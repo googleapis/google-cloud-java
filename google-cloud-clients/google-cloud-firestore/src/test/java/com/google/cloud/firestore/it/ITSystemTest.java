@@ -86,8 +86,7 @@ public class ITSystemTest {
 
   @Before
   public void before() {
-    FirestoreOptions firestoreOptions =
-        FirestoreOptions.newBuilder().setTimestampsInSnapshotsEnabled(true).build();
+    FirestoreOptions firestoreOptions = FirestoreOptions.newBuilder().build();
     firestore = firestoreOptions.getService();
     randomColl =
         firestore.collection(

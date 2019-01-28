@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -94,49 +94,49 @@ public final class HealthCheck implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("checkIntervalSec")) {
+    if ("checkIntervalSec".equals(fieldName)) {
       return checkIntervalSec;
     }
-    if (fieldName.equals("creationTimestamp")) {
+    if ("creationTimestamp".equals(fieldName)) {
       return creationTimestamp;
     }
-    if (fieldName.equals("description")) {
+    if ("description".equals(fieldName)) {
       return description;
     }
-    if (fieldName.equals("healthyThreshold")) {
+    if ("healthyThreshold".equals(fieldName)) {
       return healthyThreshold;
     }
-    if (fieldName.equals("httpHealthCheck")) {
+    if ("httpHealthCheck".equals(fieldName)) {
       return httpHealthCheck;
     }
-    if (fieldName.equals("httpsHealthCheck")) {
+    if ("httpsHealthCheck".equals(fieldName)) {
       return httpsHealthCheck;
     }
-    if (fieldName.equals("id")) {
+    if ("id".equals(fieldName)) {
       return id;
     }
-    if (fieldName.equals("kind")) {
+    if ("kind".equals(fieldName)) {
       return kind;
     }
-    if (fieldName.equals("name")) {
+    if ("name".equals(fieldName)) {
       return name;
     }
-    if (fieldName.equals("selfLink")) {
+    if ("selfLink".equals(fieldName)) {
       return selfLink;
     }
-    if (fieldName.equals("sslHealthCheck")) {
+    if ("sslHealthCheck".equals(fieldName)) {
       return sslHealthCheck;
     }
-    if (fieldName.equals("tcpHealthCheck")) {
+    if ("tcpHealthCheck".equals(fieldName)) {
       return tcpHealthCheck;
     }
-    if (fieldName.equals("timeoutSec")) {
+    if ("timeoutSec".equals(fieldName)) {
       return timeoutSec;
     }
-    if (fieldName.equals("type")) {
+    if ("type".equals(fieldName)) {
       return type;
     }
-    if (fieldName.equals("unhealthyThreshold")) {
+    if ("unhealthyThreshold".equals(fieldName)) {
       return unhealthyThreshold;
     }
     return null;
