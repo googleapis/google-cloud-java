@@ -62,6 +62,13 @@
           <groups>com.google.cloud.spanner.IntegrationTest</groups>
           <excludedGroups>com.google.cloud.spanner.FlakyTest</excludedGroups>
         </configuration>
+		<dependencies>
+          <dependency>
+            <groupId>org.apache.maven.surefire</groupId>
+            <artifactId>surefire-junit47</artifactId>
+            <version>3.0.0-M</version>
+          </dependency>
+        </dependencies>
         <executions>
           <execution>
             <goals>
