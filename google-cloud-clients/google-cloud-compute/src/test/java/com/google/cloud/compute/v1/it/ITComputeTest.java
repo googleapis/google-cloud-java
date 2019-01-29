@@ -16,27 +16,41 @@
 package com.google.cloud.compute.v1.it;
 
 import static com.google.common.truth.Truth.assertThat;
+import static junit.framework.TestCase.fail;
 
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.paging.Page;
+import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.compute.v1.AttachedDisk;
 import com.google.cloud.compute.v1.DiskType;
 import com.google.cloud.compute.v1.DiskTypeClient;
 import com.google.cloud.compute.v1.DiskTypeClient.AggregatedListDiskTypesPagedResponse;
 import com.google.cloud.compute.v1.DiskTypeSettings;
 import com.google.cloud.compute.v1.DiskTypesScopedList;
+import com.google.cloud.compute.v1.Instance;
+import com.google.cloud.compute.v1.InstanceClient;
+import com.google.cloud.compute.v1.InstanceSettings;
+import com.google.cloud.compute.v1.Instance;
+import com.google.cloud.compute.v1.InstanceClient;
+import com.google.cloud.compute.v1.InstanceSettings;
 import com.google.cloud.compute.v1.ListDiskTypesHttpRequest;
+import com.google.cloud.compute.v1.NetworkInterface;
 import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.ProjectRegionDiskTypeName;
+import com.google.cloud.compute.v1.ProjectZoneDiskName;
 import com.google.cloud.compute.v1.ProjectZoneDiskTypeName;
+import com.google.cloud.compute.v1.ProjectZoneInstanceName;
+import com.google.cloud.compute.v1.ProjectZoneMachineTypeName;
 import com.google.cloud.compute.v1.ProjectZoneName;
 import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import org.apache.http.client.HttpResponseException;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Rule;
@@ -52,6 +66,9 @@ public class ITComputeTest {
   private static DiskTypeClient diskTypeClient;
   private static DiskTypeSettings diskTypeSettings;
 
+  private static InstanceClient instanceClient;
+  private static InstanceSettings instanceSettings;
+
   @Rule public Timeout globalTimeout = Timeout.seconds(300);
 
   @BeforeClass
@@ -65,11 +82,18 @@ public class ITComputeTest {
             .setCredentialsProvider(FixedCredentialsProvider.create(credentials))
             .build();
     diskTypeClient = DiskTypeClient.create(diskTypeSettings);
+
+    instanceSettings =
+        InstanceSettings.newBuilder()
+            .setCredentialsProvider(FixedCredentialsProvider.create(credentials))
+            .build();
+    instanceClient = InstanceClient.create(instanceSettings);
   }
 
   @AfterClass
   public static void tearDown() throws Exception {
     diskTypeClient.close();
+    instanceClient.close();
   }
 
   @Test
@@ -83,6 +107,28 @@ public class ITComputeTest {
     assertThat(diskType.getDescription()).isNotNull();
     assertThat(diskType.getValidDiskSize()).isNotNull();
     assertThat(diskType.getDefaultDiskSizeGb()).isNotNull();
+  }
+
+  @Test
+  public void testInsertInstance() {
+    String machineType =
+        ProjectZoneMachineTypeName.of("n1-standard-1", DEFAULT_PROJECT, ZONE).toString();
+    Instance instance =
+        Instance.newBuilder()
+            .setName("mytestinstancetemplate")
+            .setMachineType(machineType)
+            .build();
+    try {
+      instanceClient.insertInstance(ProjectZoneName.of(DEFAULT_PROJECT, ZONE), instance);
+    } catch (InvalidArgumentException e) {
+      // Expect a Bad Request HTTP 400 error, but it should NOT be because of a resource name problem.
+      assertThat(e.getMessage()).contains("Bad Request");
+      assertThat(e.getCause().getMessage())
+          .doesNotContain("Invalid value for field 'resource.machineType'");
+      return;
+    }
+
+    fail();
   }
 
   @Test
