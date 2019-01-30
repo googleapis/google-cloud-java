@@ -18,9 +18,9 @@ package com.google.cloud.firestore;
 
 import com.google.cloud.Timestamp;
 import com.google.common.base.Preconditions;
-import com.google.firestore.v1beta1.ArrayValue;
-import com.google.firestore.v1beta1.MapValue;
-import com.google.firestore.v1beta1.Value;
+import com.google.firestore.v1.ArrayValue;
+import com.google.firestore.v1.MapValue;
+import com.google.firestore.v1.Value;
 import com.google.protobuf.NullValue;
 import java.util.Date;
 import java.util.List;

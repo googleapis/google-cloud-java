@@ -17,8 +17,8 @@
 package com.google.cloud.firestore;
 
 import com.google.common.base.Preconditions;
-import com.google.firestore.v1beta1.ArrayValue;
-import com.google.firestore.v1beta1.DocumentTransform.FieldTransform;
+import com.google.firestore.v1.ArrayValue;
+import com.google.firestore.v1.DocumentTransform.FieldTransform;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
