@@ -18,15 +18,35 @@ package com.google.cloud.bigtable.data.v2.models;
 import com.google.api.core.InternalApi;
 import com.google.api.core.InternalExtensionOnly;
 import com.google.auto.value.AutoValue;
+import com.google.cloud.bigtable.data.v2.internal.ByteStringComparator;
 import com.google.protobuf.ByteString;
 import java.io.Serializable;
+import java.util.Comparator;
 import java.util.List;
 import javax.annotation.Nonnull;
 
-/** Default representation of a logical row. */
+/**
+ * Default representation of a logical row.
+ *
+ * <p>The cells contained within, will be sorted by the native order. Please see
+ * {@link RowCell#compareByNative()} for details.
+ */
 @InternalExtensionOnly
 @AutoValue
-public abstract class Row implements Comparable<Row>, Serializable {
+public abstract class Row implements Serializable {
+  /**
+   * Returns a comparator that compares two Row objects by comparing the result of {@link
+   * #getKey()}} for each.
+   */
+  public static Comparator<Row> compareByKey() {
+    return new Comparator<Row>() {
+      @Override
+      public int compare(Row r1, Row r2) {
+        return ByteStringComparator.INSTANCE.compare(r1.getKey(), r2.getKey());
+      }
+    };
+  }
+
   /** Creates a new instance of the {@link Row}. */
   @InternalApi
   public static Row create(ByteString key, List<RowCell> cells) {
@@ -42,26 +62,4 @@ public abstract class Row implements Comparable<Row>, Serializable {
    * qualifier.
    */
   public abstract List<RowCell> getCells();
-
-  /** Lexicographically compares this row's key to another row's key. */
-  @Override
-  public int compareTo(@Nonnull Row row) {
-    int sizeA = getKey().size();
-    int sizeB = row.getKey().size();
-    int size = Math.min(sizeA, sizeB);
-
-    for (int i = 0; i < size; i++) {
-      int byteA = getKey().byteAt(i) & 0xff;
-      int byteB = row.getKey().byteAt(i) & 0xff;
-      if (byteA == byteB) {
-        continue;
-      } else {
-        return byteA < byteB ? -1 : 1;
-      }
-    }
-    if (sizeA == sizeB) {
-      return 0;
-    }
-    return sizeA < sizeB ? -1 : 1;
-  }
 }

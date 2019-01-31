@@ -18,8 +18,11 @@ package com.google.cloud.bigtable.data.v2.models;
 import com.google.api.core.InternalApi;
 import com.google.api.core.InternalExtensionOnly;
 import com.google.auto.value.AutoValue;
+import com.google.cloud.bigtable.data.v2.internal.ByteStringComparator;
+import com.google.common.collect.ComparisonChain;
 import com.google.protobuf.ByteString;
 import java.io.Serializable;
+import java.util.Comparator;
 import java.util.List;
 import javax.annotation.Nonnull;
 
@@ -27,6 +30,26 @@ import javax.annotation.Nonnull;
 @InternalExtensionOnly
 @AutoValue
 public abstract class RowCell implements Serializable {
+  /**
+   * A comparator that compares the cells by Bigtable native ordering.
+   *
+   * <p>family lexicographically, then by qualifier
+   * lexicographically and finally by timestamp in reverse chronological order. Labels and values
+   * are not included in the comparison.
+   */
+  public static Comparator<RowCell> compareByNative() {
+    return new Comparator<RowCell>() {
+      @Override
+      public int compare(RowCell c1, RowCell c2) {
+        return ComparisonChain.start()
+            .compare(c1.getFamily(), c2.getFamily())
+            .compare(c1.getQualifier(), c2.getQualifier(), ByteStringComparator.INSTANCE)
+            .compare(c2.getTimestamp(), c1.getTimestamp())
+            .result();
+      }
+    };
+  }
+
   /** Creates a new instance of the {@link RowCell}. */
   @InternalApi
   public static RowCell create(

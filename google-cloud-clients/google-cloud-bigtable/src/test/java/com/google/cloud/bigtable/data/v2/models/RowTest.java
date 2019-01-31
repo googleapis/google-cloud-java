@@ -63,12 +63,11 @@ public class RowTest {
                     ImmutableList.<String>of(),
                     ByteString.copyFromUtf8("value"))));
 
-    assertThat(row1).isEqualTo(row1);
-    assertThat(row1).isLessThan(row2);
-    assertThat(row2).isGreaterThan(row1);
+    assertThat(Row.compareByKey().compare(row1, row2)).isEqualTo(-1);
+    assertThat(Row.compareByKey().compare(row2, row1)).isEqualTo(1);
 
     // Comparator only cares about row keys
-    assertThat(row2).isEquivalentAccordingToCompareTo(row2b);
+    assertThat(Row.compareByKey().compare(row2, row2b)).isEqualTo(0);
   }
 
   @Test
