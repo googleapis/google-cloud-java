@@ -18,14 +18,11 @@ package com.google.cloud.bigtable.data.v2.models;
 import com.google.api.core.InternalApi;
 import com.google.api.core.InternalExtensionOnly;
 import com.google.auto.value.AutoValue;
-import com.google.bigtable.v2.Cell;
 import com.google.cloud.bigtable.data.v2.internal.ByteStringComparator;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Ordering;
 import com.google.protobuf.ByteString;
 import java.io.Serializable;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import javax.annotation.Nonnull;
@@ -75,7 +72,7 @@ public abstract class Row implements Serializable {
    *
    * @see RowCell#compareByNative() For details about the ordering.
    */
-  public List<RowCell> getFamilyCells(@Nonnull String family) {
+  public List<RowCell> getCells(@Nonnull String family) {
     Preconditions.checkNotNull(family, "family");
 
     int start = getFirst(family, null);
@@ -93,7 +90,19 @@ public abstract class Row implements Serializable {
    *
    * @see RowCell#compareByNative() For details about the ordering.
    */
-  public List<RowCell> getQualifierCells(@Nonnull String family, @Nonnull ByteString qualifier) {
+  public List<RowCell> getCells(@Nonnull String family, @Nonnull String qualifier) {
+    Preconditions.checkNotNull(family, "family");
+    Preconditions.checkNotNull(qualifier, "qualifier");
+
+    return getCells(family, ByteString.copyFromUtf8(qualifier));
+  }
+
+  /**
+   * Returns a sublist of the cells that belong to the specified family and qualifier.
+   *
+   * @see RowCell#compareByNative() For details about the ordering.
+   */
+  public List<RowCell> getCells(@Nonnull String family, @Nonnull ByteString qualifier) {
     Preconditions.checkNotNull(family, "family");
     Preconditions.checkNotNull(qualifier, "qualifier");
 

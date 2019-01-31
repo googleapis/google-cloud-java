@@ -113,18 +113,18 @@ public class RowTest {
     );
 
 
-    assertThat(row.getFamilyCells("family1")).containsExactly(
+    assertThat(row.getCells("family1")).containsExactly(
         RowCell.create("family1", col1, 1_000, labels, value),
         RowCell.create("family1", col2, 1_000, labels, value)
     ).inOrder();
 
-    assertThat(row.getFamilyCells("family2")).containsExactly(
+    assertThat(row.getCells("family2")).containsExactly(
         RowCell.create("family2", col1, 1_000, labels, value)
     );
 
-    assertThat(row.getFamilyCells("family3")).isEmpty();
+    assertThat(row.getCells("family3")).isEmpty();
 
-    assertThat(row.getFamilyCells("family4")).containsExactly(
+    assertThat(row.getCells("family4")).containsExactly(
         RowCell.create("family4", col1, 1_000, labels, value)
     );
   }
@@ -150,26 +150,26 @@ public class RowTest {
     );
 
 
-    assertThat(row.getQualifierCells("family1", col1)).containsExactly(
+    assertThat(row.getCells("family1", col1)).containsExactly(
         RowCell.create("family1", col1, 1_000, labels, value)
     );
 
-    assertThat(row.getQualifierCells("family1", col2)).containsExactly(
+    assertThat(row.getCells("family1", col2)).containsExactly(
         RowCell.create("family1", col2, 1_000, labels, value),
         RowCell.create("family1", col2, 2_000, labels, value)
     );
 
-    assertThat(row.getQualifierCells("family2", col1)).containsExactly(
+    assertThat(row.getCells("family2", col1)).containsExactly(
         RowCell.create("family2", col1, 1_000, labels, value)
     );
 
-    assertThat(row.getQualifierCells("family2", col2)).isEmpty();
+    assertThat(row.getCells("family2", col2)).isEmpty();
 
-    assertThat(row.getQualifierCells("family3", col1)).isEmpty();
-    assertThat(row.getQualifierCells("family3", col2)).isEmpty();
+    assertThat(row.getCells("family3", col1)).isEmpty();
+    assertThat(row.getCells("family3", col2)).isEmpty();
 
 
-    assertThat(row.getQualifierCells("family4", col1)).containsExactly(
+    assertThat(row.getCells("family4", col1)).containsExactly(
         RowCell.create("family4", col1, 1_000, labels, value)
     );
   }
