@@ -153,14 +153,14 @@
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-clients</site.installationModule>
     <bom.version>0.79.1-alpha-SNAPSHOT</bom.version><!-- {x-version-update:google-cloud-bom:current} -->
-    <api-client.version>1.27.0</api-client.version>
+    <api-client.version>1.28.0</api-client.version>
     <!-- make sure to keep gax version in sync with google-cloud-bom -->
-    <gax.version>1.37.0</gax.version>
+    <gax.version>1.37.1-SNAPSHOT</gax.version>
     <api.common.java.version>1.7.0</api.common.java.version>
     <google.auth.version>0.12.0</google.auth.version>
     <grpc.version>1.17.1</grpc.version>
     <guava.version>26.0-android</guava.version>
-    <http-client.version>1.27.0</http-client.version>
+    <http-client.version>1.28.0</http-client.version>
     <oauth-client.version>1.27.0</oauth-client.version>
     <protobuf.version>3.6.1</protobuf.version>
     <!-- make sure to keep opencensus version in sync with grpc -->
