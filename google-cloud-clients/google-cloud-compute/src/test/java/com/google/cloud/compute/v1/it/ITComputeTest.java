@@ -82,25 +82,19 @@ import org.junit.rules.Timeout;
 
 public class ITComputeTest {
 
-  private static final String ZONE = "us-central1-a";
+  private static final String ZONE = "us-west1-a";
   private static final String DISK_TYPE = "local-ssd";
   private static final String DEFAULT_PROJECT = ServiceOptions.getDefaultProjectId();
   private static final String UUID_INSTANCE = UUID.randomUUID().toString().replaceAll("-", "");
   private static final String INSTANCE_NAME_FORMAT = String.format("test-api-instance-%s", UUID_INSTANCE);
   private static final String REGION = "us-west1";
-  // private static final String ZONE = "us-west1-a";
-  private static final String NETWORK = String.format("test%s", UUID_INSTANCE);
-  private static final String SUBNET = "test-create-subnet1";
-  private static final String IMAGE =  String.format("test%s", UUID_INSTANCE);
 
   private static final ProjectZoneName PROJECT_ZONE_NAME = ProjectZoneName.of(DEFAULT_PROJECT, ZONE);
   private static final ProjectZoneMachineTypeName MACHINE_TYPE_NAME = ProjectZoneMachineTypeName
       .of(String.format("custom-%s-%s", 4, 4 * 1024), DEFAULT_PROJECT, ZONE);
-  private static final ProjectGlobalNetworkName NETWORK_NAME = ProjectGlobalNetworkName.of(NETWORK, DEFAULT_PROJECT);
 
-  // private static final  ProjectRegionSubnetworkName SUBNETWORK_NAME = ProjectRegionSubnetworkName
-  //     .of(DEFAULT_PROJECT, REGION, SUBNET);
-  private static final ProjectGlobalImageName IMAGE_NAME = ProjectGlobalImageName.of(IMAGE, DEFAULT_PROJECT);
+  // Google-managed image. See https://cloud.google.com/compute/docs/images.
+  private static final ProjectGlobalImageName IMAGE_NAME = ProjectGlobalImageName.of("cos-69-10895-138-0", "cos-cloud");
   private static final ProjectZoneInstanceName INSTANCE_NAME = ProjectZoneInstanceName
       .of(String.format(INSTANCE_NAME_FORMAT, UUID_INSTANCE), DEFAULT_PROJECT, ZONE);
 
@@ -112,14 +106,13 @@ public class ITComputeTest {
   private static DiskTypeClient diskTypeClient;
   private static InstanceClient instanceClient;
   private static DiskClient diskClient;
-  private static NetworkClient networkClient;
   private static SubnetworkClient subNetworkClient;
   private static ImageClient imageClient;
 
   @Rule public Timeout globalTimeout = Timeout.seconds(300);
   
   @BeforeClass
-  public static void beforeClass() throws IOException {
+  public static void beforeClass() throws Exception {
     Credentials credentials =
         GoogleCredentials.getApplicationDefault()
             .createScoped(DiskTypeSettings.getDefaultServiceScopes());
@@ -142,12 +135,6 @@ public class ITComputeTest {
             .build();
     diskClient = DiskClient.create(diskSettings);
 
-    NetworkSettings networkSettings =
-        NetworkSettings.newBuilder()
-            .setCredentialsProvider(FixedCredentialsProvider.create(credentials))
-            .build();
-    networkClient = NetworkClient.create(networkSettings);
-
     SubnetworkSettings subNetworkSettings =
         SubnetworkSettings.newBuilder()
             .setCredentialsProvider(FixedCredentialsProvider.create(credentials))
@@ -165,20 +152,17 @@ public class ITComputeTest {
   }
 
   // Remove resources that are created in this test class to avoid overbilling and 403s.
-  private static void removeResources(List<Class<? extends ApiException>> exceptionTypes) {
+  private static void removeResources(List<Class<? extends ApiException>> exceptionTypes) throws Exception {
     try {
       instanceClient.deleteInstance(INSTANCE_NAME);
+      Thread.sleep(10000);
     } catch (Exception e) {
       if (isNotExceptionType(exceptionTypes, e)) throw e;
     }
+    Thread.sleep(10000);
     try {
       diskClient.deleteDisk(DISK_NAME);
-    }catch (Exception e) {
-      if (isNotExceptionType(exceptionTypes, e)) throw e;
-    }
-    try {
-      networkClient.deleteNetwork(NETWORK_NAME);
-    }catch (Exception e) {
+    } catch (Exception e) {
       if (isNotExceptionType(exceptionTypes, e)) throw e;
     }
     try {
@@ -209,8 +193,9 @@ public class ITComputeTest {
     } finally {
       diskTypeClient.close();
       instanceClient.close();
-      networkClient.close();
       subNetworkClient.close();
+      diskClient.close();
+      imageClient.close();
     }
   }
 
@@ -219,21 +204,14 @@ public class ITComputeTest {
     long startAt = System.currentTimeMillis();
     System.out.println("Clients created in " + (System.currentTimeMillis() - startAt) + "ms.");
 
-    // Insert a network.
-    try {
-      networkClient.insertNetwork(DEFAULT_PROJECT,
-          Network.newBuilder().setName(NETWORK_NAME.getNetwork()).setAutoCreateSubnetworks(true).build());
-    } catch (AlreadyExistsException e) {}
-
+    // Fetch a subnetwork, assuming there is one. Projects start with a default network.
     Iterable<SubnetworksScopedList> subnetworks = subNetworkClient.aggregatedListSubnetworks(DEFAULT_PROJECT).iterateAll();
     // TODO(andrealin): Implement futures for Compute methods.
     Thread.sleep(10000);
     Subnetwork subnetwork = subnetworks.iterator().next().getSubnetworksList().get(0);
 
-    imageClient.insertImage(true, DEFAULT_PROJECT, Image.newBuilder().setName(IMAGE).build());
-
     NetworkInterface networkInterface = NetworkInterface.newBuilder()
-        .setNetwork(NETWORK_NAME.toString())
+        .setNetwork(subnetwork.getNetwork())
         .setSubnetwork(ProjectRegionSubnetworkName.of(DEFAULT_PROJECT, REGION, subnetwork.getName()).toString())
         .build();
     AttachedDisk bootDisk = AttachedDisk.newBuilder()
@@ -245,6 +223,7 @@ public class ITComputeTest {
             .build())
         .build();
 
+    // Insert an instance using the found subnetwork and its corresponding network (may not be the inserted network).
     Instance instanceResource = Instance.newBuilder()
         .setName(INSTANCE_NAME.getInstance())
         .addNetworkInterfaces(networkInterface)
@@ -254,16 +233,17 @@ public class ITComputeTest {
     Operation op1 = instanceClient.insertInstance(PROJECT_ZONE_NAME, instanceResource);
     System.out.println(String.format("Instance created: %s", op1.toString()));
 
+    // Insert a disk.
     Disk disk = Disk.newBuilder()
         .setName(DISK_NAME.getDisk())
         .setSizeGb(String.valueOf(7))
         .setType(diskTypeName.toString())
         .build();
-
     Operation op2 = diskClient.insertDisk(PROJECT_ZONE_NAME, disk);
     System.out.println(String.format("Disk created: %s", op2.toString()));
     Thread.sleep(10000);
 
+    // Attach the disk to the instance.
     AttachedDisk attachedDisk = AttachedDisk.newBuilder()
         .setDeviceName(DISK_NAME.getDisk())
         .setAutoDelete(false)
@@ -273,13 +253,6 @@ public class ITComputeTest {
     Operation op3 = instanceClient.attachDiskInstance(INSTANCE_NAME, false, attachedDisk);
     System.out.println(String.format("Disk attached: %s", op3.toString()));
     Thread.sleep(10000);
-
-    System.out.println("----------------------------------------");
-    System.out.println(String.format(
-        "After getting error you should manually delete instance %s and disk %s",
-        INSTANCE_NAME.getInstance(),
-        DISK_NAME.getDisk()
-    ));
     System.out.println("----------------------------------------");
 
     Operation op4 = instanceClient.detachDiskInstance(INSTANCE_NAME, DISK_NAME.getDisk());
@@ -297,28 +270,6 @@ public class ITComputeTest {
     assertThat(diskType.getDescription()).isNotNull();
     assertThat(diskType.getValidDiskSize()).isNotNull();
     assertThat(diskType.getDefaultDiskSizeGb()).isNotNull();
-  }
-
-  @Test
-  public void testInsertInstance() {
-    String machineType =
-        ProjectZoneMachineTypeName.of("n1-standard-1", DEFAULT_PROJECT, ZONE).toString();
-    Instance instance =
-        Instance.newBuilder()
-            .setName("mytestinstancetemplate")
-            .setMachineType(machineType)
-            .build();
-    try {
-      instanceClient.insertInstance(ProjectZoneName.of(DEFAULT_PROJECT, ZONE), instance);
-    } catch (InvalidArgumentException e) {
-      // Expect a Bad Request HTTP 400 error, but it should NOT be because of a resource name problem.
-      assertThat(e.getMessage()).contains("Bad Request");
-      assertThat(e.getCause().getMessage())
-          .doesNotContain("Invalid value for field 'resource.machineType'");
-      return;
-    }
-
-    fail();
   }
 
   @Test
