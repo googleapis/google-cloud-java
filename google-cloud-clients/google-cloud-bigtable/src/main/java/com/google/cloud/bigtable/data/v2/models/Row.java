@@ -18,12 +18,18 @@ package com.google.cloud.bigtable.data.v2.models;
 import com.google.api.core.InternalApi;
 import com.google.api.core.InternalExtensionOnly;
 import com.google.auto.value.AutoValue;
+import com.google.bigtable.v2.Cell;
 import com.google.cloud.bigtable.data.v2.internal.ByteStringComparator;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Ordering;
 import com.google.protobuf.ByteString;
 import java.io.Serializable;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 /**
  * Default representation of a logical row.
@@ -58,8 +64,98 @@ public abstract class Row implements Serializable {
   public abstract ByteString getKey();
 
   /**
-   * Returns the list of cells. The cells will be clustered by their family and sorted by their
-   * qualifier.
+   * Returns a sorted list of cells. The cells will be sorted natively.
+   *
+   * @see RowCell#compareByNative() For details about the ordering.
    */
   public abstract List<RowCell> getCells();
+
+  /**
+   * Returns a sublist of the cells that belong to the specified family.
+   *
+   * @see RowCell#compareByNative() For details about the ordering.
+   */
+  public List<RowCell> getFamilyCells(@Nonnull String family) {
+    Preconditions.checkNotNull(family, "family");
+
+    int start = getFirst(family, null);
+    if (start < 0) {
+      return ImmutableList.of();
+    }
+
+    int end = getLast(family, null, start);
+
+    return getCells().subList(start, end + 1);
+  }
+
+  /**
+   * Returns a sublist of the cells that belong to the specified family and qualifier.
+   *
+   * @see RowCell#compareByNative() For details about the ordering.
+   */
+  public List<RowCell> getQualifierCells(@Nonnull String family, @Nonnull ByteString qualifier) {
+    Preconditions.checkNotNull(family, "family");
+    Preconditions.checkNotNull(qualifier, "qualifier");
+
+    int start = getFirst(family, qualifier);
+    if (start < 0) {
+      return ImmutableList.of();
+    }
+
+    int end = getLast(family, qualifier, start);
+
+    return getCells().subList(start, end + 1);
+  }
+
+  private int getFirst(@Nonnull String family, @Nullable ByteString qualifier) {
+    int low = 0;
+    int high = getCells().size();
+    int index = -1;
+
+    while (low < high) {
+      int mid = (high + low) / 2;
+      RowCell midCell = getCells().get(mid);
+
+      int c = midCell.getFamily().compareTo(family);
+      if (c == 0 && qualifier != null) {
+        c = ByteStringComparator.INSTANCE.compare(midCell.getQualifier(), qualifier);
+      }
+
+      if (c < 0) {
+        low = mid + 1;
+      } else if (c == 0) {
+        index = mid;
+        high = mid;
+      } else {
+        high = mid;
+      }
+    }
+    return index;
+  }
+
+  private int getLast(@Nonnull String family, @Nullable ByteString qualifier, int startIndex) {
+    int low = startIndex;
+    int high = getCells().size();
+    int index = -1;
+
+    while (low < high) {
+      int mid = (high + low) / 2;
+      RowCell midCell = getCells().get(mid);
+
+      int c = midCell.getFamily().compareTo(family);
+      if (c == 0 && qualifier != null) {
+        c = ByteStringComparator.INSTANCE.compare(midCell.getQualifier(), qualifier);
+      }
+
+      if (c < 0) {
+        low = mid + 1;
+      } else if (c == 0) {
+        index = mid;
+        low = mid + 1;
+      } else {
+        high = mid;
+      }
+    }
+    return index;
+  }
 }
