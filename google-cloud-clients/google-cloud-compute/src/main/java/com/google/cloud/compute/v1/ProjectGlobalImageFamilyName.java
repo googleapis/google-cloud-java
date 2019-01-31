@@ -149,9 +149,10 @@ public final class ProjectGlobalImageFamilyName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
-        "family", family,
-        "project", project);
+    return SERVICE_ADDRESS
+        + PATH_TEMPLATE.instantiate(
+            "family", family,
+            "project", project);
   }
 
   @Override

@@ -41,8 +41,11 @@ public final class InstanceGroupManager implements ApiMessage {
   private final List<NamedPort> namedPorts;
   private final String region;
   private final String selfLink;
+  private final InstanceGroupManagerStatus status;
   private final List<String> targetPools;
   private final Integer targetSize;
+  private final InstanceGroupManagerUpdatePolicy updatePolicy;
+  private final List<InstanceGroupManagerVersion> versions;
   private final String zone;
 
   private InstanceGroupManager() {
@@ -61,8 +64,11 @@ public final class InstanceGroupManager implements ApiMessage {
     this.namedPorts = null;
     this.region = null;
     this.selfLink = null;
+    this.status = null;
     this.targetPools = null;
     this.targetSize = null;
+    this.updatePolicy = null;
+    this.versions = null;
     this.zone = null;
   }
 
@@ -82,8 +88,11 @@ public final class InstanceGroupManager implements ApiMessage {
       List<NamedPort> namedPorts,
       String region,
       String selfLink,
+      InstanceGroupManagerStatus status,
       List<String> targetPools,
       Integer targetSize,
+      InstanceGroupManagerUpdatePolicy updatePolicy,
+      List<InstanceGroupManagerVersion> versions,
       String zone) {
     this.autoHealingPolicies = autoHealingPolicies;
     this.baseInstanceName = baseInstanceName;
@@ -100,8 +109,11 @@ public final class InstanceGroupManager implements ApiMessage {
     this.namedPorts = namedPorts;
     this.region = region;
     this.selfLink = selfLink;
+    this.status = status;
     this.targetPools = targetPools;
     this.targetSize = targetSize;
+    this.updatePolicy = updatePolicy;
+    this.versions = versions;
     this.zone = zone;
   }
 
@@ -152,11 +164,20 @@ public final class InstanceGroupManager implements ApiMessage {
     if ("selfLink".equals(fieldName)) {
       return selfLink;
     }
+    if ("status".equals(fieldName)) {
+      return status;
+    }
     if ("targetPools".equals(fieldName)) {
       return targetPools;
     }
     if ("targetSize".equals(fieldName)) {
       return targetSize;
+    }
+    if ("updatePolicy".equals(fieldName)) {
+      return updatePolicy;
+    }
+    if ("versions".equals(fieldName)) {
+      return versions;
     }
     if ("zone".equals(fieldName)) {
       return zone;
@@ -236,12 +257,24 @@ public final class InstanceGroupManager implements ApiMessage {
     return selfLink;
   }
 
+  public InstanceGroupManagerStatus getStatus() {
+    return status;
+  }
+
   public List<String> getTargetPoolsList() {
     return targetPools;
   }
 
   public Integer getTargetSize() {
     return targetSize;
+  }
+
+  public InstanceGroupManagerUpdatePolicy getUpdatePolicy() {
+    return updatePolicy;
+  }
+
+  public List<InstanceGroupManagerVersion> getVersionsList() {
+    return versions;
   }
 
   public String getZone() {
@@ -286,8 +319,11 @@ public final class InstanceGroupManager implements ApiMessage {
     private List<NamedPort> namedPorts;
     private String region;
     private String selfLink;
+    private InstanceGroupManagerStatus status;
     private List<String> targetPools;
     private Integer targetSize;
+    private InstanceGroupManagerUpdatePolicy updatePolicy;
+    private List<InstanceGroupManagerVersion> versions;
     private String zone;
 
     Builder() {}
@@ -339,11 +375,20 @@ public final class InstanceGroupManager implements ApiMessage {
       if (other.getSelfLink() != null) {
         this.selfLink = other.selfLink;
       }
+      if (other.getStatus() != null) {
+        this.status = other.status;
+      }
       if (other.getTargetPoolsList() != null) {
         this.targetPools = other.targetPools;
       }
       if (other.getTargetSize() != null) {
         this.targetSize = other.targetSize;
+      }
+      if (other.getUpdatePolicy() != null) {
+        this.updatePolicy = other.updatePolicy;
+      }
+      if (other.getVersionsList() != null) {
+        this.versions = other.versions;
       }
       if (other.getZone() != null) {
         this.zone = other.zone;
@@ -367,8 +412,11 @@ public final class InstanceGroupManager implements ApiMessage {
       this.namedPorts = source.namedPorts;
       this.region = source.region;
       this.selfLink = source.selfLink;
+      this.status = source.status;
       this.targetPools = source.targetPools;
       this.targetSize = source.targetSize;
+      this.updatePolicy = source.updatePolicy;
+      this.versions = source.versions;
       this.zone = source.zone;
     }
 
@@ -531,6 +579,15 @@ public final class InstanceGroupManager implements ApiMessage {
       return this;
     }
 
+    public InstanceGroupManagerStatus getStatus() {
+      return status;
+    }
+
+    public Builder setStatus(InstanceGroupManagerStatus status) {
+      this.status = status;
+      return this;
+    }
+
     public List<String> getTargetPoolsList() {
       return targetPools;
     }
@@ -557,6 +614,35 @@ public final class InstanceGroupManager implements ApiMessage {
 
     public Builder setTargetSize(Integer targetSize) {
       this.targetSize = targetSize;
+      return this;
+    }
+
+    public InstanceGroupManagerUpdatePolicy getUpdatePolicy() {
+      return updatePolicy;
+    }
+
+    public Builder setUpdatePolicy(InstanceGroupManagerUpdatePolicy updatePolicy) {
+      this.updatePolicy = updatePolicy;
+      return this;
+    }
+
+    public List<InstanceGroupManagerVersion> getVersionsList() {
+      return versions;
+    }
+
+    public Builder addAllVersions(List<InstanceGroupManagerVersion> versions) {
+      if (this.versions == null) {
+        this.versions = new LinkedList<>();
+      }
+      this.versions.addAll(versions);
+      return this;
+    }
+
+    public Builder addVersions(InstanceGroupManagerVersion versions) {
+      if (this.versions == null) {
+        this.versions = new LinkedList<>();
+      }
+      this.versions.add(versions);
       return this;
     }
 
@@ -587,8 +673,11 @@ public final class InstanceGroupManager implements ApiMessage {
           namedPorts,
           region,
           selfLink,
+          status,
           targetPools,
           targetSize,
+          updatePolicy,
+          versions,
           zone);
     }
 
@@ -609,8 +698,11 @@ public final class InstanceGroupManager implements ApiMessage {
       newBuilder.addAllNamedPorts(this.namedPorts);
       newBuilder.setRegion(this.region);
       newBuilder.setSelfLink(this.selfLink);
+      newBuilder.setStatus(this.status);
       newBuilder.addAllTargetPools(this.targetPools);
       newBuilder.setTargetSize(this.targetSize);
+      newBuilder.setUpdatePolicy(this.updatePolicy);
+      newBuilder.addAllVersions(this.versions);
       newBuilder.setZone(this.zone);
       return newBuilder;
     }
@@ -664,11 +756,20 @@ public final class InstanceGroupManager implements ApiMessage {
         + "selfLink="
         + selfLink
         + ", "
+        + "status="
+        + status
+        + ", "
         + "targetPools="
         + targetPools
         + ", "
         + "targetSize="
         + targetSize
+        + ", "
+        + "updatePolicy="
+        + updatePolicy
+        + ", "
+        + "versions="
+        + versions
         + ", "
         + "zone="
         + zone
@@ -697,8 +798,11 @@ public final class InstanceGroupManager implements ApiMessage {
           && Objects.equals(this.namedPorts, that.getNamedPortsList())
           && Objects.equals(this.region, that.getRegion())
           && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.status, that.getStatus())
           && Objects.equals(this.targetPools, that.getTargetPoolsList())
           && Objects.equals(this.targetSize, that.getTargetSize())
+          && Objects.equals(this.updatePolicy, that.getUpdatePolicy())
+          && Objects.equals(this.versions, that.getVersionsList())
           && Objects.equals(this.zone, that.getZone());
     }
     return false;
@@ -722,8 +826,11 @@ public final class InstanceGroupManager implements ApiMessage {
         namedPorts,
         region,
         selfLink,
+        status,
         targetPools,
         targetSize,
+        updatePolicy,
+        versions,
         zone);
   }
 }

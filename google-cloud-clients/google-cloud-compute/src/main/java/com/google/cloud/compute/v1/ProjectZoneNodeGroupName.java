@@ -166,10 +166,11 @@ public final class ProjectZoneNodeGroupName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
-        "nodeGroup", nodeGroup,
-        "project", project,
-        "zone", zone);
+    return SERVICE_ADDRESS
+        + PATH_TEMPLATE.instantiate(
+            "nodeGroup", nodeGroup,
+            "project", project,
+            "zone", zone);
   }
 
   @Override

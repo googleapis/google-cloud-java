@@ -166,10 +166,11 @@ public final class ProjectRegionSubnetworkName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
-        "project", project,
-        "region", region,
-        "subnetwork", subnetwork);
+    return SERVICE_ADDRESS
+        + PATH_TEMPLATE.instantiate(
+            "project", project,
+            "region", region,
+            "subnetwork", subnetwork);
   }
 
   @Override
