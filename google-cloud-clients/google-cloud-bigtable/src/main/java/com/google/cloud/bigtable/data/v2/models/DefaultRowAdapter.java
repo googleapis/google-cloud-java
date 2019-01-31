@@ -93,10 +93,10 @@ public class DefaultRowAdapter implements RowAdapter<Row> {
     /** {@inheritDoc} */
     @Override
     public void finishCell() {
-      if (!Objects.equals(this.family, this.previousFamily)) {
-        this.previousFamily = this.family;
+      if (!Objects.equals(family, previousFamily)) {
+        previousFamily = family;
         currentFamilyCells = ImmutableList.builder();
-        cellsByFamily.put(this.family, this.currentFamilyCells);
+        cellsByFamily.put(family, currentFamilyCells);
       }
 
       RowCell rowCell = RowCell.create(family, qualifier, timestamp, labels, value);
