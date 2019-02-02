@@ -893,7 +893,7 @@ public class InstanceAdminClient implements BackgroundResource {
    *     .setInstanceId(instanceId.toString())
    *     .setInstance(instance)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = instanceAdminClient.createInstanceOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Instance, CreateInstanceMetadata&gt; future = instanceAdminClient.createInstanceOperationCallable().futureCall(request);
    *   // Do something
    *   Instance response = future.get();
    * }
@@ -1131,7 +1131,7 @@ public class InstanceAdminClient implements BackgroundResource {
    *     .setInstance(instance)
    *     .setFieldMask(fieldMask)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = instanceAdminClient.updateInstanceOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Instance, UpdateInstanceMetadata&gt; future = instanceAdminClient.updateInstanceOperationCallable().futureCall(request);
    *   // Do something
    *   Instance response = future.get();
    * }
