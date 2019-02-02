@@ -256,7 +256,7 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
    *     .setInputUri(inputUri)
    *     .addAllFeatures(features)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = videoIntelligenceServiceClient.annotateVideoOperationCallable().futureCall(request);
+   *   OperationFuture&lt;AnnotateVideoResponse, AnnotateVideoProgress&gt; future = videoIntelligenceServiceClient.annotateVideoOperationCallable().futureCall(request);
    *   // Do something
    *   AnnotateVideoResponse response = future.get();
    * }
