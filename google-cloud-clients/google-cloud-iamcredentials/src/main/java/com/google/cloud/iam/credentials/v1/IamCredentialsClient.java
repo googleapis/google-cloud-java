@@ -18,7 +18,6 @@ package com.google.cloud.iam.credentials.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.iam.credentials.v1.stub.IamCredentialsStub;
 import com.google.cloud.iam.credentials.v1.stub.IamCredentialsStubSettings;
 import com.google.protobuf.ByteString;
@@ -45,7 +44,7 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
- *   String formattedName = IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+ *   String formattedName = ServiceAccountName.format("[PROJECT]", "[SERVICE_ACCOUNT]");
  *   List&lt;String&gt; delegates = new ArrayList&lt;&gt;();
  *   List&lt;String&gt; scope = new ArrayList&lt;&gt;();
  *   Duration lifetime = Duration.newBuilder().build();
@@ -110,34 +109,6 @@ public class IamCredentialsClient implements BackgroundResource {
   private final IamCredentialsSettings settings;
   private final IamCredentialsStub stub;
 
-  private static final PathTemplate SERVICE_ACCOUNT_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/serviceAccounts/{service_account}");
-
-  /**
-   * Formats a string containing the fully-qualified path to represent a service_account resource.
-   */
-  public static final String formatServiceAccountName(String project, String serviceAccount) {
-    return SERVICE_ACCOUNT_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "service_account", serviceAccount);
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a service_account
-   * resource.
-   */
-  public static final String parseProjectFromServiceAccountName(String serviceAccountName) {
-    return SERVICE_ACCOUNT_PATH_TEMPLATE.parse(serviceAccountName).get("project");
-  }
-
-  /**
-   * Parses the service_account from the given fully-qualified path which represents a
-   * service_account resource.
-   */
-  public static final String parseServiceAccountFromServiceAccountName(String serviceAccountName) {
-    return SERVICE_ACCOUNT_PATH_TEMPLATE.parse(serviceAccountName).get("service_account");
-  }
-
   /** Constructs an instance of IamCredentialsClient with default settings. */
   public static final IamCredentialsClient create() throws IOException {
     return create(IamCredentialsSettings.newBuilder().build());
@@ -194,7 +165,7 @@ public class IamCredentialsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
-   *   String formattedName = IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+   *   String formattedName = ServiceAccountName.format("[PROJECT]", "[SERVICE_ACCOUNT]");
    *   List&lt;String&gt; delegates = new ArrayList&lt;&gt;();
    *   List&lt;String&gt; scope = new ArrayList&lt;&gt;();
    *   Duration lifetime = Duration.newBuilder().build();
@@ -221,7 +192,7 @@ public class IamCredentialsClient implements BackgroundResource {
    */
   public final GenerateAccessTokenResponse generateAccessToken(
       String name, List<String> delegates, List<String> scope, Duration lifetime) {
-    SERVICE_ACCOUNT_PATH_TEMPLATE.validate(name, "generateAccessToken");
+
     GenerateAccessTokenRequest request =
         GenerateAccessTokenRequest.newBuilder()
             .setName(name)
@@ -240,7 +211,7 @@ public class IamCredentialsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
-   *   String formattedName = IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+   *   String formattedName = ServiceAccountName.format("[PROJECT]", "[SERVICE_ACCOUNT]");
    *   List&lt;String&gt; scope = new ArrayList&lt;&gt;();
    *   GenerateAccessTokenRequest request = GenerateAccessTokenRequest.newBuilder()
    *     .setName(formattedName)
@@ -265,7 +236,7 @@ public class IamCredentialsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
-   *   String formattedName = IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+   *   String formattedName = ServiceAccountName.format("[PROJECT]", "[SERVICE_ACCOUNT]");
    *   List&lt;String&gt; scope = new ArrayList&lt;&gt;();
    *   GenerateAccessTokenRequest request = GenerateAccessTokenRequest.newBuilder()
    *     .setName(formattedName)
@@ -290,7 +261,7 @@ public class IamCredentialsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
-   *   String formattedName = IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+   *   String formattedName = ServiceAccountName.format("[PROJECT]", "[SERVICE_ACCOUNT]");
    *   List&lt;String&gt; delegates = new ArrayList&lt;&gt;();
    *   String audience = "";
    *   boolean includeEmail = false;
@@ -315,7 +286,7 @@ public class IamCredentialsClient implements BackgroundResource {
    */
   public final GenerateIdTokenResponse generateIdToken(
       String name, List<String> delegates, String audience, boolean includeEmail) {
-    SERVICE_ACCOUNT_PATH_TEMPLATE.validate(name, "generateIdToken");
+
     GenerateIdTokenRequest request =
         GenerateIdTokenRequest.newBuilder()
             .setName(name)
@@ -334,7 +305,7 @@ public class IamCredentialsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
-   *   String formattedName = IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+   *   String formattedName = ServiceAccountName.format("[PROJECT]", "[SERVICE_ACCOUNT]");
    *   String audience = "";
    *   GenerateIdTokenRequest request = GenerateIdTokenRequest.newBuilder()
    *     .setName(formattedName)
@@ -359,7 +330,7 @@ public class IamCredentialsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
-   *   String formattedName = IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+   *   String formattedName = ServiceAccountName.format("[PROJECT]", "[SERVICE_ACCOUNT]");
    *   String audience = "";
    *   GenerateIdTokenRequest request = GenerateIdTokenRequest.newBuilder()
    *     .setName(formattedName)
@@ -384,7 +355,7 @@ public class IamCredentialsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
-   *   String formattedName = IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+   *   String formattedName = ServiceAccountName.format("[PROJECT]", "[SERVICE_ACCOUNT]");
    *   List&lt;String&gt; delegates = new ArrayList&lt;&gt;();
    *   ByteString payload = ByteString.copyFromUtf8("");
    *   SignBlobResponse response = iamCredentialsClient.signBlob(formattedName, delegates, payload);
@@ -404,7 +375,7 @@ public class IamCredentialsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SignBlobResponse signBlob(String name, List<String> delegates, ByteString payload) {
-    SERVICE_ACCOUNT_PATH_TEMPLATE.validate(name, "signBlob");
+
     SignBlobRequest request =
         SignBlobRequest.newBuilder()
             .setName(name)
@@ -422,7 +393,7 @@ public class IamCredentialsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
-   *   String formattedName = IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+   *   String formattedName = ServiceAccountName.format("[PROJECT]", "[SERVICE_ACCOUNT]");
    *   ByteString payload = ByteString.copyFromUtf8("");
    *   SignBlobRequest request = SignBlobRequest.newBuilder()
    *     .setName(formattedName)
@@ -447,7 +418,7 @@ public class IamCredentialsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
-   *   String formattedName = IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+   *   String formattedName = ServiceAccountName.format("[PROJECT]", "[SERVICE_ACCOUNT]");
    *   ByteString payload = ByteString.copyFromUtf8("");
    *   SignBlobRequest request = SignBlobRequest.newBuilder()
    *     .setName(formattedName)
@@ -471,7 +442,7 @@ public class IamCredentialsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
-   *   String formattedName = IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+   *   String formattedName = ServiceAccountName.format("[PROJECT]", "[SERVICE_ACCOUNT]");
    *   List&lt;String&gt; delegates = new ArrayList&lt;&gt;();
    *   String payload = "";
    *   SignJwtResponse response = iamCredentialsClient.signJwt(formattedName, delegates, payload);
@@ -491,7 +462,7 @@ public class IamCredentialsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SignJwtResponse signJwt(String name, List<String> delegates, String payload) {
-    SERVICE_ACCOUNT_PATH_TEMPLATE.validate(name, "signJwt");
+
     SignJwtRequest request =
         SignJwtRequest.newBuilder()
             .setName(name)
@@ -509,7 +480,7 @@ public class IamCredentialsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
-   *   String formattedName = IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+   *   String formattedName = ServiceAccountName.format("[PROJECT]", "[SERVICE_ACCOUNT]");
    *   String payload = "";
    *   SignJwtRequest request = SignJwtRequest.newBuilder()
    *     .setName(formattedName)
@@ -534,7 +505,7 @@ public class IamCredentialsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
-   *   String formattedName = IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+   *   String formattedName = ServiceAccountName.format("[PROJECT]", "[SERVICE_ACCOUNT]");
    *   String payload = "";
    *   SignJwtRequest request = SignJwtRequest.newBuilder()
    *     .setName(formattedName)
@@ -558,7 +529,7 @@ public class IamCredentialsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
-   *   String formattedName = IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+   *   String formattedName = ServiceAccountName.format("[PROJECT]", "[SERVICE_ACCOUNT]");
    *   List&lt;String&gt; scope = new ArrayList&lt;&gt;();
    *   String jwt = "";
    *   GenerateIdentityBindingAccessTokenResponse response = iamCredentialsClient.generateIdentityBindingAccessToken(formattedName, scope, jwt);
@@ -596,7 +567,7 @@ public class IamCredentialsClient implements BackgroundResource {
    */
   public final GenerateIdentityBindingAccessTokenResponse generateIdentityBindingAccessToken(
       String name, List<String> scope, String jwt) {
-    SERVICE_ACCOUNT_PATH_TEMPLATE.validate(name, "generateIdentityBindingAccessToken");
+
     GenerateIdentityBindingAccessTokenRequest request =
         GenerateIdentityBindingAccessTokenRequest.newBuilder()
             .setName(name)
@@ -614,7 +585,7 @@ public class IamCredentialsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
-   *   String formattedName = IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+   *   String formattedName = ServiceAccountName.format("[PROJECT]", "[SERVICE_ACCOUNT]");
    *   List&lt;String&gt; scope = new ArrayList&lt;&gt;();
    *   String jwt = "";
    *   GenerateIdentityBindingAccessTokenRequest request = GenerateIdentityBindingAccessTokenRequest.newBuilder()
@@ -642,7 +613,7 @@ public class IamCredentialsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
-   *   String formattedName = IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+   *   String formattedName = ServiceAccountName.format("[PROJECT]", "[SERVICE_ACCOUNT]");
    *   List&lt;String&gt; scope = new ArrayList&lt;&gt;();
    *   String jwt = "";
    *   GenerateIdentityBindingAccessTokenRequest request = GenerateIdentityBindingAccessTokenRequest.newBuilder()

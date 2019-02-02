@@ -83,8 +83,7 @@ public class IamCredentialsClientTest {
         GenerateAccessTokenResponse.newBuilder().setAccessToken(accessToken).build();
     mockIAMCredentials.addResponse(expectedResponse);
 
-    String formattedName =
-        IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+    String formattedName = ServiceAccountName.format("[PROJECT]", "[SERVICE_ACCOUNT]");
     List<String> delegates = new ArrayList<>();
     List<String> scope = new ArrayList<>();
     Duration lifetime = Duration.newBuilder().build();
@@ -114,8 +113,7 @@ public class IamCredentialsClientTest {
     mockIAMCredentials.addException(exception);
 
     try {
-      String formattedName =
-          IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+      String formattedName = ServiceAccountName.format("[PROJECT]", "[SERVICE_ACCOUNT]");
       List<String> delegates = new ArrayList<>();
       List<String> scope = new ArrayList<>();
       Duration lifetime = Duration.newBuilder().build();
@@ -135,8 +133,7 @@ public class IamCredentialsClientTest {
         GenerateIdTokenResponse.newBuilder().setToken(token).build();
     mockIAMCredentials.addResponse(expectedResponse);
 
-    String formattedName =
-        IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+    String formattedName = ServiceAccountName.format("[PROJECT]", "[SERVICE_ACCOUNT]");
     List<String> delegates = new ArrayList<>();
     String audience = "audience975628804";
     boolean includeEmail = false;
@@ -166,8 +163,7 @@ public class IamCredentialsClientTest {
     mockIAMCredentials.addException(exception);
 
     try {
-      String formattedName =
-          IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+      String formattedName = ServiceAccountName.format("[PROJECT]", "[SERVICE_ACCOUNT]");
       List<String> delegates = new ArrayList<>();
       String audience = "audience975628804";
       boolean includeEmail = false;
@@ -188,8 +184,7 @@ public class IamCredentialsClientTest {
         SignBlobResponse.newBuilder().setKeyId(keyId).setSignedBlob(signedBlob).build();
     mockIAMCredentials.addResponse(expectedResponse);
 
-    String formattedName =
-        IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+    String formattedName = ServiceAccountName.format("[PROJECT]", "[SERVICE_ACCOUNT]");
     List<String> delegates = new ArrayList<>();
     ByteString payload = ByteString.copyFromUtf8("-114");
 
@@ -216,8 +211,7 @@ public class IamCredentialsClientTest {
     mockIAMCredentials.addException(exception);
 
     try {
-      String formattedName =
-          IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+      String formattedName = ServiceAccountName.format("[PROJECT]", "[SERVICE_ACCOUNT]");
       List<String> delegates = new ArrayList<>();
       ByteString payload = ByteString.copyFromUtf8("-114");
 
@@ -237,8 +231,7 @@ public class IamCredentialsClientTest {
         SignJwtResponse.newBuilder().setKeyId(keyId).setSignedJwt(signedJwt).build();
     mockIAMCredentials.addResponse(expectedResponse);
 
-    String formattedName =
-        IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+    String formattedName = ServiceAccountName.format("[PROJECT]", "[SERVICE_ACCOUNT]");
     List<String> delegates = new ArrayList<>();
     String payload = "-114";
 
@@ -265,8 +258,7 @@ public class IamCredentialsClientTest {
     mockIAMCredentials.addException(exception);
 
     try {
-      String formattedName =
-          IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+      String formattedName = ServiceAccountName.format("[PROJECT]", "[SERVICE_ACCOUNT]");
       List<String> delegates = new ArrayList<>();
       String payload = "-114";
 
@@ -285,8 +277,7 @@ public class IamCredentialsClientTest {
         GenerateIdentityBindingAccessTokenResponse.newBuilder().setAccessToken(accessToken).build();
     mockIAMCredentials.addResponse(expectedResponse);
 
-    String formattedName =
-        IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+    String formattedName = ServiceAccountName.format("[PROJECT]", "[SERVICE_ACCOUNT]");
     List<String> scope = new ArrayList<>();
     String jwt = "jwt105671";
 
@@ -315,8 +306,7 @@ public class IamCredentialsClientTest {
     mockIAMCredentials.addException(exception);
 
     try {
-      String formattedName =
-          IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+      String formattedName = ServiceAccountName.format("[PROJECT]", "[SERVICE_ACCOUNT]");
       List<String> scope = new ArrayList<>();
       String jwt = "jwt105671";
 

@@ -35,7 +35,7 @@
  * <pre>
  * <code>
  * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
- *   String formattedName = IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+ *   String formattedName = ServiceAccountName.format("[PROJECT]", "[SERVICE_ACCOUNT]");
  *   List&lt;String&gt; delegates = new ArrayList&lt;&gt;();
  *   List&lt;String&gt; scope = new ArrayList&lt;&gt;();
  *   Duration lifetime = Duration.newBuilder().build();
