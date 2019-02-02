@@ -31,11 +31,15 @@ import javax.annotation.Nonnull;
 @AutoValue
 public abstract class RowCell implements Serializable {
   /**
-   * A comparator that compares the cells by Bigtable native ordering.
+   * A comparator that compares the cells by Bigtable native ordering:
    *
-   * <p>family lexicographically, then by qualifier
-   * lexicographically and finally by timestamp in reverse chronological order. Labels and values
-   * are not included in the comparison.
+   * <ul>
+   *   <li>Family lexicographically ascending
+   *   <li>Qualifier lexicographically ascending
+   *   <li>Timestamp in reverse chronological order
+   * </ul>
+   *
+   * <p>Labels and values are not included in the comparison.
    */
   public static Comparator<RowCell> compareByNative() {
     return new Comparator<RowCell>() {

@@ -31,8 +31,8 @@ import javax.annotation.Nullable;
 /**
  * Default representation of a logical row.
  *
- * <p>The cells contained within, will be sorted by the native order. Please see
- * {@link RowCell#compareByNative()} for details.
+ * <p>The cells contained within, will be sorted by the native order. Please see {@link
+ * RowCell#compareByNative()} for details.
  */
 @InternalExtensionOnly
 @AutoValue

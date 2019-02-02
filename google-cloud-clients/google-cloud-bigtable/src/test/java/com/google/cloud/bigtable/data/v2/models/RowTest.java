@@ -101,32 +101,28 @@ public class RowTest {
     List<String> labels = ImmutableList.of();
     ByteString value = ByteString.EMPTY;
 
+    Row row =
+        Row.create(
+            ByteString.copyFromUtf8("ignored-key"),
+            ImmutableList.of(
+                RowCell.create("family1", col1, 1_000, labels, value),
+                RowCell.create("family1", col2, 1_000, labels, value),
+                RowCell.create("family2", col1, 1_000, labels, value),
+                RowCell.create("family4", col1, 1_000, labels, value)));
 
-    Row row = Row.create(
-        ByteString.copyFromUtf8("ignored-key"),
-        ImmutableList.of(
+    assertThat(row.getCells("family1"))
+        .containsExactly(
             RowCell.create("family1", col1, 1_000, labels, value),
-            RowCell.create("family1", col2, 1_000, labels, value),
-            RowCell.create("family2", col1, 1_000, labels, value),
-            RowCell.create("family4", col1, 1_000, labels, value)
-        )
-    );
+            RowCell.create("family1", col2, 1_000, labels, value))
+        .inOrder();
 
-
-    assertThat(row.getCells("family1")).containsExactly(
-        RowCell.create("family1", col1, 1_000, labels, value),
-        RowCell.create("family1", col2, 1_000, labels, value)
-    ).inOrder();
-
-    assertThat(row.getCells("family2")).containsExactly(
-        RowCell.create("family2", col1, 1_000, labels, value)
-    );
+    assertThat(row.getCells("family2"))
+        .containsExactly(RowCell.create("family2", col1, 1_000, labels, value));
 
     assertThat(row.getCells("family3")).isEmpty();
 
-    assertThat(row.getCells("family4")).containsExactly(
-        RowCell.create("family4", col1, 1_000, labels, value)
-    );
+    assertThat(row.getCells("family4"))
+        .containsExactly(RowCell.create("family4", col1, 1_000, labels, value));
   }
 
   @Test
@@ -137,40 +133,33 @@ public class RowTest {
     List<String> labels = ImmutableList.of();
     ByteString value = ByteString.EMPTY;
 
+    Row row =
+        Row.create(
+            ByteString.copyFromUtf8("ignored-key"),
+            ImmutableList.of(
+                RowCell.create("family1", col1, 1_000, labels, value),
+                RowCell.create("family1", col2, 2_000, labels, value),
+                RowCell.create("family1", col2, 1_000, labels, value),
+                RowCell.create("family2", col1, 1_000, labels, value),
+                RowCell.create("family4", col1, 1_000, labels, value)));
 
-    Row row = Row.create(
-        ByteString.copyFromUtf8("ignored-key"),
-        ImmutableList.of(
-            RowCell.create("family1", col1, 1_000, labels, value),
-            RowCell.create("family1", col2, 2_000, labels, value),
+    assertThat(row.getCells("family1", col1))
+        .containsExactly(RowCell.create("family1", col1, 1_000, labels, value));
+
+    assertThat(row.getCells("family1", col2))
+        .containsExactly(
             RowCell.create("family1", col2, 1_000, labels, value),
-            RowCell.create("family2", col1, 1_000, labels, value),
-            RowCell.create("family4", col1, 1_000, labels, value)
-        )
-    );
+            RowCell.create("family1", col2, 2_000, labels, value));
 
-
-    assertThat(row.getCells("family1", col1)).containsExactly(
-        RowCell.create("family1", col1, 1_000, labels, value)
-    );
-
-    assertThat(row.getCells("family1", col2)).containsExactly(
-        RowCell.create("family1", col2, 1_000, labels, value),
-        RowCell.create("family1", col2, 2_000, labels, value)
-    );
-
-    assertThat(row.getCells("family2", col1)).containsExactly(
-        RowCell.create("family2", col1, 1_000, labels, value)
-    );
+    assertThat(row.getCells("family2", col1))
+        .containsExactly(RowCell.create("family2", col1, 1_000, labels, value));
 
     assertThat(row.getCells("family2", col2)).isEmpty();
 
     assertThat(row.getCells("family3", col1)).isEmpty();
     assertThat(row.getCells("family3", col2)).isEmpty();
 
-
-    assertThat(row.getCells("family4", col1)).containsExactly(
-        RowCell.create("family4", col1, 1_000, labels, value)
-    );
+    assertThat(row.getCells("family4", col1))
+        .containsExactly(RowCell.create("family4", col1, 1_000, labels, value));
   }
 }
