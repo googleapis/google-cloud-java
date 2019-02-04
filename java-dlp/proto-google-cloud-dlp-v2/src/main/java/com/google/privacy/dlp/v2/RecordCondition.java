@@ -2432,7 +2432,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (logicalOperator_
           != com.google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator
-              .LOGICAL_OPERATOR_UNSPECIFIED.getNumber()) {
+              .LOGICAL_OPERATOR_UNSPECIFIED
+              .getNumber()) {
         output.writeEnum(1, logicalOperator_);
       }
       if (typeCase_ == 3) {
@@ -2449,7 +2450,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
       size = 0;
       if (logicalOperator_
           != com.google.privacy.dlp.v2.RecordCondition.Expressions.LogicalOperator
-              .LOGICAL_OPERATOR_UNSPECIFIED.getNumber()) {
+              .LOGICAL_OPERATOR_UNSPECIFIED
+              .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, logicalOperator_);
       }
       if (typeCase_ == 3) {
