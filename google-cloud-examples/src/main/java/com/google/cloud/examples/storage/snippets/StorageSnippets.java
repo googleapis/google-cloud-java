@@ -1136,13 +1136,13 @@ public class StorageSnippets {
     System.out.println("ContentLanguage: " + blob.getContentLanguage());
     System.out.println("ContentType: " + blob.getContentType());
     System.out.println("Crc32c: " + blob.getCrc32c());
-    System.out.println("Crc32cString: " + blob.getCrc32cToHexString());
+    System.out.println("Crc32cHexString: " + blob.getCrc32cToHexString());
     System.out.println("ETag: " + blob.getEtag());
     System.out.println("Generation: " + blob.getGeneration());
     System.out.println("Id: " + blob.getBlobId());
     System.out.println("KmsKeyName: " + blob.getKmsKeyName());
     System.out.println("Md5Hash: " + blob.getMd5());
-    System.out.println("Md5String: " + blob.getMd5ToHexString());
+    System.out.println("Md5HexString: " + blob.getMd5ToHexString());
     System.out.println("MediaLink: " + blob.getMediaLink());
     System.out.println("Metageneration: " + blob.getMetageneration());
     System.out.println("Name: " + blob.getName());

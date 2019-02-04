@@ -227,6 +227,14 @@ public class BlobInfo implements Serializable {
     public abstract Builder setMd5(String md5);
 
     /**
+     * Sets the MD5 hash of blob's data from hex string.
+     *
+     * @see <a href="https://cloud.google.com/storage/docs/hashes-etags#_JSONAPI">Hashes and ETags:
+     *     Best Practices</a>
+     */
+    public abstract Builder setMd5FromHexString(String md5HexString);
+
+    /**
      * Sets the CRC32C checksum of blob's data as described in <a
      * href="http://tools.ietf.org/html/rfc4960#appendix-B">RFC 4960, Appendix B;</a> encoded in
      * base64 in big-endian order.
@@ -235,6 +243,16 @@ public class BlobInfo implements Serializable {
      *     Best Practices</a>
      */
     public abstract Builder setCrc32c(String crc32c);
+
+    /**
+     * Sets the CRC32C checksum of blob's data as described in <a
+     * href="http://tools.ietf.org/html/rfc4960#appendix-B">RFC 4960, Appendix B;</a> from hex
+     * string.
+     *
+     * @see <a href="https://cloud.google.com/storage/docs/hashes-etags#_JSONAPI">Hashes and ETags:
+     *     Best Practices</a>
+     */
+    public abstract Builder setCrc32cFromHexString(String crc32cHexString);
 
     abstract Builder setMediaLink(String mediaLink);
 
@@ -423,9 +441,34 @@ public class BlobInfo implements Serializable {
       return this;
     }
 
+    public Builder setMd5FromHexString(String md5HexString) {
+      if (md5HexString == null) {
+        return this;
+      }
+      if (md5HexString.startsWith("0x")) {
+        md5HexString = md5HexString.replaceFirst("0x", "");
+      }
+      byte[] bytes = new BigInteger(md5HexString, 16).toByteArray();
+      this.md5 = "0x" + BaseEncoding.base64().omitPadding().encode(bytes);
+      return this;
+    }
+
     @Override
     public Builder setCrc32c(String crc32c) {
       this.crc32c = firstNonNull(crc32c, Data.<String>nullOf(String.class));
+      return this;
+    }
+
+    @Override
+    public Builder setCrc32cFromHexString(String crc32cHexString) {
+      if (crc32cHexString == null) {
+        return this;
+      }
+      if (crc32cHexString.startsWith("0x")) {
+        crc32cHexString = crc32cHexString.replaceFirst("0x", "");
+      }
+      byte[] bytes = new BigInteger(crc32cHexString, 16).toByteArray();
+      this.crc32c = "0x" + BaseEncoding.base64().omitPadding().encode(bytes);
       return this;
     }
 
@@ -684,7 +727,8 @@ public class BlobInfo implements Serializable {
     if (md5 == null) {
       return null;
     }
-    byte[] decodedMd5 = BaseEncoding.base64().decode(md5);
+    String md5withoutPrefix = md5.startsWith("0x") ? md5.replaceFirst("0x", "") : md5;
+    byte[] decodedMd5 = BaseEncoding.base64().decode(md5withoutPrefix);
     StringBuilder stringBuilder = new StringBuilder();
     for (byte b : decodedMd5) {
       stringBuilder.append(String.format("%02x", b & 0xff));
@@ -716,7 +760,8 @@ public class BlobInfo implements Serializable {
     if (crc32c == null) {
       return null;
     }
-    byte[] decodeCrc32c = BaseEncoding.base64().decode(crc32c);
+    String crc32cWithoutPrefix = crc32c.startsWith("0x") ? crc32c.replaceFirst("0x", "") : crc32c;
+    byte[] decodeCrc32c = BaseEncoding.base64().decode(crc32cWithoutPrefix);
     StringBuilder stringBuilder = new StringBuilder();
     for (byte b : decodeCrc32c) {
       stringBuilder.append(String.format("%02x", b & 0xff));
