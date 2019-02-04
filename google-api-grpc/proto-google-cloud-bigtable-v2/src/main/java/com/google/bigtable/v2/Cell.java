@@ -102,8 +102,9 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.bigtable.v2.DataProto
-        .internal_static_google_bigtable_v2_Cell_fieldAccessorTable.ensureFieldAccessorsInitialized(
-        com.google.bigtable.v2.Cell.class, com.google.bigtable.v2.Cell.Builder.class);
+        .internal_static_google_bigtable_v2_Cell_fieldAccessorTable
+        .ensureFieldAccessorsInitialized(
+            com.google.bigtable.v2.Cell.class, com.google.bigtable.v2.Cell.Builder.class);
   }
 
   private int bitField0_;

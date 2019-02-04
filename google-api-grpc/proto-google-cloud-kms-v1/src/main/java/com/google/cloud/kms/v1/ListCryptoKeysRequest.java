@@ -278,7 +278,8 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
     }
     if (versionView_
         != com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionView
-            .CRYPTO_KEY_VERSION_VIEW_UNSPECIFIED.getNumber()) {
+            .CRYPTO_KEY_VERSION_VIEW_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(4, versionView_);
     }
     unknownFields.writeTo(output);
@@ -301,7 +302,8 @@ public final class ListCryptoKeysRequest extends com.google.protobuf.GeneratedMe
     }
     if (versionView_
         != com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionView
-            .CRYPTO_KEY_VERSION_VIEW_UNSPECIFIED.getNumber()) {
+            .CRYPTO_KEY_VERSION_VIEW_UNSPECIFIED
+            .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, versionView_);
     }
     size += unknownFields.getSerializedSize();
