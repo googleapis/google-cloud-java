@@ -144,7 +144,8 @@ public final class TextClassificationDatasetMetadata extends com.google.protobuf
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (classificationType_
         != com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationType
-            .CLASSIFICATION_TYPE_UNSPECIFIED.getNumber()) {
+            .CLASSIFICATION_TYPE_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(1, classificationType_);
     }
     unknownFields.writeTo(output);
@@ -158,7 +159,8 @@ public final class TextClassificationDatasetMetadata extends com.google.protobuf
     size = 0;
     if (classificationType_
         != com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationType
-            .CLASSIFICATION_TYPE_UNSPECIFIED.getNumber()) {
+            .CLASSIFICATION_TYPE_UNSPECIFIED
+            .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, classificationType_);
     }
     size += unknownFields.getSerializedSize();

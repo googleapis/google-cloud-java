@@ -124,8 +124,9 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.pubsub.v1.PubsubProto
-        .internal_static_google_pubsub_v1_Topic_fieldAccessorTable.ensureFieldAccessorsInitialized(
-        com.google.pubsub.v1.Topic.class, com.google.pubsub.v1.Topic.Builder.class);
+        .internal_static_google_pubsub_v1_Topic_fieldAccessorTable
+        .ensureFieldAccessorsInitialized(
+            com.google.pubsub.v1.Topic.class, com.google.pubsub.v1.Topic.Builder.class);
   }
 
   private int bitField0_;
