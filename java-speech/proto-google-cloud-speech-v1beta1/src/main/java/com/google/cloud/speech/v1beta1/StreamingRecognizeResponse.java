@@ -590,7 +590,8 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
     }
     if (endpointerType_
         != com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType
-            .ENDPOINTER_EVENT_UNSPECIFIED.getNumber()) {
+            .ENDPOINTER_EVENT_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(4, endpointerType_);
     }
     unknownFields.writeTo(output);
@@ -612,7 +613,8 @@ public final class StreamingRecognizeResponse extends com.google.protobuf.Genera
     }
     if (endpointerType_
         != com.google.cloud.speech.v1beta1.StreamingRecognizeResponse.EndpointerType
-            .ENDPOINTER_EVENT_UNSPECIFIED.getNumber()) {
+            .ENDPOINTER_EVENT_UNSPECIFIED
+            .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, endpointerType_);
     }
     size += unknownFields.getSerializedSize();
