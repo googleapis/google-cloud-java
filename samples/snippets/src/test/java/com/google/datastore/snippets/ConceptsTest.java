@@ -36,7 +36,6 @@ import com.google.cloud.datastore.KeyFactory;
 import com.google.cloud.datastore.PathElement;
 import com.google.cloud.datastore.ProjectionEntity;
 import com.google.cloud.datastore.Query;
-import com.google.cloud.datastore.Query.ResultType;
 import com.google.cloud.datastore.QueryResults;
 import com.google.cloud.datastore.ReadOption;
 import com.google.cloud.datastore.StringValue;
@@ -50,6 +49,8 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterators;
+import com.google.datastore.v1.TransactionOptions;
+import com.google.datastore.v1.TransactionOptions.ReadOnly;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -826,7 +827,11 @@ public class ConceptsTest {
     // [START datastore_transactional_single_entity_group_read_only]
     Entity taskList;
     QueryResults<Entity> tasks;
-    Transaction txn = datastore.newTransaction();
+    Transaction txn = datastore.newTransaction(
+        TransactionOptions.newBuilder()
+            .setReadOnly(ReadOnly.newBuilder().build())
+            .build()
+    );
     try {
       taskList = txn.get(taskListKey);
       Query<Entity> query = Query.newEntityQueryBuilder()
