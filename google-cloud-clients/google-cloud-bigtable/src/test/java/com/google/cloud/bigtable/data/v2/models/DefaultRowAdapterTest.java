@@ -128,4 +128,47 @@ public class DefaultRowAdapterTest {
 
     assertThat(adapter.isScanMarkerRow(rowBuilder.finishRow())).isFalse();
   }
+
+  @Test
+  public void sortFamiliesAreSorted() {
+    ByteString col1 = ByteString.copyFromUtf8("col1");
+    ByteString col2 = ByteString.copyFromUtf8("col2");
+    List<String> labels = ImmutableList.of();
+    ByteString value1 = ByteString.copyFromUtf8("my-value1");
+    ByteString value2 = ByteString.copyFromUtf8("my-value2");
+    ByteString value3 = ByteString.copyFromUtf8("my-value3");
+    ByteString value4 = ByteString.copyFromUtf8("my-value4");
+
+    rowBuilder.startRow(ByteString.copyFromUtf8("key1"));
+
+    // family2 with 2 cells is received before family1
+    rowBuilder.startCell("family2", col1, 1000, labels, value1.size());
+    rowBuilder.cellValue(value1);
+    rowBuilder.finishCell();
+
+    rowBuilder.startCell("family2", col2, 1000, labels, value2.size());
+    rowBuilder.cellValue(value2);
+    rowBuilder.finishCell();
+
+    // family1 with 2 cells is received after family2 cells
+    rowBuilder.startCell("family1", col1, 1000, ImmutableList.<String>of(), value3.size());
+    rowBuilder.cellValue(value3);
+    rowBuilder.finishCell();
+
+    rowBuilder.startCell("family1", col2, 1000, ImmutableList.<String>of(), value4.size());
+    rowBuilder.cellValue(value4);
+    rowBuilder.finishCell();
+
+    Row actualRow = rowBuilder.finishRow();
+
+    // The resulting the cells will reorder family1 first
+    assertThat(actualRow.getCells())
+        .containsExactlyElementsIn(
+            ImmutableList.of(
+                RowCell.create("family1", col1, 1000, labels, value3),
+                RowCell.create("family1", col2, 1000, labels, value4),
+                RowCell.create("family2", col1, 1000, labels, value1),
+                RowCell.create("family2", col2, 1000, labels, value2)))
+        .inOrder();
+  }
 }

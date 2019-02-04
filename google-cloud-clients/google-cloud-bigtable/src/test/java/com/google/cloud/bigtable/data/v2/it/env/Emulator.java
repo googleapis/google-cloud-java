@@ -172,10 +172,8 @@ class Emulator {
   }
 
   private ManagedChannel createChannel(int port) {
-    // NOTE: usePlaintext is currently @ExperimentalAPI. In grpc 1.11 it be became parameterless.
-    // In 1.12 it should be stable. See https://github.com/grpc/grpc-java/issues/1772 for discussion
     return ManagedChannelBuilder.forAddress("localhost", port)
-        .usePlaintext(true)
+        .usePlaintext()
         .maxInboundMessageSize(256 * 1024 * 1024)
         .build();
   }
