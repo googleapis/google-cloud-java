@@ -24,6 +24,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -63,12 +64,11 @@ public class RowTest {
                     ImmutableList.<String>of(),
                     ByteString.copyFromUtf8("value"))));
 
-    assertThat(row1).isEqualTo(row1);
-    assertThat(row1).isLessThan(row2);
-    assertThat(row2).isGreaterThan(row1);
+    assertThat(Row.compareByKey().compare(row1, row2)).isEqualTo(-1);
+    assertThat(Row.compareByKey().compare(row2, row1)).isEqualTo(1);
 
     // Comparator only cares about row keys
-    assertThat(row2).isEquivalentAccordingToCompareTo(row2b);
+    assertThat(Row.compareByKey().compare(row2, row2b)).isEqualTo(0);
   }
 
   @Test
@@ -91,5 +91,75 @@ public class RowTest {
 
     ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(bos.toByteArray()));
     assertThat(ois.readObject()).isEqualTo(expected);
+  }
+
+  @Test
+  public void getFamilyCellsTest() {
+    ByteString col1 = ByteString.copyFromUtf8("col1");
+    ByteString col2 = ByteString.copyFromUtf8("col2");
+
+    List<String> labels = ImmutableList.of();
+    ByteString value = ByteString.EMPTY;
+
+    Row row =
+        Row.create(
+            ByteString.copyFromUtf8("ignored-key"),
+            ImmutableList.of(
+                RowCell.create("family1", col1, 1_000, labels, value),
+                RowCell.create("family1", col2, 1_000, labels, value),
+                RowCell.create("family2", col1, 1_000, labels, value),
+                RowCell.create("family4", col1, 1_000, labels, value)));
+
+    assertThat(row.getCells("family1"))
+        .containsExactly(
+            RowCell.create("family1", col1, 1_000, labels, value),
+            RowCell.create("family1", col2, 1_000, labels, value))
+        .inOrder();
+
+    assertThat(row.getCells("family2"))
+        .containsExactly(RowCell.create("family2", col1, 1_000, labels, value));
+
+    assertThat(row.getCells("family3")).isEmpty();
+
+    assertThat(row.getCells("family4"))
+        .containsExactly(RowCell.create("family4", col1, 1_000, labels, value));
+  }
+
+  @Test
+  public void getQualifierCellsTest() {
+    ByteString col1 = ByteString.copyFromUtf8("col1");
+    ByteString col2 = ByteString.copyFromUtf8("col2");
+
+    List<String> labels = ImmutableList.of();
+    ByteString value = ByteString.EMPTY;
+
+    Row row =
+        Row.create(
+            ByteString.copyFromUtf8("ignored-key"),
+            ImmutableList.of(
+                RowCell.create("family1", col1, 1_000, labels, value),
+                RowCell.create("family1", col2, 2_000, labels, value),
+                RowCell.create("family1", col2, 1_000, labels, value),
+                RowCell.create("family2", col1, 1_000, labels, value),
+                RowCell.create("family4", col1, 1_000, labels, value)));
+
+    assertThat(row.getCells("family1", col1))
+        .containsExactly(RowCell.create("family1", col1, 1_000, labels, value));
+
+    assertThat(row.getCells("family1", col2))
+        .containsExactly(
+            RowCell.create("family1", col2, 1_000, labels, value),
+            RowCell.create("family1", col2, 2_000, labels, value));
+
+    assertThat(row.getCells("family2", col1))
+        .containsExactly(RowCell.create("family2", col1, 1_000, labels, value));
+
+    assertThat(row.getCells("family2", col2)).isEmpty();
+
+    assertThat(row.getCells("family3", col1)).isEmpty();
+    assertThat(row.getCells("family3", col2)).isEmpty();
+
+    assertThat(row.getCells("family4", col1))
+        .containsExactly(RowCell.create("family4", col1, 1_000, labels, value));
   }
 }
