@@ -1352,7 +1352,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (interactionType_
         != com.google.cloud.speech.v1p1beta1.RecognitionMetadata.InteractionType
-            .INTERACTION_TYPE_UNSPECIFIED.getNumber()) {
+            .INTERACTION_TYPE_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(1, interactionType_);
     }
     if (industryNaicsCodeOfAudio_ != 0) {
@@ -1360,17 +1361,20 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
     }
     if (microphoneDistance_
         != com.google.cloud.speech.v1p1beta1.RecognitionMetadata.MicrophoneDistance
-            .MICROPHONE_DISTANCE_UNSPECIFIED.getNumber()) {
+            .MICROPHONE_DISTANCE_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(4, microphoneDistance_);
     }
     if (originalMediaType_
         != com.google.cloud.speech.v1p1beta1.RecognitionMetadata.OriginalMediaType
-            .ORIGINAL_MEDIA_TYPE_UNSPECIFIED.getNumber()) {
+            .ORIGINAL_MEDIA_TYPE_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(5, originalMediaType_);
     }
     if (recordingDeviceType_
         != com.google.cloud.speech.v1p1beta1.RecognitionMetadata.RecordingDeviceType
-            .RECORDING_DEVICE_TYPE_UNSPECIFIED.getNumber()) {
+            .RECORDING_DEVICE_TYPE_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(6, recordingDeviceType_);
     }
     if (!getRecordingDeviceNameBytes().isEmpty()) {
@@ -1396,7 +1400,8 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
     size = 0;
     if (interactionType_
         != com.google.cloud.speech.v1p1beta1.RecognitionMetadata.InteractionType
-            .INTERACTION_TYPE_UNSPECIFIED.getNumber()) {
+            .INTERACTION_TYPE_UNSPECIFIED
+            .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, interactionType_);
     }
     if (industryNaicsCodeOfAudio_ != 0) {
@@ -1404,17 +1409,20 @@ public final class RecognitionMetadata extends com.google.protobuf.GeneratedMess
     }
     if (microphoneDistance_
         != com.google.cloud.speech.v1p1beta1.RecognitionMetadata.MicrophoneDistance
-            .MICROPHONE_DISTANCE_UNSPECIFIED.getNumber()) {
+            .MICROPHONE_DISTANCE_UNSPECIFIED
+            .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, microphoneDistance_);
     }
     if (originalMediaType_
         != com.google.cloud.speech.v1p1beta1.RecognitionMetadata.OriginalMediaType
-            .ORIGINAL_MEDIA_TYPE_UNSPECIFIED.getNumber()) {
+            .ORIGINAL_MEDIA_TYPE_UNSPECIFIED
+            .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, originalMediaType_);
     }
     if (recordingDeviceType_
         != com.google.cloud.speech.v1p1beta1.RecognitionMetadata.RecordingDeviceType
-            .RECORDING_DEVICE_TYPE_UNSPECIFIED.getNumber()) {
+            .RECORDING_DEVICE_TYPE_UNSPECIFIED
+            .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, recordingDeviceType_);
     }
     if (!getRecordingDeviceNameBytes().isEmpty()) {

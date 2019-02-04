@@ -594,7 +594,8 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       }
       if (state_
           != com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State
-              .STATE_UNSPECIFIED.getNumber()) {
+              .STATE_UNSPECIFIED
+              .getNumber()) {
         output.writeEnum(2, state_);
       }
       unknownFields.writeTo(output);
@@ -611,7 +612,8 @@ public final class ListAssetsResponse extends com.google.protobuf.GeneratedMessa
       }
       if (state_
           != com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult.State
-              .STATE_UNSPECIFIED.getNumber()) {
+              .STATE_UNSPECIFIED
+              .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, state_);
       }
       size += unknownFields.getSerializedSize();
