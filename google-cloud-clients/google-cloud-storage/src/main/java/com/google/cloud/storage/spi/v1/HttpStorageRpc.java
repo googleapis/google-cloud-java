@@ -66,6 +66,7 @@ import com.google.common.collect.Lists;
 import com.google.common.hash.HashFunction;
 import com.google.common.hash.Hashing;
 import com.google.common.io.BaseEncoding;
+import com.google.common.io.CountingOutputStream;
 import io.opencensus.common.Scope;
 import io.opencensus.trace.AttributeValue;
 import io.opencensus.trace.Span;
@@ -625,6 +626,34 @@ public class HttpStorageRpc implements StorageRpc {
   @Override
   public RpcBatch createBatch() {
     return new DefaultRpcBatch(storage);
+  }
+
+  @Override
+  public void readToOutputStream(
+      StorageObject from, long position, CountingOutputStream to, Map<Option, ?> options) {
+    Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_READ);
+    Scope scope = tracer.withSpan(span);
+    try {
+      Get req =
+          storage
+              .objects()
+              .get(from.getBucket(), from.getName())
+              .setGeneration(from.getGeneration())
+              .setIfMetagenerationMatch(Option.IF_METAGENERATION_MATCH.getLong(options))
+              .setIfMetagenerationNotMatch(Option.IF_METAGENERATION_NOT_MATCH.getLong(options))
+              .setIfGenerationMatch(Option.IF_GENERATION_MATCH.getLong(options))
+              .setIfGenerationNotMatch(Option.IF_GENERATION_NOT_MATCH.getLong(options))
+              .setUserProject(Option.USER_PROJECT.getString(options));
+      req.getMediaHttpDownloader().setDirectDownloadEnabled(true).setBytesDownloaded(position);
+      req.executeMediaAndDownloadTo(to);
+    } catch (IOException ex) {
+      span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
+      StorageException serviceException = translate(ex);
+      throw serviceException;
+    } finally {
+      scope.close();
+      span.end();
+    }
   }
 
   @Override

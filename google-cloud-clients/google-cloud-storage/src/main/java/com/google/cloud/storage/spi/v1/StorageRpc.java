@@ -28,6 +28,7 @@ import com.google.api.services.storage.model.TestIamPermissionsResponse;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.Tuple;
 import com.google.cloud.storage.StorageException;
+import com.google.common.io.CountingOutputStream;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
@@ -57,6 +58,7 @@ public interface StorageRpc extends ServiceRpc {
     FIELDS("fields"),
     CUSTOMER_SUPPLIED_KEY("customerSuppliedKey"),
     USE_DIRECT_DOWNLOAD("useDirectDownload"),
+    READ_CHANNEL_CHUNK_SIZE_MULTIPLIER("useDirectDownload"),
     USER_PROJECT("userProject"),
     KMS_KEY_NAME("kmsKeyName");
 
@@ -281,6 +283,14 @@ public interface StorageRpc extends ServiceRpc {
    * @throws StorageException upon failure
    */
   Tuple<String, byte[]> read(StorageObject from, Map<Option, ?> options, long position, int bytes);
+
+  /**
+   * Reads from a storage object at the given position directly to outputstream
+   *
+   * @throws StorageException upon failure
+   */
+  void readToOutputStream(
+      StorageObject from, long position, CountingOutputStream to, Map<Option, ?> options);
 
   /**
    * Opens a resumable upload channel for a given storage object.

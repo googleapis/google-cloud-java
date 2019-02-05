@@ -16,14 +16,17 @@
 
 package com.google.cloud.storage;
 
+import static com.google.cloud.RetryHelper.runWithRetries;
 import static com.google.cloud.storage.Blob.BlobSourceOption.toGetOptions;
 import static com.google.cloud.storage.Blob.BlobSourceOption.toSourceOptions;
 import static com.google.common.base.Preconditions.checkNotNull;
+import static java.util.concurrent.Executors.callable;
 
 import com.google.api.services.storage.model.StorageObject;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.ServiceAccountSigner.SigningException;
 import com.google.cloud.ReadChannel;
+import com.google.cloud.RetryHelper;
 import com.google.cloud.Tuple;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.Acl.Entity;
@@ -34,6 +37,7 @@ import com.google.cloud.storage.Storage.SignUrlOption;
 import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.common.base.Function;
 import com.google.common.io.BaseEncoding;
+import com.google.common.io.CountingOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.OutputStream;
@@ -238,6 +242,41 @@ public class Blob extends BlobInfo {
   }
 
   /**
+   * Downloads this blob to the given output stream path using specified blob read options.
+   *
+   * @param outputStream destination
+   * @param options blob read options
+   * @throws StorageException upon failure
+   */
+  public void downloadTo(OutputStream outputStream, final BlobSourceOption... options) {
+    try (CountingOutputStream countingOutputStream = new CountingOutputStream(outputStream)) {
+      final StorageObject storageObject = getBlobId().toPb();
+      final StorageOptions storageOptions = this.options;
+      final StorageRpc storageRpc = storageOptions.getStorageRpcV1();
+      final Map<StorageRpc.Option, ?> requestOptions = StorageImpl.optionMap(getBlobId(), options);
+      runWithRetries(
+          callable(
+              new Runnable() {
+                @Override
+                public void run() {
+                  storageRpc.readToOutputStream(
+                      storageObject,
+                      countingOutputStream.getCount(),
+                      countingOutputStream,
+                      requestOptions);
+                }
+              }),
+          storageOptions.getRetrySettings(),
+          StorageImpl.EXCEPTION_HANDLER,
+          storageOptions.getClock());
+    } catch (RetryHelper.RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    } catch (IOException e) {
+      throw new StorageException(e);
+    }
+  }
+
+  /**
    * Downloads this blob to the given file path.
    *
    * <p>This method is replaced with {@link #downloadTo(Path, BlobSourceOption...)}, but is kept
@@ -248,6 +287,16 @@ public class Blob extends BlobInfo {
    */
   public void downloadTo(Path path) {
     downloadTo(path, new BlobSourceOption[0]);
+  }
+
+  /**
+   * Downloads this blob to the given outputStream.
+   *
+   * @param outputStream destination
+   * @throws StorageException upon failure
+   */
+  public void downloadTo(OutputStream outputStream) {
+    downloadTo(outputStream, new BlobSourceOption[0]);
   }
 
   /** Builder for {@code Blob}. */
