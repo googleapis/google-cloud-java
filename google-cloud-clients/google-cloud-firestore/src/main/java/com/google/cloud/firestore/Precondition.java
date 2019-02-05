@@ -66,9 +66,9 @@ public final class Precondition {
     return exists != null;
   }
 
-  com.google.firestore.v1beta1.Precondition toPb() {
-    com.google.firestore.v1beta1.Precondition.Builder precondition =
-        com.google.firestore.v1beta1.Precondition.newBuilder();
+  com.google.firestore.v1.Precondition toPb() {
+    com.google.firestore.v1.Precondition.Builder precondition =
+        com.google.firestore.v1.Precondition.newBuilder();
 
     if (exists != null) {
       precondition.setExists(exists);

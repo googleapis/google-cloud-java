@@ -3271,7 +3271,7 @@ public final class TestDefinition {
      * The request that the call should send to the Firestore service.
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.GetDocumentRequest request = 2;</code>
+     * <code>.google.firestore.v1.GetDocumentRequest request = 2;</code>
      */
     boolean hasRequest();
     /**
@@ -3281,9 +3281,9 @@ public final class TestDefinition {
      * The request that the call should send to the Firestore service.
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.GetDocumentRequest request = 2;</code>
+     * <code>.google.firestore.v1.GetDocumentRequest request = 2;</code>
      */
-    com.google.firestore.v1beta1.GetDocumentRequest getRequest();
+    com.google.firestore.v1.GetDocumentRequest getRequest();
     /**
      *
      *
@@ -3291,9 +3291,9 @@ public final class TestDefinition {
      * The request that the call should send to the Firestore service.
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.GetDocumentRequest request = 2;</code>
+     * <code>.google.firestore.v1.GetDocumentRequest request = 2;</code>
      */
-    com.google.firestore.v1beta1.GetDocumentRequestOrBuilder getRequestOrBuilder();
+    com.google.firestore.v1.GetDocumentRequestOrBuilder getRequestOrBuilder();
   }
   /**
    *
@@ -3358,14 +3358,13 @@ public final class TestDefinition {
               }
             case 18:
               {
-                com.google.firestore.v1beta1.GetDocumentRequest.Builder subBuilder = null;
+                com.google.firestore.v1.GetDocumentRequest.Builder subBuilder = null;
                 if (request_ != null) {
                   subBuilder = request_.toBuilder();
                 }
                 request_ =
                     input.readMessage(
-                        com.google.firestore.v1beta1.GetDocumentRequest.parser(),
-                        extensionRegistry);
+                        com.google.firestore.v1.GetDocumentRequest.parser(), extensionRegistry);
                 if (subBuilder != null) {
                   subBuilder.mergeFrom(request_);
                   request_ = subBuilder.buildPartial();
@@ -3443,7 +3442,7 @@ public final class TestDefinition {
     }
 
     public static final int REQUEST_FIELD_NUMBER = 2;
-    private com.google.firestore.v1beta1.GetDocumentRequest request_;
+    private com.google.firestore.v1.GetDocumentRequest request_;
     /**
      *
      *
@@ -3451,7 +3450,7 @@ public final class TestDefinition {
      * The request that the call should send to the Firestore service.
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.GetDocumentRequest request = 2;</code>
+     * <code>.google.firestore.v1.GetDocumentRequest request = 2;</code>
      */
     public boolean hasRequest() {
       return request_ != null;
@@ -3463,11 +3462,11 @@ public final class TestDefinition {
      * The request that the call should send to the Firestore service.
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.GetDocumentRequest request = 2;</code>
+     * <code>.google.firestore.v1.GetDocumentRequest request = 2;</code>
      */
-    public com.google.firestore.v1beta1.GetDocumentRequest getRequest() {
+    public com.google.firestore.v1.GetDocumentRequest getRequest() {
       return request_ == null
-          ? com.google.firestore.v1beta1.GetDocumentRequest.getDefaultInstance()
+          ? com.google.firestore.v1.GetDocumentRequest.getDefaultInstance()
           : request_;
     }
     /**
@@ -3477,9 +3476,9 @@ public final class TestDefinition {
      * The request that the call should send to the Firestore service.
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.GetDocumentRequest request = 2;</code>
+     * <code>.google.firestore.v1.GetDocumentRequest request = 2;</code>
      */
-    public com.google.firestore.v1beta1.GetDocumentRequestOrBuilder getRequestOrBuilder() {
+    public com.google.firestore.v1.GetDocumentRequestOrBuilder getRequestOrBuilder() {
       return getRequest();
     }
 
@@ -3913,11 +3912,11 @@ public final class TestDefinition {
         return this;
       }
 
-      private com.google.firestore.v1beta1.GetDocumentRequest request_ = null;
+      private com.google.firestore.v1.GetDocumentRequest request_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.firestore.v1beta1.GetDocumentRequest,
-              com.google.firestore.v1beta1.GetDocumentRequest.Builder,
-              com.google.firestore.v1beta1.GetDocumentRequestOrBuilder>
+              com.google.firestore.v1.GetDocumentRequest,
+              com.google.firestore.v1.GetDocumentRequest.Builder,
+              com.google.firestore.v1.GetDocumentRequestOrBuilder>
           requestBuilder_;
       /**
        *
@@ -3926,7 +3925,7 @@ public final class TestDefinition {
        * The request that the call should send to the Firestore service.
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.GetDocumentRequest request = 2;</code>
+       * <code>.google.firestore.v1.GetDocumentRequest request = 2;</code>
        */
       public boolean hasRequest() {
         return requestBuilder_ != null || request_ != null;
@@ -3938,12 +3937,12 @@ public final class TestDefinition {
        * The request that the call should send to the Firestore service.
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.GetDocumentRequest request = 2;</code>
+       * <code>.google.firestore.v1.GetDocumentRequest request = 2;</code>
        */
-      public com.google.firestore.v1beta1.GetDocumentRequest getRequest() {
+      public com.google.firestore.v1.GetDocumentRequest getRequest() {
         if (requestBuilder_ == null) {
           return request_ == null
-              ? com.google.firestore.v1beta1.GetDocumentRequest.getDefaultInstance()
+              ? com.google.firestore.v1.GetDocumentRequest.getDefaultInstance()
               : request_;
         } else {
           return requestBuilder_.getMessage();
@@ -3956,9 +3955,9 @@ public final class TestDefinition {
        * The request that the call should send to the Firestore service.
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.GetDocumentRequest request = 2;</code>
+       * <code>.google.firestore.v1.GetDocumentRequest request = 2;</code>
        */
-      public Builder setRequest(com.google.firestore.v1beta1.GetDocumentRequest value) {
+      public Builder setRequest(com.google.firestore.v1.GetDocumentRequest value) {
         if (requestBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3978,10 +3977,10 @@ public final class TestDefinition {
        * The request that the call should send to the Firestore service.
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.GetDocumentRequest request = 2;</code>
+       * <code>.google.firestore.v1.GetDocumentRequest request = 2;</code>
        */
       public Builder setRequest(
-          com.google.firestore.v1beta1.GetDocumentRequest.Builder builderForValue) {
+          com.google.firestore.v1.GetDocumentRequest.Builder builderForValue) {
         if (requestBuilder_ == null) {
           request_ = builderForValue.build();
           onChanged();
@@ -3998,13 +3997,13 @@ public final class TestDefinition {
        * The request that the call should send to the Firestore service.
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.GetDocumentRequest request = 2;</code>
+       * <code>.google.firestore.v1.GetDocumentRequest request = 2;</code>
        */
-      public Builder mergeRequest(com.google.firestore.v1beta1.GetDocumentRequest value) {
+      public Builder mergeRequest(com.google.firestore.v1.GetDocumentRequest value) {
         if (requestBuilder_ == null) {
           if (request_ != null) {
             request_ =
-                com.google.firestore.v1beta1.GetDocumentRequest.newBuilder(request_)
+                com.google.firestore.v1.GetDocumentRequest.newBuilder(request_)
                     .mergeFrom(value)
                     .buildPartial();
           } else {
@@ -4024,7 +4023,7 @@ public final class TestDefinition {
        * The request that the call should send to the Firestore service.
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.GetDocumentRequest request = 2;</code>
+       * <code>.google.firestore.v1.GetDocumentRequest request = 2;</code>
        */
       public Builder clearRequest() {
         if (requestBuilder_ == null) {
@@ -4044,9 +4043,9 @@ public final class TestDefinition {
        * The request that the call should send to the Firestore service.
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.GetDocumentRequest request = 2;</code>
+       * <code>.google.firestore.v1.GetDocumentRequest request = 2;</code>
        */
-      public com.google.firestore.v1beta1.GetDocumentRequest.Builder getRequestBuilder() {
+      public com.google.firestore.v1.GetDocumentRequest.Builder getRequestBuilder() {
 
         onChanged();
         return getRequestFieldBuilder().getBuilder();
@@ -4058,14 +4057,14 @@ public final class TestDefinition {
        * The request that the call should send to the Firestore service.
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.GetDocumentRequest request = 2;</code>
+       * <code>.google.firestore.v1.GetDocumentRequest request = 2;</code>
        */
-      public com.google.firestore.v1beta1.GetDocumentRequestOrBuilder getRequestOrBuilder() {
+      public com.google.firestore.v1.GetDocumentRequestOrBuilder getRequestOrBuilder() {
         if (requestBuilder_ != null) {
           return requestBuilder_.getMessageOrBuilder();
         } else {
           return request_ == null
-              ? com.google.firestore.v1beta1.GetDocumentRequest.getDefaultInstance()
+              ? com.google.firestore.v1.GetDocumentRequest.getDefaultInstance()
               : request_;
         }
       }
@@ -4076,19 +4075,19 @@ public final class TestDefinition {
        * The request that the call should send to the Firestore service.
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.GetDocumentRequest request = 2;</code>
+       * <code>.google.firestore.v1.GetDocumentRequest request = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.firestore.v1beta1.GetDocumentRequest,
-              com.google.firestore.v1beta1.GetDocumentRequest.Builder,
-              com.google.firestore.v1beta1.GetDocumentRequestOrBuilder>
+              com.google.firestore.v1.GetDocumentRequest,
+              com.google.firestore.v1.GetDocumentRequest.Builder,
+              com.google.firestore.v1.GetDocumentRequestOrBuilder>
           getRequestFieldBuilder() {
         if (requestBuilder_ == null) {
           requestBuilder_ =
               new com.google.protobuf.SingleFieldBuilderV3<
-                  com.google.firestore.v1beta1.GetDocumentRequest,
-                  com.google.firestore.v1beta1.GetDocumentRequest.Builder,
-                  com.google.firestore.v1beta1.GetDocumentRequestOrBuilder>(
+                  com.google.firestore.v1.GetDocumentRequest,
+                  com.google.firestore.v1.GetDocumentRequest.Builder,
+                  com.google.firestore.v1.GetDocumentRequestOrBuilder>(
                   getRequest(), getParentForChildren(), isClean());
           request_ = null;
         }
@@ -4204,7 +4203,7 @@ public final class TestDefinition {
      * The request that the call should generate.
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.CommitRequest request = 3;</code>
+     * <code>.google.firestore.v1.CommitRequest request = 3;</code>
      */
     boolean hasRequest();
     /**
@@ -4214,9 +4213,9 @@ public final class TestDefinition {
      * The request that the call should generate.
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.CommitRequest request = 3;</code>
+     * <code>.google.firestore.v1.CommitRequest request = 3;</code>
      */
-    com.google.firestore.v1beta1.CommitRequest getRequest();
+    com.google.firestore.v1.CommitRequest getRequest();
     /**
      *
      *
@@ -4224,9 +4223,9 @@ public final class TestDefinition {
      * The request that the call should generate.
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.CommitRequest request = 3;</code>
+     * <code>.google.firestore.v1.CommitRequest request = 3;</code>
      */
-    com.google.firestore.v1beta1.CommitRequestOrBuilder getRequestOrBuilder();
+    com.google.firestore.v1.CommitRequestOrBuilder getRequestOrBuilder();
 
     /**
      *
@@ -4312,13 +4311,13 @@ public final class TestDefinition {
               }
             case 26:
               {
-                com.google.firestore.v1beta1.CommitRequest.Builder subBuilder = null;
+                com.google.firestore.v1.CommitRequest.Builder subBuilder = null;
                 if (request_ != null) {
                   subBuilder = request_.toBuilder();
                 }
                 request_ =
                     input.readMessage(
-                        com.google.firestore.v1beta1.CommitRequest.parser(), extensionRegistry);
+                        com.google.firestore.v1.CommitRequest.parser(), extensionRegistry);
                 if (subBuilder != null) {
                   subBuilder.mergeFrom(request_);
                   request_ = subBuilder.buildPartial();
@@ -4448,7 +4447,7 @@ public final class TestDefinition {
     }
 
     public static final int REQUEST_FIELD_NUMBER = 3;
-    private com.google.firestore.v1beta1.CommitRequest request_;
+    private com.google.firestore.v1.CommitRequest request_;
     /**
      *
      *
@@ -4456,7 +4455,7 @@ public final class TestDefinition {
      * The request that the call should generate.
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.CommitRequest request = 3;</code>
+     * <code>.google.firestore.v1.CommitRequest request = 3;</code>
      */
     public boolean hasRequest() {
       return request_ != null;
@@ -4468,11 +4467,11 @@ public final class TestDefinition {
      * The request that the call should generate.
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.CommitRequest request = 3;</code>
+     * <code>.google.firestore.v1.CommitRequest request = 3;</code>
      */
-    public com.google.firestore.v1beta1.CommitRequest getRequest() {
+    public com.google.firestore.v1.CommitRequest getRequest() {
       return request_ == null
-          ? com.google.firestore.v1beta1.CommitRequest.getDefaultInstance()
+          ? com.google.firestore.v1.CommitRequest.getDefaultInstance()
           : request_;
     }
     /**
@@ -4482,9 +4481,9 @@ public final class TestDefinition {
      * The request that the call should generate.
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.CommitRequest request = 3;</code>
+     * <code>.google.firestore.v1.CommitRequest request = 3;</code>
      */
-    public com.google.firestore.v1beta1.CommitRequestOrBuilder getRequestOrBuilder() {
+    public com.google.firestore.v1.CommitRequestOrBuilder getRequestOrBuilder() {
       return getRequest();
     }
 
@@ -5073,11 +5072,11 @@ public final class TestDefinition {
         return this;
       }
 
-      private com.google.firestore.v1beta1.CommitRequest request_ = null;
+      private com.google.firestore.v1.CommitRequest request_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.firestore.v1beta1.CommitRequest,
-              com.google.firestore.v1beta1.CommitRequest.Builder,
-              com.google.firestore.v1beta1.CommitRequestOrBuilder>
+              com.google.firestore.v1.CommitRequest,
+              com.google.firestore.v1.CommitRequest.Builder,
+              com.google.firestore.v1.CommitRequestOrBuilder>
           requestBuilder_;
       /**
        *
@@ -5086,7 +5085,7 @@ public final class TestDefinition {
        * The request that the call should generate.
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 3;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 3;</code>
        */
       public boolean hasRequest() {
         return requestBuilder_ != null || request_ != null;
@@ -5098,12 +5097,12 @@ public final class TestDefinition {
        * The request that the call should generate.
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 3;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 3;</code>
        */
-      public com.google.firestore.v1beta1.CommitRequest getRequest() {
+      public com.google.firestore.v1.CommitRequest getRequest() {
         if (requestBuilder_ == null) {
           return request_ == null
-              ? com.google.firestore.v1beta1.CommitRequest.getDefaultInstance()
+              ? com.google.firestore.v1.CommitRequest.getDefaultInstance()
               : request_;
         } else {
           return requestBuilder_.getMessage();
@@ -5116,9 +5115,9 @@ public final class TestDefinition {
        * The request that the call should generate.
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 3;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 3;</code>
        */
-      public Builder setRequest(com.google.firestore.v1beta1.CommitRequest value) {
+      public Builder setRequest(com.google.firestore.v1.CommitRequest value) {
         if (requestBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -5138,10 +5137,9 @@ public final class TestDefinition {
        * The request that the call should generate.
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 3;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 3;</code>
        */
-      public Builder setRequest(
-          com.google.firestore.v1beta1.CommitRequest.Builder builderForValue) {
+      public Builder setRequest(com.google.firestore.v1.CommitRequest.Builder builderForValue) {
         if (requestBuilder_ == null) {
           request_ = builderForValue.build();
           onChanged();
@@ -5158,13 +5156,13 @@ public final class TestDefinition {
        * The request that the call should generate.
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 3;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 3;</code>
        */
-      public Builder mergeRequest(com.google.firestore.v1beta1.CommitRequest value) {
+      public Builder mergeRequest(com.google.firestore.v1.CommitRequest value) {
         if (requestBuilder_ == null) {
           if (request_ != null) {
             request_ =
-                com.google.firestore.v1beta1.CommitRequest.newBuilder(request_)
+                com.google.firestore.v1.CommitRequest.newBuilder(request_)
                     .mergeFrom(value)
                     .buildPartial();
           } else {
@@ -5184,7 +5182,7 @@ public final class TestDefinition {
        * The request that the call should generate.
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 3;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 3;</code>
        */
       public Builder clearRequest() {
         if (requestBuilder_ == null) {
@@ -5204,9 +5202,9 @@ public final class TestDefinition {
        * The request that the call should generate.
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 3;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 3;</code>
        */
-      public com.google.firestore.v1beta1.CommitRequest.Builder getRequestBuilder() {
+      public com.google.firestore.v1.CommitRequest.Builder getRequestBuilder() {
 
         onChanged();
         return getRequestFieldBuilder().getBuilder();
@@ -5218,14 +5216,14 @@ public final class TestDefinition {
        * The request that the call should generate.
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 3;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 3;</code>
        */
-      public com.google.firestore.v1beta1.CommitRequestOrBuilder getRequestOrBuilder() {
+      public com.google.firestore.v1.CommitRequestOrBuilder getRequestOrBuilder() {
         if (requestBuilder_ != null) {
           return requestBuilder_.getMessageOrBuilder();
         } else {
           return request_ == null
-              ? com.google.firestore.v1beta1.CommitRequest.getDefaultInstance()
+              ? com.google.firestore.v1.CommitRequest.getDefaultInstance()
               : request_;
         }
       }
@@ -5236,19 +5234,19 @@ public final class TestDefinition {
        * The request that the call should generate.
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 3;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.firestore.v1beta1.CommitRequest,
-              com.google.firestore.v1beta1.CommitRequest.Builder,
-              com.google.firestore.v1beta1.CommitRequestOrBuilder>
+              com.google.firestore.v1.CommitRequest,
+              com.google.firestore.v1.CommitRequest.Builder,
+              com.google.firestore.v1.CommitRequestOrBuilder>
           getRequestFieldBuilder() {
         if (requestBuilder_ == null) {
           requestBuilder_ =
               new com.google.protobuf.SingleFieldBuilderV3<
-                  com.google.firestore.v1beta1.CommitRequest,
-                  com.google.firestore.v1beta1.CommitRequest.Builder,
-                  com.google.firestore.v1beta1.CommitRequestOrBuilder>(
+                  com.google.firestore.v1.CommitRequest,
+                  com.google.firestore.v1.CommitRequest.Builder,
+                  com.google.firestore.v1.CommitRequestOrBuilder>(
                   getRequest(), getParentForChildren(), isClean());
           request_ = null;
         }
@@ -5438,7 +5436,7 @@ public final class TestDefinition {
      * expected request
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.CommitRequest request = 4;</code>
+     * <code>.google.firestore.v1.CommitRequest request = 4;</code>
      */
     boolean hasRequest();
     /**
@@ -5448,9 +5446,9 @@ public final class TestDefinition {
      * expected request
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.CommitRequest request = 4;</code>
+     * <code>.google.firestore.v1.CommitRequest request = 4;</code>
      */
-    com.google.firestore.v1beta1.CommitRequest getRequest();
+    com.google.firestore.v1.CommitRequest getRequest();
     /**
      *
      *
@@ -5458,9 +5456,9 @@ public final class TestDefinition {
      * expected request
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.CommitRequest request = 4;</code>
+     * <code>.google.firestore.v1.CommitRequest request = 4;</code>
      */
-    com.google.firestore.v1beta1.CommitRequestOrBuilder getRequestOrBuilder();
+    com.google.firestore.v1.CommitRequestOrBuilder getRequestOrBuilder();
 
     /**
      *
@@ -5563,13 +5561,13 @@ public final class TestDefinition {
               }
             case 34:
               {
-                com.google.firestore.v1beta1.CommitRequest.Builder subBuilder = null;
+                com.google.firestore.v1.CommitRequest.Builder subBuilder = null;
                 if (request_ != null) {
                   subBuilder = request_.toBuilder();
                 }
                 request_ =
                     input.readMessage(
-                        com.google.firestore.v1beta1.CommitRequest.parser(), extensionRegistry);
+                        com.google.firestore.v1.CommitRequest.parser(), extensionRegistry);
                 if (subBuilder != null) {
                   subBuilder.mergeFrom(request_);
                   request_ = subBuilder.buildPartial();
@@ -5737,7 +5735,7 @@ public final class TestDefinition {
     }
 
     public static final int REQUEST_FIELD_NUMBER = 4;
-    private com.google.firestore.v1beta1.CommitRequest request_;
+    private com.google.firestore.v1.CommitRequest request_;
     /**
      *
      *
@@ -5745,7 +5743,7 @@ public final class TestDefinition {
      * expected request
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.CommitRequest request = 4;</code>
+     * <code>.google.firestore.v1.CommitRequest request = 4;</code>
      */
     public boolean hasRequest() {
       return request_ != null;
@@ -5757,11 +5755,11 @@ public final class TestDefinition {
      * expected request
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.CommitRequest request = 4;</code>
+     * <code>.google.firestore.v1.CommitRequest request = 4;</code>
      */
-    public com.google.firestore.v1beta1.CommitRequest getRequest() {
+    public com.google.firestore.v1.CommitRequest getRequest() {
       return request_ == null
-          ? com.google.firestore.v1beta1.CommitRequest.getDefaultInstance()
+          ? com.google.firestore.v1.CommitRequest.getDefaultInstance()
           : request_;
     }
     /**
@@ -5771,9 +5769,9 @@ public final class TestDefinition {
      * expected request
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.CommitRequest request = 4;</code>
+     * <code>.google.firestore.v1.CommitRequest request = 4;</code>
      */
-    public com.google.firestore.v1beta1.CommitRequestOrBuilder getRequestOrBuilder() {
+    public com.google.firestore.v1.CommitRequestOrBuilder getRequestOrBuilder() {
       return getRequest();
     }
 
@@ -6561,11 +6559,11 @@ public final class TestDefinition {
         return this;
       }
 
-      private com.google.firestore.v1beta1.CommitRequest request_ = null;
+      private com.google.firestore.v1.CommitRequest request_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.firestore.v1beta1.CommitRequest,
-              com.google.firestore.v1beta1.CommitRequest.Builder,
-              com.google.firestore.v1beta1.CommitRequestOrBuilder>
+              com.google.firestore.v1.CommitRequest,
+              com.google.firestore.v1.CommitRequest.Builder,
+              com.google.firestore.v1.CommitRequestOrBuilder>
           requestBuilder_;
       /**
        *
@@ -6574,7 +6572,7 @@ public final class TestDefinition {
        * expected request
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 4;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 4;</code>
        */
       public boolean hasRequest() {
         return requestBuilder_ != null || request_ != null;
@@ -6586,12 +6584,12 @@ public final class TestDefinition {
        * expected request
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 4;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 4;</code>
        */
-      public com.google.firestore.v1beta1.CommitRequest getRequest() {
+      public com.google.firestore.v1.CommitRequest getRequest() {
         if (requestBuilder_ == null) {
           return request_ == null
-              ? com.google.firestore.v1beta1.CommitRequest.getDefaultInstance()
+              ? com.google.firestore.v1.CommitRequest.getDefaultInstance()
               : request_;
         } else {
           return requestBuilder_.getMessage();
@@ -6604,9 +6602,9 @@ public final class TestDefinition {
        * expected request
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 4;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 4;</code>
        */
-      public Builder setRequest(com.google.firestore.v1beta1.CommitRequest value) {
+      public Builder setRequest(com.google.firestore.v1.CommitRequest value) {
         if (requestBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -6626,10 +6624,9 @@ public final class TestDefinition {
        * expected request
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 4;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 4;</code>
        */
-      public Builder setRequest(
-          com.google.firestore.v1beta1.CommitRequest.Builder builderForValue) {
+      public Builder setRequest(com.google.firestore.v1.CommitRequest.Builder builderForValue) {
         if (requestBuilder_ == null) {
           request_ = builderForValue.build();
           onChanged();
@@ -6646,13 +6643,13 @@ public final class TestDefinition {
        * expected request
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 4;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 4;</code>
        */
-      public Builder mergeRequest(com.google.firestore.v1beta1.CommitRequest value) {
+      public Builder mergeRequest(com.google.firestore.v1.CommitRequest value) {
         if (requestBuilder_ == null) {
           if (request_ != null) {
             request_ =
-                com.google.firestore.v1beta1.CommitRequest.newBuilder(request_)
+                com.google.firestore.v1.CommitRequest.newBuilder(request_)
                     .mergeFrom(value)
                     .buildPartial();
           } else {
@@ -6672,7 +6669,7 @@ public final class TestDefinition {
        * expected request
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 4;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 4;</code>
        */
       public Builder clearRequest() {
         if (requestBuilder_ == null) {
@@ -6692,9 +6689,9 @@ public final class TestDefinition {
        * expected request
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 4;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 4;</code>
        */
-      public com.google.firestore.v1beta1.CommitRequest.Builder getRequestBuilder() {
+      public com.google.firestore.v1.CommitRequest.Builder getRequestBuilder() {
 
         onChanged();
         return getRequestFieldBuilder().getBuilder();
@@ -6706,14 +6703,14 @@ public final class TestDefinition {
        * expected request
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 4;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 4;</code>
        */
-      public com.google.firestore.v1beta1.CommitRequestOrBuilder getRequestOrBuilder() {
+      public com.google.firestore.v1.CommitRequestOrBuilder getRequestOrBuilder() {
         if (requestBuilder_ != null) {
           return requestBuilder_.getMessageOrBuilder();
         } else {
           return request_ == null
-              ? com.google.firestore.v1beta1.CommitRequest.getDefaultInstance()
+              ? com.google.firestore.v1.CommitRequest.getDefaultInstance()
               : request_;
         }
       }
@@ -6724,19 +6721,19 @@ public final class TestDefinition {
        * expected request
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 4;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.firestore.v1beta1.CommitRequest,
-              com.google.firestore.v1beta1.CommitRequest.Builder,
-              com.google.firestore.v1beta1.CommitRequestOrBuilder>
+              com.google.firestore.v1.CommitRequest,
+              com.google.firestore.v1.CommitRequest.Builder,
+              com.google.firestore.v1.CommitRequestOrBuilder>
           getRequestFieldBuilder() {
         if (requestBuilder_ == null) {
           requestBuilder_ =
               new com.google.protobuf.SingleFieldBuilderV3<
-                  com.google.firestore.v1beta1.CommitRequest,
-                  com.google.firestore.v1beta1.CommitRequest.Builder,
-                  com.google.firestore.v1beta1.CommitRequestOrBuilder>(
+                  com.google.firestore.v1.CommitRequest,
+                  com.google.firestore.v1.CommitRequest.Builder,
+                  com.google.firestore.v1.CommitRequestOrBuilder>(
                   getRequest(), getParentForChildren(), isClean());
           request_ = null;
         }
@@ -6871,7 +6868,7 @@ public final class TestDefinition {
      * precondition in call, if any
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.Precondition precondition = 2;</code>
+     * <code>.google.firestore.v1.Precondition precondition = 2;</code>
      */
     boolean hasPrecondition();
     /**
@@ -6881,9 +6878,9 @@ public final class TestDefinition {
      * precondition in call, if any
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.Precondition precondition = 2;</code>
+     * <code>.google.firestore.v1.Precondition precondition = 2;</code>
      */
-    com.google.firestore.v1beta1.Precondition getPrecondition();
+    com.google.firestore.v1.Precondition getPrecondition();
     /**
      *
      *
@@ -6891,9 +6888,9 @@ public final class TestDefinition {
      * precondition in call, if any
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.Precondition precondition = 2;</code>
+     * <code>.google.firestore.v1.Precondition precondition = 2;</code>
      */
-    com.google.firestore.v1beta1.PreconditionOrBuilder getPreconditionOrBuilder();
+    com.google.firestore.v1.PreconditionOrBuilder getPreconditionOrBuilder();
 
     /**
      *
@@ -6923,7 +6920,7 @@ public final class TestDefinition {
      * expected request
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.CommitRequest request = 4;</code>
+     * <code>.google.firestore.v1.CommitRequest request = 4;</code>
      */
     boolean hasRequest();
     /**
@@ -6933,9 +6930,9 @@ public final class TestDefinition {
      * expected request
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.CommitRequest request = 4;</code>
+     * <code>.google.firestore.v1.CommitRequest request = 4;</code>
      */
-    com.google.firestore.v1beta1.CommitRequest getRequest();
+    com.google.firestore.v1.CommitRequest getRequest();
     /**
      *
      *
@@ -6943,9 +6940,9 @@ public final class TestDefinition {
      * expected request
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.CommitRequest request = 4;</code>
+     * <code>.google.firestore.v1.CommitRequest request = 4;</code>
      */
-    com.google.firestore.v1beta1.CommitRequestOrBuilder getRequestOrBuilder();
+    com.google.firestore.v1.CommitRequestOrBuilder getRequestOrBuilder();
 
     /**
      *
@@ -7024,13 +7021,13 @@ public final class TestDefinition {
               }
             case 18:
               {
-                com.google.firestore.v1beta1.Precondition.Builder subBuilder = null;
+                com.google.firestore.v1.Precondition.Builder subBuilder = null;
                 if (precondition_ != null) {
                   subBuilder = precondition_.toBuilder();
                 }
                 precondition_ =
                     input.readMessage(
-                        com.google.firestore.v1beta1.Precondition.parser(), extensionRegistry);
+                        com.google.firestore.v1.Precondition.parser(), extensionRegistry);
                 if (subBuilder != null) {
                   subBuilder.mergeFrom(precondition_);
                   precondition_ = subBuilder.buildPartial();
@@ -7047,13 +7044,13 @@ public final class TestDefinition {
               }
             case 34:
               {
-                com.google.firestore.v1beta1.CommitRequest.Builder subBuilder = null;
+                com.google.firestore.v1.CommitRequest.Builder subBuilder = null;
                 if (request_ != null) {
                   subBuilder = request_.toBuilder();
                 }
                 request_ =
                     input.readMessage(
-                        com.google.firestore.v1beta1.CommitRequest.parser(), extensionRegistry);
+                        com.google.firestore.v1.CommitRequest.parser(), extensionRegistry);
                 if (subBuilder != null) {
                   subBuilder.mergeFrom(request_);
                   request_ = subBuilder.buildPartial();
@@ -7136,7 +7133,7 @@ public final class TestDefinition {
     }
 
     public static final int PRECONDITION_FIELD_NUMBER = 2;
-    private com.google.firestore.v1beta1.Precondition precondition_;
+    private com.google.firestore.v1.Precondition precondition_;
     /**
      *
      *
@@ -7144,7 +7141,7 @@ public final class TestDefinition {
      * precondition in call, if any
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.Precondition precondition = 2;</code>
+     * <code>.google.firestore.v1.Precondition precondition = 2;</code>
      */
     public boolean hasPrecondition() {
       return precondition_ != null;
@@ -7156,11 +7153,11 @@ public final class TestDefinition {
      * precondition in call, if any
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.Precondition precondition = 2;</code>
+     * <code>.google.firestore.v1.Precondition precondition = 2;</code>
      */
-    public com.google.firestore.v1beta1.Precondition getPrecondition() {
+    public com.google.firestore.v1.Precondition getPrecondition() {
       return precondition_ == null
-          ? com.google.firestore.v1beta1.Precondition.getDefaultInstance()
+          ? com.google.firestore.v1.Precondition.getDefaultInstance()
           : precondition_;
     }
     /**
@@ -7170,9 +7167,9 @@ public final class TestDefinition {
      * precondition in call, if any
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.Precondition precondition = 2;</code>
+     * <code>.google.firestore.v1.Precondition precondition = 2;</code>
      */
-    public com.google.firestore.v1beta1.PreconditionOrBuilder getPreconditionOrBuilder() {
+    public com.google.firestore.v1.PreconditionOrBuilder getPreconditionOrBuilder() {
       return getPrecondition();
     }
 
@@ -7220,7 +7217,7 @@ public final class TestDefinition {
     }
 
     public static final int REQUEST_FIELD_NUMBER = 4;
-    private com.google.firestore.v1beta1.CommitRequest request_;
+    private com.google.firestore.v1.CommitRequest request_;
     /**
      *
      *
@@ -7228,7 +7225,7 @@ public final class TestDefinition {
      * expected request
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.CommitRequest request = 4;</code>
+     * <code>.google.firestore.v1.CommitRequest request = 4;</code>
      */
     public boolean hasRequest() {
       return request_ != null;
@@ -7240,11 +7237,11 @@ public final class TestDefinition {
      * expected request
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.CommitRequest request = 4;</code>
+     * <code>.google.firestore.v1.CommitRequest request = 4;</code>
      */
-    public com.google.firestore.v1beta1.CommitRequest getRequest() {
+    public com.google.firestore.v1.CommitRequest getRequest() {
       return request_ == null
-          ? com.google.firestore.v1beta1.CommitRequest.getDefaultInstance()
+          ? com.google.firestore.v1.CommitRequest.getDefaultInstance()
           : request_;
     }
     /**
@@ -7254,9 +7251,9 @@ public final class TestDefinition {
      * expected request
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.CommitRequest request = 4;</code>
+     * <code>.google.firestore.v1.CommitRequest request = 4;</code>
      */
-    public com.google.firestore.v1beta1.CommitRequestOrBuilder getRequestOrBuilder() {
+    public com.google.firestore.v1.CommitRequestOrBuilder getRequestOrBuilder() {
       return getRequest();
     }
 
@@ -7769,11 +7766,11 @@ public final class TestDefinition {
         return this;
       }
 
-      private com.google.firestore.v1beta1.Precondition precondition_ = null;
+      private com.google.firestore.v1.Precondition precondition_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.firestore.v1beta1.Precondition,
-              com.google.firestore.v1beta1.Precondition.Builder,
-              com.google.firestore.v1beta1.PreconditionOrBuilder>
+              com.google.firestore.v1.Precondition,
+              com.google.firestore.v1.Precondition.Builder,
+              com.google.firestore.v1.PreconditionOrBuilder>
           preconditionBuilder_;
       /**
        *
@@ -7782,7 +7779,7 @@ public final class TestDefinition {
        * precondition in call, if any
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.Precondition precondition = 2;</code>
+       * <code>.google.firestore.v1.Precondition precondition = 2;</code>
        */
       public boolean hasPrecondition() {
         return preconditionBuilder_ != null || precondition_ != null;
@@ -7794,12 +7791,12 @@ public final class TestDefinition {
        * precondition in call, if any
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.Precondition precondition = 2;</code>
+       * <code>.google.firestore.v1.Precondition precondition = 2;</code>
        */
-      public com.google.firestore.v1beta1.Precondition getPrecondition() {
+      public com.google.firestore.v1.Precondition getPrecondition() {
         if (preconditionBuilder_ == null) {
           return precondition_ == null
-              ? com.google.firestore.v1beta1.Precondition.getDefaultInstance()
+              ? com.google.firestore.v1.Precondition.getDefaultInstance()
               : precondition_;
         } else {
           return preconditionBuilder_.getMessage();
@@ -7812,9 +7809,9 @@ public final class TestDefinition {
        * precondition in call, if any
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.Precondition precondition = 2;</code>
+       * <code>.google.firestore.v1.Precondition precondition = 2;</code>
        */
-      public Builder setPrecondition(com.google.firestore.v1beta1.Precondition value) {
+      public Builder setPrecondition(com.google.firestore.v1.Precondition value) {
         if (preconditionBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -7834,10 +7831,9 @@ public final class TestDefinition {
        * precondition in call, if any
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.Precondition precondition = 2;</code>
+       * <code>.google.firestore.v1.Precondition precondition = 2;</code>
        */
-      public Builder setPrecondition(
-          com.google.firestore.v1beta1.Precondition.Builder builderForValue) {
+      public Builder setPrecondition(com.google.firestore.v1.Precondition.Builder builderForValue) {
         if (preconditionBuilder_ == null) {
           precondition_ = builderForValue.build();
           onChanged();
@@ -7854,13 +7850,13 @@ public final class TestDefinition {
        * precondition in call, if any
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.Precondition precondition = 2;</code>
+       * <code>.google.firestore.v1.Precondition precondition = 2;</code>
        */
-      public Builder mergePrecondition(com.google.firestore.v1beta1.Precondition value) {
+      public Builder mergePrecondition(com.google.firestore.v1.Precondition value) {
         if (preconditionBuilder_ == null) {
           if (precondition_ != null) {
             precondition_ =
-                com.google.firestore.v1beta1.Precondition.newBuilder(precondition_)
+                com.google.firestore.v1.Precondition.newBuilder(precondition_)
                     .mergeFrom(value)
                     .buildPartial();
           } else {
@@ -7880,7 +7876,7 @@ public final class TestDefinition {
        * precondition in call, if any
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.Precondition precondition = 2;</code>
+       * <code>.google.firestore.v1.Precondition precondition = 2;</code>
        */
       public Builder clearPrecondition() {
         if (preconditionBuilder_ == null) {
@@ -7900,9 +7896,9 @@ public final class TestDefinition {
        * precondition in call, if any
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.Precondition precondition = 2;</code>
+       * <code>.google.firestore.v1.Precondition precondition = 2;</code>
        */
-      public com.google.firestore.v1beta1.Precondition.Builder getPreconditionBuilder() {
+      public com.google.firestore.v1.Precondition.Builder getPreconditionBuilder() {
 
         onChanged();
         return getPreconditionFieldBuilder().getBuilder();
@@ -7914,14 +7910,14 @@ public final class TestDefinition {
        * precondition in call, if any
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.Precondition precondition = 2;</code>
+       * <code>.google.firestore.v1.Precondition precondition = 2;</code>
        */
-      public com.google.firestore.v1beta1.PreconditionOrBuilder getPreconditionOrBuilder() {
+      public com.google.firestore.v1.PreconditionOrBuilder getPreconditionOrBuilder() {
         if (preconditionBuilder_ != null) {
           return preconditionBuilder_.getMessageOrBuilder();
         } else {
           return precondition_ == null
-              ? com.google.firestore.v1beta1.Precondition.getDefaultInstance()
+              ? com.google.firestore.v1.Precondition.getDefaultInstance()
               : precondition_;
         }
       }
@@ -7932,19 +7928,19 @@ public final class TestDefinition {
        * precondition in call, if any
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.Precondition precondition = 2;</code>
+       * <code>.google.firestore.v1.Precondition precondition = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.firestore.v1beta1.Precondition,
-              com.google.firestore.v1beta1.Precondition.Builder,
-              com.google.firestore.v1beta1.PreconditionOrBuilder>
+              com.google.firestore.v1.Precondition,
+              com.google.firestore.v1.Precondition.Builder,
+              com.google.firestore.v1.PreconditionOrBuilder>
           getPreconditionFieldBuilder() {
         if (preconditionBuilder_ == null) {
           preconditionBuilder_ =
               new com.google.protobuf.SingleFieldBuilderV3<
-                  com.google.firestore.v1beta1.Precondition,
-                  com.google.firestore.v1beta1.Precondition.Builder,
-                  com.google.firestore.v1beta1.PreconditionOrBuilder>(
+                  com.google.firestore.v1.Precondition,
+                  com.google.firestore.v1.Precondition.Builder,
+                  com.google.firestore.v1.PreconditionOrBuilder>(
                   getPrecondition(), getParentForChildren(), isClean());
           precondition_ = null;
         }
@@ -8045,11 +8041,11 @@ public final class TestDefinition {
         return this;
       }
 
-      private com.google.firestore.v1beta1.CommitRequest request_ = null;
+      private com.google.firestore.v1.CommitRequest request_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.firestore.v1beta1.CommitRequest,
-              com.google.firestore.v1beta1.CommitRequest.Builder,
-              com.google.firestore.v1beta1.CommitRequestOrBuilder>
+              com.google.firestore.v1.CommitRequest,
+              com.google.firestore.v1.CommitRequest.Builder,
+              com.google.firestore.v1.CommitRequestOrBuilder>
           requestBuilder_;
       /**
        *
@@ -8058,7 +8054,7 @@ public final class TestDefinition {
        * expected request
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 4;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 4;</code>
        */
       public boolean hasRequest() {
         return requestBuilder_ != null || request_ != null;
@@ -8070,12 +8066,12 @@ public final class TestDefinition {
        * expected request
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 4;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 4;</code>
        */
-      public com.google.firestore.v1beta1.CommitRequest getRequest() {
+      public com.google.firestore.v1.CommitRequest getRequest() {
         if (requestBuilder_ == null) {
           return request_ == null
-              ? com.google.firestore.v1beta1.CommitRequest.getDefaultInstance()
+              ? com.google.firestore.v1.CommitRequest.getDefaultInstance()
               : request_;
         } else {
           return requestBuilder_.getMessage();
@@ -8088,9 +8084,9 @@ public final class TestDefinition {
        * expected request
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 4;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 4;</code>
        */
-      public Builder setRequest(com.google.firestore.v1beta1.CommitRequest value) {
+      public Builder setRequest(com.google.firestore.v1.CommitRequest value) {
         if (requestBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -8110,10 +8106,9 @@ public final class TestDefinition {
        * expected request
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 4;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 4;</code>
        */
-      public Builder setRequest(
-          com.google.firestore.v1beta1.CommitRequest.Builder builderForValue) {
+      public Builder setRequest(com.google.firestore.v1.CommitRequest.Builder builderForValue) {
         if (requestBuilder_ == null) {
           request_ = builderForValue.build();
           onChanged();
@@ -8130,13 +8125,13 @@ public final class TestDefinition {
        * expected request
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 4;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 4;</code>
        */
-      public Builder mergeRequest(com.google.firestore.v1beta1.CommitRequest value) {
+      public Builder mergeRequest(com.google.firestore.v1.CommitRequest value) {
         if (requestBuilder_ == null) {
           if (request_ != null) {
             request_ =
-                com.google.firestore.v1beta1.CommitRequest.newBuilder(request_)
+                com.google.firestore.v1.CommitRequest.newBuilder(request_)
                     .mergeFrom(value)
                     .buildPartial();
           } else {
@@ -8156,7 +8151,7 @@ public final class TestDefinition {
        * expected request
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 4;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 4;</code>
        */
       public Builder clearRequest() {
         if (requestBuilder_ == null) {
@@ -8176,9 +8171,9 @@ public final class TestDefinition {
        * expected request
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 4;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 4;</code>
        */
-      public com.google.firestore.v1beta1.CommitRequest.Builder getRequestBuilder() {
+      public com.google.firestore.v1.CommitRequest.Builder getRequestBuilder() {
 
         onChanged();
         return getRequestFieldBuilder().getBuilder();
@@ -8190,14 +8185,14 @@ public final class TestDefinition {
        * expected request
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 4;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 4;</code>
        */
-      public com.google.firestore.v1beta1.CommitRequestOrBuilder getRequestOrBuilder() {
+      public com.google.firestore.v1.CommitRequestOrBuilder getRequestOrBuilder() {
         if (requestBuilder_ != null) {
           return requestBuilder_.getMessageOrBuilder();
         } else {
           return request_ == null
-              ? com.google.firestore.v1beta1.CommitRequest.getDefaultInstance()
+              ? com.google.firestore.v1.CommitRequest.getDefaultInstance()
               : request_;
         }
       }
@@ -8208,19 +8203,19 @@ public final class TestDefinition {
        * expected request
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 4;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.firestore.v1beta1.CommitRequest,
-              com.google.firestore.v1beta1.CommitRequest.Builder,
-              com.google.firestore.v1beta1.CommitRequestOrBuilder>
+              com.google.firestore.v1.CommitRequest,
+              com.google.firestore.v1.CommitRequest.Builder,
+              com.google.firestore.v1.CommitRequestOrBuilder>
           getRequestFieldBuilder() {
         if (requestBuilder_ == null) {
           requestBuilder_ =
               new com.google.protobuf.SingleFieldBuilderV3<
-                  com.google.firestore.v1beta1.CommitRequest,
-                  com.google.firestore.v1beta1.CommitRequest.Builder,
-                  com.google.firestore.v1beta1.CommitRequestOrBuilder>(
+                  com.google.firestore.v1.CommitRequest,
+                  com.google.firestore.v1.CommitRequest.Builder,
+                  com.google.firestore.v1.CommitRequestOrBuilder>(
                   getRequest(), getParentForChildren(), isClean());
           request_ = null;
         }
@@ -8355,7 +8350,7 @@ public final class TestDefinition {
      * precondition in call, if any
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.Precondition precondition = 2;</code>
+     * <code>.google.firestore.v1.Precondition precondition = 2;</code>
      */
     boolean hasPrecondition();
     /**
@@ -8365,9 +8360,9 @@ public final class TestDefinition {
      * precondition in call, if any
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.Precondition precondition = 2;</code>
+     * <code>.google.firestore.v1.Precondition precondition = 2;</code>
      */
-    com.google.firestore.v1beta1.Precondition getPrecondition();
+    com.google.firestore.v1.Precondition getPrecondition();
     /**
      *
      *
@@ -8375,9 +8370,9 @@ public final class TestDefinition {
      * precondition in call, if any
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.Precondition precondition = 2;</code>
+     * <code>.google.firestore.v1.Precondition precondition = 2;</code>
      */
-    com.google.firestore.v1beta1.PreconditionOrBuilder getPreconditionOrBuilder();
+    com.google.firestore.v1.PreconditionOrBuilder getPreconditionOrBuilder();
 
     /**
      *
@@ -8482,7 +8477,7 @@ public final class TestDefinition {
      * expected rquest
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.CommitRequest request = 5;</code>
+     * <code>.google.firestore.v1.CommitRequest request = 5;</code>
      */
     boolean hasRequest();
     /**
@@ -8492,9 +8487,9 @@ public final class TestDefinition {
      * expected rquest
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.CommitRequest request = 5;</code>
+     * <code>.google.firestore.v1.CommitRequest request = 5;</code>
      */
-    com.google.firestore.v1beta1.CommitRequest getRequest();
+    com.google.firestore.v1.CommitRequest getRequest();
     /**
      *
      *
@@ -8502,9 +8497,9 @@ public final class TestDefinition {
      * expected rquest
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.CommitRequest request = 5;</code>
+     * <code>.google.firestore.v1.CommitRequest request = 5;</code>
      */
-    com.google.firestore.v1beta1.CommitRequestOrBuilder getRequestOrBuilder();
+    com.google.firestore.v1.CommitRequestOrBuilder getRequestOrBuilder();
 
     /**
      *
@@ -8584,13 +8579,13 @@ public final class TestDefinition {
               }
             case 18:
               {
-                com.google.firestore.v1beta1.Precondition.Builder subBuilder = null;
+                com.google.firestore.v1.Precondition.Builder subBuilder = null;
                 if (precondition_ != null) {
                   subBuilder = precondition_.toBuilder();
                 }
                 precondition_ =
                     input.readMessage(
-                        com.google.firestore.v1beta1.Precondition.parser(), extensionRegistry);
+                        com.google.firestore.v1.Precondition.parser(), extensionRegistry);
                 if (subBuilder != null) {
                   subBuilder.mergeFrom(precondition_);
                   precondition_ = subBuilder.buildPartial();
@@ -8624,13 +8619,13 @@ public final class TestDefinition {
               }
             case 42:
               {
-                com.google.firestore.v1beta1.CommitRequest.Builder subBuilder = null;
+                com.google.firestore.v1.CommitRequest.Builder subBuilder = null;
                 if (request_ != null) {
                   subBuilder = request_.toBuilder();
                 }
                 request_ =
                     input.readMessage(
-                        com.google.firestore.v1beta1.CommitRequest.parser(), extensionRegistry);
+                        com.google.firestore.v1.CommitRequest.parser(), extensionRegistry);
                 if (subBuilder != null) {
                   subBuilder.mergeFrom(request_);
                   request_ = subBuilder.buildPartial();
@@ -8720,7 +8715,7 @@ public final class TestDefinition {
     }
 
     public static final int PRECONDITION_FIELD_NUMBER = 2;
-    private com.google.firestore.v1beta1.Precondition precondition_;
+    private com.google.firestore.v1.Precondition precondition_;
     /**
      *
      *
@@ -8728,7 +8723,7 @@ public final class TestDefinition {
      * precondition in call, if any
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.Precondition precondition = 2;</code>
+     * <code>.google.firestore.v1.Precondition precondition = 2;</code>
      */
     public boolean hasPrecondition() {
       return precondition_ != null;
@@ -8740,11 +8735,11 @@ public final class TestDefinition {
      * precondition in call, if any
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.Precondition precondition = 2;</code>
+     * <code>.google.firestore.v1.Precondition precondition = 2;</code>
      */
-    public com.google.firestore.v1beta1.Precondition getPrecondition() {
+    public com.google.firestore.v1.Precondition getPrecondition() {
       return precondition_ == null
-          ? com.google.firestore.v1beta1.Precondition.getDefaultInstance()
+          ? com.google.firestore.v1.Precondition.getDefaultInstance()
           : precondition_;
     }
     /**
@@ -8754,9 +8749,9 @@ public final class TestDefinition {
      * precondition in call, if any
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.Precondition precondition = 2;</code>
+     * <code>.google.firestore.v1.Precondition precondition = 2;</code>
      */
-    public com.google.firestore.v1beta1.PreconditionOrBuilder getPreconditionOrBuilder() {
+    public com.google.firestore.v1.PreconditionOrBuilder getPreconditionOrBuilder() {
       return getPrecondition();
     }
 
@@ -8881,7 +8876,7 @@ public final class TestDefinition {
     }
 
     public static final int REQUEST_FIELD_NUMBER = 5;
-    private com.google.firestore.v1beta1.CommitRequest request_;
+    private com.google.firestore.v1.CommitRequest request_;
     /**
      *
      *
@@ -8889,7 +8884,7 @@ public final class TestDefinition {
      * expected rquest
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.CommitRequest request = 5;</code>
+     * <code>.google.firestore.v1.CommitRequest request = 5;</code>
      */
     public boolean hasRequest() {
       return request_ != null;
@@ -8901,11 +8896,11 @@ public final class TestDefinition {
      * expected rquest
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.CommitRequest request = 5;</code>
+     * <code>.google.firestore.v1.CommitRequest request = 5;</code>
      */
-    public com.google.firestore.v1beta1.CommitRequest getRequest() {
+    public com.google.firestore.v1.CommitRequest getRequest() {
       return request_ == null
-          ? com.google.firestore.v1beta1.CommitRequest.getDefaultInstance()
+          ? com.google.firestore.v1.CommitRequest.getDefaultInstance()
           : request_;
     }
     /**
@@ -8915,9 +8910,9 @@ public final class TestDefinition {
      * expected rquest
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.CommitRequest request = 5;</code>
+     * <code>.google.firestore.v1.CommitRequest request = 5;</code>
      */
-    public com.google.firestore.v1beta1.CommitRequestOrBuilder getRequestOrBuilder() {
+    public com.google.firestore.v1.CommitRequestOrBuilder getRequestOrBuilder() {
       return getRequest();
     }
 
@@ -9510,11 +9505,11 @@ public final class TestDefinition {
         return this;
       }
 
-      private com.google.firestore.v1beta1.Precondition precondition_ = null;
+      private com.google.firestore.v1.Precondition precondition_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.firestore.v1beta1.Precondition,
-              com.google.firestore.v1beta1.Precondition.Builder,
-              com.google.firestore.v1beta1.PreconditionOrBuilder>
+              com.google.firestore.v1.Precondition,
+              com.google.firestore.v1.Precondition.Builder,
+              com.google.firestore.v1.PreconditionOrBuilder>
           preconditionBuilder_;
       /**
        *
@@ -9523,7 +9518,7 @@ public final class TestDefinition {
        * precondition in call, if any
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.Precondition precondition = 2;</code>
+       * <code>.google.firestore.v1.Precondition precondition = 2;</code>
        */
       public boolean hasPrecondition() {
         return preconditionBuilder_ != null || precondition_ != null;
@@ -9535,12 +9530,12 @@ public final class TestDefinition {
        * precondition in call, if any
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.Precondition precondition = 2;</code>
+       * <code>.google.firestore.v1.Precondition precondition = 2;</code>
        */
-      public com.google.firestore.v1beta1.Precondition getPrecondition() {
+      public com.google.firestore.v1.Precondition getPrecondition() {
         if (preconditionBuilder_ == null) {
           return precondition_ == null
-              ? com.google.firestore.v1beta1.Precondition.getDefaultInstance()
+              ? com.google.firestore.v1.Precondition.getDefaultInstance()
               : precondition_;
         } else {
           return preconditionBuilder_.getMessage();
@@ -9553,9 +9548,9 @@ public final class TestDefinition {
        * precondition in call, if any
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.Precondition precondition = 2;</code>
+       * <code>.google.firestore.v1.Precondition precondition = 2;</code>
        */
-      public Builder setPrecondition(com.google.firestore.v1beta1.Precondition value) {
+      public Builder setPrecondition(com.google.firestore.v1.Precondition value) {
         if (preconditionBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -9575,10 +9570,9 @@ public final class TestDefinition {
        * precondition in call, if any
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.Precondition precondition = 2;</code>
+       * <code>.google.firestore.v1.Precondition precondition = 2;</code>
        */
-      public Builder setPrecondition(
-          com.google.firestore.v1beta1.Precondition.Builder builderForValue) {
+      public Builder setPrecondition(com.google.firestore.v1.Precondition.Builder builderForValue) {
         if (preconditionBuilder_ == null) {
           precondition_ = builderForValue.build();
           onChanged();
@@ -9595,13 +9589,13 @@ public final class TestDefinition {
        * precondition in call, if any
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.Precondition precondition = 2;</code>
+       * <code>.google.firestore.v1.Precondition precondition = 2;</code>
        */
-      public Builder mergePrecondition(com.google.firestore.v1beta1.Precondition value) {
+      public Builder mergePrecondition(com.google.firestore.v1.Precondition value) {
         if (preconditionBuilder_ == null) {
           if (precondition_ != null) {
             precondition_ =
-                com.google.firestore.v1beta1.Precondition.newBuilder(precondition_)
+                com.google.firestore.v1.Precondition.newBuilder(precondition_)
                     .mergeFrom(value)
                     .buildPartial();
           } else {
@@ -9621,7 +9615,7 @@ public final class TestDefinition {
        * precondition in call, if any
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.Precondition precondition = 2;</code>
+       * <code>.google.firestore.v1.Precondition precondition = 2;</code>
        */
       public Builder clearPrecondition() {
         if (preconditionBuilder_ == null) {
@@ -9641,9 +9635,9 @@ public final class TestDefinition {
        * precondition in call, if any
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.Precondition precondition = 2;</code>
+       * <code>.google.firestore.v1.Precondition precondition = 2;</code>
        */
-      public com.google.firestore.v1beta1.Precondition.Builder getPreconditionBuilder() {
+      public com.google.firestore.v1.Precondition.Builder getPreconditionBuilder() {
 
         onChanged();
         return getPreconditionFieldBuilder().getBuilder();
@@ -9655,14 +9649,14 @@ public final class TestDefinition {
        * precondition in call, if any
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.Precondition precondition = 2;</code>
+       * <code>.google.firestore.v1.Precondition precondition = 2;</code>
        */
-      public com.google.firestore.v1beta1.PreconditionOrBuilder getPreconditionOrBuilder() {
+      public com.google.firestore.v1.PreconditionOrBuilder getPreconditionOrBuilder() {
         if (preconditionBuilder_ != null) {
           return preconditionBuilder_.getMessageOrBuilder();
         } else {
           return precondition_ == null
-              ? com.google.firestore.v1beta1.Precondition.getDefaultInstance()
+              ? com.google.firestore.v1.Precondition.getDefaultInstance()
               : precondition_;
         }
       }
@@ -9673,19 +9667,19 @@ public final class TestDefinition {
        * precondition in call, if any
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.Precondition precondition = 2;</code>
+       * <code>.google.firestore.v1.Precondition precondition = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.firestore.v1beta1.Precondition,
-              com.google.firestore.v1beta1.Precondition.Builder,
-              com.google.firestore.v1beta1.PreconditionOrBuilder>
+              com.google.firestore.v1.Precondition,
+              com.google.firestore.v1.Precondition.Builder,
+              com.google.firestore.v1.PreconditionOrBuilder>
           getPreconditionFieldBuilder() {
         if (preconditionBuilder_ == null) {
           preconditionBuilder_ =
               new com.google.protobuf.SingleFieldBuilderV3<
-                  com.google.firestore.v1beta1.Precondition,
-                  com.google.firestore.v1beta1.Precondition.Builder,
-                  com.google.firestore.v1beta1.PreconditionOrBuilder>(
+                  com.google.firestore.v1.Precondition,
+                  com.google.firestore.v1.Precondition.Builder,
+                  com.google.firestore.v1.PreconditionOrBuilder>(
                   getPrecondition(), getParentForChildren(), isClean());
           precondition_ = null;
         }
@@ -10209,11 +10203,11 @@ public final class TestDefinition {
         return this;
       }
 
-      private com.google.firestore.v1beta1.CommitRequest request_ = null;
+      private com.google.firestore.v1.CommitRequest request_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.firestore.v1beta1.CommitRequest,
-              com.google.firestore.v1beta1.CommitRequest.Builder,
-              com.google.firestore.v1beta1.CommitRequestOrBuilder>
+              com.google.firestore.v1.CommitRequest,
+              com.google.firestore.v1.CommitRequest.Builder,
+              com.google.firestore.v1.CommitRequestOrBuilder>
           requestBuilder_;
       /**
        *
@@ -10222,7 +10216,7 @@ public final class TestDefinition {
        * expected rquest
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 5;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 5;</code>
        */
       public boolean hasRequest() {
         return requestBuilder_ != null || request_ != null;
@@ -10234,12 +10228,12 @@ public final class TestDefinition {
        * expected rquest
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 5;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 5;</code>
        */
-      public com.google.firestore.v1beta1.CommitRequest getRequest() {
+      public com.google.firestore.v1.CommitRequest getRequest() {
         if (requestBuilder_ == null) {
           return request_ == null
-              ? com.google.firestore.v1beta1.CommitRequest.getDefaultInstance()
+              ? com.google.firestore.v1.CommitRequest.getDefaultInstance()
               : request_;
         } else {
           return requestBuilder_.getMessage();
@@ -10252,9 +10246,9 @@ public final class TestDefinition {
        * expected rquest
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 5;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 5;</code>
        */
-      public Builder setRequest(com.google.firestore.v1beta1.CommitRequest value) {
+      public Builder setRequest(com.google.firestore.v1.CommitRequest value) {
         if (requestBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -10274,10 +10268,9 @@ public final class TestDefinition {
        * expected rquest
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 5;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 5;</code>
        */
-      public Builder setRequest(
-          com.google.firestore.v1beta1.CommitRequest.Builder builderForValue) {
+      public Builder setRequest(com.google.firestore.v1.CommitRequest.Builder builderForValue) {
         if (requestBuilder_ == null) {
           request_ = builderForValue.build();
           onChanged();
@@ -10294,13 +10287,13 @@ public final class TestDefinition {
        * expected rquest
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 5;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 5;</code>
        */
-      public Builder mergeRequest(com.google.firestore.v1beta1.CommitRequest value) {
+      public Builder mergeRequest(com.google.firestore.v1.CommitRequest value) {
         if (requestBuilder_ == null) {
           if (request_ != null) {
             request_ =
-                com.google.firestore.v1beta1.CommitRequest.newBuilder(request_)
+                com.google.firestore.v1.CommitRequest.newBuilder(request_)
                     .mergeFrom(value)
                     .buildPartial();
           } else {
@@ -10320,7 +10313,7 @@ public final class TestDefinition {
        * expected rquest
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 5;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 5;</code>
        */
       public Builder clearRequest() {
         if (requestBuilder_ == null) {
@@ -10340,9 +10333,9 @@ public final class TestDefinition {
        * expected rquest
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 5;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 5;</code>
        */
-      public com.google.firestore.v1beta1.CommitRequest.Builder getRequestBuilder() {
+      public com.google.firestore.v1.CommitRequest.Builder getRequestBuilder() {
 
         onChanged();
         return getRequestFieldBuilder().getBuilder();
@@ -10354,14 +10347,14 @@ public final class TestDefinition {
        * expected rquest
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 5;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 5;</code>
        */
-      public com.google.firestore.v1beta1.CommitRequestOrBuilder getRequestOrBuilder() {
+      public com.google.firestore.v1.CommitRequestOrBuilder getRequestOrBuilder() {
         if (requestBuilder_ != null) {
           return requestBuilder_.getMessageOrBuilder();
         } else {
           return request_ == null
-              ? com.google.firestore.v1beta1.CommitRequest.getDefaultInstance()
+              ? com.google.firestore.v1.CommitRequest.getDefaultInstance()
               : request_;
         }
       }
@@ -10372,19 +10365,19 @@ public final class TestDefinition {
        * expected rquest
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 5;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.firestore.v1beta1.CommitRequest,
-              com.google.firestore.v1beta1.CommitRequest.Builder,
-              com.google.firestore.v1beta1.CommitRequestOrBuilder>
+              com.google.firestore.v1.CommitRequest,
+              com.google.firestore.v1.CommitRequest.Builder,
+              com.google.firestore.v1.CommitRequestOrBuilder>
           getRequestFieldBuilder() {
         if (requestBuilder_ == null) {
           requestBuilder_ =
               new com.google.protobuf.SingleFieldBuilderV3<
-                  com.google.firestore.v1beta1.CommitRequest,
-                  com.google.firestore.v1beta1.CommitRequest.Builder,
-                  com.google.firestore.v1beta1.CommitRequestOrBuilder>(
+                  com.google.firestore.v1.CommitRequest,
+                  com.google.firestore.v1.CommitRequest.Builder,
+                  com.google.firestore.v1.CommitRequestOrBuilder>(
                   getRequest(), getParentForChildren(), isClean());
           request_ = null;
         }
@@ -10513,12 +10506,12 @@ public final class TestDefinition {
      */
     com.google.protobuf.ByteString getDocRefPathBytes();
 
-    /** <code>.google.firestore.v1beta1.Precondition precondition = 2;</code> */
+    /** <code>.google.firestore.v1.Precondition precondition = 2;</code> */
     boolean hasPrecondition();
-    /** <code>.google.firestore.v1beta1.Precondition precondition = 2;</code> */
-    com.google.firestore.v1beta1.Precondition getPrecondition();
-    /** <code>.google.firestore.v1beta1.Precondition precondition = 2;</code> */
-    com.google.firestore.v1beta1.PreconditionOrBuilder getPreconditionOrBuilder();
+    /** <code>.google.firestore.v1.Precondition precondition = 2;</code> */
+    com.google.firestore.v1.Precondition getPrecondition();
+    /** <code>.google.firestore.v1.Precondition precondition = 2;</code> */
+    com.google.firestore.v1.PreconditionOrBuilder getPreconditionOrBuilder();
 
     /**
      *
@@ -10527,7 +10520,7 @@ public final class TestDefinition {
      * expected rquest
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.CommitRequest request = 3;</code>
+     * <code>.google.firestore.v1.CommitRequest request = 3;</code>
      */
     boolean hasRequest();
     /**
@@ -10537,9 +10530,9 @@ public final class TestDefinition {
      * expected rquest
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.CommitRequest request = 3;</code>
+     * <code>.google.firestore.v1.CommitRequest request = 3;</code>
      */
-    com.google.firestore.v1beta1.CommitRequest getRequest();
+    com.google.firestore.v1.CommitRequest getRequest();
     /**
      *
      *
@@ -10547,9 +10540,9 @@ public final class TestDefinition {
      * expected rquest
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.CommitRequest request = 3;</code>
+     * <code>.google.firestore.v1.CommitRequest request = 3;</code>
      */
-    com.google.firestore.v1beta1.CommitRequestOrBuilder getRequestOrBuilder();
+    com.google.firestore.v1.CommitRequestOrBuilder getRequestOrBuilder();
 
     /**
      *
@@ -10626,13 +10619,13 @@ public final class TestDefinition {
               }
             case 18:
               {
-                com.google.firestore.v1beta1.Precondition.Builder subBuilder = null;
+                com.google.firestore.v1.Precondition.Builder subBuilder = null;
                 if (precondition_ != null) {
                   subBuilder = precondition_.toBuilder();
                 }
                 precondition_ =
                     input.readMessage(
-                        com.google.firestore.v1beta1.Precondition.parser(), extensionRegistry);
+                        com.google.firestore.v1.Precondition.parser(), extensionRegistry);
                 if (subBuilder != null) {
                   subBuilder.mergeFrom(precondition_);
                   precondition_ = subBuilder.buildPartial();
@@ -10642,13 +10635,13 @@ public final class TestDefinition {
               }
             case 26:
               {
-                com.google.firestore.v1beta1.CommitRequest.Builder subBuilder = null;
+                com.google.firestore.v1.CommitRequest.Builder subBuilder = null;
                 if (request_ != null) {
                   subBuilder = request_.toBuilder();
                 }
                 request_ =
                     input.readMessage(
-                        com.google.firestore.v1beta1.CommitRequest.parser(), extensionRegistry);
+                        com.google.firestore.v1.CommitRequest.parser(), extensionRegistry);
                 if (subBuilder != null) {
                   subBuilder.mergeFrom(request_);
                   request_ = subBuilder.buildPartial();
@@ -10731,24 +10724,24 @@ public final class TestDefinition {
     }
 
     public static final int PRECONDITION_FIELD_NUMBER = 2;
-    private com.google.firestore.v1beta1.Precondition precondition_;
-    /** <code>.google.firestore.v1beta1.Precondition precondition = 2;</code> */
+    private com.google.firestore.v1.Precondition precondition_;
+    /** <code>.google.firestore.v1.Precondition precondition = 2;</code> */
     public boolean hasPrecondition() {
       return precondition_ != null;
     }
-    /** <code>.google.firestore.v1beta1.Precondition precondition = 2;</code> */
-    public com.google.firestore.v1beta1.Precondition getPrecondition() {
+    /** <code>.google.firestore.v1.Precondition precondition = 2;</code> */
+    public com.google.firestore.v1.Precondition getPrecondition() {
       return precondition_ == null
-          ? com.google.firestore.v1beta1.Precondition.getDefaultInstance()
+          ? com.google.firestore.v1.Precondition.getDefaultInstance()
           : precondition_;
     }
-    /** <code>.google.firestore.v1beta1.Precondition precondition = 2;</code> */
-    public com.google.firestore.v1beta1.PreconditionOrBuilder getPreconditionOrBuilder() {
+    /** <code>.google.firestore.v1.Precondition precondition = 2;</code> */
+    public com.google.firestore.v1.PreconditionOrBuilder getPreconditionOrBuilder() {
       return getPrecondition();
     }
 
     public static final int REQUEST_FIELD_NUMBER = 3;
-    private com.google.firestore.v1beta1.CommitRequest request_;
+    private com.google.firestore.v1.CommitRequest request_;
     /**
      *
      *
@@ -10756,7 +10749,7 @@ public final class TestDefinition {
      * expected rquest
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.CommitRequest request = 3;</code>
+     * <code>.google.firestore.v1.CommitRequest request = 3;</code>
      */
     public boolean hasRequest() {
       return request_ != null;
@@ -10768,11 +10761,11 @@ public final class TestDefinition {
      * expected rquest
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.CommitRequest request = 3;</code>
+     * <code>.google.firestore.v1.CommitRequest request = 3;</code>
      */
-    public com.google.firestore.v1beta1.CommitRequest getRequest() {
+    public com.google.firestore.v1.CommitRequest getRequest() {
       return request_ == null
-          ? com.google.firestore.v1beta1.CommitRequest.getDefaultInstance()
+          ? com.google.firestore.v1.CommitRequest.getDefaultInstance()
           : request_;
     }
     /**
@@ -10782,9 +10775,9 @@ public final class TestDefinition {
      * expected rquest
      * </pre>
      *
-     * <code>.google.firestore.v1beta1.CommitRequest request = 3;</code>
+     * <code>.google.firestore.v1.CommitRequest request = 3;</code>
      */
-    public com.google.firestore.v1beta1.CommitRequestOrBuilder getRequestOrBuilder() {
+    public com.google.firestore.v1.CommitRequestOrBuilder getRequestOrBuilder() {
       return getRequest();
     }
 
@@ -11280,28 +11273,28 @@ public final class TestDefinition {
         return this;
       }
 
-      private com.google.firestore.v1beta1.Precondition precondition_ = null;
+      private com.google.firestore.v1.Precondition precondition_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.firestore.v1beta1.Precondition,
-              com.google.firestore.v1beta1.Precondition.Builder,
-              com.google.firestore.v1beta1.PreconditionOrBuilder>
+              com.google.firestore.v1.Precondition,
+              com.google.firestore.v1.Precondition.Builder,
+              com.google.firestore.v1.PreconditionOrBuilder>
           preconditionBuilder_;
-      /** <code>.google.firestore.v1beta1.Precondition precondition = 2;</code> */
+      /** <code>.google.firestore.v1.Precondition precondition = 2;</code> */
       public boolean hasPrecondition() {
         return preconditionBuilder_ != null || precondition_ != null;
       }
-      /** <code>.google.firestore.v1beta1.Precondition precondition = 2;</code> */
-      public com.google.firestore.v1beta1.Precondition getPrecondition() {
+      /** <code>.google.firestore.v1.Precondition precondition = 2;</code> */
+      public com.google.firestore.v1.Precondition getPrecondition() {
         if (preconditionBuilder_ == null) {
           return precondition_ == null
-              ? com.google.firestore.v1beta1.Precondition.getDefaultInstance()
+              ? com.google.firestore.v1.Precondition.getDefaultInstance()
               : precondition_;
         } else {
           return preconditionBuilder_.getMessage();
         }
       }
-      /** <code>.google.firestore.v1beta1.Precondition precondition = 2;</code> */
-      public Builder setPrecondition(com.google.firestore.v1beta1.Precondition value) {
+      /** <code>.google.firestore.v1.Precondition precondition = 2;</code> */
+      public Builder setPrecondition(com.google.firestore.v1.Precondition value) {
         if (preconditionBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -11314,9 +11307,8 @@ public final class TestDefinition {
 
         return this;
       }
-      /** <code>.google.firestore.v1beta1.Precondition precondition = 2;</code> */
-      public Builder setPrecondition(
-          com.google.firestore.v1beta1.Precondition.Builder builderForValue) {
+      /** <code>.google.firestore.v1.Precondition precondition = 2;</code> */
+      public Builder setPrecondition(com.google.firestore.v1.Precondition.Builder builderForValue) {
         if (preconditionBuilder_ == null) {
           precondition_ = builderForValue.build();
           onChanged();
@@ -11326,12 +11318,12 @@ public final class TestDefinition {
 
         return this;
       }
-      /** <code>.google.firestore.v1beta1.Precondition precondition = 2;</code> */
-      public Builder mergePrecondition(com.google.firestore.v1beta1.Precondition value) {
+      /** <code>.google.firestore.v1.Precondition precondition = 2;</code> */
+      public Builder mergePrecondition(com.google.firestore.v1.Precondition value) {
         if (preconditionBuilder_ == null) {
           if (precondition_ != null) {
             precondition_ =
-                com.google.firestore.v1beta1.Precondition.newBuilder(precondition_)
+                com.google.firestore.v1.Precondition.newBuilder(precondition_)
                     .mergeFrom(value)
                     .buildPartial();
           } else {
@@ -11344,7 +11336,7 @@ public final class TestDefinition {
 
         return this;
       }
-      /** <code>.google.firestore.v1beta1.Precondition precondition = 2;</code> */
+      /** <code>.google.firestore.v1.Precondition precondition = 2;</code> */
       public Builder clearPrecondition() {
         if (preconditionBuilder_ == null) {
           precondition_ = null;
@@ -11356,45 +11348,45 @@ public final class TestDefinition {
 
         return this;
       }
-      /** <code>.google.firestore.v1beta1.Precondition precondition = 2;</code> */
-      public com.google.firestore.v1beta1.Precondition.Builder getPreconditionBuilder() {
+      /** <code>.google.firestore.v1.Precondition precondition = 2;</code> */
+      public com.google.firestore.v1.Precondition.Builder getPreconditionBuilder() {
 
         onChanged();
         return getPreconditionFieldBuilder().getBuilder();
       }
-      /** <code>.google.firestore.v1beta1.Precondition precondition = 2;</code> */
-      public com.google.firestore.v1beta1.PreconditionOrBuilder getPreconditionOrBuilder() {
+      /** <code>.google.firestore.v1.Precondition precondition = 2;</code> */
+      public com.google.firestore.v1.PreconditionOrBuilder getPreconditionOrBuilder() {
         if (preconditionBuilder_ != null) {
           return preconditionBuilder_.getMessageOrBuilder();
         } else {
           return precondition_ == null
-              ? com.google.firestore.v1beta1.Precondition.getDefaultInstance()
+              ? com.google.firestore.v1.Precondition.getDefaultInstance()
               : precondition_;
         }
       }
-      /** <code>.google.firestore.v1beta1.Precondition precondition = 2;</code> */
+      /** <code>.google.firestore.v1.Precondition precondition = 2;</code> */
       private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.firestore.v1beta1.Precondition,
-              com.google.firestore.v1beta1.Precondition.Builder,
-              com.google.firestore.v1beta1.PreconditionOrBuilder>
+              com.google.firestore.v1.Precondition,
+              com.google.firestore.v1.Precondition.Builder,
+              com.google.firestore.v1.PreconditionOrBuilder>
           getPreconditionFieldBuilder() {
         if (preconditionBuilder_ == null) {
           preconditionBuilder_ =
               new com.google.protobuf.SingleFieldBuilderV3<
-                  com.google.firestore.v1beta1.Precondition,
-                  com.google.firestore.v1beta1.Precondition.Builder,
-                  com.google.firestore.v1beta1.PreconditionOrBuilder>(
+                  com.google.firestore.v1.Precondition,
+                  com.google.firestore.v1.Precondition.Builder,
+                  com.google.firestore.v1.PreconditionOrBuilder>(
                   getPrecondition(), getParentForChildren(), isClean());
           precondition_ = null;
         }
         return preconditionBuilder_;
       }
 
-      private com.google.firestore.v1beta1.CommitRequest request_ = null;
+      private com.google.firestore.v1.CommitRequest request_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.firestore.v1beta1.CommitRequest,
-              com.google.firestore.v1beta1.CommitRequest.Builder,
-              com.google.firestore.v1beta1.CommitRequestOrBuilder>
+              com.google.firestore.v1.CommitRequest,
+              com.google.firestore.v1.CommitRequest.Builder,
+              com.google.firestore.v1.CommitRequestOrBuilder>
           requestBuilder_;
       /**
        *
@@ -11403,7 +11395,7 @@ public final class TestDefinition {
        * expected rquest
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 3;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 3;</code>
        */
       public boolean hasRequest() {
         return requestBuilder_ != null || request_ != null;
@@ -11415,12 +11407,12 @@ public final class TestDefinition {
        * expected rquest
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 3;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 3;</code>
        */
-      public com.google.firestore.v1beta1.CommitRequest getRequest() {
+      public com.google.firestore.v1.CommitRequest getRequest() {
         if (requestBuilder_ == null) {
           return request_ == null
-              ? com.google.firestore.v1beta1.CommitRequest.getDefaultInstance()
+              ? com.google.firestore.v1.CommitRequest.getDefaultInstance()
               : request_;
         } else {
           return requestBuilder_.getMessage();
@@ -11433,9 +11425,9 @@ public final class TestDefinition {
        * expected rquest
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 3;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 3;</code>
        */
-      public Builder setRequest(com.google.firestore.v1beta1.CommitRequest value) {
+      public Builder setRequest(com.google.firestore.v1.CommitRequest value) {
         if (requestBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -11455,10 +11447,9 @@ public final class TestDefinition {
        * expected rquest
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 3;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 3;</code>
        */
-      public Builder setRequest(
-          com.google.firestore.v1beta1.CommitRequest.Builder builderForValue) {
+      public Builder setRequest(com.google.firestore.v1.CommitRequest.Builder builderForValue) {
         if (requestBuilder_ == null) {
           request_ = builderForValue.build();
           onChanged();
@@ -11475,13 +11466,13 @@ public final class TestDefinition {
        * expected rquest
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 3;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 3;</code>
        */
-      public Builder mergeRequest(com.google.firestore.v1beta1.CommitRequest value) {
+      public Builder mergeRequest(com.google.firestore.v1.CommitRequest value) {
         if (requestBuilder_ == null) {
           if (request_ != null) {
             request_ =
-                com.google.firestore.v1beta1.CommitRequest.newBuilder(request_)
+                com.google.firestore.v1.CommitRequest.newBuilder(request_)
                     .mergeFrom(value)
                     .buildPartial();
           } else {
@@ -11501,7 +11492,7 @@ public final class TestDefinition {
        * expected rquest
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 3;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 3;</code>
        */
       public Builder clearRequest() {
         if (requestBuilder_ == null) {
@@ -11521,9 +11512,9 @@ public final class TestDefinition {
        * expected rquest
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 3;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 3;</code>
        */
-      public com.google.firestore.v1beta1.CommitRequest.Builder getRequestBuilder() {
+      public com.google.firestore.v1.CommitRequest.Builder getRequestBuilder() {
 
         onChanged();
         return getRequestFieldBuilder().getBuilder();
@@ -11535,14 +11526,14 @@ public final class TestDefinition {
        * expected rquest
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 3;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 3;</code>
        */
-      public com.google.firestore.v1beta1.CommitRequestOrBuilder getRequestOrBuilder() {
+      public com.google.firestore.v1.CommitRequestOrBuilder getRequestOrBuilder() {
         if (requestBuilder_ != null) {
           return requestBuilder_.getMessageOrBuilder();
         } else {
           return request_ == null
-              ? com.google.firestore.v1beta1.CommitRequest.getDefaultInstance()
+              ? com.google.firestore.v1.CommitRequest.getDefaultInstance()
               : request_;
         }
       }
@@ -11553,19 +11544,19 @@ public final class TestDefinition {
        * expected rquest
        * </pre>
        *
-       * <code>.google.firestore.v1beta1.CommitRequest request = 3;</code>
+       * <code>.google.firestore.v1.CommitRequest request = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.firestore.v1beta1.CommitRequest,
-              com.google.firestore.v1beta1.CommitRequest.Builder,
-              com.google.firestore.v1beta1.CommitRequestOrBuilder>
+              com.google.firestore.v1.CommitRequest,
+              com.google.firestore.v1.CommitRequest.Builder,
+              com.google.firestore.v1.CommitRequestOrBuilder>
           getRequestFieldBuilder() {
         if (requestBuilder_ == null) {
           requestBuilder_ =
               new com.google.protobuf.SingleFieldBuilderV3<
-                  com.google.firestore.v1beta1.CommitRequest,
-                  com.google.firestore.v1beta1.CommitRequest.Builder,
-                  com.google.firestore.v1beta1.CommitRequestOrBuilder>(
+                  com.google.firestore.v1.CommitRequest,
+                  com.google.firestore.v1.CommitRequest.Builder,
+                  com.google.firestore.v1.CommitRequestOrBuilder>(
                   getRequest(), getParentForChildren(), isClean());
           request_ = null;
         }
@@ -12799,12 +12790,12 @@ public final class TestDefinition {
     com.google.cloud.firestore.conformance.TestDefinition.ClauseOrBuilder getClausesOrBuilder(
         int index);
 
-    /** <code>.google.firestore.v1beta1.StructuredQuery query = 3;</code> */
+    /** <code>.google.firestore.v1.StructuredQuery query = 3;</code> */
     boolean hasQuery();
-    /** <code>.google.firestore.v1beta1.StructuredQuery query = 3;</code> */
-    com.google.firestore.v1beta1.StructuredQuery getQuery();
-    /** <code>.google.firestore.v1beta1.StructuredQuery query = 3;</code> */
-    com.google.firestore.v1beta1.StructuredQueryOrBuilder getQueryOrBuilder();
+    /** <code>.google.firestore.v1.StructuredQuery query = 3;</code> */
+    com.google.firestore.v1.StructuredQuery getQuery();
+    /** <code>.google.firestore.v1.StructuredQuery query = 3;</code> */
+    com.google.firestore.v1.StructuredQueryOrBuilder getQueryOrBuilder();
 
     /** <code>bool is_error = 4;</code> */
     boolean getIsError();
@@ -12880,13 +12871,13 @@ public final class TestDefinition {
               }
             case 26:
               {
-                com.google.firestore.v1beta1.StructuredQuery.Builder subBuilder = null;
+                com.google.firestore.v1.StructuredQuery.Builder subBuilder = null;
                 if (query_ != null) {
                   subBuilder = query_.toBuilder();
                 }
                 query_ =
                     input.readMessage(
-                        com.google.firestore.v1beta1.StructuredQuery.parser(), extensionRegistry);
+                        com.google.firestore.v1.StructuredQuery.parser(), extensionRegistry);
                 if (subBuilder != null) {
                   subBuilder.mergeFrom(query_);
                   query_ = subBuilder.buildPartial();
@@ -13000,19 +12991,17 @@ public final class TestDefinition {
     }
 
     public static final int QUERY_FIELD_NUMBER = 3;
-    private com.google.firestore.v1beta1.StructuredQuery query_;
-    /** <code>.google.firestore.v1beta1.StructuredQuery query = 3;</code> */
+    private com.google.firestore.v1.StructuredQuery query_;
+    /** <code>.google.firestore.v1.StructuredQuery query = 3;</code> */
     public boolean hasQuery() {
       return query_ != null;
     }
-    /** <code>.google.firestore.v1beta1.StructuredQuery query = 3;</code> */
-    public com.google.firestore.v1beta1.StructuredQuery getQuery() {
-      return query_ == null
-          ? com.google.firestore.v1beta1.StructuredQuery.getDefaultInstance()
-          : query_;
+    /** <code>.google.firestore.v1.StructuredQuery query = 3;</code> */
+    public com.google.firestore.v1.StructuredQuery getQuery() {
+      return query_ == null ? com.google.firestore.v1.StructuredQuery.getDefaultInstance() : query_;
     }
-    /** <code>.google.firestore.v1beta1.StructuredQuery query = 3;</code> */
-    public com.google.firestore.v1beta1.StructuredQueryOrBuilder getQueryOrBuilder() {
+    /** <code>.google.firestore.v1.StructuredQuery query = 3;</code> */
+    public com.google.firestore.v1.StructuredQueryOrBuilder getQueryOrBuilder() {
       return getQuery();
     }
 
@@ -13748,28 +13737,28 @@ public final class TestDefinition {
         return clausesBuilder_;
       }
 
-      private com.google.firestore.v1beta1.StructuredQuery query_ = null;
+      private com.google.firestore.v1.StructuredQuery query_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.firestore.v1beta1.StructuredQuery,
-              com.google.firestore.v1beta1.StructuredQuery.Builder,
-              com.google.firestore.v1beta1.StructuredQueryOrBuilder>
+              com.google.firestore.v1.StructuredQuery,
+              com.google.firestore.v1.StructuredQuery.Builder,
+              com.google.firestore.v1.StructuredQueryOrBuilder>
           queryBuilder_;
-      /** <code>.google.firestore.v1beta1.StructuredQuery query = 3;</code> */
+      /** <code>.google.firestore.v1.StructuredQuery query = 3;</code> */
       public boolean hasQuery() {
         return queryBuilder_ != null || query_ != null;
       }
-      /** <code>.google.firestore.v1beta1.StructuredQuery query = 3;</code> */
-      public com.google.firestore.v1beta1.StructuredQuery getQuery() {
+      /** <code>.google.firestore.v1.StructuredQuery query = 3;</code> */
+      public com.google.firestore.v1.StructuredQuery getQuery() {
         if (queryBuilder_ == null) {
           return query_ == null
-              ? com.google.firestore.v1beta1.StructuredQuery.getDefaultInstance()
+              ? com.google.firestore.v1.StructuredQuery.getDefaultInstance()
               : query_;
         } else {
           return queryBuilder_.getMessage();
         }
       }
-      /** <code>.google.firestore.v1beta1.StructuredQuery query = 3;</code> */
-      public Builder setQuery(com.google.firestore.v1beta1.StructuredQuery value) {
+      /** <code>.google.firestore.v1.StructuredQuery query = 3;</code> */
+      public Builder setQuery(com.google.firestore.v1.StructuredQuery value) {
         if (queryBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -13782,9 +13771,8 @@ public final class TestDefinition {
 
         return this;
       }
-      /** <code>.google.firestore.v1beta1.StructuredQuery query = 3;</code> */
-      public Builder setQuery(
-          com.google.firestore.v1beta1.StructuredQuery.Builder builderForValue) {
+      /** <code>.google.firestore.v1.StructuredQuery query = 3;</code> */
+      public Builder setQuery(com.google.firestore.v1.StructuredQuery.Builder builderForValue) {
         if (queryBuilder_ == null) {
           query_ = builderForValue.build();
           onChanged();
@@ -13794,12 +13782,12 @@ public final class TestDefinition {
 
         return this;
       }
-      /** <code>.google.firestore.v1beta1.StructuredQuery query = 3;</code> */
-      public Builder mergeQuery(com.google.firestore.v1beta1.StructuredQuery value) {
+      /** <code>.google.firestore.v1.StructuredQuery query = 3;</code> */
+      public Builder mergeQuery(com.google.firestore.v1.StructuredQuery value) {
         if (queryBuilder_ == null) {
           if (query_ != null) {
             query_ =
-                com.google.firestore.v1beta1.StructuredQuery.newBuilder(query_)
+                com.google.firestore.v1.StructuredQuery.newBuilder(query_)
                     .mergeFrom(value)
                     .buildPartial();
           } else {
@@ -13812,7 +13800,7 @@ public final class TestDefinition {
 
         return this;
       }
-      /** <code>.google.firestore.v1beta1.StructuredQuery query = 3;</code> */
+      /** <code>.google.firestore.v1.StructuredQuery query = 3;</code> */
       public Builder clearQuery() {
         if (queryBuilder_ == null) {
           query_ = null;
@@ -13824,34 +13812,34 @@ public final class TestDefinition {
 
         return this;
       }
-      /** <code>.google.firestore.v1beta1.StructuredQuery query = 3;</code> */
-      public com.google.firestore.v1beta1.StructuredQuery.Builder getQueryBuilder() {
+      /** <code>.google.firestore.v1.StructuredQuery query = 3;</code> */
+      public com.google.firestore.v1.StructuredQuery.Builder getQueryBuilder() {
 
         onChanged();
         return getQueryFieldBuilder().getBuilder();
       }
-      /** <code>.google.firestore.v1beta1.StructuredQuery query = 3;</code> */
-      public com.google.firestore.v1beta1.StructuredQueryOrBuilder getQueryOrBuilder() {
+      /** <code>.google.firestore.v1.StructuredQuery query = 3;</code> */
+      public com.google.firestore.v1.StructuredQueryOrBuilder getQueryOrBuilder() {
         if (queryBuilder_ != null) {
           return queryBuilder_.getMessageOrBuilder();
         } else {
           return query_ == null
-              ? com.google.firestore.v1beta1.StructuredQuery.getDefaultInstance()
+              ? com.google.firestore.v1.StructuredQuery.getDefaultInstance()
               : query_;
         }
       }
-      /** <code>.google.firestore.v1beta1.StructuredQuery query = 3;</code> */
+      /** <code>.google.firestore.v1.StructuredQuery query = 3;</code> */
       private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.firestore.v1beta1.StructuredQuery,
-              com.google.firestore.v1beta1.StructuredQuery.Builder,
-              com.google.firestore.v1beta1.StructuredQueryOrBuilder>
+              com.google.firestore.v1.StructuredQuery,
+              com.google.firestore.v1.StructuredQuery.Builder,
+              com.google.firestore.v1.StructuredQueryOrBuilder>
           getQueryFieldBuilder() {
         if (queryBuilder_ == null) {
           queryBuilder_ =
               new com.google.protobuf.SingleFieldBuilderV3<
-                  com.google.firestore.v1beta1.StructuredQuery,
-                  com.google.firestore.v1beta1.StructuredQuery.Builder,
-                  com.google.firestore.v1beta1.StructuredQueryOrBuilder>(
+                  com.google.firestore.v1.StructuredQuery,
+                  com.google.firestore.v1.StructuredQuery.Builder,
+                  com.google.firestore.v1.StructuredQueryOrBuilder>(
                   getQuery(), getParentForChildren(), isClean());
           query_ = null;
         }
@@ -20478,17 +20466,17 @@ public final class TestDefinition {
       // @@protoc_insertion_point(interface_extends:tests.ListenTest)
       com.google.protobuf.MessageOrBuilder {
 
-    /** <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code> */
-    java.util.List<com.google.firestore.v1beta1.ListenResponse> getResponsesList();
-    /** <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code> */
-    com.google.firestore.v1beta1.ListenResponse getResponses(int index);
-    /** <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code> */
+    /** <code>repeated .google.firestore.v1.ListenResponse responses = 1;</code> */
+    java.util.List<com.google.firestore.v1.ListenResponse> getResponsesList();
+    /** <code>repeated .google.firestore.v1.ListenResponse responses = 1;</code> */
+    com.google.firestore.v1.ListenResponse getResponses(int index);
+    /** <code>repeated .google.firestore.v1.ListenResponse responses = 1;</code> */
     int getResponsesCount();
-    /** <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code> */
-    java.util.List<? extends com.google.firestore.v1beta1.ListenResponseOrBuilder>
+    /** <code>repeated .google.firestore.v1.ListenResponse responses = 1;</code> */
+    java.util.List<? extends com.google.firestore.v1.ListenResponseOrBuilder>
         getResponsesOrBuilderList();
-    /** <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code> */
-    com.google.firestore.v1beta1.ListenResponseOrBuilder getResponsesOrBuilder(int index);
+    /** <code>repeated .google.firestore.v1.ListenResponse responses = 1;</code> */
+    com.google.firestore.v1.ListenResponseOrBuilder getResponsesOrBuilder(int index);
 
     /** <code>repeated .tests.Snapshot snapshots = 2;</code> */
     java.util.List<com.google.cloud.firestore.conformance.TestDefinition.Snapshot>
@@ -20575,13 +20563,12 @@ public final class TestDefinition {
             case 10:
               {
                 if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                  responses_ =
-                      new java.util.ArrayList<com.google.firestore.v1beta1.ListenResponse>();
+                  responses_ = new java.util.ArrayList<com.google.firestore.v1.ListenResponse>();
                   mutable_bitField0_ |= 0x00000001;
                 }
                 responses_.add(
                     input.readMessage(
-                        com.google.firestore.v1beta1.ListenResponse.parser(), extensionRegistry));
+                        com.google.firestore.v1.ListenResponse.parser(), extensionRegistry));
                 break;
               }
             case 18:
@@ -20637,26 +20624,26 @@ public final class TestDefinition {
 
     private int bitField0_;
     public static final int RESPONSES_FIELD_NUMBER = 1;
-    private java.util.List<com.google.firestore.v1beta1.ListenResponse> responses_;
-    /** <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code> */
-    public java.util.List<com.google.firestore.v1beta1.ListenResponse> getResponsesList() {
+    private java.util.List<com.google.firestore.v1.ListenResponse> responses_;
+    /** <code>repeated .google.firestore.v1.ListenResponse responses = 1;</code> */
+    public java.util.List<com.google.firestore.v1.ListenResponse> getResponsesList() {
       return responses_;
     }
-    /** <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code> */
-    public java.util.List<? extends com.google.firestore.v1beta1.ListenResponseOrBuilder>
+    /** <code>repeated .google.firestore.v1.ListenResponse responses = 1;</code> */
+    public java.util.List<? extends com.google.firestore.v1.ListenResponseOrBuilder>
         getResponsesOrBuilderList() {
       return responses_;
     }
-    /** <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code> */
+    /** <code>repeated .google.firestore.v1.ListenResponse responses = 1;</code> */
     public int getResponsesCount() {
       return responses_.size();
     }
-    /** <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code> */
-    public com.google.firestore.v1beta1.ListenResponse getResponses(int index) {
+    /** <code>repeated .google.firestore.v1.ListenResponse responses = 1;</code> */
+    public com.google.firestore.v1.ListenResponse getResponses(int index) {
       return responses_.get(index);
     }
-    /** <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code> */
-    public com.google.firestore.v1beta1.ListenResponseOrBuilder getResponsesOrBuilder(int index) {
+    /** <code>repeated .google.firestore.v1.ListenResponse responses = 1;</code> */
+    public com.google.firestore.v1.ListenResponseOrBuilder getResponsesOrBuilder(int index) {
       return responses_.get(index);
     }
 
@@ -21128,32 +21115,31 @@ public final class TestDefinition {
 
       private int bitField0_;
 
-      private java.util.List<com.google.firestore.v1beta1.ListenResponse> responses_ =
+      private java.util.List<com.google.firestore.v1.ListenResponse> responses_ =
           java.util.Collections.emptyList();
 
       private void ensureResponsesIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          responses_ =
-              new java.util.ArrayList<com.google.firestore.v1beta1.ListenResponse>(responses_);
+          responses_ = new java.util.ArrayList<com.google.firestore.v1.ListenResponse>(responses_);
           bitField0_ |= 0x00000001;
         }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-              com.google.firestore.v1beta1.ListenResponse,
-              com.google.firestore.v1beta1.ListenResponse.Builder,
-              com.google.firestore.v1beta1.ListenResponseOrBuilder>
+              com.google.firestore.v1.ListenResponse,
+              com.google.firestore.v1.ListenResponse.Builder,
+              com.google.firestore.v1.ListenResponseOrBuilder>
           responsesBuilder_;
 
-      /** <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code> */
-      public java.util.List<com.google.firestore.v1beta1.ListenResponse> getResponsesList() {
+      /** <code>repeated .google.firestore.v1.ListenResponse responses = 1;</code> */
+      public java.util.List<com.google.firestore.v1.ListenResponse> getResponsesList() {
         if (responsesBuilder_ == null) {
           return java.util.Collections.unmodifiableList(responses_);
         } else {
           return responsesBuilder_.getMessageList();
         }
       }
-      /** <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code> */
+      /** <code>repeated .google.firestore.v1.ListenResponse responses = 1;</code> */
       public int getResponsesCount() {
         if (responsesBuilder_ == null) {
           return responses_.size();
@@ -21161,16 +21147,16 @@ public final class TestDefinition {
           return responsesBuilder_.getCount();
         }
       }
-      /** <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code> */
-      public com.google.firestore.v1beta1.ListenResponse getResponses(int index) {
+      /** <code>repeated .google.firestore.v1.ListenResponse responses = 1;</code> */
+      public com.google.firestore.v1.ListenResponse getResponses(int index) {
         if (responsesBuilder_ == null) {
           return responses_.get(index);
         } else {
           return responsesBuilder_.getMessage(index);
         }
       }
-      /** <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code> */
-      public Builder setResponses(int index, com.google.firestore.v1beta1.ListenResponse value) {
+      /** <code>repeated .google.firestore.v1.ListenResponse responses = 1;</code> */
+      public Builder setResponses(int index, com.google.firestore.v1.ListenResponse value) {
         if (responsesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -21183,9 +21169,9 @@ public final class TestDefinition {
         }
         return this;
       }
-      /** <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code> */
+      /** <code>repeated .google.firestore.v1.ListenResponse responses = 1;</code> */
       public Builder setResponses(
-          int index, com.google.firestore.v1beta1.ListenResponse.Builder builderForValue) {
+          int index, com.google.firestore.v1.ListenResponse.Builder builderForValue) {
         if (responsesBuilder_ == null) {
           ensureResponsesIsMutable();
           responses_.set(index, builderForValue.build());
@@ -21195,8 +21181,8 @@ public final class TestDefinition {
         }
         return this;
       }
-      /** <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code> */
-      public Builder addResponses(com.google.firestore.v1beta1.ListenResponse value) {
+      /** <code>repeated .google.firestore.v1.ListenResponse responses = 1;</code> */
+      public Builder addResponses(com.google.firestore.v1.ListenResponse value) {
         if (responsesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -21209,8 +21195,8 @@ public final class TestDefinition {
         }
         return this;
       }
-      /** <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code> */
-      public Builder addResponses(int index, com.google.firestore.v1beta1.ListenResponse value) {
+      /** <code>repeated .google.firestore.v1.ListenResponse responses = 1;</code> */
+      public Builder addResponses(int index, com.google.firestore.v1.ListenResponse value) {
         if (responsesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -21223,9 +21209,8 @@ public final class TestDefinition {
         }
         return this;
       }
-      /** <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code> */
-      public Builder addResponses(
-          com.google.firestore.v1beta1.ListenResponse.Builder builderForValue) {
+      /** <code>repeated .google.firestore.v1.ListenResponse responses = 1;</code> */
+      public Builder addResponses(com.google.firestore.v1.ListenResponse.Builder builderForValue) {
         if (responsesBuilder_ == null) {
           ensureResponsesIsMutable();
           responses_.add(builderForValue.build());
@@ -21235,9 +21220,9 @@ public final class TestDefinition {
         }
         return this;
       }
-      /** <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code> */
+      /** <code>repeated .google.firestore.v1.ListenResponse responses = 1;</code> */
       public Builder addResponses(
-          int index, com.google.firestore.v1beta1.ListenResponse.Builder builderForValue) {
+          int index, com.google.firestore.v1.ListenResponse.Builder builderForValue) {
         if (responsesBuilder_ == null) {
           ensureResponsesIsMutable();
           responses_.add(index, builderForValue.build());
@@ -21247,9 +21232,9 @@ public final class TestDefinition {
         }
         return this;
       }
-      /** <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code> */
+      /** <code>repeated .google.firestore.v1.ListenResponse responses = 1;</code> */
       public Builder addAllResponses(
-          java.lang.Iterable<? extends com.google.firestore.v1beta1.ListenResponse> values) {
+          java.lang.Iterable<? extends com.google.firestore.v1.ListenResponse> values) {
         if (responsesBuilder_ == null) {
           ensureResponsesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, responses_);
@@ -21259,7 +21244,7 @@ public final class TestDefinition {
         }
         return this;
       }
-      /** <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code> */
+      /** <code>repeated .google.firestore.v1.ListenResponse responses = 1;</code> */
       public Builder clearResponses() {
         if (responsesBuilder_ == null) {
           responses_ = java.util.Collections.emptyList();
@@ -21270,7 +21255,7 @@ public final class TestDefinition {
         }
         return this;
       }
-      /** <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code> */
+      /** <code>repeated .google.firestore.v1.ListenResponse responses = 1;</code> */
       public Builder removeResponses(int index) {
         if (responsesBuilder_ == null) {
           ensureResponsesIsMutable();
@@ -21281,20 +21266,20 @@ public final class TestDefinition {
         }
         return this;
       }
-      /** <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code> */
-      public com.google.firestore.v1beta1.ListenResponse.Builder getResponsesBuilder(int index) {
+      /** <code>repeated .google.firestore.v1.ListenResponse responses = 1;</code> */
+      public com.google.firestore.v1.ListenResponse.Builder getResponsesBuilder(int index) {
         return getResponsesFieldBuilder().getBuilder(index);
       }
-      /** <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code> */
-      public com.google.firestore.v1beta1.ListenResponseOrBuilder getResponsesOrBuilder(int index) {
+      /** <code>repeated .google.firestore.v1.ListenResponse responses = 1;</code> */
+      public com.google.firestore.v1.ListenResponseOrBuilder getResponsesOrBuilder(int index) {
         if (responsesBuilder_ == null) {
           return responses_.get(index);
         } else {
           return responsesBuilder_.getMessageOrBuilder(index);
         }
       }
-      /** <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code> */
-      public java.util.List<? extends com.google.firestore.v1beta1.ListenResponseOrBuilder>
+      /** <code>repeated .google.firestore.v1.ListenResponse responses = 1;</code> */
+      public java.util.List<? extends com.google.firestore.v1.ListenResponseOrBuilder>
           getResponsesOrBuilderList() {
         if (responsesBuilder_ != null) {
           return responsesBuilder_.getMessageOrBuilderList();
@@ -21302,33 +21287,33 @@ public final class TestDefinition {
           return java.util.Collections.unmodifiableList(responses_);
         }
       }
-      /** <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code> */
-      public com.google.firestore.v1beta1.ListenResponse.Builder addResponsesBuilder() {
+      /** <code>repeated .google.firestore.v1.ListenResponse responses = 1;</code> */
+      public com.google.firestore.v1.ListenResponse.Builder addResponsesBuilder() {
         return getResponsesFieldBuilder()
-            .addBuilder(com.google.firestore.v1beta1.ListenResponse.getDefaultInstance());
+            .addBuilder(com.google.firestore.v1.ListenResponse.getDefaultInstance());
       }
-      /** <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code> */
-      public com.google.firestore.v1beta1.ListenResponse.Builder addResponsesBuilder(int index) {
+      /** <code>repeated .google.firestore.v1.ListenResponse responses = 1;</code> */
+      public com.google.firestore.v1.ListenResponse.Builder addResponsesBuilder(int index) {
         return getResponsesFieldBuilder()
-            .addBuilder(index, com.google.firestore.v1beta1.ListenResponse.getDefaultInstance());
+            .addBuilder(index, com.google.firestore.v1.ListenResponse.getDefaultInstance());
       }
-      /** <code>repeated .google.firestore.v1beta1.ListenResponse responses = 1;</code> */
-      public java.util.List<com.google.firestore.v1beta1.ListenResponse.Builder>
+      /** <code>repeated .google.firestore.v1.ListenResponse responses = 1;</code> */
+      public java.util.List<com.google.firestore.v1.ListenResponse.Builder>
           getResponsesBuilderList() {
         return getResponsesFieldBuilder().getBuilderList();
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-              com.google.firestore.v1beta1.ListenResponse,
-              com.google.firestore.v1beta1.ListenResponse.Builder,
-              com.google.firestore.v1beta1.ListenResponseOrBuilder>
+              com.google.firestore.v1.ListenResponse,
+              com.google.firestore.v1.ListenResponse.Builder,
+              com.google.firestore.v1.ListenResponseOrBuilder>
           getResponsesFieldBuilder() {
         if (responsesBuilder_ == null) {
           responsesBuilder_ =
               new com.google.protobuf.RepeatedFieldBuilderV3<
-                  com.google.firestore.v1beta1.ListenResponse,
-                  com.google.firestore.v1beta1.ListenResponse.Builder,
-                  com.google.firestore.v1beta1.ListenResponseOrBuilder>(
+                  com.google.firestore.v1.ListenResponse,
+                  com.google.firestore.v1.ListenResponse.Builder,
+                  com.google.firestore.v1.ListenResponseOrBuilder>(
                   responses_,
                   ((bitField0_ & 0x00000001) == 0x00000001),
                   getParentForChildren(),
@@ -21644,16 +21629,16 @@ public final class TestDefinition {
       // @@protoc_insertion_point(interface_extends:tests.Snapshot)
       com.google.protobuf.MessageOrBuilder {
 
-    /** <code>repeated .google.firestore.v1beta1.Document docs = 1;</code> */
-    java.util.List<com.google.firestore.v1beta1.Document> getDocsList();
-    /** <code>repeated .google.firestore.v1beta1.Document docs = 1;</code> */
-    com.google.firestore.v1beta1.Document getDocs(int index);
-    /** <code>repeated .google.firestore.v1beta1.Document docs = 1;</code> */
+    /** <code>repeated .google.firestore.v1.Document docs = 1;</code> */
+    java.util.List<com.google.firestore.v1.Document> getDocsList();
+    /** <code>repeated .google.firestore.v1.Document docs = 1;</code> */
+    com.google.firestore.v1.Document getDocs(int index);
+    /** <code>repeated .google.firestore.v1.Document docs = 1;</code> */
     int getDocsCount();
-    /** <code>repeated .google.firestore.v1beta1.Document docs = 1;</code> */
-    java.util.List<? extends com.google.firestore.v1beta1.DocumentOrBuilder> getDocsOrBuilderList();
-    /** <code>repeated .google.firestore.v1beta1.Document docs = 1;</code> */
-    com.google.firestore.v1beta1.DocumentOrBuilder getDocsOrBuilder(int index);
+    /** <code>repeated .google.firestore.v1.Document docs = 1;</code> */
+    java.util.List<? extends com.google.firestore.v1.DocumentOrBuilder> getDocsOrBuilderList();
+    /** <code>repeated .google.firestore.v1.Document docs = 1;</code> */
+    com.google.firestore.v1.DocumentOrBuilder getDocsOrBuilder(int index);
 
     /** <code>repeated .tests.DocChange changes = 2;</code> */
     java.util.List<com.google.cloud.firestore.conformance.TestDefinition.DocChange>
@@ -21727,12 +21712,12 @@ public final class TestDefinition {
             case 10:
               {
                 if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                  docs_ = new java.util.ArrayList<com.google.firestore.v1beta1.Document>();
+                  docs_ = new java.util.ArrayList<com.google.firestore.v1.Document>();
                   mutable_bitField0_ |= 0x00000001;
                 }
                 docs_.add(
                     input.readMessage(
-                        com.google.firestore.v1beta1.Document.parser(), extensionRegistry));
+                        com.google.firestore.v1.Document.parser(), extensionRegistry));
                 break;
               }
             case 18:
@@ -21798,26 +21783,26 @@ public final class TestDefinition {
 
     private int bitField0_;
     public static final int DOCS_FIELD_NUMBER = 1;
-    private java.util.List<com.google.firestore.v1beta1.Document> docs_;
-    /** <code>repeated .google.firestore.v1beta1.Document docs = 1;</code> */
-    public java.util.List<com.google.firestore.v1beta1.Document> getDocsList() {
+    private java.util.List<com.google.firestore.v1.Document> docs_;
+    /** <code>repeated .google.firestore.v1.Document docs = 1;</code> */
+    public java.util.List<com.google.firestore.v1.Document> getDocsList() {
       return docs_;
     }
-    /** <code>repeated .google.firestore.v1beta1.Document docs = 1;</code> */
-    public java.util.List<? extends com.google.firestore.v1beta1.DocumentOrBuilder>
+    /** <code>repeated .google.firestore.v1.Document docs = 1;</code> */
+    public java.util.List<? extends com.google.firestore.v1.DocumentOrBuilder>
         getDocsOrBuilderList() {
       return docs_;
     }
-    /** <code>repeated .google.firestore.v1beta1.Document docs = 1;</code> */
+    /** <code>repeated .google.firestore.v1.Document docs = 1;</code> */
     public int getDocsCount() {
       return docs_.size();
     }
-    /** <code>repeated .google.firestore.v1beta1.Document docs = 1;</code> */
-    public com.google.firestore.v1beta1.Document getDocs(int index) {
+    /** <code>repeated .google.firestore.v1.Document docs = 1;</code> */
+    public com.google.firestore.v1.Document getDocs(int index) {
       return docs_.get(index);
     }
-    /** <code>repeated .google.firestore.v1beta1.Document docs = 1;</code> */
-    public com.google.firestore.v1beta1.DocumentOrBuilder getDocsOrBuilder(int index) {
+    /** <code>repeated .google.firestore.v1.Document docs = 1;</code> */
+    public com.google.firestore.v1.DocumentOrBuilder getDocsOrBuilder(int index) {
       return docs_.get(index);
     }
 
@@ -22290,31 +22275,31 @@ public final class TestDefinition {
 
       private int bitField0_;
 
-      private java.util.List<com.google.firestore.v1beta1.Document> docs_ =
+      private java.util.List<com.google.firestore.v1.Document> docs_ =
           java.util.Collections.emptyList();
 
       private void ensureDocsIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          docs_ = new java.util.ArrayList<com.google.firestore.v1beta1.Document>(docs_);
+          docs_ = new java.util.ArrayList<com.google.firestore.v1.Document>(docs_);
           bitField0_ |= 0x00000001;
         }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-              com.google.firestore.v1beta1.Document,
-              com.google.firestore.v1beta1.Document.Builder,
-              com.google.firestore.v1beta1.DocumentOrBuilder>
+              com.google.firestore.v1.Document,
+              com.google.firestore.v1.Document.Builder,
+              com.google.firestore.v1.DocumentOrBuilder>
           docsBuilder_;
 
-      /** <code>repeated .google.firestore.v1beta1.Document docs = 1;</code> */
-      public java.util.List<com.google.firestore.v1beta1.Document> getDocsList() {
+      /** <code>repeated .google.firestore.v1.Document docs = 1;</code> */
+      public java.util.List<com.google.firestore.v1.Document> getDocsList() {
         if (docsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(docs_);
         } else {
           return docsBuilder_.getMessageList();
         }
       }
-      /** <code>repeated .google.firestore.v1beta1.Document docs = 1;</code> */
+      /** <code>repeated .google.firestore.v1.Document docs = 1;</code> */
       public int getDocsCount() {
         if (docsBuilder_ == null) {
           return docs_.size();
@@ -22322,16 +22307,16 @@ public final class TestDefinition {
           return docsBuilder_.getCount();
         }
       }
-      /** <code>repeated .google.firestore.v1beta1.Document docs = 1;</code> */
-      public com.google.firestore.v1beta1.Document getDocs(int index) {
+      /** <code>repeated .google.firestore.v1.Document docs = 1;</code> */
+      public com.google.firestore.v1.Document getDocs(int index) {
         if (docsBuilder_ == null) {
           return docs_.get(index);
         } else {
           return docsBuilder_.getMessage(index);
         }
       }
-      /** <code>repeated .google.firestore.v1beta1.Document docs = 1;</code> */
-      public Builder setDocs(int index, com.google.firestore.v1beta1.Document value) {
+      /** <code>repeated .google.firestore.v1.Document docs = 1;</code> */
+      public Builder setDocs(int index, com.google.firestore.v1.Document value) {
         if (docsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -22344,9 +22329,8 @@ public final class TestDefinition {
         }
         return this;
       }
-      /** <code>repeated .google.firestore.v1beta1.Document docs = 1;</code> */
-      public Builder setDocs(
-          int index, com.google.firestore.v1beta1.Document.Builder builderForValue) {
+      /** <code>repeated .google.firestore.v1.Document docs = 1;</code> */
+      public Builder setDocs(int index, com.google.firestore.v1.Document.Builder builderForValue) {
         if (docsBuilder_ == null) {
           ensureDocsIsMutable();
           docs_.set(index, builderForValue.build());
@@ -22356,8 +22340,8 @@ public final class TestDefinition {
         }
         return this;
       }
-      /** <code>repeated .google.firestore.v1beta1.Document docs = 1;</code> */
-      public Builder addDocs(com.google.firestore.v1beta1.Document value) {
+      /** <code>repeated .google.firestore.v1.Document docs = 1;</code> */
+      public Builder addDocs(com.google.firestore.v1.Document value) {
         if (docsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -22370,8 +22354,8 @@ public final class TestDefinition {
         }
         return this;
       }
-      /** <code>repeated .google.firestore.v1beta1.Document docs = 1;</code> */
-      public Builder addDocs(int index, com.google.firestore.v1beta1.Document value) {
+      /** <code>repeated .google.firestore.v1.Document docs = 1;</code> */
+      public Builder addDocs(int index, com.google.firestore.v1.Document value) {
         if (docsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -22384,8 +22368,8 @@ public final class TestDefinition {
         }
         return this;
       }
-      /** <code>repeated .google.firestore.v1beta1.Document docs = 1;</code> */
-      public Builder addDocs(com.google.firestore.v1beta1.Document.Builder builderForValue) {
+      /** <code>repeated .google.firestore.v1.Document docs = 1;</code> */
+      public Builder addDocs(com.google.firestore.v1.Document.Builder builderForValue) {
         if (docsBuilder_ == null) {
           ensureDocsIsMutable();
           docs_.add(builderForValue.build());
@@ -22395,9 +22379,8 @@ public final class TestDefinition {
         }
         return this;
       }
-      /** <code>repeated .google.firestore.v1beta1.Document docs = 1;</code> */
-      public Builder addDocs(
-          int index, com.google.firestore.v1beta1.Document.Builder builderForValue) {
+      /** <code>repeated .google.firestore.v1.Document docs = 1;</code> */
+      public Builder addDocs(int index, com.google.firestore.v1.Document.Builder builderForValue) {
         if (docsBuilder_ == null) {
           ensureDocsIsMutable();
           docs_.add(index, builderForValue.build());
@@ -22407,9 +22390,9 @@ public final class TestDefinition {
         }
         return this;
       }
-      /** <code>repeated .google.firestore.v1beta1.Document docs = 1;</code> */
+      /** <code>repeated .google.firestore.v1.Document docs = 1;</code> */
       public Builder addAllDocs(
-          java.lang.Iterable<? extends com.google.firestore.v1beta1.Document> values) {
+          java.lang.Iterable<? extends com.google.firestore.v1.Document> values) {
         if (docsBuilder_ == null) {
           ensureDocsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, docs_);
@@ -22419,7 +22402,7 @@ public final class TestDefinition {
         }
         return this;
       }
-      /** <code>repeated .google.firestore.v1beta1.Document docs = 1;</code> */
+      /** <code>repeated .google.firestore.v1.Document docs = 1;</code> */
       public Builder clearDocs() {
         if (docsBuilder_ == null) {
           docs_ = java.util.Collections.emptyList();
@@ -22430,7 +22413,7 @@ public final class TestDefinition {
         }
         return this;
       }
-      /** <code>repeated .google.firestore.v1beta1.Document docs = 1;</code> */
+      /** <code>repeated .google.firestore.v1.Document docs = 1;</code> */
       public Builder removeDocs(int index) {
         if (docsBuilder_ == null) {
           ensureDocsIsMutable();
@@ -22441,20 +22424,20 @@ public final class TestDefinition {
         }
         return this;
       }
-      /** <code>repeated .google.firestore.v1beta1.Document docs = 1;</code> */
-      public com.google.firestore.v1beta1.Document.Builder getDocsBuilder(int index) {
+      /** <code>repeated .google.firestore.v1.Document docs = 1;</code> */
+      public com.google.firestore.v1.Document.Builder getDocsBuilder(int index) {
         return getDocsFieldBuilder().getBuilder(index);
       }
-      /** <code>repeated .google.firestore.v1beta1.Document docs = 1;</code> */
-      public com.google.firestore.v1beta1.DocumentOrBuilder getDocsOrBuilder(int index) {
+      /** <code>repeated .google.firestore.v1.Document docs = 1;</code> */
+      public com.google.firestore.v1.DocumentOrBuilder getDocsOrBuilder(int index) {
         if (docsBuilder_ == null) {
           return docs_.get(index);
         } else {
           return docsBuilder_.getMessageOrBuilder(index);
         }
       }
-      /** <code>repeated .google.firestore.v1beta1.Document docs = 1;</code> */
-      public java.util.List<? extends com.google.firestore.v1beta1.DocumentOrBuilder>
+      /** <code>repeated .google.firestore.v1.Document docs = 1;</code> */
+      public java.util.List<? extends com.google.firestore.v1.DocumentOrBuilder>
           getDocsOrBuilderList() {
         if (docsBuilder_ != null) {
           return docsBuilder_.getMessageOrBuilderList();
@@ -22462,32 +22445,32 @@ public final class TestDefinition {
           return java.util.Collections.unmodifiableList(docs_);
         }
       }
-      /** <code>repeated .google.firestore.v1beta1.Document docs = 1;</code> */
-      public com.google.firestore.v1beta1.Document.Builder addDocsBuilder() {
+      /** <code>repeated .google.firestore.v1.Document docs = 1;</code> */
+      public com.google.firestore.v1.Document.Builder addDocsBuilder() {
         return getDocsFieldBuilder()
-            .addBuilder(com.google.firestore.v1beta1.Document.getDefaultInstance());
+            .addBuilder(com.google.firestore.v1.Document.getDefaultInstance());
       }
-      /** <code>repeated .google.firestore.v1beta1.Document docs = 1;</code> */
-      public com.google.firestore.v1beta1.Document.Builder addDocsBuilder(int index) {
+      /** <code>repeated .google.firestore.v1.Document docs = 1;</code> */
+      public com.google.firestore.v1.Document.Builder addDocsBuilder(int index) {
         return getDocsFieldBuilder()
-            .addBuilder(index, com.google.firestore.v1beta1.Document.getDefaultInstance());
+            .addBuilder(index, com.google.firestore.v1.Document.getDefaultInstance());
       }
-      /** <code>repeated .google.firestore.v1beta1.Document docs = 1;</code> */
-      public java.util.List<com.google.firestore.v1beta1.Document.Builder> getDocsBuilderList() {
+      /** <code>repeated .google.firestore.v1.Document docs = 1;</code> */
+      public java.util.List<com.google.firestore.v1.Document.Builder> getDocsBuilderList() {
         return getDocsFieldBuilder().getBuilderList();
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-              com.google.firestore.v1beta1.Document,
-              com.google.firestore.v1beta1.Document.Builder,
-              com.google.firestore.v1beta1.DocumentOrBuilder>
+              com.google.firestore.v1.Document,
+              com.google.firestore.v1.Document.Builder,
+              com.google.firestore.v1.DocumentOrBuilder>
           getDocsFieldBuilder() {
         if (docsBuilder_ == null) {
           docsBuilder_ =
               new com.google.protobuf.RepeatedFieldBuilderV3<
-                  com.google.firestore.v1beta1.Document,
-                  com.google.firestore.v1beta1.Document.Builder,
-                  com.google.firestore.v1beta1.DocumentOrBuilder>(
+                  com.google.firestore.v1.Document,
+                  com.google.firestore.v1.Document.Builder,
+                  com.google.firestore.v1.DocumentOrBuilder>(
                   docs_,
                   ((bitField0_ & 0x00000001) == 0x00000001),
                   getParentForChildren(),
@@ -22890,12 +22873,12 @@ public final class TestDefinition {
     /** <code>.tests.DocChange.Kind kind = 1;</code> */
     com.google.cloud.firestore.conformance.TestDefinition.DocChange.Kind getKind();
 
-    /** <code>.google.firestore.v1beta1.Document doc = 2;</code> */
+    /** <code>.google.firestore.v1.Document doc = 2;</code> */
     boolean hasDoc();
-    /** <code>.google.firestore.v1beta1.Document doc = 2;</code> */
-    com.google.firestore.v1beta1.Document getDoc();
-    /** <code>.google.firestore.v1beta1.Document doc = 2;</code> */
-    com.google.firestore.v1beta1.DocumentOrBuilder getDocOrBuilder();
+    /** <code>.google.firestore.v1.Document doc = 2;</code> */
+    com.google.firestore.v1.Document getDoc();
+    /** <code>.google.firestore.v1.Document doc = 2;</code> */
+    com.google.firestore.v1.DocumentOrBuilder getDocOrBuilder();
 
     /** <code>int32 old_index = 3;</code> */
     int getOldIndex();
@@ -22960,13 +22943,12 @@ public final class TestDefinition {
               }
             case 18:
               {
-                com.google.firestore.v1beta1.Document.Builder subBuilder = null;
+                com.google.firestore.v1.Document.Builder subBuilder = null;
                 if (doc_ != null) {
                   subBuilder = doc_.toBuilder();
                 }
                 doc_ =
-                    input.readMessage(
-                        com.google.firestore.v1beta1.Document.parser(), extensionRegistry);
+                    input.readMessage(com.google.firestore.v1.Document.parser(), extensionRegistry);
                 if (subBuilder != null) {
                   subBuilder.mergeFrom(doc_);
                   doc_ = subBuilder.buildPartial();
@@ -23123,17 +23105,17 @@ public final class TestDefinition {
     }
 
     public static final int DOC_FIELD_NUMBER = 2;
-    private com.google.firestore.v1beta1.Document doc_;
-    /** <code>.google.firestore.v1beta1.Document doc = 2;</code> */
+    private com.google.firestore.v1.Document doc_;
+    /** <code>.google.firestore.v1.Document doc = 2;</code> */
     public boolean hasDoc() {
       return doc_ != null;
     }
-    /** <code>.google.firestore.v1beta1.Document doc = 2;</code> */
-    public com.google.firestore.v1beta1.Document getDoc() {
-      return doc_ == null ? com.google.firestore.v1beta1.Document.getDefaultInstance() : doc_;
+    /** <code>.google.firestore.v1.Document doc = 2;</code> */
+    public com.google.firestore.v1.Document getDoc() {
+      return doc_ == null ? com.google.firestore.v1.Document.getDefaultInstance() : doc_;
     }
-    /** <code>.google.firestore.v1beta1.Document doc = 2;</code> */
-    public com.google.firestore.v1beta1.DocumentOrBuilder getDocOrBuilder() {
+    /** <code>.google.firestore.v1.Document doc = 2;</code> */
+    public com.google.firestore.v1.DocumentOrBuilder getDocOrBuilder() {
       return getDoc();
     }
 
@@ -23552,26 +23534,26 @@ public final class TestDefinition {
         return this;
       }
 
-      private com.google.firestore.v1beta1.Document doc_ = null;
+      private com.google.firestore.v1.Document doc_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.firestore.v1beta1.Document,
-              com.google.firestore.v1beta1.Document.Builder,
-              com.google.firestore.v1beta1.DocumentOrBuilder>
+              com.google.firestore.v1.Document,
+              com.google.firestore.v1.Document.Builder,
+              com.google.firestore.v1.DocumentOrBuilder>
           docBuilder_;
-      /** <code>.google.firestore.v1beta1.Document doc = 2;</code> */
+      /** <code>.google.firestore.v1.Document doc = 2;</code> */
       public boolean hasDoc() {
         return docBuilder_ != null || doc_ != null;
       }
-      /** <code>.google.firestore.v1beta1.Document doc = 2;</code> */
-      public com.google.firestore.v1beta1.Document getDoc() {
+      /** <code>.google.firestore.v1.Document doc = 2;</code> */
+      public com.google.firestore.v1.Document getDoc() {
         if (docBuilder_ == null) {
-          return doc_ == null ? com.google.firestore.v1beta1.Document.getDefaultInstance() : doc_;
+          return doc_ == null ? com.google.firestore.v1.Document.getDefaultInstance() : doc_;
         } else {
           return docBuilder_.getMessage();
         }
       }
-      /** <code>.google.firestore.v1beta1.Document doc = 2;</code> */
-      public Builder setDoc(com.google.firestore.v1beta1.Document value) {
+      /** <code>.google.firestore.v1.Document doc = 2;</code> */
+      public Builder setDoc(com.google.firestore.v1.Document value) {
         if (docBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -23584,8 +23566,8 @@ public final class TestDefinition {
 
         return this;
       }
-      /** <code>.google.firestore.v1beta1.Document doc = 2;</code> */
-      public Builder setDoc(com.google.firestore.v1beta1.Document.Builder builderForValue) {
+      /** <code>.google.firestore.v1.Document doc = 2;</code> */
+      public Builder setDoc(com.google.firestore.v1.Document.Builder builderForValue) {
         if (docBuilder_ == null) {
           doc_ = builderForValue.build();
           onChanged();
@@ -23595,14 +23577,12 @@ public final class TestDefinition {
 
         return this;
       }
-      /** <code>.google.firestore.v1beta1.Document doc = 2;</code> */
-      public Builder mergeDoc(com.google.firestore.v1beta1.Document value) {
+      /** <code>.google.firestore.v1.Document doc = 2;</code> */
+      public Builder mergeDoc(com.google.firestore.v1.Document value) {
         if (docBuilder_ == null) {
           if (doc_ != null) {
             doc_ =
-                com.google.firestore.v1beta1.Document.newBuilder(doc_)
-                    .mergeFrom(value)
-                    .buildPartial();
+                com.google.firestore.v1.Document.newBuilder(doc_).mergeFrom(value).buildPartial();
           } else {
             doc_ = value;
           }
@@ -23613,7 +23593,7 @@ public final class TestDefinition {
 
         return this;
       }
-      /** <code>.google.firestore.v1beta1.Document doc = 2;</code> */
+      /** <code>.google.firestore.v1.Document doc = 2;</code> */
       public Builder clearDoc() {
         if (docBuilder_ == null) {
           doc_ = null;
@@ -23625,32 +23605,32 @@ public final class TestDefinition {
 
         return this;
       }
-      /** <code>.google.firestore.v1beta1.Document doc = 2;</code> */
-      public com.google.firestore.v1beta1.Document.Builder getDocBuilder() {
+      /** <code>.google.firestore.v1.Document doc = 2;</code> */
+      public com.google.firestore.v1.Document.Builder getDocBuilder() {
 
         onChanged();
         return getDocFieldBuilder().getBuilder();
       }
-      /** <code>.google.firestore.v1beta1.Document doc = 2;</code> */
-      public com.google.firestore.v1beta1.DocumentOrBuilder getDocOrBuilder() {
+      /** <code>.google.firestore.v1.Document doc = 2;</code> */
+      public com.google.firestore.v1.DocumentOrBuilder getDocOrBuilder() {
         if (docBuilder_ != null) {
           return docBuilder_.getMessageOrBuilder();
         } else {
-          return doc_ == null ? com.google.firestore.v1beta1.Document.getDefaultInstance() : doc_;
+          return doc_ == null ? com.google.firestore.v1.Document.getDefaultInstance() : doc_;
         }
       }
-      /** <code>.google.firestore.v1beta1.Document doc = 2;</code> */
+      /** <code>.google.firestore.v1.Document doc = 2;</code> */
       private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.firestore.v1beta1.Document,
-              com.google.firestore.v1beta1.Document.Builder,
-              com.google.firestore.v1beta1.DocumentOrBuilder>
+              com.google.firestore.v1.Document,
+              com.google.firestore.v1.Document.Builder,
+              com.google.firestore.v1.DocumentOrBuilder>
           getDocFieldBuilder() {
         if (docBuilder_ == null) {
           docBuilder_ =
               new com.google.protobuf.SingleFieldBuilderV3<
-                  com.google.firestore.v1beta1.Document,
-                  com.google.firestore.v1beta1.Document.Builder,
-                  com.google.firestore.v1beta1.DocumentOrBuilder>(
+                  com.google.firestore.v1.Document,
+                  com.google.firestore.v1.Document.Builder,
+                  com.google.firestore.v1.DocumentOrBuilder>(
                   getDoc(), getParentForChildren(), isClean());
           doc_ = null;
         }
@@ -23838,10 +23818,10 @@ public final class TestDefinition {
   static {
     java.lang.String[] descriptorData = {
       "\n\025test-definition.proto\022\005tests\032%google/f"
-          + "irestore/v1beta1/common.proto\032\'google/fi"
-          + "restore/v1beta1/document.proto\032(google/f"
-          + "irestore/v1beta1/firestore.proto\032$google"
-          + "/firestore/v1beta1/query.proto\032\037google/p"
+          + "irestore/v1/common.proto\032\'google/fi"
+          + "restore/v1/document.proto\032(google/f"
+          + "irestore/v1/firestore.proto\032$google"
+          + "/firestore/v1/query.proto\032\037google/p"
           + "rotobuf/timestamp.proto\"\'\n\tTestSuite\022\032\n\005"
           + "tests\030\001 \003(\0132\013.tests.Test\"\310\002\n\004Test\022\023\n\013des"
           + "cription\030\001 \001(\t\022\035\n\003get\030\002 \001(\0132\016.tests.GetT"
@@ -23853,28 +23833,28 @@ public final class TestDefinition {
           + "uery\030\010 \001(\0132\020.tests.QueryTestH\000\022#\n\006listen"
           + "\030\t \001(\0132\021.tests.ListenTestH\000B\006\n\004test\"^\n\007G"
           + "etTest\022\024\n\014doc_ref_path\030\001 \001(\t\022=\n\007request\030"
-          + "\002 \001(\0132,.google.firestore.v1beta1.GetDocu"
+          + "\002 \001(\0132,.google.firestore.v1.GetDocu"
           + "mentRequest\"\201\001\n\nCreateTest\022\024\n\014doc_ref_pa"
           + "th\030\001 \001(\t\022\021\n\tjson_data\030\002 \001(\t\0228\n\007request\030\003"
-          + " \001(\0132\'.google.firestore.v1beta1.CommitRe"
+          + " \001(\0132\'.google.firestore.v1.CommitRe"
           + "quest\022\020\n\010is_error\030\004 \001(\010\"\240\001\n\007SetTest\022\024\n\014d"
           + "oc_ref_path\030\001 \001(\t\022 \n\006option\030\002 \001(\0132\020.test"
           + "s.SetOption\022\021\n\tjson_data\030\003 \001(\t\0228\n\007reques"
-          + "t\030\004 \001(\0132\'.google.firestore.v1beta1.Commi"
+          + "t\030\004 \001(\0132\'.google.firestore.v1.Commi"
           + "tRequest\022\020\n\010is_error\030\005 \001(\010\"\277\001\n\nUpdateTes"
           + "t\022\024\n\014doc_ref_path\030\001 \001(\t\022<\n\014precondition\030"
-          + "\002 \001(\0132&.google.firestore.v1beta1.Precond"
+          + "\002 \001(\0132&.google.firestore.v1.Precond"
           + "ition\022\021\n\tjson_data\030\003 \001(\t\0228\n\007request\030\004 \001("
-          + "\0132\'.google.firestore.v1beta1.CommitReque"
+          + "\0132\'.google.firestore.v1.CommitReque"
           + "st\022\020\n\010is_error\030\005 \001(\010\"\355\001\n\017UpdatePathsTest"
           + "\022\024\n\014doc_ref_path\030\001 \001(\t\022<\n\014precondition\030\002"
-          + " \001(\0132&.google.firestore.v1beta1.Precondi"
+          + " \001(\0132&.google.firestore.v1.Precondi"
           + "tion\022%\n\013field_paths\030\003 \003(\0132\020.tests.FieldP"
           + "ath\022\023\n\013json_values\030\004 \003(\t\0228\n\007request\030\005 \001("
-          + "\0132\'.google.firestore.v1beta1.CommitReque"
+          + "\0132\'.google.firestore.v1.CommitReque"
           + "st\022\020\n\010is_error\030\006 \001(\010\"\254\001\n\nDeleteTest\022\024\n\014d"
           + "oc_ref_path\030\001 \001(\t\022<\n\014precondition\030\002 \001(\0132"
-          + "&.google.firestore.v1beta1.Precondition\022"
+          + "&.google.firestore.v1.Precondition\022"
           + "8\n\007request\030\003 \001(\0132\'.google.firestore.v1be"
           + "ta1.CommitRequest\022\020\n\010is_error\030\004 \001(\010\":\n\tS"
           + "etOption\022\013\n\003all\030\001 \001(\010\022 \n\006fields\030\002 \003(\0132\020."
@@ -23906,7 +23886,7 @@ public final class TestDefinition {
           + ".DocChange\022-\n\tread_time\030\003 \001(\0132\032.google.p"
           + "rotobuf.Timestamp\"\313\001\n\tDocChange\022#\n\004kind\030"
           + "\001 \001(\0162\025.tests.DocChange.Kind\022/\n\003doc\030\002 \001("
-          + "\0132\".google.firestore.v1beta1.Document\022\021\n"
+          + "\0132\".google.firestore.v1.Document\022\021\n"
           + "\told_index\030\003 \001(\005\022\021\n\tnew_index\030\004 \001(\005\"B\n\004K"
           + "ind\022\024\n\020KIND_UNSPECIFIED\020\000\022\t\n\005ADDED\020\001\022\013\n\007"
           + "REMOVED\020\002\022\014\n\010MODIFIED\020\003Bx\n&com.google.cl"
@@ -23925,10 +23905,10 @@ public final class TestDefinition {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.firestore.v1beta1.CommonProto.getDescriptor(),
-          com.google.firestore.v1beta1.DocumentProto.getDescriptor(),
-          com.google.firestore.v1beta1.FirestoreProto.getDescriptor(),
-          com.google.firestore.v1beta1.QueryProto.getDescriptor(),
+          com.google.firestore.v1.CommonProto.getDescriptor(),
+          com.google.firestore.v1.DocumentProto.getDescriptor(),
+          com.google.firestore.v1.FirestoreProto.getDescriptor(),
+          com.google.firestore.v1.QueryProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
         },
         assigner);
@@ -24090,10 +24070,10 @@ public final class TestDefinition {
             new java.lang.String[] {
               "Kind", "Doc", "OldIndex", "NewIndex",
             });
-    com.google.firestore.v1beta1.CommonProto.getDescriptor();
-    com.google.firestore.v1beta1.DocumentProto.getDescriptor();
-    com.google.firestore.v1beta1.FirestoreProto.getDescriptor();
-    com.google.firestore.v1beta1.QueryProto.getDescriptor();
+    com.google.firestore.v1.CommonProto.getDescriptor();
+    com.google.firestore.v1.DocumentProto.getDescriptor();
+    com.google.firestore.v1.FirestoreProto.getDescriptor();
+    com.google.firestore.v1.QueryProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 
