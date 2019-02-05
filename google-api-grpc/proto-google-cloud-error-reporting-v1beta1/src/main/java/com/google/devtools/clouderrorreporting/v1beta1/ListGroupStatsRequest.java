@@ -665,8 +665,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
     }
     if (alignment_
         != com.google.devtools.clouderrorreporting.v1beta1.TimedCountAlignment
-            .ERROR_COUNT_ALIGNMENT_UNSPECIFIED
-            .getNumber()) {
+            .ERROR_COUNT_ALIGNMENT_UNSPECIFIED.getNumber()) {
       output.writeEnum(7, alignment_);
     }
     if (alignmentTime_ != null) {
@@ -714,8 +713,7 @@ public final class ListGroupStatsRequest extends com.google.protobuf.GeneratedMe
     }
     if (alignment_
         != com.google.devtools.clouderrorreporting.v1beta1.TimedCountAlignment
-            .ERROR_COUNT_ALIGNMENT_UNSPECIFIED
-            .getNumber()) {
+            .ERROR_COUNT_ALIGNMENT_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, alignment_);
     }
     if (alignmentTime_ != null) {
