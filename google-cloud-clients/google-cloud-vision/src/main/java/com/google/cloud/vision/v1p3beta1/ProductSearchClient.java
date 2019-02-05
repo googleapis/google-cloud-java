@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2612,7 +2612,7 @@ public class ProductSearchClient implements BackgroundResource {
    *     .setParent(parent.toString())
    *     .setInputConfig(inputConfig)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = productSearchClient.importProductSetsOperationCallable().futureCall(request);
+   *   OperationFuture&lt;ImportProductSetsResponse, BatchOperationMetadata&gt; future = productSearchClient.importProductSetsOperationCallable().futureCall(request);
    *   // Do something
    *   ImportProductSetsResponse response = future.get();
    * }

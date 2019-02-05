@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,10 +42,10 @@
  * <pre>
  * <code>
  * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
- *   String formattedParent = ProductSearchClient.formatLocationName("[PROJECT]", "[LOCATION]");
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
  *   Product product = Product.newBuilder().build();
  *   String productId = "";
- *   Product response = productSearchClient.createProduct(formattedParent, product, productId);
+ *   Product response = productSearchClient.createProduct(parent, product, productId);
  * }
  * </code>
  * </pre>
