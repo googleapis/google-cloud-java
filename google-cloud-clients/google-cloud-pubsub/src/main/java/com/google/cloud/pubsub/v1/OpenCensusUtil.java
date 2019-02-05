@@ -54,16 +54,21 @@ final class OpenCensusUtil {
   private static final Tracer tracer = Tracing.getTracer();
 
   // Used in Publisher.
-  // TODO(dpo): add configuration support to control adding these attributes.
+  // TODO: consider adding configuration support to control adding these attributes.
   static PubsubMessage putOpenCensusAttributes(PubsubMessage message) {
-    return PubsubMessage.newBuilder(message)
-        .putAttributes(
-            TRACE_CONTEXT_KEY,
-            encodeSpanContext(tracer.getCurrentSpan().getContext()))
-        .putAttributes(
-            TAG_CONTEXT_KEY,
-            encodeTagContext(tagger.getCurrentTagContext()))
-        .build();
+    PubsubMessage.Builder builder = PubsubMessage.newBuilder(message);
+    String encodedSpanContext = encodeSpanContext(tracer.getCurrentSpan().getContext());
+    String encodedTagContext = encodeTagContext(tagger.getCurrentTagContext());
+    if (encodedSpanContext.isEmpty() && encodedTagContext.isEmpty()) {
+      return message;
+    }
+    if (!encodedSpanContext.isEmpty()) {
+      builder.putAttributes(TRACE_CONTEXT_KEY, encodedSpanContext);
+    }
+    if (!encodedTagContext.isEmpty()) {
+      builder.putAttributes(TAG_CONTEXT_KEY, encodedTagContext);
+    }
+    return builder.build();
   }
 
   // Used in Subscriber.
@@ -75,6 +80,9 @@ final class OpenCensusUtil {
     TraceId traceId = ctxt.getTraceId();
     SpanId spanId = ctxt.getSpanId();
     TraceOptions traceOpts = ctxt.getTraceOptions();
+    if (traceOpts.isSampled()) {
+      return "";
+    }
     return "traceid=" + traceId.toLowerBase16()
         + "&spanid=" + spanId.toLowerBase16()
         + "&traceopt=" + (traceOpts.isSampled() ? "t&" : "f&");
@@ -106,8 +114,6 @@ final class OpenCensusUtil {
     return tracer
         .spanBuilderWithExplicitParent(name, tracer.getCurrentSpan())
         .setRecordEvents(true)
-        // TODO(dpo): set to default.
-        .setSampler(Samplers.alwaysSample())
         .startScopedSpan();
   }
 
@@ -152,6 +158,7 @@ final class OpenCensusUtil {
     return encodedSpan.substring(start, end);
   }
 
+  // class
   private static final class OpenCensusMessageReceiver implements MessageReceiver {
     private final MessageReceiver receiver;
 
@@ -162,10 +169,22 @@ final class OpenCensusUtil {
     @Override
     public void receiveMessage(PubsubMessage message, AckReplyConsumer consumer) {
       String encodedTagContext = message.getAttributesOrDefault(TAG_CONTEXT_KEY, "");
+      if (encodedTagContext.isEmpty()) {
+        addTraceScope(message, consumer);
+        return;
+      }
+      try (Scope statsScope = createScopedTagContext(encodedTagContext)) {
+        addTraceScope(message, consumer);
+      }
+    }
+
+    private void addTraceScope(PubsubMessage message, AckReplyConsumer consumer) {
       String encodedSpanContext = message.getAttributesOrDefault(TRACE_CONTEXT_KEY, "");
-      try (
-          Scope spanScope = createScopedSpan("receiver");
-          Scope statsScope = createScopedTagContext(encodedTagContext)) {
+      if (encodedSpanContext.isEmpty()) {
+        receiver.receiveMessage(message, consumer);
+        return;
+      }
+      try (Scope spanScope = createScopedSpan("receiver")) {
         addParentLink(encodedSpanContext);
         receiver.receiveMessage(message, consumer);
       }

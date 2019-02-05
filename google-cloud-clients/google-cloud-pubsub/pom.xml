@@ -16,7 +16,6 @@
   </parent>
   <properties>
     <site.installationModule>google-cloud-pubsub</site.installationModule>
-    <opencensus.version>0.15.1</opencensus.version>
   </properties>
   <dependencies>
     <dependency>
