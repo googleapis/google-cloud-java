@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.addresses.list. Retrieves a list of addresses contained within
+ * the specified region.
+ */
 public final class ListAddressesHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

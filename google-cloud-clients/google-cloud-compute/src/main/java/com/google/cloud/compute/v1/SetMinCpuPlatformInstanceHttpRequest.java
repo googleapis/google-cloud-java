@@ -24,6 +24,11 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.instances.setMinCpuPlatform. Changes the minimum CPU platform
+ * that this instance should use. This method can only be called on a stopped instance. For more
+ * information, read Specifying a Minimum CPU Platform.
+ */
 public final class SetMinCpuPlatformInstanceHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

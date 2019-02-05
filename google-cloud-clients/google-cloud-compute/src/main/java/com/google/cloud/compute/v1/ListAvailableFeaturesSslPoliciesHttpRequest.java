@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.sslPolicies.listAvailableFeatures. Lists all features that can
+ * be specified in the SSL policy when using custom profile.
+ */
 public final class ListAvailableFeaturesSslPoliciesHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

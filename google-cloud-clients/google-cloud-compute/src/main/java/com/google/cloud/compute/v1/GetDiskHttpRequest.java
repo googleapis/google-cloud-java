@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.disks.get. Returns a specified persistent disk. Gets a list of
+ * available persistent disks by making a list() request.
+ */
 public final class GetDiskHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.backendBuckets.deleteSignedUrlKey. Deletes a key for validating
+ * requests with signed URLs for this backend bucket.
+ */
 public final class DeleteSignedUrlKeyBackendBucketHttpRequest implements ApiMessage {
   private final String access_token;
   private final String backendBucket;

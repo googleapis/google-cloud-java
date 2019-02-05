@@ -149,9 +149,10 @@ public final class ProjectGlobalForwardingRuleName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
-        "forwardingRule", forwardingRule,
-        "project", project);
+    return SERVICE_ADDRESS
+        + PATH_TEMPLATE.instantiate(
+            "forwardingRule", forwardingRule,
+            "project", project);
   }
 
   @Override

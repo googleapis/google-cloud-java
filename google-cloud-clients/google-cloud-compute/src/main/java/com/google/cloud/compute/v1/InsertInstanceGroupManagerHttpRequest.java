@@ -24,6 +24,16 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.instanceGroupManagers.insert. Creates a managed instance group
+ * using the information that you specify in the request. After the group is created, instances in
+ * the group are created using the specified instance template. This operation is marked as DONE
+ * when the group is created even if the instances in the group have not yet been created. You must
+ * separately verify the status of the individual instances with the listmanagedinstances method.
+ *
+ * <p>A managed instance group can have up to 1000 VM instances per group. Please contact Cloud
+ * Support if you need an increase in this limit.
+ */
 public final class InsertInstanceGroupManagerHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

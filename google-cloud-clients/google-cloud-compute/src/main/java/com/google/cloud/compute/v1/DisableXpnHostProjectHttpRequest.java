@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.projects.disableXpnHost. Disable this project as a shared VPC
+ * host project.
+ */
 public final class DisableXpnHostProjectHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

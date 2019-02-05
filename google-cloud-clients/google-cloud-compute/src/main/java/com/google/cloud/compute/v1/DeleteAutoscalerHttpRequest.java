@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Request object for method compute.autoscalers.delete. Deletes the specified autoscaler. */
 public final class DeleteAutoscalerHttpRequest implements ApiMessage {
   private final String access_token;
   private final String autoscaler;

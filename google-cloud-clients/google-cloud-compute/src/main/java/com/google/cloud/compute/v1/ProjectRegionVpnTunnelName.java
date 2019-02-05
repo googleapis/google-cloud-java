@@ -166,10 +166,11 @@ public final class ProjectRegionVpnTunnelName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
-        "project", project,
-        "region", region,
-        "vpnTunnel", vpnTunnel);
+    return SERVICE_ADDRESS
+        + PATH_TEMPLATE.instantiate(
+            "project", project,
+            "region", region,
+            "vpnTunnel", vpnTunnel);
   }
 
   @Override

@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.targetHttpsProxies.setUrlMap. Changes the URL map for
+ * TargetHttpsProxy.
+ */
 public final class SetUrlMapTargetHttpsProxyHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

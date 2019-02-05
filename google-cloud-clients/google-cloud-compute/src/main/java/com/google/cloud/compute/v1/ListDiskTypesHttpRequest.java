@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.diskTypes.list. Retrieves a list of disk types available to the
+ * specified project.
+ */
 public final class ListDiskTypesHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

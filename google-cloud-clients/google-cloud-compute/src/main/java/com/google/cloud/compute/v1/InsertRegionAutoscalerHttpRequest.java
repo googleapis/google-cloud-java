@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.regionAutoscalers.insert. Creates an autoscaler in the
+ * specified project using the data included in the request.
+ */
 public final class InsertRegionAutoscalerHttpRequest implements ApiMessage {
   private final String access_token;
   private final Autoscaler autoscalerResource;

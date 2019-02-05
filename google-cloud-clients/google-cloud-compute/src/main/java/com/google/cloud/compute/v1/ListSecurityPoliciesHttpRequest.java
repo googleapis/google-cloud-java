@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.securityPolicies.list. List all the policies that have been
+ * configured for the specified project.
+ */
 public final class ListSecurityPoliciesHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

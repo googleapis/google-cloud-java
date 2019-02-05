@@ -148,9 +148,10 @@ public final class ProjectGlobalLicenseName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
-        "license", license,
-        "project", project);
+    return SERVICE_ADDRESS
+        + PATH_TEMPLATE.instantiate(
+            "license", license,
+            "project", project);
   }
 
   @Override

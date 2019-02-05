@@ -130,7 +130,7 @@ public final class ProjectName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project);
+    return SERVICE_ADDRESS + PATH_TEMPLATE.instantiate("project", project);
   }
 
   @Override

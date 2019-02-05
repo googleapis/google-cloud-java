@@ -24,6 +24,9 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.acceleratorTypes.get. Returns the specified accelerator type.
+ */
 public final class GetAcceleratorTypeHttpRequest implements ApiMessage {
   private final String acceleratorType;
   private final String access_token;

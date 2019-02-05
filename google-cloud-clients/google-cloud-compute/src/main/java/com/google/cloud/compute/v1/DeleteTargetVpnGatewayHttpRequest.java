@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.targetVpnGateways.delete. Deletes the specified target VPN
+ * gateway.
+ */
 public final class DeleteTargetVpnGatewayHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

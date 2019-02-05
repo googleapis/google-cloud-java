@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Request object for method compute.licenses.get. Returns the specified License resource. */
 public final class GetLicenseHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

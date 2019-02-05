@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.regions.get. Returns the specified Region resource. Gets a list
+ * of available regions by making a list() request.
+ */
 public final class GetRegionHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

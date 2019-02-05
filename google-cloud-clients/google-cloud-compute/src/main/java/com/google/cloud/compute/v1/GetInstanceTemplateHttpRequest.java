@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.instanceTemplates.get. Returns the specified instance template.
+ * Gets a list of available instance templates by making a list() request.
+ */
 public final class GetInstanceTemplateHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

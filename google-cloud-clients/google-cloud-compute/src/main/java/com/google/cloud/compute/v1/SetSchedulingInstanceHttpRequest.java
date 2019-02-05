@@ -24,6 +24,9 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.instances.setScheduling. Sets an instance's scheduling options.
+ */
 public final class SetSchedulingInstanceHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

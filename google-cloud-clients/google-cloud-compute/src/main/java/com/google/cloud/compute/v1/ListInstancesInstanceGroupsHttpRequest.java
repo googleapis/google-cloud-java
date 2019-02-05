@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.instanceGroups.listInstances. Lists the instances in the
+ * specified instance group.
+ */
 public final class ListInstancesInstanceGroupsHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

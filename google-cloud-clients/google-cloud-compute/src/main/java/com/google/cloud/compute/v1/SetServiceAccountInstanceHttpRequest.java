@@ -24,6 +24,11 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.instances.setServiceAccount. Sets the service account on the
+ * instance. For more information, read Changing the service account and access scopes for an
+ * instance.
+ */
 public final class SetServiceAccountInstanceHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

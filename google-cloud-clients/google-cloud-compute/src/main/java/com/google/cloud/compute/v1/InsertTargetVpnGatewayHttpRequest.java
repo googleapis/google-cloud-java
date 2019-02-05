@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.targetVpnGateways.insert. Creates a target VPN gateway in the
+ * specified project and region using the data included in the request.
+ */
 public final class InsertTargetVpnGatewayHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

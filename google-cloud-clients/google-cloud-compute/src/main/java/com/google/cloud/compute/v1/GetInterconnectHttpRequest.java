@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.interconnects.get. Returns the specified interconnect. Get a
+ * list of available interconnects by making a list() request.
+ */
 public final class GetInterconnectHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.diskTypes.aggregatedList. Retrieves an aggregated list of disk
+ * types.
+ */
 public final class AggregatedListDiskTypesHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

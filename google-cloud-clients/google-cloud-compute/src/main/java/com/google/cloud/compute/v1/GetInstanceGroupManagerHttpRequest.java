@@ -24,6 +24,11 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.instanceGroupManagers.get. Returns all of the details about the
+ * specified managed instance group. Gets a list of available managed instance groups by making a
+ * list() request.
+ */
 public final class GetInstanceGroupManagerHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

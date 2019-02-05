@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.targetTcpProxies.setProxyHeader. Changes the ProxyHeaderType
+ * for TargetTcpProxy.
+ */
 public final class SetProxyHeaderTargetTcpProxyHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.routers.get. Returns the specified Router resource. Gets a list
+ * of available routers by making a list() request.
+ */
 public final class GetRouterHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

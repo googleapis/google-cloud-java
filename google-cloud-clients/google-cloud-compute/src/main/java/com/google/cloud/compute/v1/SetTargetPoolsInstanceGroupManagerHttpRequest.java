@@ -24,6 +24,14 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.instanceGroupManagers.setTargetPools. Modifies the target pools
+ * to which all instances in this managed instance group are assigned. The target pools
+ * automatically apply to all of the instances in the managed instance group. This operation is
+ * marked DONE when you make the request even if the instances have not yet been added to their
+ * target pools. The change might take some time to apply to all of the instances in the group
+ * depending on the size of the group.
+ */
 public final class SetTargetPoolsInstanceGroupManagerHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

@@ -24,6 +24,11 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.urlMaps.validate. Runs static validation for the UrlMap. In
+ * particular, the tests of the provided UrlMap will be run. Calling this method does NOT create the
+ * UrlMap.
+ */
 public final class ValidateUrlMapHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

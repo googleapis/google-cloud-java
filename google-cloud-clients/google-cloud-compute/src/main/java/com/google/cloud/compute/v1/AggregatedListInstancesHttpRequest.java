@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.instances.aggregatedList. Retrieves aggregated list of all of
+ * the instances in your project across all regions and zones.
+ */
 public final class AggregatedListInstancesHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

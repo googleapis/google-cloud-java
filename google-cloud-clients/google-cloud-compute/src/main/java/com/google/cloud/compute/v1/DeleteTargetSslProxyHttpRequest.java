@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.targetSslProxies.delete. Deletes the specified TargetSslProxy
+ * resource.
+ */
 public final class DeleteTargetSslProxyHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

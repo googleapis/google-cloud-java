@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.sslPolicies.list. Lists all the SSL policies that have been
+ * configured for the specified project.
+ */
 public final class ListSslPoliciesHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

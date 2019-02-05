@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.machineTypes.get. Returns the specified machine type. Gets a
+ * list of available machine types by making a list() request.
+ */
 public final class GetMachineTypeHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

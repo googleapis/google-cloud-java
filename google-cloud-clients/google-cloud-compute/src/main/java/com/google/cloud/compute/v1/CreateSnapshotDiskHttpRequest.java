@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.disks.createSnapshot. Creates a snapshot of a specified
+ * persistent disk.
+ */
 public final class CreateSnapshotDiskHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;
