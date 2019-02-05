@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.instanceGroupManagers.aggregatedList. Retrieves the list of
+ * managed instance groups and groups them by zone.
+ */
 public final class AggregatedListInstanceGroupManagersHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

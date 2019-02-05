@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.backendBuckets.insert. Creates a BackendBucket resource in the
+ * specified project using the data included in the request.
+ */
 public final class InsertBackendBucketHttpRequest implements ApiMessage {
   private final String access_token;
   private final BackendBucket backendBucketResource;

@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.nodeGroups.addNodes. Adds specified number of nodes to the node
+ * group.
+ */
 public final class AddNodesNodeGroupHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.sslCertificates.list. Retrieves the list of SslCertificate
+ * resources available to the specified project.
+ */
 public final class ListSslCertificatesHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

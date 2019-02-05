@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.targetTcpProxies.get. Returns the specified TargetTcpProxy
+ * resource. Gets a list of available target TCP proxies by making a list() request.
+ */
 public final class GetTargetTcpProxyHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

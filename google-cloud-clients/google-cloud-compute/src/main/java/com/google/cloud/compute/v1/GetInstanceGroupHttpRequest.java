@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.instanceGroups.get. Returns the specified instance group. Gets
+ * a list of available instance groups by making a list() request.
+ */
 public final class GetInstanceGroupHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

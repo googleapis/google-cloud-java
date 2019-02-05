@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.regionOperations.list. Retrieves a list of Operation resources
+ * contained within the specified region.
+ */
 public final class ListRegionOperationsHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

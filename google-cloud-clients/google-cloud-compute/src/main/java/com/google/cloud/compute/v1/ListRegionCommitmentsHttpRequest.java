@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.regionCommitments.list. Retrieves a list of commitments
+ * contained within the specified region.
+ */
 public final class ListRegionCommitmentsHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

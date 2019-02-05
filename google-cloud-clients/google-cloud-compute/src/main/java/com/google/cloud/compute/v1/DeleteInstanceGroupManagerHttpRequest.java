@@ -24,6 +24,11 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.instanceGroupManagers.delete. Deletes the specified managed
+ * instance group and all of the instances in that group. Note that the instance group must not
+ * belong to a backend service. Read Deleting an instance group for more information.
+ */
 public final class DeleteInstanceGroupManagerHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

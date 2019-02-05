@@ -148,9 +148,10 @@ public final class ProjectTargetHttpsProxyName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
-        "project", project,
-        "targetHttpsProxy", targetHttpsProxy);
+    return SERVICE_ADDRESS
+        + PATH_TEMPLATE.instantiate(
+            "project", project,
+            "targetHttpsProxy", targetHttpsProxy);
   }
 
   @Override

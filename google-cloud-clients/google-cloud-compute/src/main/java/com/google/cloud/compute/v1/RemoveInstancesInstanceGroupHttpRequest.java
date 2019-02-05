@@ -24,6 +24,14 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.instanceGroups.removeInstances. Removes one or more instances
+ * from the specified instance group, but does not delete those instances.
+ *
+ * <p>If the group is part of a backend service that has enabled connection draining, it can take up
+ * to 60 seconds after the connection draining duration before the VM instance is removed or
+ * deleted.
+ */
 public final class RemoveInstancesInstanceGroupHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

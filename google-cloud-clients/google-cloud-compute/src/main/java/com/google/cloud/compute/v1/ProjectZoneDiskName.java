@@ -166,10 +166,11 @@ public final class ProjectZoneDiskName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
-        "disk", disk,
-        "project", project,
-        "zone", zone);
+    return SERVICE_ADDRESS
+        + PATH_TEMPLATE.instantiate(
+            "disk", disk,
+            "project", project,
+            "zone", zone);
   }
 
   @Override

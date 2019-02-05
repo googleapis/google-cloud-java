@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.regionDisks.insert. Creates a persistent regional disk in the
+ * specified project using the data included in the request.
+ */
 public final class InsertRegionDiskHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

@@ -25,6 +25,12 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.subnetworks.patch. Patches the specified subnetwork with the
+ * data included in the request. Only certain fields can up updated with a patch request as
+ * indicated in the field descriptions. You must specify the current fingeprint of the subnetwork
+ * resource being patched.
+ */
 public final class PatchSubnetworkHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

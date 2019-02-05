@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.sslPolicies.get. Lists all of the ordered rules present in a
+ * single specified policy.
+ */
 public final class GetSslPolicyHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

@@ -24,6 +24,11 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.disks.delete. Deletes the specified persistent disk. Deleting a
+ * disk removes its data permanently and is irreversible. However, deleting a disk does not delete
+ * any snapshots previously made from the disk. You must separately delete snapshots.
+ */
 public final class DeleteDiskHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

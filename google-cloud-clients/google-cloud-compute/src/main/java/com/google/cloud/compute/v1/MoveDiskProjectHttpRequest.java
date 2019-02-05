@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.projects.moveDisk. Moves a persistent disk from one zone to
+ * another.
+ */
 public final class MoveDiskProjectHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

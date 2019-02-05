@@ -24,6 +24,11 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.nodeGroups.get. Returns the specified NodeGroup. Get a list of
+ * available NodeGroups by making a list() request. Note: the "nodes" field should not be used. Use
+ * nodeGroups.listNodes instead.
+ */
 public final class GetNodeGroupHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

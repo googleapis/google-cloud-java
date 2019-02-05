@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.networks.switchToCustomMode. Switches the network mode from
+ * auto subnet mode to custom subnet mode.
+ */
 public final class SwitchToCustomModeNetworkHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

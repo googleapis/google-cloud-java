@@ -24,6 +24,9 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.networks.addPeering. Adds a peering to the specified network.
+ */
 public final class AddPeeringNetworkHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

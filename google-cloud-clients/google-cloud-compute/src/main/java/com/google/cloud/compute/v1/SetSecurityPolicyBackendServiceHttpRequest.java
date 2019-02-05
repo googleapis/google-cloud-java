@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.backendServices.setSecurityPolicy. Sets the security policy for
+ * the specified backend service.
+ */
 public final class SetSecurityPolicyBackendServiceHttpRequest implements ApiMessage {
   private final String access_token;
   private final String backendService;

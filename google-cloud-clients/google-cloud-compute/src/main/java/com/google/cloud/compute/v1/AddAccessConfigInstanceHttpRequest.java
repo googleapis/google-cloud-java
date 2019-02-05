@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.instances.addAccessConfig. Adds an access config to an
+ * instance's network interface.
+ */
 public final class AddAccessConfigInstanceHttpRequest implements ApiMessage {
   private final AccessConfig accessConfigResource;
   private final String access_token;

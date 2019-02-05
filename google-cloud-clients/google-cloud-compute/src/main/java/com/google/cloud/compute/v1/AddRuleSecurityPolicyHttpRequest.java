@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.securityPolicies.addRule. Inserts a rule into a security
+ * policy.
+ */
 public final class AddRuleSecurityPolicyHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

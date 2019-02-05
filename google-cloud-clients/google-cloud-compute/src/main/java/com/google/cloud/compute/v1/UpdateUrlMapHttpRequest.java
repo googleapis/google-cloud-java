@@ -25,6 +25,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.urlMaps.update. Updates the specified UrlMap resource with the
+ * data included in the request.
+ */
 public final class UpdateUrlMapHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

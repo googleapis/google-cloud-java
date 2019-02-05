@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.targetHttpsProxies.list. Retrieves the list of TargetHttpsProxy
+ * resources available to the specified project.
+ */
 public final class ListTargetHttpsProxiesHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

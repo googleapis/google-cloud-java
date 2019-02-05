@@ -24,6 +24,12 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.regionDisks.delete. Deletes the specified regional persistent
+ * disk. Deleting a regional disk removes all the replicas of its data permanently and is
+ * irreversible. However, deleting a disk does not delete any snapshots previously made from the
+ * disk. You must separately delete snapshots.
+ */
 public final class DeleteRegionDiskHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

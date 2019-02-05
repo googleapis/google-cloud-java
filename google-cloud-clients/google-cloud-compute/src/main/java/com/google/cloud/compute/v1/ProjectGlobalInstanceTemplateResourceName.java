@@ -150,9 +150,10 @@ public final class ProjectGlobalInstanceTemplateResourceName implements Resource
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
-        "project", project,
-        "resource", resource);
+    return SERVICE_ADDRESS
+        + PATH_TEMPLATE.instantiate(
+            "project", project,
+            "resource", resource);
   }
 
   @Override

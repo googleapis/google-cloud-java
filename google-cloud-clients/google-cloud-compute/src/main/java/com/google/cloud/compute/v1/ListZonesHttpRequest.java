@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.zones.list. Retrieves the list of Zone resources available to
+ * the specified project.
+ */
 public final class ListZonesHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

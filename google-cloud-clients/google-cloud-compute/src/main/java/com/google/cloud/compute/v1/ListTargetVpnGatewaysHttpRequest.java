@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.targetVpnGateways.list. Retrieves a list of target VPN gateways
+ * available to the specified project and region.
+ */
 public final class ListTargetVpnGatewaysHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

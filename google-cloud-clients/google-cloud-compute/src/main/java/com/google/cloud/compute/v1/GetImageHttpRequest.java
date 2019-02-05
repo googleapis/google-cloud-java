@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.images.get. Returns the specified image. Gets a list of
+ * available images by making a list() request.
+ */
 public final class GetImageHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

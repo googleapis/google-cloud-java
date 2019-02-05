@@ -24,6 +24,27 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.instanceGroupManagers.resize. Resizes the managed instance
+ * group. If you increase the size, the group creates new instances using the current instance
+ * template. If you decrease the size, the group deletes instances. The resize operation is marked
+ * DONE when the resize actions are scheduled even if the group has not yet added or deleted any
+ * instances. You must separately verify the status of the creating or deleting actions with the
+ * listmanagedinstances method.
+ *
+ * <p>When resizing down, the instance group arbitrarily chooses the order in which VMs are deleted.
+ * The group takes into account some VM attributes when making the selection including:
+ *
+ * <p>+ The status of the VM instance. + The health of the VM instance. + The instance template
+ * version the VM is based on. + For regional managed instance groups, the location of the VM
+ * instance.
+ *
+ * <p>This list is subject to change.
+ *
+ * <p>If the group is part of a backend service that has enabled connection draining, it can take up
+ * to 60 seconds after the connection draining duration has elapsed before the VM instance is
+ * removed or deleted.
+ */
 public final class ResizeInstanceGroupManagerHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

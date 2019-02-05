@@ -24,6 +24,20 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.instanceGroupManagers.deleteInstances. Flags the specified
+ * instances in the managed instance group for immediate deletion. The instances are also removed
+ * from any target pools of which they were a member. This method reduces the targetSize of the
+ * managed instance group by the number of instances that you delete. This operation is marked as
+ * DONE when the action is scheduled even if the instances are still being deleted. You must
+ * separately verify the status of the deleting action with the listmanagedinstances method.
+ *
+ * <p>If the group is part of a backend service that has enabled connection draining, it can take up
+ * to 60 seconds after the connection draining duration has elapsed before the VM instance is
+ * removed or deleted.
+ *
+ * <p>You can specify a maximum of 1000 instances with this method per request.
+ */
 public final class DeleteInstancesInstanceGroupManagerHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.sslPolicies.insert. Returns the specified SSL policy resource.
+ * Gets a list of available SSL policies by making a list() request.
+ */
 public final class InsertSslPolicyHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

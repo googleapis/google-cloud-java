@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.instances.get. Returns the specified Instance resource. Gets a
+ * list of available instances by making a list() request.
+ */
 public final class GetInstanceHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

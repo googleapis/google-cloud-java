@@ -25,6 +25,11 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.firewalls.update. Updates the specified firewall rule with the
+ * data included in the request. The PUT method can only update the following fields of firewall
+ * rule: allowed, description, sourceRanges, sourceTags, targetTags.
+ */
 public final class UpdateFirewallHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

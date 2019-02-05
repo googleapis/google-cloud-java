@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.regionDisks.list. Retrieves the list of persistent disks
+ * contained within the specified region.
+ */
 public final class ListRegionDisksHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

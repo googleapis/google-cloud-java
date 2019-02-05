@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.nodeTemplates.delete. Deletes the specified NodeTemplate
+ * resource.
+ */
 public final class DeleteNodeTemplateHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

@@ -24,6 +24,16 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.regionInstanceGroupManagers.insert. Creates a managed instance
+ * group using the information that you specify in the request. After the group is created,
+ * instances in the group are created using the specified instance template. This operation is
+ * marked as DONE when the group is created even if the instances in the group have not yet been
+ * created. You must separately verify the status of the individual instances with the
+ * listmanagedinstances method.
+ *
+ * <p>A regional managed instance group can contain up to 2000 instances.
+ */
 public final class InsertRegionInstanceGroupManagerHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.httpHealthChecks.list. Retrieves the list of HttpHealthCheck
+ * resources available to the specified project.
+ */
 public final class ListHttpHealthChecksHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

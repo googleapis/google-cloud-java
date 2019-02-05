@@ -148,9 +148,10 @@ public final class ProjectGlobalUrlMapName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
-        "project", project,
-        "urlMap", urlMap);
+    return SERVICE_ADDRESS
+        + PATH_TEMPLATE.instantiate(
+            "project", project,
+            "urlMap", urlMap);
   }
 
   @Override

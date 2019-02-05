@@ -24,6 +24,12 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.backendServices.insert. Creates a BackendService resource in
+ * the specified project using the data included in the request. There are several restrictions and
+ * guidelines to keep in mind when creating a backend service. Read Restrictions and Guidelines for
+ * more information.
+ */
 public final class InsertBackendServiceHttpRequest implements ApiMessage {
   private final String access_token;
   private final BackendService backendServiceResource;

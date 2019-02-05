@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.machineTypes.aggregatedList. Retrieves an aggregated list of
+ * machine types.
+ */
 public final class AggregatedListMachineTypesHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

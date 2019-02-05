@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.targetInstances.aggregatedList. Retrieves an aggregated list of
+ * target instances.
+ */
 public final class AggregatedListTargetInstancesHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;
