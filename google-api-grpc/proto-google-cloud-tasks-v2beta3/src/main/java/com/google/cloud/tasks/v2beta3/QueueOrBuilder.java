@@ -61,8 +61,8 @@ public interface QueueOrBuilder
    *
    *
    * <pre>
-   * App Engine HTTP queue.
-   * An App Engine queue is a queue that has an [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] type.
+   * [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] settings apply only to
+   * [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest] in this queue.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
@@ -72,8 +72,8 @@ public interface QueueOrBuilder
    *
    *
    * <pre>
-   * App Engine HTTP queue.
-   * An App Engine queue is a queue that has an [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] type.
+   * [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] settings apply only to
+   * [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest] in this queue.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
@@ -83,8 +83,8 @@ public interface QueueOrBuilder
    *
    *
    * <pre>
-   * App Engine HTTP queue.
-   * An App Engine queue is a queue that has an [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] type.
+   * [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] settings apply only to
+   * [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest] in this queue.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
@@ -96,10 +96,9 @@ public interface QueueOrBuilder
    *
    * <pre>
    * Rate limits for task dispatches.
-   * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and
-   * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related because they both
-   * control task attempts however they control how tasks are
-   * attempted in different ways:
+   * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are
+   * related because they both control task attempts. However they control task
+   * attempts in different ways:
    * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the total rate of
    *   dispatches from a queue (i.e. all traffic dispatched from the
    *   queue, regardless of whether the dispatch is from a first
@@ -108,6 +107,14 @@ public interface QueueOrBuilder
    *   particular a task after its first attempt fails. That is,
    *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls task retries (the
    *   second attempt, third attempt, etc).
+   * The queue's actual dispatch rate is the result of:
+   * * Number of tasks in the queue
+   * * User-specified throttling: [rate limits][Queue.RateLimits]
+   *   [retry configuration][Queue.RetryConfig], and the
+   *   [queue's state][google.cloud.tasks.v2beta3.Queue.state].
+   * * System throttling due to `429` (Too Many Requests) or `503` (Service
+   *   Unavailable) responses from the worker, high error rates, or to smooth
+   *   sudden large traffic spikes.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.RateLimits rate_limits = 4;</code>
@@ -118,10 +125,9 @@ public interface QueueOrBuilder
    *
    * <pre>
    * Rate limits for task dispatches.
-   * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and
-   * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related because they both
-   * control task attempts however they control how tasks are
-   * attempted in different ways:
+   * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are
+   * related because they both control task attempts. However they control task
+   * attempts in different ways:
    * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the total rate of
    *   dispatches from a queue (i.e. all traffic dispatched from the
    *   queue, regardless of whether the dispatch is from a first
@@ -130,6 +136,14 @@ public interface QueueOrBuilder
    *   particular a task after its first attempt fails. That is,
    *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls task retries (the
    *   second attempt, third attempt, etc).
+   * The queue's actual dispatch rate is the result of:
+   * * Number of tasks in the queue
+   * * User-specified throttling: [rate limits][Queue.RateLimits]
+   *   [retry configuration][Queue.RetryConfig], and the
+   *   [queue's state][google.cloud.tasks.v2beta3.Queue.state].
+   * * System throttling due to `429` (Too Many Requests) or `503` (Service
+   *   Unavailable) responses from the worker, high error rates, or to smooth
+   *   sudden large traffic spikes.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.RateLimits rate_limits = 4;</code>
@@ -140,10 +154,9 @@ public interface QueueOrBuilder
    *
    * <pre>
    * Rate limits for task dispatches.
-   * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and
-   * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related because they both
-   * control task attempts however they control how tasks are
-   * attempted in different ways:
+   * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are
+   * related because they both control task attempts. However they control task
+   * attempts in different ways:
    * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the total rate of
    *   dispatches from a queue (i.e. all traffic dispatched from the
    *   queue, regardless of whether the dispatch is from a first
@@ -152,6 +165,14 @@ public interface QueueOrBuilder
    *   particular a task after its first attempt fails. That is,
    *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls task retries (the
    *   second attempt, third attempt, etc).
+   * The queue's actual dispatch rate is the result of:
+   * * Number of tasks in the queue
+   * * User-specified throttling: [rate limits][Queue.RateLimits]
+   *   [retry configuration][Queue.RetryConfig], and the
+   *   [queue's state][google.cloud.tasks.v2beta3.Queue.state].
+   * * System throttling due to `429` (Too Many Requests) or `503` (Service
+   *   Unavailable) responses from the worker, high error rates, or to smooth
+   *   sudden large traffic spikes.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.RateLimits rate_limits = 4;</code>
