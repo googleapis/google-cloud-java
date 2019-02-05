@@ -54,6 +54,25 @@ public interface RecognitionConfigOrBuilder
    *
    *
    * <pre>
+   * *Optional* The number of channels in the input audio data.
+   * ONLY set this for MULTI-CHANNEL recognition.
+   * Valid values for LINEAR16 and FLAC are `1`-`8`.
+   * Valid values for OGG_OPUS are '1'-'254'.
+   * Valid value for MULAW, AMR, AMR_WB and SPEEX_WITH_HEADER_BYTE is only `1`.
+   * If `0` or omitted, defaults to one channel (mono).
+   * Note: We only recognize the first channel by default.
+   * To perform independent recognition on each channel set
+   * `enable_separate_recognition_per_channel` to 'true'.
+   * </pre>
+   *
+   * <code>int32 audio_channel_count = 7;</code>
+   */
+  int getAudioChannelCount();
+
+  /**
+   *
+   *
+   * <pre>
    * This needs to be set to `true` explicitly and `audio_channel_count` &gt; 1
    * to get each channel recognized separately. The recognition result will
    * contain a `channel_tag` field to state which channel that result belongs
