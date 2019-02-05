@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.targetInstances.insert. Creates a TargetInstance resource in
+ * the specified project and zone using the data included in the request.
+ */
 public final class InsertTargetInstanceHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

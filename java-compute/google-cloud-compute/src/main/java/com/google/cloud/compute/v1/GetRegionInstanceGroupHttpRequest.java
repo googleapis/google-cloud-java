@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.regionInstanceGroups.get. Returns the specified instance group
+ * resource.
+ */
 public final class GetRegionInstanceGroupHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

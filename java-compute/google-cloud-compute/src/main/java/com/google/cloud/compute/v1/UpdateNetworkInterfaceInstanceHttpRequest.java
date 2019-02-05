@@ -25,6 +25,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.instances.updateNetworkInterface. Updates an instance's network
+ * interface. This method follows PATCH semantics.
+ */
 public final class UpdateNetworkInterfaceInstanceHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

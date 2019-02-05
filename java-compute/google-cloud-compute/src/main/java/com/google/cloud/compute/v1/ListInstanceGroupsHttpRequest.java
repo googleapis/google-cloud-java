@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.instanceGroups.list. Retrieves the list of instance groups that
+ * are located in the specified project and zone.
+ */
 public final class ListInstanceGroupsHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

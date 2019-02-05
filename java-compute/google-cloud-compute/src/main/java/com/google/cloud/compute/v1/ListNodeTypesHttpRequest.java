@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.nodeTypes.list. Retrieves a list of node types available to the
+ * specified project.
+ */
 public final class ListNodeTypesHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

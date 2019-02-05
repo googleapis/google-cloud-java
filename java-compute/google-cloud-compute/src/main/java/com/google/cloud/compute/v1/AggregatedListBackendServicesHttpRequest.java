@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.backendServices.aggregatedList. Retrieves the list of all
+ * BackendService resources, regional and global, available to the specified project.
+ */
 public final class AggregatedListBackendServicesHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

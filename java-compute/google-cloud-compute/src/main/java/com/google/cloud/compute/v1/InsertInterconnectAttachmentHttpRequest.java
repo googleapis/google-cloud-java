@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.interconnectAttachments.insert. Creates an
+ * InterconnectAttachment in the specified project using the data included in the request.
+ */
 public final class InsertInterconnectAttachmentHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

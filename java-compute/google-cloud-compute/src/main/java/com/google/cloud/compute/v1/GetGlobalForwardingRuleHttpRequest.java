@@ -24,6 +24,11 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.globalForwardingRules.get. Returns the specified
+ * GlobalForwardingRule resource. Gets a list of available forwarding rules by making a list()
+ * request.
+ */
 public final class GetGlobalForwardingRuleHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

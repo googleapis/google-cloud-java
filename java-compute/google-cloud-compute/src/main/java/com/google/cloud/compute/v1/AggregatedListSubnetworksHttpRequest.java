@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.subnetworks.aggregatedList. Retrieves an aggregated list of
+ * subnetworks.
+ */
 public final class AggregatedListSubnetworksHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

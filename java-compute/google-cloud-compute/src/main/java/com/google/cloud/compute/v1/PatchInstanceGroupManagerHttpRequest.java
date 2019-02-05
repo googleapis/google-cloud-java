@@ -25,6 +25,14 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.instanceGroupManagers.patch. Updates a managed instance group
+ * using the information that you specify in the request. This operation is marked as DONE when the
+ * group is patched even if the instances in the group are still in the process of being patched.
+ * You must separately verify the status of the individual instances with the listManagedInstances
+ * method. This method supports PATCH semantics and uses the JSON merge patch format and processing
+ * rules.
+ */
 public final class PatchInstanceGroupManagerHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

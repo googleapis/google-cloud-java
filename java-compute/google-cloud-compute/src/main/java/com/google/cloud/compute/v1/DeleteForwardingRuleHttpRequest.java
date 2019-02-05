@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.forwardingRules.delete. Deletes the specified ForwardingRule
+ * resource.
+ */
 public final class DeleteForwardingRuleHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.targetSslProxies.insert. Creates a TargetSslProxy resource in
+ * the specified project using the data included in the request.
+ */
 public final class InsertTargetSslProxyHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

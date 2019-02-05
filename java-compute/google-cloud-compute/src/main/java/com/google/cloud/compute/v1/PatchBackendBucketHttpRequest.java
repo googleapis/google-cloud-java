@@ -25,6 +25,11 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.backendBuckets.patch. Updates the specified BackendBucket
+ * resource with the data included in the request. This method supports PATCH semantics and uses the
+ * JSON merge patch format and processing rules.
+ */
 public final class PatchBackendBucketHttpRequest implements ApiMessage {
   private final String access_token;
   private final String backendBucket;

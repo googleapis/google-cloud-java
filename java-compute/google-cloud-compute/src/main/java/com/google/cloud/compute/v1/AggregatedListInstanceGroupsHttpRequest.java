@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.instanceGroups.aggregatedList. Retrieves the list of instance
+ * groups and sorts them by zone.
+ */
 public final class AggregatedListInstanceGroupsHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

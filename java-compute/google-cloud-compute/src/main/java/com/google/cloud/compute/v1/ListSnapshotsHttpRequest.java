@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.snapshots.list. Retrieves the list of Snapshot resources
+ * contained within the specified project.
+ */
 public final class ListSnapshotsHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

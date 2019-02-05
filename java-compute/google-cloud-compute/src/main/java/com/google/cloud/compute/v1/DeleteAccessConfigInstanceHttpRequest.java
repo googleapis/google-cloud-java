@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.instances.deleteAccessConfig. Deletes an access config from an
+ * instance's network interface.
+ */
 public final class DeleteAccessConfigInstanceHttpRequest implements ApiMessage {
   private final String accessConfig;
   private final String access_token;

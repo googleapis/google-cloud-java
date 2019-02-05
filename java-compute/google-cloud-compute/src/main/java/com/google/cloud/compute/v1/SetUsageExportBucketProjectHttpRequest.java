@@ -24,6 +24,11 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.projects.setUsageExportBucket. Enables the usage export feature
+ * and sets the usage export bucket where reports are stored. If you provide an empty request body
+ * using this method, the usage export feature will be disabled.
+ */
 public final class SetUsageExportBucketProjectHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

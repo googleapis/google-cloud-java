@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.images.getFromFamily. Returns the latest image that is part of
+ * an image family and is not deprecated.
+ */
 public final class GetFromFamilyImageHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

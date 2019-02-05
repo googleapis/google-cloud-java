@@ -25,6 +25,11 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.httpsHealthChecks.patch. Updates a HttpsHealthCheck resource in
+ * the specified project using the data included in the request. This method supports PATCH
+ * semantics and uses the JSON merge patch format and processing rules.
+ */
 public final class PatchHttpsHealthCheckHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

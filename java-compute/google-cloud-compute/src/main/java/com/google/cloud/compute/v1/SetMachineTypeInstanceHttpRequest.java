@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.instances.setMachineType. Changes the machine type for a
+ * stopped instance to the machine type specified in the request.
+ */
 public final class SetMachineTypeInstanceHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.regionDiskTypes.get. Returns the specified regional disk type.
+ * Gets a list of available disk types by making a list() request.
+ */
 public final class GetRegionDiskTypeHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

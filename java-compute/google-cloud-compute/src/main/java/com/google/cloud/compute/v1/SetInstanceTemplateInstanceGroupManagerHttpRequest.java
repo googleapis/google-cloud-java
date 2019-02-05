@@ -24,6 +24,11 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.instanceGroupManagers.setInstanceTemplate. Specifies the
+ * instance template to use when creating new instances in this group. The templates for existing
+ * instances in the group do not change unless you recreate them.
+ */
 public final class SetInstanceTemplateInstanceGroupManagerHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

@@ -24,6 +24,21 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.instanceGroupManagers.abandonInstances. Flags the specified
+ * instances to be removed from the managed instance group. Abandoning an instance does not delete
+ * the instance, but it does remove the instance from any target pools that are applied by the
+ * managed instance group. This method reduces the targetSize of the managed instance group by the
+ * number of instances that you abandon. This operation is marked as DONE when the action is
+ * scheduled even if the instances have not yet been removed from the group. You must separately
+ * verify the status of the abandoning action with the listmanagedinstances method.
+ *
+ * <p>If the group is part of a backend service that has enabled connection draining, it can take up
+ * to 60 seconds after the connection draining duration has elapsed before the VM instance is
+ * removed or deleted.
+ *
+ * <p>You can specify a maximum of 1000 instances with this method per request.
+ */
 public final class AbandonInstancesInstanceGroupManagerHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

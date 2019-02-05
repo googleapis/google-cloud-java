@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.instances.setDiskAutoDelete. Sets the auto-delete flag for a
+ * disk attached to an instance.
+ */
 public final class SetDiskAutoDeleteInstanceHttpRequest implements ApiMessage {
   private final String access_token;
   private final Boolean autoDelete;

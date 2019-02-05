@@ -25,6 +25,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.networks.patch. Patches the specified network with the data
+ * included in the request. Only the following fields can be modified: routingConfig.routingMode.
+ */
 public final class PatchNetworkHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

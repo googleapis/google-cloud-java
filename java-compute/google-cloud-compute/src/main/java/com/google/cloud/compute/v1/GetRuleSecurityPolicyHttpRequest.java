@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.securityPolicies.getRule. Gets a rule at the specified
+ * priority.
+ */
 public final class GetRuleSecurityPolicyHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

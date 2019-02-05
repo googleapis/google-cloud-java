@@ -24,6 +24,11 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.subnetworks.setPrivateIpGoogleAccess. Set whether VMs in this
+ * subnet can access Google services without assigning external IP addresses through Private Google
+ * Access.
+ */
 public final class SetPrivateIpGoogleAccessSubnetworkHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

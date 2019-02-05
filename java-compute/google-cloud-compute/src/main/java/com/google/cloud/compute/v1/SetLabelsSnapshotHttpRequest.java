@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.snapshots.setLabels. Sets the labels on a snapshot. To learn
+ * more about labels, read the Labeling Resources documentation.
+ */
 public final class SetLabelsSnapshotHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

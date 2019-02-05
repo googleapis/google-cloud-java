@@ -24,6 +24,13 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.instances.stop. Stops a running instance, shutting it down
+ * cleanly, and allows you to restart the instance at a later time. Stopped instances do not incur
+ * VM usage charges while they are stopped. However, resources that the VM is using, such as
+ * persistent disks and static IP addresses, will continue to be charged until they are deleted. For
+ * more information, see Stopping an instance.
+ */
 public final class StopInstanceHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

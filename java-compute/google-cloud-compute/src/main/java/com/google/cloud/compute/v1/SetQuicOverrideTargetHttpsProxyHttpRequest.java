@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.targetHttpsProxies.setQuicOverride. Sets the QUIC override
+ * policy for TargetHttpsProxy.
+ */
 public final class SetQuicOverrideTargetHttpsProxyHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

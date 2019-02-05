@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.regionOperations.get. Retrieves the specified region-specific
+ * Operations resource.
+ */
 public final class GetRegionOperationHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

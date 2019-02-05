@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.projects.setCommonInstanceMetadata. Sets metadata common to all
+ * instances within the specified project using the data included in the request.
+ */
 public final class SetCommonInstanceMetadataProjectHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

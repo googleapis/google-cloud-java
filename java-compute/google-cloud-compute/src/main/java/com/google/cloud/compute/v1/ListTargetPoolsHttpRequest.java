@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.targetPools.list. Retrieves a list of target pools available to
+ * the specified project and region.
+ */
 public final class ListTargetPoolsHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

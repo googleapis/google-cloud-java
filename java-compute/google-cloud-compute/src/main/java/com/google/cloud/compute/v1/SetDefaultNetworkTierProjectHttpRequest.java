@@ -24,6 +24,11 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.projects.setDefaultNetworkTier. Sets the default network tier
+ * of the project. The default network tier is used when an address/forwardingRule/instance is
+ * created without specifying the network tier field.
+ */
 public final class SetDefaultNetworkTierProjectHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;
