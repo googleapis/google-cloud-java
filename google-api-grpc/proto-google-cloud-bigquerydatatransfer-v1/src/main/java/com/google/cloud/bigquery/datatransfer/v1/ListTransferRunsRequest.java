@@ -536,8 +536,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
     }
     if (runAttempt_
         != com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest.RunAttempt
-            .RUN_ATTEMPT_UNSPECIFIED
-            .getNumber()) {
+            .RUN_ATTEMPT_UNSPECIFIED.getNumber()) {
       output.writeEnum(5, runAttempt_);
     }
     unknownFields.writeTo(output);
@@ -572,8 +571,7 @@ public final class ListTransferRunsRequest extends com.google.protobuf.Generated
     }
     if (runAttempt_
         != com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest.RunAttempt
-            .RUN_ATTEMPT_UNSPECIFIED
-            .getNumber()) {
+            .RUN_ATTEMPT_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, runAttempt_);
     }
     size += unknownFields.getSerializedSize();

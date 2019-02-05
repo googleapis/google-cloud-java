@@ -1289,14 +1289,12 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     }
     if (authorizationType_
         != com.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType
-            .AUTHORIZATION_TYPE_UNSPECIFIED
-            .getNumber()) {
+            .AUTHORIZATION_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(14, authorizationType_);
     }
     if (dataRefreshType_
         != com.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType
-            .DATA_REFRESH_TYPE_UNSPECIFIED
-            .getNumber()) {
+            .DATA_REFRESH_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(15, dataRefreshType_);
     }
     if (defaultDataRefreshWindowDays_ != 0) {
@@ -1365,14 +1363,12 @@ public final class DataSource extends com.google.protobuf.GeneratedMessageV3
     }
     if (authorizationType_
         != com.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType
-            .AUTHORIZATION_TYPE_UNSPECIFIED
-            .getNumber()) {
+            .AUTHORIZATION_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(14, authorizationType_);
     }
     if (dataRefreshType_
         != com.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType
-            .DATA_REFRESH_TYPE_UNSPECIFIED
-            .getNumber()) {
+            .DATA_REFRESH_TYPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(15, dataRefreshType_);
     }
     if (defaultDataRefreshWindowDays_ != 0) {
