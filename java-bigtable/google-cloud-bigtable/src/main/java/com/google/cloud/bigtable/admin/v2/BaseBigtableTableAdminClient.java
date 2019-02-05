@@ -470,7 +470,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *     .setTableId(tableId)
    *     .setSourceSnapshot(sourceSnapshot.toString())
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = baseBigtableTableAdminClient.createTableFromSnapshotOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Table, CreateTableFromSnapshotMetadata&gt; future = baseBigtableTableAdminClient.createTableFromSnapshotOperationCallable().futureCall(request);
    *   // Do something
    *   Table response = future.get();
    * }
@@ -1370,7 +1370,7 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
    *     .setSnapshotId(snapshotId.toString())
    *     .setDescription(description)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = baseBigtableTableAdminClient.snapshotTableOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Snapshot, SnapshotTableMetadata&gt; future = baseBigtableTableAdminClient.snapshotTableOperationCallable().futureCall(request);
    *   // Do something
    *   Snapshot response = future.get();
    * }
