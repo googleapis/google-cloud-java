@@ -34,12 +34,6 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class RowTest {
-  private static final ByteString QUALIFIER_1 = ByteString.copyFromUtf8("Firstqualifier");
-  private static final ByteString QUALIFIER_2 = ByteString.copyFromUtf8("Anotherqualifier");
-  private static final int TIMESTAMP = 12345;
-  private static final String LABEL = "label";
-  private static final ByteString VALUE = ByteString.copyFromUtf8("test-value");
-  private static final ByteString ROW_KEY = ByteString.copyFromUtf8("test-key");
 
   @Test
   public void compareTest() {
@@ -183,56 +177,64 @@ public class RowTest {
 
   @Test
   public void testFromProto() {
+    ByteString rowKey = ByteString.copyFromUtf8("test-key");
+    ByteString qualifier1 = ByteString.copyFromUtf8("qualifier1");
+    ByteString qualifier2 = ByteString.copyFromUtf8("qualifier2");
+    ByteString value = ByteString.copyFromUtf8("test-value");
+    String family1 = "firstFamily";
+    String family2 = "secondFamily";
+    String label = "label";
+
     com.google.bigtable.v2.Row rowProto =
         com.google.bigtable.v2.Row.newBuilder()
-            .setKey(ROW_KEY)
+            .setKey(rowKey)
             .addFamilies(
                 Family.newBuilder()
-                    .setName("secondFamily")
+                    .setName(family2)
                     .addColumns(
                         Column.newBuilder()
-                            .setQualifier(QUALIFIER_1)
+                            .setQualifier(qualifier1)
                             .addCells(
                                 Cell.newBuilder()
-                                    .setValue(VALUE)
-                                    .setTimestampMicros(TIMESTAMP)
-                                    .addLabels(LABEL)
+                                    .setValue(value)
+                                    .setTimestampMicros(98765)
+                                    .addLabels(label)
                                     .build())
                             .build()))
             .addFamilies(
                 Family.newBuilder()
-                    .setName("firstFamily")
+                    .setName(family1)
                     .addColumns(
                         Column.newBuilder()
-                            .setQualifier(QUALIFIER_1)
+                            .setQualifier(qualifier1)
                             .addCells(
                                 Cell.newBuilder()
-                                    .setValue(VALUE)
-                                    .setTimestampMicros(TIMESTAMP)
-                                    .addLabels(LABEL)
+                                    .setValue(value)
+                                    .setTimestampMicros(12345)
+                                    .addLabels(label)
                                     .build())
                             .build())
                     .addColumns(
                         Column.newBuilder()
-                            .setQualifier(QUALIFIER_2)
+                            .setQualifier(qualifier2)
                             .addCells(
                                 Cell.newBuilder()
-                                    .setValue(VALUE)
+                                    .setValue(value)
                                     .setTimestampMicros(54321)
-                                    .addLabels(LABEL)
+                                    .addLabels(label)
                                     .build())
                             .build())
                     .build())
             .build();
     Row row = Row.fromProto(rowProto);
 
-    List<String> labels = ImmutableList.of(LABEL);
-    assertThat(row.getKey()).isEqualTo(ROW_KEY);
-    assertThat(row.getCells("firstFamily"))
+    List<String> labels = ImmutableList.of(label);
+    assertThat(row.getKey()).isEqualTo(rowKey);
+    assertThat(row.getCells(family1))
         .containsExactly(
-            RowCell.create("firstFamily", QUALIFIER_1, TIMESTAMP, labels, VALUE),
-            RowCell.create("firstFamily", QUALIFIER_2, 54321, labels, VALUE));
-    assertThat(row.getCells("secondFamily"))
-        .containsExactly(RowCell.create("secondFamily", QUALIFIER_1, TIMESTAMP, labels, VALUE));
+            RowCell.create(family1, qualifier1, 12345, labels, value),
+            RowCell.create(family1, qualifier2, 54321, labels, value));
+    assertThat(row.getCells(family2))
+        .containsExactly(RowCell.create(family2, qualifier1, 98765, labels, value));
   }
 }
