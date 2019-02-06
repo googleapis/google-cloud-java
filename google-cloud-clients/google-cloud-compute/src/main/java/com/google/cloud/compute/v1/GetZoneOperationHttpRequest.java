@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.zoneOperations.get. Retrieves the specified zone-specific
+ * Operations resource.
+ */
 public final class GetZoneOperationHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

@@ -26,6 +26,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
   private RecognitionConfig() {
     encoding_ = 0;
     sampleRateHertz_ = 0;
+    audioChannelCount_ = 0;
     enableSeparateRecognitionPerChannel_ = false;
     languageCode_ = "";
     maxAlternatives_ = 0;
@@ -92,14 +93,19 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
             }
           case 50:
             {
-              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
                 speechContexts_ =
                     new java.util.ArrayList<com.google.cloud.speech.v1.SpeechContext>();
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000080;
               }
               speechContexts_.add(
                   input.readMessage(
                       com.google.cloud.speech.v1.SpeechContext.parser(), extensionRegistry));
+              break;
+            }
+          case 56:
+            {
+              audioChannelCount_ = input.readInt32();
               break;
             }
           case 64:
@@ -143,7 +149,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
         speechContexts_ = java.util.Collections.unmodifiableList(speechContexts_);
       }
       this.unknownFields = unknownFields.build();
@@ -531,6 +537,29 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    */
   public int getSampleRateHertz() {
     return sampleRateHertz_;
+  }
+
+  public static final int AUDIO_CHANNEL_COUNT_FIELD_NUMBER = 7;
+  private int audioChannelCount_;
+  /**
+   *
+   *
+   * <pre>
+   * *Optional* The number of channels in the input audio data.
+   * ONLY set this for MULTI-CHANNEL recognition.
+   * Valid values for LINEAR16 and FLAC are `1`-`8`.
+   * Valid values for OGG_OPUS are '1'-'254'.
+   * Valid value for MULAW, AMR, AMR_WB and SPEEX_WITH_HEADER_BYTE is only `1`.
+   * If `0` or omitted, defaults to one channel (mono).
+   * Note: We only recognize the first channel by default.
+   * To perform independent recognition on each channel set
+   * `enable_separate_recognition_per_channel` to 'true'.
+   * </pre>
+   *
+   * <code>int32 audio_channel_count = 7;</code>
+   */
+  public int getAudioChannelCount() {
+    return audioChannelCount_;
   }
 
   public static final int ENABLE_SEPARATE_RECOGNITION_PER_CHANNEL_FIELD_NUMBER = 12;
@@ -921,6 +950,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     for (int i = 0; i < speechContexts_.size(); i++) {
       output.writeMessage(6, speechContexts_.get(i));
     }
+    if (audioChannelCount_ != 0) {
+      output.writeInt32(7, audioChannelCount_);
+    }
     if (enableWordTimeOffsets_ != false) {
       output.writeBool(8, enableWordTimeOffsets_);
     }
@@ -965,6 +997,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     for (int i = 0; i < speechContexts_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, speechContexts_.get(i));
     }
+    if (audioChannelCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(7, audioChannelCount_);
+    }
     if (enableWordTimeOffsets_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, enableWordTimeOffsets_);
     }
@@ -1002,6 +1037,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     boolean result = true;
     result = result && encoding_ == other.encoding_;
     result = result && (getSampleRateHertz() == other.getSampleRateHertz());
+    result = result && (getAudioChannelCount() == other.getAudioChannelCount());
     result =
         result
             && (getEnableSeparateRecognitionPerChannel()
@@ -1029,6 +1065,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     hash = (53 * hash) + encoding_;
     hash = (37 * hash) + SAMPLE_RATE_HERTZ_FIELD_NUMBER;
     hash = (53 * hash) + getSampleRateHertz();
+    hash = (37 * hash) + AUDIO_CHANNEL_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getAudioChannelCount();
     hash = (37 * hash) + ENABLE_SEPARATE_RECOGNITION_PER_CHANNEL_FIELD_NUMBER;
     hash =
         (53 * hash)
@@ -1203,6 +1241,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
 
       sampleRateHertz_ = 0;
 
+      audioChannelCount_ = 0;
+
       enableSeparateRecognitionPerChannel_ = false;
 
       languageCode_ = "";
@@ -1213,7 +1253,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
 
       if (speechContextsBuilder_ == null) {
         speechContexts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
       } else {
         speechContextsBuilder_.clear();
       }
@@ -1256,14 +1296,15 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       int to_bitField0_ = 0;
       result.encoding_ = encoding_;
       result.sampleRateHertz_ = sampleRateHertz_;
+      result.audioChannelCount_ = audioChannelCount_;
       result.enableSeparateRecognitionPerChannel_ = enableSeparateRecognitionPerChannel_;
       result.languageCode_ = languageCode_;
       result.maxAlternatives_ = maxAlternatives_;
       result.profanityFilter_ = profanityFilter_;
       if (speechContextsBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        if (((bitField0_ & 0x00000080) == 0x00000080)) {
           speechContexts_ = java.util.Collections.unmodifiableList(speechContexts_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.speechContexts_ = speechContexts_;
       } else {
@@ -1329,6 +1370,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       if (other.getSampleRateHertz() != 0) {
         setSampleRateHertz(other.getSampleRateHertz());
       }
+      if (other.getAudioChannelCount() != 0) {
+        setAudioChannelCount(other.getAudioChannelCount());
+      }
       if (other.getEnableSeparateRecognitionPerChannel() != false) {
         setEnableSeparateRecognitionPerChannel(other.getEnableSeparateRecognitionPerChannel());
       }
@@ -1346,7 +1390,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         if (!other.speechContexts_.isEmpty()) {
           if (speechContexts_.isEmpty()) {
             speechContexts_ = other.speechContexts_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureSpeechContextsIsMutable();
             speechContexts_.addAll(other.speechContexts_);
@@ -1359,7 +1403,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
             speechContextsBuilder_.dispose();
             speechContextsBuilder_ = null;
             speechContexts_ = other.speechContexts_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
             speechContextsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSpeechContextsFieldBuilder()
@@ -1559,6 +1603,74 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     public Builder clearSampleRateHertz() {
 
       sampleRateHertz_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int audioChannelCount_;
+    /**
+     *
+     *
+     * <pre>
+     * *Optional* The number of channels in the input audio data.
+     * ONLY set this for MULTI-CHANNEL recognition.
+     * Valid values for LINEAR16 and FLAC are `1`-`8`.
+     * Valid values for OGG_OPUS are '1'-'254'.
+     * Valid value for MULAW, AMR, AMR_WB and SPEEX_WITH_HEADER_BYTE is only `1`.
+     * If `0` or omitted, defaults to one channel (mono).
+     * Note: We only recognize the first channel by default.
+     * To perform independent recognition on each channel set
+     * `enable_separate_recognition_per_channel` to 'true'.
+     * </pre>
+     *
+     * <code>int32 audio_channel_count = 7;</code>
+     */
+    public int getAudioChannelCount() {
+      return audioChannelCount_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * *Optional* The number of channels in the input audio data.
+     * ONLY set this for MULTI-CHANNEL recognition.
+     * Valid values for LINEAR16 and FLAC are `1`-`8`.
+     * Valid values for OGG_OPUS are '1'-'254'.
+     * Valid value for MULAW, AMR, AMR_WB and SPEEX_WITH_HEADER_BYTE is only `1`.
+     * If `0` or omitted, defaults to one channel (mono).
+     * Note: We only recognize the first channel by default.
+     * To perform independent recognition on each channel set
+     * `enable_separate_recognition_per_channel` to 'true'.
+     * </pre>
+     *
+     * <code>int32 audio_channel_count = 7;</code>
+     */
+    public Builder setAudioChannelCount(int value) {
+
+      audioChannelCount_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * *Optional* The number of channels in the input audio data.
+     * ONLY set this for MULTI-CHANNEL recognition.
+     * Valid values for LINEAR16 and FLAC are `1`-`8`.
+     * Valid values for OGG_OPUS are '1'-'254'.
+     * Valid value for MULAW, AMR, AMR_WB and SPEEX_WITH_HEADER_BYTE is only `1`.
+     * If `0` or omitted, defaults to one channel (mono).
+     * Note: We only recognize the first channel by default.
+     * To perform independent recognition on each channel set
+     * `enable_separate_recognition_per_channel` to 'true'.
+     * </pre>
+     *
+     * <code>int32 audio_channel_count = 7;</code>
+     */
+    public Builder clearAudioChannelCount() {
+
+      audioChannelCount_ = 0;
       onChanged();
       return this;
     }
@@ -1852,10 +1964,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         java.util.Collections.emptyList();
 
     private void ensureSpeechContextsIsMutable() {
-      if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (!((bitField0_ & 0x00000080) == 0x00000080)) {
         speechContexts_ =
             new java.util.ArrayList<com.google.cloud.speech.v1.SpeechContext>(speechContexts_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -2093,7 +2205,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     public Builder clearSpeechContexts() {
       if (speechContextsBuilder_ == null) {
         speechContexts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         speechContextsBuilder_.clear();
@@ -2230,7 +2342,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
                 com.google.cloud.speech.v1.SpeechContext.Builder,
                 com.google.cloud.speech.v1.SpeechContextOrBuilder>(
                 speechContexts_,
-                ((bitField0_ & 0x00000040) == 0x00000040),
+                ((bitField0_ & 0x00000080) == 0x00000080),
                 getParentForChildren(),
                 isClean());
         speechContexts_ = null;

@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.snapshots.setIamPolicy. Sets the access control policy on the
+ * specified resource. Replaces any existing policy.
+ */
 public final class SetIamPolicySnapshotHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

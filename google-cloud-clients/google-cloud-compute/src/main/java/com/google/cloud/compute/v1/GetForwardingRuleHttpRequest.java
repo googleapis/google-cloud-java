@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.forwardingRules.get. Returns the specified ForwardingRule
+ * resource.
+ */
 public final class GetForwardingRuleHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

@@ -148,9 +148,10 @@ public final class ProjectGlobalSslPolicyName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
-        "project", project,
-        "sslPolicy", sslPolicy);
+    return SERVICE_ADDRESS
+        + PATH_TEMPLATE.instantiate(
+            "project", project,
+            "sslPolicy", sslPolicy);
   }
 
   @Override

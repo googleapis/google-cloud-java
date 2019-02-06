@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.regionBackendServices.delete. Deletes the specified regional
+ * BackendService resource.
+ */
 public final class DeleteRegionBackendServiceHttpRequest implements ApiMessage {
   private final String access_token;
   private final String backendService;

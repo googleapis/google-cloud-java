@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.instances.list. Retrieves the list of instances contained
+ * within the specified zone.
+ */
 public final class ListInstancesHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

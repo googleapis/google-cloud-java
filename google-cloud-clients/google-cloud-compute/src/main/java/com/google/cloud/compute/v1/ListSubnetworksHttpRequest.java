@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.subnetworks.list. Retrieves a list of subnetworks available to
+ * the specified project.
+ */
 public final class ListSubnetworksHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

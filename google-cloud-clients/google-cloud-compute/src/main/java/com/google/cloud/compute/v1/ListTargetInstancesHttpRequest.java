@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.targetInstances.list. Retrieves a list of TargetInstance
+ * resources available to the specified project and zone.
+ */
 public final class ListTargetInstancesHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

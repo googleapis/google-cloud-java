@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.interconnects.getDiagnostics. Returns the
+ * interconnectDiagnostics for the specified interconnect.
+ */
 public final class GetDiagnosticsInterconnectHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

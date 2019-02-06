@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.subnetworks.getIamPolicy. Gets the access control policy for a
+ * resource. May be empty if no such policy or resource exists.
+ */
 public final class GetIamPolicySubnetworkHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

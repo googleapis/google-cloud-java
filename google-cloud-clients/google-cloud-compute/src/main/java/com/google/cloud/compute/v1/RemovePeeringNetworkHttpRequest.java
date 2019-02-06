@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.networks.removePeering. Removes a peering from the specified
+ * network.
+ */
 public final class RemovePeeringNetworkHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

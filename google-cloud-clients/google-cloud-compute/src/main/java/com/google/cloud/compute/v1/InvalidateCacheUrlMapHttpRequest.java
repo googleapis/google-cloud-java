@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.urlMaps.invalidateCache. Initiates a cache invalidation
+ * operation, invalidating the specified path, scoped to the specified UrlMap.
+ */
 public final class InvalidateCacheUrlMapHttpRequest implements ApiMessage {
   private final String access_token;
   private final CacheInvalidationRule cacheInvalidationRuleResource;

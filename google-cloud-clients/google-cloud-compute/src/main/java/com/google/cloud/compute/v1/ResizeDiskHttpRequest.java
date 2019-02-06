@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.disks.resize. Resizes the specified persistent disk. You can
+ * only increase the size of the disk.
+ */
 public final class ResizeDiskHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

@@ -24,6 +24,11 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.instances.updateAccessConfig. Updates the specified access
+ * config from an instance's network interface with the data included in the request. This method
+ * supports PATCH semantics and uses the JSON merge patch format and processing rules.
+ */
 public final class UpdateAccessConfigInstanceHttpRequest implements ApiMessage {
   private final AccessConfig accessConfigResource;
   private final String access_token;

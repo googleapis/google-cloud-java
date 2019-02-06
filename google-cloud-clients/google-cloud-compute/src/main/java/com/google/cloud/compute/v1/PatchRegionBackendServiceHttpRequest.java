@@ -25,6 +25,13 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.regionBackendServices.patch. Updates the specified regional
+ * BackendService resource with the data included in the request. There are several restrictions and
+ * guidelines to keep in mind when updating a backend service. Read Restrictions and Guidelines for
+ * more information. This method supports PATCH semantics and uses the JSON merge patch format and
+ * processing rules.
+ */
 public final class PatchRegionBackendServiceHttpRequest implements ApiMessage {
   private final String access_token;
   private final String backendService;

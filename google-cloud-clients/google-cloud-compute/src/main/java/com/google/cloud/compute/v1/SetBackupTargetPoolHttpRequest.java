@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.targetPools.setBackup. Changes a backup target pool's
+ * configurations.
+ */
 public final class SetBackupTargetPoolHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

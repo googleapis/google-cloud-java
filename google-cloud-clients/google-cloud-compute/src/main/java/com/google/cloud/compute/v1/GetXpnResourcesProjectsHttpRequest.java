@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.projects.getXpnResources. Gets service resources (a.k.a service
+ * project) associated with this host project.
+ */
 public final class GetXpnResourcesProjectsHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

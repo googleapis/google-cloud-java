@@ -24,6 +24,14 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.snapshots.delete. Deletes the specified Snapshot resource. Keep
+ * in mind that deleting a single snapshot might not necessarily delete all the data on that
+ * snapshot. If any data on the snapshot that is marked for deletion is needed for subsequent
+ * snapshots, the data will be moved to the next corresponding snapshot.
+ *
+ * <p>For more information, see Deleting snapshots.
+ */
 public final class DeleteSnapshotHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

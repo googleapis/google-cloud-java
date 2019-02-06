@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.globalAddresses.get. Returns the specified address resource.
+ * Gets a list of available addresses by making a list() request.
+ */
 public final class GetGlobalAddressHttpRequest implements ApiMessage {
   private final String access_token;
   private final String address;

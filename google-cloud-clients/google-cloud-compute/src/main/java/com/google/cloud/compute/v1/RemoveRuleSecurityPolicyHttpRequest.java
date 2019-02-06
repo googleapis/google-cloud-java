@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.securityPolicies.removeRule. Deletes a rule at the specified
+ * priority.
+ */
 public final class RemoveRuleSecurityPolicyHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

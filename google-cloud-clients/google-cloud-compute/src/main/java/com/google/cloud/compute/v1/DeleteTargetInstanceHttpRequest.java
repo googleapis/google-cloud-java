@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.targetInstances.delete. Deletes the specified TargetInstance
+ * resource.
+ */
 public final class DeleteTargetInstanceHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

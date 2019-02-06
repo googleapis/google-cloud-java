@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.urlMaps.insert. Creates a UrlMap resource in the specified
+ * project using the data included in the request.
+ */
 public final class InsertUrlMapHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

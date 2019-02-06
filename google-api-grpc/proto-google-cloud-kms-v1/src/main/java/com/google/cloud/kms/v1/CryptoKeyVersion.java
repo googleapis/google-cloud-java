@@ -1336,7 +1336,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     }
     if (state_
         != com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState
-            .CRYPTO_KEY_VERSION_STATE_UNSPECIFIED.getNumber()) {
+            .CRYPTO_KEY_VERSION_STATE_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(3, state_);
     }
     if (createTime_ != null) {
@@ -1357,7 +1358,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     }
     if (algorithm_
         != com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm
-            .CRYPTO_KEY_VERSION_ALGORITHM_UNSPECIFIED.getNumber()) {
+            .CRYPTO_KEY_VERSION_ALGORITHM_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(10, algorithm_);
     }
     if (generateTime_ != null) {
@@ -1377,7 +1379,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     }
     if (state_
         != com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState
-            .CRYPTO_KEY_VERSION_STATE_UNSPECIFIED.getNumber()) {
+            .CRYPTO_KEY_VERSION_STATE_UNSPECIFIED
+            .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, state_);
     }
     if (createTime_ != null) {
@@ -1398,7 +1401,8 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
     }
     if (algorithm_
         != com.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm
-            .CRYPTO_KEY_VERSION_ALGORITHM_UNSPECIFIED.getNumber()) {
+            .CRYPTO_KEY_VERSION_ALGORITHM_UNSPECIFIED
+            .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, algorithm_);
     }
     if (generateTime_ != null) {

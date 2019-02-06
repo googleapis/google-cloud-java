@@ -22,9 +22,9 @@ import com.google.api.core.ApiFutures;
 import com.google.cloud.firestore.UserDataConverter.EncodingOptions;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import com.google.firestore.v1beta1.CommitRequest;
-import com.google.firestore.v1beta1.CommitResponse;
-import com.google.firestore.v1beta1.Write;
+import com.google.firestore.v1.CommitRequest;
+import com.google.firestore.v1.CommitResponse;
+import com.google.firestore.v1.Write;
 import com.google.protobuf.ByteString;
 import io.opencensus.trace.AttributeValue;
 import io.opencensus.trace.Tracing;
@@ -48,7 +48,7 @@ public abstract class UpdateBuilder<T extends UpdateBuilder> {
   private static class Mutation {
     Write.Builder document;
     Write.Builder transform;
-    com.google.firestore.v1beta1.Precondition precondition;
+    com.google.firestore.v1.Precondition precondition;
   }
 
   final FirestoreImpl firestore;
@@ -625,7 +625,7 @@ public abstract class UpdateBuilder<T extends UpdateBuilder> {
         new ApiFunction<CommitResponse, List<WriteResult>>() {
           @Override
           public List<WriteResult> apply(CommitResponse commitResponse) {
-            List<com.google.firestore.v1beta1.WriteResult> writeResults =
+            List<com.google.firestore.v1.WriteResult> writeResults =
                 commitResponse.getWriteResultsList();
 
             List<WriteResult> result = new ArrayList<>();
@@ -637,7 +637,7 @@ public abstract class UpdateBuilder<T extends UpdateBuilder> {
                 request.getWritesCount());
 
             Iterator<Mutation> mutationIterator = mutations.iterator();
-            Iterator<com.google.firestore.v1beta1.WriteResult> responseIterator =
+            Iterator<com.google.firestore.v1.WriteResult> responseIterator =
                 writeResults.iterator();
 
             while (mutationIterator.hasNext()) {

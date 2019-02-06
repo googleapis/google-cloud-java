@@ -18,8 +18,8 @@ package com.google.cloud.firestore;
 
 import com.google.cloud.Timestamp;
 import com.google.common.base.Preconditions;
-import com.google.firestore.v1beta1.Document;
-import com.google.firestore.v1beta1.Value;
+import com.google.firestore.v1.Document;
+import com.google.firestore.v1.Value;
 import java.util.Map;
 import javax.annotation.Nonnull;
 

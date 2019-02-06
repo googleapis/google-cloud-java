@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.vpnTunnels.aggregatedList. Retrieves an aggregated list of VPN
+ * tunnels.
+ */
 public final class AggregatedListVpnTunnelsHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

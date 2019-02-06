@@ -166,6 +166,183 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
+     * Adds the given value to the field's current value.
+     * This must be an integer or a double value.
+     * If the field is not an integer or double, or if the field does not yet
+     * exist, the transformation will set the field to the given value.
+     * If either of the given value or the current field value are doubles,
+     * both values will be interpreted as doubles. Double arithmetic and
+     * representation of double values follow IEEE 754 semantics.
+     * If there is positive/negative integer overflow, the field is resolved
+     * to the largest magnitude positive/negative integer.
+     * </pre>
+     *
+     * <code>.google.firestore.v1beta1.Value increment = 3;</code>
+     */
+    boolean hasIncrement();
+    /**
+     *
+     *
+     * <pre>
+     * Adds the given value to the field's current value.
+     * This must be an integer or a double value.
+     * If the field is not an integer or double, or if the field does not yet
+     * exist, the transformation will set the field to the given value.
+     * If either of the given value or the current field value are doubles,
+     * both values will be interpreted as doubles. Double arithmetic and
+     * representation of double values follow IEEE 754 semantics.
+     * If there is positive/negative integer overflow, the field is resolved
+     * to the largest magnitude positive/negative integer.
+     * </pre>
+     *
+     * <code>.google.firestore.v1beta1.Value increment = 3;</code>
+     */
+    com.google.firestore.v1beta1.Value getIncrement();
+    /**
+     *
+     *
+     * <pre>
+     * Adds the given value to the field's current value.
+     * This must be an integer or a double value.
+     * If the field is not an integer or double, or if the field does not yet
+     * exist, the transformation will set the field to the given value.
+     * If either of the given value or the current field value are doubles,
+     * both values will be interpreted as doubles. Double arithmetic and
+     * representation of double values follow IEEE 754 semantics.
+     * If there is positive/negative integer overflow, the field is resolved
+     * to the largest magnitude positive/negative integer.
+     * </pre>
+     *
+     * <code>.google.firestore.v1beta1.Value increment = 3;</code>
+     */
+    com.google.firestore.v1beta1.ValueOrBuilder getIncrementOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the field to the maximum of its current value and the given value.
+     * This must be an integer or a double value.
+     * If the field is not an integer or double, or if the field does not yet
+     * exist, the transformation will set the field to the given value.
+     * If a maximum operation is applied where the field and the input value
+     * are of mixed types (that is - one is an integer and one is a double)
+     * the field takes on the type of the larger operand. If the operands are
+     * equivalent (e.g. 3 and 3.0), the field does not change.
+     * 0, 0.0, and -0.0 are all zero. The maximum of a zero stored value and
+     * zero input value is always the stored value.
+     * The maximum of any numeric value x and NaN is NaN.
+     * </pre>
+     *
+     * <code>.google.firestore.v1beta1.Value maximum = 4;</code>
+     */
+    boolean hasMaximum();
+    /**
+     *
+     *
+     * <pre>
+     * Sets the field to the maximum of its current value and the given value.
+     * This must be an integer or a double value.
+     * If the field is not an integer or double, or if the field does not yet
+     * exist, the transformation will set the field to the given value.
+     * If a maximum operation is applied where the field and the input value
+     * are of mixed types (that is - one is an integer and one is a double)
+     * the field takes on the type of the larger operand. If the operands are
+     * equivalent (e.g. 3 and 3.0), the field does not change.
+     * 0, 0.0, and -0.0 are all zero. The maximum of a zero stored value and
+     * zero input value is always the stored value.
+     * The maximum of any numeric value x and NaN is NaN.
+     * </pre>
+     *
+     * <code>.google.firestore.v1beta1.Value maximum = 4;</code>
+     */
+    com.google.firestore.v1beta1.Value getMaximum();
+    /**
+     *
+     *
+     * <pre>
+     * Sets the field to the maximum of its current value and the given value.
+     * This must be an integer or a double value.
+     * If the field is not an integer or double, or if the field does not yet
+     * exist, the transformation will set the field to the given value.
+     * If a maximum operation is applied where the field and the input value
+     * are of mixed types (that is - one is an integer and one is a double)
+     * the field takes on the type of the larger operand. If the operands are
+     * equivalent (e.g. 3 and 3.0), the field does not change.
+     * 0, 0.0, and -0.0 are all zero. The maximum of a zero stored value and
+     * zero input value is always the stored value.
+     * The maximum of any numeric value x and NaN is NaN.
+     * </pre>
+     *
+     * <code>.google.firestore.v1beta1.Value maximum = 4;</code>
+     */
+    com.google.firestore.v1beta1.ValueOrBuilder getMaximumOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the field to the minimum of its current value and the given value.
+     * This must be an integer or a double value.
+     * If the field is not an integer or double, or if the field does not yet
+     * exist, the transformation will set the field to the input value.
+     * If a minimum operation is applied where the field and the input value
+     * are of mixed types (that is - one is an integer and one is a double)
+     * the field takes on the type of the smaller operand. If the operands are
+     * equivalent (e.g. 3 and 3.0), the field does not change.
+     * 0, 0.0, and -0.0 are all zero. The minimum of a zero stored value and
+     * zero input value is always the stored value.
+     * The minimum of any numeric value x and NaN is NaN.
+     * </pre>
+     *
+     * <code>.google.firestore.v1beta1.Value minimum = 5;</code>
+     */
+    boolean hasMinimum();
+    /**
+     *
+     *
+     * <pre>
+     * Sets the field to the minimum of its current value and the given value.
+     * This must be an integer or a double value.
+     * If the field is not an integer or double, or if the field does not yet
+     * exist, the transformation will set the field to the input value.
+     * If a minimum operation is applied where the field and the input value
+     * are of mixed types (that is - one is an integer and one is a double)
+     * the field takes on the type of the smaller operand. If the operands are
+     * equivalent (e.g. 3 and 3.0), the field does not change.
+     * 0, 0.0, and -0.0 are all zero. The minimum of a zero stored value and
+     * zero input value is always the stored value.
+     * The minimum of any numeric value x and NaN is NaN.
+     * </pre>
+     *
+     * <code>.google.firestore.v1beta1.Value minimum = 5;</code>
+     */
+    com.google.firestore.v1beta1.Value getMinimum();
+    /**
+     *
+     *
+     * <pre>
+     * Sets the field to the minimum of its current value and the given value.
+     * This must be an integer or a double value.
+     * If the field is not an integer or double, or if the field does not yet
+     * exist, the transformation will set the field to the input value.
+     * If a minimum operation is applied where the field and the input value
+     * are of mixed types (that is - one is an integer and one is a double)
+     * the field takes on the type of the smaller operand. If the operands are
+     * equivalent (e.g. 3 and 3.0), the field does not change.
+     * 0, 0.0, and -0.0 are all zero. The minimum of a zero stored value and
+     * zero input value is always the stored value.
+     * The minimum of any numeric value x and NaN is NaN.
+     * </pre>
+     *
+     * <code>.google.firestore.v1beta1.Value minimum = 5;</code>
+     */
+    com.google.firestore.v1beta1.ValueOrBuilder getMinimumOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
      * Append the given elements in order if they are not already present in
      * the current field value.
      * If the field is not an array, or if the field does not yet exist, it is
@@ -334,6 +511,54 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
                 int rawValue = input.readEnum();
                 transformTypeCase_ = 2;
                 transformType_ = rawValue;
+                break;
+              }
+            case 26:
+              {
+                com.google.firestore.v1beta1.Value.Builder subBuilder = null;
+                if (transformTypeCase_ == 3) {
+                  subBuilder = ((com.google.firestore.v1beta1.Value) transformType_).toBuilder();
+                }
+                transformType_ =
+                    input.readMessage(
+                        com.google.firestore.v1beta1.Value.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom((com.google.firestore.v1beta1.Value) transformType_);
+                  transformType_ = subBuilder.buildPartial();
+                }
+                transformTypeCase_ = 3;
+                break;
+              }
+            case 34:
+              {
+                com.google.firestore.v1beta1.Value.Builder subBuilder = null;
+                if (transformTypeCase_ == 4) {
+                  subBuilder = ((com.google.firestore.v1beta1.Value) transformType_).toBuilder();
+                }
+                transformType_ =
+                    input.readMessage(
+                        com.google.firestore.v1beta1.Value.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom((com.google.firestore.v1beta1.Value) transformType_);
+                  transformType_ = subBuilder.buildPartial();
+                }
+                transformTypeCase_ = 4;
+                break;
+              }
+            case 42:
+              {
+                com.google.firestore.v1beta1.Value.Builder subBuilder = null;
+                if (transformTypeCase_ == 5) {
+                  subBuilder = ((com.google.firestore.v1beta1.Value) transformType_).toBuilder();
+                }
+                transformType_ =
+                    input.readMessage(
+                        com.google.firestore.v1beta1.Value.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom((com.google.firestore.v1beta1.Value) transformType_);
+                  transformType_ = subBuilder.buildPartial();
+                }
+                transformTypeCase_ = 5;
                 break;
               }
             case 50:
@@ -536,6 +761,9 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
 
     public enum TransformTypeCase implements com.google.protobuf.Internal.EnumLite {
       SET_TO_SERVER_VALUE(2),
+      INCREMENT(3),
+      MAXIMUM(4),
+      MINIMUM(5),
       APPEND_MISSING_ELEMENTS(6),
       REMOVE_ALL_FROM_ARRAY(7),
       TRANSFORMTYPE_NOT_SET(0);
@@ -554,6 +782,12 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         switch (value) {
           case 2:
             return SET_TO_SERVER_VALUE;
+          case 3:
+            return INCREMENT;
+          case 4:
+            return MAXIMUM;
+          case 5:
+            return MINIMUM;
           case 6:
             return APPEND_MISSING_ELEMENTS;
           case 7:
@@ -661,6 +895,222 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       }
       return com.google.firestore.v1beta1.DocumentTransform.FieldTransform.ServerValue
           .SERVER_VALUE_UNSPECIFIED;
+    }
+
+    public static final int INCREMENT_FIELD_NUMBER = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Adds the given value to the field's current value.
+     * This must be an integer or a double value.
+     * If the field is not an integer or double, or if the field does not yet
+     * exist, the transformation will set the field to the given value.
+     * If either of the given value or the current field value are doubles,
+     * both values will be interpreted as doubles. Double arithmetic and
+     * representation of double values follow IEEE 754 semantics.
+     * If there is positive/negative integer overflow, the field is resolved
+     * to the largest magnitude positive/negative integer.
+     * </pre>
+     *
+     * <code>.google.firestore.v1beta1.Value increment = 3;</code>
+     */
+    public boolean hasIncrement() {
+      return transformTypeCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Adds the given value to the field's current value.
+     * This must be an integer or a double value.
+     * If the field is not an integer or double, or if the field does not yet
+     * exist, the transformation will set the field to the given value.
+     * If either of the given value or the current field value are doubles,
+     * both values will be interpreted as doubles. Double arithmetic and
+     * representation of double values follow IEEE 754 semantics.
+     * If there is positive/negative integer overflow, the field is resolved
+     * to the largest magnitude positive/negative integer.
+     * </pre>
+     *
+     * <code>.google.firestore.v1beta1.Value increment = 3;</code>
+     */
+    public com.google.firestore.v1beta1.Value getIncrement() {
+      if (transformTypeCase_ == 3) {
+        return (com.google.firestore.v1beta1.Value) transformType_;
+      }
+      return com.google.firestore.v1beta1.Value.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Adds the given value to the field's current value.
+     * This must be an integer or a double value.
+     * If the field is not an integer or double, or if the field does not yet
+     * exist, the transformation will set the field to the given value.
+     * If either of the given value or the current field value are doubles,
+     * both values will be interpreted as doubles. Double arithmetic and
+     * representation of double values follow IEEE 754 semantics.
+     * If there is positive/negative integer overflow, the field is resolved
+     * to the largest magnitude positive/negative integer.
+     * </pre>
+     *
+     * <code>.google.firestore.v1beta1.Value increment = 3;</code>
+     */
+    public com.google.firestore.v1beta1.ValueOrBuilder getIncrementOrBuilder() {
+      if (transformTypeCase_ == 3) {
+        return (com.google.firestore.v1beta1.Value) transformType_;
+      }
+      return com.google.firestore.v1beta1.Value.getDefaultInstance();
+    }
+
+    public static final int MAXIMUM_FIELD_NUMBER = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Sets the field to the maximum of its current value and the given value.
+     * This must be an integer or a double value.
+     * If the field is not an integer or double, or if the field does not yet
+     * exist, the transformation will set the field to the given value.
+     * If a maximum operation is applied where the field and the input value
+     * are of mixed types (that is - one is an integer and one is a double)
+     * the field takes on the type of the larger operand. If the operands are
+     * equivalent (e.g. 3 and 3.0), the field does not change.
+     * 0, 0.0, and -0.0 are all zero. The maximum of a zero stored value and
+     * zero input value is always the stored value.
+     * The maximum of any numeric value x and NaN is NaN.
+     * </pre>
+     *
+     * <code>.google.firestore.v1beta1.Value maximum = 4;</code>
+     */
+    public boolean hasMaximum() {
+      return transformTypeCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sets the field to the maximum of its current value and the given value.
+     * This must be an integer or a double value.
+     * If the field is not an integer or double, or if the field does not yet
+     * exist, the transformation will set the field to the given value.
+     * If a maximum operation is applied where the field and the input value
+     * are of mixed types (that is - one is an integer and one is a double)
+     * the field takes on the type of the larger operand. If the operands are
+     * equivalent (e.g. 3 and 3.0), the field does not change.
+     * 0, 0.0, and -0.0 are all zero. The maximum of a zero stored value and
+     * zero input value is always the stored value.
+     * The maximum of any numeric value x and NaN is NaN.
+     * </pre>
+     *
+     * <code>.google.firestore.v1beta1.Value maximum = 4;</code>
+     */
+    public com.google.firestore.v1beta1.Value getMaximum() {
+      if (transformTypeCase_ == 4) {
+        return (com.google.firestore.v1beta1.Value) transformType_;
+      }
+      return com.google.firestore.v1beta1.Value.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sets the field to the maximum of its current value and the given value.
+     * This must be an integer or a double value.
+     * If the field is not an integer or double, or if the field does not yet
+     * exist, the transformation will set the field to the given value.
+     * If a maximum operation is applied where the field and the input value
+     * are of mixed types (that is - one is an integer and one is a double)
+     * the field takes on the type of the larger operand. If the operands are
+     * equivalent (e.g. 3 and 3.0), the field does not change.
+     * 0, 0.0, and -0.0 are all zero. The maximum of a zero stored value and
+     * zero input value is always the stored value.
+     * The maximum of any numeric value x and NaN is NaN.
+     * </pre>
+     *
+     * <code>.google.firestore.v1beta1.Value maximum = 4;</code>
+     */
+    public com.google.firestore.v1beta1.ValueOrBuilder getMaximumOrBuilder() {
+      if (transformTypeCase_ == 4) {
+        return (com.google.firestore.v1beta1.Value) transformType_;
+      }
+      return com.google.firestore.v1beta1.Value.getDefaultInstance();
+    }
+
+    public static final int MINIMUM_FIELD_NUMBER = 5;
+    /**
+     *
+     *
+     * <pre>
+     * Sets the field to the minimum of its current value and the given value.
+     * This must be an integer or a double value.
+     * If the field is not an integer or double, or if the field does not yet
+     * exist, the transformation will set the field to the input value.
+     * If a minimum operation is applied where the field and the input value
+     * are of mixed types (that is - one is an integer and one is a double)
+     * the field takes on the type of the smaller operand. If the operands are
+     * equivalent (e.g. 3 and 3.0), the field does not change.
+     * 0, 0.0, and -0.0 are all zero. The minimum of a zero stored value and
+     * zero input value is always the stored value.
+     * The minimum of any numeric value x and NaN is NaN.
+     * </pre>
+     *
+     * <code>.google.firestore.v1beta1.Value minimum = 5;</code>
+     */
+    public boolean hasMinimum() {
+      return transformTypeCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sets the field to the minimum of its current value and the given value.
+     * This must be an integer or a double value.
+     * If the field is not an integer or double, or if the field does not yet
+     * exist, the transformation will set the field to the input value.
+     * If a minimum operation is applied where the field and the input value
+     * are of mixed types (that is - one is an integer and one is a double)
+     * the field takes on the type of the smaller operand. If the operands are
+     * equivalent (e.g. 3 and 3.0), the field does not change.
+     * 0, 0.0, and -0.0 are all zero. The minimum of a zero stored value and
+     * zero input value is always the stored value.
+     * The minimum of any numeric value x and NaN is NaN.
+     * </pre>
+     *
+     * <code>.google.firestore.v1beta1.Value minimum = 5;</code>
+     */
+    public com.google.firestore.v1beta1.Value getMinimum() {
+      if (transformTypeCase_ == 5) {
+        return (com.google.firestore.v1beta1.Value) transformType_;
+      }
+      return com.google.firestore.v1beta1.Value.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sets the field to the minimum of its current value and the given value.
+     * This must be an integer or a double value.
+     * If the field is not an integer or double, or if the field does not yet
+     * exist, the transformation will set the field to the input value.
+     * If a minimum operation is applied where the field and the input value
+     * are of mixed types (that is - one is an integer and one is a double)
+     * the field takes on the type of the smaller operand. If the operands are
+     * equivalent (e.g. 3 and 3.0), the field does not change.
+     * 0, 0.0, and -0.0 are all zero. The minimum of a zero stored value and
+     * zero input value is always the stored value.
+     * The minimum of any numeric value x and NaN is NaN.
+     * </pre>
+     *
+     * <code>.google.firestore.v1beta1.Value minimum = 5;</code>
+     */
+    public com.google.firestore.v1beta1.ValueOrBuilder getMinimumOrBuilder() {
+      if (transformTypeCase_ == 5) {
+        return (com.google.firestore.v1beta1.Value) transformType_;
+      }
+      return com.google.firestore.v1beta1.Value.getDefaultInstance();
     }
 
     public static final int APPEND_MISSING_ELEMENTS_FIELD_NUMBER = 6;
@@ -819,6 +1269,15 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       if (transformTypeCase_ == 2) {
         output.writeEnum(2, ((java.lang.Integer) transformType_));
       }
+      if (transformTypeCase_ == 3) {
+        output.writeMessage(3, (com.google.firestore.v1beta1.Value) transformType_);
+      }
+      if (transformTypeCase_ == 4) {
+        output.writeMessage(4, (com.google.firestore.v1beta1.Value) transformType_);
+      }
+      if (transformTypeCase_ == 5) {
+        output.writeMessage(5, (com.google.firestore.v1beta1.Value) transformType_);
+      }
       if (transformTypeCase_ == 6) {
         output.writeMessage(6, (com.google.firestore.v1beta1.ArrayValue) transformType_);
       }
@@ -841,6 +1300,21 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         size +=
             com.google.protobuf.CodedOutputStream.computeEnumSize(
                 2, ((java.lang.Integer) transformType_));
+      }
+      if (transformTypeCase_ == 3) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                3, (com.google.firestore.v1beta1.Value) transformType_);
+      }
+      if (transformTypeCase_ == 4) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                4, (com.google.firestore.v1beta1.Value) transformType_);
+      }
+      if (transformTypeCase_ == 5) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                5, (com.google.firestore.v1beta1.Value) transformType_);
       }
       if (transformTypeCase_ == 6) {
         size +=
@@ -876,6 +1350,15 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         case 2:
           result = result && getSetToServerValueValue() == other.getSetToServerValueValue();
           break;
+        case 3:
+          result = result && getIncrement().equals(other.getIncrement());
+          break;
+        case 4:
+          result = result && getMaximum().equals(other.getMaximum());
+          break;
+        case 5:
+          result = result && getMinimum().equals(other.getMinimum());
+          break;
         case 6:
           result = result && getAppendMissingElements().equals(other.getAppendMissingElements());
           break;
@@ -902,6 +1385,18 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         case 2:
           hash = (37 * hash) + SET_TO_SERVER_VALUE_FIELD_NUMBER;
           hash = (53 * hash) + getSetToServerValueValue();
+          break;
+        case 3:
+          hash = (37 * hash) + INCREMENT_FIELD_NUMBER;
+          hash = (53 * hash) + getIncrement().hashCode();
+          break;
+        case 4:
+          hash = (37 * hash) + MAXIMUM_FIELD_NUMBER;
+          hash = (53 * hash) + getMaximum().hashCode();
+          break;
+        case 5:
+          hash = (37 * hash) + MINIMUM_FIELD_NUMBER;
+          hash = (53 * hash) + getMinimum().hashCode();
           break;
         case 6:
           hash = (37 * hash) + APPEND_MISSING_ELEMENTS_FIELD_NUMBER;
@@ -1098,6 +1593,27 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         if (transformTypeCase_ == 2) {
           result.transformType_ = transformType_;
         }
+        if (transformTypeCase_ == 3) {
+          if (incrementBuilder_ == null) {
+            result.transformType_ = transformType_;
+          } else {
+            result.transformType_ = incrementBuilder_.build();
+          }
+        }
+        if (transformTypeCase_ == 4) {
+          if (maximumBuilder_ == null) {
+            result.transformType_ = transformType_;
+          } else {
+            result.transformType_ = maximumBuilder_.build();
+          }
+        }
+        if (transformTypeCase_ == 5) {
+          if (minimumBuilder_ == null) {
+            result.transformType_ = transformType_;
+          } else {
+            result.transformType_ = minimumBuilder_.build();
+          }
+        }
         if (transformTypeCase_ == 6) {
           if (appendMissingElementsBuilder_ == null) {
             result.transformType_ = transformType_;
@@ -1175,6 +1691,21 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
           case SET_TO_SERVER_VALUE:
             {
               setSetToServerValueValue(other.getSetToServerValueValue());
+              break;
+            }
+          case INCREMENT:
+            {
+              mergeIncrement(other.getIncrement());
+              break;
+            }
+          case MAXIMUM:
+            {
+              mergeMaximum(other.getMaximum());
+              break;
+            }
+          case MINIMUM:
+            {
+              mergeMinimum(other.getMinimum());
               break;
             }
           case APPEND_MISSING_ELEMENTS:
@@ -1435,6 +1966,861 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
           onChanged();
         }
         return this;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.firestore.v1beta1.Value,
+              com.google.firestore.v1beta1.Value.Builder,
+              com.google.firestore.v1beta1.ValueOrBuilder>
+          incrementBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Adds the given value to the field's current value.
+       * This must be an integer or a double value.
+       * If the field is not an integer or double, or if the field does not yet
+       * exist, the transformation will set the field to the given value.
+       * If either of the given value or the current field value are doubles,
+       * both values will be interpreted as doubles. Double arithmetic and
+       * representation of double values follow IEEE 754 semantics.
+       * If there is positive/negative integer overflow, the field is resolved
+       * to the largest magnitude positive/negative integer.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.Value increment = 3;</code>
+       */
+      public boolean hasIncrement() {
+        return transformTypeCase_ == 3;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Adds the given value to the field's current value.
+       * This must be an integer or a double value.
+       * If the field is not an integer or double, or if the field does not yet
+       * exist, the transformation will set the field to the given value.
+       * If either of the given value or the current field value are doubles,
+       * both values will be interpreted as doubles. Double arithmetic and
+       * representation of double values follow IEEE 754 semantics.
+       * If there is positive/negative integer overflow, the field is resolved
+       * to the largest magnitude positive/negative integer.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.Value increment = 3;</code>
+       */
+      public com.google.firestore.v1beta1.Value getIncrement() {
+        if (incrementBuilder_ == null) {
+          if (transformTypeCase_ == 3) {
+            return (com.google.firestore.v1beta1.Value) transformType_;
+          }
+          return com.google.firestore.v1beta1.Value.getDefaultInstance();
+        } else {
+          if (transformTypeCase_ == 3) {
+            return incrementBuilder_.getMessage();
+          }
+          return com.google.firestore.v1beta1.Value.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Adds the given value to the field's current value.
+       * This must be an integer or a double value.
+       * If the field is not an integer or double, or if the field does not yet
+       * exist, the transformation will set the field to the given value.
+       * If either of the given value or the current field value are doubles,
+       * both values will be interpreted as doubles. Double arithmetic and
+       * representation of double values follow IEEE 754 semantics.
+       * If there is positive/negative integer overflow, the field is resolved
+       * to the largest magnitude positive/negative integer.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.Value increment = 3;</code>
+       */
+      public Builder setIncrement(com.google.firestore.v1beta1.Value value) {
+        if (incrementBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          transformType_ = value;
+          onChanged();
+        } else {
+          incrementBuilder_.setMessage(value);
+        }
+        transformTypeCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Adds the given value to the field's current value.
+       * This must be an integer or a double value.
+       * If the field is not an integer or double, or if the field does not yet
+       * exist, the transformation will set the field to the given value.
+       * If either of the given value or the current field value are doubles,
+       * both values will be interpreted as doubles. Double arithmetic and
+       * representation of double values follow IEEE 754 semantics.
+       * If there is positive/negative integer overflow, the field is resolved
+       * to the largest magnitude positive/negative integer.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.Value increment = 3;</code>
+       */
+      public Builder setIncrement(com.google.firestore.v1beta1.Value.Builder builderForValue) {
+        if (incrementBuilder_ == null) {
+          transformType_ = builderForValue.build();
+          onChanged();
+        } else {
+          incrementBuilder_.setMessage(builderForValue.build());
+        }
+        transformTypeCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Adds the given value to the field's current value.
+       * This must be an integer or a double value.
+       * If the field is not an integer or double, or if the field does not yet
+       * exist, the transformation will set the field to the given value.
+       * If either of the given value or the current field value are doubles,
+       * both values will be interpreted as doubles. Double arithmetic and
+       * representation of double values follow IEEE 754 semantics.
+       * If there is positive/negative integer overflow, the field is resolved
+       * to the largest magnitude positive/negative integer.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.Value increment = 3;</code>
+       */
+      public Builder mergeIncrement(com.google.firestore.v1beta1.Value value) {
+        if (incrementBuilder_ == null) {
+          if (transformTypeCase_ == 3
+              && transformType_ != com.google.firestore.v1beta1.Value.getDefaultInstance()) {
+            transformType_ =
+                com.google.firestore.v1beta1.Value.newBuilder(
+                        (com.google.firestore.v1beta1.Value) transformType_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            transformType_ = value;
+          }
+          onChanged();
+        } else {
+          if (transformTypeCase_ == 3) {
+            incrementBuilder_.mergeFrom(value);
+          }
+          incrementBuilder_.setMessage(value);
+        }
+        transformTypeCase_ = 3;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Adds the given value to the field's current value.
+       * This must be an integer or a double value.
+       * If the field is not an integer or double, or if the field does not yet
+       * exist, the transformation will set the field to the given value.
+       * If either of the given value or the current field value are doubles,
+       * both values will be interpreted as doubles. Double arithmetic and
+       * representation of double values follow IEEE 754 semantics.
+       * If there is positive/negative integer overflow, the field is resolved
+       * to the largest magnitude positive/negative integer.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.Value increment = 3;</code>
+       */
+      public Builder clearIncrement() {
+        if (incrementBuilder_ == null) {
+          if (transformTypeCase_ == 3) {
+            transformTypeCase_ = 0;
+            transformType_ = null;
+            onChanged();
+          }
+        } else {
+          if (transformTypeCase_ == 3) {
+            transformTypeCase_ = 0;
+            transformType_ = null;
+          }
+          incrementBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Adds the given value to the field's current value.
+       * This must be an integer or a double value.
+       * If the field is not an integer or double, or if the field does not yet
+       * exist, the transformation will set the field to the given value.
+       * If either of the given value or the current field value are doubles,
+       * both values will be interpreted as doubles. Double arithmetic and
+       * representation of double values follow IEEE 754 semantics.
+       * If there is positive/negative integer overflow, the field is resolved
+       * to the largest magnitude positive/negative integer.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.Value increment = 3;</code>
+       */
+      public com.google.firestore.v1beta1.Value.Builder getIncrementBuilder() {
+        return getIncrementFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Adds the given value to the field's current value.
+       * This must be an integer or a double value.
+       * If the field is not an integer or double, or if the field does not yet
+       * exist, the transformation will set the field to the given value.
+       * If either of the given value or the current field value are doubles,
+       * both values will be interpreted as doubles. Double arithmetic and
+       * representation of double values follow IEEE 754 semantics.
+       * If there is positive/negative integer overflow, the field is resolved
+       * to the largest magnitude positive/negative integer.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.Value increment = 3;</code>
+       */
+      public com.google.firestore.v1beta1.ValueOrBuilder getIncrementOrBuilder() {
+        if ((transformTypeCase_ == 3) && (incrementBuilder_ != null)) {
+          return incrementBuilder_.getMessageOrBuilder();
+        } else {
+          if (transformTypeCase_ == 3) {
+            return (com.google.firestore.v1beta1.Value) transformType_;
+          }
+          return com.google.firestore.v1beta1.Value.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Adds the given value to the field's current value.
+       * This must be an integer or a double value.
+       * If the field is not an integer or double, or if the field does not yet
+       * exist, the transformation will set the field to the given value.
+       * If either of the given value or the current field value are doubles,
+       * both values will be interpreted as doubles. Double arithmetic and
+       * representation of double values follow IEEE 754 semantics.
+       * If there is positive/negative integer overflow, the field is resolved
+       * to the largest magnitude positive/negative integer.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.Value increment = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.firestore.v1beta1.Value,
+              com.google.firestore.v1beta1.Value.Builder,
+              com.google.firestore.v1beta1.ValueOrBuilder>
+          getIncrementFieldBuilder() {
+        if (incrementBuilder_ == null) {
+          if (!(transformTypeCase_ == 3)) {
+            transformType_ = com.google.firestore.v1beta1.Value.getDefaultInstance();
+          }
+          incrementBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.firestore.v1beta1.Value,
+                  com.google.firestore.v1beta1.Value.Builder,
+                  com.google.firestore.v1beta1.ValueOrBuilder>(
+                  (com.google.firestore.v1beta1.Value) transformType_,
+                  getParentForChildren(),
+                  isClean());
+          transformType_ = null;
+        }
+        transformTypeCase_ = 3;
+        onChanged();
+        ;
+        return incrementBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.firestore.v1beta1.Value,
+              com.google.firestore.v1beta1.Value.Builder,
+              com.google.firestore.v1beta1.ValueOrBuilder>
+          maximumBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Sets the field to the maximum of its current value and the given value.
+       * This must be an integer or a double value.
+       * If the field is not an integer or double, or if the field does not yet
+       * exist, the transformation will set the field to the given value.
+       * If a maximum operation is applied where the field and the input value
+       * are of mixed types (that is - one is an integer and one is a double)
+       * the field takes on the type of the larger operand. If the operands are
+       * equivalent (e.g. 3 and 3.0), the field does not change.
+       * 0, 0.0, and -0.0 are all zero. The maximum of a zero stored value and
+       * zero input value is always the stored value.
+       * The maximum of any numeric value x and NaN is NaN.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.Value maximum = 4;</code>
+       */
+      public boolean hasMaximum() {
+        return transformTypeCase_ == 4;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sets the field to the maximum of its current value and the given value.
+       * This must be an integer or a double value.
+       * If the field is not an integer or double, or if the field does not yet
+       * exist, the transformation will set the field to the given value.
+       * If a maximum operation is applied where the field and the input value
+       * are of mixed types (that is - one is an integer and one is a double)
+       * the field takes on the type of the larger operand. If the operands are
+       * equivalent (e.g. 3 and 3.0), the field does not change.
+       * 0, 0.0, and -0.0 are all zero. The maximum of a zero stored value and
+       * zero input value is always the stored value.
+       * The maximum of any numeric value x and NaN is NaN.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.Value maximum = 4;</code>
+       */
+      public com.google.firestore.v1beta1.Value getMaximum() {
+        if (maximumBuilder_ == null) {
+          if (transformTypeCase_ == 4) {
+            return (com.google.firestore.v1beta1.Value) transformType_;
+          }
+          return com.google.firestore.v1beta1.Value.getDefaultInstance();
+        } else {
+          if (transformTypeCase_ == 4) {
+            return maximumBuilder_.getMessage();
+          }
+          return com.google.firestore.v1beta1.Value.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sets the field to the maximum of its current value and the given value.
+       * This must be an integer or a double value.
+       * If the field is not an integer or double, or if the field does not yet
+       * exist, the transformation will set the field to the given value.
+       * If a maximum operation is applied where the field and the input value
+       * are of mixed types (that is - one is an integer and one is a double)
+       * the field takes on the type of the larger operand. If the operands are
+       * equivalent (e.g. 3 and 3.0), the field does not change.
+       * 0, 0.0, and -0.0 are all zero. The maximum of a zero stored value and
+       * zero input value is always the stored value.
+       * The maximum of any numeric value x and NaN is NaN.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.Value maximum = 4;</code>
+       */
+      public Builder setMaximum(com.google.firestore.v1beta1.Value value) {
+        if (maximumBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          transformType_ = value;
+          onChanged();
+        } else {
+          maximumBuilder_.setMessage(value);
+        }
+        transformTypeCase_ = 4;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sets the field to the maximum of its current value and the given value.
+       * This must be an integer or a double value.
+       * If the field is not an integer or double, or if the field does not yet
+       * exist, the transformation will set the field to the given value.
+       * If a maximum operation is applied where the field and the input value
+       * are of mixed types (that is - one is an integer and one is a double)
+       * the field takes on the type of the larger operand. If the operands are
+       * equivalent (e.g. 3 and 3.0), the field does not change.
+       * 0, 0.0, and -0.0 are all zero. The maximum of a zero stored value and
+       * zero input value is always the stored value.
+       * The maximum of any numeric value x and NaN is NaN.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.Value maximum = 4;</code>
+       */
+      public Builder setMaximum(com.google.firestore.v1beta1.Value.Builder builderForValue) {
+        if (maximumBuilder_ == null) {
+          transformType_ = builderForValue.build();
+          onChanged();
+        } else {
+          maximumBuilder_.setMessage(builderForValue.build());
+        }
+        transformTypeCase_ = 4;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sets the field to the maximum of its current value and the given value.
+       * This must be an integer or a double value.
+       * If the field is not an integer or double, or if the field does not yet
+       * exist, the transformation will set the field to the given value.
+       * If a maximum operation is applied where the field and the input value
+       * are of mixed types (that is - one is an integer and one is a double)
+       * the field takes on the type of the larger operand. If the operands are
+       * equivalent (e.g. 3 and 3.0), the field does not change.
+       * 0, 0.0, and -0.0 are all zero. The maximum of a zero stored value and
+       * zero input value is always the stored value.
+       * The maximum of any numeric value x and NaN is NaN.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.Value maximum = 4;</code>
+       */
+      public Builder mergeMaximum(com.google.firestore.v1beta1.Value value) {
+        if (maximumBuilder_ == null) {
+          if (transformTypeCase_ == 4
+              && transformType_ != com.google.firestore.v1beta1.Value.getDefaultInstance()) {
+            transformType_ =
+                com.google.firestore.v1beta1.Value.newBuilder(
+                        (com.google.firestore.v1beta1.Value) transformType_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            transformType_ = value;
+          }
+          onChanged();
+        } else {
+          if (transformTypeCase_ == 4) {
+            maximumBuilder_.mergeFrom(value);
+          }
+          maximumBuilder_.setMessage(value);
+        }
+        transformTypeCase_ = 4;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sets the field to the maximum of its current value and the given value.
+       * This must be an integer or a double value.
+       * If the field is not an integer or double, or if the field does not yet
+       * exist, the transformation will set the field to the given value.
+       * If a maximum operation is applied where the field and the input value
+       * are of mixed types (that is - one is an integer and one is a double)
+       * the field takes on the type of the larger operand. If the operands are
+       * equivalent (e.g. 3 and 3.0), the field does not change.
+       * 0, 0.0, and -0.0 are all zero. The maximum of a zero stored value and
+       * zero input value is always the stored value.
+       * The maximum of any numeric value x and NaN is NaN.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.Value maximum = 4;</code>
+       */
+      public Builder clearMaximum() {
+        if (maximumBuilder_ == null) {
+          if (transformTypeCase_ == 4) {
+            transformTypeCase_ = 0;
+            transformType_ = null;
+            onChanged();
+          }
+        } else {
+          if (transformTypeCase_ == 4) {
+            transformTypeCase_ = 0;
+            transformType_ = null;
+          }
+          maximumBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sets the field to the maximum of its current value and the given value.
+       * This must be an integer or a double value.
+       * If the field is not an integer or double, or if the field does not yet
+       * exist, the transformation will set the field to the given value.
+       * If a maximum operation is applied where the field and the input value
+       * are of mixed types (that is - one is an integer and one is a double)
+       * the field takes on the type of the larger operand. If the operands are
+       * equivalent (e.g. 3 and 3.0), the field does not change.
+       * 0, 0.0, and -0.0 are all zero. The maximum of a zero stored value and
+       * zero input value is always the stored value.
+       * The maximum of any numeric value x and NaN is NaN.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.Value maximum = 4;</code>
+       */
+      public com.google.firestore.v1beta1.Value.Builder getMaximumBuilder() {
+        return getMaximumFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sets the field to the maximum of its current value and the given value.
+       * This must be an integer or a double value.
+       * If the field is not an integer or double, or if the field does not yet
+       * exist, the transformation will set the field to the given value.
+       * If a maximum operation is applied where the field and the input value
+       * are of mixed types (that is - one is an integer and one is a double)
+       * the field takes on the type of the larger operand. If the operands are
+       * equivalent (e.g. 3 and 3.0), the field does not change.
+       * 0, 0.0, and -0.0 are all zero. The maximum of a zero stored value and
+       * zero input value is always the stored value.
+       * The maximum of any numeric value x and NaN is NaN.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.Value maximum = 4;</code>
+       */
+      public com.google.firestore.v1beta1.ValueOrBuilder getMaximumOrBuilder() {
+        if ((transformTypeCase_ == 4) && (maximumBuilder_ != null)) {
+          return maximumBuilder_.getMessageOrBuilder();
+        } else {
+          if (transformTypeCase_ == 4) {
+            return (com.google.firestore.v1beta1.Value) transformType_;
+          }
+          return com.google.firestore.v1beta1.Value.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sets the field to the maximum of its current value and the given value.
+       * This must be an integer or a double value.
+       * If the field is not an integer or double, or if the field does not yet
+       * exist, the transformation will set the field to the given value.
+       * If a maximum operation is applied where the field and the input value
+       * are of mixed types (that is - one is an integer and one is a double)
+       * the field takes on the type of the larger operand. If the operands are
+       * equivalent (e.g. 3 and 3.0), the field does not change.
+       * 0, 0.0, and -0.0 are all zero. The maximum of a zero stored value and
+       * zero input value is always the stored value.
+       * The maximum of any numeric value x and NaN is NaN.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.Value maximum = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.firestore.v1beta1.Value,
+              com.google.firestore.v1beta1.Value.Builder,
+              com.google.firestore.v1beta1.ValueOrBuilder>
+          getMaximumFieldBuilder() {
+        if (maximumBuilder_ == null) {
+          if (!(transformTypeCase_ == 4)) {
+            transformType_ = com.google.firestore.v1beta1.Value.getDefaultInstance();
+          }
+          maximumBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.firestore.v1beta1.Value,
+                  com.google.firestore.v1beta1.Value.Builder,
+                  com.google.firestore.v1beta1.ValueOrBuilder>(
+                  (com.google.firestore.v1beta1.Value) transformType_,
+                  getParentForChildren(),
+                  isClean());
+          transformType_ = null;
+        }
+        transformTypeCase_ = 4;
+        onChanged();
+        ;
+        return maximumBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.firestore.v1beta1.Value,
+              com.google.firestore.v1beta1.Value.Builder,
+              com.google.firestore.v1beta1.ValueOrBuilder>
+          minimumBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Sets the field to the minimum of its current value and the given value.
+       * This must be an integer or a double value.
+       * If the field is not an integer or double, or if the field does not yet
+       * exist, the transformation will set the field to the input value.
+       * If a minimum operation is applied where the field and the input value
+       * are of mixed types (that is - one is an integer and one is a double)
+       * the field takes on the type of the smaller operand. If the operands are
+       * equivalent (e.g. 3 and 3.0), the field does not change.
+       * 0, 0.0, and -0.0 are all zero. The minimum of a zero stored value and
+       * zero input value is always the stored value.
+       * The minimum of any numeric value x and NaN is NaN.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.Value minimum = 5;</code>
+       */
+      public boolean hasMinimum() {
+        return transformTypeCase_ == 5;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sets the field to the minimum of its current value and the given value.
+       * This must be an integer or a double value.
+       * If the field is not an integer or double, or if the field does not yet
+       * exist, the transformation will set the field to the input value.
+       * If a minimum operation is applied where the field and the input value
+       * are of mixed types (that is - one is an integer and one is a double)
+       * the field takes on the type of the smaller operand. If the operands are
+       * equivalent (e.g. 3 and 3.0), the field does not change.
+       * 0, 0.0, and -0.0 are all zero. The minimum of a zero stored value and
+       * zero input value is always the stored value.
+       * The minimum of any numeric value x and NaN is NaN.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.Value minimum = 5;</code>
+       */
+      public com.google.firestore.v1beta1.Value getMinimum() {
+        if (minimumBuilder_ == null) {
+          if (transformTypeCase_ == 5) {
+            return (com.google.firestore.v1beta1.Value) transformType_;
+          }
+          return com.google.firestore.v1beta1.Value.getDefaultInstance();
+        } else {
+          if (transformTypeCase_ == 5) {
+            return minimumBuilder_.getMessage();
+          }
+          return com.google.firestore.v1beta1.Value.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sets the field to the minimum of its current value and the given value.
+       * This must be an integer or a double value.
+       * If the field is not an integer or double, or if the field does not yet
+       * exist, the transformation will set the field to the input value.
+       * If a minimum operation is applied where the field and the input value
+       * are of mixed types (that is - one is an integer and one is a double)
+       * the field takes on the type of the smaller operand. If the operands are
+       * equivalent (e.g. 3 and 3.0), the field does not change.
+       * 0, 0.0, and -0.0 are all zero. The minimum of a zero stored value and
+       * zero input value is always the stored value.
+       * The minimum of any numeric value x and NaN is NaN.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.Value minimum = 5;</code>
+       */
+      public Builder setMinimum(com.google.firestore.v1beta1.Value value) {
+        if (minimumBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          transformType_ = value;
+          onChanged();
+        } else {
+          minimumBuilder_.setMessage(value);
+        }
+        transformTypeCase_ = 5;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sets the field to the minimum of its current value and the given value.
+       * This must be an integer or a double value.
+       * If the field is not an integer or double, or if the field does not yet
+       * exist, the transformation will set the field to the input value.
+       * If a minimum operation is applied where the field and the input value
+       * are of mixed types (that is - one is an integer and one is a double)
+       * the field takes on the type of the smaller operand. If the operands are
+       * equivalent (e.g. 3 and 3.0), the field does not change.
+       * 0, 0.0, and -0.0 are all zero. The minimum of a zero stored value and
+       * zero input value is always the stored value.
+       * The minimum of any numeric value x and NaN is NaN.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.Value minimum = 5;</code>
+       */
+      public Builder setMinimum(com.google.firestore.v1beta1.Value.Builder builderForValue) {
+        if (minimumBuilder_ == null) {
+          transformType_ = builderForValue.build();
+          onChanged();
+        } else {
+          minimumBuilder_.setMessage(builderForValue.build());
+        }
+        transformTypeCase_ = 5;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sets the field to the minimum of its current value and the given value.
+       * This must be an integer or a double value.
+       * If the field is not an integer or double, or if the field does not yet
+       * exist, the transformation will set the field to the input value.
+       * If a minimum operation is applied where the field and the input value
+       * are of mixed types (that is - one is an integer and one is a double)
+       * the field takes on the type of the smaller operand. If the operands are
+       * equivalent (e.g. 3 and 3.0), the field does not change.
+       * 0, 0.0, and -0.0 are all zero. The minimum of a zero stored value and
+       * zero input value is always the stored value.
+       * The minimum of any numeric value x and NaN is NaN.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.Value minimum = 5;</code>
+       */
+      public Builder mergeMinimum(com.google.firestore.v1beta1.Value value) {
+        if (minimumBuilder_ == null) {
+          if (transformTypeCase_ == 5
+              && transformType_ != com.google.firestore.v1beta1.Value.getDefaultInstance()) {
+            transformType_ =
+                com.google.firestore.v1beta1.Value.newBuilder(
+                        (com.google.firestore.v1beta1.Value) transformType_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            transformType_ = value;
+          }
+          onChanged();
+        } else {
+          if (transformTypeCase_ == 5) {
+            minimumBuilder_.mergeFrom(value);
+          }
+          minimumBuilder_.setMessage(value);
+        }
+        transformTypeCase_ = 5;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sets the field to the minimum of its current value and the given value.
+       * This must be an integer or a double value.
+       * If the field is not an integer or double, or if the field does not yet
+       * exist, the transformation will set the field to the input value.
+       * If a minimum operation is applied where the field and the input value
+       * are of mixed types (that is - one is an integer and one is a double)
+       * the field takes on the type of the smaller operand. If the operands are
+       * equivalent (e.g. 3 and 3.0), the field does not change.
+       * 0, 0.0, and -0.0 are all zero. The minimum of a zero stored value and
+       * zero input value is always the stored value.
+       * The minimum of any numeric value x and NaN is NaN.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.Value minimum = 5;</code>
+       */
+      public Builder clearMinimum() {
+        if (minimumBuilder_ == null) {
+          if (transformTypeCase_ == 5) {
+            transformTypeCase_ = 0;
+            transformType_ = null;
+            onChanged();
+          }
+        } else {
+          if (transformTypeCase_ == 5) {
+            transformTypeCase_ = 0;
+            transformType_ = null;
+          }
+          minimumBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sets the field to the minimum of its current value and the given value.
+       * This must be an integer or a double value.
+       * If the field is not an integer or double, or if the field does not yet
+       * exist, the transformation will set the field to the input value.
+       * If a minimum operation is applied where the field and the input value
+       * are of mixed types (that is - one is an integer and one is a double)
+       * the field takes on the type of the smaller operand. If the operands are
+       * equivalent (e.g. 3 and 3.0), the field does not change.
+       * 0, 0.0, and -0.0 are all zero. The minimum of a zero stored value and
+       * zero input value is always the stored value.
+       * The minimum of any numeric value x and NaN is NaN.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.Value minimum = 5;</code>
+       */
+      public com.google.firestore.v1beta1.Value.Builder getMinimumBuilder() {
+        return getMinimumFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sets the field to the minimum of its current value and the given value.
+       * This must be an integer or a double value.
+       * If the field is not an integer or double, or if the field does not yet
+       * exist, the transformation will set the field to the input value.
+       * If a minimum operation is applied where the field and the input value
+       * are of mixed types (that is - one is an integer and one is a double)
+       * the field takes on the type of the smaller operand. If the operands are
+       * equivalent (e.g. 3 and 3.0), the field does not change.
+       * 0, 0.0, and -0.0 are all zero. The minimum of a zero stored value and
+       * zero input value is always the stored value.
+       * The minimum of any numeric value x and NaN is NaN.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.Value minimum = 5;</code>
+       */
+      public com.google.firestore.v1beta1.ValueOrBuilder getMinimumOrBuilder() {
+        if ((transformTypeCase_ == 5) && (minimumBuilder_ != null)) {
+          return minimumBuilder_.getMessageOrBuilder();
+        } else {
+          if (transformTypeCase_ == 5) {
+            return (com.google.firestore.v1beta1.Value) transformType_;
+          }
+          return com.google.firestore.v1beta1.Value.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sets the field to the minimum of its current value and the given value.
+       * This must be an integer or a double value.
+       * If the field is not an integer or double, or if the field does not yet
+       * exist, the transformation will set the field to the input value.
+       * If a minimum operation is applied where the field and the input value
+       * are of mixed types (that is - one is an integer and one is a double)
+       * the field takes on the type of the smaller operand. If the operands are
+       * equivalent (e.g. 3 and 3.0), the field does not change.
+       * 0, 0.0, and -0.0 are all zero. The minimum of a zero stored value and
+       * zero input value is always the stored value.
+       * The minimum of any numeric value x and NaN is NaN.
+       * </pre>
+       *
+       * <code>.google.firestore.v1beta1.Value minimum = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.firestore.v1beta1.Value,
+              com.google.firestore.v1beta1.Value.Builder,
+              com.google.firestore.v1beta1.ValueOrBuilder>
+          getMinimumFieldBuilder() {
+        if (minimumBuilder_ == null) {
+          if (!(transformTypeCase_ == 5)) {
+            transformType_ = com.google.firestore.v1beta1.Value.getDefaultInstance();
+          }
+          minimumBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.firestore.v1beta1.Value,
+                  com.google.firestore.v1beta1.Value.Builder,
+                  com.google.firestore.v1beta1.ValueOrBuilder>(
+                  (com.google.firestore.v1beta1.Value) transformType_,
+                  getParentForChildren(),
+                  isClean());
+          transformType_ = null;
+        }
+        transformTypeCase_ = 5;
+        onChanged();
+        ;
+        return minimumBuilder_;
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<

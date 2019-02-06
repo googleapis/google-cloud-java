@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.backendBuckets.delete. Deletes the specified BackendBucket
+ * resource.
+ */
 public final class DeleteBackendBucketHttpRequest implements ApiMessage {
   private final String access_token;
   private final String backendBucket;

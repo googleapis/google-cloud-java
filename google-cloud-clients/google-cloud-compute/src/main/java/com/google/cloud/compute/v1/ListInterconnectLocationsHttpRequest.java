@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.interconnectLocations.list. Retrieves the list of interconnect
+ * locations available to the specified project.
+ */
 public final class ListInterconnectLocationsHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

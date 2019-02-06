@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.disks.setLabels. Sets the labels on a disk. To learn more about
+ * labels, read the Labeling Resources documentation.
+ */
 public final class SetLabelsDiskHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

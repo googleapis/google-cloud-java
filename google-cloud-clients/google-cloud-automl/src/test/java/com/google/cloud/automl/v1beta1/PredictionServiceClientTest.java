@@ -39,19 +39,19 @@ import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class PredictionServiceClientTest {
-  private static MockPredictionService mockPredictionService;
   private static MockAutoMl mockAutoMl;
+  private static MockPredictionService mockPredictionService;
   private static MockServiceHelper serviceHelper;
   private PredictionServiceClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
-    mockPredictionService = new MockPredictionService();
     mockAutoMl = new MockAutoMl();
+    mockPredictionService = new MockPredictionService();
     serviceHelper =
         new MockServiceHelper(
-            "in-process-1", Arrays.<MockGrpcService>asList(mockPredictionService, mockAutoMl));
+            "in-process-1", Arrays.<MockGrpcService>asList(mockAutoMl, mockPredictionService));
     serviceHelper.start();
   }
 

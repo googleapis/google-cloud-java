@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.sslCertificates.delete. Deletes the specified SslCertificate
+ * resource.
+ */
 public final class DeleteSslCertificateHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

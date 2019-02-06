@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.routers.getNatMappingInfo. Retrieves runtime Nat mapping
+ * information of VM endpoints.
+ */
 public final class GetNatMappingInfoRoutersHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

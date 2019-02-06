@@ -48,6 +48,8 @@ public final class ForwardingRule implements ApiMessage {
   private final List<String> ports;
   private final String region;
   private final String selfLink;
+  private final String serviceLabel;
+  private final String serviceName;
   private final String subnetwork;
   private final String target;
 
@@ -68,6 +70,8 @@ public final class ForwardingRule implements ApiMessage {
     this.ports = null;
     this.region = null;
     this.selfLink = null;
+    this.serviceLabel = null;
+    this.serviceName = null;
     this.subnetwork = null;
     this.target = null;
   }
@@ -89,6 +93,8 @@ public final class ForwardingRule implements ApiMessage {
       List<String> ports,
       String region,
       String selfLink,
+      String serviceLabel,
+      String serviceName,
       String subnetwork,
       String target) {
     this.backendService = backendService;
@@ -107,6 +113,8 @@ public final class ForwardingRule implements ApiMessage {
     this.ports = ports;
     this.region = region;
     this.selfLink = selfLink;
+    this.serviceLabel = serviceLabel;
+    this.serviceName = serviceName;
     this.subnetwork = subnetwork;
     this.target = target;
   }
@@ -160,6 +168,12 @@ public final class ForwardingRule implements ApiMessage {
     }
     if ("selfLink".equals(fieldName)) {
       return selfLink;
+    }
+    if ("serviceLabel".equals(fieldName)) {
+      return serviceLabel;
+    }
+    if ("serviceName".equals(fieldName)) {
+      return serviceName;
     }
     if ("subnetwork".equals(fieldName)) {
       return subnetwork;
@@ -246,6 +260,14 @@ public final class ForwardingRule implements ApiMessage {
     return selfLink;
   }
 
+  public String getServiceLabel() {
+    return serviceLabel;
+  }
+
+  public String getServiceName() {
+    return serviceName;
+  }
+
   public String getSubnetwork() {
     return subnetwork;
   }
@@ -293,6 +315,8 @@ public final class ForwardingRule implements ApiMessage {
     private List<String> ports;
     private String region;
     private String selfLink;
+    private String serviceLabel;
+    private String serviceName;
     private String subnetwork;
     private String target;
 
@@ -348,6 +372,12 @@ public final class ForwardingRule implements ApiMessage {
       if (other.getSelfLink() != null) {
         this.selfLink = other.selfLink;
       }
+      if (other.getServiceLabel() != null) {
+        this.serviceLabel = other.serviceLabel;
+      }
+      if (other.getServiceName() != null) {
+        this.serviceName = other.serviceName;
+      }
       if (other.getSubnetwork() != null) {
         this.subnetwork = other.subnetwork;
       }
@@ -374,6 +404,8 @@ public final class ForwardingRule implements ApiMessage {
       this.ports = source.ports;
       this.region = source.region;
       this.selfLink = source.selfLink;
+      this.serviceLabel = source.serviceLabel;
+      this.serviceName = source.serviceName;
       this.subnetwork = source.subnetwork;
       this.target = source.target;
     }
@@ -533,6 +565,24 @@ public final class ForwardingRule implements ApiMessage {
       return this;
     }
 
+    public String getServiceLabel() {
+      return serviceLabel;
+    }
+
+    public Builder setServiceLabel(String serviceLabel) {
+      this.serviceLabel = serviceLabel;
+      return this;
+    }
+
+    public String getServiceName() {
+      return serviceName;
+    }
+
+    public Builder setServiceName(String serviceName) {
+      this.serviceName = serviceName;
+      return this;
+    }
+
     public String getSubnetwork() {
       return subnetwork;
     }
@@ -570,6 +620,8 @@ public final class ForwardingRule implements ApiMessage {
           ports,
           region,
           selfLink,
+          serviceLabel,
+          serviceName,
           subnetwork,
           target);
     }
@@ -592,6 +644,8 @@ public final class ForwardingRule implements ApiMessage {
       newBuilder.addAllPorts(this.ports);
       newBuilder.setRegion(this.region);
       newBuilder.setSelfLink(this.selfLink);
+      newBuilder.setServiceLabel(this.serviceLabel);
+      newBuilder.setServiceName(this.serviceName);
       newBuilder.setSubnetwork(this.subnetwork);
       newBuilder.setTarget(this.target);
       return newBuilder;
@@ -649,6 +703,12 @@ public final class ForwardingRule implements ApiMessage {
         + "selfLink="
         + selfLink
         + ", "
+        + "serviceLabel="
+        + serviceLabel
+        + ", "
+        + "serviceName="
+        + serviceName
+        + ", "
         + "subnetwork="
         + subnetwork
         + ", "
@@ -680,6 +740,8 @@ public final class ForwardingRule implements ApiMessage {
           && Objects.equals(this.ports, that.getPortsList())
           && Objects.equals(this.region, that.getRegion())
           && Objects.equals(this.selfLink, that.getSelfLink())
+          && Objects.equals(this.serviceLabel, that.getServiceLabel())
+          && Objects.equals(this.serviceName, that.getServiceName())
           && Objects.equals(this.subnetwork, that.getSubnetwork())
           && Objects.equals(this.target, that.getTarget());
     }
@@ -705,6 +767,8 @@ public final class ForwardingRule implements ApiMessage {
         ports,
         region,
         selfLink,
+        serviceLabel,
+        serviceName,
         subnetwork,
         target);
   }

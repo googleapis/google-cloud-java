@@ -2426,7 +2426,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (category_
         != com.google.cloud.vision.v1p3beta1.ProductSearchCategory
-            .PRODUCT_SEARCH_CATEGORY_UNSPECIFIED.getNumber()) {
+            .PRODUCT_SEARCH_CATEGORY_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(1, category_);
     }
     if (indexTime_ != null) {
@@ -2452,7 +2453,8 @@ public final class ProductSearchResults extends com.google.protobuf.GeneratedMes
     size = 0;
     if (category_
         != com.google.cloud.vision.v1p3beta1.ProductSearchCategory
-            .PRODUCT_SEARCH_CATEGORY_UNSPECIFIED.getNumber()) {
+            .PRODUCT_SEARCH_CATEGORY_UNSPECIFIED
+            .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, category_);
     }
     if (indexTime_ != null) {

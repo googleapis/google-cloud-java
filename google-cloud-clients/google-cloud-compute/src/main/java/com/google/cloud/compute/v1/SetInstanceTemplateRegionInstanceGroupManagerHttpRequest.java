@@ -24,6 +24,11 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.regionInstanceGroupManagers.setInstanceTemplate. Sets the
+ * instance template to use when creating new instances or recreating instances in this group.
+ * Existing instances are not affected.
+ */
 public final class SetInstanceTemplateRegionInstanceGroupManagerHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

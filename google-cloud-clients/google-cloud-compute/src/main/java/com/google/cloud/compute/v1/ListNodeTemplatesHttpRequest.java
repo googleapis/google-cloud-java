@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.nodeTemplates.list. Retrieves a list of node templates
+ * available to the specified project.
+ */
 public final class ListNodeTemplatesHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

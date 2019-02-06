@@ -166,10 +166,11 @@ public final class ProjectZoneMachineTypeName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
-        "machineType", machineType,
-        "project", project,
-        "zone", zone);
+    return SERVICE_ADDRESS
+        + PATH_TEMPLATE.instantiate(
+            "machineType", machineType,
+            "project", project,
+            "zone", zone);
   }
 
   @Override

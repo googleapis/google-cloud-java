@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.instances.setMachineResources. Changes the number and/or type
+ * of accelerator for a stopped instance to the values specified in the request.
+ */
 public final class SetMachineResourcesInstanceHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

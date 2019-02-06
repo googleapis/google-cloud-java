@@ -14,27 +14,27 @@
  * limitations under the License.
  */
 
-package com.google.cloud.firestore.spi.v1beta1;
+package com.google.cloud.firestore.spi.v1;
 
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.ServiceRpc;
-import com.google.cloud.firestore.v1beta1.FirestoreClient.ListCollectionIdsPagedResponse;
-import com.google.cloud.firestore.v1beta1.FirestoreClient.ListDocumentsPagedResponse;
-import com.google.firestore.v1beta1.BatchGetDocumentsRequest;
-import com.google.firestore.v1beta1.BatchGetDocumentsResponse;
-import com.google.firestore.v1beta1.BeginTransactionRequest;
-import com.google.firestore.v1beta1.BeginTransactionResponse;
-import com.google.firestore.v1beta1.CommitRequest;
-import com.google.firestore.v1beta1.CommitResponse;
-import com.google.firestore.v1beta1.ListCollectionIdsRequest;
-import com.google.firestore.v1beta1.ListDocumentsRequest;
-import com.google.firestore.v1beta1.ListenRequest;
-import com.google.firestore.v1beta1.ListenResponse;
-import com.google.firestore.v1beta1.RollbackRequest;
-import com.google.firestore.v1beta1.RunQueryRequest;
-import com.google.firestore.v1beta1.RunQueryResponse;
+import com.google.cloud.firestore.v1.FirestoreClient.ListCollectionIdsPagedResponse;
+import com.google.cloud.firestore.v1.FirestoreClient.ListDocumentsPagedResponse;
+import com.google.firestore.v1.BatchGetDocumentsRequest;
+import com.google.firestore.v1.BatchGetDocumentsResponse;
+import com.google.firestore.v1.BeginTransactionRequest;
+import com.google.firestore.v1.BeginTransactionResponse;
+import com.google.firestore.v1.CommitRequest;
+import com.google.firestore.v1.CommitResponse;
+import com.google.firestore.v1.ListCollectionIdsRequest;
+import com.google.firestore.v1.ListDocumentsRequest;
+import com.google.firestore.v1.ListenRequest;
+import com.google.firestore.v1.ListenResponse;
+import com.google.firestore.v1.RollbackRequest;
+import com.google.firestore.v1.RunQueryRequest;
+import com.google.firestore.v1.RunQueryResponse;
 import com.google.protobuf.Empty;
 import java.util.concurrent.ScheduledExecutorService;
 

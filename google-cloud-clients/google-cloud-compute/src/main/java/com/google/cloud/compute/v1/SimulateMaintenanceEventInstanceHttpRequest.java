@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.instances.simulateMaintenanceEvent. Simulates a maintenance
+ * event on the instance.
+ */
 public final class SimulateMaintenanceEventInstanceHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

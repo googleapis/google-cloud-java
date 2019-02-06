@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.regionDisks.createSnapshot. Creates a snapshot of this regional
+ * disk.
+ */
 public final class CreateSnapshotRegionDiskHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

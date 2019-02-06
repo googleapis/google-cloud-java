@@ -24,6 +24,20 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.regionInstanceGroupManagers.recreateInstances. Flags the
+ * specified instances in the managed instance group to be immediately recreated. The instances are
+ * deleted and recreated using the current instance template for the managed instance group. This
+ * operation is marked as DONE when the flag is set even if the instances have not yet been
+ * recreated. You must separately verify the status of the recreating action with the
+ * listmanagedinstances method.
+ *
+ * <p>If the group is part of a backend service that has enabled connection draining, it can take up
+ * to 60 seconds after the connection draining duration has elapsed before the VM instance is
+ * removed or deleted.
+ *
+ * <p>You can specify a maximum of 1000 instances with this method per request.
+ */
 public final class RecreateInstancesRegionInstanceGroupManagerHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;

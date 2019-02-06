@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.targetPools.insert. Creates a target pool in the specified
+ * project and region using the data included in the request.
+ */
 public final class InsertTargetPoolHttpRequest implements ApiMessage {
   private final String access_token;
   private final String callback;
