@@ -71,9 +71,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-/**
- * This class contains a number of snippets for the {@link Storage} interface.
- */
+/** This class contains a number of snippets for the {@link Storage} interface. */
 public class StorageSnippets {
 
   private final Storage storage;
@@ -82,9 +80,7 @@ public class StorageSnippets {
     this.storage = storage;
   }
 
-  /**
-   * Example of creating a bucket.
-   */
+  /** Example of creating a bucket. */
   // [TARGET create(BucketInfo, BucketTargetOption...)]
   // [VARIABLE "my_unique_bucket"]
   public Bucket createBucket(String bucketName) {
@@ -94,9 +90,7 @@ public class StorageSnippets {
     return bucket;
   }
 
-  /**
-   * Example of creating a bucket with storage class and location.
-   */
+  /** Example of creating a bucket with storage class and location. */
   // [TARGET create(BucketInfo, BucketTargetOption...)]
   // [VARIABLE "my_unique_bucket"]
   public Bucket createBucketWithStorageClassAndLocation(String bucketName) {
@@ -113,9 +107,7 @@ public class StorageSnippets {
     return bucket;
   }
 
-  /**
-   * Example of creating a blob with no content.
-   */
+  /** Example of creating a blob with no content. */
   // [TARGET create(BlobInfo, BlobTargetOption...)]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "my_blob_name"]
@@ -128,9 +120,7 @@ public class StorageSnippets {
     return blob;
   }
 
-  /**
-   * Example of creating a blob from a byte array.
-   */
+  /** Example of creating a blob from a byte array. */
   // [TARGET create(BlobInfo, byte[], BlobTargetOption...)]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "my_blob_name"]
@@ -143,9 +133,7 @@ public class StorageSnippets {
     return blob;
   }
 
-  /**
-   * Example of creating a blob from an input stream.
-   */
+  /** Example of creating a blob from an input stream. */
   // [TARGET create(BlobInfo, InputStream, BlobWriteOption...)]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "my_blob_name"]
@@ -159,9 +147,7 @@ public class StorageSnippets {
     return blob;
   }
 
-  /**
-   * Example of uploading an encrypted blob.
-   */
+  /** Example of uploading an encrypted blob. */
   // [TARGET create(BlobInfo, InputStream, BlobWriteOption...)]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "my_blob_name"]
@@ -177,9 +163,7 @@ public class StorageSnippets {
     return blob;
   }
 
-  /**
-   * Example of uploading a blob encrypted service side with a Cloud KMS key.
-   */
+  /** Example of uploading a blob encrypted service side with a Cloud KMS key. */
   public Blob createKmsEncrpytedBlob(String bucketName, String blobName, String kmsKeyName) {
     // [START storage_upload_with_kms_key]
     byte[] data = "Hello, World!".getBytes(UTF_8);
@@ -231,9 +215,7 @@ public class StorageSnippets {
     return blob;
   }
 
-  /**
-   * Example of getting information on a blob.
-   */
+  /** Example of getting information on a blob. */
   // [TARGET get(BlobId)]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "my_blob_name"]
@@ -262,9 +244,7 @@ public class StorageSnippets {
     return blob;
   }
 
-  /**
-   * Example of listing buckets, specifying the page size and a name prefix.
-   */
+  /** Example of listing buckets, specifying the page size and a name prefix. */
   // [TARGET list(BucketListOption...)]
   // [VARIABLE "bucket_"]
   public Page<Bucket> listBucketsWithSizeAndPrefix(String prefix) {
@@ -280,9 +260,7 @@ public class StorageSnippets {
     return buckets;
   }
 
-  /**
-   * Example of listing blobs in a provided directory.
-   */
+  /** Example of listing blobs in a provided directory. */
   // [TARGET list(String, BlobListOption...)]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "my_directory/"]
@@ -298,9 +276,7 @@ public class StorageSnippets {
     return blobs;
   }
 
-  /**
-   * Example of updating bucket information.
-   */
+  /** Example of updating bucket information. */
   // [TARGET update(BucketInfo, BucketTargetOption...)]
   // [VARIABLE "my_unique_bucket"]
   public Bucket updateBucket(String bucketName) {
@@ -311,9 +287,7 @@ public class StorageSnippets {
     return bucket;
   }
 
-  /**
-   * Example of replacing blob's metadata.
-   */
+  /** Example of replacing blob's metadata. */
   // [TARGET update(BlobInfo)]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "my_blob_name"]
@@ -408,9 +382,7 @@ public class StorageSnippets {
     return deleted;
   }
 
-  /**
-   * Example of deleting a blob.
-   */
+  /** Example of deleting a blob. */
   // [TARGET delete(BlobId)]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "my_blob_name"]
@@ -427,9 +399,7 @@ public class StorageSnippets {
     return deleted;
   }
 
-  /**
-   * Example of composing two blobs.
-   */
+  /** Example of composing two blobs. */
   // [TARGET compose(ComposeRequest)]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "my_blob_name"]
@@ -451,9 +421,7 @@ public class StorageSnippets {
     return blob;
   }
 
-  /**
-   * Example of copying a blob.
-   */
+  /** Example of copying a blob. */
   // [TARGET copy(CopyRequest)]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "my_blob_name"]
@@ -470,9 +438,7 @@ public class StorageSnippets {
     return blob;
   }
 
-  /**
-   * Example of copying a blob in chunks.
-   */
+  /** Example of copying a blob in chunks. */
   // [TARGET copy(CopyRequest)]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "my_blob_name"]
@@ -493,9 +459,7 @@ public class StorageSnippets {
     return blob;
   }
 
-  /**
-   * Example of rotating the encryption key of a blob.
-   */
+  /** Example of rotating the encryption key of a blob. */
   // [TARGET copy(CopyRequest)]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "my_blob_name"]
@@ -550,9 +514,7 @@ public class StorageSnippets {
     return content;
   }
 
-  /**
-   * Example of reading all bytes of an encrypted blob.
-   */
+  /** Example of reading all bytes of an encrypted blob. */
   // [TARGET readAllBytes(BlobId, BlobSourceOption...)]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "my_blob_name"]
@@ -565,9 +527,7 @@ public class StorageSnippets {
     return content;
   }
 
-  /**
-   * Example of using a batch request to delete, update and get a blob.
-   */
+  /** Example of using a batch request to delete, update and get a blob. */
   // [TARGET batch()]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "my_blob_name1"]
@@ -597,9 +557,7 @@ public class StorageSnippets {
     return blob;
   }
 
-  /**
-   * Example of reading a blob's content through a reader.
-   */
+  /** Example of reading a blob's content through a reader. */
   // [TARGET reader(String, String, BlobSourceOption...)]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "my_blob_name"]
@@ -616,9 +574,7 @@ public class StorageSnippets {
     // [END readerFromStrings]
   }
 
-  /**
-   * Example of reading a blob's content through a reader.
-   */
+  /** Example of reading a blob's content through a reader. */
   // [TARGET reader(BlobId, BlobSourceOption...)]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "my_blob_name"]
@@ -636,9 +592,7 @@ public class StorageSnippets {
     // [END readerFromId]
   }
 
-  /**
-   * Example of writing a blob's content through a writer.
-   */
+  /** Example of writing a blob's content through a writer. */
   // [TARGET writer(BlobInfo, BlobWriteOption...)]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "my_blob_name"]
@@ -694,9 +648,7 @@ public class StorageSnippets {
     return signedUrl;
   }
 
-  /**
-   * Example of getting information on several blobs using a single batch request.
-   */
+  /** Example of getting information on several blobs using a single batch request. */
   // [TARGET get(BlobId...)]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "my_blob_name1"]
@@ -710,9 +662,7 @@ public class StorageSnippets {
     return blobs;
   }
 
-  /**
-   * Example of getting information on several blobs using a single batch request.
-   */
+  /** Example of getting information on several blobs using a single batch request. */
   // [TARGET get(Iterable)]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "my_blob_name1"]
@@ -727,9 +677,7 @@ public class StorageSnippets {
     return blobs;
   }
 
-  /**
-   * Example of updating information on several blobs using a single batch request.
-   */
+  /** Example of updating information on several blobs using a single batch request. */
   // [TARGET update(BlobInfo...)]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "my_blob_name1"]
@@ -746,9 +694,7 @@ public class StorageSnippets {
     return updatedBlobs;
   }
 
-  /**
-   * Example of updating information on several blobs using a single batch request.
-   */
+  /** Example of updating information on several blobs using a single batch request. */
   // [TARGET update(Iterable)]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "my_blob_name1"]
@@ -765,9 +711,7 @@ public class StorageSnippets {
     return updatedBlobs;
   }
 
-  /**
-   * Example of deleting several blobs using a single batch request.
-   */
+  /** Example of deleting several blobs using a single batch request. */
   // [TARGET delete(BlobId...)]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "my_blob_name1"]
@@ -781,9 +725,7 @@ public class StorageSnippets {
     return deleted;
   }
 
-  /**
-   * Example of deleting several blobs using a single batch request.
-   */
+  /** Example of deleting several blobs using a single batch request. */
   // [TARGET delete(Iterable)]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "my_blob_name1"]
@@ -798,9 +740,7 @@ public class StorageSnippets {
     return deleted;
   }
 
-  /**
-   * Example of getting the ACL entry for an entity on a bucket.
-   */
+  /** Example of getting the ACL entry for an entity on a bucket. */
   // [TARGET getAcl(String, Entity)]
   // [VARIABLE "my_unique_bucket"]
   public Acl getBucketAcl(String bucketName) {
@@ -810,9 +750,7 @@ public class StorageSnippets {
     return acl;
   }
 
-  /**
-   * Example of getting the ACL entry for a specific user on a bucket.
-   */
+  /** Example of getting the ACL entry for a specific user on a bucket. */
   // [TARGET getAcl(String, Entity)]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "google-cloud-java-tests@java-docs-samples-tests.iam.gserviceaccount.com"]
@@ -823,9 +761,7 @@ public class StorageSnippets {
     return acl;
   }
 
-  /**
-   * Example of deleting the ACL entry for an entity on a bucket.
-   */
+  /** Example of deleting the ACL entry for an entity on a bucket. */
   // [TARGET deleteAcl(String, Entity)]
   // [VARIABLE "my_unique_bucket"]
   public boolean deleteBucketAcl(String bucketName) {
@@ -840,9 +776,7 @@ public class StorageSnippets {
     return deleted;
   }
 
-  /**
-   * Example of creating a new ACL entry on a bucket.
-   */
+  /** Example of creating a new ACL entry on a bucket. */
   // [TARGET createAcl(String, Acl)]
   // [VARIABLE "my_unique_bucket"]
   public Acl createBucketAcl(String bucketName) {
@@ -852,9 +786,7 @@ public class StorageSnippets {
     return acl;
   }
 
-  /**
-   * Example of updating a new ACL entry on a bucket.
-   */
+  /** Example of updating a new ACL entry on a bucket. */
   // [TARGET updateAcl(String, Acl)]
   // [VARIABLE "my_unique_bucket"]
   public Acl updateBucketAcl(String bucketName) {
@@ -864,9 +796,7 @@ public class StorageSnippets {
     return acl;
   }
 
-  /**
-   * Example of listing the ACL entries for a blob.
-   */
+  /** Example of listing the ACL entries for a blob. */
   // [TARGET listAcls(String)]
   // [VARIABLE "my_unique_bucket"]
   public List<Acl> listBucketAcls(String bucketName) {
@@ -879,9 +809,7 @@ public class StorageSnippets {
     return acls;
   }
 
-  /**
-   * Example of getting the default ACL entry for an entity on a bucket.
-   */
+  /** Example of getting the default ACL entry for an entity on a bucket. */
   // [TARGET getDefaultAcl(String, Entity)]
   // [VARIABLE "my_unique_bucket"]
   public Acl getDefaultBucketAcl(String bucketName) {
@@ -891,9 +819,7 @@ public class StorageSnippets {
     return acl;
   }
 
-  /**
-   * Example of deleting the default ACL entry for an entity on a bucket.
-   */
+  /** Example of deleting the default ACL entry for an entity on a bucket. */
   // [TARGET deleteDefaultAcl(String, Entity)]
   // [VARIABLE "my_unique_bucket"]
   public boolean deleteDefaultBucketAcl(String bucketName) {
@@ -908,9 +834,7 @@ public class StorageSnippets {
     return deleted;
   }
 
-  /**
-   * Example of creating a new default ACL entry on a bucket.
-   */
+  /** Example of creating a new default ACL entry on a bucket. */
   // [TARGET createDefaultAcl(String, Acl)]
   // [VARIABLE "my_unique_bucket"]
   public Acl createDefaultBucketAcl(String bucketName) {
@@ -921,9 +845,7 @@ public class StorageSnippets {
     return acl;
   }
 
-  /**
-   * Example of updating a new default ACL entry on a bucket.
-   */
+  /** Example of updating a new default ACL entry on a bucket. */
   // [TARGET updateDefaultAcl(String, Acl)]
   // [VARIABLE "my_unique_bucket"]
   public Acl updateDefaultBucketAcl(String bucketName) {
@@ -934,9 +856,7 @@ public class StorageSnippets {
     return acl;
   }
 
-  /**
-   * Example of listing the default ACL entries for a blob.
-   */
+  /** Example of listing the default ACL entries for a blob. */
   // [TARGET listDefaultAcls(String)]
   // [VARIABLE "my_unique_bucket"]
   public List<Acl> listDefaultBucketAcls(String bucketName) {
@@ -949,9 +869,7 @@ public class StorageSnippets {
     return acls;
   }
 
-  /**
-   * Example of getting the ACL entry for an entity on a blob.
-   */
+  /** Example of getting the ACL entry for an entity on a blob. */
   // [TARGET getAcl(BlobId, Entity)]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "my_blob_name"]
@@ -964,9 +882,7 @@ public class StorageSnippets {
     return acl;
   }
 
-  /**
-   * Example of getting the ACL entry for a specific user on a blob.
-   */
+  /** Example of getting the ACL entry for a specific user on a blob. */
   // [TARGET getAcl(BlobId, Entity)]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "my_blob_name"]
@@ -979,9 +895,7 @@ public class StorageSnippets {
     return acl;
   }
 
-  /**
-   * Example of deleting the ACL entry for an entity on a blob.
-   */
+  /** Example of deleting the ACL entry for an entity on a blob. */
   // [TARGET deleteAcl(BlobId, Entity)]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "my_blob_name"]
@@ -999,9 +913,7 @@ public class StorageSnippets {
     return deleted;
   }
 
-  /**
-   * Example of creating a new ACL entry on a blob.
-   */
+  /** Example of creating a new ACL entry on a blob. */
   // [TARGET createAcl(BlobId, Acl)]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "my_blob_name"]
@@ -1014,9 +926,7 @@ public class StorageSnippets {
     return acl;
   }
 
-  /**
-   * Example of updating a new ACL entry on a blob.
-   */
+  /** Example of updating a new ACL entry on a blob. */
   // [TARGET updateAcl(BlobId, Acl)]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "my_blob_name"]
@@ -1029,9 +939,7 @@ public class StorageSnippets {
     return acl;
   }
 
-  /**
-   * Example of updating a blob to be public-read.
-   */
+  /** Example of updating a blob to be public-read. */
   // [TARGET createAcl(BlobId, Acl)]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "my_blob_name"]
@@ -1044,9 +952,7 @@ public class StorageSnippets {
     return acl;
   }
 
-  /**
-   * Example of listing the ACL entries for a blob.
-   */
+  /** Example of listing the ACL entries for a blob. */
   // [TARGET listAcls(BlobId)]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "my_blob_name"]
@@ -1062,9 +968,7 @@ public class StorageSnippets {
     return acls;
   }
 
-  /**
-   * Example of default auth
-   */
+  /** Example of default auth */
   public Page<Bucket> authListBuckets() {
     // [START auth_cloud_implicit]
     // If you don't specify credentials when constructing the client, the
@@ -1080,9 +984,7 @@ public class StorageSnippets {
     return buckets;
   }
 
-  /**
-   * Example of enabling Requester pays on a bucket.
-   */
+  /** Example of enabling Requester pays on a bucket. */
   public Bucket enableRequesterPays(String bucketName) throws StorageException {
     // [START enable_requester_pays]
     // Instantiate a Google Cloud Storage client
@@ -1100,9 +1002,7 @@ public class StorageSnippets {
     return bucket;
   }
 
-  /**
-   * Example of disabling Requester pays on a bucket.
-   */
+  /** Example of disabling Requester pays on a bucket. */
   public Bucket disableRequesterPays(String bucketName) {
     // [START disable_requester_pays]
     // Instantiate a Google Cloud Storage client
@@ -1120,9 +1020,7 @@ public class StorageSnippets {
     return bucket;
   }
 
-  /**
-   * Example of retrieving Requester pays status on a bucket.
-   */
+  /** Example of retrieving Requester pays status on a bucket. */
   public Bucket getRequesterPaysStatus(String bucketName) throws StorageException {
     // [START get_requester_pays_status]
     // Instantiate a Google Cloud Storage client
@@ -1138,9 +1036,7 @@ public class StorageSnippets {
     return bucket;
   }
 
-  /**
-   * Example of downloading a file.
-   */
+  /** Example of downloading a file. */
   public void downloadFile(String bucketName, String srcFilename, Path destFilePath)
       throws IOException {
     // [START storage_download_file]
@@ -1164,9 +1060,7 @@ public class StorageSnippets {
     // [END storage_download_file]
   }
 
-  /**
-   * Example of downloading a file using Requester pay.
-   */
+  /** Example of downloading a file using Requester pay. */
   public void downloadFileUsingRequesterPays(
       String projectId, String bucketName, String srcFilename, Path destFilePath)
       throws IOException {
@@ -1194,9 +1088,7 @@ public class StorageSnippets {
     // [END storage_download_file_requester_pays]
   }
 
-  /**
-   * Example of setting a default KMS key on a bucket.
-   */
+  /** Example of setting a default KMS key on a bucket. */
   public Bucket setDefaultKmsKey(String bucketName, String kmsKeyName) throws StorageException {
     // [START storage_set_bucket_default_kms_key]
     // Instantiate a Google Cloud Storage client
@@ -1220,9 +1112,7 @@ public class StorageSnippets {
     return bucket;
   }
 
-  /**
-   * Example of displaying Blob metadata
-   */
+  /** Example of displaying Blob metadata */
   public void getBlobMetadata(String bucketName, String blobName) throws StorageException {
     // [START storage_get_metadata]
     // Instantiate a Google Cloud Storage client
@@ -1276,9 +1166,7 @@ public class StorageSnippets {
     // [END storage_get_metadata]
   }
 
-  /**
-   * Example of setting a retention policy on a bucket
-   */
+  /** Example of setting a retention policy on a bucket */
   public Bucket setRetentionPolicy(String bucketName, Long retentionPeriod)
       throws StorageException {
     // [START storage_set_retention_policy]
@@ -1304,9 +1192,7 @@ public class StorageSnippets {
     return bucketWithRetentionPolicy;
   }
 
-  /**
-   * Example of removing a retention policy on a bucket
-   */
+  /** Example of removing a retention policy on a bucket */
   public Bucket removeRetentionPolicy(String bucketName)
       throws StorageException, IllegalArgumentException {
     // [START storage_remove_retention_policy]
@@ -1330,9 +1216,7 @@ public class StorageSnippets {
     return bucketWithoutRetentionPolicy;
   }
 
-  /**
-   * Example of how to get a bucket's retention policy
-   */
+  /** Example of how to get a bucket's retention policy */
   public Bucket getRetentionPolicy(String bucketName) throws StorageException {
     // [START storage_get_retention_policy]
     // Instantiate a Google Cloud Storage client
@@ -1355,9 +1239,7 @@ public class StorageSnippets {
     return bucket;
   }
 
-  /**
-   * Example of how to lock a bucket retention policy
-   */
+  /** Example of how to lock a bucket retention policy */
   public Bucket lockRetentionPolicy(String bucketName) throws StorageException {
     // [START storage_lock_retention_policy]
     // Instantiate a Google Cloud Storage client
@@ -1378,9 +1260,7 @@ public class StorageSnippets {
     return lockedBucket;
   }
 
-  /**
-   * Example of how to enable default event-based hold for a bucket
-   */
+  /** Example of how to enable default event-based hold for a bucket */
   public Bucket enableDefaultEventBasedHold(String bucketName) throws StorageException {
     // [START storage_enable_default_event_based_hold]
     // Instantiate a Google Cloud Storage client
@@ -1397,9 +1277,7 @@ public class StorageSnippets {
     return bucket;
   }
 
-  /**
-   * Example of how to disable default event-based hold for a bucket
-   */
+  /** Example of how to disable default event-based hold for a bucket */
   public Bucket disableDefaultEventBasedHold(String bucketName) throws StorageException {
     // [START storage_disable_default_event_based_hold]
     // Instantiate a Google Cloud Storage client
@@ -1416,9 +1294,7 @@ public class StorageSnippets {
     return bucket;
   }
 
-  /**
-   * Example of how to get default event-based hold for a bucket
-   */
+  /** Example of how to get default event-based hold for a bucket */
   public Bucket getDefaultEventBasedHold(String bucketName) throws StorageException {
     // [START storage_get_default_event_based_hold]
     // Instantiate a Google Cloud Storage client
@@ -1439,9 +1315,7 @@ public class StorageSnippets {
     return bucket;
   }
 
-  /**
-   * Example of how to set event-based hold for a blob
-   */
+  /** Example of how to set event-based hold for a blob */
   public Blob setEventBasedHold(String bucketName, String blobName) throws StorageException {
     // [START storage_set_event_based_hold]
     // Instantiate a Google Cloud Storage client
@@ -1461,9 +1335,7 @@ public class StorageSnippets {
     return blob;
   }
 
-  /**
-   * Example of how to release event-based hold for a blob
-   */
+  /** Example of how to release event-based hold for a blob */
   public Blob releaseEventBasedHold(String bucketName, String blobName) throws StorageException {
     // [START storage_release_event_based_hold]
     // Instantiate a Google Cloud Storage client
@@ -1483,9 +1355,7 @@ public class StorageSnippets {
     return blob;
   }
 
-  /**
-   * Example of how to set a temporary hold for a blob
-   */
+  /** Example of how to set a temporary hold for a blob */
   public Blob setTemporaryHold(String bucketName, String blobName) throws StorageException {
     // [START storage_set_temporary_hold]
     // Instantiate a Google Cloud Storage client
@@ -1505,9 +1375,7 @@ public class StorageSnippets {
     return blob;
   }
 
-  /**
-   * Example of how to release a temporary hold for a blob
-   */
+  /** Example of how to release a temporary hold for a blob */
   public Blob releaseTemporaryHold(String bucketName, String blobName) throws StorageException {
     // [START storage_release_temporary_hold]
     // Instantiate a Google Cloud Storage client
@@ -1527,9 +1395,7 @@ public class StorageSnippets {
     return blob;
   }
 
-  /**
-   * Example of how to enable Bucket Policy Only for a bucket
-   */
+  /** Example of how to enable Bucket Policy Only for a bucket */
   public Bucket enableBucketPolicyOnly(String bucketName) throws StorageException {
     // [START storage_enable_bucket_policy_only]
     // Instantiate a Google Cloud Storage client
@@ -1538,19 +1404,18 @@ public class StorageSnippets {
     // The name of a bucket, e.g. "my-bucket"
     // String bucketName = "my-bucket";
 
-    BucketInfo.IamConfiguration iamConfiguration = BucketInfo.IamConfiguration.newBuilder().setIsBucketPolicyOnlyEnabled(
-        true).build();
+    BucketInfo.IamConfiguration iamConfiguration =
+        BucketInfo.IamConfiguration.newBuilder().setIsBucketPolicyOnlyEnabled(true).build();
     Bucket bucket =
-        storage.update(BucketInfo.newBuilder(bucketName).setIamConfiguration(iamConfiguration).build());
+        storage.update(
+            BucketInfo.newBuilder(bucketName).setIamConfiguration(iamConfiguration).build());
 
     System.out.println("Bucket Policy Only was enabled for " + bucketName);
     // [END storage_enable_bucket_policy_only]
     return bucket;
   }
 
-  /**
-   * Example of how to disable Bucket Policy Only for a bucket
-   */
+  /** Example of how to disable Bucket Policy Only for a bucket */
   public Bucket disableBucketPolicyOnly(String bucketName) throws StorageException {
     // [START storage_disable_bucket_policy_only]
     // Instantiate a Google Cloud Storage client
@@ -1559,19 +1424,18 @@ public class StorageSnippets {
     // The name of a bucket, e.g. "my-bucket"
     // String bucketName = "my-bucket";
 
-    BucketInfo.IamConfiguration iamConfiguration = BucketInfo.IamConfiguration.newBuilder().setIsBucketPolicyOnlyEnabled(
-        false).build();
+    BucketInfo.IamConfiguration iamConfiguration =
+        BucketInfo.IamConfiguration.newBuilder().setIsBucketPolicyOnlyEnabled(false).build();
     Bucket bucket =
-        storage.update(BucketInfo.newBuilder(bucketName).setIamConfiguration(iamConfiguration).build());
+        storage.update(
+            BucketInfo.newBuilder(bucketName).setIamConfiguration(iamConfiguration).build());
 
     System.out.println("Bucket Policy Only was disabled for " + bucketName);
     // [END storage_disable_bucket_policy_only]
     return bucket;
   }
 
-  /**
-   * Example of how to get Bucket Policy Only metadata for a bucket
-   */
+  /** Example of how to get Bucket Policy Only metadata for a bucket */
   public Bucket getBucketPolicyOnly(String bucketName) throws StorageException {
     // [START storage_get_bucket_policy_only]
     // Instantiate a Google Cloud Storage client
@@ -1595,5 +1459,4 @@ public class StorageSnippets {
     // [END storage_get_bucket_policy_only]
     return bucket;
   }
-
 }
