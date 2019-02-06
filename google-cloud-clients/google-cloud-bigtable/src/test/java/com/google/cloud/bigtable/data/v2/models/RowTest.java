@@ -17,6 +17,9 @@ package com.google.cloud.bigtable.data.v2.models;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.bigtable.v2.Cell;
+import com.google.bigtable.v2.Column;
+import com.google.bigtable.v2.Family;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
 import java.io.ByteArrayInputStream;
@@ -31,6 +34,13 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class RowTest {
+  private static final ByteString QUALIFIER_1 = ByteString.copyFromUtf8("Firstqualifier");
+  private static final ByteString QUALIFIER_2 = ByteString.copyFromUtf8("Anotherqualifier");
+  private static final int TIMESTAMP = 12345;
+  private static final String LABEL = "label";
+  private static final ByteString VALUE = ByteString.copyFromUtf8("test-value");
+  private static final ByteString ROW_KEY = ByteString.copyFromUtf8("test-key");
+
   @Test
   public void compareTest() {
     Row row1 =
@@ -161,5 +171,68 @@ public class RowTest {
 
     assertThat(row.getCells("family4", col1))
         .containsExactly(RowCell.create("family4", col1, 1_000, labels, value));
+  }
+
+  @Test
+  public void testFromProtoWithEmptyRow() {
+    com.google.bigtable.v2.Row rowProto = com.google.bigtable.v2.Row.getDefaultInstance();
+    Row row = Row.fromProto(rowProto);
+    assertThat(row.getKey()).isEqualTo(ByteString.EMPTY);
+    assertThat(row.getCells()).isEmpty();
+  }
+
+  @Test
+  public void testFromProto() {
+    com.google.bigtable.v2.Row rowProto =
+        com.google.bigtable.v2.Row.newBuilder()
+            .setKey(ROW_KEY)
+            .addFamilies(
+                Family.newBuilder()
+                    .setName("secondFamily")
+                    .addColumns(
+                        Column.newBuilder()
+                            .setQualifier(QUALIFIER_1)
+                            .addCells(
+                                Cell.newBuilder()
+                                    .setValue(VALUE)
+                                    .setTimestampMicros(TIMESTAMP)
+                                    .addLabels(LABEL)
+                                    .build())
+                            .build()))
+            .addFamilies(
+                Family.newBuilder()
+                    .setName("firstFamily")
+                    .addColumns(
+                        Column.newBuilder()
+                            .setQualifier(QUALIFIER_1)
+                            .addCells(
+                                Cell.newBuilder()
+                                    .setValue(VALUE)
+                                    .setTimestampMicros(TIMESTAMP)
+                                    .addLabels(LABEL)
+                                    .build())
+                            .build())
+                    .addColumns(
+                        Column.newBuilder()
+                            .setQualifier(QUALIFIER_2)
+                            .addCells(
+                                Cell.newBuilder()
+                                    .setValue(VALUE)
+                                    .setTimestampMicros(54321)
+                                    .addLabels(LABEL)
+                                    .build())
+                            .build())
+                    .build())
+            .build();
+    Row row = Row.fromProto(rowProto);
+
+    List<String> labels = ImmutableList.of(LABEL);
+    assertThat(row.getKey()).isEqualTo(ROW_KEY);
+    assertThat(row.getCells("firstFamily"))
+        .containsExactly(
+            RowCell.create("firstFamily", QUALIFIER_1, TIMESTAMP, labels, VALUE),
+            RowCell.create("firstFamily", QUALIFIER_2, 54321, labels, VALUE));
+    assertThat(row.getCells("secondFamily"))
+        .containsExactly(RowCell.create("secondFamily", QUALIFIER_1, TIMESTAMP, labels, VALUE));
   }
 }

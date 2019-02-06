@@ -18,7 +18,11 @@ package com.google.cloud.bigtable.data.v2.models;
 import com.google.api.core.InternalApi;
 import com.google.api.core.InternalExtensionOnly;
 import com.google.auto.value.AutoValue;
+import com.google.bigtable.v2.Cell;
+import com.google.bigtable.v2.Column;
+import com.google.bigtable.v2.Family;
 import com.google.cloud.bigtable.data.v2.internal.ByteStringComparator;
+import com.google.cloud.bigtable.data.v2.models.RowAdapter.RowBuilder;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
@@ -166,5 +170,31 @@ public abstract class Row implements Serializable {
       }
     }
     return index;
+  }
+
+  /** wraps the protobuf {@link com.google.bigtable.v2.Row} */
+  public static Row fromProto(@Nonnull com.google.bigtable.v2.Row rowProto) {
+    Preconditions.checkArgument(rowProto != null, "Row must not be null");
+
+    DefaultRowAdapter adapter = new DefaultRowAdapter();
+    RowBuilder<Row> rowBuilder = adapter.createRowBuilder();
+    rowBuilder.startRow(rowProto.getKey());
+
+    for (Family family : rowProto.getFamiliesList()) {
+      for (Column column : family.getColumnsList()) {
+        for (Cell cell : column.getCellsList()) {
+          rowBuilder.startCell(
+              family.getName(),
+              column.getQualifier(),
+              cell.getTimestampMicros(),
+              cell.getLabelsList(),
+              column.getCellsCount());
+          rowBuilder.cellValue(cell.getValue());
+          rowBuilder.finishCell();
+        }
+      }
+    }
+
+    return rowBuilder.finishRow();
   }
 }
