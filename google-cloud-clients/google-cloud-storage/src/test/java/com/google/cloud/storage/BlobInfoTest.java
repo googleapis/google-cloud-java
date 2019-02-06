@@ -129,14 +129,14 @@ public class BlobInfoTest {
   public void testToBuilderSetMd5FromHexString() {
     BlobInfo blobInfo =
         BlobInfo.newBuilder(BlobId.of("b2", "n2")).setMd5FromHexString(MD5_HEX_STRING).build();
-    assertEquals(MD5, blobInfo.getMd5());
+    assertEquals(BlobInfo.remove0xPrefixFromHexString(MD5), blobInfo.getMd5());
   }
 
   @Test
   public void testToBuilderSetCrc32cFromHexString() {
     BlobInfo blobInfo =
         BlobInfo.newBuilder(BlobId.of("b2", "n2")).setCrc32cFromHexString(CRC32_HEX_STRING).build();
-    assertEquals(CRC32, blobInfo.getCrc32c());
+    assertEquals(BlobInfo.remove0xPrefixFromHexString(CRC32), blobInfo.getCrc32c());
   }
 
   @Test
@@ -157,13 +157,13 @@ public class BlobInfoTest {
     assertEquals(CONTENT_ENCODING, BLOB_INFO.getContentEncoding());
     assertEquals(CONTENT_LANGUAGE, BLOB_INFO.getContentLanguage());
     assertEquals(CUSTOMER_ENCRYPTION, BLOB_INFO.getCustomerEncryption());
-    assertEquals(CRC32, BLOB_INFO.getCrc32c());
+    assertEquals(BlobInfo.remove0xPrefixFromHexString(CRC32), BLOB_INFO.getCrc32c());
     assertEquals(CRC32_HEX_STRING, BLOB_INFO.getCrc32cToHexString());
     assertEquals(DELETE_TIME, BLOB_INFO.getDeleteTime());
     assertEquals(ETAG, BLOB_INFO.getEtag());
     assertEquals(GENERATION, BLOB_INFO.getGeneration());
     assertEquals(GENERATED_ID, BLOB_INFO.getGeneratedId());
-    assertEquals(MD5, BLOB_INFO.getMd5());
+    assertEquals(BlobInfo.remove0xPrefixFromHexString(MD5), BLOB_INFO.getMd5());
     assertEquals(MD5_HEX_STRING, BLOB_INFO.getMd5ToHexString());
     assertEquals(MEDIA_LINK, BLOB_INFO.getMediaLink());
     assertEquals(METADATA, BLOB_INFO.getMetadata());

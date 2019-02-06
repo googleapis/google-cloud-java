@@ -88,6 +88,11 @@ public class BlobInfo implements Serializable {
   private final Boolean temporaryHold;
   private final Long retentionExpirationTime;
 
+  /** Helper method to remove 0x prefix from the hex string */
+  public static String remove0xPrefixFromHexString(String hex) {
+    return hex != null && hex.startsWith("0x") ? hex.replaceFirst("0x", "") : hex;
+  }
+
   /** This class is meant for internal use only. Users are discouraged from using this class. */
   public static final class ImmutableEmptyMap<K, V> extends AbstractMap<K, V> {
 
@@ -437,7 +442,7 @@ public class BlobInfo implements Serializable {
 
     @Override
     public Builder setMd5(String md5) {
-      this.md5 = firstNonNull(md5, Data.<String>nullOf(String.class));
+      this.md5 = firstNonNull(remove0xPrefixFromHexString(md5), Data.<String>nullOf(String.class));
       return this;
     }
 
@@ -445,17 +450,15 @@ public class BlobInfo implements Serializable {
       if (md5HexString == null) {
         return this;
       }
-      if (md5HexString.startsWith("0x")) {
-        md5HexString = md5HexString.replaceFirst("0x", "");
-      }
-      byte[] bytes = new BigInteger(md5HexString, 16).toByteArray();
-      this.md5 = "0x" + BaseEncoding.base64().omitPadding().encode(bytes);
+      byte[] bytes = new BigInteger(remove0xPrefixFromHexString(md5HexString), 16).toByteArray();
+      this.md5 = BaseEncoding.base64().encode(bytes);
       return this;
     }
 
     @Override
     public Builder setCrc32c(String crc32c) {
-      this.crc32c = firstNonNull(crc32c, Data.<String>nullOf(String.class));
+      this.crc32c =
+          firstNonNull(remove0xPrefixFromHexString(crc32c), Data.<String>nullOf(String.class));
       return this;
     }
 
@@ -464,11 +467,8 @@ public class BlobInfo implements Serializable {
       if (crc32cHexString == null) {
         return this;
       }
-      if (crc32cHexString.startsWith("0x")) {
-        crc32cHexString = crc32cHexString.replaceFirst("0x", "");
-      }
-      byte[] bytes = new BigInteger(crc32cHexString, 16).toByteArray();
-      this.crc32c = "0x" + BaseEncoding.base64().omitPadding().encode(bytes);
+      byte[] bytes = new BigInteger(remove0xPrefixFromHexString(crc32cHexString), 16).toByteArray();
+      this.crc32c = BaseEncoding.base64().encode(bytes);
       return this;
     }
 
@@ -727,8 +727,7 @@ public class BlobInfo implements Serializable {
     if (md5 == null) {
       return null;
     }
-    String md5withoutPrefix = md5.startsWith("0x") ? md5.replaceFirst("0x", "") : md5;
-    byte[] decodedMd5 = BaseEncoding.base64().decode(md5withoutPrefix);
+    byte[] decodedMd5 = BaseEncoding.base64().decode(remove0xPrefixFromHexString(md5));
     StringBuilder stringBuilder = new StringBuilder();
     for (byte b : decodedMd5) {
       stringBuilder.append(String.format("%02x", b & 0xff));
@@ -760,8 +759,7 @@ public class BlobInfo implements Serializable {
     if (crc32c == null) {
       return null;
     }
-    String crc32cWithoutPrefix = crc32c.startsWith("0x") ? crc32c.replaceFirst("0x", "") : crc32c;
-    byte[] decodeCrc32c = BaseEncoding.base64().decode(crc32cWithoutPrefix);
+    byte[] decodeCrc32c = BaseEncoding.base64().decode(remove0xPrefixFromHexString(crc32c));
     StringBuilder stringBuilder = new StringBuilder();
     for (byte b : decodeCrc32c) {
       stringBuilder.append(String.format("%02x", b & 0xff));

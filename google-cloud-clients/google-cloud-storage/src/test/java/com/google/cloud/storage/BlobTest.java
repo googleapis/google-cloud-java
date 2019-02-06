@@ -507,7 +507,7 @@ public class BlobTest {
     assertEquals(CONTENT_DISPOSITION, blob.getContentDisposition());
     assertEquals(CONTENT_ENCODING, blob.getContentEncoding());
     assertEquals(CONTENT_LANGUAGE, blob.getContentLanguage());
-    assertEquals(CRC32, blob.getCrc32c());
+    assertEquals(BlobInfo.remove0xPrefixFromHexString(CRC32), blob.getCrc32c());
     assertEquals(CRC32_HEX_STRING, blob.getCrc32cToHexString());
     assertEquals(CREATE_TIME, blob.getCreateTime());
     assertEquals(CUSTOMER_ENCRYPTION, blob.getCustomerEncryption());
@@ -518,7 +518,7 @@ public class BlobTest {
     assertEquals(DELETE_TIME, blob.getDeleteTime());
     assertEquals(ETAG, blob.getEtag());
     assertEquals(GENERATED_ID, blob.getGeneratedId());
-    assertEquals(MD5, blob.getMd5());
+    assertEquals(BlobInfo.remove0xPrefixFromHexString(MD5), blob.getMd5());
     assertEquals(MD5_HEX_STRING, blob.getMd5ToHexString());
     assertEquals(MEDIA_LINK, blob.getMediaLink());
     assertEquals(METADATA, blob.getMetadata());
