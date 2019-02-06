@@ -15,6 +15,10 @@
  */
 package com.google.cloud.bigtable.data.v2.models;
 
+import com.google.api.core.InternalApi;
+import com.google.bigtable.v2.Cell;
+import com.google.bigtable.v2.Column;
+import com.google.bigtable.v2.Family;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
 import java.util.List;
@@ -41,6 +45,34 @@ public class DefaultRowAdapter implements RowAdapter<Row> {
   @Override
   public ByteString getKey(Row row) {
     return row.getKey();
+  }
+
+  /**
+   * Helper to convert a proto Row to a model Row.
+   *
+   * <p>For internal use only.
+   */
+  @InternalApi
+  public Row createRowFromProto(com.google.bigtable.v2.Row row) {
+    RowBuilder<Row> builder = createRowBuilder();
+    builder.startRow(row.getKey());
+
+    for (Family family : row.getFamiliesList()) {
+      for (Column column : family.getColumnsList()) {
+        for (Cell cell : column.getCellsList()) {
+          builder.startCell(
+              family.getName(),
+              column.getQualifier(),
+              cell.getTimestampMicros(),
+              cell.getLabelsList(),
+              cell.getValue().size());
+          builder.cellValue(cell.getValue());
+          builder.finishCell();
+        }
+      }
+    }
+
+    return builder.finishRow();
   }
 
   /** {@inheritDoc} */
