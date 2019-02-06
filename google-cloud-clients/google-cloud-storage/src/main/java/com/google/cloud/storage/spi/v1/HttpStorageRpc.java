@@ -85,6 +85,7 @@ import org.apache.http.HttpStatus;
 
 public class HttpStorageRpc implements StorageRpc {
   public static final String DEFAULT_PROJECTION = "full";
+  public static final String NO_ACL_PROJECTION = "noAcl";
   private static final String ENCRYPTION_KEY_PREFIX = "x-goog-encryption-";
   private static final String SOURCE_ENCRYPTION_KEY_PREFIX = "x-goog-copy-source-encryption-";
 
@@ -450,10 +451,24 @@ public class HttpStorageRpc implements StorageRpc {
     Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_PATCH_BUCKET);
     Scope scope = tracer.withSpan(span);
     try {
+      String projection = Option.PROJECTION.getString(options);
+
+      if (bucket.getIamConfiguration() != null
+          && bucket.getIamConfiguration().getBucketPolicyOnly() != null
+          && bucket.getIamConfiguration().getBucketPolicyOnly().getEnabled()) {
+        // If BucketPolicyOnly is enabled, patch calls will fail if ACL information is included in
+        // the request
+        bucket.setDefaultObjectAcl(null);
+        bucket.setAcl(null);
+
+        if (projection == null) {
+          projection = NO_ACL_PROJECTION;
+        }
+      }
       return storage
           .buckets()
           .patch(bucket.getName(), bucket)
-          .setProjection(DEFAULT_PROJECTION)
+          .setProjection(projection == null ? DEFAULT_PROJECTION : projection)
           .setPredefinedAcl(Option.PREDEFINED_ACL.getString(options))
           .setPredefinedDefaultObjectAcl(Option.PREDEFINED_DEFAULT_OBJECT_ACL.getString(options))
           .setIfMetagenerationMatch(Option.IF_METAGENERATION_MATCH.getLong(options))
