@@ -40,8 +40,9 @@ public class DetectIT {
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
-  private static final String BUCKET = PROJECT_ID;
-  private static final  String OUTPUT_PREFIX = "OCR_PDF_TEST_OUTPUT";
+  private static final String ASSET_BUCKET = "cloud-samples-data";
+  private static final String OUTPUT_BUCKET = PROJECT_ID;
+  private static final String OUTPUT_PREFIX = "OCR_PDF_TEST_OUTPUT";
 
   @Before
   public void setUp() throws IOException {
@@ -58,7 +59,7 @@ public class DetectIT {
   @Test
   public void testFaces() throws Exception {
     // Act
-    String[] args = {"faces", "./resources/face_no_surprise.jpg"};
+    String[] args = { "faces", "./resources/face_no_surprise.jpg" };
     Detect.argsHelper(args, out);
 
     // Assert
@@ -71,7 +72,7 @@ public class DetectIT {
   @Test
   public void testFacesGcs() throws Exception {
     // Act
-    String[] args = {"faces", "gs://" + BUCKET + "/vision/face_no_surprise.jpg"};
+    String[] args = { "faces", "gs://" + ASSET_BUCKET + "/vision/face/face_no_surprise.jpg" };
     Detect.argsHelper(args, out);
 
     // Assert
@@ -84,86 +85,85 @@ public class DetectIT {
   @Test
   public void testLabels() throws Exception {
     // Act
-    String[] args = {"labels", "./resources/wakeupcat.jpg"};
+    String[] args = { "labels", "./resources/wakeupcat.jpg" };
     Detect.argsHelper(args, out);
 
     // Assert
-    String got = bout.toString();
+    String got = bout.toString().toLowerCase();
     assertThat(got).contains("whiskers");
   }
 
   @Test
   public void testLabelsGcs() throws Exception {
     // Act
-    String[] args = {"labels", "gs://" + BUCKET + "/vision/wakeupcat.jpg"};
+    String[] args = { "labels", "gs://" + ASSET_BUCKET + "/vision/label/wakeupcat.jpg" };
     Detect.argsHelper(args, out);
 
     // Assert
-    String got = bout.toString();
+    String got = bout.toString().toLowerCase();
     assertThat(got).contains("whiskers");
   }
 
   @Test
   public void testLandmarks() throws Exception {
     // Act
-    String[] args = {"landmarks", "./resources/landmark.jpg"};
+    String[] args = { "landmarks", "./resources/landmark.jpg" };
     Detect.argsHelper(args, out);
 
     // Assert
-    String got = bout.toString();
-    assertThat(got).contains("Palace of Fine Arts");
+    String got = bout.toString().toLowerCase();
+    assertThat(got).contains("palace of fine arts");
   }
 
   @Test
   public void testLandmarksGcs() throws Exception {
     // Act
-    String[] args = {"landmarks", "gs://" + BUCKET + "/vision/landmark.jpg"};
+    String[] args = { "landmarks", "gs://" + ASSET_BUCKET + "/vision/landmark/pofa.jpg" };
     Detect.argsHelper(args, out);
 
     // Assert
-    String got = bout.toString();
-    assertThat(got).contains("Palace of Fine Arts");
+    String got = bout.toString().toLowerCase();
+    assertThat(got).contains("palace of fine arts");
   }
 
   @Test
   public void testLandmarksUrl() throws Exception {
     // Act
-    String uri = "https://storage-download.googleapis.com/"
-        + BUCKET + "/vision/landmark.jpg";
-    String[] args = {"landmarks", uri};
+    String uri = "https://storage-download.googleapis.com/" + ASSET_BUCKET + "/vision/landmark/pofa.jpg";
+    String[] args = { "landmarks", uri };
     Detect.argsHelper(args, out);
 
     // Assert
-    String got = bout.toString();
-    assertThat(got).contains("Palace of Fine Arts");
+    String got = bout.toString().toLowerCase();
+    assertThat(got).contains("palace of fine arts");
   }
 
   @Test
   public void testLogos() throws Exception {
     // Act
-    String[] args = {"logos", "./resources/logos.png"};
+    String[] args = { "logos", "./resources/logos.png" };
     Detect.argsHelper(args, out);
 
     // Assert
-    String got = bout.toString();
-    assertThat(got).contains("Google");
+    String got = bout.toString().toLowerCase();
+    assertThat(got).contains("google");
   }
 
   @Test
   public void testLogosGcs() throws Exception {
     // Act
-    String[] args = {"logos", "gs://" + BUCKET + "/vision/logos.png"};
+    String[] args = { "logos", "gs://" + ASSET_BUCKET + "/vision/logo/logo_google.png" };
     Detect.argsHelper(args, out);
 
     // Assert
-    String got = bout.toString();
-    assertThat(got).contains("Google");
+    String got = bout.toString().toLowerCase();
+    assertThat(got).contains("google");
   }
 
   @Test
   public void testText() throws Exception {
     // Act
-    String[] args = {"text", "./resources/text.jpg"};
+    String[] args = { "text", "./resources/text.jpg" };
     Detect.argsHelper(args, out);
 
     // Assert
@@ -174,7 +174,7 @@ public class DetectIT {
   @Test
   public void testTextGcs() throws Exception {
     // Act
-    String[] args = {"text", "gs://" + BUCKET + "/vision/text.jpg"};
+    String[] args = { "text", "gs://" + ASSET_BUCKET + "/vision/text/screen.jpg" };
     Detect.argsHelper(args, out);
 
     // Assert
@@ -185,7 +185,7 @@ public class DetectIT {
   @Test
   public void testSafeSearch() throws Exception {
     // Act
-    String[] args = {"safe-search", "./resources/wakeupcat.jpg"};
+    String[] args = { "safe-search", "./resources/wakeupcat.jpg" };
     Detect.argsHelper(args, out);
 
     // Assert
@@ -197,7 +197,7 @@ public class DetectIT {
   @Test
   public void testSafeSearchGcs() throws Exception {
     // Act
-    String[] args = {"safe-search", "gs://" + BUCKET + "/vision/wakeupcat.jpg"};
+    String[] args = { "safe-search", "gs://" + ASSET_BUCKET + "/vision/label/wakeupcat.jpg" };
     Detect.argsHelper(args, out);
 
     // Assert
@@ -209,7 +209,7 @@ public class DetectIT {
   @Test
   public void testProperties() throws Exception {
     // Act
-    String[] args = {"properties", "./resources/landmark.jpg"};
+    String[] args = { "properties", "./resources/landmark.jpg" };
     Detect.argsHelper(args, out);
 
     // Assert
@@ -223,7 +223,7 @@ public class DetectIT {
   @Test
   public void testPropertiesGcs() throws Exception {
     // Act
-    String[] args = {"properties", "gs://" + BUCKET + "/vision/landmark.jpg"};
+    String[] args = { "properties", "gs://" + ASSET_BUCKET + "/vision/landmark/pofa.jpg" };
     Detect.argsHelper(args, out);
 
     // Assert
@@ -237,74 +237,75 @@ public class DetectIT {
   @Test
   public void detectWebAnnotations() throws Exception {
     // Act
-    String[] args = {"web", "./resources/landmark.jpg"};
+    String[] args = { "web", "./resources/landmark.jpg" };
     Detect.argsHelper(args, out);
 
     // Assert
-    String got = bout.toString();
-    assertThat(got).contains("History");
-    assertThat(got).contains("Best guess label: palace of fine arts");
+    String got = bout.toString().toLowerCase();
+    assertThat(got).contains("history");
+    assertThat(got).contains("best guess label: palace of fine arts");
   }
 
   @Test
   public void detectWebAnnotationsGcs() throws Exception {
     // Act
-    String[] args = {"web", "gs://" + BUCKET + "/vision/landmark.jpg"};
+    String[] args = { "web", "gs://" + ASSET_BUCKET + "/vision/landmark/pofa.jpg" };
     Detect.argsHelper(args, out);
 
     // Assert
-    String got = bout.toString();
-    assertThat(got).contains("History");
-    assertThat(got).contains("Best guess label: palace of fine arts");
+    String got = bout.toString().toLowerCase();
+    assertThat(got).contains("history");
+    assertThat(got).contains("best guess label: palace of fine arts");
   }
 
   @Test
   public void testDetectWebEntities() throws Exception {
     // Act
-    String[] args = {"web-entities", "./resources/city.jpg"};
+    String[] args = { "web-entities", "./resources/city.jpg" };
     Detect.argsHelper(args, out);
 
     // Assert
-    String got = bout.toString();
-    assertThat(got).doesNotContain("Zepra");
+    String got = bout.toString().toLowerCase();
+    assertThat(got).doesNotContain("zepra");
   }
 
   @Test
   public void testDetectWebEntitiesGcs() throws Exception {
     // Act
-    String[] args = {"web-entities", "gs://" + BUCKET + "/vision/landmark.jpg"};
+    String[] args = { "web-entities", "gs://" + ASSET_BUCKET + "/vision/landmark/pofa.jpg" };
     Detect.argsHelper(args, out);
 
-    String got = bout.toString();
-    assertThat(got).contains("Description");
+    String got = bout.toString().toLowerCase();
+    assertThat(got).contains("description");
   }
 
   @Test
   public void testDetectWebEntitiesIncludeGeoResults() throws Exception {
     // Act
-    String[] args = {"web-entities-include-geo", "./resources/city.jpg"};
+    String[] args = { "web-entities-include-geo", "./resources/city.jpg" };
     Detect.argsHelper(args, out);
 
     // Assert
-    String got = bout.toString();
+    String got = bout.toString().toLowerCase();
     // Note: entities and labels can change over time.
-    assertThat(got).doesNotContain("Error");
+    assertThat(got).doesNotContain("error");
   }
 
   @Test
   public void testDetectWebEntitiesIncludeGeoResultsGcs() throws Exception {
     // Act
-    String[] args = {"web-entities-include-geo", "gs://" + BUCKET + "/vision/landmark.jpg"};
+    String[] args = { "web-entities-include-geo", 
+        "gs://" + ASSET_BUCKET + "/vision/landmark/pofa.jpg" };
     Detect.argsHelper(args, out);
 
-    String got = bout.toString();
-    assertThat(got).contains("Description");
+    String got = bout.toString().toLowerCase();
+    assertThat(got).contains("description");
   }
 
   @Test
   public void testCropHints() throws Exception {
     // Act
-    String[] args = {"crop", "./resources/wakeupcat.jpg"};
+    String[] args = { "crop", "./resources/wakeupcat.jpg" };
     Detect.argsHelper(args, out);
 
     // Assert
@@ -317,7 +318,7 @@ public class DetectIT {
   @Test
   public void testCropHintsGcs() throws Exception {
     // Act
-    String[] args = {"crop", "gs://" + BUCKET + "/vision/wakeupcat.jpg"};
+    String[] args = { "crop", "gs://" + ASSET_BUCKET + "/vision/label/wakeupcat.jpg" };
     Detect.argsHelper(args, out);
 
     // Assert
@@ -330,7 +331,7 @@ public class DetectIT {
   @Test
   public void testDocumentText() throws Exception {
     // Act
-    String[] args = {"fulltext", "./resources/text.jpg"};
+    String[] args = { "fulltext", "./resources/text.jpg" };
     Detect.argsHelper(args, out);
 
     // Assert
@@ -343,7 +344,7 @@ public class DetectIT {
   @Test
   public void testDocumentTextGcs() throws Exception {
     // Act
-    String[] args = {"fulltext", "gs://" + BUCKET + "/vision/text.jpg"};
+    String[] args = { "fulltext", "gs://" + ASSET_BUCKET + "/vision/text/screen.jpg" };
     Detect.argsHelper(args, out);
 
     // Assert
@@ -356,17 +357,17 @@ public class DetectIT {
   @Test
   public void testDetectDocumentsGcs() throws Exception {
     // Act
-    String[] args = {"ocr", "gs://" + BUCKET + "/vision/HodgeConj.pdf",
-        "gs://" + BUCKET + "/" + OUTPUT_PREFIX + "/"};
+    String[] args = { "ocr", "gs://" + ASSET_BUCKET + "/vision/document/custom_0773375000.pdf",
+        "gs://" + OUTPUT_BUCKET + "/" + OUTPUT_PREFIX + "/" };
     Detect.argsHelper(args, out);
 
     // Assert
     String got = bout.toString();
-    assertThat(got).contains("HODGE'S GENERAL CONJECTURE");
+    assertThat(got).contains("OIL, GAS AND MINERAL LEASE");
 
     Storage storage = StorageOptions.getDefaultInstance().getService();
 
-    Page<Blob> blobs = storage.list(BUCKET, BlobListOption.currentDirectory(),
+    Page<Blob> blobs = storage.list(OUTPUT_BUCKET, BlobListOption.currentDirectory(),
         BlobListOption.prefix(OUTPUT_PREFIX + "/"));
 
     for (Blob blob : blobs.iterateAll()) {
@@ -377,22 +378,23 @@ public class DetectIT {
   @Test
   public void testDetectLocalizedObjects() throws Exception {
     // Act
-    String[] args = {"object-localization", "./resources/puppies.jpg"};
+    String[] args = { "object-localization", "./resources/puppies.jpg" };
     Detect.argsHelper(args, out);
 
     // Assert
-    String got = bout.toString();
-    assertThat(got).contains("Dog");
+    String got = bout.toString().toLowerCase();
+    assertThat(got).contains("dog");
   }
 
   @Test
   public void testDetectLocalizedObjectsGcs() throws Exception {
     // Act
-    String[] args = {"object-localization", "gs://cloud-samples-data/vision/puppies.jpg"};
+    String[] args = { "object-localization", 
+        "gs://cloud-samples-data/vision/object_localization/puppies.jpg" };
     Detect.argsHelper(args, out);
 
     // Assert
-    String got = bout.toString();
-    assertThat(got).contains("Dog");
+    String got = bout.toString().toLowerCase();
+    assertThat(got).contains("dog");
   }
 }
