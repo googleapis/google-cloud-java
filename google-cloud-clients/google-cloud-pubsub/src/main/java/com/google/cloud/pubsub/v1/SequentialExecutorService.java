@@ -1,3 +1,19 @@
+/*
+ * Copyright 2019 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.google.cloud.pubsub.v1;
 
 import com.google.api.core.ApiFuture;
@@ -12,6 +28,8 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.concurrent.Executor;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 interface CancellableRunnable extends Runnable {
   public void cancel(Throwable e);
@@ -23,10 +41,12 @@ interface CancellableRunnable extends Runnable {
  * be run in parallel.
  */
 final class SequentialExecutorService<T> {
+  private static final Logger logger = Logger.getLogger(SequentialExecutorService.class.getName());
+
   private final SequentialExecutor manageableSequentialExecutor;
   private final SequentialExecutor autoSequentialExecutor;
 
-  public SequentialExecutorService(Executor executor) {
+  SequentialExecutorService(Executor executor) {
     this.manageableSequentialExecutor = SequentialExecutor.newManageableSequentialExecutor(executor);
     this.autoSequentialExecutor = SequentialExecutor.newAutoSequentialExecutor(executor);
   }
@@ -35,7 +55,7 @@ final class SequentialExecutorService<T> {
    * Runs asynchronous {@code Callable} tasks sequentially. If one of the tasks fails, other tasks
    * with the same key that have not been executed will be cancelled.
    */
-  public ApiFuture<T> submit(final String key, final Callable<ApiFuture> callable) {
+  ApiFuture<T> submit(final String key, final Callable<ApiFuture> callable) {
     final SettableApiFuture<T> future = SettableApiFuture.<T>create();
     manageableSequentialExecutor.execute(key, new CancellableRunnable() {
       private boolean cancelled = false;
@@ -59,11 +79,11 @@ final class SequentialExecutorService<T> {
               future.setException(e);
               manageableSequentialExecutor.cancelQueuedTasks(key,
                   new CancellationException(
-                      "Publishing cancelled since delivering previous message has been failed."));
+                      "Execution cancelled because executing previous runnable failed."));
             }
           });
         } catch (Exception e) {
-
+          future.setException(e);
         }
       }
 
@@ -113,7 +133,7 @@ final class SequentialExecutorService<T> {
      * queued task. The first queued task is executed immediately, but the following tasks will be
      * executed only when {@link #resume(String)} is called explicitly.
      */
-    public static SequentialExecutor newManageableSequentialExecutor(Executor executor) {
+    static SequentialExecutor newManageableSequentialExecutor(Executor executor) {
       return new SequentialExecutor(executor, TaskCompleteAction.WAIT_UNTIL_RESUME);
     }
 
@@ -142,10 +162,15 @@ final class SequentialExecutorService<T> {
       executor.execute(new Runnable() {
         @Override
         public void run() {
-          if (taskCompleteAction.equals(TaskCompleteAction.EXECUTE_NEXT_TASK)) {
-            invokeCallbackAndExecuteNext(key, finalTasks);
-          } else if (taskCompleteAction.equals(TaskCompleteAction.WAIT_UNTIL_RESUME)) {
-            invokeCallback(key, finalTasks);
+          switch(taskCompleteAction) {
+            case EXECUTE_NEXT_TASK:
+              invokeCallbackAndExecuteNext(key, finalTasks);
+              break;
+            case WAIT_UNTIL_RESUME:
+              invokeCallback(finalTasks);
+              break;
+            default:
+              // Nothing to do.
           }
         }
       });
@@ -164,6 +189,9 @@ final class SequentialExecutorService<T> {
           Runnable task = tasks.poll();
           if (task instanceof CancellableRunnable) {
             ((CancellableRunnable) task).cancel(e);
+          } else {
+            logger.log(Level.WARNING,
+                       "Attempted to cancel Runnable that was not CancellableRunnable; ignored.");
           }
         }
       }
@@ -191,12 +219,12 @@ final class SequentialExecutorService<T> {
       executor.execute(new Runnable() {
         @Override
         public void run() {
-          invokeCallback(key, finalTasks);
+          invokeCallback(finalTasks);
         }
       });
     }
 
-    private void invokeCallback(final String key, final Deque<Runnable> tasks) {
+    private void invokeCallback(final Deque<Runnable> tasks) {
       // TODO(kimkyung-goog): Check if there is a race when task list becomes empty.
       Runnable task = tasks.poll();
       if (task != null) {
@@ -205,7 +233,7 @@ final class SequentialExecutorService<T> {
     }
 
     private void invokeCallbackAndExecuteNext(final String key, final Deque<Runnable> tasks) {
-      invokeCallback(key, tasks);
+      invokeCallback(tasks);
       synchronized (tasksByKey) {
         if (tasks.isEmpty()) {
           // Note that there can be a race if a task is added to `tasks` at this point. However,
