@@ -62,13 +62,6 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
     return new Mutation(false);
   }
 
-  /** Wraps the List of protobuf {@link com.google.bigtable.v2.Mutation}. */
-  public static Mutation fromProto(List<com.google.bigtable.v2.Mutation> protos) {
-    Mutation mutation = new Mutation(false);
-    mutation.mutations.addAll(protos);
-    return mutation;
-  }
-
   /**
    * Creates new instance of Mutation object which allows setCell operation to use server side
    * timestamp. This is dangerous because mutations will no longer be idempotent, which might cause
@@ -78,6 +71,15 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
   @BetaApi
   public static Mutation createUnsafe() {
     return new Mutation(true);
+  }
+
+
+  /** Wraps the List of protobuf {@link com.google.bigtable.v2.Mutation}. */
+  @BetaApi
+  public static Mutation fromProtoUnsafe(List<com.google.bigtable.v2.Mutation> protos) {
+    Mutation mutation = new Mutation(true);
+    mutation.mutations.addAll(protos);
+    return mutation;
   }
 
   private Mutation(boolean allowServersideTimestamp) {

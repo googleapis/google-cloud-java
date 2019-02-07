@@ -96,7 +96,7 @@ public class MutationTest {
         .isEqualTo(ByteString.copyFromUtf8("fake-value2"));
     assertThat(actual.get(3).getSetCell().getTimestampMicros()).isIn(expectedTimestampRange);
 
-    assertThat(Mutation.fromProto(actual).getMutations()).isEqualTo(actual);
+    assertThat(Mutation.fromProtoUnsafe(actual).getMutations()).isEqualTo(actual);
   }
 
   @Test
