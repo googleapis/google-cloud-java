@@ -62,10 +62,12 @@ public final class TargetInstancesScopedList implements ApiMessage {
     return null;
   }
 
+  /** A list of target instances contained in this scope. */
   public List<TargetInstance> getTargetInstancesList() {
     return targetInstances;
   }
 
+  /** Informational warning which replaces the list of addresses when the list is empty. */
   public Warning getWarning() {
     return warning;
   }
@@ -114,10 +116,12 @@ public final class TargetInstancesScopedList implements ApiMessage {
       this.warning = source.warning;
     }
 
+    /** A list of target instances contained in this scope. */
     public List<TargetInstance> getTargetInstancesList() {
       return targetInstances;
     }
 
+    /** A list of target instances contained in this scope. */
     public Builder addAllTargetInstances(List<TargetInstance> targetInstances) {
       if (this.targetInstances == null) {
         this.targetInstances = new LinkedList<>();
@@ -126,6 +130,7 @@ public final class TargetInstancesScopedList implements ApiMessage {
       return this;
     }
 
+    /** A list of target instances contained in this scope. */
     public Builder addTargetInstances(TargetInstance targetInstances) {
       if (this.targetInstances == null) {
         this.targetInstances = new LinkedList<>();
@@ -134,10 +139,12 @@ public final class TargetInstancesScopedList implements ApiMessage {
       return this;
     }
 
+    /** Informational warning which replaces the list of addresses when the list is empty. */
     public Warning getWarning() {
       return warning;
     }
 
+    /** Informational warning which replaces the list of addresses when the list is empty. */
     public Builder setWarning(Warning warning) {
       this.warning = warning;
       return this;

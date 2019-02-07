@@ -63,10 +63,18 @@ public final class InstanceGroupManagersScopedList implements ApiMessage {
     return null;
   }
 
+  /**
+   * [Output Only] The list of managed instance groups that are contained in the specified project
+   * and zone.
+   */
   public List<InstanceGroupManager> getInstanceGroupManagersList() {
     return instanceGroupManagers;
   }
 
+  /**
+   * [Output Only] The warning that replaces the list of managed instance groups when the list is
+   * empty.
+   */
   public Warning getWarning() {
     return warning;
   }
@@ -115,10 +123,18 @@ public final class InstanceGroupManagersScopedList implements ApiMessage {
       this.warning = source.warning;
     }
 
+    /**
+     * [Output Only] The list of managed instance groups that are contained in the specified project
+     * and zone.
+     */
     public List<InstanceGroupManager> getInstanceGroupManagersList() {
       return instanceGroupManagers;
     }
 
+    /**
+     * [Output Only] The list of managed instance groups that are contained in the specified project
+     * and zone.
+     */
     public Builder addAllInstanceGroupManagers(List<InstanceGroupManager> instanceGroupManagers) {
       if (this.instanceGroupManagers == null) {
         this.instanceGroupManagers = new LinkedList<>();
@@ -127,6 +143,10 @@ public final class InstanceGroupManagersScopedList implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] The list of managed instance groups that are contained in the specified project
+     * and zone.
+     */
     public Builder addInstanceGroupManagers(InstanceGroupManager instanceGroupManagers) {
       if (this.instanceGroupManagers == null) {
         this.instanceGroupManagers = new LinkedList<>();
@@ -135,10 +155,18 @@ public final class InstanceGroupManagersScopedList implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] The warning that replaces the list of managed instance groups when the list is
+     * empty.
+     */
     public Warning getWarning() {
       return warning;
     }
 
+    /**
+     * [Output Only] The warning that replaces the list of managed instance groups when the list is
+     * empty.
+     */
     public Builder setWarning(Warning warning) {
       this.warning = warning;
       return this;

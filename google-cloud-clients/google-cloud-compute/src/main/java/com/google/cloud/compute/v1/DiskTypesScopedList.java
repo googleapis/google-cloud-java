@@ -62,10 +62,15 @@ public final class DiskTypesScopedList implements ApiMessage {
     return null;
   }
 
+  /** [Output Only] A list of disk types contained in this scope. */
   public List<DiskType> getDiskTypesList() {
     return diskTypes;
   }
 
+  /**
+   * [Output Only] Informational warning which replaces the list of disk types when the list is
+   * empty.
+   */
   public Warning getWarning() {
     return warning;
   }
@@ -114,10 +119,12 @@ public final class DiskTypesScopedList implements ApiMessage {
       this.warning = source.warning;
     }
 
+    /** [Output Only] A list of disk types contained in this scope. */
     public List<DiskType> getDiskTypesList() {
       return diskTypes;
     }
 
+    /** [Output Only] A list of disk types contained in this scope. */
     public Builder addAllDiskTypes(List<DiskType> diskTypes) {
       if (this.diskTypes == null) {
         this.diskTypes = new LinkedList<>();
@@ -126,6 +133,7 @@ public final class DiskTypesScopedList implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] A list of disk types contained in this scope. */
     public Builder addDiskTypes(DiskType diskTypes) {
       if (this.diskTypes == null) {
         this.diskTypes = new LinkedList<>();
@@ -134,10 +142,18 @@ public final class DiskTypesScopedList implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] Informational warning which replaces the list of disk types when the list is
+     * empty.
+     */
     public Warning getWarning() {
       return warning;
     }
 
+    /**
+     * [Output Only] Informational warning which replaces the list of disk types when the list is
+     * empty.
+     */
     public Builder setWarning(Warning warning) {
       this.warning = warning;
       return this;

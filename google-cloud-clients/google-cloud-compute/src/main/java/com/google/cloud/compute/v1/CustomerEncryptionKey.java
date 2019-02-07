@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Represents a customer-supplied encryption key */
 public final class CustomerEncryptionKey implements ApiMessage {
   private final String kmsKeyName;
   private final String rawKey;
@@ -67,14 +68,23 @@ public final class CustomerEncryptionKey implements ApiMessage {
     return null;
   }
 
+  /** The name of the encryption key that is stored in Google Cloud KMS. */
   public String getKmsKeyName() {
     return kmsKeyName;
   }
 
+  /**
+   * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either
+   * encrypt or decrypt this resource.
+   */
   public String getRawKey() {
     return rawKey;
   }
 
+  /**
+   * [Output only] The RFC 4648 base64 encoded SHA-256 hash of the customer-supplied encryption key
+   * that protects this resource.
+   */
   public String getSha256() {
     return sha256;
   }
@@ -128,28 +138,46 @@ public final class CustomerEncryptionKey implements ApiMessage {
       this.sha256 = source.sha256;
     }
 
+    /** The name of the encryption key that is stored in Google Cloud KMS. */
     public String getKmsKeyName() {
       return kmsKeyName;
     }
 
+    /** The name of the encryption key that is stored in Google Cloud KMS. */
     public Builder setKmsKeyName(String kmsKeyName) {
       this.kmsKeyName = kmsKeyName;
       return this;
     }
 
+    /**
+     * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either
+     * encrypt or decrypt this resource.
+     */
     public String getRawKey() {
       return rawKey;
     }
 
+    /**
+     * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either
+     * encrypt or decrypt this resource.
+     */
     public Builder setRawKey(String rawKey) {
       this.rawKey = rawKey;
       return this;
     }
 
+    /**
+     * [Output only] The RFC 4648 base64 encoded SHA-256 hash of the customer-supplied encryption
+     * key that protects this resource.
+     */
     public String getSha256() {
       return sha256;
     }
 
+    /**
+     * [Output only] The RFC 4648 base64 encoded SHA-256 hash of the customer-supplied encryption
+     * key that protects this resource.
+     */
     public Builder setSha256(String sha256) {
       this.sha256 = sha256;
       return this;

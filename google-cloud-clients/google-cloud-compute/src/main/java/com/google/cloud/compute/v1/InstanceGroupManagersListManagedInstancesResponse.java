@@ -57,6 +57,7 @@ public final class InstanceGroupManagersListManagedInstancesResponse implements 
     return null;
   }
 
+  /** [Output Only] The list of instances in the managed instance group. */
   public List<ManagedInstance> getManagedInstancesList() {
     return managedInstances;
   }
@@ -101,10 +102,12 @@ public final class InstanceGroupManagersListManagedInstancesResponse implements 
       this.managedInstances = source.managedInstances;
     }
 
+    /** [Output Only] The list of instances in the managed instance group. */
     public List<ManagedInstance> getManagedInstancesList() {
       return managedInstances;
     }
 
+    /** [Output Only] The list of instances in the managed instance group. */
     public Builder addAllManagedInstances(List<ManagedInstance> managedInstances) {
       if (this.managedInstances == null) {
         this.managedInstances = new LinkedList<>();
@@ -113,6 +116,7 @@ public final class InstanceGroupManagersListManagedInstancesResponse implements 
       return this;
     }
 
+    /** [Output Only] The list of instances in the managed instance group. */
     public Builder addManagedInstances(ManagedInstance managedInstances) {
       if (this.managedInstances == null) {
         this.managedInstances = new LinkedList<>();

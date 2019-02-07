@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Service resource (a.k.a service project) ID. */
 public final class XpnResourceId implements ApiMessage {
   private final String id;
   private final String type;
@@ -61,10 +62,15 @@ public final class XpnResourceId implements ApiMessage {
     return null;
   }
 
+  /**
+   * The ID of the service resource. In the case of projects, this field supports project id (e.g.,
+   * my-project-123) and project number (e.g. 12345678).
+   */
   public String getId() {
     return id;
   }
 
+  /** The type of the service resource. */
   public String getType() {
     return type;
   }
@@ -113,19 +119,29 @@ public final class XpnResourceId implements ApiMessage {
       this.type = source.type;
     }
 
+    /**
+     * The ID of the service resource. In the case of projects, this field supports project id
+     * (e.g., my-project-123) and project number (e.g. 12345678).
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * The ID of the service resource. In the case of projects, this field supports project id
+     * (e.g., my-project-123) and project number (e.g. 12345678).
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /** The type of the service resource. */
     public String getType() {
       return type;
     }
 
+    /** The type of the service resource. */
     public Builder setType(String type) {
       this.type = type;
       return this;

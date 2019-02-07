@@ -55,6 +55,7 @@ public final class DisksResizeRequest implements ApiMessage {
     return null;
   }
 
+  /** The new size of the persistent disk, which is specified in GB. */
   public String getSizeGb() {
     return sizeGb;
   }
@@ -98,10 +99,12 @@ public final class DisksResizeRequest implements ApiMessage {
       this.sizeGb = source.sizeGb;
     }
 
+    /** The new size of the persistent disk, which is specified in GB. */
     public String getSizeGb() {
       return sizeGb;
     }
 
+    /** The new size of the persistent disk, which is specified in GB. */
     public Builder setSizeGb(String sizeGb) {
       this.sizeGb = sizeGb;
       return this;

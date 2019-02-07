@@ -25,6 +25,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Cloud Autoscaler policy. */
 public final class AutoscalingPolicy implements ApiMessage {
   private final Integer coolDownPeriodSec;
   private final AutoscalingPolicyCpuUtilization cpuUtilization;
@@ -92,26 +93,52 @@ public final class AutoscalingPolicy implements ApiMessage {
     return null;
   }
 
+  /**
+   * The number of seconds that the autoscaler should wait before it starts collecting information
+   * from a new instance. This prevents the autoscaler from collecting information when the instance
+   * is initializing, during which the collected usage would not be reliable. The default time
+   * autoscaler waits is 60 seconds.
+   *
+   * <p>Virtual machine initialization times might vary because of numerous factors. We recommend
+   * that you test how long an instance may take to initialize. To do this, create an instance and
+   * time the startup process.
+   */
   public Integer getCoolDownPeriodSec() {
     return coolDownPeriodSec;
   }
 
+  /**
+   * Defines the CPU utilization policy that allows the autoscaler to scale based on the average CPU
+   * utilization of a managed instance group.
+   */
   public AutoscalingPolicyCpuUtilization getCpuUtilization() {
     return cpuUtilization;
   }
 
+  /** Configuration parameters of autoscaling based on a custom metric. */
   public List<AutoscalingPolicyCustomMetricUtilization> getCustomMetricUtilizationsList() {
     return customMetricUtilizations;
   }
 
+  /** Configuration parameters of autoscaling based on load balancer. */
   public AutoscalingPolicyLoadBalancingUtilization getLoadBalancingUtilization() {
     return loadBalancingUtilization;
   }
 
+  /**
+   * The maximum number of instances that the autoscaler can scale up to. This is required when
+   * creating or updating an autoscaler. The maximum number of replicas should not be lower than
+   * minimal number of replicas.
+   */
   public Integer getMaxNumReplicas() {
     return maxNumReplicas;
   }
 
+  /**
+   * The minimum number of replicas that the autoscaler can scale down to. This cannot be less than
+   * 0. If not provided, autoscaler will choose a default value depending on maximum number of
+   * instances allowed.
+   */
   public Integer getMinNumReplicas() {
     return minNumReplicas;
   }
@@ -180,28 +207,58 @@ public final class AutoscalingPolicy implements ApiMessage {
       this.minNumReplicas = source.minNumReplicas;
     }
 
+    /**
+     * The number of seconds that the autoscaler should wait before it starts collecting information
+     * from a new instance. This prevents the autoscaler from collecting information when the
+     * instance is initializing, during which the collected usage would not be reliable. The default
+     * time autoscaler waits is 60 seconds.
+     *
+     * <p>Virtual machine initialization times might vary because of numerous factors. We recommend
+     * that you test how long an instance may take to initialize. To do this, create an instance and
+     * time the startup process.
+     */
     public Integer getCoolDownPeriodSec() {
       return coolDownPeriodSec;
     }
 
+    /**
+     * The number of seconds that the autoscaler should wait before it starts collecting information
+     * from a new instance. This prevents the autoscaler from collecting information when the
+     * instance is initializing, during which the collected usage would not be reliable. The default
+     * time autoscaler waits is 60 seconds.
+     *
+     * <p>Virtual machine initialization times might vary because of numerous factors. We recommend
+     * that you test how long an instance may take to initialize. To do this, create an instance and
+     * time the startup process.
+     */
     public Builder setCoolDownPeriodSec(Integer coolDownPeriodSec) {
       this.coolDownPeriodSec = coolDownPeriodSec;
       return this;
     }
 
+    /**
+     * Defines the CPU utilization policy that allows the autoscaler to scale based on the average
+     * CPU utilization of a managed instance group.
+     */
     public AutoscalingPolicyCpuUtilization getCpuUtilization() {
       return cpuUtilization;
     }
 
+    /**
+     * Defines the CPU utilization policy that allows the autoscaler to scale based on the average
+     * CPU utilization of a managed instance group.
+     */
     public Builder setCpuUtilization(AutoscalingPolicyCpuUtilization cpuUtilization) {
       this.cpuUtilization = cpuUtilization;
       return this;
     }
 
+    /** Configuration parameters of autoscaling based on a custom metric. */
     public List<AutoscalingPolicyCustomMetricUtilization> getCustomMetricUtilizationsList() {
       return customMetricUtilizations;
     }
 
+    /** Configuration parameters of autoscaling based on a custom metric. */
     public Builder addAllCustomMetricUtilizations(
         List<AutoscalingPolicyCustomMetricUtilization> customMetricUtilizations) {
       if (this.customMetricUtilizations == null) {
@@ -211,6 +268,7 @@ public final class AutoscalingPolicy implements ApiMessage {
       return this;
     }
 
+    /** Configuration parameters of autoscaling based on a custom metric. */
     public Builder addCustomMetricUtilizations(
         AutoscalingPolicyCustomMetricUtilization customMetricUtilizations) {
       if (this.customMetricUtilizations == null) {
@@ -220,29 +278,51 @@ public final class AutoscalingPolicy implements ApiMessage {
       return this;
     }
 
+    /** Configuration parameters of autoscaling based on load balancer. */
     public AutoscalingPolicyLoadBalancingUtilization getLoadBalancingUtilization() {
       return loadBalancingUtilization;
     }
 
+    /** Configuration parameters of autoscaling based on load balancer. */
     public Builder setLoadBalancingUtilization(
         AutoscalingPolicyLoadBalancingUtilization loadBalancingUtilization) {
       this.loadBalancingUtilization = loadBalancingUtilization;
       return this;
     }
 
+    /**
+     * The maximum number of instances that the autoscaler can scale up to. This is required when
+     * creating or updating an autoscaler. The maximum number of replicas should not be lower than
+     * minimal number of replicas.
+     */
     public Integer getMaxNumReplicas() {
       return maxNumReplicas;
     }
 
+    /**
+     * The maximum number of instances that the autoscaler can scale up to. This is required when
+     * creating or updating an autoscaler. The maximum number of replicas should not be lower than
+     * minimal number of replicas.
+     */
     public Builder setMaxNumReplicas(Integer maxNumReplicas) {
       this.maxNumReplicas = maxNumReplicas;
       return this;
     }
 
+    /**
+     * The minimum number of replicas that the autoscaler can scale down to. This cannot be less
+     * than 0. If not provided, autoscaler will choose a default value depending on maximum number
+     * of instances allowed.
+     */
     public Integer getMinNumReplicas() {
       return minNumReplicas;
     }
 
+    /**
+     * The minimum number of replicas that the autoscaler can scale down to. This cannot be less
+     * than 0. If not provided, autoscaler will choose a default value depending on maximum number
+     * of instances allowed.
+     */
     public Builder setMinNumReplicas(Integer minNumReplicas) {
       this.minNumReplicas = minNumReplicas;
       return this;

@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** A DiskType resource. (== resource_for beta.diskTypes ==) (== resource_for v1.diskTypes ==) */
 public final class DiskType implements ApiMessage {
   private final String creationTimestamp;
   private final String defaultDiskSizeGb;
@@ -126,46 +127,66 @@ public final class DiskType implements ApiMessage {
     return null;
   }
 
+  /** [Output Only] Creation timestamp in RFC3339 text format. */
   public String getCreationTimestamp() {
     return creationTimestamp;
   }
 
+  /** [Output Only] Server-defined default disk size in GB. */
   public String getDefaultDiskSizeGb() {
     return defaultDiskSizeGb;
   }
 
+  /** [Output Only] The deprecation status associated with this disk type. */
   public DeprecationStatus getDeprecated() {
     return deprecated;
   }
 
+  /** [Output Only] An optional description of this resource. */
   public String getDescription() {
     return description;
   }
 
+  /**
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   */
   public String getId() {
     return id;
   }
 
+  /** [Output Only] Type of the resource. Always compute#diskType for disk types. */
   public String getKind() {
     return kind;
   }
 
+  /** [Output Only] Name of the resource. */
   public String getName() {
     return name;
   }
 
+  /**
+   * [Output Only] URL of the region where the disk type resides. Only applicable for regional
+   * resources. You must specify this field as part of the HTTP request URL. It is not settable as a
+   * field in the request body.
+   */
   public String getRegion() {
     return region;
   }
 
+  /** [Output Only] Server-defined URL for the resource. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /** [Output Only] An optional textual description of the valid disk size, such as "10GB-10TB". */
   public String getValidDiskSize() {
     return validDiskSize;
   }
 
+  /**
+   * [Output Only] URL of the zone where the disk type resides. You must specify this field as part
+   * of the HTTP request URL. It is not settable as a field in the request body.
+   */
   public String getZone() {
     return zone;
   }
@@ -259,100 +280,146 @@ public final class DiskType implements ApiMessage {
       this.zone = source.zone;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public String getCreationTimestamp() {
       return creationTimestamp;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
+    /** [Output Only] Server-defined default disk size in GB. */
     public String getDefaultDiskSizeGb() {
       return defaultDiskSizeGb;
     }
 
+    /** [Output Only] Server-defined default disk size in GB. */
     public Builder setDefaultDiskSizeGb(String defaultDiskSizeGb) {
       this.defaultDiskSizeGb = defaultDiskSizeGb;
       return this;
     }
 
+    /** [Output Only] The deprecation status associated with this disk type. */
     public DeprecationStatus getDeprecated() {
       return deprecated;
     }
 
+    /** [Output Only] The deprecation status associated with this disk type. */
     public Builder setDeprecated(DeprecationStatus deprecated) {
       this.deprecated = deprecated;
       return this;
     }
 
+    /** [Output Only] An optional description of this resource. */
     public String getDescription() {
       return description;
     }
 
+    /** [Output Only] An optional description of this resource. */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /** [Output Only] Type of the resource. Always compute#diskType for disk types. */
     public String getKind() {
       return kind;
     }
 
+    /** [Output Only] Type of the resource. Always compute#diskType for disk types. */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /** [Output Only] Name of the resource. */
     public String getName() {
       return name;
     }
 
+    /** [Output Only] Name of the resource. */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /**
+     * [Output Only] URL of the region where the disk type resides. Only applicable for regional
+     * resources. You must specify this field as part of the HTTP request URL. It is not settable as
+     * a field in the request body.
+     */
     public String getRegion() {
       return region;
     }
 
+    /**
+     * [Output Only] URL of the region where the disk type resides. Only applicable for regional
+     * resources. You must specify this field as part of the HTTP request URL. It is not settable as
+     * a field in the request body.
+     */
     public Builder setRegion(String region) {
       this.region = region;
       return this;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /**
+     * [Output Only] An optional textual description of the valid disk size, such as "10GB-10TB".
+     */
     public String getValidDiskSize() {
       return validDiskSize;
     }
 
+    /**
+     * [Output Only] An optional textual description of the valid disk size, such as "10GB-10TB".
+     */
     public Builder setValidDiskSize(String validDiskSize) {
       this.validDiskSize = validDiskSize;
       return this;
     }
 
+    /**
+     * [Output Only] URL of the zone where the disk type resides. You must specify this field as
+     * part of the HTTP request URL. It is not settable as a field in the request body.
+     */
     public String getZone() {
       return zone;
     }
 
+    /**
+     * [Output Only] URL of the zone where the disk type resides. You must specify this field as
+     * part of the HTTP request URL. It is not settable as a field in the request body.
+     */
     public Builder setZone(String zone) {
       this.zone = zone;
       return this;

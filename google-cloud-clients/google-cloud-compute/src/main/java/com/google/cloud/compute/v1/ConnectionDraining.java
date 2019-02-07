@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Message containing connection draining configuration. */
 public final class ConnectionDraining implements ApiMessage {
   private final Integer drainingTimeoutSec;
 
@@ -55,6 +56,10 @@ public final class ConnectionDraining implements ApiMessage {
     return null;
   }
 
+  /**
+   * Time for which instance will be drained (not accept new connections, but still work to finish
+   * started).
+   */
   public Integer getDrainingTimeoutSec() {
     return drainingTimeoutSec;
   }
@@ -98,10 +103,18 @@ public final class ConnectionDraining implements ApiMessage {
       this.drainingTimeoutSec = source.drainingTimeoutSec;
     }
 
+    /**
+     * Time for which instance will be drained (not accept new connections, but still work to finish
+     * started).
+     */
     public Integer getDrainingTimeoutSec() {
       return drainingTimeoutSec;
     }
 
+    /**
+     * Time for which instance will be drained (not accept new connections, but still work to finish
+     * started).
+     */
     public Builder setDrainingTimeoutSec(Integer drainingTimeoutSec) {
       this.drainingTimeoutSec = drainingTimeoutSec;
       return this;

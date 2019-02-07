@@ -56,6 +56,10 @@ public final class InstanceGroupManagersAbandonInstancesRequest implements ApiMe
     return null;
   }
 
+  /**
+   * The URLs of one or more instances to abandon. This can be a full URL or a partial URL, such as
+   * zones/[ZONE]/instances/[INSTANCE_NAME].
+   */
   public List<String> getInstancesList() {
     return instances;
   }
@@ -99,10 +103,18 @@ public final class InstanceGroupManagersAbandonInstancesRequest implements ApiMe
       this.instances = source.instances;
     }
 
+    /**
+     * The URLs of one or more instances to abandon. This can be a full URL or a partial URL, such
+     * as zones/[ZONE]/instances/[INSTANCE_NAME].
+     */
     public List<String> getInstancesList() {
       return instances;
     }
 
+    /**
+     * The URLs of one or more instances to abandon. This can be a full URL or a partial URL, such
+     * as zones/[ZONE]/instances/[INSTANCE_NAME].
+     */
     public Builder addAllInstances(List<String> instances) {
       if (this.instances == null) {
         this.instances = new LinkedList<>();
@@ -111,6 +123,10 @@ public final class InstanceGroupManagersAbandonInstancesRequest implements ApiMe
       return this;
     }
 
+    /**
+     * The URLs of one or more instances to abandon. This can be a full URL or a partial URL, such
+     * as zones/[ZONE]/instances/[INSTANCE_NAME].
+     */
     public Builder addInstances(String instances) {
       if (this.instances == null) {
         this.instances = new LinkedList<>();

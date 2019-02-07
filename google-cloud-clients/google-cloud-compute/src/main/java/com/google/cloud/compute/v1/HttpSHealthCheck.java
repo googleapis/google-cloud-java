@@ -91,26 +91,47 @@ public final class HttpSHealthCheck implements ApiMessage {
     return null;
   }
 
+  /**
+   * The value of the host header in the HTTPS health check request. If left empty (default value),
+   * the IP on behalf of which this health check is performed will be used.
+   */
   public String getHost() {
     return host;
   }
 
+  /**
+   * The TCP port number for the health check request. The default value is 443. Valid values are 1
+   * through 65535.
+   */
   public Integer getPort() {
     return port;
   }
 
+  /**
+   * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined,
+   * port takes precedence.
+   */
   public String getPortName() {
     return portName;
   }
 
+  /**
+   * Specifies the type of proxy header to append before sending data to the backend, either NONE or
+   * PROXY_V1. The default is NONE.
+   */
   public String getProxyHeader() {
     return proxyHeader;
   }
 
+  /** The request path of the HTTPS health check request. The default value is /. */
   public String getRequestPath() {
     return requestPath;
   }
 
+  /**
+   * The string to match anywhere in the first 1024 bytes of the response body. If left empty (the
+   * default value), the status code determines health. The response data can only be ASCII.
+   */
   public String getResponse() {
     return response;
   }
@@ -179,55 +200,97 @@ public final class HttpSHealthCheck implements ApiMessage {
       this.response = source.response;
     }
 
+    /**
+     * The value of the host header in the HTTPS health check request. If left empty (default
+     * value), the IP on behalf of which this health check is performed will be used.
+     */
     public String getHost() {
       return host;
     }
 
+    /**
+     * The value of the host header in the HTTPS health check request. If left empty (default
+     * value), the IP on behalf of which this health check is performed will be used.
+     */
     public Builder setHost(String host) {
       this.host = host;
       return this;
     }
 
+    /**
+     * The TCP port number for the health check request. The default value is 443. Valid values are
+     * 1 through 65535.
+     */
     public Integer getPort() {
       return port;
     }
 
+    /**
+     * The TCP port number for the health check request. The default value is 443. Valid values are
+     * 1 through 65535.
+     */
     public Builder setPort(Integer port) {
       this.port = port;
       return this;
     }
 
+    /**
+     * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined,
+     * port takes precedence.
+     */
     public String getPortName() {
       return portName;
     }
 
+    /**
+     * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined,
+     * port takes precedence.
+     */
     public Builder setPortName(String portName) {
       this.portName = portName;
       return this;
     }
 
+    /**
+     * Specifies the type of proxy header to append before sending data to the backend, either NONE
+     * or PROXY_V1. The default is NONE.
+     */
     public String getProxyHeader() {
       return proxyHeader;
     }
 
+    /**
+     * Specifies the type of proxy header to append before sending data to the backend, either NONE
+     * or PROXY_V1. The default is NONE.
+     */
     public Builder setProxyHeader(String proxyHeader) {
       this.proxyHeader = proxyHeader;
       return this;
     }
 
+    /** The request path of the HTTPS health check request. The default value is /. */
     public String getRequestPath() {
       return requestPath;
     }
 
+    /** The request path of the HTTPS health check request. The default value is /. */
     public Builder setRequestPath(String requestPath) {
       this.requestPath = requestPath;
       return this;
     }
 
+    /**
+     * The string to match anywhere in the first 1024 bytes of the response body. If left empty (the
+     * default value), the status code determines health. The response data can only be ASCII.
+     */
     public String getResponse() {
       return response;
     }
 
+    /**
+     * The string to match anywhere in the first 1024 bytes of the response body. If left empty (the
+     * default value), the status code determines health. The response data can only be ASCII.
+     */
     public Builder setResponse(String response) {
       this.response = response;
       return this;

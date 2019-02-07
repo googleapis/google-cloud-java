@@ -62,10 +62,12 @@ public final class NodeTemplatesScopedList implements ApiMessage {
     return null;
   }
 
+  /** [Output Only] A list of node templates contained in this scope. */
   public List<NodeTemplate> getNodeTemplatesList() {
     return nodeTemplates;
   }
 
+  /** [Output Only] An informational warning that appears when the node templates list is empty. */
   public Warning getWarning() {
     return warning;
   }
@@ -114,10 +116,12 @@ public final class NodeTemplatesScopedList implements ApiMessage {
       this.warning = source.warning;
     }
 
+    /** [Output Only] A list of node templates contained in this scope. */
     public List<NodeTemplate> getNodeTemplatesList() {
       return nodeTemplates;
     }
 
+    /** [Output Only] A list of node templates contained in this scope. */
     public Builder addAllNodeTemplates(List<NodeTemplate> nodeTemplates) {
       if (this.nodeTemplates == null) {
         this.nodeTemplates = new LinkedList<>();
@@ -126,6 +130,7 @@ public final class NodeTemplatesScopedList implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] A list of node templates contained in this scope. */
     public Builder addNodeTemplates(NodeTemplate nodeTemplates) {
       if (this.nodeTemplates == null) {
         this.nodeTemplates = new LinkedList<>();
@@ -134,10 +139,16 @@ public final class NodeTemplatesScopedList implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] An informational warning that appears when the node templates list is empty.
+     */
     public Warning getWarning() {
       return warning;
     }
 
+    /**
+     * [Output Only] An informational warning that appears when the node templates list is empty.
+     */
     public Builder setWarning(Warning warning) {
       this.warning = warning;
       return this;

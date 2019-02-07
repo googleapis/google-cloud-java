@@ -55,6 +55,7 @@ public final class TargetTcpProxiesSetBackendServiceRequest implements ApiMessag
     return null;
   }
 
+  /** The URL of the new BackendService resource for the targetTcpProxy. */
   public String getService() {
     return service;
   }
@@ -98,10 +99,12 @@ public final class TargetTcpProxiesSetBackendServiceRequest implements ApiMessag
       this.service = source.service;
     }
 
+    /** The URL of the new BackendService resource for the targetTcpProxy. */
     public String getService() {
       return service;
     }
 
+    /** The URL of the new BackendService resource for the targetTcpProxy. */
     public Builder setService(String service) {
       this.service = service;
       return this;

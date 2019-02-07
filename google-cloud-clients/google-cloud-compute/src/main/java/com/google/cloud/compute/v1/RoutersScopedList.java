@@ -62,10 +62,12 @@ public final class RoutersScopedList implements ApiMessage {
     return null;
   }
 
+  /** A list of routers contained in this scope. */
   public List<Router> getRoutersList() {
     return routers;
   }
 
+  /** Informational warning which replaces the list of routers when the list is empty. */
   public Warning getWarning() {
     return warning;
   }
@@ -114,10 +116,12 @@ public final class RoutersScopedList implements ApiMessage {
       this.warning = source.warning;
     }
 
+    /** A list of routers contained in this scope. */
     public List<Router> getRoutersList() {
       return routers;
     }
 
+    /** A list of routers contained in this scope. */
     public Builder addAllRouters(List<Router> routers) {
       if (this.routers == null) {
         this.routers = new LinkedList<>();
@@ -126,6 +130,7 @@ public final class RoutersScopedList implements ApiMessage {
       return this;
     }
 
+    /** A list of routers contained in this scope. */
     public Builder addRouters(Router routers) {
       if (this.routers == null) {
         this.routers = new LinkedList<>();
@@ -134,10 +139,12 @@ public final class RoutersScopedList implements ApiMessage {
       return this;
     }
 
+    /** Informational warning which replaces the list of routers when the list is empty. */
     public Warning getWarning() {
       return warning;
     }
 
+    /** Informational warning which replaces the list of routers when the list is empty. */
     public Builder setWarning(Warning warning) {
       this.warning = warning;
       return this;

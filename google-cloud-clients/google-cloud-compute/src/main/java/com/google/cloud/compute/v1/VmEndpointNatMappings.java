@@ -25,6 +25,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Contain information of Nat mapping for a VM endpoint (i.e., NIC). */
 public final class VmEndpointNatMappings implements ApiMessage {
   private final String instanceName;
   private final List<VmEndpointNatMappingsInterfaceNatMappings> interfaceNatMappings;
@@ -63,6 +64,7 @@ public final class VmEndpointNatMappings implements ApiMessage {
     return null;
   }
 
+  /** Name of the VM instance which the endpoint belongs to */
   public String getInstanceName() {
     return instanceName;
   }
@@ -115,10 +117,12 @@ public final class VmEndpointNatMappings implements ApiMessage {
       this.interfaceNatMappings = source.interfaceNatMappings;
     }
 
+    /** Name of the VM instance which the endpoint belongs to */
     public String getInstanceName() {
       return instanceName;
     }
 
+    /** Name of the VM instance which the endpoint belongs to */
     public Builder setInstanceName(String instanceName) {
       this.instanceName = instanceName;
       return this;

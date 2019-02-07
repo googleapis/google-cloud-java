@@ -62,10 +62,15 @@ public final class InstancesScopedList implements ApiMessage {
     return null;
   }
 
+  /** [Output Only] A list of instances contained in this scope. */
   public List<Instance> getInstancesList() {
     return instances;
   }
 
+  /**
+   * [Output Only] Informational warning which replaces the list of instances when the list is
+   * empty.
+   */
   public Warning getWarning() {
     return warning;
   }
@@ -114,10 +119,12 @@ public final class InstancesScopedList implements ApiMessage {
       this.warning = source.warning;
     }
 
+    /** [Output Only] A list of instances contained in this scope. */
     public List<Instance> getInstancesList() {
       return instances;
     }
 
+    /** [Output Only] A list of instances contained in this scope. */
     public Builder addAllInstances(List<Instance> instances) {
       if (this.instances == null) {
         this.instances = new LinkedList<>();
@@ -126,6 +133,7 @@ public final class InstancesScopedList implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] A list of instances contained in this scope. */
     public Builder addInstances(Instance instances) {
       if (this.instances == null) {
         this.instances = new LinkedList<>();
@@ -134,10 +142,18 @@ public final class InstancesScopedList implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] Informational warning which replaces the list of instances when the list is
+     * empty.
+     */
     public Warning getWarning() {
       return warning;
     }
 
+    /**
+     * [Output Only] Informational warning which replaces the list of instances when the list is
+     * empty.
+     */
     public Builder setWarning(Warning warning) {
       this.warning = warning;
       return this;

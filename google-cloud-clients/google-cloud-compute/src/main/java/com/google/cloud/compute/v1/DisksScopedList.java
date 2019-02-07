@@ -62,10 +62,14 @@ public final class DisksScopedList implements ApiMessage {
     return null;
   }
 
+  /** [Output Only] A list of disks contained in this scope. */
   public List<Disk> getDisksList() {
     return disks;
   }
 
+  /**
+   * [Output Only] Informational warning which replaces the list of disks when the list is empty.
+   */
   public Warning getWarning() {
     return warning;
   }
@@ -114,10 +118,12 @@ public final class DisksScopedList implements ApiMessage {
       this.warning = source.warning;
     }
 
+    /** [Output Only] A list of disks contained in this scope. */
     public List<Disk> getDisksList() {
       return disks;
     }
 
+    /** [Output Only] A list of disks contained in this scope. */
     public Builder addAllDisks(List<Disk> disks) {
       if (this.disks == null) {
         this.disks = new LinkedList<>();
@@ -126,6 +132,7 @@ public final class DisksScopedList implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] A list of disks contained in this scope. */
     public Builder addDisks(Disk disks) {
       if (this.disks == null) {
         this.disks = new LinkedList<>();
@@ -134,10 +141,16 @@ public final class DisksScopedList implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] Informational warning which replaces the list of disks when the list is empty.
+     */
     public Warning getWarning() {
       return warning;
     }
 
+    /**
+     * [Output Only] Informational warning which replaces the list of disks when the list is empty.
+     */
     public Builder setWarning(Warning warning) {
       this.warning = warning;
       return this;

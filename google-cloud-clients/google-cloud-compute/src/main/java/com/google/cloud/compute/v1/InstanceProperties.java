@@ -135,50 +135,92 @@ public final class InstanceProperties implements ApiMessage {
     return null;
   }
 
+  /**
+   * Enables instances created based on this template to send packets with source IP addresses other
+   * than their own and receive packets with destination IP addresses other than their own. If these
+   * instances will be used as an IP gateway or it will be set as the next-hop in a Route resource,
+   * specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation
+   * for more information.
+   */
   public Boolean getCanIpForward() {
     return canIpForward;
   }
 
+  /**
+   * An optional text description for the instances that are created from this instance template.
+   */
   public String getDescription() {
     return description;
   }
 
+  /**
+   * An array of disks that are associated with the instances that are created from this template.
+   */
   public List<AttachedDisk> getDisksList() {
     return disks;
   }
 
+  /**
+   * A list of guest accelerator cards' type and count to use for instances created from the
+   * instance template.
+   */
   public List<AcceleratorConfig> getGuestAcceleratorsList() {
     return guestAccelerators;
   }
 
+  /** Labels to apply to instances that are created from this template. */
   public Map<String, String> getLabelsMap() {
     return labels;
   }
 
+  /** The machine type to use for instances that are created from this template. */
   public String getMachineType() {
     return machineType;
   }
 
+  /**
+   * The metadata key/value pairs to assign to instances that are created from this template. These
+   * pairs can consist of custom metadata or predefined keys. See Project and instance metadata for
+   * more information.
+   */
   public Metadata getMetadata() {
     return metadata;
   }
 
+  /**
+   * Minimum cpu/platform to be used by this instance. The instance may be scheduled on the
+   * specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms,
+   * such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more
+   * information, read Specifying a Minimum CPU Platform.
+   */
   public String getMinCpuPlatform() {
     return minCpuPlatform;
   }
 
+  /** An array of network access configurations for this interface. */
   public List<NetworkInterface> getNetworkInterfacesList() {
     return networkInterfaces;
   }
 
+  /** Specifies the scheduling options for the instances that are created from this template. */
   public Scheduling getScheduling() {
     return scheduling;
   }
 
+  /**
+   * A list of service accounts with specified scopes. Access tokens for these service accounts are
+   * available to the instances that are created from this template. Use metadata queries to obtain
+   * the access tokens for these instances.
+   */
   public List<ServiceAccount> getServiceAccountsList() {
     return serviceAccounts;
   }
 
+  /**
+   * A list of tags to apply to the instances that are created from this template. The tags identify
+   * valid sources or targets for network firewalls. The setTags method can modify this list of
+   * tags. Each tag within the list must comply with RFC1035.
+   */
   public Tags getTags() {
     return tags;
   }
@@ -277,28 +319,54 @@ public final class InstanceProperties implements ApiMessage {
       this.tags = source.tags;
     }
 
+    /**
+     * Enables instances created based on this template to send packets with source IP addresses
+     * other than their own and receive packets with destination IP addresses other than their own.
+     * If these instances will be used as an IP gateway or it will be set as the next-hop in a Route
+     * resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding
+     * documentation for more information.
+     */
     public Boolean getCanIpForward() {
       return canIpForward;
     }
 
+    /**
+     * Enables instances created based on this template to send packets with source IP addresses
+     * other than their own and receive packets with destination IP addresses other than their own.
+     * If these instances will be used as an IP gateway or it will be set as the next-hop in a Route
+     * resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding
+     * documentation for more information.
+     */
     public Builder setCanIpForward(Boolean canIpForward) {
       this.canIpForward = canIpForward;
       return this;
     }
 
+    /**
+     * An optional text description for the instances that are created from this instance template.
+     */
     public String getDescription() {
       return description;
     }
 
+    /**
+     * An optional text description for the instances that are created from this instance template.
+     */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /**
+     * An array of disks that are associated with the instances that are created from this template.
+     */
     public List<AttachedDisk> getDisksList() {
       return disks;
     }
 
+    /**
+     * An array of disks that are associated with the instances that are created from this template.
+     */
     public Builder addAllDisks(List<AttachedDisk> disks) {
       if (this.disks == null) {
         this.disks = new LinkedList<>();
@@ -307,6 +375,9 @@ public final class InstanceProperties implements ApiMessage {
       return this;
     }
 
+    /**
+     * An array of disks that are associated with the instances that are created from this template.
+     */
     public Builder addDisks(AttachedDisk disks) {
       if (this.disks == null) {
         this.disks = new LinkedList<>();
@@ -315,10 +386,18 @@ public final class InstanceProperties implements ApiMessage {
       return this;
     }
 
+    /**
+     * A list of guest accelerator cards' type and count to use for instances created from the
+     * instance template.
+     */
     public List<AcceleratorConfig> getGuestAcceleratorsList() {
       return guestAccelerators;
     }
 
+    /**
+     * A list of guest accelerator cards' type and count to use for instances created from the
+     * instance template.
+     */
     public Builder addAllGuestAccelerators(List<AcceleratorConfig> guestAccelerators) {
       if (this.guestAccelerators == null) {
         this.guestAccelerators = new LinkedList<>();
@@ -327,6 +406,10 @@ public final class InstanceProperties implements ApiMessage {
       return this;
     }
 
+    /**
+     * A list of guest accelerator cards' type and count to use for instances created from the
+     * instance template.
+     */
     public Builder addGuestAccelerators(AcceleratorConfig guestAccelerators) {
       if (this.guestAccelerators == null) {
         this.guestAccelerators = new LinkedList<>();
@@ -335,46 +418,74 @@ public final class InstanceProperties implements ApiMessage {
       return this;
     }
 
+    /** Labels to apply to instances that are created from this template. */
     public Map<String, String> getLabelsMap() {
       return labels;
     }
 
+    /** Labels to apply to instances that are created from this template. */
     public Builder putAllLabels(Map<String, String> labels) {
       this.labels = labels;
       return this;
     }
 
+    /** The machine type to use for instances that are created from this template. */
     public String getMachineType() {
       return machineType;
     }
 
+    /** The machine type to use for instances that are created from this template. */
     public Builder setMachineType(String machineType) {
       this.machineType = machineType;
       return this;
     }
 
+    /**
+     * The metadata key/value pairs to assign to instances that are created from this template.
+     * These pairs can consist of custom metadata or predefined keys. See Project and instance
+     * metadata for more information.
+     */
     public Metadata getMetadata() {
       return metadata;
     }
 
+    /**
+     * The metadata key/value pairs to assign to instances that are created from this template.
+     * These pairs can consist of custom metadata or predefined keys. See Project and instance
+     * metadata for more information.
+     */
     public Builder setMetadata(Metadata metadata) {
       this.metadata = metadata;
       return this;
     }
 
+    /**
+     * Minimum cpu/platform to be used by this instance. The instance may be scheduled on the
+     * specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms,
+     * such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more
+     * information, read Specifying a Minimum CPU Platform.
+     */
     public String getMinCpuPlatform() {
       return minCpuPlatform;
     }
 
+    /**
+     * Minimum cpu/platform to be used by this instance. The instance may be scheduled on the
+     * specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms,
+     * such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more
+     * information, read Specifying a Minimum CPU Platform.
+     */
     public Builder setMinCpuPlatform(String minCpuPlatform) {
       this.minCpuPlatform = minCpuPlatform;
       return this;
     }
 
+    /** An array of network access configurations for this interface. */
     public List<NetworkInterface> getNetworkInterfacesList() {
       return networkInterfaces;
     }
 
+    /** An array of network access configurations for this interface. */
     public Builder addAllNetworkInterfaces(List<NetworkInterface> networkInterfaces) {
       if (this.networkInterfaces == null) {
         this.networkInterfaces = new LinkedList<>();
@@ -383,6 +494,7 @@ public final class InstanceProperties implements ApiMessage {
       return this;
     }
 
+    /** An array of network access configurations for this interface. */
     public Builder addNetworkInterfaces(NetworkInterface networkInterfaces) {
       if (this.networkInterfaces == null) {
         this.networkInterfaces = new LinkedList<>();
@@ -391,19 +503,31 @@ public final class InstanceProperties implements ApiMessage {
       return this;
     }
 
+    /** Specifies the scheduling options for the instances that are created from this template. */
     public Scheduling getScheduling() {
       return scheduling;
     }
 
+    /** Specifies the scheduling options for the instances that are created from this template. */
     public Builder setScheduling(Scheduling scheduling) {
       this.scheduling = scheduling;
       return this;
     }
 
+    /**
+     * A list of service accounts with specified scopes. Access tokens for these service accounts
+     * are available to the instances that are created from this template. Use metadata queries to
+     * obtain the access tokens for these instances.
+     */
     public List<ServiceAccount> getServiceAccountsList() {
       return serviceAccounts;
     }
 
+    /**
+     * A list of service accounts with specified scopes. Access tokens for these service accounts
+     * are available to the instances that are created from this template. Use metadata queries to
+     * obtain the access tokens for these instances.
+     */
     public Builder addAllServiceAccounts(List<ServiceAccount> serviceAccounts) {
       if (this.serviceAccounts == null) {
         this.serviceAccounts = new LinkedList<>();
@@ -412,6 +536,11 @@ public final class InstanceProperties implements ApiMessage {
       return this;
     }
 
+    /**
+     * A list of service accounts with specified scopes. Access tokens for these service accounts
+     * are available to the instances that are created from this template. Use metadata queries to
+     * obtain the access tokens for these instances.
+     */
     public Builder addServiceAccounts(ServiceAccount serviceAccounts) {
       if (this.serviceAccounts == null) {
         this.serviceAccounts = new LinkedList<>();
@@ -420,10 +549,20 @@ public final class InstanceProperties implements ApiMessage {
       return this;
     }
 
+    /**
+     * A list of tags to apply to the instances that are created from this template. The tags
+     * identify valid sources or targets for network firewalls. The setTags method can modify this
+     * list of tags. Each tag within the list must comply with RFC1035.
+     */
     public Tags getTags() {
       return tags;
     }
 
+    /**
+     * A list of tags to apply to the instances that are created from this template. The tags
+     * identify valid sources or targets for network firewalls. The setTags method can modify this
+     * list of tags. Each tag within the list must comply with RFC1035.
+     */
     public Builder setTags(Tags tags) {
       this.tags = tags;
       return this;

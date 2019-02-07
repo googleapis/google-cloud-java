@@ -26,6 +26,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** An instance-attached disk resource. */
 public final class AttachedDisk implements ApiMessage {
   private final Boolean autoDelete;
   private final Boolean boot;
@@ -145,54 +146,132 @@ public final class AttachedDisk implements ApiMessage {
     return null;
   }
 
+  /**
+   * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the
+   * disk is detached from the instance).
+   */
   public Boolean getAutoDelete() {
     return autoDelete;
   }
 
+  /**
+   * Indicates that this is a boot disk. The virtual machine will use the first partition of the
+   * disk for its root filesystem.
+   */
   public Boolean getBoot() {
     return boot;
   }
 
+  /**
+   * Specifies a unique device name of your choice that is reflected into the
+   * /dev/disk/by-id/google-&#42; tree of a Linux operating system running within the instance. This
+   * name can be used to reference the device for mounting, resizing, and so on, from within the
+   * instance.
+   *
+   * <p>If not specified, the server chooses a default device name to apply to this disk, in the
+   * form persistent-disk-x, where x is a number assigned by Google Compute Engine. This field is
+   * only applicable for persistent disks.
+   */
   public String getDeviceName() {
     return deviceName;
   }
 
+  /**
+   * Encrypts or decrypts a disk using a customer-supplied encryption key.
+   *
+   * <p>If you are creating a new disk, this field encrypts the new disk using an encryption key
+   * that you provide. If you are attaching an existing disk that is already encrypted, this field
+   * decrypts the disk using the customer-supplied encryption key.
+   *
+   * <p>If you encrypt a disk using a customer-supplied key, you must provide the same key again
+   * when you attempt to use this resource at a later time. For example, you must provide the key
+   * when you create a snapshot or an image from the disk or when you attach the disk to a virtual
+   * machine instance.
+   *
+   * <p>If you do not provide an encryption key, then the disk will be encrypted using an
+   * automatically generated key and you do not need to provide a key to use the disk later.
+   *
+   * <p>Instance templates do not store customer-supplied encryption keys, so you cannot use your
+   * own keys to encrypt disks in a managed instance group.
+   */
   public CustomerEncryptionKey getDiskEncryptionKey() {
     return diskEncryptionKey;
   }
 
+  /**
+   * A list of features to enable on the guest operating system. Applicable only for bootable
+   * images. Read Enabling guest operating system features to see a list of available options.
+   */
   public List<GuestOsFeature> getGuestOsFeaturesList() {
     return guestOsFeatures;
   }
 
+  /**
+   * [Output Only] A zero-based index to this disk, where 0 is reserved for the boot disk. If you
+   * have many disks attached to an instance, each disk would have a unique index number.
+   */
   public Integer getIndex() {
     return index;
   }
 
+  /**
+   * [Input Only] Specifies the parameters for a new disk that will be created alongside the new
+   * instance. Use initialization parameters to create boot disks or local SSDs attached to the new
+   * instance.
+   *
+   * <p>This property is mutually exclusive with the source property; you can only define one or the
+   * other, but not both.
+   */
   public AttachedDiskInitializeParams getInitializeParams() {
     return initializeParams;
   }
 
+  /**
+   * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The
+   * default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt
+   * to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or
+   * SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+   */
   public String getInterface() {
     return interface2;
   }
 
+  /** [Output Only] Type of the resource. Always compute#attachedDisk for attached disks. */
   public String getKind() {
     return kind;
   }
 
+  /** [Output Only] Any valid publicly visible licenses. */
   public List<String> getLicensesList() {
     return licenses;
   }
 
+  /**
+   * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the
+   * default is to attach the disk in READ_WRITE mode.
+   */
   public String getMode() {
     return mode;
   }
 
+  /**
+   * Specifies a valid partial or full URL to an existing Persistent Disk resource. When creating a
+   * new instance, one of initializeParams.sourceImage or disks.source is required except for local
+   * SSD.
+   *
+   * <p>If desired, you can also attach existing non-root persistent disks using this property. This
+   * field is only applicable for persistent disks.
+   *
+   * <p>Note that for InstanceTemplate, specify the disk name, not the URL for the disk.
+   */
   public String getSource() {
     return source;
   }
 
+  /**
+   * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not specified, the default is
+   * PERSISTENT.
+   */
   public String getType() {
     return type;
   }
@@ -296,46 +375,126 @@ public final class AttachedDisk implements ApiMessage {
       this.type = source.type;
     }
 
+    /**
+     * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when
+     * the disk is detached from the instance).
+     */
     public Boolean getAutoDelete() {
       return autoDelete;
     }
 
+    /**
+     * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when
+     * the disk is detached from the instance).
+     */
     public Builder setAutoDelete(Boolean autoDelete) {
       this.autoDelete = autoDelete;
       return this;
     }
 
+    /**
+     * Indicates that this is a boot disk. The virtual machine will use the first partition of the
+     * disk for its root filesystem.
+     */
     public Boolean getBoot() {
       return boot;
     }
 
+    /**
+     * Indicates that this is a boot disk. The virtual machine will use the first partition of the
+     * disk for its root filesystem.
+     */
     public Builder setBoot(Boolean boot) {
       this.boot = boot;
       return this;
     }
 
+    /**
+     * Specifies a unique device name of your choice that is reflected into the
+     * /dev/disk/by-id/google-&#42; tree of a Linux operating system running within the instance.
+     * This name can be used to reference the device for mounting, resizing, and so on, from within
+     * the instance.
+     *
+     * <p>If not specified, the server chooses a default device name to apply to this disk, in the
+     * form persistent-disk-x, where x is a number assigned by Google Compute Engine. This field is
+     * only applicable for persistent disks.
+     */
     public String getDeviceName() {
       return deviceName;
     }
 
+    /**
+     * Specifies a unique device name of your choice that is reflected into the
+     * /dev/disk/by-id/google-&#42; tree of a Linux operating system running within the instance.
+     * This name can be used to reference the device for mounting, resizing, and so on, from within
+     * the instance.
+     *
+     * <p>If not specified, the server chooses a default device name to apply to this disk, in the
+     * form persistent-disk-x, where x is a number assigned by Google Compute Engine. This field is
+     * only applicable for persistent disks.
+     */
     public Builder setDeviceName(String deviceName) {
       this.deviceName = deviceName;
       return this;
     }
 
+    /**
+     * Encrypts or decrypts a disk using a customer-supplied encryption key.
+     *
+     * <p>If you are creating a new disk, this field encrypts the new disk using an encryption key
+     * that you provide. If you are attaching an existing disk that is already encrypted, this field
+     * decrypts the disk using the customer-supplied encryption key.
+     *
+     * <p>If you encrypt a disk using a customer-supplied key, you must provide the same key again
+     * when you attempt to use this resource at a later time. For example, you must provide the key
+     * when you create a snapshot or an image from the disk or when you attach the disk to a virtual
+     * machine instance.
+     *
+     * <p>If you do not provide an encryption key, then the disk will be encrypted using an
+     * automatically generated key and you do not need to provide a key to use the disk later.
+     *
+     * <p>Instance templates do not store customer-supplied encryption keys, so you cannot use your
+     * own keys to encrypt disks in a managed instance group.
+     */
     public CustomerEncryptionKey getDiskEncryptionKey() {
       return diskEncryptionKey;
     }
 
+    /**
+     * Encrypts or decrypts a disk using a customer-supplied encryption key.
+     *
+     * <p>If you are creating a new disk, this field encrypts the new disk using an encryption key
+     * that you provide. If you are attaching an existing disk that is already encrypted, this field
+     * decrypts the disk using the customer-supplied encryption key.
+     *
+     * <p>If you encrypt a disk using a customer-supplied key, you must provide the same key again
+     * when you attempt to use this resource at a later time. For example, you must provide the key
+     * when you create a snapshot or an image from the disk or when you attach the disk to a virtual
+     * machine instance.
+     *
+     * <p>If you do not provide an encryption key, then the disk will be encrypted using an
+     * automatically generated key and you do not need to provide a key to use the disk later.
+     *
+     * <p>Instance templates do not store customer-supplied encryption keys, so you cannot use your
+     * own keys to encrypt disks in a managed instance group.
+     */
     public Builder setDiskEncryptionKey(CustomerEncryptionKey diskEncryptionKey) {
       this.diskEncryptionKey = diskEncryptionKey;
       return this;
     }
 
+    /**
+     * A list of features to enable on the guest operating system. Applicable only for bootable
+     * images. Read Enabling guest operating system features to see a list of available options.
+     */
     public List<GuestOsFeature> getGuestOsFeaturesList() {
       return guestOsFeatures;
     }
 
+    /**
+     * A list of features to enable on the guest operating system. Applicable only for bootable
+     * images. Read Enabling guest operating system features to see a list of available options.
+     */
     public Builder addAllGuestOsFeatures(List<GuestOsFeature> guestOsFeatures) {
       if (this.guestOsFeatures == null) {
         this.guestOsFeatures = new LinkedList<>();
@@ -344,6 +503,10 @@ public final class AttachedDisk implements ApiMessage {
       return this;
     }
 
+    /**
+     * A list of features to enable on the guest operating system. Applicable only for bootable
+     * images. Read Enabling guest operating system features to see a list of available options.
+     */
     public Builder addGuestOsFeatures(GuestOsFeature guestOsFeatures) {
       if (this.guestOsFeatures == null) {
         this.guestOsFeatures = new LinkedList<>();
@@ -352,46 +515,86 @@ public final class AttachedDisk implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] A zero-based index to this disk, where 0 is reserved for the boot disk. If you
+     * have many disks attached to an instance, each disk would have a unique index number.
+     */
     public Integer getIndex() {
       return index;
     }
 
+    /**
+     * [Output Only] A zero-based index to this disk, where 0 is reserved for the boot disk. If you
+     * have many disks attached to an instance, each disk would have a unique index number.
+     */
     public Builder setIndex(Integer index) {
       this.index = index;
       return this;
     }
 
+    /**
+     * [Input Only] Specifies the parameters for a new disk that will be created alongside the new
+     * instance. Use initialization parameters to create boot disks or local SSDs attached to the
+     * new instance.
+     *
+     * <p>This property is mutually exclusive with the source property; you can only define one or
+     * the other, but not both.
+     */
     public AttachedDiskInitializeParams getInitializeParams() {
       return initializeParams;
     }
 
+    /**
+     * [Input Only] Specifies the parameters for a new disk that will be created alongside the new
+     * instance. Use initialization parameters to create boot disks or local SSDs attached to the
+     * new instance.
+     *
+     * <p>This property is mutually exclusive with the source property; you can only define one or
+     * the other, but not both.
+     */
     public Builder setInitializeParams(AttachedDiskInitializeParams initializeParams) {
       this.initializeParams = initializeParams;
       return this;
     }
 
+    /**
+     * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME.
+     * The default is SCSI. Persistent disks must always use SCSI and the request will fail if you
+     * attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either
+     * NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+     */
     public String getInterface() {
       return interface2;
     }
 
+    /**
+     * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME.
+     * The default is SCSI. Persistent disks must always use SCSI and the request will fail if you
+     * attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either
+     * NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+     */
     public Builder setInterface(String interface2) {
       this.interface2 = interface2;
       return this;
     }
 
+    /** [Output Only] Type of the resource. Always compute#attachedDisk for attached disks. */
     public String getKind() {
       return kind;
     }
 
+    /** [Output Only] Type of the resource. Always compute#attachedDisk for attached disks. */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /** [Output Only] Any valid publicly visible licenses. */
     public List<String> getLicensesList() {
       return licenses;
     }
 
+    /** [Output Only] Any valid publicly visible licenses. */
     public Builder addAllLicenses(List<String> licenses) {
       if (this.licenses == null) {
         this.licenses = new LinkedList<>();
@@ -400,6 +603,7 @@ public final class AttachedDisk implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] Any valid publicly visible licenses. */
     public Builder addLicenses(String licenses) {
       if (this.licenses == null) {
         this.licenses = new LinkedList<>();
@@ -408,28 +612,64 @@ public final class AttachedDisk implements ApiMessage {
       return this;
     }
 
+    /**
+     * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the
+     * default is to attach the disk in READ_WRITE mode.
+     */
     public String getMode() {
       return mode;
     }
 
+    /**
+     * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the
+     * default is to attach the disk in READ_WRITE mode.
+     */
     public Builder setMode(String mode) {
       this.mode = mode;
       return this;
     }
 
+    /**
+     * Specifies a valid partial or full URL to an existing Persistent Disk resource. When creating
+     * a new instance, one of initializeParams.sourceImage or disks.source is required except for
+     * local SSD.
+     *
+     * <p>If desired, you can also attach existing non-root persistent disks using this property.
+     * This field is only applicable for persistent disks.
+     *
+     * <p>Note that for InstanceTemplate, specify the disk name, not the URL for the disk.
+     */
     public String getSource() {
       return source;
     }
 
+    /**
+     * Specifies a valid partial or full URL to an existing Persistent Disk resource. When creating
+     * a new instance, one of initializeParams.sourceImage or disks.source is required except for
+     * local SSD.
+     *
+     * <p>If desired, you can also attach existing non-root persistent disks using this property.
+     * This field is only applicable for persistent disks.
+     *
+     * <p>Note that for InstanceTemplate, specify the disk name, not the URL for the disk.
+     */
     public Builder setSource(String source) {
       this.source = source;
       return this;
     }
 
+    /**
+     * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not specified, the default
+     * is PERSISTENT.
+     */
     public String getType() {
       return type;
     }
 
+    /**
+     * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not specified, the default
+     * is PERSISTENT.
+     */
     public Builder setType(String type) {
       this.type = type;
       return this;

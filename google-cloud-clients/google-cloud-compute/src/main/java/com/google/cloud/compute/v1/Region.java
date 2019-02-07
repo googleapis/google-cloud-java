@@ -25,6 +25,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Region resource. (== resource_for beta.regions ==) (== resource_for v1.regions ==) */
 public final class Region implements ApiMessage {
   private final String creationTimestamp;
   private final DeprecationStatus deprecated;
@@ -120,42 +121,54 @@ public final class Region implements ApiMessage {
     return null;
   }
 
+  /** [Output Only] Creation timestamp in RFC3339 text format. */
   public String getCreationTimestamp() {
     return creationTimestamp;
   }
 
+  /** [Output Only] The deprecation status associated with this region. */
   public DeprecationStatus getDeprecated() {
     return deprecated;
   }
 
+  /** [Output Only] Textual description of the resource. */
   public String getDescription() {
     return description;
   }
 
+  /**
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   */
   public String getId() {
     return id;
   }
 
+  /** [Output Only] Type of the resource. Always compute#region for regions. */
   public String getKind() {
     return kind;
   }
 
+  /** [Output Only] Name of the resource. */
   public String getName() {
     return name;
   }
 
+  /** [Output Only] Quotas assigned to this region. */
   public List<Quota> getQuotasList() {
     return quotas;
   }
 
+  /** [Output Only] Server-defined URL for the resource. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /** [Output Only] Status of the region, either UP or DOWN. */
   public String getStatus() {
     return status;
   }
 
+  /** [Output Only] A list of zones available in this region, in the form of resource URLs. */
   public List<String> getZonesList() {
     return zones;
   }
@@ -244,64 +257,84 @@ public final class Region implements ApiMessage {
       this.zones = source.zones;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public String getCreationTimestamp() {
       return creationTimestamp;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
+    /** [Output Only] The deprecation status associated with this region. */
     public DeprecationStatus getDeprecated() {
       return deprecated;
     }
 
+    /** [Output Only] The deprecation status associated with this region. */
     public Builder setDeprecated(DeprecationStatus deprecated) {
       this.deprecated = deprecated;
       return this;
     }
 
+    /** [Output Only] Textual description of the resource. */
     public String getDescription() {
       return description;
     }
 
+    /** [Output Only] Textual description of the resource. */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /** [Output Only] Type of the resource. Always compute#region for regions. */
     public String getKind() {
       return kind;
     }
 
+    /** [Output Only] Type of the resource. Always compute#region for regions. */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /** [Output Only] Name of the resource. */
     public String getName() {
       return name;
     }
 
+    /** [Output Only] Name of the resource. */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /** [Output Only] Quotas assigned to this region. */
     public List<Quota> getQuotasList() {
       return quotas;
     }
 
+    /** [Output Only] Quotas assigned to this region. */
     public Builder addAllQuotas(List<Quota> quotas) {
       if (this.quotas == null) {
         this.quotas = new LinkedList<>();
@@ -310,6 +343,7 @@ public final class Region implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] Quotas assigned to this region. */
     public Builder addQuotas(Quota quotas) {
       if (this.quotas == null) {
         this.quotas = new LinkedList<>();
@@ -318,28 +352,34 @@ public final class Region implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /** [Output Only] Status of the region, either UP or DOWN. */
     public String getStatus() {
       return status;
     }
 
+    /** [Output Only] Status of the region, either UP or DOWN. */
     public Builder setStatus(String status) {
       this.status = status;
       return this;
     }
 
+    /** [Output Only] A list of zones available in this region, in the form of resource URLs. */
     public List<String> getZonesList() {
       return zones;
     }
 
+    /** [Output Only] A list of zones available in this region, in the form of resource URLs. */
     public Builder addAllZones(List<String> zones) {
       if (this.zones == null) {
         this.zones = new LinkedList<>();
@@ -348,6 +388,7 @@ public final class Region implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] A list of zones available in this region, in the form of resource URLs. */
     public Builder addZones(String zones) {
       if (this.zones == null) {
         this.zones = new LinkedList<>();

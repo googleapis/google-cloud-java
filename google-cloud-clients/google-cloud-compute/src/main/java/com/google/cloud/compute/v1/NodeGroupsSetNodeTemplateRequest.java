@@ -55,6 +55,7 @@ public final class NodeGroupsSetNodeTemplateRequest implements ApiMessage {
     return null;
   }
 
+  /** Full or partial URL of the node template resource to be updated for this node group. */
   public String getNodeTemplate() {
     return nodeTemplate;
   }
@@ -98,10 +99,12 @@ public final class NodeGroupsSetNodeTemplateRequest implements ApiMessage {
       this.nodeTemplate = source.nodeTemplate;
     }
 
+    /** Full or partial URL of the node template resource to be updated for this node group. */
     public String getNodeTemplate() {
       return nodeTemplate;
     }
 
+    /** Full or partial URL of the node template resource to be updated for this node group. */
     public Builder setNodeTemplate(String nodeTemplate) {
       this.nodeTemplate = nodeTemplate;
       return this;

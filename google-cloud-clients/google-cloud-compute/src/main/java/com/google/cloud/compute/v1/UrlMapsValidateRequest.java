@@ -55,6 +55,7 @@ public final class UrlMapsValidateRequest implements ApiMessage {
     return null;
   }
 
+  /** Content of the UrlMap to be validated. */
   public UrlMap getResource() {
     return resource;
   }
@@ -98,10 +99,12 @@ public final class UrlMapsValidateRequest implements ApiMessage {
       this.resource = source.resource;
     }
 
+    /** Content of the UrlMap to be validated. */
     public UrlMap getResource() {
       return resource;
     }
 
+    /** Content of the UrlMap to be validated. */
     public Builder setResource(UrlMap resource) {
       this.resource = resource;
       return this;

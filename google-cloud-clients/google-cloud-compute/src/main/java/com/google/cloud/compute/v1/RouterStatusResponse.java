@@ -61,6 +61,7 @@ public final class RouterStatusResponse implements ApiMessage {
     return null;
   }
 
+  /** Type of resource. */
   public String getKind() {
     return kind;
   }
@@ -113,10 +114,12 @@ public final class RouterStatusResponse implements ApiMessage {
       this.result = source.result;
     }
 
+    /** Type of resource. */
     public String getKind() {
       return kind;
     }
 
+    /** Type of resource. */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
