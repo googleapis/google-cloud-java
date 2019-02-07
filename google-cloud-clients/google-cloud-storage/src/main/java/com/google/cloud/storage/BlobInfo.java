@@ -445,11 +445,8 @@ public class BlobInfo implements Serializable {
       if (md5HexString == null) {
         return this;
       }
-      if (md5HexString.startsWith("0x")) {
-        md5HexString = md5HexString.replaceFirst("0x", "");
-      }
       byte[] bytes = new BigInteger(md5HexString, 16).toByteArray();
-      this.md5 = "0x" + BaseEncoding.base64().omitPadding().encode(bytes);
+      this.md5 = BaseEncoding.base64().encode(bytes);
       return this;
     }
 
@@ -464,11 +461,8 @@ public class BlobInfo implements Serializable {
       if (crc32cHexString == null) {
         return this;
       }
-      if (crc32cHexString.startsWith("0x")) {
-        crc32cHexString = crc32cHexString.replaceFirst("0x", "");
-      }
       byte[] bytes = new BigInteger(crc32cHexString, 16).toByteArray();
-      this.crc32c = "0x" + BaseEncoding.base64().omitPadding().encode(bytes);
+      this.crc32c = BaseEncoding.base64().encode(bytes);
       return this;
     }
 
