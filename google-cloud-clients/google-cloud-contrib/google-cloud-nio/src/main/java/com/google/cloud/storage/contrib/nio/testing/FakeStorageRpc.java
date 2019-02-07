@@ -29,6 +29,7 @@ import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.spi.v1.RpcBatch;
 import com.google.cloud.storage.spi.v1.StorageRpc;
+import com.google.common.io.CountingOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigInteger;
@@ -293,6 +294,12 @@ class FakeStorageRpc implements StorageRpc {
     byte[] ret = new byte[bytes];
     System.arraycopy(full, (int) position, ret, 0, bytes);
     return Tuple.of("etag-goes-here", ret);
+  }
+
+  @Override
+  public boolean readToOutputStream(
+      StorageObject from, CountingOutputStream to, Map<Option, ?> options) {
+    throw new UnsupportedOperationException();
   }
 
   @Override
