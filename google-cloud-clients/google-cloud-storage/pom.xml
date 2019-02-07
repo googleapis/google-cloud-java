@@ -31,11 +31,6 @@
       <artifactId>google-api-services-storage</artifactId>
       <scope>compile</scope>
     </dependency>
-    <dependency>
-      <groupId>com.google.api-client</groupId>
-        <artifactId>google-api-client</artifactId>
-      <version>1.27.1-SNAPSHOT</version>
-    </dependency>
 
     <!-- Test dependencies -->
     <dependency>
