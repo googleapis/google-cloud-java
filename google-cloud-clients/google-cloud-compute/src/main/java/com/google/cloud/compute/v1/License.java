@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** A license resource. */
 public final class License implements ApiMessage {
   private final Boolean chargesUseFee;
   private final String creationTimestamp;
@@ -119,30 +120,44 @@ public final class License implements ApiMessage {
     return null;
   }
 
+  /**
+   * [Output Only] Deprecated. This field no longer reflects whether a license charges a usage fee.
+   */
   public Boolean getChargesUseFee() {
     return chargesUseFee;
   }
 
+  /** [Output Only] Creation timestamp in RFC3339 text format. */
   public String getCreationTimestamp() {
     return creationTimestamp;
   }
 
+  /**
+   * An optional textual description of the resource; provided by the client when the resource is
+   * created.
+   */
   public String getDescription() {
     return description;
   }
 
+  /**
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   */
   public String getId() {
     return id;
   }
 
+  /** [Output Only] Type of resource. Always compute#license for licenses. */
   public String getKind() {
     return kind;
   }
 
+  /** [Output Only] The unique code used to attach this license to images, snapshots, and disks. */
   public String getLicenseCode() {
     return licenseCode;
   }
 
+  /** Name of the resource. The name must be 1-63 characters long and comply with RFC1035. */
   public String getName() {
     return name;
   }
@@ -151,10 +166,15 @@ public final class License implements ApiMessage {
     return resourceRequirements;
   }
 
+  /** [Output Only] Server-defined URL for the resource. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /**
+   * If false, licenses will not be copied from the source resource when creating an image from a
+   * disk, disk from snapshot, or snapshot from disk.
+   */
   public Boolean getTransferable() {
     return transferable;
   }
@@ -243,64 +263,100 @@ public final class License implements ApiMessage {
       this.transferable = source.transferable;
     }
 
+    /**
+     * [Output Only] Deprecated. This field no longer reflects whether a license charges a usage
+     * fee.
+     */
     public Boolean getChargesUseFee() {
       return chargesUseFee;
     }
 
+    /**
+     * [Output Only] Deprecated. This field no longer reflects whether a license charges a usage
+     * fee.
+     */
     public Builder setChargesUseFee(Boolean chargesUseFee) {
       this.chargesUseFee = chargesUseFee;
       return this;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public String getCreationTimestamp() {
       return creationTimestamp;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
+    /**
+     * An optional textual description of the resource; provided by the client when the resource is
+     * created.
+     */
     public String getDescription() {
       return description;
     }
 
+    /**
+     * An optional textual description of the resource; provided by the client when the resource is
+     * created.
+     */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /** [Output Only] Type of resource. Always compute#license for licenses. */
     public String getKind() {
       return kind;
     }
 
+    /** [Output Only] Type of resource. Always compute#license for licenses. */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /**
+     * [Output Only] The unique code used to attach this license to images, snapshots, and disks.
+     */
     public String getLicenseCode() {
       return licenseCode;
     }
 
+    /**
+     * [Output Only] The unique code used to attach this license to images, snapshots, and disks.
+     */
     public Builder setLicenseCode(String licenseCode) {
       this.licenseCode = licenseCode;
       return this;
     }
 
+    /** Name of the resource. The name must be 1-63 characters long and comply with RFC1035. */
     public String getName() {
       return name;
     }
 
+    /** Name of the resource. The name must be 1-63 characters long and comply with RFC1035. */
     public Builder setName(String name) {
       this.name = name;
       return this;
@@ -315,19 +371,29 @@ public final class License implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /**
+     * If false, licenses will not be copied from the source resource when creating an image from a
+     * disk, disk from snapshot, or snapshot from disk.
+     */
     public Boolean getTransferable() {
       return transferable;
     }
 
+    /**
+     * If false, licenses will not be copied from the source resource when creating an image from a
+     * disk, disk from snapshot, or snapshot from disk.
+     */
     public Builder setTransferable(Boolean transferable) {
       this.transferable = transferable;
       return this;

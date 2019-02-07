@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * An access configuration attached to an instance's network interface. Only one access config per
+ * instance is supported.
+ */
 public final class AccessConfig implements ApiMessage {
   private final String kind;
   private final String name;
@@ -98,30 +102,60 @@ public final class AccessConfig implements ApiMessage {
     return null;
   }
 
+  /** [Output Only] Type of the resource. Always compute#accessConfig for access configs. */
   public String getKind() {
     return kind;
   }
 
+  /**
+   * The name of this access configuration. The default and recommended name is External NAT but you
+   * can use any arbitrary string you would like. For example, My external IP or Network Access.
+   */
   public String getName() {
     return name;
   }
 
+  /**
+   * An external IP address associated with this instance. Specify an unused static external IP
+   * address available to the project or leave this field undefined to use an IP from a shared
+   * ephemeral IP address pool. If you specify a static external IP address, it must live in the
+   * same region as the zone of the instance.
+   */
   public String getNatIP() {
     return natIP;
   }
 
+  /**
+   * This signifies the networking tier used for configuring this access configuration and can only
+   * take the following values: PREMIUM, STANDARD.
+   *
+   * <p>If an AccessConfig is specified without a valid external IP address, an ephemeral IP will be
+   * created with this networkTier.
+   *
+   * <p>If an AccessConfig with a valid external IP address is specified, it must match that of the
+   * networkTier associated with the Address resource owning that IP.
+   */
   public String getNetworkTier() {
     return networkTier;
   }
 
+  /**
+   * The DNS domain name for the public PTR record. This field can only be set when the
+   * set_public_ptr field is enabled.
+   */
   public String getPublicPtrDomainName() {
     return publicPtrDomainName;
   }
 
+  /**
+   * Specifies whether a public DNS ?PTR? record should be created to map the external IP address of
+   * the instance to a DNS domain name.
+   */
   public Boolean getSetPublicPtr() {
     return setPublicPtr;
   }
 
+  /** The type of configuration. The default and only option is ONE_TO_ONE_NAT. */
   public String getType() {
     return type;
   }
@@ -195,64 +229,126 @@ public final class AccessConfig implements ApiMessage {
       this.type = source.type;
     }
 
+    /** [Output Only] Type of the resource. Always compute#accessConfig for access configs. */
     public String getKind() {
       return kind;
     }
 
+    /** [Output Only] Type of the resource. Always compute#accessConfig for access configs. */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /**
+     * The name of this access configuration. The default and recommended name is External NAT but
+     * you can use any arbitrary string you would like. For example, My external IP or Network
+     * Access.
+     */
     public String getName() {
       return name;
     }
 
+    /**
+     * The name of this access configuration. The default and recommended name is External NAT but
+     * you can use any arbitrary string you would like. For example, My external IP or Network
+     * Access.
+     */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /**
+     * An external IP address associated with this instance. Specify an unused static external IP
+     * address available to the project or leave this field undefined to use an IP from a shared
+     * ephemeral IP address pool. If you specify a static external IP address, it must live in the
+     * same region as the zone of the instance.
+     */
     public String getNatIP() {
       return natIP;
     }
 
+    /**
+     * An external IP address associated with this instance. Specify an unused static external IP
+     * address available to the project or leave this field undefined to use an IP from a shared
+     * ephemeral IP address pool. If you specify a static external IP address, it must live in the
+     * same region as the zone of the instance.
+     */
     public Builder setNatIP(String natIP) {
       this.natIP = natIP;
       return this;
     }
 
+    /**
+     * This signifies the networking tier used for configuring this access configuration and can
+     * only take the following values: PREMIUM, STANDARD.
+     *
+     * <p>If an AccessConfig is specified without a valid external IP address, an ephemeral IP will
+     * be created with this networkTier.
+     *
+     * <p>If an AccessConfig with a valid external IP address is specified, it must match that of
+     * the networkTier associated with the Address resource owning that IP.
+     */
     public String getNetworkTier() {
       return networkTier;
     }
 
+    /**
+     * This signifies the networking tier used for configuring this access configuration and can
+     * only take the following values: PREMIUM, STANDARD.
+     *
+     * <p>If an AccessConfig is specified without a valid external IP address, an ephemeral IP will
+     * be created with this networkTier.
+     *
+     * <p>If an AccessConfig with a valid external IP address is specified, it must match that of
+     * the networkTier associated with the Address resource owning that IP.
+     */
     public Builder setNetworkTier(String networkTier) {
       this.networkTier = networkTier;
       return this;
     }
 
+    /**
+     * The DNS domain name for the public PTR record. This field can only be set when the
+     * set_public_ptr field is enabled.
+     */
     public String getPublicPtrDomainName() {
       return publicPtrDomainName;
     }
 
+    /**
+     * The DNS domain name for the public PTR record. This field can only be set when the
+     * set_public_ptr field is enabled.
+     */
     public Builder setPublicPtrDomainName(String publicPtrDomainName) {
       this.publicPtrDomainName = publicPtrDomainName;
       return this;
     }
 
+    /**
+     * Specifies whether a public DNS ?PTR? record should be created to map the external IP address
+     * of the instance to a DNS domain name.
+     */
     public Boolean getSetPublicPtr() {
       return setPublicPtr;
     }
 
+    /**
+     * Specifies whether a public DNS ?PTR? record should be created to map the external IP address
+     * of the instance to a DNS domain name.
+     */
     public Builder setSetPublicPtr(Boolean setPublicPtr) {
       this.setPublicPtr = setPublicPtr;
       return this;
     }
 
+    /** The type of configuration. The default and only option is ONE_TO_ONE_NAT. */
     public String getType() {
       return type;
     }
 
+    /** The type of configuration. The default and only option is ONE_TO_ONE_NAT. */
     public Builder setType(String type) {
       this.type = type;
       return this;

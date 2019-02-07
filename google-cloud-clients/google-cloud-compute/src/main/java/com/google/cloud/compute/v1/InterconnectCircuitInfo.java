@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Describes a single physical circuit between the Customer and Google. CircuitInfo objects are
+ * created by Google, so all fields are output only. Next id: 4
+ */
 public final class InterconnectCircuitInfo implements ApiMessage {
   private final String customerDemarcId;
   private final String googleCircuitId;
@@ -68,14 +72,20 @@ public final class InterconnectCircuitInfo implements ApiMessage {
     return null;
   }
 
+  /** Customer-side demarc ID for this circuit. */
   public String getCustomerDemarcId() {
     return customerDemarcId;
   }
 
+  /** Google-assigned unique ID for this circuit. Assigned at circuit turn-up. */
   public String getGoogleCircuitId() {
     return googleCircuitId;
   }
 
+  /**
+   * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to
+   * the customer in the LOA.
+   */
   public String getGoogleDemarcId() {
     return googleDemarcId;
   }
@@ -129,28 +139,40 @@ public final class InterconnectCircuitInfo implements ApiMessage {
       this.googleDemarcId = source.googleDemarcId;
     }
 
+    /** Customer-side demarc ID for this circuit. */
     public String getCustomerDemarcId() {
       return customerDemarcId;
     }
 
+    /** Customer-side demarc ID for this circuit. */
     public Builder setCustomerDemarcId(String customerDemarcId) {
       this.customerDemarcId = customerDemarcId;
       return this;
     }
 
+    /** Google-assigned unique ID for this circuit. Assigned at circuit turn-up. */
     public String getGoogleCircuitId() {
       return googleCircuitId;
     }
 
+    /** Google-assigned unique ID for this circuit. Assigned at circuit turn-up. */
     public Builder setGoogleCircuitId(String googleCircuitId) {
       this.googleCircuitId = googleCircuitId;
       return this;
     }
 
+    /**
+     * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to
+     * the customer in the LOA.
+     */
     public String getGoogleDemarcId() {
       return googleDemarcId;
     }
 
+    /**
+     * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to
+     * the customer in the LOA.
+     */
     public Builder setGoogleDemarcId(String googleDemarcId) {
       this.googleDemarcId = googleDemarcId;
       return this;

@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** CPU utilization policy. */
 public final class AutoscalingPolicyCpuUtilization implements ApiMessage {
   private final Double utilizationTarget;
 
@@ -55,6 +56,18 @@ public final class AutoscalingPolicyCpuUtilization implements ApiMessage {
     return null;
   }
 
+  /**
+   * The target CPU utilization that the autoscaler should maintain. Must be a float value in the
+   * range (0, 1]. If not specified, the default is 0.6.
+   *
+   * <p>If the CPU level is below the target utilization, the autoscaler scales down the number of
+   * instances until it reaches the minimum number of instances you specified or until the average
+   * CPU of your instances reaches the target utilization.
+   *
+   * <p>If the average CPU is above the target utilization, the autoscaler scales up until it
+   * reaches the maximum number of instances you specified or until the average utilization reaches
+   * the target utilization.
+   */
   public Double getUtilizationTarget() {
     return utilizationTarget;
   }
@@ -98,10 +111,34 @@ public final class AutoscalingPolicyCpuUtilization implements ApiMessage {
       this.utilizationTarget = source.utilizationTarget;
     }
 
+    /**
+     * The target CPU utilization that the autoscaler should maintain. Must be a float value in the
+     * range (0, 1]. If not specified, the default is 0.6.
+     *
+     * <p>If the CPU level is below the target utilization, the autoscaler scales down the number of
+     * instances until it reaches the minimum number of instances you specified or until the average
+     * CPU of your instances reaches the target utilization.
+     *
+     * <p>If the average CPU is above the target utilization, the autoscaler scales up until it
+     * reaches the maximum number of instances you specified or until the average utilization
+     * reaches the target utilization.
+     */
     public Double getUtilizationTarget() {
       return utilizationTarget;
     }
 
+    /**
+     * The target CPU utilization that the autoscaler should maintain. Must be a float value in the
+     * range (0, 1]. If not specified, the default is 0.6.
+     *
+     * <p>If the CPU level is below the target utilization, the autoscaler scales down the number of
+     * instances until it reaches the minimum number of instances you specified or until the average
+     * CPU of your instances reaches the target utilization.
+     *
+     * <p>If the average CPU is above the target utilization, the autoscaler scales up until it
+     * reaches the maximum number of instances you specified or until the average utilization
+     * reaches the target utilization.
+     */
     public Builder setUtilizationTarget(Double utilizationTarget) {
       this.utilizationTarget = utilizationTarget;
       return this;

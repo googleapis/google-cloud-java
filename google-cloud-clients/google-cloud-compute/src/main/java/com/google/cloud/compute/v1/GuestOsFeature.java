@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Guest OS features. */
 public final class GuestOsFeature implements ApiMessage {
   private final String type;
 
@@ -55,6 +56,10 @@ public final class GuestOsFeature implements ApiMessage {
     return null;
   }
 
+  /**
+   * The ID of a supported feature. Read Enabling guest operating system features to see a list of
+   * available options.
+   */
   public String getType() {
     return type;
   }
@@ -98,10 +103,18 @@ public final class GuestOsFeature implements ApiMessage {
       this.type = source.type;
     }
 
+    /**
+     * The ID of a supported feature. Read Enabling guest operating system features to see a list of
+     * available options.
+     */
     public String getType() {
       return type;
     }
 
+    /**
+     * The ID of a supported feature. Read Enabling guest operating system features to see a list of
+     * available options.
+     */
     public Builder setType(String type) {
       this.type = type;
       return this;

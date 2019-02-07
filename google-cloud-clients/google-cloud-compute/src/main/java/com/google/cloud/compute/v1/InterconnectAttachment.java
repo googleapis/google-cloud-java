@@ -25,6 +25,11 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Represents an InterconnectAttachment (VLAN attachment) resource. For more information, see
+ * Creating VLAN Attachments. (== resource_for beta.interconnectAttachments ==) (== resource_for
+ * v1.interconnectAttachments ==)
+ */
 public final class InterconnectAttachment implements ApiMessage {
   private final Boolean adminEnabled;
   private final String bandwidth;
@@ -218,90 +223,175 @@ public final class InterconnectAttachment implements ApiMessage {
     return null;
   }
 
+  /** Determines whether this Attachment will carry packets. Not present for PARTNER_PROVIDER. */
   public Boolean getAdminEnabled() {
     return adminEnabled;
   }
 
+  /**
+   * Provisioned bandwidth capacity for the interconnectAttachment. Can be set by the partner to
+   * update the customer's provisioned bandwidth. Output only for PARTNER type, mutable for
+   * PARTNER_PROVIDER and DEDICATED.
+   */
   public String getBandwidth() {
     return bandwidth;
   }
 
+  /**
+   * Up to 16 candidate prefixes that can be used to restrict the allocation of cloudRouterIpAddress
+   * and customerRouterIpAddress for this attachment. All prefixes must be within link-local address
+   * space (169.254.0.0/16) and must be /29 or shorter (/28, /27, etc). Google will attempt to
+   * select an unused /29 from the supplied candidate prefix(es). The request will fail if all
+   * possible /29s are in use on Google?s edge. If not supplied, Google will randomly select an
+   * unused /29 from all of link-local space.
+   */
   public List<String> getCandidateSubnetsList() {
     return candidateSubnets;
   }
 
+  /**
+   * [Output Only] IPv4 address + prefix length to be configured on Cloud Router Interface for this
+   * interconnect attachment.
+   */
   public String getCloudRouterIpAddress() {
     return cloudRouterIpAddress;
   }
 
+  /** [Output Only] Creation timestamp in RFC3339 text format. */
   public String getCreationTimestamp() {
     return creationTimestamp;
   }
 
+  /**
+   * [Output Only] IPv4 address + prefix length to be configured on the customer router subinterface
+   * for this interconnect attachment.
+   */
   public String getCustomerRouterIpAddress() {
     return customerRouterIpAddress;
   }
 
+  /** An optional description of this resource. */
   public String getDescription() {
     return description;
   }
 
+  /**
+   * Desired availability domain for the attachment. Only available for type PARTNER, at creation
+   * time. For improved reliability, customers should configure a pair of attachments with one per
+   * availability domain. The selected availability domain will be provided to the Partner via the
+   * pairing key so that the provisioned circuit will lie in the specified domain. If not specified,
+   * the value will default to AVAILABILITY_DOMAIN_ANY.
+   */
   public String getEdgeAvailabilityDomain() {
     return edgeAvailabilityDomain;
   }
 
+  /**
+   * [Output Only] Google reference ID, to be used when raising support tickets with Google or
+   * otherwise to debug backend connectivity issues.
+   */
   public String getGoogleReferenceId() {
     return googleReferenceId;
   }
 
+  /**
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   */
   public String getId() {
     return id;
   }
 
+  /**
+   * URL of the underlying Interconnect object that this attachment's traffic will traverse through.
+   */
   public String getInterconnect() {
     return interconnect;
   }
 
+  /**
+   * [Output Only] Type of the resource. Always compute#interconnectAttachment for interconnect
+   * attachments.
+   */
   public String getKind() {
     return kind;
   }
 
+  /**
+   * Name of the resource. Provided by the client when the resource is created. The name must be
+   * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+   * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be a dash, lowercase
+   * letter, or digit, except the last character, which cannot be a dash.
+   */
   public String getName() {
     return name;
   }
 
+  /**
+   * [Output Only] The current status of whether or not this interconnect attachment is functional.
+   */
   public String getOperationalStatus() {
     return operationalStatus;
   }
 
+  /**
+   * [Output only for type PARTNER. Input only for PARTNER_PROVIDER. Not present for DEDICATED]. The
+   * opaque identifier of an PARTNER attachment used to initiate provisioning with a selected
+   * partner. Of the form "XXXXX/region/domain"
+   */
   public String getPairingKey() {
     return pairingKey;
   }
 
+  /**
+   * Optional BGP ASN for the router that should be supplied by a layer 3 Partner if they configured
+   * BGP on behalf of the customer. Output only for PARTNER type, input only for PARTNER_PROVIDER,
+   * not available for DEDICATED.
+   */
   public String getPartnerAsn() {
     return partnerAsn;
   }
 
+  /**
+   * Informational metadata about Partner attachments from Partners to display to customers. Output
+   * only for for PARTNER type, mutable for PARTNER_PROVIDER, not available for DEDICATED.
+   */
   public InterconnectAttachmentPartnerMetadata getPartnerMetadata() {
     return partnerMetadata;
   }
 
+  /**
+   * [Output Only] Information specific to an InterconnectAttachment. This property is populated if
+   * the interconnect that this is attached to is of type DEDICATED.
+   */
   public InterconnectAttachmentPrivateInfo getPrivateInterconnectInfo() {
     return privateInterconnectInfo;
   }
 
+  /**
+   * [Output Only] URL of the region where the regional interconnect attachment resides. You must
+   * specify this field as part of the HTTP request URL. It is not settable as a field in the
+   * request body.
+   */
   public String getRegion() {
     return region;
   }
 
+  /**
+   * URL of the Cloud Router to be used for dynamic routing. This router must be in the same region
+   * as this InterconnectAttachment. The InterconnectAttachment will automatically connect the
+   * Interconnect to the network &amp; region within which the Cloud Router is configured.
+   */
   public String getRouter() {
     return router;
   }
 
+  /** [Output Only] Server-defined URL for the resource. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /** [Output Only] The current state of this attachment's functionality. */
   public String getState() {
     return state;
   }
@@ -310,6 +400,10 @@ public final class InterconnectAttachment implements ApiMessage {
     return type;
   }
 
+  /**
+   * The IEEE 802.1Q VLAN tag for this attachment, in the range 2-4094. Only specified at creation
+   * time.
+   */
   public Integer getVlanTag8021q() {
     return vlanTag8021q;
   }
@@ -468,28 +562,56 @@ public final class InterconnectAttachment implements ApiMessage {
       this.vlanTag8021q = source.vlanTag8021q;
     }
 
+    /** Determines whether this Attachment will carry packets. Not present for PARTNER_PROVIDER. */
     public Boolean getAdminEnabled() {
       return adminEnabled;
     }
 
+    /** Determines whether this Attachment will carry packets. Not present for PARTNER_PROVIDER. */
     public Builder setAdminEnabled(Boolean adminEnabled) {
       this.adminEnabled = adminEnabled;
       return this;
     }
 
+    /**
+     * Provisioned bandwidth capacity for the interconnectAttachment. Can be set by the partner to
+     * update the customer's provisioned bandwidth. Output only for PARTNER type, mutable for
+     * PARTNER_PROVIDER and DEDICATED.
+     */
     public String getBandwidth() {
       return bandwidth;
     }
 
+    /**
+     * Provisioned bandwidth capacity for the interconnectAttachment. Can be set by the partner to
+     * update the customer's provisioned bandwidth. Output only for PARTNER type, mutable for
+     * PARTNER_PROVIDER and DEDICATED.
+     */
     public Builder setBandwidth(String bandwidth) {
       this.bandwidth = bandwidth;
       return this;
     }
 
+    /**
+     * Up to 16 candidate prefixes that can be used to restrict the allocation of
+     * cloudRouterIpAddress and customerRouterIpAddress for this attachment. All prefixes must be
+     * within link-local address space (169.254.0.0/16) and must be /29 or shorter (/28, /27, etc).
+     * Google will attempt to select an unused /29 from the supplied candidate prefix(es). The
+     * request will fail if all possible /29s are in use on Google?s edge. If not supplied, Google
+     * will randomly select an unused /29 from all of link-local space.
+     */
     public List<String> getCandidateSubnetsList() {
       return candidateSubnets;
     }
 
+    /**
+     * Up to 16 candidate prefixes that can be used to restrict the allocation of
+     * cloudRouterIpAddress and customerRouterIpAddress for this attachment. All prefixes must be
+     * within link-local address space (169.254.0.0/16) and must be /29 or shorter (/28, /27, etc).
+     * Google will attempt to select an unused /29 from the supplied candidate prefix(es). The
+     * request will fail if all possible /29s are in use on Google?s edge. If not supplied, Google
+     * will randomly select an unused /29 from all of link-local space.
+     */
     public Builder addAllCandidateSubnets(List<String> candidateSubnets) {
       if (this.candidateSubnets == null) {
         this.candidateSubnets = new LinkedList<>();
@@ -498,6 +620,14 @@ public final class InterconnectAttachment implements ApiMessage {
       return this;
     }
 
+    /**
+     * Up to 16 candidate prefixes that can be used to restrict the allocation of
+     * cloudRouterIpAddress and customerRouterIpAddress for this attachment. All prefixes must be
+     * within link-local address space (169.254.0.0/16) and must be /29 or shorter (/28, /27, etc).
+     * Google will attempt to select an unused /29 from the supplied candidate prefix(es). The
+     * request will fail if all possible /29s are in use on Google?s edge. If not supplied, Google
+     * will randomly select an unused /29 from all of link-local space.
+     */
     public Builder addCandidateSubnets(String candidateSubnets) {
       if (this.candidateSubnets == null) {
         this.candidateSubnets = new LinkedList<>();
@@ -506,173 +636,321 @@ public final class InterconnectAttachment implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] IPv4 address + prefix length to be configured on Cloud Router Interface for
+     * this interconnect attachment.
+     */
     public String getCloudRouterIpAddress() {
       return cloudRouterIpAddress;
     }
 
+    /**
+     * [Output Only] IPv4 address + prefix length to be configured on Cloud Router Interface for
+     * this interconnect attachment.
+     */
     public Builder setCloudRouterIpAddress(String cloudRouterIpAddress) {
       this.cloudRouterIpAddress = cloudRouterIpAddress;
       return this;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public String getCreationTimestamp() {
       return creationTimestamp;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
+    /**
+     * [Output Only] IPv4 address + prefix length to be configured on the customer router
+     * subinterface for this interconnect attachment.
+     */
     public String getCustomerRouterIpAddress() {
       return customerRouterIpAddress;
     }
 
+    /**
+     * [Output Only] IPv4 address + prefix length to be configured on the customer router
+     * subinterface for this interconnect attachment.
+     */
     public Builder setCustomerRouterIpAddress(String customerRouterIpAddress) {
       this.customerRouterIpAddress = customerRouterIpAddress;
       return this;
     }
 
+    /** An optional description of this resource. */
     public String getDescription() {
       return description;
     }
 
+    /** An optional description of this resource. */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /**
+     * Desired availability domain for the attachment. Only available for type PARTNER, at creation
+     * time. For improved reliability, customers should configure a pair of attachments with one per
+     * availability domain. The selected availability domain will be provided to the Partner via the
+     * pairing key so that the provisioned circuit will lie in the specified domain. If not
+     * specified, the value will default to AVAILABILITY_DOMAIN_ANY.
+     */
     public String getEdgeAvailabilityDomain() {
       return edgeAvailabilityDomain;
     }
 
+    /**
+     * Desired availability domain for the attachment. Only available for type PARTNER, at creation
+     * time. For improved reliability, customers should configure a pair of attachments with one per
+     * availability domain. The selected availability domain will be provided to the Partner via the
+     * pairing key so that the provisioned circuit will lie in the specified domain. If not
+     * specified, the value will default to AVAILABILITY_DOMAIN_ANY.
+     */
     public Builder setEdgeAvailabilityDomain(String edgeAvailabilityDomain) {
       this.edgeAvailabilityDomain = edgeAvailabilityDomain;
       return this;
     }
 
+    /**
+     * [Output Only] Google reference ID, to be used when raising support tickets with Google or
+     * otherwise to debug backend connectivity issues.
+     */
     public String getGoogleReferenceId() {
       return googleReferenceId;
     }
 
+    /**
+     * [Output Only] Google reference ID, to be used when raising support tickets with Google or
+     * otherwise to debug backend connectivity issues.
+     */
     public Builder setGoogleReferenceId(String googleReferenceId) {
       this.googleReferenceId = googleReferenceId;
       return this;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /**
+     * URL of the underlying Interconnect object that this attachment's traffic will traverse
+     * through.
+     */
     public String getInterconnect() {
       return interconnect;
     }
 
+    /**
+     * URL of the underlying Interconnect object that this attachment's traffic will traverse
+     * through.
+     */
     public Builder setInterconnect(String interconnect) {
       this.interconnect = interconnect;
       return this;
     }
 
+    /**
+     * [Output Only] Type of the resource. Always compute#interconnectAttachment for interconnect
+     * attachments.
+     */
     public String getKind() {
       return kind;
     }
 
+    /**
+     * [Output Only] Type of the resource. Always compute#interconnectAttachment for interconnect
+     * attachments.
+     */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /**
+     * Name of the resource. Provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public String getName() {
       return name;
     }
 
+    /**
+     * Name of the resource. Provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /**
+     * [Output Only] The current status of whether or not this interconnect attachment is
+     * functional.
+     */
     public String getOperationalStatus() {
       return operationalStatus;
     }
 
+    /**
+     * [Output Only] The current status of whether or not this interconnect attachment is
+     * functional.
+     */
     public Builder setOperationalStatus(String operationalStatus) {
       this.operationalStatus = operationalStatus;
       return this;
     }
 
+    /**
+     * [Output only for type PARTNER. Input only for PARTNER_PROVIDER. Not present for DEDICATED].
+     * The opaque identifier of an PARTNER attachment used to initiate provisioning with a selected
+     * partner. Of the form "XXXXX/region/domain"
+     */
     public String getPairingKey() {
       return pairingKey;
     }
 
+    /**
+     * [Output only for type PARTNER. Input only for PARTNER_PROVIDER. Not present for DEDICATED].
+     * The opaque identifier of an PARTNER attachment used to initiate provisioning with a selected
+     * partner. Of the form "XXXXX/region/domain"
+     */
     public Builder setPairingKey(String pairingKey) {
       this.pairingKey = pairingKey;
       return this;
     }
 
+    /**
+     * Optional BGP ASN for the router that should be supplied by a layer 3 Partner if they
+     * configured BGP on behalf of the customer. Output only for PARTNER type, input only for
+     * PARTNER_PROVIDER, not available for DEDICATED.
+     */
     public String getPartnerAsn() {
       return partnerAsn;
     }
 
+    /**
+     * Optional BGP ASN for the router that should be supplied by a layer 3 Partner if they
+     * configured BGP on behalf of the customer. Output only for PARTNER type, input only for
+     * PARTNER_PROVIDER, not available for DEDICATED.
+     */
     public Builder setPartnerAsn(String partnerAsn) {
       this.partnerAsn = partnerAsn;
       return this;
     }
 
+    /**
+     * Informational metadata about Partner attachments from Partners to display to customers.
+     * Output only for for PARTNER type, mutable for PARTNER_PROVIDER, not available for DEDICATED.
+     */
     public InterconnectAttachmentPartnerMetadata getPartnerMetadata() {
       return partnerMetadata;
     }
 
+    /**
+     * Informational metadata about Partner attachments from Partners to display to customers.
+     * Output only for for PARTNER type, mutable for PARTNER_PROVIDER, not available for DEDICATED.
+     */
     public Builder setPartnerMetadata(InterconnectAttachmentPartnerMetadata partnerMetadata) {
       this.partnerMetadata = partnerMetadata;
       return this;
     }
 
+    /**
+     * [Output Only] Information specific to an InterconnectAttachment. This property is populated
+     * if the interconnect that this is attached to is of type DEDICATED.
+     */
     public InterconnectAttachmentPrivateInfo getPrivateInterconnectInfo() {
       return privateInterconnectInfo;
     }
 
+    /**
+     * [Output Only] Information specific to an InterconnectAttachment. This property is populated
+     * if the interconnect that this is attached to is of type DEDICATED.
+     */
     public Builder setPrivateInterconnectInfo(
         InterconnectAttachmentPrivateInfo privateInterconnectInfo) {
       this.privateInterconnectInfo = privateInterconnectInfo;
       return this;
     }
 
+    /**
+     * [Output Only] URL of the region where the regional interconnect attachment resides. You must
+     * specify this field as part of the HTTP request URL. It is not settable as a field in the
+     * request body.
+     */
     public String getRegion() {
       return region;
     }
 
+    /**
+     * [Output Only] URL of the region where the regional interconnect attachment resides. You must
+     * specify this field as part of the HTTP request URL. It is not settable as a field in the
+     * request body.
+     */
     public Builder setRegion(String region) {
       this.region = region;
       return this;
     }
 
+    /**
+     * URL of the Cloud Router to be used for dynamic routing. This router must be in the same
+     * region as this InterconnectAttachment. The InterconnectAttachment will automatically connect
+     * the Interconnect to the network &amp; region within which the Cloud Router is configured.
+     */
     public String getRouter() {
       return router;
     }
 
+    /**
+     * URL of the Cloud Router to be used for dynamic routing. This router must be in the same
+     * region as this InterconnectAttachment. The InterconnectAttachment will automatically connect
+     * the Interconnect to the network &amp; region within which the Cloud Router is configured.
+     */
     public Builder setRouter(String router) {
       this.router = router;
       return this;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /** [Output Only] The current state of this attachment's functionality. */
     public String getState() {
       return state;
     }
 
+    /** [Output Only] The current state of this attachment's functionality. */
     public Builder setState(String state) {
       this.state = state;
       return this;
@@ -687,10 +965,18 @@ public final class InterconnectAttachment implements ApiMessage {
       return this;
     }
 
+    /**
+     * The IEEE 802.1Q VLAN tag for this attachment, in the range 2-4094. Only specified at creation
+     * time.
+     */
     public Integer getVlanTag8021q() {
       return vlanTag8021q;
     }
 
+    /**
+     * The IEEE 802.1Q VLAN tag for this attachment, in the range 2-4094. Only specified at creation
+     * time.
+     */
     public Builder setVlanTag8021q(Integer vlanTag8021q) {
       this.vlanTag8021q = vlanTag8021q;
       return this;

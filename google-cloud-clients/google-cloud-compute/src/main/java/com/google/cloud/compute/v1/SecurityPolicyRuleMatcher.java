@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Represents a match condition that incoming traffic is evaluated against. Exactly one field must
+ * be specified.
+ */
 public final class SecurityPolicyRuleMatcher implements ApiMessage {
   private final SecurityPolicyRuleMatcherConfig config;
   private final String versionedExpr;
@@ -61,10 +65,20 @@ public final class SecurityPolicyRuleMatcher implements ApiMessage {
     return null;
   }
 
+  /**
+   * The configuration options available when specifying versioned_expr. This field must be
+   * specified if versioned_expr is specified and cannot be specified if versioned_expr is not
+   * specified.
+   */
   public SecurityPolicyRuleMatcherConfig getConfig() {
     return config;
   }
 
+  /**
+   * Preconfigured versioned expression. If this field is specified, config must also be specified.
+   * Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must
+   * specify the corresponding src_ip_range field in config.
+   */
   public String getVersionedExpr() {
     return versionedExpr;
   }
@@ -113,19 +127,39 @@ public final class SecurityPolicyRuleMatcher implements ApiMessage {
       this.versionedExpr = source.versionedExpr;
     }
 
+    /**
+     * The configuration options available when specifying versioned_expr. This field must be
+     * specified if versioned_expr is specified and cannot be specified if versioned_expr is not
+     * specified.
+     */
     public SecurityPolicyRuleMatcherConfig getConfig() {
       return config;
     }
 
+    /**
+     * The configuration options available when specifying versioned_expr. This field must be
+     * specified if versioned_expr is specified and cannot be specified if versioned_expr is not
+     * specified.
+     */
     public Builder setConfig(SecurityPolicyRuleMatcherConfig config) {
       this.config = config;
       return this;
     }
 
+    /**
+     * Preconfigured versioned expression. If this field is specified, config must also be
+     * specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1
+     * - must specify the corresponding src_ip_range field in config.
+     */
     public String getVersionedExpr() {
       return versionedExpr;
     }
 
+    /**
+     * Preconfigured versioned expression. If this field is specified, config must also be
+     * specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1
+     * - must specify the corresponding src_ip_range field in config.
+     */
     public Builder setVersionedExpr(String versionedExpr) {
       this.versionedExpr = versionedExpr;
       return this;

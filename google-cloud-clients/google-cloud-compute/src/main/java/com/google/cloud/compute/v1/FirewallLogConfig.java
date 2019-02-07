@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** The available logging options for a firewall rule. */
 public final class FirewallLogConfig implements ApiMessage {
   private final Boolean enable;
 
@@ -55,6 +56,7 @@ public final class FirewallLogConfig implements ApiMessage {
     return null;
   }
 
+  /** This field denotes whether to enable logging for a particular firewall rule. */
   public Boolean getEnable() {
     return enable;
   }
@@ -98,10 +100,12 @@ public final class FirewallLogConfig implements ApiMessage {
       this.enable = source.enable;
     }
 
+    /** This field denotes whether to enable logging for a particular firewall rule. */
     public Boolean getEnable() {
       return enable;
     }
 
+    /** This field denotes whether to enable logging for a particular firewall rule. */
     public Builder setEnable(Boolean enable) {
       this.enable = enable;
       return this;

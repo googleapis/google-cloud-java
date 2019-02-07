@@ -56,6 +56,7 @@ public final class DistributionPolicy implements ApiMessage {
     return null;
   }
 
+  /** Zones where the regional managed instance group will create and manage instances. */
   public List<DistributionPolicyZoneConfiguration> getZonesList() {
     return zones;
   }
@@ -99,10 +100,12 @@ public final class DistributionPolicy implements ApiMessage {
       this.zones = source.zones;
     }
 
+    /** Zones where the regional managed instance group will create and manage instances. */
     public List<DistributionPolicyZoneConfiguration> getZonesList() {
       return zones;
     }
 
+    /** Zones where the regional managed instance group will create and manage instances. */
     public Builder addAllZones(List<DistributionPolicyZoneConfiguration> zones) {
       if (this.zones == null) {
         this.zones = new LinkedList<>();
@@ -111,6 +114,7 @@ public final class DistributionPolicy implements ApiMessage {
       return this;
     }
 
+    /** Zones where the regional managed instance group will create and manage instances. */
     public Builder addZones(DistributionPolicyZoneConfiguration zones) {
       if (this.zones == null) {
         this.zones = new LinkedList<>();

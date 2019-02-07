@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * An HealthCheck resource. This resource defines a template for how individual virtual machines
+ * should be checked for health, via one of the supported protocols.
+ */
 public final class HealthCheck implements ApiMessage {
   private final Integer checkIntervalSec;
   private final String creationTimestamp;
@@ -154,18 +158,27 @@ public final class HealthCheck implements ApiMessage {
     return null;
   }
 
+  /** How often (in seconds) to send a health check. The default value is 5 seconds. */
   public Integer getCheckIntervalSec() {
     return checkIntervalSec;
   }
 
+  /** [Output Only] Creation timestamp in 3339 text format. */
   public String getCreationTimestamp() {
     return creationTimestamp;
   }
 
+  /**
+   * An optional description of this resource. Provide this property when you create the resource.
+   */
   public String getDescription() {
     return description;
   }
 
+  /**
+   * A so-far unhealthy instance will be marked healthy after this many consecutive successes. The
+   * default value is 2.
+   */
   public Integer getHealthyThreshold() {
     return healthyThreshold;
   }
@@ -178,18 +191,30 @@ public final class HealthCheck implements ApiMessage {
     return httpsHealthCheck;
   }
 
+  /**
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   */
   public String getId() {
     return id;
   }
 
+  /** Type of the resource. */
   public String getKind() {
     return kind;
   }
 
+  /**
+   * Name of the resource. Provided by the client when the resource is created. The name must be
+   * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+   * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be a dash, lowercase
+   * letter, or digit, except the last character, which cannot be a dash.
+   */
   public String getName() {
     return name;
   }
 
+  /** [Output Only] Server-defined URL for the resource. */
   public String getSelfLink() {
     return selfLink;
   }
@@ -202,14 +227,27 @@ public final class HealthCheck implements ApiMessage {
     return tcpHealthCheck;
   }
 
+  /**
+   * How long (in seconds) to wait before claiming failure. The default value is 5 seconds. It is
+   * invalid for timeoutSec to have greater value than checkIntervalSec.
+   */
   public Integer getTimeoutSec() {
     return timeoutSec;
   }
 
+  /**
+   * Specifies the type of the healthCheck, either TCP, SSL, HTTP or HTTPS. If not specified, the
+   * default is TCP. Exactly one of the protocol-specific health check field must be specified,
+   * which must match type field.
+   */
   public String getType() {
     return type;
   }
 
+  /**
+   * A so-far healthy instance will be marked unhealthy after this many consecutive failures. The
+   * default value is 2.
+   */
   public Integer getUnhealthyThreshold() {
     return unhealthyThreshold;
   }
@@ -323,37 +361,55 @@ public final class HealthCheck implements ApiMessage {
       this.unhealthyThreshold = source.unhealthyThreshold;
     }
 
+    /** How often (in seconds) to send a health check. The default value is 5 seconds. */
     public Integer getCheckIntervalSec() {
       return checkIntervalSec;
     }
 
+    /** How often (in seconds) to send a health check. The default value is 5 seconds. */
     public Builder setCheckIntervalSec(Integer checkIntervalSec) {
       this.checkIntervalSec = checkIntervalSec;
       return this;
     }
 
+    /** [Output Only] Creation timestamp in 3339 text format. */
     public String getCreationTimestamp() {
       return creationTimestamp;
     }
 
+    /** [Output Only] Creation timestamp in 3339 text format. */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public String getDescription() {
       return description;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /**
+     * A so-far unhealthy instance will be marked healthy after this many consecutive successes. The
+     * default value is 2.
+     */
     public Integer getHealthyThreshold() {
       return healthyThreshold;
     }
 
+    /**
+     * A so-far unhealthy instance will be marked healthy after this many consecutive successes. The
+     * default value is 2.
+     */
     public Builder setHealthyThreshold(Integer healthyThreshold) {
       this.healthyThreshold = healthyThreshold;
       return this;
@@ -377,37 +433,63 @@ public final class HealthCheck implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /** Type of the resource. */
     public String getKind() {
       return kind;
     }
 
+    /** Type of the resource. */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /**
+     * Name of the resource. Provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public String getName() {
       return name;
     }
 
+    /**
+     * Name of the resource. Provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
@@ -431,28 +513,54 @@ public final class HealthCheck implements ApiMessage {
       return this;
     }
 
+    /**
+     * How long (in seconds) to wait before claiming failure. The default value is 5 seconds. It is
+     * invalid for timeoutSec to have greater value than checkIntervalSec.
+     */
     public Integer getTimeoutSec() {
       return timeoutSec;
     }
 
+    /**
+     * How long (in seconds) to wait before claiming failure. The default value is 5 seconds. It is
+     * invalid for timeoutSec to have greater value than checkIntervalSec.
+     */
     public Builder setTimeoutSec(Integer timeoutSec) {
       this.timeoutSec = timeoutSec;
       return this;
     }
 
+    /**
+     * Specifies the type of the healthCheck, either TCP, SSL, HTTP or HTTPS. If not specified, the
+     * default is TCP. Exactly one of the protocol-specific health check field must be specified,
+     * which must match type field.
+     */
     public String getType() {
       return type;
     }
 
+    /**
+     * Specifies the type of the healthCheck, either TCP, SSL, HTTP or HTTPS. If not specified, the
+     * default is TCP. Exactly one of the protocol-specific health check field must be specified,
+     * which must match type field.
+     */
     public Builder setType(String type) {
       this.type = type;
       return this;
     }
 
+    /**
+     * A so-far healthy instance will be marked unhealthy after this many consecutive failures. The
+     * default value is 2.
+     */
     public Integer getUnhealthyThreshold() {
       return unhealthyThreshold;
     }
 
+    /**
+     * A so-far healthy instance will be marked unhealthy after this many consecutive failures. The
+     * default value is 2.
+     */
     public Builder setUnhealthyThreshold(Integer unhealthyThreshold) {
       this.unhealthyThreshold = unhealthyThreshold;
       return this;

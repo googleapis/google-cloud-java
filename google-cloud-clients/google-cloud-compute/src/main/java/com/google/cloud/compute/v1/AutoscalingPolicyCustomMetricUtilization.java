@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Custom utilization metric policy. */
 public final class AutoscalingPolicyCustomMetricUtilization implements ApiMessage {
   private final String metric;
   private final Double utilizationTarget;
@@ -68,14 +69,33 @@ public final class AutoscalingPolicyCustomMetricUtilization implements ApiMessag
     return null;
   }
 
+  /**
+   * The identifier (type) of the Stackdriver Monitoring metric. The metric cannot have negative
+   * values.
+   *
+   * <p>The metric must have a value type of INT64 or DOUBLE.
+   */
   public String getMetric() {
     return metric;
   }
 
+  /**
+   * The target value of the metric that autoscaler should maintain. This must be a positive value.
+   * A utilization metric scales number of virtual machines handling requests to increase or
+   * decrease proportionally to the metric.
+   *
+   * <p>For example, a good metric to use as a utilization_target is
+   * compute.googleapis.com/instance/network/received_bytes_count. The autoscaler will work to keep
+   * this value constant for each of the instances.
+   */
   public Double getUtilizationTarget() {
     return utilizationTarget;
   }
 
+  /**
+   * Defines how target utilization value is expressed for a Stackdriver Monitoring metric. Either
+   * GAUGE, DELTA_PER_SECOND, or DELTA_PER_MINUTE.
+   */
   public String getUtilizationTargetType() {
     return utilizationTargetType;
   }
@@ -129,28 +149,66 @@ public final class AutoscalingPolicyCustomMetricUtilization implements ApiMessag
       this.utilizationTargetType = source.utilizationTargetType;
     }
 
+    /**
+     * The identifier (type) of the Stackdriver Monitoring metric. The metric cannot have negative
+     * values.
+     *
+     * <p>The metric must have a value type of INT64 or DOUBLE.
+     */
     public String getMetric() {
       return metric;
     }
 
+    /**
+     * The identifier (type) of the Stackdriver Monitoring metric. The metric cannot have negative
+     * values.
+     *
+     * <p>The metric must have a value type of INT64 or DOUBLE.
+     */
     public Builder setMetric(String metric) {
       this.metric = metric;
       return this;
     }
 
+    /**
+     * The target value of the metric that autoscaler should maintain. This must be a positive
+     * value. A utilization metric scales number of virtual machines handling requests to increase
+     * or decrease proportionally to the metric.
+     *
+     * <p>For example, a good metric to use as a utilization_target is
+     * compute.googleapis.com/instance/network/received_bytes_count. The autoscaler will work to
+     * keep this value constant for each of the instances.
+     */
     public Double getUtilizationTarget() {
       return utilizationTarget;
     }
 
+    /**
+     * The target value of the metric that autoscaler should maintain. This must be a positive
+     * value. A utilization metric scales number of virtual machines handling requests to increase
+     * or decrease proportionally to the metric.
+     *
+     * <p>For example, a good metric to use as a utilization_target is
+     * compute.googleapis.com/instance/network/received_bytes_count. The autoscaler will work to
+     * keep this value constant for each of the instances.
+     */
     public Builder setUtilizationTarget(Double utilizationTarget) {
       this.utilizationTarget = utilizationTarget;
       return this;
     }
 
+    /**
+     * Defines how target utilization value is expressed for a Stackdriver Monitoring metric. Either
+     * GAUGE, DELTA_PER_SECOND, or DELTA_PER_MINUTE.
+     */
     public String getUtilizationTargetType() {
       return utilizationTargetType;
     }
 
+    /**
+     * Defines how target utilization value is expressed for a Stackdriver Monitoring metric. Either
+     * GAUGE, DELTA_PER_SECOND, or DELTA_PER_MINUTE.
+     */
     public Builder setUtilizationTargetType(String utilizationTargetType) {
       this.utilizationTargetType = utilizationTargetType;
       return this;

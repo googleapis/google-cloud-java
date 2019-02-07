@@ -24,6 +24,11 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * A full or valid partial URL to a health check. For example, the following are valid URLs: -
+ * https://www.googleapis.com/compute/beta/projects/project-id/global/httpHealthChecks/health-check
+ * - projects/project-id/global/httpHealthChecks/health-check - global/httpHealthChecks/health-check
+ */
 public final class HealthCheckReference implements ApiMessage {
   private final String healthCheck;
 

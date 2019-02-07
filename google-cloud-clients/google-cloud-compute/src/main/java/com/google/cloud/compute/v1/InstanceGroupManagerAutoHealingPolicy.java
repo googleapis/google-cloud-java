@@ -61,10 +61,18 @@ public final class InstanceGroupManagerAutoHealingPolicy implements ApiMessage {
     return null;
   }
 
+  /** The URL for the health check that signals autohealing. */
   public String getHealthCheck() {
     return healthCheck;
   }
 
+  /**
+   * The number of seconds that the managed instance group waits before it applies autohealing
+   * policies to new instances or recently recreated instances. This initial delay allows instances
+   * to initialize and run their startup scripts before the instance group determines that they are
+   * UNHEALTHY. This prevents the managed instance group from recreating its instances prematurely.
+   * This value must be from range [0, 3600].
+   */
   public Integer getInitialDelaySec() {
     return initialDelaySec;
   }
@@ -113,19 +121,35 @@ public final class InstanceGroupManagerAutoHealingPolicy implements ApiMessage {
       this.initialDelaySec = source.initialDelaySec;
     }
 
+    /** The URL for the health check that signals autohealing. */
     public String getHealthCheck() {
       return healthCheck;
     }
 
+    /** The URL for the health check that signals autohealing. */
     public Builder setHealthCheck(String healthCheck) {
       this.healthCheck = healthCheck;
       return this;
     }
 
+    /**
+     * The number of seconds that the managed instance group waits before it applies autohealing
+     * policies to new instances or recently recreated instances. This initial delay allows
+     * instances to initialize and run their startup scripts before the instance group determines
+     * that they are UNHEALTHY. This prevents the managed instance group from recreating its
+     * instances prematurely. This value must be from range [0, 3600].
+     */
     public Integer getInitialDelaySec() {
       return initialDelaySec;
     }
 
+    /**
+     * The number of seconds that the managed instance group waits before it applies autohealing
+     * policies to new instances or recently recreated instances. This initial delay allows
+     * instances to initialize and run their startup scripts before the instance group determines
+     * that they are UNHEALTHY. This prevents the managed instance group from recreating its
+     * instances prematurely. This value must be from range [0, 3600].
+     */
     public Builder setInitialDelaySec(Integer initialDelaySec) {
       this.initialDelaySec = initialDelaySec;
       return this;

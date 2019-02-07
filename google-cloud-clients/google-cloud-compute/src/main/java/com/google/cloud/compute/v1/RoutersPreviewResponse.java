@@ -55,6 +55,7 @@ public final class RoutersPreviewResponse implements ApiMessage {
     return null;
   }
 
+  /** Preview of given router. */
   public Router getResource() {
     return resource;
   }
@@ -98,10 +99,12 @@ public final class RoutersPreviewResponse implements ApiMessage {
       this.resource = source.resource;
     }
 
+    /** Preview of given router. */
     public Router getResource() {
       return resource;
     }
 
+    /** Preview of given router. */
     public Builder setResource(Router resource) {
       this.resource = resource;
       return this;

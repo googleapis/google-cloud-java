@@ -62,10 +62,12 @@ public final class SubnetworksScopedList implements ApiMessage {
     return null;
   }
 
+  /** A list of subnetworks contained in this scope. */
   public List<Subnetwork> getSubnetworksList() {
     return subnetworks;
   }
 
+  /** An informational warning that appears when the list of addresses is empty. */
   public Warning getWarning() {
     return warning;
   }
@@ -114,10 +116,12 @@ public final class SubnetworksScopedList implements ApiMessage {
       this.warning = source.warning;
     }
 
+    /** A list of subnetworks contained in this scope. */
     public List<Subnetwork> getSubnetworksList() {
       return subnetworks;
     }
 
+    /** A list of subnetworks contained in this scope. */
     public Builder addAllSubnetworks(List<Subnetwork> subnetworks) {
       if (this.subnetworks == null) {
         this.subnetworks = new LinkedList<>();
@@ -126,6 +130,7 @@ public final class SubnetworksScopedList implements ApiMessage {
       return this;
     }
 
+    /** A list of subnetworks contained in this scope. */
     public Builder addSubnetworks(Subnetwork subnetworks) {
       if (this.subnetworks == null) {
         this.subnetworks = new LinkedList<>();
@@ -134,10 +139,12 @@ public final class SubnetworksScopedList implements ApiMessage {
       return this;
     }
 
+    /** An informational warning that appears when the list of addresses is empty. */
     public Warning getWarning() {
       return warning;
     }
 
+    /** An informational warning that appears when the list of addresses is empty. */
     public Builder setWarning(Warning warning) {
       this.warning = warning;
       return this;

@@ -56,6 +56,7 @@ public final class RegionInstanceGroupManagersListInstancesResponse implements A
     return null;
   }
 
+  /** A list of managed instances. */
   public List<ManagedInstance> getManagedInstancesList() {
     return managedInstances;
   }
@@ -100,10 +101,12 @@ public final class RegionInstanceGroupManagersListInstancesResponse implements A
       this.managedInstances = source.managedInstances;
     }
 
+    /** A list of managed instances. */
     public List<ManagedInstance> getManagedInstancesList() {
       return managedInstances;
     }
 
+    /** A list of managed instances. */
     public Builder addAllManagedInstances(List<ManagedInstance> managedInstances) {
       if (this.managedInstances == null) {
         this.managedInstances = new LinkedList<>();
@@ -112,6 +115,7 @@ public final class RegionInstanceGroupManagersListInstancesResponse implements A
       return this;
     }
 
+    /** A list of managed instances. */
     public Builder addManagedInstances(ManagedInstance managedInstances) {
       if (this.managedInstances == null) {
         this.managedInstances = new LinkedList<>();

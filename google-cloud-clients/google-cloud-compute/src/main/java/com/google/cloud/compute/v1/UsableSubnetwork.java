@@ -25,6 +25,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Subnetwork which the current user has compute.subnetworks.use permission on. */
 public final class UsableSubnetwork implements ApiMessage {
   private final String ipCidrRange;
   private final String network;
@@ -78,18 +79,22 @@ public final class UsableSubnetwork implements ApiMessage {
     return null;
   }
 
+  /** The range of internal addresses that are owned by this subnetwork. */
   public String getIpCidrRange() {
     return ipCidrRange;
   }
 
+  /** Network URL. */
   public String getNetwork() {
     return network;
   }
 
+  /** Secondary IP ranges. */
   public List<UsableSubnetworkSecondaryRange> getSecondaryIpRangesList() {
     return secondaryIpRanges;
   }
 
+  /** Subnetwork URL. */
   public String getSubnetwork() {
     return subnetwork;
   }
@@ -148,28 +153,34 @@ public final class UsableSubnetwork implements ApiMessage {
       this.subnetwork = source.subnetwork;
     }
 
+    /** The range of internal addresses that are owned by this subnetwork. */
     public String getIpCidrRange() {
       return ipCidrRange;
     }
 
+    /** The range of internal addresses that are owned by this subnetwork. */
     public Builder setIpCidrRange(String ipCidrRange) {
       this.ipCidrRange = ipCidrRange;
       return this;
     }
 
+    /** Network URL. */
     public String getNetwork() {
       return network;
     }
 
+    /** Network URL. */
     public Builder setNetwork(String network) {
       this.network = network;
       return this;
     }
 
+    /** Secondary IP ranges. */
     public List<UsableSubnetworkSecondaryRange> getSecondaryIpRangesList() {
       return secondaryIpRanges;
     }
 
+    /** Secondary IP ranges. */
     public Builder addAllSecondaryIpRanges(List<UsableSubnetworkSecondaryRange> secondaryIpRanges) {
       if (this.secondaryIpRanges == null) {
         this.secondaryIpRanges = new LinkedList<>();
@@ -178,6 +189,7 @@ public final class UsableSubnetwork implements ApiMessage {
       return this;
     }
 
+    /** Secondary IP ranges. */
     public Builder addSecondaryIpRanges(UsableSubnetworkSecondaryRange secondaryIpRanges) {
       if (this.secondaryIpRanges == null) {
         this.secondaryIpRanges = new LinkedList<>();
@@ -186,10 +198,12 @@ public final class UsableSubnetwork implements ApiMessage {
       return this;
     }
 
+    /** Subnetwork URL. */
     public String getSubnetwork() {
       return subnetwork;
     }
 
+    /** Subnetwork URL. */
     public Builder setSubnetwork(String subnetwork) {
       this.subnetwork = subnetwork;
       return this;

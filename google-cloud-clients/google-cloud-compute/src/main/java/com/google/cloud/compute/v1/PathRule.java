@@ -25,6 +25,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * A path-matching rule for a URL. If matched, will use the specified BackendService to handle the
+ * traffic arriving at this URL.
+ */
 public final class PathRule implements ApiMessage {
   private final List<String> paths;
   private final String service;
@@ -62,10 +66,23 @@ public final class PathRule implements ApiMessage {
     return null;
   }
 
+  /**
+   * The list of path patterns to match. Each must start with / and the only place a &#42; is
+   * allowed is at the end following a /. The string fed to the path matcher does not include any
+   * text after the first ? or #, and those chars are not allowed here.
+   */
   public List<String> getPathsList() {
     return paths;
   }
 
+  /**
+   * The full or partial URL of the backend service resource to which traffic is directed if this
+   * rule is matched. If routeAction is additionally specified, advanced routing actions like URL
+   * Rewrites, etc. take effect prior to sending the request to the backend. However, if service is
+   * specified, routeAction cannot contain any weightedBackendService s. Conversely, if routeAction
+   * specifies any weightedBackendServices, service must not be specified. Only one of urlRedirect,
+   * service or routeAction.weightedBackendService must be set.
+   */
   public String getService() {
     return service;
   }
@@ -114,10 +131,20 @@ public final class PathRule implements ApiMessage {
       this.service = source.service;
     }
 
+    /**
+     * The list of path patterns to match. Each must start with / and the only place a &#42; is
+     * allowed is at the end following a /. The string fed to the path matcher does not include any
+     * text after the first ? or #, and those chars are not allowed here.
+     */
     public List<String> getPathsList() {
       return paths;
     }
 
+    /**
+     * The list of path patterns to match. Each must start with / and the only place a &#42; is
+     * allowed is at the end following a /. The string fed to the path matcher does not include any
+     * text after the first ? or #, and those chars are not allowed here.
+     */
     public Builder addAllPaths(List<String> paths) {
       if (this.paths == null) {
         this.paths = new LinkedList<>();
@@ -126,6 +153,11 @@ public final class PathRule implements ApiMessage {
       return this;
     }
 
+    /**
+     * The list of path patterns to match. Each must start with / and the only place a &#42; is
+     * allowed is at the end following a /. The string fed to the path matcher does not include any
+     * text after the first ? or #, and those chars are not allowed here.
+     */
     public Builder addPaths(String paths) {
       if (this.paths == null) {
         this.paths = new LinkedList<>();
@@ -134,10 +166,26 @@ public final class PathRule implements ApiMessage {
       return this;
     }
 
+    /**
+     * The full or partial URL of the backend service resource to which traffic is directed if this
+     * rule is matched. If routeAction is additionally specified, advanced routing actions like URL
+     * Rewrites, etc. take effect prior to sending the request to the backend. However, if service
+     * is specified, routeAction cannot contain any weightedBackendService s. Conversely, if
+     * routeAction specifies any weightedBackendServices, service must not be specified. Only one of
+     * urlRedirect, service or routeAction.weightedBackendService must be set.
+     */
     public String getService() {
       return service;
     }
 
+    /**
+     * The full or partial URL of the backend service resource to which traffic is directed if this
+     * rule is matched. If routeAction is additionally specified, advanced routing actions like URL
+     * Rewrites, etc. take effect prior to sending the request to the backend. However, if service
+     * is specified, routeAction cannot contain any weightedBackendService s. Conversely, if
+     * routeAction specifies any weightedBackendServices, service must not be specified. Only one of
+     * urlRedirect, service or routeAction.weightedBackendService must be set.
+     */
     public Builder setService(String service) {
       this.service = service;
       return this;

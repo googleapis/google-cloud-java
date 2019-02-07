@@ -61,10 +61,19 @@ public final class RegionInstanceGroupsListInstancesRequest implements ApiMessag
     return null;
   }
 
+  /**
+   * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default,
+   * it lists all instances.
+   */
   public String getInstanceState() {
     return instanceState;
   }
 
+  /**
+   * Name of port user is interested in. It is optional. If it is set, only information about this
+   * ports will be returned. If it is not set, all the named ports will be returned. Always lists
+   * all instances.
+   */
   public String getPortName() {
     return portName;
   }
@@ -113,19 +122,37 @@ public final class RegionInstanceGroupsListInstancesRequest implements ApiMessag
       this.portName = source.portName;
     }
 
+    /**
+     * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default,
+     * it lists all instances.
+     */
     public String getInstanceState() {
       return instanceState;
     }
 
+    /**
+     * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default,
+     * it lists all instances.
+     */
     public Builder setInstanceState(String instanceState) {
       this.instanceState = instanceState;
       return this;
     }
 
+    /**
+     * Name of port user is interested in. It is optional. If it is set, only information about this
+     * ports will be returned. If it is not set, all the named ports will be returned. Always lists
+     * all instances.
+     */
     public String getPortName() {
       return portName;
     }
 
+    /**
+     * Name of port user is interested in. It is optional. If it is set, only information about this
+     * ports will be returned. If it is not set, all the named ports will be returned. Always lists
+     * all instances.
+     */
     public Builder setPortName(String portName) {
       this.portName = portName;
       return this;

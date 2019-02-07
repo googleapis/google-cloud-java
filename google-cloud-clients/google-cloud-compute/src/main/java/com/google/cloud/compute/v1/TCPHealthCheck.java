@@ -80,22 +80,43 @@ public final class TCPHealthCheck implements ApiMessage {
     return null;
   }
 
+  /**
+   * The TCP port number for the health check request. The default value is 80. Valid values are 1
+   * through 65535.
+   */
   public Integer getPort() {
     return port;
   }
 
+  /**
+   * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined,
+   * port takes precedence.
+   */
   public String getPortName() {
     return portName;
   }
 
+  /**
+   * Specifies the type of proxy header to append before sending data to the backend, either NONE or
+   * PROXY_V1. The default is NONE.
+   */
   public String getProxyHeader() {
     return proxyHeader;
   }
 
+  /**
+   * The application data to send once the TCP connection has been established (default value is
+   * empty). If both request and response are empty, the connection establishment alone will
+   * indicate health. The request data can only be ASCII.
+   */
   public String getRequest() {
     return request;
   }
 
+  /**
+   * The bytes to match against the beginning of the response data. If left empty (the default
+   * value), any response will indicate health. The response data can only be ASCII.
+   */
   public String getResponse() {
     return response;
   }
@@ -159,46 +180,88 @@ public final class TCPHealthCheck implements ApiMessage {
       this.response = source.response;
     }
 
+    /**
+     * The TCP port number for the health check request. The default value is 80. Valid values are 1
+     * through 65535.
+     */
     public Integer getPort() {
       return port;
     }
 
+    /**
+     * The TCP port number for the health check request. The default value is 80. Valid values are 1
+     * through 65535.
+     */
     public Builder setPort(Integer port) {
       this.port = port;
       return this;
     }
 
+    /**
+     * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined,
+     * port takes precedence.
+     */
     public String getPortName() {
       return portName;
     }
 
+    /**
+     * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined,
+     * port takes precedence.
+     */
     public Builder setPortName(String portName) {
       this.portName = portName;
       return this;
     }
 
+    /**
+     * Specifies the type of proxy header to append before sending data to the backend, either NONE
+     * or PROXY_V1. The default is NONE.
+     */
     public String getProxyHeader() {
       return proxyHeader;
     }
 
+    /**
+     * Specifies the type of proxy header to append before sending data to the backend, either NONE
+     * or PROXY_V1. The default is NONE.
+     */
     public Builder setProxyHeader(String proxyHeader) {
       this.proxyHeader = proxyHeader;
       return this;
     }
 
+    /**
+     * The application data to send once the TCP connection has been established (default value is
+     * empty). If both request and response are empty, the connection establishment alone will
+     * indicate health. The request data can only be ASCII.
+     */
     public String getRequest() {
       return request;
     }
 
+    /**
+     * The application data to send once the TCP connection has been established (default value is
+     * empty). If both request and response are empty, the connection establishment alone will
+     * indicate health. The request data can only be ASCII.
+     */
     public Builder setRequest(String request) {
       this.request = request;
       return this;
     }
 
+    /**
+     * The bytes to match against the beginning of the response data. If left empty (the default
+     * value), any response will indicate health. The response data can only be ASCII.
+     */
     public String getResponse() {
       return response;
     }
 
+    /**
+     * The bytes to match against the beginning of the response data. If left empty (the default
+     * value), any response will indicate health. The response data can only be ASCII.
+     */
     public Builder setResponse(String response) {
       this.response = response;
       return this;

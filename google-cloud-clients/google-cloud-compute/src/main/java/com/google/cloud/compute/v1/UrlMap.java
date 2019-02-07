@@ -25,6 +25,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * A UrlMap resource. This resource defines the mapping from URL to the BackendService resource,
+ * based on the "longest-match" of the URL's host and path.
+ */
 public final class UrlMap implements ApiMessage {
   private final String creationTimestamp;
   private final String defaultService;
@@ -127,46 +131,85 @@ public final class UrlMap implements ApiMessage {
     return null;
   }
 
+  /** [Output Only] Creation timestamp in RFC3339 text format. */
   public String getCreationTimestamp() {
     return creationTimestamp;
   }
 
+  /**
+   * The full or partial URL of the defaultService resource to which traffic is directed if none of
+   * the hostRules match. If defaultRouteAction is additionally specified, advanced routing actions
+   * like URL Rewrites, etc. take effect prior to sending the request to the backend. However, if
+   * defaultService is specified, defaultRouteAction cannot contain any weightedBackendServices.
+   * Conversely, if routeAction specifies any weightedBackendServices, service must not be
+   * specified. Only one of defaultService, defaultUrlRedirect or
+   * defaultRouteAction.weightedBackendService must be set.
+   */
   public String getDefaultService() {
     return defaultService;
   }
 
+  /**
+   * An optional description of this resource. Provide this property when you create the resource.
+   */
   public String getDescription() {
     return description;
   }
 
+  /**
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used
+   * in optimistic locking. This field will be ignored when inserting a UrlMap. An up-to-date
+   * fingerprint must be provided in order to update the UrlMap, otherwise the request will fail
+   * with error 412 conditionNotMet.
+   *
+   * <p>To see the latest fingerprint, make a get() request to retrieve a UrlMap.
+   */
   public String getFingerprint() {
     return fingerprint;
   }
 
+  /** The list of HostRules to use against the URL. */
   public List<HostRule> getHostRulesList() {
     return hostRules;
   }
 
+  /**
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   */
   public String getId() {
     return id;
   }
 
+  /** [Output Only] Type of the resource. Always compute#urlMaps for url maps. */
   public String getKind() {
     return kind;
   }
 
+  /**
+   * Name of the resource. Provided by the client when the resource is created. The name must be
+   * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+   * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be a dash, lowercase
+   * letter, or digit, except the last character, which cannot be a dash.
+   */
   public String getName() {
     return name;
   }
 
+  /** The list of named PathMatchers to use against the URL. */
   public List<PathMatcher> getPathMatchersList() {
     return pathMatchers;
   }
 
+  /** [Output Only] Server-defined URL for the resource. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /**
+   * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if all
+   * of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
+   */
   public List<UrlMapTest> getTestsList() {
     return tests;
   }
@@ -260,46 +303,90 @@ public final class UrlMap implements ApiMessage {
       this.tests = source.tests;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public String getCreationTimestamp() {
       return creationTimestamp;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
+    /**
+     * The full or partial URL of the defaultService resource to which traffic is directed if none
+     * of the hostRules match. If defaultRouteAction is additionally specified, advanced routing
+     * actions like URL Rewrites, etc. take effect prior to sending the request to the backend.
+     * However, if defaultService is specified, defaultRouteAction cannot contain any
+     * weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices,
+     * service must not be specified. Only one of defaultService, defaultUrlRedirect or
+     * defaultRouteAction.weightedBackendService must be set.
+     */
     public String getDefaultService() {
       return defaultService;
     }
 
+    /**
+     * The full or partial URL of the defaultService resource to which traffic is directed if none
+     * of the hostRules match. If defaultRouteAction is additionally specified, advanced routing
+     * actions like URL Rewrites, etc. take effect prior to sending the request to the backend.
+     * However, if defaultService is specified, defaultRouteAction cannot contain any
+     * weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices,
+     * service must not be specified. Only one of defaultService, defaultUrlRedirect or
+     * defaultRouteAction.weightedBackendService must be set.
+     */
     public Builder setDefaultService(String defaultService) {
       this.defaultService = defaultService;
       return this;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public String getDescription() {
       return description;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /**
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is
+     * used in optimistic locking. This field will be ignored when inserting a UrlMap. An up-to-date
+     * fingerprint must be provided in order to update the UrlMap, otherwise the request will fail
+     * with error 412 conditionNotMet.
+     *
+     * <p>To see the latest fingerprint, make a get() request to retrieve a UrlMap.
+     */
     public String getFingerprint() {
       return fingerprint;
     }
 
+    /**
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is
+     * used in optimistic locking. This field will be ignored when inserting a UrlMap. An up-to-date
+     * fingerprint must be provided in order to update the UrlMap, otherwise the request will fail
+     * with error 412 conditionNotMet.
+     *
+     * <p>To see the latest fingerprint, make a get() request to retrieve a UrlMap.
+     */
     public Builder setFingerprint(String fingerprint) {
       this.fingerprint = fingerprint;
       return this;
     }
 
+    /** The list of HostRules to use against the URL. */
     public List<HostRule> getHostRulesList() {
       return hostRules;
     }
 
+    /** The list of HostRules to use against the URL. */
     public Builder addAllHostRules(List<HostRule> hostRules) {
       if (this.hostRules == null) {
         this.hostRules = new LinkedList<>();
@@ -308,6 +395,7 @@ public final class UrlMap implements ApiMessage {
       return this;
     }
 
+    /** The list of HostRules to use against the URL. */
     public Builder addHostRules(HostRule hostRules) {
       if (this.hostRules == null) {
         this.hostRules = new LinkedList<>();
@@ -316,37 +404,63 @@ public final class UrlMap implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /** [Output Only] Type of the resource. Always compute#urlMaps for url maps. */
     public String getKind() {
       return kind;
     }
 
+    /** [Output Only] Type of the resource. Always compute#urlMaps for url maps. */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /**
+     * Name of the resource. Provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public String getName() {
       return name;
     }
 
+    /**
+     * Name of the resource. Provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /** The list of named PathMatchers to use against the URL. */
     public List<PathMatcher> getPathMatchersList() {
       return pathMatchers;
     }
 
+    /** The list of named PathMatchers to use against the URL. */
     public Builder addAllPathMatchers(List<PathMatcher> pathMatchers) {
       if (this.pathMatchers == null) {
         this.pathMatchers = new LinkedList<>();
@@ -355,6 +469,7 @@ public final class UrlMap implements ApiMessage {
       return this;
     }
 
+    /** The list of named PathMatchers to use against the URL. */
     public Builder addPathMatchers(PathMatcher pathMatchers) {
       if (this.pathMatchers == null) {
         this.pathMatchers = new LinkedList<>();
@@ -363,19 +478,29 @@ public final class UrlMap implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /**
+     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if
+     * all of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
+     */
     public List<UrlMapTest> getTestsList() {
       return tests;
     }
 
+    /**
+     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if
+     * all of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
+     */
     public Builder addAllTests(List<UrlMapTest> tests) {
       if (this.tests == null) {
         this.tests = new LinkedList<>();
@@ -384,6 +509,10 @@ public final class UrlMap implements ApiMessage {
       return this;
     }
 
+    /**
+     * The list of expected URL mapping tests. Request to update this UrlMap will succeed only if
+     * all of the test cases pass. You can specify a maximum of 100 tests per UrlMap.
+     */
     public Builder addTests(UrlMapTest tests) {
       if (this.tests == null) {
         this.tests = new LinkedList<>();
