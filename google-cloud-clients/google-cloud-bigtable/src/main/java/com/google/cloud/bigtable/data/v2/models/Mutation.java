@@ -73,7 +73,6 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
     return new Mutation(true);
   }
 
-
   /** Wraps the List of protobuf {@link com.google.bigtable.v2.Mutation}. */
   @BetaApi
   public static Mutation fromProtoUnsafe(List<com.google.bigtable.v2.Mutation> protos) {
