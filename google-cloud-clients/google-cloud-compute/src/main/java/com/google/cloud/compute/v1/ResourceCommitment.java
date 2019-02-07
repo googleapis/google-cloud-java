@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Commitment for a particular resource (a Commitment is composed of one or more of these). */
 public final class ResourceCommitment implements ApiMessage {
   private final String amount;
   private final String type;
@@ -61,10 +62,16 @@ public final class ResourceCommitment implements ApiMessage {
     return null;
   }
 
+  /**
+   * The amount of the resource purchased (in a type-dependent unit, such as bytes). For vCPUs, this
+   * can just be an integer. For memory, this must be provided in MB. Memory must be a multiple of
+   * 256 MB, with up to 6.5GB of memory per every vCPU.
+   */
   public String getAmount() {
     return amount;
   }
 
+  /** Type of resource for which this commitment applies. Possible values are VCPU and MEMORY */
   public String getType() {
     return type;
   }
@@ -113,19 +120,31 @@ public final class ResourceCommitment implements ApiMessage {
       this.type = source.type;
     }
 
+    /**
+     * The amount of the resource purchased (in a type-dependent unit, such as bytes). For vCPUs,
+     * this can just be an integer. For memory, this must be provided in MB. Memory must be a
+     * multiple of 256 MB, with up to 6.5GB of memory per every vCPU.
+     */
     public String getAmount() {
       return amount;
     }
 
+    /**
+     * The amount of the resource purchased (in a type-dependent unit, such as bytes). For vCPUs,
+     * this can just be an integer. For memory, this must be provided in MB. Memory must be a
+     * multiple of 256 MB, with up to 6.5GB of memory per every vCPU.
+     */
     public Builder setAmount(String amount) {
       this.amount = amount;
       return this;
     }
 
+    /** Type of resource for which this commitment applies. Possible values are VCPU and MEMORY */
     public String getType() {
       return type;
     }
 
+    /** Type of resource for which this commitment applies. Possible values are VCPU and MEMORY */
     public Builder setType(String type) {
       this.type = type;
       return this;

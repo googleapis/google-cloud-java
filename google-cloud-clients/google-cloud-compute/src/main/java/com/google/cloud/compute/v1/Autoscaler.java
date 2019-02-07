@@ -25,6 +25,13 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Represents an Autoscaler resource. Autoscalers allow you to automatically scale virtual machine
+ * instances in managed instance groups according to an autoscaling policy that you define. For more
+ * information, read Autoscaling Groups of Instances. (== resource_for beta.autoscalers ==) (==
+ * resource_for v1.autoscalers ==) (== resource_for beta.regionAutoscalers ==) (== resource_for
+ * v1.regionAutoscalers ==)
+ */
 public final class Autoscaler implements ApiMessage {
   private final AutoscalingPolicy autoscalingPolicy;
   private final String creationTimestamp;
@@ -134,50 +141,89 @@ public final class Autoscaler implements ApiMessage {
     return null;
   }
 
+  /**
+   * The configuration parameters for the autoscaling algorithm. You can define one or more of the
+   * policies for an autoscaler: cpuUtilization, customMetricUtilizations, and
+   * loadBalancingUtilization.
+   *
+   * <p>If none of these are specified, the default will be to autoscale based on cpuUtilization to
+   * 0.6 or 60%.
+   */
   public AutoscalingPolicy getAutoscalingPolicy() {
     return autoscalingPolicy;
   }
 
+  /** [Output Only] Creation timestamp in RFC3339 text format. */
   public String getCreationTimestamp() {
     return creationTimestamp;
   }
 
+  /**
+   * An optional description of this resource. Provide this property when you create the resource.
+   */
   public String getDescription() {
     return description;
   }
 
+  /**
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   */
   public String getId() {
     return id;
   }
 
+  /** [Output Only] Type of the resource. Always compute#autoscaler for autoscalers. */
   public String getKind() {
     return kind;
   }
 
+  /**
+   * Name of the resource. Provided by the client when the resource is created. The name must be
+   * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+   * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be a dash, lowercase
+   * letter, or digit, except the last character, which cannot be a dash.
+   */
   public String getName() {
     return name;
   }
 
+  /**
+   * [Output Only] URL of the region where the instance group resides (for autoscalers living in
+   * regional scope).
+   */
   public String getRegion() {
     return region;
   }
 
+  /** [Output Only] Server-defined URL for the resource. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /** [Output Only] The status of the autoscaler configuration. */
   public String getStatus() {
     return status;
   }
 
+  /**
+   * [Output Only] Human-readable details about the current state of the autoscaler. Read the
+   * documentation for Commonly returned status messages for examples of status messages you might
+   * encounter.
+   */
   public List<AutoscalerStatusDetails> getStatusDetailsList() {
     return statusDetails;
   }
 
+  /** URL of the managed instance group that this autoscaler will scale. */
   public String getTarget() {
     return target;
   }
 
+  /**
+   * [Output Only] URL of the zone where the instance group resides (for autoscalers living in zonal
+   * scope).
+   */
   public String getZone() {
     return zone;
   }
@@ -276,91 +322,161 @@ public final class Autoscaler implements ApiMessage {
       this.zone = source.zone;
     }
 
+    /**
+     * The configuration parameters for the autoscaling algorithm. You can define one or more of the
+     * policies for an autoscaler: cpuUtilization, customMetricUtilizations, and
+     * loadBalancingUtilization.
+     *
+     * <p>If none of these are specified, the default will be to autoscale based on cpuUtilization
+     * to 0.6 or 60%.
+     */
     public AutoscalingPolicy getAutoscalingPolicy() {
       return autoscalingPolicy;
     }
 
+    /**
+     * The configuration parameters for the autoscaling algorithm. You can define one or more of the
+     * policies for an autoscaler: cpuUtilization, customMetricUtilizations, and
+     * loadBalancingUtilization.
+     *
+     * <p>If none of these are specified, the default will be to autoscale based on cpuUtilization
+     * to 0.6 or 60%.
+     */
     public Builder setAutoscalingPolicy(AutoscalingPolicy autoscalingPolicy) {
       this.autoscalingPolicy = autoscalingPolicy;
       return this;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public String getCreationTimestamp() {
       return creationTimestamp;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public String getDescription() {
       return description;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /** [Output Only] Type of the resource. Always compute#autoscaler for autoscalers. */
     public String getKind() {
       return kind;
     }
 
+    /** [Output Only] Type of the resource. Always compute#autoscaler for autoscalers. */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /**
+     * Name of the resource. Provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public String getName() {
       return name;
     }
 
+    /**
+     * Name of the resource. Provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /**
+     * [Output Only] URL of the region where the instance group resides (for autoscalers living in
+     * regional scope).
+     */
     public String getRegion() {
       return region;
     }
 
+    /**
+     * [Output Only] URL of the region where the instance group resides (for autoscalers living in
+     * regional scope).
+     */
     public Builder setRegion(String region) {
       this.region = region;
       return this;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /** [Output Only] The status of the autoscaler configuration. */
     public String getStatus() {
       return status;
     }
 
+    /** [Output Only] The status of the autoscaler configuration. */
     public Builder setStatus(String status) {
       this.status = status;
       return this;
     }
 
+    /**
+     * [Output Only] Human-readable details about the current state of the autoscaler. Read the
+     * documentation for Commonly returned status messages for examples of status messages you might
+     * encounter.
+     */
     public List<AutoscalerStatusDetails> getStatusDetailsList() {
       return statusDetails;
     }
 
+    /**
+     * [Output Only] Human-readable details about the current state of the autoscaler. Read the
+     * documentation for Commonly returned status messages for examples of status messages you might
+     * encounter.
+     */
     public Builder addAllStatusDetails(List<AutoscalerStatusDetails> statusDetails) {
       if (this.statusDetails == null) {
         this.statusDetails = new LinkedList<>();
@@ -369,6 +485,11 @@ public final class Autoscaler implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] Human-readable details about the current state of the autoscaler. Read the
+     * documentation for Commonly returned status messages for examples of status messages you might
+     * encounter.
+     */
     public Builder addStatusDetails(AutoscalerStatusDetails statusDetails) {
       if (this.statusDetails == null) {
         this.statusDetails = new LinkedList<>();
@@ -377,19 +498,29 @@ public final class Autoscaler implements ApiMessage {
       return this;
     }
 
+    /** URL of the managed instance group that this autoscaler will scale. */
     public String getTarget() {
       return target;
     }
 
+    /** URL of the managed instance group that this autoscaler will scale. */
     public Builder setTarget(String target) {
       this.target = target;
       return this;
     }
 
+    /**
+     * [Output Only] URL of the zone where the instance group resides (for autoscalers living in
+     * zonal scope).
+     */
     public String getZone() {
       return zone;
     }
 
+    /**
+     * [Output Only] URL of the zone where the instance group resides (for autoscalers living in
+     * zonal scope).
+     */
     public Builder setZone(String zone) {
       this.zone = zone;
       return this;

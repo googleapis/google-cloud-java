@@ -65,6 +65,11 @@ public final class InterconnectDiagnosticsLinkOpticalPower implements ApiMessage
     return state;
   }
 
+  /**
+   * Value of the current optical power, read in dBm. Take a known good optical value, give it a 10%
+   * margin and trigger warnings relative to that value. In general, a -7dBm warning and a -11dBm
+   * alarm are good optical value estimates for most links.
+   */
   public Float getValue() {
     return value;
   }
@@ -122,10 +127,20 @@ public final class InterconnectDiagnosticsLinkOpticalPower implements ApiMessage
       return this;
     }
 
+    /**
+     * Value of the current optical power, read in dBm. Take a known good optical value, give it a
+     * 10% margin and trigger warnings relative to that value. In general, a -7dBm warning and a
+     * -11dBm alarm are good optical value estimates for most links.
+     */
     public Float getValue() {
       return value;
     }
 
+    /**
+     * Value of the current optical power, read in dBm. Take a known good optical value, give it a
+     * 10% margin and trigger warnings relative to that value. In general, a -7dBm warning and a
+     * -11dBm alarm are good optical value estimates for most links.
+     */
     public Builder setValue(Float value) {
       this.value = value;
       return this;

@@ -25,6 +25,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** VPN tunnel resource. (== resource_for beta.vpnTunnels ==) (== resource_for v1.vpnTunnels ==) */
 public final class VpnTunnel implements ApiMessage {
   private final String creationTimestamp;
   private final String description;
@@ -169,70 +170,117 @@ public final class VpnTunnel implements ApiMessage {
     return null;
   }
 
+  /** [Output Only] Creation timestamp in RFC3339 text format. */
   public String getCreationTimestamp() {
     return creationTimestamp;
   }
 
+  /**
+   * An optional description of this resource. Provide this property when you create the resource.
+   */
   public String getDescription() {
     return description;
   }
 
+  /** [Output Only] Detailed status message for the VPN tunnel. */
   public String getDetailedStatus() {
     return detailedStatus;
   }
 
+  /**
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   */
   public String getId() {
     return id;
   }
 
+  /**
+   * IKE protocol version to use when establishing the VPN tunnel with peer VPN gateway. Acceptable
+   * IKE versions are 1 or 2. Default version is 2.
+   */
   public Integer getIkeVersion() {
     return ikeVersion;
   }
 
+  /** [Output Only] Type of resource. Always compute#vpnTunnel for VPN tunnels. */
   public String getKind() {
     return kind;
   }
 
+  /**
+   * Local traffic selector to use when establishing the VPN tunnel with peer VPN gateway. The value
+   * should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint.
+   * Only IPv4 is supported.
+   */
   public List<String> getLocalTrafficSelectorList() {
     return localTrafficSelector;
   }
 
+  /**
+   * Name of the resource. Provided by the client when the resource is created. The name must be
+   * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+   * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be a dash, lowercase
+   * letter, or digit, except the last character, which cannot be a dash.
+   */
   public String getName() {
     return name;
   }
 
+  /** IP address of the peer VPN gateway. Only IPv4 is supported. */
   public String getPeerIp() {
     return peerIp;
   }
 
+  /**
+   * [Output Only] URL of the region where the VPN tunnel resides. You must specify this field as
+   * part of the HTTP request URL. It is not settable as a field in the request body.
+   */
   public String getRegion() {
     return region;
   }
 
+  /**
+   * Remote traffic selectors to use when establishing the VPN tunnel with peer VPN gateway. The
+   * value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be
+   * disjoint. Only IPv4 is supported.
+   */
   public List<String> getRemoteTrafficSelectorList() {
     return remoteTrafficSelector;
   }
 
+  /** URL of router resource to be used for dynamic routing. */
   public String getRouter() {
     return router;
   }
 
+  /** [Output Only] Server-defined URL for the resource. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /**
+   * Shared secret used to set the secure session between the Cloud VPN gateway and the peer VPN
+   * gateway.
+   */
   public String getSharedSecret() {
     return sharedSecret;
   }
 
+  /** Hash of the shared secret. */
   public String getSharedSecretHash() {
     return sharedSecretHash;
   }
 
+  /** [Output Only] The status of the VPN tunnel. */
   public String getStatus() {
     return status;
   }
 
+  /**
+   * URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client
+   * when the VPN tunnel is created.
+   */
   public String getTargetVpnGateway() {
     return targetVpnGateway;
   }
@@ -356,64 +404,102 @@ public final class VpnTunnel implements ApiMessage {
       this.targetVpnGateway = source.targetVpnGateway;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public String getCreationTimestamp() {
       return creationTimestamp;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public String getDescription() {
       return description;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /** [Output Only] Detailed status message for the VPN tunnel. */
     public String getDetailedStatus() {
       return detailedStatus;
     }
 
+    /** [Output Only] Detailed status message for the VPN tunnel. */
     public Builder setDetailedStatus(String detailedStatus) {
       this.detailedStatus = detailedStatus;
       return this;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /**
+     * IKE protocol version to use when establishing the VPN tunnel with peer VPN gateway.
+     * Acceptable IKE versions are 1 or 2. Default version is 2.
+     */
     public Integer getIkeVersion() {
       return ikeVersion;
     }
 
+    /**
+     * IKE protocol version to use when establishing the VPN tunnel with peer VPN gateway.
+     * Acceptable IKE versions are 1 or 2. Default version is 2.
+     */
     public Builder setIkeVersion(Integer ikeVersion) {
       this.ikeVersion = ikeVersion;
       return this;
     }
 
+    /** [Output Only] Type of resource. Always compute#vpnTunnel for VPN tunnels. */
     public String getKind() {
       return kind;
     }
 
+    /** [Output Only] Type of resource. Always compute#vpnTunnel for VPN tunnels. */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /**
+     * Local traffic selector to use when establishing the VPN tunnel with peer VPN gateway. The
+     * value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be
+     * disjoint. Only IPv4 is supported.
+     */
     public List<String> getLocalTrafficSelectorList() {
       return localTrafficSelector;
     }
 
+    /**
+     * Local traffic selector to use when establishing the VPN tunnel with peer VPN gateway. The
+     * value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be
+     * disjoint. Only IPv4 is supported.
+     */
     public Builder addAllLocalTrafficSelector(List<String> localTrafficSelector) {
       if (this.localTrafficSelector == null) {
         this.localTrafficSelector = new LinkedList<>();
@@ -422,6 +508,11 @@ public final class VpnTunnel implements ApiMessage {
       return this;
     }
 
+    /**
+     * Local traffic selector to use when establishing the VPN tunnel with peer VPN gateway. The
+     * value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be
+     * disjoint. Only IPv4 is supported.
+     */
     public Builder addLocalTrafficSelector(String localTrafficSelector) {
       if (this.localTrafficSelector == null) {
         this.localTrafficSelector = new LinkedList<>();
@@ -430,37 +521,71 @@ public final class VpnTunnel implements ApiMessage {
       return this;
     }
 
+    /**
+     * Name of the resource. Provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public String getName() {
       return name;
     }
 
+    /**
+     * Name of the resource. Provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /** IP address of the peer VPN gateway. Only IPv4 is supported. */
     public String getPeerIp() {
       return peerIp;
     }
 
+    /** IP address of the peer VPN gateway. Only IPv4 is supported. */
     public Builder setPeerIp(String peerIp) {
       this.peerIp = peerIp;
       return this;
     }
 
+    /**
+     * [Output Only] URL of the region where the VPN tunnel resides. You must specify this field as
+     * part of the HTTP request URL. It is not settable as a field in the request body.
+     */
     public String getRegion() {
       return region;
     }
 
+    /**
+     * [Output Only] URL of the region where the VPN tunnel resides. You must specify this field as
+     * part of the HTTP request URL. It is not settable as a field in the request body.
+     */
     public Builder setRegion(String region) {
       this.region = region;
       return this;
     }
 
+    /**
+     * Remote traffic selectors to use when establishing the VPN tunnel with peer VPN gateway. The
+     * value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be
+     * disjoint. Only IPv4 is supported.
+     */
     public List<String> getRemoteTrafficSelectorList() {
       return remoteTrafficSelector;
     }
 
+    /**
+     * Remote traffic selectors to use when establishing the VPN tunnel with peer VPN gateway. The
+     * value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be
+     * disjoint. Only IPv4 is supported.
+     */
     public Builder addAllRemoteTrafficSelector(List<String> remoteTrafficSelector) {
       if (this.remoteTrafficSelector == null) {
         this.remoteTrafficSelector = new LinkedList<>();
@@ -469,6 +594,11 @@ public final class VpnTunnel implements ApiMessage {
       return this;
     }
 
+    /**
+     * Remote traffic selectors to use when establishing the VPN tunnel with peer VPN gateway. The
+     * value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be
+     * disjoint. Only IPv4 is supported.
+     */
     public Builder addRemoteTrafficSelector(String remoteTrafficSelector) {
       if (this.remoteTrafficSelector == null) {
         this.remoteTrafficSelector = new LinkedList<>();
@@ -477,55 +607,79 @@ public final class VpnTunnel implements ApiMessage {
       return this;
     }
 
+    /** URL of router resource to be used for dynamic routing. */
     public String getRouter() {
       return router;
     }
 
+    /** URL of router resource to be used for dynamic routing. */
     public Builder setRouter(String router) {
       this.router = router;
       return this;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /**
+     * Shared secret used to set the secure session between the Cloud VPN gateway and the peer VPN
+     * gateway.
+     */
     public String getSharedSecret() {
       return sharedSecret;
     }
 
+    /**
+     * Shared secret used to set the secure session between the Cloud VPN gateway and the peer VPN
+     * gateway.
+     */
     public Builder setSharedSecret(String sharedSecret) {
       this.sharedSecret = sharedSecret;
       return this;
     }
 
+    /** Hash of the shared secret. */
     public String getSharedSecretHash() {
       return sharedSecretHash;
     }
 
+    /** Hash of the shared secret. */
     public Builder setSharedSecretHash(String sharedSecretHash) {
       this.sharedSecretHash = sharedSecretHash;
       return this;
     }
 
+    /** [Output Only] The status of the VPN tunnel. */
     public String getStatus() {
       return status;
     }
 
+    /** [Output Only] The status of the VPN tunnel. */
     public Builder setStatus(String status) {
       this.status = status;
       return this;
     }
 
+    /**
+     * URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the
+     * client when the VPN tunnel is created.
+     */
     public String getTargetVpnGateway() {
       return targetVpnGateway;
     }
 
+    /**
+     * URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the
+     * client when the VPN tunnel is created.
+     */
     public Builder setTargetVpnGateway(String targetVpnGateway) {
       this.targetVpnGateway = targetVpnGateway;
       return this;

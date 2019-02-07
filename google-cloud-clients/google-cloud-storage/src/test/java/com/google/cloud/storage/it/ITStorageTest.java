@@ -2442,4 +2442,84 @@ public class ITStorageTest {
     assertNotNull(serviceAccount);
     assertTrue(serviceAccount.getEmail().endsWith(SERVICE_ACCOUNT_EMAIL_SUFFIX));
   }
+
+  @Test
+  public void testBucketWithBucketPolicyOnlyEnabled() throws Exception {
+    String bpoBucket = RemoteStorageHelper.generateBucketName();
+    try {
+      storage.create(
+          Bucket.newBuilder(bpoBucket)
+              .setIamConfiguration(
+                  BucketInfo.IamConfiguration.newBuilder()
+                      .setIsBucketPolicyOnlyEnabled(true)
+                      .build())
+              .build());
+
+      Bucket remoteBucket =
+          storage.get(bpoBucket, Storage.BucketGetOption.fields(BucketField.IAMCONFIGURATION));
+
+      assertTrue(remoteBucket.getIamConfiguration().isBucketPolicyOnlyEnabled());
+      assertNotNull(remoteBucket.getIamConfiguration().getBucketPolicyOnlyLockedTime());
+      try {
+        remoteBucket.listAcls();
+        fail("StorageException was expected.");
+      } catch (StorageException e) {
+        // Expected: Listing legacy ACLs should fail on a BPO enabled bucket
+      }
+      try {
+        remoteBucket.listDefaultAcls();
+        fail("StorageException was expected");
+      } catch (StorageException e) {
+        // Expected: Listing legacy ACLs should fail on a BPO enabled bucket
+      }
+    } finally {
+      RemoteStorageHelper.forceDelete(storage, bpoBucket, 1, TimeUnit.MINUTES);
+    }
+  }
+
+  @Test
+  public void testEnableAndDisableBucketPolicyOnlyOnExistingBucket() throws Exception {
+    String bpoBucket = RemoteStorageHelper.generateBucketName();
+    try {
+      BucketInfo.IamConfiguration bpoDisabledIamConfiguration =
+          BucketInfo.IamConfiguration.newBuilder().setIsBucketPolicyOnlyEnabled(false).build();
+      Bucket bucket =
+          storage.create(
+              Bucket.newBuilder(bpoBucket)
+                  .setIamConfiguration(bpoDisabledIamConfiguration)
+                  .setAcl(ImmutableList.of(Acl.of(User.ofAllAuthenticatedUsers(), Role.READER)))
+                  .setDefaultAcl(
+                      ImmutableList.of(Acl.of(User.ofAllAuthenticatedUsers(), Role.READER)))
+                  .build());
+
+      bucket
+          .toBuilder()
+          .setIamConfiguration(
+              bpoDisabledIamConfiguration.toBuilder().setIsBucketPolicyOnlyEnabled(true).build())
+          .build()
+          .update();
+
+      Bucket remoteBucket =
+          storage.get(bpoBucket, Storage.BucketGetOption.fields(BucketField.IAMCONFIGURATION));
+
+      assertTrue(remoteBucket.getIamConfiguration().isBucketPolicyOnlyEnabled());
+      assertNotNull(remoteBucket.getIamConfiguration().getBucketPolicyOnlyLockedTime());
+
+      bucket.toBuilder().setIamConfiguration(bpoDisabledIamConfiguration).build().update();
+
+      remoteBucket =
+          storage.get(
+              bpoBucket,
+              Storage.BucketGetOption.fields(
+                  BucketField.IAMCONFIGURATION, BucketField.ACL, BucketField.DEFAULT_OBJECT_ACL));
+
+      assertFalse(remoteBucket.getIamConfiguration().isBucketPolicyOnlyEnabled());
+      assertEquals(User.ofAllAuthenticatedUsers(), remoteBucket.getDefaultAcl().get(0).getEntity());
+      assertEquals(Role.READER, remoteBucket.getDefaultAcl().get(0).getRole());
+      assertEquals(User.ofAllAuthenticatedUsers(), remoteBucket.getAcl().get(0).getEntity());
+      assertEquals(Role.READER, remoteBucket.getAcl().get(0).getRole());
+    } finally {
+      RemoteStorageHelper.forceDelete(storage, bpoBucket, 1, TimeUnit.MINUTES);
+    }
+  }
 }

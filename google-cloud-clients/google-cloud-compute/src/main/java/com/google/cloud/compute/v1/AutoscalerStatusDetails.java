@@ -61,10 +61,12 @@ public final class AutoscalerStatusDetails implements ApiMessage {
     return null;
   }
 
+  /** The status message. */
   public String getMessage() {
     return message;
   }
 
+  /** The type of error returned. */
   public String getType() {
     return type;
   }
@@ -113,19 +115,23 @@ public final class AutoscalerStatusDetails implements ApiMessage {
       this.type = source.type;
     }
 
+    /** The status message. */
     public String getMessage() {
       return message;
     }
 
+    /** The status message. */
     public Builder setMessage(String message) {
       this.message = message;
       return this;
     }
 
+    /** The type of error returned. */
     public String getType() {
       return type;
     }
 
+    /** The type of error returned. */
     public Builder setType(String type) {
       this.type = type;
       return this;

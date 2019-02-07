@@ -25,6 +25,9 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * A Subnetwork resource. (== resource_for beta.subnetworks ==) (== resource_for v1.subnetworks ==)
+ */
 public final class Subnetwork implements ApiMessage {
   private final String creationTimestamp;
   private final String description;
@@ -148,58 +151,117 @@ public final class Subnetwork implements ApiMessage {
     return null;
   }
 
+  /** [Output Only] Creation timestamp in RFC3339 text format. */
   public String getCreationTimestamp() {
     return creationTimestamp;
   }
 
+  /**
+   * An optional description of this resource. Provide this property when you create the resource.
+   * This field can be set only at resource creation time.
+   */
   public String getDescription() {
     return description;
   }
 
+  /**
+   * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it
+   * will not appear in get listings. If not set the default behavior is to disable flow logging.
+   */
   public Boolean getEnableFlowLogs() {
     return enableFlowLogs;
   }
 
+  /**
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used
+   * in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date
+   * fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail
+   * with error 412 conditionNotMet.
+   *
+   * <p>To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
+   */
   public String getFingerprint() {
     return fingerprint;
   }
 
+  /**
+   * [Output Only] The gateway address for default routes to reach destination addresses outside
+   * this subnetwork.
+   */
   public String getGatewayAddress() {
     return gatewayAddress;
   }
 
+  /**
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   */
   public String getId() {
     return id;
   }
 
+  /**
+   * The range of internal addresses that are owned by this subnetwork. Provide this property when
+   * you create the subnetwork. For example, 10.0.0.0/8 or 192.168.0.0/16. Ranges must be unique and
+   * non-overlapping within a network. Only IPv4 is supported. This field can be set only at
+   * resource creation time.
+   */
   public String getIpCidrRange() {
     return ipCidrRange;
   }
 
+  /** [Output Only] Type of the resource. Always compute#subnetwork for Subnetwork resources. */
   public String getKind() {
     return kind;
   }
 
+  /**
+   * The name of the resource, provided by the client when initially creating the resource. The name
+   * must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63
+   * characters long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means
+   * the first character must be a lowercase letter, and all following characters must be a dash,
+   * lowercase letter, or digit, except the last character, which cannot be a dash.
+   */
   public String getName() {
     return name;
   }
 
+  /**
+   * The URL of the network to which this subnetwork belongs, provided by the client when initially
+   * creating the subnetwork. Only networks that are in the distributed mode can have subnetworks.
+   * This field can be set only at resource creation time.
+   */
   public String getNetwork() {
     return network;
   }
 
+  /**
+   * Whether the VMs in this subnet can access Google services without assigned external IP
+   * addresses. This field can be both set at resource creation time and updated using
+   * setPrivateIpGoogleAccess.
+   */
   public Boolean getPrivateIpGoogleAccess() {
     return privateIpGoogleAccess;
   }
 
+  /**
+   * URL of the region where the Subnetwork resides. This field can be set only at resource creation
+   * time.
+   */
   public String getRegion() {
     return region;
   }
 
+  /**
+   * An array of configurations for secondary IP ranges for VM instances contained in this
+   * subnetwork. The primary IP of such VM must belong to the primary ipCidrRange of the subnetwork.
+   * The alias IPs may belong to either primary or secondary ranges. This field can be updated with
+   * a patch request.
+   */
   public List<SubnetworkSecondaryRange> getSecondaryIpRangesList() {
     return secondaryIpRanges;
   }
 
+  /** [Output Only] Server-defined URL for the resource. */
   public String getSelfLink() {
     return selfLink;
   }
@@ -308,118 +370,236 @@ public final class Subnetwork implements ApiMessage {
       this.selfLink = source.selfLink;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public String getCreationTimestamp() {
       return creationTimestamp;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     * This field can be set only at resource creation time.
+     */
     public String getDescription() {
       return description;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     * This field can be set only at resource creation time.
+     */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /**
+     * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it
+     * will not appear in get listings. If not set the default behavior is to disable flow logging.
+     */
     public Boolean getEnableFlowLogs() {
       return enableFlowLogs;
     }
 
+    /**
+     * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it
+     * will not appear in get listings. If not set the default behavior is to disable flow logging.
+     */
     public Builder setEnableFlowLogs(Boolean enableFlowLogs) {
       this.enableFlowLogs = enableFlowLogs;
       return this;
     }
 
+    /**
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is
+     * used in optimistic locking. This field will be ignored when inserting a Subnetwork. An
+     * up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the
+     * request will fail with error 412 conditionNotMet.
+     *
+     * <p>To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
+     */
     public String getFingerprint() {
       return fingerprint;
     }
 
+    /**
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is
+     * used in optimistic locking. This field will be ignored when inserting a Subnetwork. An
+     * up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the
+     * request will fail with error 412 conditionNotMet.
+     *
+     * <p>To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
+     */
     public Builder setFingerprint(String fingerprint) {
       this.fingerprint = fingerprint;
       return this;
     }
 
+    /**
+     * [Output Only] The gateway address for default routes to reach destination addresses outside
+     * this subnetwork.
+     */
     public String getGatewayAddress() {
       return gatewayAddress;
     }
 
+    /**
+     * [Output Only] The gateway address for default routes to reach destination addresses outside
+     * this subnetwork.
+     */
     public Builder setGatewayAddress(String gatewayAddress) {
       this.gatewayAddress = gatewayAddress;
       return this;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /**
+     * The range of internal addresses that are owned by this subnetwork. Provide this property when
+     * you create the subnetwork. For example, 10.0.0.0/8 or 192.168.0.0/16. Ranges must be unique
+     * and non-overlapping within a network. Only IPv4 is supported. This field can be set only at
+     * resource creation time.
+     */
     public String getIpCidrRange() {
       return ipCidrRange;
     }
 
+    /**
+     * The range of internal addresses that are owned by this subnetwork. Provide this property when
+     * you create the subnetwork. For example, 10.0.0.0/8 or 192.168.0.0/16. Ranges must be unique
+     * and non-overlapping within a network. Only IPv4 is supported. This field can be set only at
+     * resource creation time.
+     */
     public Builder setIpCidrRange(String ipCidrRange) {
       this.ipCidrRange = ipCidrRange;
       return this;
     }
 
+    /** [Output Only] Type of the resource. Always compute#subnetwork for Subnetwork resources. */
     public String getKind() {
       return kind;
     }
 
+    /** [Output Only] Type of the resource. Always compute#subnetwork for Subnetwork resources. */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /**
+     * The name of the resource, provided by the client when initially creating the resource. The
+     * name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be
+     * 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which
+     * means the first character must be a lowercase letter, and all following characters must be a
+     * dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     */
     public String getName() {
       return name;
     }
 
+    /**
+     * The name of the resource, provided by the client when initially creating the resource. The
+     * name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be
+     * 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which
+     * means the first character must be a lowercase letter, and all following characters must be a
+     * dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+     */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /**
+     * The URL of the network to which this subnetwork belongs, provided by the client when
+     * initially creating the subnetwork. Only networks that are in the distributed mode can have
+     * subnetworks. This field can be set only at resource creation time.
+     */
     public String getNetwork() {
       return network;
     }
 
+    /**
+     * The URL of the network to which this subnetwork belongs, provided by the client when
+     * initially creating the subnetwork. Only networks that are in the distributed mode can have
+     * subnetworks. This field can be set only at resource creation time.
+     */
     public Builder setNetwork(String network) {
       this.network = network;
       return this;
     }
 
+    /**
+     * Whether the VMs in this subnet can access Google services without assigned external IP
+     * addresses. This field can be both set at resource creation time and updated using
+     * setPrivateIpGoogleAccess.
+     */
     public Boolean getPrivateIpGoogleAccess() {
       return privateIpGoogleAccess;
     }
 
+    /**
+     * Whether the VMs in this subnet can access Google services without assigned external IP
+     * addresses. This field can be both set at resource creation time and updated using
+     * setPrivateIpGoogleAccess.
+     */
     public Builder setPrivateIpGoogleAccess(Boolean privateIpGoogleAccess) {
       this.privateIpGoogleAccess = privateIpGoogleAccess;
       return this;
     }
 
+    /**
+     * URL of the region where the Subnetwork resides. This field can be set only at resource
+     * creation time.
+     */
     public String getRegion() {
       return region;
     }
 
+    /**
+     * URL of the region where the Subnetwork resides. This field can be set only at resource
+     * creation time.
+     */
     public Builder setRegion(String region) {
       this.region = region;
       return this;
     }
 
+    /**
+     * An array of configurations for secondary IP ranges for VM instances contained in this
+     * subnetwork. The primary IP of such VM must belong to the primary ipCidrRange of the
+     * subnetwork. The alias IPs may belong to either primary or secondary ranges. This field can be
+     * updated with a patch request.
+     */
     public List<SubnetworkSecondaryRange> getSecondaryIpRangesList() {
       return secondaryIpRanges;
     }
 
+    /**
+     * An array of configurations for secondary IP ranges for VM instances contained in this
+     * subnetwork. The primary IP of such VM must belong to the primary ipCidrRange of the
+     * subnetwork. The alias IPs may belong to either primary or secondary ranges. This field can be
+     * updated with a patch request.
+     */
     public Builder addAllSecondaryIpRanges(List<SubnetworkSecondaryRange> secondaryIpRanges) {
       if (this.secondaryIpRanges == null) {
         this.secondaryIpRanges = new LinkedList<>();
@@ -428,6 +608,12 @@ public final class Subnetwork implements ApiMessage {
       return this;
     }
 
+    /**
+     * An array of configurations for secondary IP ranges for VM instances contained in this
+     * subnetwork. The primary IP of such VM must belong to the primary ipCidrRange of the
+     * subnetwork. The alias IPs may belong to either primary or secondary ranges. This field can be
+     * updated with a patch request.
+     */
     public Builder addSecondaryIpRanges(SubnetworkSecondaryRange secondaryIpRanges) {
       if (this.secondaryIpRanges == null) {
         this.secondaryIpRanges = new LinkedList<>();
@@ -436,10 +622,12 @@ public final class Subnetwork implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;

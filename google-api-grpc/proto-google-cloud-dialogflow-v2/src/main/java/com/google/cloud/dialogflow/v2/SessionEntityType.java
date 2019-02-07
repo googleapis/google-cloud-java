@@ -456,7 +456,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
     }
     if (entityOverrideMode_
         != com.google.cloud.dialogflow.v2.SessionEntityType.EntityOverrideMode
-            .ENTITY_OVERRIDE_MODE_UNSPECIFIED.getNumber()) {
+            .ENTITY_OVERRIDE_MODE_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(2, entityOverrideMode_);
     }
     for (int i = 0; i < entities_.size(); i++) {
@@ -476,7 +477,8 @@ public final class SessionEntityType extends com.google.protobuf.GeneratedMessag
     }
     if (entityOverrideMode_
         != com.google.cloud.dialogflow.v2.SessionEntityType.EntityOverrideMode
-            .ENTITY_OVERRIDE_MODE_UNSPECIFIED.getNumber()) {
+            .ENTITY_OVERRIDE_MODE_UNSPECIFIED
+            .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, entityOverrideMode_);
     }
     for (int i = 0; i < entities_.size(); i++) {

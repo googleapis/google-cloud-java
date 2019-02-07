@@ -55,6 +55,7 @@ public final class ProjectsSetDefaultNetworkTierRequest implements ApiMessage {
     return null;
   }
 
+  /** Default network tier to be set. */
   public String getNetworkTier() {
     return networkTier;
   }
@@ -98,10 +99,12 @@ public final class ProjectsSetDefaultNetworkTierRequest implements ApiMessage {
       this.networkTier = source.networkTier;
     }
 
+    /** Default network tier to be set. */
     public String getNetworkTier() {
       return networkTier;
     }
 
+    /** Default network tier to be set. */
     public Builder setNetworkTier(String networkTier) {
       this.networkTier = networkTier;
       return this;

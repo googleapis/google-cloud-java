@@ -20,28 +20,26 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.bigtable.v2.Cell;
-import com.google.bigtable.v2.Column;
-import com.google.bigtable.v2.Family;
 import com.google.bigtable.v2.ReadModifyWriteRowRequest;
 import com.google.bigtable.v2.ReadModifyWriteRowResponse;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
+import com.google.cloud.bigtable.data.v2.models.DefaultRowAdapter;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.Row;
-import com.google.cloud.bigtable.data.v2.models.RowCell;
-import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.MoreExecutors;
 
 /** Simple wrapper for ReadModifyWriteRow to wrap the request and response protobufs. */
 class ReadModifyWriteRowCallable extends UnaryCallable<ReadModifyWriteRow, Row> {
   private final UnaryCallable<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse> inner;
   private final RequestContext requestContext;
+  private final DefaultRowAdapter rowAdapter;
 
   ReadModifyWriteRowCallable(
       UnaryCallable<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse> inner,
       RequestContext requestContext) {
     this.inner = inner;
     this.requestContext = requestContext;
+    this.rowAdapter = new DefaultRowAdapter();
   }
 
   @Override
@@ -61,21 +59,6 @@ class ReadModifyWriteRowCallable extends UnaryCallable<ReadModifyWriteRow, Row> 
   }
 
   private Row convertResponse(ReadModifyWriteRowResponse response) {
-    ImmutableList.Builder<RowCell> cells = ImmutableList.builder();
-
-    for (Family family : response.getRow().getFamiliesList()) {
-      for (Column column : family.getColumnsList()) {
-        for (Cell cell : column.getCellsList()) {
-          cells.add(
-              RowCell.create(
-                  family.getName(),
-                  column.getQualifier(),
-                  cell.getTimestampMicros(),
-                  cell.getLabelsList(),
-                  cell.getValue()));
-        }
-      }
-    }
-    return Row.create(response.getRow().getKey(), cells.build());
+    return rowAdapter.createRowFromProto(response.getRow());
   }
 }

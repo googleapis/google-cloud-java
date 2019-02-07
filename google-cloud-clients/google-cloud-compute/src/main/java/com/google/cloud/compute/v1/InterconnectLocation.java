@@ -25,6 +25,11 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Represents an InterconnectLocations resource. The InterconnectLocations resource describes the
+ * locations where you can connect to Google's networks. For more information, see Colocation
+ * Facilities.
+ */
 public final class InterconnectLocation implements ApiMessage {
   private final String address;
   private final String availabilityZone;
@@ -155,62 +160,102 @@ public final class InterconnectLocation implements ApiMessage {
     return null;
   }
 
+  /**
+   * [Output Only] The postal address of the Point of Presence, each line in the address is
+   * separated by a newline character.
+   */
   public String getAddress() {
     return address;
   }
 
+  /**
+   * [Output Only] Availability zone for this InterconnectLocation. Within a metropolitan area
+   * (metro), maintenance will not be simultaneously scheduled in more than one availability zone.
+   * Example: "zone1" or "zone2".
+   */
   public String getAvailabilityZone() {
     return availabilityZone;
   }
 
+  /**
+   * [Output Only] Metropolitan area designator that indicates which city an interconnect is
+   * located. For example: "Chicago, IL", "Amsterdam, Netherlands".
+   */
   public String getCity() {
     return city;
   }
 
+  /** [Output Only] Continent for this location. */
   public String getContinent() {
     return continent;
   }
 
+  /** [Output Only] Creation timestamp in RFC3339 text format. */
   public String getCreationTimestamp() {
     return creationTimestamp;
   }
 
+  /** [Output Only] An optional description of the resource. */
   public String getDescription() {
     return description;
   }
 
+  /** [Output Only] The name of the provider for this facility (e.g., EQUINIX). */
   public String getFacilityProvider() {
     return facilityProvider;
   }
 
+  /** [Output Only] A provider-assigned Identifier for this facility (e.g., Ashburn-DC1). */
   public String getFacilityProviderFacilityId() {
     return facilityProviderFacilityId;
   }
 
+  /**
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   */
   public String getId() {
     return id;
   }
 
+  /**
+   * [Output Only] Type of the resource. Always compute#interconnectLocation for interconnect
+   * locations.
+   */
   public String getKind() {
     return kind;
   }
 
+  /** [Output Only] Name of the resource. */
   public String getName() {
     return name;
   }
 
+  /**
+   * [Output Only] The peeringdb identifier for this facility (corresponding with a netfac type in
+   * peeringdb).
+   */
   public String getPeeringdbFacilityId() {
     return peeringdbFacilityId;
   }
 
+  /**
+   * [Output Only] A list of InterconnectLocation.RegionInfo objects, that describe parameters
+   * pertaining to the relation between this InterconnectLocation and various Google Cloud regions.
+   */
   public List<InterconnectLocationRegionInfo> getRegionInfosList() {
     return regionInfos;
   }
 
+  /** [Output Only] Server-defined URL for the resource. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /**
+   * [Output Only] The status of this InterconnectLocation. If the status is AVAILABLE, new
+   * Interconnects may be provisioned in this InterconnectLocation. Otherwise, no new Interconnects
+   * may be provisioned.
+   */
   public String getStatus() {
     return status;
   }
@@ -324,118 +369,190 @@ public final class InterconnectLocation implements ApiMessage {
       this.status = source.status;
     }
 
+    /**
+     * [Output Only] The postal address of the Point of Presence, each line in the address is
+     * separated by a newline character.
+     */
     public String getAddress() {
       return address;
     }
 
+    /**
+     * [Output Only] The postal address of the Point of Presence, each line in the address is
+     * separated by a newline character.
+     */
     public Builder setAddress(String address) {
       this.address = address;
       return this;
     }
 
+    /**
+     * [Output Only] Availability zone for this InterconnectLocation. Within a metropolitan area
+     * (metro), maintenance will not be simultaneously scheduled in more than one availability zone.
+     * Example: "zone1" or "zone2".
+     */
     public String getAvailabilityZone() {
       return availabilityZone;
     }
 
+    /**
+     * [Output Only] Availability zone for this InterconnectLocation. Within a metropolitan area
+     * (metro), maintenance will not be simultaneously scheduled in more than one availability zone.
+     * Example: "zone1" or "zone2".
+     */
     public Builder setAvailabilityZone(String availabilityZone) {
       this.availabilityZone = availabilityZone;
       return this;
     }
 
+    /**
+     * [Output Only] Metropolitan area designator that indicates which city an interconnect is
+     * located. For example: "Chicago, IL", "Amsterdam, Netherlands".
+     */
     public String getCity() {
       return city;
     }
 
+    /**
+     * [Output Only] Metropolitan area designator that indicates which city an interconnect is
+     * located. For example: "Chicago, IL", "Amsterdam, Netherlands".
+     */
     public Builder setCity(String city) {
       this.city = city;
       return this;
     }
 
+    /** [Output Only] Continent for this location. */
     public String getContinent() {
       return continent;
     }
 
+    /** [Output Only] Continent for this location. */
     public Builder setContinent(String continent) {
       this.continent = continent;
       return this;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public String getCreationTimestamp() {
       return creationTimestamp;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
+    /** [Output Only] An optional description of the resource. */
     public String getDescription() {
       return description;
     }
 
+    /** [Output Only] An optional description of the resource. */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /** [Output Only] The name of the provider for this facility (e.g., EQUINIX). */
     public String getFacilityProvider() {
       return facilityProvider;
     }
 
+    /** [Output Only] The name of the provider for this facility (e.g., EQUINIX). */
     public Builder setFacilityProvider(String facilityProvider) {
       this.facilityProvider = facilityProvider;
       return this;
     }
 
+    /** [Output Only] A provider-assigned Identifier for this facility (e.g., Ashburn-DC1). */
     public String getFacilityProviderFacilityId() {
       return facilityProviderFacilityId;
     }
 
+    /** [Output Only] A provider-assigned Identifier for this facility (e.g., Ashburn-DC1). */
     public Builder setFacilityProviderFacilityId(String facilityProviderFacilityId) {
       this.facilityProviderFacilityId = facilityProviderFacilityId;
       return this;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /**
+     * [Output Only] Type of the resource. Always compute#interconnectLocation for interconnect
+     * locations.
+     */
     public String getKind() {
       return kind;
     }
 
+    /**
+     * [Output Only] Type of the resource. Always compute#interconnectLocation for interconnect
+     * locations.
+     */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /** [Output Only] Name of the resource. */
     public String getName() {
       return name;
     }
 
+    /** [Output Only] Name of the resource. */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /**
+     * [Output Only] The peeringdb identifier for this facility (corresponding with a netfac type in
+     * peeringdb).
+     */
     public String getPeeringdbFacilityId() {
       return peeringdbFacilityId;
     }
 
+    /**
+     * [Output Only] The peeringdb identifier for this facility (corresponding with a netfac type in
+     * peeringdb).
+     */
     public Builder setPeeringdbFacilityId(String peeringdbFacilityId) {
       this.peeringdbFacilityId = peeringdbFacilityId;
       return this;
     }
 
+    /**
+     * [Output Only] A list of InterconnectLocation.RegionInfo objects, that describe parameters
+     * pertaining to the relation between this InterconnectLocation and various Google Cloud
+     * regions.
+     */
     public List<InterconnectLocationRegionInfo> getRegionInfosList() {
       return regionInfos;
     }
 
+    /**
+     * [Output Only] A list of InterconnectLocation.RegionInfo objects, that describe parameters
+     * pertaining to the relation between this InterconnectLocation and various Google Cloud
+     * regions.
+     */
     public Builder addAllRegionInfos(List<InterconnectLocationRegionInfo> regionInfos) {
       if (this.regionInfos == null) {
         this.regionInfos = new LinkedList<>();
@@ -444,6 +561,11 @@ public final class InterconnectLocation implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] A list of InterconnectLocation.RegionInfo objects, that describe parameters
+     * pertaining to the relation between this InterconnectLocation and various Google Cloud
+     * regions.
+     */
     public Builder addRegionInfos(InterconnectLocationRegionInfo regionInfos) {
       if (this.regionInfos == null) {
         this.regionInfos = new LinkedList<>();
@@ -452,19 +574,31 @@ public final class InterconnectLocation implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /**
+     * [Output Only] The status of this InterconnectLocation. If the status is AVAILABLE, new
+     * Interconnects may be provisioned in this InterconnectLocation. Otherwise, no new
+     * Interconnects may be provisioned.
+     */
     public String getStatus() {
       return status;
     }
 
+    /**
+     * [Output Only] The status of this InterconnectLocation. If the status is AVAILABLE, new
+     * Interconnects may be provisioned in this InterconnectLocation. Otherwise, no new
+     * Interconnects may be provisioned.
+     */
     public Builder setStatus(String status) {
       this.status = status;
       return this;

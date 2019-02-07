@@ -630,7 +630,7 @@ public class CloudRedisClient implements BackgroundResource {
    *     .setInstanceId(instanceId)
    *     .setInstance(instance)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = cloudRedisClient.createInstanceOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Instance, Any&gt; future = cloudRedisClient.createInstanceOperationCallable().futureCall(request);
    *   // Do something
    *   Instance response = future.get();
    * }
@@ -798,7 +798,7 @@ public class CloudRedisClient implements BackgroundResource {
    *     .setUpdateMask(updateMask)
    *     .setInstance(instance)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = cloudRedisClient.updateInstanceOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Instance, Any&gt; future = cloudRedisClient.updateInstanceOperationCallable().futureCall(request);
    *   // Do something
    *   Instance response = future.get();
    * }
@@ -857,7 +857,7 @@ public class CloudRedisClient implements BackgroundResource {
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
    *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
-   *   Empty response = cloudRedisClient.deleteInstanceAsync(name).get();
+   *   cloudRedisClient.deleteInstanceAsync(name).get();
    * }
    * </code></pre>
    *
@@ -884,7 +884,7 @@ public class CloudRedisClient implements BackgroundResource {
    * <pre><code>
    * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
    *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
-   *   Empty response = cloudRedisClient.deleteInstanceAsync(name.toString()).get();
+   *   cloudRedisClient.deleteInstanceAsync(name.toString()).get();
    * }
    * </code></pre>
    *
@@ -913,7 +913,7 @@ public class CloudRedisClient implements BackgroundResource {
    *   DeleteInstanceRequest request = DeleteInstanceRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
-   *   Empty response = cloudRedisClient.deleteInstanceAsync(request).get();
+   *   cloudRedisClient.deleteInstanceAsync(request).get();
    * }
    * </code></pre>
    *
@@ -938,9 +938,9 @@ public class CloudRedisClient implements BackgroundResource {
    *   DeleteInstanceRequest request = DeleteInstanceRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = cloudRedisClient.deleteInstanceOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Empty, Any&gt; future = cloudRedisClient.deleteInstanceOperationCallable().futureCall(request);
    *   // Do something
-   *   Empty response = future.get();
+   *   future.get();
    * }
    * </code></pre>
    */

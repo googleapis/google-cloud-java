@@ -56,6 +56,10 @@ public final class TestPermissionsRequest implements ApiMessage {
     return null;
   }
 
+  /**
+   * The set of permissions to check for the 'resource'. Permissions with wildcards (such as '&#42;'
+   * or 'storage.&#42;') are not allowed.
+   */
   public List<String> getPermissionsList() {
     return permissions;
   }
@@ -99,10 +103,18 @@ public final class TestPermissionsRequest implements ApiMessage {
       this.permissions = source.permissions;
     }
 
+    /**
+     * The set of permissions to check for the 'resource'. Permissions with wildcards (such as
+     * '&#42;' or 'storage.&#42;') are not allowed.
+     */
     public List<String> getPermissionsList() {
       return permissions;
     }
 
+    /**
+     * The set of permissions to check for the 'resource'. Permissions with wildcards (such as
+     * '&#42;' or 'storage.&#42;') are not allowed.
+     */
     public Builder addAllPermissions(List<String> permissions) {
       if (this.permissions == null) {
         this.permissions = new LinkedList<>();
@@ -111,6 +123,10 @@ public final class TestPermissionsRequest implements ApiMessage {
       return this;
     }
 
+    /**
+     * The set of permissions to check for the 'resource'. Permissions with wildcards (such as
+     * '&#42;' or 'storage.&#42;') are not allowed.
+     */
     public Builder addPermissions(String permissions) {
       if (this.permissions == null) {
         this.permissions = new LinkedList<>();

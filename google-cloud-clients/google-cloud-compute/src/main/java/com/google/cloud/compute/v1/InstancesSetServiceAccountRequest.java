@@ -62,10 +62,12 @@ public final class InstancesSetServiceAccountRequest implements ApiMessage {
     return null;
   }
 
+  /** Email address of the service account. */
   public String getEmail() {
     return email;
   }
 
+  /** The list of scopes to be made available for this service account. */
   public List<String> getScopesList() {
     return scopes;
   }
@@ -114,19 +116,23 @@ public final class InstancesSetServiceAccountRequest implements ApiMessage {
       this.scopes = source.scopes;
     }
 
+    /** Email address of the service account. */
     public String getEmail() {
       return email;
     }
 
+    /** Email address of the service account. */
     public Builder setEmail(String email) {
       this.email = email;
       return this;
     }
 
+    /** The list of scopes to be made available for this service account. */
     public List<String> getScopesList() {
       return scopes;
     }
 
+    /** The list of scopes to be made available for this service account. */
     public Builder addAllScopes(List<String> scopes) {
       if (this.scopes == null) {
         this.scopes = new LinkedList<>();
@@ -135,6 +141,7 @@ public final class InstancesSetServiceAccountRequest implements ApiMessage {
       return this;
     }
 
+    /** The list of scopes to be made available for this service account. */
     public Builder addScopes(String scopes) {
       if (this.scopes == null) {
         this.scopes = new LinkedList<>();

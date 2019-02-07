@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Response for the InterconnectsGetDiagnosticsRequest. */
 public final class InterconnectsGetDiagnosticsResponse implements ApiMessage {
   private final InterconnectDiagnostics result;
 

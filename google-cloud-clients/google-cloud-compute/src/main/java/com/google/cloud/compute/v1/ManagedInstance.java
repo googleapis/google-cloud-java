@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** A Managed Instance resource. */
 public final class ManagedInstance implements ApiMessage {
   private final String currentAction;
   private final String id;
@@ -84,22 +85,51 @@ public final class ManagedInstance implements ApiMessage {
     return null;
   }
 
+  /**
+   * [Output Only] The current action that the managed instance group has scheduled for the
+   * instance. Possible values: - NONE The instance is running, and the managed instance group does
+   * not have any scheduled actions for this instance. - CREATING The managed instance group is
+   * creating this instance. If the group fails to create this instance, it will try again until it
+   * is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create
+   * this instance only once. If the group fails to create this instance, it does not try again and
+   * the group's targetSize value is decreased instead. - RECREATING The managed instance group is
+   * recreating this instance. - DELETING The managed instance group is permanently deleting this
+   * instance. - ABANDONING The managed instance group is abandoning this instance. The instance
+   * will be removed from the instance group and from any target pools that are associated with this
+   * group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The
+   * managed instance group is applying configuration changes to the instance without stopping it.
+   * For example, the group can update the target pool list for an instance without stopping that
+   * instance. - VERIFYING The managed instance group has created the instance and it is in the
+   * process of being verified.
+   */
   public String getCurrentAction() {
     return currentAction;
   }
 
+  /**
+   * [Output only] The unique identifier for this resource. This field is empty when instance does
+   * not exist.
+   */
   public String getId() {
     return id;
   }
 
+  /**
+   * [Output Only] The URL of the instance. The URL can exist even if the instance has not yet been
+   * created.
+   */
   public String getInstance() {
     return instance;
   }
 
+  /**
+   * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+   */
   public String getInstanceStatus() {
     return instanceStatus;
   }
 
+  /** [Output Only] Information about the last attempt to create or delete the instance. */
   public ManagedInstanceLastAttempt getLastAttempt() {
     return lastAttempt;
   }
@@ -163,46 +193,106 @@ public final class ManagedInstance implements ApiMessage {
       this.lastAttempt = source.lastAttempt;
     }
 
+    /**
+     * [Output Only] The current action that the managed instance group has scheduled for the
+     * instance. Possible values: - NONE The instance is running, and the managed instance group
+     * does not have any scheduled actions for this instance. - CREATING The managed instance group
+     * is creating this instance. If the group fails to create this instance, it will try again
+     * until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting
+     * to create this instance only once. If the group fails to create this instance, it does not
+     * try again and the group's targetSize value is decreased instead. - RECREATING The managed
+     * instance group is recreating this instance. - DELETING The managed instance group is
+     * permanently deleting this instance. - ABANDONING The managed instance group is abandoning
+     * this instance. The instance will be removed from the instance group and from any target pools
+     * that are associated with this group. - RESTARTING The managed instance group is restarting
+     * the instance. - REFRESHING The managed instance group is applying configuration changes to
+     * the instance without stopping it. For example, the group can update the target pool list for
+     * an instance without stopping that instance. - VERIFYING The managed instance group has
+     * created the instance and it is in the process of being verified.
+     */
     public String getCurrentAction() {
       return currentAction;
     }
 
+    /**
+     * [Output Only] The current action that the managed instance group has scheduled for the
+     * instance. Possible values: - NONE The instance is running, and the managed instance group
+     * does not have any scheduled actions for this instance. - CREATING The managed instance group
+     * is creating this instance. If the group fails to create this instance, it will try again
+     * until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting
+     * to create this instance only once. If the group fails to create this instance, it does not
+     * try again and the group's targetSize value is decreased instead. - RECREATING The managed
+     * instance group is recreating this instance. - DELETING The managed instance group is
+     * permanently deleting this instance. - ABANDONING The managed instance group is abandoning
+     * this instance. The instance will be removed from the instance group and from any target pools
+     * that are associated with this group. - RESTARTING The managed instance group is restarting
+     * the instance. - REFRESHING The managed instance group is applying configuration changes to
+     * the instance without stopping it. For example, the group can update the target pool list for
+     * an instance without stopping that instance. - VERIFYING The managed instance group has
+     * created the instance and it is in the process of being verified.
+     */
     public Builder setCurrentAction(String currentAction) {
       this.currentAction = currentAction;
       return this;
     }
 
+    /**
+     * [Output only] The unique identifier for this resource. This field is empty when instance does
+     * not exist.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output only] The unique identifier for this resource. This field is empty when instance does
+     * not exist.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /**
+     * [Output Only] The URL of the instance. The URL can exist even if the instance has not yet
+     * been created.
+     */
     public String getInstance() {
       return instance;
     }
 
+    /**
+     * [Output Only] The URL of the instance. The URL can exist even if the instance has not yet
+     * been created.
+     */
     public Builder setInstance(String instance) {
       this.instance = instance;
       return this;
     }
 
+    /**
+     * [Output Only] The status of the instance. This field is empty when the instance does not
+     * exist.
+     */
     public String getInstanceStatus() {
       return instanceStatus;
     }
 
+    /**
+     * [Output Only] The status of the instance. This field is empty when the instance does not
+     * exist.
+     */
     public Builder setInstanceStatus(String instanceStatus) {
       this.instanceStatus = instanceStatus;
       return this;
     }
 
+    /** [Output Only] Information about the last attempt to create or delete the instance. */
     public ManagedInstanceLastAttempt getLastAttempt() {
       return lastAttempt;
     }
 
+    /** [Output Only] Information about the last attempt to create or delete the instance. */
     public Builder setLastAttempt(ManagedInstanceLastAttempt lastAttempt) {
       this.lastAttempt = lastAttempt;
       return this;

@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Message containing information of one individual backend. */
 public final class Backend implements ApiMessage {
   private final String balancingMode;
   private final Float capacityScaler;
@@ -112,38 +113,110 @@ public final class Backend implements ApiMessage {
     return null;
   }
 
+  /**
+   * Specifies the balancing mode for this backend. For global HTTP(S) or TCP/SSL load balancing,
+   * the default is UTILIZATION. Valid values are UTILIZATION, RATE (for HTTP(S)) and CONNECTION
+   * (for TCP/SSL).
+   *
+   * <p>For Internal Load Balancing, the default and only supported mode is CONNECTION.
+   */
   public String getBalancingMode() {
     return balancingMode;
   }
 
+  /**
+   * A multiplier applied to the group's maximum servicing capacity (based on UTILIZATION, RATE or
+   * CONNECTION). Default value is 1, which means the group will serve up to 100% of its configured
+   * capacity (depending on balancingMode). A setting of 0 means the group is completely drained,
+   * offering 0% of its available Capacity. Valid range is [0.0,1.0].
+   *
+   * <p>This cannot be used for internal load balancing.
+   */
   public Float getCapacityScaler() {
     return capacityScaler;
   }
 
+  /**
+   * An optional description of this resource. Provide this property when you create the resource.
+   */
   public String getDescription() {
     return description;
   }
 
+  /**
+   * The fully-qualified URL of an Instance Group or Network Endpoint Group resource. In case of
+   * instance group this defines the list of instances that serve traffic. Member virtual machine
+   * instances from each instance group must live in the same zone as the instance group itself. No
+   * two backends in a backend service are allowed to use same Instance Group resource.
+   *
+   * <p>For Network Endpoint Groups this defines list of endpoints. All endpoints of Network
+   * Endpoint Group must be hosted on instances located in the same zone as the Network Endpoint
+   * Group.
+   *
+   * <p>Backend service can not contain mix of Instance Group and Network Endpoint Group backends.
+   *
+   * <p>Note that you must specify an Instance Group or Network Endpoint Group resource using the
+   * fully-qualified URL, rather than a partial URL.
+   *
+   * <p>When the BackendService has load balancing scheme INTERNAL, the instance group must be
+   * within the same region as the BackendService. Network Endpoint Groups are not supported for
+   * INTERNAL load balancing scheme.
+   */
   public String getGroup() {
     return group;
   }
 
+  /**
+   * The max number of simultaneous connections for the group. Can be used with either CONNECTION or
+   * UTILIZATION balancing modes. For CONNECTION mode, either maxConnections or
+   * maxConnectionsPerInstance must be set.
+   *
+   * <p>This cannot be used for internal load balancing.
+   */
   public Integer getMaxConnections() {
     return maxConnections;
   }
 
+  /**
+   * The max number of simultaneous connections that a single backend instance can handle. This is
+   * used to calculate the capacity of the group. Can be used in either CONNECTION or UTILIZATION
+   * balancing modes. For CONNECTION mode, either maxConnections or maxConnectionsPerInstance must
+   * be set.
+   *
+   * <p>This cannot be used for internal load balancing.
+   */
   public Integer getMaxConnectionsPerInstance() {
     return maxConnectionsPerInstance;
   }
 
+  /**
+   * The max requests per second (RPS) of the group. Can be used with either RATE or UTILIZATION
+   * balancing modes, but required if RATE mode. For RATE mode, either maxRate or maxRatePerInstance
+   * must be set.
+   *
+   * <p>This cannot be used for internal load balancing.
+   */
   public Integer getMaxRate() {
     return maxRate;
   }
 
+  /**
+   * The max requests per second (RPS) that a single backend instance can handle. This is used to
+   * calculate the capacity of the group. Can be used in either balancing mode. For RATE mode,
+   * either maxRate or maxRatePerInstance must be set.
+   *
+   * <p>This cannot be used for internal load balancing.
+   */
   public Float getMaxRatePerInstance() {
     return maxRatePerInstance;
   }
 
+  /**
+   * Used when balancingMode is UTILIZATION. This ratio defines the CPU utilization target for the
+   * group. The default is 0.8. Valid range is [0.0, 1.0].
+   *
+   * <p>This cannot be used for internal load balancing.
+   */
   public Float getMaxUtilization() {
     return maxUtilization;
   }
@@ -227,82 +300,226 @@ public final class Backend implements ApiMessage {
       this.maxUtilization = source.maxUtilization;
     }
 
+    /**
+     * Specifies the balancing mode for this backend. For global HTTP(S) or TCP/SSL load balancing,
+     * the default is UTILIZATION. Valid values are UTILIZATION, RATE (for HTTP(S)) and CONNECTION
+     * (for TCP/SSL).
+     *
+     * <p>For Internal Load Balancing, the default and only supported mode is CONNECTION.
+     */
     public String getBalancingMode() {
       return balancingMode;
     }
 
+    /**
+     * Specifies the balancing mode for this backend. For global HTTP(S) or TCP/SSL load balancing,
+     * the default is UTILIZATION. Valid values are UTILIZATION, RATE (for HTTP(S)) and CONNECTION
+     * (for TCP/SSL).
+     *
+     * <p>For Internal Load Balancing, the default and only supported mode is CONNECTION.
+     */
     public Builder setBalancingMode(String balancingMode) {
       this.balancingMode = balancingMode;
       return this;
     }
 
+    /**
+     * A multiplier applied to the group's maximum servicing capacity (based on UTILIZATION, RATE or
+     * CONNECTION). Default value is 1, which means the group will serve up to 100% of its
+     * configured capacity (depending on balancingMode). A setting of 0 means the group is
+     * completely drained, offering 0% of its available Capacity. Valid range is [0.0,1.0].
+     *
+     * <p>This cannot be used for internal load balancing.
+     */
     public Float getCapacityScaler() {
       return capacityScaler;
     }
 
+    /**
+     * A multiplier applied to the group's maximum servicing capacity (based on UTILIZATION, RATE or
+     * CONNECTION). Default value is 1, which means the group will serve up to 100% of its
+     * configured capacity (depending on balancingMode). A setting of 0 means the group is
+     * completely drained, offering 0% of its available Capacity. Valid range is [0.0,1.0].
+     *
+     * <p>This cannot be used for internal load balancing.
+     */
     public Builder setCapacityScaler(Float capacityScaler) {
       this.capacityScaler = capacityScaler;
       return this;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public String getDescription() {
       return description;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /**
+     * The fully-qualified URL of an Instance Group or Network Endpoint Group resource. In case of
+     * instance group this defines the list of instances that serve traffic. Member virtual machine
+     * instances from each instance group must live in the same zone as the instance group itself.
+     * No two backends in a backend service are allowed to use same Instance Group resource.
+     *
+     * <p>For Network Endpoint Groups this defines list of endpoints. All endpoints of Network
+     * Endpoint Group must be hosted on instances located in the same zone as the Network Endpoint
+     * Group.
+     *
+     * <p>Backend service can not contain mix of Instance Group and Network Endpoint Group backends.
+     *
+     * <p>Note that you must specify an Instance Group or Network Endpoint Group resource using the
+     * fully-qualified URL, rather than a partial URL.
+     *
+     * <p>When the BackendService has load balancing scheme INTERNAL, the instance group must be
+     * within the same region as the BackendService. Network Endpoint Groups are not supported for
+     * INTERNAL load balancing scheme.
+     */
     public String getGroup() {
       return group;
     }
 
+    /**
+     * The fully-qualified URL of an Instance Group or Network Endpoint Group resource. In case of
+     * instance group this defines the list of instances that serve traffic. Member virtual machine
+     * instances from each instance group must live in the same zone as the instance group itself.
+     * No two backends in a backend service are allowed to use same Instance Group resource.
+     *
+     * <p>For Network Endpoint Groups this defines list of endpoints. All endpoints of Network
+     * Endpoint Group must be hosted on instances located in the same zone as the Network Endpoint
+     * Group.
+     *
+     * <p>Backend service can not contain mix of Instance Group and Network Endpoint Group backends.
+     *
+     * <p>Note that you must specify an Instance Group or Network Endpoint Group resource using the
+     * fully-qualified URL, rather than a partial URL.
+     *
+     * <p>When the BackendService has load balancing scheme INTERNAL, the instance group must be
+     * within the same region as the BackendService. Network Endpoint Groups are not supported for
+     * INTERNAL load balancing scheme.
+     */
     public Builder setGroup(String group) {
       this.group = group;
       return this;
     }
 
+    /**
+     * The max number of simultaneous connections for the group. Can be used with either CONNECTION
+     * or UTILIZATION balancing modes. For CONNECTION mode, either maxConnections or
+     * maxConnectionsPerInstance must be set.
+     *
+     * <p>This cannot be used for internal load balancing.
+     */
     public Integer getMaxConnections() {
       return maxConnections;
     }
 
+    /**
+     * The max number of simultaneous connections for the group. Can be used with either CONNECTION
+     * or UTILIZATION balancing modes. For CONNECTION mode, either maxConnections or
+     * maxConnectionsPerInstance must be set.
+     *
+     * <p>This cannot be used for internal load balancing.
+     */
     public Builder setMaxConnections(Integer maxConnections) {
       this.maxConnections = maxConnections;
       return this;
     }
 
+    /**
+     * The max number of simultaneous connections that a single backend instance can handle. This is
+     * used to calculate the capacity of the group. Can be used in either CONNECTION or UTILIZATION
+     * balancing modes. For CONNECTION mode, either maxConnections or maxConnectionsPerInstance must
+     * be set.
+     *
+     * <p>This cannot be used for internal load balancing.
+     */
     public Integer getMaxConnectionsPerInstance() {
       return maxConnectionsPerInstance;
     }
 
+    /**
+     * The max number of simultaneous connections that a single backend instance can handle. This is
+     * used to calculate the capacity of the group. Can be used in either CONNECTION or UTILIZATION
+     * balancing modes. For CONNECTION mode, either maxConnections or maxConnectionsPerInstance must
+     * be set.
+     *
+     * <p>This cannot be used for internal load balancing.
+     */
     public Builder setMaxConnectionsPerInstance(Integer maxConnectionsPerInstance) {
       this.maxConnectionsPerInstance = maxConnectionsPerInstance;
       return this;
     }
 
+    /**
+     * The max requests per second (RPS) of the group. Can be used with either RATE or UTILIZATION
+     * balancing modes, but required if RATE mode. For RATE mode, either maxRate or
+     * maxRatePerInstance must be set.
+     *
+     * <p>This cannot be used for internal load balancing.
+     */
     public Integer getMaxRate() {
       return maxRate;
     }
 
+    /**
+     * The max requests per second (RPS) of the group. Can be used with either RATE or UTILIZATION
+     * balancing modes, but required if RATE mode. For RATE mode, either maxRate or
+     * maxRatePerInstance must be set.
+     *
+     * <p>This cannot be used for internal load balancing.
+     */
     public Builder setMaxRate(Integer maxRate) {
       this.maxRate = maxRate;
       return this;
     }
 
+    /**
+     * The max requests per second (RPS) that a single backend instance can handle. This is used to
+     * calculate the capacity of the group. Can be used in either balancing mode. For RATE mode,
+     * either maxRate or maxRatePerInstance must be set.
+     *
+     * <p>This cannot be used for internal load balancing.
+     */
     public Float getMaxRatePerInstance() {
       return maxRatePerInstance;
     }
 
+    /**
+     * The max requests per second (RPS) that a single backend instance can handle. This is used to
+     * calculate the capacity of the group. Can be used in either balancing mode. For RATE mode,
+     * either maxRate or maxRatePerInstance must be set.
+     *
+     * <p>This cannot be used for internal load balancing.
+     */
     public Builder setMaxRatePerInstance(Float maxRatePerInstance) {
       this.maxRatePerInstance = maxRatePerInstance;
       return this;
     }
 
+    /**
+     * Used when balancingMode is UTILIZATION. This ratio defines the CPU utilization target for the
+     * group. The default is 0.8. Valid range is [0.0, 1.0].
+     *
+     * <p>This cannot be used for internal load balancing.
+     */
     public Float getMaxUtilization() {
       return maxUtilization;
     }
 
+    /**
+     * Used when balancingMode is UTILIZATION. This ratio defines the CPU utilization target for the
+     * group. The default is 0.8. Valid range is [0.0, 1.0].
+     *
+     * <p>This cannot be used for internal load balancing.
+     */
     public Builder setMaxUtilization(Float maxUtilization) {
       this.maxUtilization = maxUtilization;
       return this;

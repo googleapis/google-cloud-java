@@ -55,6 +55,7 @@ public final class NetworksRemovePeeringRequest implements ApiMessage {
     return null;
   }
 
+  /** Name of the peering, which should conform to RFC1035. */
   public String getName() {
     return name;
   }
@@ -98,10 +99,12 @@ public final class NetworksRemovePeeringRequest implements ApiMessage {
       this.name = source.name;
     }
 
+    /** Name of the peering, which should conform to RFC1035. */
     public String getName() {
       return name;
     }
 
+    /** Name of the peering, which should conform to RFC1035. */
     public Builder setName(String name) {
       this.name = name;
       return this;

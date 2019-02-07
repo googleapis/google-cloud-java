@@ -62,10 +62,15 @@ public final class CustomerEncryptionKeyProtectedDisk implements ApiMessage {
     return null;
   }
 
+  /** Decrypts data associated with the disk with a customer-supplied encryption key. */
   public CustomerEncryptionKey getDiskEncryptionKey() {
     return diskEncryptionKey;
   }
 
+  /**
+   * Specifies a valid partial or full URL to an existing Persistent Disk resource. This field is
+   * only applicable for persistent disks.
+   */
   public String getSource() {
     return source;
   }
@@ -114,19 +119,29 @@ public final class CustomerEncryptionKeyProtectedDisk implements ApiMessage {
       this.source = source.source;
     }
 
+    /** Decrypts data associated with the disk with a customer-supplied encryption key. */
     public CustomerEncryptionKey getDiskEncryptionKey() {
       return diskEncryptionKey;
     }
 
+    /** Decrypts data associated with the disk with a customer-supplied encryption key. */
     public Builder setDiskEncryptionKey(CustomerEncryptionKey diskEncryptionKey) {
       this.diskEncryptionKey = diskEncryptionKey;
       return this;
     }
 
+    /**
+     * Specifies a valid partial or full URL to an existing Persistent Disk resource. This field is
+     * only applicable for persistent disks.
+     */
     public String getSource() {
       return source;
     }
 
+    /**
+     * Specifies a valid partial or full URL to an existing Persistent Disk resource. This field is
+     * only applicable for persistent disks.
+     */
     public Builder setSource(String source) {
       this.source = source;
       return this;

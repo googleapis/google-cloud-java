@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Secondary IP range of a usable subnetwork. */
 public final class UsableSubnetworkSecondaryRange implements ApiMessage {
   private final String ipCidrRange;
   private final String rangeName;
@@ -61,10 +62,16 @@ public final class UsableSubnetworkSecondaryRange implements ApiMessage {
     return null;
   }
 
+  /** The range of IP addresses belonging to this subnetwork secondary range. */
   public String getIpCidrRange() {
     return ipCidrRange;
   }
 
+  /**
+   * The name associated with this subnetwork secondary range, used when adding an alias IP range to
+   * a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be
+   * unique within the subnetwork.
+   */
   public String getRangeName() {
     return rangeName;
   }
@@ -113,19 +120,31 @@ public final class UsableSubnetworkSecondaryRange implements ApiMessage {
       this.rangeName = source.rangeName;
     }
 
+    /** The range of IP addresses belonging to this subnetwork secondary range. */
     public String getIpCidrRange() {
       return ipCidrRange;
     }
 
+    /** The range of IP addresses belonging to this subnetwork secondary range. */
     public Builder setIpCidrRange(String ipCidrRange) {
       this.ipCidrRange = ipCidrRange;
       return this;
     }
 
+    /**
+     * The name associated with this subnetwork secondary range, used when adding an alias IP range
+     * to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name
+     * must be unique within the subnetwork.
+     */
     public String getRangeName() {
       return rangeName;
     }
 
+    /**
+     * The name associated with this subnetwork secondary range, used when adding an alias IP range
+     * to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name
+     * must be unique within the subnetwork.
+     */
     public Builder setRangeName(String rangeName) {
       this.rangeName = rangeName;
       return this;

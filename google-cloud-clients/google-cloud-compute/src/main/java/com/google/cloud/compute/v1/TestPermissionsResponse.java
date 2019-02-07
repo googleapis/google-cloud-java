@@ -56,6 +56,7 @@ public final class TestPermissionsResponse implements ApiMessage {
     return null;
   }
 
+  /** A subset of `TestPermissionsRequest.permissions` that the caller is allowed. */
   public List<String> getPermissionsList() {
     return permissions;
   }
@@ -99,10 +100,12 @@ public final class TestPermissionsResponse implements ApiMessage {
       this.permissions = source.permissions;
     }
 
+    /** A subset of `TestPermissionsRequest.permissions` that the caller is allowed. */
     public List<String> getPermissionsList() {
       return permissions;
     }
 
+    /** A subset of `TestPermissionsRequest.permissions` that the caller is allowed. */
     public Builder addAllPermissions(List<String> permissions) {
       if (this.permissions == null) {
         this.permissions = new LinkedList<>();
@@ -111,6 +114,7 @@ public final class TestPermissionsResponse implements ApiMessage {
       return this;
     }
 
+    /** A subset of `TestPermissionsRequest.permissions` that the caller is allowed. */
     public Builder addPermissions(String permissions) {
       if (this.permissions == null) {
         this.permissions = new LinkedList<>();

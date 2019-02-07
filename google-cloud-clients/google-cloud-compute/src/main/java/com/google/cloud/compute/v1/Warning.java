@@ -25,6 +25,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** [Output Only] Informational warning message. */
 public final class Warning implements ApiMessage {
   private final String code;
   private final List<Data> data;
@@ -68,14 +69,23 @@ public final class Warning implements ApiMessage {
     return null;
   }
 
+  /**
+   * [Output Only] A warning code, if applicable. For example, Compute Engine returns
+   * NO_RESULTS_ON_PAGE if there are no results in the response.
+   */
   public String getCode() {
     return code;
   }
 
+  /**
+   * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key":
+   * "scope", "value": "zones/us-east1-d" }
+   */
   public List<Data> getDataList() {
     return data;
   }
 
+  /** [Output Only] A human-readable description of the warning code. */
   public String getMessage() {
     return message;
   }
@@ -129,19 +139,35 @@ public final class Warning implements ApiMessage {
       this.message = source.message;
     }
 
+    /**
+     * [Output Only] A warning code, if applicable. For example, Compute Engine returns
+     * NO_RESULTS_ON_PAGE if there are no results in the response.
+     */
     public String getCode() {
       return code;
     }
 
+    /**
+     * [Output Only] A warning code, if applicable. For example, Compute Engine returns
+     * NO_RESULTS_ON_PAGE if there are no results in the response.
+     */
     public Builder setCode(String code) {
       this.code = code;
       return this;
     }
 
+    /**
+     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ {
+     * "key": "scope", "value": "zones/us-east1-d" }
+     */
     public List<Data> getDataList() {
       return data;
     }
 
+    /**
+     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ {
+     * "key": "scope", "value": "zones/us-east1-d" }
+     */
     public Builder addAllData(List<Data> data) {
       if (this.data == null) {
         this.data = new LinkedList<>();
@@ -150,6 +176,10 @@ public final class Warning implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] Metadata about this warning in key: value format. For example: "data": [ {
+     * "key": "scope", "value": "zones/us-east1-d" }
+     */
     public Builder addData(Data data) {
       if (this.data == null) {
         this.data = new LinkedList<>();
@@ -158,10 +188,12 @@ public final class Warning implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] A human-readable description of the warning code. */
     public String getMessage() {
       return message;
     }
 
+    /** [Output Only] A human-readable description of the warning code. */
     public Builder setMessage(String message) {
       this.message = message;
       return this;

@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** A quotas entry. */
 public final class Quota implements ApiMessage {
   private final Double limit;
   private final String metric;
@@ -73,18 +74,22 @@ public final class Quota implements ApiMessage {
     return null;
   }
 
+  /** [Output Only] Quota limit for this metric. */
   public Double getLimit() {
     return limit;
   }
 
+  /** [Output Only] Name of the quota metric. */
   public String getMetric() {
     return metric;
   }
 
+  /** [Output Only] Owning resource. This is the resource on which this quota is applied. */
   public String getOwner() {
     return owner;
   }
 
+  /** [Output Only] Current usage of this metric. */
   public Double getUsage() {
     return usage;
   }
@@ -143,37 +148,45 @@ public final class Quota implements ApiMessage {
       this.usage = source.usage;
     }
 
+    /** [Output Only] Quota limit for this metric. */
     public Double getLimit() {
       return limit;
     }
 
+    /** [Output Only] Quota limit for this metric. */
     public Builder setLimit(Double limit) {
       this.limit = limit;
       return this;
     }
 
+    /** [Output Only] Name of the quota metric. */
     public String getMetric() {
       return metric;
     }
 
+    /** [Output Only] Name of the quota metric. */
     public Builder setMetric(String metric) {
       this.metric = metric;
       return this;
     }
 
+    /** [Output Only] Owning resource. This is the resource on which this quota is applied. */
     public String getOwner() {
       return owner;
     }
 
+    /** [Output Only] Owning resource. This is the resource on which this quota is applied. */
     public Builder setOwner(String owner) {
       this.owner = owner;
       return this;
     }
 
+    /** [Output Only] Current usage of this metric. */
     public Double getUsage() {
       return usage;
     }
 
+    /** [Output Only] Current usage of this metric. */
     public Builder setUsage(Double usage) {
       this.usage = usage;
       return this;

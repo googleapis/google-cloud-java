@@ -25,6 +25,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Sets the scheduling options for an Instance. */
 public final class Scheduling implements ApiMessage {
   private final Boolean automaticRestart;
   private final List<SchedulingNodeAffinity> nodeAffinities;
@@ -78,18 +79,36 @@ public final class Scheduling implements ApiMessage {
     return null;
   }
 
+  /**
+   * Specifies whether the instance should be automatically restarted if it is terminated by Compute
+   * Engine (not terminated by a user). You can only set the automatic restart option for standard
+   * instances. Preemptible instances cannot be automatically restarted.
+   *
+   * <p>By default, this is set to true so an instance is automatically restarted if it is
+   * terminated by Compute Engine.
+   */
   public Boolean getAutomaticRestart() {
     return automaticRestart;
   }
 
+  /** A set of node affinity and anti-affinity. */
   public List<SchedulingNodeAffinity> getNodeAffinitiesList() {
     return nodeAffinities;
   }
 
+  /**
+   * Defines the maintenance behavior for this instance. For standard instances, the default
+   * behavior is MIGRATE. For preemptible instances, the default and only possible behavior is
+   * TERMINATE. For more information, see Setting Instance Scheduling Options.
+   */
   public String getOnHostMaintenance() {
     return onHostMaintenance;
   }
 
+  /**
+   * Defines whether the instance is preemptible. This can only be set during instance creation, it
+   * cannot be set or changed after the instance has been created.
+   */
   public Boolean getPreemptible() {
     return preemptible;
   }
@@ -148,19 +167,37 @@ public final class Scheduling implements ApiMessage {
       this.preemptible = source.preemptible;
     }
 
+    /**
+     * Specifies whether the instance should be automatically restarted if it is terminated by
+     * Compute Engine (not terminated by a user). You can only set the automatic restart option for
+     * standard instances. Preemptible instances cannot be automatically restarted.
+     *
+     * <p>By default, this is set to true so an instance is automatically restarted if it is
+     * terminated by Compute Engine.
+     */
     public Boolean getAutomaticRestart() {
       return automaticRestart;
     }
 
+    /**
+     * Specifies whether the instance should be automatically restarted if it is terminated by
+     * Compute Engine (not terminated by a user). You can only set the automatic restart option for
+     * standard instances. Preemptible instances cannot be automatically restarted.
+     *
+     * <p>By default, this is set to true so an instance is automatically restarted if it is
+     * terminated by Compute Engine.
+     */
     public Builder setAutomaticRestart(Boolean automaticRestart) {
       this.automaticRestart = automaticRestart;
       return this;
     }
 
+    /** A set of node affinity and anti-affinity. */
     public List<SchedulingNodeAffinity> getNodeAffinitiesList() {
       return nodeAffinities;
     }
 
+    /** A set of node affinity and anti-affinity. */
     public Builder addAllNodeAffinities(List<SchedulingNodeAffinity> nodeAffinities) {
       if (this.nodeAffinities == null) {
         this.nodeAffinities = new LinkedList<>();
@@ -169,6 +206,7 @@ public final class Scheduling implements ApiMessage {
       return this;
     }
 
+    /** A set of node affinity and anti-affinity. */
     public Builder addNodeAffinities(SchedulingNodeAffinity nodeAffinities) {
       if (this.nodeAffinities == null) {
         this.nodeAffinities = new LinkedList<>();
@@ -177,19 +215,37 @@ public final class Scheduling implements ApiMessage {
       return this;
     }
 
+    /**
+     * Defines the maintenance behavior for this instance. For standard instances, the default
+     * behavior is MIGRATE. For preemptible instances, the default and only possible behavior is
+     * TERMINATE. For more information, see Setting Instance Scheduling Options.
+     */
     public String getOnHostMaintenance() {
       return onHostMaintenance;
     }
 
+    /**
+     * Defines the maintenance behavior for this instance. For standard instances, the default
+     * behavior is MIGRATE. For preemptible instances, the default and only possible behavior is
+     * TERMINATE. For more information, see Setting Instance Scheduling Options.
+     */
     public Builder setOnHostMaintenance(String onHostMaintenance) {
       this.onHostMaintenance = onHostMaintenance;
       return this;
     }
 
+    /**
+     * Defines whether the instance is preemptible. This can only be set during instance creation,
+     * it cannot be set or changed after the instance has been created.
+     */
     public Boolean getPreemptible() {
       return preemptible;
     }
 
+    /**
+     * Defines whether the instance is preemptible. This can only be set during instance creation,
+     * it cannot be set or changed after the instance has been created.
+     */
     public Builder setPreemptible(Boolean preemptible) {
       this.preemptible = preemptible;
       return this;

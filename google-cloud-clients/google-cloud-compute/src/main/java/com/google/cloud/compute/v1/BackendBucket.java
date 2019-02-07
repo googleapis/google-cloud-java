@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** A BackendBucket resource. This resource defines a Cloud Storage bucket. */
 public final class BackendBucket implements ApiMessage {
   private final String bucketName;
   private final BackendBucketCdnPolicy cdnPolicy;
@@ -112,38 +113,56 @@ public final class BackendBucket implements ApiMessage {
     return null;
   }
 
+  /** Cloud Storage bucket name. */
   public String getBucketName() {
     return bucketName;
   }
 
+  /** Cloud CDN configuration for this BackendBucket. */
   public BackendBucketCdnPolicy getCdnPolicy() {
     return cdnPolicy;
   }
 
+  /** [Output Only] Creation timestamp in RFC3339 text format. */
   public String getCreationTimestamp() {
     return creationTimestamp;
   }
 
+  /**
+   * An optional textual description of the resource; provided by the client when the resource is
+   * created.
+   */
   public String getDescription() {
     return description;
   }
 
+  /** If true, enable Cloud CDN for this BackendBucket. */
   public Boolean getEnableCdn() {
     return enableCdn;
   }
 
+  /** [Output Only] Unique identifier for the resource; defined by the server. */
   public String getId() {
     return id;
   }
 
+  /** Type of the resource. */
   public String getKind() {
     return kind;
   }
 
+  /**
+   * Name of the resource. Provided by the client when the resource is created. The name must be
+   * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+   * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be a dash, lowercase
+   * letter, or digit, except the last character, which cannot be a dash.
+   */
   public String getName() {
     return name;
   }
 
+  /** [Output Only] Server-defined URL for the resource. */
   public String getSelfLink() {
     return selfLink;
   }
@@ -227,82 +246,118 @@ public final class BackendBucket implements ApiMessage {
       this.selfLink = source.selfLink;
     }
 
+    /** Cloud Storage bucket name. */
     public String getBucketName() {
       return bucketName;
     }
 
+    /** Cloud Storage bucket name. */
     public Builder setBucketName(String bucketName) {
       this.bucketName = bucketName;
       return this;
     }
 
+    /** Cloud CDN configuration for this BackendBucket. */
     public BackendBucketCdnPolicy getCdnPolicy() {
       return cdnPolicy;
     }
 
+    /** Cloud CDN configuration for this BackendBucket. */
     public Builder setCdnPolicy(BackendBucketCdnPolicy cdnPolicy) {
       this.cdnPolicy = cdnPolicy;
       return this;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public String getCreationTimestamp() {
       return creationTimestamp;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
+    /**
+     * An optional textual description of the resource; provided by the client when the resource is
+     * created.
+     */
     public String getDescription() {
       return description;
     }
 
+    /**
+     * An optional textual description of the resource; provided by the client when the resource is
+     * created.
+     */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /** If true, enable Cloud CDN for this BackendBucket. */
     public Boolean getEnableCdn() {
       return enableCdn;
     }
 
+    /** If true, enable Cloud CDN for this BackendBucket. */
     public Builder setEnableCdn(Boolean enableCdn) {
       this.enableCdn = enableCdn;
       return this;
     }
 
+    /** [Output Only] Unique identifier for the resource; defined by the server. */
     public String getId() {
       return id;
     }
 
+    /** [Output Only] Unique identifier for the resource; defined by the server. */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /** Type of the resource. */
     public String getKind() {
       return kind;
     }
 
+    /** Type of the resource. */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /**
+     * Name of the resource. Provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public String getName() {
       return name;
     }
 
+    /**
+     * Name of the resource. Provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;

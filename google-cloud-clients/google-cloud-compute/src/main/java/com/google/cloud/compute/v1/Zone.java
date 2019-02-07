@@ -25,6 +25,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** A Zone resource. (== resource_for beta.zones ==) (== resource_for v1.zones ==) */
 public final class Zone implements ApiMessage {
   private final List<String> availableCpuPlatforms;
   private final String creationTimestamp;
@@ -120,42 +121,54 @@ public final class Zone implements ApiMessage {
     return null;
   }
 
+  /** [Output Only] Available cpu/platform selections for the zone. */
   public List<String> getAvailableCpuPlatformsList() {
     return availableCpuPlatforms;
   }
 
+  /** [Output Only] Creation timestamp in RFC3339 text format. */
   public String getCreationTimestamp() {
     return creationTimestamp;
   }
 
+  /** [Output Only] The deprecation status associated with this zone. */
   public DeprecationStatus getDeprecated() {
     return deprecated;
   }
 
+  /** [Output Only] Textual description of the resource. */
   public String getDescription() {
     return description;
   }
 
+  /**
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   */
   public String getId() {
     return id;
   }
 
+  /** [Output Only] Type of the resource. Always compute#zone for zones. */
   public String getKind() {
     return kind;
   }
 
+  /** [Output Only] Name of the resource. */
   public String getName() {
     return name;
   }
 
+  /** [Output Only] Full URL reference to the region which hosts the zone. */
   public String getRegion() {
     return region;
   }
 
+  /** [Output Only] Server-defined URL for the resource. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /** [Output Only] Status of the zone, either UP or DOWN. */
   public String getStatus() {
     return status;
   }
@@ -244,10 +257,12 @@ public final class Zone implements ApiMessage {
       this.status = source.status;
     }
 
+    /** [Output Only] Available cpu/platform selections for the zone. */
     public List<String> getAvailableCpuPlatformsList() {
       return availableCpuPlatforms;
     }
 
+    /** [Output Only] Available cpu/platform selections for the zone. */
     public Builder addAllAvailableCpuPlatforms(List<String> availableCpuPlatforms) {
       if (this.availableCpuPlatforms == null) {
         this.availableCpuPlatforms = new LinkedList<>();
@@ -256,6 +271,7 @@ public final class Zone implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] Available cpu/platform selections for the zone. */
     public Builder addAvailableCpuPlatforms(String availableCpuPlatforms) {
       if (this.availableCpuPlatforms == null) {
         this.availableCpuPlatforms = new LinkedList<>();
@@ -264,82 +280,106 @@ public final class Zone implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public String getCreationTimestamp() {
       return creationTimestamp;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
+    /** [Output Only] The deprecation status associated with this zone. */
     public DeprecationStatus getDeprecated() {
       return deprecated;
     }
 
+    /** [Output Only] The deprecation status associated with this zone. */
     public Builder setDeprecated(DeprecationStatus deprecated) {
       this.deprecated = deprecated;
       return this;
     }
 
+    /** [Output Only] Textual description of the resource. */
     public String getDescription() {
       return description;
     }
 
+    /** [Output Only] Textual description of the resource. */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /** [Output Only] Type of the resource. Always compute#zone for zones. */
     public String getKind() {
       return kind;
     }
 
+    /** [Output Only] Type of the resource. Always compute#zone for zones. */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /** [Output Only] Name of the resource. */
     public String getName() {
       return name;
     }
 
+    /** [Output Only] Name of the resource. */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /** [Output Only] Full URL reference to the region which hosts the zone. */
     public String getRegion() {
       return region;
     }
 
+    /** [Output Only] Full URL reference to the region which hosts the zone. */
     public Builder setRegion(String region) {
       this.region = region;
       return this;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /** [Output Only] Status of the zone, either UP or DOWN. */
     public String getStatus() {
       return status;
     }
 
+    /** [Output Only] Status of the zone, either UP or DOWN. */
     public Builder setStatus(String status) {
       this.status = status;
       return this;

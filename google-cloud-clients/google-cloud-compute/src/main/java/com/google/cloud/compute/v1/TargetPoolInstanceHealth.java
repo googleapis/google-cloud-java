@@ -66,6 +66,10 @@ public final class TargetPoolInstanceHealth implements ApiMessage {
     return healthStatus;
   }
 
+  /**
+   * [Output Only] Type of resource. Always compute#targetPoolInstanceHealth when checking the
+   * health of an instance.
+   */
   public String getKind() {
     return kind;
   }
@@ -134,10 +138,18 @@ public final class TargetPoolInstanceHealth implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] Type of resource. Always compute#targetPoolInstanceHealth when checking the
+     * health of an instance.
+     */
     public String getKind() {
       return kind;
     }
 
+    /**
+     * [Output Only] Type of resource. Always compute#targetPoolInstanceHealth when checking the
+     * health of an instance.
+     */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;

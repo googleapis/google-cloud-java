@@ -56,6 +56,7 @@ public final class SecurityPolicyRuleMatcherConfig implements ApiMessage {
     return null;
   }
 
+  /** CIDR IP address range. */
   public List<String> getSrcIpRangesList() {
     return srcIpRanges;
   }
@@ -99,10 +100,12 @@ public final class SecurityPolicyRuleMatcherConfig implements ApiMessage {
       this.srcIpRanges = source.srcIpRanges;
     }
 
+    /** CIDR IP address range. */
     public List<String> getSrcIpRangesList() {
       return srcIpRanges;
     }
 
+    /** CIDR IP address range. */
     public Builder addAllSrcIpRanges(List<String> srcIpRanges) {
       if (this.srcIpRanges == null) {
         this.srcIpRanges = new LinkedList<>();
@@ -111,6 +114,7 @@ public final class SecurityPolicyRuleMatcherConfig implements ApiMessage {
       return this;
     }
 
+    /** CIDR IP address range. */
     public Builder addSrcIpRanges(String srcIpRanges) {
       if (this.srcIpRanges == null) {
         this.srcIpRanges = new LinkedList<>();

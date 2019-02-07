@@ -25,6 +25,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * A Machine Type resource. (== resource_for v1.machineTypes ==) (== resource_for beta.machineTypes
+ * ==)
+ */
 public final class MachineType implements ApiMessage {
   private final String creationTimestamp;
   private final DeprecationStatus deprecated;
@@ -155,62 +159,84 @@ public final class MachineType implements ApiMessage {
     return null;
   }
 
+  /** [Output Only] Creation timestamp in RFC3339 text format. */
   public String getCreationTimestamp() {
     return creationTimestamp;
   }
 
+  /** [Output Only] The deprecation status associated with this machine type. */
   public DeprecationStatus getDeprecated() {
     return deprecated;
   }
 
+  /** [Output Only] An optional textual description of the resource. */
   public String getDescription() {
     return description;
   }
 
+  /** [Output Only] The number of virtual CPUs that are available to the instance. */
   public Integer getGuestCpus() {
     return guestCpus;
   }
 
+  /**
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   */
   public String getId() {
     return id;
   }
 
+  /**
+   * [Deprecated] This property is deprecated and will never be populated with any relevant values.
+   */
   public Integer getImageSpaceGb() {
     return imageSpaceGb;
   }
 
+  /**
+   * [Output Only] Whether this machine type has a shared CPU. See Shared-core machine types for
+   * more information.
+   */
   public Boolean getIsSharedCpu() {
     return isSharedCpu;
   }
 
+  /** [Output Only] The type of the resource. Always compute#machineType for machine types. */
   public String getKind() {
     return kind;
   }
 
+  /** [Output Only] Maximum persistent disks allowed. */
   public Integer getMaximumPersistentDisks() {
     return maximumPersistentDisks;
   }
 
+  /** [Output Only] Maximum total persistent disks size (GB) allowed. */
   public String getMaximumPersistentDisksSizeGb() {
     return maximumPersistentDisksSizeGb;
   }
 
+  /** [Output Only] The amount of physical memory available to the instance, defined in MB. */
   public Integer getMemoryMb() {
     return memoryMb;
   }
 
+  /** [Output Only] Name of the resource. */
   public String getName() {
     return name;
   }
 
+  /** [Output Only] A list of extended scratch disks assigned to the instance. */
   public List<ScratchDisks> getScratchDisksList() {
     return scratchDisks;
   }
 
+  /** [Output Only] Server-defined URL for the resource. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /** [Output Only] The name of the zone where the machine type resides, such as us-central1-a. */
   public String getZone() {
     return zone;
   }
@@ -324,118 +350,162 @@ public final class MachineType implements ApiMessage {
       this.zone = source.zone;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public String getCreationTimestamp() {
       return creationTimestamp;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
+    /** [Output Only] The deprecation status associated with this machine type. */
     public DeprecationStatus getDeprecated() {
       return deprecated;
     }
 
+    /** [Output Only] The deprecation status associated with this machine type. */
     public Builder setDeprecated(DeprecationStatus deprecated) {
       this.deprecated = deprecated;
       return this;
     }
 
+    /** [Output Only] An optional textual description of the resource. */
     public String getDescription() {
       return description;
     }
 
+    /** [Output Only] An optional textual description of the resource. */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /** [Output Only] The number of virtual CPUs that are available to the instance. */
     public Integer getGuestCpus() {
       return guestCpus;
     }
 
+    /** [Output Only] The number of virtual CPUs that are available to the instance. */
     public Builder setGuestCpus(Integer guestCpus) {
       this.guestCpus = guestCpus;
       return this;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /**
+     * [Deprecated] This property is deprecated and will never be populated with any relevant
+     * values.
+     */
     public Integer getImageSpaceGb() {
       return imageSpaceGb;
     }
 
+    /**
+     * [Deprecated] This property is deprecated and will never be populated with any relevant
+     * values.
+     */
     public Builder setImageSpaceGb(Integer imageSpaceGb) {
       this.imageSpaceGb = imageSpaceGb;
       return this;
     }
 
+    /**
+     * [Output Only] Whether this machine type has a shared CPU. See Shared-core machine types for
+     * more information.
+     */
     public Boolean getIsSharedCpu() {
       return isSharedCpu;
     }
 
+    /**
+     * [Output Only] Whether this machine type has a shared CPU. See Shared-core machine types for
+     * more information.
+     */
     public Builder setIsSharedCpu(Boolean isSharedCpu) {
       this.isSharedCpu = isSharedCpu;
       return this;
     }
 
+    /** [Output Only] The type of the resource. Always compute#machineType for machine types. */
     public String getKind() {
       return kind;
     }
 
+    /** [Output Only] The type of the resource. Always compute#machineType for machine types. */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /** [Output Only] Maximum persistent disks allowed. */
     public Integer getMaximumPersistentDisks() {
       return maximumPersistentDisks;
     }
 
+    /** [Output Only] Maximum persistent disks allowed. */
     public Builder setMaximumPersistentDisks(Integer maximumPersistentDisks) {
       this.maximumPersistentDisks = maximumPersistentDisks;
       return this;
     }
 
+    /** [Output Only] Maximum total persistent disks size (GB) allowed. */
     public String getMaximumPersistentDisksSizeGb() {
       return maximumPersistentDisksSizeGb;
     }
 
+    /** [Output Only] Maximum total persistent disks size (GB) allowed. */
     public Builder setMaximumPersistentDisksSizeGb(String maximumPersistentDisksSizeGb) {
       this.maximumPersistentDisksSizeGb = maximumPersistentDisksSizeGb;
       return this;
     }
 
+    /** [Output Only] The amount of physical memory available to the instance, defined in MB. */
     public Integer getMemoryMb() {
       return memoryMb;
     }
 
+    /** [Output Only] The amount of physical memory available to the instance, defined in MB. */
     public Builder setMemoryMb(Integer memoryMb) {
       this.memoryMb = memoryMb;
       return this;
     }
 
+    /** [Output Only] Name of the resource. */
     public String getName() {
       return name;
     }
 
+    /** [Output Only] Name of the resource. */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /** [Output Only] A list of extended scratch disks assigned to the instance. */
     public List<ScratchDisks> getScratchDisksList() {
       return scratchDisks;
     }
 
+    /** [Output Only] A list of extended scratch disks assigned to the instance. */
     public Builder addAllScratchDisks(List<ScratchDisks> scratchDisks) {
       if (this.scratchDisks == null) {
         this.scratchDisks = new LinkedList<>();
@@ -444,6 +514,7 @@ public final class MachineType implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] A list of extended scratch disks assigned to the instance. */
     public Builder addScratchDisks(ScratchDisks scratchDisks) {
       if (this.scratchDisks == null) {
         this.scratchDisks = new LinkedList<>();
@@ -452,19 +523,23 @@ public final class MachineType implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /** [Output Only] The name of the zone where the machine type resides, such as us-central1-a. */
     public String getZone() {
       return zone;
     }
 
+    /** [Output Only] The name of the zone where the machine type resides, such as us-central1-a. */
     public Builder setZone(String zone) {
       this.zone = zone;
       return this;

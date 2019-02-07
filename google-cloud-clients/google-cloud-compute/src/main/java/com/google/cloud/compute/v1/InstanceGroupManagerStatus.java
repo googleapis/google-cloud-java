@@ -55,6 +55,13 @@ public final class InstanceGroupManagerStatus implements ApiMessage {
     return null;
   }
 
+  /**
+   * [Output Only] A bit indicating whether the managed instance group is in a stable state. A
+   * stable state means that: none of the instances in the managed instance group is currently
+   * undergoing any type of change (for example, creation, restart, or deletion); no future changes
+   * are scheduled for instances in the managed instance group; and the managed instance group
+   * itself is not being modified.
+   */
   public Boolean getIsStable() {
     return isStable;
   }
@@ -98,10 +105,24 @@ public final class InstanceGroupManagerStatus implements ApiMessage {
       this.isStable = source.isStable;
     }
 
+    /**
+     * [Output Only] A bit indicating whether the managed instance group is in a stable state. A
+     * stable state means that: none of the instances in the managed instance group is currently
+     * undergoing any type of change (for example, creation, restart, or deletion); no future
+     * changes are scheduled for instances in the managed instance group; and the managed instance
+     * group itself is not being modified.
+     */
     public Boolean getIsStable() {
       return isStable;
     }
 
+    /**
+     * [Output Only] A bit indicating whether the managed instance group is in a stable state. A
+     * stable state means that: none of the instances in the managed instance group is currently
+     * undergoing any type of change (for example, creation, restart, or deletion); no future
+     * changes are scheduled for instances in the managed instance group; and the managed instance
+     * group itself is not being modified.
+     */
     public Builder setIsStable(Boolean isStable) {
       this.isStable = isStable;
       return this;

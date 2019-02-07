@@ -26,6 +26,13 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * A ForwardingRule resource. A ForwardingRule resource specifies which pool of target virtual
+ * machines to forward a packet to if it matches the given [IPAddress, IPProtocol, ports] tuple. (==
+ * resource_for beta.forwardingRules ==) (== resource_for v1.forwardingRules ==) (== resource_for
+ * beta.globalForwardingRules ==) (== resource_for v1.globalForwardingRules ==) (== resource_for
+ * beta.regionForwardingRules ==) (== resource_for v1.regionForwardingRules ==)
+ */
 public final class ForwardingRule implements ApiMessage {
   private final String backendService;
   private final String creationTimestamp;
@@ -196,82 +203,227 @@ public final class ForwardingRule implements ApiMessage {
     return null;
   }
 
+  /**
+   * This field is only used for INTERNAL load balancing.
+   *
+   * <p>For internal load balancing, this field identifies the BackendService resource to receive
+   * the matched traffic.
+   */
   public String getBackendService() {
     return backendService;
   }
 
+  /** [Output Only] Creation timestamp in RFC3339 text format. */
   public String getCreationTimestamp() {
     return creationTimestamp;
   }
 
+  /**
+   * An optional description of this resource. Provide this property when you create the resource.
+   */
   public String getDescription() {
     return description;
   }
 
+  /**
+   * The IP address that this forwarding rule is serving on behalf of.
+   *
+   * <p>Addresses are restricted based on the forwarding rule's load balancing scheme (EXTERNAL or
+   * INTERNAL) and scope (global or regional).
+   *
+   * <p>When the load balancing scheme is EXTERNAL, for global forwarding rules, the address must be
+   * a global IP, and for regional forwarding rules, the address must live in the same region as the
+   * forwarding rule. If this field is empty, an ephemeral IPv4 address from the same scope (global
+   * or regional) will be assigned. A regional forwarding rule supports IPv4 only. A global
+   * forwarding rule supports either IPv4 or IPv6.
+   *
+   * <p>When the load balancing scheme is INTERNAL_SELF_MANAGED, this must be a URL reference to an
+   * existing Address resource ( internal regional static IP address), with a purpose of
+   * GCE_END_POINT and address_type of INTERNAL.
+   *
+   * <p>When the load balancing scheme is INTERNAL, this can only be an RFC 1918 IP address
+   * belonging to the network/subnet configured for the forwarding rule. By default, if this field
+   * is empty, an ephemeral internal IP address will be automatically allocated from the IP range of
+   * the subnet or network configured for this forwarding rule.
+   *
+   * <p>An address can be specified either by a literal IP address or a URL reference to an existing
+   * Address resource. The following examples are all valid: - 100.1.2.3 -
+   * https://www.googleapis.com/compute/v1/projects/project/regions/region/addresses/address -
+   * projects/project/regions/region/addresses/address - regions/region/addresses/address -
+   * global/addresses/address - address
+   */
   public String getIPAddress() {
     return iPAddress;
   }
 
+  /**
+   * The IP protocol to which this rule applies. Valid options are TCP, UDP, ESP, AH, SCTP or ICMP.
+   *
+   * <p>When the load balancing scheme is INTERNAL, only TCP and UDP are valid. When the load
+   * balancing scheme is INTERNAL_SELF_MANAGED, only TCPis valid.
+   */
   public String getIPProtocol() {
     return iPProtocol;
   }
 
+  /**
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   */
   public String getId() {
     return id;
   }
 
+  /**
+   * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This
+   * can only be specified for an external global forwarding rule.
+   */
   public String getIpVersion() {
     return ipVersion;
   }
 
+  /**
+   * [Output Only] Type of the resource. Always compute#forwardingRule for Forwarding Rule
+   * resources.
+   */
   public String getKind() {
     return kind;
   }
 
+  /**
+   * This signifies what the ForwardingRule will be used for and can only take the following values:
+   * INTERNAL, INTERNAL_SELF_MANAGED, EXTERNAL. The value of INTERNAL means that this will be used
+   * for Internal Network Load Balancing (TCP, UDP). The value of INTERNAL_SELF_MANAGED means that
+   * this will be used for Internal Global HTTP(S) LB. The value of EXTERNAL means that this will be
+   * used for External Load Balancing (HTTP(S) LB, External TCP/UDP LB, SSL Proxy)
+   */
   public String getLoadBalancingScheme() {
     return loadBalancingScheme;
   }
 
+  /**
+   * Name of the resource; provided by the client when the resource is created. The name must be
+   * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+   * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be a dash, lowercase
+   * letter, or digit, except the last character, which cannot be a dash.
+   */
   public String getName() {
     return name;
   }
 
+  /**
+   * This field is not used for external load balancing.
+   *
+   * <p>For INTERNAL and INTERNAL_SELF_MANAGED load balancing, this field identifies the network
+   * that the load balanced IP should belong to for this Forwarding Rule. If this field is not
+   * specified, the default network will be used.
+   */
   public String getNetwork() {
     return network;
   }
 
+  /**
+   * This signifies the networking tier used for configuring this load balancer and can only take
+   * the following values: PREMIUM , STANDARD.
+   *
+   * <p>For regional ForwardingRule, the valid values are PREMIUM and STANDARD. For
+   * GlobalForwardingRule, the valid value is PREMIUM.
+   *
+   * <p>If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this
+   * value must be equal to the networkTier of the Address.
+   */
   public String getNetworkTier() {
     return networkTier;
   }
 
+  /**
+   * This field is used along with the target field for TargetHttpProxy, TargetHttpsProxy,
+   * TargetSslProxy, TargetTcpProxy, TargetVpnGateway, TargetPool, TargetInstance.
+   *
+   * <p>Applicable only when IPProtocol is TCP, UDP, or SCTP, only packets addressed to ports in the
+   * specified range will be forwarded to target. Forwarding rules with the same [IPAddress,
+   * IPProtocol] pair must have disjoint port ranges.
+   *
+   * <p>Some types of forwarding target have constraints on the acceptable ports: - TargetHttpProxy:
+   * 80, 8080 - TargetHttpsProxy: 443 - TargetTcpProxy: 25, 43, 110, 143, 195, 443, 465, 587, 700,
+   * 993, 995, 1688, 1883, 5222 - TargetSslProxy: 25, 43, 110, 143, 195, 443, 465, 587, 700, 993,
+   * 995, 1688, 1883, 5222 - TargetVpnGateway: 500, 4500
+   */
   public String getPortRange() {
     return portRange;
   }
 
+  /**
+   * This field is used along with the backend_service field for internal load balancing.
+   *
+   * <p>When the load balancing scheme is INTERNAL, a list of ports can be configured, for example,
+   * ['80'], ['8000','9000'] etc. Only packets addressed to these ports will be forwarded to the
+   * backends configured with this forwarding rule.
+   *
+   * <p>You may specify a maximum of up to 5 ports.
+   */
   public List<String> getPortsList() {
     return ports;
   }
 
+  /**
+   * [Output Only] URL of the region where the regional forwarding rule resides. This field is not
+   * applicable to global forwarding rules. You must specify this field as part of the HTTP request
+   * URL. It is not settable as a field in the request body.
+   */
   public String getRegion() {
     return region;
   }
 
+  /** [Output Only] Server-defined URL for the resource. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /**
+   * An optional prefix to the service name for this Forwarding Rule. If specified, will be the
+   * first label of the fully qualified service name.
+   *
+   * <p>The label must be 1-63 characters long, and comply with RFC1035. Specifically, the label
+   * must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?`
+   * which means the first character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   *
+   * <p>This field is only used for internal load balancing.
+   */
   public String getServiceLabel() {
     return serviceLabel;
   }
 
+  /**
+   * [Output Only] The internal fully qualified service name for this Forwarding Rule.
+   *
+   * <p>This field is only used for internal load balancing.
+   */
   public String getServiceName() {
     return serviceName;
   }
 
+  /**
+   * This field is only used for INTERNAL load balancing.
+   *
+   * <p>For internal load balancing, this field identifies the subnetwork that the load balanced IP
+   * should belong to for this Forwarding Rule.
+   *
+   * <p>If the network specified is in auto subnet mode, this field is optional. However, if the
+   * network is in custom subnet mode, a subnetwork must be specified.
+   */
   public String getSubnetwork() {
     return subnetwork;
   }
 
+  /**
+   * The URL of the target resource to receive the matched traffic. For regional forwarding rules,
+   * this target must live in the same region as the forwarding rule. For global forwarding rules,
+   * this target must be a global load balancing resource. The forwarded traffic must be of a type
+   * appropriate to the target object. For INTERNAL_SELF_MANAGED" load balancing, only HTTP and
+   * HTTPS targets are valid.
+   */
   public String getTarget() {
     return target;
   }
@@ -410,127 +562,345 @@ public final class ForwardingRule implements ApiMessage {
       this.target = source.target;
     }
 
+    /**
+     * This field is only used for INTERNAL load balancing.
+     *
+     * <p>For internal load balancing, this field identifies the BackendService resource to receive
+     * the matched traffic.
+     */
     public String getBackendService() {
       return backendService;
     }
 
+    /**
+     * This field is only used for INTERNAL load balancing.
+     *
+     * <p>For internal load balancing, this field identifies the BackendService resource to receive
+     * the matched traffic.
+     */
     public Builder setBackendService(String backendService) {
       this.backendService = backendService;
       return this;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public String getCreationTimestamp() {
       return creationTimestamp;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public String getDescription() {
       return description;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /**
+     * The IP address that this forwarding rule is serving on behalf of.
+     *
+     * <p>Addresses are restricted based on the forwarding rule's load balancing scheme (EXTERNAL or
+     * INTERNAL) and scope (global or regional).
+     *
+     * <p>When the load balancing scheme is EXTERNAL, for global forwarding rules, the address must
+     * be a global IP, and for regional forwarding rules, the address must live in the same region
+     * as the forwarding rule. If this field is empty, an ephemeral IPv4 address from the same scope
+     * (global or regional) will be assigned. A regional forwarding rule supports IPv4 only. A
+     * global forwarding rule supports either IPv4 or IPv6.
+     *
+     * <p>When the load balancing scheme is INTERNAL_SELF_MANAGED, this must be a URL reference to
+     * an existing Address resource ( internal regional static IP address), with a purpose of
+     * GCE_END_POINT and address_type of INTERNAL.
+     *
+     * <p>When the load balancing scheme is INTERNAL, this can only be an RFC 1918 IP address
+     * belonging to the network/subnet configured for the forwarding rule. By default, if this field
+     * is empty, an ephemeral internal IP address will be automatically allocated from the IP range
+     * of the subnet or network configured for this forwarding rule.
+     *
+     * <p>An address can be specified either by a literal IP address or a URL reference to an
+     * existing Address resource. The following examples are all valid: - 100.1.2.3 -
+     * https://www.googleapis.com/compute/v1/projects/project/regions/region/addresses/address -
+     * projects/project/regions/region/addresses/address - regions/region/addresses/address -
+     * global/addresses/address - address
+     */
     public String getIPAddress() {
       return iPAddress;
     }
 
+    /**
+     * The IP address that this forwarding rule is serving on behalf of.
+     *
+     * <p>Addresses are restricted based on the forwarding rule's load balancing scheme (EXTERNAL or
+     * INTERNAL) and scope (global or regional).
+     *
+     * <p>When the load balancing scheme is EXTERNAL, for global forwarding rules, the address must
+     * be a global IP, and for regional forwarding rules, the address must live in the same region
+     * as the forwarding rule. If this field is empty, an ephemeral IPv4 address from the same scope
+     * (global or regional) will be assigned. A regional forwarding rule supports IPv4 only. A
+     * global forwarding rule supports either IPv4 or IPv6.
+     *
+     * <p>When the load balancing scheme is INTERNAL_SELF_MANAGED, this must be a URL reference to
+     * an existing Address resource ( internal regional static IP address), with a purpose of
+     * GCE_END_POINT and address_type of INTERNAL.
+     *
+     * <p>When the load balancing scheme is INTERNAL, this can only be an RFC 1918 IP address
+     * belonging to the network/subnet configured for the forwarding rule. By default, if this field
+     * is empty, an ephemeral internal IP address will be automatically allocated from the IP range
+     * of the subnet or network configured for this forwarding rule.
+     *
+     * <p>An address can be specified either by a literal IP address or a URL reference to an
+     * existing Address resource. The following examples are all valid: - 100.1.2.3 -
+     * https://www.googleapis.com/compute/v1/projects/project/regions/region/addresses/address -
+     * projects/project/regions/region/addresses/address - regions/region/addresses/address -
+     * global/addresses/address - address
+     */
     public Builder setIPAddress(String iPAddress) {
       this.iPAddress = iPAddress;
       return this;
     }
 
+    /**
+     * The IP protocol to which this rule applies. Valid options are TCP, UDP, ESP, AH, SCTP or
+     * ICMP.
+     *
+     * <p>When the load balancing scheme is INTERNAL, only TCP and UDP are valid. When the load
+     * balancing scheme is INTERNAL_SELF_MANAGED, only TCPis valid.
+     */
     public String getIPProtocol() {
       return iPProtocol;
     }
 
+    /**
+     * The IP protocol to which this rule applies. Valid options are TCP, UDP, ESP, AH, SCTP or
+     * ICMP.
+     *
+     * <p>When the load balancing scheme is INTERNAL, only TCP and UDP are valid. When the load
+     * balancing scheme is INTERNAL_SELF_MANAGED, only TCPis valid.
+     */
     public Builder setIPProtocol(String iPProtocol) {
       this.iPProtocol = iPProtocol;
       return this;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /**
+     * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6.
+     * This can only be specified for an external global forwarding rule.
+     */
     public String getIpVersion() {
       return ipVersion;
     }
 
+    /**
+     * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6.
+     * This can only be specified for an external global forwarding rule.
+     */
     public Builder setIpVersion(String ipVersion) {
       this.ipVersion = ipVersion;
       return this;
     }
 
+    /**
+     * [Output Only] Type of the resource. Always compute#forwardingRule for Forwarding Rule
+     * resources.
+     */
     public String getKind() {
       return kind;
     }
 
+    /**
+     * [Output Only] Type of the resource. Always compute#forwardingRule for Forwarding Rule
+     * resources.
+     */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /**
+     * This signifies what the ForwardingRule will be used for and can only take the following
+     * values: INTERNAL, INTERNAL_SELF_MANAGED, EXTERNAL. The value of INTERNAL means that this will
+     * be used for Internal Network Load Balancing (TCP, UDP). The value of INTERNAL_SELF_MANAGED
+     * means that this will be used for Internal Global HTTP(S) LB. The value of EXTERNAL means that
+     * this will be used for External Load Balancing (HTTP(S) LB, External TCP/UDP LB, SSL Proxy)
+     */
     public String getLoadBalancingScheme() {
       return loadBalancingScheme;
     }
 
+    /**
+     * This signifies what the ForwardingRule will be used for and can only take the following
+     * values: INTERNAL, INTERNAL_SELF_MANAGED, EXTERNAL. The value of INTERNAL means that this will
+     * be used for Internal Network Load Balancing (TCP, UDP). The value of INTERNAL_SELF_MANAGED
+     * means that this will be used for Internal Global HTTP(S) LB. The value of EXTERNAL means that
+     * this will be used for External Load Balancing (HTTP(S) LB, External TCP/UDP LB, SSL Proxy)
+     */
     public Builder setLoadBalancingScheme(String loadBalancingScheme) {
       this.loadBalancingScheme = loadBalancingScheme;
       return this;
     }
 
+    /**
+     * Name of the resource; provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public String getName() {
       return name;
     }
 
+    /**
+     * Name of the resource; provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /**
+     * This field is not used for external load balancing.
+     *
+     * <p>For INTERNAL and INTERNAL_SELF_MANAGED load balancing, this field identifies the network
+     * that the load balanced IP should belong to for this Forwarding Rule. If this field is not
+     * specified, the default network will be used.
+     */
     public String getNetwork() {
       return network;
     }
 
+    /**
+     * This field is not used for external load balancing.
+     *
+     * <p>For INTERNAL and INTERNAL_SELF_MANAGED load balancing, this field identifies the network
+     * that the load balanced IP should belong to for this Forwarding Rule. If this field is not
+     * specified, the default network will be used.
+     */
     public Builder setNetwork(String network) {
       this.network = network;
       return this;
     }
 
+    /**
+     * This signifies the networking tier used for configuring this load balancer and can only take
+     * the following values: PREMIUM , STANDARD.
+     *
+     * <p>For regional ForwardingRule, the valid values are PREMIUM and STANDARD. For
+     * GlobalForwardingRule, the valid value is PREMIUM.
+     *
+     * <p>If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified,
+     * this value must be equal to the networkTier of the Address.
+     */
     public String getNetworkTier() {
       return networkTier;
     }
 
+    /**
+     * This signifies the networking tier used for configuring this load balancer and can only take
+     * the following values: PREMIUM , STANDARD.
+     *
+     * <p>For regional ForwardingRule, the valid values are PREMIUM and STANDARD. For
+     * GlobalForwardingRule, the valid value is PREMIUM.
+     *
+     * <p>If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified,
+     * this value must be equal to the networkTier of the Address.
+     */
     public Builder setNetworkTier(String networkTier) {
       this.networkTier = networkTier;
       return this;
     }
 
+    /**
+     * This field is used along with the target field for TargetHttpProxy, TargetHttpsProxy,
+     * TargetSslProxy, TargetTcpProxy, TargetVpnGateway, TargetPool, TargetInstance.
+     *
+     * <p>Applicable only when IPProtocol is TCP, UDP, or SCTP, only packets addressed to ports in
+     * the specified range will be forwarded to target. Forwarding rules with the same [IPAddress,
+     * IPProtocol] pair must have disjoint port ranges.
+     *
+     * <p>Some types of forwarding target have constraints on the acceptable ports: -
+     * TargetHttpProxy: 80, 8080 - TargetHttpsProxy: 443 - TargetTcpProxy: 25, 43, 110, 143, 195,
+     * 443, 465, 587, 700, 993, 995, 1688, 1883, 5222 - TargetSslProxy: 25, 43, 110, 143, 195, 443,
+     * 465, 587, 700, 993, 995, 1688, 1883, 5222 - TargetVpnGateway: 500, 4500
+     */
     public String getPortRange() {
       return portRange;
     }
 
+    /**
+     * This field is used along with the target field for TargetHttpProxy, TargetHttpsProxy,
+     * TargetSslProxy, TargetTcpProxy, TargetVpnGateway, TargetPool, TargetInstance.
+     *
+     * <p>Applicable only when IPProtocol is TCP, UDP, or SCTP, only packets addressed to ports in
+     * the specified range will be forwarded to target. Forwarding rules with the same [IPAddress,
+     * IPProtocol] pair must have disjoint port ranges.
+     *
+     * <p>Some types of forwarding target have constraints on the acceptable ports: -
+     * TargetHttpProxy: 80, 8080 - TargetHttpsProxy: 443 - TargetTcpProxy: 25, 43, 110, 143, 195,
+     * 443, 465, 587, 700, 993, 995, 1688, 1883, 5222 - TargetSslProxy: 25, 43, 110, 143, 195, 443,
+     * 465, 587, 700, 993, 995, 1688, 1883, 5222 - TargetVpnGateway: 500, 4500
+     */
     public Builder setPortRange(String portRange) {
       this.portRange = portRange;
       return this;
     }
 
+    /**
+     * This field is used along with the backend_service field for internal load balancing.
+     *
+     * <p>When the load balancing scheme is INTERNAL, a list of ports can be configured, for
+     * example, ['80'], ['8000','9000'] etc. Only packets addressed to these ports will be forwarded
+     * to the backends configured with this forwarding rule.
+     *
+     * <p>You may specify a maximum of up to 5 ports.
+     */
     public List<String> getPortsList() {
       return ports;
     }
 
+    /**
+     * This field is used along with the backend_service field for internal load balancing.
+     *
+     * <p>When the load balancing scheme is INTERNAL, a list of ports can be configured, for
+     * example, ['80'], ['8000','9000'] etc. Only packets addressed to these ports will be forwarded
+     * to the backends configured with this forwarding rule.
+     *
+     * <p>You may specify a maximum of up to 5 ports.
+     */
     public Builder addAllPorts(List<String> ports) {
       if (this.ports == null) {
         this.ports = new LinkedList<>();
@@ -539,6 +909,15 @@ public final class ForwardingRule implements ApiMessage {
       return this;
     }
 
+    /**
+     * This field is used along with the backend_service field for internal load balancing.
+     *
+     * <p>When the load balancing scheme is INTERNAL, a list of ports can be configured, for
+     * example, ['80'], ['8000','9000'] etc. Only packets addressed to these ports will be forwarded
+     * to the backends configured with this forwarding rule.
+     *
+     * <p>You may specify a maximum of up to 5 ports.
+     */
     public Builder addPorts(String ports) {
       if (this.ports == null) {
         this.ports = new LinkedList<>();
@@ -547,55 +926,133 @@ public final class ForwardingRule implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] URL of the region where the regional forwarding rule resides. This field is not
+     * applicable to global forwarding rules. You must specify this field as part of the HTTP
+     * request URL. It is not settable as a field in the request body.
+     */
     public String getRegion() {
       return region;
     }
 
+    /**
+     * [Output Only] URL of the region where the regional forwarding rule resides. This field is not
+     * applicable to global forwarding rules. You must specify this field as part of the HTTP
+     * request URL. It is not settable as a field in the request body.
+     */
     public Builder setRegion(String region) {
       this.region = region;
       return this;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /**
+     * An optional prefix to the service name for this Forwarding Rule. If specified, will be the
+     * first label of the fully qualified service name.
+     *
+     * <p>The label must be 1-63 characters long, and comply with RFC1035. Specifically, the label
+     * must be 1-63 characters long and match the regular expression
+     * `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first character must be a lowercase letter,
+     * and all following characters must be a dash, lowercase letter, or digit, except the last
+     * character, which cannot be a dash.
+     *
+     * <p>This field is only used for internal load balancing.
+     */
     public String getServiceLabel() {
       return serviceLabel;
     }
 
+    /**
+     * An optional prefix to the service name for this Forwarding Rule. If specified, will be the
+     * first label of the fully qualified service name.
+     *
+     * <p>The label must be 1-63 characters long, and comply with RFC1035. Specifically, the label
+     * must be 1-63 characters long and match the regular expression
+     * `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first character must be a lowercase letter,
+     * and all following characters must be a dash, lowercase letter, or digit, except the last
+     * character, which cannot be a dash.
+     *
+     * <p>This field is only used for internal load balancing.
+     */
     public Builder setServiceLabel(String serviceLabel) {
       this.serviceLabel = serviceLabel;
       return this;
     }
 
+    /**
+     * [Output Only] The internal fully qualified service name for this Forwarding Rule.
+     *
+     * <p>This field is only used for internal load balancing.
+     */
     public String getServiceName() {
       return serviceName;
     }
 
+    /**
+     * [Output Only] The internal fully qualified service name for this Forwarding Rule.
+     *
+     * <p>This field is only used for internal load balancing.
+     */
     public Builder setServiceName(String serviceName) {
       this.serviceName = serviceName;
       return this;
     }
 
+    /**
+     * This field is only used for INTERNAL load balancing.
+     *
+     * <p>For internal load balancing, this field identifies the subnetwork that the load balanced
+     * IP should belong to for this Forwarding Rule.
+     *
+     * <p>If the network specified is in auto subnet mode, this field is optional. However, if the
+     * network is in custom subnet mode, a subnetwork must be specified.
+     */
     public String getSubnetwork() {
       return subnetwork;
     }
 
+    /**
+     * This field is only used for INTERNAL load balancing.
+     *
+     * <p>For internal load balancing, this field identifies the subnetwork that the load balanced
+     * IP should belong to for this Forwarding Rule.
+     *
+     * <p>If the network specified is in auto subnet mode, this field is optional. However, if the
+     * network is in custom subnet mode, a subnetwork must be specified.
+     */
     public Builder setSubnetwork(String subnetwork) {
       this.subnetwork = subnetwork;
       return this;
     }
 
+    /**
+     * The URL of the target resource to receive the matched traffic. For regional forwarding rules,
+     * this target must live in the same region as the forwarding rule. For global forwarding rules,
+     * this target must be a global load balancing resource. The forwarded traffic must be of a type
+     * appropriate to the target object. For INTERNAL_SELF_MANAGED" load balancing, only HTTP and
+     * HTTPS targets are valid.
+     */
     public String getTarget() {
       return target;
     }
 
+    /**
+     * The URL of the target resource to receive the matched traffic. For regional forwarding rules,
+     * this target must live in the same region as the forwarding rule. For global forwarding rules,
+     * this target must be a global load balancing resource. The forwarded traffic must be of a type
+     * appropriate to the target object. For INTERNAL_SELF_MANAGED" load balancing, only HTTP and
+     * HTTPS targets are valid.
+     */
     public Builder setTarget(String target) {
       this.target = target;
       return this;

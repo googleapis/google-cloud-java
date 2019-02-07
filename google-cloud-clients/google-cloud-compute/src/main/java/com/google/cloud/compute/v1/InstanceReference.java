@@ -55,6 +55,7 @@ public final class InstanceReference implements ApiMessage {
     return null;
   }
 
+  /** The URL for a specific instance. */
   public String getInstance() {
     return instance;
   }
@@ -98,10 +99,12 @@ public final class InstanceReference implements ApiMessage {
       this.instance = source.instance;
     }
 
+    /** The URL for a specific instance. */
     public String getInstance() {
       return instance;
     }
 
+    /** The URL for a specific instance. */
     public Builder setInstance(String instance) {
       this.instance = instance;
       return this;

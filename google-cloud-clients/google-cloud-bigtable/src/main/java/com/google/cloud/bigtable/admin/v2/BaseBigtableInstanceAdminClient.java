@@ -345,7 +345,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *     .setInstance(instance)
    *     .putAllClusters(clusters)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = baseBigtableInstanceAdminClient.createInstanceOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Instance, CreateInstanceMetadata&gt; future = baseBigtableInstanceAdminClient.createInstanceOperationCallable().futureCall(request);
    *   // Do something
    *   Instance response = future.get();
    * }
@@ -645,7 +645,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *     .setInstance(instance)
    *     .setUpdateMask(updateMask)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = baseBigtableInstanceAdminClient.partialUpdateInstanceOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Instance, UpdateInstanceMetadata&gt; future = baseBigtableInstanceAdminClient.partialUpdateInstanceOperationCallable().futureCall(request);
    *   // Do something
    *   Instance response = future.get();
    * }
@@ -892,7 +892,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *     .setClusterId(clusterId)
    *     .setCluster(cluster)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = baseBigtableInstanceAdminClient.createClusterOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Cluster, CreateClusterMetadata&gt; future = baseBigtableInstanceAdminClient.createClusterOperationCallable().futureCall(request);
    *   // Do something
    *   Cluster response = future.get();
    * }
@@ -1161,7 +1161,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *     .setName(name.toString())
    *     .setServeNodes(serveNodes)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = baseBigtableInstanceAdminClient.updateClusterOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Cluster, UpdateClusterMetadata&gt; future = baseBigtableInstanceAdminClient.updateClusterOperationCallable().futureCall(request);
    *   // Do something
    *   Cluster response = future.get();
    * }
@@ -1715,7 +1715,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    *     .setAppProfile(appProfile)
    *     .setUpdateMask(updateMask)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = baseBigtableInstanceAdminClient.updateAppProfileOperationCallable().futureCall(request);
+   *   OperationFuture&lt;AppProfile, UpdateAppProfileMetadata&gt; future = baseBigtableInstanceAdminClient.updateAppProfileOperationCallable().futureCall(request);
    *   // Do something
    *   AppProfile response = future.get();
    * }

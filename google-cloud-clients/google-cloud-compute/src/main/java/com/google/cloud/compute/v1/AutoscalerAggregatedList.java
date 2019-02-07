@@ -92,26 +92,43 @@ public final class AutoscalerAggregatedList implements ApiMessage {
     return null;
   }
 
+  /** [Output Only] Unique identifier for the resource; defined by the server. */
   public String getId() {
     return id;
   }
 
+  /**
+   * A list of AutoscalersScopedList resources. The key for the map is: [Output Only] Name of the
+   * scope containing this set of autoscalers.
+   */
   public Map<String, AutoscalersScopedList> getItemsMap() {
     return items;
   }
 
+  /**
+   * [Output Only] Type of resource. Always compute#autoscalerAggregatedList for aggregated lists of
+   * autoscalers.
+   */
   public String getKind() {
     return kind;
   }
 
+  /**
+   * [Output Only] This token allows you to get the next page of results for list requests. If the
+   * number of results is larger than maxResults, use the nextPageToken as a value for the query
+   * parameter pageToken in the next list request. Subsequent list requests will have their own
+   * nextPageToken to continue paging through the results.
+   */
   public String getNextPageToken() {
     return nextPageToken;
   }
 
+  /** [Output Only] Server-defined URL for this resource. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /** [Output Only] Informational warning message. */
   public Warning getWarning() {
     return warning;
   }
@@ -180,55 +197,89 @@ public final class AutoscalerAggregatedList implements ApiMessage {
       this.warning = source.warning;
     }
 
+    /** [Output Only] Unique identifier for the resource; defined by the server. */
     public String getId() {
       return id;
     }
 
+    /** [Output Only] Unique identifier for the resource; defined by the server. */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /**
+     * A list of AutoscalersScopedList resources. The key for the map is: [Output Only] Name of the
+     * scope containing this set of autoscalers.
+     */
     public Map<String, AutoscalersScopedList> getItemsMap() {
       return items;
     }
 
+    /**
+     * A list of AutoscalersScopedList resources. The key for the map is: [Output Only] Name of the
+     * scope containing this set of autoscalers.
+     */
     public Builder putAllItems(Map<String, AutoscalersScopedList> items) {
       this.items = items;
       return this;
     }
 
+    /**
+     * [Output Only] Type of resource. Always compute#autoscalerAggregatedList for aggregated lists
+     * of autoscalers.
+     */
     public String getKind() {
       return kind;
     }
 
+    /**
+     * [Output Only] Type of resource. Always compute#autoscalerAggregatedList for aggregated lists
+     * of autoscalers.
+     */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /**
+     * [Output Only] This token allows you to get the next page of results for list requests. If the
+     * number of results is larger than maxResults, use the nextPageToken as a value for the query
+     * parameter pageToken in the next list request. Subsequent list requests will have their own
+     * nextPageToken to continue paging through the results.
+     */
     public String getNextPageToken() {
       return nextPageToken;
     }
 
+    /**
+     * [Output Only] This token allows you to get the next page of results for list requests. If the
+     * number of results is larger than maxResults, use the nextPageToken as a value for the query
+     * parameter pageToken in the next list request. Subsequent list requests will have their own
+     * nextPageToken to continue paging through the results.
+     */
     public Builder setNextPageToken(String nextPageToken) {
       this.nextPageToken = nextPageToken;
       return this;
     }
 
+    /** [Output Only] Server-defined URL for this resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined URL for this resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /** [Output Only] Informational warning message. */
     public Warning getWarning() {
       return warning;
     }
 
+    /** [Output Only] Informational warning message. */
     public Builder setWarning(Warning warning) {
       this.warning = warning;
       return this;

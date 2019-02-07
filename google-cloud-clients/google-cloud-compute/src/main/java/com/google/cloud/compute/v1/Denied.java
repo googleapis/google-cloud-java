@@ -26,6 +26,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range
+ * tuple that describes a denied connection.
+ */
 public final class Denied implements ApiMessage {
   @SerializedName("IPProtocol")
   private final String iPProtocol;
@@ -65,10 +69,22 @@ public final class Denied implements ApiMessage {
     return null;
   }
 
+  /**
+   * The IP protocol to which this rule applies. The protocol type is required when creating a
+   * firewall rule. This value can either be one of the following well known protocol strings (tcp,
+   * udp, icmp, esp, ah, ipip, sctp), or the IP protocol number.
+   */
   public String getIPProtocol() {
     return iPProtocol;
   }
 
+  /**
+   * An optional list of ports to which this rule applies. This field is only applicable for UDP or
+   * TCP protocol. Each entry must be either an integer or a range. If not specified, this rule
+   * applies to connections through any port.
+   *
+   * <p>Example inputs include: ["22"], ["80","443"], and ["12345-12349"].
+   */
   public List<String> getPortsList() {
     return ports;
   }
@@ -117,19 +133,43 @@ public final class Denied implements ApiMessage {
       this.ports = source.ports;
     }
 
+    /**
+     * The IP protocol to which this rule applies. The protocol type is required when creating a
+     * firewall rule. This value can either be one of the following well known protocol strings
+     * (tcp, udp, icmp, esp, ah, ipip, sctp), or the IP protocol number.
+     */
     public String getIPProtocol() {
       return iPProtocol;
     }
 
+    /**
+     * The IP protocol to which this rule applies. The protocol type is required when creating a
+     * firewall rule. This value can either be one of the following well known protocol strings
+     * (tcp, udp, icmp, esp, ah, ipip, sctp), or the IP protocol number.
+     */
     public Builder setIPProtocol(String iPProtocol) {
       this.iPProtocol = iPProtocol;
       return this;
     }
 
+    /**
+     * An optional list of ports to which this rule applies. This field is only applicable for UDP
+     * or TCP protocol. Each entry must be either an integer or a range. If not specified, this rule
+     * applies to connections through any port.
+     *
+     * <p>Example inputs include: ["22"], ["80","443"], and ["12345-12349"].
+     */
     public List<String> getPortsList() {
       return ports;
     }
 
+    /**
+     * An optional list of ports to which this rule applies. This field is only applicable for UDP
+     * or TCP protocol. Each entry must be either an integer or a range. If not specified, this rule
+     * applies to connections through any port.
+     *
+     * <p>Example inputs include: ["22"], ["80","443"], and ["12345-12349"].
+     */
     public Builder addAllPorts(List<String> ports) {
       if (this.ports == null) {
         this.ports = new LinkedList<>();
@@ -138,6 +178,13 @@ public final class Denied implements ApiMessage {
       return this;
     }
 
+    /**
+     * An optional list of ports to which this rule applies. This field is only applicable for UDP
+     * or TCP protocol. Each entry must be either an integer or a range. If not specified, this rule
+     * applies to connections through any port.
+     *
+     * <p>Example inputs include: ["22"], ["80","443"], and ["12345-12349"].
+     */
     public Builder addPorts(String ports) {
       if (this.ports == null) {
         this.ports = new LinkedList<>();

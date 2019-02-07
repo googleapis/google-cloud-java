@@ -91,9 +91,9 @@ public final class FieldMask {
     return fieldPaths;
   }
 
-  com.google.firestore.v1beta1.DocumentMask toPb() {
-    com.google.firestore.v1beta1.DocumentMask.Builder updateMask =
-        com.google.firestore.v1beta1.DocumentMask.newBuilder();
+  com.google.firestore.v1.DocumentMask toPb() {
+    com.google.firestore.v1.DocumentMask.Builder updateMask =
+        com.google.firestore.v1.DocumentMask.newBuilder();
     for (FieldPath fieldPath : fieldPaths) {
       updateMask.addFieldPaths(fieldPath.getEncodedPath());
     }

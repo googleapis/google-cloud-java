@@ -24,6 +24,12 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Represents an expression text. Example:
+ *
+ * <p>title: "User account presence" description: "Determines whether the request has a user
+ * account" expression: "size(request.user) &gt; 0"
+ */
 public final class Expr implements ApiMessage {
   private final String description;
   private final String expression;
@@ -73,18 +79,36 @@ public final class Expr implements ApiMessage {
     return null;
   }
 
+  /**
+   * An optional description of the expression. This is a longer text which describes the
+   * expression, e.g. when hovered over it in a UI.
+   */
   public String getDescription() {
     return description;
   }
 
+  /**
+   * Textual representation of an expression in Common Expression Language syntax.
+   *
+   * <p>The application context of the containing message determines which well-known feature set of
+   * CEL is supported.
+   */
   public String getExpression() {
     return expression;
   }
 
+  /**
+   * An optional string indicating the location of the expression for error reporting, e.g. a file
+   * name and a position in the file.
+   */
   public String getLocation() {
     return location;
   }
 
+  /**
+   * An optional title for the expression, i.e. a short string describing its purpose. This can be
+   * used e.g. in UIs which allow to enter the expression.
+   */
   public String getTitle() {
     return title;
   }
@@ -143,37 +167,73 @@ public final class Expr implements ApiMessage {
       this.title = source.title;
     }
 
+    /**
+     * An optional description of the expression. This is a longer text which describes the
+     * expression, e.g. when hovered over it in a UI.
+     */
     public String getDescription() {
       return description;
     }
 
+    /**
+     * An optional description of the expression. This is a longer text which describes the
+     * expression, e.g. when hovered over it in a UI.
+     */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /**
+     * Textual representation of an expression in Common Expression Language syntax.
+     *
+     * <p>The application context of the containing message determines which well-known feature set
+     * of CEL is supported.
+     */
     public String getExpression() {
       return expression;
     }
 
+    /**
+     * Textual representation of an expression in Common Expression Language syntax.
+     *
+     * <p>The application context of the containing message determines which well-known feature set
+     * of CEL is supported.
+     */
     public Builder setExpression(String expression) {
       this.expression = expression;
       return this;
     }
 
+    /**
+     * An optional string indicating the location of the expression for error reporting, e.g. a file
+     * name and a position in the file.
+     */
     public String getLocation() {
       return location;
     }
 
+    /**
+     * An optional string indicating the location of the expression for error reporting, e.g. a file
+     * name and a position in the file.
+     */
     public Builder setLocation(String location) {
       this.location = location;
       return this;
     }
 
+    /**
+     * An optional title for the expression, i.e. a short string describing its purpose. This can be
+     * used e.g. in UIs which allow to enter the expression.
+     */
     public String getTitle() {
       return title;
     }
 
+    /**
+     * An optional title for the expression, i.e. a short string describing its purpose. This can be
+     * used e.g. in UIs which allow to enter the expression.
+     */
     public Builder setTitle(String title) {
       this.title = title;
       return this;

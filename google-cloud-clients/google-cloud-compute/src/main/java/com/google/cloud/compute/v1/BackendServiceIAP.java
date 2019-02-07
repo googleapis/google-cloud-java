@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Identity-Aware Proxy */
 public final class BackendServiceIAP implements ApiMessage {
   private final Boolean enabled;
   private final String oauth2ClientId;
@@ -89,6 +90,7 @@ public final class BackendServiceIAP implements ApiMessage {
     return oauth2ClientSecret;
   }
 
+  /** [Output Only] SHA256 hash value for the field oauth2_client_secret above. */
   public String getOauth2ClientSecretSha256() {
     return oauth2ClientSecretSha256;
   }
@@ -174,10 +176,12 @@ public final class BackendServiceIAP implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] SHA256 hash value for the field oauth2_client_secret above. */
     public String getOauth2ClientSecretSha256() {
       return oauth2ClientSecretSha256;
     }
 
+    /** [Output Only] SHA256 hash value for the field oauth2_client_secret above. */
     public Builder setOauth2ClientSecretSha256(String oauth2ClientSecretSha256) {
       this.oauth2ClientSecretSha256 = oauth2ClientSecretSha256;
       return this;

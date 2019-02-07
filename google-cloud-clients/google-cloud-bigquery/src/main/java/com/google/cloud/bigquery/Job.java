@@ -305,7 +305,7 @@ public class Job extends JobInfo {
     // Listing table data might fail, such as with CREATE VIEW queries.
     // Avoid a tabledata.list API request by returning an empty TableResult.
     if (response.getTotalRows() == 0) {
-      return new EmptyTableResult();
+      return new EmptyTableResult(response.getSchema());
     }
 
     TableId table = ((QueryJobConfiguration) getConfiguration()).getDestinationTable();
