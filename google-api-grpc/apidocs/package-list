@@ -42,6 +42,7 @@ com.google.datastore.v1
 com.google.devtools.clouderrorreporting.v1beta1
 com.google.devtools.cloudtrace.v1
 com.google.devtools.cloudtrace.v2
+com.google.firestore.v1
 com.google.firestore.v1beta1
 com.google.logging.v2
 com.google.monitoring.v3

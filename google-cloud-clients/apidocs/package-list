@@ -60,7 +60,9 @@ com.google.cloud.errorreporting.v1beta1.stub
 com.google.cloud.firestore
 com.google.cloud.firestore.annotation
 com.google.cloud.firestore.collection
-com.google.cloud.firestore.spi.v1beta1
+com.google.cloud.firestore.spi.v1
+com.google.cloud.firestore.v1
+com.google.cloud.firestore.v1.stub
 com.google.cloud.firestore.v1beta1
 com.google.cloud.firestore.v1beta1.stub
 com.google.cloud.grpc
