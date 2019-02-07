@@ -33,6 +33,9 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.core.ApiClock;
+import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.services.storage.model.StorageObject;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.storage.Acl.Project;
 import com.google.cloud.storage.Acl.Project.ProjectRole;
@@ -41,10 +44,13 @@ import com.google.cloud.storage.Acl.User;
 import com.google.cloud.storage.Blob.BlobSourceOption;
 import com.google.cloud.storage.Storage.BlobWriteOption;
 import com.google.cloud.storage.Storage.CopyRequest;
+import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.io.BaseEncoding;
+import com.google.common.io.CountingOutputStream;
 import java.io.File;
+import java.io.OutputStream;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.file.Files;
@@ -58,6 +64,7 @@ import org.easymock.IAnswer;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.threeten.bp.Duration;
 
 public class BlobTest {
 
@@ -128,6 +135,28 @@ public class BlobTest {
   private static final String BASE64_KEY = "JVzfVl8NLD9FjedFuStegjRfES5ll5zc59CIXw572OA=";
   private static final Key KEY =
       new SecretKeySpec(BaseEncoding.base64().decode(BASE64_KEY), "AES256");
+  private static final RetrySettings RETRY_SETTINGS =
+      RetrySettings.newBuilder()
+          .setInitialRetryDelay(Duration.ofMillis(100L))
+          .setRetryDelayMultiplier(1.3)
+          .setMaxRetryDelay(Duration.ofMillis(60000L))
+          .setInitialRpcTimeout(Duration.ofMillis(20000L))
+          .setRpcTimeoutMultiplier(1.0)
+          .setMaxRpcTimeout(Duration.ofMillis(20000L))
+          .setTotalTimeout(Duration.ofMillis(600000L))
+          .build();
+  private static final ApiClock API_CLOCK =
+      new ApiClock() {
+        @Override
+        public long nanoTime() {
+          return 42_000_000_000L;
+        }
+
+        @Override
+        public long millisTime() {
+          return 42_000L;
+        }
+      };
 
   private Storage storage;
   private Blob blob;
@@ -588,4 +617,44 @@ public class BlobTest {
     assertArrayEquals(expected, actual);
   }
 
+  @Test
+  public void testDownloadToOutputStream() throws Exception {
+    final byte[] expected = {1, 2};
+
+    File file = File.createTempFile("blob", ".tmp");
+    StorageRpc mockStorageRpc = createNiceMock(StorageRpc.class);
+
+    expect(storage.getOptions()).andReturn(mockOptions).times(2);
+    replay(storage);
+
+    expect(mockOptions.getStorageRpcV1()).andReturn(mockStorageRpc);
+
+    expect(mockOptions.getRetrySettings()).andReturn(RETRY_SETTINGS);
+    expect(mockOptions.getClock()).andReturn(API_CLOCK);
+
+    replay(mockOptions);
+
+    storage.getOptions();
+    blob = new Blob(storage, new BlobInfo.BuilderImpl(BLOB_INFO));
+
+    expect(
+            mockStorageRpc.readToOutputStream(
+                anyObject(StorageObject.class),
+                anyObject(CountingOutputStream.class),
+                anyObject(Map.class)))
+        .andAnswer(
+            new IAnswer<Boolean>() {
+              @Override
+              public Boolean answer() throws Throwable {
+                ((CountingOutputStream) getCurrentArguments()[1]).write(expected);
+                return true;
+              }
+            });
+    replay(mockStorageRpc);
+
+    OutputStream outputStream = Files.newOutputStream(file.toPath());
+    blob.downloadTo(outputStream);
+    byte actual[] = Files.readAllBytes(file.toPath());
+    assertArrayEquals(expected, actual);
+  }
 }

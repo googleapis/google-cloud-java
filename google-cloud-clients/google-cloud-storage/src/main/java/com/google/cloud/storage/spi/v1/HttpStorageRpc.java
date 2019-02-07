@@ -629,8 +629,8 @@ public class HttpStorageRpc implements StorageRpc {
   }
 
   @Override
-  public void readToOutputStream(
-      StorageObject from, long position, CountingOutputStream to, Map<Option, ?> options) {
+  public boolean readToOutputStream(
+      StorageObject from, CountingOutputStream to, Map<Option, ?> options) {
     Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_READ);
     Scope scope = tracer.withSpan(span);
     try {
@@ -644,8 +644,13 @@ public class HttpStorageRpc implements StorageRpc {
               .setIfGenerationMatch(Option.IF_GENERATION_MATCH.getLong(options))
               .setIfGenerationNotMatch(Option.IF_GENERATION_NOT_MATCH.getLong(options))
               .setUserProject(Option.USER_PROJECT.getString(options));
-      req.getMediaHttpDownloader().setDirectDownloadEnabled(true).setBytesDownloaded(position);
+      req.getMediaHttpDownloader().setDirectDownloadEnabled(true);
+      long bytesDownloaded = to.getCount();
+      if (bytesDownloaded > 0) {
+        req.getMediaHttpDownloader().setBytesDownloaded(bytesDownloaded);
+      }
       req.executeMediaAndDownloadTo(to);
+      return true;
     } catch (IOException ex) {
       span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
       StorageException serviceException = translate(ex);
@@ -672,8 +677,6 @@ public class HttpStorageRpc implements StorageRpc {
               .setIfGenerationMatch(Option.IF_GENERATION_MATCH.getLong(options))
               .setIfGenerationNotMatch(Option.IF_GENERATION_NOT_MATCH.getLong(options))
               .setUserProject(Option.USER_PROJECT.getString(options));
-      req.getMediaHttpDownloader()
-          .setDirectDownloadEnabled(Option.USE_DIRECT_DOWNLOAD.getBoolean(options));
       checkArgument(position >= 0, "Position should be non-negative, is %d", position);
       StringBuilder range = new StringBuilder();
       range.append("bytes=").append(position).append("-").append(position + bytes - 1);

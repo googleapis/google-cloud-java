@@ -104,8 +104,6 @@ public class Blob extends BlobInfo {
           return Storage.BlobSourceOption.metagenerationNotMatch(blobInfo.getMetageneration());
         case CUSTOMER_SUPPLIED_KEY:
           return Storage.BlobSourceOption.decryptionKey((String) getValue());
-        case USE_DIRECT_DOWNLOAD:
-          return Storage.BlobSourceOption.useDirectDownload((Boolean) getValue());
         case USER_PROJECT:
           return Storage.BlobSourceOption.userProject((String) getValue());
         default:
@@ -182,16 +180,6 @@ public class Blob extends BlobInfo {
     }
 
     /**
-     * Returns the option to enable or disable direct download. If the value is set to {@code true},
-     * then a direct download will be performed when all the blob content is loaded in one request.
-     * If {@code false} is specified, the download uses a resumed download protocol to load data
-     * into chunks.
-     */
-    public static BlobSourceOption useDirectDownload(boolean useDirectDownload) {
-      return new BlobSourceOption(StorageRpc.Option.USE_DIRECT_DOWNLOAD, useDirectDownload);
-    }
-
-    /**
      * Returns an option for blob's billing user project. This option is used only if the blob's
      * bucket has requester_pays flag enabled.
      */
@@ -250,9 +238,7 @@ public class Blob extends BlobInfo {
    */
   public void downloadTo(OutputStream outputStream, final BlobSourceOption... options) {
     try (CountingOutputStream countingOutputStream = new CountingOutputStream(outputStream)) {
-      final StorageObject storageObject = getBlobId().toPb();
-      final StorageOptions storageOptions = this.options;
-      final StorageRpc storageRpc = storageOptions.getStorageRpcV1();
+      final StorageRpc storageRpc = this.options.getStorageRpcV1();
       final Map<StorageRpc.Option, ?> requestOptions = StorageImpl.optionMap(getBlobId(), options);
       runWithRetries(
           callable(
@@ -260,15 +246,12 @@ public class Blob extends BlobInfo {
                 @Override
                 public void run() {
                   storageRpc.readToOutputStream(
-                      storageObject,
-                      countingOutputStream.getCount(),
-                      countingOutputStream,
-                      requestOptions);
+                      getBlobId().toPb(), countingOutputStream, requestOptions);
                 }
               }),
-          storageOptions.getRetrySettings(),
+          this.options.getRetrySettings(),
           StorageImpl.EXCEPTION_HANDLER,
-          storageOptions.getClock());
+          this.options.getClock());
     } catch (RetryHelper.RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     } catch (IOException e) {
@@ -290,7 +273,7 @@ public class Blob extends BlobInfo {
   }
 
   /**
-   * Downloads this blob to the given outputStream.
+   * Downloads this blob to the given output stream.
    *
    * @param outputStream destination
    * @throws StorageException upon failure
@@ -463,12 +446,6 @@ public class Blob extends BlobInfo {
     @Override
     public Builder setEventBasedHold(Boolean eventBasedHold) {
       infoBuilder.setEventBasedHold(eventBasedHold);
-      return this;
-    }
-
-    @Override
-    public Builder setUseDirectDownload(Boolean useDirectDownload) {
-      infoBuilder.setUseDirectDownload(useDirectDownload);
       return this;
     }
 

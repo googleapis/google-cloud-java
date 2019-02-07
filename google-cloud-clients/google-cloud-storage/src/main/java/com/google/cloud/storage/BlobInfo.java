@@ -85,7 +85,6 @@ public class BlobInfo implements Serializable {
   private final String kmsKeyName;
   private final Boolean eventBasedHold;
   private final Boolean temporaryHold;
-  private final Boolean useDirectDownload;
   private final Long retentionExpirationTime;
 
   /** This class is meant for internal use only. Users are discouraged from using this class. */
@@ -267,9 +266,6 @@ public class BlobInfo implements Serializable {
     public abstract Builder setTemporaryHold(Boolean temporaryHold);
 
     @BetaApi
-    public abstract Builder setUseDirectDownload(Boolean useDirectDownload);
-
-    @BetaApi
     abstract Builder setRetentionExpirationTime(Long retentionExpirationTime);
 
     /** Creates a {@code BlobInfo} object. */
@@ -305,7 +301,6 @@ public class BlobInfo implements Serializable {
     private String kmsKeyName;
     private Boolean eventBasedHold;
     private Boolean temporaryHold;
-    private Boolean useDirectDownload;
     private Long retentionExpirationTime;
 
     BuilderImpl(BlobId blobId) {
@@ -340,7 +335,6 @@ public class BlobInfo implements Serializable {
       kmsKeyName = blobInfo.kmsKeyName;
       eventBasedHold = blobInfo.eventBasedHold;
       temporaryHold = blobInfo.temporaryHold;
-      useDirectDownload = blobInfo.useDirectDownload;
       retentionExpirationTime = blobInfo.retentionExpirationTime;
     }
 
@@ -510,12 +504,6 @@ public class BlobInfo implements Serializable {
     }
 
     @Override
-    public Builder setUseDirectDownload(Boolean useDirectDownload) {
-      this.useDirectDownload = useDirectDownload;
-      return this;
-    }
-
-    @Override
     Builder setRetentionExpirationTime(Long retentionExpirationTime) {
       this.retentionExpirationTime = retentionExpirationTime;
       return this;
@@ -556,7 +544,6 @@ public class BlobInfo implements Serializable {
     kmsKeyName = builder.kmsKeyName;
     eventBasedHold = builder.eventBasedHold;
     temporaryHold = builder.temporaryHold;
-    useDirectDownload = builder.useDirectDownload;
     retentionExpirationTime = builder.retentionExpirationTime;
   }
 

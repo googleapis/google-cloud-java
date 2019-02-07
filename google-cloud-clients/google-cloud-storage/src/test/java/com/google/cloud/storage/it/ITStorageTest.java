@@ -1700,38 +1700,6 @@ public class ITStorageTest {
   }
 
   @Test
-  public void testReadChannelWithUseDirectDownload() throws IOException {
-    String blobName = "test-read-channel-blob-direct-download";
-    BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
-    Blob remoteBlob = storage.create(blob);
-    assertNotNull(remoteBlob);
-    try (ReadChannel reader =
-        storage.reader(blob.getBlobId(), Storage.BlobSourceOption.useDirectDownload(true))) {
-      reader.read(ByteBuffer.allocate(42));
-    } catch (StorageException ex) {
-      // expected
-    }
-    assertEquals(blob.getBucket(), remoteBlob.getBucket());
-    assertEquals(blob.getName(), remoteBlob.getName());
-  }
-
-  @Test
-  public void testReadChannelWithNoUseDirectDownload() throws IOException {
-    String blobName = "test-read-channel-blob-direct-download";
-    BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
-    Blob remoteBlob = storage.create(blob);
-    assertNotNull(remoteBlob);
-    try (ReadChannel reader =
-        storage.reader(blob.getBlobId(), Storage.BlobSourceOption.useDirectDownload(false))) {
-      reader.read(ByteBuffer.allocate(42));
-    } catch (StorageException ex) {
-      // expected
-    }
-    assertEquals(blob.getBucket(), remoteBlob.getBucket());
-    assertEquals(blob.getName(), remoteBlob.getName());
-  }
-
-  @Test
   public void testReadChannelFailUpdatedGeneration() throws IOException {
     String blobName = "test-read-blob-fail-updated-generation";
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();

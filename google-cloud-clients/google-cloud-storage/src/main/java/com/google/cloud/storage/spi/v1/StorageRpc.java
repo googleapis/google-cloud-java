@@ -57,8 +57,6 @@ public interface StorageRpc extends ServiceRpc {
     VERSIONS("versions"),
     FIELDS("fields"),
     CUSTOMER_SUPPLIED_KEY("customerSuppliedKey"),
-    USE_DIRECT_DOWNLOAD("useDirectDownload"),
-    READ_CHANNEL_CHUNK_SIZE_MULTIPLIER("useDirectDownload"),
     USER_PROJECT("userProject"),
     KMS_KEY_NAME("kmsKeyName");
 
@@ -285,12 +283,11 @@ public interface StorageRpc extends ServiceRpc {
   Tuple<String, byte[]> read(StorageObject from, Map<Option, ?> options, long position, int bytes);
 
   /**
-   * Reads from a storage object at the given position directly to outputstream
+   * Reads from a storage object at the given position directly to output stream.
    *
    * @throws StorageException upon failure
    */
-  void readToOutputStream(
-      StorageObject from, long position, CountingOutputStream to, Map<Option, ?> options);
+  boolean readToOutputStream(StorageObject from, CountingOutputStream to, Map<Option, ?> options);
 
   /**
    * Opens a resumable upload channel for a given storage object.
