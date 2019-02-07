@@ -78,6 +78,7 @@ grpc-google-cloud-dialogflow-v2beta1:0.44.0:0.44.1-SNAPSHOT
 grpc-google-cloud-dlp-v2:0.44.0:0.44.1-SNAPSHOT
 grpc-google-cloud-error-reporting-v1beta1:0.44.0:0.44.1-SNAPSHOT
 grpc-google-cloud-firestore-v1beta1:0.44.0:0.44.1-SNAPSHOT
+grpc-google-cloud-firestore-v1:0.44.0:0.44.1-SNAPSHOT
 grpc-google-cloud-iamcredentials-v1:0.6.0-alpha:0.6.1-alpha-SNAPSHOT
 grpc-google-cloud-iot-v1:0.44.0:0.44.1-SNAPSHOT
 grpc-google-cloud-kms-v1:0.44.0:0.44.1-SNAPSHOT
@@ -129,6 +130,7 @@ proto-google-cloud-dialogflow-v2beta1:0.44.0:0.44.1-SNAPSHOT
 proto-google-cloud-dlp-v2:0.44.0:0.44.1-SNAPSHOT
 proto-google-cloud-error-reporting-v1beta1:0.44.0:0.44.1-SNAPSHOT
 proto-google-cloud-firestore-v1beta1:0.44.0:0.44.1-SNAPSHOT
+proto-google-cloud-firestore-v1:0.44.0:0.44.1-SNAPSHOT
 proto-google-cloud-iamcredentials-v1:0.6.0-alpha:0.6.1-alpha-SNAPSHOT
 proto-google-cloud-iot-v1:0.44.0:0.44.1-SNAPSHOT
 proto-google-cloud-kms-v1:0.44.0:0.44.1-SNAPSHOT
