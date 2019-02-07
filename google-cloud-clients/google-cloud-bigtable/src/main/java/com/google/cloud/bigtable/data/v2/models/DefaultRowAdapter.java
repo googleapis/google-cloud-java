@@ -15,9 +15,15 @@
  */
 package com.google.cloud.bigtable.data.v2.models;
 
+import com.google.api.core.InternalApi;
+import com.google.bigtable.v2.Cell;
+import com.google.bigtable.v2.Column;
+import com.google.bigtable.v2.Family;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
 import java.util.List;
+import java.util.Objects;
+import java.util.TreeMap;
 
 /**
  * Default implementation of a {@link RowAdapter} that uses {@link Row}s to represent logical rows.
@@ -41,15 +47,51 @@ public class DefaultRowAdapter implements RowAdapter<Row> {
     return row.getKey();
   }
 
+  /**
+   * Helper to convert a proto Row to a model Row.
+   *
+   * <p>For internal use only.
+   */
+  @InternalApi
+  public Row createRowFromProto(com.google.bigtable.v2.Row row) {
+    RowBuilder<Row> builder = createRowBuilder();
+    builder.startRow(row.getKey());
+
+    for (Family family : row.getFamiliesList()) {
+      for (Column column : family.getColumnsList()) {
+        for (Cell cell : column.getCellsList()) {
+          builder.startCell(
+              family.getName(),
+              column.getQualifier(),
+              cell.getTimestampMicros(),
+              cell.getLabelsList(),
+              cell.getValue().size());
+          builder.cellValue(cell.getValue());
+          builder.finishCell();
+        }
+      }
+    }
+
+    return builder.finishRow();
+  }
+
   /** {@inheritDoc} */
   public class DefaultRowBuilder implements RowBuilder<Row> {
     private ByteString currentKey;
-    private ImmutableList.Builder<RowCell> cells;
+    private TreeMap<String, ImmutableList.Builder<RowCell>> cellsByFamily;
+    private ImmutableList.Builder<RowCell> currentFamilyCells;
+    private String previousFamily;
+    private int totalCellCount;
+
     private String family;
     private ByteString qualifier;
     private List<String> labels;
     private long timestamp;
     private ByteString value;
+
+    public DefaultRowBuilder() {
+      reset();
+    }
 
     /** {@inheritDoc} */
     @Override
@@ -61,7 +103,6 @@ public class DefaultRowAdapter implements RowAdapter<Row> {
     @Override
     public void startRow(ByteString key) {
       currentKey = key;
-      cells = ImmutableList.builder();
     }
 
     /** {@inheritDoc} */
@@ -84,20 +125,52 @@ public class DefaultRowAdapter implements RowAdapter<Row> {
     /** {@inheritDoc} */
     @Override
     public void finishCell() {
-      cells.add(RowCell.create(family, qualifier, timestamp, labels, value));
+      if (!Objects.equals(family, previousFamily)) {
+        previousFamily = family;
+        currentFamilyCells = ImmutableList.builder();
+        cellsByFamily.put(family, currentFamilyCells);
+      }
+
+      RowCell rowCell = RowCell.create(family, qualifier, timestamp, labels, value);
+      currentFamilyCells.add(rowCell);
+      totalCellCount++;
     }
 
     /** {@inheritDoc} */
     @Override
     public Row finishRow() {
-      return Row.create(currentKey, cells.build());
+      final ImmutableList<RowCell> sortedCells;
+
+      // Optimization: If there are no cells, then just return the static empty list.
+      if (cellsByFamily.size() == 0) {
+        sortedCells = ImmutableList.of();
+      } else if (cellsByFamily.size() == 1) {
+        // Optimization: If there is a single family, avoid copies and return that one list.
+        sortedCells = currentFamilyCells.build();
+      } else {
+        // Normal path: concatenate the cells order by family.
+        ImmutableList.Builder<RowCell> sortedCellsBuilder =
+            ImmutableList.builderWithExpectedSize(totalCellCount);
+
+        for (ImmutableList.Builder<RowCell> familyCells : cellsByFamily.values()) {
+          sortedCellsBuilder.addAll(familyCells.build());
+        }
+        sortedCells = sortedCellsBuilder.build();
+      }
+
+      return Row.create(currentKey, sortedCells);
     }
 
     /** {@inheritDoc} */
     @Override
     public void reset() {
       currentKey = null;
-      cells = null;
+
+      cellsByFamily = new TreeMap<>();
+      currentFamilyCells = null;
+      previousFamily = null;
+      totalCellCount = 0;
+
       family = null;
       qualifier = null;
       labels = null;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Represents a secondary IP range of a subnetwork. */
 public final class SubnetworkSecondaryRange implements ApiMessage {
   private final String ipCidrRange;
   private final String rangeName;
@@ -40,10 +41,10 @@ public final class SubnetworkSecondaryRange implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("ipCidrRange")) {
+    if ("ipCidrRange".equals(fieldName)) {
       return ipCidrRange;
     }
-    if (fieldName.equals("rangeName")) {
+    if ("rangeName".equals(fieldName)) {
       return rangeName;
     }
     return null;
@@ -61,10 +62,20 @@ public final class SubnetworkSecondaryRange implements ApiMessage {
     return null;
   }
 
+  /**
+   * The range of IP addresses belonging to this subnetwork secondary range. Provide this property
+   * when you create the subnetwork. Ranges must be unique and non-overlapping with all primary and
+   * secondary IP ranges within a network. Only IPv4 is supported.
+   */
   public String getIpCidrRange() {
     return ipCidrRange;
   }
 
+  /**
+   * The name associated with this subnetwork secondary range, used when adding an alias IP range to
+   * a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be
+   * unique within the subnetwork.
+   */
   public String getRangeName() {
     return rangeName;
   }
@@ -113,19 +124,39 @@ public final class SubnetworkSecondaryRange implements ApiMessage {
       this.rangeName = source.rangeName;
     }
 
+    /**
+     * The range of IP addresses belonging to this subnetwork secondary range. Provide this property
+     * when you create the subnetwork. Ranges must be unique and non-overlapping with all primary
+     * and secondary IP ranges within a network. Only IPv4 is supported.
+     */
     public String getIpCidrRange() {
       return ipCidrRange;
     }
 
+    /**
+     * The range of IP addresses belonging to this subnetwork secondary range. Provide this property
+     * when you create the subnetwork. Ranges must be unique and non-overlapping with all primary
+     * and secondary IP ranges within a network. Only IPv4 is supported.
+     */
     public Builder setIpCidrRange(String ipCidrRange) {
       this.ipCidrRange = ipCidrRange;
       return this;
     }
 
+    /**
+     * The name associated with this subnetwork secondary range, used when adding an alias IP range
+     * to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name
+     * must be unique within the subnetwork.
+     */
     public String getRangeName() {
       return rangeName;
     }
 
+    /**
+     * The name associated with this subnetwork secondary range, used when adding an alias IP range
+     * to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name
+     * must be unique within the subnetwork.
+     */
     public Builder setRangeName(String rangeName) {
       this.rangeName = rangeName;
       return this;

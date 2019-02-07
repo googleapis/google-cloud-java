@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** The available logging options for a firewall rule. */
 public final class FirewallLogConfig implements ApiMessage {
   private final Boolean enable;
 
@@ -37,7 +38,7 @@ public final class FirewallLogConfig implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("enable")) {
+    if ("enable".equals(fieldName)) {
       return enable;
     }
     return null;
@@ -55,6 +56,7 @@ public final class FirewallLogConfig implements ApiMessage {
     return null;
   }
 
+  /** This field denotes whether to enable logging for a particular firewall rule. */
   public Boolean getEnable() {
     return enable;
   }
@@ -98,10 +100,12 @@ public final class FirewallLogConfig implements ApiMessage {
       this.enable = source.enable;
     }
 
+    /** This field denotes whether to enable logging for a particular firewall rule. */
     public Boolean getEnable() {
       return enable;
     }
 
+    /** This field denotes whether to enable logging for a particular firewall rule. */
     public Builder setEnable(Boolean enable) {
       this.enable = enable;
       return this;

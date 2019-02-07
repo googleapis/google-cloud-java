@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** An instance's serial console output. */
 public final class SerialPortOutput implements ApiMessage {
   private final String contents;
   private final String kind;
@@ -50,19 +51,19 @@ public final class SerialPortOutput implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("contents")) {
+    if ("contents".equals(fieldName)) {
       return contents;
     }
-    if (fieldName.equals("kind")) {
+    if ("kind".equals(fieldName)) {
       return kind;
     }
-    if (fieldName.equals("next")) {
+    if ("next".equals(fieldName)) {
       return next;
     }
-    if (fieldName.equals("selfLink")) {
+    if ("selfLink".equals(fieldName)) {
       return selfLink;
     }
-    if (fieldName.equals("start")) {
+    if ("start".equals(fieldName)) {
       return start;
     }
     return null;
@@ -80,22 +81,34 @@ public final class SerialPortOutput implements ApiMessage {
     return null;
   }
 
+  /** [Output Only] The contents of the console output. */
   public String getContents() {
     return contents;
   }
 
+  /** [Output Only] Type of the resource. Always compute#serialPortOutput for serial port output. */
   public String getKind() {
     return kind;
   }
 
+  /**
+   * [Output Only] The position of the next byte of content from the serial console output. Use this
+   * value in the next request as the start parameter.
+   */
   public String getNext() {
     return next;
   }
 
+  /** [Output Only] Server-defined URL for this resource. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /**
+   * The starting byte position of the output that was returned. This should match the start
+   * parameter sent with the request. If the serial console output exceeds the size of the buffer,
+   * older output will be overwritten by newer content and the start values will be mismatched.
+   */
   public String getStart() {
     return start;
   }
@@ -159,46 +172,74 @@ public final class SerialPortOutput implements ApiMessage {
       this.start = source.start;
     }
 
+    /** [Output Only] The contents of the console output. */
     public String getContents() {
       return contents;
     }
 
+    /** [Output Only] The contents of the console output. */
     public Builder setContents(String contents) {
       this.contents = contents;
       return this;
     }
 
+    /**
+     * [Output Only] Type of the resource. Always compute#serialPortOutput for serial port output.
+     */
     public String getKind() {
       return kind;
     }
 
+    /**
+     * [Output Only] Type of the resource. Always compute#serialPortOutput for serial port output.
+     */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /**
+     * [Output Only] The position of the next byte of content from the serial console output. Use
+     * this value in the next request as the start parameter.
+     */
     public String getNext() {
       return next;
     }
 
+    /**
+     * [Output Only] The position of the next byte of content from the serial console output. Use
+     * this value in the next request as the start parameter.
+     */
     public Builder setNext(String next) {
       this.next = next;
       return this;
     }
 
+    /** [Output Only] Server-defined URL for this resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined URL for this resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /**
+     * The starting byte position of the output that was returned. This should match the start
+     * parameter sent with the request. If the serial console output exceeds the size of the buffer,
+     * older output will be overwritten by newer content and the start values will be mismatched.
+     */
     public String getStart() {
       return start;
     }
 
+    /**
+     * The starting byte position of the output that was returned. This should match the start
+     * parameter sent with the request. If the serial console output exceeds the size of the buffer,
+     * older output will be overwritten by newer content and the start values will be mismatched.
+     */
     public Builder setStart(String start) {
       this.start = start;
       return this;

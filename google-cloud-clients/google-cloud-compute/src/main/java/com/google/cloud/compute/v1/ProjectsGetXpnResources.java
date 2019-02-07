@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,13 +45,13 @@ public final class ProjectsGetXpnResources implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("kind")) {
+    if ("kind".equals(fieldName)) {
       return kind;
     }
-    if (fieldName.equals("nextPageToken")) {
+    if ("nextPageToken".equals(fieldName)) {
       return nextPageToken;
     }
-    if (fieldName.equals("resources")) {
+    if ("resources".equals(fieldName)) {
       return resources;
     }
     return null;
@@ -69,14 +69,27 @@ public final class ProjectsGetXpnResources implements ApiMessage {
     return null;
   }
 
+  /**
+   * [Output Only] Type of resource. Always compute#projectsGetXpnResources for lists of service
+   * resources (a.k.a service projects)
+   */
   public String getKind() {
     return kind;
   }
 
+  /**
+   * [Output Only] This token allows you to get the next page of results for list requests. If the
+   * number of results is larger than maxResults, use the nextPageToken as a value for the query
+   * parameter pageToken in the next list request. Subsequent list requests will have their own
+   * nextPageToken to continue paging through the results.
+   */
   public String getNextPageToken() {
     return nextPageToken;
   }
 
+  /**
+   * Service resources (a.k.a service projects) attached to this project as their shared VPC host.
+   */
   public List<XpnResourceId> getResourcesList() {
     return resources;
   }
@@ -130,28 +143,54 @@ public final class ProjectsGetXpnResources implements ApiMessage {
       this.resources = source.resources;
     }
 
+    /**
+     * [Output Only] Type of resource. Always compute#projectsGetXpnResources for lists of service
+     * resources (a.k.a service projects)
+     */
     public String getKind() {
       return kind;
     }
 
+    /**
+     * [Output Only] Type of resource. Always compute#projectsGetXpnResources for lists of service
+     * resources (a.k.a service projects)
+     */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /**
+     * [Output Only] This token allows you to get the next page of results for list requests. If the
+     * number of results is larger than maxResults, use the nextPageToken as a value for the query
+     * parameter pageToken in the next list request. Subsequent list requests will have their own
+     * nextPageToken to continue paging through the results.
+     */
     public String getNextPageToken() {
       return nextPageToken;
     }
 
+    /**
+     * [Output Only] This token allows you to get the next page of results for list requests. If the
+     * number of results is larger than maxResults, use the nextPageToken as a value for the query
+     * parameter pageToken in the next list request. Subsequent list requests will have their own
+     * nextPageToken to continue paging through the results.
+     */
     public Builder setNextPageToken(String nextPageToken) {
       this.nextPageToken = nextPageToken;
       return this;
     }
 
+    /**
+     * Service resources (a.k.a service projects) attached to this project as their shared VPC host.
+     */
     public List<XpnResourceId> getResourcesList() {
       return resources;
     }
 
+    /**
+     * Service resources (a.k.a service projects) attached to this project as their shared VPC host.
+     */
     public Builder addAllResources(List<XpnResourceId> resources) {
       if (this.resources == null) {
         this.resources = new LinkedList<>();
@@ -160,6 +199,9 @@ public final class ProjectsGetXpnResources implements ApiMessage {
       return this;
     }
 
+    /**
+     * Service resources (a.k.a service projects) attached to this project as their shared VPC host.
+     */
     public Builder addResources(XpnResourceId resources) {
       if (this.resources == null) {
         this.resources = new LinkedList<>();

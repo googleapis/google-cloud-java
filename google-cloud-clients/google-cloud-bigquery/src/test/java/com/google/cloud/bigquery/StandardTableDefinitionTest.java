@@ -120,6 +120,11 @@ public class StandardTableDefinitionTest {
         TABLE_DEFINITION.toPb().setStreamingBuffer(new Streamingbuffer()));
   }
 
+  @Test
+  public void testStreamingBufferWithNullFieldsToPb() {
+    new StreamingBuffer(null, null, null).toPb();
+  }
+
   private void compareStandardTableDefinition(
       StandardTableDefinition expected, StandardTableDefinition value) {
     assertEquals(expected, value);

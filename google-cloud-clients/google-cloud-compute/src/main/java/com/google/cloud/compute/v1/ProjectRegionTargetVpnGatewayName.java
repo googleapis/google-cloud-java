@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -173,10 +173,11 @@ public final class ProjectRegionTargetVpnGatewayName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
-        "project", project,
-        "region", region,
-        "targetVpnGateway", targetVpnGateway);
+    return SERVICE_ADDRESS
+        + PATH_TEMPLATE.instantiate(
+            "project", project,
+            "region", region,
+            "targetVpnGateway", targetVpnGateway);
   }
 
   @Override

@@ -75,16 +75,19 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
 
+  private static final int FLUSH_WAIT_TIMEOUT_SECONDS = 6;
   private final LoggingRpc rpc;
   private final Object writeLock = new Object();
   private final Set<ApiFuture<Void>> pendingWrites =
       Collections.newSetFromMap(new IdentityHashMap<ApiFuture<Void>, Boolean>());
 
   private volatile Synchronicity writeSynchronicity = Synchronicity.ASYNC;
-  private volatile Severity flushSeverity = Severity.ERROR;
+  private volatile Severity flushSeverity = null;
   private boolean closed;
 
   private static final Function<Empty, Boolean> EMPTY_TO_BOOLEAN_FUNCTION =
@@ -553,11 +556,13 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
 
     try {
       writeLogEntries(logEntries, options);
-      for (LogEntry logEntry : logEntries) {
-        // flush pending writes if log severity at or above flush severity
-        if (logEntry.getSeverity().compareTo(flushSeverity) >= 0) {
-          flush();
-          break;
+      if (flushSeverity != null) {
+        for (LogEntry logEntry : logEntries) {
+          // flush pending writes if log severity at or above flush severity
+          if (logEntry.getSeverity().compareTo(flushSeverity) >= 0) {
+            flush();
+            break;
+          }
         }
       }
     } finally {
@@ -574,8 +579,8 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     }
 
     try {
-      ApiFutures.allAsList(writesToFlush).get();
-    } catch (InterruptedException | ExecutionException e) {
+      ApiFutures.allAsList(writesToFlush).get(FLUSH_WAIT_TIMEOUT_SECONDS, TimeUnit.SECONDS);
+    } catch (InterruptedException | ExecutionException | TimeoutException e) {
       throw new RuntimeException(e);
     }
   }

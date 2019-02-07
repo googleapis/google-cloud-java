@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,32 +24,39 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** A quotas entry. */
 public final class Quota implements ApiMessage {
   private final Double limit;
   private final String metric;
+  private final String owner;
   private final Double usage;
 
   private Quota() {
     this.limit = null;
     this.metric = null;
+    this.owner = null;
     this.usage = null;
   }
 
-  private Quota(Double limit, String metric, Double usage) {
+  private Quota(Double limit, String metric, String owner, Double usage) {
     this.limit = limit;
     this.metric = metric;
+    this.owner = owner;
     this.usage = usage;
   }
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("limit")) {
+    if ("limit".equals(fieldName)) {
       return limit;
     }
-    if (fieldName.equals("metric")) {
+    if ("metric".equals(fieldName)) {
       return metric;
     }
-    if (fieldName.equals("usage")) {
+    if ("owner".equals(fieldName)) {
+      return owner;
+    }
+    if ("usage".equals(fieldName)) {
       return usage;
     }
     return null;
@@ -67,14 +74,22 @@ public final class Quota implements ApiMessage {
     return null;
   }
 
+  /** [Output Only] Quota limit for this metric. */
   public Double getLimit() {
     return limit;
   }
 
+  /** [Output Only] Name of the quota metric. */
   public String getMetric() {
     return metric;
   }
 
+  /** [Output Only] Owning resource. This is the resource on which this quota is applied. */
+  public String getOwner() {
+    return owner;
+  }
+
+  /** [Output Only] Current usage of this metric. */
   public Double getUsage() {
     return usage;
   }
@@ -104,6 +119,7 @@ public final class Quota implements ApiMessage {
   public static class Builder {
     private Double limit;
     private String metric;
+    private String owner;
     private Double usage;
 
     Builder() {}
@@ -116,6 +132,9 @@ public final class Quota implements ApiMessage {
       if (other.getMetric() != null) {
         this.metric = other.metric;
       }
+      if (other.getOwner() != null) {
+        this.owner = other.owner;
+      }
       if (other.getUsage() != null) {
         this.usage = other.usage;
       }
@@ -125,31 +144,49 @@ public final class Quota implements ApiMessage {
     Builder(Quota source) {
       this.limit = source.limit;
       this.metric = source.metric;
+      this.owner = source.owner;
       this.usage = source.usage;
     }
 
+    /** [Output Only] Quota limit for this metric. */
     public Double getLimit() {
       return limit;
     }
 
+    /** [Output Only] Quota limit for this metric. */
     public Builder setLimit(Double limit) {
       this.limit = limit;
       return this;
     }
 
+    /** [Output Only] Name of the quota metric. */
     public String getMetric() {
       return metric;
     }
 
+    /** [Output Only] Name of the quota metric. */
     public Builder setMetric(String metric) {
       this.metric = metric;
       return this;
     }
 
+    /** [Output Only] Owning resource. This is the resource on which this quota is applied. */
+    public String getOwner() {
+      return owner;
+    }
+
+    /** [Output Only] Owning resource. This is the resource on which this quota is applied. */
+    public Builder setOwner(String owner) {
+      this.owner = owner;
+      return this;
+    }
+
+    /** [Output Only] Current usage of this metric. */
     public Double getUsage() {
       return usage;
     }
 
+    /** [Output Only] Current usage of this metric. */
     public Builder setUsage(Double usage) {
       this.usage = usage;
       return this;
@@ -157,13 +194,14 @@ public final class Quota implements ApiMessage {
 
     public Quota build() {
 
-      return new Quota(limit, metric, usage);
+      return new Quota(limit, metric, owner, usage);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
       newBuilder.setLimit(this.limit);
       newBuilder.setMetric(this.metric);
+      newBuilder.setOwner(this.owner);
       newBuilder.setUsage(this.usage);
       return newBuilder;
     }
@@ -171,7 +209,8 @@ public final class Quota implements ApiMessage {
 
   @Override
   public String toString() {
-    return "Quota{" + "limit=" + limit + ", " + "metric=" + metric + ", " + "usage=" + usage + "}";
+    return "Quota{" + "limit=" + limit + ", " + "metric=" + metric + ", " + "owner=" + owner + ", "
+        + "usage=" + usage + "}";
   }
 
   @Override
@@ -183,6 +222,7 @@ public final class Quota implements ApiMessage {
       Quota that = (Quota) o;
       return Objects.equals(this.limit, that.getLimit())
           && Objects.equals(this.metric, that.getMetric())
+          && Objects.equals(this.owner, that.getOwner())
           && Objects.equals(this.usage, that.getUsage());
     }
     return false;
@@ -190,6 +230,6 @@ public final class Quota implements ApiMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(limit, metric, usage);
+    return Objects.hash(limit, metric, owner, usage);
   }
 }

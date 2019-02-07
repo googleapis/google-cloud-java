@@ -546,4 +546,19 @@ public class ITStorageSnippets {
     bucket = storageSnippets.lockRetentionPolicy(tempBucket);
     assertTrue(bucket.retentionPolicyIsLocked());
   }
+
+  @Test
+  public void testBucketPolicyOnly() {
+    String tempBucket = RemoteStorageHelper.generateBucketName();
+    Bucket bucket = storageSnippets.createBucket(tempBucket);
+    assertNotNull(bucket);
+    bucket = storageSnippets.enableBucketPolicyOnly(tempBucket);
+    assertTrue(bucket.getIamConfiguration().isBucketPolicyOnlyEnabled());
+    assertNotNull(bucket.getIamConfiguration().getBucketPolicyOnlyLockedTime());
+    bucket = storageSnippets.getBucketPolicyOnly(tempBucket);
+    assertTrue(bucket.getIamConfiguration().isBucketPolicyOnlyEnabled());
+    assertNotNull(bucket.getIamConfiguration().getBucketPolicyOnlyLockedTime());
+    bucket = storageSnippets.disableBucketPolicyOnly(tempBucket);
+    assertFalse(bucket.getIamConfiguration().isBucketPolicyOnlyEnabled());
+  }
 }

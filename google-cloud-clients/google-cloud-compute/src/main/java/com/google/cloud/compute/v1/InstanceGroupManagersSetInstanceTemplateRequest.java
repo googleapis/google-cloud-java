@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ public final class InstanceGroupManagersSetInstanceTemplateRequest implements Ap
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("instanceTemplate")) {
+    if ("instanceTemplate".equals(fieldName)) {
       return instanceTemplate;
     }
     return null;
@@ -55,6 +55,10 @@ public final class InstanceGroupManagersSetInstanceTemplateRequest implements Ap
     return null;
   }
 
+  /**
+   * The URL of the instance template that is specified for this managed instance group. The group
+   * uses this template to create all new instances in the managed instance group.
+   */
   public String getInstanceTemplate() {
     return instanceTemplate;
   }
@@ -99,10 +103,18 @@ public final class InstanceGroupManagersSetInstanceTemplateRequest implements Ap
       this.instanceTemplate = source.instanceTemplate;
     }
 
+    /**
+     * The URL of the instance template that is specified for this managed instance group. The group
+     * uses this template to create all new instances in the managed instance group.
+     */
     public String getInstanceTemplate() {
       return instanceTemplate;
     }
 
+    /**
+     * The URL of the instance template that is specified for this managed instance group. The group
+     * uses this template to create all new instances in the managed instance group.
+     */
     public Builder setInstanceTemplate(String instanceTemplate) {
       this.instanceTemplate = instanceTemplate;
       return this;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -215,7 +215,7 @@ public class AssetServiceClient implements BackgroundResource {
    *     .setParent(parent.toString())
    *     .setOutputConfig(outputConfig)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = assetServiceClient.exportAssetsOperationCallable().futureCall(request);
+   *   OperationFuture&lt;ExportAssetsResponse, ExportAssetsRequest&gt; future = assetServiceClient.exportAssetsOperationCallable().futureCall(request);
    *   // Do something
    *   ExportAssetsResponse response = future.get();
    * }

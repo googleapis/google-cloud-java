@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ public final class InstanceReference implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("instance")) {
+    if ("instance".equals(fieldName)) {
       return instance;
     }
     return null;
@@ -55,6 +55,7 @@ public final class InstanceReference implements ApiMessage {
     return null;
   }
 
+  /** The URL for a specific instance. */
   public String getInstance() {
     return instance;
   }
@@ -98,10 +99,12 @@ public final class InstanceReference implements ApiMessage {
       this.instance = source.instance;
     }
 
+    /** The URL for a specific instance. */
     public String getInstance() {
       return instance;
     }
 
+    /** The URL for a specific instance. */
     public Builder setInstance(String instance) {
       this.instance = instance;
       return this;

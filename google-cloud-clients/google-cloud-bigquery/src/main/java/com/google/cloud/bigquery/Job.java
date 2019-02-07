@@ -189,7 +189,7 @@ public class Job extends JobInfo {
   public boolean isDone() {
     checkNotDryRun("isDone");
     Job job = bigquery.getJob(getJobId(), JobOption.fields(BigQuery.JobField.STATUS));
-    return job == null || job.getStatus().getState() == JobStatus.State.DONE;
+    return job == null || JobStatus.State.DONE.equals(job.getStatus().getState());
   }
   /**
    * Blocks until this job completes its execution, either failing or succeeding. This method
@@ -293,7 +293,7 @@ public class Job extends JobInfo {
 
     // Get the job resource to determine if it has errored.
     Job job = this;
-    if (job.getStatus() == null || job.getStatus().getState() != JobStatus.State.DONE) {
+    if (job.getStatus() == null || !JobStatus.State.DONE.equals(job.getStatus().getState())) {
       job = reload();
     }
     if (job.getStatus() != null && job.getStatus().getError() != null) {
@@ -362,7 +362,7 @@ public class Job extends JobInfo {
             @Override
             public boolean shouldRetry(Throwable prevThrowable, Job prevResponse) {
               return prevResponse != null
-                  && prevResponse.getStatus().getState() != JobStatus.State.DONE;
+                  && !JobStatus.State.DONE.equals(prevResponse.getStatus().getState());
             }
           },
           options.getClock());
@@ -377,7 +377,7 @@ public class Job extends JobInfo {
    * <p>Example of reloading all fields until job status is DONE.
    *
    * <pre>{@code
-   * while (job.getStatus().getState() != JobStatus.State.DONE) {
+   * while (!JobStatus.State.DONE.equals(job.getStatus().getState())) {
    *   Thread.sleep(1000L);
    *   job = job.reload();
    * }
@@ -386,7 +386,7 @@ public class Job extends JobInfo {
    * <p>Example of reloading status field until job status is DONE.
    *
    * <pre>{@code
-   * while (job.getStatus().getState() != JobStatus.State.DONE) {
+   * while (!JobStatus.State.DONE.equals(job.getStatus().getState())) {
    *   Thread.sleep(1000L);
    *   job = job.reload(BigQuery.JobOption.fields(BigQuery.JobField.STATUS));
    * }

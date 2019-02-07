@@ -37,7 +37,7 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * Type of the asset. Example: "google.compute.disk".
+   * Type of the asset. Example: "google.compute.Disk".
    * </pre>
    *
    * <code>string asset_type = 2;</code>
@@ -47,7 +47,7 @@ public interface AssetOrBuilder
    *
    *
    * <pre>
-   * Type of the asset. Example: "google.compute.disk".
+   * Type of the asset. Example: "google.compute.Disk".
    * </pre>
    *
    * <code>string asset_type = 2;</code>

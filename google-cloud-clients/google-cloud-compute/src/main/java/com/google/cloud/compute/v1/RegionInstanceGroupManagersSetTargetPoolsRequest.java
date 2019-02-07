@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,10 +42,10 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest implements A
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("fingerprint")) {
+    if ("fingerprint".equals(fieldName)) {
       return fingerprint;
     }
-    if (fieldName.equals("targetPools")) {
+    if ("targetPools".equals(fieldName)) {
       return targetPools;
     }
     return null;
@@ -63,10 +63,18 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest implements A
     return null;
   }
 
+  /**
+   * Fingerprint of the target pools information, which is a hash of the contents. This field is
+   * used for optimistic locking when you update the target pool entries. This field is optional.
+   */
   public String getFingerprint() {
     return fingerprint;
   }
 
+  /**
+   * The URL of all TargetPool resources to which instances in the instanceGroup field are added.
+   * The target pools automatically apply to all of the instances in the managed instance group.
+   */
   public List<String> getTargetPoolsList() {
     return targetPools;
   }
@@ -116,19 +124,35 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest implements A
       this.targetPools = source.targetPools;
     }
 
+    /**
+     * Fingerprint of the target pools information, which is a hash of the contents. This field is
+     * used for optimistic locking when you update the target pool entries. This field is optional.
+     */
     public String getFingerprint() {
       return fingerprint;
     }
 
+    /**
+     * Fingerprint of the target pools information, which is a hash of the contents. This field is
+     * used for optimistic locking when you update the target pool entries. This field is optional.
+     */
     public Builder setFingerprint(String fingerprint) {
       this.fingerprint = fingerprint;
       return this;
     }
 
+    /**
+     * The URL of all TargetPool resources to which instances in the instanceGroup field are added.
+     * The target pools automatically apply to all of the instances in the managed instance group.
+     */
     public List<String> getTargetPoolsList() {
       return targetPools;
     }
 
+    /**
+     * The URL of all TargetPool resources to which instances in the instanceGroup field are added.
+     * The target pools automatically apply to all of the instances in the managed instance group.
+     */
     public Builder addAllTargetPools(List<String> targetPools) {
       if (this.targetPools == null) {
         this.targetPools = new LinkedList<>();
@@ -137,6 +161,10 @@ public final class RegionInstanceGroupManagersSetTargetPoolsRequest implements A
       return this;
     }
 
+    /**
+     * The URL of all TargetPool resources to which instances in the instanceGroup field are added.
+     * The target pools automatically apply to all of the instances in the managed instance group.
+     */
     public Builder addTargetPools(String targetPools) {
       if (this.targetPools == null) {
         this.targetPools = new LinkedList<>();

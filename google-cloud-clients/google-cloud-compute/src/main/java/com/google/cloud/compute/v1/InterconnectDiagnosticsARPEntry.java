@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Describing the ARP neighbor entries seen on this link */
 public final class InterconnectDiagnosticsARPEntry implements ApiMessage {
   private final String ipAddress;
   private final String macAddress;
@@ -40,10 +41,10 @@ public final class InterconnectDiagnosticsARPEntry implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("ipAddress")) {
+    if ("ipAddress".equals(fieldName)) {
       return ipAddress;
     }
-    if (fieldName.equals("macAddress")) {
+    if ("macAddress".equals(fieldName)) {
       return macAddress;
     }
     return null;
@@ -61,10 +62,12 @@ public final class InterconnectDiagnosticsARPEntry implements ApiMessage {
     return null;
   }
 
+  /** The IP address of this ARP neighbor. */
   public String getIpAddress() {
     return ipAddress;
   }
 
+  /** The MAC address of this ARP neighbor. */
   public String getMacAddress() {
     return macAddress;
   }
@@ -113,19 +116,23 @@ public final class InterconnectDiagnosticsARPEntry implements ApiMessage {
       this.macAddress = source.macAddress;
     }
 
+    /** The IP address of this ARP neighbor. */
     public String getIpAddress() {
       return ipAddress;
     }
 
+    /** The IP address of this ARP neighbor. */
     public Builder setIpAddress(String ipAddress) {
       this.ipAddress = ipAddress;
       return this;
     }
 
+    /** The MAC address of this ARP neighbor. */
     public String getMacAddress() {
       return macAddress;
     }
 
+    /** The MAC address of this ARP neighbor. */
     public Builder setMacAddress(String macAddress) {
       this.macAddress = macAddress;
       return this;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,15 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Provides the configuration for logging a type of permissions. Example:
+ *
+ * <p>{ "audit_log_configs": [ { "log_type": "DATA_READ", "exempted_members": [
+ * "user:foo{@literal @}gmail.com" ] }, { "log_type": "DATA_WRITE", } ] }
+ *
+ * <p>This enables 'DATA_READ' and 'DATA_WRITE' logging, while exempting foo{@literal @}gmail.com
+ * from DATA_READ logging.
+ */
 public final class AuditLogConfig implements ApiMessage {
   private final List<String> exemptedMembers;
   private final String logType;
@@ -41,10 +50,10 @@ public final class AuditLogConfig implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("exemptedMembers")) {
+    if ("exemptedMembers".equals(fieldName)) {
       return exemptedMembers;
     }
-    if (fieldName.equals("logType")) {
+    if ("logType".equals(fieldName)) {
       return logType;
     }
     return null;
@@ -62,10 +71,15 @@ public final class AuditLogConfig implements ApiMessage {
     return null;
   }
 
+  /**
+   * Specifies the identities that do not cause logging for this type of permission. Follows the
+   * same format of [Binding.members][].
+   */
   public List<String> getExemptedMembersList() {
     return exemptedMembers;
   }
 
+  /** The log type that this config enables. */
   public String getLogType() {
     return logType;
   }
@@ -114,10 +128,18 @@ public final class AuditLogConfig implements ApiMessage {
       this.logType = source.logType;
     }
 
+    /**
+     * Specifies the identities that do not cause logging for this type of permission. Follows the
+     * same format of [Binding.members][].
+     */
     public List<String> getExemptedMembersList() {
       return exemptedMembers;
     }
 
+    /**
+     * Specifies the identities that do not cause logging for this type of permission. Follows the
+     * same format of [Binding.members][].
+     */
     public Builder addAllExemptedMembers(List<String> exemptedMembers) {
       if (this.exemptedMembers == null) {
         this.exemptedMembers = new LinkedList<>();
@@ -126,6 +148,10 @@ public final class AuditLogConfig implements ApiMessage {
       return this;
     }
 
+    /**
+     * Specifies the identities that do not cause logging for this type of permission. Follows the
+     * same format of [Binding.members][].
+     */
     public Builder addExemptedMembers(String exemptedMembers) {
       if (this.exemptedMembers == null) {
         this.exemptedMembers = new LinkedList<>();
@@ -134,10 +160,12 @@ public final class AuditLogConfig implements ApiMessage {
       return this;
     }
 
+    /** The log type that this config enables. */
     public String getLogType() {
       return logType;
     }
 
+    /** The log type that this config enables. */
     public Builder setLogType(String logType) {
       this.logType = logType;
       return this;

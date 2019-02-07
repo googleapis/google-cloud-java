@@ -22,9 +22,7 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
     super(builder);
   }
 
-  private GcsDestination() {
-    uri_ = "";
-  }
+  private GcsDestination() {}
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -53,8 +51,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
           case 10:
             {
               java.lang.String s = input.readStringRequireUtf8();
-
-              uri_ = s;
+              objectUriCase_ = 1;
+              objectUri_ = s;
               break;
             }
           default:
@@ -91,27 +89,70 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.asset.v1beta1.GcsDestination.Builder.class);
   }
 
+  private int objectUriCase_ = 0;
+  private java.lang.Object objectUri_;
+
+  public enum ObjectUriCase implements com.google.protobuf.Internal.EnumLite {
+    URI(1),
+    OBJECTURI_NOT_SET(0);
+    private final int value;
+
+    private ObjectUriCase(int value) {
+      this.value = value;
+    }
+    /** @deprecated Use {@link #forNumber(int)} instead. */
+    @java.lang.Deprecated
+    public static ObjectUriCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ObjectUriCase forNumber(int value) {
+      switch (value) {
+        case 1:
+          return URI;
+        case 0:
+          return OBJECTURI_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public ObjectUriCase getObjectUriCase() {
+    return ObjectUriCase.forNumber(objectUriCase_);
+  }
+
   public static final int URI_FIELD_NUMBER = 1;
-  private volatile java.lang.Object uri_;
   /**
    *
    *
    * <pre>
-   * The path of the Cloud Storage objects. It's the same path that is used by
-   *  gsutil. For example: "gs://bucket_name/object_path". See [Viewing and Editing Object Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
+   * The uri of the Cloud Storage object. It's the same uri that is used by
+   * gsutil. For example: "gs://bucket_name/object_name". See [Viewing and
+   * Editing Object
+   * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
    * for more information.
    * </pre>
    *
    * <code>string uri = 1;</code>
    */
   public java.lang.String getUri() {
-    java.lang.Object ref = uri_;
+    java.lang.Object ref = "";
+    if (objectUriCase_ == 1) {
+      ref = objectUri_;
+    }
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      uri_ = s;
+      if (objectUriCase_ == 1) {
+        objectUri_ = s;
+      }
       return s;
     }
   }
@@ -119,19 +160,26 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The path of the Cloud Storage objects. It's the same path that is used by
-   *  gsutil. For example: "gs://bucket_name/object_path". See [Viewing and Editing Object Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
+   * The uri of the Cloud Storage object. It's the same uri that is used by
+   * gsutil. For example: "gs://bucket_name/object_name". See [Viewing and
+   * Editing Object
+   * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
    * for more information.
    * </pre>
    *
    * <code>string uri = 1;</code>
    */
   public com.google.protobuf.ByteString getUriBytes() {
-    java.lang.Object ref = uri_;
+    java.lang.Object ref = "";
+    if (objectUriCase_ == 1) {
+      ref = objectUri_;
+    }
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      uri_ = b;
+      if (objectUriCase_ == 1) {
+        objectUri_ = b;
+      }
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -152,8 +200,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getUriBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uri_);
+    if (objectUriCase_ == 1) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, objectUri_);
     }
     unknownFields.writeTo(output);
   }
@@ -164,8 +212,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getUriBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uri_);
+    if (objectUriCase_ == 1) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, objectUri_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -184,7 +232,15 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.asset.v1beta1.GcsDestination) obj;
 
     boolean result = true;
-    result = result && getUri().equals(other.getUri());
+    result = result && getObjectUriCase().equals(other.getObjectUriCase());
+    if (!result) return false;
+    switch (objectUriCase_) {
+      case 1:
+        result = result && getUri().equals(other.getUri());
+        break;
+      case 0:
+      default:
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -196,8 +252,14 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + URI_FIELD_NUMBER;
-    hash = (53 * hash) + getUri().hashCode();
+    switch (objectUriCase_) {
+      case 1:
+        hash = (37 * hash) + URI_FIELD_NUMBER;
+        hash = (53 * hash) + getUri().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -343,8 +405,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      uri_ = "";
-
+      objectUriCase_ = 0;
+      objectUri_ = null;
       return this;
     }
 
@@ -372,7 +434,10 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.asset.v1beta1.GcsDestination buildPartial() {
       com.google.cloud.asset.v1beta1.GcsDestination result =
           new com.google.cloud.asset.v1beta1.GcsDestination(this);
-      result.uri_ = uri_;
+      if (objectUriCase_ == 1) {
+        result.objectUri_ = objectUri_;
+      }
+      result.objectUriCase_ = objectUriCase_;
       onBuilt();
       return result;
     }
@@ -422,9 +487,18 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.asset.v1beta1.GcsDestination other) {
       if (other == com.google.cloud.asset.v1beta1.GcsDestination.getDefaultInstance()) return this;
-      if (!other.getUri().isEmpty()) {
-        uri_ = other.uri_;
-        onChanged();
+      switch (other.getObjectUriCase()) {
+        case URI:
+          {
+            objectUriCase_ = 1;
+            objectUri_ = other.objectUri_;
+            onChanged();
+            break;
+          }
+        case OBJECTURI_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -455,24 +529,44 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private java.lang.Object uri_ = "";
+    private int objectUriCase_ = 0;
+    private java.lang.Object objectUri_;
+
+    public ObjectUriCase getObjectUriCase() {
+      return ObjectUriCase.forNumber(objectUriCase_);
+    }
+
+    public Builder clearObjectUri() {
+      objectUriCase_ = 0;
+      objectUri_ = null;
+      onChanged();
+      return this;
+    }
+
     /**
      *
      *
      * <pre>
-     * The path of the Cloud Storage objects. It's the same path that is used by
-     *  gsutil. For example: "gs://bucket_name/object_path". See [Viewing and Editing Object Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
+     * The uri of the Cloud Storage object. It's the same uri that is used by
+     * gsutil. For example: "gs://bucket_name/object_name". See [Viewing and
+     * Editing Object
+     * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
      * for more information.
      * </pre>
      *
      * <code>string uri = 1;</code>
      */
     public java.lang.String getUri() {
-      java.lang.Object ref = uri_;
+      java.lang.Object ref = "";
+      if (objectUriCase_ == 1) {
+        ref = objectUri_;
+      }
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        uri_ = s;
+        if (objectUriCase_ == 1) {
+          objectUri_ = s;
+        }
         return s;
       } else {
         return (java.lang.String) ref;
@@ -482,19 +576,26 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The path of the Cloud Storage objects. It's the same path that is used by
-     *  gsutil. For example: "gs://bucket_name/object_path". See [Viewing and Editing Object Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
+     * The uri of the Cloud Storage object. It's the same uri that is used by
+     * gsutil. For example: "gs://bucket_name/object_name". See [Viewing and
+     * Editing Object
+     * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
      * for more information.
      * </pre>
      *
      * <code>string uri = 1;</code>
      */
     public com.google.protobuf.ByteString getUriBytes() {
-      java.lang.Object ref = uri_;
+      java.lang.Object ref = "";
+      if (objectUriCase_ == 1) {
+        ref = objectUri_;
+      }
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        uri_ = b;
+        if (objectUriCase_ == 1) {
+          objectUri_ = b;
+        }
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -504,8 +605,10 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The path of the Cloud Storage objects. It's the same path that is used by
-     *  gsutil. For example: "gs://bucket_name/object_path". See [Viewing and Editing Object Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
+     * The uri of the Cloud Storage object. It's the same uri that is used by
+     * gsutil. For example: "gs://bucket_name/object_name". See [Viewing and
+     * Editing Object
+     * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
      * for more information.
      * </pre>
      *
@@ -515,8 +618,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-
-      uri_ = value;
+      objectUriCase_ = 1;
+      objectUri_ = value;
       onChanged();
       return this;
     }
@@ -524,25 +627,31 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The path of the Cloud Storage objects. It's the same path that is used by
-     *  gsutil. For example: "gs://bucket_name/object_path". See [Viewing and Editing Object Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
+     * The uri of the Cloud Storage object. It's the same uri that is used by
+     * gsutil. For example: "gs://bucket_name/object_name". See [Viewing and
+     * Editing Object
+     * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
      * for more information.
      * </pre>
      *
      * <code>string uri = 1;</code>
      */
     public Builder clearUri() {
-
-      uri_ = getDefaultInstance().getUri();
-      onChanged();
+      if (objectUriCase_ == 1) {
+        objectUriCase_ = 0;
+        objectUri_ = null;
+        onChanged();
+      }
       return this;
     }
     /**
      *
      *
      * <pre>
-     * The path of the Cloud Storage objects. It's the same path that is used by
-     *  gsutil. For example: "gs://bucket_name/object_path". See [Viewing and Editing Object Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
+     * The uri of the Cloud Storage object. It's the same uri that is used by
+     * gsutil. For example: "gs://bucket_name/object_name". See [Viewing and
+     * Editing Object
+     * Metadata](https://cloud.google.com/storage/docs/viewing-editing-metadata)
      * for more information.
      * </pre>
      *
@@ -553,8 +662,8 @@ public final class GcsDestination extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-
-      uri_ = value;
+      objectUriCase_ = 1;
+      objectUri_ = value;
       onChanged();
       return this;
     }

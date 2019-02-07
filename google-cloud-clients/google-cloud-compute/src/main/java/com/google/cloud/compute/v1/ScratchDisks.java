@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** [Output Only] A list of extended scratch disks assigned to the instance. */
 public final class ScratchDisks implements ApiMessage {
   private final Integer diskGb;
 
@@ -37,7 +38,7 @@ public final class ScratchDisks implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("diskGb")) {
+    if ("diskGb".equals(fieldName)) {
       return diskGb;
     }
     return null;
@@ -55,6 +56,7 @@ public final class ScratchDisks implements ApiMessage {
     return null;
   }
 
+  /** Size of the scratch disk, defined in GB. */
   public Integer getDiskGb() {
     return diskGb;
   }
@@ -98,10 +100,12 @@ public final class ScratchDisks implements ApiMessage {
       this.diskGb = source.diskGb;
     }
 
+    /** Size of the scratch disk, defined in GB. */
     public Integer getDiskGb() {
       return diskGb;
     }
 
+    /** Size of the scratch disk, defined in GB. */
     public Builder setDiskGb(Integer diskGb) {
       this.diskGb = diskGb;
       return this;

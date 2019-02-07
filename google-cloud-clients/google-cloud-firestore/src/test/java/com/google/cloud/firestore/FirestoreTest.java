@@ -25,9 +25,9 @@ import static org.mockito.Mockito.doAnswer;
 
 import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
-import com.google.cloud.firestore.spi.v1beta1.FirestoreRpc;
-import com.google.firestore.v1beta1.BatchGetDocumentsRequest;
-import com.google.firestore.v1beta1.ListCollectionIdsRequest;
+import com.google.cloud.firestore.spi.v1.FirestoreRpc;
+import com.google.firestore.v1.BatchGetDocumentsRequest;
+import com.google.firestore.v1.ListCollectionIdsRequest;
 import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -44,10 +44,7 @@ public class FirestoreTest {
   @Spy
   private FirestoreImpl firestoreMock =
       new FirestoreImpl(
-          FirestoreOptions.newBuilder()
-              .setProjectId("test-project")
-              .setTimestampsInSnapshotsEnabled(true)
-              .build(),
+          FirestoreOptions.newBuilder().setProjectId("test-project").build(),
           Mockito.mock(FirestoreRpc.class));
 
   @Captor private ArgumentCaptor<BatchGetDocumentsRequest> getAllCapture;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,11 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * A routing configuration attached to a network resource. The message includes the list of routers
+ * associated with the network, and a flag indicating the type of routing behavior to enforce
+ * network-wide.
+ */
 public final class NetworkRoutingConfig implements ApiMessage {
   private final String routingMode;
 
@@ -37,7 +42,7 @@ public final class NetworkRoutingConfig implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("routingMode")) {
+    if ("routingMode".equals(fieldName)) {
       return routingMode;
     }
     return null;
@@ -55,6 +60,12 @@ public final class NetworkRoutingConfig implements ApiMessage {
     return null;
   }
 
+  /**
+   * The network-wide routing mode to use. If set to REGIONAL, this network's cloud routers will
+   * only advertise routes with subnets of this network in the same region as the router. If set to
+   * GLOBAL, this network's cloud routers will advertise routes with all subnets of this network,
+   * across regions.
+   */
   public String getRoutingMode() {
     return routingMode;
   }
@@ -98,10 +109,22 @@ public final class NetworkRoutingConfig implements ApiMessage {
       this.routingMode = source.routingMode;
     }
 
+    /**
+     * The network-wide routing mode to use. If set to REGIONAL, this network's cloud routers will
+     * only advertise routes with subnets of this network in the same region as the router. If set
+     * to GLOBAL, this network's cloud routers will advertise routes with all subnets of this
+     * network, across regions.
+     */
     public String getRoutingMode() {
       return routingMode;
     }
 
+    /**
+     * The network-wide routing mode to use. If set to REGIONAL, this network's cloud routers will
+     * only advertise routes with subnets of this network in the same region as the router. If set
+     * to GLOBAL, this network's cloud routers will advertise routes with all subnets of this
+     * network, across regions.
+     */
     public Builder setRoutingMode(String routingMode) {
       this.routingMode = routingMode;
       return this;

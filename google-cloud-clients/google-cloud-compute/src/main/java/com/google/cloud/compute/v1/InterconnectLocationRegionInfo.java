@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Information about any potential InterconnectAttachments between an Interconnect at a specific
+ * InterconnectLocation, and a specific Cloud Region.
+ */
 public final class InterconnectLocationRegionInfo implements ApiMessage {
   private final String expectedRttMs;
   private final String locationPresence;
@@ -44,13 +48,13 @@ public final class InterconnectLocationRegionInfo implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("expectedRttMs")) {
+    if ("expectedRttMs".equals(fieldName)) {
       return expectedRttMs;
     }
-    if (fieldName.equals("locationPresence")) {
+    if ("locationPresence".equals(fieldName)) {
       return locationPresence;
     }
-    if (fieldName.equals("region")) {
+    if ("region".equals(fieldName)) {
       return region;
     }
     return null;
@@ -68,14 +72,20 @@ public final class InterconnectLocationRegionInfo implements ApiMessage {
     return null;
   }
 
+  /**
+   * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this
+   * region.
+   */
   public String getExpectedRttMs() {
     return expectedRttMs;
   }
 
+  /** Identifies the network presence of this location. */
   public String getLocationPresence() {
     return locationPresence;
   }
 
+  /** URL for the region of this location. */
   public String getRegion() {
     return region;
   }
@@ -129,28 +139,40 @@ public final class InterconnectLocationRegionInfo implements ApiMessage {
       this.region = source.region;
     }
 
+    /**
+     * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this
+     * region.
+     */
     public String getExpectedRttMs() {
       return expectedRttMs;
     }
 
+    /**
+     * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this
+     * region.
+     */
     public Builder setExpectedRttMs(String expectedRttMs) {
       this.expectedRttMs = expectedRttMs;
       return this;
     }
 
+    /** Identifies the network presence of this location. */
     public String getLocationPresence() {
       return locationPresence;
     }
 
+    /** Identifies the network presence of this location. */
     public Builder setLocationPresence(String locationPresence) {
       this.locationPresence = locationPresence;
       return this;
     }
 
+    /** URL for the region of this location. */
     public String getRegion() {
       return region;
     }
 
+    /** URL for the region of this location. */
     public Builder setRegion(String region) {
       this.region = region;
       return this;

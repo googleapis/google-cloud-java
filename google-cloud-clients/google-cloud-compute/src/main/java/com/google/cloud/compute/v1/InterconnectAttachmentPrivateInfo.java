@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Information for an interconnect attachment when this belongs to an interconnect of type
+ * DEDICATED.
+ */
 public final class InterconnectAttachmentPrivateInfo implements ApiMessage {
   private final Integer tag8021q;
 
@@ -37,7 +41,7 @@ public final class InterconnectAttachmentPrivateInfo implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("tag8021q")) {
+    if ("tag8021q".equals(fieldName)) {
       return tag8021q;
     }
     return null;
@@ -55,6 +59,10 @@ public final class InterconnectAttachmentPrivateInfo implements ApiMessage {
     return null;
   }
 
+  /**
+   * [Output Only] 802.1q encapsulation tag to be used for traffic between Google and the customer,
+   * going to and from this network and region.
+   */
   public Integer getTag8021q() {
     return tag8021q;
   }
@@ -98,10 +106,18 @@ public final class InterconnectAttachmentPrivateInfo implements ApiMessage {
       this.tag8021q = source.tag8021q;
     }
 
+    /**
+     * [Output Only] 802.1q encapsulation tag to be used for traffic between Google and the
+     * customer, going to and from this network and region.
+     */
     public Integer getTag8021q() {
       return tag8021q;
     }
 
+    /**
+     * [Output Only] 802.1q encapsulation tag to be used for traffic between Google and the
+     * customer, going to and from this network and region.
+     */
     public Builder setTag8021q(Integer tag8021q) {
       this.tag8021q = tag8021q;
       return this;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,11 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Informational metadata about Partner attachments from Partners to display to customers. These
+ * fields are propagated from PARTNER_PROVIDER attachments to their corresponding PARTNER
+ * attachments.
+ */
 public final class InterconnectAttachmentPartnerMetadata implements ApiMessage {
   private final String interconnectName;
   private final String partnerName;
@@ -44,13 +49,13 @@ public final class InterconnectAttachmentPartnerMetadata implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("interconnectName")) {
+    if ("interconnectName".equals(fieldName)) {
       return interconnectName;
     }
-    if (fieldName.equals("partnerName")) {
+    if ("partnerName".equals(fieldName)) {
       return partnerName;
     }
-    if (fieldName.equals("portalUrl")) {
+    if ("portalUrl".equals(fieldName)) {
       return portalUrl;
     }
     return null;
@@ -68,14 +73,28 @@ public final class InterconnectAttachmentPartnerMetadata implements ApiMessage {
     return null;
   }
 
+  /**
+   * Plain text name of the Interconnect this attachment is connected to, as displayed in the
+   * Partner?s portal. For instance "Chicago 1". This value may be validated to match approved
+   * Partner values.
+   */
   public String getInterconnectName() {
     return interconnectName;
   }
 
+  /**
+   * Plain text name of the Partner providing this attachment. This value may be validated to match
+   * approved Partner values.
+   */
   public String getPartnerName() {
     return partnerName;
   }
 
+  /**
+   * URL of the Partner?s portal for this Attachment. Partners may customise this to be a deep-link
+   * to the specific resource on the Partner portal. This value may be validated to match approved
+   * Partner values.
+   */
   public String getPortalUrl() {
     return portalUrl;
   }
@@ -129,28 +148,56 @@ public final class InterconnectAttachmentPartnerMetadata implements ApiMessage {
       this.portalUrl = source.portalUrl;
     }
 
+    /**
+     * Plain text name of the Interconnect this attachment is connected to, as displayed in the
+     * Partner?s portal. For instance "Chicago 1". This value may be validated to match approved
+     * Partner values.
+     */
     public String getInterconnectName() {
       return interconnectName;
     }
 
+    /**
+     * Plain text name of the Interconnect this attachment is connected to, as displayed in the
+     * Partner?s portal. For instance "Chicago 1". This value may be validated to match approved
+     * Partner values.
+     */
     public Builder setInterconnectName(String interconnectName) {
       this.interconnectName = interconnectName;
       return this;
     }
 
+    /**
+     * Plain text name of the Partner providing this attachment. This value may be validated to
+     * match approved Partner values.
+     */
     public String getPartnerName() {
       return partnerName;
     }
 
+    /**
+     * Plain text name of the Partner providing this attachment. This value may be validated to
+     * match approved Partner values.
+     */
     public Builder setPartnerName(String partnerName) {
       this.partnerName = partnerName;
       return this;
     }
 
+    /**
+     * URL of the Partner?s portal for this Attachment. Partners may customise this to be a
+     * deep-link to the specific resource on the Partner portal. This value may be validated to
+     * match approved Partner values.
+     */
     public String getPortalUrl() {
       return portalUrl;
     }
 
+    /**
+     * URL of the Partner?s portal for this Attachment. Partners may customise this to be a
+     * deep-link to the specific resource on the Partner portal. This value may be validated to
+     * match approved Partner values.
+     */
     public Builder setPortalUrl(String portalUrl) {
       this.portalUrl = portalUrl;
       return this;

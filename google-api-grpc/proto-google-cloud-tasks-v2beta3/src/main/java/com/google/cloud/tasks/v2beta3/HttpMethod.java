@@ -73,6 +73,26 @@ public enum HttpMethod implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DELETE = 5;</code>
    */
   DELETE(5),
+  /**
+   *
+   *
+   * <pre>
+   * HTTP PATCH
+   * </pre>
+   *
+   * <code>PATCH = 6;</code>
+   */
+  PATCH(6),
+  /**
+   *
+   *
+   * <pre>
+   * HTTP OPTIONS
+   * </pre>
+   *
+   * <code>OPTIONS = 7;</code>
+   */
+  OPTIONS(7),
   UNRECOGNIZED(-1),
   ;
 
@@ -136,6 +156,26 @@ public enum HttpMethod implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DELETE = 5;</code>
    */
   public static final int DELETE_VALUE = 5;
+  /**
+   *
+   *
+   * <pre>
+   * HTTP PATCH
+   * </pre>
+   *
+   * <code>PATCH = 6;</code>
+   */
+  public static final int PATCH_VALUE = 6;
+  /**
+   *
+   *
+   * <pre>
+   * HTTP OPTIONS
+   * </pre>
+   *
+   * <code>OPTIONS = 7;</code>
+   */
+  public static final int OPTIONS_VALUE = 7;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -165,6 +205,10 @@ public enum HttpMethod implements com.google.protobuf.ProtocolMessageEnum {
         return PUT;
       case 5:
         return DELETE;
+      case 6:
+        return PATCH;
+      case 7:
+        return OPTIONS;
       default:
         return null;
     }

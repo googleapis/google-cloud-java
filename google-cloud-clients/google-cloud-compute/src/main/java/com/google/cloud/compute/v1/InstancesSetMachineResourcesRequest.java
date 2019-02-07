@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public final class InstancesSetMachineResourcesRequest implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("guestAccelerators")) {
+    if ("guestAccelerators".equals(fieldName)) {
       return guestAccelerators;
     }
     return null;
@@ -56,6 +56,7 @@ public final class InstancesSetMachineResourcesRequest implements ApiMessage {
     return null;
   }
 
+  /** A list of the type and count of accelerator cards attached to the instance. */
   public List<AcceleratorConfig> getGuestAcceleratorsList() {
     return guestAccelerators;
   }
@@ -99,10 +100,12 @@ public final class InstancesSetMachineResourcesRequest implements ApiMessage {
       this.guestAccelerators = source.guestAccelerators;
     }
 
+    /** A list of the type and count of accelerator cards attached to the instance. */
     public List<AcceleratorConfig> getGuestAcceleratorsList() {
       return guestAccelerators;
     }
 
+    /** A list of the type and count of accelerator cards attached to the instance. */
     public Builder addAllGuestAccelerators(List<AcceleratorConfig> guestAccelerators) {
       if (this.guestAccelerators == null) {
         this.guestAccelerators = new LinkedList<>();
@@ -111,6 +114,7 @@ public final class InstancesSetMachineResourcesRequest implements ApiMessage {
       return this;
     }
 
+    /** A list of the type and count of accelerator cards attached to the instance. */
     public Builder addGuestAccelerators(AcceleratorConfig guestAccelerators) {
       if (this.guestAccelerators == null) {
         this.guestAccelerators = new LinkedList<>();

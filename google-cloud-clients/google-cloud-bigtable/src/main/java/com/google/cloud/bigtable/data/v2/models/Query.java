@@ -19,11 +19,13 @@ import com.google.api.core.InternalApi;
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.RowRange;
 import com.google.bigtable.v2.RowSet;
-import com.google.bigtable.v2.TableName;
 import com.google.cloud.bigtable.data.v2.internal.ByteStringComparator;
+import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.internal.RowSetUtil;
 import com.google.cloud.bigtable.data.v2.models.Range.ByteStringRange;
+import com.google.common.base.MoreObjects;
+import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableSortedSet;
 import com.google.common.collect.Lists;
@@ -34,6 +36,7 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.List;
 import java.util.SortedSet;
+import javax.annotation.Nonnull;
 
 /** A simple wrapper to construct a query for the ReadRows RPC. */
 public final class Query implements Serializable {
@@ -195,8 +198,8 @@ public final class Query implements Serializable {
         ImmutableSortedSet.orderedBy(ByteStringComparator.INSTANCE);
 
     for (KeyOffset keyOffset : sampledRowKeys) {
-      if (!keyOffset.geyKey().isEmpty()) {
-        splitPoints.add(keyOffset.geyKey());
+      if (!keyOffset.getKey().isEmpty()) {
+        splitPoints.add(keyOffset.getKey());
       }
     }
 
@@ -246,16 +249,29 @@ public final class Query implements Serializable {
    */
   @InternalApi
   public ReadRowsRequest toProto(RequestContext requestContext) {
-    TableName tableName =
-        TableName.of(
-            requestContext.getInstanceName().getProject(),
-            requestContext.getInstanceName().getInstance(),
-            tableId);
+    String tableName =
+        NameUtil.formatTableName(
+            requestContext.getProjectId(), requestContext.getInstanceId(), tableId);
 
     return builder
-        .setTableName(tableName.toString())
+        .setTableName(tableName)
         .setAppProfileId(requestContext.getAppProfileId())
         .build();
+  }
+
+  /**
+   * Wraps the protobuf {@link ReadRowsRequest}.
+   *
+   * <p>WARNING: Please note that the project id & instance id in the table name will be overwritten
+   * by the configuration in the BigtableDataClient.
+   */
+  public static Query fromProto(@Nonnull ReadRowsRequest request) {
+    Preconditions.checkArgument(request != null, "ReadRowsRequest must not be null");
+
+    Query query = new Query(NameUtil.extractTableIdFromTableName(request.getTableName()));
+    query.builder = request.toBuilder();
+
+    return query;
   }
 
   private static ByteString wrapKey(String key) {
@@ -263,5 +279,35 @@ public final class Query implements Serializable {
       return null;
     }
     return ByteString.copyFromUtf8(key);
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    Query query = (Query) o;
+    return Objects.equal(tableId, query.tableId)
+        && Objects.equal(builder.build(), query.builder.build());
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hashCode(tableId, builder.build());
+  }
+
+  @Override
+  public String toString() {
+    ReadRowsRequest request = builder.build();
+
+    return MoreObjects.toStringHelper(this)
+        .add("tableId", tableId)
+        .add("keys", request.getRows().getRowKeysList())
+        .add("ranges", request.getRows().getRowRangesList())
+        .add("filter", request.getFilter())
+        .toString();
   }
 }

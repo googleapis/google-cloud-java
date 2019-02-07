@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ public final class SslPolicyReference implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("sslPolicy")) {
+    if ("sslPolicy".equals(fieldName)) {
       return sslPolicy;
     }
     return null;
@@ -55,6 +55,10 @@ public final class SslPolicyReference implements ApiMessage {
     return null;
   }
 
+  /**
+   * URL of the SSL policy resource. Set this to empty string to clear any existing SSL policy
+   * associated with the target proxy resource.
+   */
   public String getSslPolicy() {
     return sslPolicy;
   }
@@ -98,10 +102,18 @@ public final class SslPolicyReference implements ApiMessage {
       this.sslPolicy = source.sslPolicy;
     }
 
+    /**
+     * URL of the SSL policy resource. Set this to empty string to clear any existing SSL policy
+     * associated with the target proxy resource.
+     */
     public String getSslPolicy() {
       return sslPolicy;
     }
 
+    /**
+     * URL of the SSL policy resource. Set this to empty string to clear any existing SSL policy
+     * associated with the target proxy resource.
+     */
     public Builder setSslPolicy(String sslPolicy) {
       this.sslPolicy = sslPolicy;
       return this;

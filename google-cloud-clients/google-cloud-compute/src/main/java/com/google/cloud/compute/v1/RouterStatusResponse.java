@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,10 +40,10 @@ public final class RouterStatusResponse implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("kind")) {
+    if ("kind".equals(fieldName)) {
       return kind;
     }
-    if (fieldName.equals("result")) {
+    if ("result".equals(fieldName)) {
       return result;
     }
     return null;
@@ -61,6 +61,7 @@ public final class RouterStatusResponse implements ApiMessage {
     return null;
   }
 
+  /** Type of resource. */
   public String getKind() {
     return kind;
   }
@@ -113,10 +114,12 @@ public final class RouterStatusResponse implements ApiMessage {
       this.result = source.result;
     }
 
+    /** Type of resource. */
     public String getKind() {
       return kind;
     }
 
+    /** Type of resource. */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;

@@ -1,26 +1,41 @@
 {
+  "updateTime": "2019-02-07T08:50:36.930179Z",
   "sources": [
+    {
+      "generator": {
+        "name": "artman",
+        "version": "0.16.10",
+        "dockerImage": "googleapis/artman@sha256:0954ba3e40d694e631bb2f39460d502a3d9f3a66d40b7a9a67f4b30012195beb"
+      }
+    },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "5a57f0c13a358b2b15452bf2d67453774a5f6d4f",
-        "internalRef": "221837528"
+        "sha": "49b7906ba5f15c1bc52bf5febc3bd0645d29b980",
+        "internalRef": "232773383"
+      }
+    }
+  ],
+  "destinations": [
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "texttospeech",
+        "apiVersion": "v1",
+        "language": "java",
+        "generator": "gapic",
+        "config": "google/cloud/texttospeech/artman_texttospeech_v1.yaml"
       }
     },
     {
-      "git": {
-        "name": "googleapis-private",
-        "remote": "https://github.com/googleapis/googleapis-private.git",
-        "sha": "6aa8e1a447bb8d0367150356a28cb4d3f2332641",
-        "internalRef": "221340946"
-      }
-    },
-    {
-      "generator": {
-        "name": "artman",
-        "version": "0.16.0",
-        "dockerImage": "googleapis/artman@sha256:90f9d15e9bad675aeecd586725bce48f5667ffe7d5fc4d1e96d51ff34304815b"
+      "client": {
+        "source": "googleapis",
+        "apiName": "texttospeech",
+        "apiVersion": "v1beta1",
+        "language": "java",
+        "generator": "gapic",
+        "config": "google/cloud/texttospeech/artman_texttospeech_v1beta1.yaml"
       }
     }
   ]

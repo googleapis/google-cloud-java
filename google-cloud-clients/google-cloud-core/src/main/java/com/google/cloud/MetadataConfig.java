@@ -33,7 +33,7 @@ import java.net.URL;
  */
 public class MetadataConfig {
 
-  private static final String METADATA_URL = "http://metadata/computeMetadata/v1/";
+  private static final String METADATA_URL = "http://metadata.google.internal/computeMetadata/v1/";
 
   private MetadataConfig() {}
 
@@ -43,7 +43,7 @@ public class MetadataConfig {
 
   public static String getZone() {
     String zoneId = getAttribute("instance/zone");
-    if (zoneId.contains("/")) {
+    if (zoneId != null && zoneId.contains("/")) {
       return zoneId.substring(zoneId.lastIndexOf('/') + 1);
     }
     return zoneId;

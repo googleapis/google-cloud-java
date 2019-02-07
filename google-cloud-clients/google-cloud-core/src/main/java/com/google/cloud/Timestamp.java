@@ -26,7 +26,6 @@ import java.util.concurrent.TimeUnit;
 import org.threeten.bp.Instant;
 import org.threeten.bp.LocalDateTime;
 import org.threeten.bp.ZoneOffset;
-import org.threeten.bp.chrono.IsoChronology;
 import org.threeten.bp.format.DateTimeFormatter;
 
 /**
@@ -46,8 +45,7 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
   public static final Timestamp MAX_VALUE =
       new Timestamp(253402300799L, (int) TimeUnit.SECONDS.toNanos(1) - 1);
 
-  private static final DateTimeFormatter format =
-      DateTimeFormatter.ISO_LOCAL_DATE_TIME.withChronology(IsoChronology.INSTANCE);
+  private static final DateTimeFormatter format = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
 
   private final long seconds;
   private final int nanos;

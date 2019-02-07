@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-examples</artifactId>
-  <version>0.74.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-examples:current} -->
+  <version>0.79.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-examples:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Examples</name>
   <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples</url>
@@ -18,7 +18,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.74.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-bom:current} -->
+        <version>0.79.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-bom:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -28,6 +28,10 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigquery</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-bigtable</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
@@ -185,10 +189,10 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-failsafe-plugin</artifactId>
-        <version>2.19.1</version>
+        <version>3.0.0-M3</version>
         <configuration>
           <excludes>
-            <exclude>**/IT*Snippets.java</exclude>
+            <exclude>**/IT*.java</exclude>
           </excludes>
         </configuration>
       </plugin>
@@ -219,7 +223,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-failsafe-plugin</artifactId>
-            <version>2.19.1</version>
+            <version>3.0.0-M3</version>
             <configuration>
               <excludes combine.self="override"></excludes>
           </configuration>

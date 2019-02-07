@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Response for the InterconnectsGetDiagnosticsRequest. */
 public final class InterconnectsGetDiagnosticsResponse implements ApiMessage {
   private final InterconnectDiagnostics result;
 
@@ -37,7 +38,7 @@ public final class InterconnectsGetDiagnosticsResponse implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("result")) {
+    if ("result".equals(fieldName)) {
       return result;
     }
     return null;

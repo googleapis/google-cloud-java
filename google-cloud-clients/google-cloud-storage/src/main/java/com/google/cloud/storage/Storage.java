@@ -96,7 +96,8 @@ public interface Storage extends Service<StorageOptions> {
     ENCRYPTION("encryption"),
     BILLING("billing"),
     DEFAULT_EVENT_BASED_HOLD("defaultEventBasedHold"),
-    RETENTION_POLICY("retentionPolicy");
+    RETENTION_POLICY("retentionPolicy"),
+    IAMCONFIGURATION("iamConfiguration");
 
     static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(NAME);
 
@@ -203,6 +204,18 @@ public interface Storage extends Service<StorageOptions> {
      */
     public static BucketTargetOption userProject(String userProject) {
       return new BucketTargetOption(StorageRpc.Option.USER_PROJECT, userProject);
+    }
+
+    /**
+     * Returns an option to define the projection in the API request. In some cases this option may
+     * be needed to be set to `noAcl` to omit ACL data from the response. The default value is
+     * `full`
+     *
+     * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/buckets/patch">Buckets:
+     *     patch</a>
+     */
+    public static BucketTargetOption projection(String projection) {
+      return new BucketTargetOption(StorageRpc.Option.PROJECTION, projection);
     }
   }
 

@@ -24,6 +24,7 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
 
   private SpeechRecognitionResult() {
     alternatives_ = java.util.Collections.emptyList();
+    channelTag_ = 0;
   }
 
   @java.lang.Override
@@ -64,6 +65,11 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
                       extensionRegistry));
               break;
             }
+          case 16:
+            {
+              channelTag_ = input.readInt32();
+              break;
+            }
           default:
             {
               if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
@@ -101,6 +107,7 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
             com.google.cloud.speech.v1.SpeechRecognitionResult.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ALTERNATIVES_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.speech.v1.SpeechRecognitionAlternative> alternatives_;
   /**
@@ -182,6 +189,23 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
     return alternatives_.get(index);
   }
 
+  public static final int CHANNEL_TAG_FIELD_NUMBER = 2;
+  private int channelTag_;
+  /**
+   *
+   *
+   * <pre>
+   * For multi-channel audio, this is the channel number corresponding to the
+   * recognized result for the audio from that channel.
+   * For audio_channel_count = N, its output values can range from '1' to 'N'.
+   * </pre>
+   *
+   * <code>int32 channel_tag = 2;</code>
+   */
+  public int getChannelTag() {
+    return channelTag_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -199,6 +223,9 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
     for (int i = 0; i < alternatives_.size(); i++) {
       output.writeMessage(1, alternatives_.get(i));
     }
+    if (channelTag_ != 0) {
+      output.writeInt32(2, channelTag_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -210,6 +237,9 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
     size = 0;
     for (int i = 0; i < alternatives_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, alternatives_.get(i));
+    }
+    if (channelTag_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, channelTag_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -229,6 +259,7 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
 
     boolean result = true;
     result = result && getAlternativesList().equals(other.getAlternativesList());
+    result = result && (getChannelTag() == other.getChannelTag());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -244,6 +275,8 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
       hash = (37 * hash) + ALTERNATIVES_FIELD_NUMBER;
       hash = (53 * hash) + getAlternativesList().hashCode();
     }
+    hash = (37 * hash) + CHANNEL_TAG_FIELD_NUMBER;
+    hash = (53 * hash) + getChannelTag();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -397,6 +430,8 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
       } else {
         alternativesBuilder_.clear();
       }
+      channelTag_ = 0;
+
       return this;
     }
 
@@ -425,6 +460,7 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
       com.google.cloud.speech.v1.SpeechRecognitionResult result =
           new com.google.cloud.speech.v1.SpeechRecognitionResult(this);
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (alternativesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
           alternatives_ = java.util.Collections.unmodifiableList(alternatives_);
@@ -434,6 +470,8 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
       } else {
         result.alternatives_ = alternativesBuilder_.build();
       }
+      result.channelTag_ = channelTag_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -510,6 +548,9 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
             alternativesBuilder_.addAllMessages(other.alternatives_);
           }
         }
+      }
+      if (other.getChannelTag() != 0) {
+        setChannelTag(other.getChannelTag());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -962,6 +1003,56 @@ public final class SpeechRecognitionResult extends com.google.protobuf.Generated
         alternatives_ = null;
       }
       return alternativesBuilder_;
+    }
+
+    private int channelTag_;
+    /**
+     *
+     *
+     * <pre>
+     * For multi-channel audio, this is the channel number corresponding to the
+     * recognized result for the audio from that channel.
+     * For audio_channel_count = N, its output values can range from '1' to 'N'.
+     * </pre>
+     *
+     * <code>int32 channel_tag = 2;</code>
+     */
+    public int getChannelTag() {
+      return channelTag_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For multi-channel audio, this is the channel number corresponding to the
+     * recognized result for the audio from that channel.
+     * For audio_channel_count = N, its output values can range from '1' to 'N'.
+     * </pre>
+     *
+     * <code>int32 channel_tag = 2;</code>
+     */
+    public Builder setChannelTag(int value) {
+
+      channelTag_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For multi-channel audio, this is the channel number corresponding to the
+     * recognized result for the audio from that channel.
+     * For audio_channel_count = N, its output values can range from '1' to 'N'.
+     * </pre>
+     *
+     * <code>int32 channel_tag = 2;</code>
+     */
+    public Builder clearChannelTag() {
+
+      channelTag_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

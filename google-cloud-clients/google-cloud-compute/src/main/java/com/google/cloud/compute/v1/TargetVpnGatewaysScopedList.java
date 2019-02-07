@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,10 +41,10 @@ public final class TargetVpnGatewaysScopedList implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("targetVpnGateways")) {
+    if ("targetVpnGateways".equals(fieldName)) {
       return targetVpnGateways;
     }
-    if (fieldName.equals("warning")) {
+    if ("warning".equals(fieldName)) {
       return warning;
     }
     return null;
@@ -62,10 +62,15 @@ public final class TargetVpnGatewaysScopedList implements ApiMessage {
     return null;
   }
 
+  /** [Output Only] A list of target vpn gateways contained in this scope. */
   public List<TargetVpnGateway> getTargetVpnGatewaysList() {
     return targetVpnGateways;
   }
 
+  /**
+   * [Output Only] Informational warning which replaces the list of addresses when the list is
+   * empty.
+   */
   public Warning getWarning() {
     return warning;
   }
@@ -114,10 +119,12 @@ public final class TargetVpnGatewaysScopedList implements ApiMessage {
       this.warning = source.warning;
     }
 
+    /** [Output Only] A list of target vpn gateways contained in this scope. */
     public List<TargetVpnGateway> getTargetVpnGatewaysList() {
       return targetVpnGateways;
     }
 
+    /** [Output Only] A list of target vpn gateways contained in this scope. */
     public Builder addAllTargetVpnGateways(List<TargetVpnGateway> targetVpnGateways) {
       if (this.targetVpnGateways == null) {
         this.targetVpnGateways = new LinkedList<>();
@@ -126,6 +133,7 @@ public final class TargetVpnGatewaysScopedList implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] A list of target vpn gateways contained in this scope. */
     public Builder addTargetVpnGateways(TargetVpnGateway targetVpnGateways) {
       if (this.targetVpnGateways == null) {
         this.targetVpnGateways = new LinkedList<>();
@@ -134,10 +142,18 @@ public final class TargetVpnGatewaysScopedList implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] Informational warning which replaces the list of addresses when the list is
+     * empty.
+     */
     public Warning getWarning() {
       return warning;
     }
 
+    /**
+     * [Output Only] Informational warning which replaces the list of addresses when the list is
+     * empty.
+     */
     public Builder setWarning(Warning warning) {
       this.warning = warning;
       return this;

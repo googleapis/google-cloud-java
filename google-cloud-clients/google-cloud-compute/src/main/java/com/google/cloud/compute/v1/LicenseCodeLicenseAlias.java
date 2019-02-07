@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,10 +40,10 @@ public final class LicenseCodeLicenseAlias implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("description")) {
+    if ("description".equals(fieldName)) {
       return description;
     }
-    if (fieldName.equals("selfLink")) {
+    if ("selfLink".equals(fieldName)) {
       return selfLink;
     }
     return null;
@@ -61,10 +61,12 @@ public final class LicenseCodeLicenseAlias implements ApiMessage {
     return null;
   }
 
+  /** [Output Only] Description of this License Code. */
   public String getDescription() {
     return description;
   }
 
+  /** [Output Only] URL of license corresponding to this License Code. */
   public String getSelfLink() {
     return selfLink;
   }
@@ -113,19 +115,23 @@ public final class LicenseCodeLicenseAlias implements ApiMessage {
       this.selfLink = source.selfLink;
     }
 
+    /** [Output Only] Description of this License Code. */
     public String getDescription() {
       return description;
     }
 
+    /** [Output Only] Description of this License Code. */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /** [Output Only] URL of license corresponding to this License Code. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] URL of license corresponding to this License Code. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;

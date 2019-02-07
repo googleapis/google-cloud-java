@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ public final class RegionInstanceGroupManagersSetTemplateRequest implements ApiM
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("instanceTemplate")) {
+    if ("instanceTemplate".equals(fieldName)) {
       return instanceTemplate;
     }
     return null;
@@ -55,6 +55,7 @@ public final class RegionInstanceGroupManagersSetTemplateRequest implements ApiM
     return null;
   }
 
+  /** URL of the InstanceTemplate resource from which all new instances will be created. */
   public String getInstanceTemplate() {
     return instanceTemplate;
   }
@@ -98,10 +99,12 @@ public final class RegionInstanceGroupManagersSetTemplateRequest implements ApiM
       this.instanceTemplate = source.instanceTemplate;
     }
 
+    /** URL of the InstanceTemplate resource from which all new instances will be created. */
     public String getInstanceTemplate() {
       return instanceTemplate;
     }
 
+    /** URL of the InstanceTemplate resource from which all new instances will be created. */
     public Builder setInstanceTemplate(String instanceTemplate) {
       this.instanceTemplate = instanceTemplate;
       return this;

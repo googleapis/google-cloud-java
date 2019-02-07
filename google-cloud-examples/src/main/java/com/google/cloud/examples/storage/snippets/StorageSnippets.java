@@ -1393,4 +1393,69 @@ public class StorageSnippets {
     // [END storage_release_temporary_hold]
     return blob;
   }
+
+  /** Example of how to enable Bucket Policy Only for a bucket */
+  public Bucket enableBucketPolicyOnly(String bucketName) throws StorageException {
+    // [START storage_enable_bucket_policy_only]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The name of a bucket, e.g. "my-bucket"
+    // String bucketName = "my-bucket";
+
+    BucketInfo.IamConfiguration iamConfiguration =
+        BucketInfo.IamConfiguration.newBuilder().setIsBucketPolicyOnlyEnabled(true).build();
+    Bucket bucket =
+        storage.update(
+            BucketInfo.newBuilder(bucketName).setIamConfiguration(iamConfiguration).build());
+
+    System.out.println("Bucket Policy Only was enabled for " + bucketName);
+    // [END storage_enable_bucket_policy_only]
+    return bucket;
+  }
+
+  /** Example of how to disable Bucket Policy Only for a bucket */
+  public Bucket disableBucketPolicyOnly(String bucketName) throws StorageException {
+    // [START storage_disable_bucket_policy_only]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The name of a bucket, e.g. "my-bucket"
+    // String bucketName = "my-bucket";
+
+    BucketInfo.IamConfiguration iamConfiguration =
+        BucketInfo.IamConfiguration.newBuilder().setIsBucketPolicyOnlyEnabled(false).build();
+    Bucket bucket =
+        storage.update(
+            BucketInfo.newBuilder(bucketName).setIamConfiguration(iamConfiguration).build());
+
+    System.out.println("Bucket Policy Only was disabled for " + bucketName);
+    // [END storage_disable_bucket_policy_only]
+    return bucket;
+  }
+
+  /** Example of how to get Bucket Policy Only metadata for a bucket */
+  public Bucket getBucketPolicyOnly(String bucketName) throws StorageException {
+    // [START storage_get_bucket_policy_only]
+    // Instantiate a Google Cloud Storage client
+    Storage storage = StorageOptions.getDefaultInstance().getService();
+
+    // The name of a bucket, e.g. "my-bucket"
+    // String bucketName = "my-bucket";
+
+    Bucket bucket = storage.get(bucketName, BucketGetOption.fields(BucketField.IAMCONFIGURATION));
+    BucketInfo.IamConfiguration iamConfiguration = bucket.getIamConfiguration();
+
+    Boolean enabled = iamConfiguration.isBucketPolicyOnlyEnabled();
+    Date lockedTime = new Date(iamConfiguration.getBucketPolicyOnlyLockedTime());
+
+    if (enabled != null && enabled) {
+      System.out.println("Bucket Policy Only is enabled for " + bucketName);
+      System.out.println("Bucket will be locked on " + lockedTime);
+    } else {
+      System.out.println("Bucket Policy Only is disabled for " + bucketName);
+    }
+    // [END storage_get_bucket_policy_only]
+    return bucket;
+  }
 }

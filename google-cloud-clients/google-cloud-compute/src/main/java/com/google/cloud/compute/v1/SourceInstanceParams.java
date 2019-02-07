@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * A specification of the parameters to use when creating the instance template from a source
+ * instance.
+ */
 public final class SourceInstanceParams implements ApiMessage {
   private final List<DiskInstantiationConfig> diskConfigs;
 
@@ -38,7 +42,7 @@ public final class SourceInstanceParams implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("diskConfigs")) {
+    if ("diskConfigs".equals(fieldName)) {
       return diskConfigs;
     }
     return null;
@@ -56,6 +60,11 @@ public final class SourceInstanceParams implements ApiMessage {
     return null;
   }
 
+  /**
+   * Attached disks configuration. If not provided, defaults are applied: For boot disk and any
+   * other R/W disks, new custom images will be created from each disk. For read-only disks, they
+   * will be attached in read-only mode. Local SSD disks will be created as blank volumes.
+   */
   public List<DiskInstantiationConfig> getDiskConfigsList() {
     return diskConfigs;
   }
@@ -99,10 +108,20 @@ public final class SourceInstanceParams implements ApiMessage {
       this.diskConfigs = source.diskConfigs;
     }
 
+    /**
+     * Attached disks configuration. If not provided, defaults are applied: For boot disk and any
+     * other R/W disks, new custom images will be created from each disk. For read-only disks, they
+     * will be attached in read-only mode. Local SSD disks will be created as blank volumes.
+     */
     public List<DiskInstantiationConfig> getDiskConfigsList() {
       return diskConfigs;
     }
 
+    /**
+     * Attached disks configuration. If not provided, defaults are applied: For boot disk and any
+     * other R/W disks, new custom images will be created from each disk. For read-only disks, they
+     * will be attached in read-only mode. Local SSD disks will be created as blank volumes.
+     */
     public Builder addAllDiskConfigs(List<DiskInstantiationConfig> diskConfigs) {
       if (this.diskConfigs == null) {
         this.diskConfigs = new LinkedList<>();
@@ -111,6 +130,11 @@ public final class SourceInstanceParams implements ApiMessage {
       return this;
     }
 
+    /**
+     * Attached disks configuration. If not provided, defaults are applied: For boot disk and any
+     * other R/W disks, new custom images will be created from each disk. For read-only disks, they
+     * will be attached in read-only mode. Local SSD disks will be created as blank volumes.
+     */
     public Builder addDiskConfigs(DiskInstantiationConfig diskConfigs) {
       if (this.diskConfigs == null) {
         this.diskConfigs = new LinkedList<>();

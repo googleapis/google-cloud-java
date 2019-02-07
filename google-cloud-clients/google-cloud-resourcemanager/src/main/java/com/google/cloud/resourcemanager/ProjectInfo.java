@@ -29,8 +29,9 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
-import org.joda.time.DateTime;
-import org.joda.time.format.ISODateTimeFormat;
+import org.threeten.bp.Instant;
+import org.threeten.bp.ZoneOffset;
+import org.threeten.bp.format.DateTimeFormatter;
 
 /**
  * A Google Cloud Resource Manager project metadata object. A Project is a high-level Google Cloud
@@ -39,6 +40,8 @@ import org.joda.time.format.ISODateTimeFormat;
  */
 public class ProjectInfo implements Serializable {
 
+  public static final DateTimeFormatter DATE_TIME_FORMATTER =
+      DateTimeFormatter.ISO_DATE_TIME.withZone(ZoneOffset.UTC);
   private static final long serialVersionUID = 9148970963697734236L;
   private final String name;
   private final String projectId;
@@ -390,7 +393,10 @@ public class ProjectInfo implements Serializable {
       projectPb.setLifecycleState(state.toString());
     }
     if (createTimeMillis != null) {
-      projectPb.setCreateTime(ISODateTimeFormat.dateTime().withZoneUTC().print(createTimeMillis));
+      projectPb.setCreateTime(
+          DateTimeFormatter.ISO_DATE_TIME
+              .withZone(ZoneOffset.UTC)
+              .format(Instant.ofEpochMilli(createTimeMillis)));
     }
     if (parent != null) {
       projectPb.setParent(parent.toPb());
@@ -411,7 +417,8 @@ public class ProjectInfo implements Serializable {
       builder.setState(State.valueOf(projectPb.getLifecycleState()));
     }
     if (projectPb.getCreateTime() != null) {
-      builder.setCreateTimeMillis(DateTime.parse(projectPb.getCreateTime()).getMillis());
+      builder.setCreateTimeMillis(
+          DATE_TIME_FORMATTER.parse(projectPb.getCreateTime(), Instant.FROM).toEpochMilli());
     }
     if (projectPb.getParent() != null) {
       builder.setParent(ResourceId.fromPb(projectPb.getParent()));

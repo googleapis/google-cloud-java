@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public final class DistributionPolicy implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("zones")) {
+    if ("zones".equals(fieldName)) {
       return zones;
     }
     return null;
@@ -56,6 +56,7 @@ public final class DistributionPolicy implements ApiMessage {
     return null;
   }
 
+  /** Zones where the regional managed instance group will create and manage instances. */
   public List<DistributionPolicyZoneConfiguration> getZonesList() {
     return zones;
   }
@@ -99,10 +100,12 @@ public final class DistributionPolicy implements ApiMessage {
       this.zones = source.zones;
     }
 
+    /** Zones where the regional managed instance group will create and manage instances. */
     public List<DistributionPolicyZoneConfiguration> getZonesList() {
       return zones;
     }
 
+    /** Zones where the regional managed instance group will create and manage instances. */
     public Builder addAllZones(List<DistributionPolicyZoneConfiguration> zones) {
       if (this.zones == null) {
         this.zones = new LinkedList<>();
@@ -111,6 +114,7 @@ public final class DistributionPolicy implements ApiMessage {
       return this;
     }
 
+    /** Zones where the regional managed instance group will create and manage instances. */
     public Builder addZones(DistributionPolicyZoneConfiguration zones) {
       if (this.zones == null) {
         this.zones = new LinkedList<>();

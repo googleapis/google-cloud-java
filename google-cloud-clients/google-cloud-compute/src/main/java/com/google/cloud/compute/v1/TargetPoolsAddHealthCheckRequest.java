@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public final class TargetPoolsAddHealthCheckRequest implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("healthChecks")) {
+    if ("healthChecks".equals(fieldName)) {
       return healthChecks;
     }
     return null;
@@ -56,6 +56,7 @@ public final class TargetPoolsAddHealthCheckRequest implements ApiMessage {
     return null;
   }
 
+  /** The HttpHealthCheck to add to the target pool. */
   public List<HealthCheckReference> getHealthChecksList() {
     return healthChecks;
   }
@@ -99,10 +100,12 @@ public final class TargetPoolsAddHealthCheckRequest implements ApiMessage {
       this.healthChecks = source.healthChecks;
     }
 
+    /** The HttpHealthCheck to add to the target pool. */
     public List<HealthCheckReference> getHealthChecksList() {
       return healthChecks;
     }
 
+    /** The HttpHealthCheck to add to the target pool. */
     public Builder addAllHealthChecks(List<HealthCheckReference> healthChecks) {
       if (this.healthChecks == null) {
         this.healthChecks = new LinkedList<>();
@@ -111,6 +114,7 @@ public final class TargetPoolsAddHealthCheckRequest implements ApiMessage {
       return this;
     }
 
+    /** The HttpHealthCheck to add to the target pool. */
     public Builder addHealthChecks(HealthCheckReference healthChecks) {
       if (this.healthChecks == null) {
         this.healthChecks = new LinkedList<>();

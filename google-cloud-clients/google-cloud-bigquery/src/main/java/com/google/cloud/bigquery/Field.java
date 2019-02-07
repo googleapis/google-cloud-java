@@ -105,7 +105,7 @@ public final class Field implements Serializable {
      * @throws IllegalArgumentException if {@code type == LegacySQLTypeName.RECORD &&
      *     subFields.length == 0} or if {@code type != LegacySQLTypeName.RECORD && subFields.length
      *     != 0}
-     * @see <a href="https://cloud.google.com/bigquery/preparing-data-for-bigquery#datatypes">Data
+     * @see <a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types">Data
      *     Types</a>
      */
     public Builder setType(LegacySQLTypeName type, Field... subFields) {
@@ -121,11 +121,12 @@ public final class Field implements Serializable {
      * @throws IllegalArgumentException if {@code type == LegacySQLTypeName.RECORD && (subFields ==
      *     null || subFields.isEmpty())} or if {@code type != LegacySQLTypeName.RECORD && subFields
      *     != null}
-     * @see <a href="https://cloud.google.com/bigquery/preparing-data-for-bigquery#datatypes">Data
+     * @see <a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types">Data
      *     Types</a>
      */
     public Builder setType(LegacySQLTypeName type, FieldList subFields) {
-      if (type == LegacySQLTypeName.RECORD) {
+      // LegacySQLTypeName is not an enum, cannot use reference equal.
+      if (LegacySQLTypeName.RECORD.equals(type)) {
         if (subFields == null || subFields.isEmpty()) {
           throw new IllegalArgumentException(
               "The " + type + " field must have at least one sub-field");
@@ -175,7 +176,7 @@ public final class Field implements Serializable {
   /**
    * Returns the field type.
    *
-   * @see <a href="https://cloud.google.com/bigquery/preparing-data-for-bigquery#datatypes">Data
+   * @see <a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types">Data
    *     Types</a>
    */
   public LegacySQLTypeName getType() {

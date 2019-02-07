@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,16 +46,16 @@ public final class HealthStatus implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("healthState")) {
+    if ("healthState".equals(fieldName)) {
       return healthState;
     }
-    if (fieldName.equals("instance")) {
+    if ("instance".equals(fieldName)) {
       return instance;
     }
-    if (fieldName.equals("ipAddress")) {
+    if ("ipAddress".equals(fieldName)) {
       return ipAddress;
     }
-    if (fieldName.equals("port")) {
+    if ("port".equals(fieldName)) {
       return port;
     }
     return null;
@@ -73,18 +73,22 @@ public final class HealthStatus implements ApiMessage {
     return null;
   }
 
+  /** Health state of the instance. */
   public String getHealthState() {
     return healthState;
   }
 
+  /** URL of the instance resource. */
   public String getInstance() {
     return instance;
   }
 
+  /** The IP address represented by this resource. */
   public String getIpAddress() {
     return ipAddress;
   }
 
+  /** The port on the instance. */
   public Integer getPort() {
     return port;
   }
@@ -143,37 +147,45 @@ public final class HealthStatus implements ApiMessage {
       this.port = source.port;
     }
 
+    /** Health state of the instance. */
     public String getHealthState() {
       return healthState;
     }
 
+    /** Health state of the instance. */
     public Builder setHealthState(String healthState) {
       this.healthState = healthState;
       return this;
     }
 
+    /** URL of the instance resource. */
     public String getInstance() {
       return instance;
     }
 
+    /** URL of the instance resource. */
     public Builder setInstance(String instance) {
       this.instance = instance;
       return this;
     }
 
+    /** The IP address represented by this resource. */
     public String getIpAddress() {
       return ipAddress;
     }
 
+    /** The IP address represented by this resource. */
     public Builder setIpAddress(String ipAddress) {
       this.ipAddress = ipAddress;
       return this;
     }
 
+    /** The port on the instance. */
     public Integer getPort() {
       return port;
     }
 
+    /** The port on the instance. */
     public Builder setPort(Integer port) {
       this.port = port;
       return this;

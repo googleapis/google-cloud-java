@@ -21,16 +21,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigtable</artifactId>
-  <version>0.74.0-alpha</version>
+  <version>0.79.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-bigtable:0.74.0-alpha'
+compile 'com.google.cloud:google-cloud-bigtable:0.79.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigtable" % "0.74.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigtable" % "0.79.0-alpha"
 ```
 [//]: # ({x-version-update-end})
 
@@ -107,10 +107,10 @@ The Admin APIs are similar. Here is a code snippet showing how to create a table
 imports at the top of your file:
 
 ```java
-import com.google.bigtable.admin.v2.ColumnFamily;
-import com.google.bigtable.admin.v2.InstanceName;
-import com.google.bigtable.admin.v2.Table;
+import static com.google.cloud.bigtable.admin.v2.models.GCRules.GCRULES;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
+import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
+import com.google.cloud.bigtable.admin.v2.models.Table;
 ```
 
 Then, to create a table, use the following code:
@@ -118,15 +118,13 @@ Then, to create a table, use the following code:
 String projectId = "my-instance";
 String instanceId = "my-database";
 
-BigtableTableAdminClient tableAdminClient = BigtableTableAdminClient.create();
+BigtableTableAdminClient tableAdminClient = BigtableTableAdminClient
+  .create(projectId, instanceId);
 
 try {
   tableAdminClient.createTable(
-      InstanceName.of(projectId, instanceId),
-      "new-table-id",
-      Table.newBuilder()
-          .putColumnFamilies("my-family", ColumnFamily.getDefaultInstance())
-          .build()
+      CreateTableRequest.of("my-table")
+        .addFamily("my-family")
   );
 } finally {
   tableAdminClient.close();

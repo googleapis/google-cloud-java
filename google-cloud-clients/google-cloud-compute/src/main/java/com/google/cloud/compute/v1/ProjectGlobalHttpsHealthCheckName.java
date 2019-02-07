@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -150,9 +150,10 @@ public final class ProjectGlobalHttpsHealthCheckName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
-        "httpsHealthCheck", httpsHealthCheck,
-        "project", project);
+    return SERVICE_ADDRESS
+        + PATH_TEMPLATE.instantiate(
+            "httpsHealthCheck", httpsHealthCheck,
+            "project", project);
   }
 
   @Override

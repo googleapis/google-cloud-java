@@ -273,7 +273,8 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (format_
         != com.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat
-            .ATTESTATION_FORMAT_UNSPECIFIED.getNumber()) {
+            .ATTESTATION_FORMAT_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(4, format_);
     }
     if (!content_.isEmpty()) {
@@ -290,7 +291,8 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     size = 0;
     if (format_
         != com.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat
-            .ATTESTATION_FORMAT_UNSPECIFIED.getNumber()) {
+            .ATTESTATION_FORMAT_UNSPECIFIED
+            .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, format_);
     }
     if (!content_.isEmpty()) {

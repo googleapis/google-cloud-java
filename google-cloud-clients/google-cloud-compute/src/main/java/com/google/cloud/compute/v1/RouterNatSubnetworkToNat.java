@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Defines the IP ranges that want to use NAT for a subnetwork. */
 public final class RouterNatSubnetworkToNat implements ApiMessage {
   private final String name;
   private final List<String> secondaryIpRangeNames;
@@ -45,13 +46,13 @@ public final class RouterNatSubnetworkToNat implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("name")) {
+    if ("name".equals(fieldName)) {
       return name;
     }
-    if (fieldName.equals("secondaryIpRangeNames")) {
+    if ("secondaryIpRangeNames".equals(fieldName)) {
       return secondaryIpRangeNames;
     }
-    if (fieldName.equals("sourceIpRangesToNat")) {
+    if ("sourceIpRangesToNat".equals(fieldName)) {
       return sourceIpRangesToNat;
     }
     return null;
@@ -69,14 +70,25 @@ public final class RouterNatSubnetworkToNat implements ApiMessage {
     return null;
   }
 
+  /** URL for the subnetwork resource to use NAT. */
   public String getName() {
     return name;
   }
 
+  /**
+   * A list of the secondary ranges of the Subnetwork that are allowed to use NAT. This can be
+   * populated only if "LIST_OF_SECONDARY_IP_RANGES" is one of the values in
+   * source_ip_ranges_to_nat.
+   */
   public List<String> getSecondaryIpRangeNamesList() {
     return secondaryIpRangeNames;
   }
 
+  /**
+   * Specify the options for NAT ranges in the Subnetwork. All usages of single value are valid
+   * except NAT_IP_RANGE_OPTION_UNSPECIFIED. The only valid option with multiple values is:
+   * ["PRIMARY_IP_RANGE", "LIST_OF_SECONDARY_IP_RANGES"] Default: [ALL_IP_RANGES]
+   */
   public List<String> getSourceIpRangesToNatList() {
     return sourceIpRangesToNat;
   }
@@ -130,19 +142,31 @@ public final class RouterNatSubnetworkToNat implements ApiMessage {
       this.sourceIpRangesToNat = source.sourceIpRangesToNat;
     }
 
+    /** URL for the subnetwork resource to use NAT. */
     public String getName() {
       return name;
     }
 
+    /** URL for the subnetwork resource to use NAT. */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /**
+     * A list of the secondary ranges of the Subnetwork that are allowed to use NAT. This can be
+     * populated only if "LIST_OF_SECONDARY_IP_RANGES" is one of the values in
+     * source_ip_ranges_to_nat.
+     */
     public List<String> getSecondaryIpRangeNamesList() {
       return secondaryIpRangeNames;
     }
 
+    /**
+     * A list of the secondary ranges of the Subnetwork that are allowed to use NAT. This can be
+     * populated only if "LIST_OF_SECONDARY_IP_RANGES" is one of the values in
+     * source_ip_ranges_to_nat.
+     */
     public Builder addAllSecondaryIpRangeNames(List<String> secondaryIpRangeNames) {
       if (this.secondaryIpRangeNames == null) {
         this.secondaryIpRangeNames = new LinkedList<>();
@@ -151,6 +175,11 @@ public final class RouterNatSubnetworkToNat implements ApiMessage {
       return this;
     }
 
+    /**
+     * A list of the secondary ranges of the Subnetwork that are allowed to use NAT. This can be
+     * populated only if "LIST_OF_SECONDARY_IP_RANGES" is one of the values in
+     * source_ip_ranges_to_nat.
+     */
     public Builder addSecondaryIpRangeNames(String secondaryIpRangeNames) {
       if (this.secondaryIpRangeNames == null) {
         this.secondaryIpRangeNames = new LinkedList<>();
@@ -159,10 +188,20 @@ public final class RouterNatSubnetworkToNat implements ApiMessage {
       return this;
     }
 
+    /**
+     * Specify the options for NAT ranges in the Subnetwork. All usages of single value are valid
+     * except NAT_IP_RANGE_OPTION_UNSPECIFIED. The only valid option with multiple values is:
+     * ["PRIMARY_IP_RANGE", "LIST_OF_SECONDARY_IP_RANGES"] Default: [ALL_IP_RANGES]
+     */
     public List<String> getSourceIpRangesToNatList() {
       return sourceIpRangesToNat;
     }
 
+    /**
+     * Specify the options for NAT ranges in the Subnetwork. All usages of single value are valid
+     * except NAT_IP_RANGE_OPTION_UNSPECIFIED. The only valid option with multiple values is:
+     * ["PRIMARY_IP_RANGE", "LIST_OF_SECONDARY_IP_RANGES"] Default: [ALL_IP_RANGES]
+     */
     public Builder addAllSourceIpRangesToNat(List<String> sourceIpRangesToNat) {
       if (this.sourceIpRangesToNat == null) {
         this.sourceIpRangesToNat = new LinkedList<>();
@@ -171,6 +210,11 @@ public final class RouterNatSubnetworkToNat implements ApiMessage {
       return this;
     }
 
+    /**
+     * Specify the options for NAT ranges in the Subnetwork. All usages of single value are valid
+     * except NAT_IP_RANGE_OPTION_UNSPECIFIED. The only valid option with multiple values is:
+     * ["PRIMARY_IP_RANGE", "LIST_OF_SECONDARY_IP_RANGES"] Default: [ALL_IP_RANGES]
+     */
     public Builder addSourceIpRangesToNat(String sourceIpRangesToNat) {
       if (this.sourceIpRangesToNat == null) {
         this.sourceIpRangesToNat = new LinkedList<>();

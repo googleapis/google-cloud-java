@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,22 +59,22 @@ public final class InterconnectDiagnosticsLinkStatus implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("arpCaches")) {
+    if ("arpCaches".equals(fieldName)) {
       return arpCaches;
     }
-    if (fieldName.equals("circuitId")) {
+    if ("circuitId".equals(fieldName)) {
       return circuitId;
     }
-    if (fieldName.equals("googleDemarc")) {
+    if ("googleDemarc".equals(fieldName)) {
       return googleDemarc;
     }
-    if (fieldName.equals("lacpStatus")) {
+    if ("lacpStatus".equals(fieldName)) {
       return lacpStatus;
     }
-    if (fieldName.equals("receivingOpticalPower")) {
+    if ("receivingOpticalPower".equals(fieldName)) {
       return receivingOpticalPower;
     }
-    if (fieldName.equals("transmittingOpticalPower")) {
+    if ("transmittingOpticalPower".equals(fieldName)) {
       return transmittingOpticalPower;
     }
     return null;
@@ -92,14 +92,20 @@ public final class InterconnectDiagnosticsLinkStatus implements ApiMessage {
     return null;
   }
 
+  /**
+   * A list of InterconnectDiagnostics.ARPEntry objects, describing the ARP neighbor entries seen on
+   * this link. This will be empty if the link is bundled
+   */
   public List<InterconnectDiagnosticsARPEntry> getArpCachesList() {
     return arpCaches;
   }
 
+  /** The unique ID for this link assigned during turn up by Google. */
   public String getCircuitId() {
     return circuitId;
   }
 
+  /** The Demarc address assigned by Google and provided in the LoA. */
   public String getGoogleDemarc() {
     return googleDemarc;
   }
@@ -180,10 +186,18 @@ public final class InterconnectDiagnosticsLinkStatus implements ApiMessage {
       this.transmittingOpticalPower = source.transmittingOpticalPower;
     }
 
+    /**
+     * A list of InterconnectDiagnostics.ARPEntry objects, describing the ARP neighbor entries seen
+     * on this link. This will be empty if the link is bundled
+     */
     public List<InterconnectDiagnosticsARPEntry> getArpCachesList() {
       return arpCaches;
     }
 
+    /**
+     * A list of InterconnectDiagnostics.ARPEntry objects, describing the ARP neighbor entries seen
+     * on this link. This will be empty if the link is bundled
+     */
     public Builder addAllArpCaches(List<InterconnectDiagnosticsARPEntry> arpCaches) {
       if (this.arpCaches == null) {
         this.arpCaches = new LinkedList<>();
@@ -192,6 +206,10 @@ public final class InterconnectDiagnosticsLinkStatus implements ApiMessage {
       return this;
     }
 
+    /**
+     * A list of InterconnectDiagnostics.ARPEntry objects, describing the ARP neighbor entries seen
+     * on this link. This will be empty if the link is bundled
+     */
     public Builder addArpCaches(InterconnectDiagnosticsARPEntry arpCaches) {
       if (this.arpCaches == null) {
         this.arpCaches = new LinkedList<>();
@@ -200,19 +218,23 @@ public final class InterconnectDiagnosticsLinkStatus implements ApiMessage {
       return this;
     }
 
+    /** The unique ID for this link assigned during turn up by Google. */
     public String getCircuitId() {
       return circuitId;
     }
 
+    /** The unique ID for this link assigned during turn up by Google. */
     public Builder setCircuitId(String circuitId) {
       this.circuitId = circuitId;
       return this;
     }
 
+    /** The Demarc address assigned by Google and provided in the LoA. */
     public String getGoogleDemarc() {
       return googleDemarc;
     }
 
+    /** The Demarc address assigned by Google and provided in the LoA. */
     public Builder setGoogleDemarc(String googleDemarc) {
       this.googleDemarc = googleDemarc;
       return this;

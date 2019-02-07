@@ -25,8 +25,8 @@ import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.SampleRowKeysResponse;
+import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
-import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
@@ -41,8 +41,9 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class SampleRowKeysCallableTest {
+
   private final RequestContext requestContext =
-      RequestContext.create(InstanceName.of("my-project", "my-instance"), "my-app-profile");
+      RequestContext.create("my-project", "my-instance", "my-profile");
   private FakeCallable inner;
   private SampleRowKeysCallable callable;
 
@@ -59,7 +60,9 @@ public class SampleRowKeysCallableTest {
     assertThat(inner.request)
         .isEqualTo(
             SampleRowKeysRequest.newBuilder()
-                .setTableName(requestContext.getInstanceName() + "/tables/my-table")
+                .setTableName(
+                    NameUtil.formatTableName(
+                        requestContext.getProjectId(), requestContext.getInstanceId(), "my-table"))
                 .setAppProfileId(requestContext.getAppProfileId())
                 .build());
   }

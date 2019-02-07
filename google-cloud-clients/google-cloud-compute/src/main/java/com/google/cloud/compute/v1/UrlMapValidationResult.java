@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Message representing the validation result for a UrlMap. */
 public final class UrlMapValidationResult implements ApiMessage {
   private final List<String> loadErrors;
   private final Boolean loadSucceeded;
@@ -51,16 +52,16 @@ public final class UrlMapValidationResult implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("loadErrors")) {
+    if ("loadErrors".equals(fieldName)) {
       return loadErrors;
     }
-    if (fieldName.equals("loadSucceeded")) {
+    if ("loadSucceeded".equals(fieldName)) {
       return loadSucceeded;
     }
-    if (fieldName.equals("testFailures")) {
+    if ("testFailures".equals(fieldName)) {
       return testFailures;
     }
-    if (fieldName.equals("testPassed")) {
+    if ("testPassed".equals(fieldName)) {
       return testPassed;
     }
     return null;
@@ -82,6 +83,10 @@ public final class UrlMapValidationResult implements ApiMessage {
     return loadErrors;
   }
 
+  /**
+   * Whether the given UrlMap can be successfully loaded. If false, 'loadErrors' indicates the
+   * reasons.
+   */
   public Boolean getLoadSucceeded() {
     return loadSucceeded;
   }
@@ -90,6 +95,10 @@ public final class UrlMapValidationResult implements ApiMessage {
     return testFailures;
   }
 
+  /**
+   * If successfully loaded, this field indicates whether the test passed. If false, 'testFailures's
+   * indicate the reason of failure.
+   */
   public Boolean getTestPassed() {
     return testPassed;
   }
@@ -168,10 +177,18 @@ public final class UrlMapValidationResult implements ApiMessage {
       return this;
     }
 
+    /**
+     * Whether the given UrlMap can be successfully loaded. If false, 'loadErrors' indicates the
+     * reasons.
+     */
     public Boolean getLoadSucceeded() {
       return loadSucceeded;
     }
 
+    /**
+     * Whether the given UrlMap can be successfully loaded. If false, 'loadErrors' indicates the
+     * reasons.
+     */
     public Builder setLoadSucceeded(Boolean loadSucceeded) {
       this.loadSucceeded = loadSucceeded;
       return this;
@@ -197,10 +214,18 @@ public final class UrlMapValidationResult implements ApiMessage {
       return this;
     }
 
+    /**
+     * If successfully loaded, this field indicates whether the test passed. If false,
+     * 'testFailures's indicate the reason of failure.
+     */
     public Boolean getTestPassed() {
       return testPassed;
     }
 
+    /**
+     * If successfully loaded, this field indicates whether the test passed. If false,
+     * 'testFailures's indicate the reason of failure.
+     */
     public Builder setTestPassed(Boolean testPassed) {
       this.testPassed = testPassed;
       return this;

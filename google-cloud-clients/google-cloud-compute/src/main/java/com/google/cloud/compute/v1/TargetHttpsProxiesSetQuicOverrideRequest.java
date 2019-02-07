@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest implements ApiMessag
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("quicOverride")) {
+    if ("quicOverride".equals(fieldName)) {
       return quicOverride;
     }
     return null;
@@ -55,6 +55,7 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest implements ApiMessag
     return null;
   }
 
+  /** QUIC policy for the TargetHttpsProxy resource. */
   public String getQuicOverride() {
     return quicOverride;
   }
@@ -98,10 +99,12 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest implements ApiMessag
       this.quicOverride = source.quicOverride;
     }
 
+    /** QUIC policy for the TargetHttpsProxy resource. */
     public String getQuicOverride() {
       return quicOverride;
     }
 
+    /** QUIC policy for the TargetHttpsProxy resource. */
     public Builder setQuicOverride(String quicOverride) {
       this.quicOverride = quicOverride;
       return this;

@@ -29,8 +29,8 @@ import com.google.bigtable.v2.Family;
 import com.google.bigtable.v2.ReadModifyWriteRowRequest;
 import com.google.bigtable.v2.ReadModifyWriteRowResponse;
 import com.google.bigtable.v2.ReadModifyWriteRule;
+import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
-import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowCell;
@@ -47,7 +47,7 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class ReadModifyWriteRowCallableTest {
   private final RequestContext requestContext =
-      RequestContext.create(InstanceName.of("my-project", "my-instance"), "my-app-profile");
+      RequestContext.create("fake-project", "fake-instance", "fake-profile");
   private FakeCallable inner;
   private ReadModifyWriteRowCallable callable;
 
@@ -65,7 +65,9 @@ public class ReadModifyWriteRowCallableTest {
     assertThat(inner.request)
         .isEqualTo(
             ReadModifyWriteRowRequest.newBuilder()
-                .setTableName(requestContext.getInstanceName() + "/tables/my-table")
+                .setTableName(
+                    NameUtil.formatTableName(
+                        requestContext.getProjectId(), requestContext.getInstanceId(), "my-table"))
                 .setAppProfileId(requestContext.getAppProfileId())
                 .setRowKey(ByteString.copyFromUtf8("my-key"))
                 .addRules(
@@ -110,6 +112,54 @@ public class ReadModifyWriteRowCallableTest {
                         1_000,
                         ImmutableList.<String>of(),
                         ByteString.copyFromUtf8("suffix")))));
+  }
+
+  @Test
+  public void responseSortsFamilies() throws Exception {
+    ByteString col = ByteString.copyFromUtf8("col1");
+    ByteString value1 = ByteString.copyFromUtf8("value1");
+    ByteString value2 = ByteString.copyFromUtf8("value2");
+
+    ApiFuture<Row> result =
+        callable.futureCall(
+            ReadModifyWriteRow.create("my-table", "my-key").append("my-family", "col", "suffix"));
+
+    inner.response.set(
+        ReadModifyWriteRowResponse.newBuilder()
+            .setRow(
+                com.google.bigtable.v2.Row.newBuilder()
+                    .setKey(ByteString.copyFromUtf8("my-key"))
+                    // family2 is out of order
+                    .addFamilies(
+                        Family.newBuilder()
+                            .setName("family2")
+                            .addColumns(
+                                Column.newBuilder()
+                                    .setQualifier(col)
+                                    .addCells(
+                                        Cell.newBuilder()
+                                            .setTimestampMicros(1_000)
+                                            .setValue(value2))))
+                    .addFamilies(
+                        Family.newBuilder()
+                            .setName("family1")
+                            .addColumns(
+                                Column.newBuilder()
+                                    .setQualifier(col)
+                                    .addCells(
+                                        Cell.newBuilder()
+                                            .setTimestampMicros(1_000)
+                                            .setValue(value1)))
+                            .build()))
+            .build());
+
+    assertThat(result.get(1, TimeUnit.SECONDS))
+        .isEqualTo(
+            Row.create(
+                ByteString.copyFromUtf8("my-key"),
+                ImmutableList.of(
+                    RowCell.create("family1", col, 1_000, ImmutableList.<String>of(), value1),
+                    RowCell.create("family2", col, 1_000, ImmutableList.<String>of(), value2))));
   }
 
   @Test
