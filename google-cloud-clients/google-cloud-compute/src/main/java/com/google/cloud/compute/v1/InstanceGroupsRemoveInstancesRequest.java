@@ -56,6 +56,7 @@ public final class InstanceGroupsRemoveInstancesRequest implements ApiMessage {
     return null;
   }
 
+  /** The list of instances to remove from the instance group. */
   public List<InstanceReference> getInstancesList() {
     return instances;
   }
@@ -99,10 +100,12 @@ public final class InstanceGroupsRemoveInstancesRequest implements ApiMessage {
       this.instances = source.instances;
     }
 
+    /** The list of instances to remove from the instance group. */
     public List<InstanceReference> getInstancesList() {
       return instances;
     }
 
+    /** The list of instances to remove from the instance group. */
     public Builder addAllInstances(List<InstanceReference> instances) {
       if (this.instances == null) {
         this.instances = new LinkedList<>();
@@ -111,6 +114,7 @@ public final class InstanceGroupsRemoveInstancesRequest implements ApiMessage {
       return this;
     }
 
+    /** The list of instances to remove from the instance group. */
     public Builder addInstances(InstanceReference instances) {
       if (this.instances == null) {
         this.instances = new LinkedList<>();

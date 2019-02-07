@@ -55,6 +55,10 @@ public final class DistributionPolicyZoneConfiguration implements ApiMessage {
     return null;
   }
 
+  /**
+   * The URL of the zone. The zone must exist in the region where the managed instance group is
+   * located.
+   */
   public String getZone() {
     return zone;
   }
@@ -98,10 +102,18 @@ public final class DistributionPolicyZoneConfiguration implements ApiMessage {
       this.zone = source.zone;
     }
 
+    /**
+     * The URL of the zone. The zone must exist in the region where the managed instance group is
+     * located.
+     */
     public String getZone() {
       return zone;
     }
 
+    /**
+     * The URL of the zone. The zone must exist in the region where the managed instance group is
+     * located.
+     */
     public Builder setZone(String zone) {
       this.zone = zone;
       return this;

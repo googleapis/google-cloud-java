@@ -62,10 +62,19 @@ public final class InstanceGroupsSetNamedPortsRequest implements ApiMessage {
     return null;
   }
 
+  /**
+   * The fingerprint of the named ports information for this instance group. Use this optional
+   * property to prevent conflicts when multiple users change the named ports settings concurrently.
+   * Obtain the fingerprint with the instanceGroups.get method. Then, include the fingerprint in
+   * your request to ensure that you do not overwrite changes that were applied from another
+   * concurrent request. A request with an incorrect fingerprint will fail with error 412
+   * conditionNotMet.
+   */
   public String getFingerprint() {
     return fingerprint;
   }
 
+  /** The list of named ports to set for this instance group. */
   public List<NamedPort> getNamedPortsList() {
     return namedPorts;
   }
@@ -114,19 +123,37 @@ public final class InstanceGroupsSetNamedPortsRequest implements ApiMessage {
       this.namedPorts = source.namedPorts;
     }
 
+    /**
+     * The fingerprint of the named ports information for this instance group. Use this optional
+     * property to prevent conflicts when multiple users change the named ports settings
+     * concurrently. Obtain the fingerprint with the instanceGroups.get method. Then, include the
+     * fingerprint in your request to ensure that you do not overwrite changes that were applied
+     * from another concurrent request. A request with an incorrect fingerprint will fail with error
+     * 412 conditionNotMet.
+     */
     public String getFingerprint() {
       return fingerprint;
     }
 
+    /**
+     * The fingerprint of the named ports information for this instance group. Use this optional
+     * property to prevent conflicts when multiple users change the named ports settings
+     * concurrently. Obtain the fingerprint with the instanceGroups.get method. Then, include the
+     * fingerprint in your request to ensure that you do not overwrite changes that were applied
+     * from another concurrent request. A request with an incorrect fingerprint will fail with error
+     * 412 conditionNotMet.
+     */
     public Builder setFingerprint(String fingerprint) {
       this.fingerprint = fingerprint;
       return this;
     }
 
+    /** The list of named ports to set for this instance group. */
     public List<NamedPort> getNamedPortsList() {
       return namedPorts;
     }
 
+    /** The list of named ports to set for this instance group. */
     public Builder addAllNamedPorts(List<NamedPort> namedPorts) {
       if (this.namedPorts == null) {
         this.namedPorts = new LinkedList<>();
@@ -135,6 +162,7 @@ public final class InstanceGroupsSetNamedPortsRequest implements ApiMessage {
       return this;
     }
 
+    /** The list of named ports to set for this instance group. */
     public Builder addNamedPorts(NamedPort namedPorts) {
       if (this.namedPorts == null) {
         this.namedPorts = new LinkedList<>();

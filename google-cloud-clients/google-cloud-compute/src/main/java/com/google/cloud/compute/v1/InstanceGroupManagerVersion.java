@@ -72,10 +72,20 @@ public final class InstanceGroupManagerVersion implements ApiMessage {
     return instanceTemplate;
   }
 
+  /** Name of the version. Unique among all versions in the scope of this managed instance group. */
   public String getName() {
     return name;
   }
 
+  /**
+   * Specifies the intended number of instances to be created from the instanceTemplate. The final
+   * number of instances created from the template will be equal to: - If expressed as a fixed
+   * number, the minimum of either targetSize.fixed or instanceGroupManager.targetSize is used. - if
+   * expressed as a percent, the targetSize would be (targetSize.percent/100 &#42;
+   * InstanceGroupManager.targetSize) If there is a remainder, the number is rounded up. If unset,
+   * this version will update any remaining instances not updated by another version. Read Starting
+   * a canary update for more information.
+   */
   public FixedOrPercent getTargetSize() {
     return targetSize;
   }
@@ -138,19 +148,43 @@ public final class InstanceGroupManagerVersion implements ApiMessage {
       return this;
     }
 
+    /**
+     * Name of the version. Unique among all versions in the scope of this managed instance group.
+     */
     public String getName() {
       return name;
     }
 
+    /**
+     * Name of the version. Unique among all versions in the scope of this managed instance group.
+     */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /**
+     * Specifies the intended number of instances to be created from the instanceTemplate. The final
+     * number of instances created from the template will be equal to: - If expressed as a fixed
+     * number, the minimum of either targetSize.fixed or instanceGroupManager.targetSize is used. -
+     * if expressed as a percent, the targetSize would be (targetSize.percent/100 &#42;
+     * InstanceGroupManager.targetSize) If there is a remainder, the number is rounded up. If unset,
+     * this version will update any remaining instances not updated by another version. Read
+     * Starting a canary update for more information.
+     */
     public FixedOrPercent getTargetSize() {
       return targetSize;
     }
 
+    /**
+     * Specifies the intended number of instances to be created from the instanceTemplate. The final
+     * number of instances created from the template will be equal to: - If expressed as a fixed
+     * number, the minimum of either targetSize.fixed or instanceGroupManager.targetSize is used. -
+     * if expressed as a percent, the targetSize would be (targetSize.percent/100 &#42;
+     * InstanceGroupManager.targetSize) If there is a remainder, the number is rounded up. If unset,
+     * this version will update any remaining instances not updated by another version. Read
+     * Starting a canary update for more information.
+     */
     public Builder setTargetSize(FixedOrPercent targetSize) {
       this.targetSize = targetSize;
       return this;

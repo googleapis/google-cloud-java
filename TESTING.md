@@ -156,50 +156,7 @@ uses the `RemoteLoggingHelper` to create a metric.
 
 You can test against a Pub/Sub emulator:
 
-1. [Install Cloud SDK](https://cloud.google.com/sdk/downloads)
-
-2. Start the emulator:
-```shell
-$ gcloud beta emulators pubsub start
-```
-
-To determine which host/port the emulator is running on:
-```shell
-$ gcloud beta emulators pubsub env-init
-# Sample output:
-#   export PUBSUB_EMULATOR_HOST=localhost:8759
-```
-
-3. Point your client to the emulator.
-```java
-String hostport = System.getenv("PUBSUB_EMULATOR_HOST");
-ManagedChannel channel = ManagedChannelBuilder.forTarget(hostport).usePlaintext(true).build();
-try {
-  ChannelProvider channelProvider = FixedChannelProvider.create(channel);
-  CredentialsProvider credentialsProvider = new NoCredentialsProvider();
-
-  // Similarly for SubscriptionAdminSettings
-  TopicAdminClient topicClient = TopicAdminClient.create(
-    TopicAdminSettings
-      .defaultBuilder()
-        .setTransportProvider(
-            GrpcTransportProvider.newBuilder()
-                .setChannelProvider(channelProvider)
-                .build())
-      .setCredentialsProvider(credentialsProvider)
-      .build());
-
-  // Similarly for Subscriber
-  Publisher publisher =
-    Publisher
-      .defaultBuilder(topicName)
-      .setChannelProvider(channelProvider)
-      .setCredentialsProvider(credentialsProvider)
-      .build();
-} finally {
-  channel.shutdown();
-}
-```
+1. [Set up the emulator](https://cloud.google.com/pubsub/docs/emulator)
 
 ### Testing code that uses Redis
 

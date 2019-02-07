@@ -62,6 +62,10 @@ public final class InstancesSetLabelsRequest implements ApiMessage {
     return null;
   }
 
+  /**
+   * Fingerprint of the previous set of labels for this resource, used to prevent conflicts. Provide
+   * the latest fingerprint value when making a request to add or change labels.
+   */
   public String getLabelFingerprint() {
     return labelFingerprint;
   }
@@ -114,10 +118,18 @@ public final class InstancesSetLabelsRequest implements ApiMessage {
       this.labels = source.labels;
     }
 
+    /**
+     * Fingerprint of the previous set of labels for this resource, used to prevent conflicts.
+     * Provide the latest fingerprint value when making a request to add or change labels.
+     */
     public String getLabelFingerprint() {
       return labelFingerprint;
     }
 
+    /**
+     * Fingerprint of the previous set of labels for this resource, used to prevent conflicts.
+     * Provide the latest fingerprint value when making a request to add or change labels.
+     */
     public Builder setLabelFingerprint(String labelFingerprint) {
       this.labelFingerprint = labelFingerprint;
       return this;

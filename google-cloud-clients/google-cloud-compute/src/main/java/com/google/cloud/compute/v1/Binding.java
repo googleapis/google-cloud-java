@@ -25,6 +25,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Associates `members` with a `role`. */
 public final class Binding implements ApiMessage {
   private final Expr condition;
   private final List<String> members;
@@ -68,14 +69,45 @@ public final class Binding implements ApiMessage {
     return null;
   }
 
+  /**
+   * Unimplemented. The condition that is associated with this binding. NOTE: an unsatisfied
+   * condition will not allow user access via current binding. Different bindings, including their
+   * conditions, are examined independently.
+   */
   public Expr getCondition() {
     return condition;
   }
 
+  /**
+   * Specifies the identities requesting access for a Cloud Platform resource. `members` can have
+   * the following values:
+   *
+   * <p>&#42; `allUsers`: A special identifier that represents anyone who is on the internet; with
+   * or without a Google account.
+   *
+   * <p>&#42; `allAuthenticatedUsers`: A special identifier that represents anyone who is
+   * authenticated with a Google account or a service account.
+   *
+   * <p>&#42; `user:{emailid}`: An email address that represents a specific Google account. For
+   * example, `alice{@literal @}gmail.com` .
+   *
+   * <p>&#42; `serviceAccount:{emailid}`: An email address that represents a service account. For
+   * example, `my-other-app{@literal @}appspot.gserviceaccount.com`.
+   *
+   * <p>&#42; `group:{emailid}`: An email address that represents a Google group. For example,
+   * `admins{@literal @}example.com`.
+   *
+   * <p>&#42; `domain:{domain}`: A Google Apps domain name that represents all the users of that
+   * domain. For example, `google.com` or `example.com`.
+   */
   public List<String> getMembersList() {
     return members;
   }
 
+  /**
+   * Role that is assigned to `members`. For example, `roles/viewer`, `roles/editor`, or
+   * `roles/owner`.
+   */
   public String getRole() {
     return role;
   }
@@ -129,19 +161,73 @@ public final class Binding implements ApiMessage {
       this.role = source.role;
     }
 
+    /**
+     * Unimplemented. The condition that is associated with this binding. NOTE: an unsatisfied
+     * condition will not allow user access via current binding. Different bindings, including their
+     * conditions, are examined independently.
+     */
     public Expr getCondition() {
       return condition;
     }
 
+    /**
+     * Unimplemented. The condition that is associated with this binding. NOTE: an unsatisfied
+     * condition will not allow user access via current binding. Different bindings, including their
+     * conditions, are examined independently.
+     */
     public Builder setCondition(Expr condition) {
       this.condition = condition;
       return this;
     }
 
+    /**
+     * Specifies the identities requesting access for a Cloud Platform resource. `members` can have
+     * the following values:
+     *
+     * <p>&#42; `allUsers`: A special identifier that represents anyone who is on the internet; with
+     * or without a Google account.
+     *
+     * <p>&#42; `allAuthenticatedUsers`: A special identifier that represents anyone who is
+     * authenticated with a Google account or a service account.
+     *
+     * <p>&#42; `user:{emailid}`: An email address that represents a specific Google account. For
+     * example, `alice{@literal @}gmail.com` .
+     *
+     * <p>&#42; `serviceAccount:{emailid}`: An email address that represents a service account. For
+     * example, `my-other-app{@literal @}appspot.gserviceaccount.com`.
+     *
+     * <p>&#42; `group:{emailid}`: An email address that represents a Google group. For example,
+     * `admins{@literal @}example.com`.
+     *
+     * <p>&#42; `domain:{domain}`: A Google Apps domain name that represents all the users of that
+     * domain. For example, `google.com` or `example.com`.
+     */
     public List<String> getMembersList() {
       return members;
     }
 
+    /**
+     * Specifies the identities requesting access for a Cloud Platform resource. `members` can have
+     * the following values:
+     *
+     * <p>&#42; `allUsers`: A special identifier that represents anyone who is on the internet; with
+     * or without a Google account.
+     *
+     * <p>&#42; `allAuthenticatedUsers`: A special identifier that represents anyone who is
+     * authenticated with a Google account or a service account.
+     *
+     * <p>&#42; `user:{emailid}`: An email address that represents a specific Google account. For
+     * example, `alice{@literal @}gmail.com` .
+     *
+     * <p>&#42; `serviceAccount:{emailid}`: An email address that represents a service account. For
+     * example, `my-other-app{@literal @}appspot.gserviceaccount.com`.
+     *
+     * <p>&#42; `group:{emailid}`: An email address that represents a Google group. For example,
+     * `admins{@literal @}example.com`.
+     *
+     * <p>&#42; `domain:{domain}`: A Google Apps domain name that represents all the users of that
+     * domain. For example, `google.com` or `example.com`.
+     */
     public Builder addAllMembers(List<String> members) {
       if (this.members == null) {
         this.members = new LinkedList<>();
@@ -150,6 +236,28 @@ public final class Binding implements ApiMessage {
       return this;
     }
 
+    /**
+     * Specifies the identities requesting access for a Cloud Platform resource. `members` can have
+     * the following values:
+     *
+     * <p>&#42; `allUsers`: A special identifier that represents anyone who is on the internet; with
+     * or without a Google account.
+     *
+     * <p>&#42; `allAuthenticatedUsers`: A special identifier that represents anyone who is
+     * authenticated with a Google account or a service account.
+     *
+     * <p>&#42; `user:{emailid}`: An email address that represents a specific Google account. For
+     * example, `alice{@literal @}gmail.com` .
+     *
+     * <p>&#42; `serviceAccount:{emailid}`: An email address that represents a service account. For
+     * example, `my-other-app{@literal @}appspot.gserviceaccount.com`.
+     *
+     * <p>&#42; `group:{emailid}`: An email address that represents a Google group. For example,
+     * `admins{@literal @}example.com`.
+     *
+     * <p>&#42; `domain:{domain}`: A Google Apps domain name that represents all the users of that
+     * domain. For example, `google.com` or `example.com`.
+     */
     public Builder addMembers(String members) {
       if (this.members == null) {
         this.members = new LinkedList<>();
@@ -158,10 +266,18 @@ public final class Binding implements ApiMessage {
       return this;
     }
 
+    /**
+     * Role that is assigned to `members`. For example, `roles/viewer`, `roles/editor`, or
+     * `roles/owner`.
+     */
     public String getRole() {
       return role;
     }
 
+    /**
+     * Role that is assigned to `members`. For example, `roles/viewer`, `roles/editor`, or
+     * `roles/owner`.
+     */
     public Builder setRole(String role) {
       this.role = role;
       return this;

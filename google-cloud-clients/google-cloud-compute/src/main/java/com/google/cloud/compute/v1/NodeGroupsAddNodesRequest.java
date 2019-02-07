@@ -55,6 +55,7 @@ public final class NodeGroupsAddNodesRequest implements ApiMessage {
     return null;
   }
 
+  /** Count of additional nodes to be added to the node group. */
   public Integer getAdditionalNodeCount() {
     return additionalNodeCount;
   }
@@ -98,10 +99,12 @@ public final class NodeGroupsAddNodesRequest implements ApiMessage {
       this.additionalNodeCount = source.additionalNodeCount;
     }
 
+    /** Count of additional nodes to be added to the node group. */
     public Integer getAdditionalNodeCount() {
       return additionalNodeCount;
     }
 
+    /** Count of additional nodes to be added to the node group. */
     public Builder setAdditionalNodeCount(Integer additionalNodeCount) {
       this.additionalNodeCount = additionalNodeCount;
       return this;

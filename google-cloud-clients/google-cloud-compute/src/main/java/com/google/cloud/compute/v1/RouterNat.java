@@ -25,6 +25,12 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Represents a Nat resource. It enables the VMs within the specified subnetworks to access Internet
+ * without external IP addresses. It specifies a list of subnetworks (and the ranges within) that
+ * want to use NAT. Customers can also provide the external IPs that would be used for NAT. GCP
+ * would auto-allocate ephemeral IPs if no external IPs are provided.
+ */
 public final class RouterNat implements ApiMessage {
   private final Integer icmpIdleTimeoutSec;
   private final Integer minPortsPerVm;
@@ -120,42 +126,68 @@ public final class RouterNat implements ApiMessage {
     return null;
   }
 
+  /** Timeout (in seconds) for ICMP connections. Defaults to 30s if not set. */
   public Integer getIcmpIdleTimeoutSec() {
     return icmpIdleTimeoutSec;
   }
 
+  /**
+   * Minimum number of ports allocated to a VM from this NAT config. If not set, a default number of
+   * ports is allocated to a VM. This gets rounded up to the nearest power of 2. Eg. if the value of
+   * this field is 50, at least 64 ports will be allocated to a VM.
+   */
   public Integer getMinPortsPerVm() {
     return minPortsPerVm;
   }
 
+  /**
+   * Unique name of this Nat service. The name must be 1-63 characters long and comply with RFC1035.
+   */
   public String getName() {
     return name;
   }
 
+  /** Specify the NatIpAllocateOption. If it is AUTO_ONLY, then nat_ip should be empty. */
   public String getNatIpAllocateOption() {
     return natIpAllocateOption;
   }
 
+  /**
+   * A list of URLs of the IP resources used for this Nat service. These IPs must be valid static
+   * external IP addresses assigned to the project. max_length is subject to change post alpha.
+   */
   public List<String> getNatIpsList() {
     return natIps;
   }
 
+  /**
+   * Specify the Nat option. If this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or
+   * ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in
+   * any Router for this network in this region.
+   */
   public String getSourceSubnetworkIpRangesToNat() {
     return sourceSubnetworkIpRangesToNat;
   }
 
+  /**
+   * A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used
+   * only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
+   */
   public List<RouterNatSubnetworkToNat> getSubnetworksList() {
     return subnetworks;
   }
 
+  /** Timeout (in seconds) for TCP established connections. Defaults to 1200s if not set. */
   public Integer getTcpEstablishedIdleTimeoutSec() {
     return tcpEstablishedIdleTimeoutSec;
   }
 
+  /** Timeout (in seconds) for TCP transitory connections. Defaults to 30s if not set. */
   public Integer getTcpTransitoryIdleTimeoutSec() {
     return tcpTransitoryIdleTimeoutSec;
   }
 
+  /** Timeout (in seconds) for UDP connections. Defaults to 30s if not set. */
   public Integer getUdpIdleTimeoutSec() {
     return udpIdleTimeoutSec;
   }
@@ -244,46 +276,76 @@ public final class RouterNat implements ApiMessage {
       this.udpIdleTimeoutSec = source.udpIdleTimeoutSec;
     }
 
+    /** Timeout (in seconds) for ICMP connections. Defaults to 30s if not set. */
     public Integer getIcmpIdleTimeoutSec() {
       return icmpIdleTimeoutSec;
     }
 
+    /** Timeout (in seconds) for ICMP connections. Defaults to 30s if not set. */
     public Builder setIcmpIdleTimeoutSec(Integer icmpIdleTimeoutSec) {
       this.icmpIdleTimeoutSec = icmpIdleTimeoutSec;
       return this;
     }
 
+    /**
+     * Minimum number of ports allocated to a VM from this NAT config. If not set, a default number
+     * of ports is allocated to a VM. This gets rounded up to the nearest power of 2. Eg. if the
+     * value of this field is 50, at least 64 ports will be allocated to a VM.
+     */
     public Integer getMinPortsPerVm() {
       return minPortsPerVm;
     }
 
+    /**
+     * Minimum number of ports allocated to a VM from this NAT config. If not set, a default number
+     * of ports is allocated to a VM. This gets rounded up to the nearest power of 2. Eg. if the
+     * value of this field is 50, at least 64 ports will be allocated to a VM.
+     */
     public Builder setMinPortsPerVm(Integer minPortsPerVm) {
       this.minPortsPerVm = minPortsPerVm;
       return this;
     }
 
+    /**
+     * Unique name of this Nat service. The name must be 1-63 characters long and comply with
+     * RFC1035.
+     */
     public String getName() {
       return name;
     }
 
+    /**
+     * Unique name of this Nat service. The name must be 1-63 characters long and comply with
+     * RFC1035.
+     */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /** Specify the NatIpAllocateOption. If it is AUTO_ONLY, then nat_ip should be empty. */
     public String getNatIpAllocateOption() {
       return natIpAllocateOption;
     }
 
+    /** Specify the NatIpAllocateOption. If it is AUTO_ONLY, then nat_ip should be empty. */
     public Builder setNatIpAllocateOption(String natIpAllocateOption) {
       this.natIpAllocateOption = natIpAllocateOption;
       return this;
     }
 
+    /**
+     * A list of URLs of the IP resources used for this Nat service. These IPs must be valid static
+     * external IP addresses assigned to the project. max_length is subject to change post alpha.
+     */
     public List<String> getNatIpsList() {
       return natIps;
     }
 
+    /**
+     * A list of URLs of the IP resources used for this Nat service. These IPs must be valid static
+     * external IP addresses assigned to the project. max_length is subject to change post alpha.
+     */
     public Builder addAllNatIps(List<String> natIps) {
       if (this.natIps == null) {
         this.natIps = new LinkedList<>();
@@ -292,6 +354,10 @@ public final class RouterNat implements ApiMessage {
       return this;
     }
 
+    /**
+     * A list of URLs of the IP resources used for this Nat service. These IPs must be valid static
+     * external IP addresses assigned to the project. max_length is subject to change post alpha.
+     */
     public Builder addNatIps(String natIps) {
       if (this.natIps == null) {
         this.natIps = new LinkedList<>();
@@ -300,19 +366,37 @@ public final class RouterNat implements ApiMessage {
       return this;
     }
 
+    /**
+     * Specify the Nat option. If this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or
+     * ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section
+     * in any Router for this network in this region.
+     */
     public String getSourceSubnetworkIpRangesToNat() {
       return sourceSubnetworkIpRangesToNat;
     }
 
+    /**
+     * Specify the Nat option. If this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or
+     * ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section
+     * in any Router for this network in this region.
+     */
     public Builder setSourceSubnetworkIpRangesToNat(String sourceSubnetworkIpRangesToNat) {
       this.sourceSubnetworkIpRangesToNat = sourceSubnetworkIpRangesToNat;
       return this;
     }
 
+    /**
+     * A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used
+     * only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
+     */
     public List<RouterNatSubnetworkToNat> getSubnetworksList() {
       return subnetworks;
     }
 
+    /**
+     * A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used
+     * only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
+     */
     public Builder addAllSubnetworks(List<RouterNatSubnetworkToNat> subnetworks) {
       if (this.subnetworks == null) {
         this.subnetworks = new LinkedList<>();
@@ -321,6 +405,10 @@ public final class RouterNat implements ApiMessage {
       return this;
     }
 
+    /**
+     * A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used
+     * only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
+     */
     public Builder addSubnetworks(RouterNatSubnetworkToNat subnetworks) {
       if (this.subnetworks == null) {
         this.subnetworks = new LinkedList<>();
@@ -329,28 +417,34 @@ public final class RouterNat implements ApiMessage {
       return this;
     }
 
+    /** Timeout (in seconds) for TCP established connections. Defaults to 1200s if not set. */
     public Integer getTcpEstablishedIdleTimeoutSec() {
       return tcpEstablishedIdleTimeoutSec;
     }
 
+    /** Timeout (in seconds) for TCP established connections. Defaults to 1200s if not set. */
     public Builder setTcpEstablishedIdleTimeoutSec(Integer tcpEstablishedIdleTimeoutSec) {
       this.tcpEstablishedIdleTimeoutSec = tcpEstablishedIdleTimeoutSec;
       return this;
     }
 
+    /** Timeout (in seconds) for TCP transitory connections. Defaults to 30s if not set. */
     public Integer getTcpTransitoryIdleTimeoutSec() {
       return tcpTransitoryIdleTimeoutSec;
     }
 
+    /** Timeout (in seconds) for TCP transitory connections. Defaults to 30s if not set. */
     public Builder setTcpTransitoryIdleTimeoutSec(Integer tcpTransitoryIdleTimeoutSec) {
       this.tcpTransitoryIdleTimeoutSec = tcpTransitoryIdleTimeoutSec;
       return this;
     }
 
+    /** Timeout (in seconds) for UDP connections. Defaults to 30s if not set. */
     public Integer getUdpIdleTimeoutSec() {
       return udpIdleTimeoutSec;
     }
 
+    /** Timeout (in seconds) for UDP connections. Defaults to 30s if not set. */
     public Builder setUdpIdleTimeoutSec(Integer udpIdleTimeoutSec) {
       this.udpIdleTimeoutSec = udpIdleTimeoutSec;
       return this;

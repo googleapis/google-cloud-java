@@ -55,6 +55,10 @@ public final class ResourceGroupReference implements ApiMessage {
     return null;
   }
 
+  /**
+   * A URI referencing one of the instance groups or network endpoint groups listed in the backend
+   * service.
+   */
   public String getGroup() {
     return group;
   }
@@ -98,10 +102,18 @@ public final class ResourceGroupReference implements ApiMessage {
       this.group = source.group;
     }
 
+    /**
+     * A URI referencing one of the instance groups or network endpoint groups listed in the backend
+     * service.
+     */
     public String getGroup() {
       return group;
     }
 
+    /**
+     * A URI referencing one of the instance groups or network endpoint groups listed in the backend
+     * service.
+     */
     public Builder setGroup(String group) {
       this.group = group;
       return this;

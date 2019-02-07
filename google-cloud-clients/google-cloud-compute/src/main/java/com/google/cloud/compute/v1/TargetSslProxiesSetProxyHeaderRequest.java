@@ -55,6 +55,10 @@ public final class TargetSslProxiesSetProxyHeaderRequest implements ApiMessage {
     return null;
   }
 
+  /**
+   * The new type of proxy header to append before sending data to the backend. NONE or PROXY_V1 are
+   * allowed.
+   */
   public String getProxyHeader() {
     return proxyHeader;
   }
@@ -98,10 +102,18 @@ public final class TargetSslProxiesSetProxyHeaderRequest implements ApiMessage {
       this.proxyHeader = source.proxyHeader;
     }
 
+    /**
+     * The new type of proxy header to append before sending data to the backend. NONE or PROXY_V1
+     * are allowed.
+     */
     public String getProxyHeader() {
       return proxyHeader;
     }
 
+    /**
+     * The new type of proxy header to append before sending data to the backend. NONE or PROXY_V1
+     * are allowed.
+     */
     public Builder setProxyHeader(String proxyHeader) {
       this.proxyHeader = proxyHeader;
       return this;

@@ -25,6 +25,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * A TargetHttpsProxy resource. This resource defines an HTTPS proxy. (== resource_for
+ * beta.targetHttpsProxies ==) (== resource_for v1.targetHttpsProxies ==)
+ */
 public final class TargetHttpsProxy implements ApiMessage {
   private final String creationTimestamp;
   private final String description;
@@ -120,42 +124,81 @@ public final class TargetHttpsProxy implements ApiMessage {
     return null;
   }
 
+  /** [Output Only] Creation timestamp in RFC3339 text format. */
   public String getCreationTimestamp() {
     return creationTimestamp;
   }
 
+  /**
+   * An optional description of this resource. Provide this property when you create the resource.
+   */
   public String getDescription() {
     return description;
   }
 
+  /**
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   */
   public String getId() {
     return id;
   }
 
+  /** [Output Only] Type of resource. Always compute#targetHttpsProxy for target HTTPS proxies. */
   public String getKind() {
     return kind;
   }
 
+  /**
+   * Name of the resource. Provided by the client when the resource is created. The name must be
+   * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+   * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be a dash, lowercase
+   * letter, or digit, except the last character, which cannot be a dash.
+   */
   public String getName() {
     return name;
   }
 
+  /**
+   * Specifies the QUIC override policy for this TargetHttpsProxy resource. This determines whether
+   * the load balancer will attempt to negotiate QUIC with clients or not. Can specify one of NONE,
+   * ENABLE, or DISABLE. Specify ENABLE to always enable QUIC, Enables QUIC when set to ENABLE, and
+   * disables QUIC when set to DISABLE. If NONE is specified, uses the QUIC policy with no user
+   * overrides, which is equivalent to DISABLE. Not specifying this field is equivalent to
+   * specifying NONE.
+   */
   public String getQuicOverride() {
     return quicOverride;
   }
 
+  /** [Output Only] Server-defined URL for the resource. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /**
+   * URLs to SslCertificate resources that are used to authenticate connections between users and
+   * the load balancer. At least one SSL certificate must be specified. Currently, you may specify
+   * up to 15 SSL certificates.
+   */
   public List<String> getSslCertificatesList() {
     return sslCertificates;
   }
 
+  /**
+   * URL of SslPolicy resource that will be associated with the TargetHttpsProxy resource. If not
+   * set, the TargetHttpsProxy resource will not have any SSL policy configured.
+   */
   public String getSslPolicy() {
     return sslPolicy;
   }
 
+  /**
+   * A fully-qualified or valid partial URL to the UrlMap resource that defines the mapping from URL
+   * to the BackendService. For example, the following are all valid URLs for specifying a URL map:
+   * - https://www.googleapis.compute/v1/projects/project/global/urlMaps/url-map -
+   * projects/project/global/urlMaps/url-map - global/urlMaps/url-map
+   */
   public String getUrlMap() {
     return urlMap;
   }
@@ -244,73 +287,133 @@ public final class TargetHttpsProxy implements ApiMessage {
       this.urlMap = source.urlMap;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public String getCreationTimestamp() {
       return creationTimestamp;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public String getDescription() {
       return description;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /** [Output Only] Type of resource. Always compute#targetHttpsProxy for target HTTPS proxies. */
     public String getKind() {
       return kind;
     }
 
+    /** [Output Only] Type of resource. Always compute#targetHttpsProxy for target HTTPS proxies. */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /**
+     * Name of the resource. Provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public String getName() {
       return name;
     }
 
+    /**
+     * Name of the resource. Provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /**
+     * Specifies the QUIC override policy for this TargetHttpsProxy resource. This determines
+     * whether the load balancer will attempt to negotiate QUIC with clients or not. Can specify one
+     * of NONE, ENABLE, or DISABLE. Specify ENABLE to always enable QUIC, Enables QUIC when set to
+     * ENABLE, and disables QUIC when set to DISABLE. If NONE is specified, uses the QUIC policy
+     * with no user overrides, which is equivalent to DISABLE. Not specifying this field is
+     * equivalent to specifying NONE.
+     */
     public String getQuicOverride() {
       return quicOverride;
     }
 
+    /**
+     * Specifies the QUIC override policy for this TargetHttpsProxy resource. This determines
+     * whether the load balancer will attempt to negotiate QUIC with clients or not. Can specify one
+     * of NONE, ENABLE, or DISABLE. Specify ENABLE to always enable QUIC, Enables QUIC when set to
+     * ENABLE, and disables QUIC when set to DISABLE. If NONE is specified, uses the QUIC policy
+     * with no user overrides, which is equivalent to DISABLE. Not specifying this field is
+     * equivalent to specifying NONE.
+     */
     public Builder setQuicOverride(String quicOverride) {
       this.quicOverride = quicOverride;
       return this;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /**
+     * URLs to SslCertificate resources that are used to authenticate connections between users and
+     * the load balancer. At least one SSL certificate must be specified. Currently, you may specify
+     * up to 15 SSL certificates.
+     */
     public List<String> getSslCertificatesList() {
       return sslCertificates;
     }
 
+    /**
+     * URLs to SslCertificate resources that are used to authenticate connections between users and
+     * the load balancer. At least one SSL certificate must be specified. Currently, you may specify
+     * up to 15 SSL certificates.
+     */
     public Builder addAllSslCertificates(List<String> sslCertificates) {
       if (this.sslCertificates == null) {
         this.sslCertificates = new LinkedList<>();
@@ -319,6 +422,11 @@ public final class TargetHttpsProxy implements ApiMessage {
       return this;
     }
 
+    /**
+     * URLs to SslCertificate resources that are used to authenticate connections between users and
+     * the load balancer. At least one SSL certificate must be specified. Currently, you may specify
+     * up to 15 SSL certificates.
+     */
     public Builder addSslCertificates(String sslCertificates) {
       if (this.sslCertificates == null) {
         this.sslCertificates = new LinkedList<>();
@@ -327,19 +435,39 @@ public final class TargetHttpsProxy implements ApiMessage {
       return this;
     }
 
+    /**
+     * URL of SslPolicy resource that will be associated with the TargetHttpsProxy resource. If not
+     * set, the TargetHttpsProxy resource will not have any SSL policy configured.
+     */
     public String getSslPolicy() {
       return sslPolicy;
     }
 
+    /**
+     * URL of SslPolicy resource that will be associated with the TargetHttpsProxy resource. If not
+     * set, the TargetHttpsProxy resource will not have any SSL policy configured.
+     */
     public Builder setSslPolicy(String sslPolicy) {
       this.sslPolicy = sslPolicy;
       return this;
     }
 
+    /**
+     * A fully-qualified or valid partial URL to the UrlMap resource that defines the mapping from
+     * URL to the BackendService. For example, the following are all valid URLs for specifying a URL
+     * map: - https://www.googleapis.compute/v1/projects/project/global/urlMaps/url-map -
+     * projects/project/global/urlMaps/url-map - global/urlMaps/url-map
+     */
     public String getUrlMap() {
       return urlMap;
     }
 
+    /**
+     * A fully-qualified or valid partial URL to the UrlMap resource that defines the mapping from
+     * URL to the BackendService. For example, the following are all valid URLs for specifying a URL
+     * map: - https://www.googleapis.compute/v1/projects/project/global/urlMaps/url-map -
+     * projects/project/global/urlMaps/url-map - global/urlMaps/url-map
+     */
     public Builder setUrlMap(String urlMap) {
       this.urlMap = urlMap;
       return this;

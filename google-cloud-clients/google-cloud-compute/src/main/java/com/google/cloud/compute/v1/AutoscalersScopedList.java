@@ -62,10 +62,15 @@ public final class AutoscalersScopedList implements ApiMessage {
     return null;
   }
 
+  /** [Output Only] A list of autoscalers contained in this scope. */
   public List<Autoscaler> getAutoscalersList() {
     return autoscalers;
   }
 
+  /**
+   * [Output Only] Informational warning which replaces the list of autoscalers when the list is
+   * empty.
+   */
   public Warning getWarning() {
     return warning;
   }
@@ -114,10 +119,12 @@ public final class AutoscalersScopedList implements ApiMessage {
       this.warning = source.warning;
     }
 
+    /** [Output Only] A list of autoscalers contained in this scope. */
     public List<Autoscaler> getAutoscalersList() {
       return autoscalers;
     }
 
+    /** [Output Only] A list of autoscalers contained in this scope. */
     public Builder addAllAutoscalers(List<Autoscaler> autoscalers) {
       if (this.autoscalers == null) {
         this.autoscalers = new LinkedList<>();
@@ -126,6 +133,7 @@ public final class AutoscalersScopedList implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] A list of autoscalers contained in this scope. */
     public Builder addAutoscalers(Autoscaler autoscalers) {
       if (this.autoscalers == null) {
         this.autoscalers = new LinkedList<>();
@@ -134,10 +142,18 @@ public final class AutoscalersScopedList implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] Informational warning which replaces the list of autoscalers when the list is
+     * empty.
+     */
     public Warning getWarning() {
       return warning;
     }
 
+    /**
+     * [Output Only] Informational warning which replaces the list of autoscalers when the list is
+     * empty.
+     */
     public Builder setWarning(Warning warning) {
       this.warning = warning;
       return this;

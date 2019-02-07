@@ -55,6 +55,11 @@ public final class SubnetworksExpandIpCidrRangeRequest implements ApiMessage {
     return null;
   }
 
+  /**
+   * The IP (in CIDR format or netmask) of internal addresses that are legal on this Subnetwork.
+   * This range should be disjoint from other subnetworks within this network. This range can only
+   * be larger than (i.e. a superset of) the range previously defined before the update.
+   */
   public String getIpCidrRange() {
     return ipCidrRange;
   }
@@ -98,10 +103,20 @@ public final class SubnetworksExpandIpCidrRangeRequest implements ApiMessage {
       this.ipCidrRange = source.ipCidrRange;
     }
 
+    /**
+     * The IP (in CIDR format or netmask) of internal addresses that are legal on this Subnetwork.
+     * This range should be disjoint from other subnetworks within this network. This range can only
+     * be larger than (i.e. a superset of) the range previously defined before the update.
+     */
     public String getIpCidrRange() {
       return ipCidrRange;
     }
 
+    /**
+     * The IP (in CIDR format or netmask) of internal addresses that are legal on this Subnetwork.
+     * This range should be disjoint from other subnetworks within this network. This range can only
+     * be larger than (i.e. a superset of) the range previously defined before the update.
+     */
     public Builder setIpCidrRange(String ipCidrRange) {
       this.ipCidrRange = ipCidrRange;
       return this;

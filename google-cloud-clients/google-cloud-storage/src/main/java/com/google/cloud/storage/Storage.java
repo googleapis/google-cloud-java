@@ -1443,6 +1443,30 @@ public interface Storage extends Service<StorageOptions> {
   Blob create(BlobInfo blobInfo, byte[] content, BlobTargetOption... options);
 
   /**
+   * Creates a new blob with the sub array of the given byte array. Direct upload is used to upload
+   * {@code content}. For large content, {@link #writer} is recommended as it uses resumable upload.
+   * MD5 and CRC32C hashes of {@code content} are computed and used for validating transferred data.
+   * Accepts a userProject {@link BlobGetOption} option, which defines the project id to assign
+   * operational costs.
+   *
+   * <p>Example of creating a blob from a byte array.
+   *
+   * <pre>{@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * BlobId blobId = BlobId.of(bucketName, blobName);
+   * BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
+   * Blob blob = storage.create(blobInfo, "Hello, World!".getBytes(UTF_8), 7, 5);
+   * }</pre>
+   *
+   * @return a [@code Blob} with complete information
+   * @throws StorageException upon failure
+   * @see <a href="https://cloud.google.com/storage/docs/hashes-etags">Hashes and ETags</a>
+   */
+  Blob create(
+      BlobInfo blobInfo, byte[] content, int offset, int length, BlobTargetOption... options);
+
+  /**
    * Creates a new blob. Direct upload is used to upload {@code content}. For large content, {@link
    * #writer} is recommended as it uses resumable upload. By default any md5 and crc32c values in
    * the given {@code blobInfo} are ignored unless requested via the {@code

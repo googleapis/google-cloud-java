@@ -25,6 +25,27 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Specifies the audit configuration for a service. The configuration determines which permission
+ * types are logged, and what identities, if any, are exempted from logging. An AuditConfig must
+ * have one or more AuditLogConfigs.
+ *
+ * <p>If there are AuditConfigs for both `allServices` and a specific service, the union of the two
+ * AuditConfigs is used for that service: the log_types specified in each AuditConfig are enabled,
+ * and the exempted_members in each AuditLogConfig are exempted.
+ *
+ * <p>Example Policy with multiple AuditConfigs:
+ *
+ * <p>{ "audit_configs": [ { "service": "allServices" "audit_log_configs": [ { "log_type":
+ * "DATA_READ", "exempted_members": [ "user:foo{@literal @}gmail.com" ] }, { "log_type":
+ * "DATA_WRITE", }, { "log_type": "ADMIN_READ", } ] }, { "service": "fooservice.googleapis.com"
+ * "audit_log_configs": [ { "log_type": "DATA_READ", }, { "log_type": "DATA_WRITE",
+ * "exempted_members": [ "user:bar{@literal @}gmail.com" ] } ] } ] }
+ *
+ * <p>For fooservice, this policy enables DATA_READ, DATA_WRITE and ADMIN_READ logging. It also
+ * exempts foo{@literal @}gmail.com from DATA_READ logging, and bar{@literal @}gmail.com from
+ * DATA_WRITE logging.
+ */
 public final class AuditConfig implements ApiMessage {
   private final List<AuditLogConfig> auditLogConfigs;
   private final List<String> exemptedMembers;
@@ -69,6 +90,7 @@ public final class AuditConfig implements ApiMessage {
     return null;
   }
 
+  /** The configuration for logging of each type of permission. */
   public List<AuditLogConfig> getAuditLogConfigsList() {
     return auditLogConfigs;
   }
@@ -77,6 +99,11 @@ public final class AuditConfig implements ApiMessage {
     return exemptedMembers;
   }
 
+  /**
+   * Specifies a service that will be enabled for audit logging. For example,
+   * `storage.googleapis.com`, `cloudsql.googleapis.com`. `allServices` is a special value that
+   * covers all services.
+   */
   public String getService() {
     return service;
   }
@@ -130,10 +157,12 @@ public final class AuditConfig implements ApiMessage {
       this.service = source.service;
     }
 
+    /** The configuration for logging of each type of permission. */
     public List<AuditLogConfig> getAuditLogConfigsList() {
       return auditLogConfigs;
     }
 
+    /** The configuration for logging of each type of permission. */
     public Builder addAllAuditLogConfigs(List<AuditLogConfig> auditLogConfigs) {
       if (this.auditLogConfigs == null) {
         this.auditLogConfigs = new LinkedList<>();
@@ -142,6 +171,7 @@ public final class AuditConfig implements ApiMessage {
       return this;
     }
 
+    /** The configuration for logging of each type of permission. */
     public Builder addAuditLogConfigs(AuditLogConfig auditLogConfigs) {
       if (this.auditLogConfigs == null) {
         this.auditLogConfigs = new LinkedList<>();
@@ -170,10 +200,20 @@ public final class AuditConfig implements ApiMessage {
       return this;
     }
 
+    /**
+     * Specifies a service that will be enabled for audit logging. For example,
+     * `storage.googleapis.com`, `cloudsql.googleapis.com`. `allServices` is a special value that
+     * covers all services.
+     */
     public String getService() {
       return service;
     }
 
+    /**
+     * Specifies a service that will be enabled for audit logging. For example,
+     * `storage.googleapis.com`, `cloudsql.googleapis.com`. `allServices` is a special value that
+     * covers all services.
+     */
     public Builder setService(String service) {
       this.service = service;
       return this;

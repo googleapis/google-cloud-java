@@ -25,6 +25,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * A BackendService resource. This resource defines a group of backend virtual machines and their
+ * serving capacity. (== resource_for v1.backendService ==) (== resource_for beta.backendService ==)
+ */
 public final class BackendService implements ApiMessage {
   private final Integer affinityCookieTtlSec;
   private final List<Backend> backends;
@@ -204,14 +208,23 @@ public final class BackendService implements ApiMessage {
     return null;
   }
 
+  /**
+   * Lifetime of cookies in seconds if session_affinity is GENERATED_COOKIE. If set to 0, the cookie
+   * is non-persistent and lasts only until the end of the browser session (or equivalent). The
+   * maximum allowed value for TTL is one day.
+   *
+   * <p>When the load balancing scheme is INTERNAL, this field is not used.
+   */
   public Integer getAffinityCookieTtlSec() {
     return affinityCookieTtlSec;
   }
 
+  /** The list of backends that serve this BackendService. */
   public List<Backend> getBackendsList() {
     return backends;
   }
 
+  /** Cloud CDN configuration for this BackendService. */
   public BackendServiceCdnPolicy getCdnPolicy() {
     return cdnPolicy;
   }
@@ -220,22 +233,47 @@ public final class BackendService implements ApiMessage {
     return connectionDraining;
   }
 
+  /** [Output Only] Creation timestamp in RFC3339 text format. */
   public String getCreationTimestamp() {
     return creationTimestamp;
   }
 
+  /**
+   * An optional description of this resource. Provide this property when you create the resource.
+   */
   public String getDescription() {
     return description;
   }
 
+  /**
+   * If true, enable Cloud CDN for this BackendService.
+   *
+   * <p>When the load balancing scheme is INTERNAL, this field is not used.
+   */
   public Boolean getEnableCDN() {
     return enableCDN;
   }
 
+  /**
+   * Fingerprint of this resource. A hash of the contents stored in this object. This field is used
+   * in optimistic locking. This field will be ignored when inserting a BackendService. An
+   * up-to-date fingerprint must be provided in order to update the BackendService, otherwise the
+   * request will fail with error 412 conditionNotMet.
+   *
+   * <p>To see the latest fingerprint, make a get() request to retrieve a BackendService.
+   */
   public String getFingerprint() {
     return fingerprint;
   }
 
+  /**
+   * The list of URLs to the HttpHealthCheck or HttpsHealthCheck resource for health checking this
+   * BackendService. Currently at most one health check can be specified, and a health check is
+   * required for Compute Engine backend services. A health check must not be specified for App
+   * Engine backend and Cloud Function backend.
+   *
+   * <p>For internal load balancing, a URL to a HealthCheck resource must be specified instead.
+   */
   public List<String> getHealthChecksList() {
     return healthChecks;
   }
@@ -244,50 +282,108 @@ public final class BackendService implements ApiMessage {
     return iap;
   }
 
+  /**
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   */
   public String getId() {
     return id;
   }
 
+  /** [Output Only] Type of resource. Always compute#backendService for backend services. */
   public String getKind() {
     return kind;
   }
 
+  /**
+   * Indicates whether the backend service will be used with internal or external load balancing. A
+   * backend service created for one type of load balancing cannot be used with the other. Possible
+   * values are INTERNAL and EXTERNAL.
+   */
   public String getLoadBalancingScheme() {
     return loadBalancingScheme;
   }
 
+  /**
+   * Name of the resource. Provided by the client when the resource is created. The name must be
+   * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+   * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be a dash, lowercase
+   * letter, or digit, except the last character, which cannot be a dash.
+   */
   public String getName() {
     return name;
   }
 
+  /**
+   * Deprecated in favor of portName. The TCP port to connect on the backend. The default value is
+   * 80.
+   *
+   * <p>This cannot be used for internal load balancing.
+   */
   public Integer getPort() {
     return port;
   }
 
+  /**
+   * Name of backend port. The same name should appear in the instance groups referenced by this
+   * service. Required when the load balancing scheme is EXTERNAL.
+   *
+   * <p>When the load balancing scheme is INTERNAL, this field is not used.
+   */
   public String getPortName() {
     return portName;
   }
 
+  /**
+   * The protocol this BackendService uses to communicate with backends.
+   *
+   * <p>Possible values are HTTP, HTTPS, TCP, and SSL. The default is HTTP.
+   *
+   * <p>For internal load balancing, the possible values are TCP and UDP, and the default is TCP.
+   */
   public String getProtocol() {
     return protocol;
   }
 
+  /**
+   * [Output Only] URL of the region where the regional backend service resides. This field is not
+   * applicable to global backend services. You must specify this field as part of the HTTP request
+   * URL. It is not settable as a field in the request body.
+   */
   public String getRegion() {
     return region;
   }
 
+  /**
+   * [Output Only] The resource URL for the security policy associated with this backend service.
+   */
   public String getSecurityPolicy() {
     return securityPolicy;
   }
 
+  /** [Output Only] Server-defined URL for the resource. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /**
+   * Type of session affinity to use. The default is NONE.
+   *
+   * <p>When the load balancing scheme is EXTERNAL, can be NONE, CLIENT_IP, or GENERATED_COOKIE.
+   *
+   * <p>When the load balancing scheme is INTERNAL, can be NONE, CLIENT_IP, CLIENT_IP_PROTO, or
+   * CLIENT_IP_PORT_PROTO.
+   *
+   * <p>When the protocol is UDP, this field is not used.
+   */
   public String getSessionAffinity() {
     return sessionAffinity;
   }
 
+  /**
+   * How many seconds to wait for the backend before considering it a failed request. Default is 30
+   * seconds.
+   */
   public Integer getTimeoutSec() {
     return timeoutSec;
   }
@@ -436,19 +532,35 @@ public final class BackendService implements ApiMessage {
       this.timeoutSec = source.timeoutSec;
     }
 
+    /**
+     * Lifetime of cookies in seconds if session_affinity is GENERATED_COOKIE. If set to 0, the
+     * cookie is non-persistent and lasts only until the end of the browser session (or equivalent).
+     * The maximum allowed value for TTL is one day.
+     *
+     * <p>When the load balancing scheme is INTERNAL, this field is not used.
+     */
     public Integer getAffinityCookieTtlSec() {
       return affinityCookieTtlSec;
     }
 
+    /**
+     * Lifetime of cookies in seconds if session_affinity is GENERATED_COOKIE. If set to 0, the
+     * cookie is non-persistent and lasts only until the end of the browser session (or equivalent).
+     * The maximum allowed value for TTL is one day.
+     *
+     * <p>When the load balancing scheme is INTERNAL, this field is not used.
+     */
     public Builder setAffinityCookieTtlSec(Integer affinityCookieTtlSec) {
       this.affinityCookieTtlSec = affinityCookieTtlSec;
       return this;
     }
 
+    /** The list of backends that serve this BackendService. */
     public List<Backend> getBackendsList() {
       return backends;
     }
 
+    /** The list of backends that serve this BackendService. */
     public Builder addAllBackends(List<Backend> backends) {
       if (this.backends == null) {
         this.backends = new LinkedList<>();
@@ -457,6 +569,7 @@ public final class BackendService implements ApiMessage {
       return this;
     }
 
+    /** The list of backends that serve this BackendService. */
     public Builder addBackends(Backend backends) {
       if (this.backends == null) {
         this.backends = new LinkedList<>();
@@ -465,10 +578,12 @@ public final class BackendService implements ApiMessage {
       return this;
     }
 
+    /** Cloud CDN configuration for this BackendService. */
     public BackendServiceCdnPolicy getCdnPolicy() {
       return cdnPolicy;
     }
 
+    /** Cloud CDN configuration for this BackendService. */
     public Builder setCdnPolicy(BackendServiceCdnPolicy cdnPolicy) {
       this.cdnPolicy = cdnPolicy;
       return this;
@@ -483,46 +598,96 @@ public final class BackendService implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public String getCreationTimestamp() {
       return creationTimestamp;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public String getDescription() {
       return description;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /**
+     * If true, enable Cloud CDN for this BackendService.
+     *
+     * <p>When the load balancing scheme is INTERNAL, this field is not used.
+     */
     public Boolean getEnableCDN() {
       return enableCDN;
     }
 
+    /**
+     * If true, enable Cloud CDN for this BackendService.
+     *
+     * <p>When the load balancing scheme is INTERNAL, this field is not used.
+     */
     public Builder setEnableCDN(Boolean enableCDN) {
       this.enableCDN = enableCDN;
       return this;
     }
 
+    /**
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is
+     * used in optimistic locking. This field will be ignored when inserting a BackendService. An
+     * up-to-date fingerprint must be provided in order to update the BackendService, otherwise the
+     * request will fail with error 412 conditionNotMet.
+     *
+     * <p>To see the latest fingerprint, make a get() request to retrieve a BackendService.
+     */
     public String getFingerprint() {
       return fingerprint;
     }
 
+    /**
+     * Fingerprint of this resource. A hash of the contents stored in this object. This field is
+     * used in optimistic locking. This field will be ignored when inserting a BackendService. An
+     * up-to-date fingerprint must be provided in order to update the BackendService, otherwise the
+     * request will fail with error 412 conditionNotMet.
+     *
+     * <p>To see the latest fingerprint, make a get() request to retrieve a BackendService.
+     */
     public Builder setFingerprint(String fingerprint) {
       this.fingerprint = fingerprint;
       return this;
     }
 
+    /**
+     * The list of URLs to the HttpHealthCheck or HttpsHealthCheck resource for health checking this
+     * BackendService. Currently at most one health check can be specified, and a health check is
+     * required for Compute Engine backend services. A health check must not be specified for App
+     * Engine backend and Cloud Function backend.
+     *
+     * <p>For internal load balancing, a URL to a HealthCheck resource must be specified instead.
+     */
     public List<String> getHealthChecksList() {
       return healthChecks;
     }
 
+    /**
+     * The list of URLs to the HttpHealthCheck or HttpsHealthCheck resource for health checking this
+     * BackendService. Currently at most one health check can be specified, and a health check is
+     * required for Compute Engine backend services. A health check must not be specified for App
+     * Engine backend and Cloud Function backend.
+     *
+     * <p>For internal load balancing, a URL to a HealthCheck resource must be specified instead.
+     */
     public Builder addAllHealthChecks(List<String> healthChecks) {
       if (this.healthChecks == null) {
         this.healthChecks = new LinkedList<>();
@@ -531,6 +696,14 @@ public final class BackendService implements ApiMessage {
       return this;
     }
 
+    /**
+     * The list of URLs to the HttpHealthCheck or HttpsHealthCheck resource for health checking this
+     * BackendService. Currently at most one health check can be specified, and a health check is
+     * required for Compute Engine backend services. A health check must not be specified for App
+     * Engine backend and Cloud Function backend.
+     *
+     * <p>For internal load balancing, a URL to a HealthCheck resource must be specified instead.
+     */
     public Builder addHealthChecks(String healthChecks) {
       if (this.healthChecks == null) {
         this.healthChecks = new LinkedList<>();
@@ -548,109 +721,227 @@ public final class BackendService implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /** [Output Only] Type of resource. Always compute#backendService for backend services. */
     public String getKind() {
       return kind;
     }
 
+    /** [Output Only] Type of resource. Always compute#backendService for backend services. */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /**
+     * Indicates whether the backend service will be used with internal or external load balancing.
+     * A backend service created for one type of load balancing cannot be used with the other.
+     * Possible values are INTERNAL and EXTERNAL.
+     */
     public String getLoadBalancingScheme() {
       return loadBalancingScheme;
     }
 
+    /**
+     * Indicates whether the backend service will be used with internal or external load balancing.
+     * A backend service created for one type of load balancing cannot be used with the other.
+     * Possible values are INTERNAL and EXTERNAL.
+     */
     public Builder setLoadBalancingScheme(String loadBalancingScheme) {
       this.loadBalancingScheme = loadBalancingScheme;
       return this;
     }
 
+    /**
+     * Name of the resource. Provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public String getName() {
       return name;
     }
 
+    /**
+     * Name of the resource. Provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /**
+     * Deprecated in favor of portName. The TCP port to connect on the backend. The default value is
+     * 80.
+     *
+     * <p>This cannot be used for internal load balancing.
+     */
     public Integer getPort() {
       return port;
     }
 
+    /**
+     * Deprecated in favor of portName. The TCP port to connect on the backend. The default value is
+     * 80.
+     *
+     * <p>This cannot be used for internal load balancing.
+     */
     public Builder setPort(Integer port) {
       this.port = port;
       return this;
     }
 
+    /**
+     * Name of backend port. The same name should appear in the instance groups referenced by this
+     * service. Required when the load balancing scheme is EXTERNAL.
+     *
+     * <p>When the load balancing scheme is INTERNAL, this field is not used.
+     */
     public String getPortName() {
       return portName;
     }
 
+    /**
+     * Name of backend port. The same name should appear in the instance groups referenced by this
+     * service. Required when the load balancing scheme is EXTERNAL.
+     *
+     * <p>When the load balancing scheme is INTERNAL, this field is not used.
+     */
     public Builder setPortName(String portName) {
       this.portName = portName;
       return this;
     }
 
+    /**
+     * The protocol this BackendService uses to communicate with backends.
+     *
+     * <p>Possible values are HTTP, HTTPS, TCP, and SSL. The default is HTTP.
+     *
+     * <p>For internal load balancing, the possible values are TCP and UDP, and the default is TCP.
+     */
     public String getProtocol() {
       return protocol;
     }
 
+    /**
+     * The protocol this BackendService uses to communicate with backends.
+     *
+     * <p>Possible values are HTTP, HTTPS, TCP, and SSL. The default is HTTP.
+     *
+     * <p>For internal load balancing, the possible values are TCP and UDP, and the default is TCP.
+     */
     public Builder setProtocol(String protocol) {
       this.protocol = protocol;
       return this;
     }
 
+    /**
+     * [Output Only] URL of the region where the regional backend service resides. This field is not
+     * applicable to global backend services. You must specify this field as part of the HTTP
+     * request URL. It is not settable as a field in the request body.
+     */
     public String getRegion() {
       return region;
     }
 
+    /**
+     * [Output Only] URL of the region where the regional backend service resides. This field is not
+     * applicable to global backend services. You must specify this field as part of the HTTP
+     * request URL. It is not settable as a field in the request body.
+     */
     public Builder setRegion(String region) {
       this.region = region;
       return this;
     }
 
+    /**
+     * [Output Only] The resource URL for the security policy associated with this backend service.
+     */
     public String getSecurityPolicy() {
       return securityPolicy;
     }
 
+    /**
+     * [Output Only] The resource URL for the security policy associated with this backend service.
+     */
     public Builder setSecurityPolicy(String securityPolicy) {
       this.securityPolicy = securityPolicy;
       return this;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /**
+     * Type of session affinity to use. The default is NONE.
+     *
+     * <p>When the load balancing scheme is EXTERNAL, can be NONE, CLIENT_IP, or GENERATED_COOKIE.
+     *
+     * <p>When the load balancing scheme is INTERNAL, can be NONE, CLIENT_IP, CLIENT_IP_PROTO, or
+     * CLIENT_IP_PORT_PROTO.
+     *
+     * <p>When the protocol is UDP, this field is not used.
+     */
     public String getSessionAffinity() {
       return sessionAffinity;
     }
 
+    /**
+     * Type of session affinity to use. The default is NONE.
+     *
+     * <p>When the load balancing scheme is EXTERNAL, can be NONE, CLIENT_IP, or GENERATED_COOKIE.
+     *
+     * <p>When the load balancing scheme is INTERNAL, can be NONE, CLIENT_IP, CLIENT_IP_PROTO, or
+     * CLIENT_IP_PORT_PROTO.
+     *
+     * <p>When the protocol is UDP, this field is not used.
+     */
     public Builder setSessionAffinity(String sessionAffinity) {
       this.sessionAffinity = sessionAffinity;
       return this;
     }
 
+    /**
+     * How many seconds to wait for the backend before considering it a failed request. Default is
+     * 30 seconds.
+     */
     public Integer getTimeoutSec() {
       return timeoutSec;
     }
 
+    /**
+     * How many seconds to wait for the backend before considering it a failed request. Default is
+     * 30 seconds.
+     */
     public Builder setTimeoutSec(Integer timeoutSec) {
       this.timeoutSec = timeoutSec;
       return this;

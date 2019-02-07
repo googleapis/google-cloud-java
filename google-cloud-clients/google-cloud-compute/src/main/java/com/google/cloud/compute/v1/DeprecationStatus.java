@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Deprecation status for a public resource. */
 public final class DeprecationStatus implements ApiMessage {
   private final String deleted;
   private final String deprecated;
@@ -80,22 +81,47 @@ public final class DeprecationStatus implements ApiMessage {
     return null;
   }
 
+  /**
+   * An optional RFC3339 timestamp on or after which the state of this resource is intended to
+   * change to DELETED. This is only informational and the status will not change unless the client
+   * explicitly changes it.
+   */
   public String getDeleted() {
     return deleted;
   }
 
+  /**
+   * An optional RFC3339 timestamp on or after which the state of this resource is intended to
+   * change to DEPRECATED. This is only informational and the status will not change unless the
+   * client explicitly changes it.
+   */
   public String getDeprecated() {
     return deprecated;
   }
 
+  /**
+   * An optional RFC3339 timestamp on or after which the state of this resource is intended to
+   * change to OBSOLETE. This is only informational and the status will not change unless the client
+   * explicitly changes it.
+   */
   public String getObsolete() {
     return obsolete;
   }
 
+  /**
+   * The URL of the suggested replacement for a deprecated resource. The suggested replacement
+   * resource must be the same kind of resource as the deprecated resource.
+   */
   public String getReplacement() {
     return replacement;
   }
 
+  /**
+   * The deprecation state of this resource. This can be DEPRECATED, OBSOLETE, or DELETED.
+   * Operations which create a new resource using a DEPRECATED resource will return successfully,
+   * but with a warning indicating the deprecated resource and recommending its replacement.
+   * Operations which use OBSOLETE or DELETED resources will be rejected and result in an error.
+   */
   public String getState() {
     return state;
   }
@@ -159,46 +185,96 @@ public final class DeprecationStatus implements ApiMessage {
       this.state = source.state;
     }
 
+    /**
+     * An optional RFC3339 timestamp on or after which the state of this resource is intended to
+     * change to DELETED. This is only informational and the status will not change unless the
+     * client explicitly changes it.
+     */
     public String getDeleted() {
       return deleted;
     }
 
+    /**
+     * An optional RFC3339 timestamp on or after which the state of this resource is intended to
+     * change to DELETED. This is only informational and the status will not change unless the
+     * client explicitly changes it.
+     */
     public Builder setDeleted(String deleted) {
       this.deleted = deleted;
       return this;
     }
 
+    /**
+     * An optional RFC3339 timestamp on or after which the state of this resource is intended to
+     * change to DEPRECATED. This is only informational and the status will not change unless the
+     * client explicitly changes it.
+     */
     public String getDeprecated() {
       return deprecated;
     }
 
+    /**
+     * An optional RFC3339 timestamp on or after which the state of this resource is intended to
+     * change to DEPRECATED. This is only informational and the status will not change unless the
+     * client explicitly changes it.
+     */
     public Builder setDeprecated(String deprecated) {
       this.deprecated = deprecated;
       return this;
     }
 
+    /**
+     * An optional RFC3339 timestamp on or after which the state of this resource is intended to
+     * change to OBSOLETE. This is only informational and the status will not change unless the
+     * client explicitly changes it.
+     */
     public String getObsolete() {
       return obsolete;
     }
 
+    /**
+     * An optional RFC3339 timestamp on or after which the state of this resource is intended to
+     * change to OBSOLETE. This is only informational and the status will not change unless the
+     * client explicitly changes it.
+     */
     public Builder setObsolete(String obsolete) {
       this.obsolete = obsolete;
       return this;
     }
 
+    /**
+     * The URL of the suggested replacement for a deprecated resource. The suggested replacement
+     * resource must be the same kind of resource as the deprecated resource.
+     */
     public String getReplacement() {
       return replacement;
     }
 
+    /**
+     * The URL of the suggested replacement for a deprecated resource. The suggested replacement
+     * resource must be the same kind of resource as the deprecated resource.
+     */
     public Builder setReplacement(String replacement) {
       this.replacement = replacement;
       return this;
     }
 
+    /**
+     * The deprecation state of this resource. This can be DEPRECATED, OBSOLETE, or DELETED.
+     * Operations which create a new resource using a DEPRECATED resource will return successfully,
+     * but with a warning indicating the deprecated resource and recommending its replacement.
+     * Operations which use OBSOLETE or DELETED resources will be rejected and result in an error.
+     */
     public String getState() {
       return state;
     }
 
+    /**
+     * The deprecation state of this resource. This can be DEPRECATED, OBSOLETE, or DELETED.
+     * Operations which create a new resource using a DEPRECATED resource will return successfully,
+     * but with a warning indicating the deprecated resource and recommending its replacement.
+     * Operations which use OBSOLETE or DELETED resources will be rejected and result in an error.
+     */
     public Builder setState(String state) {
       this.state = state;
       return this;

@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** An alias IP range attached to an instance's network interface. */
 public final class AliasIpRange implements ApiMessage {
   private final String ipCidrRange;
   private final String subnetworkRangeName;
@@ -61,10 +62,21 @@ public final class AliasIpRange implements ApiMessage {
     return null;
   }
 
+  /**
+   * The IP CIDR range represented by this alias IP range. This IP CIDR range must belong to the
+   * specified subnetwork and cannot contain IP addresses reserved by system or used by other
+   * network interfaces. This range may be a single IP address (e.g. 10.2.3.4), a netmask (e.g. /24)
+   * or a CIDR format string (e.g. 10.1.2.0/24).
+   */
   public String getIpCidrRange() {
     return ipCidrRange;
   }
 
+  /**
+   * Optional subnetwork secondary range name specifying the secondary range from which to allocate
+   * the IP CIDR range for this alias IP range. If left unspecified, the primary range of the
+   * subnetwork will be used.
+   */
   public String getSubnetworkRangeName() {
     return subnetworkRangeName;
   }
@@ -113,19 +125,41 @@ public final class AliasIpRange implements ApiMessage {
       this.subnetworkRangeName = source.subnetworkRangeName;
     }
 
+    /**
+     * The IP CIDR range represented by this alias IP range. This IP CIDR range must belong to the
+     * specified subnetwork and cannot contain IP addresses reserved by system or used by other
+     * network interfaces. This range may be a single IP address (e.g. 10.2.3.4), a netmask (e.g.
+     * /24) or a CIDR format string (e.g. 10.1.2.0/24).
+     */
     public String getIpCidrRange() {
       return ipCidrRange;
     }
 
+    /**
+     * The IP CIDR range represented by this alias IP range. This IP CIDR range must belong to the
+     * specified subnetwork and cannot contain IP addresses reserved by system or used by other
+     * network interfaces. This range may be a single IP address (e.g. 10.2.3.4), a netmask (e.g.
+     * /24) or a CIDR format string (e.g. 10.1.2.0/24).
+     */
     public Builder setIpCidrRange(String ipCidrRange) {
       this.ipCidrRange = ipCidrRange;
       return this;
     }
 
+    /**
+     * Optional subnetwork secondary range name specifying the secondary range from which to
+     * allocate the IP CIDR range for this alias IP range. If left unspecified, the primary range of
+     * the subnetwork will be used.
+     */
     public String getSubnetworkRangeName() {
       return subnetworkRangeName;
     }
 
+    /**
+     * Optional subnetwork secondary range name specifying the secondary range from which to
+     * allocate the IP CIDR range for this alias IP range. If left unspecified, the primary range of
+     * the subnetwork will be used.
+     */
     public Builder setSubnetworkRangeName(String subnetworkRangeName) {
       this.subnetworkRangeName = subnetworkRangeName;
       return this;

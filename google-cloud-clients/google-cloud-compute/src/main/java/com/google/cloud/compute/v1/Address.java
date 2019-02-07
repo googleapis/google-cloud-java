@@ -25,6 +25,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * A reserved address resource. (== resource_for beta.addresses ==) (== resource_for v1.addresses
+ * ==) (== resource_for beta.globalAddresses ==) (== resource_for v1.globalAddresses ==)
+ */
 public final class Address implements ApiMessage {
   private final String address;
   private final String addressType;
@@ -169,70 +173,127 @@ public final class Address implements ApiMessage {
     return null;
   }
 
+  /** The static IP address represented by this resource. */
   public String getAddress() {
     return address;
   }
 
+  /**
+   * The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to
+   * EXTERNAL.
+   */
   public String getAddressType() {
     return addressType;
   }
 
+  /** [Output Only] Creation timestamp in RFC3339 text format. */
   public String getCreationTimestamp() {
     return creationTimestamp;
   }
 
+  /**
+   * An optional description of this resource. Provide this property when you create the resource.
+   */
   public String getDescription() {
     return description;
   }
 
+  /**
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   */
   public String getId() {
     return id;
   }
 
+  /**
+   * The IP Version that will be used by this address. Valid options are IPV4 or IPV6. This can only
+   * be specified for a global address.
+   */
   public String getIpVersion() {
     return ipVersion;
   }
 
+  /** [Output Only] Type of the resource. Always compute#address for addresses. */
   public String getKind() {
     return kind;
   }
 
+  /**
+   * Name of the resource. Provided by the client when the resource is created. The name must be
+   * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+   * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be a dash, lowercase
+   * letter, or digit, except the last character, which cannot be a dash.
+   */
   public String getName() {
     return name;
   }
 
+  /**
+   * The URL of the network in which to reserve the address. This field can only be used with
+   * INTERNAL type with VPC_PEERING purpose.
+   */
   public String getNetwork() {
     return network;
   }
 
+  /**
+   * This signifies the networking tier used for configuring this Address and can only take the
+   * following values: PREMIUM, STANDARD. Global forwarding rules can only be Premium Tier. Regional
+   * forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to
+   * regional forwarding rules can be used with any external load balancer. Regional forwarding
+   * rules in Premium Tier can only be used with a Network load balancer.
+   *
+   * <p>If this field is not specified, it is assumed to be PREMIUM.
+   */
   public String getNetworkTier() {
     return networkTier;
   }
 
+  /** The prefix length if the resource reprensents an IP range. */
   public Integer getPrefixLength() {
     return prefixLength;
   }
 
+  /** The purpose of resource, only used with INTERNAL type. */
   public String getPurpose() {
     return purpose;
   }
 
+  /**
+   * [Output Only] URL of the region where the regional address resides. This field is not
+   * applicable to global addresses. You must specify this field as part of the HTTP request URL.
+   * You cannot set this field in the request body.
+   */
   public String getRegion() {
     return region;
   }
 
+  /** [Output Only] Server-defined URL for the resource. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /**
+   * [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An
+   * address that is RESERVING is currently in the process of being reserved. A RESERVED address is
+   * currently reserved and available to use. An IN_USE address is currently being used by another
+   * resource and is not available.
+   */
   public String getStatus() {
     return status;
   }
 
+  /**
+   * The URL of the subnetwork in which to reserve the address. If an IP address is specified, it
+   * must be within the subnetwork's IP range. This field can only be used with INTERNAL type with
+   * GCE_ENDPOINT/DNS_RESOLVER purposes.
+   */
   public String getSubnetwork() {
     return subnetwork;
   }
 
+  /** [Output Only] The URLs of the resources that are using this address. */
   public List<String> getUsersList() {
     return users;
   }
@@ -356,154 +417,270 @@ public final class Address implements ApiMessage {
       this.users = source.users;
     }
 
+    /** The static IP address represented by this resource. */
     public String getAddress() {
       return address;
     }
 
+    /** The static IP address represented by this resource. */
     public Builder setAddress(String address) {
       this.address = address;
       return this;
     }
 
+    /**
+     * The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to
+     * EXTERNAL.
+     */
     public String getAddressType() {
       return addressType;
     }
 
+    /**
+     * The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to
+     * EXTERNAL.
+     */
     public Builder setAddressType(String addressType) {
       this.addressType = addressType;
       return this;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public String getCreationTimestamp() {
       return creationTimestamp;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public String getDescription() {
       return description;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /**
+     * The IP Version that will be used by this address. Valid options are IPV4 or IPV6. This can
+     * only be specified for a global address.
+     */
     public String getIpVersion() {
       return ipVersion;
     }
 
+    /**
+     * The IP Version that will be used by this address. Valid options are IPV4 or IPV6. This can
+     * only be specified for a global address.
+     */
     public Builder setIpVersion(String ipVersion) {
       this.ipVersion = ipVersion;
       return this;
     }
 
+    /** [Output Only] Type of the resource. Always compute#address for addresses. */
     public String getKind() {
       return kind;
     }
 
+    /** [Output Only] Type of the resource. Always compute#address for addresses. */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /**
+     * Name of the resource. Provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public String getName() {
       return name;
     }
 
+    /**
+     * Name of the resource. Provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /**
+     * The URL of the network in which to reserve the address. This field can only be used with
+     * INTERNAL type with VPC_PEERING purpose.
+     */
     public String getNetwork() {
       return network;
     }
 
+    /**
+     * The URL of the network in which to reserve the address. This field can only be used with
+     * INTERNAL type with VPC_PEERING purpose.
+     */
     public Builder setNetwork(String network) {
       this.network = network;
       return this;
     }
 
+    /**
+     * This signifies the networking tier used for configuring this Address and can only take the
+     * following values: PREMIUM, STANDARD. Global forwarding rules can only be Premium Tier.
+     * Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses
+     * applied to regional forwarding rules can be used with any external load balancer. Regional
+     * forwarding rules in Premium Tier can only be used with a Network load balancer.
+     *
+     * <p>If this field is not specified, it is assumed to be PREMIUM.
+     */
     public String getNetworkTier() {
       return networkTier;
     }
 
+    /**
+     * This signifies the networking tier used for configuring this Address and can only take the
+     * following values: PREMIUM, STANDARD. Global forwarding rules can only be Premium Tier.
+     * Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses
+     * applied to regional forwarding rules can be used with any external load balancer. Regional
+     * forwarding rules in Premium Tier can only be used with a Network load balancer.
+     *
+     * <p>If this field is not specified, it is assumed to be PREMIUM.
+     */
     public Builder setNetworkTier(String networkTier) {
       this.networkTier = networkTier;
       return this;
     }
 
+    /** The prefix length if the resource reprensents an IP range. */
     public Integer getPrefixLength() {
       return prefixLength;
     }
 
+    /** The prefix length if the resource reprensents an IP range. */
     public Builder setPrefixLength(Integer prefixLength) {
       this.prefixLength = prefixLength;
       return this;
     }
 
+    /** The purpose of resource, only used with INTERNAL type. */
     public String getPurpose() {
       return purpose;
     }
 
+    /** The purpose of resource, only used with INTERNAL type. */
     public Builder setPurpose(String purpose) {
       this.purpose = purpose;
       return this;
     }
 
+    /**
+     * [Output Only] URL of the region where the regional address resides. This field is not
+     * applicable to global addresses. You must specify this field as part of the HTTP request URL.
+     * You cannot set this field in the request body.
+     */
     public String getRegion() {
       return region;
     }
 
+    /**
+     * [Output Only] URL of the region where the regional address resides. This field is not
+     * applicable to global addresses. You must specify this field as part of the HTTP request URL.
+     * You cannot set this field in the request body.
+     */
     public Builder setRegion(String region) {
       this.region = region;
       return this;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /**
+     * [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE.
+     * An address that is RESERVING is currently in the process of being reserved. A RESERVED
+     * address is currently reserved and available to use. An IN_USE address is currently being used
+     * by another resource and is not available.
+     */
     public String getStatus() {
       return status;
     }
 
+    /**
+     * [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE.
+     * An address that is RESERVING is currently in the process of being reserved. A RESERVED
+     * address is currently reserved and available to use. An IN_USE address is currently being used
+     * by another resource and is not available.
+     */
     public Builder setStatus(String status) {
       this.status = status;
       return this;
     }
 
+    /**
+     * The URL of the subnetwork in which to reserve the address. If an IP address is specified, it
+     * must be within the subnetwork's IP range. This field can only be used with INTERNAL type with
+     * GCE_ENDPOINT/DNS_RESOLVER purposes.
+     */
     public String getSubnetwork() {
       return subnetwork;
     }
 
+    /**
+     * The URL of the subnetwork in which to reserve the address. If an IP address is specified, it
+     * must be within the subnetwork's IP range. This field can only be used with INTERNAL type with
+     * GCE_ENDPOINT/DNS_RESOLVER purposes.
+     */
     public Builder setSubnetwork(String subnetwork) {
       this.subnetwork = subnetwork;
       return this;
     }
 
+    /** [Output Only] The URLs of the resources that are using this address. */
     public List<String> getUsersList() {
       return users;
     }
 
+    /** [Output Only] The URLs of the resources that are using this address. */
     public Builder addAllUsers(List<String> users) {
       if (this.users == null) {
         this.users = new LinkedList<>();
@@ -512,6 +689,7 @@ public final class Address implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] The URLs of the resources that are using this address. */
     public Builder addUsers(String users) {
       if (this.users == null) {
         this.users = new LinkedList<>();

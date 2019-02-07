@@ -56,6 +56,12 @@ public final class TargetPoolsAddInstanceRequest implements ApiMessage {
     return null;
   }
 
+  /**
+   * A full or partial URL to an instance to add to this target pool. This can be a full or partial
+   * URL. For example, the following are valid URLs: -
+   * https://www.googleapis.com/compute/v1/projects/project-id/zones/zone/instances/instance-name -
+   * projects/project-id/zones/zone/instances/instance-name - zones/zone/instances/instance-name
+   */
   public List<InstanceReference> getInstancesList() {
     return instances;
   }
@@ -99,10 +105,22 @@ public final class TargetPoolsAddInstanceRequest implements ApiMessage {
       this.instances = source.instances;
     }
 
+    /**
+     * A full or partial URL to an instance to add to this target pool. This can be a full or
+     * partial URL. For example, the following are valid URLs: -
+     * https://www.googleapis.com/compute/v1/projects/project-id/zones/zone/instances/instance-name
+     * - projects/project-id/zones/zone/instances/instance-name - zones/zone/instances/instance-name
+     */
     public List<InstanceReference> getInstancesList() {
       return instances;
     }
 
+    /**
+     * A full or partial URL to an instance to add to this target pool. This can be a full or
+     * partial URL. For example, the following are valid URLs: -
+     * https://www.googleapis.com/compute/v1/projects/project-id/zones/zone/instances/instance-name
+     * - projects/project-id/zones/zone/instances/instance-name - zones/zone/instances/instance-name
+     */
     public Builder addAllInstances(List<InstanceReference> instances) {
       if (this.instances == null) {
         this.instances = new LinkedList<>();
@@ -111,6 +129,12 @@ public final class TargetPoolsAddInstanceRequest implements ApiMessage {
       return this;
     }
 
+    /**
+     * A full or partial URL to an instance to add to this target pool. This can be a full or
+     * partial URL. For example, the following are valid URLs: -
+     * https://www.googleapis.com/compute/v1/projects/project-id/zones/zone/instances/instance-name
+     * - projects/project-id/zones/zone/instances/instance-name - zones/zone/instances/instance-name
+     */
     public Builder addInstances(InstanceReference instances) {
       if (this.instances == null) {
         this.instances = new LinkedList<>();

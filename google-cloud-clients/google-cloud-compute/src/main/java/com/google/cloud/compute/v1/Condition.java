@@ -25,6 +25,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** A condition to be met. */
 public final class Condition implements ApiMessage {
   private final String iam;
   private final String op;
@@ -87,26 +88,35 @@ public final class Condition implements ApiMessage {
     return null;
   }
 
+  /** Trusted attributes supplied by the IAM system. */
   public String getIam() {
     return iam;
   }
 
+  /** An operator to apply the subject with. */
   public String getOp() {
     return op;
   }
 
+  /** Trusted attributes discharged by the service. */
   public String getSvc() {
     return svc;
   }
 
+  /**
+   * Trusted attributes supplied by any service that owns resources and uses the IAM system for
+   * access control.
+   */
   public String getSys() {
     return sys;
   }
 
+  /** DEPRECATED. Use 'values' instead. */
   public String getValue() {
     return value;
   }
 
+  /** The objects of the condition. This is mutually exclusive with 'value'. */
   public List<String> getValuesList() {
     return values;
   }
@@ -175,55 +185,73 @@ public final class Condition implements ApiMessage {
       this.values = source.values;
     }
 
+    /** Trusted attributes supplied by the IAM system. */
     public String getIam() {
       return iam;
     }
 
+    /** Trusted attributes supplied by the IAM system. */
     public Builder setIam(String iam) {
       this.iam = iam;
       return this;
     }
 
+    /** An operator to apply the subject with. */
     public String getOp() {
       return op;
     }
 
+    /** An operator to apply the subject with. */
     public Builder setOp(String op) {
       this.op = op;
       return this;
     }
 
+    /** Trusted attributes discharged by the service. */
     public String getSvc() {
       return svc;
     }
 
+    /** Trusted attributes discharged by the service. */
     public Builder setSvc(String svc) {
       this.svc = svc;
       return this;
     }
 
+    /**
+     * Trusted attributes supplied by any service that owns resources and uses the IAM system for
+     * access control.
+     */
     public String getSys() {
       return sys;
     }
 
+    /**
+     * Trusted attributes supplied by any service that owns resources and uses the IAM system for
+     * access control.
+     */
     public Builder setSys(String sys) {
       this.sys = sys;
       return this;
     }
 
+    /** DEPRECATED. Use 'values' instead. */
     public String getValue() {
       return value;
     }
 
+    /** DEPRECATED. Use 'values' instead. */
     public Builder setValue(String value) {
       this.value = value;
       return this;
     }
 
+    /** The objects of the condition. This is mutually exclusive with 'value'. */
     public List<String> getValuesList() {
       return values;
     }
 
+    /** The objects of the condition. This is mutually exclusive with 'value'. */
     public Builder addAllValues(List<String> values) {
       if (this.values == null) {
         this.values = new LinkedList<>();
@@ -232,6 +260,7 @@ public final class Condition implements ApiMessage {
       return this;
     }
 
+    /** The objects of the condition. This is mutually exclusive with 'value'. */
     public Builder addValues(String values) {
       if (this.values == null) {
         this.values = new LinkedList<>();

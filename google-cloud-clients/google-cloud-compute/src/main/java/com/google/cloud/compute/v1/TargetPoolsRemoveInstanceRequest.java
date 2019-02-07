@@ -56,6 +56,7 @@ public final class TargetPoolsRemoveInstanceRequest implements ApiMessage {
     return null;
   }
 
+  /** URLs of the instances to be removed from target pool. */
   public List<InstanceReference> getInstancesList() {
     return instances;
   }
@@ -99,10 +100,12 @@ public final class TargetPoolsRemoveInstanceRequest implements ApiMessage {
       this.instances = source.instances;
     }
 
+    /** URLs of the instances to be removed from target pool. */
     public List<InstanceReference> getInstancesList() {
       return instances;
     }
 
+    /** URLs of the instances to be removed from target pool. */
     public Builder addAllInstances(List<InstanceReference> instances) {
       if (this.instances == null) {
         this.instances = new LinkedList<>();
@@ -111,6 +114,7 @@ public final class TargetPoolsRemoveInstanceRequest implements ApiMessage {
       return this;
     }
 
+    /** URLs of the instances to be removed from target pool. */
     public Builder addInstances(InstanceReference instances) {
       if (this.instances == null) {
         this.instances = new LinkedList<>();

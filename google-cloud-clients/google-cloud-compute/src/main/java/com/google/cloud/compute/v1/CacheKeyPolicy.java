@@ -25,6 +25,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Message containing what to include in the cache key for a request for Cloud CDN. */
 public final class CacheKeyPolicy implements ApiMessage {
   private final Boolean includeHost;
   private final Boolean includeProtocol;
@@ -85,22 +86,39 @@ public final class CacheKeyPolicy implements ApiMessage {
     return null;
   }
 
+  /** If true, requests to different hosts will be cached separately. */
   public Boolean getIncludeHost() {
     return includeHost;
   }
 
+  /** If true, http and https requests will be cached separately. */
   public Boolean getIncludeProtocol() {
     return includeProtocol;
   }
 
+  /**
+   * If true, include query string parameters in the cache key according to query_string_whitelist
+   * and query_string_blacklist. If neither is set, the entire query string will be included. If
+   * false, the query string will be excluded from the cache key entirely.
+   */
   public Boolean getIncludeQueryString() {
     return includeQueryString;
   }
 
+  /**
+   * Names of query string parameters to exclude in cache keys. All other parameters will be
+   * included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;'
+   * and '=' will be percent encoded and not treated as delimiters.
+   */
   public List<String> getQueryStringBlacklistList() {
     return queryStringBlacklist;
   }
 
+  /**
+   * Names of query string parameters to include in cache keys. All other parameters will be
+   * excluded. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;'
+   * and '=' will be percent encoded and not treated as delimiters.
+   */
   public List<String> getQueryStringWhitelistList() {
     return queryStringWhitelist;
   }
@@ -164,37 +182,61 @@ public final class CacheKeyPolicy implements ApiMessage {
       this.queryStringWhitelist = source.queryStringWhitelist;
     }
 
+    /** If true, requests to different hosts will be cached separately. */
     public Boolean getIncludeHost() {
       return includeHost;
     }
 
+    /** If true, requests to different hosts will be cached separately. */
     public Builder setIncludeHost(Boolean includeHost) {
       this.includeHost = includeHost;
       return this;
     }
 
+    /** If true, http and https requests will be cached separately. */
     public Boolean getIncludeProtocol() {
       return includeProtocol;
     }
 
+    /** If true, http and https requests will be cached separately. */
     public Builder setIncludeProtocol(Boolean includeProtocol) {
       this.includeProtocol = includeProtocol;
       return this;
     }
 
+    /**
+     * If true, include query string parameters in the cache key according to query_string_whitelist
+     * and query_string_blacklist. If neither is set, the entire query string will be included. If
+     * false, the query string will be excluded from the cache key entirely.
+     */
     public Boolean getIncludeQueryString() {
       return includeQueryString;
     }
 
+    /**
+     * If true, include query string parameters in the cache key according to query_string_whitelist
+     * and query_string_blacklist. If neither is set, the entire query string will be included. If
+     * false, the query string will be excluded from the cache key entirely.
+     */
     public Builder setIncludeQueryString(Boolean includeQueryString) {
       this.includeQueryString = includeQueryString;
       return this;
     }
 
+    /**
+     * Names of query string parameters to exclude in cache keys. All other parameters will be
+     * included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;'
+     * and '=' will be percent encoded and not treated as delimiters.
+     */
     public List<String> getQueryStringBlacklistList() {
       return queryStringBlacklist;
     }
 
+    /**
+     * Names of query string parameters to exclude in cache keys. All other parameters will be
+     * included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;'
+     * and '=' will be percent encoded and not treated as delimiters.
+     */
     public Builder addAllQueryStringBlacklist(List<String> queryStringBlacklist) {
       if (this.queryStringBlacklist == null) {
         this.queryStringBlacklist = new LinkedList<>();
@@ -203,6 +245,11 @@ public final class CacheKeyPolicy implements ApiMessage {
       return this;
     }
 
+    /**
+     * Names of query string parameters to exclude in cache keys. All other parameters will be
+     * included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;'
+     * and '=' will be percent encoded and not treated as delimiters.
+     */
     public Builder addQueryStringBlacklist(String queryStringBlacklist) {
       if (this.queryStringBlacklist == null) {
         this.queryStringBlacklist = new LinkedList<>();
@@ -211,10 +258,20 @@ public final class CacheKeyPolicy implements ApiMessage {
       return this;
     }
 
+    /**
+     * Names of query string parameters to include in cache keys. All other parameters will be
+     * excluded. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;'
+     * and '=' will be percent encoded and not treated as delimiters.
+     */
     public List<String> getQueryStringWhitelistList() {
       return queryStringWhitelist;
     }
 
+    /**
+     * Names of query string parameters to include in cache keys. All other parameters will be
+     * excluded. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;'
+     * and '=' will be percent encoded and not treated as delimiters.
+     */
     public Builder addAllQueryStringWhitelist(List<String> queryStringWhitelist) {
       if (this.queryStringWhitelist == null) {
         this.queryStringWhitelist = new LinkedList<>();
@@ -223,6 +280,11 @@ public final class CacheKeyPolicy implements ApiMessage {
       return this;
     }
 
+    /**
+     * Names of query string parameters to include in cache keys. All other parameters will be
+     * excluded. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;'
+     * and '=' will be percent encoded and not treated as delimiters.
+     */
     public Builder addQueryStringWhitelist(String queryStringWhitelist) {
       if (this.queryStringWhitelist == null) {
         this.queryStringWhitelist = new LinkedList<>();
