@@ -120,7 +120,7 @@ public class HttpTransportOptions implements TransportOptions {
     }
   }
 
-  private HttpTransportOptions(Builder builder) {
+  public HttpTransportOptions(Builder builder) {
     httpTransportFactory =
         firstNonNull(
             builder.httpTransportFactory,
