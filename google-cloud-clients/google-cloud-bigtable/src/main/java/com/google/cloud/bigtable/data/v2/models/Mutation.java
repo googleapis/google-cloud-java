@@ -63,6 +63,16 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
   }
 
   /**
+   * Wraps the List of protobuf {@link com.google.bigtable.v2.Mutation}.
+   *
+   */
+   public static Mutation fromProto(List<com.google.bigtable.v2.Mutation> protos) {
+    Mutation mutation = new Mutation(false);
+    mutation.mutations.addAll(protos);
+    return mutation;
+  }
+
+  /**
    * Creates new instance of Mutation object which allows setCell operation to use server side
    * timestamp. This is dangerous because mutations will no longer be idempotent, which might cause
    * multiple duplicate values to be stored in Bigtable. This option should only be used for
