@@ -112,38 +112,84 @@ public final class InstanceGroupManagerActionsSummary implements ApiMessage {
     return null;
   }
 
+  /**
+   * [Output Only] The total number of instances in the managed instance group that are scheduled to
+   * be abandoned. Abandoning an instance removes it from the managed instance group without
+   * deleting it.
+   */
   public Integer getAbandoning() {
     return abandoning;
   }
 
+  /**
+   * [Output Only] The number of instances in the managed instance group that are scheduled to be
+   * created or are currently being created. If the group fails to create any of these instances, it
+   * tries again until it creates the instance successfully.
+   *
+   * <p>If you have disabled creation retries, this field will not be populated; instead, the
+   * creatingWithoutRetries field will be populated.
+   */
   public Integer getCreating() {
     return creating;
   }
 
+  /**
+   * [Output Only] The number of instances that the managed instance group will attempt to create.
+   * The group attempts to create each instance only once. If the group fails to create any of these
+   * instances, it decreases the group's targetSize value accordingly.
+   */
   public Integer getCreatingWithoutRetries() {
     return creatingWithoutRetries;
   }
 
+  /**
+   * [Output Only] The number of instances in the managed instance group that are scheduled to be
+   * deleted or are currently being deleted.
+   */
   public Integer getDeleting() {
     return deleting;
   }
 
+  /**
+   * [Output Only] The number of instances in the managed instance group that are running and have
+   * no scheduled actions.
+   */
   public Integer getNone() {
     return none;
   }
 
+  /**
+   * [Output Only] The number of instances in the managed instance group that are scheduled to be
+   * recreated or are currently being being recreated. Recreating an instance deletes the existing
+   * root persistent disk and creates a new disk from the image that is defined in the instance
+   * template.
+   */
   public Integer getRecreating() {
     return recreating;
   }
 
+  /**
+   * [Output Only] The number of instances in the managed instance group that are being reconfigured
+   * with properties that do not require a restart or a recreate action. For example, setting or
+   * removing target pools for the instance.
+   */
   public Integer getRefreshing() {
     return refreshing;
   }
 
+  /**
+   * [Output Only] The number of instances in the managed instance group that are scheduled to be
+   * restarted or are currently being restarted.
+   */
   public Integer getRestarting() {
     return restarting;
   }
 
+  /**
+   * [Output Only] The number of instances in the managed instance group that are being verified.
+   * See the managedInstances[].currentAction property in the listManagedInstances method
+   * documentation.
+   */
   public Integer getVerifying() {
     return verifying;
   }
@@ -227,82 +273,174 @@ public final class InstanceGroupManagerActionsSummary implements ApiMessage {
       this.verifying = source.verifying;
     }
 
+    /**
+     * [Output Only] The total number of instances in the managed instance group that are scheduled
+     * to be abandoned. Abandoning an instance removes it from the managed instance group without
+     * deleting it.
+     */
     public Integer getAbandoning() {
       return abandoning;
     }
 
+    /**
+     * [Output Only] The total number of instances in the managed instance group that are scheduled
+     * to be abandoned. Abandoning an instance removes it from the managed instance group without
+     * deleting it.
+     */
     public Builder setAbandoning(Integer abandoning) {
       this.abandoning = abandoning;
       return this;
     }
 
+    /**
+     * [Output Only] The number of instances in the managed instance group that are scheduled to be
+     * created or are currently being created. If the group fails to create any of these instances,
+     * it tries again until it creates the instance successfully.
+     *
+     * <p>If you have disabled creation retries, this field will not be populated; instead, the
+     * creatingWithoutRetries field will be populated.
+     */
     public Integer getCreating() {
       return creating;
     }
 
+    /**
+     * [Output Only] The number of instances in the managed instance group that are scheduled to be
+     * created or are currently being created. If the group fails to create any of these instances,
+     * it tries again until it creates the instance successfully.
+     *
+     * <p>If you have disabled creation retries, this field will not be populated; instead, the
+     * creatingWithoutRetries field will be populated.
+     */
     public Builder setCreating(Integer creating) {
       this.creating = creating;
       return this;
     }
 
+    /**
+     * [Output Only] The number of instances that the managed instance group will attempt to create.
+     * The group attempts to create each instance only once. If the group fails to create any of
+     * these instances, it decreases the group's targetSize value accordingly.
+     */
     public Integer getCreatingWithoutRetries() {
       return creatingWithoutRetries;
     }
 
+    /**
+     * [Output Only] The number of instances that the managed instance group will attempt to create.
+     * The group attempts to create each instance only once. If the group fails to create any of
+     * these instances, it decreases the group's targetSize value accordingly.
+     */
     public Builder setCreatingWithoutRetries(Integer creatingWithoutRetries) {
       this.creatingWithoutRetries = creatingWithoutRetries;
       return this;
     }
 
+    /**
+     * [Output Only] The number of instances in the managed instance group that are scheduled to be
+     * deleted or are currently being deleted.
+     */
     public Integer getDeleting() {
       return deleting;
     }
 
+    /**
+     * [Output Only] The number of instances in the managed instance group that are scheduled to be
+     * deleted or are currently being deleted.
+     */
     public Builder setDeleting(Integer deleting) {
       this.deleting = deleting;
       return this;
     }
 
+    /**
+     * [Output Only] The number of instances in the managed instance group that are running and have
+     * no scheduled actions.
+     */
     public Integer getNone() {
       return none;
     }
 
+    /**
+     * [Output Only] The number of instances in the managed instance group that are running and have
+     * no scheduled actions.
+     */
     public Builder setNone(Integer none) {
       this.none = none;
       return this;
     }
 
+    /**
+     * [Output Only] The number of instances in the managed instance group that are scheduled to be
+     * recreated or are currently being being recreated. Recreating an instance deletes the existing
+     * root persistent disk and creates a new disk from the image that is defined in the instance
+     * template.
+     */
     public Integer getRecreating() {
       return recreating;
     }
 
+    /**
+     * [Output Only] The number of instances in the managed instance group that are scheduled to be
+     * recreated or are currently being being recreated. Recreating an instance deletes the existing
+     * root persistent disk and creates a new disk from the image that is defined in the instance
+     * template.
+     */
     public Builder setRecreating(Integer recreating) {
       this.recreating = recreating;
       return this;
     }
 
+    /**
+     * [Output Only] The number of instances in the managed instance group that are being
+     * reconfigured with properties that do not require a restart or a recreate action. For example,
+     * setting or removing target pools for the instance.
+     */
     public Integer getRefreshing() {
       return refreshing;
     }
 
+    /**
+     * [Output Only] The number of instances in the managed instance group that are being
+     * reconfigured with properties that do not require a restart or a recreate action. For example,
+     * setting or removing target pools for the instance.
+     */
     public Builder setRefreshing(Integer refreshing) {
       this.refreshing = refreshing;
       return this;
     }
 
+    /**
+     * [Output Only] The number of instances in the managed instance group that are scheduled to be
+     * restarted or are currently being restarted.
+     */
     public Integer getRestarting() {
       return restarting;
     }
 
+    /**
+     * [Output Only] The number of instances in the managed instance group that are scheduled to be
+     * restarted or are currently being restarted.
+     */
     public Builder setRestarting(Integer restarting) {
       this.restarting = restarting;
       return this;
     }
 
+    /**
+     * [Output Only] The number of instances in the managed instance group that are being verified.
+     * See the managedInstances[].currentAction property in the listManagedInstances method
+     * documentation.
+     */
     public Integer getVerifying() {
       return verifying;
     }
 
+    /**
+     * [Output Only] The number of instances in the managed instance group that are being verified.
+     * See the managedInstances[].currentAction property in the listManagedInstances method
+     * documentation.
+     */
     public Builder setVerifying(Integer verifying) {
       this.verifying = verifying;
       return this;

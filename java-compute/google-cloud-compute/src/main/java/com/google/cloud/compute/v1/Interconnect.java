@@ -25,6 +25,11 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Represents an Interconnects resource. The Interconnects resource is a dedicated connection
+ * between Google's network and your on-premises network. For more information, see the Dedicated
+ * overview page. (== resource_for v1.interconnects ==) (== resource_for beta.interconnects ==)
+ */
 public final class Interconnect implements ApiMessage {
   private final Boolean adminEnabled;
   private final List<InterconnectCircuitInfo> circuitInfos;
@@ -204,90 +209,154 @@ public final class Interconnect implements ApiMessage {
     return null;
   }
 
+  /**
+   * Administrative status of the interconnect. When this is set to true, the Interconnect is
+   * functional and can carry traffic. When set to false, no packets can be carried over the
+   * interconnect and no BGP routes are exchanged over it. By default, the status is set to true.
+   */
   public Boolean getAdminEnabled() {
     return adminEnabled;
   }
 
+  /**
+   * [Output Only] A list of CircuitInfo objects, that describe the individual circuits in this LAG.
+   */
   public List<InterconnectCircuitInfo> getCircuitInfosList() {
     return circuitInfos;
   }
 
+  /** [Output Only] Creation timestamp in RFC3339 text format. */
   public String getCreationTimestamp() {
     return creationTimestamp;
   }
 
+  /**
+   * Customer name, to put in the Letter of Authorization as the party authorized to request a
+   * crossconnect.
+   */
   public String getCustomerName() {
     return customerName;
   }
 
+  /**
+   * An optional description of this resource. Provide this property when you create the resource.
+   */
   public String getDescription() {
     return description;
   }
 
+  /** [Output Only] A list of outages expected for this Interconnect. */
   public List<InterconnectOutageNotification> getExpectedOutagesList() {
     return expectedOutages;
   }
 
+  /**
+   * [Output Only] IP address configured on the Google side of the Interconnect link. This can be
+   * used only for ping tests.
+   */
   public String getGoogleIpAddress() {
     return googleIpAddress;
   }
 
+  /**
+   * [Output Only] Google reference ID; to be used when raising support tickets with Google or
+   * otherwise to debug backend connectivity issues.
+   */
   public String getGoogleReferenceId() {
     return googleReferenceId;
   }
 
+  /**
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   */
   public String getId() {
     return id;
   }
 
+  /**
+   * [Output Only] A list of the URLs of all InterconnectAttachments configured to use this
+   * Interconnect.
+   */
   public List<String> getInterconnectAttachmentsList() {
     return interconnectAttachments;
   }
 
+  /** Type of interconnect. Note that "IT_PRIVATE" has been deprecated in favor of "DEDICATED" */
   public String getInterconnectType() {
     return interconnectType;
   }
 
+  /** [Output Only] Type of the resource. Always compute#interconnect for interconnects. */
   public String getKind() {
     return kind;
   }
 
+  /**
+   * Type of link requested. This field indicates speed of each of the links in the bundle, not the
+   * entire bundle.
+   */
   public String getLinkType() {
     return linkType;
   }
 
+  /**
+   * URL of the InterconnectLocation object that represents where this connection is to be
+   * provisioned.
+   */
   public String getLocation() {
     return location;
   }
 
+  /**
+   * Name of the resource. Provided by the client when the resource is created. The name must be
+   * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+   * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be a dash, lowercase
+   * letter, or digit, except the last character, which cannot be a dash.
+   */
   public String getName() {
     return name;
   }
 
+  /**
+   * Email address to contact the customer NOC for operations and maintenance notifications
+   * regarding this Interconnect. If specified, this will be used for notifications in addition to
+   * all other forms described, such as Stackdriver logs alerting and Cloud Notifications.
+   */
   public String getNocContactEmail() {
     return nocContactEmail;
   }
 
+  /** [Output Only] The current status of whether or not this Interconnect is functional. */
   public String getOperationalStatus() {
     return operationalStatus;
   }
 
+  /**
+   * [Output Only] IP address configured on the customer side of the Interconnect link. The customer
+   * should configure this IP address during turnup when prompted by Google NOC. This can be used
+   * only for ping tests.
+   */
   public String getPeerIpAddress() {
     return peerIpAddress;
   }
 
+  /** [Output Only] Number of links actually provisioned in this interconnect. */
   public Integer getProvisionedLinkCount() {
     return provisionedLinkCount;
   }
 
+  /** Target number of physical links in the link bundle, as requested by the customer. */
   public Integer getRequestedLinkCount() {
     return requestedLinkCount;
   }
 
+  /** [Output Only] Server-defined URL for the resource. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /** [Output Only] The current state of whether or not this Interconnect is functional. */
   public String getState() {
     return state;
   }
@@ -436,19 +505,37 @@ public final class Interconnect implements ApiMessage {
       this.state = source.state;
     }
 
+    /**
+     * Administrative status of the interconnect. When this is set to true, the Interconnect is
+     * functional and can carry traffic. When set to false, no packets can be carried over the
+     * interconnect and no BGP routes are exchanged over it. By default, the status is set to true.
+     */
     public Boolean getAdminEnabled() {
       return adminEnabled;
     }
 
+    /**
+     * Administrative status of the interconnect. When this is set to true, the Interconnect is
+     * functional and can carry traffic. When set to false, no packets can be carried over the
+     * interconnect and no BGP routes are exchanged over it. By default, the status is set to true.
+     */
     public Builder setAdminEnabled(Boolean adminEnabled) {
       this.adminEnabled = adminEnabled;
       return this;
     }
 
+    /**
+     * [Output Only] A list of CircuitInfo objects, that describe the individual circuits in this
+     * LAG.
+     */
     public List<InterconnectCircuitInfo> getCircuitInfosList() {
       return circuitInfos;
     }
 
+    /**
+     * [Output Only] A list of CircuitInfo objects, that describe the individual circuits in this
+     * LAG.
+     */
     public Builder addAllCircuitInfos(List<InterconnectCircuitInfo> circuitInfos) {
       if (this.circuitInfos == null) {
         this.circuitInfos = new LinkedList<>();
@@ -457,6 +544,10 @@ public final class Interconnect implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] A list of CircuitInfo objects, that describe the individual circuits in this
+     * LAG.
+     */
     public Builder addCircuitInfos(InterconnectCircuitInfo circuitInfos) {
       if (this.circuitInfos == null) {
         this.circuitInfos = new LinkedList<>();
@@ -465,37 +556,55 @@ public final class Interconnect implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public String getCreationTimestamp() {
       return creationTimestamp;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
+    /**
+     * Customer name, to put in the Letter of Authorization as the party authorized to request a
+     * crossconnect.
+     */
     public String getCustomerName() {
       return customerName;
     }
 
+    /**
+     * Customer name, to put in the Letter of Authorization as the party authorized to request a
+     * crossconnect.
+     */
     public Builder setCustomerName(String customerName) {
       this.customerName = customerName;
       return this;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public String getDescription() {
       return description;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /** [Output Only] A list of outages expected for this Interconnect. */
     public List<InterconnectOutageNotification> getExpectedOutagesList() {
       return expectedOutages;
     }
 
+    /** [Output Only] A list of outages expected for this Interconnect. */
     public Builder addAllExpectedOutages(List<InterconnectOutageNotification> expectedOutages) {
       if (this.expectedOutages == null) {
         this.expectedOutages = new LinkedList<>();
@@ -504,6 +613,7 @@ public final class Interconnect implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] A list of outages expected for this Interconnect. */
     public Builder addExpectedOutages(InterconnectOutageNotification expectedOutages) {
       if (this.expectedOutages == null) {
         this.expectedOutages = new LinkedList<>();
@@ -512,37 +622,69 @@ public final class Interconnect implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] IP address configured on the Google side of the Interconnect link. This can be
+     * used only for ping tests.
+     */
     public String getGoogleIpAddress() {
       return googleIpAddress;
     }
 
+    /**
+     * [Output Only] IP address configured on the Google side of the Interconnect link. This can be
+     * used only for ping tests.
+     */
     public Builder setGoogleIpAddress(String googleIpAddress) {
       this.googleIpAddress = googleIpAddress;
       return this;
     }
 
+    /**
+     * [Output Only] Google reference ID; to be used when raising support tickets with Google or
+     * otherwise to debug backend connectivity issues.
+     */
     public String getGoogleReferenceId() {
       return googleReferenceId;
     }
 
+    /**
+     * [Output Only] Google reference ID; to be used when raising support tickets with Google or
+     * otherwise to debug backend connectivity issues.
+     */
     public Builder setGoogleReferenceId(String googleReferenceId) {
       this.googleReferenceId = googleReferenceId;
       return this;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /**
+     * [Output Only] A list of the URLs of all InterconnectAttachments configured to use this
+     * Interconnect.
+     */
     public List<String> getInterconnectAttachmentsList() {
       return interconnectAttachments;
     }
 
+    /**
+     * [Output Only] A list of the URLs of all InterconnectAttachments configured to use this
+     * Interconnect.
+     */
     public Builder addAllInterconnectAttachments(List<String> interconnectAttachments) {
       if (this.interconnectAttachments == null) {
         this.interconnectAttachments = new LinkedList<>();
@@ -551,6 +693,10 @@ public final class Interconnect implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] A list of the URLs of all InterconnectAttachments configured to use this
+     * Interconnect.
+     */
     public Builder addInterconnectAttachments(String interconnectAttachments) {
       if (this.interconnectAttachments == null) {
         this.interconnectAttachments = new LinkedList<>();
@@ -559,109 +705,173 @@ public final class Interconnect implements ApiMessage {
       return this;
     }
 
+    /** Type of interconnect. Note that "IT_PRIVATE" has been deprecated in favor of "DEDICATED" */
     public String getInterconnectType() {
       return interconnectType;
     }
 
+    /** Type of interconnect. Note that "IT_PRIVATE" has been deprecated in favor of "DEDICATED" */
     public Builder setInterconnectType(String interconnectType) {
       this.interconnectType = interconnectType;
       return this;
     }
 
+    /** [Output Only] Type of the resource. Always compute#interconnect for interconnects. */
     public String getKind() {
       return kind;
     }
 
+    /** [Output Only] Type of the resource. Always compute#interconnect for interconnects. */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /**
+     * Type of link requested. This field indicates speed of each of the links in the bundle, not
+     * the entire bundle.
+     */
     public String getLinkType() {
       return linkType;
     }
 
+    /**
+     * Type of link requested. This field indicates speed of each of the links in the bundle, not
+     * the entire bundle.
+     */
     public Builder setLinkType(String linkType) {
       this.linkType = linkType;
       return this;
     }
 
+    /**
+     * URL of the InterconnectLocation object that represents where this connection is to be
+     * provisioned.
+     */
     public String getLocation() {
       return location;
     }
 
+    /**
+     * URL of the InterconnectLocation object that represents where this connection is to be
+     * provisioned.
+     */
     public Builder setLocation(String location) {
       this.location = location;
       return this;
     }
 
+    /**
+     * Name of the resource. Provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public String getName() {
       return name;
     }
 
+    /**
+     * Name of the resource. Provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /**
+     * Email address to contact the customer NOC for operations and maintenance notifications
+     * regarding this Interconnect. If specified, this will be used for notifications in addition to
+     * all other forms described, such as Stackdriver logs alerting and Cloud Notifications.
+     */
     public String getNocContactEmail() {
       return nocContactEmail;
     }
 
+    /**
+     * Email address to contact the customer NOC for operations and maintenance notifications
+     * regarding this Interconnect. If specified, this will be used for notifications in addition to
+     * all other forms described, such as Stackdriver logs alerting and Cloud Notifications.
+     */
     public Builder setNocContactEmail(String nocContactEmail) {
       this.nocContactEmail = nocContactEmail;
       return this;
     }
 
+    /** [Output Only] The current status of whether or not this Interconnect is functional. */
     public String getOperationalStatus() {
       return operationalStatus;
     }
 
+    /** [Output Only] The current status of whether or not this Interconnect is functional. */
     public Builder setOperationalStatus(String operationalStatus) {
       this.operationalStatus = operationalStatus;
       return this;
     }
 
+    /**
+     * [Output Only] IP address configured on the customer side of the Interconnect link. The
+     * customer should configure this IP address during turnup when prompted by Google NOC. This can
+     * be used only for ping tests.
+     */
     public String getPeerIpAddress() {
       return peerIpAddress;
     }
 
+    /**
+     * [Output Only] IP address configured on the customer side of the Interconnect link. The
+     * customer should configure this IP address during turnup when prompted by Google NOC. This can
+     * be used only for ping tests.
+     */
     public Builder setPeerIpAddress(String peerIpAddress) {
       this.peerIpAddress = peerIpAddress;
       return this;
     }
 
+    /** [Output Only] Number of links actually provisioned in this interconnect. */
     public Integer getProvisionedLinkCount() {
       return provisionedLinkCount;
     }
 
+    /** [Output Only] Number of links actually provisioned in this interconnect. */
     public Builder setProvisionedLinkCount(Integer provisionedLinkCount) {
       this.provisionedLinkCount = provisionedLinkCount;
       return this;
     }
 
+    /** Target number of physical links in the link bundle, as requested by the customer. */
     public Integer getRequestedLinkCount() {
       return requestedLinkCount;
     }
 
+    /** Target number of physical links in the link bundle, as requested by the customer. */
     public Builder setRequestedLinkCount(Integer requestedLinkCount) {
       this.requestedLinkCount = requestedLinkCount;
       return this;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /** [Output Only] The current state of whether or not this Interconnect is functional. */
     public String getState() {
       return state;
     }
 
+    /** [Output Only] The current state of whether or not this Interconnect is functional. */
     public Builder setState(String state) {
       this.state = state;
       return this;

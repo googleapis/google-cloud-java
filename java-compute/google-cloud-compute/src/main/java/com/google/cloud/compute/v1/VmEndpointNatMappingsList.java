@@ -25,6 +25,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Contains a list of VmEndpointNatMappings. */
 public final class VmEndpointNatMappingsList implements ApiMessage {
   private final String id;
   private final String kind;
@@ -92,26 +93,42 @@ public final class VmEndpointNatMappingsList implements ApiMessage {
     return null;
   }
 
+  /**
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   */
   public String getId() {
     return id;
   }
 
+  /**
+   * [Output Only] Type of resource. Always compute#vmEndpointNatMappingsList for lists of Nat
+   * mappings of VM endpoints.
+   */
   public String getKind() {
     return kind;
   }
 
+  /**
+   * [Output Only] This token allows you to get the next page of results for list requests. If the
+   * number of results is larger than maxResults, use the nextPageToken as a value for the query
+   * parameter pageToken in the next list request. Subsequent list requests will have their own
+   * nextPageToken to continue paging through the results.
+   */
   public String getNextPageToken() {
     return nextPageToken;
   }
 
+  /** [Output Only] A list of Nat mapping information of VM endpoints. */
   public List<VmEndpointNatMappings> getResultList() {
     return result;
   }
 
+  /** [Output Only] Server-defined URL for this resource. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /** [Output Only] Informational warning message. */
   public Warning getWarning() {
     return warning;
   }
@@ -180,37 +197,67 @@ public final class VmEndpointNatMappingsList implements ApiMessage {
       this.warning = source.warning;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /**
+     * [Output Only] Type of resource. Always compute#vmEndpointNatMappingsList for lists of Nat
+     * mappings of VM endpoints.
+     */
     public String getKind() {
       return kind;
     }
 
+    /**
+     * [Output Only] Type of resource. Always compute#vmEndpointNatMappingsList for lists of Nat
+     * mappings of VM endpoints.
+     */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /**
+     * [Output Only] This token allows you to get the next page of results for list requests. If the
+     * number of results is larger than maxResults, use the nextPageToken as a value for the query
+     * parameter pageToken in the next list request. Subsequent list requests will have their own
+     * nextPageToken to continue paging through the results.
+     */
     public String getNextPageToken() {
       return nextPageToken;
     }
 
+    /**
+     * [Output Only] This token allows you to get the next page of results for list requests. If the
+     * number of results is larger than maxResults, use the nextPageToken as a value for the query
+     * parameter pageToken in the next list request. Subsequent list requests will have their own
+     * nextPageToken to continue paging through the results.
+     */
     public Builder setNextPageToken(String nextPageToken) {
       this.nextPageToken = nextPageToken;
       return this;
     }
 
+    /** [Output Only] A list of Nat mapping information of VM endpoints. */
     public List<VmEndpointNatMappings> getResultList() {
       return result;
     }
 
+    /** [Output Only] A list of Nat mapping information of VM endpoints. */
     public Builder addAllResult(List<VmEndpointNatMappings> result) {
       if (this.result == null) {
         this.result = new LinkedList<>();
@@ -219,6 +266,7 @@ public final class VmEndpointNatMappingsList implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] A list of Nat mapping information of VM endpoints. */
     public Builder addResult(VmEndpointNatMappings result) {
       if (this.result == null) {
         this.result = new LinkedList<>();
@@ -227,19 +275,23 @@ public final class VmEndpointNatMappingsList implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] Server-defined URL for this resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined URL for this resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /** [Output Only] Informational warning message. */
     public Warning getWarning() {
       return warning;
     }
 
+    /** [Output Only] Informational warning message. */
     public Builder setWarning(Warning warning) {
       this.warning = warning;
       return this;

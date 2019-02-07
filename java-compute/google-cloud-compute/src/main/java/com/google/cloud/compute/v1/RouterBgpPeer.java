@@ -120,42 +120,74 @@ public final class RouterBgpPeer implements ApiMessage {
     return null;
   }
 
+  /** User-specified flag to indicate which mode to use for advertisement. */
   public String getAdvertiseMode() {
     return advertiseMode;
   }
 
+  /**
+   * User-specified list of prefix groups to advertise in custom mode. This field can only be
+   * populated if advertise_mode is CUSTOM and overrides the list defined for the router (in Bgp
+   * message). These groups will be advertised in addition to any specified prefixes. Leave this
+   * field blank to advertise no custom groups.
+   */
   public List<String> getAdvertisedGroupsList() {
     return advertisedGroups;
   }
 
+  /**
+   * User-specified list of individual IP ranges to advertise in custom mode. This field can only be
+   * populated if advertise_mode is CUSTOM and overrides the list defined for the router (in Bgp
+   * message). These IP ranges will be advertised in addition to any specified groups. Leave this
+   * field blank to advertise no custom IP ranges.
+   */
   public List<RouterAdvertisedIpRange> getAdvertisedIpRangesList() {
     return advertisedIpRanges;
   }
 
+  /**
+   * The priority of routes advertised to this BGP peer. In the case where there is more than one
+   * matching route of maximum length, the routes with lowest priority value win.
+   */
   public Integer getAdvertisedRoutePriority() {
     return advertisedRoutePriority;
   }
 
+  /** Name of the interface the BGP peer is associated with. */
   public String getInterfaceName() {
     return interfaceName;
   }
 
+  /** IP address of the interface inside Google Cloud Platform. Only IPv4 is supported. */
   public String getIpAddress() {
     return ipAddress;
   }
 
+  /**
+   * [Output Only] The resource that configures and manages this BGP peer. MANAGED_BY_USER is the
+   * default value and can be managed by you or other users; MANAGED_BY_ATTACHMENT is a BGP peer
+   * that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment
+   * of type PARTNER. Google will automatically create, update, and delete this type of BGP peer
+   * when the PARTNER InterconnectAttachment is created, updated, or deleted.
+   */
   public String getManagementType() {
     return managementType;
   }
 
+  /** Name of this BGP peer. The name must be 1-63 characters long and comply with RFC1035. */
   public String getName() {
     return name;
   }
 
+  /**
+   * Peer BGP Autonomous System Number (ASN). For VPN use case, this value can be different for
+   * every tunnel.
+   */
   public Integer getPeerAsn() {
     return peerAsn;
   }
 
+  /** IP address of the BGP interface outside Google cloud. Only IPv4 is supported. */
   public String getPeerIpAddress() {
     return peerIpAddress;
   }
@@ -244,19 +276,33 @@ public final class RouterBgpPeer implements ApiMessage {
       this.peerIpAddress = source.peerIpAddress;
     }
 
+    /** User-specified flag to indicate which mode to use for advertisement. */
     public String getAdvertiseMode() {
       return advertiseMode;
     }
 
+    /** User-specified flag to indicate which mode to use for advertisement. */
     public Builder setAdvertiseMode(String advertiseMode) {
       this.advertiseMode = advertiseMode;
       return this;
     }
 
+    /**
+     * User-specified list of prefix groups to advertise in custom mode. This field can only be
+     * populated if advertise_mode is CUSTOM and overrides the list defined for the router (in Bgp
+     * message). These groups will be advertised in addition to any specified prefixes. Leave this
+     * field blank to advertise no custom groups.
+     */
     public List<String> getAdvertisedGroupsList() {
       return advertisedGroups;
     }
 
+    /**
+     * User-specified list of prefix groups to advertise in custom mode. This field can only be
+     * populated if advertise_mode is CUSTOM and overrides the list defined for the router (in Bgp
+     * message). These groups will be advertised in addition to any specified prefixes. Leave this
+     * field blank to advertise no custom groups.
+     */
     public Builder addAllAdvertisedGroups(List<String> advertisedGroups) {
       if (this.advertisedGroups == null) {
         this.advertisedGroups = new LinkedList<>();
@@ -265,6 +311,12 @@ public final class RouterBgpPeer implements ApiMessage {
       return this;
     }
 
+    /**
+     * User-specified list of prefix groups to advertise in custom mode. This field can only be
+     * populated if advertise_mode is CUSTOM and overrides the list defined for the router (in Bgp
+     * message). These groups will be advertised in addition to any specified prefixes. Leave this
+     * field blank to advertise no custom groups.
+     */
     public Builder addAdvertisedGroups(String advertisedGroups) {
       if (this.advertisedGroups == null) {
         this.advertisedGroups = new LinkedList<>();
@@ -273,10 +325,22 @@ public final class RouterBgpPeer implements ApiMessage {
       return this;
     }
 
+    /**
+     * User-specified list of individual IP ranges to advertise in custom mode. This field can only
+     * be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in
+     * Bgp message). These IP ranges will be advertised in addition to any specified groups. Leave
+     * this field blank to advertise no custom IP ranges.
+     */
     public List<RouterAdvertisedIpRange> getAdvertisedIpRangesList() {
       return advertisedIpRanges;
     }
 
+    /**
+     * User-specified list of individual IP ranges to advertise in custom mode. This field can only
+     * be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in
+     * Bgp message). These IP ranges will be advertised in addition to any specified groups. Leave
+     * this field blank to advertise no custom IP ranges.
+     */
     public Builder addAllAdvertisedIpRanges(List<RouterAdvertisedIpRange> advertisedIpRanges) {
       if (this.advertisedIpRanges == null) {
         this.advertisedIpRanges = new LinkedList<>();
@@ -285,6 +349,12 @@ public final class RouterBgpPeer implements ApiMessage {
       return this;
     }
 
+    /**
+     * User-specified list of individual IP ranges to advertise in custom mode. This field can only
+     * be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in
+     * Bgp message). These IP ranges will be advertised in addition to any specified groups. Leave
+     * this field blank to advertise no custom IP ranges.
+     */
     public Builder addAdvertisedIpRanges(RouterAdvertisedIpRange advertisedIpRanges) {
       if (this.advertisedIpRanges == null) {
         this.advertisedIpRanges = new LinkedList<>();
@@ -293,64 +363,104 @@ public final class RouterBgpPeer implements ApiMessage {
       return this;
     }
 
+    /**
+     * The priority of routes advertised to this BGP peer. In the case where there is more than one
+     * matching route of maximum length, the routes with lowest priority value win.
+     */
     public Integer getAdvertisedRoutePriority() {
       return advertisedRoutePriority;
     }
 
+    /**
+     * The priority of routes advertised to this BGP peer. In the case where there is more than one
+     * matching route of maximum length, the routes with lowest priority value win.
+     */
     public Builder setAdvertisedRoutePriority(Integer advertisedRoutePriority) {
       this.advertisedRoutePriority = advertisedRoutePriority;
       return this;
     }
 
+    /** Name of the interface the BGP peer is associated with. */
     public String getInterfaceName() {
       return interfaceName;
     }
 
+    /** Name of the interface the BGP peer is associated with. */
     public Builder setInterfaceName(String interfaceName) {
       this.interfaceName = interfaceName;
       return this;
     }
 
+    /** IP address of the interface inside Google Cloud Platform. Only IPv4 is supported. */
     public String getIpAddress() {
       return ipAddress;
     }
 
+    /** IP address of the interface inside Google Cloud Platform. Only IPv4 is supported. */
     public Builder setIpAddress(String ipAddress) {
       this.ipAddress = ipAddress;
       return this;
     }
 
+    /**
+     * [Output Only] The resource that configures and manages this BGP peer. MANAGED_BY_USER is the
+     * default value and can be managed by you or other users; MANAGED_BY_ATTACHMENT is a BGP peer
+     * that is configured and managed by Cloud Interconnect, specifically by an
+     * InterconnectAttachment of type PARTNER. Google will automatically create, update, and delete
+     * this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or
+     * deleted.
+     */
     public String getManagementType() {
       return managementType;
     }
 
+    /**
+     * [Output Only] The resource that configures and manages this BGP peer. MANAGED_BY_USER is the
+     * default value and can be managed by you or other users; MANAGED_BY_ATTACHMENT is a BGP peer
+     * that is configured and managed by Cloud Interconnect, specifically by an
+     * InterconnectAttachment of type PARTNER. Google will automatically create, update, and delete
+     * this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or
+     * deleted.
+     */
     public Builder setManagementType(String managementType) {
       this.managementType = managementType;
       return this;
     }
 
+    /** Name of this BGP peer. The name must be 1-63 characters long and comply with RFC1035. */
     public String getName() {
       return name;
     }
 
+    /** Name of this BGP peer. The name must be 1-63 characters long and comply with RFC1035. */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /**
+     * Peer BGP Autonomous System Number (ASN). For VPN use case, this value can be different for
+     * every tunnel.
+     */
     public Integer getPeerAsn() {
       return peerAsn;
     }
 
+    /**
+     * Peer BGP Autonomous System Number (ASN). For VPN use case, this value can be different for
+     * every tunnel.
+     */
     public Builder setPeerAsn(Integer peerAsn) {
       this.peerAsn = peerAsn;
       return this;
     }
 
+    /** IP address of the BGP interface outside Google cloud. Only IPv4 is supported. */
     public String getPeerIpAddress() {
       return peerIpAddress;
     }
 
+    /** IP address of the BGP interface outside Google cloud. Only IPv4 is supported. */
     public Builder setPeerIpAddress(String peerIpAddress) {
       this.peerIpAddress = peerIpAddress;
       return this;

@@ -62,10 +62,12 @@ public final class MachineTypesScopedList implements ApiMessage {
     return null;
   }
 
+  /** [Output Only] A list of machine types contained in this scope. */
   public List<MachineType> getMachineTypesList() {
     return machineTypes;
   }
 
+  /** [Output Only] An informational warning that appears when the machine types list is empty. */
   public Warning getWarning() {
     return warning;
   }
@@ -114,10 +116,12 @@ public final class MachineTypesScopedList implements ApiMessage {
       this.warning = source.warning;
     }
 
+    /** [Output Only] A list of machine types contained in this scope. */
     public List<MachineType> getMachineTypesList() {
       return machineTypes;
     }
 
+    /** [Output Only] A list of machine types contained in this scope. */
     public Builder addAllMachineTypes(List<MachineType> machineTypes) {
       if (this.machineTypes == null) {
         this.machineTypes = new LinkedList<>();
@@ -126,6 +130,7 @@ public final class MachineTypesScopedList implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] A list of machine types contained in this scope. */
     public Builder addMachineTypes(MachineType machineTypes) {
       if (this.machineTypes == null) {
         this.machineTypes = new LinkedList<>();
@@ -134,10 +139,12 @@ public final class MachineTypesScopedList implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] An informational warning that appears when the machine types list is empty. */
     public Warning getWarning() {
       return warning;
     }
 
+    /** [Output Only] An informational warning that appears when the machine types list is empty. */
     public Builder setWarning(Warning warning) {
       this.warning = warning;
       return this;

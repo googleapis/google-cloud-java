@@ -55,6 +55,7 @@ public final class InstancesSetMinCpuPlatformRequest implements ApiMessage {
     return null;
   }
 
+  /** Minimum cpu/platform this instance should be started at. */
   public String getMinCpuPlatform() {
     return minCpuPlatform;
   }
@@ -98,10 +99,12 @@ public final class InstancesSetMinCpuPlatformRequest implements ApiMessage {
       this.minCpuPlatform = source.minCpuPlatform;
     }
 
+    /** Minimum cpu/platform this instance should be started at. */
     public String getMinCpuPlatform() {
       return minCpuPlatform;
     }
 
+    /** Minimum cpu/platform this instance should be started at. */
     public Builder setMinCpuPlatform(String minCpuPlatform) {
       this.minCpuPlatform = minCpuPlatform;
       return this;

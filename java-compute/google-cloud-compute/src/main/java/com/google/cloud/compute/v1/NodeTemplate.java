@@ -25,6 +25,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** A Node Template resource. */
 public final class NodeTemplate implements ApiMessage {
   private final String creationTimestamp;
   private final String description;
@@ -134,50 +135,81 @@ public final class NodeTemplate implements ApiMessage {
     return null;
   }
 
+  /** [Output Only] Creation timestamp in RFC3339 text format. */
   public String getCreationTimestamp() {
     return creationTimestamp;
   }
 
+  /**
+   * An optional description of this resource. Provide this property when you create the resource.
+   */
   public String getDescription() {
     return description;
   }
 
+  /**
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   */
   public String getId() {
     return id;
   }
 
+  /** [Output Only] The type of the resource. Always compute#nodeTemplate for node templates. */
   public String getKind() {
     return kind;
   }
 
+  /**
+   * The name of the resource, provided by the client when initially creating the resource. The
+   * resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name
+   * must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?`
+   * which means the first character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   */
   public String getName() {
     return name;
   }
 
+  /** Labels to use for node affinity, which will be used in instance scheduling. */
   public Map<String, String> getNodeAffinityLabelsMap() {
     return nodeAffinityLabels;
   }
 
+  /** The node type to use for nodes group that are created from this template. */
   public String getNodeType() {
     return nodeType;
   }
 
+  /**
+   * The flexible properties of the desired node type. Node groups that use this node template will
+   * create nodes of a type that matches these properties.
+   *
+   * <p>This field is mutually exclusive with the node_type property; you can only define one or the
+   * other, but not both.
+   */
   public NodeTemplateNodeTypeFlexibility getNodeTypeFlexibility() {
     return nodeTypeFlexibility;
   }
 
+  /** [Output Only] The name of the region where the node template resides, such as us-central1. */
   public String getRegion() {
     return region;
   }
 
+  /** [Output Only] Server-defined URL for the resource. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /**
+   * [Output Only] The status of the node template. One of the following values: CREATING, READY,
+   * and DELETING.
+   */
   public String getStatus() {
     return status;
   }
 
+  /** [Output Only] An optional, human-readable explanation of the status. */
   public String getStatusMessage() {
     return statusMessage;
   }
@@ -276,109 +308,179 @@ public final class NodeTemplate implements ApiMessage {
       this.statusMessage = source.statusMessage;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public String getCreationTimestamp() {
       return creationTimestamp;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public String getDescription() {
       return description;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /** [Output Only] The type of the resource. Always compute#nodeTemplate for node templates. */
     public String getKind() {
       return kind;
     }
 
+    /** [Output Only] The type of the resource. Always compute#nodeTemplate for node templates. */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /**
+     * The name of the resource, provided by the client when initially creating the resource. The
+     * resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name
+     * must be 1-63 characters long and match the regular expression
+     * `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first character must be a lowercase letter,
+     * and all following characters must be a dash, lowercase letter, or digit, except the last
+     * character, which cannot be a dash.
+     */
     public String getName() {
       return name;
     }
 
+    /**
+     * The name of the resource, provided by the client when initially creating the resource. The
+     * resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name
+     * must be 1-63 characters long and match the regular expression
+     * `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first character must be a lowercase letter,
+     * and all following characters must be a dash, lowercase letter, or digit, except the last
+     * character, which cannot be a dash.
+     */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /** Labels to use for node affinity, which will be used in instance scheduling. */
     public Map<String, String> getNodeAffinityLabelsMap() {
       return nodeAffinityLabels;
     }
 
+    /** Labels to use for node affinity, which will be used in instance scheduling. */
     public Builder putAllNodeAffinityLabels(Map<String, String> nodeAffinityLabels) {
       this.nodeAffinityLabels = nodeAffinityLabels;
       return this;
     }
 
+    /** The node type to use for nodes group that are created from this template. */
     public String getNodeType() {
       return nodeType;
     }
 
+    /** The node type to use for nodes group that are created from this template. */
     public Builder setNodeType(String nodeType) {
       this.nodeType = nodeType;
       return this;
     }
 
+    /**
+     * The flexible properties of the desired node type. Node groups that use this node template
+     * will create nodes of a type that matches these properties.
+     *
+     * <p>This field is mutually exclusive with the node_type property; you can only define one or
+     * the other, but not both.
+     */
     public NodeTemplateNodeTypeFlexibility getNodeTypeFlexibility() {
       return nodeTypeFlexibility;
     }
 
+    /**
+     * The flexible properties of the desired node type. Node groups that use this node template
+     * will create nodes of a type that matches these properties.
+     *
+     * <p>This field is mutually exclusive with the node_type property; you can only define one or
+     * the other, but not both.
+     */
     public Builder setNodeTypeFlexibility(NodeTemplateNodeTypeFlexibility nodeTypeFlexibility) {
       this.nodeTypeFlexibility = nodeTypeFlexibility;
       return this;
     }
 
+    /**
+     * [Output Only] The name of the region where the node template resides, such as us-central1.
+     */
     public String getRegion() {
       return region;
     }
 
+    /**
+     * [Output Only] The name of the region where the node template resides, such as us-central1.
+     */
     public Builder setRegion(String region) {
       this.region = region;
       return this;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /**
+     * [Output Only] The status of the node template. One of the following values: CREATING, READY,
+     * and DELETING.
+     */
     public String getStatus() {
       return status;
     }
 
+    /**
+     * [Output Only] The status of the node template. One of the following values: CREATING, READY,
+     * and DELETING.
+     */
     public Builder setStatus(String status) {
       this.status = status;
       return this;
     }
 
+    /** [Output Only] An optional, human-readable explanation of the status. */
     public String getStatusMessage() {
       return statusMessage;
     }
 
+    /** [Output Only] An optional, human-readable explanation of the status. */
     public Builder setStatusMessage(String statusMessage) {
       this.statusMessage = statusMessage;
       return this;

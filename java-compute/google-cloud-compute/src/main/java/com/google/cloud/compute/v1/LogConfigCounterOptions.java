@@ -24,6 +24,27 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Increment a streamz counter with the specified metric and field names.
+ *
+ * <p>Metric names should start with a '/', generally be lowercase-only, and end in "_count". Field
+ * names should not contain an initial slash. The actual exported metric names will have
+ * "/iam/policy" prepended.
+ *
+ * <p>Field names correspond to IAM request parameters and field values are their respective values.
+ *
+ * <p>Supported field names: - "authority", which is "[token]" if IAMContext.token is present,
+ * otherwise the value of IAMContext.authority_selector if present, and otherwise a representation
+ * of IAMContext.principal; or - "iam_principal", a representation of IAMContext.principal even if a
+ * token or authority selector is present; or - "" (empty string), resulting in a counter with no
+ * fields.
+ *
+ * <p>Examples: counter { metric: "/debug_access_count" field: "iam_principal" } ==&gt; increment
+ * counter /iam/policy/backend_debug_access_count {iam_principal=[value of IAMContext.principal]}
+ *
+ * <p>At this time we do not support multiple field names (though this may be supported in the
+ * future).
+ */
 public final class LogConfigCounterOptions implements ApiMessage {
   private final String field;
   private final String metric;
@@ -61,10 +82,12 @@ public final class LogConfigCounterOptions implements ApiMessage {
     return null;
   }
 
+  /** The field value to attribute. */
   public String getField() {
     return field;
   }
 
+  /** The metric to update. */
   public String getMetric() {
     return metric;
   }
@@ -113,19 +136,23 @@ public final class LogConfigCounterOptions implements ApiMessage {
       this.metric = source.metric;
     }
 
+    /** The field value to attribute. */
     public String getField() {
       return field;
     }
 
+    /** The field value to attribute. */
     public Builder setField(String field) {
       this.field = field;
       return this;
     }
 
+    /** The metric to update. */
     public String getMetric() {
       return metric;
     }
 
+    /** The metric to update. */
     public Builder setMetric(String metric) {
       this.metric = metric;
       return this;

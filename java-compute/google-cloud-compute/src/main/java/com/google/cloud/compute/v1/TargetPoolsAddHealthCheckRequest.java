@@ -56,6 +56,7 @@ public final class TargetPoolsAddHealthCheckRequest implements ApiMessage {
     return null;
   }
 
+  /** The HttpHealthCheck to add to the target pool. */
   public List<HealthCheckReference> getHealthChecksList() {
     return healthChecks;
   }
@@ -99,10 +100,12 @@ public final class TargetPoolsAddHealthCheckRequest implements ApiMessage {
       this.healthChecks = source.healthChecks;
     }
 
+    /** The HttpHealthCheck to add to the target pool. */
     public List<HealthCheckReference> getHealthChecksList() {
       return healthChecks;
     }
 
+    /** The HttpHealthCheck to add to the target pool. */
     public Builder addAllHealthChecks(List<HealthCheckReference> healthChecks) {
       if (this.healthChecks == null) {
         this.healthChecks = new LinkedList<>();
@@ -111,6 +114,7 @@ public final class TargetPoolsAddHealthCheckRequest implements ApiMessage {
       return this;
     }
 
+    /** The HttpHealthCheck to add to the target pool. */
     public Builder addHealthChecks(HealthCheckReference healthChecks) {
       if (this.healthChecks == null) {
         this.healthChecks = new LinkedList<>();

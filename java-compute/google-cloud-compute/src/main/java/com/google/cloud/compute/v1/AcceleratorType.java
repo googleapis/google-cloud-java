@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * An Accelerator Type resource. (== resource_for beta.acceleratorTypes ==) (== resource_for
+ * v1.acceleratorTypes ==)
+ */
 public final class AcceleratorType implements ApiMessage {
   private final String creationTimestamp;
   private final DeprecationStatus deprecated;
@@ -112,38 +116,55 @@ public final class AcceleratorType implements ApiMessage {
     return null;
   }
 
+  /** [Output Only] Creation timestamp in RFC3339 text format. */
   public String getCreationTimestamp() {
     return creationTimestamp;
   }
 
+  /** [Output Only] The deprecation status associated with this accelerator type. */
   public DeprecationStatus getDeprecated() {
     return deprecated;
   }
 
+  /** [Output Only] An optional textual description of the resource. */
   public String getDescription() {
     return description;
   }
 
+  /**
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   */
   public String getId() {
     return id;
   }
 
+  /**
+   * [Output Only] The type of the resource. Always compute#acceleratorType for accelerator types.
+   */
   public String getKind() {
     return kind;
   }
 
+  /** [Output Only] Maximum accelerator cards allowed per instance. */
   public Integer getMaximumCardsPerInstance() {
     return maximumCardsPerInstance;
   }
 
+  /** [Output Only] Name of the resource. */
   public String getName() {
     return name;
   }
 
+  /** [Output Only] Server-defined fully-qualified URL for this resource. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /**
+   * [Output Only] The name of the zone where the accelerator type resides, such as us-central1-a.
+   * You must specify this field as part of the HTTP request URL. It is not settable as a field in
+   * the request body.
+   */
   public String getZone() {
     return zone;
   }
@@ -227,82 +248,118 @@ public final class AcceleratorType implements ApiMessage {
       this.zone = source.zone;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public String getCreationTimestamp() {
       return creationTimestamp;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
+    /** [Output Only] The deprecation status associated with this accelerator type. */
     public DeprecationStatus getDeprecated() {
       return deprecated;
     }
 
+    /** [Output Only] The deprecation status associated with this accelerator type. */
     public Builder setDeprecated(DeprecationStatus deprecated) {
       this.deprecated = deprecated;
       return this;
     }
 
+    /** [Output Only] An optional textual description of the resource. */
     public String getDescription() {
       return description;
     }
 
+    /** [Output Only] An optional textual description of the resource. */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /**
+     * [Output Only] The type of the resource. Always compute#acceleratorType for accelerator types.
+     */
     public String getKind() {
       return kind;
     }
 
+    /**
+     * [Output Only] The type of the resource. Always compute#acceleratorType for accelerator types.
+     */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /** [Output Only] Maximum accelerator cards allowed per instance. */
     public Integer getMaximumCardsPerInstance() {
       return maximumCardsPerInstance;
     }
 
+    /** [Output Only] Maximum accelerator cards allowed per instance. */
     public Builder setMaximumCardsPerInstance(Integer maximumCardsPerInstance) {
       this.maximumCardsPerInstance = maximumCardsPerInstance;
       return this;
     }
 
+    /** [Output Only] Name of the resource. */
     public String getName() {
       return name;
     }
 
+    /** [Output Only] Name of the resource. */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /** [Output Only] Server-defined fully-qualified URL for this resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined fully-qualified URL for this resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /**
+     * [Output Only] The name of the zone where the accelerator type resides, such as us-central1-a.
+     * You must specify this field as part of the HTTP request URL. It is not settable as a field in
+     * the request body.
+     */
     public String getZone() {
       return zone;
     }
 
+    /**
+     * [Output Only] The name of the zone where the accelerator type resides, such as us-central1-a.
+     * You must specify this field as part of the HTTP request URL. It is not settable as a field in
+     * the request body.
+     */
     public Builder setZone(String zone) {
       this.zone = zone;
       return this;

@@ -25,6 +25,17 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Represents a Commitment resource. Creating a Commitment resource means that you are purchasing a
+ * committed use contract with an explicit start and end time. You can create commitments based on
+ * vCPUs and memory usage and receive discounted rates. For full details, read Signing Up for
+ * Committed Use Discounts.
+ *
+ * <p>Committed use discounts are subject to Google Cloud Platform's Service Specific Terms. By
+ * purchasing a committed use discount, you agree to these terms. Committed use discounts will not
+ * renew, so you must purchase a new commitment to continue receiving discounts. (== resource_for
+ * beta.commitments ==) (== resource_for v1.commitments ==)
+ */
 public final class Commitment implements ApiMessage {
   private final String creationTimestamp;
   private final String description;
@@ -141,54 +152,86 @@ public final class Commitment implements ApiMessage {
     return null;
   }
 
+  /** [Output Only] Creation timestamp in RFC3339 text format. */
   public String getCreationTimestamp() {
     return creationTimestamp;
   }
 
+  /**
+   * An optional description of this resource. Provide this property when you create the resource.
+   */
   public String getDescription() {
     return description;
   }
 
+  /** [Output Only] Commitment end time in RFC3339 text format. */
   public String getEndTimestamp() {
     return endTimestamp;
   }
 
+  /**
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   */
   public String getId() {
     return id;
   }
 
+  /** [Output Only] Type of the resource. Always compute#commitment for commitments. */
   public String getKind() {
     return kind;
   }
 
+  /**
+   * Name of the resource. Provided by the client when the resource is created. The name must be
+   * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+   * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be a dash, lowercase
+   * letter, or digit, except the last character, which cannot be a dash.
+   */
   public String getName() {
     return name;
   }
 
+  /**
+   * The plan for this commitment, which determines duration and discount rate. The currently
+   * supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+   */
   public String getPlan() {
     return plan;
   }
 
+  /** [Output Only] URL of the region where this commitment may be used. */
   public String getRegion() {
     return region;
   }
 
+  /**
+   * A list of commitment amounts for particular resources. Note that VCPU and MEMORY resource
+   * commitments must occur together.
+   */
   public List<ResourceCommitment> getResourcesList() {
     return resources;
   }
 
+  /** [Output Only] Server-defined URL for the resource. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /** [Output Only] Commitment start time in RFC3339 text format. */
   public String getStartTimestamp() {
     return startTimestamp;
   }
 
+  /**
+   * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has
+   * an end date defined). One of the following values: NOT_YET_ACTIVE, ACTIVE, EXPIRED.
+   */
   public String getStatus() {
     return status;
   }
 
+  /** [Output Only] An optional, human-readable explanation of the status. */
   public String getStatusMessage() {
     return statusMessage;
   }
@@ -292,82 +335,134 @@ public final class Commitment implements ApiMessage {
       this.statusMessage = source.statusMessage;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public String getCreationTimestamp() {
       return creationTimestamp;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public String getDescription() {
       return description;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /** [Output Only] Commitment end time in RFC3339 text format. */
     public String getEndTimestamp() {
       return endTimestamp;
     }
 
+    /** [Output Only] Commitment end time in RFC3339 text format. */
     public Builder setEndTimestamp(String endTimestamp) {
       this.endTimestamp = endTimestamp;
       return this;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /** [Output Only] Type of the resource. Always compute#commitment for commitments. */
     public String getKind() {
       return kind;
     }
 
+    /** [Output Only] Type of the resource. Always compute#commitment for commitments. */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /**
+     * Name of the resource. Provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public String getName() {
       return name;
     }
 
+    /**
+     * Name of the resource. Provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /**
+     * The plan for this commitment, which determines duration and discount rate. The currently
+     * supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+     */
     public String getPlan() {
       return plan;
     }
 
+    /**
+     * The plan for this commitment, which determines duration and discount rate. The currently
+     * supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+     */
     public Builder setPlan(String plan) {
       this.plan = plan;
       return this;
     }
 
+    /** [Output Only] URL of the region where this commitment may be used. */
     public String getRegion() {
       return region;
     }
 
+    /** [Output Only] URL of the region where this commitment may be used. */
     public Builder setRegion(String region) {
       this.region = region;
       return this;
     }
 
+    /**
+     * A list of commitment amounts for particular resources. Note that VCPU and MEMORY resource
+     * commitments must occur together.
+     */
     public List<ResourceCommitment> getResourcesList() {
       return resources;
     }
 
+    /**
+     * A list of commitment amounts for particular resources. Note that VCPU and MEMORY resource
+     * commitments must occur together.
+     */
     public Builder addAllResources(List<ResourceCommitment> resources) {
       if (this.resources == null) {
         this.resources = new LinkedList<>();
@@ -376,6 +471,10 @@ public final class Commitment implements ApiMessage {
       return this;
     }
 
+    /**
+     * A list of commitment amounts for particular resources. Note that VCPU and MEMORY resource
+     * commitments must occur together.
+     */
     public Builder addResources(ResourceCommitment resources) {
       if (this.resources == null) {
         this.resources = new LinkedList<>();
@@ -384,37 +483,51 @@ public final class Commitment implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /** [Output Only] Commitment start time in RFC3339 text format. */
     public String getStartTimestamp() {
       return startTimestamp;
     }
 
+    /** [Output Only] Commitment start time in RFC3339 text format. */
     public Builder setStartTimestamp(String startTimestamp) {
       this.startTimestamp = startTimestamp;
       return this;
     }
 
+    /**
+     * [Output Only] Status of the commitment with regards to eventual expiration (each commitment
+     * has an end date defined). One of the following values: NOT_YET_ACTIVE, ACTIVE, EXPIRED.
+     */
     public String getStatus() {
       return status;
     }
 
+    /**
+     * [Output Only] Status of the commitment with regards to eventual expiration (each commitment
+     * has an end date defined). One of the following values: NOT_YET_ACTIVE, ACTIVE, EXPIRED.
+     */
     public Builder setStatus(String status) {
       this.status = status;
       return this;
     }
 
+    /** [Output Only] An optional, human-readable explanation of the status. */
     public String getStatusMessage() {
       return statusMessage;
     }
 
+    /** [Output Only] An optional, human-readable explanation of the status. */
     public Builder setStatusMessage(String statusMessage) {
       this.statusMessage = statusMessage;
       return this;

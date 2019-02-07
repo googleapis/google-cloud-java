@@ -68,14 +68,27 @@ public final class GlobalSetPolicyRequest implements ApiMessage {
     return null;
   }
 
+  /**
+   * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify
+   * bindings.
+   */
   public List<Binding> getBindingsList() {
     return bindings;
   }
 
+  /**
+   * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify
+   * the etag.
+   */
   public String getEtag() {
     return etag;
   }
 
+  /**
+   * REQUIRED: The complete policy to be applied to the 'resource'. The size of the policy is
+   * limited to a few 10s of KB. An empty policy is in general a valid policy but certain services
+   * (like Projects) might reject them.
+   */
   public Policy getPolicy() {
     return policy;
   }
@@ -129,10 +142,18 @@ public final class GlobalSetPolicyRequest implements ApiMessage {
       this.policy = source.policy;
     }
 
+    /**
+     * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to
+     * specify bindings.
+     */
     public List<Binding> getBindingsList() {
       return bindings;
     }
 
+    /**
+     * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to
+     * specify bindings.
+     */
     public Builder addAllBindings(List<Binding> bindings) {
       if (this.bindings == null) {
         this.bindings = new LinkedList<>();
@@ -141,6 +162,10 @@ public final class GlobalSetPolicyRequest implements ApiMessage {
       return this;
     }
 
+    /**
+     * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to
+     * specify bindings.
+     */
     public Builder addBindings(Binding bindings) {
       if (this.bindings == null) {
         this.bindings = new LinkedList<>();
@@ -149,19 +174,37 @@ public final class GlobalSetPolicyRequest implements ApiMessage {
       return this;
     }
 
+    /**
+     * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to
+     * specify the etag.
+     */
     public String getEtag() {
       return etag;
     }
 
+    /**
+     * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to
+     * specify the etag.
+     */
     public Builder setEtag(String etag) {
       this.etag = etag;
       return this;
     }
 
+    /**
+     * REQUIRED: The complete policy to be applied to the 'resource'. The size of the policy is
+     * limited to a few 10s of KB. An empty policy is in general a valid policy but certain services
+     * (like Projects) might reject them.
+     */
     public Policy getPolicy() {
       return policy;
     }
 
+    /**
+     * REQUIRED: The complete policy to be applied to the 'resource'. The size of the policy is
+     * limited to a few 10s of KB. An empty policy is in general a valid policy but certain services
+     * (like Projects) might reject them.
+     */
     public Builder setPolicy(Policy policy) {
       this.policy = policy;
       return this;

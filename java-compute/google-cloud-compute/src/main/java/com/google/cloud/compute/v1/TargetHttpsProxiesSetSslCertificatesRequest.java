@@ -56,6 +56,10 @@ public final class TargetHttpsProxiesSetSslCertificatesRequest implements ApiMes
     return null;
   }
 
+  /**
+   * New set of SslCertificate resources to associate with this TargetHttpsProxy resource. Currently
+   * exactly one SslCertificate resource must be specified.
+   */
   public List<String> getSslCertificatesList() {
     return sslCertificates;
   }
@@ -99,10 +103,18 @@ public final class TargetHttpsProxiesSetSslCertificatesRequest implements ApiMes
       this.sslCertificates = source.sslCertificates;
     }
 
+    /**
+     * New set of SslCertificate resources to associate with this TargetHttpsProxy resource.
+     * Currently exactly one SslCertificate resource must be specified.
+     */
     public List<String> getSslCertificatesList() {
       return sslCertificates;
     }
 
+    /**
+     * New set of SslCertificate resources to associate with this TargetHttpsProxy resource.
+     * Currently exactly one SslCertificate resource must be specified.
+     */
     public Builder addAllSslCertificates(List<String> sslCertificates) {
       if (this.sslCertificates == null) {
         this.sslCertificates = new LinkedList<>();
@@ -111,6 +123,10 @@ public final class TargetHttpsProxiesSetSslCertificatesRequest implements ApiMes
       return this;
     }
 
+    /**
+     * New set of SslCertificate resources to associate with this TargetHttpsProxy resource.
+     * Currently exactly one SslCertificate resource must be specified.
+     */
     public Builder addSslCertificates(String sslCertificates) {
       if (this.sslCertificates == null) {
         this.sslCertificates = new LinkedList<>();

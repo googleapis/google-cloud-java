@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Configuration parameters of autoscaling based on load balancing. */
 public final class AutoscalingPolicyLoadBalancingUtilization implements ApiMessage {
   private final Double utilizationTarget;
 
@@ -55,6 +56,10 @@ public final class AutoscalingPolicyLoadBalancingUtilization implements ApiMessa
     return null;
   }
 
+  /**
+   * Fraction of backend capacity utilization (set in HTTP(S) load balancing configuration) that
+   * autoscaler should maintain. Must be a positive float value. If not defined, the default is 0.8.
+   */
   public Double getUtilizationTarget() {
     return utilizationTarget;
   }
@@ -98,10 +103,20 @@ public final class AutoscalingPolicyLoadBalancingUtilization implements ApiMessa
       this.utilizationTarget = source.utilizationTarget;
     }
 
+    /**
+     * Fraction of backend capacity utilization (set in HTTP(S) load balancing configuration) that
+     * autoscaler should maintain. Must be a positive float value. If not defined, the default is
+     * 0.8.
+     */
     public Double getUtilizationTarget() {
       return utilizationTarget;
     }
 
+    /**
+     * Fraction of backend capacity utilization (set in HTTP(S) load balancing configuration) that
+     * autoscaler should maintain. Must be a positive float value. If not defined, the default is
+     * 0.8.
+     */
     public Builder setUtilizationTarget(Double utilizationTarget) {
       this.utilizationTarget = utilizationTarget;
       return this;

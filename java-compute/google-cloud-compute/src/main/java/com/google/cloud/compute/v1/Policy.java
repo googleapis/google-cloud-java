@@ -25,6 +25,30 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Defines an Identity and Access Management (IAM) policy. It is used to specify access control
+ * policies for Cloud Platform resources.
+ *
+ * <p>A `Policy` consists of a list of `bindings`. A `binding` binds a list of `members` to a
+ * `role`, where the members can be user accounts, Google groups, Google domains, and service
+ * accounts. A `role` is a named list of permissions defined by IAM.
+ *
+ * <p>&#42;&#42;JSON Example&#42;&#42;
+ *
+ * <p>{ "bindings": [ { "role": "roles/owner", "members": [ "user:mike{@literal @}example.com",
+ * "group:admins{@literal @}example.com", "domain:google.com",
+ * "serviceAccount:my-other-app{@literal @}appspot.gserviceaccount.com" ] }, { "role":
+ * "roles/viewer", "members": ["user:sean{@literal @}example.com"] } ] }
+ *
+ * <p>&#42;&#42;YAML Example&#42;&#42;
+ *
+ * <p>bindings: - members: - user:mike{@literal @}example.com - group:admins{@literal @}example.com
+ * - domain:google.com - serviceAccount:my-other-app{@literal @}appspot.gserviceaccount.com role:
+ * roles/owner - members: - user:sean{@literal @}example.com role: roles/viewer
+ *
+ * <p>For a description of IAM and its features, see the [IAM developer's
+ * guide](https://cloud.google.com/iam/docs).
+ */
 public final class Policy implements ApiMessage {
   private final List<AuditConfig> auditConfigs;
   private final List<Binding> bindings;
@@ -92,14 +116,29 @@ public final class Policy implements ApiMessage {
     return null;
   }
 
+  /** Specifies cloud audit logging configuration for this policy. */
   public List<AuditConfig> getAuditConfigsList() {
     return auditConfigs;
   }
 
+  /**
+   * Associates a list of `members` to a `role`. `bindings` with no members will result in an error.
+   */
   public List<Binding> getBindingsList() {
     return bindings;
   }
 
+  /**
+   * `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates
+   * of a policy from overwriting each other. It is strongly suggested that systems make use of the
+   * `etag` in the read-modify-write cycle to perform policy updates in order to avoid race
+   * conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected
+   * to put that etag in the request to `setIamPolicy` to ensure that their change will be applied
+   * to the same version of the policy.
+   *
+   * <p>If no `etag` is provided in the call to `setIamPolicy`, then the existing policy is
+   * overwritten blindly.
+   */
   public String getEtag() {
     return etag;
   }
@@ -108,10 +147,18 @@ public final class Policy implements ApiMessage {
     return iamOwned;
   }
 
+  /**
+   * If more than one rule is specified, the rules are applied in the following manner: - All
+   * matching LOG rules are always applied. - If any DENY/DENY_WITH_LOG rule matches, permission is
+   * denied. Logging will be applied if one or more matching rule requires logging. - Otherwise, if
+   * any ALLOW/ALLOW_WITH_LOG rule matches, permission is granted. Logging will be applied if one or
+   * more matching rule requires logging. - Otherwise, if no rule applies, permission is denied.
+   */
   public List<Rule> getRulesList() {
     return rules;
   }
 
+  /** Deprecated. */
   public Integer getVersion() {
     return version;
   }
@@ -180,10 +227,12 @@ public final class Policy implements ApiMessage {
       this.version = source.version;
     }
 
+    /** Specifies cloud audit logging configuration for this policy. */
     public List<AuditConfig> getAuditConfigsList() {
       return auditConfigs;
     }
 
+    /** Specifies cloud audit logging configuration for this policy. */
     public Builder addAllAuditConfigs(List<AuditConfig> auditConfigs) {
       if (this.auditConfigs == null) {
         this.auditConfigs = new LinkedList<>();
@@ -192,6 +241,7 @@ public final class Policy implements ApiMessage {
       return this;
     }
 
+    /** Specifies cloud audit logging configuration for this policy. */
     public Builder addAuditConfigs(AuditConfig auditConfigs) {
       if (this.auditConfigs == null) {
         this.auditConfigs = new LinkedList<>();
@@ -200,10 +250,18 @@ public final class Policy implements ApiMessage {
       return this;
     }
 
+    /**
+     * Associates a list of `members` to a `role`. `bindings` with no members will result in an
+     * error.
+     */
     public List<Binding> getBindingsList() {
       return bindings;
     }
 
+    /**
+     * Associates a list of `members` to a `role`. `bindings` with no members will result in an
+     * error.
+     */
     public Builder addAllBindings(List<Binding> bindings) {
       if (this.bindings == null) {
         this.bindings = new LinkedList<>();
@@ -212,6 +270,10 @@ public final class Policy implements ApiMessage {
       return this;
     }
 
+    /**
+     * Associates a list of `members` to a `role`. `bindings` with no members will result in an
+     * error.
+     */
     public Builder addBindings(Binding bindings) {
       if (this.bindings == null) {
         this.bindings = new LinkedList<>();
@@ -220,10 +282,32 @@ public final class Policy implements ApiMessage {
       return this;
     }
 
+    /**
+     * `etag` is used for optimistic concurrency control as a way to help prevent simultaneous
+     * updates of a policy from overwriting each other. It is strongly suggested that systems make
+     * use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid
+     * race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are
+     * expected to put that etag in the request to `setIamPolicy` to ensure that their change will
+     * be applied to the same version of the policy.
+     *
+     * <p>If no `etag` is provided in the call to `setIamPolicy`, then the existing policy is
+     * overwritten blindly.
+     */
     public String getEtag() {
       return etag;
     }
 
+    /**
+     * `etag` is used for optimistic concurrency control as a way to help prevent simultaneous
+     * updates of a policy from overwriting each other. It is strongly suggested that systems make
+     * use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid
+     * race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are
+     * expected to put that etag in the request to `setIamPolicy` to ensure that their change will
+     * be applied to the same version of the policy.
+     *
+     * <p>If no `etag` is provided in the call to `setIamPolicy`, then the existing policy is
+     * overwritten blindly.
+     */
     public Builder setEtag(String etag) {
       this.etag = etag;
       return this;
@@ -238,10 +322,26 @@ public final class Policy implements ApiMessage {
       return this;
     }
 
+    /**
+     * If more than one rule is specified, the rules are applied in the following manner: - All
+     * matching LOG rules are always applied. - If any DENY/DENY_WITH_LOG rule matches, permission
+     * is denied. Logging will be applied if one or more matching rule requires logging. -
+     * Otherwise, if any ALLOW/ALLOW_WITH_LOG rule matches, permission is granted. Logging will be
+     * applied if one or more matching rule requires logging. - Otherwise, if no rule applies,
+     * permission is denied.
+     */
     public List<Rule> getRulesList() {
       return rules;
     }
 
+    /**
+     * If more than one rule is specified, the rules are applied in the following manner: - All
+     * matching LOG rules are always applied. - If any DENY/DENY_WITH_LOG rule matches, permission
+     * is denied. Logging will be applied if one or more matching rule requires logging. -
+     * Otherwise, if any ALLOW/ALLOW_WITH_LOG rule matches, permission is granted. Logging will be
+     * applied if one or more matching rule requires logging. - Otherwise, if no rule applies,
+     * permission is denied.
+     */
     public Builder addAllRules(List<Rule> rules) {
       if (this.rules == null) {
         this.rules = new LinkedList<>();
@@ -250,6 +350,14 @@ public final class Policy implements ApiMessage {
       return this;
     }
 
+    /**
+     * If more than one rule is specified, the rules are applied in the following manner: - All
+     * matching LOG rules are always applied. - If any DENY/DENY_WITH_LOG rule matches, permission
+     * is denied. Logging will be applied if one or more matching rule requires logging. -
+     * Otherwise, if any ALLOW/ALLOW_WITH_LOG rule matches, permission is granted. Logging will be
+     * applied if one or more matching rule requires logging. - Otherwise, if no rule applies,
+     * permission is denied.
+     */
     public Builder addRules(Rule rules) {
       if (this.rules == null) {
         this.rules = new LinkedList<>();
@@ -258,10 +366,12 @@ public final class Policy implements ApiMessage {
       return this;
     }
 
+    /** Deprecated. */
     public Integer getVersion() {
       return version;
     }
 
+    /** Deprecated. */
     public Builder setVersion(Integer version) {
       this.version = version;
       return this;

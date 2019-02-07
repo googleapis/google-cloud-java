@@ -55,6 +55,7 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest implements ApiMessag
     return null;
   }
 
+  /** QUIC policy for the TargetHttpsProxy resource. */
   public String getQuicOverride() {
     return quicOverride;
   }
@@ -98,10 +99,12 @@ public final class TargetHttpsProxiesSetQuicOverrideRequest implements ApiMessag
       this.quicOverride = source.quicOverride;
     }
 
+    /** QUIC policy for the TargetHttpsProxy resource. */
     public String getQuicOverride() {
       return quicOverride;
     }
 
+    /** QUIC policy for the TargetHttpsProxy resource. */
     public Builder setQuicOverride(String quicOverride) {
       this.quicOverride = quicOverride;
       return this;

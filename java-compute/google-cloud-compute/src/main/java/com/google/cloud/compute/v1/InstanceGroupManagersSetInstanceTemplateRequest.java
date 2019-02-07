@@ -55,6 +55,10 @@ public final class InstanceGroupManagersSetInstanceTemplateRequest implements Ap
     return null;
   }
 
+  /**
+   * The URL of the instance template that is specified for this managed instance group. The group
+   * uses this template to create all new instances in the managed instance group.
+   */
   public String getInstanceTemplate() {
     return instanceTemplate;
   }
@@ -99,10 +103,18 @@ public final class InstanceGroupManagersSetInstanceTemplateRequest implements Ap
       this.instanceTemplate = source.instanceTemplate;
     }
 
+    /**
+     * The URL of the instance template that is specified for this managed instance group. The group
+     * uses this template to create all new instances in the managed instance group.
+     */
     public String getInstanceTemplate() {
       return instanceTemplate;
     }
 
+    /**
+     * The URL of the instance template that is specified for this managed instance group. The group
+     * uses this template to create all new instances in the managed instance group.
+     */
     public Builder setInstanceTemplate(String instanceTemplate) {
       this.instanceTemplate = instanceTemplate;
       return this;

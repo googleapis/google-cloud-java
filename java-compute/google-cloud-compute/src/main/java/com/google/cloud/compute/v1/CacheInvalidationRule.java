@@ -61,6 +61,9 @@ public final class CacheInvalidationRule implements ApiMessage {
     return null;
   }
 
+  /**
+   * If set, this invalidation rule will only apply to requests with a Host header matching host.
+   */
   public String getHost() {
     return host;
   }
@@ -113,10 +116,16 @@ public final class CacheInvalidationRule implements ApiMessage {
       this.path = source.path;
     }
 
+    /**
+     * If set, this invalidation rule will only apply to requests with a Host header matching host.
+     */
     public String getHost() {
       return host;
     }
 
+    /**
+     * If set, this invalidation rule will only apply to requests with a Host header matching host.
+     */
     public Builder setHost(String host) {
       this.host = host;
       return this;

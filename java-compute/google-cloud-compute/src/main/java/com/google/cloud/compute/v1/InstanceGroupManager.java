@@ -25,6 +25,11 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * An Instance Group Manager resource. (== resource_for beta.instanceGroupManagers ==) (==
+ * resource_for v1.instanceGroupManagers ==) (== resource_for beta.regionInstanceGroupManagers ==)
+ * (== resource_for v1.regionInstanceGroupManagers ==)
+ */
 public final class InstanceGroupManager implements ApiMessage {
   private final List<InstanceGroupManagerAutoHealingPolicy> autoHealingPolicies;
   private final String baseInstanceName;
@@ -197,86 +202,158 @@ public final class InstanceGroupManager implements ApiMessage {
     return null;
   }
 
+  /** The autohealing policy for this managed instance group. You can specify only one value. */
   public List<InstanceGroupManagerAutoHealingPolicy> getAutoHealingPoliciesList() {
     return autoHealingPolicies;
   }
 
+  /**
+   * The base instance name to use for instances in this group. The value must be 1-58 characters
+   * long. Instances are named by appending a hyphen and a random four-character string to the base
+   * instance name. The base instance name must comply with RFC1035.
+   */
   public String getBaseInstanceName() {
     return baseInstanceName;
   }
 
+  /**
+   * [Output Only] The creation timestamp for this managed instance group in RFC3339 text format.
+   */
   public String getCreationTimestamp() {
     return creationTimestamp;
   }
 
+  /**
+   * [Output Only] The list of instance actions and the number of instances in this managed instance
+   * group that are scheduled for each of those actions.
+   */
   public InstanceGroupManagerActionsSummary getCurrentActions() {
     return currentActions;
   }
 
+  /**
+   * An optional description of this resource. Provide this property when you create the resource.
+   */
   public String getDescription() {
     return description;
   }
 
+  /** Policy specifying intended distribution of instances in regional managed instance group. */
   public DistributionPolicy getDistributionPolicy() {
     return distributionPolicy;
   }
 
+  /**
+   * Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored
+   * when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to
+   * update the InstanceGroupManager, otherwise the request will fail with error 412
+   * conditionNotMet.
+   *
+   * <p>To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
+   */
   public String getFingerprint() {
     return fingerprint;
   }
 
+  /**
+   * [Output Only] A unique identifier for this resource type. The server generates this identifier.
+   */
   public String getId() {
     return id;
   }
 
+  /** [Output Only] The URL of the Instance Group resource. */
   public String getInstanceGroup() {
     return instanceGroup;
   }
 
+  /**
+   * The URL of the instance template that is specified for this managed instance group. The group
+   * uses this template to create all new instances in the managed instance group.
+   */
   public String getInstanceTemplate() {
     return instanceTemplate;
   }
 
+  /**
+   * [Output Only] The resource type, which is always compute#instanceGroupManager for managed
+   * instance groups.
+   */
   public String getKind() {
     return kind;
   }
 
+  /**
+   * The name of the managed instance group. The name must be 1-63 characters long, and comply with
+   * RFC1035.
+   */
   public String getName() {
     return name;
   }
 
+  /**
+   * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
+   */
   public List<NamedPort> getNamedPortsList() {
     return namedPorts;
   }
 
+  /**
+   * [Output Only] The URL of the region where the managed instance group resides (for regional
+   * resources).
+   */
   public String getRegion() {
     return region;
   }
 
+  /** [Output Only] The URL for this managed instance group. The server defines this URL. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /** [Output Only] The status of this managed instance group. */
   public InstanceGroupManagerStatus getStatus() {
     return status;
   }
 
+  /**
+   * The URLs for all TargetPool resources to which instances in the instanceGroup field are added.
+   * The target pools automatically apply to all of the instances in the managed instance group.
+   */
   public List<String> getTargetPoolsList() {
     return targetPools;
   }
 
+  /**
+   * The target number of running instances for this managed instance group. Deleting or abandoning
+   * instances reduces this number. Resizing the group changes this number.
+   */
   public Integer getTargetSize() {
     return targetSize;
   }
 
+  /** The update policy for this managed instance group. */
   public InstanceGroupManagerUpdatePolicy getUpdatePolicy() {
     return updatePolicy;
   }
 
+  /**
+   * Specifies the instance templates used by this managed instance group to create instances.
+   *
+   * <p>Each version is defined by an instanceTemplate. Every template can appear at most once per
+   * instance group. This field overrides the top-level instanceTemplate field. Read more about the
+   * relationships between these fields. Exactly one version must leave the targetSize field unset.
+   * That version will be applied to all remaining instances. For more information, read about
+   * canary updates.
+   */
   public List<InstanceGroupManagerVersion> getVersionsList() {
     return versions;
   }
 
+  /**
+   * [Output Only] The URL of the zone where the managed instance group is located (for zonal
+   * resources).
+   */
   public String getZone() {
     return zone;
   }
@@ -420,10 +497,12 @@ public final class InstanceGroupManager implements ApiMessage {
       this.zone = source.zone;
     }
 
+    /** The autohealing policy for this managed instance group. You can specify only one value. */
     public List<InstanceGroupManagerAutoHealingPolicy> getAutoHealingPoliciesList() {
       return autoHealingPolicies;
     }
 
+    /** The autohealing policy for this managed instance group. You can specify only one value. */
     public Builder addAllAutoHealingPolicies(
         List<InstanceGroupManagerAutoHealingPolicy> autoHealingPolicies) {
       if (this.autoHealingPolicies == null) {
@@ -433,6 +512,7 @@ public final class InstanceGroupManager implements ApiMessage {
       return this;
     }
 
+    /** The autohealing policy for this managed instance group. You can specify only one value. */
     public Builder addAutoHealingPolicies(
         InstanceGroupManagerAutoHealingPolicy autoHealingPolicies) {
       if (this.autoHealingPolicies == null) {
@@ -442,109 +522,197 @@ public final class InstanceGroupManager implements ApiMessage {
       return this;
     }
 
+    /**
+     * The base instance name to use for instances in this group. The value must be 1-58 characters
+     * long. Instances are named by appending a hyphen and a random four-character string to the
+     * base instance name. The base instance name must comply with RFC1035.
+     */
     public String getBaseInstanceName() {
       return baseInstanceName;
     }
 
+    /**
+     * The base instance name to use for instances in this group. The value must be 1-58 characters
+     * long. Instances are named by appending a hyphen and a random four-character string to the
+     * base instance name. The base instance name must comply with RFC1035.
+     */
     public Builder setBaseInstanceName(String baseInstanceName) {
       this.baseInstanceName = baseInstanceName;
       return this;
     }
 
+    /**
+     * [Output Only] The creation timestamp for this managed instance group in RFC3339 text format.
+     */
     public String getCreationTimestamp() {
       return creationTimestamp;
     }
 
+    /**
+     * [Output Only] The creation timestamp for this managed instance group in RFC3339 text format.
+     */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
+    /**
+     * [Output Only] The list of instance actions and the number of instances in this managed
+     * instance group that are scheduled for each of those actions.
+     */
     public InstanceGroupManagerActionsSummary getCurrentActions() {
       return currentActions;
     }
 
+    /**
+     * [Output Only] The list of instance actions and the number of instances in this managed
+     * instance group that are scheduled for each of those actions.
+     */
     public Builder setCurrentActions(InstanceGroupManagerActionsSummary currentActions) {
       this.currentActions = currentActions;
       return this;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public String getDescription() {
       return description;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /** Policy specifying intended distribution of instances in regional managed instance group. */
     public DistributionPolicy getDistributionPolicy() {
       return distributionPolicy;
     }
 
+    /** Policy specifying intended distribution of instances in regional managed instance group. */
     public Builder setDistributionPolicy(DistributionPolicy distributionPolicy) {
       this.distributionPolicy = distributionPolicy;
       return this;
     }
 
+    /**
+     * Fingerprint of this resource. This field may be used in optimistic locking. It will be
+     * ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in
+     * order to update the InstanceGroupManager, otherwise the request will fail with error 412
+     * conditionNotMet.
+     *
+     * <p>To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
+     */
     public String getFingerprint() {
       return fingerprint;
     }
 
+    /**
+     * Fingerprint of this resource. This field may be used in optimistic locking. It will be
+     * ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in
+     * order to update the InstanceGroupManager, otherwise the request will fail with error 412
+     * conditionNotMet.
+     *
+     * <p>To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
+     */
     public Builder setFingerprint(String fingerprint) {
       this.fingerprint = fingerprint;
       return this;
     }
 
+    /**
+     * [Output Only] A unique identifier for this resource type. The server generates this
+     * identifier.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output Only] A unique identifier for this resource type. The server generates this
+     * identifier.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /** [Output Only] The URL of the Instance Group resource. */
     public String getInstanceGroup() {
       return instanceGroup;
     }
 
+    /** [Output Only] The URL of the Instance Group resource. */
     public Builder setInstanceGroup(String instanceGroup) {
       this.instanceGroup = instanceGroup;
       return this;
     }
 
+    /**
+     * The URL of the instance template that is specified for this managed instance group. The group
+     * uses this template to create all new instances in the managed instance group.
+     */
     public String getInstanceTemplate() {
       return instanceTemplate;
     }
 
+    /**
+     * The URL of the instance template that is specified for this managed instance group. The group
+     * uses this template to create all new instances in the managed instance group.
+     */
     public Builder setInstanceTemplate(String instanceTemplate) {
       this.instanceTemplate = instanceTemplate;
       return this;
     }
 
+    /**
+     * [Output Only] The resource type, which is always compute#instanceGroupManager for managed
+     * instance groups.
+     */
     public String getKind() {
       return kind;
     }
 
+    /**
+     * [Output Only] The resource type, which is always compute#instanceGroupManager for managed
+     * instance groups.
+     */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /**
+     * The name of the managed instance group. The name must be 1-63 characters long, and comply
+     * with RFC1035.
+     */
     public String getName() {
       return name;
     }
 
+    /**
+     * The name of the managed instance group. The name must be 1-63 characters long, and comply
+     * with RFC1035.
+     */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /**
+     * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
+     */
     public List<NamedPort> getNamedPortsList() {
       return namedPorts;
     }
 
+    /**
+     * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
+     */
     public Builder addAllNamedPorts(List<NamedPort> namedPorts) {
       if (this.namedPorts == null) {
         this.namedPorts = new LinkedList<>();
@@ -553,6 +721,9 @@ public final class InstanceGroupManager implements ApiMessage {
       return this;
     }
 
+    /**
+     * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
+     */
     public Builder addNamedPorts(NamedPort namedPorts) {
       if (this.namedPorts == null) {
         this.namedPorts = new LinkedList<>();
@@ -561,37 +732,59 @@ public final class InstanceGroupManager implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] The URL of the region where the managed instance group resides (for regional
+     * resources).
+     */
     public String getRegion() {
       return region;
     }
 
+    /**
+     * [Output Only] The URL of the region where the managed instance group resides (for regional
+     * resources).
+     */
     public Builder setRegion(String region) {
       this.region = region;
       return this;
     }
 
+    /** [Output Only] The URL for this managed instance group. The server defines this URL. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] The URL for this managed instance group. The server defines this URL. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /** [Output Only] The status of this managed instance group. */
     public InstanceGroupManagerStatus getStatus() {
       return status;
     }
 
+    /** [Output Only] The status of this managed instance group. */
     public Builder setStatus(InstanceGroupManagerStatus status) {
       this.status = status;
       return this;
     }
 
+    /**
+     * The URLs for all TargetPool resources to which instances in the instanceGroup field are
+     * added. The target pools automatically apply to all of the instances in the managed instance
+     * group.
+     */
     public List<String> getTargetPoolsList() {
       return targetPools;
     }
 
+    /**
+     * The URLs for all TargetPool resources to which instances in the instanceGroup field are
+     * added. The target pools automatically apply to all of the instances in the managed instance
+     * group.
+     */
     public Builder addAllTargetPools(List<String> targetPools) {
       if (this.targetPools == null) {
         this.targetPools = new LinkedList<>();
@@ -600,6 +793,11 @@ public final class InstanceGroupManager implements ApiMessage {
       return this;
     }
 
+    /**
+     * The URLs for all TargetPool resources to which instances in the instanceGroup field are
+     * added. The target pools automatically apply to all of the instances in the managed instance
+     * group.
+     */
     public Builder addTargetPools(String targetPools) {
       if (this.targetPools == null) {
         this.targetPools = new LinkedList<>();
@@ -608,28 +806,56 @@ public final class InstanceGroupManager implements ApiMessage {
       return this;
     }
 
+    /**
+     * The target number of running instances for this managed instance group. Deleting or
+     * abandoning instances reduces this number. Resizing the group changes this number.
+     */
     public Integer getTargetSize() {
       return targetSize;
     }
 
+    /**
+     * The target number of running instances for this managed instance group. Deleting or
+     * abandoning instances reduces this number. Resizing the group changes this number.
+     */
     public Builder setTargetSize(Integer targetSize) {
       this.targetSize = targetSize;
       return this;
     }
 
+    /** The update policy for this managed instance group. */
     public InstanceGroupManagerUpdatePolicy getUpdatePolicy() {
       return updatePolicy;
     }
 
+    /** The update policy for this managed instance group. */
     public Builder setUpdatePolicy(InstanceGroupManagerUpdatePolicy updatePolicy) {
       this.updatePolicy = updatePolicy;
       return this;
     }
 
+    /**
+     * Specifies the instance templates used by this managed instance group to create instances.
+     *
+     * <p>Each version is defined by an instanceTemplate. Every template can appear at most once per
+     * instance group. This field overrides the top-level instanceTemplate field. Read more about
+     * the relationships between these fields. Exactly one version must leave the targetSize field
+     * unset. That version will be applied to all remaining instances. For more information, read
+     * about canary updates.
+     */
     public List<InstanceGroupManagerVersion> getVersionsList() {
       return versions;
     }
 
+    /**
+     * Specifies the instance templates used by this managed instance group to create instances.
+     *
+     * <p>Each version is defined by an instanceTemplate. Every template can appear at most once per
+     * instance group. This field overrides the top-level instanceTemplate field. Read more about
+     * the relationships between these fields. Exactly one version must leave the targetSize field
+     * unset. That version will be applied to all remaining instances. For more information, read
+     * about canary updates.
+     */
     public Builder addAllVersions(List<InstanceGroupManagerVersion> versions) {
       if (this.versions == null) {
         this.versions = new LinkedList<>();
@@ -638,6 +864,15 @@ public final class InstanceGroupManager implements ApiMessage {
       return this;
     }
 
+    /**
+     * Specifies the instance templates used by this managed instance group to create instances.
+     *
+     * <p>Each version is defined by an instanceTemplate. Every template can appear at most once per
+     * instance group. This field overrides the top-level instanceTemplate field. Read more about
+     * the relationships between these fields. Exactly one version must leave the targetSize field
+     * unset. That version will be applied to all remaining instances. For more information, read
+     * about canary updates.
+     */
     public Builder addVersions(InstanceGroupManagerVersion versions) {
       if (this.versions == null) {
         this.versions = new LinkedList<>();
@@ -646,10 +881,18 @@ public final class InstanceGroupManager implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] The URL of the zone where the managed instance group is located (for zonal
+     * resources).
+     */
     public String getZone() {
       return zone;
     }
 
+    /**
+     * [Output Only] The URL of the zone where the managed instance group is located (for zonal
+     * resources).
+     */
     public Builder setZone(String zone) {
       this.zone = zone;
       return this;

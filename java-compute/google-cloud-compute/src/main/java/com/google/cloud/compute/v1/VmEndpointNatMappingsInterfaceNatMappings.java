@@ -25,6 +25,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Contain information of Nat mapping for an interface of this endpoint. */
 public final class VmEndpointNatMappingsInterfaceNatMappings implements ApiMessage {
   private final List<String> natIpPortRanges;
   private final Integer numTotalNatPorts;
@@ -78,18 +79,32 @@ public final class VmEndpointNatMappingsInterfaceNatMappings implements ApiMessa
     return null;
   }
 
+  /**
+   * A list of all IP:port-range mappings assigned to this interface. These ranges are inclusive,
+   * that is, both the first and the last ports can be used for NAT. Example:
+   * ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
+   */
   public List<String> getNatIpPortRangesList() {
     return natIpPortRanges;
   }
 
+  /**
+   * Total number of ports across all NAT IPs allocated to this interface. It equals to the
+   * aggregated port number in the field nat_ip_port_ranges.
+   */
   public Integer getNumTotalNatPorts() {
     return numTotalNatPorts;
   }
 
+  /**
+   * Alias IP range for this interface endpoint. It will be a private (RFC 1918) IP range. Examples:
+   * "10.33.4.55/32", or "192.168.5.0/24".
+   */
   public String getSourceAliasIpRange() {
     return sourceAliasIpRange;
   }
 
+  /** Primary IP of the VM for this NIC. */
   public String getSourceVirtualIp() {
     return sourceVirtualIp;
   }
@@ -148,10 +163,20 @@ public final class VmEndpointNatMappingsInterfaceNatMappings implements ApiMessa
       this.sourceVirtualIp = source.sourceVirtualIp;
     }
 
+    /**
+     * A list of all IP:port-range mappings assigned to this interface. These ranges are inclusive,
+     * that is, both the first and the last ports can be used for NAT. Example:
+     * ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
+     */
     public List<String> getNatIpPortRangesList() {
       return natIpPortRanges;
     }
 
+    /**
+     * A list of all IP:port-range mappings assigned to this interface. These ranges are inclusive,
+     * that is, both the first and the last ports can be used for NAT. Example:
+     * ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
+     */
     public Builder addAllNatIpPortRanges(List<String> natIpPortRanges) {
       if (this.natIpPortRanges == null) {
         this.natIpPortRanges = new LinkedList<>();
@@ -160,6 +185,11 @@ public final class VmEndpointNatMappingsInterfaceNatMappings implements ApiMessa
       return this;
     }
 
+    /**
+     * A list of all IP:port-range mappings assigned to this interface. These ranges are inclusive,
+     * that is, both the first and the last ports can be used for NAT. Example:
+     * ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
+     */
     public Builder addNatIpPortRanges(String natIpPortRanges) {
       if (this.natIpPortRanges == null) {
         this.natIpPortRanges = new LinkedList<>();
@@ -168,28 +198,46 @@ public final class VmEndpointNatMappingsInterfaceNatMappings implements ApiMessa
       return this;
     }
 
+    /**
+     * Total number of ports across all NAT IPs allocated to this interface. It equals to the
+     * aggregated port number in the field nat_ip_port_ranges.
+     */
     public Integer getNumTotalNatPorts() {
       return numTotalNatPorts;
     }
 
+    /**
+     * Total number of ports across all NAT IPs allocated to this interface. It equals to the
+     * aggregated port number in the field nat_ip_port_ranges.
+     */
     public Builder setNumTotalNatPorts(Integer numTotalNatPorts) {
       this.numTotalNatPorts = numTotalNatPorts;
       return this;
     }
 
+    /**
+     * Alias IP range for this interface endpoint. It will be a private (RFC 1918) IP range.
+     * Examples: "10.33.4.55/32", or "192.168.5.0/24".
+     */
     public String getSourceAliasIpRange() {
       return sourceAliasIpRange;
     }
 
+    /**
+     * Alias IP range for this interface endpoint. It will be a private (RFC 1918) IP range.
+     * Examples: "10.33.4.55/32", or "192.168.5.0/24".
+     */
     public Builder setSourceAliasIpRange(String sourceAliasIpRange) {
       this.sourceAliasIpRange = sourceAliasIpRange;
       return this;
     }
 
+    /** Primary IP of the VM for this NIC. */
     public String getSourceVirtualIp() {
       return sourceVirtualIp;
     }
 
+    /** Primary IP of the VM for this NIC. */
     public Builder setSourceVirtualIp(String sourceVirtualIp) {
       this.sourceVirtualIp = sourceVirtualIp;
       return this;

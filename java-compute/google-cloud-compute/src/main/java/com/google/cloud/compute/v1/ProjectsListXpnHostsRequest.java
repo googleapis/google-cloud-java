@@ -55,6 +55,10 @@ public final class ProjectsListXpnHostsRequest implements ApiMessage {
     return null;
   }
 
+  /**
+   * Optional organization ID managed by Cloud Resource Manager, for which to list shared VPC host
+   * projects. If not specified, the organization will be inferred from the project.
+   */
   public String getOrganization() {
     return organization;
   }
@@ -98,10 +102,18 @@ public final class ProjectsListXpnHostsRequest implements ApiMessage {
       this.organization = source.organization;
     }
 
+    /**
+     * Optional organization ID managed by Cloud Resource Manager, for which to list shared VPC host
+     * projects. If not specified, the organization will be inferred from the project.
+     */
     public String getOrganization() {
       return organization;
     }
 
+    /**
+     * Optional organization ID managed by Cloud Resource Manager, for which to list shared VPC host
+     * projects. If not specified, the organization will be inferred from the project.
+     */
     public Builder setOrganization(String organization) {
       this.organization = organization;
       return this;

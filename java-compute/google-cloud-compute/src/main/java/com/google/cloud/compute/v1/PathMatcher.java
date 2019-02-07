@@ -25,6 +25,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * A matcher for the path portion of the URL. The BackendService from the longest-matched rule will
+ * serve the URL. If no rule was matched, the default service will be used.
+ */
 public final class PathMatcher implements ApiMessage {
   private final String defaultService;
   private final String description;
@@ -75,18 +79,44 @@ public final class PathMatcher implements ApiMessage {
     return null;
   }
 
+  /**
+   * The full or partial URL to the BackendService resource. This will be used if none of the
+   * pathRules or routeRules defined by this PathMatcher are matched. For example, the following are
+   * all valid URLs to a BackendService resource: -
+   * https://www.googleapis.com/compute/v1/projects/project/global/backendServices/backendService -
+   * compute/v1/projects/project/global/backendServices/backendService -
+   * global/backendServices/backendService If defaultRouteAction is additionally specified, advanced
+   * routing actions like URL Rewrites, etc. take effect prior to sending the request to the
+   * backend. However, if defaultService is specified, defaultRouteAction cannot contain any
+   * weightedBackendServices. Conversely, if defaultRouteAction specifies any
+   * weightedBackendServices, defaultService must not be specified. Only one of defaultService,
+   * defaultUrlRedirect or defaultRouteAction.weightedBackendService must be set. Authorization
+   * requires one or more of the following Google IAM permissions on the specified resource
+   * default_service: - compute.backendBuckets.use - compute.backendServices.use
+   */
   public String getDefaultService() {
     return defaultService;
   }
 
+  /**
+   * An optional description of this resource. Provide this property when you create the resource.
+   */
   public String getDescription() {
     return description;
   }
 
+  /** The name to which this PathMatcher is referred by the HostRule. */
   public String getName() {
     return name;
   }
 
+  /**
+   * The list of path rules. Use this list instead of routeRules when routing based on simple path
+   * matching is all that's required. The order by which path rules are specified does not matter.
+   * Matches are always done on the longest-path-first basis. For example: a pathRule with a path
+   * /a/b/c/&#42; will match before /a/b/&#42; irrespective of the order in which those paths appear
+   * in this list. Only one of pathRules or routeRules must be set.
+   */
   public List<PathRule> getPathRulesList() {
     return pathRules;
   }
@@ -145,37 +175,89 @@ public final class PathMatcher implements ApiMessage {
       this.pathRules = source.pathRules;
     }
 
+    /**
+     * The full or partial URL to the BackendService resource. This will be used if none of the
+     * pathRules or routeRules defined by this PathMatcher are matched. For example, the following
+     * are all valid URLs to a BackendService resource: -
+     * https://www.googleapis.com/compute/v1/projects/project/global/backendServices/backendService
+     * - compute/v1/projects/project/global/backendServices/backendService -
+     * global/backendServices/backendService If defaultRouteAction is additionally specified,
+     * advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to
+     * the backend. However, if defaultService is specified, defaultRouteAction cannot contain any
+     * weightedBackendServices. Conversely, if defaultRouteAction specifies any
+     * weightedBackendServices, defaultService must not be specified. Only one of defaultService,
+     * defaultUrlRedirect or defaultRouteAction.weightedBackendService must be set. Authorization
+     * requires one or more of the following Google IAM permissions on the specified resource
+     * default_service: - compute.backendBuckets.use - compute.backendServices.use
+     */
     public String getDefaultService() {
       return defaultService;
     }
 
+    /**
+     * The full or partial URL to the BackendService resource. This will be used if none of the
+     * pathRules or routeRules defined by this PathMatcher are matched. For example, the following
+     * are all valid URLs to a BackendService resource: -
+     * https://www.googleapis.com/compute/v1/projects/project/global/backendServices/backendService
+     * - compute/v1/projects/project/global/backendServices/backendService -
+     * global/backendServices/backendService If defaultRouteAction is additionally specified,
+     * advanced routing actions like URL Rewrites, etc. take effect prior to sending the request to
+     * the backend. However, if defaultService is specified, defaultRouteAction cannot contain any
+     * weightedBackendServices. Conversely, if defaultRouteAction specifies any
+     * weightedBackendServices, defaultService must not be specified. Only one of defaultService,
+     * defaultUrlRedirect or defaultRouteAction.weightedBackendService must be set. Authorization
+     * requires one or more of the following Google IAM permissions on the specified resource
+     * default_service: - compute.backendBuckets.use - compute.backendServices.use
+     */
     public Builder setDefaultService(String defaultService) {
       this.defaultService = defaultService;
       return this;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public String getDescription() {
       return description;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /** The name to which this PathMatcher is referred by the HostRule. */
     public String getName() {
       return name;
     }
 
+    /** The name to which this PathMatcher is referred by the HostRule. */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /**
+     * The list of path rules. Use this list instead of routeRules when routing based on simple path
+     * matching is all that's required. The order by which path rules are specified does not matter.
+     * Matches are always done on the longest-path-first basis. For example: a pathRule with a path
+     * /a/b/c/&#42; will match before /a/b/&#42; irrespective of the order in which those paths
+     * appear in this list. Only one of pathRules or routeRules must be set.
+     */
     public List<PathRule> getPathRulesList() {
       return pathRules;
     }
 
+    /**
+     * The list of path rules. Use this list instead of routeRules when routing based on simple path
+     * matching is all that's required. The order by which path rules are specified does not matter.
+     * Matches are always done on the longest-path-first basis. For example: a pathRule with a path
+     * /a/b/c/&#42; will match before /a/b/&#42; irrespective of the order in which those paths
+     * appear in this list. Only one of pathRules or routeRules must be set.
+     */
     public Builder addAllPathRules(List<PathRule> pathRules) {
       if (this.pathRules == null) {
         this.pathRules = new LinkedList<>();
@@ -184,6 +266,13 @@ public final class PathMatcher implements ApiMessage {
       return this;
     }
 
+    /**
+     * The list of path rules. Use this list instead of routeRules when routing based on simple path
+     * matching is all that's required. The order by which path rules are specified does not matter.
+     * Matches are always done on the longest-path-first basis. For example: a pathRule with a path
+     * /a/b/c/&#42; will match before /a/b/&#42; irrespective of the order in which those paths
+     * appear in this list. Only one of pathRules or routeRules must be set.
+     */
     public Builder addPathRules(PathRule pathRules) {
       if (this.pathRules == null) {
         this.pathRules = new LinkedList<>();
