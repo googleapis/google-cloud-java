@@ -168,7 +168,7 @@
       <dependency>
         <groupId>com.google.api</groupId>
         <artifactId>gax-bom</artifactId>
-        <version>1.37.0</version>
+        <version>1.38.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -451,8 +451,18 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-firestore-v1</artifactId>
+        <version>0.44.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-firestore-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-firestore-v1beta1</artifactId>
         <version>0.44.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-firestore-v1beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-firestore-v1</artifactId>
+        <version>0.44.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-firestore-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>

@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** A NodeGroup resource. */
 public final class NodeGroup implements ApiMessage {
   private final String creationTimestamp;
   private final String description;
@@ -119,34 +120,52 @@ public final class NodeGroup implements ApiMessage {
     return null;
   }
 
+  /** [Output Only] Creation timestamp in RFC3339 text format. */
   public String getCreationTimestamp() {
     return creationTimestamp;
   }
 
+  /**
+   * An optional description of this resource. Provide this property when you create the resource.
+   */
   public String getDescription() {
     return description;
   }
 
+  /**
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   */
   public String getId() {
     return id;
   }
 
+  /** [Output Only] The type of the resource. Always compute#nodeGroup for node group. */
   public String getKind() {
     return kind;
   }
 
+  /**
+   * The name of the resource, provided by the client when initially creating the resource. The
+   * resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name
+   * must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?`
+   * which means the first character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   */
   public String getName() {
     return name;
   }
 
+  /** The URL of the node template to which this node group belongs. */
   public String getNodeTemplate() {
     return nodeTemplate;
   }
 
+  /** [Output Only] Server-defined URL for the resource. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /** [Output Only] The total number of nodes in the node group. */
   public Integer getSize() {
     return size;
   }
@@ -155,6 +174,7 @@ public final class NodeGroup implements ApiMessage {
     return status;
   }
 
+  /** [Output Only] The name of the zone where the node group resides, such as us-central1-a. */
   public String getZone() {
     return zone;
   }
@@ -243,73 +263,113 @@ public final class NodeGroup implements ApiMessage {
       this.zone = source.zone;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public String getCreationTimestamp() {
       return creationTimestamp;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public String getDescription() {
       return description;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /** [Output Only] The type of the resource. Always compute#nodeGroup for node group. */
     public String getKind() {
       return kind;
     }
 
+    /** [Output Only] The type of the resource. Always compute#nodeGroup for node group. */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /**
+     * The name of the resource, provided by the client when initially creating the resource. The
+     * resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name
+     * must be 1-63 characters long and match the regular expression
+     * `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first character must be a lowercase letter,
+     * and all following characters must be a dash, lowercase letter, or digit, except the last
+     * character, which cannot be a dash.
+     */
     public String getName() {
       return name;
     }
 
+    /**
+     * The name of the resource, provided by the client when initially creating the resource. The
+     * resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name
+     * must be 1-63 characters long and match the regular expression
+     * `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first character must be a lowercase letter,
+     * and all following characters must be a dash, lowercase letter, or digit, except the last
+     * character, which cannot be a dash.
+     */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /** The URL of the node template to which this node group belongs. */
     public String getNodeTemplate() {
       return nodeTemplate;
     }
 
+    /** The URL of the node template to which this node group belongs. */
     public Builder setNodeTemplate(String nodeTemplate) {
       this.nodeTemplate = nodeTemplate;
       return this;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /** [Output Only] The total number of nodes in the node group. */
     public Integer getSize() {
       return size;
     }
 
+    /** [Output Only] The total number of nodes in the node group. */
     public Builder setSize(Integer size) {
       this.size = size;
       return this;
@@ -324,10 +384,12 @@ public final class NodeGroup implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] The name of the zone where the node group resides, such as us-central1-a. */
     public String getZone() {
       return zone;
     }
 
+    /** [Output Only] The name of the zone where the node group resides, such as us-central1-a. */
     public Builder setZone(String zone) {
       this.zone = zone;
       return this;

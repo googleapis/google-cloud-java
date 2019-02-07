@@ -62,10 +62,12 @@ public final class TargetPoolsScopedList implements ApiMessage {
     return null;
   }
 
+  /** A list of target pools contained in this scope. */
   public List<TargetPool> getTargetPoolsList() {
     return targetPools;
   }
 
+  /** Informational warning which replaces the list of addresses when the list is empty. */
   public Warning getWarning() {
     return warning;
   }
@@ -114,10 +116,12 @@ public final class TargetPoolsScopedList implements ApiMessage {
       this.warning = source.warning;
     }
 
+    /** A list of target pools contained in this scope. */
     public List<TargetPool> getTargetPoolsList() {
       return targetPools;
     }
 
+    /** A list of target pools contained in this scope. */
     public Builder addAllTargetPools(List<TargetPool> targetPools) {
       if (this.targetPools == null) {
         this.targetPools = new LinkedList<>();
@@ -126,6 +130,7 @@ public final class TargetPoolsScopedList implements ApiMessage {
       return this;
     }
 
+    /** A list of target pools contained in this scope. */
     public Builder addTargetPools(TargetPool targetPools) {
       if (this.targetPools == null) {
         this.targetPools = new LinkedList<>();
@@ -134,10 +139,12 @@ public final class TargetPoolsScopedList implements ApiMessage {
       return this;
     }
 
+    /** Informational warning which replaces the list of addresses when the list is empty. */
     public Warning getWarning() {
       return warning;
     }
 
+    /** Informational warning which replaces the list of addresses when the list is empty. */
     public Builder setWarning(Warning warning) {
       this.warning = warning;
       return this;

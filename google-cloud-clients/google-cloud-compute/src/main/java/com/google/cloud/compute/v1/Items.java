@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Array of key/value pairs. The total size of all keys and values must be less than 512 KB. */
 public final class Items implements ApiMessage {
   private final String key;
   private final String value;
@@ -61,10 +62,21 @@ public final class Items implements ApiMessage {
     return null;
   }
 
+  /**
+   * Key for the metadata entry. Keys must conform to the following regexp: [a-zA-Z0-9-_]+, and be
+   * less than 128 bytes in length. This is reflected as part of a URL in the metadata server.
+   * Additionally, to avoid ambiguity, keys must not conflict with any other metadata keys for the
+   * project.
+   */
   public String getKey() {
     return key;
   }
 
+  /**
+   * Value for the metadata entry. These are free-form strings, and only have meaning as interpreted
+   * by the image running in the instance. The only restriction placed on values is that their size
+   * must be less than or equal to 262144 bytes (256 KiB).
+   */
   public String getValue() {
     return value;
   }
@@ -113,19 +125,41 @@ public final class Items implements ApiMessage {
       this.value = source.value;
     }
 
+    /**
+     * Key for the metadata entry. Keys must conform to the following regexp: [a-zA-Z0-9-_]+, and be
+     * less than 128 bytes in length. This is reflected as part of a URL in the metadata server.
+     * Additionally, to avoid ambiguity, keys must not conflict with any other metadata keys for the
+     * project.
+     */
     public String getKey() {
       return key;
     }
 
+    /**
+     * Key for the metadata entry. Keys must conform to the following regexp: [a-zA-Z0-9-_]+, and be
+     * less than 128 bytes in length. This is reflected as part of a URL in the metadata server.
+     * Additionally, to avoid ambiguity, keys must not conflict with any other metadata keys for the
+     * project.
+     */
     public Builder setKey(String key) {
       this.key = key;
       return this;
     }
 
+    /**
+     * Value for the metadata entry. These are free-form strings, and only have meaning as
+     * interpreted by the image running in the instance. The only restriction placed on values is
+     * that their size must be less than or equal to 262144 bytes (256 KiB).
+     */
     public String getValue() {
       return value;
     }
 
+    /**
+     * Value for the metadata entry. These are free-form strings, and only have meaning as
+     * interpreted by the image running in the instance. The only restriction placed on values is
+     * that their size must be less than or equal to 262144 bytes (256 KiB).
+     */
     public Builder setValue(String value) {
       this.value = value;
       return this;

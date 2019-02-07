@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** [Output Only] A list of extended scratch disks assigned to the instance. */
 public final class ScratchDisks implements ApiMessage {
   private final Integer diskGb;
 
@@ -55,6 +56,7 @@ public final class ScratchDisks implements ApiMessage {
     return null;
   }
 
+  /** Size of the scratch disk, defined in GB. */
   public Integer getDiskGb() {
     return diskGb;
   }
@@ -98,10 +100,12 @@ public final class ScratchDisks implements ApiMessage {
       this.diskGb = source.diskGb;
     }
 
+    /** Size of the scratch disk, defined in GB. */
     public Integer getDiskGb() {
       return diskGb;
     }
 
+    /** Size of the scratch disk, defined in GB. */
     public Builder setDiskGb(Integer diskGb) {
       this.diskGb = diskGb;
       return this;

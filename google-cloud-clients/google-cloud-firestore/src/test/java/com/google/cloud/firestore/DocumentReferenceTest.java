@@ -65,13 +65,13 @@ import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.Timestamp;
-import com.google.cloud.firestore.spi.v1beta1.FirestoreRpc;
+import com.google.cloud.firestore.spi.v1.FirestoreRpc;
 import com.google.common.collect.ImmutableList;
-import com.google.firestore.v1beta1.BatchGetDocumentsRequest;
-import com.google.firestore.v1beta1.BatchGetDocumentsResponse;
-import com.google.firestore.v1beta1.CommitRequest;
-import com.google.firestore.v1beta1.CommitResponse;
-import com.google.firestore.v1beta1.Value;
+import com.google.firestore.v1.BatchGetDocumentsRequest;
+import com.google.firestore.v1.BatchGetDocumentsResponse;
+import com.google.firestore.v1.CommitRequest;
+import com.google.firestore.v1.CommitResponse;
+import com.google.firestore.v1.Value;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -300,8 +300,8 @@ public class DocumentReferenceTest {
     List<CommitRequest> commitRequests = commitCapture.getAllValues();
     assertCommitEquals(commit(delete()), commitRequests.get(0));
 
-    com.google.firestore.v1beta1.Precondition.Builder precondition =
-        com.google.firestore.v1beta1.Precondition.newBuilder();
+    com.google.firestore.v1.Precondition.Builder precondition =
+        com.google.firestore.v1.Precondition.newBuilder();
     precondition.getUpdateTimeBuilder().setSeconds(479978400).setNanos(123000000);
     assertCommitEquals(commit(delete(precondition.build())), commitRequests.get(1));
   }
@@ -926,8 +926,8 @@ public class DocumentReferenceTest {
     documentReference.update(SINGLE_FIELD_MAP, options).get();
     documentReference.update(options, "foo", "bar").get();
 
-    com.google.firestore.v1beta1.Precondition.Builder precondition =
-        com.google.firestore.v1beta1.Precondition.newBuilder();
+    com.google.firestore.v1.Precondition.Builder precondition =
+        com.google.firestore.v1.Precondition.newBuilder();
     precondition.getUpdateTimeBuilder().setSeconds(479978400).setNanos(123000000);
 
     CommitRequest expectedCommit =

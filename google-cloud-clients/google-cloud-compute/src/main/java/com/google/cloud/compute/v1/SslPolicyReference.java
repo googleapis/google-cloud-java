@@ -55,6 +55,10 @@ public final class SslPolicyReference implements ApiMessage {
     return null;
   }
 
+  /**
+   * URL of the SSL policy resource. Set this to empty string to clear any existing SSL policy
+   * associated with the target proxy resource.
+   */
   public String getSslPolicy() {
     return sslPolicy;
   }
@@ -98,10 +102,18 @@ public final class SslPolicyReference implements ApiMessage {
       this.sslPolicy = source.sslPolicy;
     }
 
+    /**
+     * URL of the SSL policy resource. Set this to empty string to clear any existing SSL policy
+     * associated with the target proxy resource.
+     */
     public String getSslPolicy() {
       return sslPolicy;
     }
 
+    /**
+     * URL of the SSL policy resource. Set this to empty string to clear any existing SSL policy
+     * associated with the target proxy resource.
+     */
     public Builder setSslPolicy(String sslPolicy) {
       this.sslPolicy = sslPolicy;
       return this;

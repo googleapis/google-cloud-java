@@ -61,10 +61,22 @@ public final class DiskMoveRequest implements ApiMessage {
     return null;
   }
 
+  /**
+   * The URL of the destination zone to move the disk. This can be a full or partial URL. For
+   * example, the following are all valid URLs to a zone: -
+   * https://www.googleapis.com/compute/v1/projects/project/zones/zone - projects/project/zones/zone
+   * - zones/zone
+   */
   public String getDestinationZone() {
     return destinationZone;
   }
 
+  /**
+   * The URL of the target disk to move. This can be a full or partial URL. For example, the
+   * following are all valid URLs to a disk: -
+   * https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk -
+   * projects/project/zones/zone/disks/disk - zones/zone/disks/disk
+   */
   public String getTargetDisk() {
     return targetDisk;
   }
@@ -113,19 +125,43 @@ public final class DiskMoveRequest implements ApiMessage {
       this.targetDisk = source.targetDisk;
     }
 
+    /**
+     * The URL of the destination zone to move the disk. This can be a full or partial URL. For
+     * example, the following are all valid URLs to a zone: -
+     * https://www.googleapis.com/compute/v1/projects/project/zones/zone -
+     * projects/project/zones/zone - zones/zone
+     */
     public String getDestinationZone() {
       return destinationZone;
     }
 
+    /**
+     * The URL of the destination zone to move the disk. This can be a full or partial URL. For
+     * example, the following are all valid URLs to a zone: -
+     * https://www.googleapis.com/compute/v1/projects/project/zones/zone -
+     * projects/project/zones/zone - zones/zone
+     */
     public Builder setDestinationZone(String destinationZone) {
       this.destinationZone = destinationZone;
       return this;
     }
 
+    /**
+     * The URL of the target disk to move. This can be a full or partial URL. For example, the
+     * following are all valid URLs to a disk: -
+     * https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk -
+     * projects/project/zones/zone/disks/disk - zones/zone/disks/disk
+     */
     public String getTargetDisk() {
       return targetDisk;
     }
 
+    /**
+     * The URL of the target disk to move. This can be a full or partial URL. For example, the
+     * following are all valid URLs to a disk: -
+     * https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk -
+     * projects/project/zones/zone/disks/disk - zones/zone/disks/disk
+     */
     public Builder setTargetDisk(String targetDisk) {
       this.targetDisk = targetDisk;
       return this;

@@ -74,14 +74,17 @@ public final class NodeGroupNode implements ApiMessage {
     return null;
   }
 
+  /** Instances scheduled on this node. */
   public List<String> getInstancesList() {
     return instances;
   }
 
+  /** The name of the node. */
   public String getName() {
     return name;
   }
 
+  /** The type of this node. */
   public String getNodeType() {
     return nodeType;
   }
@@ -144,10 +147,12 @@ public final class NodeGroupNode implements ApiMessage {
       this.status = source.status;
     }
 
+    /** Instances scheduled on this node. */
     public List<String> getInstancesList() {
       return instances;
     }
 
+    /** Instances scheduled on this node. */
     public Builder addAllInstances(List<String> instances) {
       if (this.instances == null) {
         this.instances = new LinkedList<>();
@@ -156,6 +161,7 @@ public final class NodeGroupNode implements ApiMessage {
       return this;
     }
 
+    /** Instances scheduled on this node. */
     public Builder addInstances(String instances) {
       if (this.instances == null) {
         this.instances = new LinkedList<>();
@@ -164,19 +170,23 @@ public final class NodeGroupNode implements ApiMessage {
       return this;
     }
 
+    /** The name of the node. */
     public String getName() {
       return name;
     }
 
+    /** The name of the node. */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /** The type of this node. */
     public String getNodeType() {
       return nodeType;
     }
 
+    /** The type of this node. */
     public Builder setNodeType(String nodeType) {
       this.nodeType = nodeType;
       return this;

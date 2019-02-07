@@ -55,6 +55,7 @@ public final class TargetSslProxiesSetBackendServiceRequest implements ApiMessag
     return null;
   }
 
+  /** The URL of the new BackendService resource for the targetSslProxy. */
   public String getService() {
     return service;
   }
@@ -98,10 +99,12 @@ public final class TargetSslProxiesSetBackendServiceRequest implements ApiMessag
       this.service = source.service;
     }
 
+    /** The URL of the new BackendService resource for the targetSslProxy. */
     public String getService() {
       return service;
     }
 
+    /** The URL of the new BackendService resource for the targetSslProxy. */
     public Builder setService(String service) {
       this.service = service;
       return this;

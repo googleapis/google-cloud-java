@@ -149,9 +149,10 @@ public final class ProjectGlobalHealthCheckName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
-        "healthCheck", healthCheck,
-        "project", project);
+    return SERVICE_ADDRESS
+        + PATH_TEMPLATE.instantiate(
+            "healthCheck", healthCheck,
+            "project", project);
   }
 
   @Override

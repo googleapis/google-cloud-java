@@ -56,6 +56,15 @@ public final class InstancesStartWithEncryptionKeyRequest implements ApiMessage 
     return null;
   }
 
+  /**
+   * Array of disks associated with this instance that are protected with a customer-supplied
+   * encryption key.
+   *
+   * <p>In order to start the instance, the disk url and its corresponding key must be provided.
+   *
+   * <p>If the disk is not protected with a customer-supplied encryption key it should not be
+   * specified.
+   */
   public List<CustomerEncryptionKeyProtectedDisk> getDisksList() {
     return disks;
   }
@@ -99,10 +108,28 @@ public final class InstancesStartWithEncryptionKeyRequest implements ApiMessage 
       this.disks = source.disks;
     }
 
+    /**
+     * Array of disks associated with this instance that are protected with a customer-supplied
+     * encryption key.
+     *
+     * <p>In order to start the instance, the disk url and its corresponding key must be provided.
+     *
+     * <p>If the disk is not protected with a customer-supplied encryption key it should not be
+     * specified.
+     */
     public List<CustomerEncryptionKeyProtectedDisk> getDisksList() {
       return disks;
     }
 
+    /**
+     * Array of disks associated with this instance that are protected with a customer-supplied
+     * encryption key.
+     *
+     * <p>In order to start the instance, the disk url and its corresponding key must be provided.
+     *
+     * <p>If the disk is not protected with a customer-supplied encryption key it should not be
+     * specified.
+     */
     public Builder addAllDisks(List<CustomerEncryptionKeyProtectedDisk> disks) {
       if (this.disks == null) {
         this.disks = new LinkedList<>();
@@ -111,6 +138,15 @@ public final class InstancesStartWithEncryptionKeyRequest implements ApiMessage 
       return this;
     }
 
+    /**
+     * Array of disks associated with this instance that are protected with a customer-supplied
+     * encryption key.
+     *
+     * <p>In order to start the instance, the disk url and its corresponding key must be provided.
+     *
+     * <p>If the disk is not protected with a customer-supplied encryption key it should not be
+     * specified.
+     */
     public Builder addDisks(CustomerEncryptionKeyProtectedDisk disks) {
       if (this.disks == null) {
         this.disks = new LinkedList<>();

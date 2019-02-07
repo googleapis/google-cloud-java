@@ -25,6 +25,22 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Represents a Route resource. A route specifies how certain packets should be handled by the
+ * network. Routes are associated with instances by tags and the set of routes for a particular
+ * instance is called its routing table.
+ *
+ * <p>For each packet leaving an instance, the system searches that instance's routing table for a
+ * single best matching route. Routes match packets by destination IP address, preferring smaller or
+ * more specific ranges over larger ones. If there is a tie, the system selects the route with the
+ * smallest priority value. If there is still a tie, it uses the layer three and four packet headers
+ * to select just one of the remaining matching routes. The packet is then forwarded as specified by
+ * the nextHop field of the winning route - either to another instance destination, an instance
+ * gateway, or a Google Compute Engine-operated gateway.
+ *
+ * <p>Packets that do not match any route in the sending instance's routing table are dropped. (==
+ * resource_for beta.routes ==) (== resource_for v1.routes ==)
+ */
 public final class Route implements ApiMessage {
   private final String creationTimestamp;
   private final String description;
@@ -169,70 +185,121 @@ public final class Route implements ApiMessage {
     return null;
   }
 
+  /** [Output Only] Creation timestamp in RFC3339 text format. */
   public String getCreationTimestamp() {
     return creationTimestamp;
   }
 
+  /**
+   * An optional description of this resource. Provide this property when you create the resource.
+   */
   public String getDescription() {
     return description;
   }
 
+  /**
+   * The destination range of outgoing packets that this route applies to. Only IPv4 is supported.
+   */
   public String getDestRange() {
     return destRange;
   }
 
+  /**
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   */
   public String getId() {
     return id;
   }
 
+  /** [Output Only] Type of this resource. Always compute#routes for Route resources. */
   public String getKind() {
     return kind;
   }
 
+  /**
+   * Name of the resource. Provided by the client when the resource is created. The name must be
+   * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+   * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be a dash, lowercase
+   * letter, or digit, except the last character, which cannot be a dash.
+   */
   public String getName() {
     return name;
   }
 
+  /** Fully-qualified URL of the network that this route applies to. */
   public String getNetwork() {
     return network;
   }
 
+  /**
+   * The URL to a gateway that should handle matching packets. You can only specify the internet
+   * gateway using a full or partial valid URL:
+   * projects/&lt;project-id&gt;/global/gateways/default-internet-gateway
+   */
   public String getNextHopGateway() {
     return nextHopGateway;
   }
 
+  /**
+   * The URL to an instance that should handle matching packets. You can specify this as a full or
+   * partial URL. For example:
+   * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
+   */
   public String getNextHopInstance() {
     return nextHopInstance;
   }
 
+  /**
+   * The network IP address of an instance that should handle matching packets. Only IPv4 is
+   * supported.
+   */
   public String getNextHopIp() {
     return nextHopIp;
   }
 
+  /** The URL of the local network if it should handle matching packets. */
   public String getNextHopNetwork() {
     return nextHopNetwork;
   }
 
+  /**
+   * [Output Only] The network peering name that should handle matching packets, which should
+   * conform to RFC1035.
+   */
   public String getNextHopPeering() {
     return nextHopPeering;
   }
 
+  /** The URL to a VpnTunnel that should handle matching packets. */
   public String getNextHopVpnTunnel() {
     return nextHopVpnTunnel;
   }
 
+  /**
+   * The priority of this route. Priority is used to break ties in cases where there is more than
+   * one matching route of equal prefix length. In the case of two routes with equal prefix length,
+   * the one with the lowest-numbered priority value wins. Default value is 1000. Valid range is 0
+   * through 65535.
+   */
   public Integer getPriority() {
     return priority;
   }
 
+  /** [Output Only] Server-defined fully-qualified URL for this resource. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /** A list of instance tags to which this route applies. */
   public List<String> getTagsList() {
     return tags;
   }
 
+  /**
+   * [Output Only] If potential misconfigurations are detected for this route, this field will be
+   * populated with warning messages.
+   */
   public List<Warnings> getWarningsList() {
     return warnings;
   }
@@ -356,145 +423,241 @@ public final class Route implements ApiMessage {
       this.warnings = source.warnings;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public String getCreationTimestamp() {
       return creationTimestamp;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public String getDescription() {
       return description;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /**
+     * The destination range of outgoing packets that this route applies to. Only IPv4 is supported.
+     */
     public String getDestRange() {
       return destRange;
     }
 
+    /**
+     * The destination range of outgoing packets that this route applies to. Only IPv4 is supported.
+     */
     public Builder setDestRange(String destRange) {
       this.destRange = destRange;
       return this;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /** [Output Only] Type of this resource. Always compute#routes for Route resources. */
     public String getKind() {
       return kind;
     }
 
+    /** [Output Only] Type of this resource. Always compute#routes for Route resources. */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /**
+     * Name of the resource. Provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public String getName() {
       return name;
     }
 
+    /**
+     * Name of the resource. Provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /** Fully-qualified URL of the network that this route applies to. */
     public String getNetwork() {
       return network;
     }
 
+    /** Fully-qualified URL of the network that this route applies to. */
     public Builder setNetwork(String network) {
       this.network = network;
       return this;
     }
 
+    /**
+     * The URL to a gateway that should handle matching packets. You can only specify the internet
+     * gateway using a full or partial valid URL:
+     * projects/&lt;project-id&gt;/global/gateways/default-internet-gateway
+     */
     public String getNextHopGateway() {
       return nextHopGateway;
     }
 
+    /**
+     * The URL to a gateway that should handle matching packets. You can only specify the internet
+     * gateway using a full or partial valid URL:
+     * projects/&lt;project-id&gt;/global/gateways/default-internet-gateway
+     */
     public Builder setNextHopGateway(String nextHopGateway) {
       this.nextHopGateway = nextHopGateway;
       return this;
     }
 
+    /**
+     * The URL to an instance that should handle matching packets. You can specify this as a full or
+     * partial URL. For example:
+     * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
+     */
     public String getNextHopInstance() {
       return nextHopInstance;
     }
 
+    /**
+     * The URL to an instance that should handle matching packets. You can specify this as a full or
+     * partial URL. For example:
+     * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
+     */
     public Builder setNextHopInstance(String nextHopInstance) {
       this.nextHopInstance = nextHopInstance;
       return this;
     }
 
+    /**
+     * The network IP address of an instance that should handle matching packets. Only IPv4 is
+     * supported.
+     */
     public String getNextHopIp() {
       return nextHopIp;
     }
 
+    /**
+     * The network IP address of an instance that should handle matching packets. Only IPv4 is
+     * supported.
+     */
     public Builder setNextHopIp(String nextHopIp) {
       this.nextHopIp = nextHopIp;
       return this;
     }
 
+    /** The URL of the local network if it should handle matching packets. */
     public String getNextHopNetwork() {
       return nextHopNetwork;
     }
 
+    /** The URL of the local network if it should handle matching packets. */
     public Builder setNextHopNetwork(String nextHopNetwork) {
       this.nextHopNetwork = nextHopNetwork;
       return this;
     }
 
+    /**
+     * [Output Only] The network peering name that should handle matching packets, which should
+     * conform to RFC1035.
+     */
     public String getNextHopPeering() {
       return nextHopPeering;
     }
 
+    /**
+     * [Output Only] The network peering name that should handle matching packets, which should
+     * conform to RFC1035.
+     */
     public Builder setNextHopPeering(String nextHopPeering) {
       this.nextHopPeering = nextHopPeering;
       return this;
     }
 
+    /** The URL to a VpnTunnel that should handle matching packets. */
     public String getNextHopVpnTunnel() {
       return nextHopVpnTunnel;
     }
 
+    /** The URL to a VpnTunnel that should handle matching packets. */
     public Builder setNextHopVpnTunnel(String nextHopVpnTunnel) {
       this.nextHopVpnTunnel = nextHopVpnTunnel;
       return this;
     }
 
+    /**
+     * The priority of this route. Priority is used to break ties in cases where there is more than
+     * one matching route of equal prefix length. In the case of two routes with equal prefix
+     * length, the one with the lowest-numbered priority value wins. Default value is 1000. Valid
+     * range is 0 through 65535.
+     */
     public Integer getPriority() {
       return priority;
     }
 
+    /**
+     * The priority of this route. Priority is used to break ties in cases where there is more than
+     * one matching route of equal prefix length. In the case of two routes with equal prefix
+     * length, the one with the lowest-numbered priority value wins. Default value is 1000. Valid
+     * range is 0 through 65535.
+     */
     public Builder setPriority(Integer priority) {
       this.priority = priority;
       return this;
     }
 
+    /** [Output Only] Server-defined fully-qualified URL for this resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined fully-qualified URL for this resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /** A list of instance tags to which this route applies. */
     public List<String> getTagsList() {
       return tags;
     }
 
+    /** A list of instance tags to which this route applies. */
     public Builder addAllTags(List<String> tags) {
       if (this.tags == null) {
         this.tags = new LinkedList<>();
@@ -503,6 +666,7 @@ public final class Route implements ApiMessage {
       return this;
     }
 
+    /** A list of instance tags to which this route applies. */
     public Builder addTags(String tags) {
       if (this.tags == null) {
         this.tags = new LinkedList<>();
@@ -511,10 +675,18 @@ public final class Route implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] If potential misconfigurations are detected for this route, this field will be
+     * populated with warning messages.
+     */
     public List<Warnings> getWarningsList() {
       return warnings;
     }
 
+    /**
+     * [Output Only] If potential misconfigurations are detected for this route, this field will be
+     * populated with warning messages.
+     */
     public Builder addAllWarnings(List<Warnings> warnings) {
       if (this.warnings == null) {
         this.warnings = new LinkedList<>();
@@ -523,6 +695,10 @@ public final class Route implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] If potential misconfigurations are detected for this route, this field will be
+     * populated with warning messages.
+     */
     public Builder addWarnings(Warnings warnings) {
       if (this.warnings == null) {
         this.warnings = new LinkedList<>();

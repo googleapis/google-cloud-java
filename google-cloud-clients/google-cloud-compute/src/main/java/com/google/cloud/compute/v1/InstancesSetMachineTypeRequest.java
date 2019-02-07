@@ -55,6 +55,10 @@ public final class InstancesSetMachineTypeRequest implements ApiMessage {
     return null;
   }
 
+  /**
+   * Full or partial URL of the machine type resource. See Machine Types for a full list of machine
+   * types. For example: zones/us-central1-f/machineTypes/n1-standard-1
+   */
   public String getMachineType() {
     return machineType;
   }
@@ -98,10 +102,18 @@ public final class InstancesSetMachineTypeRequest implements ApiMessage {
       this.machineType = source.machineType;
     }
 
+    /**
+     * Full or partial URL of the machine type resource. See Machine Types for a full list of
+     * machine types. For example: zones/us-central1-f/machineTypes/n1-standard-1
+     */
     public String getMachineType() {
       return machineType;
     }
 
+    /**
+     * Full or partial URL of the machine type resource. See Machine Types for a full list of
+     * machine types. For example: zones/us-central1-f/machineTypes/n1-standard-1
+     */
     public Builder setMachineType(String machineType) {
       this.machineType = machineType;
       return this;

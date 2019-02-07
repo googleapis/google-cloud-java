@@ -55,6 +55,7 @@ public final class ProjectsDisableXpnResourceRequest implements ApiMessage {
     return null;
   }
 
+  /** Service resource (a.k.a service project) ID. */
   public XpnResourceId getXpnResource() {
     return xpnResource;
   }
@@ -98,10 +99,12 @@ public final class ProjectsDisableXpnResourceRequest implements ApiMessage {
       this.xpnResource = source.xpnResource;
     }
 
+    /** Service resource (a.k.a service project) ID. */
     public XpnResourceId getXpnResource() {
       return xpnResource;
     }
 
+    /** Service resource (a.k.a service project) ID. */
     public Builder setXpnResource(XpnResourceId xpnResource) {
       this.xpnResource = xpnResource;
       return this;

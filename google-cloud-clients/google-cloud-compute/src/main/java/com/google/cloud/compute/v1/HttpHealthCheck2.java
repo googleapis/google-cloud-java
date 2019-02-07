@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * An HttpHealthCheck resource. This resource defines a template for how individual instances should
+ * be checked for health, via HTTP.
+ */
 public final class HttpHealthCheck2 implements ApiMessage {
   private final Integer checkIntervalSec;
   private final String creationTimestamp;
@@ -140,54 +144,89 @@ public final class HttpHealthCheck2 implements ApiMessage {
     return null;
   }
 
+  /** How often (in seconds) to send a health check. The default value is 5 seconds. */
   public Integer getCheckIntervalSec() {
     return checkIntervalSec;
   }
 
+  /** [Output Only] Creation timestamp in RFC3339 text format. */
   public String getCreationTimestamp() {
     return creationTimestamp;
   }
 
+  /**
+   * An optional description of this resource. Provide this property when you create the resource.
+   */
   public String getDescription() {
     return description;
   }
 
+  /**
+   * A so-far unhealthy instance will be marked healthy after this many consecutive successes. The
+   * default value is 2.
+   */
   public Integer getHealthyThreshold() {
     return healthyThreshold;
   }
 
+  /**
+   * The value of the host header in the HTTP health check request. If left empty (default value),
+   * the public IP on behalf of which this health check is performed will be used.
+   */
   public String getHost() {
     return host;
   }
 
+  /**
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   */
   public String getId() {
     return id;
   }
 
+  /** [Output Only] Type of the resource. Always compute#httpHealthCheck for HTTP health checks. */
   public String getKind() {
     return kind;
   }
 
+  /**
+   * Name of the resource. Provided by the client when the resource is created. The name must be
+   * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+   * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be a dash, lowercase
+   * letter, or digit, except the last character, which cannot be a dash.
+   */
   public String getName() {
     return name;
   }
 
+  /** The TCP port number for the HTTP health check request. The default value is 80. */
   public Integer getPort() {
     return port;
   }
 
+  /** The request path of the HTTP health check request. The default value is /. */
   public String getRequestPath() {
     return requestPath;
   }
 
+  /** [Output Only] Server-defined URL for the resource. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /**
+   * How long (in seconds) to wait before claiming failure. The default value is 5 seconds. It is
+   * invalid for timeoutSec to have greater value than checkIntervalSec.
+   */
   public Integer getTimeoutSec() {
     return timeoutSec;
   }
 
+  /**
+   * A so-far healthy instance will be marked unhealthy after this many consecutive failures. The
+   * default value is 2.
+   */
   public Integer getUnhealthyThreshold() {
     return unhealthyThreshold;
   }
@@ -291,118 +330,194 @@ public final class HttpHealthCheck2 implements ApiMessage {
       this.unhealthyThreshold = source.unhealthyThreshold;
     }
 
+    /** How often (in seconds) to send a health check. The default value is 5 seconds. */
     public Integer getCheckIntervalSec() {
       return checkIntervalSec;
     }
 
+    /** How often (in seconds) to send a health check. The default value is 5 seconds. */
     public Builder setCheckIntervalSec(Integer checkIntervalSec) {
       this.checkIntervalSec = checkIntervalSec;
       return this;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public String getCreationTimestamp() {
       return creationTimestamp;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public String getDescription() {
       return description;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /**
+     * A so-far unhealthy instance will be marked healthy after this many consecutive successes. The
+     * default value is 2.
+     */
     public Integer getHealthyThreshold() {
       return healthyThreshold;
     }
 
+    /**
+     * A so-far unhealthy instance will be marked healthy after this many consecutive successes. The
+     * default value is 2.
+     */
     public Builder setHealthyThreshold(Integer healthyThreshold) {
       this.healthyThreshold = healthyThreshold;
       return this;
     }
 
+    /**
+     * The value of the host header in the HTTP health check request. If left empty (default value),
+     * the public IP on behalf of which this health check is performed will be used.
+     */
     public String getHost() {
       return host;
     }
 
+    /**
+     * The value of the host header in the HTTP health check request. If left empty (default value),
+     * the public IP on behalf of which this health check is performed will be used.
+     */
     public Builder setHost(String host) {
       this.host = host;
       return this;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /**
+     * [Output Only] Type of the resource. Always compute#httpHealthCheck for HTTP health checks.
+     */
     public String getKind() {
       return kind;
     }
 
+    /**
+     * [Output Only] Type of the resource. Always compute#httpHealthCheck for HTTP health checks.
+     */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /**
+     * Name of the resource. Provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public String getName() {
       return name;
     }
 
+    /**
+     * Name of the resource. Provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /** The TCP port number for the HTTP health check request. The default value is 80. */
     public Integer getPort() {
       return port;
     }
 
+    /** The TCP port number for the HTTP health check request. The default value is 80. */
     public Builder setPort(Integer port) {
       this.port = port;
       return this;
     }
 
+    /** The request path of the HTTP health check request. The default value is /. */
     public String getRequestPath() {
       return requestPath;
     }
 
+    /** The request path of the HTTP health check request. The default value is /. */
     public Builder setRequestPath(String requestPath) {
       this.requestPath = requestPath;
       return this;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /**
+     * How long (in seconds) to wait before claiming failure. The default value is 5 seconds. It is
+     * invalid for timeoutSec to have greater value than checkIntervalSec.
+     */
     public Integer getTimeoutSec() {
       return timeoutSec;
     }
 
+    /**
+     * How long (in seconds) to wait before claiming failure. The default value is 5 seconds. It is
+     * invalid for timeoutSec to have greater value than checkIntervalSec.
+     */
     public Builder setTimeoutSec(Integer timeoutSec) {
       this.timeoutSec = timeoutSec;
       return this;
     }
 
+    /**
+     * A so-far healthy instance will be marked unhealthy after this many consecutive failures. The
+     * default value is 2.
+     */
     public Integer getUnhealthyThreshold() {
       return unhealthyThreshold;
     }
 
+    /**
+     * A so-far healthy instance will be marked unhealthy after this many consecutive failures. The
+     * default value is 2.
+     */
     public Builder setUnhealthyThreshold(Integer unhealthyThreshold) {
       this.unhealthyThreshold = unhealthyThreshold;
       return this;

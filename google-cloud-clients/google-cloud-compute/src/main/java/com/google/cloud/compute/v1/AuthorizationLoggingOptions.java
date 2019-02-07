@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Authorization-related information used by Cloud Audit Logging. */
 public final class AuthorizationLoggingOptions implements ApiMessage {
   private final String permissionType;
 
@@ -55,6 +56,7 @@ public final class AuthorizationLoggingOptions implements ApiMessage {
     return null;
   }
 
+  /** The type of the permission that was checked. */
   public String getPermissionType() {
     return permissionType;
   }
@@ -98,10 +100,12 @@ public final class AuthorizationLoggingOptions implements ApiMessage {
       this.permissionType = source.permissionType;
     }
 
+    /** The type of the permission that was checked. */
     public String getPermissionType() {
       return permissionType;
     }
 
+    /** The type of the permission that was checked. */
     public Builder setPermissionType(String permissionType) {
       this.permissionType = permissionType;
       return this;

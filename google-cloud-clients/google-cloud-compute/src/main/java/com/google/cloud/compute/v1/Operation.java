@@ -25,6 +25,12 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * An Operation resource, used to manage asynchronous API requests. (== resource_for
+ * v1.globalOperations ==) (== resource_for beta.globalOperations ==) (== resource_for
+ * v1.regionOperations ==) (== resource_for beta.regionOperations ==) (== resource_for
+ * v1.zoneOperations ==) (== resource_for beta.zoneOperations ==)
+ */
 public final class Operation implements ApiMessage {
   private final String clientOperationId;
   private final String creationTimestamp;
@@ -211,94 +217,166 @@ public final class Operation implements ApiMessage {
     return null;
   }
 
+  /**
+   * [Output Only] The value of `requestId` if you provided it in the request. Not present
+   * otherwise.
+   */
   public String getClientOperationId() {
     return clientOperationId;
   }
 
+  /** [Deprecated] This field is deprecated. */
   public String getCreationTimestamp() {
     return creationTimestamp;
   }
 
+  /**
+   * [Output Only] A textual description of the operation, which is set when the operation is
+   * created.
+   */
   public String getDescription() {
     return description;
   }
 
+  /**
+   * [Output Only] The time that this operation was completed. This value is in RFC3339 text format.
+   */
   public String getEndTime() {
     return endTime;
   }
 
+  /**
+   * [Output Only] If errors are generated during processing of the operation, this field will be
+   * populated.
+   */
   public Error getError() {
     return error;
   }
 
+  /**
+   * [Output Only] If the operation fails, this field contains the HTTP error message that was
+   * returned, such as NOT FOUND.
+   */
   public String getHttpErrorMessage() {
     return httpErrorMessage;
   }
 
+  /**
+   * [Output Only] If the operation fails, this field contains the HTTP error status code that was
+   * returned. For example, a 404 means the resource was not found.
+   */
   public Integer getHttpErrorStatusCode() {
     return httpErrorStatusCode;
   }
 
+  /**
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   */
   public String getId() {
     return id;
   }
 
+  /**
+   * [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
+   */
   public String getInsertTime() {
     return insertTime;
   }
 
+  /** [Output Only] Type of the resource. Always compute#operation for Operation resources. */
   public String getKind() {
     return kind;
   }
 
+  /** [Output Only] Name of the resource. */
   public String getName() {
     return name;
   }
 
+  /** [Output Only] The type of operation, such as insert, update, or delete, and so on. */
   public String getOperationType() {
     return operationType;
   }
 
+  /**
+   * [Output Only] An optional progress indicator that ranges from 0 to 100. There is no requirement
+   * that this be linear or support any granularity of operations. This should not be used to guess
+   * when the operation will be complete. This number should monotonically increase as the operation
+   * progresses.
+   */
   public Integer getProgress() {
     return progress;
   }
 
+  /**
+   * [Output Only] The URL of the region where the operation resides. Only available when performing
+   * regional operations. You must specify this field as part of the HTTP request URL. It is not
+   * settable as a field in the request body.
+   */
   public String getRegion() {
     return region;
   }
 
+  /** [Output Only] Server-defined URL for the resource. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /**
+   * [Output Only] The time that this operation was started by the server. This value is in RFC3339
+   * text format.
+   */
   public String getStartTime() {
     return startTime;
   }
 
+  /**
+   * [Output Only] The status of the operation, which can be one of the following: PENDING, RUNNING,
+   * or DONE.
+   */
   public String getStatus() {
     return status;
   }
 
+  /** [Output Only] An optional textual description of the current status of the operation. */
   public String getStatusMessage() {
     return statusMessage;
   }
 
+  /**
+   * [Output Only] The unique target ID, which identifies a specific incarnation of the target
+   * resource.
+   */
   public String getTargetId() {
     return targetId;
   }
 
+  /**
+   * [Output Only] The URL of the resource that the operation modifies. For operations related to
+   * creating a snapshot, this points to the persistent disk that the snapshot was created from.
+   */
   public String getTargetLink() {
     return targetLink;
   }
 
+  /** [Output Only] User who requested the operation, for example: user{@literal @}example.com. */
   public String getUser() {
     return user;
   }
 
+  /**
+   * [Output Only] If warning messages are generated during processing of the operation, this field
+   * will be populated.
+   */
   public List<Warnings> getWarningsList() {
     return warnings;
   }
 
+  /**
+   * [Output Only] The URL of the zone where the operation resides. Only available when performing
+   * per-zone operations. You must specify this field as part of the HTTP request URL. It is not
+   * settable as a field in the request body.
+   */
   public String getZone() {
     return zone;
   }
@@ -452,199 +530,339 @@ public final class Operation implements ApiMessage {
       this.zone = source.zone;
     }
 
+    /**
+     * [Output Only] The value of `requestId` if you provided it in the request. Not present
+     * otherwise.
+     */
     public String getClientOperationId() {
       return clientOperationId;
     }
 
+    /**
+     * [Output Only] The value of `requestId` if you provided it in the request. Not present
+     * otherwise.
+     */
     public Builder setClientOperationId(String clientOperationId) {
       this.clientOperationId = clientOperationId;
       return this;
     }
 
+    /** [Deprecated] This field is deprecated. */
     public String getCreationTimestamp() {
       return creationTimestamp;
     }
 
+    /** [Deprecated] This field is deprecated. */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
+    /**
+     * [Output Only] A textual description of the operation, which is set when the operation is
+     * created.
+     */
     public String getDescription() {
       return description;
     }
 
+    /**
+     * [Output Only] A textual description of the operation, which is set when the operation is
+     * created.
+     */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /**
+     * [Output Only] The time that this operation was completed. This value is in RFC3339 text
+     * format.
+     */
     public String getEndTime() {
       return endTime;
     }
 
+    /**
+     * [Output Only] The time that this operation was completed. This value is in RFC3339 text
+     * format.
+     */
     public Builder setEndTime(String endTime) {
       this.endTime = endTime;
       return this;
     }
 
+    /**
+     * [Output Only] If errors are generated during processing of the operation, this field will be
+     * populated.
+     */
     public Error getError() {
       return error;
     }
 
+    /**
+     * [Output Only] If errors are generated during processing of the operation, this field will be
+     * populated.
+     */
     public Builder setError(Error error) {
       this.error = error;
       return this;
     }
 
+    /**
+     * [Output Only] If the operation fails, this field contains the HTTP error message that was
+     * returned, such as NOT FOUND.
+     */
     public String getHttpErrorMessage() {
       return httpErrorMessage;
     }
 
+    /**
+     * [Output Only] If the operation fails, this field contains the HTTP error message that was
+     * returned, such as NOT FOUND.
+     */
     public Builder setHttpErrorMessage(String httpErrorMessage) {
       this.httpErrorMessage = httpErrorMessage;
       return this;
     }
 
+    /**
+     * [Output Only] If the operation fails, this field contains the HTTP error status code that was
+     * returned. For example, a 404 means the resource was not found.
+     */
     public Integer getHttpErrorStatusCode() {
       return httpErrorStatusCode;
     }
 
+    /**
+     * [Output Only] If the operation fails, this field contains the HTTP error status code that was
+     * returned. For example, a 404 means the resource was not found.
+     */
     public Builder setHttpErrorStatusCode(Integer httpErrorStatusCode) {
       this.httpErrorStatusCode = httpErrorStatusCode;
       return this;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /**
+     * [Output Only] The time that this operation was requested. This value is in RFC3339 text
+     * format.
+     */
     public String getInsertTime() {
       return insertTime;
     }
 
+    /**
+     * [Output Only] The time that this operation was requested. This value is in RFC3339 text
+     * format.
+     */
     public Builder setInsertTime(String insertTime) {
       this.insertTime = insertTime;
       return this;
     }
 
+    /** [Output Only] Type of the resource. Always compute#operation for Operation resources. */
     public String getKind() {
       return kind;
     }
 
+    /** [Output Only] Type of the resource. Always compute#operation for Operation resources. */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /** [Output Only] Name of the resource. */
     public String getName() {
       return name;
     }
 
+    /** [Output Only] Name of the resource. */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /** [Output Only] The type of operation, such as insert, update, or delete, and so on. */
     public String getOperationType() {
       return operationType;
     }
 
+    /** [Output Only] The type of operation, such as insert, update, or delete, and so on. */
     public Builder setOperationType(String operationType) {
       this.operationType = operationType;
       return this;
     }
 
+    /**
+     * [Output Only] An optional progress indicator that ranges from 0 to 100. There is no
+     * requirement that this be linear or support any granularity of operations. This should not be
+     * used to guess when the operation will be complete. This number should monotonically increase
+     * as the operation progresses.
+     */
     public Integer getProgress() {
       return progress;
     }
 
+    /**
+     * [Output Only] An optional progress indicator that ranges from 0 to 100. There is no
+     * requirement that this be linear or support any granularity of operations. This should not be
+     * used to guess when the operation will be complete. This number should monotonically increase
+     * as the operation progresses.
+     */
     public Builder setProgress(Integer progress) {
       this.progress = progress;
       return this;
     }
 
+    /**
+     * [Output Only] The URL of the region where the operation resides. Only available when
+     * performing regional operations. You must specify this field as part of the HTTP request URL.
+     * It is not settable as a field in the request body.
+     */
     public String getRegion() {
       return region;
     }
 
+    /**
+     * [Output Only] The URL of the region where the operation resides. Only available when
+     * performing regional operations. You must specify this field as part of the HTTP request URL.
+     * It is not settable as a field in the request body.
+     */
     public Builder setRegion(String region) {
       this.region = region;
       return this;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /**
+     * [Output Only] The time that this operation was started by the server. This value is in
+     * RFC3339 text format.
+     */
     public String getStartTime() {
       return startTime;
     }
 
+    /**
+     * [Output Only] The time that this operation was started by the server. This value is in
+     * RFC3339 text format.
+     */
     public Builder setStartTime(String startTime) {
       this.startTime = startTime;
       return this;
     }
 
+    /**
+     * [Output Only] The status of the operation, which can be one of the following: PENDING,
+     * RUNNING, or DONE.
+     */
     public String getStatus() {
       return status;
     }
 
+    /**
+     * [Output Only] The status of the operation, which can be one of the following: PENDING,
+     * RUNNING, or DONE.
+     */
     public Builder setStatus(String status) {
       this.status = status;
       return this;
     }
 
+    /** [Output Only] An optional textual description of the current status of the operation. */
     public String getStatusMessage() {
       return statusMessage;
     }
 
+    /** [Output Only] An optional textual description of the current status of the operation. */
     public Builder setStatusMessage(String statusMessage) {
       this.statusMessage = statusMessage;
       return this;
     }
 
+    /**
+     * [Output Only] The unique target ID, which identifies a specific incarnation of the target
+     * resource.
+     */
     public String getTargetId() {
       return targetId;
     }
 
+    /**
+     * [Output Only] The unique target ID, which identifies a specific incarnation of the target
+     * resource.
+     */
     public Builder setTargetId(String targetId) {
       this.targetId = targetId;
       return this;
     }
 
+    /**
+     * [Output Only] The URL of the resource that the operation modifies. For operations related to
+     * creating a snapshot, this points to the persistent disk that the snapshot was created from.
+     */
     public String getTargetLink() {
       return targetLink;
     }
 
+    /**
+     * [Output Only] The URL of the resource that the operation modifies. For operations related to
+     * creating a snapshot, this points to the persistent disk that the snapshot was created from.
+     */
     public Builder setTargetLink(String targetLink) {
       this.targetLink = targetLink;
       return this;
     }
 
+    /** [Output Only] User who requested the operation, for example: user{@literal @}example.com. */
     public String getUser() {
       return user;
     }
 
+    /** [Output Only] User who requested the operation, for example: user{@literal @}example.com. */
     public Builder setUser(String user) {
       this.user = user;
       return this;
     }
 
+    /**
+     * [Output Only] If warning messages are generated during processing of the operation, this
+     * field will be populated.
+     */
     public List<Warnings> getWarningsList() {
       return warnings;
     }
 
+    /**
+     * [Output Only] If warning messages are generated during processing of the operation, this
+     * field will be populated.
+     */
     public Builder addAllWarnings(List<Warnings> warnings) {
       if (this.warnings == null) {
         this.warnings = new LinkedList<>();
@@ -653,6 +871,10 @@ public final class Operation implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] If warning messages are generated during processing of the operation, this
+     * field will be populated.
+     */
     public Builder addWarnings(Warnings warnings) {
       if (this.warnings == null) {
         this.warnings = new LinkedList<>();
@@ -661,10 +883,20 @@ public final class Operation implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] The URL of the zone where the operation resides. Only available when performing
+     * per-zone operations. You must specify this field as part of the HTTP request URL. It is not
+     * settable as a field in the request body.
+     */
     public String getZone() {
       return zone;
     }
 
+    /**
+     * [Output Only] The URL of the zone where the operation resides. Only available when performing
+     * per-zone operations. You must specify this field as part of the HTTP request URL. It is not
+     * settable as a field in the request body.
+     */
     public Builder setZone(String zone) {
       this.zone = zone;
       return this;

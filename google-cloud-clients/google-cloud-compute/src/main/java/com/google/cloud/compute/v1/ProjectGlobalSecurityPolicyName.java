@@ -149,9 +149,10 @@ public final class ProjectGlobalSecurityPolicyName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
-        "project", project,
-        "securityPolicy", securityPolicy);
+    return SERVICE_ADDRESS
+        + PATH_TEMPLATE.instantiate(
+            "project", project,
+            "securityPolicy", securityPolicy);
   }
 
   @Override

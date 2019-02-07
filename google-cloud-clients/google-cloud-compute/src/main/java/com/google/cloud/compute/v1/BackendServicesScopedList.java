@@ -62,10 +62,12 @@ public final class BackendServicesScopedList implements ApiMessage {
     return null;
   }
 
+  /** A list of BackendServices contained in this scope. */
   public List<BackendService> getBackendServicesList() {
     return backendServices;
   }
 
+  /** Informational warning which replaces the list of backend services when the list is empty. */
   public Warning getWarning() {
     return warning;
   }
@@ -114,10 +116,12 @@ public final class BackendServicesScopedList implements ApiMessage {
       this.warning = source.warning;
     }
 
+    /** A list of BackendServices contained in this scope. */
     public List<BackendService> getBackendServicesList() {
       return backendServices;
     }
 
+    /** A list of BackendServices contained in this scope. */
     public Builder addAllBackendServices(List<BackendService> backendServices) {
       if (this.backendServices == null) {
         this.backendServices = new LinkedList<>();
@@ -126,6 +130,7 @@ public final class BackendServicesScopedList implements ApiMessage {
       return this;
     }
 
+    /** A list of BackendServices contained in this scope. */
     public Builder addBackendServices(BackendService backendServices) {
       if (this.backendServices == null) {
         this.backendServices = new LinkedList<>();
@@ -134,10 +139,12 @@ public final class BackendServicesScopedList implements ApiMessage {
       return this;
     }
 
+    /** Informational warning which replaces the list of backend services when the list is empty. */
     public Warning getWarning() {
       return warning;
     }
 
+    /** Informational warning which replaces the list of backend services when the list is empty. */
     public Builder setWarning(Warning warning) {
       this.warning = warning;
       return this;

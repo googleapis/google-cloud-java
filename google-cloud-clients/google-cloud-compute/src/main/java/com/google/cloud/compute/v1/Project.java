@@ -25,6 +25,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * A Project resource. For an overview of projects, see Cloud Platform Resource Hierarchy. (==
+ * resource_for v1.projects ==) (== resource_for beta.projects ==)
+ */
 public final class Project implements ApiMessage {
   private final Metadata commonInstanceMetadata;
   private final String creationTimestamp;
@@ -141,54 +145,87 @@ public final class Project implements ApiMessage {
     return null;
   }
 
+  /**
+   * Metadata key/value pairs available to all instances contained in this project. See Custom
+   * metadata for more information.
+   */
   public Metadata getCommonInstanceMetadata() {
     return commonInstanceMetadata;
   }
 
+  /** [Output Only] Creation timestamp in RFC3339 text format. */
   public String getCreationTimestamp() {
     return creationTimestamp;
   }
 
+  /**
+   * This signifies the default network tier used for configuring resources of the project and can
+   * only take the following values: PREMIUM, STANDARD. Initially the default network tier is
+   * PREMIUM.
+   */
   public String getDefaultNetworkTier() {
     return defaultNetworkTier;
   }
 
+  /** [Output Only] Default service account used by VMs running in this project. */
   public String getDefaultServiceAccount() {
     return defaultServiceAccount;
   }
 
+  /** An optional textual description of the resource. */
   public String getDescription() {
     return description;
   }
 
+  /** Restricted features enabled for use on this project. */
   public List<String> getEnabledFeaturesList() {
     return enabledFeatures;
   }
 
+  /**
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   * This is not the project ID, and is just a unique ID used by Compute Engine to identify
+   * resources.
+   */
   public String getId() {
     return id;
   }
 
+  /** [Output Only] Type of the resource. Always compute#project for projects. */
   public String getKind() {
     return kind;
   }
 
+  /**
+   * The project ID. For example: my-example-project. Use the project ID to make requests to Compute
+   * Engine.
+   */
   public String getName() {
     return name;
   }
 
+  /** [Output Only] Quotas assigned to this project. */
   public List<Quota> getQuotasList() {
     return quotas;
   }
 
+  /** [Output Only] Server-defined URL for the resource. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /**
+   * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are
+   * stored.
+   */
   public UsageExportLocation getUsageExportLocation() {
     return usageExportLocation;
   }
 
+  /**
+   * [Output Only] The role this project has in a shared VPC configuration. Currently only HOST
+   * projects are differentiated.
+   */
   public String getXpnProjectStatus() {
     return xpnProjectStatus;
   }
@@ -292,55 +329,81 @@ public final class Project implements ApiMessage {
       this.xpnProjectStatus = source.xpnProjectStatus;
     }
 
+    /**
+     * Metadata key/value pairs available to all instances contained in this project. See Custom
+     * metadata for more information.
+     */
     public Metadata getCommonInstanceMetadata() {
       return commonInstanceMetadata;
     }
 
+    /**
+     * Metadata key/value pairs available to all instances contained in this project. See Custom
+     * metadata for more information.
+     */
     public Builder setCommonInstanceMetadata(Metadata commonInstanceMetadata) {
       this.commonInstanceMetadata = commonInstanceMetadata;
       return this;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public String getCreationTimestamp() {
       return creationTimestamp;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
+    /**
+     * This signifies the default network tier used for configuring resources of the project and can
+     * only take the following values: PREMIUM, STANDARD. Initially the default network tier is
+     * PREMIUM.
+     */
     public String getDefaultNetworkTier() {
       return defaultNetworkTier;
     }
 
+    /**
+     * This signifies the default network tier used for configuring resources of the project and can
+     * only take the following values: PREMIUM, STANDARD. Initially the default network tier is
+     * PREMIUM.
+     */
     public Builder setDefaultNetworkTier(String defaultNetworkTier) {
       this.defaultNetworkTier = defaultNetworkTier;
       return this;
     }
 
+    /** [Output Only] Default service account used by VMs running in this project. */
     public String getDefaultServiceAccount() {
       return defaultServiceAccount;
     }
 
+    /** [Output Only] Default service account used by VMs running in this project. */
     public Builder setDefaultServiceAccount(String defaultServiceAccount) {
       this.defaultServiceAccount = defaultServiceAccount;
       return this;
     }
 
+    /** An optional textual description of the resource. */
     public String getDescription() {
       return description;
     }
 
+    /** An optional textual description of the resource. */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /** Restricted features enabled for use on this project. */
     public List<String> getEnabledFeaturesList() {
       return enabledFeatures;
     }
 
+    /** Restricted features enabled for use on this project. */
     public Builder addAllEnabledFeatures(List<String> enabledFeatures) {
       if (this.enabledFeatures == null) {
         this.enabledFeatures = new LinkedList<>();
@@ -349,6 +412,7 @@ public final class Project implements ApiMessage {
       return this;
     }
 
+    /** Restricted features enabled for use on this project. */
     public Builder addEnabledFeatures(String enabledFeatures) {
       if (this.enabledFeatures == null) {
         this.enabledFeatures = new LinkedList<>();
@@ -357,37 +421,59 @@ public final class Project implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server. This is not the project ID, and is just a unique ID used by Compute Engine to
+     * identify resources.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server. This is not the project ID, and is just a unique ID used by Compute Engine to
+     * identify resources.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /** [Output Only] Type of the resource. Always compute#project for projects. */
     public String getKind() {
       return kind;
     }
 
+    /** [Output Only] Type of the resource. Always compute#project for projects. */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /**
+     * The project ID. For example: my-example-project. Use the project ID to make requests to
+     * Compute Engine.
+     */
     public String getName() {
       return name;
     }
 
+    /**
+     * The project ID. For example: my-example-project. Use the project ID to make requests to
+     * Compute Engine.
+     */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /** [Output Only] Quotas assigned to this project. */
     public List<Quota> getQuotasList() {
       return quotas;
     }
 
+    /** [Output Only] Quotas assigned to this project. */
     public Builder addAllQuotas(List<Quota> quotas) {
       if (this.quotas == null) {
         this.quotas = new LinkedList<>();
@@ -396,6 +482,7 @@ public final class Project implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] Quotas assigned to this project. */
     public Builder addQuotas(Quota quotas) {
       if (this.quotas == null) {
         this.quotas = new LinkedList<>();
@@ -404,28 +491,46 @@ public final class Project implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /**
+     * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are
+     * stored.
+     */
     public UsageExportLocation getUsageExportLocation() {
       return usageExportLocation;
     }
 
+    /**
+     * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are
+     * stored.
+     */
     public Builder setUsageExportLocation(UsageExportLocation usageExportLocation) {
       this.usageExportLocation = usageExportLocation;
       return this;
     }
 
+    /**
+     * [Output Only] The role this project has in a shared VPC configuration. Currently only HOST
+     * projects are differentiated.
+     */
     public String getXpnProjectStatus() {
       return xpnProjectStatus;
     }
 
+    /**
+     * [Output Only] The role this project has in a shared VPC configuration. Currently only HOST
+     * projects are differentiated.
+     */
     public Builder setXpnProjectStatus(String xpnProjectStatus) {
       this.xpnProjectStatus = xpnProjectStatus;
       return this;

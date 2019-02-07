@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Description-tagged IP ranges for the router to advertise. */
 public final class RouterAdvertisedIpRange implements ApiMessage {
   private final String description;
   private final String range;
@@ -61,10 +62,12 @@ public final class RouterAdvertisedIpRange implements ApiMessage {
     return null;
   }
 
+  /** User-specified description for the IP range. */
   public String getDescription() {
     return description;
   }
 
+  /** The IP range to advertise. The value must be a CIDR-formatted string. */
   public String getRange() {
     return range;
   }
@@ -113,19 +116,23 @@ public final class RouterAdvertisedIpRange implements ApiMessage {
       this.range = source.range;
     }
 
+    /** User-specified description for the IP range. */
     public String getDescription() {
       return description;
     }
 
+    /** User-specified description for the IP range. */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /** The IP range to advertise. The value must be a CIDR-formatted string. */
     public String getRange() {
       return range;
     }
 
+    /** The IP range to advertise. The value must be a CIDR-formatted string. */
     public Builder setRange(String range) {
       this.range = range;
       return this;

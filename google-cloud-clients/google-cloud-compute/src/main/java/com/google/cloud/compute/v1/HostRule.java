@@ -25,6 +25,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * UrlMaps A host-matching rule for a URL. If matched, will use the named PathMatcher to select the
+ * BackendService.
+ */
 public final class HostRule implements ApiMessage {
   private final String description;
   private final List<String> hosts;
@@ -68,14 +72,26 @@ public final class HostRule implements ApiMessage {
     return null;
   }
 
+  /**
+   * An optional description of this resource. Provide this property when you create the resource.
+   */
   public String getDescription() {
     return description;
   }
 
+  /**
+   * The list of host patterns to match. They must be valid hostnames, except &#42; will match any
+   * string of ([a-z0-9-.]&#42;). In that case, &#42; must be the first character and must be
+   * followed in the pattern by either - or ..
+   */
   public List<String> getHostsList() {
     return hosts;
   }
 
+  /**
+   * The name of the PathMatcher to use to match the path portion of the URL if the hostRule matches
+   * the URL's host portion.
+   */
   public String getPathMatcher() {
     return pathMatcher;
   }
@@ -129,19 +145,35 @@ public final class HostRule implements ApiMessage {
       this.pathMatcher = source.pathMatcher;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public String getDescription() {
       return description;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /**
+     * The list of host patterns to match. They must be valid hostnames, except &#42; will match any
+     * string of ([a-z0-9-.]&#42;). In that case, &#42; must be the first character and must be
+     * followed in the pattern by either - or ..
+     */
     public List<String> getHostsList() {
       return hosts;
     }
 
+    /**
+     * The list of host patterns to match. They must be valid hostnames, except &#42; will match any
+     * string of ([a-z0-9-.]&#42;). In that case, &#42; must be the first character and must be
+     * followed in the pattern by either - or ..
+     */
     public Builder addAllHosts(List<String> hosts) {
       if (this.hosts == null) {
         this.hosts = new LinkedList<>();
@@ -150,6 +182,11 @@ public final class HostRule implements ApiMessage {
       return this;
     }
 
+    /**
+     * The list of host patterns to match. They must be valid hostnames, except &#42; will match any
+     * string of ([a-z0-9-.]&#42;). In that case, &#42; must be the first character and must be
+     * followed in the pattern by either - or ..
+     */
     public Builder addHosts(String hosts) {
       if (this.hosts == null) {
         this.hosts = new LinkedList<>();
@@ -158,10 +195,18 @@ public final class HostRule implements ApiMessage {
       return this;
     }
 
+    /**
+     * The name of the PathMatcher to use to match the path portion of the URL if the hostRule
+     * matches the URL's host portion.
+     */
     public String getPathMatcher() {
       return pathMatcher;
     }
 
+    /**
+     * The name of the PathMatcher to use to match the path portion of the URL if the hostRule
+     * matches the URL's host portion.
+     */
     public Builder setPathMatcher(String pathMatcher) {
       this.pathMatcher = pathMatcher;
       return this;

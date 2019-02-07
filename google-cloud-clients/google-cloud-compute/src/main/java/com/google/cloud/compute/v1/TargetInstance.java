@@ -24,6 +24,11 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * A TargetInstance resource. This resource defines an endpoint instance that terminates traffic of
+ * certain protocols. (== resource_for beta.targetInstances ==) (== resource_for v1.targetInstances
+ * ==)
+ */
 public final class TargetInstance implements ApiMessage {
   private final String creationTimestamp;
   private final String description;
@@ -112,38 +117,69 @@ public final class TargetInstance implements ApiMessage {
     return null;
   }
 
+  /** [Output Only] Creation timestamp in RFC3339 text format. */
   public String getCreationTimestamp() {
     return creationTimestamp;
   }
 
+  /**
+   * An optional description of this resource. Provide this property when you create the resource.
+   */
   public String getDescription() {
     return description;
   }
 
+  /**
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   */
   public String getId() {
     return id;
   }
 
+  /**
+   * A URL to the virtual machine instance that handles traffic for this target instance. When
+   * creating a target instance, you can provide the fully-qualified URL or a valid partial URL to
+   * the desired virtual machine. For example, the following are all valid URLs: -
+   * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance -
+   * projects/project/zones/zone/instances/instance - zones/zone/instances/instance
+   */
   public String getInstance() {
     return instance;
   }
 
+  /** [Output Only] The type of the resource. Always compute#targetInstance for target instances. */
   public String getKind() {
     return kind;
   }
 
+  /**
+   * Name of the resource. Provided by the client when the resource is created. The name must be
+   * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+   * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be a dash, lowercase
+   * letter, or digit, except the last character, which cannot be a dash.
+   */
   public String getName() {
     return name;
   }
 
+  /**
+   * NAT option controlling how IPs are NAT'ed to the instance. Currently only NO_NAT (default
+   * value) is supported.
+   */
   public String getNatPolicy() {
     return natPolicy;
   }
 
+  /** [Output Only] Server-defined URL for the resource. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /**
+   * [Output Only] URL of the zone where the target instance resides. You must specify this field as
+   * part of the HTTP request URL. It is not settable as a field in the request body.
+   */
   public String getZone() {
     return zone;
   }
@@ -227,82 +263,150 @@ public final class TargetInstance implements ApiMessage {
       this.zone = source.zone;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public String getCreationTimestamp() {
       return creationTimestamp;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public String getDescription() {
       return description;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /**
+     * A URL to the virtual machine instance that handles traffic for this target instance. When
+     * creating a target instance, you can provide the fully-qualified URL or a valid partial URL to
+     * the desired virtual machine. For example, the following are all valid URLs: -
+     * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance -
+     * projects/project/zones/zone/instances/instance - zones/zone/instances/instance
+     */
     public String getInstance() {
       return instance;
     }
 
+    /**
+     * A URL to the virtual machine instance that handles traffic for this target instance. When
+     * creating a target instance, you can provide the fully-qualified URL or a valid partial URL to
+     * the desired virtual machine. For example, the following are all valid URLs: -
+     * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance -
+     * projects/project/zones/zone/instances/instance - zones/zone/instances/instance
+     */
     public Builder setInstance(String instance) {
       this.instance = instance;
       return this;
     }
 
+    /**
+     * [Output Only] The type of the resource. Always compute#targetInstance for target instances.
+     */
     public String getKind() {
       return kind;
     }
 
+    /**
+     * [Output Only] The type of the resource. Always compute#targetInstance for target instances.
+     */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /**
+     * Name of the resource. Provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public String getName() {
       return name;
     }
 
+    /**
+     * Name of the resource. Provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /**
+     * NAT option controlling how IPs are NAT'ed to the instance. Currently only NO_NAT (default
+     * value) is supported.
+     */
     public String getNatPolicy() {
       return natPolicy;
     }
 
+    /**
+     * NAT option controlling how IPs are NAT'ed to the instance. Currently only NO_NAT (default
+     * value) is supported.
+     */
     public Builder setNatPolicy(String natPolicy) {
       this.natPolicy = natPolicy;
       return this;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /**
+     * [Output Only] URL of the zone where the target instance resides. You must specify this field
+     * as part of the HTTP request URL. It is not settable as a field in the request body.
+     */
     public String getZone() {
       return zone;
     }
 
+    /**
+     * [Output Only] URL of the zone where the target instance resides. You must specify this field
+     * as part of the HTTP request URL. It is not settable as a field in the request body.
+     */
     public Builder setZone(String zone) {
       this.zone = zone;
       return this;

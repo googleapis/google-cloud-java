@@ -215,7 +215,7 @@ public class AssetServiceClient implements BackgroundResource {
    *     .setParent(parent.toString())
    *     .setOutputConfig(outputConfig)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = assetServiceClient.exportAssetsOperationCallable().futureCall(request);
+   *   OperationFuture&lt;ExportAssetsResponse, ExportAssetsRequest&gt; future = assetServiceClient.exportAssetsOperationCallable().futureCall(request);
    *   // Do something
    *   ExportAssetsResponse response = future.get();
    * }

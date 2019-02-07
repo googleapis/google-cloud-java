@@ -55,6 +55,7 @@ public final class RegionInstanceGroupManagersSetTemplateRequest implements ApiM
     return null;
   }
 
+  /** URL of the InstanceTemplate resource from which all new instances will be created. */
   public String getInstanceTemplate() {
     return instanceTemplate;
   }
@@ -98,10 +99,12 @@ public final class RegionInstanceGroupManagersSetTemplateRequest implements ApiM
       this.instanceTemplate = source.instanceTemplate;
     }
 
+    /** URL of the InstanceTemplate resource from which all new instances will be created. */
     public String getInstanceTemplate() {
       return instanceTemplate;
     }
 
+    /** URL of the InstanceTemplate resource from which all new instances will be created. */
     public Builder setInstanceTemplate(String instanceTemplate) {
       this.instanceTemplate = instanceTemplate;
       return this;

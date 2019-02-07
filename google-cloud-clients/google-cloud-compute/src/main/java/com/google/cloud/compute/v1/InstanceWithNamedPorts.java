@@ -68,14 +68,17 @@ public final class InstanceWithNamedPorts implements ApiMessage {
     return null;
   }
 
+  /** [Output Only] The URL of the instance. */
   public String getInstance() {
     return instance;
   }
 
+  /** [Output Only] The named ports that belong to this instance group. */
   public List<NamedPort> getNamedPortsList() {
     return namedPorts;
   }
 
+  /** [Output Only] The status of the instance. */
   public String getStatus() {
     return status;
   }
@@ -129,19 +132,23 @@ public final class InstanceWithNamedPorts implements ApiMessage {
       this.status = source.status;
     }
 
+    /** [Output Only] The URL of the instance. */
     public String getInstance() {
       return instance;
     }
 
+    /** [Output Only] The URL of the instance. */
     public Builder setInstance(String instance) {
       this.instance = instance;
       return this;
     }
 
+    /** [Output Only] The named ports that belong to this instance group. */
     public List<NamedPort> getNamedPortsList() {
       return namedPorts;
     }
 
+    /** [Output Only] The named ports that belong to this instance group. */
     public Builder addAllNamedPorts(List<NamedPort> namedPorts) {
       if (this.namedPorts == null) {
         this.namedPorts = new LinkedList<>();
@@ -150,6 +157,7 @@ public final class InstanceWithNamedPorts implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] The named ports that belong to this instance group. */
     public Builder addNamedPorts(NamedPort namedPorts) {
       if (this.namedPorts == null) {
         this.namedPorts = new LinkedList<>();
@@ -158,10 +166,12 @@ public final class InstanceWithNamedPorts implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] The status of the instance. */
     public String getStatus() {
       return status;
     }
 
+    /** [Output Only] The status of the instance. */
     public Builder setStatus(String status) {
       this.status = status;
       return this;

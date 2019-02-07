@@ -207,6 +207,24 @@ public class ITStorageSnippets {
   }
 
   @Test
+  public void testCreateCopyAndGetBlobFromSubArray() {
+    String blobName = "test-create-copy-get-blob-from-sub-array";
+    Blob blob = storageSnippets.createBlobWithSubArrayFromByteArray(BUCKET, blobName, 7, 1);
+    assertNotNull(blob);
+    Blob copiedBlob = storageSnippets.copyBlobInChunks(BUCKET, blobName, "copy-blob");
+    assertNotNull(copiedBlob);
+    try {
+      storageSnippets.getBlobFromIdWithMetageneration(BUCKET, blobName, -1);
+      fail("Expected StorageException to be thrown");
+    } catch (StorageException ex) {
+      // expected
+    }
+    assertTrue(
+        storageSnippets.deleteBlobFromIdWithGeneration(BUCKET, blobName, blob.getGeneration()));
+    copiedBlob.delete();
+  }
+
+  @Test
   public void testCreateBlobFromInputStream() {
     Blob blob =
         storageSnippets.createBlobFromInputStream(BUCKET, "test-create-blob-from-input-stream");
@@ -545,5 +563,20 @@ public class ITStorageSnippets {
     assertEquals(bucket.getRetentionPeriod(), RETENTION_PERIOD);
     bucket = storageSnippets.lockRetentionPolicy(tempBucket);
     assertTrue(bucket.retentionPolicyIsLocked());
+  }
+
+  @Test
+  public void testBucketPolicyOnly() {
+    String tempBucket = RemoteStorageHelper.generateBucketName();
+    Bucket bucket = storageSnippets.createBucket(tempBucket);
+    assertNotNull(bucket);
+    bucket = storageSnippets.enableBucketPolicyOnly(tempBucket);
+    assertTrue(bucket.getIamConfiguration().isBucketPolicyOnlyEnabled());
+    assertNotNull(bucket.getIamConfiguration().getBucketPolicyOnlyLockedTime());
+    bucket = storageSnippets.getBucketPolicyOnly(tempBucket);
+    assertTrue(bucket.getIamConfiguration().isBucketPolicyOnlyEnabled());
+    assertNotNull(bucket.getIamConfiguration().getBucketPolicyOnlyLockedTime());
+    bucket = storageSnippets.disableBucketPolicyOnly(tempBucket);
+    assertFalse(bucket.getIamConfiguration().isBucketPolicyOnlyEnabled());
   }
 }

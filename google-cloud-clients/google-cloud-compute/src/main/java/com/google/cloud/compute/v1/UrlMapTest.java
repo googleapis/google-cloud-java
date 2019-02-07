@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Message for the expected URL mappings. */
 public final class UrlMapTest implements ApiMessage {
   private final String description;
   private final String host;
@@ -73,18 +74,22 @@ public final class UrlMapTest implements ApiMessage {
     return null;
   }
 
+  /** Description of this test case. */
   public String getDescription() {
     return description;
   }
 
+  /** Host portion of the URL. */
   public String getHost() {
     return host;
   }
 
+  /** Path portion of the URL. */
   public String getPath() {
     return path;
   }
 
+  /** Expected BackendService resource the given URL should be mapped to. */
   public String getService() {
     return service;
   }
@@ -143,37 +148,45 @@ public final class UrlMapTest implements ApiMessage {
       this.service = source.service;
     }
 
+    /** Description of this test case. */
     public String getDescription() {
       return description;
     }
 
+    /** Description of this test case. */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /** Host portion of the URL. */
     public String getHost() {
       return host;
     }
 
+    /** Host portion of the URL. */
     public Builder setHost(String host) {
       this.host = host;
       return this;
     }
 
+    /** Path portion of the URL. */
     public String getPath() {
       return path;
     }
 
+    /** Path portion of the URL. */
     public Builder setPath(String path) {
       this.path = path;
       return this;
     }
 
+    /** Expected BackendService resource the given URL should be mapped to. */
     public String getService() {
       return service;
     }
 
+    /** Expected BackendService resource the given URL should be mapped to. */
     public Builder setService(String service) {
       this.service = service;
       return this;

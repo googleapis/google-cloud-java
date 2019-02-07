@@ -286,8 +286,18 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-firestore-v1</artifactId>
+        <version>0.44.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-firestore-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-firestore-v1beta1</artifactId>
         <version>0.44.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-firestore-v1beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-firestore-v1</artifactId>
+        <version>0.44.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-firestore-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -662,6 +672,7 @@
     <module>grpc-google-cloud-dialogflow-v2beta1</module>
     <module>grpc-google-cloud-dlp-v2</module>
     <module>grpc-google-cloud-error-reporting-v1beta1</module>
+    <module>grpc-google-cloud-firestore-v1</module>
     <module>grpc-google-cloud-firestore-v1beta1</module>
     <module>grpc-google-cloud-iamcredentials-v1</module>
     <module>grpc-google-cloud-iot-v1</module>
@@ -714,6 +725,7 @@
     <module>proto-google-cloud-dialogflow-v2beta1</module>
     <module>proto-google-cloud-dlp-v2</module>
     <module>proto-google-cloud-error-reporting-v1beta1</module>
+    <module>proto-google-cloud-firestore-v1</module>
     <module>proto-google-cloud-firestore-v1beta1</module>
     <module>proto-google-cloud-iamcredentials-v1</module>
     <module>proto-google-cloud-iot-v1</module>

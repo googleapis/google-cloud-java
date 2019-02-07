@@ -25,6 +25,9 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Node Affinity: the configuration of desired nodes onto which this Instance could be scheduled.
+ */
 public final class SchedulingNodeAffinity implements ApiMessage {
   private final String key;
   private final String operator;
@@ -68,14 +71,17 @@ public final class SchedulingNodeAffinity implements ApiMessage {
     return null;
   }
 
+  /** Corresponds to the label key of Node resource. */
   public String getKey() {
     return key;
   }
 
+  /** Defines the operation of node selection. */
   public String getOperator() {
     return operator;
   }
 
+  /** Corresponds to the label values of Node resource. */
   public List<String> getValuesList() {
     return values;
   }
@@ -129,28 +135,34 @@ public final class SchedulingNodeAffinity implements ApiMessage {
       this.values = source.values;
     }
 
+    /** Corresponds to the label key of Node resource. */
     public String getKey() {
       return key;
     }
 
+    /** Corresponds to the label key of Node resource. */
     public Builder setKey(String key) {
       this.key = key;
       return this;
     }
 
+    /** Defines the operation of node selection. */
     public String getOperator() {
       return operator;
     }
 
+    /** Defines the operation of node selection. */
     public Builder setOperator(String operator) {
       this.operator = operator;
       return this;
     }
 
+    /** Corresponds to the label values of Node resource. */
     public List<String> getValuesList() {
       return values;
     }
 
+    /** Corresponds to the label values of Node resource. */
     public Builder addAllValues(List<String> values) {
       if (this.values == null) {
         this.values = new LinkedList<>();
@@ -159,6 +171,7 @@ public final class SchedulingNodeAffinity implements ApiMessage {
       return this;
     }
 
+    /** Corresponds to the label values of Node resource. */
     public Builder addValues(String values) {
       if (this.values == null) {
         this.values = new LinkedList<>();

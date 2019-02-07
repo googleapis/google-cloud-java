@@ -247,7 +247,8 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (format_
         != com.google.cloud.iot.v1.PublicKeyCertificateFormat
-            .UNSPECIFIED_PUBLIC_KEY_CERTIFICATE_FORMAT.getNumber()) {
+            .UNSPECIFIED_PUBLIC_KEY_CERTIFICATE_FORMAT
+            .getNumber()) {
       output.writeEnum(1, format_);
     }
     if (!getCertificateBytes().isEmpty()) {
@@ -267,7 +268,8 @@ public final class PublicKeyCertificate extends com.google.protobuf.GeneratedMes
     size = 0;
     if (format_
         != com.google.cloud.iot.v1.PublicKeyCertificateFormat
-            .UNSPECIFIED_PUBLIC_KEY_CERTIFICATE_FORMAT.getNumber()) {
+            .UNSPECIFIED_PUBLIC_KEY_CERTIFICATE_FORMAT
+            .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, format_);
     }
     if (!getCertificateBytes().isEmpty()) {

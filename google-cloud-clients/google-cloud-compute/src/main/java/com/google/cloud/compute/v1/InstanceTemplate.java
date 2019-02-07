@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * An Instance Template resource. (== resource_for beta.instanceTemplates ==) (== resource_for
+ * v1.instanceTemplates ==)
+ */
 public final class InstanceTemplate implements ApiMessage {
   private final String creationTimestamp;
   private final String description;
@@ -112,38 +116,66 @@ public final class InstanceTemplate implements ApiMessage {
     return null;
   }
 
+  /** [Output Only] The creation timestamp for this instance template in RFC3339 text format. */
   public String getCreationTimestamp() {
     return creationTimestamp;
   }
 
+  /**
+   * An optional description of this resource. Provide this property when you create the resource.
+   */
   public String getDescription() {
     return description;
   }
 
+  /**
+   * [Output Only] A unique identifier for this instance template. The server defines this
+   * identifier.
+   */
   public String getId() {
     return id;
   }
 
+  /**
+   * [Output Only] The resource type, which is always compute#instanceTemplate for instance
+   * templates.
+   */
   public String getKind() {
     return kind;
   }
 
+  /**
+   * Name of the resource; provided by the client when the resource is created. The name must be
+   * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+   * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be a dash, lowercase
+   * letter, or digit, except the last character, which cannot be a dash.
+   */
   public String getName() {
     return name;
   }
 
+  /** The instance properties for this instance template. */
   public InstanceProperties getProperties() {
     return properties;
   }
 
+  /** [Output Only] The URL for this instance template. The server defines this URL. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /**
+   * The source instance used to create the template. You can provide this as a partial or full URL
+   * to the resource. For example, the following are valid values: -
+   * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance -
+   * projects/project/zones/zone/instances/instance
+   */
   public String getSourceInstance() {
     return sourceInstance;
   }
 
+  /** The source instance params to use to create this instance template. */
   public SourceInstanceParams getSourceInstanceParams() {
     return sourceInstanceParams;
   }
@@ -227,82 +259,138 @@ public final class InstanceTemplate implements ApiMessage {
       this.sourceInstanceParams = source.sourceInstanceParams;
     }
 
+    /** [Output Only] The creation timestamp for this instance template in RFC3339 text format. */
     public String getCreationTimestamp() {
       return creationTimestamp;
     }
 
+    /** [Output Only] The creation timestamp for this instance template in RFC3339 text format. */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public String getDescription() {
       return description;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /**
+     * [Output Only] A unique identifier for this instance template. The server defines this
+     * identifier.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output Only] A unique identifier for this instance template. The server defines this
+     * identifier.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /**
+     * [Output Only] The resource type, which is always compute#instanceTemplate for instance
+     * templates.
+     */
     public String getKind() {
       return kind;
     }
 
+    /**
+     * [Output Only] The resource type, which is always compute#instanceTemplate for instance
+     * templates.
+     */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /**
+     * Name of the resource; provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public String getName() {
       return name;
     }
 
+    /**
+     * Name of the resource; provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /** The instance properties for this instance template. */
     public InstanceProperties getProperties() {
       return properties;
     }
 
+    /** The instance properties for this instance template. */
     public Builder setProperties(InstanceProperties properties) {
       this.properties = properties;
       return this;
     }
 
+    /** [Output Only] The URL for this instance template. The server defines this URL. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] The URL for this instance template. The server defines this URL. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /**
+     * The source instance used to create the template. You can provide this as a partial or full
+     * URL to the resource. For example, the following are valid values: -
+     * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance -
+     * projects/project/zones/zone/instances/instance
+     */
     public String getSourceInstance() {
       return sourceInstance;
     }
 
+    /**
+     * The source instance used to create the template. You can provide this as a partial or full
+     * URL to the resource. For example, the following are valid values: -
+     * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance -
+     * projects/project/zones/zone/instances/instance
+     */
     public Builder setSourceInstance(String sourceInstance) {
       this.sourceInstance = sourceInstance;
       return this;
     }
 
+    /** The source instance params to use to create this instance template. */
     public SourceInstanceParams getSourceInstanceParams() {
       return sourceInstanceParams;
     }
 
+    /** The source instance params to use to create this instance template. */
     public Builder setSourceInstanceParams(SourceInstanceParams sourceInstanceParams) {
       this.sourceInstanceParams = sourceInstanceParams;
       return this;
