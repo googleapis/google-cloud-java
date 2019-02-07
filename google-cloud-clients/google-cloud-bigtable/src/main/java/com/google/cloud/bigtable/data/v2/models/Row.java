@@ -172,7 +172,7 @@ public abstract class Row implements Serializable {
     return index;
   }
 
-  /** wraps the protobuf {@link com.google.bigtable.v2.Row} */
+  /** Wraps the protobuf {@link com.google.bigtable.v2.Row} */
   public static Row fromProto(@Nonnull com.google.bigtable.v2.Row rowProto) {
     Preconditions.checkArgument(rowProto != null, "Row must not be null");
 
@@ -188,7 +188,7 @@ public abstract class Row implements Serializable {
               column.getQualifier(),
               cell.getTimestampMicros(),
               cell.getLabelsList(),
-              column.getCellsCount());
+              cell.getValue().size());
           rowBuilder.cellValue(cell.getValue());
           rowBuilder.finishCell();
         }
