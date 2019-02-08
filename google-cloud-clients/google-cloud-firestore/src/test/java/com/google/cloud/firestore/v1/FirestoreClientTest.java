@@ -30,12 +30,14 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.common.collect.Lists;
+import com.google.firestore.v1.AnyPathName;
 import com.google.firestore.v1.BatchGetDocumentsRequest;
 import com.google.firestore.v1.BatchGetDocumentsResponse;
 import com.google.firestore.v1.BeginTransactionRequest;
 import com.google.firestore.v1.BeginTransactionResponse;
 import com.google.firestore.v1.CommitRequest;
 import com.google.firestore.v1.CommitResponse;
+import com.google.firestore.v1.DatabaseRootName;
 import com.google.firestore.v1.DeleteDocumentRequest;
 import com.google.firestore.v1.Document;
 import com.google.firestore.v1.DocumentMask;
@@ -153,7 +155,7 @@ public class FirestoreClientTest {
     mockFirestore.addResponse(expectedResponse);
 
     String formattedName =
-        FirestoreClient.formatAnyPathName("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
+        AnyPathName.format("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
 
     client.deleteDocument(formattedName);
 
@@ -176,7 +178,7 @@ public class FirestoreClientTest {
 
     try {
       String formattedName =
-          FirestoreClient.formatAnyPathName("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
+          AnyPathName.format("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
 
       client.deleteDocument(formattedName);
       Assert.fail("No exception raised");
@@ -196,7 +198,7 @@ public class FirestoreClientTest {
             .setTransaction(transaction)
             .build();
     mockFirestore.addResponse(expectedResponse);
-    String formattedDatabase = FirestoreClient.formatDatabaseRootName("[PROJECT]", "[DATABASE]");
+    String formattedDatabase = DatabaseRootName.format("[PROJECT]", "[DATABASE]");
     List<String> documents = new ArrayList<>();
     BatchGetDocumentsRequest request =
         BatchGetDocumentsRequest.newBuilder()
@@ -220,7 +222,7 @@ public class FirestoreClientTest {
   public void batchGetDocumentsExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockFirestore.addException(exception);
-    String formattedDatabase = FirestoreClient.formatDatabaseRootName("[PROJECT]", "[DATABASE]");
+    String formattedDatabase = DatabaseRootName.format("[PROJECT]", "[DATABASE]");
     List<String> documents = new ArrayList<>();
     BatchGetDocumentsRequest request =
         BatchGetDocumentsRequest.newBuilder()
@@ -252,7 +254,7 @@ public class FirestoreClientTest {
         BeginTransactionResponse.newBuilder().setTransaction(transaction).build();
     mockFirestore.addResponse(expectedResponse);
 
-    String formattedDatabase = FirestoreClient.formatDatabaseRootName("[PROJECT]", "[DATABASE]");
+    String formattedDatabase = DatabaseRootName.format("[PROJECT]", "[DATABASE]");
 
     BeginTransactionResponse actualResponse = client.beginTransaction(formattedDatabase);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -275,7 +277,7 @@ public class FirestoreClientTest {
     mockFirestore.addException(exception);
 
     try {
-      String formattedDatabase = FirestoreClient.formatDatabaseRootName("[PROJECT]", "[DATABASE]");
+      String formattedDatabase = DatabaseRootName.format("[PROJECT]", "[DATABASE]");
 
       client.beginTransaction(formattedDatabase);
       Assert.fail("No exception raised");
@@ -290,7 +292,7 @@ public class FirestoreClientTest {
     CommitResponse expectedResponse = CommitResponse.newBuilder().build();
     mockFirestore.addResponse(expectedResponse);
 
-    String formattedDatabase = FirestoreClient.formatDatabaseRootName("[PROJECT]", "[DATABASE]");
+    String formattedDatabase = DatabaseRootName.format("[PROJECT]", "[DATABASE]");
     List<Write> writes = new ArrayList<>();
 
     CommitResponse actualResponse = client.commit(formattedDatabase, writes);
@@ -315,7 +317,7 @@ public class FirestoreClientTest {
     mockFirestore.addException(exception);
 
     try {
-      String formattedDatabase = FirestoreClient.formatDatabaseRootName("[PROJECT]", "[DATABASE]");
+      String formattedDatabase = DatabaseRootName.format("[PROJECT]", "[DATABASE]");
       List<Write> writes = new ArrayList<>();
 
       client.commit(formattedDatabase, writes);
@@ -331,7 +333,7 @@ public class FirestoreClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockFirestore.addResponse(expectedResponse);
 
-    String formattedDatabase = FirestoreClient.formatDatabaseRootName("[PROJECT]", "[DATABASE]");
+    String formattedDatabase = DatabaseRootName.format("[PROJECT]", "[DATABASE]");
     ByteString transaction = ByteString.copyFromUtf8("-34");
 
     client.rollback(formattedDatabase, transaction);
@@ -355,7 +357,7 @@ public class FirestoreClientTest {
     mockFirestore.addException(exception);
 
     try {
-      String formattedDatabase = FirestoreClient.formatDatabaseRootName("[PROJECT]", "[DATABASE]");
+      String formattedDatabase = DatabaseRootName.format("[PROJECT]", "[DATABASE]");
       ByteString transaction = ByteString.copyFromUtf8("-34");
 
       client.rollback(formattedDatabase, transaction);
@@ -377,7 +379,7 @@ public class FirestoreClientTest {
             .build();
     mockFirestore.addResponse(expectedResponse);
     String formattedParent =
-        FirestoreClient.formatAnyPathName("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
+        AnyPathName.format("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
     RunQueryRequest request = RunQueryRequest.newBuilder().setParent(formattedParent).build();
 
     MockStreamObserver<RunQueryResponse> responseObserver = new MockStreamObserver<>();
@@ -396,7 +398,7 @@ public class FirestoreClientTest {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockFirestore.addException(exception);
     String formattedParent =
-        FirestoreClient.formatAnyPathName("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
+        AnyPathName.format("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
     RunQueryRequest request = RunQueryRequest.newBuilder().setParent(formattedParent).build();
 
     MockStreamObserver<RunQueryResponse> responseObserver = new MockStreamObserver<>();
@@ -422,7 +424,7 @@ public class FirestoreClientTest {
     WriteResponse expectedResponse =
         WriteResponse.newBuilder().setStreamId(streamId).setStreamToken(streamToken).build();
     mockFirestore.addResponse(expectedResponse);
-    String formattedDatabase = FirestoreClient.formatDatabaseRootName("[PROJECT]", "[DATABASE]");
+    String formattedDatabase = DatabaseRootName.format("[PROJECT]", "[DATABASE]");
     WriteRequest request = WriteRequest.newBuilder().setDatabase(formattedDatabase).build();
 
     MockStreamObserver<WriteResponse> responseObserver = new MockStreamObserver<>();
@@ -443,7 +445,7 @@ public class FirestoreClientTest {
   public void writeExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockFirestore.addException(exception);
-    String formattedDatabase = FirestoreClient.formatDatabaseRootName("[PROJECT]", "[DATABASE]");
+    String formattedDatabase = DatabaseRootName.format("[PROJECT]", "[DATABASE]");
     WriteRequest request = WriteRequest.newBuilder().setDatabase(formattedDatabase).build();
 
     MockStreamObserver<WriteResponse> responseObserver = new MockStreamObserver<>();
@@ -468,7 +470,7 @@ public class FirestoreClientTest {
   public void listenTest() throws Exception {
     ListenResponse expectedResponse = ListenResponse.newBuilder().build();
     mockFirestore.addResponse(expectedResponse);
-    String formattedDatabase = FirestoreClient.formatDatabaseRootName("[PROJECT]", "[DATABASE]");
+    String formattedDatabase = DatabaseRootName.format("[PROJECT]", "[DATABASE]");
     ListenRequest request = ListenRequest.newBuilder().setDatabase(formattedDatabase).build();
 
     MockStreamObserver<ListenResponse> responseObserver = new MockStreamObserver<>();
@@ -489,7 +491,7 @@ public class FirestoreClientTest {
   public void listenExceptionTest() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockFirestore.addException(exception);
-    String formattedDatabase = FirestoreClient.formatDatabaseRootName("[PROJECT]", "[DATABASE]");
+    String formattedDatabase = DatabaseRootName.format("[PROJECT]", "[DATABASE]");
     ListenRequest request = ListenRequest.newBuilder().setDatabase(formattedDatabase).build();
 
     MockStreamObserver<ListenResponse> responseObserver = new MockStreamObserver<>();
@@ -523,7 +525,7 @@ public class FirestoreClientTest {
     mockFirestore.addResponse(expectedResponse);
 
     String formattedParent =
-        FirestoreClient.formatAnyPathName("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
+        AnyPathName.format("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
 
     ListCollectionIdsPagedResponse pagedListResponse = client.listCollectionIds(formattedParent);
 
@@ -550,7 +552,7 @@ public class FirestoreClientTest {
 
     try {
       String formattedParent =
-          FirestoreClient.formatAnyPathName("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
+          AnyPathName.format("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
 
       client.listCollectionIds(formattedParent);
       Assert.fail("No exception raised");

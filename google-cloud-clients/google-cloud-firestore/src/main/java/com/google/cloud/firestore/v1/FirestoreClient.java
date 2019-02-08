@@ -27,7 +27,6 @@ import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.firestore.v1.stub.FirestoreStub;
 import com.google.cloud.firestore.v1.stub.FirestoreStubSettings;
 import com.google.firestore.v1.BatchGetDocumentsRequest;
@@ -145,137 +144,6 @@ public class FirestoreClient implements BackgroundResource {
   private final FirestoreSettings settings;
   private final FirestoreStub stub;
 
-  private static final PathTemplate DATABASE_ROOT_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/databases/{database}");
-
-  private static final PathTemplate DOCUMENT_ROOT_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/databases/{database}/documents");
-
-  private static final PathTemplate DOCUMENT_PATH_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/databases/{database}/documents/{document_path=**}");
-
-  private static final PathTemplate ANY_PATH_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/databases/{database}/documents/{document}/{any_path=**}");
-
-  /** Formats a string containing the fully-qualified path to represent a database_root resource. */
-  public static final String formatDatabaseRootName(String project, String database) {
-    return DATABASE_ROOT_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "database", database);
-  }
-
-  /** Formats a string containing the fully-qualified path to represent a document_root resource. */
-  public static final String formatDocumentRootName(String project, String database) {
-    return DOCUMENT_ROOT_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "database", database);
-  }
-
-  /** Formats a string containing the fully-qualified path to represent a document_path resource. */
-  public static final String formatDocumentPathName(
-      String project, String database, String documentPath) {
-    return DOCUMENT_PATH_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "database", database,
-        "document_path", documentPath);
-  }
-
-  /** Formats a string containing the fully-qualified path to represent a any_path resource. */
-  public static final String formatAnyPathName(
-      String project, String database, String document, String anyPath) {
-    return ANY_PATH_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "database", database,
-        "document", document,
-        "any_path", anyPath);
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a database_root
-   * resource.
-   */
-  public static final String parseProjectFromDatabaseRootName(String databaseRootName) {
-    return DATABASE_ROOT_PATH_TEMPLATE.parse(databaseRootName).get("project");
-  }
-
-  /**
-   * Parses the database from the given fully-qualified path which represents a database_root
-   * resource.
-   */
-  public static final String parseDatabaseFromDatabaseRootName(String databaseRootName) {
-    return DATABASE_ROOT_PATH_TEMPLATE.parse(databaseRootName).get("database");
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a document_root
-   * resource.
-   */
-  public static final String parseProjectFromDocumentRootName(String documentRootName) {
-    return DOCUMENT_ROOT_PATH_TEMPLATE.parse(documentRootName).get("project");
-  }
-
-  /**
-   * Parses the database from the given fully-qualified path which represents a document_root
-   * resource.
-   */
-  public static final String parseDatabaseFromDocumentRootName(String documentRootName) {
-    return DOCUMENT_ROOT_PATH_TEMPLATE.parse(documentRootName).get("database");
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a document_path
-   * resource.
-   */
-  public static final String parseProjectFromDocumentPathName(String documentPathName) {
-    return DOCUMENT_PATH_PATH_TEMPLATE.parse(documentPathName).get("project");
-  }
-
-  /**
-   * Parses the database from the given fully-qualified path which represents a document_path
-   * resource.
-   */
-  public static final String parseDatabaseFromDocumentPathName(String documentPathName) {
-    return DOCUMENT_PATH_PATH_TEMPLATE.parse(documentPathName).get("database");
-  }
-
-  /**
-   * Parses the document_path from the given fully-qualified path which represents a document_path
-   * resource.
-   */
-  public static final String parseDocumentPathFromDocumentPathName(String documentPathName) {
-    return DOCUMENT_PATH_PATH_TEMPLATE.parse(documentPathName).get("document_path");
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a any_path resource.
-   */
-  public static final String parseProjectFromAnyPathName(String anyPathName) {
-    return ANY_PATH_PATH_TEMPLATE.parse(anyPathName).get("project");
-  }
-
-  /**
-   * Parses the database from the given fully-qualified path which represents a any_path resource.
-   */
-  public static final String parseDatabaseFromAnyPathName(String anyPathName) {
-    return ANY_PATH_PATH_TEMPLATE.parse(anyPathName).get("database");
-  }
-
-  /**
-   * Parses the document from the given fully-qualified path which represents a any_path resource.
-   */
-  public static final String parseDocumentFromAnyPathName(String anyPathName) {
-    return ANY_PATH_PATH_TEMPLATE.parse(anyPathName).get("document");
-  }
-
-  /**
-   * Parses the any_path from the given fully-qualified path which represents a any_path resource.
-   */
-  public static final String parseAnyPathFromAnyPathName(String anyPathName) {
-    return ANY_PATH_PATH_TEMPLATE.parse(anyPathName).get("any_path");
-  }
-
   /** Constructs an instance of FirestoreClient with default settings. */
   public static final FirestoreClient create() throws IOException {
     return create(FirestoreSettings.newBuilder().build());
@@ -330,7 +198,7 @@ public class FirestoreClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
-   *   String formattedName = FirestoreClient.formatAnyPathName("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
+   *   String formattedName = AnyPathName.format("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
    *   GetDocumentRequest request = GetDocumentRequest.newBuilder()
    *     .setName(formattedName)
    *     .build();
@@ -353,7 +221,7 @@ public class FirestoreClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
-   *   String formattedName = FirestoreClient.formatAnyPathName("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
+   *   String formattedName = AnyPathName.format("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
    *   GetDocumentRequest request = GetDocumentRequest.newBuilder()
    *     .setName(formattedName)
    *     .build();
@@ -375,7 +243,7 @@ public class FirestoreClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
-   *   String formattedParent = FirestoreClient.formatAnyPathName("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
+   *   String formattedParent = AnyPathName.format("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
    *   String collectionId = "";
    *   ListDocumentsRequest request = ListDocumentsRequest.newBuilder()
    *     .setParent(formattedParent)
@@ -402,7 +270,7 @@ public class FirestoreClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
-   *   String formattedParent = FirestoreClient.formatAnyPathName("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
+   *   String formattedParent = AnyPathName.format("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
    *   String collectionId = "";
    *   ListDocumentsRequest request = ListDocumentsRequest.newBuilder()
    *     .setParent(formattedParent)
@@ -429,7 +297,7 @@ public class FirestoreClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
-   *   String formattedParent = FirestoreClient.formatAnyPathName("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
+   *   String formattedParent = AnyPathName.format("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
    *   String collectionId = "";
    *   ListDocumentsRequest request = ListDocumentsRequest.newBuilder()
    *     .setParent(formattedParent)
@@ -462,7 +330,7 @@ public class FirestoreClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
-   *   String formattedParent = FirestoreClient.formatAnyPathName("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
+   *   String formattedParent = AnyPathName.format("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
    *   String collectionId = "";
    *   String documentId = "";
    *   Document document = Document.newBuilder().build();
@@ -491,7 +359,7 @@ public class FirestoreClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
-   *   String formattedParent = FirestoreClient.formatAnyPathName("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
+   *   String formattedParent = AnyPathName.format("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
    *   String collectionId = "";
    *   String documentId = "";
    *   Document document = Document.newBuilder().build();
@@ -597,7 +465,7 @@ public class FirestoreClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
-   *   String formattedName = FirestoreClient.formatAnyPathName("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
+   *   String formattedName = AnyPathName.format("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
    *   firestoreClient.deleteDocument(formattedName);
    * }
    * </code></pre>
@@ -607,7 +475,7 @@ public class FirestoreClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteDocument(String name) {
-    ANY_PATH_PATH_TEMPLATE.validate(name, "deleteDocument");
+
     DeleteDocumentRequest request = DeleteDocumentRequest.newBuilder().setName(name).build();
     deleteDocument(request);
   }
@@ -620,7 +488,7 @@ public class FirestoreClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
-   *   String formattedName = FirestoreClient.formatAnyPathName("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
+   *   String formattedName = AnyPathName.format("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
    *   DeleteDocumentRequest request = DeleteDocumentRequest.newBuilder()
    *     .setName(formattedName)
    *     .build();
@@ -643,7 +511,7 @@ public class FirestoreClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
-   *   String formattedName = FirestoreClient.formatAnyPathName("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
+   *   String formattedName = AnyPathName.format("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
    *   DeleteDocumentRequest request = DeleteDocumentRequest.newBuilder()
    *     .setName(formattedName)
    *     .build();
@@ -668,7 +536,7 @@ public class FirestoreClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
-   *   String formattedDatabase = FirestoreClient.formatDatabaseRootName("[PROJECT]", "[DATABASE]");
+   *   String formattedDatabase = DatabaseRootName.format("[PROJECT]", "[DATABASE]");
    *   List&lt;String&gt; documents = new ArrayList&lt;&gt;();
    *   BatchGetDocumentsRequest request = BatchGetDocumentsRequest.newBuilder()
    *     .setDatabase(formattedDatabase)
@@ -695,7 +563,7 @@ public class FirestoreClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
-   *   String formattedDatabase = FirestoreClient.formatDatabaseRootName("[PROJECT]", "[DATABASE]");
+   *   String formattedDatabase = DatabaseRootName.format("[PROJECT]", "[DATABASE]");
    *   BeginTransactionResponse response = firestoreClient.beginTransaction(formattedDatabase);
    * }
    * </code></pre>
@@ -705,7 +573,7 @@ public class FirestoreClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BeginTransactionResponse beginTransaction(String database) {
-    DATABASE_ROOT_PATH_TEMPLATE.validate(database, "beginTransaction");
+
     BeginTransactionRequest request =
         BeginTransactionRequest.newBuilder().setDatabase(database).build();
     return beginTransaction(request);
@@ -719,7 +587,7 @@ public class FirestoreClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
-   *   String formattedDatabase = FirestoreClient.formatDatabaseRootName("[PROJECT]", "[DATABASE]");
+   *   String formattedDatabase = DatabaseRootName.format("[PROJECT]", "[DATABASE]");
    *   BeginTransactionRequest request = BeginTransactionRequest.newBuilder()
    *     .setDatabase(formattedDatabase)
    *     .build();
@@ -742,7 +610,7 @@ public class FirestoreClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
-   *   String formattedDatabase = FirestoreClient.formatDatabaseRootName("[PROJECT]", "[DATABASE]");
+   *   String formattedDatabase = DatabaseRootName.format("[PROJECT]", "[DATABASE]");
    *   BeginTransactionRequest request = BeginTransactionRequest.newBuilder()
    *     .setDatabase(formattedDatabase)
    *     .build();
@@ -765,7 +633,7 @@ public class FirestoreClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
-   *   String formattedDatabase = FirestoreClient.formatDatabaseRootName("[PROJECT]", "[DATABASE]");
+   *   String formattedDatabase = DatabaseRootName.format("[PROJECT]", "[DATABASE]");
    *   List&lt;Write&gt; writes = new ArrayList&lt;&gt;();
    *   CommitResponse response = firestoreClient.commit(formattedDatabase, writes);
    * }
@@ -778,7 +646,7 @@ public class FirestoreClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CommitResponse commit(String database, List<Write> writes) {
-    DATABASE_ROOT_PATH_TEMPLATE.validate(database, "commit");
+
     CommitRequest request =
         CommitRequest.newBuilder().setDatabase(database).addAllWrites(writes).build();
     return commit(request);
@@ -792,7 +660,7 @@ public class FirestoreClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
-   *   String formattedDatabase = FirestoreClient.formatDatabaseRootName("[PROJECT]", "[DATABASE]");
+   *   String formattedDatabase = DatabaseRootName.format("[PROJECT]", "[DATABASE]");
    *   List&lt;Write&gt; writes = new ArrayList&lt;&gt;();
    *   CommitRequest request = CommitRequest.newBuilder()
    *     .setDatabase(formattedDatabase)
@@ -817,7 +685,7 @@ public class FirestoreClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
-   *   String formattedDatabase = FirestoreClient.formatDatabaseRootName("[PROJECT]", "[DATABASE]");
+   *   String formattedDatabase = DatabaseRootName.format("[PROJECT]", "[DATABASE]");
    *   List&lt;Write&gt; writes = new ArrayList&lt;&gt;();
    *   CommitRequest request = CommitRequest.newBuilder()
    *     .setDatabase(formattedDatabase)
@@ -841,7 +709,7 @@ public class FirestoreClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
-   *   String formattedDatabase = FirestoreClient.formatDatabaseRootName("[PROJECT]", "[DATABASE]");
+   *   String formattedDatabase = DatabaseRootName.format("[PROJECT]", "[DATABASE]");
    *   ByteString transaction = ByteString.copyFromUtf8("");
    *   firestoreClient.rollback(formattedDatabase, transaction);
    * }
@@ -853,7 +721,7 @@ public class FirestoreClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void rollback(String database, ByteString transaction) {
-    DATABASE_ROOT_PATH_TEMPLATE.validate(database, "rollback");
+
     RollbackRequest request =
         RollbackRequest.newBuilder().setDatabase(database).setTransaction(transaction).build();
     rollback(request);
@@ -867,7 +735,7 @@ public class FirestoreClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
-   *   String formattedDatabase = FirestoreClient.formatDatabaseRootName("[PROJECT]", "[DATABASE]");
+   *   String formattedDatabase = DatabaseRootName.format("[PROJECT]", "[DATABASE]");
    *   ByteString transaction = ByteString.copyFromUtf8("");
    *   RollbackRequest request = RollbackRequest.newBuilder()
    *     .setDatabase(formattedDatabase)
@@ -892,7 +760,7 @@ public class FirestoreClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
-   *   String formattedDatabase = FirestoreClient.formatDatabaseRootName("[PROJECT]", "[DATABASE]");
+   *   String formattedDatabase = DatabaseRootName.format("[PROJECT]", "[DATABASE]");
    *   ByteString transaction = ByteString.copyFromUtf8("");
    *   RollbackRequest request = RollbackRequest.newBuilder()
    *     .setDatabase(formattedDatabase)
@@ -916,7 +784,7 @@ public class FirestoreClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
-   *   String formattedParent = FirestoreClient.formatAnyPathName("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
+   *   String formattedParent = AnyPathName.format("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
    *   RunQueryRequest request = RunQueryRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .build();
@@ -943,7 +811,7 @@ public class FirestoreClient implements BackgroundResource {
    *   BidiStream&lt;WriteRequest, WriteResponse&gt; bidiStream =
    *       firestoreClient.writeCallable().call();
    *
-   *   String formattedDatabase = FirestoreClient.formatDatabaseRootName("[PROJECT]", "[DATABASE]");
+   *   String formattedDatabase = DatabaseRootName.format("[PROJECT]", "[DATABASE]");
    *   WriteRequest request = WriteRequest.newBuilder()
    *     .setDatabase(formattedDatabase)
    *     .build();
@@ -969,7 +837,7 @@ public class FirestoreClient implements BackgroundResource {
    *   BidiStream&lt;ListenRequest, ListenResponse&gt; bidiStream =
    *       firestoreClient.listenCallable().call();
    *
-   *   String formattedDatabase = FirestoreClient.formatDatabaseRootName("[PROJECT]", "[DATABASE]");
+   *   String formattedDatabase = DatabaseRootName.format("[PROJECT]", "[DATABASE]");
    *   ListenRequest request = ListenRequest.newBuilder()
    *     .setDatabase(formattedDatabase)
    *     .build();
@@ -992,7 +860,7 @@ public class FirestoreClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
-   *   String formattedParent = FirestoreClient.formatAnyPathName("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
+   *   String formattedParent = AnyPathName.format("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
    *   for (String element : firestoreClient.listCollectionIds(formattedParent).iterateAll()) {
    *     // doThingsWith(element);
    *   }
@@ -1005,7 +873,6 @@ public class FirestoreClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCollectionIdsPagedResponse listCollectionIds(String parent) {
-    ANY_PATH_PATH_TEMPLATE.validate(parent, "listCollectionIds");
     ListCollectionIdsRequest request =
         ListCollectionIdsRequest.newBuilder().setParent(parent).build();
     return listCollectionIds(request);
@@ -1019,7 +886,7 @@ public class FirestoreClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
-   *   String formattedParent = FirestoreClient.formatAnyPathName("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
+   *   String formattedParent = AnyPathName.format("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
    *   ListCollectionIdsRequest request = ListCollectionIdsRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .build();
@@ -1044,7 +911,7 @@ public class FirestoreClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
-   *   String formattedParent = FirestoreClient.formatAnyPathName("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
+   *   String formattedParent = AnyPathName.format("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
    *   ListCollectionIdsRequest request = ListCollectionIdsRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .build();
@@ -1069,7 +936,7 @@ public class FirestoreClient implements BackgroundResource {
    *
    * <pre><code>
    * try (FirestoreClient firestoreClient = FirestoreClient.create()) {
-   *   String formattedParent = FirestoreClient.formatAnyPathName("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
+   *   String formattedParent = AnyPathName.format("[PROJECT]", "[DATABASE]", "[DOCUMENT]", "[ANY_PATH]");
    *   ListCollectionIdsRequest request = ListCollectionIdsRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .build();
