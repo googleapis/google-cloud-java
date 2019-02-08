@@ -35,13 +35,13 @@ import com.google.common.io.BaseEncoding;
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.AbstractMap;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
-import javax.xml.bind.DatatypeConverter;
 
 /**
  * Google Storage object metadata.
@@ -443,11 +443,14 @@ public class BlobInfo implements Serializable {
     }
 
     public Builder setMd5FromHexString(String md5HexString) {
-      System.out.println("crc32cHexString: " + md5HexString);
       if (md5HexString == null) {
         return this;
       }
-      byte[] bytes = DatatypeConverter.parseHexBinary(md5HexString);
+      byte[] bytes = new BigInteger(md5HexString, 16).toByteArray();
+      int leadingEmptyBytes = bytes.length - md5HexString.length() / 2;
+      if (leadingEmptyBytes > 0) {
+        bytes = Arrays.copyOfRange(bytes, leadingEmptyBytes, bytes.length);
+      }
       this.md5 = BaseEncoding.base64().encode(bytes);
       return this;
     }
@@ -463,7 +466,11 @@ public class BlobInfo implements Serializable {
       if (crc32cHexString == null) {
         return this;
       }
-      byte[] bytes = DatatypeConverter.parseHexBinary(crc32cHexString);
+      byte[] bytes = new BigInteger(crc32cHexString, 16).toByteArray();
+      int leadingEmptyBytes = bytes.length - crc32cHexString.length() / 2;
+      if (leadingEmptyBytes > 0) {
+        bytes = Arrays.copyOfRange(bytes, leadingEmptyBytes, bytes.length);
+      }
       this.crc32c = BaseEncoding.base64().encode(bytes);
       return this;
     }
