@@ -41,6 +41,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
+import javax.xml.bind.DatatypeConverter;
 
 /**
  * Google Storage object metadata.
@@ -442,10 +443,11 @@ public class BlobInfo implements Serializable {
     }
 
     public Builder setMd5FromHexString(String md5HexString) {
+      System.out.println("crc32cHexString: " + md5HexString);
       if (md5HexString == null) {
         return this;
       }
-      byte[] bytes = new BigInteger(md5HexString, 16).toByteArray();
+      byte[] bytes = DatatypeConverter.parseHexBinary(md5HexString);
       this.md5 = BaseEncoding.base64().encode(bytes);
       return this;
     }
@@ -461,7 +463,7 @@ public class BlobInfo implements Serializable {
       if (crc32cHexString == null) {
         return this;
       }
-      byte[] bytes = new BigInteger(crc32cHexString, 16).toByteArray();
+      byte[] bytes = DatatypeConverter.parseHexBinary(crc32cHexString);
       this.crc32c = BaseEncoding.base64().encode(bytes);
       return this;
     }
@@ -721,8 +723,7 @@ public class BlobInfo implements Serializable {
     if (md5 == null) {
       return null;
     }
-    String md5withoutPrefix = md5.startsWith("0x") ? md5.replaceFirst("0x", "") : md5;
-    byte[] decodedMd5 = BaseEncoding.base64().decode(md5withoutPrefix);
+    byte[] decodedMd5 = BaseEncoding.base64().decode(md5);
     StringBuilder stringBuilder = new StringBuilder();
     for (byte b : decodedMd5) {
       stringBuilder.append(String.format("%02x", b & 0xff));
@@ -754,8 +755,7 @@ public class BlobInfo implements Serializable {
     if (crc32c == null) {
       return null;
     }
-    String crc32cWithoutPrefix = crc32c.startsWith("0x") ? crc32c.replaceFirst("0x", "") : crc32c;
-    byte[] decodeCrc32c = BaseEncoding.base64().decode(crc32cWithoutPrefix);
+    byte[] decodeCrc32c = BaseEncoding.base64().decode(crc32c);
     StringBuilder stringBuilder = new StringBuilder();
     for (byte b : decodeCrc32c) {
       stringBuilder.append(String.format("%02x", b & 0xff));

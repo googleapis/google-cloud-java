@@ -70,13 +70,13 @@ public class BlobTest {
   private static final String CONTENT_DISPOSITION = "content-disposition";
   private static final String CONTENT_ENCODING = "UTF-8";
   private static final String CONTENT_LANGUAGE = "En";
-  private static final String CRC32 = "0xFF00";
+  private static final String CRC32 = "FF00";
   private static final String CRC32_HEX_STRING = "145d34";
   private static final Long DELETE_TIME = System.currentTimeMillis();
   private static final String ETAG = "0xFF00";
   private static final Long GENERATION = 1L;
   private static final String GENERATED_ID = "B/N:1";
-  private static final String MD5 = "0xFF00";
+  private static final String MD5 = "FF00";
   private static final String MD5_HEX_STRING = "145d34";
   private static final String MEDIA_LINK = "http://media/b/n";
   private static final Map<String, String> METADATA = ImmutableMap.of("n1", "v1", "n2", "v2");
