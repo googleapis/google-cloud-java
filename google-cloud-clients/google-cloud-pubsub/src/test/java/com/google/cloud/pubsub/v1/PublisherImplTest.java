@@ -35,12 +35,14 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.pubsub.v1.Publisher.Builder;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.ProjectTopicName;
+import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PubsubMessage;
 import io.grpc.Server;
 import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.inprocess.InProcessServerBuilder;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import org.junit.After;
@@ -239,6 +241,177 @@ public class PublisherImplTest {
   private ApiFuture<String> sendTestMessage(Publisher publisher, String data) {
     return publisher.publish(
         PubsubMessage.newBuilder().setData(ByteString.copyFromUtf8(data)).build());
+  }
+
+  @Test
+  public void testBatchedMessagesWithOrderingKeyByNum() throws Exception {
+    // Limit the number of maximum elements in a single batch to 3.
+    Publisher publisher =
+        getTestPublisherBuilder()
+            .setBatchingSettings(
+                Publisher.Builder.DEFAULT_BATCHING_SETTINGS
+                    .toBuilder()
+                    .setElementCountThreshold(3L)
+                    .setDelayThreshold(Duration.ofSeconds(100))
+                    .build())
+            .setEnableMessageOrdering(true)
+            .build();
+    testPublisherServiceImpl.setAutoPublishResponse(true);
+
+    // Publish two messages with ordering key, "OrderA", and other two messages with "OrderB".
+    ApiFuture<String> publishFuture1 = sendTestMessageWithOrderingKey(publisher, "m1", "OrderA");
+    ApiFuture<String> publishFuture2 = sendTestMessageWithOrderingKey(publisher, "m2", "OrderB");
+    ApiFuture<String> publishFuture3 = sendTestMessageWithOrderingKey(publisher, "m3", "OrderA");
+    ApiFuture<String> publishFuture4 = sendTestMessageWithOrderingKey(publisher, "m4", "OrderB");
+
+    // Verify that none of them were published since the batching size is 3.
+    assertFalse(publishFuture1.isDone());
+    assertFalse(publishFuture2.isDone());
+    assertFalse(publishFuture3.isDone());
+    assertFalse(publishFuture4.isDone());
+
+    // One of the batches reaches the limit.
+    ApiFuture<String> publishFuture5 = sendTestMessageWithOrderingKey(publisher, "m5", "OrderA");
+    // Verify that they were delivered in order per ordering key.
+    assertTrue(Integer.parseInt(publishFuture1.get()) < Integer.parseInt(publishFuture3.get()));
+    assertTrue(Integer.parseInt(publishFuture2.get()) < Integer.parseInt(publishFuture4.get()));
+    assertTrue(Integer.parseInt(publishFuture3.get()) < Integer.parseInt(publishFuture5.get()));
+
+    // Verify that every message within the same batch has the same ordering key.
+    List<PublishRequest> requests = testPublisherServiceImpl.getCapturedRequests();
+    for (PublishRequest request : requests) {
+      if (request.getMessagesCount() > 1) {
+        String orderingKey = request.getMessages(0).getOrderingKey();
+        for (PubsubMessage message : request.getMessagesList()) {
+          assertEquals(message.getOrderingKey(), orderingKey);
+        }
+      }
+    }
+    publisher.shutdown();
+  }
+
+  @Test
+  public void testBatchedMessagesWithOrderingKeyByDuration() throws Exception {
+    // Limit the batching timeout to 100 seconds.
+    Publisher publisher =
+        getTestPublisherBuilder()
+            .setBatchingSettings(
+                Publisher.Builder.DEFAULT_BATCHING_SETTINGS
+                    .toBuilder()
+                    .setElementCountThreshold(10L)
+                    .setDelayThreshold(Duration.ofSeconds(100))
+                    .build())
+            .setEnableMessageOrdering(true)
+            .build();
+    testPublisherServiceImpl.setAutoPublishResponse(true);
+
+    // Publish two messages with ordering key, "OrderA", and other two messages with "OrderB".
+    ApiFuture<String> publishFuture1 = sendTestMessageWithOrderingKey(publisher, "m1", "OrderA");
+    ApiFuture<String> publishFuture2 = sendTestMessageWithOrderingKey(publisher, "m2", "OrderB");
+    ApiFuture<String> publishFuture3 = sendTestMessageWithOrderingKey(publisher, "m3", "OrderA");
+    ApiFuture<String> publishFuture4 = sendTestMessageWithOrderingKey(publisher, "m4", "OrderB");
+
+    // Verify that none of them were published since the batching size is 10 and timeout has not
+    // been expired.
+    assertFalse(publishFuture1.isDone());
+    assertFalse(publishFuture2.isDone());
+    assertFalse(publishFuture3.isDone());
+    assertFalse(publishFuture4.isDone());
+
+    // The timeout expires.
+    fakeExecutor.advanceTime(Duration.ofSeconds(100));
+
+    // Verify that they were delivered in order per ordering key.
+    assertTrue(Integer.parseInt(publishFuture1.get()) < Integer.parseInt(publishFuture3.get()));
+    assertTrue(Integer.parseInt(publishFuture2.get()) < Integer.parseInt(publishFuture4.get()));
+
+    // Verify that every message within the same batch has the same ordering key.
+    List<PublishRequest> requests = testPublisherServiceImpl.getCapturedRequests();
+    for (PublishRequest request : requests) {
+      if (request.getMessagesCount() > 1) {
+        String orderingKey = request.getMessages(0).getOrderingKey();
+        for (PubsubMessage message : request.getMessagesList()) {
+          assertEquals(message.getOrderingKey(), orderingKey);
+        }
+      }
+    }
+    publisher.shutdown();
+  }
+
+  @Test
+  public void testOrderingKeyWhenDisabled_throwsException() throws Exception {
+    // Message ordering is disabled by default.
+    Publisher publisher = getTestPublisherBuilder().build();
+    try {
+      ApiFuture<String> publishFuture = sendTestMessageWithOrderingKey(publisher, "m1", "orderA");
+      fail("Should have thrown an IllegalStateException");
+    } catch (IllegalStateException expected) {
+      // expected
+    }
+    publisher.shutdown();
+  }
+
+  @Test
+  public void testEnableMessageOrdering_overwritesMaxAttempts() throws Exception {
+    // Set maxAttempts to 1 and enableMessageOrdering to true at the same time.
+    Publisher publisher =
+        getTestPublisherBuilder()
+            .setExecutorProvider(SINGLE_THREAD_EXECUTOR)
+            .setRetrySettings(
+                Publisher.Builder.DEFAULT_RETRY_SETTINGS
+                    .toBuilder()
+                    .setTotalTimeout(Duration.ofSeconds(10))
+                    .setMaxAttempts(1)
+                    .build())
+            .setEnableMessageOrdering(true)
+            .build();
+
+    // Although maxAttempts is 1, the publisher will retry until it succeeds since
+    // enableMessageOrdering is true.
+    testPublisherServiceImpl.addPublishError(new Throwable("Transiently failing"));
+    testPublisherServiceImpl.addPublishError(new Throwable("Transiently failing"));
+    testPublisherServiceImpl.addPublishError(new Throwable("Transiently failing"));
+    testPublisherServiceImpl.addPublishResponse(PublishResponse.newBuilder().addMessageIds("1"));
+
+    ApiFuture<String> publishFuture1 = sendTestMessageWithOrderingKey(publisher, "m1", "orderA");
+    assertEquals("1", publishFuture1.get());
+
+    assertEquals(4, testPublisherServiceImpl.getCapturedRequests().size());
+    publisher.shutdown();
+  }
+
+  @Test(expected = ExecutionException.class)
+  public void testEnableMessageOrdering_failsImmediatelyForNonRetryableError() throws Exception {
+    Publisher publisher =
+        getTestPublisherBuilder()
+            .setExecutorProvider(SINGLE_THREAD_EXECUTOR)
+            .setRetrySettings(
+                Publisher.Builder.DEFAULT_RETRY_SETTINGS
+                    .toBuilder()
+                    .setTotalTimeout(Duration.ofSeconds(10))
+                    .setMaxAttempts(2)
+                    .build())
+            .setEnableMessageOrdering(true)
+            .build();
+
+    testPublisherServiceImpl.addPublishError(new StatusException(Status.INVALID_ARGUMENT));
+    ApiFuture<String> publishFuture1 = sendTestMessageWithOrderingKey(publisher, "m1", "orderA");
+
+    try {
+      publishFuture1.get();
+    } finally {
+      assertEquals(1, testPublisherServiceImpl.getCapturedRequests().size());
+      publisher.shutdown();
+    }
+  }
+
+  private ApiFuture<String> sendTestMessageWithOrderingKey(
+      Publisher publisher, String data, String orderingKey) {
+    return publisher.publish(
+        PubsubMessage.newBuilder()
+            .setOrderingKey(orderingKey)
+            .setData(ByteString.copyFromUtf8(data))
+            .build());
   }
 
   @Test
