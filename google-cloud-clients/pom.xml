@@ -157,7 +157,7 @@
     <!-- make sure to keep gax version in sync with google-cloud-bom -->
     <gax.version>1.38.0</gax.version>
     <api.common.java.version>1.7.0</api.common.java.version>
-    <google.auth.version>0.12.0</google.auth.version>
+    <google.auth.version>0.13.0</google.auth.version>
     <grpc.version>1.17.1</grpc.version>
     <!-- We are currently using the *-android version to support JDK7. -->
     <guava.version>26.0-android</guava.version>
