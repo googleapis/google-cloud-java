@@ -264,6 +264,9 @@ public interface SubscriptionOrBuilder
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
+  /** <code>bool enable_message_ordering = 10;</code> */
+  boolean getEnableMessageOrdering();
+
   /**
    *
    *

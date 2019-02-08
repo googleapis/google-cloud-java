@@ -32,6 +32,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
   private PubsubMessage() {
     data_ = com.google.protobuf.ByteString.EMPTY;
     messageId_ = "";
+    orderingKey_ = "";
   }
 
   @java.lang.Override
@@ -98,6 +99,13 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
                 publishTime_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              orderingKey_ = s;
               break;
             }
           default:
@@ -350,6 +358,33 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
     return getPublishTime();
   }
 
+  public static final int ORDERING_KEY_FIELD_NUMBER = 5;
+  private volatile java.lang.Object orderingKey_;
+  /** <code>string ordering_key = 5;</code> */
+  public java.lang.String getOrderingKey() {
+    java.lang.Object ref = orderingKey_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      orderingKey_ = s;
+      return s;
+    }
+  }
+  /** <code>string ordering_key = 5;</code> */
+  public com.google.protobuf.ByteString getOrderingKeyBytes() {
+    java.lang.Object ref = orderingKey_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      orderingKey_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -374,6 +409,9 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
     }
     if (publishTime_ != null) {
       output.writeMessage(4, getPublishTime());
+    }
+    if (!getOrderingKeyBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, orderingKey_);
     }
     unknownFields.writeTo(output);
   }
@@ -403,6 +441,9 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
     if (publishTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getPublishTime());
     }
+    if (!getOrderingKeyBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, orderingKey_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -426,6 +467,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
     if (hasPublishTime()) {
       result = result && getPublishTime().equals(other.getPublishTime());
     }
+    result = result && getOrderingKey().equals(other.getOrderingKey());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -449,6 +491,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + PUBLISH_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getPublishTime().hashCode();
     }
+    hash = (37 * hash) + ORDERING_KEY_FIELD_NUMBER;
+    hash = (53 * hash) + getOrderingKey().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -631,6 +675,8 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
         publishTime_ = null;
         publishTimeBuilder_ = null;
       }
+      orderingKey_ = "";
+
       return this;
     }
 
@@ -668,6 +714,7 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.publishTime_ = publishTimeBuilder_.build();
       }
+      result.orderingKey_ = orderingKey_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -728,6 +775,10 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasPublishTime()) {
         mergePublishTime(other.getPublishTime());
+      }
+      if (!other.getOrderingKey().isEmpty()) {
+        orderingKey_ = other.orderingKey_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1271,6 +1322,60 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
         publishTime_ = null;
       }
       return publishTimeBuilder_;
+    }
+
+    private java.lang.Object orderingKey_ = "";
+    /** <code>string ordering_key = 5;</code> */
+    public java.lang.String getOrderingKey() {
+      java.lang.Object ref = orderingKey_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        orderingKey_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /** <code>string ordering_key = 5;</code> */
+    public com.google.protobuf.ByteString getOrderingKeyBytes() {
+      java.lang.Object ref = orderingKey_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        orderingKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /** <code>string ordering_key = 5;</code> */
+    public Builder setOrderingKey(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      orderingKey_ = value;
+      onChanged();
+      return this;
+    }
+    /** <code>string ordering_key = 5;</code> */
+    public Builder clearOrderingKey() {
+
+      orderingKey_ = getDefaultInstance().getOrderingKey();
+      onChanged();
+      return this;
+    }
+    /** <code>string ordering_key = 5;</code> */
+    public Builder setOrderingKeyBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      orderingKey_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

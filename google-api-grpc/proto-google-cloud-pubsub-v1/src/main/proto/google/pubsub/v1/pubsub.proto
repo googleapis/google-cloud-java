@@ -399,6 +399,8 @@ message PubsubMessage {
   // it receives the `Publish` call. It must not be populated by the
   // publisher in a `Publish` call.
   google.protobuf.Timestamp publish_time = 4;
+
+  string ordering_key = 5;
 }
 
 // Request for the GetTopic method.
@@ -599,6 +601,7 @@ message Subscription {
   // managing labels</a>.
   map<string, string> labels = 9;
 
+  bool enable_message_ordering = 10;
   // A policy that specifies the conditions for this subscription's expiration.
   // A subscription is considered active as long as any connected subscriber is
   // successfully consuming messages from the subscription or is issuing

@@ -137,4 +137,9 @@ public interface PubsubMessageOrBuilder
    * <code>.google.protobuf.Timestamp publish_time = 4;</code>
    */
   com.google.protobuf.TimestampOrBuilder getPublishTimeOrBuilder();
+
+  /** <code>string ordering_key = 5;</code> */
+  java.lang.String getOrderingKey();
+  /** <code>string ordering_key = 5;</code> */
+  com.google.protobuf.ByteString getOrderingKeyBytes();
 }
