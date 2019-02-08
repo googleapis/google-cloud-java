@@ -27,14 +27,14 @@ import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.common.collect.ImmutableList;
-import java.util.concurrent.Callable;
-import java.util.concurrent.CancellationException;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutionException;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.Map;
+import java.util.concurrent.Callable;
+import java.util.concurrent.CancellationException;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutionException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -221,8 +221,9 @@ public final class SequentialExecutorServiceTest {
       startedTasks.put(key, completedTasksSequence);
       completedTasks.put(key, completedTasksSequence);
       for (int taskId = 0; taskId < numTasks; taskId++) {
-        SleepingSyncTask task = new SleepingSyncTask(
-            taskId, 10, startedTasksSequence, completedTasksSequence, remainingTasksCount);
+        SleepingSyncTask task =
+            new SleepingSyncTask(
+                taskId, 10, startedTasksSequence, completedTasksSequence, remainingTasksCount);
         sequentialExecutor.submit(key, task);
       }
     }

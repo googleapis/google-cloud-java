@@ -20,7 +20,6 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.SettableApiFuture;
-import com.google.pubsub.v1.PublishResponse;
 import java.util.Deque;
 import java.util.HashMap;
 import java.util.Map;
@@ -47,7 +46,8 @@ final class SequentialExecutorService<T> {
   private final SequentialExecutor autoSequentialExecutor;
 
   SequentialExecutorService(Executor executor) {
-    this.manageableSequentialExecutor = SequentialExecutor.newManageableSequentialExecutor(executor);
+    this.manageableSequentialExecutor =
+        SequentialExecutor.newManageableSequentialExecutor(executor);
     this.autoSequentialExecutor = SequentialExecutor.newAutoSequentialExecutor(executor);
   }
 
@@ -57,48 +57,51 @@ final class SequentialExecutorService<T> {
    */
   ApiFuture<T> submit(final String key, final Callable<ApiFuture> callable) {
     final SettableApiFuture<T> future = SettableApiFuture.<T>create();
-    manageableSequentialExecutor.execute(key, new CancellableRunnable() {
-      private boolean cancelled = false;
+    manageableSequentialExecutor.execute(
+        key,
+        new CancellableRunnable() {
+          private boolean cancelled = false;
 
-      @Override
-      public void run() {
-        if (cancelled) {
-          return;
-        }
-        try {
-          ApiFuture<T> callResult = callable.call();
-          ApiFutures.addCallback(callResult, new ApiFutureCallback<T>() {
-            @Override
-            public void onSuccess(T msg) {
-              future.set(msg);
-              manageableSequentialExecutor.resume(key);
+          @Override
+          public void run() {
+            if (cancelled) {
+              return;
             }
+            try {
+              ApiFuture<T> callResult = callable.call();
+              ApiFutures.addCallback(
+                  callResult,
+                  new ApiFutureCallback<T>() {
+                    @Override
+                    public void onSuccess(T msg) {
+                      future.set(msg);
+                      manageableSequentialExecutor.resume(key);
+                    }
 
-            @Override
-            public void onFailure(Throwable e) {
+                    @Override
+                    public void onFailure(Throwable e) {
+                      future.setException(e);
+                      manageableSequentialExecutor.cancelQueuedTasks(
+                          key,
+                          new CancellationException(
+                              "Execution cancelled because executing previous runnable failed."));
+                    }
+                  });
+            } catch (Exception e) {
               future.setException(e);
-              manageableSequentialExecutor.cancelQueuedTasks(key,
-                  new CancellationException(
-                      "Execution cancelled because executing previous runnable failed."));
             }
-          });
-        } catch (Exception e) {
-          future.setException(e);
-        }
-      }
+          }
 
-      @Override
-      public void cancel(Throwable e) {
-        this.cancelled = true;
-        future.setException(e);
-      }
-    });
+          @Override
+          public void cancel(Throwable e) {
+            this.cancelled = true;
+            future.setException(e);
+          }
+        });
     return future;
   }
 
-  /**
-   * Runs synchronous {@code Runnable} tasks sequentially.
-   */
+  /** Runs synchronous {@code Runnable} tasks sequentially. */
   public void submit(final String key, final Runnable runnable) {
     autoSequentialExecutor.execute(key, runnable);
   }
@@ -118,6 +121,7 @@ final class SequentialExecutorService<T> {
       EXECUTE_NEXT_TASK,
       WAIT_UNTIL_RESUME,
     }
+
     private TaskCompleteAction taskCompleteAction;
 
     /**
@@ -159,21 +163,22 @@ final class SequentialExecutorService<T> {
       }
 
       final Deque<Runnable> finalTasks = newTasks;
-      executor.execute(new Runnable() {
-        @Override
-        public void run() {
-          switch(taskCompleteAction) {
-            case EXECUTE_NEXT_TASK:
-              invokeCallbackAndExecuteNext(key, finalTasks);
-              break;
-            case WAIT_UNTIL_RESUME:
-              invokeCallback(finalTasks);
-              break;
-            default:
-              // Nothing to do.
-          }
-        }
-      });
+      executor.execute(
+          new Runnable() {
+            @Override
+            public void run() {
+              switch (taskCompleteAction) {
+                case EXECUTE_NEXT_TASK:
+                  invokeCallbackAndExecuteNext(key, finalTasks);
+                  break;
+                case WAIT_UNTIL_RESUME:
+                  invokeCallback(finalTasks);
+                  break;
+                default:
+                  // Nothing to do.
+              }
+            }
+          });
     }
 
     /** Cancels every task in the queue assoicated with {@code key}. */
@@ -190,8 +195,9 @@ final class SequentialExecutorService<T> {
           if (task instanceof CancellableRunnable) {
             ((CancellableRunnable) task).cancel(e);
           } else {
-            logger.log(Level.WARNING,
-                       "Attempted to cancel Runnable that was not CancellableRunnable; ignored.");
+            logger.log(
+                Level.WARNING,
+                "Attempted to cancel Runnable that was not CancellableRunnable; ignored.");
           }
         }
       }
@@ -216,12 +222,13 @@ final class SequentialExecutorService<T> {
       }
       final Deque<Runnable> finalTasks = tasks;
       // Run the next task.
-      executor.execute(new Runnable() {
-        @Override
-        public void run() {
-          invokeCallback(finalTasks);
-        }
-      });
+      executor.execute(
+          new Runnable() {
+            @Override
+            public void run() {
+              invokeCallback(finalTasks);
+            }
+          });
     }
 
     private void invokeCallback(final Deque<Runnable> tasks) {
@@ -244,12 +251,13 @@ final class SequentialExecutorService<T> {
           return;
         }
       }
-      executor.execute(new Runnable() {
-        @Override
-        public void run() {
-          invokeCallbackAndExecuteNext(key, tasks);
-        }
-      });
+      executor.execute(
+          new Runnable() {
+            @Override
+            public void run() {
+              invokeCallbackAndExecuteNext(key, tasks);
+            }
+          });
     }
   }
 }
