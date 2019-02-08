@@ -27,8 +27,9 @@ import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.List;
 import java.util.Objects;
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.ISODateTimeFormat;
+import org.threeten.bp.Instant;
+import org.threeten.bp.ZoneOffset;
+import org.threeten.bp.format.DateTimeFormatter;
 
 /**
  * A Google Compute Engine address. With Compute Engine you can create static external IP addresses
@@ -61,7 +62,8 @@ public class AddressInfo implements Serializable {
       };
 
   private static final long serialVersionUID = 7678434703520207500L;
-  private static final DateTimeFormatter TIMESTAMP_FORMATTER = ISODateTimeFormat.dateTime();
+  private static final DateTimeFormatter TIMESTAMP_FORMATTER =
+      DateTimeFormatter.ISO_DATE_TIME.withZone(ZoneOffset.UTC);
 
   private final String address;
   private final Long creationTimestamp;
@@ -324,7 +326,10 @@ public class AddressInfo implements Serializable {
       }
       address = addressPb.getAddress();
       if (addressPb.getCreationTimestamp() != null) {
-        creationTimestamp = TIMESTAMP_FORMATTER.parseMillis(addressPb.getCreationTimestamp());
+        creationTimestamp =
+            TIMESTAMP_FORMATTER
+                .parse(addressPb.getCreationTimestamp(), Instant.FROM)
+                .toEpochMilli();
       }
       description = addressPb.getDescription();
       if (addressPb.getId() != null) {
@@ -485,7 +490,8 @@ public class AddressInfo implements Serializable {
     Address addressPb = usage != null ? usage.toPb() : new Address();
     addressPb.setAddress(address);
     if (creationTimestamp != null) {
-      addressPb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));
+      addressPb.setCreationTimestamp(
+          TIMESTAMP_FORMATTER.format(Instant.ofEpochMilli(creationTimestamp)));
     }
     addressPb.setDescription(description);
     if (generatedId != null) {
