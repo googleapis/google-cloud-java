@@ -90,9 +90,9 @@ public class WriteBatchTest {
     batch.update(documentReference, "foo", "bar");
     batch.update(documentReference, updateTime, "foo", "bar");
     batch.update(documentReference, LocalFirestoreHelper.SINGLE_FIELD_MAP, updateTime);
-    
+
     assertEquals(4, batch.getMutationsSize());
-    
+
     List<WriteResult> writeResults = batch.commit().get();
     List<Write> writes = new ArrayList<>();
 
@@ -127,9 +127,9 @@ public class WriteBatchTest {
     writes.add(set(LocalFirestoreHelper.SINGLE_FIELD_PROTO));
     writes.add(set(LocalFirestoreHelper.SINGLE_FIELD_PROTO, Arrays.asList("foo")));
     writes.add(set(LocalFirestoreHelper.SINGLE_FIELD_PROTO, Arrays.asList("foo")));
-    
+
     assertEquals(4, batch.getMutationsSize());
-    
+
     List<WriteResult> writeResults = batch.commit().get();
     for (int i = 0; i < writeResults.size(); ++i) {
       assertEquals(Timestamp.ofTimeSecondsAndNanos(i, i), writeResults.get(i).getUpdateTime());
@@ -147,9 +147,9 @@ public class WriteBatchTest {
             commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
 
     batch.set(documentReference, map("time", FieldValue.serverTimestamp()));
-    
+
     assertEquals(1, batch.getMutationsSize());
-    
+
     List<WriteResult> writeResults = batch.commit().get();
     assertEquals(1, writeResults.size());
   }
@@ -164,9 +164,9 @@ public class WriteBatchTest {
     batch
         .create(documentReference, LocalFirestoreHelper.SINGLE_FIELD_MAP)
         .create(documentReference, LocalFirestoreHelper.SINGLE_FIELD_OBJECT);
-    
+
     assertEquals(2, batch.getMutationsSize());
-    
+
     List<WriteResult> writeResults = batch.commit().get();
     List<Write> writes = new ArrayList<>();
 
@@ -195,9 +195,9 @@ public class WriteBatchTest {
         com.google.firestore.v1beta1.Precondition.newBuilder();
     precondition.getUpdateTimeBuilder().setSeconds(1).setNanos(2);
     writes.add(delete(precondition.build()));
-    
+
     assertEquals(2, batch.getMutationsSize());
-    
+
     List<WriteResult> writeResults = batch.commit().get();
 
     for (int i = 0; i < writeResults.size(); ++i) {

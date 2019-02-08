@@ -664,7 +664,7 @@ public abstract class UpdateBuilder<T extends UpdateBuilder> {
   boolean isEmpty() {
     return mutations.isEmpty();
   }
-  
+
   /** Get the number of mutations. */
   public int getMutationsSize() {
     return mutations.size();
