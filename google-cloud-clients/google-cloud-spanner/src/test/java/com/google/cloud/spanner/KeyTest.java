@@ -23,6 +23,8 @@ import com.google.cloud.ByteArray;
 import com.google.cloud.Date;
 import com.google.cloud.Timestamp;
 import com.google.common.testing.EqualsTester;
+import com.google.protobuf.ListValue;
+import com.google.protobuf.NullValue;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -188,5 +190,36 @@ public class KeyTest {
     reserializeAndAssert(Key.of(Timestamp.parseTimestamp("2015-09-15T00:00:00Z")));
     reserializeAndAssert(Key.of(Date.parseDate("2015-09-15")));
     reserializeAndAssert(Key.of(1, 2, 3));
+  }
+
+  @Test
+  public void toProto() {
+    String timestamp = "2015-09-15T00:00:00Z";
+    String date = "2015-09-15";
+    Key k =
+        Key.newBuilder()
+            .append((Boolean) null)
+            .append(true)
+            .append(32)
+            .append(64L)
+            .append(2.0f)
+            .append(4.0d)
+            .append("x")
+            .append(ByteArray.copyFrom("y"))
+            .append(Timestamp.parseTimestamp(timestamp))
+            .append(Date.parseDate(date))
+            .build();
+    ListValue.Builder builder = ListValue.newBuilder();
+    builder.addValuesBuilder().setNullValue(NullValue.NULL_VALUE);
+    builder.addValuesBuilder().setBoolValue(true);
+    builder.addValuesBuilder().setStringValue("32");
+    builder.addValuesBuilder().setStringValue("64");
+    builder.addValuesBuilder().setNumberValue(2.0f);
+    builder.addValuesBuilder().setNumberValue(4.0d);
+    builder.addValuesBuilder().setStringValue("x");
+    builder.addValuesBuilder().setStringValue("eQ==");
+    builder.addValuesBuilder().setStringValue(timestamp);
+    builder.addValuesBuilder().setStringValue(date);
+    assertThat(k.toProto()).isEqualTo(builder.build());
   }
 }
