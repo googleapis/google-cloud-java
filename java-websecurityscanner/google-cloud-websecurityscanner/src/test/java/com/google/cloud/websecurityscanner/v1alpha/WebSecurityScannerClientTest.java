@@ -91,7 +91,7 @@ public class WebSecurityScannerClientTest {
         ScanConfig.newBuilder().setName(name).setDisplayName(displayName).setMaxQps(maxQps).build();
     mockWebSecurityScanner.addResponse(expectedResponse);
 
-    String formattedParent = WebSecurityScannerClient.formatProjectName("[PROJECT]");
+    String formattedParent = ProjectName.format("[PROJECT]");
     ScanConfig scanConfig = ScanConfig.newBuilder().build();
 
     ScanConfig actualResponse = client.createScanConfig(formattedParent, scanConfig);
@@ -116,7 +116,7 @@ public class WebSecurityScannerClientTest {
     mockWebSecurityScanner.addException(exception);
 
     try {
-      String formattedParent = WebSecurityScannerClient.formatProjectName("[PROJECT]");
+      String formattedParent = ProjectName.format("[PROJECT]");
       ScanConfig scanConfig = ScanConfig.newBuilder().build();
 
       client.createScanConfig(formattedParent, scanConfig);
@@ -132,8 +132,7 @@ public class WebSecurityScannerClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockWebSecurityScanner.addResponse(expectedResponse);
 
-    String formattedName =
-        WebSecurityScannerClient.formatScanConfigName("[PROJECT]", "[SCAN_CONFIG]");
+    String formattedName = ScanConfigName.format("[PROJECT]", "[SCAN_CONFIG]");
 
     client.deleteScanConfig(formattedName);
 
@@ -155,8 +154,7 @@ public class WebSecurityScannerClientTest {
     mockWebSecurityScanner.addException(exception);
 
     try {
-      String formattedName =
-          WebSecurityScannerClient.formatScanConfigName("[PROJECT]", "[SCAN_CONFIG]");
+      String formattedName = ScanConfigName.format("[PROJECT]", "[SCAN_CONFIG]");
 
       client.deleteScanConfig(formattedName);
       Assert.fail("No exception raised");
@@ -179,8 +177,7 @@ public class WebSecurityScannerClientTest {
             .build();
     mockWebSecurityScanner.addResponse(expectedResponse);
 
-    String formattedName =
-        WebSecurityScannerClient.formatScanConfigName("[PROJECT]", "[SCAN_CONFIG]");
+    String formattedName = ScanConfigName.format("[PROJECT]", "[SCAN_CONFIG]");
 
     ScanConfig actualResponse = client.getScanConfig(formattedName);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -203,8 +200,7 @@ public class WebSecurityScannerClientTest {
     mockWebSecurityScanner.addException(exception);
 
     try {
-      String formattedName =
-          WebSecurityScannerClient.formatScanConfigName("[PROJECT]", "[SCAN_CONFIG]");
+      String formattedName = ScanConfigName.format("[PROJECT]", "[SCAN_CONFIG]");
 
       client.getScanConfig(formattedName);
       Assert.fail("No exception raised");
@@ -226,7 +222,7 @@ public class WebSecurityScannerClientTest {
             .build();
     mockWebSecurityScanner.addResponse(expectedResponse);
 
-    String formattedParent = WebSecurityScannerClient.formatProjectName("[PROJECT]");
+    String formattedParent = ProjectName.format("[PROJECT]");
 
     ListScanConfigsPagedResponse pagedListResponse = client.listScanConfigs(formattedParent);
 
@@ -252,7 +248,7 @@ public class WebSecurityScannerClientTest {
     mockWebSecurityScanner.addException(exception);
 
     try {
-      String formattedParent = WebSecurityScannerClient.formatProjectName("[PROJECT]");
+      String formattedParent = ProjectName.format("[PROJECT]");
 
       client.listScanConfigs(formattedParent);
       Assert.fail("No exception raised");
@@ -324,8 +320,7 @@ public class WebSecurityScannerClientTest {
             .build();
     mockWebSecurityScanner.addResponse(expectedResponse);
 
-    String formattedName =
-        WebSecurityScannerClient.formatScanConfigName("[PROJECT]", "[SCAN_CONFIG]");
+    String formattedName = ScanConfigName.format("[PROJECT]", "[SCAN_CONFIG]");
 
     ScanRun actualResponse = client.startScanRun(formattedName);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -348,8 +343,7 @@ public class WebSecurityScannerClientTest {
     mockWebSecurityScanner.addException(exception);
 
     try {
-      String formattedName =
-          WebSecurityScannerClient.formatScanConfigName("[PROJECT]", "[SCAN_CONFIG]");
+      String formattedName = ScanConfigName.format("[PROJECT]", "[SCAN_CONFIG]");
 
       client.startScanRun(formattedName);
       Assert.fail("No exception raised");
@@ -376,8 +370,7 @@ public class WebSecurityScannerClientTest {
             .build();
     mockWebSecurityScanner.addResponse(expectedResponse);
 
-    String formattedName =
-        WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+    String formattedName = ScanRunName.format("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
 
     ScanRun actualResponse = client.getScanRun(formattedName);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -400,8 +393,7 @@ public class WebSecurityScannerClientTest {
     mockWebSecurityScanner.addException(exception);
 
     try {
-      String formattedName =
-          WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+      String formattedName = ScanRunName.format("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
 
       client.getScanRun(formattedName);
       Assert.fail("No exception raised");
@@ -423,8 +415,7 @@ public class WebSecurityScannerClientTest {
             .build();
     mockWebSecurityScanner.addResponse(expectedResponse);
 
-    String formattedParent =
-        WebSecurityScannerClient.formatScanConfigName("[PROJECT]", "[SCAN_CONFIG]");
+    String formattedParent = ScanConfigName.format("[PROJECT]", "[SCAN_CONFIG]");
 
     ListScanRunsPagedResponse pagedListResponse = client.listScanRuns(formattedParent);
 
@@ -450,8 +441,7 @@ public class WebSecurityScannerClientTest {
     mockWebSecurityScanner.addException(exception);
 
     try {
-      String formattedParent =
-          WebSecurityScannerClient.formatScanConfigName("[PROJECT]", "[SCAN_CONFIG]");
+      String formattedParent = ScanConfigName.format("[PROJECT]", "[SCAN_CONFIG]");
 
       client.listScanRuns(formattedParent);
       Assert.fail("No exception raised");
@@ -478,8 +468,7 @@ public class WebSecurityScannerClientTest {
             .build();
     mockWebSecurityScanner.addResponse(expectedResponse);
 
-    String formattedName =
-        WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+    String formattedName = ScanRunName.format("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
 
     ScanRun actualResponse = client.stopScanRun(formattedName);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -502,8 +491,7 @@ public class WebSecurityScannerClientTest {
     mockWebSecurityScanner.addException(exception);
 
     try {
-      String formattedName =
-          WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+      String formattedName = ScanRunName.format("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
 
       client.stopScanRun(formattedName);
       Assert.fail("No exception raised");
@@ -525,8 +513,7 @@ public class WebSecurityScannerClientTest {
             .build();
     mockWebSecurityScanner.addResponse(expectedResponse);
 
-    String formattedParent =
-        WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+    String formattedParent = ScanRunName.format("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
 
     ListCrawledUrlsPagedResponse pagedListResponse = client.listCrawledUrls(formattedParent);
 
@@ -552,8 +539,7 @@ public class WebSecurityScannerClientTest {
     mockWebSecurityScanner.addException(exception);
 
     try {
-      String formattedParent =
-          WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+      String formattedParent = ScanRunName.format("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
 
       client.listCrawledUrls(formattedParent);
       Assert.fail("No exception raised");
@@ -589,8 +575,7 @@ public class WebSecurityScannerClientTest {
     mockWebSecurityScanner.addResponse(expectedResponse);
 
     String formattedName =
-        WebSecurityScannerClient.formatFindingName(
-            "[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]", "[FINDING]");
+        FindingName.format("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]", "[FINDING]");
 
     Finding actualResponse = client.getFinding(formattedName);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -614,8 +599,7 @@ public class WebSecurityScannerClientTest {
 
     try {
       String formattedName =
-          WebSecurityScannerClient.formatFindingName(
-              "[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]", "[FINDING]");
+          FindingName.format("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]", "[FINDING]");
 
       client.getFinding(formattedName);
       Assert.fail("No exception raised");
@@ -637,8 +621,7 @@ public class WebSecurityScannerClientTest {
             .build();
     mockWebSecurityScanner.addResponse(expectedResponse);
 
-    String formattedParent =
-        WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+    String formattedParent = ScanRunName.format("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
     String filter = "filter-1274492040";
 
     ListFindingsPagedResponse pagedListResponse = client.listFindings(formattedParent, filter);
@@ -666,8 +649,7 @@ public class WebSecurityScannerClientTest {
     mockWebSecurityScanner.addException(exception);
 
     try {
-      String formattedParent =
-          WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+      String formattedParent = ScanRunName.format("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
       String filter = "filter-1274492040";
 
       client.listFindings(formattedParent, filter);
@@ -684,8 +666,7 @@ public class WebSecurityScannerClientTest {
         ListFindingTypeStatsResponse.newBuilder().build();
     mockWebSecurityScanner.addResponse(expectedResponse);
 
-    String formattedParent =
-        WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+    String formattedParent = ScanRunName.format("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
 
     ListFindingTypeStatsResponse actualResponse = client.listFindingTypeStats(formattedParent);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -708,8 +689,7 @@ public class WebSecurityScannerClientTest {
     mockWebSecurityScanner.addException(exception);
 
     try {
-      String formattedParent =
-          WebSecurityScannerClient.formatScanRunName("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
+      String formattedParent = ScanRunName.format("[PROJECT]", "[SCAN_CONFIG]", "[SCAN_RUN]");
 
       client.listFindingTypeStats(formattedParent);
       Assert.fail("No exception raised");
