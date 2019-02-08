@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -256,7 +256,7 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
    *     .setInputUri(inputUri)
    *     .addAllFeatures(features)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = videoIntelligenceServiceClient.annotateVideoOperationCallable().futureCall(request);
+   *   OperationFuture&lt;AnnotateVideoResponse, AnnotateVideoProgress&gt; future = videoIntelligenceServiceClient.annotateVideoOperationCallable().futureCall(request);
    *   // Do something
    *   AnnotateVideoResponse response = future.get();
    * }

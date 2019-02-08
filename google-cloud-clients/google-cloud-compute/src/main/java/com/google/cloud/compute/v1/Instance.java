@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** An Instance resource. (== resource_for beta.instances ==) (== resource_for v1.instances ==) */
 public final class Instance implements ApiMessage {
   private final Boolean canIpForward;
   private final String cpuPlatform;
@@ -34,6 +35,7 @@ public final class Instance implements ApiMessage {
   private final String description;
   private final List<AttachedDisk> disks;
   private final List<AcceleratorConfig> guestAccelerators;
+  private final String hostname;
   private final String id;
   private final String kind;
   private final String labelFingerprint;
@@ -60,6 +62,7 @@ public final class Instance implements ApiMessage {
     this.description = null;
     this.disks = null;
     this.guestAccelerators = null;
+    this.hostname = null;
     this.id = null;
     this.kind = null;
     this.labelFingerprint = null;
@@ -87,6 +90,7 @@ public final class Instance implements ApiMessage {
       String description,
       List<AttachedDisk> disks,
       List<AcceleratorConfig> guestAccelerators,
+      String hostname,
       String id,
       String kind,
       String labelFingerprint,
@@ -111,6 +115,7 @@ public final class Instance implements ApiMessage {
     this.description = description;
     this.disks = disks;
     this.guestAccelerators = guestAccelerators;
+    this.hostname = hostname;
     this.id = id;
     this.kind = kind;
     this.labelFingerprint = labelFingerprint;
@@ -132,76 +137,79 @@ public final class Instance implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("canIpForward")) {
+    if ("canIpForward".equals(fieldName)) {
       return canIpForward;
     }
-    if (fieldName.equals("cpuPlatform")) {
+    if ("cpuPlatform".equals(fieldName)) {
       return cpuPlatform;
     }
-    if (fieldName.equals("creationTimestamp")) {
+    if ("creationTimestamp".equals(fieldName)) {
       return creationTimestamp;
     }
-    if (fieldName.equals("deletionProtection")) {
+    if ("deletionProtection".equals(fieldName)) {
       return deletionProtection;
     }
-    if (fieldName.equals("description")) {
+    if ("description".equals(fieldName)) {
       return description;
     }
-    if (fieldName.equals("disks")) {
+    if ("disks".equals(fieldName)) {
       return disks;
     }
-    if (fieldName.equals("guestAccelerators")) {
+    if ("guestAccelerators".equals(fieldName)) {
       return guestAccelerators;
     }
-    if (fieldName.equals("id")) {
+    if ("hostname".equals(fieldName)) {
+      return hostname;
+    }
+    if ("id".equals(fieldName)) {
       return id;
     }
-    if (fieldName.equals("kind")) {
+    if ("kind".equals(fieldName)) {
       return kind;
     }
-    if (fieldName.equals("labelFingerprint")) {
+    if ("labelFingerprint".equals(fieldName)) {
       return labelFingerprint;
     }
-    if (fieldName.equals("labels")) {
+    if ("labels".equals(fieldName)) {
       return labels;
     }
-    if (fieldName.equals("machineType")) {
+    if ("machineType".equals(fieldName)) {
       return machineType;
     }
-    if (fieldName.equals("metadata")) {
+    if ("metadata".equals(fieldName)) {
       return metadata;
     }
-    if (fieldName.equals("minCpuPlatform")) {
+    if ("minCpuPlatform".equals(fieldName)) {
       return minCpuPlatform;
     }
-    if (fieldName.equals("name")) {
+    if ("name".equals(fieldName)) {
       return name;
     }
-    if (fieldName.equals("networkInterfaces")) {
+    if ("networkInterfaces".equals(fieldName)) {
       return networkInterfaces;
     }
-    if (fieldName.equals("scheduling")) {
+    if ("scheduling".equals(fieldName)) {
       return scheduling;
     }
-    if (fieldName.equals("selfLink")) {
+    if ("selfLink".equals(fieldName)) {
       return selfLink;
     }
-    if (fieldName.equals("serviceAccounts")) {
+    if ("serviceAccounts".equals(fieldName)) {
       return serviceAccounts;
     }
-    if (fieldName.equals("startRestricted")) {
+    if ("startRestricted".equals(fieldName)) {
       return startRestricted;
     }
-    if (fieldName.equals("status")) {
+    if ("status".equals(fieldName)) {
       return status;
     }
-    if (fieldName.equals("statusMessage")) {
+    if ("statusMessage".equals(fieldName)) {
       return statusMessage;
     }
-    if (fieldName.equals("tags")) {
+    if ("tags".equals(fieldName)) {
       return tags;
     }
-    if (fieldName.equals("zone")) {
+    if ("zone".equals(fieldName)) {
       return zone;
     }
     return null;
@@ -219,98 +227,195 @@ public final class Instance implements ApiMessage {
     return null;
   }
 
+  /**
+   * Allows this instance to send and receive packets with non-matching destination or source IPs.
+   * This is required if you plan to use this instance to forward routes. For more information, see
+   * Enabling IP Forwarding.
+   */
   public Boolean getCanIpForward() {
     return canIpForward;
   }
 
+  /** [Output Only] The CPU platform used by this instance. */
   public String getCpuPlatform() {
     return cpuPlatform;
   }
 
+  /** [Output Only] Creation timestamp in RFC3339 text format. */
   public String getCreationTimestamp() {
     return creationTimestamp;
   }
 
+  /** Whether the resource should be protected against deletion. */
   public Boolean getDeletionProtection() {
     return deletionProtection;
   }
 
+  /**
+   * An optional description of this resource. Provide this property when you create the resource.
+   */
   public String getDescription() {
     return description;
   }
 
+  /**
+   * Array of disks associated with this instance. Persistent disks must be created before you can
+   * assign them.
+   */
   public List<AttachedDisk> getDisksList() {
     return disks;
   }
 
+  /** A list of the type and count of accelerator cards attached to the instance. */
   public List<AcceleratorConfig> getGuestAcceleratorsList() {
     return guestAccelerators;
   }
 
+  public String getHostname() {
+    return hostname;
+  }
+
+  /**
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   */
   public String getId() {
     return id;
   }
 
+  /** [Output Only] Type of the resource. Always compute#instance for instances. */
   public String getKind() {
     return kind;
   }
 
+  /**
+   * A fingerprint for this request, which is essentially a hash of the label's contents and used
+   * for optimistic locking. The fingerprint is initially generated by Compute Engine and changes
+   * after every request to modify or update labels. You must always provide an up-to-date
+   * fingerprint hash in order to update or change labels.
+   *
+   * <p>To see the latest fingerprint, make get() request to the instance.
+   */
   public String getLabelFingerprint() {
     return labelFingerprint;
   }
 
+  /** Labels to apply to this instance. These can be later modified by the setLabels method. */
   public Map<String, String> getLabelsMap() {
     return labels;
   }
 
+  /**
+   * Full or partial URL of the machine type resource to use for this instance, in the format:
+   * zones/zone/machineTypes/machine-type. This is provided by the client when the instance is
+   * created. For example, the following is a valid partial url to a predefined machine type:
+   * zones/us-central1-f/machineTypes/n1-standard-1
+   *
+   * <p>To create a custom machine type, provide a URL to a machine type in the following format,
+   * where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total
+   * memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g.
+   * 5 GB of memory is 5120 MB): zones/zone/machineTypes/custom-CPUS-MEMORY
+   *
+   * <p>For example: zones/us-central1-f/machineTypes/custom-4-5120
+   *
+   * <p>For a full list of restrictions, read the Specifications for custom machine types.
+   */
   public String getMachineType() {
     return machineType;
   }
 
+  /**
+   * The metadata key/value pairs assigned to this instance. This includes custom metadata and
+   * predefined keys.
+   */
   public Metadata getMetadata() {
     return metadata;
   }
 
+  /**
+   * Specifies a minimum CPU platform for the VM instance. Applicable values are the friendly names
+   * of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy
+   * Bridge".
+   */
   public String getMinCpuPlatform() {
     return minCpuPlatform;
   }
 
+  /**
+   * The name of the resource, provided by the client when initially creating the resource. The
+   * resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name
+   * must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?`
+   * which means the first character must be a lowercase letter, and all following characters must
+   * be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+   */
   public String getName() {
     return name;
   }
 
+  /**
+   * An array of network configurations for this instance. These specify how interfaces are
+   * configured to interact with other network services, such as connecting to the internet.
+   * Multiple interfaces are supported per instance.
+   */
   public List<NetworkInterface> getNetworkInterfacesList() {
     return networkInterfaces;
   }
 
+  /** Sets the scheduling options for this instance. */
   public Scheduling getScheduling() {
     return scheduling;
   }
 
+  /** [Output Only] Server-defined URL for this resource. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /**
+   * A list of service accounts, with their specified scopes, authorized for this instance. Only one
+   * service account per VM instance is supported.
+   *
+   * <p>Service accounts generate access tokens that can be accessed through the metadata server and
+   * used to authenticate applications on the instance. See Service Accounts for more information.
+   */
   public List<ServiceAccount> getServiceAccountsList() {
     return serviceAccounts;
   }
 
+  /**
+   * [Output Only] Whether a VM has been restricted for start because Compute Engine has detected
+   * suspicious activity.
+   */
   public Boolean getStartRestricted() {
     return startRestricted;
   }
 
+  /**
+   * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING,
+   * RUNNING, STOPPING, STOPPED, SUSPENDING, SUSPENDED, and TERMINATED.
+   */
   public String getStatus() {
     return status;
   }
 
+  /** [Output Only] An optional, human-readable explanation of the status. */
   public String getStatusMessage() {
     return statusMessage;
   }
 
+  /**
+   * Tags to apply to this instance. Tags are used to identify valid sources or targets for network
+   * firewalls and are specified by the client during instance creation. The tags can be later
+   * modified by the setTags method. Each tag within the list must comply with RFC1035. Multiple
+   * tags can be specified via the 'tags.items' field.
+   */
   public Tags getTags() {
     return tags;
   }
 
+  /**
+   * [Output Only] URL of the zone where the instance resides. You must specify this field as part
+   * of the HTTP request URL. It is not settable as a field in the request body.
+   */
   public String getZone() {
     return zone;
   }
@@ -345,6 +450,7 @@ public final class Instance implements ApiMessage {
     private String description;
     private List<AttachedDisk> disks;
     private List<AcceleratorConfig> guestAccelerators;
+    private String hostname;
     private String id;
     private String kind;
     private String labelFingerprint;
@@ -387,6 +493,9 @@ public final class Instance implements ApiMessage {
       }
       if (other.getGuestAcceleratorsList() != null) {
         this.guestAccelerators = other.guestAccelerators;
+      }
+      if (other.getHostname() != null) {
+        this.hostname = other.hostname;
       }
       if (other.getId() != null) {
         this.id = other.id;
@@ -450,6 +559,7 @@ public final class Instance implements ApiMessage {
       this.description = source.description;
       this.disks = source.disks;
       this.guestAccelerators = source.guestAccelerators;
+      this.hostname = source.hostname;
       this.id = source.id;
       this.kind = source.kind;
       this.labelFingerprint = source.labelFingerprint;
@@ -469,55 +579,85 @@ public final class Instance implements ApiMessage {
       this.zone = source.zone;
     }
 
+    /**
+     * Allows this instance to send and receive packets with non-matching destination or source IPs.
+     * This is required if you plan to use this instance to forward routes. For more information,
+     * see Enabling IP Forwarding.
+     */
     public Boolean getCanIpForward() {
       return canIpForward;
     }
 
+    /**
+     * Allows this instance to send and receive packets with non-matching destination or source IPs.
+     * This is required if you plan to use this instance to forward routes. For more information,
+     * see Enabling IP Forwarding.
+     */
     public Builder setCanIpForward(Boolean canIpForward) {
       this.canIpForward = canIpForward;
       return this;
     }
 
+    /** [Output Only] The CPU platform used by this instance. */
     public String getCpuPlatform() {
       return cpuPlatform;
     }
 
+    /** [Output Only] The CPU platform used by this instance. */
     public Builder setCpuPlatform(String cpuPlatform) {
       this.cpuPlatform = cpuPlatform;
       return this;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public String getCreationTimestamp() {
       return creationTimestamp;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
+    /** Whether the resource should be protected against deletion. */
     public Boolean getDeletionProtection() {
       return deletionProtection;
     }
 
+    /** Whether the resource should be protected against deletion. */
     public Builder setDeletionProtection(Boolean deletionProtection) {
       this.deletionProtection = deletionProtection;
       return this;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public String getDescription() {
       return description;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /**
+     * Array of disks associated with this instance. Persistent disks must be created before you can
+     * assign them.
+     */
     public List<AttachedDisk> getDisksList() {
       return disks;
     }
 
+    /**
+     * Array of disks associated with this instance. Persistent disks must be created before you can
+     * assign them.
+     */
     public Builder addAllDisks(List<AttachedDisk> disks) {
       if (this.disks == null) {
         this.disks = new LinkedList<>();
@@ -526,6 +666,10 @@ public final class Instance implements ApiMessage {
       return this;
     }
 
+    /**
+     * Array of disks associated with this instance. Persistent disks must be created before you can
+     * assign them.
+     */
     public Builder addDisks(AttachedDisk disks) {
       if (this.disks == null) {
         this.disks = new LinkedList<>();
@@ -534,10 +678,12 @@ public final class Instance implements ApiMessage {
       return this;
     }
 
+    /** A list of the type and count of accelerator cards attached to the instance. */
     public List<AcceleratorConfig> getGuestAcceleratorsList() {
       return guestAccelerators;
     }
 
+    /** A list of the type and count of accelerator cards attached to the instance. */
     public Builder addAllGuestAccelerators(List<AcceleratorConfig> guestAccelerators) {
       if (this.guestAccelerators == null) {
         this.guestAccelerators = new LinkedList<>();
@@ -546,6 +692,7 @@ public final class Instance implements ApiMessage {
       return this;
     }
 
+    /** A list of the type and count of accelerator cards attached to the instance. */
     public Builder addGuestAccelerators(AcceleratorConfig guestAccelerators) {
       if (this.guestAccelerators == null) {
         this.guestAccelerators = new LinkedList<>();
@@ -554,82 +701,193 @@ public final class Instance implements ApiMessage {
       return this;
     }
 
+    public String getHostname() {
+      return hostname;
+    }
+
+    public Builder setHostname(String hostname) {
+      this.hostname = hostname;
+      return this;
+    }
+
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /** [Output Only] Type of the resource. Always compute#instance for instances. */
     public String getKind() {
       return kind;
     }
 
+    /** [Output Only] Type of the resource. Always compute#instance for instances. */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /**
+     * A fingerprint for this request, which is essentially a hash of the label's contents and used
+     * for optimistic locking. The fingerprint is initially generated by Compute Engine and changes
+     * after every request to modify or update labels. You must always provide an up-to-date
+     * fingerprint hash in order to update or change labels.
+     *
+     * <p>To see the latest fingerprint, make get() request to the instance.
+     */
     public String getLabelFingerprint() {
       return labelFingerprint;
     }
 
+    /**
+     * A fingerprint for this request, which is essentially a hash of the label's contents and used
+     * for optimistic locking. The fingerprint is initially generated by Compute Engine and changes
+     * after every request to modify or update labels. You must always provide an up-to-date
+     * fingerprint hash in order to update or change labels.
+     *
+     * <p>To see the latest fingerprint, make get() request to the instance.
+     */
     public Builder setLabelFingerprint(String labelFingerprint) {
       this.labelFingerprint = labelFingerprint;
       return this;
     }
 
+    /** Labels to apply to this instance. These can be later modified by the setLabels method. */
     public Map<String, String> getLabelsMap() {
       return labels;
     }
 
+    /** Labels to apply to this instance. These can be later modified by the setLabels method. */
     public Builder putAllLabels(Map<String, String> labels) {
       this.labels = labels;
       return this;
     }
 
+    /**
+     * Full or partial URL of the machine type resource to use for this instance, in the format:
+     * zones/zone/machineTypes/machine-type. This is provided by the client when the instance is
+     * created. For example, the following is a valid partial url to a predefined machine type:
+     * zones/us-central1-f/machineTypes/n1-standard-1
+     *
+     * <p>To create a custom machine type, provide a URL to a machine type in the following format,
+     * where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total
+     * memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB
+     * (e.g. 5 GB of memory is 5120 MB): zones/zone/machineTypes/custom-CPUS-MEMORY
+     *
+     * <p>For example: zones/us-central1-f/machineTypes/custom-4-5120
+     *
+     * <p>For a full list of restrictions, read the Specifications for custom machine types.
+     */
     public String getMachineType() {
       return machineType;
     }
 
+    /**
+     * Full or partial URL of the machine type resource to use for this instance, in the format:
+     * zones/zone/machineTypes/machine-type. This is provided by the client when the instance is
+     * created. For example, the following is a valid partial url to a predefined machine type:
+     * zones/us-central1-f/machineTypes/n1-standard-1
+     *
+     * <p>To create a custom machine type, provide a URL to a machine type in the following format,
+     * where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total
+     * memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB
+     * (e.g. 5 GB of memory is 5120 MB): zones/zone/machineTypes/custom-CPUS-MEMORY
+     *
+     * <p>For example: zones/us-central1-f/machineTypes/custom-4-5120
+     *
+     * <p>For a full list of restrictions, read the Specifications for custom machine types.
+     */
     public Builder setMachineType(String machineType) {
       this.machineType = machineType;
       return this;
     }
 
+    /**
+     * The metadata key/value pairs assigned to this instance. This includes custom metadata and
+     * predefined keys.
+     */
     public Metadata getMetadata() {
       return metadata;
     }
 
+    /**
+     * The metadata key/value pairs assigned to this instance. This includes custom metadata and
+     * predefined keys.
+     */
     public Builder setMetadata(Metadata metadata) {
       this.metadata = metadata;
       return this;
     }
 
+    /**
+     * Specifies a minimum CPU platform for the VM instance. Applicable values are the friendly
+     * names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel
+     * Sandy Bridge".
+     */
     public String getMinCpuPlatform() {
       return minCpuPlatform;
     }
 
+    /**
+     * Specifies a minimum CPU platform for the VM instance. Applicable values are the friendly
+     * names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel
+     * Sandy Bridge".
+     */
     public Builder setMinCpuPlatform(String minCpuPlatform) {
       this.minCpuPlatform = minCpuPlatform;
       return this;
     }
 
+    /**
+     * The name of the resource, provided by the client when initially creating the resource. The
+     * resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name
+     * must be 1-63 characters long and match the regular expression
+     * `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first character must be a lowercase letter,
+     * and all following characters must be a dash, lowercase letter, or digit, except the last
+     * character, which cannot be a dash.
+     */
     public String getName() {
       return name;
     }
 
+    /**
+     * The name of the resource, provided by the client when initially creating the resource. The
+     * resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name
+     * must be 1-63 characters long and match the regular expression
+     * `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first character must be a lowercase letter,
+     * and all following characters must be a dash, lowercase letter, or digit, except the last
+     * character, which cannot be a dash.
+     */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /**
+     * An array of network configurations for this instance. These specify how interfaces are
+     * configured to interact with other network services, such as connecting to the internet.
+     * Multiple interfaces are supported per instance.
+     */
     public List<NetworkInterface> getNetworkInterfacesList() {
       return networkInterfaces;
     }
 
+    /**
+     * An array of network configurations for this instance. These specify how interfaces are
+     * configured to interact with other network services, such as connecting to the internet.
+     * Multiple interfaces are supported per instance.
+     */
     public Builder addAllNetworkInterfaces(List<NetworkInterface> networkInterfaces) {
       if (this.networkInterfaces == null) {
         this.networkInterfaces = new LinkedList<>();
@@ -638,6 +896,11 @@ public final class Instance implements ApiMessage {
       return this;
     }
 
+    /**
+     * An array of network configurations for this instance. These specify how interfaces are
+     * configured to interact with other network services, such as connecting to the internet.
+     * Multiple interfaces are supported per instance.
+     */
     public Builder addNetworkInterfaces(NetworkInterface networkInterfaces) {
       if (this.networkInterfaces == null) {
         this.networkInterfaces = new LinkedList<>();
@@ -646,28 +909,48 @@ public final class Instance implements ApiMessage {
       return this;
     }
 
+    /** Sets the scheduling options for this instance. */
     public Scheduling getScheduling() {
       return scheduling;
     }
 
+    /** Sets the scheduling options for this instance. */
     public Builder setScheduling(Scheduling scheduling) {
       this.scheduling = scheduling;
       return this;
     }
 
+    /** [Output Only] Server-defined URL for this resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined URL for this resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /**
+     * A list of service accounts, with their specified scopes, authorized for this instance. Only
+     * one service account per VM instance is supported.
+     *
+     * <p>Service accounts generate access tokens that can be accessed through the metadata server
+     * and used to authenticate applications on the instance. See Service Accounts for more
+     * information.
+     */
     public List<ServiceAccount> getServiceAccountsList() {
       return serviceAccounts;
     }
 
+    /**
+     * A list of service accounts, with their specified scopes, authorized for this instance. Only
+     * one service account per VM instance is supported.
+     *
+     * <p>Service accounts generate access tokens that can be accessed through the metadata server
+     * and used to authenticate applications on the instance. See Service Accounts for more
+     * information.
+     */
     public Builder addAllServiceAccounts(List<ServiceAccount> serviceAccounts) {
       if (this.serviceAccounts == null) {
         this.serviceAccounts = new LinkedList<>();
@@ -676,6 +959,14 @@ public final class Instance implements ApiMessage {
       return this;
     }
 
+    /**
+     * A list of service accounts, with their specified scopes, authorized for this instance. Only
+     * one service account per VM instance is supported.
+     *
+     * <p>Service accounts generate access tokens that can be accessed through the metadata server
+     * and used to authenticate applications on the instance. See Service Accounts for more
+     * information.
+     */
     public Builder addServiceAccounts(ServiceAccount serviceAccounts) {
       if (this.serviceAccounts == null) {
         this.serviceAccounts = new LinkedList<>();
@@ -684,46 +975,84 @@ public final class Instance implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] Whether a VM has been restricted for start because Compute Engine has detected
+     * suspicious activity.
+     */
     public Boolean getStartRestricted() {
       return startRestricted;
     }
 
+    /**
+     * [Output Only] Whether a VM has been restricted for start because Compute Engine has detected
+     * suspicious activity.
+     */
     public Builder setStartRestricted(Boolean startRestricted) {
       this.startRestricted = startRestricted;
       return this;
     }
 
+    /**
+     * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING,
+     * RUNNING, STOPPING, STOPPED, SUSPENDING, SUSPENDED, and TERMINATED.
+     */
     public String getStatus() {
       return status;
     }
 
+    /**
+     * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING,
+     * RUNNING, STOPPING, STOPPED, SUSPENDING, SUSPENDED, and TERMINATED.
+     */
     public Builder setStatus(String status) {
       this.status = status;
       return this;
     }
 
+    /** [Output Only] An optional, human-readable explanation of the status. */
     public String getStatusMessage() {
       return statusMessage;
     }
 
+    /** [Output Only] An optional, human-readable explanation of the status. */
     public Builder setStatusMessage(String statusMessage) {
       this.statusMessage = statusMessage;
       return this;
     }
 
+    /**
+     * Tags to apply to this instance. Tags are used to identify valid sources or targets for
+     * network firewalls and are specified by the client during instance creation. The tags can be
+     * later modified by the setTags method. Each tag within the list must comply with RFC1035.
+     * Multiple tags can be specified via the 'tags.items' field.
+     */
     public Tags getTags() {
       return tags;
     }
 
+    /**
+     * Tags to apply to this instance. Tags are used to identify valid sources or targets for
+     * network firewalls and are specified by the client during instance creation. The tags can be
+     * later modified by the setTags method. Each tag within the list must comply with RFC1035.
+     * Multiple tags can be specified via the 'tags.items' field.
+     */
     public Builder setTags(Tags tags) {
       this.tags = tags;
       return this;
     }
 
+    /**
+     * [Output Only] URL of the zone where the instance resides. You must specify this field as part
+     * of the HTTP request URL. It is not settable as a field in the request body.
+     */
     public String getZone() {
       return zone;
     }
 
+    /**
+     * [Output Only] URL of the zone where the instance resides. You must specify this field as part
+     * of the HTTP request URL. It is not settable as a field in the request body.
+     */
     public Builder setZone(String zone) {
       this.zone = zone;
       return this;
@@ -739,6 +1068,7 @@ public final class Instance implements ApiMessage {
           description,
           disks,
           guestAccelerators,
+          hostname,
           id,
           kind,
           labelFingerprint,
@@ -767,6 +1097,7 @@ public final class Instance implements ApiMessage {
       newBuilder.setDescription(this.description);
       newBuilder.addAllDisks(this.disks);
       newBuilder.addAllGuestAccelerators(this.guestAccelerators);
+      newBuilder.setHostname(this.hostname);
       newBuilder.setId(this.id);
       newBuilder.setKind(this.kind);
       newBuilder.setLabelFingerprint(this.labelFingerprint);
@@ -811,6 +1142,9 @@ public final class Instance implements ApiMessage {
         + ", "
         + "guestAccelerators="
         + guestAccelerators
+        + ", "
+        + "hostname="
+        + hostname
         + ", "
         + "id="
         + id
@@ -879,6 +1213,7 @@ public final class Instance implements ApiMessage {
           && Objects.equals(this.description, that.getDescription())
           && Objects.equals(this.disks, that.getDisksList())
           && Objects.equals(this.guestAccelerators, that.getGuestAcceleratorsList())
+          && Objects.equals(this.hostname, that.getHostname())
           && Objects.equals(this.id, that.getId())
           && Objects.equals(this.kind, that.getKind())
           && Objects.equals(this.labelFingerprint, that.getLabelFingerprint())
@@ -910,6 +1245,7 @@ public final class Instance implements ApiMessage {
         description,
         disks,
         guestAccelerators,
+        hostname,
         id,
         kind,
         labelFingerprint,

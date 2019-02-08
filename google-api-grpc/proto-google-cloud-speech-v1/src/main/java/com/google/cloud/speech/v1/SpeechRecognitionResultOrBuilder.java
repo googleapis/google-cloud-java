@@ -75,4 +75,17 @@ public interface SpeechRecognitionResultOrBuilder
    */
   com.google.cloud.speech.v1.SpeechRecognitionAlternativeOrBuilder getAlternativesOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * For multi-channel audio, this is the channel number corresponding to the
+   * recognized result for the audio from that channel.
+   * For audio_channel_count = N, its output values can range from '1' to 'N'.
+   * </pre>
+   *
+   * <code>int32 channel_tag = 2;</code>
+   */
+  int getChannelTag();
 }

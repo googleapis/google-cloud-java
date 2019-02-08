@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Description of a planned outage on this Interconnect. Next id: 9 */
 public final class InterconnectOutageNotification implements ApiMessage {
   private final List<String> affectedCircuits;
   private final String description;
@@ -67,28 +68,28 @@ public final class InterconnectOutageNotification implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("affectedCircuits")) {
+    if ("affectedCircuits".equals(fieldName)) {
       return affectedCircuits;
     }
-    if (fieldName.equals("description")) {
+    if ("description".equals(fieldName)) {
       return description;
     }
-    if (fieldName.equals("endTime")) {
+    if ("endTime".equals(fieldName)) {
       return endTime;
     }
-    if (fieldName.equals("issueType")) {
+    if ("issueType".equals(fieldName)) {
       return issueType;
     }
-    if (fieldName.equals("name")) {
+    if ("name".equals(fieldName)) {
       return name;
     }
-    if (fieldName.equals("source")) {
+    if ("source".equals(fieldName)) {
       return source;
     }
-    if (fieldName.equals("startTime")) {
+    if ("startTime".equals(fieldName)) {
       return startTime;
     }
-    if (fieldName.equals("state")) {
+    if ("state".equals(fieldName)) {
       return state;
     }
     return null;
@@ -106,34 +107,54 @@ public final class InterconnectOutageNotification implements ApiMessage {
     return null;
   }
 
+  /**
+   * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit IDs that will be
+   * affected.
+   */
   public List<String> getAffectedCircuitsList() {
     return affectedCircuits;
   }
 
+  /** A description about the purpose of the outage. */
   public String getDescription() {
     return description;
   }
 
+  /** Scheduled end time for the outage (milliseconds since Unix epoch). */
   public String getEndTime() {
     return endTime;
   }
 
+  /**
+   * Form this outage is expected to take. Note that the "IT_" versions of this enum have been
+   * deprecated in favor of the unprefixed values.
+   */
   public String getIssueType() {
     return issueType;
   }
 
+  /** Unique identifier for this outage notification. */
   public String getName() {
     return name;
   }
 
+  /**
+   * The party that generated this notification. Note that "NSRC_GOOGLE" has been deprecated in
+   * favor of "GOOGLE"
+   */
   public String getSource() {
     return source;
   }
 
+  /** Scheduled start time for the outage (milliseconds since Unix epoch). */
   public String getStartTime() {
     return startTime;
   }
 
+  /**
+   * State of this notification. Note that the "NS_" versions of this enum have been deprecated in
+   * favor of the unprefixed values.
+   */
   public String getState() {
     return state;
   }
@@ -212,10 +233,18 @@ public final class InterconnectOutageNotification implements ApiMessage {
       this.state = source.state;
     }
 
+    /**
+     * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit IDs that will be
+     * affected.
+     */
     public List<String> getAffectedCircuitsList() {
       return affectedCircuits;
     }
 
+    /**
+     * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit IDs that will be
+     * affected.
+     */
     public Builder addAllAffectedCircuits(List<String> affectedCircuits) {
       if (this.affectedCircuits == null) {
         this.affectedCircuits = new LinkedList<>();
@@ -224,6 +253,10 @@ public final class InterconnectOutageNotification implements ApiMessage {
       return this;
     }
 
+    /**
+     * If issue_type is IT_PARTIAL_OUTAGE, a list of the Google-side circuit IDs that will be
+     * affected.
+     */
     public Builder addAffectedCircuits(String affectedCircuits) {
       if (this.affectedCircuits == null) {
         this.affectedCircuits = new LinkedList<>();
@@ -232,64 +265,96 @@ public final class InterconnectOutageNotification implements ApiMessage {
       return this;
     }
 
+    /** A description about the purpose of the outage. */
     public String getDescription() {
       return description;
     }
 
+    /** A description about the purpose of the outage. */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /** Scheduled end time for the outage (milliseconds since Unix epoch). */
     public String getEndTime() {
       return endTime;
     }
 
+    /** Scheduled end time for the outage (milliseconds since Unix epoch). */
     public Builder setEndTime(String endTime) {
       this.endTime = endTime;
       return this;
     }
 
+    /**
+     * Form this outage is expected to take. Note that the "IT_" versions of this enum have been
+     * deprecated in favor of the unprefixed values.
+     */
     public String getIssueType() {
       return issueType;
     }
 
+    /**
+     * Form this outage is expected to take. Note that the "IT_" versions of this enum have been
+     * deprecated in favor of the unprefixed values.
+     */
     public Builder setIssueType(String issueType) {
       this.issueType = issueType;
       return this;
     }
 
+    /** Unique identifier for this outage notification. */
     public String getName() {
       return name;
     }
 
+    /** Unique identifier for this outage notification. */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /**
+     * The party that generated this notification. Note that "NSRC_GOOGLE" has been deprecated in
+     * favor of "GOOGLE"
+     */
     public String getSource() {
       return source;
     }
 
+    /**
+     * The party that generated this notification. Note that "NSRC_GOOGLE" has been deprecated in
+     * favor of "GOOGLE"
+     */
     public Builder setSource(String source) {
       this.source = source;
       return this;
     }
 
+    /** Scheduled start time for the outage (milliseconds since Unix epoch). */
     public String getStartTime() {
       return startTime;
     }
 
+    /** Scheduled start time for the outage (milliseconds since Unix epoch). */
     public Builder setStartTime(String startTime) {
       this.startTime = startTime;
       return this;
     }
 
+    /**
+     * State of this notification. Note that the "NS_" versions of this enum have been deprecated in
+     * favor of the unprefixed values.
+     */
     public String getState() {
       return state;
     }
 
+    /**
+     * State of this notification. Note that the "NS_" versions of this enum have been deprecated in
+     * favor of the unprefixed values.
+     */
     public Builder setState(String state) {
       this.state = state;
       return this;

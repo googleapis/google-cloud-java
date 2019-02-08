@@ -26,12 +26,12 @@ import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.Timestamp;
-import com.google.cloud.firestore.spi.v1beta1.FirestoreRpc;
+import com.google.cloud.firestore.spi.v1.FirestoreRpc;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import com.google.firestore.v1beta1.BatchGetDocumentsRequest;
-import com.google.firestore.v1beta1.BatchGetDocumentsResponse;
-import com.google.firestore.v1beta1.DatabaseRootName;
+import com.google.firestore.v1.BatchGetDocumentsRequest;
+import com.google.firestore.v1.BatchGetDocumentsResponse;
+import com.google.firestore.v1.DatabaseRootName;
 import com.google.protobuf.ByteString;
 import io.grpc.Context;
 import io.grpc.Status;
@@ -85,34 +85,6 @@ class FirestoreImpl implements Firestore {
             + "Please explicitly set your Project ID in FirestoreOptions.");
     this.databasePath =
         ResourcePath.create(DatabaseRootName.of(options.getProjectId(), options.getDatabaseId()));
-
-    if (!options.areTimestampsInSnapshotsEnabled()) {
-      LOGGER.warning(
-          "The behavior for java.util.Date objects stored in Firestore is going to change "
-              + "AND YOUR APP MAY BREAK.\n"
-              + "To hide this warning and ensure your app does not break, you need to add "
-              + "the following code to your app before calling any other Cloud Firestore "
-              + "methods:\n"
-              + "\n"
-              + "FirestoreOptions options = \n"
-              + "  FirestoreOptions.newBuilder().setTimestampsInSnapshotsEnabled(true).build();\n"
-              + "Firestore firestore = options.getService();\n"
-              + "\n"
-              + "With this change, timestamps stored in Cloud Firestore will be read back as "
-              + "com.google.cloud.Timestamp objects instead of as system java.util.Date "
-              + "objects. So you will also need to update code expecting a java.util.Date to "
-              + "instead expect a Timestamp. For example:\n"
-              + "\n"
-              + "// Old:\n"
-              + "java.util.Date date = (java.util.Date) snapshot.get(\"created_at\");\n"
-              + "// New:\n"
-              + "Timestamp timestamp = (Timestamp) snapshot.get(\"created_at\");\n"
-              + "java.util.Date date = timestamp.toDate();\n"
-              + "\n"
-              + "Please audit all existing usages of java.util.Date when you enable the new "
-              + "behavior. In a future release, the behavior will be changed to the new "
-              + "behavior, so if you do not follow these steps, YOUR APP MAY BREAK.");
-    }
   }
 
   /** Creates a pseudo-random 20-character ID that can be used for Firestore documents. */
@@ -426,7 +398,7 @@ class FirestoreImpl implements Firestore {
 
   /** Returns the name of the Firestore project associated with this client. */
   String getDatabaseName() {
-    return databasePath.toString();
+    return databasePath.getDatabaseName().toString();
   }
 
   /** Returns the underlying RPC client. */

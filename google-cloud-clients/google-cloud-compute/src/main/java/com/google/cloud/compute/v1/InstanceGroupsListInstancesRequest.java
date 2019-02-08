@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ public final class InstanceGroupsListInstancesRequest implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("instanceState")) {
+    if ("instanceState".equals(fieldName)) {
       return instanceState;
     }
     return null;
@@ -55,6 +55,11 @@ public final class InstanceGroupsListInstancesRequest implements ApiMessage {
     return null;
   }
 
+  /**
+   * A filter for the state of the instances in the instance group. Valid options are ALL or
+   * RUNNING. If you do not specify this parameter the list includes all instances regardless of
+   * their state.
+   */
   public String getInstanceState() {
     return instanceState;
   }
@@ -98,10 +103,20 @@ public final class InstanceGroupsListInstancesRequest implements ApiMessage {
       this.instanceState = source.instanceState;
     }
 
+    /**
+     * A filter for the state of the instances in the instance group. Valid options are ALL or
+     * RUNNING. If you do not specify this parameter the list includes all instances regardless of
+     * their state.
+     */
     public String getInstanceState() {
       return instanceState;
     }
 
+    /**
+     * A filter for the state of the instances in the instance group. Valid options are ALL or
+     * RUNNING. If you do not specify this parameter the list includes all instances regardless of
+     * their state.
+     */
     public Builder setInstanceState(String instanceState) {
       this.instanceState = instanceState;
       return this;

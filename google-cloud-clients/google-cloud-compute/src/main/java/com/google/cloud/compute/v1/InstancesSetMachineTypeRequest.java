@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ public final class InstancesSetMachineTypeRequest implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("machineType")) {
+    if ("machineType".equals(fieldName)) {
       return machineType;
     }
     return null;
@@ -55,6 +55,10 @@ public final class InstancesSetMachineTypeRequest implements ApiMessage {
     return null;
   }
 
+  /**
+   * Full or partial URL of the machine type resource. See Machine Types for a full list of machine
+   * types. For example: zones/us-central1-f/machineTypes/n1-standard-1
+   */
   public String getMachineType() {
     return machineType;
   }
@@ -98,10 +102,18 @@ public final class InstancesSetMachineTypeRequest implements ApiMessage {
       this.machineType = source.machineType;
     }
 
+    /**
+     * Full or partial URL of the machine type resource. See Machine Types for a full list of
+     * machine types. For example: zones/us-central1-f/machineTypes/n1-standard-1
+     */
     public String getMachineType() {
       return machineType;
     }
 
+    /**
+     * Full or partial URL of the machine type resource. See Machine Types for a full list of
+     * machine types. For example: zones/us-central1-f/machineTypes/n1-standard-1
+     */
     public Builder setMachineType(String machineType) {
       this.machineType = machineType;
       return this;

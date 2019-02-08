@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -507,7 +507,7 @@ public class DocumentsClient implements BackgroundResource {
    *     .setParent(parent.toString())
    *     .setDocument(document)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = documentsClient.createDocumentOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Document, KnowledgeOperationMetadata&gt; future = documentsClient.createDocumentOperationCallable().futureCall(request);
    *   // Do something
    *   Document response = future.get();
    * }
@@ -558,7 +558,7 @@ public class DocumentsClient implements BackgroundResource {
    * <pre><code>
    * try (DocumentsClient documentsClient = DocumentsClient.create()) {
    *   DocumentName name = DocumentName.of("[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]");
-   *   Empty response = documentsClient.deleteDocumentAsync(name).get();
+   *   documentsClient.deleteDocumentAsync(name).get();
    * }
    * </code></pre>
    *
@@ -588,7 +588,7 @@ public class DocumentsClient implements BackgroundResource {
    * <pre><code>
    * try (DocumentsClient documentsClient = DocumentsClient.create()) {
    *   DocumentName name = DocumentName.of("[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]");
-   *   Empty response = documentsClient.deleteDocumentAsync(name.toString()).get();
+   *   documentsClient.deleteDocumentAsync(name.toString()).get();
    * }
    * </code></pre>
    *
@@ -619,7 +619,7 @@ public class DocumentsClient implements BackgroundResource {
    *   DeleteDocumentRequest request = DeleteDocumentRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
-   *   Empty response = documentsClient.deleteDocumentAsync(request).get();
+   *   documentsClient.deleteDocumentAsync(request).get();
    * }
    * </code></pre>
    *
@@ -648,9 +648,9 @@ public class DocumentsClient implements BackgroundResource {
    *   DeleteDocumentRequest request = DeleteDocumentRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = documentsClient.deleteDocumentOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Empty, KnowledgeOperationMetadata&gt; future = documentsClient.deleteDocumentOperationCallable().futureCall(request);
    *   // Do something
-   *   Empty response = future.get();
+   *   future.get();
    * }
    * </code></pre>
    */

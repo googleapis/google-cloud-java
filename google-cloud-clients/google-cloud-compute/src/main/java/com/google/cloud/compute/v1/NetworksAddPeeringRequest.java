@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,13 +43,13 @@ public final class NetworksAddPeeringRequest implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("autoCreateRoutes")) {
+    if ("autoCreateRoutes".equals(fieldName)) {
       return autoCreateRoutes;
     }
-    if (fieldName.equals("name")) {
+    if ("name".equals(fieldName)) {
       return name;
     }
-    if (fieldName.equals("peerNetwork")) {
+    if ("peerNetwork".equals(fieldName)) {
       return peerNetwork;
     }
     return null;
@@ -67,14 +67,21 @@ public final class NetworksAddPeeringRequest implements ApiMessage {
     return null;
   }
 
+  /** Whether Google Compute Engine manages the routes automatically. */
   public Boolean getAutoCreateRoutes() {
     return autoCreateRoutes;
   }
 
+  /** Name of the peering, which should conform to RFC1035. */
   public String getName() {
     return name;
   }
 
+  /**
+   * URL of the peer network. It can be either full URL or partial URL. The peer network may belong
+   * to a different project. If the partial URL does not contain project, it is assumed that the
+   * peer network is in the same project as the current network.
+   */
   public String getPeerNetwork() {
     return peerNetwork;
   }
@@ -128,28 +135,42 @@ public final class NetworksAddPeeringRequest implements ApiMessage {
       this.peerNetwork = source.peerNetwork;
     }
 
+    /** Whether Google Compute Engine manages the routes automatically. */
     public Boolean getAutoCreateRoutes() {
       return autoCreateRoutes;
     }
 
+    /** Whether Google Compute Engine manages the routes automatically. */
     public Builder setAutoCreateRoutes(Boolean autoCreateRoutes) {
       this.autoCreateRoutes = autoCreateRoutes;
       return this;
     }
 
+    /** Name of the peering, which should conform to RFC1035. */
     public String getName() {
       return name;
     }
 
+    /** Name of the peering, which should conform to RFC1035. */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /**
+     * URL of the peer network. It can be either full URL or partial URL. The peer network may
+     * belong to a different project. If the partial URL does not contain project, it is assumed
+     * that the peer network is in the same project as the current network.
+     */
     public String getPeerNetwork() {
       return peerNetwork;
     }
 
+    /**
+     * URL of the peer network. It can be either full URL or partial URL. The peer network may
+     * belong to a different project. If the partial URL does not contain project, it is assumed
+     * that the peer network is in the same project as the current network.
+     */
     public Builder setPeerNetwork(String peerNetwork) {
       this.peerNetwork = peerNetwork;
       return this;

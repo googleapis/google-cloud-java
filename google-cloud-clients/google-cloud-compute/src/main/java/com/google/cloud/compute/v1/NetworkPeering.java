@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,11 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * A network peering attached to a network resource. The message includes the peering name, peer
+ * network, peering state, and a flag indicating whether Google Compute Engine should automatically
+ * create routes for the peering.
+ */
 public final class NetworkPeering implements ApiMessage {
   private final Boolean autoCreateRoutes;
   private final String name;
@@ -50,19 +55,19 @@ public final class NetworkPeering implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("autoCreateRoutes")) {
+    if ("autoCreateRoutes".equals(fieldName)) {
       return autoCreateRoutes;
     }
-    if (fieldName.equals("name")) {
+    if ("name".equals(fieldName)) {
       return name;
     }
-    if (fieldName.equals("network")) {
+    if ("network".equals(fieldName)) {
       return network;
     }
-    if (fieldName.equals("state")) {
+    if ("state".equals(fieldName)) {
       return state;
     }
-    if (fieldName.equals("stateDetails")) {
+    if ("stateDetails".equals(fieldName)) {
       return stateDetails;
     }
     return null;
@@ -80,22 +85,42 @@ public final class NetworkPeering implements ApiMessage {
     return null;
   }
 
+  /**
+   * Indicates whether full mesh connectivity is created and managed automatically. When it is set
+   * to true, Google Compute Engine will automatically create and manage the routes between two
+   * networks when the state is ACTIVE. Otherwise, user needs to create routes manually to route
+   * packets to peer network.
+   */
   public Boolean getAutoCreateRoutes() {
     return autoCreateRoutes;
   }
 
+  /**
+   * Name of this peering. Provided by the client when the peering is created. The name must comply
+   * with RFC1035. Specifically, the name must be 1-63 characters long and match regular expression
+   * `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first character must be a lowercase letter,
+   * and all the following characters must be a dash, lowercase letter, or digit, except the last
+   * character, which cannot be a dash.
+   */
   public String getName() {
     return name;
   }
 
+  /**
+   * The URL of the peer network. It can be either full URL or partial URL. The peer network may
+   * belong to a different project. If the partial URL does not contain project, it is assumed that
+   * the peer network is in the same project as the current network.
+   */
   public String getNetwork() {
     return network;
   }
 
+  /** [Output Only] State for the peering. */
   public String getState() {
     return state;
   }
 
+  /** [Output Only] Details about the current state of the peering. */
   public String getStateDetails() {
     return stateDetails;
   }
@@ -159,46 +184,86 @@ public final class NetworkPeering implements ApiMessage {
       this.stateDetails = source.stateDetails;
     }
 
+    /**
+     * Indicates whether full mesh connectivity is created and managed automatically. When it is set
+     * to true, Google Compute Engine will automatically create and manage the routes between two
+     * networks when the state is ACTIVE. Otherwise, user needs to create routes manually to route
+     * packets to peer network.
+     */
     public Boolean getAutoCreateRoutes() {
       return autoCreateRoutes;
     }
 
+    /**
+     * Indicates whether full mesh connectivity is created and managed automatically. When it is set
+     * to true, Google Compute Engine will automatically create and manage the routes between two
+     * networks when the state is ACTIVE. Otherwise, user needs to create routes manually to route
+     * packets to peer network.
+     */
     public Builder setAutoCreateRoutes(Boolean autoCreateRoutes) {
       this.autoCreateRoutes = autoCreateRoutes;
       return this;
     }
 
+    /**
+     * Name of this peering. Provided by the client when the peering is created. The name must
+     * comply with RFC1035. Specifically, the name must be 1-63 characters long and match regular
+     * expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first character must be a
+     * lowercase letter, and all the following characters must be a dash, lowercase letter, or
+     * digit, except the last character, which cannot be a dash.
+     */
     public String getName() {
       return name;
     }
 
+    /**
+     * Name of this peering. Provided by the client when the peering is created. The name must
+     * comply with RFC1035. Specifically, the name must be 1-63 characters long and match regular
+     * expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first character must be a
+     * lowercase letter, and all the following characters must be a dash, lowercase letter, or
+     * digit, except the last character, which cannot be a dash.
+     */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /**
+     * The URL of the peer network. It can be either full URL or partial URL. The peer network may
+     * belong to a different project. If the partial URL does not contain project, it is assumed
+     * that the peer network is in the same project as the current network.
+     */
     public String getNetwork() {
       return network;
     }
 
+    /**
+     * The URL of the peer network. It can be either full URL or partial URL. The peer network may
+     * belong to a different project. If the partial URL does not contain project, it is assumed
+     * that the peer network is in the same project as the current network.
+     */
     public Builder setNetwork(String network) {
       this.network = network;
       return this;
     }
 
+    /** [Output Only] State for the peering. */
     public String getState() {
       return state;
     }
 
+    /** [Output Only] State for the peering. */
     public Builder setState(String state) {
       this.state = state;
       return this;
     }
 
+    /** [Output Only] Details about the current state of the peering. */
     public String getStateDetails() {
       return stateDetails;
     }
 
+    /** [Output Only] Details about the current state of the peering. */
     public Builder setStateDetails(String stateDetails) {
       this.stateDetails = stateDetails;
       return this;

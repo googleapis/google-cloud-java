@@ -862,13 +862,14 @@ public final class SubscriberGrpc {
      *
      * <pre>
      * Creates a subscription to a given topic. See the
-     * &lt;a href="/pubsub/docs/admin#resource_names"&gt; resource name rules&lt;/a&gt;.
+     * &lt;a href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt;
+     * resource name rules&lt;/a&gt;.
      * If the subscription already exists, returns `ALREADY_EXISTS`.
      * If the corresponding topic doesn't exist, returns `NOT_FOUND`.
      * If the name is not provided in the request, the server will assign a random
      * name for this subscription on the same project as the topic, conforming
      * to the
-     * [resource name format](https://cloud.google.com/pubsub/docs/overview#names).
+     * [resource name format](https://cloud.google.com/pubsub/docs/admin#resource_names).
      * The generated name is populated in the returned Subscription object.
      * Note that for REST API requests, you must specify a name in the request.
      * </pre>
@@ -1026,8 +1027,12 @@ public final class SubscriberGrpc {
      *
      *
      * <pre>
-     * Gets the configuration details of a snapshot.&lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * Gets the configuration details of a snapshot. Snapshots are used in
+     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt;
+     * operations, which allow you to manage message acknowledgments in bulk. That
+     * is, you can set the acknowledgment state of messages in an existing
+     * subscription to the state captured by a snapshot.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.
      * </pre>
@@ -1042,8 +1047,13 @@ public final class SubscriberGrpc {
      *
      *
      * <pre>
-     * Lists the existing snapshots.&lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * Lists the existing snapshots. Snapshots are used in
+     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt;
+     * operations, which allow
+     * you to manage message acknowledgments in bulk. That is, you can set the
+     * acknowledgment state of messages in an existing subscription to the state
+     * captured by a snapshot.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.
      * </pre>
@@ -1058,8 +1068,14 @@ public final class SubscriberGrpc {
      *
      *
      * <pre>
-     * Creates a snapshot from the requested subscription.&lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * Creates a snapshot from the requested subscription. Snapshots are used in
+     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt;
+     * operations, which allow
+     * you to manage message acknowledgments in bulk. That is, you can set the
+     * acknowledgment state of messages in an existing subscription to the state
+     * captured by a snapshot.
+     * &lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.&lt;br&gt;&lt;br&gt;
      * If the snapshot already exists, returns `ALREADY_EXISTS`.
@@ -1069,10 +1085,10 @@ public final class SubscriberGrpc {
      * See also the `Snapshot.expire_time` field. If the name is not provided in
      * the request, the server will assign a random
      * name for this snapshot on the same project as the subscription, conforming
-     * to the [resource name format](https://cloud.google.com/pubsub/docs/overview#names).
-     * The generated
-     * name is populated in the returned Snapshot object. Note that for REST API
-     * requests, you must specify a name in the request.
+     * to the
+     * [resource name format](https://cloud.google.com/pubsub/docs/admin#resource_names).
+     * The generated name is populated in the returned Snapshot object. Note that
+     * for REST API requests, you must specify a name in the request.
      * </pre>
      */
     public void createSnapshot(
@@ -1085,8 +1101,13 @@ public final class SubscriberGrpc {
      *
      *
      * <pre>
-     * Updates an existing snapshot.&lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * Updates an existing snapshot. Snapshots are used in
+     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt;
+     * operations, which allow
+     * you to manage message acknowledgments in bulk. That is, you can set the
+     * acknowledgment state of messages in an existing subscription to the state
+     * captured by a snapshot.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.
      * Note that certain properties of a snapshot are not modifiable.
@@ -1102,8 +1123,13 @@ public final class SubscriberGrpc {
      *
      *
      * <pre>
-     * Removes an existing snapshot. &lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * Removes an existing snapshot. Snapshots are used in
+     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt;
+     * operations, which allow
+     * you to manage message acknowledgments in bulk. That is, you can set the
+     * acknowledgment state of messages in an existing subscription to the state
+     * captured by a snapshot.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.
      * When the snapshot is deleted, all messages retained in the snapshot
@@ -1123,8 +1149,14 @@ public final class SubscriberGrpc {
      *
      * <pre>
      * Seeks an existing subscription to a point in time or to a given snapshot,
-     * whichever is provided in the request.&lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * whichever is provided in the request. Snapshots are used in
+     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt;
+     * operations, which allow
+     * you to manage message acknowledgments in bulk. That is, you can set the
+     * acknowledgment state of messages in an existing subscription to the state
+     * captured by a snapshot. Note that both the subscription and the snapshot
+     * must be on the same topic.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.
      * </pre>
@@ -1267,13 +1299,14 @@ public final class SubscriberGrpc {
      *
      * <pre>
      * Creates a subscription to a given topic. See the
-     * &lt;a href="/pubsub/docs/admin#resource_names"&gt; resource name rules&lt;/a&gt;.
+     * &lt;a href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt;
+     * resource name rules&lt;/a&gt;.
      * If the subscription already exists, returns `ALREADY_EXISTS`.
      * If the corresponding topic doesn't exist, returns `NOT_FOUND`.
      * If the name is not provided in the request, the server will assign a random
      * name for this subscription on the same project as the topic, conforming
      * to the
-     * [resource name format](https://cloud.google.com/pubsub/docs/overview#names).
+     * [resource name format](https://cloud.google.com/pubsub/docs/admin#resource_names).
      * The generated name is populated in the returned Subscription object.
      * Note that for REST API requests, you must specify a name in the request.
      * </pre>
@@ -1457,8 +1490,12 @@ public final class SubscriberGrpc {
      *
      *
      * <pre>
-     * Gets the configuration details of a snapshot.&lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * Gets the configuration details of a snapshot. Snapshots are used in
+     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt;
+     * operations, which allow you to manage message acknowledgments in bulk. That
+     * is, you can set the acknowledgment state of messages in an existing
+     * subscription to the state captured by a snapshot.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.
      * </pre>
@@ -1476,8 +1513,13 @@ public final class SubscriberGrpc {
      *
      *
      * <pre>
-     * Lists the existing snapshots.&lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * Lists the existing snapshots. Snapshots are used in
+     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt;
+     * operations, which allow
+     * you to manage message acknowledgments in bulk. That is, you can set the
+     * acknowledgment state of messages in an existing subscription to the state
+     * captured by a snapshot.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.
      * </pre>
@@ -1495,8 +1537,14 @@ public final class SubscriberGrpc {
      *
      *
      * <pre>
-     * Creates a snapshot from the requested subscription.&lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * Creates a snapshot from the requested subscription. Snapshots are used in
+     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt;
+     * operations, which allow
+     * you to manage message acknowledgments in bulk. That is, you can set the
+     * acknowledgment state of messages in an existing subscription to the state
+     * captured by a snapshot.
+     * &lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.&lt;br&gt;&lt;br&gt;
      * If the snapshot already exists, returns `ALREADY_EXISTS`.
@@ -1506,10 +1554,10 @@ public final class SubscriberGrpc {
      * See also the `Snapshot.expire_time` field. If the name is not provided in
      * the request, the server will assign a random
      * name for this snapshot on the same project as the subscription, conforming
-     * to the [resource name format](https://cloud.google.com/pubsub/docs/overview#names).
-     * The generated
-     * name is populated in the returned Snapshot object. Note that for REST API
-     * requests, you must specify a name in the request.
+     * to the
+     * [resource name format](https://cloud.google.com/pubsub/docs/admin#resource_names).
+     * The generated name is populated in the returned Snapshot object. Note that
+     * for REST API requests, you must specify a name in the request.
      * </pre>
      */
     public void createSnapshot(
@@ -1525,8 +1573,13 @@ public final class SubscriberGrpc {
      *
      *
      * <pre>
-     * Updates an existing snapshot.&lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * Updates an existing snapshot. Snapshots are used in
+     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt;
+     * operations, which allow
+     * you to manage message acknowledgments in bulk. That is, you can set the
+     * acknowledgment state of messages in an existing subscription to the state
+     * captured by a snapshot.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.
      * Note that certain properties of a snapshot are not modifiable.
@@ -1545,8 +1598,13 @@ public final class SubscriberGrpc {
      *
      *
      * <pre>
-     * Removes an existing snapshot. &lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * Removes an existing snapshot. Snapshots are used in
+     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt;
+     * operations, which allow
+     * you to manage message acknowledgments in bulk. That is, you can set the
+     * acknowledgment state of messages in an existing subscription to the state
+     * captured by a snapshot.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.
      * When the snapshot is deleted, all messages retained in the snapshot
@@ -1569,8 +1627,14 @@ public final class SubscriberGrpc {
      *
      * <pre>
      * Seeks an existing subscription to a point in time or to a given snapshot,
-     * whichever is provided in the request.&lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * whichever is provided in the request. Snapshots are used in
+     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt;
+     * operations, which allow
+     * you to manage message acknowledgments in bulk. That is, you can set the
+     * acknowledgment state of messages in an existing subscription to the state
+     * captured by a snapshot. Note that both the subscription and the snapshot
+     * must be on the same topic.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.
      * </pre>
@@ -1613,13 +1677,14 @@ public final class SubscriberGrpc {
      *
      * <pre>
      * Creates a subscription to a given topic. See the
-     * &lt;a href="/pubsub/docs/admin#resource_names"&gt; resource name rules&lt;/a&gt;.
+     * &lt;a href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt;
+     * resource name rules&lt;/a&gt;.
      * If the subscription already exists, returns `ALREADY_EXISTS`.
      * If the corresponding topic doesn't exist, returns `NOT_FOUND`.
      * If the name is not provided in the request, the server will assign a random
      * name for this subscription on the same project as the topic, conforming
      * to the
-     * [resource name format](https://cloud.google.com/pubsub/docs/overview#names).
+     * [resource name format](https://cloud.google.com/pubsub/docs/admin#resource_names).
      * The generated name is populated in the returned Subscription object.
      * Note that for REST API requests, you must specify a name in the request.
      * </pre>
@@ -1755,8 +1820,12 @@ public final class SubscriberGrpc {
      *
      *
      * <pre>
-     * Gets the configuration details of a snapshot.&lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * Gets the configuration details of a snapshot. Snapshots are used in
+     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt;
+     * operations, which allow you to manage message acknowledgments in bulk. That
+     * is, you can set the acknowledgment state of messages in an existing
+     * subscription to the state captured by a snapshot.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.
      * </pre>
@@ -1771,8 +1840,13 @@ public final class SubscriberGrpc {
      *
      *
      * <pre>
-     * Lists the existing snapshots.&lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * Lists the existing snapshots. Snapshots are used in
+     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt;
+     * operations, which allow
+     * you to manage message acknowledgments in bulk. That is, you can set the
+     * acknowledgment state of messages in an existing subscription to the state
+     * captured by a snapshot.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.
      * </pre>
@@ -1787,8 +1861,14 @@ public final class SubscriberGrpc {
      *
      *
      * <pre>
-     * Creates a snapshot from the requested subscription.&lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * Creates a snapshot from the requested subscription. Snapshots are used in
+     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt;
+     * operations, which allow
+     * you to manage message acknowledgments in bulk. That is, you can set the
+     * acknowledgment state of messages in an existing subscription to the state
+     * captured by a snapshot.
+     * &lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.&lt;br&gt;&lt;br&gt;
      * If the snapshot already exists, returns `ALREADY_EXISTS`.
@@ -1798,10 +1878,10 @@ public final class SubscriberGrpc {
      * See also the `Snapshot.expire_time` field. If the name is not provided in
      * the request, the server will assign a random
      * name for this snapshot on the same project as the subscription, conforming
-     * to the [resource name format](https://cloud.google.com/pubsub/docs/overview#names).
-     * The generated
-     * name is populated in the returned Snapshot object. Note that for REST API
-     * requests, you must specify a name in the request.
+     * to the
+     * [resource name format](https://cloud.google.com/pubsub/docs/admin#resource_names).
+     * The generated name is populated in the returned Snapshot object. Note that
+     * for REST API requests, you must specify a name in the request.
      * </pre>
      */
     public com.google.pubsub.v1.Snapshot createSnapshot(
@@ -1814,8 +1894,13 @@ public final class SubscriberGrpc {
      *
      *
      * <pre>
-     * Updates an existing snapshot.&lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * Updates an existing snapshot. Snapshots are used in
+     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt;
+     * operations, which allow
+     * you to manage message acknowledgments in bulk. That is, you can set the
+     * acknowledgment state of messages in an existing subscription to the state
+     * captured by a snapshot.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.
      * Note that certain properties of a snapshot are not modifiable.
@@ -1831,8 +1916,13 @@ public final class SubscriberGrpc {
      *
      *
      * <pre>
-     * Removes an existing snapshot. &lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * Removes an existing snapshot. Snapshots are used in
+     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt;
+     * operations, which allow
+     * you to manage message acknowledgments in bulk. That is, you can set the
+     * acknowledgment state of messages in an existing subscription to the state
+     * captured by a snapshot.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.
      * When the snapshot is deleted, all messages retained in the snapshot
@@ -1852,8 +1942,14 @@ public final class SubscriberGrpc {
      *
      * <pre>
      * Seeks an existing subscription to a point in time or to a given snapshot,
-     * whichever is provided in the request.&lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * whichever is provided in the request. Snapshots are used in
+     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt;
+     * operations, which allow
+     * you to manage message acknowledgments in bulk. That is, you can set the
+     * acknowledgment state of messages in an existing subscription to the state
+     * captured by a snapshot. Note that both the subscription and the snapshot
+     * must be on the same topic.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.
      * </pre>
@@ -1892,13 +1988,14 @@ public final class SubscriberGrpc {
      *
      * <pre>
      * Creates a subscription to a given topic. See the
-     * &lt;a href="/pubsub/docs/admin#resource_names"&gt; resource name rules&lt;/a&gt;.
+     * &lt;a href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt;
+     * resource name rules&lt;/a&gt;.
      * If the subscription already exists, returns `ALREADY_EXISTS`.
      * If the corresponding topic doesn't exist, returns `NOT_FOUND`.
      * If the name is not provided in the request, the server will assign a random
      * name for this subscription on the same project as the topic, conforming
      * to the
-     * [resource name format](https://cloud.google.com/pubsub/docs/overview#names).
+     * [resource name format](https://cloud.google.com/pubsub/docs/admin#resource_names).
      * The generated name is populated in the returned Subscription object.
      * Note that for REST API requests, you must specify a name in the request.
      * </pre>
@@ -2038,8 +2135,12 @@ public final class SubscriberGrpc {
      *
      *
      * <pre>
-     * Gets the configuration details of a snapshot.&lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * Gets the configuration details of a snapshot. Snapshots are used in
+     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt;
+     * operations, which allow you to manage message acknowledgments in bulk. That
+     * is, you can set the acknowledgment state of messages in an existing
+     * subscription to the state captured by a snapshot.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.
      * </pre>
@@ -2054,8 +2155,13 @@ public final class SubscriberGrpc {
      *
      *
      * <pre>
-     * Lists the existing snapshots.&lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * Lists the existing snapshots. Snapshots are used in
+     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt;
+     * operations, which allow
+     * you to manage message acknowledgments in bulk. That is, you can set the
+     * acknowledgment state of messages in an existing subscription to the state
+     * captured by a snapshot.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.
      * </pre>
@@ -2071,8 +2177,14 @@ public final class SubscriberGrpc {
      *
      *
      * <pre>
-     * Creates a snapshot from the requested subscription.&lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * Creates a snapshot from the requested subscription. Snapshots are used in
+     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt;
+     * operations, which allow
+     * you to manage message acknowledgments in bulk. That is, you can set the
+     * acknowledgment state of messages in an existing subscription to the state
+     * captured by a snapshot.
+     * &lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.&lt;br&gt;&lt;br&gt;
      * If the snapshot already exists, returns `ALREADY_EXISTS`.
@@ -2082,10 +2194,10 @@ public final class SubscriberGrpc {
      * See also the `Snapshot.expire_time` field. If the name is not provided in
      * the request, the server will assign a random
      * name for this snapshot on the same project as the subscription, conforming
-     * to the [resource name format](https://cloud.google.com/pubsub/docs/overview#names).
-     * The generated
-     * name is populated in the returned Snapshot object. Note that for REST API
-     * requests, you must specify a name in the request.
+     * to the
+     * [resource name format](https://cloud.google.com/pubsub/docs/admin#resource_names).
+     * The generated name is populated in the returned Snapshot object. Note that
+     * for REST API requests, you must specify a name in the request.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.pubsub.v1.Snapshot>
@@ -2098,8 +2210,13 @@ public final class SubscriberGrpc {
      *
      *
      * <pre>
-     * Updates an existing snapshot.&lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * Updates an existing snapshot. Snapshots are used in
+     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt;
+     * operations, which allow
+     * you to manage message acknowledgments in bulk. That is, you can set the
+     * acknowledgment state of messages in an existing subscription to the state
+     * captured by a snapshot.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.
      * Note that certain properties of a snapshot are not modifiable.
@@ -2115,8 +2232,13 @@ public final class SubscriberGrpc {
      *
      *
      * <pre>
-     * Removes an existing snapshot. &lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * Removes an existing snapshot. Snapshots are used in
+     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt;
+     * operations, which allow
+     * you to manage message acknowledgments in bulk. That is, you can set the
+     * acknowledgment state of messages in an existing subscription to the state
+     * captured by a snapshot.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.
      * When the snapshot is deleted, all messages retained in the snapshot
@@ -2136,8 +2258,14 @@ public final class SubscriberGrpc {
      *
      * <pre>
      * Seeks an existing subscription to a point in time or to a given snapshot,
-     * whichever is provided in the request.&lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * whichever is provided in the request. Snapshots are used in
+     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt;
+     * operations, which allow
+     * you to manage message acknowledgments in bulk. That is, you can set the
+     * acknowledgment state of messages in an existing subscription to the state
+     * captured by a snapshot. Note that both the subscription and the snapshot
+     * must be on the same topic.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.
      * </pre>

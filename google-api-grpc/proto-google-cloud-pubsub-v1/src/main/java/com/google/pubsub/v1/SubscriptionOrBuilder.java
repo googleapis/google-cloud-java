@@ -107,11 +107,11 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * This value is the maximum time after a subscriber receives a message
-   * before the subscriber should acknowledge the message. After message
-   * delivery but before the ack deadline expires and before the message is
-   * acknowledged, it is an outstanding message and will not be delivered
-   * again during that time (on a best-effort basis).
+   * The approximate amount of time (on a best-effort basis) Pub/Sub waits for
+   * the subscriber to acknowledge receipt before resending the message. In the
+   * interval after the message is delivered and before it is acknowledged, it
+   * is considered to be &lt;i&gt;outstanding&lt;/i&gt;. During that time period, the
+   * message will not be redelivered (on a best-effort basis).
    * For pull subscriptions, this value is used as the initial value for the ack
    * deadline. To override this value for a given message, call
    * `ModifyAckDeadline` with the corresponding `ack_id` if using
@@ -137,8 +137,11 @@ public interface SubscriptionOrBuilder
    * Indicates whether to retain acknowledged messages. If true, then
    * messages are not expunged from the subscription's backlog, even if they are
    * acknowledged, until they fall out of the `message_retention_duration`
-   * window.&lt;br&gt;&lt;br&gt;
-   * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+   * window. This must be true if you would like to
+   * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time"&gt;
+   * Seek to a timestamp&lt;/a&gt;.
+   * &lt;br&gt;&lt;br&gt;
+   * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
    * changed in backward-incompatible ways and is not recommended for production
    * use. It is not subject to any SLA or deprecation policy.
    * </pre>
@@ -157,7 +160,7 @@ public interface SubscriptionOrBuilder
    * of acknowledged messages, and thus configures how far back in time a `Seek`
    * can be done. Defaults to 7 days. Cannot be more than 7 days or less than 10
    * minutes.&lt;br&gt;&lt;br&gt;
-   * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+   * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
    * changed in backward-incompatible ways and is not recommended for production
    * use. It is not subject to any SLA or deprecation policy.
    * </pre>
@@ -175,7 +178,7 @@ public interface SubscriptionOrBuilder
    * of acknowledged messages, and thus configures how far back in time a `Seek`
    * can be done. Defaults to 7 days. Cannot be more than 7 days or less than 10
    * minutes.&lt;br&gt;&lt;br&gt;
-   * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+   * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
    * changed in backward-incompatible ways and is not recommended for production
    * use. It is not subject to any SLA or deprecation policy.
    * </pre>
@@ -193,7 +196,7 @@ public interface SubscriptionOrBuilder
    * of acknowledged messages, and thus configures how far back in time a `Seek`
    * can be done. Defaults to 7 days. Cannot be more than 7 days or less than 10
    * minutes.&lt;br&gt;&lt;br&gt;
-   * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+   * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
    * changed in backward-incompatible ways and is not recommended for production
    * use. It is not subject to any SLA or deprecation policy.
    * </pre>
@@ -206,7 +209,8 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+   * managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 9;</code>
@@ -216,7 +220,8 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+   * managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 9;</code>
@@ -229,7 +234,8 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+   * managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 9;</code>
@@ -239,7 +245,8 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+   * managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 9;</code>
@@ -249,7 +256,8 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
-   * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
+   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+   * managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 9;</code>

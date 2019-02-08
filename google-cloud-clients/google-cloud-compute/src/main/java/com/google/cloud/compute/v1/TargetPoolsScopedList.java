@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,10 +41,10 @@ public final class TargetPoolsScopedList implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("targetPools")) {
+    if ("targetPools".equals(fieldName)) {
       return targetPools;
     }
-    if (fieldName.equals("warning")) {
+    if ("warning".equals(fieldName)) {
       return warning;
     }
     return null;
@@ -62,10 +62,12 @@ public final class TargetPoolsScopedList implements ApiMessage {
     return null;
   }
 
+  /** A list of target pools contained in this scope. */
   public List<TargetPool> getTargetPoolsList() {
     return targetPools;
   }
 
+  /** Informational warning which replaces the list of addresses when the list is empty. */
   public Warning getWarning() {
     return warning;
   }
@@ -114,10 +116,12 @@ public final class TargetPoolsScopedList implements ApiMessage {
       this.warning = source.warning;
     }
 
+    /** A list of target pools contained in this scope. */
     public List<TargetPool> getTargetPoolsList() {
       return targetPools;
     }
 
+    /** A list of target pools contained in this scope. */
     public Builder addAllTargetPools(List<TargetPool> targetPools) {
       if (this.targetPools == null) {
         this.targetPools = new LinkedList<>();
@@ -126,6 +130,7 @@ public final class TargetPoolsScopedList implements ApiMessage {
       return this;
     }
 
+    /** A list of target pools contained in this scope. */
     public Builder addTargetPools(TargetPool targetPools) {
       if (this.targetPools == null) {
         this.targetPools = new LinkedList<>();
@@ -134,10 +139,12 @@ public final class TargetPoolsScopedList implements ApiMessage {
       return this;
     }
 
+    /** Informational warning which replaces the list of addresses when the list is empty. */
     public Warning getWarning() {
       return warning;
     }
 
+    /** Informational warning which replaces the list of addresses when the list is empty. */
     public Builder setWarning(Warning warning) {
       this.warning = warning;
       return this;

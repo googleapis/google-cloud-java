@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Write a Cloud Audit log */
 public final class LogConfigCloudAuditOptions implements ApiMessage {
   private final AuthorizationLoggingOptions authorizationLoggingOptions;
   private final String logName;
@@ -41,10 +42,10 @@ public final class LogConfigCloudAuditOptions implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("authorizationLoggingOptions")) {
+    if ("authorizationLoggingOptions".equals(fieldName)) {
       return authorizationLoggingOptions;
     }
-    if (fieldName.equals("logName")) {
+    if ("logName".equals(fieldName)) {
       return logName;
     }
     return null;
@@ -62,10 +63,12 @@ public final class LogConfigCloudAuditOptions implements ApiMessage {
     return null;
   }
 
+  /** Information used by the Cloud Audit Logging pipeline. */
   public AuthorizationLoggingOptions getAuthorizationLoggingOptions() {
     return authorizationLoggingOptions;
   }
 
+  /** The log_name to populate in the Cloud Audit Record. */
   public String getLogName() {
     return logName;
   }
@@ -114,20 +117,24 @@ public final class LogConfigCloudAuditOptions implements ApiMessage {
       this.logName = source.logName;
     }
 
+    /** Information used by the Cloud Audit Logging pipeline. */
     public AuthorizationLoggingOptions getAuthorizationLoggingOptions() {
       return authorizationLoggingOptions;
     }
 
+    /** Information used by the Cloud Audit Logging pipeline. */
     public Builder setAuthorizationLoggingOptions(
         AuthorizationLoggingOptions authorizationLoggingOptions) {
       this.authorizationLoggingOptions = authorizationLoggingOptions;
       return this;
     }
 
+    /** The log_name to populate in the Cloud Audit Record. */
     public String getLogName() {
       return logName;
     }
 
+    /** The log_name to populate in the Cloud Audit Record. */
     public Builder setLogName(String logName) {
       this.logName = logName;
       return this;

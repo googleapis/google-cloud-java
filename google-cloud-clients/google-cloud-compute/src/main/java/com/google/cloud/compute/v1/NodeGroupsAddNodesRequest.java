@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ public final class NodeGroupsAddNodesRequest implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("additionalNodeCount")) {
+    if ("additionalNodeCount".equals(fieldName)) {
       return additionalNodeCount;
     }
     return null;
@@ -55,6 +55,7 @@ public final class NodeGroupsAddNodesRequest implements ApiMessage {
     return null;
   }
 
+  /** Count of additional nodes to be added to the node group. */
   public Integer getAdditionalNodeCount() {
     return additionalNodeCount;
   }
@@ -98,10 +99,12 @@ public final class NodeGroupsAddNodesRequest implements ApiMessage {
       this.additionalNodeCount = source.additionalNodeCount;
     }
 
+    /** Count of additional nodes to be added to the node group. */
     public Integer getAdditionalNodeCount() {
       return additionalNodeCount;
     }
 
+    /** Count of additional nodes to be added to the node group. */
     public Builder setAdditionalNodeCount(Integer additionalNodeCount) {
       this.additionalNodeCount = additionalNodeCount;
       return this;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,11 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Request object for method compute.autoscalers.patch. Updates an autoscaler in the specified
+ * project using the data included in the request. This method supports PATCH semantics and uses the
+ * JSON merge patch format and processing rules.
+ */
 public final class PatchAutoscalerHttpRequest implements ApiMessage {
   private final String access_token;
   private final String autoscaler;
@@ -83,40 +88,40 @@ public final class PatchAutoscalerHttpRequest implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("access_token")) {
+    if ("access_token".equals(fieldName)) {
       return access_token;
     }
-    if (fieldName.equals("autoscaler")) {
+    if ("autoscaler".equals(fieldName)) {
       return autoscaler;
     }
-    if (fieldName.equals("autoscalerResource")) {
+    if ("autoscalerResource".equals(fieldName)) {
       return autoscalerResource;
     }
-    if (fieldName.equals("callback")) {
+    if ("callback".equals(fieldName)) {
       return callback;
     }
-    if (fieldName.equals("fieldMask")) {
+    if ("fieldMask".equals(fieldName)) {
       return fieldMask;
     }
-    if (fieldName.equals("fields")) {
+    if ("fields".equals(fieldName)) {
       return fields;
     }
-    if (fieldName.equals("key")) {
+    if ("key".equals(fieldName)) {
       return key;
     }
-    if (fieldName.equals("prettyPrint")) {
+    if ("prettyPrint".equals(fieldName)) {
       return prettyPrint;
     }
-    if (fieldName.equals("quotaUser")) {
+    if ("quotaUser".equals(fieldName)) {
       return quotaUser;
     }
-    if (fieldName.equals("requestId")) {
+    if ("requestId".equals(fieldName)) {
       return requestId;
     }
-    if (fieldName.equals("userIp")) {
+    if ("userIp".equals(fieldName)) {
       return userIp;
     }
-    if (fieldName.equals("zone")) {
+    if ("zone".equals(fieldName)) {
       return zone;
     }
     return null;
@@ -128,18 +133,28 @@ public final class PatchAutoscalerHttpRequest implements ApiMessage {
     return autoscalerResource;
   }
 
+  /** OAuth 2.0 token for the current user. */
   public String getAccessToken() {
     return access_token;
   }
 
+  /** Name of the autoscaler to patch. */
   public String getAutoscaler() {
     return autoscaler;
   }
 
+  /**
+   * Represents an Autoscaler resource. Autoscalers allow you to automatically scale virtual machine
+   * instances in managed instance groups according to an autoscaling policy that you define. For
+   * more information, read Autoscaling Groups of Instances. (== resource_for beta.autoscalers ==)
+   * (== resource_for v1.autoscalers ==) (== resource_for beta.regionAutoscalers ==) (==
+   * resource_for v1.regionAutoscalers ==)
+   */
   public Autoscaler getAutoscalerResource() {
     return autoscalerResource;
   }
 
+  /** Name of the JavaScript callback function that handles the response. */
   public String getCallback() {
     return callback;
   }
@@ -148,30 +163,55 @@ public final class PatchAutoscalerHttpRequest implements ApiMessage {
     return fieldMask;
   }
 
+  /** Selector specifying a subset of fields to include in the response. */
   public String getFields() {
     return fields;
   }
 
+  /** API key. Required unless you provide an OAuth 2.0 token. */
   public String getKey() {
     return key;
   }
 
+  /** Returns response with indentations and line breaks. */
   public String getPrettyPrint() {
     return prettyPrint;
   }
 
+  /** Alternative to userIp. */
   public String getQuotaUser() {
     return quotaUser;
   }
 
+  /**
+   * An optional request ID to identify requests. Specify a unique request ID so that if you must
+   * retry your request, the server will know to ignore the request if it has already been
+   * completed.
+   *
+   * <p>For example, consider a situation where you make an initial request and the request times
+   * out. If you make the request again with the same request ID, the server can check if original
+   * operation with the same request ID was received, and if so, will ignore the second request.
+   * This prevents clients from accidentally creating duplicate commitments.
+   *
+   * <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+   * (00000000-0000-0000-0000-000000000000).
+   */
   public String getRequestId() {
     return requestId;
   }
 
+  /** IP address of the end user for whom the API call is being made. */
   public String getUserIp() {
     return userIp;
   }
 
+  /**
+   * Name of the zone for this request. It must have the format
+   * `{project}/zones/{zone}/autoscalers`. \`{zone}\` must start with a letter, and contain only
+   * letters (\`[A-Za-z]\`), numbers (\`[0-9]\`), dashes (\`-\`), &#42; underscores (\`_\`), periods
+   * (\`.\`), tildes (\`~\`), plus (\`+\`) or percent &#42; signs (\`%\`). It must be between 3 and
+   * 255 characters in length, and it &#42; must not start with \`"goog"\`.
+   */
   public String getZone() {
     return zone;
   }
@@ -270,37 +310,57 @@ public final class PatchAutoscalerHttpRequest implements ApiMessage {
       this.zone = source.zone;
     }
 
+    /** OAuth 2.0 token for the current user. */
     public String getAccessToken() {
       return access_token;
     }
 
+    /** OAuth 2.0 token for the current user. */
     public Builder setAccessToken(String access_token) {
       this.access_token = access_token;
       return this;
     }
 
+    /** Name of the autoscaler to patch. */
     public String getAutoscaler() {
       return autoscaler;
     }
 
+    /** Name of the autoscaler to patch. */
     public Builder setAutoscaler(String autoscaler) {
       this.autoscaler = autoscaler;
       return this;
     }
 
+    /**
+     * Represents an Autoscaler resource. Autoscalers allow you to automatically scale virtual
+     * machine instances in managed instance groups according to an autoscaling policy that you
+     * define. For more information, read Autoscaling Groups of Instances. (== resource_for
+     * beta.autoscalers ==) (== resource_for v1.autoscalers ==) (== resource_for
+     * beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
+     */
     public Autoscaler getAutoscalerResource() {
       return autoscalerResource;
     }
 
+    /**
+     * Represents an Autoscaler resource. Autoscalers allow you to automatically scale virtual
+     * machine instances in managed instance groups according to an autoscaling policy that you
+     * define. For more information, read Autoscaling Groups of Instances. (== resource_for
+     * beta.autoscalers ==) (== resource_for v1.autoscalers ==) (== resource_for
+     * beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
+     */
     public Builder setAutoscalerResource(Autoscaler autoscalerResource) {
       this.autoscalerResource = autoscalerResource;
       return this;
     }
 
+    /** Name of the JavaScript callback function that handles the response. */
     public String getCallback() {
       return callback;
     }
 
+    /** Name of the JavaScript callback function that handles the response. */
     public Builder setCallback(String callback) {
       this.callback = callback;
       return this;
@@ -326,64 +386,114 @@ public final class PatchAutoscalerHttpRequest implements ApiMessage {
       return this;
     }
 
+    /** Selector specifying a subset of fields to include in the response. */
     public String getFields() {
       return fields;
     }
 
+    /** Selector specifying a subset of fields to include in the response. */
     public Builder setFields(String fields) {
       this.fields = fields;
       return this;
     }
 
+    /** API key. Required unless you provide an OAuth 2.0 token. */
     public String getKey() {
       return key;
     }
 
+    /** API key. Required unless you provide an OAuth 2.0 token. */
     public Builder setKey(String key) {
       this.key = key;
       return this;
     }
 
+    /** Returns response with indentations and line breaks. */
     public String getPrettyPrint() {
       return prettyPrint;
     }
 
+    /** Returns response with indentations and line breaks. */
     public Builder setPrettyPrint(String prettyPrint) {
       this.prettyPrint = prettyPrint;
       return this;
     }
 
+    /** Alternative to userIp. */
     public String getQuotaUser() {
       return quotaUser;
     }
 
+    /** Alternative to userIp. */
     public Builder setQuotaUser(String quotaUser) {
       this.quotaUser = quotaUser;
       return this;
     }
 
+    /**
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must
+     * retry your request, the server will know to ignore the request if it has already been
+     * completed.
+     *
+     * <p>For example, consider a situation where you make an initial request and the request times
+     * out. If you make the request again with the same request ID, the server can check if original
+     * operation with the same request ID was received, and if so, will ignore the second request.
+     * This prevents clients from accidentally creating duplicate commitments.
+     *
+     * <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+     * (00000000-0000-0000-0000-000000000000).
+     */
     public String getRequestId() {
       return requestId;
     }
 
+    /**
+     * An optional request ID to identify requests. Specify a unique request ID so that if you must
+     * retry your request, the server will know to ignore the request if it has already been
+     * completed.
+     *
+     * <p>For example, consider a situation where you make an initial request and the request times
+     * out. If you make the request again with the same request ID, the server can check if original
+     * operation with the same request ID was received, and if so, will ignore the second request.
+     * This prevents clients from accidentally creating duplicate commitments.
+     *
+     * <p>The request ID must be a valid UUID with the exception that zero UUID is not supported
+     * (00000000-0000-0000-0000-000000000000).
+     */
     public Builder setRequestId(String requestId) {
       this.requestId = requestId;
       return this;
     }
 
+    /** IP address of the end user for whom the API call is being made. */
     public String getUserIp() {
       return userIp;
     }
 
+    /** IP address of the end user for whom the API call is being made. */
     public Builder setUserIp(String userIp) {
       this.userIp = userIp;
       return this;
     }
 
+    /**
+     * Name of the zone for this request. It must have the format
+     * `{project}/zones/{zone}/autoscalers`. \`{zone}\` must start with a letter, and contain only
+     * letters (\`[A-Za-z]\`), numbers (\`[0-9]\`), dashes (\`-\`), &#42; underscores (\`_\`),
+     * periods (\`.\`), tildes (\`~\`), plus (\`+\`) or percent &#42; signs (\`%\`). It must be
+     * between 3 and 255 characters in length, and it &#42; must not start with \`"goog"\`.
+     */
     public String getZone() {
       return zone;
     }
 
+    /**
+     * Name of the zone for this request. It must have the format
+     * `{project}/zones/{zone}/autoscalers`. \`{zone}\` must start with a letter, and contain only
+     * letters (\`[A-Za-z]\`), numbers (\`[0-9]\`), dashes (\`-\`), &#42; underscores (\`_\`),
+     * periods (\`.\`), tildes (\`~\`), plus (\`+\`) or percent &#42; signs (\`%\`). It must be
+     * between 3 and 255 characters in length, and it &#42; must not start with \`"goog"\`.
+     */
     public Builder setZone(String zone) {
       this.zone = zone;
       return this;

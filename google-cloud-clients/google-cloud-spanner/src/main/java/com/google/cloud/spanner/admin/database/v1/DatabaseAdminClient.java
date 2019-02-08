@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -461,7 +461,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    *     .setParent(parent.toString())
    *     .setCreateStatement(createStatement)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = databaseAdminClient.createDatabaseOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Database, CreateDatabaseMetadata&gt; future = databaseAdminClient.createDatabaseOperationCallable().futureCall(request);
    *   // Do something
    *   Database response = future.get();
    * }
@@ -611,7 +611,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
    *   DatabaseName database = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
    *   List&lt;String&gt; statements = new ArrayList&lt;&gt;();
-   *   Empty response = databaseAdminClient.updateDatabaseDdlAsync(database, statements).get();
+   *   databaseAdminClient.updateDatabaseDdlAsync(database, statements).get();
    * }
    * </code></pre>
    *
@@ -648,7 +648,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    * try (DatabaseAdminClient databaseAdminClient = DatabaseAdminClient.create()) {
    *   DatabaseName database = DatabaseName.of("[PROJECT]", "[INSTANCE]", "[DATABASE]");
    *   List&lt;String&gt; statements = new ArrayList&lt;&gt;();
-   *   Empty response = databaseAdminClient.updateDatabaseDdlAsync(database.toString(), statements).get();
+   *   databaseAdminClient.updateDatabaseDdlAsync(database.toString(), statements).get();
    * }
    * </code></pre>
    *
@@ -689,7 +689,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    *     .setDatabase(database.toString())
    *     .addAllStatements(statements)
    *     .build();
-   *   Empty response = databaseAdminClient.updateDatabaseDdlAsync(request).get();
+   *   databaseAdminClient.updateDatabaseDdlAsync(request).get();
    * }
    * </code></pre>
    *
@@ -723,9 +723,9 @@ public class DatabaseAdminClient implements BackgroundResource {
    *     .setDatabase(database.toString())
    *     .addAllStatements(statements)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = databaseAdminClient.updateDatabaseDdlOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Empty, UpdateDatabaseDdlMetadata&gt; future = databaseAdminClient.updateDatabaseDdlOperationCallable().futureCall(request);
    *   // Do something
-   *   Empty response = future.get();
+   *   future.get();
    * }
    * </code></pre>
    */

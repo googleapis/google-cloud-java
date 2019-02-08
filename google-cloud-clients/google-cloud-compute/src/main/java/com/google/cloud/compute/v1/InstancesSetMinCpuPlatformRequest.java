@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ public final class InstancesSetMinCpuPlatformRequest implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("minCpuPlatform")) {
+    if ("minCpuPlatform".equals(fieldName)) {
       return minCpuPlatform;
     }
     return null;
@@ -55,6 +55,7 @@ public final class InstancesSetMinCpuPlatformRequest implements ApiMessage {
     return null;
   }
 
+  /** Minimum cpu/platform this instance should be started at. */
   public String getMinCpuPlatform() {
     return minCpuPlatform;
   }
@@ -98,10 +99,12 @@ public final class InstancesSetMinCpuPlatformRequest implements ApiMessage {
       this.minCpuPlatform = source.minCpuPlatform;
     }
 
+    /** Minimum cpu/platform this instance should be started at. */
     public String getMinCpuPlatform() {
       return minCpuPlatform;
     }
 
+    /** Minimum cpu/platform this instance should be started at. */
     public Builder setMinCpuPlatform(String minCpuPlatform) {
       this.minCpuPlatform = minCpuPlatform;
       return this;

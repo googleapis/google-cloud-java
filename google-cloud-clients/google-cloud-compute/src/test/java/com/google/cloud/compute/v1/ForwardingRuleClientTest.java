@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -261,6 +261,8 @@ public class ForwardingRuleClientTest {
     String portRange = "portRange217518079";
     ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String selfLink = "selfLink-1691268851";
+    String serviceLabel = "serviceLabel-1730474774";
+    String serviceName = "serviceName359880149";
     ProjectRegionSubnetworkName subnetwork =
         ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
     String target = "target-880905839";
@@ -281,6 +283,8 @@ public class ForwardingRuleClientTest {
             .setPortRange(portRange)
             .setRegion(region.toString())
             .setSelfLink(selfLink)
+            .setServiceLabel(serviceLabel)
+            .setServiceName(serviceName)
             .setSubnetwork(subnetwork.toString())
             .setTarget(target)
             .build();

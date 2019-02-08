@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -971,7 +971,7 @@ public class IntentsClient implements BackgroundResource {
    *     .setParent(parent.toString())
    *     .setLanguageCode(languageCode)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = intentsClient.batchUpdateIntentsOperationCallable().futureCall(request);
+   *   OperationFuture&lt;BatchUpdateIntentsResponse, Struct&gt; future = intentsClient.batchUpdateIntentsOperationCallable().futureCall(request);
    *   // Do something
    *   BatchUpdateIntentsResponse response = future.get();
    * }
@@ -1022,7 +1022,7 @@ public class IntentsClient implements BackgroundResource {
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   List&lt;Intent&gt; intents = new ArrayList&lt;&gt;();
-   *   Empty response = intentsClient.batchDeleteIntentsAsync(parent, intents).get();
+   *   intentsClient.batchDeleteIntentsAsync(parent, intents).get();
    * }
    * </code></pre>
    *
@@ -1057,7 +1057,7 @@ public class IntentsClient implements BackgroundResource {
    * try (IntentsClient intentsClient = IntentsClient.create()) {
    *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   List&lt;Intent&gt; intents = new ArrayList&lt;&gt;();
-   *   Empty response = intentsClient.batchDeleteIntentsAsync(parent.toString(), intents).get();
+   *   intentsClient.batchDeleteIntentsAsync(parent.toString(), intents).get();
    * }
    * </code></pre>
    *
@@ -1093,7 +1093,7 @@ public class IntentsClient implements BackgroundResource {
    *     .setParent(parent.toString())
    *     .addAllIntents(intents)
    *     .build();
-   *   Empty response = intentsClient.batchDeleteIntentsAsync(request).get();
+   *   intentsClient.batchDeleteIntentsAsync(request).get();
    * }
    * </code></pre>
    *
@@ -1123,9 +1123,9 @@ public class IntentsClient implements BackgroundResource {
    *     .setParent(parent.toString())
    *     .addAllIntents(intents)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = intentsClient.batchDeleteIntentsOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Empty, Struct&gt; future = intentsClient.batchDeleteIntentsOperationCallable().futureCall(request);
    *   // Do something
-   *   Empty response = future.get();
+   *   future.get();
    * }
    * </code></pre>
    */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Authorization-related information used by Cloud Audit Logging. */
 public final class AuthorizationLoggingOptions implements ApiMessage {
   private final String permissionType;
 
@@ -37,7 +38,7 @@ public final class AuthorizationLoggingOptions implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("permissionType")) {
+    if ("permissionType".equals(fieldName)) {
       return permissionType;
     }
     return null;
@@ -55,6 +56,7 @@ public final class AuthorizationLoggingOptions implements ApiMessage {
     return null;
   }
 
+  /** The type of the permission that was checked. */
   public String getPermissionType() {
     return permissionType;
   }
@@ -98,10 +100,12 @@ public final class AuthorizationLoggingOptions implements ApiMessage {
       this.permissionType = source.permissionType;
     }
 
+    /** The type of the permission that was checked. */
     public String getPermissionType() {
       return permissionType;
     }
 
+    /** The type of the permission that was checked. */
     public Builder setPermissionType(String permissionType) {
       this.permissionType = permissionType;
       return this;

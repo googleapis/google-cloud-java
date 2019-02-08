@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -256,7 +256,7 @@ public class ClusterControllerClient implements BackgroundResource {
    *     .setRegion(region)
    *     .setCluster(cluster)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = clusterControllerClient.createClusterOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Cluster, ClusterOperationMetadata&gt; future = clusterControllerClient.createClusterOperationCallable().futureCall(request);
    *   // Do something
    *   Cluster response = future.get();
    * }
@@ -411,7 +411,7 @@ public class ClusterControllerClient implements BackgroundResource {
    *     .setCluster(cluster)
    *     .setUpdateMask(updateMask)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = clusterControllerClient.updateClusterOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Cluster, ClusterOperationMetadata&gt; future = clusterControllerClient.updateClusterOperationCallable().futureCall(request);
    *   // Do something
    *   Cluster response = future.get();
    * }
@@ -464,7 +464,7 @@ public class ClusterControllerClient implements BackgroundResource {
    *   String projectId = "";
    *   String region = "";
    *   String clusterName = "";
-   *   Empty response = clusterControllerClient.deleteClusterAsync(projectId, region, clusterName).get();
+   *   clusterControllerClient.deleteClusterAsync(projectId, region, clusterName).get();
    * }
    * </code></pre>
    *
@@ -504,7 +504,7 @@ public class ClusterControllerClient implements BackgroundResource {
    *     .setRegion(region)
    *     .setClusterName(clusterName)
    *     .build();
-   *   Empty response = clusterControllerClient.deleteClusterAsync(request).get();
+   *   clusterControllerClient.deleteClusterAsync(request).get();
    * }
    * </code></pre>
    *
@@ -534,9 +534,9 @@ public class ClusterControllerClient implements BackgroundResource {
    *     .setRegion(region)
    *     .setClusterName(clusterName)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = clusterControllerClient.deleteClusterOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Empty, ClusterOperationMetadata&gt; future = clusterControllerClient.deleteClusterOperationCallable().futureCall(request);
    *   // Do something
-   *   Empty response = future.get();
+   *   future.get();
    * }
    * </code></pre>
    */
@@ -830,7 +830,7 @@ public class ClusterControllerClient implements BackgroundResource {
    *   String projectId = "";
    *   String region = "";
    *   String clusterName = "";
-   *   Empty response = clusterControllerClient.diagnoseClusterAsync(projectId, region, clusterName).get();
+   *   clusterControllerClient.diagnoseClusterAsync(projectId, region, clusterName).get();
    * }
    * </code></pre>
    *
@@ -871,7 +871,7 @@ public class ClusterControllerClient implements BackgroundResource {
    *     .setRegion(region)
    *     .setClusterName(clusterName)
    *     .build();
-   *   Empty response = clusterControllerClient.diagnoseClusterAsync(request).get();
+   *   clusterControllerClient.diagnoseClusterAsync(request).get();
    * }
    * </code></pre>
    *
@@ -902,9 +902,9 @@ public class ClusterControllerClient implements BackgroundResource {
    *     .setRegion(region)
    *     .setClusterName(clusterName)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = clusterControllerClient.diagnoseClusterOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Empty, DiagnoseClusterResults&gt; future = clusterControllerClient.diagnoseClusterOperationCallable().futureCall(request);
    *   // Do something
-   *   Empty response = future.get();
+   *   future.get();
    * }
    * </code></pre>
    */

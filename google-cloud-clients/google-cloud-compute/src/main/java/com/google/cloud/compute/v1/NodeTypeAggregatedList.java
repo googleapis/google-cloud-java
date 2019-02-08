@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,22 +59,22 @@ public final class NodeTypeAggregatedList implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("id")) {
+    if ("id".equals(fieldName)) {
       return id;
     }
-    if (fieldName.equals("items")) {
+    if ("items".equals(fieldName)) {
       return items;
     }
-    if (fieldName.equals("kind")) {
+    if ("kind".equals(fieldName)) {
       return kind;
     }
-    if (fieldName.equals("nextPageToken")) {
+    if ("nextPageToken".equals(fieldName)) {
       return nextPageToken;
     }
-    if (fieldName.equals("selfLink")) {
+    if ("selfLink".equals(fieldName)) {
       return selfLink;
     }
-    if (fieldName.equals("warning")) {
+    if ("warning".equals(fieldName)) {
       return warning;
     }
     return null;
@@ -92,26 +92,43 @@ public final class NodeTypeAggregatedList implements ApiMessage {
     return null;
   }
 
+  /** [Output Only] Unique identifier for the resource; defined by the server. */
   public String getId() {
     return id;
   }
 
+  /**
+   * A list of NodeTypesScopedList resources. The key for the map is: [Output Only] Name of the
+   * scope containing this set of node types.
+   */
   public Map<String, NodeTypesScopedList> getItemsMap() {
     return items;
   }
 
+  /**
+   * [Output Only] Type of resource.Always compute#nodeTypeAggregatedList for aggregated lists of
+   * node types.
+   */
   public String getKind() {
     return kind;
   }
 
+  /**
+   * [Output Only] This token allows you to get the next page of results for list requests. If the
+   * number of results is larger than maxResults, use the nextPageToken as a value for the query
+   * parameter pageToken in the next list request. Subsequent list requests will have their own
+   * nextPageToken to continue paging through the results.
+   */
   public String getNextPageToken() {
     return nextPageToken;
   }
 
+  /** [Output Only] Server-defined URL for this resource. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /** [Output Only] Informational warning message. */
   public Warning getWarning() {
     return warning;
   }
@@ -180,55 +197,89 @@ public final class NodeTypeAggregatedList implements ApiMessage {
       this.warning = source.warning;
     }
 
+    /** [Output Only] Unique identifier for the resource; defined by the server. */
     public String getId() {
       return id;
     }
 
+    /** [Output Only] Unique identifier for the resource; defined by the server. */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /**
+     * A list of NodeTypesScopedList resources. The key for the map is: [Output Only] Name of the
+     * scope containing this set of node types.
+     */
     public Map<String, NodeTypesScopedList> getItemsMap() {
       return items;
     }
 
+    /**
+     * A list of NodeTypesScopedList resources. The key for the map is: [Output Only] Name of the
+     * scope containing this set of node types.
+     */
     public Builder putAllItems(Map<String, NodeTypesScopedList> items) {
       this.items = items;
       return this;
     }
 
+    /**
+     * [Output Only] Type of resource.Always compute#nodeTypeAggregatedList for aggregated lists of
+     * node types.
+     */
     public String getKind() {
       return kind;
     }
 
+    /**
+     * [Output Only] Type of resource.Always compute#nodeTypeAggregatedList for aggregated lists of
+     * node types.
+     */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /**
+     * [Output Only] This token allows you to get the next page of results for list requests. If the
+     * number of results is larger than maxResults, use the nextPageToken as a value for the query
+     * parameter pageToken in the next list request. Subsequent list requests will have their own
+     * nextPageToken to continue paging through the results.
+     */
     public String getNextPageToken() {
       return nextPageToken;
     }
 
+    /**
+     * [Output Only] This token allows you to get the next page of results for list requests. If the
+     * number of results is larger than maxResults, use the nextPageToken as a value for the query
+     * parameter pageToken in the next list request. Subsequent list requests will have their own
+     * nextPageToken to continue paging through the results.
+     */
     public Builder setNextPageToken(String nextPageToken) {
       this.nextPageToken = nextPageToken;
       return this;
     }
 
+    /** [Output Only] Server-defined URL for this resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined URL for this resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /** [Output Only] Informational warning message. */
     public Warning getWarning() {
       return warning;
     }
 
+    /** [Output Only] Informational warning message. */
     public Builder setWarning(Warning warning) {
       this.warning = warning;
       return this;

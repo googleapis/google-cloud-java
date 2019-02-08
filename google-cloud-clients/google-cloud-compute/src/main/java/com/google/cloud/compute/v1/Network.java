@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package com.google.cloud.compute.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.httpjson.ApiMessage;
+import com.google.gson.annotations.SerializedName;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
@@ -25,12 +26,19 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Represents a Network resource. Read Virtual Private Cloud (VPC) Network Overview for more
+ * information. (== resource_for v1.networks ==) (== resource_for beta.networks ==)
+ */
 public final class Network implements ApiMessage {
   private final Boolean autoCreateSubnetworks;
   private final String creationTimestamp;
   private final String description;
   private final String gatewayIPv4;
+
+  @SerializedName("IPv4Range")
   private final String iPv4Range;
+
   private final String id;
   private final String kind;
   private final String name;
@@ -83,40 +91,40 @@ public final class Network implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("autoCreateSubnetworks")) {
+    if ("autoCreateSubnetworks".equals(fieldName)) {
       return autoCreateSubnetworks;
     }
-    if (fieldName.equals("creationTimestamp")) {
+    if ("creationTimestamp".equals(fieldName)) {
       return creationTimestamp;
     }
-    if (fieldName.equals("description")) {
+    if ("description".equals(fieldName)) {
       return description;
     }
-    if (fieldName.equals("gatewayIPv4")) {
+    if ("gatewayIPv4".equals(fieldName)) {
       return gatewayIPv4;
     }
-    if (fieldName.equals("iPv4Range")) {
+    if ("iPv4Range".equals(fieldName)) {
       return iPv4Range;
     }
-    if (fieldName.equals("id")) {
+    if ("id".equals(fieldName)) {
       return id;
     }
-    if (fieldName.equals("kind")) {
+    if ("kind".equals(fieldName)) {
       return kind;
     }
-    if (fieldName.equals("name")) {
+    if ("name".equals(fieldName)) {
       return name;
     }
-    if (fieldName.equals("peerings")) {
+    if ("peerings".equals(fieldName)) {
       return peerings;
     }
-    if (fieldName.equals("routingConfig")) {
+    if ("routingConfig".equals(fieldName)) {
       return routingConfig;
     }
-    if (fieldName.equals("selfLink")) {
+    if ("selfLink".equals(fieldName)) {
       return selfLink;
     }
-    if (fieldName.equals("subnetworks")) {
+    if ("subnetworks".equals(fieldName)) {
       return subnetworks;
     }
     return null;
@@ -134,50 +142,87 @@ public final class Network implements ApiMessage {
     return null;
   }
 
+  /**
+   * When set to true, the VPC network is created in "auto" mode. When set to false, the VPC network
+   * is created in "custom" mode.
+   *
+   * <p>An auto mode VPC network starts with one subnet per region. Each subnet has a predetermined
+   * range as described in Auto mode VPC network IP ranges.
+   */
   public Boolean getAutoCreateSubnetworks() {
     return autoCreateSubnetworks;
   }
 
+  /** [Output Only] Creation timestamp in RFC3339 text format. */
   public String getCreationTimestamp() {
     return creationTimestamp;
   }
 
+  /**
+   * An optional description of this resource. Provide this property when you create the resource.
+   */
   public String getDescription() {
     return description;
   }
 
+  /**
+   * [Output Only] The gateway address for default routing out of the network. This value is read
+   * only and is selected by GCP.
+   */
   public String getGatewayIPv4() {
     return gatewayIPv4;
   }
 
+  /**
+   * The range of internal addresses that are legal on this network. This range is a CIDR
+   * specification, for example: 192.168.0.0/16. Provided by the client when the network is created.
+   */
   public String getIPv4Range() {
     return iPv4Range;
   }
 
+  /**
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   */
   public String getId() {
     return id;
   }
 
+  /** [Output Only] Type of the resource. Always compute#network for networks. */
   public String getKind() {
     return kind;
   }
 
+  /**
+   * Name of the resource. Provided by the client when the resource is created. The name must be
+   * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+   * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be a dash, lowercase
+   * letter, or digit, except the last character, which cannot be a dash.
+   */
   public String getName() {
     return name;
   }
 
+  /** [Output Only] A list of network peerings for the resource. */
   public List<NetworkPeering> getPeeringsList() {
     return peerings;
   }
 
+  /**
+   * The network-level routing configuration for this network. Used by Cloud Router to determine
+   * what type of network-wide routing behavior to enforce.
+   */
   public NetworkRoutingConfig getRoutingConfig() {
     return routingConfig;
   }
 
+  /** [Output Only] Server-defined URL for the resource. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /** [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network. */
   public List<String> getSubnetworksList() {
     return subnetworks;
   }
@@ -276,82 +321,148 @@ public final class Network implements ApiMessage {
       this.subnetworks = source.subnetworks;
     }
 
+    /**
+     * When set to true, the VPC network is created in "auto" mode. When set to false, the VPC
+     * network is created in "custom" mode.
+     *
+     * <p>An auto mode VPC network starts with one subnet per region. Each subnet has a
+     * predetermined range as described in Auto mode VPC network IP ranges.
+     */
     public Boolean getAutoCreateSubnetworks() {
       return autoCreateSubnetworks;
     }
 
+    /**
+     * When set to true, the VPC network is created in "auto" mode. When set to false, the VPC
+     * network is created in "custom" mode.
+     *
+     * <p>An auto mode VPC network starts with one subnet per region. Each subnet has a
+     * predetermined range as described in Auto mode VPC network IP ranges.
+     */
     public Builder setAutoCreateSubnetworks(Boolean autoCreateSubnetworks) {
       this.autoCreateSubnetworks = autoCreateSubnetworks;
       return this;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public String getCreationTimestamp() {
       return creationTimestamp;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public String getDescription() {
       return description;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /**
+     * [Output Only] The gateway address for default routing out of the network. This value is read
+     * only and is selected by GCP.
+     */
     public String getGatewayIPv4() {
       return gatewayIPv4;
     }
 
+    /**
+     * [Output Only] The gateway address for default routing out of the network. This value is read
+     * only and is selected by GCP.
+     */
     public Builder setGatewayIPv4(String gatewayIPv4) {
       this.gatewayIPv4 = gatewayIPv4;
       return this;
     }
 
+    /**
+     * The range of internal addresses that are legal on this network. This range is a CIDR
+     * specification, for example: 192.168.0.0/16. Provided by the client when the network is
+     * created.
+     */
     public String getIPv4Range() {
       return iPv4Range;
     }
 
+    /**
+     * The range of internal addresses that are legal on this network. This range is a CIDR
+     * specification, for example: 192.168.0.0/16. Provided by the client when the network is
+     * created.
+     */
     public Builder setIPv4Range(String iPv4Range) {
       this.iPv4Range = iPv4Range;
       return this;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /** [Output Only] Type of the resource. Always compute#network for networks. */
     public String getKind() {
       return kind;
     }
 
+    /** [Output Only] Type of the resource. Always compute#network for networks. */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /**
+     * Name of the resource. Provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public String getName() {
       return name;
     }
 
+    /**
+     * Name of the resource. Provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /** [Output Only] A list of network peerings for the resource. */
     public List<NetworkPeering> getPeeringsList() {
       return peerings;
     }
 
+    /** [Output Only] A list of network peerings for the resource. */
     public Builder addAllPeerings(List<NetworkPeering> peerings) {
       if (this.peerings == null) {
         this.peerings = new LinkedList<>();
@@ -360,6 +471,7 @@ public final class Network implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] A list of network peerings for the resource. */
     public Builder addPeerings(NetworkPeering peerings) {
       if (this.peerings == null) {
         this.peerings = new LinkedList<>();
@@ -368,28 +480,44 @@ public final class Network implements ApiMessage {
       return this;
     }
 
+    /**
+     * The network-level routing configuration for this network. Used by Cloud Router to determine
+     * what type of network-wide routing behavior to enforce.
+     */
     public NetworkRoutingConfig getRoutingConfig() {
       return routingConfig;
     }
 
+    /**
+     * The network-level routing configuration for this network. Used by Cloud Router to determine
+     * what type of network-wide routing behavior to enforce.
+     */
     public Builder setRoutingConfig(NetworkRoutingConfig routingConfig) {
       this.routingConfig = routingConfig;
       return this;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /**
+     * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
+     */
     public List<String> getSubnetworksList() {
       return subnetworks;
     }
 
+    /**
+     * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
+     */
     public Builder addAllSubnetworks(List<String> subnetworks) {
       if (this.subnetworks == null) {
         this.subnetworks = new LinkedList<>();
@@ -398,6 +526,9 @@ public final class Network implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
+     */
     public Builder addSubnetworks(String subnetworks) {
       if (this.subnetworks == null) {
         this.subnetworks = new LinkedList<>();

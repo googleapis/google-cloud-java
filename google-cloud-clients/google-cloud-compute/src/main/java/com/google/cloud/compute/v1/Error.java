@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * [Output Only] If errors are generated during processing of the operation, this field will be
+ * populated.
+ */
 public final class Error implements ApiMessage {
   private final List<Errors> errors;
 
@@ -38,7 +42,7 @@ public final class Error implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("errors")) {
+    if ("errors".equals(fieldName)) {
       return errors;
     }
     return null;
@@ -56,6 +60,7 @@ public final class Error implements ApiMessage {
     return null;
   }
 
+  /** [Output Only] The array of errors encountered while processing this operation. */
   public List<Errors> getErrorsList() {
     return errors;
   }
@@ -99,10 +104,12 @@ public final class Error implements ApiMessage {
       this.errors = source.errors;
     }
 
+    /** [Output Only] The array of errors encountered while processing this operation. */
     public List<Errors> getErrorsList() {
       return errors;
     }
 
+    /** [Output Only] The array of errors encountered while processing this operation. */
     public Builder addAllErrors(List<Errors> errors) {
       if (this.errors == null) {
         this.errors = new LinkedList<>();
@@ -111,6 +118,7 @@ public final class Error implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] The array of errors encountered while processing this operation. */
     public Builder addErrors(Errors errors) {
       if (this.errors == null) {
         this.errors = new LinkedList<>();

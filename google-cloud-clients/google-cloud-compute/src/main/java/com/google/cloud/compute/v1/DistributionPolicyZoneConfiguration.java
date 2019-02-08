@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ public final class DistributionPolicyZoneConfiguration implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("zone")) {
+    if ("zone".equals(fieldName)) {
       return zone;
     }
     return null;
@@ -55,6 +55,10 @@ public final class DistributionPolicyZoneConfiguration implements ApiMessage {
     return null;
   }
 
+  /**
+   * The URL of the zone. The zone must exist in the region where the managed instance group is
+   * located.
+   */
   public String getZone() {
     return zone;
   }
@@ -98,10 +102,18 @@ public final class DistributionPolicyZoneConfiguration implements ApiMessage {
       this.zone = source.zone;
     }
 
+    /**
+     * The URL of the zone. The zone must exist in the region where the managed instance group is
+     * located.
+     */
     public String getZone() {
       return zone;
     }
 
+    /**
+     * The URL of the zone. The zone must exist in the region where the managed instance group is
+     * located.
+     */
     public Builder setZone(String zone) {
       this.zone = zone;
       return this;

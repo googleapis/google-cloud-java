@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,13 +44,13 @@ public final class InstanceWithNamedPorts implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("instance")) {
+    if ("instance".equals(fieldName)) {
       return instance;
     }
-    if (fieldName.equals("namedPorts")) {
+    if ("namedPorts".equals(fieldName)) {
       return namedPorts;
     }
-    if (fieldName.equals("status")) {
+    if ("status".equals(fieldName)) {
       return status;
     }
     return null;
@@ -68,14 +68,17 @@ public final class InstanceWithNamedPorts implements ApiMessage {
     return null;
   }
 
+  /** [Output Only] The URL of the instance. */
   public String getInstance() {
     return instance;
   }
 
+  /** [Output Only] The named ports that belong to this instance group. */
   public List<NamedPort> getNamedPortsList() {
     return namedPorts;
   }
 
+  /** [Output Only] The status of the instance. */
   public String getStatus() {
     return status;
   }
@@ -129,19 +132,23 @@ public final class InstanceWithNamedPorts implements ApiMessage {
       this.status = source.status;
     }
 
+    /** [Output Only] The URL of the instance. */
     public String getInstance() {
       return instance;
     }
 
+    /** [Output Only] The URL of the instance. */
     public Builder setInstance(String instance) {
       this.instance = instance;
       return this;
     }
 
+    /** [Output Only] The named ports that belong to this instance group. */
     public List<NamedPort> getNamedPortsList() {
       return namedPorts;
     }
 
+    /** [Output Only] The named ports that belong to this instance group. */
     public Builder addAllNamedPorts(List<NamedPort> namedPorts) {
       if (this.namedPorts == null) {
         this.namedPorts = new LinkedList<>();
@@ -150,6 +157,7 @@ public final class InstanceWithNamedPorts implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] The named ports that belong to this instance group. */
     public Builder addNamedPorts(NamedPort namedPorts) {
       if (this.namedPorts == null) {
         this.namedPorts = new LinkedList<>();
@@ -158,10 +166,12 @@ public final class InstanceWithNamedPorts implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] The status of the instance. */
     public String getStatus() {
       return status;
     }
 
+    /** [Output Only] The status of the instance. */
     public Builder setStatus(String status) {
       this.status = status;
       return this;

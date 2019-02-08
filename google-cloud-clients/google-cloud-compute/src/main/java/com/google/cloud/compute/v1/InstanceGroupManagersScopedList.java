@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,10 +42,10 @@ public final class InstanceGroupManagersScopedList implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("instanceGroupManagers")) {
+    if ("instanceGroupManagers".equals(fieldName)) {
       return instanceGroupManagers;
     }
-    if (fieldName.equals("warning")) {
+    if ("warning".equals(fieldName)) {
       return warning;
     }
     return null;
@@ -63,10 +63,18 @@ public final class InstanceGroupManagersScopedList implements ApiMessage {
     return null;
   }
 
+  /**
+   * [Output Only] The list of managed instance groups that are contained in the specified project
+   * and zone.
+   */
   public List<InstanceGroupManager> getInstanceGroupManagersList() {
     return instanceGroupManagers;
   }
 
+  /**
+   * [Output Only] The warning that replaces the list of managed instance groups when the list is
+   * empty.
+   */
   public Warning getWarning() {
     return warning;
   }
@@ -115,10 +123,18 @@ public final class InstanceGroupManagersScopedList implements ApiMessage {
       this.warning = source.warning;
     }
 
+    /**
+     * [Output Only] The list of managed instance groups that are contained in the specified project
+     * and zone.
+     */
     public List<InstanceGroupManager> getInstanceGroupManagersList() {
       return instanceGroupManagers;
     }
 
+    /**
+     * [Output Only] The list of managed instance groups that are contained in the specified project
+     * and zone.
+     */
     public Builder addAllInstanceGroupManagers(List<InstanceGroupManager> instanceGroupManagers) {
       if (this.instanceGroupManagers == null) {
         this.instanceGroupManagers = new LinkedList<>();
@@ -127,6 +143,10 @@ public final class InstanceGroupManagersScopedList implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] The list of managed instance groups that are contained in the specified project
+     * and zone.
+     */
     public Builder addInstanceGroupManagers(InstanceGroupManager instanceGroupManagers) {
       if (this.instanceGroupManagers == null) {
         this.instanceGroupManagers = new LinkedList<>();
@@ -135,10 +155,18 @@ public final class InstanceGroupManagersScopedList implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] The warning that replaces the list of managed instance groups when the list is
+     * empty.
+     */
     public Warning getWarning() {
       return warning;
     }
 
+    /**
+     * [Output Only] The warning that replaces the list of managed instance groups when the list is
+     * empty.
+     */
     public Builder setWarning(Warning warning) {
       this.warning = warning;
       return this;

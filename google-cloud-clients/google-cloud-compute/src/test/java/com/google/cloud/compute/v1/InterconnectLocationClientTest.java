@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -94,6 +94,7 @@ public class InterconnectLocationClientTest {
     String name = "name3373707";
     String peeringdbFacilityId = "peeringdbFacilityId-303818";
     String selfLink = "selfLink-1691268851";
+    String status = "status-892481550";
     InterconnectLocation expectedResponse =
         InterconnectLocation.newBuilder()
             .setAddress(address.toString())
@@ -109,6 +110,7 @@ public class InterconnectLocationClientTest {
             .setName(name)
             .setPeeringdbFacilityId(peeringdbFacilityId)
             .setSelfLink(selfLink)
+            .setStatus(status)
             .build();
     mockService.addResponse(expectedResponse);
 

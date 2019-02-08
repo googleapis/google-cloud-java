@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * The location in Cloud Storage and naming method of the daily usage report. Contains bucket_name
+ * and report_name prefix.
+ */
 public final class UsageExportLocation implements ApiMessage {
   private final String bucketName;
   private final String reportNamePrefix;
@@ -40,10 +44,10 @@ public final class UsageExportLocation implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("bucketName")) {
+    if ("bucketName".equals(fieldName)) {
       return bucketName;
     }
-    if (fieldName.equals("reportNamePrefix")) {
+    if ("reportNamePrefix".equals(fieldName)) {
       return reportNamePrefix;
     }
     return null;
@@ -61,10 +65,22 @@ public final class UsageExportLocation implements ApiMessage {
     return null;
   }
 
+  /**
+   * The name of an existing bucket in Cloud Storage where the usage report object is stored. The
+   * Google Service Account is granted write access to this bucket. This can either be the bucket
+   * name by itself, such as example-bucket, or the bucket name with gs:// or
+   * https://storage.googleapis.com/ in front of it, such as gs://example-bucket.
+   */
   public String getBucketName() {
     return bucketName;
   }
 
+  /**
+   * An optional prefix for the name of the usage report object stored in bucketName. If not
+   * supplied, defaults to usage. The report is stored as a CSV file named
+   * report_name_prefix_gce_YYYYMMDD.csv where YYYYMMDD is the day of the usage according to Pacific
+   * Time. If you supply a prefix, it should conform to Cloud Storage object naming conventions.
+   */
   public String getReportNamePrefix() {
     return reportNamePrefix;
   }
@@ -113,19 +129,45 @@ public final class UsageExportLocation implements ApiMessage {
       this.reportNamePrefix = source.reportNamePrefix;
     }
 
+    /**
+     * The name of an existing bucket in Cloud Storage where the usage report object is stored. The
+     * Google Service Account is granted write access to this bucket. This can either be the bucket
+     * name by itself, such as example-bucket, or the bucket name with gs:// or
+     * https://storage.googleapis.com/ in front of it, such as gs://example-bucket.
+     */
     public String getBucketName() {
       return bucketName;
     }
 
+    /**
+     * The name of an existing bucket in Cloud Storage where the usage report object is stored. The
+     * Google Service Account is granted write access to this bucket. This can either be the bucket
+     * name by itself, such as example-bucket, or the bucket name with gs:// or
+     * https://storage.googleapis.com/ in front of it, such as gs://example-bucket.
+     */
     public Builder setBucketName(String bucketName) {
       this.bucketName = bucketName;
       return this;
     }
 
+    /**
+     * An optional prefix for the name of the usage report object stored in bucketName. If not
+     * supplied, defaults to usage. The report is stored as a CSV file named
+     * report_name_prefix_gce_YYYYMMDD.csv where YYYYMMDD is the day of the usage according to
+     * Pacific Time. If you supply a prefix, it should conform to Cloud Storage object naming
+     * conventions.
+     */
     public String getReportNamePrefix() {
       return reportNamePrefix;
     }
 
+    /**
+     * An optional prefix for the name of the usage report object stored in bucketName. If not
+     * supplied, defaults to usage. The report is stored as a CSV file named
+     * report_name_prefix_gce_YYYYMMDD.csv where YYYYMMDD is the day of the usage according to
+     * Pacific Time. If you supply a prefix, it should conform to Cloud Storage object naming
+     * conventions.
+     */
     public Builder setReportNamePrefix(String reportNamePrefix) {
       this.reportNamePrefix = reportNamePrefix;
       return this;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public final class TargetPoolsRemoveHealthCheckRequest implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("healthChecks")) {
+    if ("healthChecks".equals(fieldName)) {
       return healthChecks;
     }
     return null;
@@ -56,6 +56,12 @@ public final class TargetPoolsRemoveHealthCheckRequest implements ApiMessage {
     return null;
   }
 
+  /**
+   * Health check URL to be removed. This can be a full or valid partial URL. For example, the
+   * following are valid URLs: -
+   * https://www.googleapis.com/compute/beta/projects/project/global/httpHealthChecks/health-check -
+   * projects/project/global/httpHealthChecks/health-check - global/httpHealthChecks/health-check
+   */
   public List<HealthCheckReference> getHealthChecksList() {
     return healthChecks;
   }
@@ -99,10 +105,24 @@ public final class TargetPoolsRemoveHealthCheckRequest implements ApiMessage {
       this.healthChecks = source.healthChecks;
     }
 
+    /**
+     * Health check URL to be removed. This can be a full or valid partial URL. For example, the
+     * following are valid URLs: -
+     * https://www.googleapis.com/compute/beta/projects/project/global/httpHealthChecks/health-check
+     * - projects/project/global/httpHealthChecks/health-check -
+     * global/httpHealthChecks/health-check
+     */
     public List<HealthCheckReference> getHealthChecksList() {
       return healthChecks;
     }
 
+    /**
+     * Health check URL to be removed. This can be a full or valid partial URL. For example, the
+     * following are valid URLs: -
+     * https://www.googleapis.com/compute/beta/projects/project/global/httpHealthChecks/health-check
+     * - projects/project/global/httpHealthChecks/health-check -
+     * global/httpHealthChecks/health-check
+     */
     public Builder addAllHealthChecks(List<HealthCheckReference> healthChecks) {
       if (this.healthChecks == null) {
         this.healthChecks = new LinkedList<>();
@@ -111,6 +131,13 @@ public final class TargetPoolsRemoveHealthCheckRequest implements ApiMessage {
       return this;
     }
 
+    /**
+     * Health check URL to be removed. This can be a full or valid partial URL. For example, the
+     * following are valid URLs: -
+     * https://www.googleapis.com/compute/beta/projects/project/global/httpHealthChecks/health-check
+     * - projects/project/global/httpHealthChecks/health-check -
+     * global/httpHealthChecks/health-check
+     */
     public Builder addHealthChecks(HealthCheckReference healthChecks) {
       if (this.healthChecks == null) {
         this.healthChecks = new LinkedList<>();

@@ -56,31 +56,14 @@ To use the `prod` environment:
 2. Download the [JSON service account credentials file][create-service-account] from the Google 
    Developer's Console.
 3. Set the environment variable `GOOGLE_APPLICATION_CREDENTIALS` to the path of the credentials file
-4. Set the system property `bigtable.env=prod` and `bigtable.table` to the full table name you 
-    created earlier. Example: 
+4. Set the system property `bigtable.env=prod`, `bigtable.project`, `bigtable.instance` and
+   `bigtable.table` to created earlier. Example: 
     ```shell
     mvn verify -am -pl google-cloud-bigtable \
       -Dbigtable.env=prod \
       -Dbigtable.project=my-project
       -Dbigtable.instance=my-instance
       -Dbigtable.table=my-table
-    ```
-
-### Testing code that uses Bigtable Admin
-
-Bigtable Admin integration tests are run against a real Bigtable instance.
-
-To run the tests:
-1. Set up the target table using `google-cloud-bigtable/scripts/setup-test-table.sh`
-2. Download the [JSON service account credentials file][create-service-account] from the Google
-   Developer's Console.
-3. Set the environment variable `GOOGLE_APPLICATION_CREDENTIALS` to the path of the credentials file
-4. Set the system property `bigtable.instance` to the full instance name you
-    created earlier. Example:
-    ```shell
-    mvn verify -am -pl google-cloud-bigtable-admin \
-      -Dbigtable.project=my-project
-      -Dbigtable.instance=my-instance
     ```
 
 ### Testing code that uses Compute
@@ -173,50 +156,7 @@ uses the `RemoteLoggingHelper` to create a metric.
 
 You can test against a Pub/Sub emulator:
 
-1. [Install Cloud SDK](https://cloud.google.com/sdk/downloads)
-
-2. Start the emulator:
-```shell
-$ gcloud beta emulators pubsub start
-```
-
-To determine which host/port the emulator is running on:
-```shell
-$ gcloud beta emulators pubsub env-init
-# Sample output:
-#   export PUBSUB_EMULATOR_HOST=localhost:8759
-```
-
-3. Point your client to the emulator.
-```java
-String hostport = System.getenv("PUBSUB_EMULATOR_HOST");
-ManagedChannel channel = ManagedChannelBuilder.forTarget(hostport).usePlaintext(true).build();
-try {
-  ChannelProvider channelProvider = FixedChannelProvider.create(channel);
-  CredentialsProvider credentialsProvider = new NoCredentialsProvider();
-
-  // Similarly for SubscriptionAdminSettings
-  TopicAdminClient topicClient = TopicAdminClient.create(
-    TopicAdminSettings
-      .defaultBuilder()
-        .setTransportProvider(
-            GrpcTransportProvider.newBuilder()
-                .setChannelProvider(channelProvider)
-                .build())
-      .setCredentialsProvider(credentialsProvider)
-      .build());
-
-  // Similarly for Subscriber
-  Publisher publisher =
-    Publisher
-      .defaultBuilder(topicName)
-      .setChannelProvider(channelProvider)
-      .setCredentialsProvider(credentialsProvider)
-      .build();
-} finally {
-  channel.shutdown();
-}
-```
+1. [Set up the emulator](https://cloud.google.com/pubsub/docs/emulator)
 
 ### Testing code that uses Redis
 

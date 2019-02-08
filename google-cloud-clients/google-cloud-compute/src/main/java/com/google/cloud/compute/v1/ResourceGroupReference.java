@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ public final class ResourceGroupReference implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("group")) {
+    if ("group".equals(fieldName)) {
       return group;
     }
     return null;
@@ -55,6 +55,10 @@ public final class ResourceGroupReference implements ApiMessage {
     return null;
   }
 
+  /**
+   * A URI referencing one of the instance groups or network endpoint groups listed in the backend
+   * service.
+   */
   public String getGroup() {
     return group;
   }
@@ -98,10 +102,18 @@ public final class ResourceGroupReference implements ApiMessage {
       this.group = source.group;
     }
 
+    /**
+     * A URI referencing one of the instance groups or network endpoint groups listed in the backend
+     * service.
+     */
     public String getGroup() {
       return group;
     }
 
+    /**
+     * A URI referencing one of the instance groups or network endpoint groups listed in the backend
+     * service.
+     */
     public Builder setGroup(String group) {
       this.group = group;
       return this;

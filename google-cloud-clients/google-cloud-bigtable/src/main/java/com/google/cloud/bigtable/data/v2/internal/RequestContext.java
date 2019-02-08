@@ -17,6 +17,7 @@ package com.google.cloud.bigtable.data.v2.internal;
 
 import com.google.api.core.InternalApi;
 import com.google.auto.value.AutoValue;
+import java.io.Serializable;
 
 /**
  * Contains information necessary to construct Bigtable protobuf requests from user facing models.
@@ -30,7 +31,7 @@ import com.google.auto.value.AutoValue;
  */
 @InternalApi
 @AutoValue
-public abstract class RequestContext {
+public abstract class RequestContext implements Serializable {
 
   /** Creates a new instance of the {@link RequestContext}. */
   public static RequestContext create(String projectId, String instanceId, String appProfileId) {

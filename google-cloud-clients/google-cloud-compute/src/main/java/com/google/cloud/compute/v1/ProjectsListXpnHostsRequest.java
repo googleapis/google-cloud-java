@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ public final class ProjectsListXpnHostsRequest implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("organization")) {
+    if ("organization".equals(fieldName)) {
       return organization;
     }
     return null;
@@ -55,6 +55,10 @@ public final class ProjectsListXpnHostsRequest implements ApiMessage {
     return null;
   }
 
+  /**
+   * Optional organization ID managed by Cloud Resource Manager, for which to list shared VPC host
+   * projects. If not specified, the organization will be inferred from the project.
+   */
   public String getOrganization() {
     return organization;
   }
@@ -98,10 +102,18 @@ public final class ProjectsListXpnHostsRequest implements ApiMessage {
       this.organization = source.organization;
     }
 
+    /**
+     * Optional organization ID managed by Cloud Resource Manager, for which to list shared VPC host
+     * projects. If not specified, the organization will be inferred from the project.
+     */
     public String getOrganization() {
       return organization;
     }
 
+    /**
+     * Optional organization ID managed by Cloud Resource Manager, for which to list shared VPC host
+     * projects. If not specified, the organization will be inferred from the project.
+     */
     public Builder setOrganization(String organization) {
       this.organization = organization;
       return this;

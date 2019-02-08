@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ public final class ManagedInstanceLastAttempt implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("errors")) {
+    if ("errors".equals(fieldName)) {
       return errors;
     }
     return null;
@@ -55,6 +55,7 @@ public final class ManagedInstanceLastAttempt implements ApiMessage {
     return null;
   }
 
+  /** [Output Only] Encountered errors during the last attempt to create or delete the instance. */
   public Errors getErrors() {
     return errors;
   }
@@ -98,10 +99,16 @@ public final class ManagedInstanceLastAttempt implements ApiMessage {
       this.errors = source.errors;
     }
 
+    /**
+     * [Output Only] Encountered errors during the last attempt to create or delete the instance.
+     */
     public Errors getErrors() {
       return errors;
     }
 
+    /**
+     * [Output Only] Encountered errors during the last attempt to create or delete the instance.
+     */
     public Builder setErrors(Errors errors) {
       this.errors = errors;
       return this;

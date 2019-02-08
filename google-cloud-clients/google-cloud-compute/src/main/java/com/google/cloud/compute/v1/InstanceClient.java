@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1610,7 +1610,8 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Performs a reset on the instance. For more information, see Resetting an instance.
+   * Performs a reset on the instance. This is a hard reset; the VM does not do a graceful shutdown.
+   * For more information, see Resetting an instance.
    *
    * <p>Sample code:
    *
@@ -1636,7 +1637,8 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Performs a reset on the instance. For more information, see Resetting an instance.
+   * Performs a reset on the instance. This is a hard reset; the VM does not do a graceful shutdown.
+   * For more information, see Resetting an instance.
    *
    * <p>Sample code:
    *
@@ -1660,7 +1662,8 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Performs a reset on the instance. For more information, see Resetting an instance.
+   * Performs a reset on the instance. This is a hard reset; the VM does not do a graceful shutdown.
+   * For more information, see Resetting an instance.
    *
    * <p>Sample code:
    *
@@ -1684,7 +1687,8 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Performs a reset on the instance. For more information, see Resetting an instance.
+   * Performs a reset on the instance. This is a hard reset; the VM does not do a graceful shutdown.
+   * For more information, see Resetting an instance.
    *
    * <p>Sample code:
    *

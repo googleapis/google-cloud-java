@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -452,7 +452,7 @@ public class AgentsClient implements BackgroundResource {
    * <pre><code>
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Empty response = agentsClient.trainAgentAsync(parent).get();
+   *   agentsClient.trainAgentAsync(parent).get();
    * }
    * </code></pre>
    *
@@ -481,7 +481,7 @@ public class AgentsClient implements BackgroundResource {
    * <pre><code>
    * try (AgentsClient agentsClient = AgentsClient.create()) {
    *   ProjectName parent = ProjectName.of("[PROJECT]");
-   *   Empty response = agentsClient.trainAgentAsync(parent.toString()).get();
+   *   agentsClient.trainAgentAsync(parent.toString()).get();
    * }
    * </code></pre>
    *
@@ -512,7 +512,7 @@ public class AgentsClient implements BackgroundResource {
    *   TrainAgentRequest request = TrainAgentRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
-   *   Empty response = agentsClient.trainAgentAsync(request).get();
+   *   agentsClient.trainAgentAsync(request).get();
    * }
    * </code></pre>
    *
@@ -540,9 +540,9 @@ public class AgentsClient implements BackgroundResource {
    *   TrainAgentRequest request = TrainAgentRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = agentsClient.trainAgentOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Empty, Struct&gt; future = agentsClient.trainAgentOperationCallable().futureCall(request);
    *   // Do something
-   *   Empty response = future.get();
+   *   future.get();
    * }
    * </code></pre>
    */
@@ -683,7 +683,7 @@ public class AgentsClient implements BackgroundResource {
    *   ExportAgentRequest request = ExportAgentRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = agentsClient.exportAgentOperationCallable().futureCall(request);
+   *   OperationFuture&lt;ExportAgentResponse, Struct&gt; future = agentsClient.exportAgentOperationCallable().futureCall(request);
    *   // Do something
    *   ExportAgentResponse response = future.get();
    * }
@@ -739,7 +739,7 @@ public class AgentsClient implements BackgroundResource {
    *   ImportAgentRequest request = ImportAgentRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
-   *   Empty response = agentsClient.importAgentAsync(request).get();
+   *   agentsClient.importAgentAsync(request).get();
    * }
    * </code></pre>
    *
@@ -770,9 +770,9 @@ public class AgentsClient implements BackgroundResource {
    *   ImportAgentRequest request = ImportAgentRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = agentsClient.importAgentOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Empty, Struct&gt; future = agentsClient.importAgentOperationCallable().futureCall(request);
    *   // Do something
-   *   Empty response = future.get();
+   *   future.get();
    * }
    * </code></pre>
    */
@@ -827,7 +827,7 @@ public class AgentsClient implements BackgroundResource {
    *   RestoreAgentRequest request = RestoreAgentRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
-   *   Empty response = agentsClient.restoreAgentAsync(request).get();
+   *   agentsClient.restoreAgentAsync(request).get();
    * }
    * </code></pre>
    *
@@ -858,9 +858,9 @@ public class AgentsClient implements BackgroundResource {
    *   RestoreAgentRequest request = RestoreAgentRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = agentsClient.restoreAgentOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Empty, Struct&gt; future = agentsClient.restoreAgentOperationCallable().futureCall(request);
    *   // Do something
-   *   Empty response = future.get();
+   *   future.get();
    * }
    * </code></pre>
    */

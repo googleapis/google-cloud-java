@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Contain information of Nat mapping for a VM endpoint (i.e., NIC). */
 public final class VmEndpointNatMappings implements ApiMessage {
   private final String instanceName;
   private final List<VmEndpointNatMappingsInterfaceNatMappings> interfaceNatMappings;
@@ -42,10 +43,10 @@ public final class VmEndpointNatMappings implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("instanceName")) {
+    if ("instanceName".equals(fieldName)) {
       return instanceName;
     }
-    if (fieldName.equals("interfaceNatMappings")) {
+    if ("interfaceNatMappings".equals(fieldName)) {
       return interfaceNatMappings;
     }
     return null;
@@ -63,6 +64,7 @@ public final class VmEndpointNatMappings implements ApiMessage {
     return null;
   }
 
+  /** Name of the VM instance which the endpoint belongs to */
   public String getInstanceName() {
     return instanceName;
   }
@@ -115,10 +117,12 @@ public final class VmEndpointNatMappings implements ApiMessage {
       this.interfaceNatMappings = source.interfaceNatMappings;
     }
 
+    /** Name of the VM instance which the endpoint belongs to */
     public String getInstanceName() {
       return instanceName;
     }
 
+    /** Name of the VM instance which the endpoint belongs to */
     public Builder setInstanceName(String instanceName) {
       this.instanceName = instanceName;
       return this;

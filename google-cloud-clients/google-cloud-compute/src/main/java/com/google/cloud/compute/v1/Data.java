@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key":
+ * "scope", "value": "zones/us-east1-d" }
+ */
 public final class Data implements ApiMessage {
   private final String key;
   private final String value;
@@ -40,10 +44,10 @@ public final class Data implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("key")) {
+    if ("key".equals(fieldName)) {
       return key;
     }
-    if (fieldName.equals("value")) {
+    if ("value".equals(fieldName)) {
       return value;
     }
     return null;
@@ -61,10 +65,19 @@ public final class Data implements ApiMessage {
     return null;
   }
 
+  /**
+   * [Output Only] A key that provides more detail on the warning being returned. For example, for
+   * warnings where there are no results in a list request for a particular zone, this key might be
+   * scope and the key value might be the zone name. Other examples might be a key indicating a
+   * deprecated resource and a suggested replacement, or a warning about invalid network settings
+   * (for example, if an instance attempts to perform IP forwarding but is not enabled for IP
+   * forwarding).
+   */
   public String getKey() {
     return key;
   }
 
+  /** [Output Only] A warning data value corresponding to the key. */
   public String getValue() {
     return value;
   }
@@ -113,19 +126,37 @@ public final class Data implements ApiMessage {
       this.value = source.value;
     }
 
+    /**
+     * [Output Only] A key that provides more detail on the warning being returned. For example, for
+     * warnings where there are no results in a list request for a particular zone, this key might
+     * be scope and the key value might be the zone name. Other examples might be a key indicating a
+     * deprecated resource and a suggested replacement, or a warning about invalid network settings
+     * (for example, if an instance attempts to perform IP forwarding but is not enabled for IP
+     * forwarding).
+     */
     public String getKey() {
       return key;
     }
 
+    /**
+     * [Output Only] A key that provides more detail on the warning being returned. For example, for
+     * warnings where there are no results in a list request for a particular zone, this key might
+     * be scope and the key value might be the zone name. Other examples might be a key indicating a
+     * deprecated resource and a suggested replacement, or a warning about invalid network settings
+     * (for example, if an instance attempts to perform IP forwarding but is not enabled for IP
+     * forwarding).
+     */
     public Builder setKey(String key) {
       this.key = key;
       return this;
     }
 
+    /** [Output Only] A warning data value corresponding to the key. */
     public String getValue() {
       return value;
     }
 
+    /** [Output Only] A warning data value corresponding to the key. */
     public Builder setValue(String value) {
       this.value = value;
       return this;

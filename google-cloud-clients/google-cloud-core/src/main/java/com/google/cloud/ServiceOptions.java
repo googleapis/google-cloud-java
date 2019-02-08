@@ -349,7 +349,8 @@ public abstract class ServiceOptions<
     String activeGoogleCloudConfig = null;
     try {
       activeGoogleCloudConfig =
-          Files.readFirstLine(new File(configDir, "active_config"), Charset.defaultCharset());
+          Files.asCharSource(new File(configDir, "active_config"), Charset.defaultCharset())
+              .readFirstLine();
     } catch (IOException ex) {
       // ignore
     }

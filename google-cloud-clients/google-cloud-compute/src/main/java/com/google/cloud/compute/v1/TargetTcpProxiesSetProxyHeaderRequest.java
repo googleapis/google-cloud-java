@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ public final class TargetTcpProxiesSetProxyHeaderRequest implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("proxyHeader")) {
+    if ("proxyHeader".equals(fieldName)) {
       return proxyHeader;
     }
     return null;
@@ -55,6 +55,10 @@ public final class TargetTcpProxiesSetProxyHeaderRequest implements ApiMessage {
     return null;
   }
 
+  /**
+   * The new type of proxy header to append before sending data to the backend. NONE or PROXY_V1 are
+   * allowed.
+   */
   public String getProxyHeader() {
     return proxyHeader;
   }
@@ -98,10 +102,18 @@ public final class TargetTcpProxiesSetProxyHeaderRequest implements ApiMessage {
       this.proxyHeader = source.proxyHeader;
     }
 
+    /**
+     * The new type of proxy header to append before sending data to the backend. NONE or PROXY_V1
+     * are allowed.
+     */
     public String getProxyHeader() {
       return proxyHeader;
     }
 
+    /**
+     * The new type of proxy header to append before sending data to the backend. NONE or PROXY_V1
+     * are allowed.
+     */
     public Builder setProxyHeader(String proxyHeader) {
       this.proxyHeader = proxyHeader;
       return this;

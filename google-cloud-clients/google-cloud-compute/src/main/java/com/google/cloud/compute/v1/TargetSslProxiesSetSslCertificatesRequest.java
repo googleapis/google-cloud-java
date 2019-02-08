@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public final class TargetSslProxiesSetSslCertificatesRequest implements ApiMessa
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("sslCertificates")) {
+    if ("sslCertificates".equals(fieldName)) {
       return sslCertificates;
     }
     return null;
@@ -56,6 +56,10 @@ public final class TargetSslProxiesSetSslCertificatesRequest implements ApiMessa
     return null;
   }
 
+  /**
+   * New set of URLs to SslCertificate resources to associate with this TargetSslProxy. Currently
+   * exactly one ssl certificate must be specified.
+   */
   public List<String> getSslCertificatesList() {
     return sslCertificates;
   }
@@ -99,10 +103,18 @@ public final class TargetSslProxiesSetSslCertificatesRequest implements ApiMessa
       this.sslCertificates = source.sslCertificates;
     }
 
+    /**
+     * New set of URLs to SslCertificate resources to associate with this TargetSslProxy. Currently
+     * exactly one ssl certificate must be specified.
+     */
     public List<String> getSslCertificatesList() {
       return sslCertificates;
     }
 
+    /**
+     * New set of URLs to SslCertificate resources to associate with this TargetSslProxy. Currently
+     * exactly one ssl certificate must be specified.
+     */
     public Builder addAllSslCertificates(List<String> sslCertificates) {
       if (this.sslCertificates == null) {
         this.sslCertificates = new LinkedList<>();
@@ -111,6 +123,10 @@ public final class TargetSslProxiesSetSslCertificatesRequest implements ApiMessa
       return this;
     }
 
+    /**
+     * New set of URLs to SslCertificate resources to associate with this TargetSslProxy. Currently
+     * exactly one ssl certificate must be specified.
+     */
     public Builder addSslCertificates(String sslCertificates) {
       if (this.sslCertificates == null) {
         this.sslCertificates = new LinkedList<>();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,10 +40,10 @@ public final class RegionInstanceGroupsListInstancesRequest implements ApiMessag
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("instanceState")) {
+    if ("instanceState".equals(fieldName)) {
       return instanceState;
     }
-    if (fieldName.equals("portName")) {
+    if ("portName".equals(fieldName)) {
       return portName;
     }
     return null;
@@ -61,10 +61,19 @@ public final class RegionInstanceGroupsListInstancesRequest implements ApiMessag
     return null;
   }
 
+  /**
+   * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default,
+   * it lists all instances.
+   */
   public String getInstanceState() {
     return instanceState;
   }
 
+  /**
+   * Name of port user is interested in. It is optional. If it is set, only information about this
+   * ports will be returned. If it is not set, all the named ports will be returned. Always lists
+   * all instances.
+   */
   public String getPortName() {
     return portName;
   }
@@ -113,19 +122,37 @@ public final class RegionInstanceGroupsListInstancesRequest implements ApiMessag
       this.portName = source.portName;
     }
 
+    /**
+     * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default,
+     * it lists all instances.
+     */
     public String getInstanceState() {
       return instanceState;
     }
 
+    /**
+     * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default,
+     * it lists all instances.
+     */
     public Builder setInstanceState(String instanceState) {
       this.instanceState = instanceState;
       return this;
     }
 
+    /**
+     * Name of port user is interested in. It is optional. If it is set, only information about this
+     * ports will be returned. If it is not set, all the named ports will be returned. Always lists
+     * all instances.
+     */
     public String getPortName() {
       return portName;
     }
 
+    /**
+     * Name of port user is interested in. It is optional. If it is set, only information about this
+     * ports will be returned. If it is not set, all the named ports will be returned. Always lists
+     * all instances.
+     */
     public Builder setPortName(String portName) {
       this.portName = portName;
       return this;

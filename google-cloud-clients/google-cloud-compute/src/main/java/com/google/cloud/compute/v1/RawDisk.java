@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** The parameters of the raw disk image. */
 public final class RawDisk implements ApiMessage {
   private final String containerType;
   private final String sha1Checksum;
@@ -43,13 +44,13 @@ public final class RawDisk implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("containerType")) {
+    if ("containerType".equals(fieldName)) {
       return containerType;
     }
-    if (fieldName.equals("sha1Checksum")) {
+    if ("sha1Checksum".equals(fieldName)) {
       return sha1Checksum;
     }
-    if (fieldName.equals("source")) {
+    if ("source".equals(fieldName)) {
       return source;
     }
     return null;
@@ -67,14 +68,27 @@ public final class RawDisk implements ApiMessage {
     return null;
   }
 
+  /**
+   * The format used to encode and transmit the block device, which should be TAR. This is just a
+   * container and transmission format and not a runtime format. Provided by the client when the
+   * disk image is created.
+   */
   public String getContainerType() {
     return containerType;
   }
 
+  /**
+   * An optional SHA1 checksum of the disk image before unpackaging; provided by the client when the
+   * disk image is created.
+   */
   public String getSha1Checksum() {
     return sha1Checksum;
   }
 
+  /**
+   * The full Google Cloud Storage URL where the disk image is stored. You must provide either this
+   * property or the sourceDisk property but not both.
+   */
   public String getSource() {
     return source;
   }
@@ -128,28 +142,54 @@ public final class RawDisk implements ApiMessage {
       this.source = source.source;
     }
 
+    /**
+     * The format used to encode and transmit the block device, which should be TAR. This is just a
+     * container and transmission format and not a runtime format. Provided by the client when the
+     * disk image is created.
+     */
     public String getContainerType() {
       return containerType;
     }
 
+    /**
+     * The format used to encode and transmit the block device, which should be TAR. This is just a
+     * container and transmission format and not a runtime format. Provided by the client when the
+     * disk image is created.
+     */
     public Builder setContainerType(String containerType) {
       this.containerType = containerType;
       return this;
     }
 
+    /**
+     * An optional SHA1 checksum of the disk image before unpackaging; provided by the client when
+     * the disk image is created.
+     */
     public String getSha1Checksum() {
       return sha1Checksum;
     }
 
+    /**
+     * An optional SHA1 checksum of the disk image before unpackaging; provided by the client when
+     * the disk image is created.
+     */
     public Builder setSha1Checksum(String sha1Checksum) {
       this.sha1Checksum = sha1Checksum;
       return this;
     }
 
+    /**
+     * The full Google Cloud Storage URL where the disk image is stored. You must provide either
+     * this property or the sourceDisk property but not both.
+     */
     public String getSource() {
       return source;
     }
 
+    /**
+     * The full Google Cloud Storage URL where the disk image is stored. You must provide either
+     * this property or the sourceDisk property but not both.
+     */
     public Builder setSource(String source) {
       this.source = source;
       return this;

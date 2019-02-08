@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public final class TestPermissionsResponse implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("permissions")) {
+    if ("permissions".equals(fieldName)) {
       return permissions;
     }
     return null;
@@ -56,6 +56,7 @@ public final class TestPermissionsResponse implements ApiMessage {
     return null;
   }
 
+  /** A subset of `TestPermissionsRequest.permissions` that the caller is allowed. */
   public List<String> getPermissionsList() {
     return permissions;
   }
@@ -99,10 +100,12 @@ public final class TestPermissionsResponse implements ApiMessage {
       this.permissions = source.permissions;
     }
 
+    /** A subset of `TestPermissionsRequest.permissions` that the caller is allowed. */
     public List<String> getPermissionsList() {
       return permissions;
     }
 
+    /** A subset of `TestPermissionsRequest.permissions` that the caller is allowed. */
     public Builder addAllPermissions(List<String> permissions) {
       if (this.permissions == null) {
         this.permissions = new LinkedList<>();
@@ -111,6 +114,7 @@ public final class TestPermissionsResponse implements ApiMessage {
       return this;
     }
 
+    /** A subset of `TestPermissionsRequest.permissions` that the caller is allowed. */
     public Builder addPermissions(String permissions) {
       if (this.permissions == null) {
         this.permissions = new LinkedList<>();

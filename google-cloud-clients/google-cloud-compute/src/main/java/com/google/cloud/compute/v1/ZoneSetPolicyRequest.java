@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,13 +44,13 @@ public final class ZoneSetPolicyRequest implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("bindings")) {
+    if ("bindings".equals(fieldName)) {
       return bindings;
     }
-    if (fieldName.equals("etag")) {
+    if ("etag".equals(fieldName)) {
       return etag;
     }
-    if (fieldName.equals("policy")) {
+    if ("policy".equals(fieldName)) {
       return policy;
     }
     return null;
@@ -68,14 +68,27 @@ public final class ZoneSetPolicyRequest implements ApiMessage {
     return null;
   }
 
+  /**
+   * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify
+   * bindings.
+   */
   public List<Binding> getBindingsList() {
     return bindings;
   }
 
+  /**
+   * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify
+   * the etag.
+   */
   public String getEtag() {
     return etag;
   }
 
+  /**
+   * REQUIRED: The complete policy to be applied to the 'resource'. The size of the policy is
+   * limited to a few 10s of KB. An empty policy is in general a valid policy but certain services
+   * (like Projects) might reject them.
+   */
   public Policy getPolicy() {
     return policy;
   }
@@ -129,10 +142,18 @@ public final class ZoneSetPolicyRequest implements ApiMessage {
       this.policy = source.policy;
     }
 
+    /**
+     * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to
+     * specify bindings.
+     */
     public List<Binding> getBindingsList() {
       return bindings;
     }
 
+    /**
+     * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to
+     * specify bindings.
+     */
     public Builder addAllBindings(List<Binding> bindings) {
       if (this.bindings == null) {
         this.bindings = new LinkedList<>();
@@ -141,6 +162,10 @@ public final class ZoneSetPolicyRequest implements ApiMessage {
       return this;
     }
 
+    /**
+     * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to
+     * specify bindings.
+     */
     public Builder addBindings(Binding bindings) {
       if (this.bindings == null) {
         this.bindings = new LinkedList<>();
@@ -149,19 +174,37 @@ public final class ZoneSetPolicyRequest implements ApiMessage {
       return this;
     }
 
+    /**
+     * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to
+     * specify the etag.
+     */
     public String getEtag() {
       return etag;
     }
 
+    /**
+     * Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to
+     * specify the etag.
+     */
     public Builder setEtag(String etag) {
       this.etag = etag;
       return this;
     }
 
+    /**
+     * REQUIRED: The complete policy to be applied to the 'resource'. The size of the policy is
+     * limited to a few 10s of KB. An empty policy is in general a valid policy but certain services
+     * (like Projects) might reject them.
+     */
     public Policy getPolicy() {
       return policy;
     }
 
+    /**
+     * REQUIRED: The complete policy to be applied to the 'resource'. The size of the policy is
+     * limited to a few 10s of KB. An empty policy is in general a valid policy but certain services
+     * (like Projects) might reject them.
+     */
     public Builder setPolicy(Policy policy) {
       this.policy = policy;
       return this;

@@ -758,7 +758,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
       }
       if (matchConfidenceLevel_
           != com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel
-              .MATCH_CONFIDENCE_LEVEL_UNSPECIFIED.getNumber()) {
+              .MATCH_CONFIDENCE_LEVEL_UNSPECIFIED
+              .getNumber()) {
         output.writeEnum(4, matchConfidenceLevel_);
       }
       if (matchConfidence_ != 0F) {
@@ -784,7 +785,8 @@ public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessage
       }
       if (matchConfidenceLevel_
           != com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel
-              .MATCH_CONFIDENCE_LEVEL_UNSPECIFIED.getNumber()) {
+              .MATCH_CONFIDENCE_LEVEL_UNSPECIFIED
+              .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, matchConfidenceLevel_);
       }
       if (matchConfidence_ != 0F) {

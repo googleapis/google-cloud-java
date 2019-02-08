@@ -462,7 +462,8 @@ public final class PublisherGrpc {
      *
      * <pre>
      * Creates the given topic with the given name. See the
-     * &lt;a href="/pubsub/docs/admin#resource_names"&gt; resource name rules&lt;/a&gt;.
+     * &lt;a href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt;
+     * resource name rules&lt;/a&gt;.
      * </pre>
      */
     public void createTopic(
@@ -543,8 +544,13 @@ public final class PublisherGrpc {
      *
      *
      * <pre>
-     * Lists the names of the snapshots on this topic.&lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * Lists the names of the snapshots on this topic. Snapshots are used in
+     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt;
+     * operations, which allow
+     * you to manage message acknowledgments in bulk. That is, you can set the
+     * acknowledgment state of messages in an existing subscription to the state
+     * captured by a snapshot.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.
      * </pre>
@@ -656,7 +662,8 @@ public final class PublisherGrpc {
      *
      * <pre>
      * Creates the given topic with the given name. See the
-     * &lt;a href="/pubsub/docs/admin#resource_names"&gt; resource name rules&lt;/a&gt;.
+     * &lt;a href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt;
+     * resource name rules&lt;/a&gt;.
      * </pre>
      */
     public void createTopic(
@@ -755,8 +762,13 @@ public final class PublisherGrpc {
      *
      *
      * <pre>
-     * Lists the names of the snapshots on this topic.&lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * Lists the names of the snapshots on this topic. Snapshots are used in
+     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt;
+     * operations, which allow
+     * you to manage message acknowledgments in bulk. That is, you can set the
+     * acknowledgment state of messages in an existing subscription to the state
+     * captured by a snapshot.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.
      * </pre>
@@ -821,7 +833,8 @@ public final class PublisherGrpc {
      *
      * <pre>
      * Creates the given topic with the given name. See the
-     * &lt;a href="/pubsub/docs/admin#resource_names"&gt; resource name rules&lt;/a&gt;.
+     * &lt;a href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt;
+     * resource name rules&lt;/a&gt;.
      * </pre>
      */
     public com.google.pubsub.v1.Topic createTopic(com.google.pubsub.v1.Topic request) {
@@ -896,8 +909,13 @@ public final class PublisherGrpc {
      *
      *
      * <pre>
-     * Lists the names of the snapshots on this topic.&lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * Lists the names of the snapshots on this topic. Snapshots are used in
+     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt;
+     * operations, which allow
+     * you to manage message acknowledgments in bulk. That is, you can set the
+     * acknowledgment state of messages in an existing subscription to the state
+     * captured by a snapshot.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.
      * </pre>
@@ -953,7 +971,8 @@ public final class PublisherGrpc {
      *
      * <pre>
      * Creates the given topic with the given name. See the
-     * &lt;a href="/pubsub/docs/admin#resource_names"&gt; resource name rules&lt;/a&gt;.
+     * &lt;a href="https://cloud.google.com/pubsub/docs/admin#resource_names"&gt;
+     * resource name rules&lt;/a&gt;.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.pubsub.v1.Topic>
@@ -1035,8 +1054,13 @@ public final class PublisherGrpc {
      *
      *
      * <pre>
-     * Lists the names of the snapshots on this topic.&lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * Lists the names of the snapshots on this topic. Snapshots are used in
+     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview"&gt;Seek&lt;/a&gt;
+     * operations, which allow
+     * you to manage message acknowledgments in bulk. That is, you can set the
+     * acknowledgment state of messages in an existing subscription to the state
+     * captured by a snapshot.&lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.
      * </pre>

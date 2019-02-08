@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,10 +41,10 @@ public final class TargetPoolInstanceHealth implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("healthStatus")) {
+    if ("healthStatus".equals(fieldName)) {
       return healthStatus;
     }
-    if (fieldName.equals("kind")) {
+    if ("kind".equals(fieldName)) {
       return kind;
     }
     return null;
@@ -66,6 +66,10 @@ public final class TargetPoolInstanceHealth implements ApiMessage {
     return healthStatus;
   }
 
+  /**
+   * [Output Only] Type of resource. Always compute#targetPoolInstanceHealth when checking the
+   * health of an instance.
+   */
   public String getKind() {
     return kind;
   }
@@ -134,10 +138,18 @@ public final class TargetPoolInstanceHealth implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] Type of resource. Always compute#targetPoolInstanceHealth when checking the
+     * health of an instance.
+     */
     public String getKind() {
       return kind;
     }
 
+    /**
+     * [Output Only] Type of resource. Always compute#targetPoolInstanceHealth when checking the
+     * health of an instance.
+     */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;

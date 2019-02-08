@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Status of a NAT contained in this router. */
 public final class RouterStatusNatStatus implements ApiMessage {
   private final List<String> autoAllocatedNatIps;
   private final Integer minExtraNatIpsNeeded;
@@ -59,22 +60,22 @@ public final class RouterStatusNatStatus implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("autoAllocatedNatIps")) {
+    if ("autoAllocatedNatIps".equals(fieldName)) {
       return autoAllocatedNatIps;
     }
-    if (fieldName.equals("minExtraNatIpsNeeded")) {
+    if ("minExtraNatIpsNeeded".equals(fieldName)) {
       return minExtraNatIpsNeeded;
     }
-    if (fieldName.equals("name")) {
+    if ("name".equals(fieldName)) {
       return name;
     }
-    if (fieldName.equals("numVmEndpointsWithNatMappings")) {
+    if ("numVmEndpointsWithNatMappings".equals(fieldName)) {
       return numVmEndpointsWithNatMappings;
     }
-    if (fieldName.equals("userAllocatedNatIpResources")) {
+    if ("userAllocatedNatIpResources".equals(fieldName)) {
       return userAllocatedNatIpResources;
     }
-    if (fieldName.equals("userAllocatedNatIps")) {
+    if ("userAllocatedNatIps".equals(fieldName)) {
       return userAllocatedNatIps;
     }
     return null;
@@ -92,26 +93,36 @@ public final class RouterStatusNatStatus implements ApiMessage {
     return null;
   }
 
+  /** A list of IPs auto-allocated for NAT. Example: ["1.1.1.1", "129.2.16.89"] */
   public List<String> getAutoAllocatedNatIpsList() {
     return autoAllocatedNatIps;
   }
 
+  /**
+   * The number of extra IPs to allocate. This will be greater than 0 only if user-specified IPs are
+   * NOT enough to allow all configured VMs to use NAT. This value is meaningful only when
+   * auto-allocation of NAT IPs is &#42;not&#42; used.
+   */
   public Integer getMinExtraNatIpsNeeded() {
     return minExtraNatIpsNeeded;
   }
 
+  /** Unique name of this NAT. */
   public String getName() {
     return name;
   }
 
+  /** Number of VM endpoints (i.e., Nics) that can use NAT. */
   public Integer getNumVmEndpointsWithNatMappings() {
     return numVmEndpointsWithNatMappings;
   }
 
+  /** A list of fully qualified URLs of reserved IP address resources. */
   public List<String> getUserAllocatedNatIpResourcesList() {
     return userAllocatedNatIpResources;
   }
 
+  /** A list of IPs user-allocated for NAT. They will be raw IP strings like "179.12.26.133". */
   public List<String> getUserAllocatedNatIpsList() {
     return userAllocatedNatIps;
   }
@@ -180,10 +191,12 @@ public final class RouterStatusNatStatus implements ApiMessage {
       this.userAllocatedNatIps = source.userAllocatedNatIps;
     }
 
+    /** A list of IPs auto-allocated for NAT. Example: ["1.1.1.1", "129.2.16.89"] */
     public List<String> getAutoAllocatedNatIpsList() {
       return autoAllocatedNatIps;
     }
 
+    /** A list of IPs auto-allocated for NAT. Example: ["1.1.1.1", "129.2.16.89"] */
     public Builder addAllAutoAllocatedNatIps(List<String> autoAllocatedNatIps) {
       if (this.autoAllocatedNatIps == null) {
         this.autoAllocatedNatIps = new LinkedList<>();
@@ -192,6 +205,7 @@ public final class RouterStatusNatStatus implements ApiMessage {
       return this;
     }
 
+    /** A list of IPs auto-allocated for NAT. Example: ["1.1.1.1", "129.2.16.89"] */
     public Builder addAutoAllocatedNatIps(String autoAllocatedNatIps) {
       if (this.autoAllocatedNatIps == null) {
         this.autoAllocatedNatIps = new LinkedList<>();
@@ -200,37 +214,53 @@ public final class RouterStatusNatStatus implements ApiMessage {
       return this;
     }
 
+    /**
+     * The number of extra IPs to allocate. This will be greater than 0 only if user-specified IPs
+     * are NOT enough to allow all configured VMs to use NAT. This value is meaningful only when
+     * auto-allocation of NAT IPs is &#42;not&#42; used.
+     */
     public Integer getMinExtraNatIpsNeeded() {
       return minExtraNatIpsNeeded;
     }
 
+    /**
+     * The number of extra IPs to allocate. This will be greater than 0 only if user-specified IPs
+     * are NOT enough to allow all configured VMs to use NAT. This value is meaningful only when
+     * auto-allocation of NAT IPs is &#42;not&#42; used.
+     */
     public Builder setMinExtraNatIpsNeeded(Integer minExtraNatIpsNeeded) {
       this.minExtraNatIpsNeeded = minExtraNatIpsNeeded;
       return this;
     }
 
+    /** Unique name of this NAT. */
     public String getName() {
       return name;
     }
 
+    /** Unique name of this NAT. */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /** Number of VM endpoints (i.e., Nics) that can use NAT. */
     public Integer getNumVmEndpointsWithNatMappings() {
       return numVmEndpointsWithNatMappings;
     }
 
+    /** Number of VM endpoints (i.e., Nics) that can use NAT. */
     public Builder setNumVmEndpointsWithNatMappings(Integer numVmEndpointsWithNatMappings) {
       this.numVmEndpointsWithNatMappings = numVmEndpointsWithNatMappings;
       return this;
     }
 
+    /** A list of fully qualified URLs of reserved IP address resources. */
     public List<String> getUserAllocatedNatIpResourcesList() {
       return userAllocatedNatIpResources;
     }
 
+    /** A list of fully qualified URLs of reserved IP address resources. */
     public Builder addAllUserAllocatedNatIpResources(List<String> userAllocatedNatIpResources) {
       if (this.userAllocatedNatIpResources == null) {
         this.userAllocatedNatIpResources = new LinkedList<>();
@@ -239,6 +269,7 @@ public final class RouterStatusNatStatus implements ApiMessage {
       return this;
     }
 
+    /** A list of fully qualified URLs of reserved IP address resources. */
     public Builder addUserAllocatedNatIpResources(String userAllocatedNatIpResources) {
       if (this.userAllocatedNatIpResources == null) {
         this.userAllocatedNatIpResources = new LinkedList<>();
@@ -247,10 +278,12 @@ public final class RouterStatusNatStatus implements ApiMessage {
       return this;
     }
 
+    /** A list of IPs user-allocated for NAT. They will be raw IP strings like "179.12.26.133". */
     public List<String> getUserAllocatedNatIpsList() {
       return userAllocatedNatIps;
     }
 
+    /** A list of IPs user-allocated for NAT. They will be raw IP strings like "179.12.26.133". */
     public Builder addAllUserAllocatedNatIps(List<String> userAllocatedNatIps) {
       if (this.userAllocatedNatIps == null) {
         this.userAllocatedNatIps = new LinkedList<>();
@@ -259,6 +292,7 @@ public final class RouterStatusNatStatus implements ApiMessage {
       return this;
     }
 
+    /** A list of IPs user-allocated for NAT. They will be raw IP strings like "179.12.26.133". */
     public Builder addUserAllocatedNatIps(String userAllocatedNatIps) {
       if (this.userAllocatedNatIps == null) {
         this.userAllocatedNatIps = new LinkedList<>();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** A Node Type resource. */
 public final class NodeType implements ApiMessage {
   private final String cpuPlatform;
   private final String creationTimestamp;
@@ -82,40 +83,40 @@ public final class NodeType implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("cpuPlatform")) {
+    if ("cpuPlatform".equals(fieldName)) {
       return cpuPlatform;
     }
-    if (fieldName.equals("creationTimestamp")) {
+    if ("creationTimestamp".equals(fieldName)) {
       return creationTimestamp;
     }
-    if (fieldName.equals("deprecated")) {
+    if ("deprecated".equals(fieldName)) {
       return deprecated;
     }
-    if (fieldName.equals("description")) {
+    if ("description".equals(fieldName)) {
       return description;
     }
-    if (fieldName.equals("guestCpus")) {
+    if ("guestCpus".equals(fieldName)) {
       return guestCpus;
     }
-    if (fieldName.equals("id")) {
+    if ("id".equals(fieldName)) {
       return id;
     }
-    if (fieldName.equals("kind")) {
+    if ("kind".equals(fieldName)) {
       return kind;
     }
-    if (fieldName.equals("localSsdGb")) {
+    if ("localSsdGb".equals(fieldName)) {
       return localSsdGb;
     }
-    if (fieldName.equals("memoryMb")) {
+    if ("memoryMb".equals(fieldName)) {
       return memoryMb;
     }
-    if (fieldName.equals("name")) {
+    if ("name".equals(fieldName)) {
       return name;
     }
-    if (fieldName.equals("selfLink")) {
+    if ("selfLink".equals(fieldName)) {
       return selfLink;
     }
-    if (fieldName.equals("zone")) {
+    if ("zone".equals(fieldName)) {
       return zone;
     }
     return null;
@@ -133,50 +134,64 @@ public final class NodeType implements ApiMessage {
     return null;
   }
 
+  /** [Output Only] The CPU platform used by this node type. */
   public String getCpuPlatform() {
     return cpuPlatform;
   }
 
+  /** [Output Only] Creation timestamp in RFC3339 text format. */
   public String getCreationTimestamp() {
     return creationTimestamp;
   }
 
+  /** [Output Only] The deprecation status associated with this node type. */
   public DeprecationStatus getDeprecated() {
     return deprecated;
   }
 
+  /** [Output Only] An optional textual description of the resource. */
   public String getDescription() {
     return description;
   }
 
+  /** [Output Only] The number of virtual CPUs that are available to the node type. */
   public Integer getGuestCpus() {
     return guestCpus;
   }
 
+  /**
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   */
   public String getId() {
     return id;
   }
 
+  /** [Output Only] The type of the resource. Always compute#nodeType for node types. */
   public String getKind() {
     return kind;
   }
 
+  /** [Output Only] Local SSD available to the node type, defined in GB. */
   public Integer getLocalSsdGb() {
     return localSsdGb;
   }
 
+  /** [Output Only] The amount of physical memory available to the node type, defined in MB. */
   public Integer getMemoryMb() {
     return memoryMb;
   }
 
+  /** [Output Only] Name of the resource. */
   public String getName() {
     return name;
   }
 
+  /** [Output Only] Server-defined URL for the resource. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /** [Output Only] The name of the zone where the node type resides, such as us-central1-a. */
   public String getZone() {
     return zone;
   }
@@ -275,109 +290,139 @@ public final class NodeType implements ApiMessage {
       this.zone = source.zone;
     }
 
+    /** [Output Only] The CPU platform used by this node type. */
     public String getCpuPlatform() {
       return cpuPlatform;
     }
 
+    /** [Output Only] The CPU platform used by this node type. */
     public Builder setCpuPlatform(String cpuPlatform) {
       this.cpuPlatform = cpuPlatform;
       return this;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public String getCreationTimestamp() {
       return creationTimestamp;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
+    /** [Output Only] The deprecation status associated with this node type. */
     public DeprecationStatus getDeprecated() {
       return deprecated;
     }
 
+    /** [Output Only] The deprecation status associated with this node type. */
     public Builder setDeprecated(DeprecationStatus deprecated) {
       this.deprecated = deprecated;
       return this;
     }
 
+    /** [Output Only] An optional textual description of the resource. */
     public String getDescription() {
       return description;
     }
 
+    /** [Output Only] An optional textual description of the resource. */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /** [Output Only] The number of virtual CPUs that are available to the node type. */
     public Integer getGuestCpus() {
       return guestCpus;
     }
 
+    /** [Output Only] The number of virtual CPUs that are available to the node type. */
     public Builder setGuestCpus(Integer guestCpus) {
       this.guestCpus = guestCpus;
       return this;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /** [Output Only] The type of the resource. Always compute#nodeType for node types. */
     public String getKind() {
       return kind;
     }
 
+    /** [Output Only] The type of the resource. Always compute#nodeType for node types. */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /** [Output Only] Local SSD available to the node type, defined in GB. */
     public Integer getLocalSsdGb() {
       return localSsdGb;
     }
 
+    /** [Output Only] Local SSD available to the node type, defined in GB. */
     public Builder setLocalSsdGb(Integer localSsdGb) {
       this.localSsdGb = localSsdGb;
       return this;
     }
 
+    /** [Output Only] The amount of physical memory available to the node type, defined in MB. */
     public Integer getMemoryMb() {
       return memoryMb;
     }
 
+    /** [Output Only] The amount of physical memory available to the node type, defined in MB. */
     public Builder setMemoryMb(Integer memoryMb) {
       this.memoryMb = memoryMb;
       return this;
     }
 
+    /** [Output Only] Name of the resource. */
     public String getName() {
       return name;
     }
 
+    /** [Output Only] Name of the resource. */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /** [Output Only] The name of the zone where the node type resides, such as us-central1-a. */
     public String getZone() {
       return zone;
     }
 
+    /** [Output Only] The name of the zone where the node type resides, such as us-central1-a. */
     public Builder setZone(String zone) {
       this.zone = zone;
       return this;

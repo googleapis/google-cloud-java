@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,31 +71,31 @@ public final class LicenseCode implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("creationTimestamp")) {
+    if ("creationTimestamp".equals(fieldName)) {
       return creationTimestamp;
     }
-    if (fieldName.equals("description")) {
+    if ("description".equals(fieldName)) {
       return description;
     }
-    if (fieldName.equals("id")) {
+    if ("id".equals(fieldName)) {
       return id;
     }
-    if (fieldName.equals("kind")) {
+    if ("kind".equals(fieldName)) {
       return kind;
     }
-    if (fieldName.equals("licenseAlias")) {
+    if ("licenseAlias".equals(fieldName)) {
       return licenseAlias;
     }
-    if (fieldName.equals("name")) {
+    if ("name".equals(fieldName)) {
       return name;
     }
-    if (fieldName.equals("selfLink")) {
+    if ("selfLink".equals(fieldName)) {
       return selfLink;
     }
-    if (fieldName.equals("state")) {
+    if ("state".equals(fieldName)) {
       return state;
     }
-    if (fieldName.equals("transferable")) {
+    if ("transferable".equals(fieldName)) {
       return transferable;
     }
     return null;
@@ -113,38 +113,55 @@ public final class LicenseCode implements ApiMessage {
     return null;
   }
 
+  /** [Output Only] Creation timestamp in RFC3339 text format. */
   public String getCreationTimestamp() {
     return creationTimestamp;
   }
 
+  /** [Output Only] Description of this License Code. */
   public String getDescription() {
     return description;
   }
 
+  /**
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   */
   public String getId() {
     return id;
   }
 
+  /** [Output Only] Type of resource. Always compute#licenseCode for licenses. */
   public String getKind() {
     return kind;
   }
 
+  /** [Output Only] URL and description aliases of Licenses with the same License Code. */
   public List<LicenseCodeLicenseAlias> getLicenseAliasList() {
     return licenseAlias;
   }
 
+  /**
+   * [Output Only] Name of the resource. The name is 1-20 characters long and must be a valid 64 bit
+   * integer.
+   */
   public String getName() {
     return name;
   }
 
+  /** [Output Only] Server-defined URL for the resource. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /** [Output Only] Current state of this License Code. */
   public String getState() {
     return state;
   }
 
+  /**
+   * [Output Only] If true, the license will remain attached when creating images or snapshots from
+   * disks. Otherwise, the license is not transferred.
+   */
   public Boolean getTransferable() {
     return transferable;
   }
@@ -228,46 +245,62 @@ public final class LicenseCode implements ApiMessage {
       this.transferable = source.transferable;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public String getCreationTimestamp() {
       return creationTimestamp;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
+    /** [Output Only] Description of this License Code. */
     public String getDescription() {
       return description;
     }
 
+    /** [Output Only] Description of this License Code. */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /** [Output Only] Type of resource. Always compute#licenseCode for licenses. */
     public String getKind() {
       return kind;
     }
 
+    /** [Output Only] Type of resource. Always compute#licenseCode for licenses. */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /** [Output Only] URL and description aliases of Licenses with the same License Code. */
     public List<LicenseCodeLicenseAlias> getLicenseAliasList() {
       return licenseAlias;
     }
 
+    /** [Output Only] URL and description aliases of Licenses with the same License Code. */
     public Builder addAllLicenseAlias(List<LicenseCodeLicenseAlias> licenseAlias) {
       if (this.licenseAlias == null) {
         this.licenseAlias = new LinkedList<>();
@@ -276,6 +309,7 @@ public final class LicenseCode implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] URL and description aliases of Licenses with the same License Code. */
     public Builder addLicenseAlias(LicenseCodeLicenseAlias licenseAlias) {
       if (this.licenseAlias == null) {
         this.licenseAlias = new LinkedList<>();
@@ -284,37 +318,57 @@ public final class LicenseCode implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] Name of the resource. The name is 1-20 characters long and must be a valid 64
+     * bit integer.
+     */
     public String getName() {
       return name;
     }
 
+    /**
+     * [Output Only] Name of the resource. The name is 1-20 characters long and must be a valid 64
+     * bit integer.
+     */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /** [Output Only] Current state of this License Code. */
     public String getState() {
       return state;
     }
 
+    /** [Output Only] Current state of this License Code. */
     public Builder setState(String state) {
       this.state = state;
       return this;
     }
 
+    /**
+     * [Output Only] If true, the license will remain attached when creating images or snapshots
+     * from disks. Otherwise, the license is not transferred.
+     */
     public Boolean getTransferable() {
       return transferable;
     }
 
+    /**
+     * [Output Only] If true, the license will remain attached when creating images or snapshots
+     * from disks. Otherwise, the license is not transferred.
+     */
     public Builder setTransferable(Boolean transferable) {
       this.transferable = transferable;
       return this;

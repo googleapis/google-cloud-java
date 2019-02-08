@@ -116,7 +116,7 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * The additional taxonomy group within findings from a give source.
+   * The additional taxonomy group within findings from a given source.
    * This field is immutable after creation time.
    * Example: "XSS_FLASH_INJECTION"
    * </pre>
@@ -128,7 +128,7 @@ public interface FindingOrBuilder
    *
    *
    * <pre>
-   * The additional taxonomy group within findings from a give source.
+   * The additional taxonomy group within findings from a given source.
    * This field is immutable after creation time.
    * Example: "XSS_FLASH_INJECTION"
    * </pre>
@@ -167,7 +167,9 @@ public interface FindingOrBuilder
    *
    * <pre>
    * Source specific properties. These properties are managed by the source
-   * that writes the finding.
+   * that writes the finding. The key names in the source_properties map must be
+   * between 1 and 255 characters, and must start with a letter and contain
+   * alphanumeric characters or underscores only.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 7;</code>
@@ -178,7 +180,9 @@ public interface FindingOrBuilder
    *
    * <pre>
    * Source specific properties. These properties are managed by the source
-   * that writes the finding.
+   * that writes the finding. The key names in the source_properties map must be
+   * between 1 and 255 characters, and must start with a letter and contain
+   * alphanumeric characters or underscores only.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 7;</code>
@@ -192,7 +196,9 @@ public interface FindingOrBuilder
    *
    * <pre>
    * Source specific properties. These properties are managed by the source
-   * that writes the finding.
+   * that writes the finding. The key names in the source_properties map must be
+   * between 1 and 255 characters, and must start with a letter and contain
+   * alphanumeric characters or underscores only.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 7;</code>
@@ -203,7 +209,9 @@ public interface FindingOrBuilder
    *
    * <pre>
    * Source specific properties. These properties are managed by the source
-   * that writes the finding.
+   * that writes the finding. The key names in the source_properties map must be
+   * between 1 and 255 characters, and must start with a letter and contain
+   * alphanumeric characters or underscores only.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 7;</code>
@@ -215,7 +223,9 @@ public interface FindingOrBuilder
    *
    * <pre>
    * Source specific properties. These properties are managed by the source
-   * that writes the finding.
+   * that writes the finding. The key names in the source_properties map must be
+   * between 1 and 255 characters, and must start with a letter and contain
+   * alphanumeric characters or underscores only.
    * </pre>
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; source_properties = 7;</code>

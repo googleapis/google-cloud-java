@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Represents a reference to a resource. */
 public final class Reference implements ApiMessage {
   private final String kind;
   private final String referenceType;
@@ -46,16 +47,16 @@ public final class Reference implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("kind")) {
+    if ("kind".equals(fieldName)) {
       return kind;
     }
-    if (fieldName.equals("referenceType")) {
+    if ("referenceType".equals(fieldName)) {
       return referenceType;
     }
-    if (fieldName.equals("referrer")) {
+    if ("referrer".equals(fieldName)) {
       return referrer;
     }
-    if (fieldName.equals("target")) {
+    if ("target".equals(fieldName)) {
       return target;
     }
     return null;
@@ -73,18 +74,25 @@ public final class Reference implements ApiMessage {
     return null;
   }
 
+  /** [Output Only] Type of the resource. Always compute#reference for references. */
   public String getKind() {
     return kind;
   }
 
+  /**
+   * A description of the reference type with no implied semantics. Possible values include: -
+   * MEMBER_OF
+   */
   public String getReferenceType() {
     return referenceType;
   }
 
+  /** URL of the resource which refers to the target. */
   public String getReferrer() {
     return referrer;
   }
 
+  /** URL of the resource to which this reference points. */
   public String getTarget() {
     return target;
   }
@@ -143,37 +151,51 @@ public final class Reference implements ApiMessage {
       this.target = source.target;
     }
 
+    /** [Output Only] Type of the resource. Always compute#reference for references. */
     public String getKind() {
       return kind;
     }
 
+    /** [Output Only] Type of the resource. Always compute#reference for references. */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /**
+     * A description of the reference type with no implied semantics. Possible values include: -
+     * MEMBER_OF
+     */
     public String getReferenceType() {
       return referenceType;
     }
 
+    /**
+     * A description of the reference type with no implied semantics. Possible values include: -
+     * MEMBER_OF
+     */
     public Builder setReferenceType(String referenceType) {
       this.referenceType = referenceType;
       return this;
     }
 
+    /** URL of the resource which refers to the target. */
     public String getReferrer() {
       return referrer;
     }
 
+    /** URL of the resource which refers to the target. */
     public Builder setReferrer(String referrer) {
       this.referrer = referrer;
       return this;
     }
 
+    /** URL of the resource to which this reference points. */
     public String getTarget() {
       return target;
     }
 
+    /** URL of the resource to which this reference points. */
     public Builder setTarget(String target) {
       this.target = target;
       return this;

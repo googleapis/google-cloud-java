@@ -1,26 +1,41 @@
 {
+  "updateTime": "2019-01-26T08:48:51.639044Z",
   "sources": [
+    {
+      "generator": {
+        "name": "artman",
+        "version": "0.16.7",
+        "dockerImage": "googleapis/artman@sha256:d6c8ced606eb49973ca95d2af7c55a681acc042db0f87d135968349e7bf6dd80"
+      }
+    },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "5a57f0c13a358b2b15452bf2d67453774a5f6d4f",
-        "internalRef": "221837528"
+        "sha": "a6b4398490269577fc511f297b85763ba4701403",
+        "internalRef": "230969086"
+      }
+    }
+  ],
+  "destinations": [
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "tasks",
+        "apiVersion": "v2beta2",
+        "language": "java",
+        "generator": "gapic",
+        "config": "google/cloud/tasks/artman_cloudtasks_v2beta2.yaml"
       }
     },
     {
-      "git": {
-        "name": "googleapis-private",
-        "remote": "https://github.com/googleapis/googleapis-private.git",
-        "sha": "6aa8e1a447bb8d0367150356a28cb4d3f2332641",
-        "internalRef": "221340946"
-      }
-    },
-    {
-      "generator": {
-        "name": "artman",
-        "version": "0.16.0",
-        "dockerImage": "googleapis/artman@sha256:90f9d15e9bad675aeecd586725bce48f5667ffe7d5fc4d1e96d51ff34304815b"
+      "client": {
+        "source": "googleapis",
+        "apiName": "tasks",
+        "apiVersion": "v2beta3",
+        "language": "java",
+        "generator": "gapic",
+        "config": "google/cloud/tasks/artman_cloudtasks_v2beta3.yaml"
       }
     }
   ]
