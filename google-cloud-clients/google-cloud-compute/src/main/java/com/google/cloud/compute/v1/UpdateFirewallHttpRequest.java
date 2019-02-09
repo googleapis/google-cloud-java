@@ -136,6 +136,12 @@ public final class UpdateFirewallHttpRequest implements ApiMessage {
     return callback;
   }
 
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return fieldMask;
   }
@@ -309,10 +315,22 @@ public final class UpdateFirewallHttpRequest implements ApiMessage {
       return this;
     }
 
+    /**
+     * The fields that should be serialized (even if they have empty values). If the containing
+     * message object has a non-null fieldmask, then all the fields in the field mask (and only
+     * those fields in the field mask) will be serialized. If the containing object does not have a
+     * fieldmask, then only non-empty fields will be serialized.
+     */
     public List<String> getFieldMask() {
       return fieldMask;
     }
 
+    /**
+     * The fields that should be serialized (even if they have empty values). If the containing
+     * message object has a non-null fieldmask, then all the fields in the field mask (and only
+     * those fields in the field mask) will be serialized. If the containing object does not have a
+     * fieldmask, then only non-empty fields will be serialized.
+     */
     public Builder addAllFieldMask(List<String> fieldMask) {
       if (this.fieldMask == null) {
         this.fieldMask = new LinkedList<>();
@@ -321,6 +339,12 @@ public final class UpdateFirewallHttpRequest implements ApiMessage {
       return this;
     }
 
+    /**
+     * The fields that should be serialized (even if they have empty values). If the containing
+     * message object has a non-null fieldmask, then all the fields in the field mask (and only
+     * those fields in the field mask) will be serialized. If the containing object does not have a
+     * fieldmask, then only non-empty fields will be serialized.
+     */
     public Builder addFieldMask(String fieldMask) {
       if (this.fieldMask == null) {
         this.fieldMask = new LinkedList<>();

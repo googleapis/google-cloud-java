@@ -765,7 +765,10 @@ public class AutoscalerClient implements BackgroundResource {
    *     autoscaling policy that you define. For more information, read Autoscaling Groups of
    *     Instances. (== resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (==
    *     resource_for beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -809,7 +812,10 @@ public class AutoscalerClient implements BackgroundResource {
    *     autoscaling policy that you define. For more information, read Autoscaling Groups of
    *     Instances. (== resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (==
    *     resource_for beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -910,7 +916,10 @@ public class AutoscalerClient implements BackgroundResource {
    *     autoscaling policy that you define. For more information, read Autoscaling Groups of
    *     Instances. (== resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (==
    *     resource_for beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -953,7 +962,10 @@ public class AutoscalerClient implements BackgroundResource {
    *     autoscaling policy that you define. For more information, read Autoscaling Groups of
    *     Instances. (== resource_for beta.autoscalers ==) (== resource_for v1.autoscalers ==) (==
    *     resource_for beta.regionAutoscalers ==) (== resource_for v1.regionAutoscalers ==)
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
