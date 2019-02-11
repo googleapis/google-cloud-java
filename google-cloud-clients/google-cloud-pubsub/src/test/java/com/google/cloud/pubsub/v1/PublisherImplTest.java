@@ -380,31 +380,6 @@ public class PublisherImplTest {
     publisher.shutdown();
   }
 
-  @Test(expected = ExecutionException.class)
-  public void testEnableMessageOrdering_failsImmediatelyForNonRetryableError() throws Exception {
-    Publisher publisher =
-        getTestPublisherBuilder()
-            .setExecutorProvider(SINGLE_THREAD_EXECUTOR)
-            .setRetrySettings(
-                Publisher.Builder.DEFAULT_RETRY_SETTINGS
-                    .toBuilder()
-                    .setTotalTimeout(Duration.ofSeconds(10))
-                    .setMaxAttempts(2)
-                    .build())
-            .setEnableMessageOrdering(true)
-            .build();
-
-    testPublisherServiceImpl.addPublishError(new StatusException(Status.INVALID_ARGUMENT));
-    ApiFuture<String> publishFuture1 = sendTestMessageWithOrderingKey(publisher, "m1", "orderA");
-
-    try {
-      publishFuture1.get();
-    } finally {
-      assertEquals(1, testPublisherServiceImpl.getCapturedRequests().size());
-      publisher.shutdown();
-    }
-  }
-
   private ApiFuture<String> sendTestMessageWithOrderingKey(
       Publisher publisher, String data, String orderingKey) {
     return publisher.publish(

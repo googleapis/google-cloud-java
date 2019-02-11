@@ -45,11 +45,13 @@ import com.google.pubsub.v1.TopicName;
 import com.google.pubsub.v1.TopicNames;
 import java.io.IOException;
 import java.util.Collections;
+import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
@@ -131,9 +133,29 @@ public class Publisher {
     // We post-process this here to keep backward-compatibility.
     // Also, if "message ordering" is enabled, the publisher should retry sending the failed
     // message infinitely rather than sending the next one.
-    RetrySettings retrySettings = builder.retrySettings;
-    if (retrySettings.getMaxAttempts() == 0 || builder.enableMessageOrdering) {
-      retrySettings = retrySettings.toBuilder().setMaxAttempts(Integer.MAX_VALUE).build();
+    RetrySettings.Builder retrySettingsBuilder = builder.retrySettings.toBuilder();
+    if (retrySettingsBuilder.getMaxAttempts() == 0) {
+      retrySettingsBuilder.setMaxAttempts(Integer.MAX_VALUE);
+    }
+    if (enableMessageOrdering) {
+      retrySettingsBuilder
+          .setMaxAttempts(Integer.MAX_VALUE)
+          .setTotalTimeout(Duration.ofNanos(Long.MAX_VALUE));
+    }
+
+    Set<StatusCode.Code> retryCodes;
+    if (enableMessageOrdering) {
+      retryCodes = EnumSet.allOf(StatusCode.Code.class);
+    } else {
+      retryCodes =
+          EnumSet.of(
+              StatusCode.Code.ABORTED,
+              StatusCode.Code.CANCELLED,
+              StatusCode.Code.DEADLINE_EXCEEDED,
+              StatusCode.Code.INTERNAL,
+              StatusCode.Code.RESOURCE_EXHAUSTED,
+              StatusCode.Code.UNKNOWN,
+              StatusCode.Code.UNAVAILABLE);
     }
 
     PublisherStubSettings.Builder stubSettings =
@@ -143,15 +165,8 @@ public class Publisher {
             .setTransportChannelProvider(builder.channelProvider);
     stubSettings
         .publishSettings()
-        .setRetryableCodes(
-            StatusCode.Code.ABORTED,
-            StatusCode.Code.CANCELLED,
-            StatusCode.Code.DEADLINE_EXCEEDED,
-            StatusCode.Code.INTERNAL,
-            StatusCode.Code.RESOURCE_EXHAUSTED,
-            StatusCode.Code.UNKNOWN,
-            StatusCode.Code.UNAVAILABLE)
-        .setRetrySettings(retrySettings)
+        .setRetryableCodes(retryCodes)
+        .setRetrySettings(retrySettingsBuilder.build())
         .setBatchingSettings(BatchingSettings.newBuilder().setIsEnabled(false).build());
     this.publisherStub = GrpcPublisherStub.create(stubSettings.build());
 
@@ -200,7 +215,7 @@ public class Publisher {
     }
 
     final String orderingKey = message.getOrderingKey();
-    if (!orderingKey.isEmpty() && !enableMessageOrdering) {
+    if (orderingKey != null && !orderingKey.isEmpty() && !enableMessageOrdering) {
       throw new IllegalStateException(
           "Cannot publish a message with an ordering key when message ordeirng is not enabled.");
     }
@@ -300,10 +315,10 @@ public class Publisher {
     try {
       for (MessagesBatch batch : messagesBatches.values()) {
         if (!batch.isEmpty()) {
-          // TODO(kimkyung-goog): Do not release `messageBatchLock` when publishing a batch. If it's
-          // released, the order of publishing cannot be guaranteed if `publish()` is called while
-          // this function is running. This locking mechanism needs to be improved if it causes any
-          // performance degradation.
+          // TODO(kimkyung-goog): Do not release `messagesBatchLock` when publishing a batch. If
+          // it's released, the order of publishing cannot be guaranteed if `publish()` is called
+          // while this function is running. This locking mechanism needs to be improved if it
+          // causes any performance degradation.
           publishOutstandingBatch(batch.popOutstandingBatch());
         }
       }
@@ -364,7 +379,7 @@ public class Publisher {
           }
         };
 
-    if (outstandingBatch.orderingKey.isEmpty()) {
+    if (outstandingBatch.orderingKey == null || outstandingBatch.orderingKey.isEmpty()) {
       // If ordering key is empty, publish the batch using the normal executor.
       Runnable task =
           new Runnable() {
