@@ -161,7 +161,7 @@
     <grpc.version>1.17.1</grpc.version>
     <!-- We are currently using the *-android version to support JDK7. -->
     <guava.version>26.0-android</guava.version>
-    <http-client.version>1.27.0</http-client.version>
+    <http-client.version>1.28.0</http-client.version>
     <oauth-client.version>1.27.0</oauth-client.version>
     <protobuf.version>3.6.1</protobuf.version>
     <!-- make sure to keep opencensus version in sync with grpc -->
