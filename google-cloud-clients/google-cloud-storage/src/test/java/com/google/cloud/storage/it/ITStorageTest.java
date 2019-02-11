@@ -461,6 +461,26 @@ public class ITStorageTest {
   }
 
   @Test
+  public void testCreateBlobMd5Crc32cFromHexString() {
+    String blobName = "test-create-blob-md5-crc32c-from-hex-string";
+    BlobInfo blob =
+        BlobInfo.newBuilder(BUCKET, blobName)
+            .setContentType(CONTENT_TYPE)
+            .setMd5FromHexString("3b54781b51c94835084898e821899585")
+            .setCrc32cFromHexString("f4ddc43d")
+            .build();
+    Blob remoteBlob = storage.create(blob, BLOB_BYTE_CONTENT);
+    assertNotNull(remoteBlob);
+    assertEquals(blob.getBucket(), remoteBlob.getBucket());
+    assertEquals(blob.getName(), remoteBlob.getName());
+    assertEquals(blob.getMd5ToHexString(), remoteBlob.getMd5ToHexString());
+    assertEquals(blob.getCrc32cToHexString(), remoteBlob.getCrc32cToHexString());
+    byte[] readBytes = storage.readAllBytes(BUCKET, blobName);
+    assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
+    assertTrue(remoteBlob.delete());
+  }
+
+  @Test
   public void testCreateBlobWithEncryptionKey() {
     String blobName = "test-create-with-customer-key-blob";
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
