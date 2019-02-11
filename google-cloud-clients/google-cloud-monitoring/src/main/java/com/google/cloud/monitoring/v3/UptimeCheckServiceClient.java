@@ -15,6 +15,8 @@
  */
 package com.google.cloud.monitoring.v3;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -714,7 +716,8 @@ public class UptimeCheckServiceClient implements BackgroundResource {
             public ListUptimeCheckConfigsPagedResponse apply(ListUptimeCheckConfigsPage input) {
               return new ListUptimeCheckConfigsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListUptimeCheckConfigsPagedResponse(ListUptimeCheckConfigsPage page) {
@@ -804,7 +807,8 @@ public class UptimeCheckServiceClient implements BackgroundResource {
             public ListUptimeCheckIpsPagedResponse apply(ListUptimeCheckIpsPage input) {
               return new ListUptimeCheckIpsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListUptimeCheckIpsPagedResponse(ListUptimeCheckIpsPage page) {

@@ -15,6 +15,8 @@
  */
 package com.google.cloud.automl.v1beta1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -1882,7 +1884,8 @@ public class AutoMlClient implements BackgroundResource {
             public ListDatasetsPagedResponse apply(ListDatasetsPage input) {
               return new ListDatasetsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListDatasetsPagedResponse(ListDatasetsPage page) {
@@ -1961,7 +1964,8 @@ public class AutoMlClient implements BackgroundResource {
             public ListModelsPagedResponse apply(ListModelsPage input) {
               return new ListModelsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListModelsPagedResponse(ListModelsPage page) {
@@ -2041,7 +2045,8 @@ public class AutoMlClient implements BackgroundResource {
             public ListModelEvaluationsPagedResponse apply(ListModelEvaluationsPage input) {
               return new ListModelEvaluationsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListModelEvaluationsPagedResponse(ListModelEvaluationsPage page) {

@@ -15,6 +15,8 @@
  */
 package com.google.cloud.tasks.v2beta2;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -2850,7 +2852,8 @@ public class CloudTasksClient implements BackgroundResource {
             public ListQueuesPagedResponse apply(ListQueuesPage input) {
               return new ListQueuesPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListQueuesPagedResponse(ListQueuesPage page) {
@@ -2925,7 +2928,8 @@ public class CloudTasksClient implements BackgroundResource {
             public ListTasksPagedResponse apply(ListTasksPage input) {
               return new ListTasksPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListTasksPagedResponse(ListTasksPage page) {

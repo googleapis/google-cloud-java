@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -1613,7 +1615,8 @@ public class NodeGroupClient implements BackgroundResource {
             public AggregatedListNodeGroupsPagedResponse apply(AggregatedListNodeGroupsPage input) {
               return new AggregatedListNodeGroupsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private AggregatedListNodeGroupsPagedResponse(AggregatedListNodeGroupsPage page) {
@@ -1703,7 +1706,8 @@ public class NodeGroupClient implements BackgroundResource {
             public ListNodeGroupsPagedResponse apply(ListNodeGroupsPage input) {
               return new ListNodeGroupsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListNodeGroupsPagedResponse(ListNodeGroupsPage page) {
@@ -1783,7 +1787,8 @@ public class NodeGroupClient implements BackgroundResource {
             public ListNodesNodeGroupsPagedResponse apply(ListNodesNodeGroupsPage input) {
               return new ListNodesNodeGroupsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListNodesNodeGroupsPagedResponse(ListNodesNodeGroupsPage page) {

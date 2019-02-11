@@ -108,15 +108,14 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
     this.config = config;
     // get the generation, enshrine that in our options
     fetchSize(gcsStorage, userProject, file);
-    List options = Lists.newArrayList(blobSourceOptions);
+    List<BlobSourceOption> options = Lists.newArrayList(blobSourceOptions);
     if (null != generation) {
       options.add(Storage.BlobSourceOption.generationMatch(generation));
     }
     if (!Strings.isNullOrEmpty(userProject)) {
       options.add(BlobSourceOption.userProject(userProject));
     }
-    this.blobSourceOptions =
-        (BlobSourceOption[]) options.toArray(new BlobSourceOption[options.size()]);
+    this.blobSourceOptions = options.toArray(new BlobSourceOption[options.size()]);
 
     // innerOpen checks that it sees the same generation as fetchSize did,
     // which ensure the file hasn't changed.

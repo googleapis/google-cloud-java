@@ -15,6 +15,8 @@
  */
 package com.google.cloud.logging.v2;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -1490,7 +1492,8 @@ public class ConfigClient implements BackgroundResource {
             public ListSinksPagedResponse apply(ListSinksPage input) {
               return new ListSinksPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListSinksPagedResponse(ListSinksPage page) {
@@ -1569,7 +1572,8 @@ public class ConfigClient implements BackgroundResource {
             public ListExclusionsPagedResponse apply(ListExclusionsPage input) {
               return new ListExclusionsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListExclusionsPagedResponse(ListExclusionsPage page) {

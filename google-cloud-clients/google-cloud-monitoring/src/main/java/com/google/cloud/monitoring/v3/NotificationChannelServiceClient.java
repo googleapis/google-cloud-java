@@ -15,6 +15,8 @@
  */
 package com.google.cloud.monitoring.v3;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -1043,7 +1045,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
                 ListNotificationChannelDescriptorsPage input) {
               return new ListNotificationChannelDescriptorsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListNotificationChannelDescriptorsPagedResponse(
@@ -1144,7 +1147,8 @@ public class NotificationChannelServiceClient implements BackgroundResource {
             public ListNotificationChannelsPagedResponse apply(ListNotificationChannelsPage input) {
               return new ListNotificationChannelsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListNotificationChannelsPagedResponse(ListNotificationChannelsPage page) {

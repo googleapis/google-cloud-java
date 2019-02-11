@@ -15,6 +15,8 @@
  */
 package com.google.cloud.devtools.containeranalysis.v1beta1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -942,7 +944,8 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
             public ListScanConfigsPagedResponse apply(ListScanConfigsPage input) {
               return new ListScanConfigsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListScanConfigsPagedResponse(ListScanConfigsPage page) {

@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -455,7 +457,8 @@ public class InterconnectLocationClient implements BackgroundResource {
                 ListInterconnectLocationsPage input) {
               return new ListInterconnectLocationsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListInterconnectLocationsPagedResponse(ListInterconnectLocationsPage page) {

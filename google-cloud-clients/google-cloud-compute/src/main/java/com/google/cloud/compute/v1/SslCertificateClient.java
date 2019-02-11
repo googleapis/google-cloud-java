@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -660,7 +662,8 @@ public class SslCertificateClient implements BackgroundResource {
             public ListSslCertificatesPagedResponse apply(ListSslCertificatesPage input) {
               return new ListSslCertificatesPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListSslCertificatesPagedResponse(ListSslCertificatesPage page) {

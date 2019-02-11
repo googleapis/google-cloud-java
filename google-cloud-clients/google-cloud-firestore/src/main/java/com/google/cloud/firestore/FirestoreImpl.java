@@ -16,6 +16,8 @@
 
 package com.google.cloud.firestore;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
@@ -326,9 +328,11 @@ class FirestoreImpl implements Firestore {
                             span.end();
                             resultFuture.set(userResult);
                           }
-                        });
+                        },
+                        directExecutor());
                   }
-                });
+                },
+                directExecutor());
           }
 
           private SettableApiFuture<T> invokeUserCallback() {
@@ -383,12 +387,14 @@ class FirestoreImpl implements Firestore {
                     public void onSuccess(Void ignored) {
                       resultFuture.setException(throwable);
                     }
-                  });
+                  },
+                  directExecutor());
             } else {
               resultFuture.setException(throwable);
             }
           }
-        });
+        },
+        directExecutor());
   }
 
   /** Returns whether the user has opted into receiving dates as com.google.cloud.Timestamp. */

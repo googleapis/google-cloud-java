@@ -16,6 +16,8 @@
 
 package com.google.cloud.logging.spi.v2;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -189,7 +191,8 @@ public class GrpcLoggingRpc implements LoggingRpc {
             }
             throw new LoggingException(exception);
           }
-        });
+        },
+        directExecutor());
   }
 
   @Override

@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -1383,7 +1385,8 @@ public class RouterClient implements BackgroundResource {
             public AggregatedListRoutersPagedResponse apply(AggregatedListRoutersPage input) {
               return new AggregatedListRoutersPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private AggregatedListRoutersPagedResponse(AggregatedListRoutersPage page) {
@@ -1474,7 +1477,8 @@ public class RouterClient implements BackgroundResource {
             public GetNatMappingInfoRoutersPagedResponse apply(GetNatMappingInfoRoutersPage input) {
               return new GetNatMappingInfoRoutersPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private GetNatMappingInfoRoutersPagedResponse(GetNatMappingInfoRoutersPage page) {
@@ -1570,7 +1574,8 @@ public class RouterClient implements BackgroundResource {
             public ListRoutersPagedResponse apply(ListRoutersPage input) {
               return new ListRoutersPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListRoutersPagedResponse(ListRoutersPage page) {

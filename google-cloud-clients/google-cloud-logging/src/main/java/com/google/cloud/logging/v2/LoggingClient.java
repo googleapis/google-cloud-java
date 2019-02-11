@@ -15,6 +15,8 @@
  */
 package com.google.cloud.logging.v2;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.MonitoredResource;
 import com.google.api.MonitoredResourceDescriptor;
 import com.google.api.core.ApiFunction;
@@ -866,7 +868,8 @@ public class LoggingClient implements BackgroundResource {
             public ListLogEntriesPagedResponse apply(ListLogEntriesPage input) {
               return new ListLogEntriesPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListLogEntriesPagedResponse(ListLogEntriesPage page) {
@@ -954,7 +957,8 @@ public class LoggingClient implements BackgroundResource {
                 ListMonitoredResourceDescriptorsPage input) {
               return new ListMonitoredResourceDescriptorsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListMonitoredResourceDescriptorsPagedResponse(
@@ -1047,7 +1051,8 @@ public class LoggingClient implements BackgroundResource {
             public ListLogsPagedResponse apply(ListLogsPage input) {
               return new ListLogsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListLogsPagedResponse(ListLogsPage page) {

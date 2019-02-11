@@ -1661,9 +1661,7 @@ public class StorageImplTest {
       throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
           UnsupportedEncodingException {
     EasyMock.replay(storageRpcMock);
-    ServiceAccountCredentials credentials =
-        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
-    storage = options.toBuilder().setCredentials(credentials).build().getService();
+    storage = serviceWithCredentials();
     URL url = storage.signUrl(BLOB_INFO1, 14, TimeUnit.DAYS);
     String stringUrl = url.toString();
     String expectedUrl =
@@ -1702,9 +1700,7 @@ public class StorageImplTest {
       throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
           UnsupportedEncodingException {
     EasyMock.replay(storageRpcMock);
-    ServiceAccountCredentials credentials =
-        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
-    storage = options.toBuilder().setCredentials(credentials).build().getService();
+    storage = serviceWithCredentials();
     URL url =
         storage.signUrl(
             BLOB_INFO1,
@@ -1749,9 +1745,7 @@ public class StorageImplTest {
           UnsupportedEncodingException {
     String blobName = "/b1";
     EasyMock.replay(storageRpcMock);
-    ServiceAccountCredentials credentials =
-        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
-    storage = options.toBuilder().setCredentials(credentials).build().getService();
+    storage = serviceWithCredentials();
     URL url =
         storage.signUrl(BlobInfo.newBuilder(BUCKET_NAME1, blobName).build(), 14, TimeUnit.DAYS);
     String escapedBlobName = UrlEscapers.urlFragmentEscaper().escape(blobName);
@@ -1791,9 +1785,7 @@ public class StorageImplTest {
           UnsupportedEncodingException {
     String blobName = "/b1";
     EasyMock.replay(storageRpcMock);
-    ServiceAccountCredentials credentials =
-        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
-    storage = options.toBuilder().setCredentials(credentials).build().getService();
+    storage = serviceWithCredentials();
     URL url =
         storage.signUrl(
             BlobInfo.newBuilder(BUCKET_NAME1, blobName).build(),
@@ -1836,9 +1828,7 @@ public class StorageImplTest {
       throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
           UnsupportedEncodingException {
     EasyMock.replay(storageRpcMock);
-    ServiceAccountCredentials credentials =
-        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
-    storage = options.toBuilder().setCredentials(credentials).build().getService();
+    storage = serviceWithCredentials();
     URL url =
         storage.signUrl(
             BLOB_INFO1,
@@ -1888,9 +1878,7 @@ public class StorageImplTest {
       throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
           UnsupportedEncodingException {
     EasyMock.replay(storageRpcMock);
-    ServiceAccountCredentials credentials =
-        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
-    storage = options.toBuilder().setCredentials(credentials).build().getService();
+    storage = serviceWithCredentials();
     URL url =
         storage.signUrl(
             BLOB_INFO1,
@@ -1947,9 +1935,7 @@ public class StorageImplTest {
           '!', '#', '$', '&', '\'', '(', ')', '*', '+', ',', ':', ';', '=', '?', '@', '[', ']'
         };
     EasyMock.replay(storageRpcMock);
-    ServiceAccountCredentials credentials =
-        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
-    storage = options.toBuilder().setCredentials(credentials).build().getService();
+    storage = serviceWithCredentials();
 
     for (char specialChar : specialChars) {
       String blobName = "/a" + specialChar + "b";
@@ -1999,9 +1985,7 @@ public class StorageImplTest {
           '!', '#', '$', '&', '\'', '(', ')', '*', '+', ',', ':', ';', '=', '?', '@', '[', ']'
         };
     EasyMock.replay(storageRpcMock);
-    ServiceAccountCredentials credentials =
-        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
-    storage = options.toBuilder().setCredentials(credentials).build().getService();
+    storage = serviceWithCredentials();
 
     for (char specialChar : specialChars) {
       String blobName = "/a" + specialChar + "b";
@@ -2049,9 +2033,7 @@ public class StorageImplTest {
       throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
           UnsupportedEncodingException {
     EasyMock.replay(storageRpcMock);
-    ServiceAccountCredentials credentials =
-        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
-    storage = options.toBuilder().setCredentials(credentials).build().getService();
+    storage = serviceWithCredentials();
     Map<String, String> extHeaders = new HashMap<String, String>();
     extHeaders.put("x-goog-acl", "public-read");
     extHeaders.put("x-goog-meta-owner", "myself");
@@ -2106,9 +2088,7 @@ public class StorageImplTest {
       throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
           UnsupportedEncodingException {
     EasyMock.replay(storageRpcMock);
-    ServiceAccountCredentials credentials =
-        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
-    storage = options.toBuilder().setCredentials(credentials).build().getService();
+    storage = serviceWithCredentials();
     Map<String, String> extHeaders = new HashMap<String, String>();
     extHeaders.put("x-goog-acl", "public-read");
     extHeaders.put("x-goog-meta-owner", "myself");
@@ -2164,9 +2144,7 @@ public class StorageImplTest {
       throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
           UnsupportedEncodingException {
     EasyMock.replay(storageRpcMock);
-    ServiceAccountCredentials credentials =
-        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
-    storage = options.toBuilder().setCredentials(credentials).build().getService();
+    storage = serviceWithCredentials();
 
     String blobName = "/foo/bar/baz #%20other cool stuff.txt";
     URL url =
@@ -2207,9 +2185,7 @@ public class StorageImplTest {
       throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
           UnsupportedEncodingException {
     EasyMock.replay(storageRpcMock);
-    ServiceAccountCredentials credentials =
-        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
-    storage = options.toBuilder().setCredentials(credentials).build().getService();
+    storage = serviceWithCredentials();
 
     String blobName = "/foo/bar/baz #%20other cool stuff.txt";
     URL url =
@@ -2798,5 +2774,20 @@ public class StorageImplTest {
     thrown.expect(StorageException.class);
     thrown.expectMessage(exceptionMessage);
     storage.get(blob);
+  }
+
+  private Storage serviceWithCredentials() {
+    return options
+        .toBuilder()
+        .setCredentials(
+            ServiceAccountCredentials.newBuilder()
+                .setClientId(null)
+                .setClientEmail(ACCOUNT)
+                .setPrivateKey(privateKey)
+                .setPrivateKeyId(null)
+                .setScopes(null)
+                .build())
+        .build()
+        .getService();
   }
 }

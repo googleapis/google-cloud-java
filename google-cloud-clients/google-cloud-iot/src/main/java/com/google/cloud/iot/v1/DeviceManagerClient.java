@@ -15,6 +15,8 @@
  */
 package com.google.cloud.iot.v1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -2289,7 +2291,8 @@ public class DeviceManagerClient implements BackgroundResource {
             public ListDeviceRegistriesPagedResponse apply(ListDeviceRegistriesPage input) {
               return new ListDeviceRegistriesPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListDeviceRegistriesPagedResponse(ListDeviceRegistriesPage page) {
@@ -2376,7 +2379,8 @@ public class DeviceManagerClient implements BackgroundResource {
             public ListDevicesPagedResponse apply(ListDevicesPage input) {
               return new ListDevicesPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListDevicesPagedResponse(ListDevicesPage page) {

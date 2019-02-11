@@ -15,6 +15,8 @@
  */
 package com.google.cloud.dialogflow.v2;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -1211,7 +1213,8 @@ public class IntentsClient implements BackgroundResource {
             public ListIntentsPagedResponse apply(ListIntentsPage input) {
               return new ListIntentsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListIntentsPagedResponse(ListIntentsPage page) {

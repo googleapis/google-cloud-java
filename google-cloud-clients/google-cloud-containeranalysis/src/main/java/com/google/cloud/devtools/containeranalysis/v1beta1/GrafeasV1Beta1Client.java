@@ -15,6 +15,8 @@
  */
 package com.google.cloud.devtools.containeranalysis.v1beta1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -1895,7 +1897,8 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
             public ListOccurrencesPagedResponse apply(ListOccurrencesPage input) {
               return new ListOccurrencesPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListOccurrencesPagedResponse(ListOccurrencesPage page) {
@@ -1972,7 +1975,8 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
             public ListNotesPagedResponse apply(ListNotesPage input) {
               return new ListNotesPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListNotesPagedResponse(ListNotesPage page) {
@@ -2047,7 +2051,8 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
             public ListNoteOccurrencesPagedResponse apply(ListNoteOccurrencesPage input) {
               return new ListNoteOccurrencesPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListNoteOccurrencesPagedResponse(ListNoteOccurrencesPage page) {

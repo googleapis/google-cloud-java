@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -1145,7 +1147,8 @@ public class BackendBucketClient implements BackgroundResource {
             public ListBackendBucketsPagedResponse apply(ListBackendBucketsPage input) {
               return new ListBackendBucketsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListBackendBucketsPagedResponse(ListBackendBucketsPage page) {

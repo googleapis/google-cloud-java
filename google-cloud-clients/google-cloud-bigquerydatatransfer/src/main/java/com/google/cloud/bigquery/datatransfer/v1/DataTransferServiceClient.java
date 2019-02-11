@@ -15,6 +15,8 @@
  */
 package com.google.cloud.bigquery.datatransfer.v1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -1639,7 +1641,8 @@ public class DataTransferServiceClient implements BackgroundResource {
             public ListDataSourcesPagedResponse apply(ListDataSourcesPage input) {
               return new ListDataSourcesPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListDataSourcesPagedResponse(ListDataSourcesPage page) {
@@ -1721,7 +1724,8 @@ public class DataTransferServiceClient implements BackgroundResource {
             public ListTransferConfigsPagedResponse apply(ListTransferConfigsPage input) {
               return new ListTransferConfigsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListTransferConfigsPagedResponse(ListTransferConfigsPage page) {
@@ -1808,7 +1812,8 @@ public class DataTransferServiceClient implements BackgroundResource {
             public ListTransferRunsPagedResponse apply(ListTransferRunsPage input) {
               return new ListTransferRunsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListTransferRunsPagedResponse(ListTransferRunsPage page) {
@@ -1889,7 +1894,8 @@ public class DataTransferServiceClient implements BackgroundResource {
             public ListTransferLogsPagedResponse apply(ListTransferLogsPage input) {
               return new ListTransferLogsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListTransferLogsPagedResponse(ListTransferLogsPage page) {

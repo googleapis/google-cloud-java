@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -1130,7 +1132,8 @@ public class NodeTemplateClient implements BackgroundResource {
                 AggregatedListNodeTemplatesPage input) {
               return new AggregatedListNodeTemplatesPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private AggregatedListNodeTemplatesPagedResponse(AggregatedListNodeTemplatesPage page) {
@@ -1226,7 +1229,8 @@ public class NodeTemplateClient implements BackgroundResource {
             public ListNodeTemplatesPagedResponse apply(ListNodeTemplatesPage input) {
               return new ListNodeTemplatesPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListNodeTemplatesPagedResponse(ListNodeTemplatesPage page) {

@@ -15,6 +15,8 @@
  */
 package com.google.cloud.kms.v1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -2852,7 +2854,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
             public ListKeyRingsPagedResponse apply(ListKeyRingsPage input) {
               return new ListKeyRingsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListKeyRingsPagedResponse(ListKeyRingsPage page) {
@@ -2931,7 +2934,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
             public ListCryptoKeysPagedResponse apply(ListCryptoKeysPage input) {
               return new ListCryptoKeysPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListCryptoKeysPagedResponse(ListCryptoKeysPage page) {
@@ -3012,7 +3016,8 @@ public class KeyManagementServiceClient implements BackgroundResource {
             public ListCryptoKeyVersionsPagedResponse apply(ListCryptoKeyVersionsPage input) {
               return new ListCryptoKeyVersionsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListCryptoKeyVersionsPagedResponse(ListCryptoKeyVersionsPage page) {

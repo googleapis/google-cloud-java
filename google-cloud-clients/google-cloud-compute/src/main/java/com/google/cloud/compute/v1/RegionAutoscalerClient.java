@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -946,7 +948,8 @@ public class RegionAutoscalerClient implements BackgroundResource {
             public ListRegionAutoscalersPagedResponse apply(ListRegionAutoscalersPage input) {
               return new ListRegionAutoscalersPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListRegionAutoscalersPagedResponse(ListRegionAutoscalersPage page) {

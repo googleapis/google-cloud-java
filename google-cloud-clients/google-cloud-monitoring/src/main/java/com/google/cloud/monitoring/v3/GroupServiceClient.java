@@ -15,6 +15,8 @@
  */
 package com.google.cloud.monitoring.v3;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.MonitoredResource;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -790,7 +792,8 @@ public class GroupServiceClient implements BackgroundResource {
             public ListGroupsPagedResponse apply(ListGroupsPage input) {
               return new ListGroupsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListGroupsPagedResponse(ListGroupsPage page) {
@@ -869,7 +872,8 @@ public class GroupServiceClient implements BackgroundResource {
             public ListGroupMembersPagedResponse apply(ListGroupMembersPage input) {
               return new ListGroupMembersPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListGroupMembersPagedResponse(ListGroupMembersPage page) {

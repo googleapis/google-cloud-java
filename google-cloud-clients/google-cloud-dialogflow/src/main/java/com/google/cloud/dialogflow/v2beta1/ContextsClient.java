@@ -15,6 +15,8 @@
  */
 package com.google.cloud.dialogflow.v2beta1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -831,7 +833,8 @@ public class ContextsClient implements BackgroundResource {
             public ListContextsPagedResponse apply(ListContextsPage input) {
               return new ListContextsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListContextsPagedResponse(ListContextsPage page) {

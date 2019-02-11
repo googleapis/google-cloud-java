@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -790,7 +792,8 @@ public class VpnTunnelClient implements BackgroundResource {
             public AggregatedListVpnTunnelsPagedResponse apply(AggregatedListVpnTunnelsPage input) {
               return new AggregatedListVpnTunnelsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private AggregatedListVpnTunnelsPagedResponse(AggregatedListVpnTunnelsPage page) {
@@ -880,7 +883,8 @@ public class VpnTunnelClient implements BackgroundResource {
             public ListVpnTunnelsPagedResponse apply(ListVpnTunnelsPage input) {
               return new ListVpnTunnelsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListVpnTunnelsPagedResponse(ListVpnTunnelsPage page) {

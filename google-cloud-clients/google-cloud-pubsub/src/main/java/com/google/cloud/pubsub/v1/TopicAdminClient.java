@@ -15,6 +15,8 @@
  */
 package com.google.cloud.pubsub.v1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -1193,7 +1195,8 @@ public class TopicAdminClient implements BackgroundResource {
             public ListTopicsPagedResponse apply(ListTopicsPage input) {
               return new ListTopicsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListTopicsPagedResponse(ListTopicsPage page) {
@@ -1272,7 +1275,8 @@ public class TopicAdminClient implements BackgroundResource {
             public ListTopicSubscriptionsPagedResponse apply(ListTopicSubscriptionsPage input) {
               return new ListTopicSubscriptionsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListTopicSubscriptionsPagedResponse(ListTopicSubscriptionsPage page) {

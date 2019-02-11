@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -1084,7 +1086,8 @@ public class AutoscalerClient implements BackgroundResource {
                 AggregatedListAutoscalersPage input) {
               return new AggregatedListAutoscalersPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private AggregatedListAutoscalersPagedResponse(AggregatedListAutoscalersPage page) {
@@ -1180,7 +1183,8 @@ public class AutoscalerClient implements BackgroundResource {
             public ListAutoscalersPagedResponse apply(ListAutoscalersPage input) {
               return new ListAutoscalersPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListAutoscalersPagedResponse(ListAutoscalersPage page) {

@@ -16,6 +16,8 @@
 
 package com.google.cloud.firestore;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -93,7 +95,8 @@ public final class Transaction extends UpdateBuilder<Transaction> {
             pending = true;
             return null;
           }
-        });
+        },
+        directExecutor());
   }
 
   /** Commits a transaction. */
@@ -120,7 +123,8 @@ public final class Transaction extends UpdateBuilder<Transaction> {
           public Void apply(Empty beginTransactionResponse) {
             return null;
           }
-        });
+        },
+        directExecutor());
   }
 
   /**
@@ -140,7 +144,8 @@ public final class Transaction extends UpdateBuilder<Transaction> {
           public DocumentSnapshot apply(List<DocumentSnapshot> snapshots) {
             return snapshots.isEmpty() ? null : snapshots.get(0);
           }
-        });
+        },
+        directExecutor());
   }
 
   /**

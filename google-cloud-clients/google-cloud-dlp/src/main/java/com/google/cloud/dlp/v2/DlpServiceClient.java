@@ -15,6 +15,8 @@
  */
 package com.google.cloud.dlp.v2;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -1915,7 +1917,8 @@ public class DlpServiceClient implements BackgroundResource {
             public ListInspectTemplatesPagedResponse apply(ListInspectTemplatesPage input) {
               return new ListInspectTemplatesPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListInspectTemplatesPagedResponse(ListInspectTemplatesPage page) {
@@ -2004,7 +2007,8 @@ public class DlpServiceClient implements BackgroundResource {
             public ListDeidentifyTemplatesPagedResponse apply(ListDeidentifyTemplatesPage input) {
               return new ListDeidentifyTemplatesPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListDeidentifyTemplatesPagedResponse(ListDeidentifyTemplatesPage page) {
@@ -2094,7 +2098,8 @@ public class DlpServiceClient implements BackgroundResource {
             public ListDlpJobsPagedResponse apply(ListDlpJobsPage input) {
               return new ListDlpJobsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListDlpJobsPagedResponse(ListDlpJobsPage page) {
@@ -2173,7 +2178,8 @@ public class DlpServiceClient implements BackgroundResource {
             public ListJobTriggersPagedResponse apply(ListJobTriggersPage input) {
               return new ListJobTriggersPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListJobTriggersPagedResponse(ListJobTriggersPage page) {
@@ -2255,7 +2261,8 @@ public class DlpServiceClient implements BackgroundResource {
             public ListStoredInfoTypesPagedResponse apply(ListStoredInfoTypesPage input) {
               return new ListStoredInfoTypesPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListStoredInfoTypesPagedResponse(ListStoredInfoTypesPage page) {

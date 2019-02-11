@@ -15,6 +15,8 @@
  */
 package com.google.cloud.dialogflow.v2beta1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -735,7 +737,8 @@ public class DocumentsClient implements BackgroundResource {
             public ListDocumentsPagedResponse apply(ListDocumentsPage input) {
               return new ListDocumentsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListDocumentsPagedResponse(ListDocumentsPage page) {

@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -924,7 +926,8 @@ public class HttpHealthCheckClient implements BackgroundResource {
             public ListHttpHealthChecksPagedResponse apply(ListHttpHealthChecksPage input) {
               return new ListHttpHealthChecksPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListHttpHealthChecksPagedResponse(ListHttpHealthChecksPage page) {

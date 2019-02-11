@@ -15,6 +15,8 @@
  */
 package com.google.cloud.bigtable.admin.v2;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -1851,7 +1853,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
             public ListTablesPagedResponse apply(ListTablesPage input) {
               return new ListTablesPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListTablesPagedResponse(ListTablesPage page) {
@@ -1930,7 +1933,8 @@ public class BaseBigtableTableAdminClient implements BackgroundResource {
             public ListSnapshotsPagedResponse apply(ListSnapshotsPage input) {
               return new ListSnapshotsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListSnapshotsPagedResponse(ListSnapshotsPage page) {

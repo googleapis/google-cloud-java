@@ -16,6 +16,8 @@
 
 package com.google.cloud.firestore;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -130,7 +132,8 @@ public class DocumentReference {
           public T apply(List<T> results) {
             return results.isEmpty() ? null : results.get(0);
           }
-        });
+        },
+        directExecutor());
   }
 
   /**

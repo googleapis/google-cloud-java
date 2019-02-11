@@ -16,6 +16,8 @@
 
 package com.google.cloud.pubsub.v1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
@@ -353,7 +355,8 @@ public class Publisher {
               messagesWaiter.incrementPendingMessages(-outstandingBatch.size());
             }
           }
-        });
+        },
+        directExecutor());
   }
 
   private static final class OutstandingBatch {

@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -1012,7 +1014,8 @@ public class InstanceTemplateClient implements BackgroundResource {
             public ListInstanceTemplatesPagedResponse apply(ListInstanceTemplatesPage input) {
               return new ListInstanceTemplatesPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListInstanceTemplatesPagedResponse(ListInstanceTemplatesPage page) {

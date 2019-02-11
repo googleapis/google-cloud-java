@@ -15,6 +15,8 @@
  */
 package com.google.cloud.monitoring.v3;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -758,7 +760,8 @@ public class AlertPolicyServiceClient implements BackgroundResource {
             public ListAlertPoliciesPagedResponse apply(ListAlertPoliciesPage input) {
               return new ListAlertPoliciesPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListAlertPoliciesPagedResponse(ListAlertPoliciesPage page) {

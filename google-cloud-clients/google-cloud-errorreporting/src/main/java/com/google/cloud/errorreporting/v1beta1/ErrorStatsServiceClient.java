@@ -15,6 +15,8 @@
  */
 package com.google.cloud.errorreporting.v1beta1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -622,7 +624,8 @@ public class ErrorStatsServiceClient implements BackgroundResource {
             public ListGroupStatsPagedResponse apply(ListGroupStatsPage input) {
               return new ListGroupStatsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListGroupStatsPagedResponse(ListGroupStatsPage page) {
@@ -702,7 +705,8 @@ public class ErrorStatsServiceClient implements BackgroundResource {
             public ListEventsPagedResponse apply(ListEventsPage input) {
               return new ListEventsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListEventsPagedResponse(ListEventsPage page) {

@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -1626,7 +1628,8 @@ public class SubnetworkClient implements BackgroundResource {
                 AggregatedListSubnetworksPage input) {
               return new AggregatedListSubnetworksPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private AggregatedListSubnetworksPagedResponse(AggregatedListSubnetworksPage page) {
@@ -1722,7 +1725,8 @@ public class SubnetworkClient implements BackgroundResource {
             public ListSubnetworksPagedResponse apply(ListSubnetworksPage input) {
               return new ListSubnetworksPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListSubnetworksPagedResponse(ListSubnetworksPage page) {
@@ -1805,7 +1809,8 @@ public class SubnetworkClient implements BackgroundResource {
             public ListUsableSubnetworksPagedResponse apply(ListUsableSubnetworksPage input) {
               return new ListUsableSubnetworksPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListUsableSubnetworksPagedResponse(ListUsableSubnetworksPage page) {

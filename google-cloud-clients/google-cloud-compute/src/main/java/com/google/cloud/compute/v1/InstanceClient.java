@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -3843,7 +3845,8 @@ public class InstanceClient implements BackgroundResource {
             public AggregatedListInstancesPagedResponse apply(AggregatedListInstancesPage input) {
               return new AggregatedListInstancesPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private AggregatedListInstancesPagedResponse(AggregatedListInstancesPage page) {
@@ -3930,7 +3933,8 @@ public class InstanceClient implements BackgroundResource {
             public ListInstancesPagedResponse apply(ListInstancesPage input) {
               return new ListInstancesPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListInstancesPagedResponse(ListInstancesPage page) {
@@ -4009,7 +4013,8 @@ public class InstanceClient implements BackgroundResource {
             public ListReferrersInstancesPagedResponse apply(ListReferrersInstancesPage input) {
               return new ListReferrersInstancesPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListReferrersInstancesPagedResponse(ListReferrersInstancesPage page) {

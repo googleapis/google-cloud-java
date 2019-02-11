@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -2068,7 +2070,8 @@ public class InstanceGroupManagerClient implements BackgroundResource {
                 AggregatedListInstanceGroupManagersPage input) {
               return new AggregatedListInstanceGroupManagersPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private AggregatedListInstanceGroupManagersPagedResponse(
@@ -2170,7 +2173,8 @@ public class InstanceGroupManagerClient implements BackgroundResource {
                 ListInstanceGroupManagersPage input) {
               return new ListInstanceGroupManagersPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListInstanceGroupManagersPagedResponse(ListInstanceGroupManagersPage page) {

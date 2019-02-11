@@ -15,6 +15,8 @@
  */
 package com.google.cloud.dialogflow.v2beta1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -754,7 +756,8 @@ public class SessionEntityTypesClient implements BackgroundResource {
             public ListSessionEntityTypesPagedResponse apply(ListSessionEntityTypesPage input) {
               return new ListSessionEntityTypesPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListSessionEntityTypesPagedResponse(ListSessionEntityTypesPage page) {

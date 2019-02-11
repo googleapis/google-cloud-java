@@ -16,6 +16,7 @@
 
 package com.google.cloud.examples.pubsub.snippets;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
@@ -92,7 +93,8 @@ public class ITPubSubSnippets {
             public void onFailure(Throwable t) {
               done.setException(t);
             }
-          });
+          },
+          directExecutor());
       done.get();
     } finally {
       if (publisher != null) {

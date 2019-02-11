@@ -15,6 +15,8 @@
  */
 package com.google.cloud.spanner.admin.database.v1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -1272,7 +1274,8 @@ public class DatabaseAdminClient implements BackgroundResource {
             public ListDatabasesPagedResponse apply(ListDatabasesPage input) {
               return new ListDatabasesPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListDatabasesPagedResponse(ListDatabasesPage page) {

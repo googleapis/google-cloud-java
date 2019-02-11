@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -1553,7 +1555,8 @@ public class BackendServiceClient implements BackgroundResource {
                 AggregatedListBackendServicesPage input) {
               return new AggregatedListBackendServicesPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private AggregatedListBackendServicesPagedResponse(AggregatedListBackendServicesPage page) {
@@ -1649,7 +1652,8 @@ public class BackendServiceClient implements BackgroundResource {
             public ListBackendServicesPagedResponse apply(ListBackendServicesPage input) {
               return new ListBackendServicesPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListBackendServicesPagedResponse(ListBackendServicesPage page) {

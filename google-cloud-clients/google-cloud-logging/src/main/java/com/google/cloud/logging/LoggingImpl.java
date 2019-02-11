@@ -24,6 +24,7 @@ import static com.google.cloud.logging.Logging.ListOption.OptionType.PAGE_TOKEN;
 import static com.google.cloud.logging.Logging.WriteOption.OptionType.LABELS;
 import static com.google.cloud.logging.Logging.WriteOption.OptionType.LOG_NAME;
 import static com.google.cloud.logging.Logging.WriteOption.OptionType.RESOURCE;
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -145,7 +146,8 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
           public O apply(I i) {
             return function.apply(i);
           }
-        });
+        },
+        directExecutor());
   }
 
   private abstract static class BasePageFetcher<T> implements AsyncPageImpl.NextPageFetcher<T> {
@@ -618,7 +620,8 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
                   removeFromPending();
                 }
               }
-            });
+            },
+            directExecutor());
         synchronized (writeLock) {
           pendingWrites.add(writeFuture);
         }

@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -772,7 +774,8 @@ public class TargetHttpProxyClient implements BackgroundResource {
             public ListTargetHttpProxiesPagedResponse apply(ListTargetHttpProxiesPage input) {
               return new ListTargetHttpProxiesPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListTargetHttpProxiesPagedResponse(ListTargetHttpProxiesPage page) {

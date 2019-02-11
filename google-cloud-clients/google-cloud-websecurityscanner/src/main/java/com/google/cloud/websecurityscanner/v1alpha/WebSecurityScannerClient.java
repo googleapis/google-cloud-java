@@ -15,6 +15,8 @@
  */
 package com.google.cloud.websecurityscanner.v1alpha;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -1276,7 +1278,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
             public ListScanConfigsPagedResponse apply(ListScanConfigsPage input) {
               return new ListScanConfigsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListScanConfigsPagedResponse(ListScanConfigsPage page) {
@@ -1357,7 +1360,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
             public ListScanRunsPagedResponse apply(ListScanRunsPage input) {
               return new ListScanRunsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListScanRunsPagedResponse(ListScanRunsPage page) {
@@ -1436,7 +1440,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
             public ListCrawledUrlsPagedResponse apply(ListCrawledUrlsPage input) {
               return new ListCrawledUrlsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListCrawledUrlsPagedResponse(ListCrawledUrlsPage page) {
@@ -1517,7 +1522,8 @@ public class WebSecurityScannerClient implements BackgroundResource {
             public ListFindingsPagedResponse apply(ListFindingsPage input) {
               return new ListFindingsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListFindingsPagedResponse(ListFindingsPage page) {

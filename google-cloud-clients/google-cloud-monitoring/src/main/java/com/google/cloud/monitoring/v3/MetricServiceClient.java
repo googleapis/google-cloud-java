@@ -15,6 +15,8 @@
  */
 package com.google.cloud.monitoring.v3;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.MetricDescriptor;
 import com.google.api.MonitoredResourceDescriptor;
 import com.google.api.core.ApiFunction;
@@ -1239,7 +1241,8 @@ public class MetricServiceClient implements BackgroundResource {
                 ListMonitoredResourceDescriptorsPage input) {
               return new ListMonitoredResourceDescriptorsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListMonitoredResourceDescriptorsPagedResponse(
@@ -1337,7 +1340,8 @@ public class MetricServiceClient implements BackgroundResource {
             public ListMetricDescriptorsPagedResponse apply(ListMetricDescriptorsPage input) {
               return new ListMetricDescriptorsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListMetricDescriptorsPagedResponse(ListMetricDescriptorsPage page) {
@@ -1424,7 +1428,8 @@ public class MetricServiceClient implements BackgroundResource {
             public ListTimeSeriesPagedResponse apply(ListTimeSeriesPage input) {
               return new ListTimeSeriesPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListTimeSeriesPagedResponse(ListTimeSeriesPage page) {

@@ -15,6 +15,8 @@
  */
 package com.google.cloud.vision.v1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -2256,7 +2258,8 @@ public class ProductSearchClient implements BackgroundResource {
             public ListProductsPagedResponse apply(ListProductsPage input) {
               return new ListProductsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListProductsPagedResponse(ListProductsPage page) {
@@ -2336,7 +2339,8 @@ public class ProductSearchClient implements BackgroundResource {
             public ListReferenceImagesPagedResponse apply(ListReferenceImagesPage input) {
               return new ListReferenceImagesPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListReferenceImagesPagedResponse(ListReferenceImagesPage page) {
@@ -2423,7 +2427,8 @@ public class ProductSearchClient implements BackgroundResource {
             public ListProductSetsPagedResponse apply(ListProductSetsPage input) {
               return new ListProductSetsPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListProductSetsPagedResponse(ListProductSetsPage page) {
@@ -2505,7 +2510,8 @@ public class ProductSearchClient implements BackgroundResource {
             public ListProductsInProductSetPagedResponse apply(ListProductsInProductSetPage input) {
               return new ListProductsInProductSetPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListProductsInProductSetPagedResponse(ListProductsInProductSetPage page) {

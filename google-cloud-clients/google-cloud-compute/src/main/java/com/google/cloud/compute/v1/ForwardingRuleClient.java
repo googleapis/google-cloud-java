@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -926,7 +928,8 @@ public class ForwardingRuleClient implements BackgroundResource {
                 AggregatedListForwardingRulesPage input) {
               return new AggregatedListForwardingRulesPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private AggregatedListForwardingRulesPagedResponse(AggregatedListForwardingRulesPage page) {
@@ -1022,7 +1025,8 @@ public class ForwardingRuleClient implements BackgroundResource {
             public ListForwardingRulesPagedResponse apply(ListForwardingRulesPage input) {
               return new ListForwardingRulesPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListForwardingRulesPagedResponse(ListForwardingRulesPage page) {

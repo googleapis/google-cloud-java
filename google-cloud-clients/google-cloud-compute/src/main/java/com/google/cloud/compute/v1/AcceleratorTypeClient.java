@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -588,7 +590,8 @@ public class AcceleratorTypeClient implements BackgroundResource {
                 AggregatedListAcceleratorTypesPage input) {
               return new AggregatedListAcceleratorTypesPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private AggregatedListAcceleratorTypesPagedResponse(AggregatedListAcceleratorTypesPage page) {
@@ -684,7 +687,8 @@ public class AcceleratorTypeClient implements BackgroundResource {
             public ListAcceleratorTypesPagedResponse apply(ListAcceleratorTypesPage input) {
               return new ListAcceleratorTypesPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListAcceleratorTypesPagedResponse(ListAcceleratorTypesPage page) {

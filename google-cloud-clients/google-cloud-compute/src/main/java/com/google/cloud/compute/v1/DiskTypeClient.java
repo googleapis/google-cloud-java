@@ -15,6 +15,8 @@
  */
 package com.google.cloud.compute.v1;
 
+import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
@@ -576,7 +578,8 @@ public class DiskTypeClient implements BackgroundResource {
             public AggregatedListDiskTypesPagedResponse apply(AggregatedListDiskTypesPage input) {
               return new AggregatedListDiskTypesPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private AggregatedListDiskTypesPagedResponse(AggregatedListDiskTypesPage page) {
@@ -663,7 +666,8 @@ public class DiskTypeClient implements BackgroundResource {
             public ListDiskTypesPagedResponse apply(ListDiskTypesPage input) {
               return new ListDiskTypesPagedResponse(input);
             }
-          });
+          },
+          directExecutor());
     }
 
     private ListDiskTypesPagedResponse(ListDiskTypesPage page) {
