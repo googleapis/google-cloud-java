@@ -114,10 +114,7 @@ public class ITComputeTest {
     String machineType =
         ProjectZoneMachineTypeName.of("n1-standard-1", DEFAULT_PROJECT, ZONE).toString();
     Instance instance =
-        Instance.newBuilder()
-            .setName("mytestinstancetemplate")
-            .setMachineType(machineType)
-            .build();
+        Instance.newBuilder().setName("mytestinstancetemplate").setMachineType(machineType).build();
     try {
       instanceClient.insertInstance(ProjectZoneName.of(DEFAULT_PROJECT, ZONE), instance);
     } catch (InvalidArgumentException e) {
