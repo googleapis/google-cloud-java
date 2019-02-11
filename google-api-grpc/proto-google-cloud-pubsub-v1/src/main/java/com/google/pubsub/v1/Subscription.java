@@ -554,7 +554,20 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENABLE_MESSAGE_ORDERING_FIELD_NUMBER = 10;
   private boolean enableMessageOrdering_;
-  /** <code>bool enable_message_ordering = 10;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * WARNING: `enable_message_ordering` is an experimental field not yet
+   * supported by the service.
+   * If true, messages published with the same `ordering_key` in `PubsubMessage`
+   * will be delivered to the subscribers in the order in which they
+   * are received by the Pub/Sub system. Otherwise, they may be delivered in
+   * any order.
+   * </pre>
+   *
+   * <code>bool enable_message_ordering = 10;</code>
+   */
   public boolean getEnableMessageOrdering() {
     return enableMessageOrdering_;
   }
@@ -2135,18 +2148,57 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean enableMessageOrdering_;
-    /** <code>bool enable_message_ordering = 10;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * WARNING: `enable_message_ordering` is an experimental field not yet
+     * supported by the service.
+     * If true, messages published with the same `ordering_key` in `PubsubMessage`
+     * will be delivered to the subscribers in the order in which they
+     * are received by the Pub/Sub system. Otherwise, they may be delivered in
+     * any order.
+     * </pre>
+     *
+     * <code>bool enable_message_ordering = 10;</code>
+     */
     public boolean getEnableMessageOrdering() {
       return enableMessageOrdering_;
     }
-    /** <code>bool enable_message_ordering = 10;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * WARNING: `enable_message_ordering` is an experimental field not yet
+     * supported by the service.
+     * If true, messages published with the same `ordering_key` in `PubsubMessage`
+     * will be delivered to the subscribers in the order in which they
+     * are received by the Pub/Sub system. Otherwise, they may be delivered in
+     * any order.
+     * </pre>
+     *
+     * <code>bool enable_message_ordering = 10;</code>
+     */
     public Builder setEnableMessageOrdering(boolean value) {
 
       enableMessageOrdering_ = value;
       onChanged();
       return this;
     }
-    /** <code>bool enable_message_ordering = 10;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * WARNING: `enable_message_ordering` is an experimental field not yet
+     * supported by the service.
+     * If true, messages published with the same `ordering_key` in `PubsubMessage`
+     * will be delivered to the subscribers in the order in which they
+     * are received by the Pub/Sub system. Otherwise, they may be delivered in
+     * any order.
+     * </pre>
+     *
+     * <code>bool enable_message_ordering = 10;</code>
+     */
     public Builder clearEnableMessageOrdering() {
 
       enableMessageOrdering_ = false;

@@ -400,6 +400,13 @@ message PubsubMessage {
   // publisher in a `Publish` call.
   google.protobuf.Timestamp publish_time = 4;
 
+  // WARNING: `ordering_key` is an experimental field not yet
+  // supported by the service.
+  //
+  // Identifies related messages for which publish order should be respected.
+  // If a `Subscription` has `enable_message_ordering` set to `true`, messages
+  // published with the same `ordering_key` value will be delivered to
+  // subscribers in the order in which they are received by the Pub/Sub system.
   string ordering_key = 5;
 }
 
@@ -601,7 +608,15 @@ message Subscription {
   // managing labels</a>.
   map<string, string> labels = 9;
 
+  // WARNING: `enable_message_ordering` is an experimental field not yet
+  // supported by the service.
+  //
+  // If true, messages published with the same `ordering_key` in `PubsubMessage`
+  // will be delivered to the subscribers in the order in which they
+  // are received by the Pub/Sub system. Otherwise, they may be delivered in
+  // any order.
   bool enable_message_ordering = 10;
+
   // A policy that specifies the conditions for this subscription's expiration.
   // A subscription is considered active as long as any connected subscriber is
   // successfully consuming messages from the subscription or is issuing

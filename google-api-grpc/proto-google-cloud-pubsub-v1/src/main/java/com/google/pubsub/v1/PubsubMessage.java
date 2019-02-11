@@ -360,7 +360,20 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ORDERING_KEY_FIELD_NUMBER = 5;
   private volatile java.lang.Object orderingKey_;
-  /** <code>string ordering_key = 5;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * WARNING: `ordering_key` is an experimental field not yet
+   * supported by the service.
+   * Identifies related messages for which publish order should be respected.
+   * If a `Subscription` has `enable_message_ordering` set to `true`, messages
+   * published with the same `ordering_key` value will be delivered to
+   * subscribers in the order in which they are received by the Pub/Sub system.
+   * </pre>
+   *
+   * <code>string ordering_key = 5;</code>
+   */
   public java.lang.String getOrderingKey() {
     java.lang.Object ref = orderingKey_;
     if (ref instanceof java.lang.String) {
@@ -372,7 +385,20 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-  /** <code>string ordering_key = 5;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * WARNING: `ordering_key` is an experimental field not yet
+   * supported by the service.
+   * Identifies related messages for which publish order should be respected.
+   * If a `Subscription` has `enable_message_ordering` set to `true`, messages
+   * published with the same `ordering_key` value will be delivered to
+   * subscribers in the order in which they are received by the Pub/Sub system.
+   * </pre>
+   *
+   * <code>string ordering_key = 5;</code>
+   */
   public com.google.protobuf.ByteString getOrderingKeyBytes() {
     java.lang.Object ref = orderingKey_;
     if (ref instanceof java.lang.String) {
@@ -1325,7 +1351,20 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object orderingKey_ = "";
-    /** <code>string ordering_key = 5;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * WARNING: `ordering_key` is an experimental field not yet
+     * supported by the service.
+     * Identifies related messages for which publish order should be respected.
+     * If a `Subscription` has `enable_message_ordering` set to `true`, messages
+     * published with the same `ordering_key` value will be delivered to
+     * subscribers in the order in which they are received by the Pub/Sub system.
+     * </pre>
+     *
+     * <code>string ordering_key = 5;</code>
+     */
     public java.lang.String getOrderingKey() {
       java.lang.Object ref = orderingKey_;
       if (!(ref instanceof java.lang.String)) {
@@ -1337,7 +1376,20 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-    /** <code>string ordering_key = 5;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * WARNING: `ordering_key` is an experimental field not yet
+     * supported by the service.
+     * Identifies related messages for which publish order should be respected.
+     * If a `Subscription` has `enable_message_ordering` set to `true`, messages
+     * published with the same `ordering_key` value will be delivered to
+     * subscribers in the order in which they are received by the Pub/Sub system.
+     * </pre>
+     *
+     * <code>string ordering_key = 5;</code>
+     */
     public com.google.protobuf.ByteString getOrderingKeyBytes() {
       java.lang.Object ref = orderingKey_;
       if (ref instanceof String) {
@@ -1349,7 +1401,20 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    /** <code>string ordering_key = 5;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * WARNING: `ordering_key` is an experimental field not yet
+     * supported by the service.
+     * Identifies related messages for which publish order should be respected.
+     * If a `Subscription` has `enable_message_ordering` set to `true`, messages
+     * published with the same `ordering_key` value will be delivered to
+     * subscribers in the order in which they are received by the Pub/Sub system.
+     * </pre>
+     *
+     * <code>string ordering_key = 5;</code>
+     */
     public Builder setOrderingKey(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -1359,14 +1424,40 @@ public final class PubsubMessage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-    /** <code>string ordering_key = 5;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * WARNING: `ordering_key` is an experimental field not yet
+     * supported by the service.
+     * Identifies related messages for which publish order should be respected.
+     * If a `Subscription` has `enable_message_ordering` set to `true`, messages
+     * published with the same `ordering_key` value will be delivered to
+     * subscribers in the order in which they are received by the Pub/Sub system.
+     * </pre>
+     *
+     * <code>string ordering_key = 5;</code>
+     */
     public Builder clearOrderingKey() {
 
       orderingKey_ = getDefaultInstance().getOrderingKey();
       onChanged();
       return this;
     }
-    /** <code>string ordering_key = 5;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * WARNING: `ordering_key` is an experimental field not yet
+     * supported by the service.
+     * Identifies related messages for which publish order should be respected.
+     * If a `Subscription` has `enable_message_ordering` set to `true`, messages
+     * published with the same `ordering_key` value will be delivered to
+     * subscribers in the order in which they are received by the Pub/Sub system.
+     * </pre>
+     *
+     * <code>string ordering_key = 5;</code>
+     */
     public Builder setOrderingKeyBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
