@@ -727,7 +727,10 @@ public class InterconnectClient implements BackgroundResource {
    *     a dedicated connection between Google's network and your on-premises network. For more
    *     information, see the Dedicated overview page. (== resource_for v1.interconnects ==) (==
    *     resource_for beta.interconnects ==)
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -766,7 +769,10 @@ public class InterconnectClient implements BackgroundResource {
    *     a dedicated connection between Google's network and your on-premises network. For more
    *     information, see the Dedicated overview page. (== resource_for v1.interconnects ==) (==
    *     resource_for beta.interconnects ==)
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
