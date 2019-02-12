@@ -31,8 +31,9 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
+import org.threeten.bp.Instant;
+import org.threeten.bp.ZoneOffset;
+import org.threeten.bp.format.DateTimeFormatter;
 
 /**
  * An example of using Google Cloud DNS.
@@ -63,7 +64,7 @@ public class DnsExample {
 
   private static final Map<String, DnsAction> ACTIONS = new HashMap<>();
   private static final DateTimeFormatter FORMATTER =
-      DateTimeFormat.forPattern("YYYY-MM-dd HH:mm:ss");
+      DateTimeFormatter.ofPattern("YYYY-MM-dd HH:mm:ss").withZone(ZoneOffset.UTC);
 
   private interface DnsAction {
     void run(Dns dns, String... args);
@@ -331,7 +332,8 @@ public class DnsExample {
           ChangeRequest change = iterator.next();
           System.out.printf("%nID: %s%n", change.getGeneratedId());
           System.out.printf("Status: %s%n", change.status());
-          System.out.printf("Started: %s%n", FORMATTER.print(change.getStartTimeMillis()));
+          System.out.printf(
+              "Started: %s%n", FORMATTER.format(Instant.ofEpochMilli(change.getStartTimeMillis())));
           System.out.printf("Deletions: %s%n", Joiner.on(", ").join(change.getDeletions()));
           System.out.printf("Additions: %s%n", Joiner.on(", ").join(change.getAdditions()));
         }
@@ -434,7 +436,8 @@ public class DnsExample {
     System.out.printf("%nName: %s%n", zone.getName());
     System.out.printf("ID: %s%n", zone.getGeneratedId());
     System.out.printf("Description: %s%n", zone.getDescription());
-    System.out.printf("Created: %s%n", FORMATTER.print(zone.getCreationTimeMillis()));
+    System.out.printf(
+        "Created: %s%n", FORMATTER.format(Instant.ofEpochMilli(zone.getCreationTimeMillis())));
     System.out.printf("Name servers: %s%n", Joiner.on(", ").join(zone.getNameServers()));
   }
 

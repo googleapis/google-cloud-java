@@ -27,8 +27,9 @@ import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.List;
 import java.util.Objects;
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.ISODateTimeFormat;
+import org.threeten.bp.Instant;
+import org.threeten.bp.ZoneOffset;
+import org.threeten.bp.format.DateTimeFormatter;
 
 /**
  * A Google Compute Engine region.
@@ -53,7 +54,8 @@ public class Region implements Serializable {
       };
 
   private static final long serialVersionUID = -3578710133393645135L;
-  private static final DateTimeFormatter TIMESTAMP_FORMATTER = ISODateTimeFormat.dateTime();
+  private static final DateTimeFormatter TIMESTAMP_FORMATTER =
+      DateTimeFormatter.ISO_DATE_TIME.withZone(ZoneOffset.UTC);
 
   private final RegionId regionId;
   private final String generatedId;
@@ -335,7 +337,8 @@ public class Region implements Serializable {
       regionPb.setId(new BigInteger(generatedId));
     }
     if (creationTimestamp != null) {
-      regionPb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));
+      regionPb.setCreationTimestamp(
+          TIMESTAMP_FORMATTER.format(Instant.ofEpochMilli(creationTimestamp)));
     }
     regionPb.setName(regionId.getRegion());
     regionPb.setDescription(description);
@@ -367,7 +370,7 @@ public class Region implements Serializable {
     }
     if (regionPb.getCreationTimestamp() != null) {
       builder.setCreationTimestamp(
-          TIMESTAMP_FORMATTER.parseMillis(regionPb.getCreationTimestamp()));
+          TIMESTAMP_FORMATTER.parse(regionPb.getCreationTimestamp(), Instant.FROM).toEpochMilli());
     }
     builder.setDescription(regionPb.getDescription());
     if (regionPb.getStatus() != null) {

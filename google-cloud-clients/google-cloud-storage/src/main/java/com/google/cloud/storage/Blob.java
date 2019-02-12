@@ -334,8 +334,20 @@ public class Blob extends BlobInfo {
     }
 
     @Override
+    public Builder setMd5FromHexString(String md5HexString) {
+      infoBuilder.setMd5FromHexString(md5HexString);
+      return this;
+    }
+
+    @Override
     public Builder setCrc32c(String crc32c) {
       infoBuilder.setCrc32c(crc32c);
+      return this;
+    }
+
+    @Override
+    public Builder setCrc32cFromHexString(String crc32cHexString) {
+      infoBuilder.setCrc32cFromHexString(crc32cHexString);
       return this;
     }
 
