@@ -41,8 +41,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Utilities for propagating OpenCensus {@link Tags} and {@link Spans} from publishers to
- * subscribers.
+ * Utilities for propagating OpenCensus {@link TagContext} and {@link SpanContext} from publishers
+ * to subscribers.
  */
 final class OpenCensusUtil {
   private static final Logger logger = Logger.getLogger(OpenCensusUtil.class.getName());
