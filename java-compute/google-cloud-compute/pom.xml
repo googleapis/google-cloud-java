@@ -31,11 +31,6 @@
       <artifactId>google-api-services-compute</artifactId>
       <scope>compile</scope>
     </dependency>
-    <dependency>
-      <groupId>joda-time</groupId>
-      <artifactId>joda-time</artifactId>
-      <scope>compile</scope>
-    </dependency>
 
     <!-- Test dependencies -->
     <dependency>

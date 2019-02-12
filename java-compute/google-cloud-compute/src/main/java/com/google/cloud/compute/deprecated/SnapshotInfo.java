@@ -27,8 +27,9 @@ import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.List;
 import java.util.Objects;
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.ISODateTimeFormat;
+import org.threeten.bp.Instant;
+import org.threeten.bp.ZoneOffset;
+import org.threeten.bp.format.DateTimeFormatter;
 
 /**
  * A Google Compute Engine snapshot. Compute Engine allows you to take snapshots of your persistent
@@ -57,7 +58,8 @@ public class SnapshotInfo implements Serializable {
       };
 
   private static final long serialVersionUID = 1065513502131159769L;
-  private static final DateTimeFormatter TIMESTAMP_FORMATTER = ISODateTimeFormat.dateTime();
+  private static final DateTimeFormatter TIMESTAMP_FORMATTER =
+      DateTimeFormatter.ISO_DATE_TIME.withZone(ZoneOffset.UTC);
 
   private final String generatedId;
   private final SnapshotId snapshotId;
@@ -171,7 +173,10 @@ public class SnapshotInfo implements Serializable {
         this.generatedId = snapshotPb.getId().toString();
       }
       if (snapshotPb.getCreationTimestamp() != null) {
-        this.creationTimestamp = TIMESTAMP_FORMATTER.parseMillis(snapshotPb.getCreationTimestamp());
+        this.creationTimestamp =
+            TIMESTAMP_FORMATTER
+                .parse(snapshotPb.getCreationTimestamp(), Instant.FROM)
+                .toEpochMilli();
       }
       this.snapshotId = SnapshotId.fromUrl(snapshotPb.getSelfLink());
       this.description = snapshotPb.getDescription();
@@ -408,7 +413,8 @@ public class SnapshotInfo implements Serializable {
       snapshotPb.setId(new BigInteger(generatedId));
     }
     if (creationTimestamp != null) {
-      snapshotPb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));
+      snapshotPb.setCreationTimestamp(
+          TIMESTAMP_FORMATTER.format(Instant.ofEpochMilli(creationTimestamp)));
     }
     snapshotPb.setName(snapshotId.getSnapshot());
     snapshotPb.setDescription(description);
