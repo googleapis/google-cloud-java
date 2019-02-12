@@ -125,7 +125,9 @@ public final class Field implements Serializable {
      *     Types</a>
      */
     public Builder setType(StandardSQLTypeName type, Field... subFields) {
-      return setType(LegacySQLTypeName.legacySQLTypeName(type), subFields.length > 0 ? FieldList.of(subFields) : null);
+      return setType(
+          LegacySQLTypeName.legacySQLTypeName(type),
+          subFields.length > 0 ? FieldList.of(subFields) : null);
     }
 
     /**
