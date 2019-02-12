@@ -28,8 +28,9 @@ import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.ISODateTimeFormat;
+import org.threeten.bp.Instant;
+import org.threeten.bp.ZoneOffset;
+import org.threeten.bp.format.DateTimeFormatter;
 
 /**
  * A Google Compute Engine VM Instance. An instance is a virtual machine (VM) hosted on Google's
@@ -67,7 +68,8 @@ public class InstanceInfo implements Serializable {
       };
 
   private static final long serialVersionUID = -6601223112628977168L;
-  private static final DateTimeFormatter TIMESTAMP_FORMATTER = ISODateTimeFormat.dateTime();
+  private static final DateTimeFormatter TIMESTAMP_FORMATTER =
+      DateTimeFormatter.ISO_DATE_TIME.withZone(ZoneOffset.UTC);
 
   private final String generatedId;
   private final InstanceId instanceId;
@@ -243,7 +245,10 @@ public class InstanceInfo implements Serializable {
       }
       this.instanceId = InstanceId.fromUrl(instancePb.getSelfLink());
       if (instancePb.getCreationTimestamp() != null) {
-        this.creationTimestamp = TIMESTAMP_FORMATTER.parseMillis(instancePb.getCreationTimestamp());
+        this.creationTimestamp =
+            TIMESTAMP_FORMATTER
+                .parse(instancePb.getCreationTimestamp(), Instant.FROM)
+                .toEpochMilli();
       }
       this.description = instancePb.getDescription();
       if (instancePb.getStatus() != null) {
@@ -585,7 +590,8 @@ public class InstanceInfo implements Serializable {
       instancePb.setId(new BigInteger(generatedId));
     }
     if (creationTimestamp != null) {
-      instancePb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));
+      instancePb.setCreationTimestamp(
+          TIMESTAMP_FORMATTER.format(Instant.ofEpochMilli(creationTimestamp)));
     }
     instancePb.setName(instanceId.getInstance());
     instancePb.setDescription(description);

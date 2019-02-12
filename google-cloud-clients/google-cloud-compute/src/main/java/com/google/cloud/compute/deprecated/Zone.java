@@ -24,8 +24,9 @@ import com.google.common.base.MoreObjects;
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.Objects;
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.ISODateTimeFormat;
+import org.threeten.bp.Instant;
+import org.threeten.bp.ZoneOffset;
+import org.threeten.bp.format.DateTimeFormatter;
 
 /**
  * A Google Compute Engine zone.
@@ -50,7 +51,8 @@ public class Zone implements Serializable {
       };
 
   private static final long serialVersionUID = 6113636504417213010L;
-  private static final DateTimeFormatter TIMESTAMP_FORMATTER = ISODateTimeFormat.dateTime();
+  private static final DateTimeFormatter TIMESTAMP_FORMATTER =
+      DateTimeFormatter.ISO_DATE_TIME.withZone(ZoneOffset.UTC);
 
   private final ZoneId zoneId;
   private final String generatedId;
@@ -236,7 +238,8 @@ public class Zone implements Serializable {
       zonePb.setId(new BigInteger(generatedId));
     }
     if (creationTimestamp != null) {
-      zonePb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));
+      zonePb.setCreationTimestamp(
+          TIMESTAMP_FORMATTER.format(Instant.ofEpochMilli(creationTimestamp)));
     }
     zonePb.setName(zoneId.getZone());
     zonePb.setDescription(description);
@@ -264,7 +267,8 @@ public class Zone implements Serializable {
       builder.setGeneratedId(zonePb.getId().toString());
     }
     if (zonePb.getCreationTimestamp() != null) {
-      builder.setCreationTimestamp(TIMESTAMP_FORMATTER.parseMillis(zonePb.getCreationTimestamp()));
+      builder.setCreationTimestamp(
+          TIMESTAMP_FORMATTER.parse(zonePb.getCreationTimestamp(), Instant.FROM).toEpochMilli());
     }
     builder.setDescription(zonePb.getDescription());
     if (zonePb.getStatus() != null) {
