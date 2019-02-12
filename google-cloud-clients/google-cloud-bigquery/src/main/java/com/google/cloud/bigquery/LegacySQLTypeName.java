@@ -19,6 +19,8 @@ package com.google.cloud.bigquery;
 import com.google.api.core.ApiFunction;
 import com.google.cloud.StringEnumType;
 import com.google.cloud.StringEnumValue;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * A type used in legacy SQL contexts. NOTE: some contexts use a mix of types; for example, for
@@ -84,6 +86,14 @@ public final class LegacySQLTypeName extends StringEnumValue {
   public static final LegacySQLTypeName RECORD =
       type.createAndRegister("RECORD").setStandardType(StandardSQLTypeName.STRUCT);
 
+  private static Map<StandardSQLTypeName, LegacySQLTypeName> standardToLegacyMap = new HashMap<>();
+
+  static {
+    for (LegacySQLTypeName legacySqlTypeName : LegacySQLTypeName.values()) {
+      standardToLegacyMap.put(legacySqlTypeName.equivalent, legacySqlTypeName);
+    }
+  }
+
   private StandardSQLTypeName equivalent;
 
   private LegacySQLTypeName setStandardType(StandardSQLTypeName equivalent) {
@@ -94,6 +104,10 @@ public final class LegacySQLTypeName extends StringEnumValue {
   /** Provides the standard SQL type name equivalent to this type name. */
   public StandardSQLTypeName getStandardType() {
     return equivalent;
+  }
+
+  public static LegacySQLTypeName legacySQLTypeName(StandardSQLTypeName type) {
+	  return standardToLegacyMap.get(type);
   }
 
   private LegacySQLTypeName(String constant) {

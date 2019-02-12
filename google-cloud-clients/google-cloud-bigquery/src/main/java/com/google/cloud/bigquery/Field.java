@@ -242,8 +242,18 @@ public final class Field implements Serializable {
   }
 
   /** Returns a builder for a Field object with given name and type. */
+  public static Builder newBuilder(String name, StandardSQLTypeName type, Field... subFields) {
+    return new Builder().setName(name).setType(LegacySQLTypeName.legacySQLTypeName(type), subFields);
+  }
+
+  /** Returns a builder for a Field object with given name and type. */
   public static Builder newBuilder(String name, LegacySQLTypeName type, FieldList subFields) {
     return new Builder().setName(name).setType(type, subFields);
+  }
+
+  /** Returns a builder for a Field object with given name and type. */
+  public static Builder newBuilder(String name, StandardSQLTypeName type, FieldList subFields) {
+    return new Builder().setName(name).setType(LegacySQLTypeName.legacySQLTypeName(type), subFields);
   }
 
   TableFieldSchema toPb() {
