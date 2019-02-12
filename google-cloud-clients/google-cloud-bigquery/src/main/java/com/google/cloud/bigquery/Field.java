@@ -125,7 +125,7 @@ public final class Field implements Serializable {
      *     Types</a>
      */
     public Builder setType(StandardSQLTypeName type, Field... subFields) {
-      return setType(type, subFields.length > 0 ? FieldList.of(subFields) : null);
+      return setType(LegacySQLTypeName.legacySQLTypeName(type), subFields.length > 0 ? FieldList.of(subFields) : null);
     }
 
     /**
@@ -162,29 +162,16 @@ public final class Field implements Serializable {
      * Sets the type of the field.
      *
      * @param type BigQuery data type
-     * @param subFields nested schema fields, in case if {@code type} is {@link
-     *     StandardSQLTypeName#STRUCT}, {@code null} otherwise.
-     * @throws IllegalArgumentException if {@code type == StandardSQLTypeName.STRUCT && (subFields
-     *     == null || subFields.isEmpty())} or if {@code type != StandardSQLTypeName.STRUCT &&
-     *     subFields != null}
+     * @param subFields nested schema fields in case if {@code type} is {@link
+     *     StandardSQLTypeName#STRUCT}, empty otherwise
+     * @throws IllegalArgumentException if {@code type == StandardSQLTypeName.STRUCT &&
+     *     subFields.length == 0} or if {@code type != StandardSQLTypeName.STRUCT &&
+     *     subFields.length != 0}
      * @see <a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types">Data
      *     Types</a>
      */
     public Builder setType(StandardSQLTypeName type, FieldList subFields) {
-      if (StandardSQLTypeName.STRUCT.equals(type)) {
-        if (subFields == null || subFields.isEmpty()) {
-          throw new IllegalArgumentException(
-              "The " + type + " field must have at least one sub-field");
-        }
-      } else {
-        if (subFields != null) {
-          throw new IllegalArgumentException(
-              "Only " + StandardSQLTypeName.STRUCT + " fields can have sub-fields");
-        }
-      }
-      this.type = LegacySQLTypeName.legacySQLTypeName(type);
-      this.subFields = subFields;
-      return this;
+      return setType(LegacySQLTypeName.legacySQLTypeName(type), subFields);
     }
 
     /** Sets the mode of the field. When not specified {@link Mode#NULLABLE} is used. */
