@@ -116,6 +116,22 @@ public final class Field implements Serializable {
      * Sets the type of the field.
      *
      * @param type BigQuery data type
+     * @param subFields nested schema fields in case if {@code type} is {@link
+     *     StandardSQLTypeName#STRUCT}, empty otherwise
+     * @throws IllegalArgumentException if {@code type == StandardSQLTypeName.STRUCT &&
+     *     subFields.length == 0} or if {@code type != StandardSQLTypeName.STRUCT &&
+     *     subFields.length != 0}
+     * @see <a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types">Data
+     *     Types</a>
+     */
+    public Builder setType(StandardSQLTypeName type, Field... subFields) {
+      return setType(type, subFields.length > 0 ? FieldList.of(subFields) : null);
+    }
+
+    /**
+     * Sets the type of the field.
+     *
+     * @param type BigQuery data type
      * @param subFields nested schema fields, in case if {@code type} is {@link
      *     LegacySQLTypeName#RECORD}, {@code null} otherwise.
      * @throws IllegalArgumentException if {@code type == LegacySQLTypeName.RECORD && (subFields ==
@@ -138,6 +154,35 @@ public final class Field implements Serializable {
         }
       }
       this.type = type;
+      this.subFields = subFields;
+      return this;
+    }
+
+    /**
+     * Sets the type of the field.
+     *
+     * @param type BigQuery data type
+     * @param subFields nested schema fields, in case if {@code type} is {@link
+     *     StandardSQLTypeName#STRUCT}, {@code null} otherwise.
+     * @throws IllegalArgumentException if {@code type == StandardSQLTypeName.STRUCT && (subFields
+     *     == null || subFields.isEmpty())} or if {@code type != StandardSQLTypeName.STRUCT &&
+     *     subFields != null}
+     * @see <a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types">Data
+     *     Types</a>
+     */
+    public Builder setType(StandardSQLTypeName type, FieldList subFields) {
+      if (StandardSQLTypeName.STRUCT.equals(type)) {
+        if (subFields == null || subFields.isEmpty()) {
+          throw new IllegalArgumentException(
+              "The " + type + " field must have at least one sub-field");
+        }
+      } else {
+        if (subFields != null) {
+          throw new IllegalArgumentException(
+              "Only " + StandardSQLTypeName.STRUCT + " fields can have sub-fields");
+        }
+      }
+      this.type = LegacySQLTypeName.legacySQLTypeName(type);
       this.subFields = subFields;
       return this;
     }
@@ -243,7 +288,7 @@ public final class Field implements Serializable {
 
   /** Returns a builder for a Field object with given name and type. */
   public static Builder newBuilder(String name, StandardSQLTypeName type, Field... subFields) {
-    return new Builder().setName(name).setType(LegacySQLTypeName.legacySQLTypeName(type), subFields);
+    return new Builder().setName(name).setType(type, subFields);
   }
 
   /** Returns a builder for a Field object with given name and type. */
@@ -253,7 +298,7 @@ public final class Field implements Serializable {
 
   /** Returns a builder for a Field object with given name and type. */
   public static Builder newBuilder(String name, StandardSQLTypeName type, FieldList subFields) {
-    return new Builder().setName(name).setType(LegacySQLTypeName.legacySQLTypeName(type), subFields);
+    return new Builder().setName(name).setType(type, subFields);
   }
 
   TableFieldSchema toPb() {
