@@ -1,4 +1,4 @@
-/* Copyright 2018 Google Inc.
+/* Copyright 2019 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,10 @@ import java.util.Base64;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * Utilities for propagating OpenCensus {@link Tags} and {@link Spans} from publishers to
+ * subscribers.
+ */
 final class OpenCensusUtil {
   private static final Logger logger = Logger.getLogger(OpenCensusUtil.class.getName());
 
