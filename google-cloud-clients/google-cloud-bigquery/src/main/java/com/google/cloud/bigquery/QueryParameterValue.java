@@ -24,7 +24,10 @@ import com.google.common.collect.Lists;
 import com.google.common.io.BaseEncoding;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.annotation.Nullable;
 import org.threeten.bp.Instant;
@@ -67,6 +70,7 @@ public abstract class QueryParameterValue implements Serializable {
       DateTimeFormatter.ofPattern("HH:mm:ss.SSSSSS");
   private static final DateTimeFormatter datetimeFormatter =
       DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSS");
+  private static final DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
   static final Function<
           QueryParameterValue, com.google.api.services.bigquery.model.QueryParameterValue>
@@ -256,6 +260,8 @@ public abstract class QueryParameterValue implements Serializable {
       return StandardSQLTypeName.FLOAT64;
     } else if (BigDecimal.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.NUMERIC;
+    } else if (Date.class.isAssignableFrom(type)) {
+      return StandardSQLTypeName.DATE;
     }
     throw new IllegalArgumentException("Unsupported object type for QueryParameter: " + type);
   }
@@ -310,6 +316,9 @@ public abstract class QueryParameterValue implements Serializable {
           // verify that the String is in the right format
           checkFormat(value, dateFormatter);
           return (String) value;
+        } else if (value instanceof Date) {
+          checkFormat(value, dateFormat);
+          return dateFormat.format(value);
         }
         break;
       case TIME:
@@ -337,6 +346,14 @@ public abstract class QueryParameterValue implements Serializable {
     try {
       formatter.parse((String) value);
     } catch (DateTimeParseException e) {
+      throw new IllegalArgumentException(e.getMessage(), e);
+    }
+  }
+
+  private static void checkFormat(Object value, DateFormat format) {
+    try {
+      format.format(value);
+    } catch (Exception e) {
       throw new IllegalArgumentException(e.getMessage(), e);
     }
   }
