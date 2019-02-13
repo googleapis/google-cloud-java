@@ -1662,7 +1662,10 @@ public class StorageImplTest {
           UnsupportedEncodingException {
     EasyMock.replay(storageRpcMock);
     ServiceAccountCredentials credentials =
-        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
+        ServiceAccountCredentials.newBuilder()
+            .setClientEmail(ACCOUNT)
+            .setPrivateKey(privateKey)
+            .build();
     storage = options.toBuilder().setCredentials(credentials).build().getService();
     URL url = storage.signUrl(BLOB_INFO1, 14, TimeUnit.DAYS);
     String stringUrl = url.toString();
@@ -1703,7 +1706,10 @@ public class StorageImplTest {
           UnsupportedEncodingException {
     EasyMock.replay(storageRpcMock);
     ServiceAccountCredentials credentials =
-        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
+        ServiceAccountCredentials.newBuilder()
+            .setClientEmail(ACCOUNT)
+            .setPrivateKey(privateKey)
+            .build();
     storage = options.toBuilder().setCredentials(credentials).build().getService();
     URL url =
         storage.signUrl(
@@ -1750,7 +1756,10 @@ public class StorageImplTest {
     String blobName = "/b1";
     EasyMock.replay(storageRpcMock);
     ServiceAccountCredentials credentials =
-        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
+        ServiceAccountCredentials.newBuilder()
+            .setClientEmail(ACCOUNT)
+            .setPrivateKey(privateKey)
+            .build();
     storage = options.toBuilder().setCredentials(credentials).build().getService();
     URL url =
         storage.signUrl(BlobInfo.newBuilder(BUCKET_NAME1, blobName).build(), 14, TimeUnit.DAYS);
@@ -1792,7 +1801,10 @@ public class StorageImplTest {
     String blobName = "/b1";
     EasyMock.replay(storageRpcMock);
     ServiceAccountCredentials credentials =
-        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
+        ServiceAccountCredentials.newBuilder()
+            .setClientEmail(ACCOUNT)
+            .setPrivateKey(privateKey)
+            .build();
     storage = options.toBuilder().setCredentials(credentials).build().getService();
     URL url =
         storage.signUrl(
@@ -1837,7 +1849,10 @@ public class StorageImplTest {
           UnsupportedEncodingException {
     EasyMock.replay(storageRpcMock);
     ServiceAccountCredentials credentials =
-        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
+        ServiceAccountCredentials.newBuilder()
+            .setClientEmail(ACCOUNT)
+            .setPrivateKey(privateKey)
+            .build();
     storage = options.toBuilder().setCredentials(credentials).build().getService();
     URL url =
         storage.signUrl(
@@ -1889,7 +1904,10 @@ public class StorageImplTest {
           UnsupportedEncodingException {
     EasyMock.replay(storageRpcMock);
     ServiceAccountCredentials credentials =
-        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
+        ServiceAccountCredentials.newBuilder()
+            .setClientEmail(ACCOUNT)
+            .setPrivateKey(privateKey)
+            .build();
     storage = options.toBuilder().setCredentials(credentials).build().getService();
     URL url =
         storage.signUrl(
@@ -1948,7 +1966,10 @@ public class StorageImplTest {
         };
     EasyMock.replay(storageRpcMock);
     ServiceAccountCredentials credentials =
-        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
+        ServiceAccountCredentials.newBuilder()
+            .setClientEmail(ACCOUNT)
+            .setPrivateKey(privateKey)
+            .build();
     storage = options.toBuilder().setCredentials(credentials).build().getService();
 
     for (char specialChar : specialChars) {
@@ -2000,7 +2021,10 @@ public class StorageImplTest {
         };
     EasyMock.replay(storageRpcMock);
     ServiceAccountCredentials credentials =
-        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
+        ServiceAccountCredentials.newBuilder()
+            .setClientEmail(ACCOUNT)
+            .setPrivateKey(privateKey)
+            .build();
     storage = options.toBuilder().setCredentials(credentials).build().getService();
 
     for (char specialChar : specialChars) {
@@ -2050,7 +2074,10 @@ public class StorageImplTest {
           UnsupportedEncodingException {
     EasyMock.replay(storageRpcMock);
     ServiceAccountCredentials credentials =
-        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
+        ServiceAccountCredentials.newBuilder()
+            .setClientEmail(ACCOUNT)
+            .setPrivateKey(privateKey)
+            .build();
     storage = options.toBuilder().setCredentials(credentials).build().getService();
     Map<String, String> extHeaders = new HashMap<String, String>();
     extHeaders.put("x-goog-acl", "public-read");
@@ -2107,7 +2134,10 @@ public class StorageImplTest {
           UnsupportedEncodingException {
     EasyMock.replay(storageRpcMock);
     ServiceAccountCredentials credentials =
-        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
+        ServiceAccountCredentials.newBuilder()
+            .setClientEmail(ACCOUNT)
+            .setPrivateKey(privateKey)
+            .build();
     storage = options.toBuilder().setCredentials(credentials).build().getService();
     Map<String, String> extHeaders = new HashMap<String, String>();
     extHeaders.put("x-goog-acl", "public-read");
@@ -2165,7 +2195,10 @@ public class StorageImplTest {
           UnsupportedEncodingException {
     EasyMock.replay(storageRpcMock);
     ServiceAccountCredentials credentials =
-        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
+        ServiceAccountCredentials.newBuilder()
+            .setClientEmail(ACCOUNT)
+            .setPrivateKey(privateKey)
+            .build();
     storage = options.toBuilder().setCredentials(credentials).build().getService();
 
     String blobName = "/foo/bar/baz #%20other cool stuff.txt";
@@ -2208,7 +2241,10 @@ public class StorageImplTest {
           UnsupportedEncodingException {
     EasyMock.replay(storageRpcMock);
     ServiceAccountCredentials credentials =
-        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
+        ServiceAccountCredentials.newBuilder()
+            .setClientEmail(ACCOUNT)
+            .setPrivateKey(privateKey)
+            .build();
     storage = options.toBuilder().setCredentials(credentials).build().getService();
 
     String blobName = "/foo/bar/baz #%20other cool stuff.txt";
