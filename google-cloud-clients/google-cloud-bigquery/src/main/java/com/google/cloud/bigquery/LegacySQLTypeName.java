@@ -106,7 +106,7 @@ public final class LegacySQLTypeName extends StringEnumValue {
     return equivalent;
   }
 
-  /** Represents LegacySQLTypeName from StandardSQLTypeName */
+  /** Converts StandardSQLTypeName to LegacySQLTypeName */
   public static LegacySQLTypeName legacySQLTypeName(StandardSQLTypeName type) {
     return standardToLegacyMap.get(type);
   }
