@@ -70,10 +70,8 @@ final class SpannerProbers {
       "projects/cloudprober-test/instances/test-instance/databases/test-db";
   private static final String LARGE_TABLE = "large_table";
   private static final String TABLE = "jenny";
-  private static final String STORAGE_ID_PAYLOAD = "payload";
   private static final String OAUTH_SCOPE = "https://www.googleapis.com/auth/cloud-platform";
   private static final String API_FILE = "src/main/resources/spannertest.json";
-  private static final int TIMEOUT = 60 * 60 * 24;
   private static final int MAX_SIZE_PER_COLUMN = 2621440;
   private static final int NUM_WARMUP = 10;
 
@@ -436,7 +434,9 @@ final class SpannerProbers {
     List<Long> result = new CopyOnWriteArrayList<>();
     List<Thread> threads = new ArrayList<>();
     if (numOfThreads > 1) {
-      threads.add(new Thread(() -> func.operate(result)));
+      for (int t = 0; t < numOfThreads; t++) {
+        threads.add(new Thread(() -> func.operate(result)));
+      }
     }
     long start = System.currentTimeMillis();
     if (numOfThreads > 1) {
@@ -559,15 +559,15 @@ final class SpannerProbers {
     channel.shutdown().awaitTermination(5, TimeUnit.SECONDS);
   }
 
-  interface Func {
+  private interface Func {
     void operate(List<Long> result);
   }
 
-  interface AsyncCall<ReqT, RespT> {
+  private interface AsyncCall<ReqT, RespT> {
     void call(ReqT request, AsyncResponseObserver<RespT> obs);
   }
 
-  interface BlockingCall<ReqT, RespT> {
+  private interface BlockingCall<ReqT, RespT> {
     RespT call(ReqT request);
   }
 

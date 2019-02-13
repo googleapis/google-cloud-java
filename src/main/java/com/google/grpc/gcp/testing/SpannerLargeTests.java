@@ -48,10 +48,10 @@ public final class SpannerLargeTests {
   private static final String SPANNER_TARGET = "spanner.googleapis.com";
   private static final String DATABASE =
       "projects/cloudprober-test/instances/test-instance/databases/test-db";
-  private static final String API_FILE = "src/test/resources/apiconfigtests/spannertest.json";
+  private static final String API_FILE = "src/main/resources/spannertest.json";
 
-  private static final int MAX_CHANNEL = 3;
-  private static final int MAX_STREAM = 2;
+  private static final int MAX_CHANNEL = 10;
+  private static final int MAX_STREAM = 10;
 
   private static final Logger logger = Logger.getLogger(SpannerLargeTests.class.getName());
 
@@ -83,7 +83,7 @@ public final class SpannerLargeTests {
     List<String> respNames = new ArrayList<>();
 
     CreateSessionRequest req = CreateSessionRequest.newBuilder().setDatabase(DATABASE).build();
-    for (int i = 0; i < MAX_CHANNEL * MAX_STREAM; i++) {
+    for (int i = 0; i < MAX_CHANNEL * MAX_STREAM / 2; i++) {
       AsyncResponseObserver<Session> resp = new AsyncResponseObserver<Session>();
       stub.createSession(req, resp);
       resps.add(resp);
@@ -118,7 +118,7 @@ public final class SpannerLargeTests {
 
     // Check CreateSession with multiple channels and streams,
     CreateSessionRequest req = CreateSessionRequest.newBuilder().setDatabase(DATABASE).build();
-    for (int i = 0; i < MAX_CHANNEL * MAX_STREAM; i++) {
+    for (int i = 0; i < MAX_CHANNEL * MAX_STREAM / 2; i++) {
       ListenableFuture<Session> future = stub.createSession(req);
       futures.add(future);
     }

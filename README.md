@@ -1,4 +1,15 @@
+All the tests need to access gcloud project cloudprober-test.
+To set the authentication: 
+export GOOGLE_APPLICATION_CREDENTIALS=$HOME/key.json 
 
-Use './gradlew build' to build and run the tests.
+Build without test:
+gradle build -x test
 
-Use 'gradle btTest' to run the bigtable 101-stream program. 
+Run large Bigtable integration tests:
+gradle btTest
+
+Run large Spanner integration tests:
+gradle spannerTest
+
+RUn Spanner benchmark:
+gradle spannerBenchmark --args="--gcp=true --thread=3 --rpc=100"
