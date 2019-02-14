@@ -15,9 +15,14 @@
  */
 package com.google.cloud.bigtable.admin.v2;
 
+import com.google.api.core.ApiFunction;
+import com.google.api.gax.core.CredentialsProvider;
+import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStubSettings;
+import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Verify;
+import io.grpc.ManagedChannelBuilder;
 import java.io.IOException;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -33,12 +38,6 @@ import javax.annotation.Nullable;
  * BigtableTableAdminSettings.Builder tableAdminSettingsBuilder = BigtableTableAdminSettings.newBuilder()
  *   .setProjectId("my-project")
  *   .setInstanceId("my-instance");
- *
- * tableAdminSettingsBuilder.stubSettings().createTableSettings()
- *   .setRetrySettings(
- *     RetrySettings.newBuilder()
- *       .setTotalTimeout(Duration.ofMinutes(15))
- *       .build());
  *
  * BigtableTableAdminSettings tableAdminSettings = tableAdminSettingsBuilder.build();
  * }</pre>
@@ -65,17 +64,6 @@ public final class BigtableTableAdminSettings {
     return instanceId;
   }
 
-  /**
-   * Gets the name of instance whose tables the client will manage.
-   *
-   * @deprecated Please use {@link #getProjectId()} and {@link #getInstanceId()}.
-   */
-  @Deprecated
-  @Nonnull
-  public com.google.bigtable.admin.v2.InstanceName getInstanceName() {
-    return com.google.bigtable.admin.v2.InstanceName.of(projectId, instanceId);
-  }
-
   /** Gets the underlying RPC settings. */
   public BigtableTableAdminStubSettings getStubSettings() {
     return stubSettings;
@@ -90,6 +78,38 @@ public final class BigtableTableAdminSettings {
   public static Builder newBuilder() {
     return new Builder();
   }
+
+  /** Create a new builder preconfigured to connect to the Bigtable emulator. */
+  public static Builder newBuilderForEmulator(int port) {
+    Builder builder = newBuilder().setProjectId("fake-project").setInstanceId("fake-instance");
+
+    builder
+        .stubSettings()
+        .setCredentialsProvider(NoCredentialsProvider.create())
+        .setEndpoint("localhost:" + port)
+        .setTransportChannelProvider(
+            EnhancedBigtableStubSettings.defaultGrpcTransportProviderBuilder()
+                .setPoolSize(1)
+                .setChannelConfigurator(
+                    new ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>() {
+                      @Override
+                      public ManagedChannelBuilder apply(ManagedChannelBuilder input) {
+                        return input.usePlaintext();
+                      }
+                    })
+                .build());
+
+    return builder;
+  }
+
+  // <editor-fold desc="Deprecated">
+  /** @deprecated Please use {@link #getProjectId()} and {@link #getInstanceId()}. */
+  @Deprecated
+  @Nonnull
+  public com.google.bigtable.admin.v2.InstanceName getInstanceName() {
+    return com.google.bigtable.admin.v2.InstanceName.of(projectId, instanceId);
+  }
+  // </editor-fold>
 
   /** Builder for BigtableTableAdminSettings. */
   public static final class Builder {
@@ -133,32 +153,15 @@ public final class BigtableTableAdminSettings {
       return instanceId;
     }
 
-    /**
-     * Sets the name of instance whose tables the client will manage.
-     *
-     * @deprecated Please use {@link #setProjectId(String)} and {@link #setInstanceId(String)}.
-     */
-    @Deprecated
-    public Builder setInstanceName(
-        @Nonnull com.google.bigtable.admin.v2.InstanceName instanceName) {
-      Preconditions.checkNotNull(instanceName);
-      this.projectId = instanceName.getProject();
-      this.instanceId = instanceName.getInstance();
+    /** Sets the CredentialsProvider to use for getting the credentials to make calls with. */
+    public Builder setCredentialsProvider(CredentialsProvider credentialsProvider) {
+      stubSettings.setCredentialsProvider(credentialsProvider);
       return this;
     }
 
-    /**
-     * Gets the name of instance whose tables the client will manage.
-     *
-     * @deprecated Please use {@link #getProjectId()} and {@link #getInstanceId()}.
-     */
-    @Deprecated
-    @Nullable
-    public com.google.bigtable.admin.v2.InstanceName getInstanceName() {
-      if (projectId != null && instanceId != null) {
-        return com.google.bigtable.admin.v2.InstanceName.of(projectId, instanceId);
-      }
-      return null;
+    /** Gets the CredentialsProvider to use for getting the credentials to make calls with. */
+    public CredentialsProvider getCredentialsProvider() {
+      return stubSettings.getCredentialsProvider();
     }
 
     /**
@@ -175,5 +178,27 @@ public final class BigtableTableAdminSettings {
     public BigtableTableAdminSettings build() throws IOException {
       return new BigtableTableAdminSettings(this);
     }
+
+    // <editor-fold desc="Deprecated">
+    /** @deprecated Please use {@link #setProjectId(String)} and {@link #setInstanceId(String)}. */
+    @Deprecated
+    public Builder setInstanceName(
+        @Nonnull com.google.bigtable.admin.v2.InstanceName instanceName) {
+      Preconditions.checkNotNull(instanceName);
+      this.projectId = instanceName.getProject();
+      this.instanceId = instanceName.getInstance();
+      return this;
+    }
+
+    /** @deprecated Please use {@link #getProjectId()} and {@link #getInstanceId()}. */
+    @Deprecated
+    @Nullable
+    public com.google.bigtable.admin.v2.InstanceName getInstanceName() {
+      if (projectId != null && instanceId != null) {
+        return com.google.bigtable.admin.v2.InstanceName.of(projectId, instanceId);
+      }
+      return null;
+    }
+    // </editor-fold>
   }
 }

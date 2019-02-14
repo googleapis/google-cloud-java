@@ -15,7 +15,6 @@
  */
 package com.google.cloud.bigtable.data.v2.stub;
 
-import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
@@ -26,6 +25,7 @@ import com.google.api.gax.rpc.BatchingCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.StubSettings;
+import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.bigtable.data.v2.internal.DummyBatchingDescriptor;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
@@ -69,11 +69,7 @@ import org.threeten.bp.Duration;
  *
  * BigtableDataSettings settings = builder.build();
  * }</pre>
- *
- * <p>This class is considered an internal implementation detail and not meant to be used by
- * applications.
  */
-@InternalApi
 public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableStubSettings> {
   // The largest message that can be received is a 256 MB ReadRowsResponse.
   private static final int MAX_MESSAGE_SIZE = 256 * 1024 * 1024;
@@ -151,14 +147,22 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     return new Builder();
   }
 
-  /**
-   * Returns the target instance.
-   *
-   * @deprecated Please use {@link #getProjectId()} and {@link #getInstanceId()}
-   */
-  @Deprecated
-  public com.google.cloud.bigtable.data.v2.models.InstanceName getInstanceName() {
-    return com.google.cloud.bigtable.data.v2.models.InstanceName.of(projectId, instanceId);
+  /** Returns a builder for the default ChannelProvider for this service. */
+  public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
+    return InstantiatingGrpcChannelProvider.newBuilder()
+        // TODO: tune channels
+        .setChannelsPerCpu(2)
+        .setMaxInboundMessageSize(MAX_MESSAGE_SIZE);
+  }
+
+  public static TransportChannelProvider defaultTransportChannelProvider() {
+    return defaultGrpcTransportProviderBuilder().build();
+  }
+
+  /** Returns a builder for the default credentials for this service. */
+  public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
+    return BigtableStubSettings.defaultCredentialsProviderBuilder()
+        .setJwtEnabledScopes(JWT_ENABLED_SCOPES);
   }
 
   /** Returns the project id of the target instance. */
@@ -174,12 +178,6 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   /** Returns the configured AppProfile to use */
   public String getAppProfileId() {
     return appProfileId;
-  }
-
-  /** Returns a builder for the default credentials for this service. */
-  public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
-    return BigtableStubSettings.defaultCredentialsProviderBuilder()
-        .setJwtEnabledScopes(JWT_ENABLED_SCOPES);
   }
 
   /** Returns the object with the settings used for calls to ReadRows. */
@@ -228,6 +226,14 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     return new Builder(this);
   }
 
+  // <editor-fold desc="Deprecated">
+  /** @deprecated Please use {@link #getProjectId()} and {@link #getInstanceId()} */
+  @Deprecated
+  public com.google.cloud.bigtable.data.v2.models.InstanceName getInstanceName() {
+    return com.google.cloud.bigtable.data.v2.models.InstanceName.of(projectId, instanceId);
+  }
+  // </editor-fold>
+
   /** Builder for BigtableDataSettings. */
   public static class Builder extends StubSettings.Builder<EnhancedBigtableStubSettings, Builder> {
 
@@ -260,12 +266,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       BigtableStubSettings.Builder baseDefaults = BigtableStubSettings.newBuilder();
 
       setEndpoint(baseDefaults.getEndpoint());
-      setTransportChannelProvider(
-          InstantiatingGrpcChannelProvider.newBuilder()
-              // TODO: tune channels
-              .setChannelsPerCpu(2)
-              .setMaxInboundMessageSize(MAX_MESSAGE_SIZE)
-              .build());
+      setTransportChannelProvider(defaultTransportChannelProvider());
       setStreamWatchdogCheckInterval(baseDefaults.getStreamWatchdogCheckInterval());
       setStreamWatchdogProvider(baseDefaults.getStreamWatchdogProvider());
 
@@ -350,35 +351,6 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     // </editor-fold>
 
     // <editor-fold desc="Public API">
-    /**
-     * Sets the target instance. This setting is required. All RPCs will be made in the context of
-     * this setting.
-     *
-     * @deprecated Please use {@link #setProjectId(String)} and {@link #setInstanceId(String)}.
-     */
-    @Deprecated
-    public Builder setInstanceName(
-        @Nonnull com.google.cloud.bigtable.data.v2.models.InstanceName instanceName) {
-      Preconditions.checkNotNull(instanceName);
-      this.projectId = instanceName.getProject();
-      this.instanceId = instanceName.getInstance();
-      return this;
-    }
-
-    /**
-     * Gets the {@link com.google.cloud.bigtable.data.v2.models.InstanceName} that was previously
-     * set on this Builder.
-     *
-     * @deprecated Please use {@link #getProjectId()} and {@link #getInstanceId()}.
-     */
-    @Deprecated
-    public com.google.cloud.bigtable.data.v2.models.InstanceName getInstanceName() {
-      if (projectId != null && instanceId != null) {
-        return com.google.cloud.bigtable.data.v2.models.InstanceName.of(projectId, instanceId);
-      }
-      return null;
-    }
-
     /**
      * Sets the project id of that target instance. This setting is required. All RPCs will be made
      * in the context of this setting.
@@ -467,6 +439,27 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       Preconditions.checkState(instanceId != null, "Instance id must be set");
 
       return new EnhancedBigtableStubSettings(this);
+    }
+    // </editor-fold>
+
+    // <editor-fold desc="Deprecated">
+    /** @deprecated Please use {@link #setProjectId(String)} and {@link #setInstanceId(String)}. */
+    @Deprecated
+    public Builder setInstanceName(
+        @Nonnull com.google.cloud.bigtable.data.v2.models.InstanceName instanceName) {
+      Preconditions.checkNotNull(instanceName);
+      this.projectId = instanceName.getProject();
+      this.instanceId = instanceName.getInstance();
+      return this;
+    }
+
+    /** @deprecated Please use {@link #getProjectId()} and {@link #getInstanceId()}. */
+    @Deprecated
+    public com.google.cloud.bigtable.data.v2.models.InstanceName getInstanceName() {
+      if (projectId != null && instanceId != null) {
+        return com.google.cloud.bigtable.data.v2.models.InstanceName.of(projectId, instanceId);
+      }
+      return null;
     }
     // </editor-fold>
   }
