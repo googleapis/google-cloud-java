@@ -314,9 +314,7 @@ public class InstanceAdminStubSettings extends StubSettings<InstanceAdminStubSet
 
             @Override
             public Iterable<InstanceConfig> extractResources(ListInstanceConfigsResponse payload) {
-              return payload.getInstanceConfigsList() != null
-                  ? payload.getInstanceConfigsList()
-                  : ImmutableList.<InstanceConfig>of();
+              return payload.getInstanceConfigsList();
             }
           };
 
@@ -350,9 +348,7 @@ public class InstanceAdminStubSettings extends StubSettings<InstanceAdminStubSet
 
             @Override
             public Iterable<Instance> extractResources(ListInstancesResponse payload) {
-              return payload.getInstancesList() != null
-                  ? payload.getInstancesList()
-                  : ImmutableList.<Instance>of();
+              return payload.getInstancesList();
             }
           };
 

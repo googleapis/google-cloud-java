@@ -72,7 +72,6 @@ public class OptionsTest {
     assertThat(options.toString()).isEqualTo("");
     assertThat(options.equals(options)).isTrue();
     assertThat(options.equals(null)).isFalse();
-    assertThat(options.equals(this)).isFalse();
 
     assertThat(options.hashCode()).isEqualTo(31);
   }

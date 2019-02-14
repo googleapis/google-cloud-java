@@ -297,9 +297,7 @@ public class DatabaseAdminStubSettings extends StubSettings<DatabaseAdminStubSet
 
             @Override
             public Iterable<Database> extractResources(ListDatabasesResponse payload) {
-              return payload.getDatabasesList() != null
-                  ? payload.getDatabasesList()
-                  : ImmutableList.<Database>of();
+              return payload.getDatabasesList();
             }
           };
 
