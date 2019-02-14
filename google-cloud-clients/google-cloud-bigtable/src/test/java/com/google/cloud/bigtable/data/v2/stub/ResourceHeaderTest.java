@@ -52,8 +52,7 @@ public class ResourceHeaderTest {
   private static final String HEADER_NAME = "x-goog-request-params";
   private static final String TEST_HEADER_NAME = "simple-header-name";
   private static final String TEST_HEADER_VALUE = "simple-header-value";
-  private static final Pattern TEST_PATTERN =
-      Pattern.compile( ".*"+  TEST_HEADER_VALUE + ".*");
+  private static final Pattern TEST_PATTERN = Pattern.compile(".*" + TEST_HEADER_VALUE + ".*");
 
   private InProcessServer<?> server;
   private LocalChannelProvider channelProvider;
