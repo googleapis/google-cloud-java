@@ -112,7 +112,8 @@ public class BigQueryImplTest {
       ModelTableDefinition.newBuilder().build();
   private static final Long EXPIRATION_MS = 86400000L;
   private static final Long TABLE_CREATION_TIME = 1546275600000L;
-  private static final TimePartitioning TIME_PARTITIONING = TimePartitioning.of(TimePartitioning.Type.DAY, EXPIRATION_MS);
+  private static final TimePartitioning TIME_PARTITIONING =
+      TimePartitioning.of(TimePartitioning.Type.DAY, EXPIRATION_MS);
   private static final StandardTableDefinition TABLE_DEFINITION_WITH_PARTITIONING =
       StandardTableDefinition.newBuilder()
           .setSchema(TABLE_SCHEMA)
@@ -726,20 +727,21 @@ public class BigQueryImplTest {
     assertArrayEquals(tableList.toArray(), Iterables.toArray(page.getValues(), Table.class));
   }
 
-    @Test
-    public void testListTablesReturnedParameters() {
-        bigquery = options.getService();
-        ImmutableList<Table> tableList =
-                ImmutableList.of(new Table(bigquery, new TableInfo.BuilderImpl(TABLE_INFO_WITH_PARTITIONS)));
-        Tuple<String, Iterable<com.google.api.services.bigquery.model.Table>> result =
-                Tuple.of(CURSOR, Iterables.transform(tableList, TableInfo.TO_PB_FUNCTION));
-        EasyMock.expect(bigqueryRpcMock.listTables(PROJECT, DATASET, TABLE_LIST_OPTIONS))
-                .andReturn(result);
-        EasyMock.replay(bigqueryRpcMock);
-        Page<Table> page = bigquery.listTables(DATASET, TABLE_LIST_PAGE_SIZE, TABLE_LIST_PAGE_TOKEN);
-        assertEquals(CURSOR, page.getNextPageToken());
-        assertArrayEquals(tableList.toArray(), Iterables.toArray(page.getValues(), Table.class));
-    }
+  @Test
+  public void testListTablesReturnedParameters() {
+    bigquery = options.getService();
+    ImmutableList<Table> tableList =
+        ImmutableList.of(
+            new Table(bigquery, new TableInfo.BuilderImpl(TABLE_INFO_WITH_PARTITIONS)));
+    Tuple<String, Iterable<com.google.api.services.bigquery.model.Table>> result =
+        Tuple.of(CURSOR, Iterables.transform(tableList, TableInfo.TO_PB_FUNCTION));
+    EasyMock.expect(bigqueryRpcMock.listTables(PROJECT, DATASET, TABLE_LIST_OPTIONS))
+        .andReturn(result);
+    EasyMock.replay(bigqueryRpcMock);
+    Page<Table> page = bigquery.listTables(DATASET, TABLE_LIST_PAGE_SIZE, TABLE_LIST_PAGE_TOKEN);
+    assertEquals(CURSOR, page.getNextPageToken());
+    assertArrayEquals(tableList.toArray(), Iterables.toArray(page.getValues(), Table.class));
+  }
 
   @Test
   public void testDeleteTable() {
