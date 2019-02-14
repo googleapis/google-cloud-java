@@ -92,25 +92,16 @@ final class OpenCensusUtil {
         + "&traceopt=" + (traceOpts.isSampled() ? "t&" : "f&");
   }
 
+  // TODO: update this code once the text encoding of tags has been resolved
+  // (https://github.com/census-instrumentation/opencensus-specs/issues/65).
   private static String encodeTagContext(TagContext tags) {
-    try {
-      byte[] encodedTags = serializer.toByteArray(tags);
-      return Base64.getEncoder().encodeToString(encodedTags);
-    }
-    catch (TagContextSerializationException exn) {
-      logger.log(Level.INFO, "OpenCensus: Tag Context Serialization Exception: " + exn);
-      return "";
-    }
+    return "";
   }
 
+  // TODO: update this code once the text encoding of tags has been resolved
+  // (https://github.com/census-instrumentation/opencensus-specs/issues/65).
   private static Scope createScopedTagContext(String encodedTags) {
-    try {
-      TagContext tags = serializer.fromByteArray(Base64.getDecoder().decode(encodedTags));
-      return tagger.withTagContext(tags);
-    } catch (TagContextDeserializationException exn) {
-      logger.log(Level.INFO, "OpenCensus: Tag Context Deserialization Exception: " + exn);
-      return tagger.withTagContext(tagger.getCurrentTagContext());
-    }
+    return tagger.withTagContext(tagger.getCurrentTagContext());
   }
 
   @MustBeClosed
