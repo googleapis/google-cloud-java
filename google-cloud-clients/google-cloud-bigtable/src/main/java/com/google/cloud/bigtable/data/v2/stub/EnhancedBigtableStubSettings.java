@@ -155,11 +155,13 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
         .setMaxInboundMessageSize(MAX_MESSAGE_SIZE);
   }
 
+  @SuppressWarnings("WeakerAccess")
   public static TransportChannelProvider defaultTransportChannelProvider() {
     return defaultGrpcTransportProviderBuilder().build();
   }
 
   /** Returns a builder for the default credentials for this service. */
+  @SuppressWarnings("WeakerAccess")
   public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
     return BigtableStubSettings.defaultCredentialsProviderBuilder()
         .setJwtEnabledScopes(JWT_ENABLED_SCOPES);

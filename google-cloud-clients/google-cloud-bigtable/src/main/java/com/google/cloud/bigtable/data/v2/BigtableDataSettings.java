@@ -335,8 +335,7 @@ public final class BigtableDataSettings {
 
     /** @deprecated Please use {@link #stubSettings()} */
     @Deprecated
-    public Builder setExecutorProvider(
-        ExecutorProvider executorProvider) {
+    public Builder setExecutorProvider(ExecutorProvider executorProvider) {
       stubSettings.setExecutorProvider(executorProvider);
       return this;
     }
@@ -350,16 +349,14 @@ public final class BigtableDataSettings {
 
     /** @deprecated Please use {@link #stubSettings()} */
     @Deprecated
-    public Builder setTransportChannelProvider(
-        TransportChannelProvider transportChannelProvider) {
+    public Builder setTransportChannelProvider(TransportChannelProvider transportChannelProvider) {
       stubSettings.setTransportChannelProvider(transportChannelProvider);
       return this;
     }
 
     /** @deprecated Please use {@link #stubSettings()} */
     @Deprecated
-    public Builder setStreamWatchdogProvider(
-        @Nullable WatchdogProvider streamWatchdogProvider) {
+    public Builder setStreamWatchdogProvider(@Nullable WatchdogProvider streamWatchdogProvider) {
       stubSettings.setStreamWatchdogProvider(streamWatchdogProvider);
       return this;
     }
@@ -380,16 +377,14 @@ public final class BigtableDataSettings {
 
     /** @deprecated Please use {@link #stubSettings()} */
     @Deprecated
-    public Builder setStreamWatchdogCheckInterval(
-        @Nonnull Duration checkInterval) {
+    public Builder setStreamWatchdogCheckInterval(@Nonnull Duration checkInterval) {
       stubSettings.setStreamWatchdogCheckInterval(checkInterval);
       return this;
     }
 
     /** @deprecated Please use {@link #stubSettings()} */
     @Deprecated
-    public Builder setTracerFactory(
-        @Nonnull ApiTracerFactory tracerFactory) {
+    public Builder setTracerFactory(@Nonnull ApiTracerFactory tracerFactory) {
       stubSettings.setTracerFactory(tracerFactory);
       return this;
     }
@@ -471,7 +466,7 @@ public final class BigtableDataSettings {
 
     /** @deprecated Please use {@link #stubSettings()} */
     @Deprecated
-    public BatchingCallSettings.Builder<RowMutation, Void> bulkMutateRowsSettings() {
+    public BatchingCallSettings.Builder<RowMutation, Void> bulkMutationsSettings() {
       return stubSettings.bulkMutateRowsSettings();
     }
 

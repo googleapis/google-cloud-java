@@ -63,15 +63,17 @@ public class ResourceHeaderTest {
         BigtableDataSettings.newBuilder()
             .setProjectId(PROJECT_ID)
             .setInstanceId(INSTANCE_ID)
-            .setTransportChannelProvider(channelProvider)
             .setCredentialsProvider(NoCredentialsProvider.create());
+    settings.stubSettings().setTransportChannelProvider(channelProvider);
 
     // Force immediate flush
     settings
-        .bulkMutationsSettings()
+        .stubSettings()
+        .bulkMutateRowsSettings()
         .setBatchingSettings(
             settings
-                .bulkMutationsSettings()
+                .stubSettings()
+                .bulkMutateRowsSettings()
                 .getBatchingSettings()
                 .toBuilder()
                 .setElementCountThreshold(1L)
