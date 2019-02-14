@@ -20,6 +20,8 @@ import static com.google.common.truth.Truth.assertWithMessage;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.testing.InProcessServer;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
+import com.google.api.gax.rpc.FixedHeaderProvider;
+import com.google.api.gax.rpc.HeaderProvider;
 import com.google.bigtable.v2.BigtableGrpc;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
@@ -48,6 +50,9 @@ public class ResourceHeaderTest {
   private static final Pattern EXPECTED_HEADER_PATTERN =
       Pattern.compile(".*" + NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID) + ".*");
   private static final String HEADER_NAME = "x-goog-request-params";
+  private static final String TEST_HEADER_NAME = "simple-header-name";
+  private static final String TEST_HEADER_VALUE = "simple-header-value";
+  private static final Pattern TEST_PATTERN = Pattern.compile(".*" + TEST_HEADER_VALUE + ".*");
 
   private InProcessServer<?> server;
   private LocalChannelProvider channelProvider;
@@ -59,11 +64,13 @@ public class ResourceHeaderTest {
     server.start();
     channelProvider = LocalChannelProvider.create(NAME);
 
+    HeaderProvider headerProvider = FixedHeaderProvider.create(TEST_HEADER_NAME, TEST_HEADER_VALUE);
     BigtableDataSettings.Builder settings =
         BigtableDataSettings.newBuilder()
             .setProjectId(PROJECT_ID)
             .setInstanceId(INSTANCE_ID)
             .setTransportChannelProvider(channelProvider)
+            .setHeaderProvider(headerProvider)
             .setCredentialsProvider(NoCredentialsProvider.create());
 
     // Force immediate flush
@@ -132,5 +139,7 @@ public class ResourceHeaderTest {
   private void verifyHeaderSent() {
     boolean headerSent = channelProvider.isHeaderSent(HEADER_NAME, EXPECTED_HEADER_PATTERN);
     assertWithMessage("Header was sent").that(headerSent).isTrue();
+    boolean testHeader = channelProvider.isHeaderSent(TEST_HEADER_NAME, TEST_PATTERN);
+    assertWithMessage("HeaderProvider's header received in Channel").that(testHeader).isTrue();
   }
 }
