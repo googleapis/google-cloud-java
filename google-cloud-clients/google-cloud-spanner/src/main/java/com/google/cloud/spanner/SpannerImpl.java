@@ -1291,7 +1291,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         // We also do this unconditionally in case a user has modified the flag when the transaction
         // was running.
         hasPendingTransaction.remove();
-        span.end();
       }
     }
 
@@ -2627,7 +2626,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       if (stream != null) {
         stream.close(message);
       }
-      span.end();
     }
 
     @Override
