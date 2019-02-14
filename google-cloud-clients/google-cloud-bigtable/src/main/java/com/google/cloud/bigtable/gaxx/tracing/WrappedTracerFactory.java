@@ -28,6 +28,8 @@ import org.threeten.bp.Duration;
  *
  * <p>This is used to disambiguate traces in underlying GAPIC client from the manually written
  * overlay.
+ *
+ * <p>For internal use, public for technical reasons.
  */
 @InternalApi
 public class WrappedTracerFactory implements ApiTracerFactory {
