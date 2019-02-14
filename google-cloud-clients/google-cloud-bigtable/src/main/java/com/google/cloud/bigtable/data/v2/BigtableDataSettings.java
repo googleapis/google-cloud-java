@@ -121,7 +121,7 @@ public final class BigtableDataSettings {
   }
 
   /** Returns the underlying RPC settings. */
-  public EnhancedBigtableStubSettings getSubSettings() {
+  public EnhancedBigtableStubSettings getStubSettings() {
     return stubSettings;
   }
 
@@ -132,92 +132,92 @@ public final class BigtableDataSettings {
     return stubSettings.getInstanceName();
   }
 
-  /** @deprecated Please use {@link #getSubSettings()} */
+  /** @deprecated Please use {@link #getStubSettings()} */
   @Deprecated
   public ServerStreamingCallSettings<Query, Row> readRowsSettings() {
     return stubSettings.readRowsSettings();
   }
 
-  /** @deprecated Please use {@link #getSubSettings()} */
+  /** @deprecated Please use {@link #getStubSettings()} */
   @Deprecated
   public UnaryCallSettings<String, List<KeyOffset>> sampleRowKeysSettings() {
     return stubSettings.sampleRowKeysSettings();
   }
 
-  /** @deprecated Please use {@link #getSubSettings()} */
+  /** @deprecated Please use {@link #getStubSettings()} */
   @Deprecated
   public UnaryCallSettings<Query, Row> readRowSettings() {
     return stubSettings.readRowSettings();
   }
 
-  /** @deprecated Please use {@link #getSubSettings()} */
+  /** @deprecated Please use {@link #getStubSettings()} */
   @Deprecated
   public UnaryCallSettings<RowMutation, Void> mutateRowSettings() {
     return stubSettings.mutateRowSettings();
   }
 
-  /** @deprecated Please use {@link #getSubSettings()} */
+  /** @deprecated Please use {@link #getStubSettings()} */
   @Deprecated
   public BatchingCallSettings<RowMutation, Void> bulkMutateRowsSettings() {
     return stubSettings.bulkMutateRowsSettings();
   }
 
-  /** @deprecated Please use {@link #getSubSettings()} */
+  /** @deprecated Please use {@link #getStubSettings()} */
   @Deprecated
   public UnaryCallSettings<ConditionalRowMutation, Boolean> checkAndMutateRowSettings() {
     return stubSettings.checkAndMutateRowSettings();
   }
 
-  /** @deprecated Please use {@link #getSubSettings()} */
+  /** @deprecated Please use {@link #getStubSettings()} */
   @Deprecated
   public UnaryCallSettings<ReadModifyWriteRow, Row> readModifyWriteRowSettings() {
     return stubSettings.readModifyWriteRowSettings();
   }
 
-  /** @deprecated Please use {@link #getSubSettings()} */
+  /** @deprecated Please use {@link #getStubSettings()} */
   @Deprecated
   public ExecutorProvider getExecutorProvider() {
     return stubSettings.getExecutorProvider();
   }
 
-  /** @deprecated Please use {@link #getSubSettings()} */
+  /** @deprecated Please use {@link #getStubSettings()} */
   @Deprecated
   public TransportChannelProvider getTransportChannelProvider() {
     return stubSettings.getTransportChannelProvider();
   }
 
-  /** @deprecated Please use {@link #getSubSettings()} */
+  /** @deprecated Please use {@link #getStubSettings()} */
   @Deprecated
   public CredentialsProvider getCredentialsProvider() {
     return stubSettings.getCredentialsProvider();
   }
 
-  /** @deprecated Please use {@link #getSubSettings()} */
+  /** @deprecated Please use {@link #getStubSettings()} */
   @Deprecated
   public HeaderProvider getHeaderProvider() {
     return stubSettings.getHeaderProvider();
   }
 
-  /** @deprecated Please use {@link #getSubSettings()} */
+  /** @deprecated Please use {@link #getStubSettings()} */
   @Deprecated
   public ApiClock getClock() {
     return stubSettings.getClock();
   }
 
-  /** @deprecated Please use {@link #getSubSettings()} */
+  /** @deprecated Please use {@link #getStubSettings()} */
   @Deprecated
   public String getEndpoint() {
     return stubSettings.getEndpoint();
   }
 
-  /** @deprecated Please use {@link #getSubSettings()} */
+  /** @deprecated Please use {@link #getStubSettings()} */
   @Deprecated
   @Nullable
   public WatchdogProvider getStreamWatchdogProvider() {
     return stubSettings.getStreamWatchdogProvider();
   }
 
-  /** @deprecated Please use {@link #getSubSettings()} */
+  /** @deprecated Please use {@link #getStubSettings()} */
   @Deprecated
   @Nonnull
   public Duration getStreamWatchdogCheckInterval() {
@@ -246,7 +246,7 @@ public final class BigtableDataSettings {
     }
 
     private Builder(BigtableDataSettings settings) {
-      stubSettings = settings.getSubSettings().toBuilder();
+      stubSettings = settings.getStubSettings().toBuilder();
     }
 
     // <editor-fold desc="Public API">
