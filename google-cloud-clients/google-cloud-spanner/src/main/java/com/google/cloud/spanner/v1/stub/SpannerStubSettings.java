@@ -299,7 +299,7 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
 
             @Override
             public Iterable<Session> extractResources(ListSessionsResponse payload) {
-              return payload.getSessionsList() != null;
+              return payload.getSessionsList();
             }
           };
 
