@@ -26,6 +26,10 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.gax.tracing.SpanName;
+import com.google.api.gax.tracing.TracedBatchingCallable;
+import com.google.api.gax.tracing.TracedServerStreamingCallable;
+import com.google.api.gax.tracing.TracedUnaryCallable;
 import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.SampleRowKeysRequest;
@@ -50,6 +54,7 @@ import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsRetryCompletedCal
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsUserCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.RowMergingCallable;
 import com.google.cloud.bigtable.gaxx.retrying.ApiResultRetryAlgorithm;
+import com.google.cloud.bigtable.gaxx.tracing.WrappedTracerFactory;
 import java.io.IOException;
 import java.util.List;
 import org.threeten.bp.Duration;
@@ -68,6 +73,9 @@ import org.threeten.bp.Duration;
  */
 @InternalApi
 public class EnhancedBigtableStub implements AutoCloseable {
+  private static final String TRACING_OUTER_CLIENT_NAME = "Bigtable";
+  private static final String TRACING_INNER_CLIENT_NAME = "BaseBigtable";
+
   private final EnhancedBigtableStubSettings settings;
   private final GrpcBigtableStub stub;
   private final ClientContext clientContext;
@@ -91,7 +99,9 @@ public class EnhancedBigtableStub implements AutoCloseable {
             .setEndpoint(settings.getEndpoint())
             .setCredentialsProvider(settings.getCredentialsProvider())
             .setStreamWatchdogProvider(settings.getStreamWatchdogProvider())
-            .setStreamWatchdogCheckInterval(settings.getStreamWatchdogCheckInterval());
+            .setStreamWatchdogCheckInterval(settings.getStreamWatchdogCheckInterval())
+            // Force the base stub to use a different TracerFactory
+            .setTracerFactory(new WrappedTracerFactory(settings.getTracerFactory(), TRACING_INNER_CLIENT_NAME));
 
     // ReadRow retries are handled in the overlay: disable retries in the base layer (but make
     // sure to preserve the exception callable settings).
@@ -138,6 +148,11 @@ public class EnhancedBigtableStub implements AutoCloseable {
     BigtableStubSettings baseSettings = baseSettingsBuilder.build();
     ClientContext clientContext = ClientContext.create(baseSettings);
     GrpcBigtableStub stub = new GrpcBigtableStub(baseSettings, clientContext);
+
+    // Make sure to keep the original tracer factory for the outer client.
+    clientContext = clientContext.toBuilder()
+        .setTracerFactory(settings.getTracerFactory())
+        .build();
 
     return new EnhancedBigtableStub(settings, clientContext, stub);
   }
@@ -246,15 +261,13 @@ public class EnhancedBigtableStub implements AutoCloseable {
     FilterMarkerRowsCallable<RowT> filtering =
         new FilterMarkerRowsCallable<>(retrying2, rowAdapter);
 
-    ServerStreamingCallable<ReadRowsRequest, RowT> withContext =
-        filtering.withDefaultCallContext(clientContext.getDefaultCallContext());
+    ReadRowsUserCallable<RowT> userFacing = new ReadRowsUserCallable<>(filtering, requestContext);
 
-    // NOTE: Ideally `withDefaultCallContext` should be the outer-most callable, however the
-    // ReadRowsUserCallable overrides the first() method. This override would be lost if
-    // ReadRowsUserCallable is wrapped by another callable.  At some point in the future,
-    // gax-java should allow preserving these kind of overrides through callable chains, at which
-    // point this should be re-ordered.
-    return new ReadRowsUserCallable<>(withContext, requestContext);
+    TracedServerStreamingCallable<Query, RowT> traced = new TracedServerStreamingCallable<>(
+        userFacing, clientContext.getTracerFactory(), SpanName.of(TRACING_OUTER_CLIENT_NAME, "ReadRows")
+    );
+
+    return traced.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
 
   /**
@@ -278,7 +291,13 @@ public class EnhancedBigtableStub implements AutoCloseable {
     UnaryCallable<String, List<KeyOffset>> userFacing =
         new SampleRowKeysCallable(retryable, requestContext);
 
-    return userFacing.withDefaultCallContext(clientContext.getDefaultCallContext());
+    UnaryCallable<String, List<KeyOffset>> traced = new TracedUnaryCallable<>(
+        userFacing,
+        clientContext.getTracerFactory(),
+        SpanName.of(TRACING_OUTER_CLIENT_NAME, "SampleRowKeys")
+    );
+
+    return traced.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
 
   /**
@@ -291,7 +310,13 @@ public class EnhancedBigtableStub implements AutoCloseable {
   private UnaryCallable<RowMutation, Void> createMutateRowCallable() {
     MutateRowCallable userFacing = new MutateRowCallable(stub.mutateRowCallable(), requestContext);
 
-    return userFacing.withDefaultCallContext(clientContext.getDefaultCallContext());
+    UnaryCallable<RowMutation, Void> traced = new TracedUnaryCallable<>(
+        userFacing,
+        clientContext.getTracerFactory(),
+        SpanName.of(TRACING_OUTER_CLIENT_NAME, "MutateRow")
+    );
+
+    return traced.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
 
   /**
@@ -310,7 +335,13 @@ public class EnhancedBigtableStub implements AutoCloseable {
    */
   private UnaryCallable<BulkMutation, Void> createBulkMutateRowsCallable() {
     UnaryCallable<MutateRowsRequest, Void> baseCallable = createMutateRowsBaseCallable();
-    return new BulkMutateRowsUserFacingCallable(baseCallable, requestContext);
+    BulkMutateRowsUserFacingCallable userFacing = new BulkMutateRowsUserFacingCallable(
+        baseCallable, requestContext);
+
+    TracedUnaryCallable<BulkMutation, Void> traced = new TracedUnaryCallable<>(
+        userFacing, clientContext.getTracerFactory(), SpanName.of(TRACING_OUTER_CLIENT_NAME, "BulkMutateRows"));
+
+    return traced.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
 
   /**
@@ -337,8 +368,12 @@ public class EnhancedBigtableStub implements AutoCloseable {
         BatchingCallSettings.newBuilder(new MutateRowsBatchingDescriptor())
             .setBatchingSettings(settings.bulkMutateRowsSettings().getBatchingSettings());
 
+    TracedBatchingCallable<MutateRowsRequest, Void> traced = new TracedBatchingCallable<>(
+        baseCallable, clientContext.getTracerFactory(), SpanName.of(TRACING_OUTER_CLIENT_NAME, "BulkMutateRows"),
+        batchingCallSettings.getBatchingDescriptor());
+
     UnaryCallable<MutateRowsRequest, Void> batching =
-        Callables.batching(baseCallable, batchingCallSettings.build(), clientContext);
+        Callables.batching(traced, batchingCallSettings.build(), clientContext);
 
     MutateRowsUserFacingCallable userFacing =
         new MutateRowsUserFacingCallable(batching, requestContext);
@@ -380,7 +415,10 @@ public class EnhancedBigtableStub implements AutoCloseable {
     CheckAndMutateRowCallable userFacing =
         new CheckAndMutateRowCallable(stub.checkAndMutateRowCallable(), requestContext);
 
-    return userFacing.withDefaultCallContext(clientContext.getDefaultCallContext());
+    TracedUnaryCallable<ConditionalRowMutation, Boolean> traced = new TracedUnaryCallable<>(
+        userFacing, clientContext.getTracerFactory(), SpanName.of(TRACING_OUTER_CLIENT_NAME, "CheckAndMutateRow"));
+
+    return traced.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
 
   /**
@@ -396,7 +434,11 @@ public class EnhancedBigtableStub implements AutoCloseable {
     ReadModifyWriteRowCallable userFacing =
         new ReadModifyWriteRowCallable(stub.readModifyWriteRowCallable(), requestContext);
 
-    return userFacing.withDefaultCallContext(clientContext.getDefaultCallContext());
+    TracedUnaryCallable<ReadModifyWriteRow, Row> traced = new TracedUnaryCallable<>(
+        userFacing, clientContext.getTracerFactory(),
+        SpanName.of(TRACING_OUTER_CLIENT_NAME, "ReadModifyWriteRow"));
+
+    return traced.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
   // </editor-fold>
 
